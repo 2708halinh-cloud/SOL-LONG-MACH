@@ -64,3 +64,17 @@ jobs:
         shell: pwsh
         run: |
           [void][scriptblock]::Create((Get-Content 'scripts/start-windows.ps1' -Raw))
+      - name: Boot and read back persistent Windows background service
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          & ./scripts/start-windows.ps1 -Port 8776
+          $health = Invoke-RestMethod -Uri 'http://127.0.0.1:8776/health' -TimeoutSec 5
+          if ($health.status -ne 'ready' -or -not $health.browser_connected) {
+            throw 'Windows bootstrap did not start a live Puppeteer browser'
+          }
+          $statePath = Join-Path $env:LOCALAPPDATA 'SOL\Puppeteer\runtime-state.json'
+          $state = Get-Content $statePath -Raw | ConvertFrom-Json
+          Write-Output ('SOL_WINDOWS_BACKGROUND_READY PID=' + $state.pid)
+          Stop-Process -Id ([int]$state.pid) -ErrorAction Stop
+          Write-Output 'SOL_WINDOWS_BACKGROUND_STOPPED_AFTER_TEST'
