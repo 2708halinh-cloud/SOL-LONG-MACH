@@ -33,3 +33,11 @@ Tài liệu chính thức: https://pptr.dev/docs
 Upstream README giới thiệu MCP: https://github.com/ChromeDevTools/chrome-devtools-mcp
 
 Trạng thái: mã nguồn đã gắn dưới dạng submodule; không có lệnh cài dependency, chạy chương trình hay đăng ký MCP được thực thi trong bước này. Không thay đổi skill Anatomy và các plugin hiện hữu.
+
+## Runtime thực thi trong COMPUTER_KHÍ
+
+- Vị trí: `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME`.
+- Package: `puppeteer@25.14.0` cùng `package-lock.json`.
+- Start: `npm ci && npm start` (Node.js 20.10+); trên Windows dùng `scripts/start-windows.ps1`.
+- CI: `.github/workflows/puppeteer-computer-khi.yml` kiểm tra Chrome, PNG và loopback.
+- Runtime nguồn dưới `COMPUTER_KHÍ` tách riêng mã submodule upstream dưới `_Plugins/puppeteer`.

@@ -26,8 +26,8 @@ Render giới hạn HTML 1 MiB, không chạy JavaScript từ nội dung HTML, k
 
 ## Các môi trường
 
-- GitHub Actions: workflow `.github/workflows/puppeteer-computer-khi.yml` dùng Ubuntu + Node 22 để cài dependencies và kiểm tra Chrome.
-- Windows: cần máy online và Node.js; tại bản checkout, chạy `npm ci` + `npm start` để có dịch vụ liên tục.
+- GitHub Actions: workflow `.github/workflows/puppeteer-computer-khi.yml` dùng Ubuntu **và Windows** + Node 22 để cài dependencies, khởi chạy Chrome và kiểm tra dịch vụ.
+- Windows: tại bản checkout, chạy `powershell -ExecutionPolicy Bypass -File scripts/start-windows.ps1`. Script cài bằng `npm ci`, khởi động dịch vụ nền và đọc `/health`, trả về PID khi ready. Chỉ có thể chạy trên máy Windows online.
 - Termux/Android: có thể cài package Node với `PUPPETEER_SKIP_DOWNLOAD=1 npm install`. Khởi chạy Chrome đòi hỏi browser executable tương thích Android; Node import thành công không chứng minh browser hoạt động.
 - Nguồn upstream đã gắn tại `OS_WORK/tools/_Plugins/puppeteer` là Git submodule riêng, không bị sửa trong bước này.
 
