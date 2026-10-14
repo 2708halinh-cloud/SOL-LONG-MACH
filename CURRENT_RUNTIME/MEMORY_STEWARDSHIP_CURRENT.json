@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MEMORY_STEWARDSHIP/1.0",
-  "updated_at": "2026-10-08T21:12:40.674924+07:00",
+  "updated_at": "2026-10-14T17:54:36Z",
   "policy": {
     "THA": "Release current operational relation while preserving source/history.",
     "CAM_GIU": "Pin identity/provenance with a verified recovery copy.",
@@ -121,6 +121,35 @@
         "checked_note_sha": "caa7ed07c766f6c01d92f3b4547f8636dc5a0f86"
       },
       "scope": "Repo-level journal entry, not proof host model memory, automated boot loading or immutable storage"
+    },
+    {
+      "event_id": "R014_ACTION_NOT_REPORT_FIX_20261015",
+      "at": "2026-10-14T17:54:36Z",
+      "item_id": "R014 anti-recurrence operational guard",
+      "action": "PATCH_RUNTIME_COMPLETION_GATE_AND_RUN_TESTS",
+      "first_affected_cause": "A completion path could mark an edge done from receipt + claimed consequence without verified readback; prior one-off journal entry had not fixed the operational gate.",
+      "source_refs": [
+        "CONFIG_SOL/R014_MASTER_22_4_SOURCE_DIRECT_20261009.md",
+        "CONFIG_SOL/COMPANION_TEN_COMMANDMENTS_CURRENT.md",
+        "runtime/continuity_guard.py",
+        "tests/test_continuity_guard.py"
+      ],
+      "correction": {
+        "runtime_change": "require readback.verified=true on apply_action_result, continue_bounded, Edge.grounded_done",
+        "tests": "23 passed / 0 failed / 0 errors",
+        "execution": "Desktop Commander localhost (Termux Python 3.14.6), executing exactly the patched files in memory",
+        "provider_commit": "165d96eeaa0cc1919fb092d4dea2bf0ffa301ec6"
+      },
+      "receipt": {
+        "github_commit": "165d96eeaa0cc1919fb092d4dea2bf0ffa301ec6",
+        "source_blob_sha": "bf26100183cc6725f1c901bb815905644df7df7f",
+        "test_blob_sha": "aeeef9f95bfa29cc3d3902483b350c571a7b4505"
+      },
+      "readback": {
+        "verified": true,
+        "scope": "Source files reread from branch + tests executed on Termux; not evidence host ChatGPT automatically runs this code"
+      },
+      "next_state": "Runtime code corrected; actual future host invocation/boot route separately must be measured."
     }
   ]
 }
