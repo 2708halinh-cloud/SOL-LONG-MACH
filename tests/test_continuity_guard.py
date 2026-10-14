@@ -112,6 +112,7 @@ class ContinuityGuardTests(unittest.TestCase):
             action_kind="WRITE",
             provider_receipt={"r": 1},
             observable_consequence={"ok": 1},
+            readback={"verified": True},
         )
         self.assertFalse(cp.objective_done())
         self.assertEqual(select_next_callable_edge(cp).edge_id, "B")
@@ -159,6 +160,7 @@ class ContinuityGuardTests(unittest.TestCase):
                 "action_kind": "ACT",
                 "provider_receipt": {"edge": edge.edge_id},
                 "observable_consequence": {"edge": edge.edge_id},
+                "readback": {"verified": True},
             }
 
         out = continue_bounded(cp, executor, max_steps=1)
@@ -175,6 +177,39 @@ class ContinuityGuardTests(unittest.TestCase):
             edges=[Edge(edge_id="A", target="a", callable_now=False)],
         )
         self.assertFalse(visible_output_allowed(cp, output_kind="COMPLETION"))
+
+    def test_no_readback_cannot_complete_a_recorded_action(self):
+        cp = Checkpoint(
+            objective_id="READBACK-GUARD", source_marker="S", lineage_ref="R-014",
+            edges=[Edge(edge_id="E", target="memory write", callable_now=True)],
+        )
+        with self.assertRaises(ValueError):
+            apply_action_result(
+                cp, "E", action_kind="WRITE",
+                provider_receipt={"commit": "sha"},
+                observable_consequence={"modified": True},
+            )
+        self.assertFalse(cp.objective_done())
+        self.assertEqual(select_next_callable_edge(cp).edge_id, "E")
+        self.assertFalse(stop_allowed(cp))
+
+    def test_self_declared_success_without_verified_readback_is_not_done(self):
+        cp = Checkpoint(
+            objective_id="READBACK-FAIL", source_marker="S", lineage_ref="R-014",
+            edges=[Edge(edge_id="E", target="memory write", callable_now=True,
+                        candidate_carriers=["A", "B"])],
+        )
+        out = continue_bounded(
+            cp, lambda edge, carrier: {
+                "success": True,
+                "action_kind": "WRITE",
+                "provider_receipt": {"commit": "claimed"},
+                "observable_consequence": {"claimed": True},
+                "readback": {"verified": False},
+            }, max_steps=1,
+        )
+        self.assertFalse(out["objective_done"])
+        self.assertEqual(select_next_callable_edge(cp).next_carrier(), "B")
 
     def test_r014_failure_mechanism_disabled_preserves_history(self):
         cp = Checkpoint(
@@ -229,6 +264,7 @@ class ContinuityGuardTests(unittest.TestCase):
             cp, "A", action_kind="WRITE",
             provider_receipt={"commit": "sha"},
             observable_consequence={"changed": True},
+            readback={"verified": True},
         )
         r014_register_known_error(
             cp, mechanism_id="OLD_REACTION",
@@ -282,6 +318,7 @@ class ContinuityGuardTests(unittest.TestCase):
                 "success": True, "action_kind": "WRITE",
                 "provider_receipt": {"id": "r2"},
                 "observable_consequence": {"written": True},
+                "readback": {"verified": True},
             }
 
         output = continue_bounded(cp, executor, max_steps=5)

@@ -22,6 +22,11 @@ import os
 import tempfile
 
 
+def _readback_verified(readback: Any) -> bool:
+    """Do not mistake a provider receipt or a self-declared status for readback."""
+    return isinstance(readback, dict) and readback.get("verified") is True
+
+
 @dataclass
 class Edge:
     edge_id: str
@@ -47,6 +52,7 @@ class Edge:
             and self.action_kind
             and self.provider_receipt is not None
             and self.observable_consequence is not None
+            and _readback_verified(self.readback)
         )
 
     def next_carrier(self) -> str | None:
@@ -321,6 +327,8 @@ def apply_action_result(
     readback: Any = None,
     last_consequence_ref: str | None = None,
 ) -> None:
+    if not _readback_verified(readback):
+        raise ValueError("verified readback is required before recording completed action")
     edge = next(e for e in cp.edges if e.edge_id == edge_id)
     edge.action_kind = action_kind
     edge.provider_receipt = provider_receipt
@@ -388,8 +396,9 @@ def continue_bounded(
 
         consequence = result.get("observable_consequence")
         provider_receipt = result.get("provider_receipt")
-        if provider_receipt is None or consequence is None:
-            # Boolean success/report-only is not grounded completion.
+        if (provider_receipt is None or consequence is None
+                or not _readback_verified(result.get("readback"))):
+            # Provider receipt or self-report without verified readback is not completion.
             edge.evidence.setdefault("rejected_results", []).append(result)
             if carrier is not None:
                 mark_carrier_failure(edge, carrier, "missing receipt/consequence")
