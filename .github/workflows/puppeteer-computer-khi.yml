@@ -12,7 +12,28 @@ permissions:
   contents: read
 
 jobs:
+  stage-runtime:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME/
+          sparse-checkout-cone-mode: false
+      - name: Stage only the Puppeteer runtime
+        run: |
+          mkdir -p runtime-stage
+          cp -a "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME/." runtime-stage/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sol-computer-khi-runtime-source
+          path: runtime-stage/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 2
+
   browser-smoke:
+    needs: stage-runtime
     strategy:
       fail-fast: false
       matrix:
@@ -21,18 +42,17 @@ jobs:
     timeout-minutes: 20
     defaults:
       run:
-        working-directory: "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME"
+        working-directory: runtime-src
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
         with:
-          sparse-checkout: |
-            CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME/
-          sparse-checkout-cone-mode: false
+          name: sol-computer-khi-runtime-source
+          path: runtime-src
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: npm
-          cache-dependency-path: "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME/package-lock.json"
+          cache-dependency-path: runtime-src/package-lock.json
       - name: Install Puppeteer and compatible Chrome
         run: npm ci
       - name: Launch Chrome, render page, and verify loopback service
