@@ -1,0 +1,40 @@
+{
+  "schema": "GGDV_TOOLS_REGISTRY_V1",
+  "id": "AZURE_DEVOPS_MCP_CORE_20261014",
+  "source": "USER_DIRECT_TOOLSET_2026-10-14",
+  "library_target": "/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/AZURE_DEVOPS_MCP_CORE",
+  "host_target": "G:\\OS_Workspace\\tools",
+  "server_name": "Local Azure DevOps MCP",
+  "transport": "OPEN",
+  "auth_state": "UNVERIFIED",
+  "tools_list_readback": false,
+  "tools": [
+    {
+      "name": "core_list_projects",
+      "description": "List all projects in the organization",
+      "inputSchema": "OPEN_NOT_PROVIDED",
+      "execution": "READ_ONLY"
+    },
+    {
+      "name": "core_list_project_teams",
+      "description": "List teams within a project",
+      "inputSchema": "OPEN_NOT_PROVIDED",
+      "execution": "READ_ONLY"
+    },
+    {
+      "name": "core_get_identity_ids",
+      "description": "Retrieve identity IDs by search filter",
+      "inputSchema": "OPEN_NOT_PROVIDED",
+      "execution": "READ_ONLY"
+    }
+  ],
+  "status": "SOURCE_REGISTERED_NOT_RUNTIME_CONNECTED",
+  "safe_activation": [
+    "verify local MCP endpoint and authentication",
+    "initialize and tools/list",
+    "verify exact inputSchema for three functions",
+    "call core_list_projects in read-only mode",
+    "readback result"
+  ],
+  "provenance_policy": "NO_SECRET_BYTES; NO_FALSE_RUNTIME_CLAIM; HISTORY_PRESERVED"
+}
