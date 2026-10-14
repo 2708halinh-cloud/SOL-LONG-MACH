@@ -102,7 +102,7 @@ const http=createServer(async(req,res)=>{
    const agent=url.searchParams.get('agent');if(!validAgent(agent))return send(res,400,{error:'invalid_agent'});
    const after=Math.max(0,Number(url.searchParams.get('after')||req.headers['last-event-id']||0));
    if(!Number.isSafeInteger(after))return send(res,400,{error:'invalid_cursor'});
-   res.writeHead(200,{'content-type':'text/event-stream','cache-control':'no-cache, no-transform','connection':'keep-alive','x-accel-buffering':'no'});
+   res.writeHead(200,{'content-type':'text/event-stream','cache-control':'no-cache, no-transform','connection':'keep-alive','x-accel-buffering':'no'});res.flushHeaders();
    const listener={agent,after,res};eventStreams.add(listener);
    for(const e of recentMemory.all(after,agent)){const ev=trimEvent(e);res.write('id: '+ev.id+'\nevent: memory\ndata: '+JSON.stringify(ev)+'\n\n');listener.after=ev.id;}
    const pulse=setInterval(()=>{if(!res.writableEnded)res.write(': heartbeat\n\n');},20000);

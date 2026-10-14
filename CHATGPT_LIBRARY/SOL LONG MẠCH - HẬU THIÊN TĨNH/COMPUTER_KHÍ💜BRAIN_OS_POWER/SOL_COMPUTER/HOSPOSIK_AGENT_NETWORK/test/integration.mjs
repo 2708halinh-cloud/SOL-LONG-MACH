@@ -79,10 +79,18 @@ try{
  assert.equal(srv.answers[0].data.port,first.ready.http_port);
  const unknown=await dnsRequest(first.ready.dns_port,'unknown.hosposik.test','A');
  assert.equal(unknown.flags&15,3);
+ const stream = await fetch(address+'/v1/memory/stream?agent=sol&after='+memory.data.event.id,{headers});
+ assert.equal(stream.status,200);
+ const streamReader=stream.body.getReader();
+ const nextEvent=await post('/v1/memory/events',{agent:'sol',kind:'signal',text:'HOSPOSIK_SSE_REALTIME_PASS',dedupe:'event-sse'});
+ assert.equal(nextEvent.status,201);
+ const streamed=await Promise.race([streamReader.read(),wait(2000).then(()=>{throw Error('SSE timeout')})]);
+ assert.match(Buffer.from(streamed.value).toString('utf8'),/HOSPOSIK_SSE_REALTIME_PASS/);
+ await streamReader.cancel();
  await stop(first.child);
  second=await start();
  const again=await (await fetch('http://127.0.0.1:'+second.ready.http_port+'/v1/memory/events?agent=sol',{headers})).json();
- assert.equal(again.events.length,1);
+ assert.equal(again.events.length,2);
  assert.equal(again.events[0].text,'HOSPOSIK_EVENT_PERSISTED');
  console.log(JSON.stringify({status:'PASS',agent_memory:'durable_after_restart',sqlite:'WAL_FULL',dedupe:true,agent_router:'queue_and_ack',dns:'A_SRV_NXDOMAIN',http:'loopback',auth:'validated',event_id:memory.data.event.id}));
 }catch(e){console.error(e.stack||e.message);process.exitCode=1;}

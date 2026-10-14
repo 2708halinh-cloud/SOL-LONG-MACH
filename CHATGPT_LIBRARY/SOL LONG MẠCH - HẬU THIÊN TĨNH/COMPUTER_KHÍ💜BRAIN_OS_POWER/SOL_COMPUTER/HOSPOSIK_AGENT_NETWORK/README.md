@@ -49,3 +49,20 @@ Service được runit giám sát khi Termux services chạy, nhưng không tự
 
 HOSPOSIK hiện chỉ là tên dịch vụ nội bộ; không phải một tên miền Internet đã được xác thực hoặc cấu hình trên Hostinger. DNS port 15353 không thay DNS hệ thống port 53.
 Bộ nhớ lưu những sự kiện mà agent thực sự gửi tới API; không tự lấy lịch sử ChatGPT. Để hoạt động liên thiết bị cần endpoint/tunnel HTTPS được xác thực, chưa cấu hình.
+
+## Agent CLI — ghi vào bộ nhớ đang chạy
+
+Chạy tại thư mục runtime đã cài:
+
+```bash
+node bin/agent.mjs health
+node bin/agent.mjs agents
+node bin/agent.mjs register sol
+node bin/agent.mjs remember sol observation "Sự kiện mới của tác nhân"
+node bin/agent.mjs history sol 0
+node bin/agent.mjs send sol router '{"task":"heartbeat"}'
+node bin/agent.mjs inbox router
+node bin/agent.mjs ack router 1
+```
+
+CLI đọc token từ file local, gọi HTTP router thật và không ghi tệp giả vào chat/GitHub. Tin nhắn chưa được ACK sẽ còn trong SQLite để tác nhân nhận lại.
