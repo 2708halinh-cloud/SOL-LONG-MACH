@@ -1,0 +1,33 @@
+name: sol-computer-khi-puppeteer-runtime
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME/**"
+      - ".github/workflows/puppeteer-computer-khi.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME/package-lock.json"
+      - name: Install Puppeteer and compatible Chrome
+        run: npm ci
+      - name: Launch Chrome, render page, and verify loopback service
+        env:
+          CI: "true"
+        run: npm test
