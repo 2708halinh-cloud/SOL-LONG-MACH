@@ -24,6 +24,10 @@ jobs:
         working-directory: "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME"
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME/
+          sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
