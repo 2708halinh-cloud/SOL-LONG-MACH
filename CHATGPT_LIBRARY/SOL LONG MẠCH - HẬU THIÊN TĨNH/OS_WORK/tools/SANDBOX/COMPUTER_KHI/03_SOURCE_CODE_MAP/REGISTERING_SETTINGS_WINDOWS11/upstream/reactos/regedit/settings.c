@@ -2,7 +2,7 @@
  * Regedit settings
  *
  * Copyright 2012 Edijs Kolesnikovics <terminedijs@yahoo.com>
- * Copyright 2012 Gr√©gori Mac√°rio Harbs <mysoft64bits@gmail.com>
+ * Copyright 2012 GrÈgori Mac·rio Harbs <mysoft64bits@gmail.com>
  * LICENSE: LGPL-2.1-or-later (https://spdx.org/licenses/LGPL-2.1-or-later)
  */
 
