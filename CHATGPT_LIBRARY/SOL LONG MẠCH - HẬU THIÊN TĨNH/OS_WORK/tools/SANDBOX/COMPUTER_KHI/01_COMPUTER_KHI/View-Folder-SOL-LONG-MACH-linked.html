@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SOL LONG MẠCH — COMPUTER_KHÍ | Bản đồ nguồn & tệp</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,Arial,sans-serif;background:#111827;color:#f5f7fa}body{max-width:1140px;margin:auto;padding:22px}h1{font-size:1.6rem}h2{font-size:1.2rem}p,small{color:#c9d1e0}.flex{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.card{border:1px solid #4b5563;border-radius:12px;padding:15px;margin:12px 0;background:#1f2937}.pill{display:inline-block;border:1px solid #6b7280;border-radius:999px;padding:5px 9px;margin:3px}label{display:block;cursor:pointer;padding:8px 0}input{max-width:100%}table{border-collapse:collapse;width:100%;font-size:.86rem}th,td{padding:8px;border-bottom:1px solid #4b5563;text-align:left;word-break:break-word}th{background:#283246}code,pre{white-space:pre-wrap;overflow-wrap:anywhere}pre{background:#111827;padding:10px;border-radius:8px;max-height:400px;overflow:auto}button{padding:8px;border-radius:6px}a{color:#8ab4fa}#status{white-space:pre-line}
+</style>
+</head>
+<body>
+<h1>COMPUTER_KHÍ — Nối nguồn SOL LONG MẠCH</h1>
+<p>Bản xem độc lập, <strong>offline</strong>. Tải tệp JSON bằng bộ chọn bên dưới; không gửi dữ liệu lên mạng. Không thực thi nội dung ZIP.</p>
+<section class="card"><h2>01 — Quan hệ nguồn</h2>
+<div class="flex"><span class="pill">SENSOR_LOGS → chứng cứ</span><span class="pill">NEURONS_SESORIMOTOR → ngữ cảnh cảm biến</span><span class="pill">View-Folder → snapshot giao diện</span><span class="pill">COMPUTER_KHÍ → phân loại</span></div>
+<label>Bản đồ nguồn `COMPUTER_KHI_SOURCE_MAP.json`: <input id="map" type="file" accept=".json,application/json"></label>
+<div id="sources">Chưa nạp bản đồ nguồn.</div></section>
+<section class="card"><h2>02 — Báo cáo kiểm kê ZIP</h2>
+<label>Báo cáo `SOURCE_DIRECT_ZIP_REPORT.json`: <input id="report" type="file" accept=".json,application/json"></label>
+<p id="status">Chưa nạp ZIP report.</p>
+<div style="overflow-x:auto"><table><thead><tr><th>Tên tệp</th><th>Kích thước (byte)</th><th>SHA-256</th><th>Loại nội dung</th><th>Ngày trong ZIP</th><th>Nội dung xem trước (đã lọc)</th></tr></thead><tbody id="entries"></tbody></table></div>
+</section>
+<section class="card"><h2>03 — Ranh giới kiểm chứng</h2>
+<p>Bản đồ và báo cáo chỉ hiển thị những gì tệp JSON đã chứa. Snapshot HTML không chứng minh trạng thái hiện hành của ổ D. Tên chứa ngày không chứng minh ngày tạo. Chưa có byte của tệp ZIP cụ thể thì chưa thể đưa ra SHA-256 hay nội dung thật.</p>
+</section>
+<script>
+'use strict';
+const MAX_JSON_BYTES=20*1024*1024;
+async function loadJson(file){if(!file) return null;if(file.size>MAX_JSON_BYTES)throw Error('Tệp JSON quá giới hạn 20 MiB');return JSON.parse(await file.text());}
+function elt(t,txt,parent){const e=document.createElement(t);e.textContent=String(txt??'');parent.appendChild(e);return e;}
+function cell(row,text){elt('td',text,row)}
+const mapEl=document.getElementById('map'),reportEl=document.getElementById('report');
+mapEl.addEventListener('change',async()=>{const root=document.getElementById('sources');root.replaceChildren();try{const m=await loadJson(mapEl.files[0]);if(!m)return;elt('p',m.schema||'schema chưa khai báo',root);for(const [key,val] of Object.entries(m.sources||{})){const box=elt('details','',root);elt('summary',key,box);elt('pre',JSON.stringify(val,null,2),box)} }catch(e){elt('p','Không đọc được JSON: '+e.message,root)}});
+reportEl.addEventListener('change',async()=>{const root=document.getElementById('entries'),status=document.getElementById('status');root.replaceChildren();try{const r=await loadJson(reportEl.files[0]);if(!r)return;let lines=[`Nguồn: ${r.source_basename||'không có'}`,`Định dạng: ${r.is_zip_magic?'ZIP signature':'chưa xác nhận ZIP'} | trạng thái ${r.archive_status||'không có'}`,`Byte: ${r.archive_size_bytes??'chưa có'} | SHA-256: ${r.sha256||'chưa có'}`,`Giải nén: ${r.extracted?'có':'chưa'} | Số mục: ${(r.entries||[]).length}`,`Ngày tạo từ filesystem: ${r.filesystem_created_at??'không có dữ kiện'}`];if(r.issues?.length)lines.push('Vấn đề: '+r.issues.join('; '));status.textContent=lines.join('\n');for(const e of (r.entries||[])){const tr=elt('tr','',root);cell(tr,e.name);cell(tr,e.size_bytes);cell(tr,e.sha256_uncompressed);cell(tr,e.category);cell(tr,e.date_time_in_zip);cell(tr,e.content_preview_redacted||'');}}catch(e){status.textContent='Không đọc được báo cáo: '+e.message;}});
+</script>
+</body>
+</html>
