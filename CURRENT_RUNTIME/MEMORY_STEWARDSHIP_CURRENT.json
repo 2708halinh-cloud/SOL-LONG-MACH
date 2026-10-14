@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MEMORY_STEWARDSHIP/1.0",
-  "updated_at": "2026-10-14T17:54:36Z",
+  "updated_at": "2026-10-14T18:05:15Z",
   "policy": {
     "THA": "Release current operational relation while preserving source/history.",
     "CAM_GIU": "Pin identity/provenance with a verified recovery copy.",
@@ -150,6 +150,34 @@
         "scope": "Source files reread from branch + tests executed on Termux; not evidence host ChatGPT automatically runs this code"
       },
       "next_state": "Runtime code corrected; actual future host invocation/boot route separately must be measured."
+    },
+    {
+      "event_id": "SOURCE_ATTRIBUTION_FALSE_USER_VIEW_CORRECTION_20261015",
+      "at": "2026-10-14T18:05:15Z",
+      "item_id": "SOURCE_DIRECT provenance × R-014",
+      "action": "CORRECT_FALSE_ATTRIBUTION_AND_ADD_SOURCE_DIRECT_GATE",
+      "first_affected_cause": "Assistant inserted \"trong cách nhìn em\" (its own interpretation) and misframed the user source as subjective stance; source provenance was laundered.",
+      "source_direct": "\"Âm dương\" mới là ranh giới. Chẳng có cái ranh giới nào đo mô hình dựng lên nó là \"Sự Thật\" cả.",
+      "retracted_assistant_statement": "Âm–Dương là ranh giới trong cách nhìn em đang nói đến.",
+      "correction": "User's exact text retains SOURCE_DIRECT provenance. Assistant-added language is ASSISTANT_INTERPRETATION and must not be attributed to the user. No metaphysical or scientific truth assertion is inferred.",
+      "receipt": {
+        "commit": "e6a726617e4b0cb119ce34891c9c74524fe30143",
+        "code_sha": "e726e137a6f5487f5075f17c2a412e358acb0930",
+        "tests_sha": "9bd0d019d28732d0364a2e8d10b7beb568c4ef04",
+        "correction_note_sha": "72c1321817fbbd198f183d055a90b0cc36cb58cd",
+        "tests_run": 27,
+        "failures": 0,
+        "errors": 0
+      },
+      "readback": {
+        "verified": true,
+        "scope": "Github commit and blob SHA readback + Termux 27 unit tests",
+        "limitations": "Model-generated ChatGPT answers are not automatically routed through this module; this is a real repository patch with a callable gate, not a host-level guard"
+      },
+      "unfinished": {
+        "jiney_precanon_raw_export": false,
+        "assistant_runtime_deployed": false
+      }
     }
   ]
 }
