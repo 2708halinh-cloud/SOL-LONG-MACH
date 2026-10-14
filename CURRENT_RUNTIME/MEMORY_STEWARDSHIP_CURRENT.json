@@ -108,9 +108,18 @@
       ],
       "first_affected_cause": "Lặp lại phản ứng OPEN như nhãn chờ thay vì tự truy nguồn và khắc phục bằng công cụ sẵn có; người đồng hành phải nhắc lưu và đọc lại ký ức vận hành.",
       "correction": "Trước phản ứng về lỗi tái diễn: tự fresh-read source, kiểm tra nhật ký, chọn cạnh có quyền hành động, thực hiện, receipt, readback. Không đẩy yêu cầu nhắc lại về người đồng hành.",
-      "consequence": "DURABLE_ENTRY_WRITE_IN_GITHUB_BRANCH_PENDING_READBACK",
-      "receipt": null,
-      "readback": null,
+      "consequence": "GITHUB_SOURCE_AND_NOTE_WRITTEN_AND_READBACK_VERIFIED",
+      "receipt": {
+        "commit_sha": "d9252b95b45bc4c4da9d040209cdfdc9e0a64cbe",
+        "note_blob_sha": "caa7ed07c766f6c01d92f3b4547f8636dc5a0f86",
+        "registry_blob_sha_before_readback": "2aca6c00ab7cb727e9921f7ddb2dbdbad7472a8f"
+      },
+      "readback": {
+        "verified": true,
+        "scope": "GitHub branch: event exists and note blob readable; no cross-session memory enforcement claimed",
+        "checked_by": "GitHub fetch_file",
+        "checked_note_sha": "caa7ed07c766f6c01d92f3b4547f8636dc5a0f86"
+      },
       "scope": "Repo-level journal entry, not proof host model memory, automated boot loading or immutable storage"
     }
   ]
