@@ -17,3 +17,11 @@ Dùng đường dẫn trên để học hỏi, tham khảo, tìm kiếm và thi�
 - Trang nguồn là nơi tham khảo; mỗi Plugin cụ thể vẫn cần xác minh riêng về tính phù hợp trước khi dùng.
 
 Ghi nhận: 2026-10-14. Trạng thái liên kết: do người dùng cung cấp; chưa xác minh trực tiếp nội dung trang web trong phiên này.
+
+## Puppeteer — tự động hóa trình duyệt
+
+- Nguồn: https://github.com/puppeteer/puppeteer.git
+- Vị trí: `puppeteer/` (Git submodule, ghim commit `d1b9a2162a0113356db5093f055b4a2e1979c6a8`).
+- Tài liệu kết nối: `PUPPETEER_INTEGRATION.md`.
+- Trong bản clone: `git submodule update --init --recursive`.
+- Gắn mã nguồn không đồng nghĩa cài package, chạy trình duyệt hoặc kích hoạt MCP.
