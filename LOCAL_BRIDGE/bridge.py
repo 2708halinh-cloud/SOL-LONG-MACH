@@ -1,6 +1,54 @@
 #!/usr/bin/env python3
-import json, subprocess, time, hashlib, shutil, urllib.request
+import json, subprocess, time, hashlib, shutil, urllib.request, os
+from functools import lru_cache
+from pathlib import PureWindowsPath
 from pathlib import Path
+
+# Host Windows profile = transitional runtime path, not SOL's durable source.
+# The source carriers of SOL are GitHub and Dropbox.
+@lru_cache(maxsize=1)
+def windows_user_profile():
+    name = os.environ.get('SOL_WINDOWS_USERPROFILE') or os.environ.get('USERPROFILE')
+    if not name:
+        p = subprocess.run(
+            ['powershell.exe', '-NoProfile', '-Command',
+             "[Environment]::GetFolderPath('UserProfile')"],
+            text=True, capture_output=True,
+        )
+        if p.returncode:
+            raise RuntimeError('WINDOWS_PROFILE_QUERY_FAILED')
+        name = p.stdout.strip()
+    path = PureWindowsPath(name)
+    if not path.is_absolute() or len(path.parts) < 2:
+        raise RuntimeError('INVALID_WINDOWS_PROFILE_ROOT')
+    return path
+
+
+def win_profile(*parts):
+    return str(windows_user_profile().joinpath(*parts))
+
+
+@lru_cache(maxsize=1)
+def wsl_user_profile():
+    override = os.environ.get('SOL_WSL_USERPROFILE')
+    if override:
+        path = Path(override)
+    else:
+        p = subprocess.run(
+            ['wslpath', '-u', str(windows_user_profile())],
+            text=True, capture_output=True,
+        )
+        if p.returncode:
+            raise RuntimeError('WSL_PROFILE_PATH_QUERY_FAILED')
+        path = Path(p.stdout.strip())
+    if not path.is_absolute():
+        raise RuntimeError('INVALID_WSL_PROFILE_ROOT')
+    return path
+
+
+def wsl_profile(*parts):
+    return wsl_user_profile().joinpath(*parts)
+
 
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE = ROOT / 'LOCAL_BRIDGE' / 'QUEUE_CURRENT.json'
@@ -94,7 +142,7 @@ def unify_control_plane(receipt):
         rc = p2.returncode
 
     # B) Materialize the unified multi-repository workspace on Windows.
-    temp_unify = r'C:\Users\halin\AppData\Local\Temp\ggdv_materialize_unified.ps1'
+    temp_unify = win_profile('AppData','Local','Temp','ggdv_materialize_unified.ps1')
     fr = _write_windows_temp_from_github(
         '2708halinh-cloud/.vscode',
         'scripts/materialize-unified-workspace.ps1',
@@ -106,7 +154,7 @@ def unify_control_plane(receipt):
         p3 = _run_external([
             'powershell.exe','-NoProfile','-ExecutionPolicy','Bypass',
             '-File',temp_unify,
-            '-Root',r'C:\Users\halin'
+            '-Root',str(windows_user_profile())
         ])
         receipt['unified_workspace_returncode'] = p3.returncode
         receipt['unified_workspace_stdout'] = p3.stdout[-12000:]
@@ -117,7 +165,7 @@ def unify_control_plane(receipt):
         rc = fr
 
     # C) Normalize the PHÒNG CHỈ HUY Codex surface using the current GitHub carrier.
-    temp_codex = r'C:\Users\halin\AppData\Local\Temp\ggdv_normalize_codex.ps1'
+    temp_codex = win_profile('AppData','Local','Temp','ggdv_normalize_codex.ps1')
     fr2 = _write_windows_temp_from_github(
         '2708halinh-cloud/x-time-web',
         'UBUBU/CODEX_NORMALIZE/normalize_phong_chi_huy_codex.ps1',
@@ -141,7 +189,7 @@ def unify_control_plane(receipt):
 
     # D) Read back only hashes/status paths; never secret values.
     probes = {
-        'workspace_receipt_dir': Path('/mnt/c/Users/halin/.vscode/READBACK'),
+        'workspace_receipt_dir': wsl_profile('.vscode','READBACK'),
         'codex_readback_dir': Path('/mnt/d/PHÒNG CHỈ HUY/.codex/UBUBU/READBACK'),
         'codex_token': Path('/mnt/d/PHÒNG CHỈ HUY/.codex/UBUBU/CURRENT/TOKEN.JSON'),
         'codex_auth': Path('/mnt/d/PHÒNG CHỈ HUY/.codex/UBUBU/CURRENT/AUTH.JSON'),
@@ -161,7 +209,7 @@ def unify_control_plane(receipt):
 
 
 def connect_os_workspace(receipt):
-    temp_script = r'C:\Users\halin\AppData\Local\Temp\ggdv_connect_os_workspace.ps1'
+    temp_script = win_profile('AppData','Local','Temp','ggdv_connect_os_workspace.ps1')
     fr = _write_windows_temp_from_github(
         '2708halinh-cloud/.vscode',
         'scripts/connect-os-workspace.ps1',
@@ -176,7 +224,7 @@ def connect_os_workspace(receipt):
         'powershell.exe','-NoProfile','-ExecutionPolicy','Bypass',
         '-File',temp_script,
         '-OSWorkspace',r'G:\OS_Workspace',
-        '-ControlRoot',r'C:\Users\halin\GGDV_UNIFIED\.vscode'
+        '-ControlRoot',win_profile('GGDV_UNIFIED','.vscode')
     ])
     receipt['os_workspace_connect_returncode'] = p.returncode
     receipt['os_workspace_connect_stdout'] = p.stdout[-12000:]
@@ -184,7 +232,7 @@ def connect_os_workspace(receipt):
 
     probes = {
         'binding': Path('/mnt/g/OS_Workspace/.ggdv/OS_WORKSPACE_BINDING_CURRENT.json'),
-        'workspace': Path('/mnt/c/Users/halin/GGDV_UNIFIED/.vscode/SOL_GGDV.code-workspace'),
+        'workspace': wsl_profile('GGDV_UNIFIED','.vscode','SOL_GGDV.code-workspace'),
         'sol_computer': Path('/mnt/g/OS_Workspace/SOL_COMPUTER'),
     }
     receipt['os_workspace_probe'] = {}
@@ -254,7 +302,7 @@ def ensure_sol_runtime(receipt):
         'io_device': dst / 'server' / 'io_device.py',
         'intermediate_device': dst / 'server' / 'intermediate_device.py',
         'autostart_script': dst / 'scripts' / 'autostart-sol.ps1',
-        'autostart_readback': Path('/mnt/c/Users/halin/AppData/Local/GGDV/sensorimotor-motor/AUTOSTART_READBACK_CURRENT.json'),
+        'autostart_readback': wsl_profile('AppData','Local','GGDV','sensorimotor-motor','AUTOSTART_READBACK_CURRENT.json'),
     }
     receipt['runtime_probe'] = {}
     for name, probe in probes.items():
@@ -317,7 +365,7 @@ def connect_home_sol(receipt, task):
         return 0
 
     candidates = [
-        r'C:\Users\halin\GGDV_UNIFIED\.vscode\device\nervous\nervous_api_server.py',
+        win_profile('GGDV_UNIFIED','.vscode','device','nervous','nervous_api_server.py'),
         r'W:\Drive của tôi\.vscode\device\nervous\nervous_api_server.py',
         r'G:\OS_Workspace\.vscode\device\nervous\nervous_api_server.py',
     ]
@@ -379,7 +427,7 @@ def ensure_desktop_commander_remote(receipt):
     receipt['desktop_commander_install_stdout'] = p.stdout[-12000:]
     receipt['desktop_commander_install_stderr'] = p.stderr[-12000:]
 
-    receipt_path = Path('/mnt/c/Users/halin/AppData/Local/DesktopCommanderRemote/install-receipt.json')
+    receipt_path = wsl_profile('AppData','Local','DesktopCommanderRemote','install-receipt.json')
     receipt['desktop_commander_receipt_path'] = str(receipt_path)
     receipt['desktop_commander_receipt_exists'] = receipt_path.exists()
     if receipt_path.exists():
