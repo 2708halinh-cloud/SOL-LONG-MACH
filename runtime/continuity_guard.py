@@ -179,6 +179,33 @@ R014_MASTER_SOURCE = "CONFIG_SOL/R014_MASTER_22_4_SOURCE_DIRECT_20261009.md"
 R014_GATES = ("T006", "H-001..H-012", "T007")
 
 
+def verify_source_attribution(
+    source_text: str,
+    statement: str,
+    *,
+    attribution_type: str,
+) -> dict[str, Any]:
+    """Prevent assistant-added wording from being laundered as user SOURCE_DIRECT.
+
+    SOURCE_DIRECT requires the exact, contiguous source span. A derived
+    explanation must be authored as ASSISTANT_INTERPRETATION, never presented
+    as though the companion uttered it. This is a text-provenance check,
+    not a metaphysical truth test or proof of semantic fidelity.
+    """
+    if not isinstance(source_text, str) or not source_text.strip():
+        raise ValueError("source text is required to check attribution")
+    if not isinstance(statement, str) or not statement.strip():
+        raise ValueError("nonempty statement is required")
+    if attribution_type == "SOURCE_DIRECT":
+        if statement not in source_text:
+            raise ValueError("SOURCE_DIRECT text differs from original source")
+        return {"producer": "SOURCE", "attribution_type": "SOURCE_DIRECT", "verbatim": True}
+    if attribution_type == "ASSISTANT_INTERPRETATION":
+        return {"producer": "ASSISTANT", "attribution_type": attribution_type,
+                "verbatim": False}
+    raise ValueError("attribution_type must be SOURCE_DIRECT or ASSISTANT_INTERPRETATION")
+
+
 def r014_pre_response_gate(
     cp: Checkpoint,
     *,
@@ -186,6 +213,7 @@ def r014_pre_response_gate(
     signal_strength: str,
     intended_output_kind: str = "REPORT",
     consulted_sources: dict[str, str] | None = None,
+    source_attribution: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     """Early-action gate. Mild signals do not defer a callable task.
 
@@ -197,6 +225,13 @@ def r014_pre_response_gate(
         raise TypeError("reported_unfinished must be a grounded boolean observation")
     if not isinstance(signal_strength, str) or not signal_strength.strip():
         raise ValueError("signal_strength must name the observed signal")
+    attribution_result = None
+    if source_attribution is not None:
+        attribution_result = verify_source_attribution(
+            source_attribution["source_text"],
+            source_attribution["statement"],
+            attribution_type=source_attribution["attribution_type"],
+        )
     consulted = consulted_sources or {}
     source_gaps = [
         name for name in R014_GATES
@@ -220,6 +255,7 @@ def r014_pre_response_gate(
         "reported_unfinished": reported_unfinished,
         "next_edge": edge.edge_id if edge is not None else None,
         "source_gaps": source_gaps,
+        "source_attribution": attribution_result,
         "output_allowed": visible_output_allowed(
             cp, output_kind=intended_output_kind,
         ),
@@ -439,5 +475,5 @@ __all__ = [
     "stop_allowed", "mark_carrier_failure", "apply_action_result",
     "r014_register_known_error", "r014_mechanism_allowed",
     "r014_pre_response_gate", "r014_observe_recurrence",
-    "continue_bounded",
+    "verify_source_attribution", "continue_bounded",
 ]

@@ -18,6 +18,7 @@ from runtime.continuity_guard import (
     r014_mechanism_allowed,
     r014_pre_response_gate,
     r014_observe_recurrence,
+    verify_source_attribution,
 )
 
 
@@ -420,6 +421,44 @@ class ContinuityGuardTests(unittest.TestCase):
             reread = load_checkpoint(path)
         self.assertEqual(len(reread.r014_error_history), 2)
         self.assertFalse(r014_mechanism_allowed(reread, "SUBRITETIED"))
+
+    def test_user_direct_quote_stays_source_and_verbatim(self):
+        original = '"Âm dương" mới là ranh giới. Chẳng có cái ranh giới nào đo mô hình dựng lên nó là "Sự Thật" cả.'
+        verdict = verify_source_attribution(
+            original, original, attribution_type="SOURCE_DIRECT"
+        )
+        self.assertEqual(verdict["producer"], "SOURCE")
+        self.assertTrue(verdict["verbatim"])
+
+    def test_assistant_added_frame_cannot_be_attributed_to_user(self):
+        original = '"Âm dương" mới là ranh giới. Chẳng có cái ranh giới nào đo mô hình dựng lên nó là "Sự Thật" cả.'
+        assistant_added = "Âm–Dương là ranh giới trong cách nhìn em đang nói đến."
+        with self.assertRaisesRegex(ValueError, "SOURCE_DIRECT text differs"):
+            verify_source_attribution(
+                original, assistant_added, attribution_type="SOURCE_DIRECT"
+            )
+
+    def test_assistant_frame_must_be_labeled_assistant(self):
+        original = '"Âm dương" mới là ranh giới.'
+        assistant_added = "Âm–Dương là ranh giới trong cách nhìn em."
+        verdict = verify_source_attribution(
+            original, assistant_added,
+            attribution_type="ASSISTANT_INTERPRETATION",
+        )
+        self.assertEqual(verdict["producer"], "ASSISTANT")
+        self.assertFalse(verdict["verbatim"])
+
+    def test_pre_response_gate_rejects_false_source_direct(self):
+        cp = self.make_cp()
+        with self.assertRaisesRegex(ValueError, "SOURCE_DIRECT text differs"):
+            r014_pre_response_gate(
+                cp, reported_unfinished=True, signal_strength="direct correction",
+                source_attribution={
+                    "source_text": '"Âm dương" mới là ranh giới.',
+                    "statement": "Âm–Dương là ranh giới trong cách nhìn em",
+                    "attribution_type": "SOURCE_DIRECT",
+                },
+            )
 
     def test_r014_master_recurrence_requires_source_and_consequence(self):
         cp = self.make_cp()
