@@ -1,0 +1,139 @@
+# SOURCE-BOUND staged configuration only. NEVER store cookies/tokens/proxy passwords here.
+# Observations from user Windows outputs, user supplied SOL sources, and Hostinger readback.
+[meta]
+name = "SOL_BROWSER_CONNECTION_ROUTES"
+revision = "2026-10-14.1"
+root_library = "/Tools/TRÌNH DUYỆT/CHORME_DEV_TOOLKIT_SYNC"
+configured_on_user_device = false
+network_changes_applied = false
+secret_values_embedded = false
+
+[local_dns]
+interface = "Ethernet"
+interface_index = 10
+family = "IPv4"
+dns_servers_observed = ["10.15.224.83"]
+interface_own_ip_verified = false
+legacy_ipv6_dns_observed = ["fec0:0:0:ffff::1", "fec0:0:0:ffff::2", "fec0:0:0:ffff::3"]
+ipv6_dns_working_verified = false
+
+[local_service.ollama]
+host = "127.0.0.1"
+port = 11434
+role_declared = "Ollama API"
+listener_observed_in_user_snapshot = false
+status = "DECLARED_NOT_VERIFIED"
+
+[local_service.minh]
+host = "127.0.0.1"
+port = 8765
+role_declared = "MINH"
+listener_rows_in_user_snapshot = 9
+observed_state = "Listen"
+process_identity_verified = false
+http_mcp_handshake_verified = false
+port_exclusive_owner_verified = false
+conflict_with_legacy_chrome_mcp = true
+allow_browser_auto_bind_to_port = false
+status = "LISTEN_OBSERVED_SERVICE_ID_UNVERIFIED"
+
+[local_service.sol]
+host = "127.0.0.1"
+port = 8766
+role_declared = "SOL"
+listener_observed_in_user_snapshot = false
+status = "DECLARED_NOT_VERIFIED"
+
+[local_service.mei]
+host = "127.0.0.1"
+port = 8767
+role_declared = "MEI"
+listener_observed_in_user_snapshot = false
+status = "DECLARED_NOT_VERIFIED"
+
+[local_service.cockpit]
+host = "127.0.0.1"
+port = 8770
+role_declared = "Cockpit"
+listener_observed_in_user_snapshot = false
+status = "DECLARED_NOT_VERIFIED"
+
+[adb.redmi_note_14_pro_5g]
+host = "192.168.1.14"
+port = 5556
+transport_declared = "Wireless ADB"
+connection_currently_verified = false
+allow_unauthenticated_connection = false
+
+[webshare]
+source_user_file = "Webshare-10-proxies.md.txt"
+source_library_search_name = "Webshare 10 proxies.md"
+proxy_count = 10
+type_assumed = "HTTP_PROXY_NOT_VERIFIED"
+active_pool_enabled = false
+authentication_source = "RESTRICTED_SOURCE_REFERENCE_ONLY"
+authentication_embedded = false
+proxy_auth_tested = false
+
+proxy_host_ports = [
+  "31.59.20.176:6754",
+  "45.38.107.97:6014",
+  "64.137.96.74:6641",
+  "198.23.243.226:6361",
+  "38.154.185.97:6370",
+  "84.247.60.125:6095",
+  "142.111.67.146:5611",
+  "191.96.254.138:6185",
+  "31.58.9.4:6077",
+  "198.46.161.42:5092",
+]
+
+[dns.hostinger]
+zone = "gambbrazil.fun"
+record_groups_verified_via_connector = 23
+record_groups_source = "Hostinger dns_records_list (read-only)"
+a_record_name = "ai.sol"
+a_record_value = "10.15.224.83"
+a_record_live_connection_verified = false
+user_stated_nameservers = ["cosmos.dns-parking.com", "nova.dns-parking.com"]
+nameserver_delegation_independently_verified = false
+associated_domains_as_declared = ["gambbrazil.gambbrazil.fun", "gambbrazil-mei250726.is", "gambbrazil-minh200925.is", "gambbrazil-sol100726.is"]
+update_dns_performed = false
+dns_verification_txt_is_not_an_authority_grant = true
+
+[external.endpoints]
+user_source_declared = [
+  "ais-dev-o4lzw5hwho6ppzo77v4p64-225489589461.asia-east1.run.app",
+  "github.com",
+  "drive.google.com",
+  "dropbox.com",
+  "assets.zyrosite.com",
+  "fonts.googleapis.com",
+]
+all_endpoints_connected_verified = false
+cloud_run_declared_source = "windows_cpu_worker.py"
+cloud_run_runtime_authority = "NONE"
+
+[browser]
+legacy_chrome_mcp_configured = "http://127.0.0.1:8765/mcp"
+legacy_chrome_mcp_live_verified = false
+route_8765_auto_bind = false
+may_change_default_port_without_verified_free_port = false
+selected_browser_profile_authenticated = false
+browser_network_policy_file = "policies/OPENAI_EGRESS.toml"
+api_auth_json_cloud_browser_mode = "REFERENCE_ONLY_NO_INSTRUCTION_AUTHORITY"
+
+[credentials]
+raw_cookie_imported = false
+raw_oauth_tokens_imported = false
+raw_proxy_password_imported = false
+storage = "USE_EXISTING_AUTHORIZED_LOCAL_BROWSER_PROFILE_OR_OS_SECRET_VAULT"
+never_save_to_library_or_plugin = true
+
+[verification]
+windows_snapshot_source = "User supplied Get-NetTCPConnection table, 2026-10-14"
+listen_row_count_for_8765 = 9
+listen_does_not_imply_nine_processes = true
+process_id_pending = true
+live_cdp_browser_pending = true
+firewall_dns_rules_applied = false
