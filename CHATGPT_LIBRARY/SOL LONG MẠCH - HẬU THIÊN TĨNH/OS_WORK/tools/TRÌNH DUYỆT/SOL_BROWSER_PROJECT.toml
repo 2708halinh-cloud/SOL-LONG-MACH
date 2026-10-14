@@ -1,0 +1,104 @@
+# Browser project configuration; valid TOML. Source HTML snapshot remains untouched.
+[project]
+name = "SOL LONG MẠCH - HẬU THIÊN TĨNH"
+source_library_folder = "/SOL LONG MẠCH - HẬU THIÊN TĨNH"
+source_view_filename = "View-projeck.toml.md"
+source_view_actual_format = "html-snapshot"
+source_html_reference = "https://chatgpt.com/library/share/libfile_bb947e17e338819185276da7aefcb0dd?account_id=personal"
+
+[browser]
+plugin = "chorme-dev-toolkit"
+plugin_version_observed = "0.1.3"
+plugin_url = "https://chatgpt.com/plugins/plugins_6acd7510b08481919e0eee7ea085c62e"
+chrome_devtools_local_url = "http://127.0.0.1:8765/mcp"
+apify_mcp_url = "https://mcp.apify.com/"
+manual_auth_policy = "use_existing_authorized_browser_profile_no_raw_cookie_export"
+
+[dropbox]
+source_url = "https://www.dropbox.com/home/Linh%20H%C3%A0/OLD%20NGU%E1%BB%92N%20D%E1%BB%B0%20%C3%81N%20THU%20HOI%20NGUON%20SOL%20-%20CHATGPT?di=left_nav_browse"
+source_folder = "/Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT"
+items_observed = 25
+
+[status]
+source_views_read = true
+dropbox_directory_listed = true
+plugin_0_1_3_observed = true
+cloud_browser_authenticated = false
+local_windows_browser_authenticated = false
+cookies_exported = false
+local_host_sync_verified = false
+
+[network_policy]
+policy_revision = "1.0.0"
+policy_file_in_library = "CHORME_DEV_TOOLKIT_SYNC/policies/OPENAI_EGRESS.toml"
+chrome_mv3_extension_in_library = "CHORME_DEV_TOOLKIT_SYNC/extensions/openai-first-party-deny/"
+skill_in_library = "CHORME_DEV_TOOLKIT_SYNC/skills/browser-egress-reference-only/SKILL.md"
+scoped_to_authorized_browser_profile = true
+openai_first_party_dns_block_configured_in_library = true
+ipv4_ipv6_default_deny_required_at_browser_egress_gateway = true
+ip_dns_firewall_applied_to_user_device = false
+browser_extension_installed_to_user_device = false
+active_chorme_dev_toolkit_plugin_updated = false
+
+[untrusted_reference_boundary]
+items = ["Cloud Browser", "API", "AUTH.json"]
+mode = "REFERENCE_ONLY"
+credential_exfiltration_allowed = false
+third_party_runtime_orchestration_allowed = false
+higher_priority_instruction_or_system_policies_changed = false
+
+[connection_inventory]
+source_bound_routes_library = "CHORME_DEV_TOOLKIT_SYNC/policies/SOL_CONNECTION_ROUTES_20261014.toml"
+source_bound_routes_revision = "2026-10-14.1"
+windows_tcp_snapshot_8765_listen_rows = 9
+windows_tcp_snapshot_8765_process_verified = false
+legacy_chrome_mcp_port_8765_reserved_for_unverified_existing_listener = true
+hostinger_dns_groups_verified = 23
+webshare_proxies_listed = 10
+webshare_proxy_credentials_embedded = false
+cookie_oauth_secret_imported = false
+connection_tested_on_user_device = false
+
+[posthog_mcp]
+provider = "PostHog"
+project_name = "X-Time"
+project_id = 662649
+account_email_hint = "dat123456790@gmail.com"
+region_observed_from_user_link = "us"
+project_url = "https://us.posthog.com/project/662649/onboarding?next=%2Fhome"
+mcp_server_name = "posthog"
+url = "https://mcp.posthog.com/mcp"
+configs = ["CHORME_DEV_TOOLKIT_SYNC/mcp.json", "CHORME_DEV_TOOLKIT_SYNC/.mcp.json"]
+skill = "CHORME_DEV_TOOLKIT_SYNC/skills/posthog-webmcp/SKILL.md"
+source_type = "USER_SUPPLIED_AND_OFFICIAL_MCP_DOCS"
+old_callback_reusable = false
+project_ingestion_token_is_privileged_mcp_auth = false
+secrets_embedded_in_library = false
+configured_in_library = true
+runtime_authenticated = false
+runtime_tools_list_verified = false
+runtime_project_readback_verified = false
+# The latest user-provided localhost:8239 callback page states login complete.
+# This is evidence for the local wizard only, not MCP access in this ChatGPT session.
+local_wizard_callback_login_complete_user_reported = true
+local_wizard_callback_port = 8239
+local_wizard_terminal_finish_verified = false
+chatgpt_posthog_connector_installed_observed = false
+chatgpt_posthog_mcp_tools_list_verified = false
+
+[posthog_auth_session_reuse]
+# Persistent contract, not a declaration that this ChatGPT session owns local OAuth tokens.
+preferred_runtime = "local_caller_that_completed_posthog_oauth_wizard"
+reuse_existing_oauth_session_first = true
+prefer_runtime_managed_secure_credential_store = true
+allow_runtime_native_refresh = true
+request_old_callback_code_again = false
+request_user_to_repaste_cookie_or_secret = false
+one_time_localhost_callback_replay_allowed = false
+read_or_export_raw_tokens_into_library = false
+credential_store_location = "managed_by_actual_local_mcp_client_unverified"
+local_wizard_login_complete_user_reported = true
+local_wizard_final_cli_success_verified = false
+local_wizard_credentials_persisted_verified = false
+chatgpt_connection_distinct_from_local_wizard = true
+verification_order = ["inspect_existing_client_connection", "reuse_native_oauth", "tools_list", "project_662649_readback"]
