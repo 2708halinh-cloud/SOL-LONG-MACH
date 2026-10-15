@@ -47,7 +47,7 @@ Service được runit giám sát khi Termux services chạy, nhưng không tự
 
 ## Phạm vi
 
-HOSPOSIK hiện chỉ là tên dịch vụ nội bộ; không phải một tên miền Internet đã được xác thực hoặc cấu hình trên Hostinger. DNS port 15353 không thay DNS hệ thống port 53.
+HOSPOSIK có bản ghi TXT nhận diện trên Hostinger tại `gambbrazil.gambbrazil.fun` và `_hosposik.gambbrazil.gambbrazil.fun` (xem `config/domain_binding.json`). Hiện chưa có địa chỉ HTTPS/A/AAAA để định tuyến truy cập công khai vào tác nhân. DNS nội bộ ở port 15353 không thay DNS hệ thống port 53.
 Bộ nhớ lưu những sự kiện mà agent thực sự gửi tới API; không tự lấy lịch sử ChatGPT. Để hoạt động liên thiết bị cần endpoint/tunnel HTTPS được xác thực, chưa cấu hình.
 
 ## Agent CLI — ghi vào bộ nhớ đang chạy
