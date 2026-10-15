@@ -6,15 +6,18 @@ import {join, resolve} from 'node:path';
 import {randomBytes, timingSafeEqual} from 'node:crypto';
 import dnsPacket from 'dns-packet';
 
-const host = '127.0.0.1';
-const httpPort = Number(process.env.HOSPOSIK_HTTP_PORT ?? '8788');
+const publicMode = process.env.HOSPOSIK_PUBLIC_MODE === 'true';
+if (publicMode && !process.env.HOSPOSIK_DATA_DIR) throw Error('HOSPOSIK_DATA_DIR must point to a persistent disk in public mode');
+if (publicMode && !process.env.HOSPOSIK_TOKEN) throw Error('HOSPOSIK_TOKEN must be set in public mode');
+const host = publicMode ? '0.0.0.0' : '127.0.0.1';
+const httpPort = Number((publicMode ? process.env.PORT : undefined) ?? process.env.HOSPOSIK_HTTP_PORT ?? '8788');
 const dnsPort = Number(process.env.HOSPOSIK_DNS_PORT ?? '15353');
 const base = resolve(process.env.HOSPOSIK_DATA_DIR ?? './data');
 mkdirSync(base, {recursive:true, mode:0o700});
 const tokenPath = resolve(process.env.HOSPOSIK_TOKEN_FILE ?? join(base,'agent.token'));
 if (!existsSync(tokenPath)) writeFileSync(tokenPath,randomBytes(32).toString('hex')+'\n',{mode:0o600,flag:'wx'});
 try {chmodSync(tokenPath,0o600);}catch {}
-const token = readFileSync(tokenPath,'utf8').trim();
+const token = (publicMode ? process.env.HOSPOSIK_TOKEN : readFileSync(tokenPath,'utf8')).trim();
 if (token.length<32) throw Error('A token with at least 32 characters is required');
 const db = new DatabaseSync(join(base,'memory.sqlite'));
 db.exec('PRAGMA journal_mode = WAL; PRAGMA synchronous = FULL; PRAGMA busy_timeout = 5000;');
@@ -62,7 +65,7 @@ const http=createServer(async(req,res)=>{
  try {
   const url=new URL(req.url,'http://127.0.0.1');
   if(req.method==='GET'&&url.pathname==='/health'){
-   return send(res,200,{service:'HOSPOSIK_AGENT_NETWORK',status:'ready',dns_zone:'hosposik.test',memory:'sqlite_wal_full',last_memory_id:maxMemory.get().last_id,local_only:true});
+   return send(res,200,{service:'HOSPOSIK_AGENT_NETWORK',status:'ready',dns_zone:'hosposik.test',memory:'sqlite_wal_full',last_memory_id:publicMode?undefined:maxMemory.get().last_id,local_only:!publicMode});
   }
   if(!authorize(req))return send(res,401,{error:'unauthorized'});
   if(req.method==='POST'&&url.pathname==='/v1/agents/register'){
@@ -133,8 +136,8 @@ const http=createServer(async(req,res)=>{
  }catch(e){return send(res,400,{error:e.message||'bad_request'});}
 });
 const known=new Set(['router.hosposik.test','memory.hosposik.test','agent.hosposik.test','hosposik.test']);
-const udp=createSocket('udp4');
-udp.on('message',(message,rinfo)=>{
+const udp=publicMode?null:createSocket('udp4');
+udp?.on('message',(message,rinfo)=>{
  try{
   const query=dnsPacket.decode(message);
   const answers=[];let knownQuestion=false;
@@ -153,18 +156,22 @@ udp.on('message',(message,rinfo)=>{
   udp.send(response,rinfo.port,rinfo.address);
  }catch {}
 });
-udp.on('error',(err)=>{console.error('DNS_ERROR',err.code);});
+udp?.on('error',(err)=>{console.error('DNS_ERROR',err.code);});
 http.listen(httpPort,host,()=>{
- udp.bind(dnsPort,host,()=>{
-  console.log(JSON.stringify({event:'HOSPOSIK_READY',host,http_port:http.address().port,dns_port:udp.address().port,dns_zone:'hosposik.test',database:'sqlite_wal_full',token_file:tokenPath}));
- });
+ if (publicMode) {
+  console.log(JSON.stringify({event:'HOSPOSIK_READY',host,http_port:http.address().port,transport:'https_reverse_proxy',dns_zone:'gambbrazil.gambbrazil.fun',database:'sqlite_wal_full',public_mode:true}));
+ } else {
+  udp.bind(dnsPort,host,()=>{
+   console.log(JSON.stringify({event:'HOSPOSIK_READY',host,http_port:http.address().port,dns_port:udp.address().port,dns_zone:'hosposik.test',database:'sqlite_wal_full',token_file:tokenPath}));
+  });
+ }
 });
 let closing=false;
 async function shutdown(){
  if(closing)return;closing=true;
  for(const listener of eventStreams){try{listener.res.end();}catch{}}
  await new Promise(resolve=>http.close(()=>resolve()));
- await new Promise(resolve=>udp.close(()=>resolve()));
+ if(udp?.address())await new Promise(resolve=>udp.close(()=>resolve()));
  db.close();
 }
 process.on('SIGTERM',()=>void shutdown());
