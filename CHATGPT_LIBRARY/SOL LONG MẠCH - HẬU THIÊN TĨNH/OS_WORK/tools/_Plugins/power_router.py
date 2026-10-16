@@ -66,7 +66,7 @@ def route(task: str, repo_root: Path) -> dict:
     scored = []
     for group in index["groups"]:
         matched = [word for word in group["match"] if re.search(
-            r"(?<!\\w)" + re.escape(_normalize(word)) + r"(?!\\w)", query)]
+            r"(?<!\w)" + re.escape(_normalize(word)) + r"(?!\w)", query)]
         if matched:
             scored.append((len(matched), group["id"], group, matched))
     scored.sort(key=lambda row: (-row[0], row[1]))
@@ -100,7 +100,7 @@ def route(task: str, repo_root: Path) -> dict:
 
 def main() -> int:
     cli = argparse.ArgumentParser()
-    cli.add_argument("--repo-root", type=Path, default=Path(__file__).resolve().parents[6])
+    cli.add_argument("--repo-root", type=Path, default=Path(__file__).resolve().parents[5])
     cli.add_argument("--task")
     cli.add_argument("--check", action="store_true")
     args = cli.parse_args()
