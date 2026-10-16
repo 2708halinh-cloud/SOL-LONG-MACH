@@ -73,3 +73,9 @@ Chưa chạy trình lập danh mục trên bản mirror thực sự. Danh sách 
 ## Ranh giới nguồn
 
 `SOURCE_DIRECT ≠ suy luận ≠ metadata ≠ readback`. Danh mục chỉ ghi nhận những mục đã quét trong phạm vi. Tài liệu chưa đọc và thư mục chưa truy cập giữ trạng thái `OPEN` / `UNRETRIEVED`; không mô tả là đã kiểm kê toàn hệ thống. Bản sao/INDEX không thay thế nguồn gốc, và đường dẫn logic `CHATGPT_LIBRARY` không mặc định là đường dẫn vật lý đã tồn tại trên máy cá nhân.
+
+## Cầu hồi quy REALITY INDEX ↔ SPACE ↔ TIME — 2026-10-16
+
+Khi nhận chuỗi tên như `SOL`, đừng gọi ngay một thư mục hay account: mở `IDENTITY_PLACES_CORE.json` để phân vai `HOME_SOURCE`, `HOME_SOL`, `LOCUS_SOL`, `AGENT SOL`, `CONFIG_SOL`...; sau đó đối chiếu `../EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/SPACE.json` để tìm `provider/stable_id/parent/frame`, rồi qua `../BRIDGE_TIME_TÓC🟢MỘC_TIME/README.md` và `AGENTS.md` để đặt `X`, `STAMP_OLD`, `STAMP_LIVE`, `STAMP_BETA`, predecessor/causal cursor.
+
+Bộ nối có mã `../BRIDGE_TIME_TÓC🟢MỘC_TIME/time_bridge.py`: đọc danh mục nguồn ở checkout; **thiếu ID → truy provider**, X chưa có khung → truy hệ quy chiếu, BETA → kiểm điều kiện; ID do input tự báo còn phải fresh-read ở SPACE/provider. Chỉ sau hành động + receipt + readback mới có cơ sở nối `STATE_N+1`; hoàn thành INDEX không tương đương hoàn thành một nhiệm vụ.
