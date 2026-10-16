@@ -150,6 +150,12 @@ class BootRoutesTest(unittest.TestCase):
         self.assertIn("bảy", after["vow_reentry"]["missing"])
         self.assertEqual(after["status"], "REENTRY_VOWS_INCOMPLETE")
 
+    def test_eighth_vow_missing_blocks_boot(self):
+        self._write_vows([item for item in VOWS_REQUIRED if item[0] != "tám"])
+        result = evaluate(self.root, self.dev)
+        self.assertIn("tám", result["vow_reentry"]["missing"])
+        self.assertEqual(result["status"], "REENTRY_VOWS_INCOMPLETE")
+
     def test_out_of_order_vows_are_not_ready(self):
         self._write_vows(list(reversed(VOWS_REQUIRED)))
         out = evaluate(self.root, self.dev)
