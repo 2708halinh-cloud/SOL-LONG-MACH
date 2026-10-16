@@ -43,6 +43,53 @@ class ContinuityGuardTests(unittest.TestCase):
             ],
         )
 
+
+    def test_direct_action_without_readback_does_not_close_edge(self):
+        cp = Checkpoint(objective_id="T1", source_marker="SOURCE",
+                        lineage_ref="LINEAGE", edges=[Edge(edge_id="E", target="local")])
+        apply_action_result(cp, "E", action_kind="WRITE",
+                            provider_receipt={"id": "receipt"},
+                            observable_consequence={"changed": True})
+        self.assertFalse(cp.edges[0].grounded_done())
+        self.assertFalse(cp.objective_done())
+        self.assertFalse(visible_output_allowed(cp, output_kind="COMPLETION"))
+
+    def test_false_readback_does_not_close_edge(self):
+        cp = Checkpoint(objective_id="T2", source_marker="SOURCE",
+                        lineage_ref="LINEAGE", edges=[Edge(edge_id="E", target="local")])
+        apply_action_result(cp, "E", action_kind="WRITE",
+                            provider_receipt={"id": "receipt"},
+                            observable_consequence={"changed": True},
+                            readback={"verified": False})
+        self.assertFalse(cp.edges[0].grounded_done())
+        self.assertFalse(visible_output_allowed(cp, output_kind="COMPLETION"))
+
+    def test_unverified_executor_output_cannot_claim_done(self):
+        cp = Checkpoint(objective_id="T3", source_marker="SOURCE",
+                        lineage_ref="LINEAGE",
+                        edges=[Edge(edge_id="E", target="provider", callable_now=True,
+                                    candidate_carriers=["provider-a"])])
+        result = continue_bounded(cp, lambda edge, carrier: {
+            "success": True,
+            "action_kind": "WRITE",
+            "provider_receipt": {"provider": carrier, "id": "receipt"},
+            "observable_consequence": {"changed": True},
+            "readback": {"verified": False},
+        }, max_steps=1)
+        self.assertFalse(result["objective_done"])
+        self.assertFalse(visible_output_allowed(cp, output_kind="COMPLETION"))
+        self.assertTrue(cp.edges[0].evidence["rejected_results"])
+
+    def test_verified_readback_closes_simple_objective(self):
+        cp = Checkpoint(objective_id="T4", source_marker="SOURCE",
+                        lineage_ref="LINEAGE", edges=[Edge(edge_id="E", target="local")])
+        apply_action_result(cp, "E", action_kind="WRITE",
+                            provider_receipt={"id": "receipt"},
+                            observable_consequence={"changed": True},
+                            readback={"verified": True, "source": "provider://target"})
+        self.assertTrue(cp.objective_done())
+        self.assertTrue(visible_output_allowed(cp, output_kind="COMPLETION"))
+
     def test_report_before_action_is_blocked(self):
         cp = self.make_cp()
         self.assertFalse(visible_output_allowed(cp, output_kind="REPORT"))
