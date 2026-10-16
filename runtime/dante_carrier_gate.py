@@ -34,18 +34,25 @@ def audit(root: Path, *, availability: dict[str, str] | None = None) -> dict:
         rec = by_role[role]
         if not rec.get("source_drive_id") or rec.get("source_deleted") is not None:
             raise ValueError("DANTE_SOURCE_HISTORY_MUST_NOT_BE_FABRICATED")
-        status = (availability or {}).get(role, "HTTP_404")
-        if status not in {"HTTP_404", "READ_OK", "PERMISSION_DENIED", "UNKNOWN"}:
+        # A CI/source-only run has NO fresh Drive observation. Do not recycle an
+        # October 16 historical 404 as though another API request happened.
+        fresh_status = availability.get(role) if availability is not None else None
+        if fresh_status is not None and fresh_status not in {"HTTP_404", "READ_OK", "PERMISSION_DENIED", "UNKNOWN"}:
             raise ValueError("INVALID_PROVIDER_OBSERVATION")
-        if status == "READ_OK":
+        if fresh_status == "READ_OK":
             state, next_step = "PROVIDER_READ_REPORTED_UNVERIFIED", "VERIFY_EXACT_ID_PARENT_AND_PROVIDER_REVISION"
-        elif status == "HTTP_404":
-            state, next_step = "HISTORICAL_ID_NOT_ACCESSIBLE", "LOOKUP_OTHER_CARRIER_WITH_PROVENANCE"
+        elif fresh_status == "HTTP_404":
+            state, next_step = "FRESH_404_REPORTED_UNVERIFIED", "LOOKUP_OTHER_CARRIER_WITH_PROVENANCE"
+        elif fresh_status in ("PERMISSION_DENIED", "UNKNOWN"):
+            state, next_step = "FRESH_PROVIDER_ACCESS_NOT_PROVEN", "RECHECK_AUTH_AND_EXACT_PROVIDER_ID"
         else:
-            state, next_step = "PROVIDER_ACCESS_NOT_PROVEN", "RECHECK_AUTH_AND_EXACT_PROVIDER_ID"
+            state, next_step = "HISTORICAL_404_SNAPSHOT_ONLY", "FRESH_PROBE_OR_USE_PRESERVED_SKILL_SOURCE"
         results.append({"role": role, "source_id": rec["source_drive_id"],
-                        "provider_observation": status, "state": state,
-                        "source_deleted": None, "next_step": next_step})
+                        "historical_provider_status": rec.get("primary"),
+                        "historical_accounts_checked": ("Primary", "Funix", "Admin"),
+                        "fresh_provider_status": fresh_status,
+                        "fresh_provider_readback_verified": False,
+                        "state": state, "source_deleted": None, "next_step": next_step})
     skill_exists = snapshot_path.is_file()
     skill_verified = False
     if skill_exists:
@@ -53,12 +60,14 @@ def audit(root: Path, *, availability: dict[str, str] | None = None) -> dict:
         candidates = [x for x in entries if "dante-am-duong-su-router" in x.get("uri", "")]
         original_ids = {x["source_drive_id"] for x in records}
         skill_verified = any(all(i in c.get("content", "") for i in original_ids) for c in candidates)
-    live = sum(x["provider_observation"] == "READ_OK" for x in results)
+    live = sum(x["fresh_provider_status"] == "READ_OK" for x in results)
     return {
         "schema": "SOL_DANTE_404_REENTRY_GATE/1.0",
         "old_incident_scope": "2026-10-16_USER_SCREENSHOT_AND_LIVE_PROVIDER_RECHECK",
         "carriers": results, "accessible_reported_count": live,
-        "not_accessible_count": sum(x["provider_observation"] == "HTTP_404" for x in results),
+        "historical_404_carriers": sum(x["historical_provider_status"] == "HTTP_404" for x in results),
+        "fresh_provider_observations_supplied": sum(x["fresh_provider_status"] is not None for x in results),
+        "provider_calls_performed_by_this_gate": False,
         "skill_snapshot_exists": skill_exists,
         "skill_snapshot_covers_historical_ids": skill_verified,
         "skill_snapshot_sha256": hashlib.sha256(snapshot_path.read_bytes()).hexdigest() if skill_exists else None,
