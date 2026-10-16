@@ -29,8 +29,8 @@ class T007IngressRegression(unittest.TestCase):
     def test_correction_belongs_to_toolchain_and_retains_consequence_boundary(self):
         p = TOOL/'Chuỗi công cụ/_Sổ_đăng_ký/T007_OPEN_INGRESS_CORRECTION_20261016.md'
         record = p.read_text(encoding='utf-8')
-        self.assertIn('agent-origin misrouting', record)
-        self.assertIn('not a status label', record)
+        self.assertIn('FIRST_AFFECTED_CAUSE', record)
+        self.assertIn('not a pending/unverified/blocked status label', record)
         self.assertIn('Document correction does not undo the past', record)
 
 if __name__ == '__main__':
