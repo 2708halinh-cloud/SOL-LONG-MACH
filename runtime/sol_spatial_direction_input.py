@@ -79,7 +79,7 @@ def parse_spatial_input(value, *, default_agent_id="SOL_YIN"):
             raise SpatialContextError("DIRECTION_LABEL_MISMATCH")
         if "vector" in payload:
             vector = payload["vector"]
-            if not isinstance(vector, (list, tuple)) or tuple(vector) != spec["vector"]:
+            if (not isinstance(vector, (list, tuple)) or len(vector) != 2\n                    or any(isinstance(x, bool) or not isinstance(x, int) for x in vector)\n                    or tuple(vector) != spec["vector"]):
                 raise SpatialContextError("DIRECTION_VECTOR_MISMATCH")
         return _result(agent_id.strip(), code, angle)
     code = _find_direction(value)
