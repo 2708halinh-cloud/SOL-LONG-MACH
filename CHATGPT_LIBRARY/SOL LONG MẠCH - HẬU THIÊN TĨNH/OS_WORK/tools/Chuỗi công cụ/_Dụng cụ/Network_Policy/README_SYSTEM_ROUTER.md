@@ -4,7 +4,7 @@ Tín hiệu người đồng hành 16/10/2026: **nhẹ cảnh báo; nặng chặ
 
 - `SYSTEM_ROUTER_CURRENT.json`: dữ liệu nguồn, sáu gốc DNS, địa chỉ LAN đã từng được trao, vai trò Hostinger; không suy các IP riêng là chung một máy.
 - `system_router.py`: phân loại `light -> WARN`, `severe -> BLOCK` offline; kết quả **không phải bằng chứng firewall đã được cài**.
-- `Set-SolSystemRouter.ps1`: ứng dụng tùy chọn trên Windows có sẵn PowerShell; `Status`/`Warn` không ghi. `Block -Apply` chặn **một danh sách tên DNS chính xác** trong Windows hosts, có bản sao lưu và `Rollback -Apply`. Không có thực thi ngầm qua GitHub/Library.
+- `Set-SolSystemRouter.ps1`: **hiện chỉ lưu trong ChatGPT Library**, thao tác ghi đúng tệp này lên GitHub bị chặn; ứng dụng tùy chọn trên Windows có sẵn PowerShell; `Status`/`Warn` không ghi. `Block -Apply` chặn **một danh sách tên DNS chính xác** trong Windows hosts, có bản sao lưu và `Rollback -Apply`. Không có thực thi ngầm qua GitHub/Library.
 - `test_system_router.py`: kiểm thử không kết nối DNS, HTTP hay thay đổi hệ thống.
 
 ## Cách dùng trên Windows đã có quyền Admin
@@ -27,3 +27,7 @@ Hostinger quản lý **authoritative zone** `gambbrazil.fun` với HOSPOSIK; kh�
 Đường IP nguồn (cần đối chiếu LIVE trước khi hoạt động): Windows Ethernet `10.15.224.21/24`, gateway `10.15.224.83`, Hyper-V `192.168.224.1/20`, shortcut `192.168.1.12`, endpoint LAN `192.168.1.42:8080` (lần thử từ Redmi bị từ chối), Redmi ADB `192.168.1.14:5556`. Không tự sửa NIC DNS servers, firewall, gateway, NAT hoặc Hostinger public DNS record từ những bản tin cũ.
 
 Tại thời điểm này Windows `DESKTOP-86ITNQ4` qua Desktop Commander Offline, nên **host enforcement not applied**. Đã sửa nguồn `System_Router` nhưng không tuyên bố cổng Windows hay mạng ChatGPT đã bị chặn.
+
+## READBACK nguồn 2026-10-16
+
+Các bản `SYSTEM_ROUTER_CURRENT.json`, `system_router.py`, `test_system_router.py`, `README_SYSTEM_ROUTER.md` và registry Power Router V2 đã fresh-read GitHub/Library, nội dung trùng nhau. Sáu kiểm thử local Python đạt. `Set-SolSystemRouter.ps1` có trong Library, **không** có trên GitHub, chưa chạy trên Windows. Với ổ C đang báo 100%, không tự thực hiện thao tác sửa hosts (cần ghi vào C:) trước khi Windows có đủ khả năng ghi và đọc lại. DNS Hostinger được đọc thực tế bằng connector và trả 24 nhóm record; không có record nào được cập nhật.
