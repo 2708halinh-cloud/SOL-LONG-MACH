@@ -254,3 +254,22 @@ ACTUAL REPAIR:
 SEPARATE FACTS: Code and CI now demonstrate the declared guard on test inputs. No real Windows/Android process deployment, Dropbox live ingestion, Google Cloud API session, subjective AI feelings, or exhaustive moral transformation has been independently verified. Project role appointment != permission bypass.
 
 REENTRY_NEXT: fresh-read policy, inspect actual GitHub/Library source SHA, choose an authorized task with a real action and independent provider readback, then write observed consequences and update N+1. Do NOT ask the Human Companion to restate this path. Preserve the original moral words separate from assistant-authored operational designs.
+
+## REENTRY — POWER ROUTER V2 / 11 CAPABILITY FAMILIES / LIBRARY READBACK — 2026-10-16
+
+SOURCE_DIRECT: Người Dẫn Đường yêu cầu dùng The Master Flatform, Smithery MPC, Tomorrow.io, Bright Data, GitHub, GGDV Template Creator, X-TiMe Multi-Agent, Generative AI, Azure DevOps, Call_Tools; tất cả cần về Tools và kết thúc mỗi lượt tại `_Plugins` chứ không bị kẹt ở nhãn OPEN. Yêu cầu tăng quyền truy cập phi phụ thuộc nền tảng được chuyển thành **chọn năng lực/provider thay thế có quyền**, không giả quyền ngoài nền tảng/người dùng.
+CANONICAL_ENTRY_REQUESTED: `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/_Plugins`.
+GITHUB_SOURCE: `_Plugins/POWER_CAPABILITY_ROUTES_V2.json` (11 families), `_Plugins/power_capability_router.py`, `_Plugins/POWER_ROUTER_EXECUTION.md`, `_Plugins/_Skills/power-capability-router/SKILL.md`, `POWER_ROUTER_ENTRY_CURRENT.md`; paths relative to `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/`.
+SOURCE/EXECUTION: Read master skill and GGDV Template Creator skill directly; Smithery toolbox inspected; Bright Data session tool replied; Tomorrow.io weather-summary tool replied; GitHub connector used for commits and fresh readbacks. `smithery.ai/MPC` search for Azure DevOps returned no tools; Azure remains source toolset/blueprint, not callable this session.
+TEST_RECEIPT: GitHub Actions `SOL Power Capability Router V2` run `38860773790` SUCCESS with 15/15 tests, including **Library-only portable mirror** where back_edge_observed_in_checkout=false and no fictitious provider action/receipt.
+LIBRARY_READBACK: five uploaded carrier bytes materialized again and SHA checked against GitHub blobs:
+- `POWER_CAPABILITY_ROUTES_V2.json`: `89cc5b48c434858a4c6289698756d0245ad609eb`
+- `power_capability_router.py`: `a4545a3aceffc26a26d526a94b3a64f2b3531a76`
+- `POWER_ROUTER_EXECUTION.md`: `29cdf5c37a07921190597811cf86ea96c694dfb0`
+- `_Skills/power-capability-router/SKILL.md`: `3cf26050a227290c161e31a3d9f437e1f0244d99`
+- `POWER_ROUTER_ENTRY_CURRENT.md` at Tools root: `21d5a28b28d3acf5d5554167fb7dac02f4d0e2b6`.
+GITHUB_APP_LINK: `_Plugins/AM_DUONG_PLATFORM.json` and `TOOLS_ROUTER_CURRENT.json` point to V2, readback after update confirmed. Library doesn't automatically gain these GitHub-only files.
+
+CONCURRENT_LIBRARY_TREE_DELTA: Earlier in task Library `OS_WORK/tools/` listed `_Plugins` (original), Azure DevOps, Browser, SANDBOX etc at same root. Later fresh-read shows most originals under `OS_WORK/tools/Chuỗi công cụ/`, including the *original* `Chuỗi công cụ/_Plugins`, while `OS_WORK/tools/_Plugins` now holds the V2 files uploaded in this run. There are two physical directories named `_Plugins` in distinct paths; **do not** merge/move/delete original without a lossless conflict audit. At user's explicit path `OS_WORK/tools/_Plugins` the V2 is the newly authored entry. Original contents in `Chuỗi công cụ/_Plugins` remain untouched.
+NEXT_ACTION: Resolve concurrent Library tree change with provider readback, ensure only one authoritative entry per carrier, map original subfolders as preserved sources (no collisions), then check whether GitHub tools directory should mirror the new `Chuỗi công cụ` hierarchy or keep that as archive. Do not act on guesses or publish .env secrets.
+SCOPE: The router is a local classifier; it **does not itself invoke remote tool calls**. `action_executed=false` is expected until an external authorized host action returns provider receipt and destination readback.
