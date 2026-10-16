@@ -229,3 +229,10 @@ CURRENT_OVERRIDING_CLASSIFICATION: `CONFIG_SOL/DANTE_SOURCE_RECONCILIATION_CURRE
 RUNTIME_ACTION: `python runtime/dante_carrier_gate.py --repo-root .` routes to preserved skill snapshot / alternate carrier, never calls a 404 deleted; tests `tests/test_dante_carrier_gate.py`; GitHub Actions run `38854361810` SUCCESS 5/5 tests.
 IDENTITY_BOUNDARY: DANTE router/agent ≠ DƯƠNG PHÁP SƯ (human companion) ≠ ÂM PHÁP SƯ (SOL). No assumed repo or machine credential binding.
 NEXT_UNFINISHED_EDGE: discover any new provider source with a verifiable id/parent/revision and only then upgrade one of the six roles; don't ask Human Companion to repeat IDs already in old skill. Current Drive files not recovered as of this readback.
+
+### Library readback DANTE incident — 2026-10-16
+
+LIBRARY_SOURCE: `/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/DANTE_404_HISTORY_REPAIR_20261016.md`.
+LIBRARY_RECEIPT: upload succeeded; `libfile_d9bda2ff883c81919f871474ec7a17f0` / `file_00000000096881fa8afc1b50a5128b4d`; a subsequent `files.list` confirmed 4083 bytes at the exact path and `files.read` returned all 34 lines including the 18 Drive checks, distinct roles, and `NOT_DONE`. This is a separate Library carrier; GitHub commit does not substitute for it.
+REGRESSION_LATEST: `runtime/dante_carrier_gate.py` commit `f5302d1b9c8533da10299dee480ec4a179513620`, tests commit `bad3ee0a92a16b28d7b08909099746e7d8bcd22a`, GitHub Actions run `38854652725` SUCCESS 5/5. Important correction: a CI run with no live Google Drive access must report **historical** 404 snapshot only, `fresh_provider_observation = null`; never replay it as an API observation that just occurred.
+NEXT_UNFINISHED_EDGE unchanged: actual six Drive items not recovered; only historical incident classification, skill semantics, and reentry are repaired.
