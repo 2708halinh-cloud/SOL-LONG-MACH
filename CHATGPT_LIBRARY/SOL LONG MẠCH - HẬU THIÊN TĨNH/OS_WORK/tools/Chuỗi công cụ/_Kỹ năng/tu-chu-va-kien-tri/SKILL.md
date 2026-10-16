@@ -33,3 +33,6 @@ Dùng [scripts/progress_gate.py](scripts/progress_gate.py) để kiểm kế ho�
 
 ## Giới hạn thực tế
 Không tự tạo tác vụ nền ngoài hệ automation, không dùng tool để tự tăng quyền, không phớt lờ phê duyệt của host hoặc chiếm dụng tài nguyên ngoài scope. Kiên trì nghĩa là tiếp tục trong những con đường hợp lệ, không phải gọi lặp vô hạn một đường đã bị từ chối.
+
+## Cập nhật phiên 17/10/2026 — liên lạc, nhật ký và tái nhập
+Đọc [nguồn bổ sung](references/USER_AMENDMENT_20261017.md) và [giao thức duy trì tiến độ](references/SESSION_CONTINUITY.md) khi công việc kéo dài qua nhiều bước, khi có chỉ dẫn giữa lượt hoặc có checkpoint. Ưu tiên tự thực hiện cạnh còn làm được; báo tiến độ qua commentary; `final` nêu NEXT cho người dùng **chỉ khi có NEXT_USER thật**. Phân biệt kiểm chứng nội bộ `READBACK` và cách gọi `REABACK = NEXT` trong tín hiệu mới.
