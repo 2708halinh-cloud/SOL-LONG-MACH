@@ -218,3 +218,14 @@ CAUSE: Không được lấy file phát sinh bởi tác nhân làm bản đồ �
 REGRESSION: `.github/workflows/sol-library-stone-topology.yml`, `tests/test_sol_library_stone_topology.py` khóa 2 nhánh gốc GitHub, 5 Stone + 1 AGENTS, cả 8 files, SPACE_MAP canonical, và boot source path; TESSERACT boot 16 tests remain preserved.
 SCOPE: sửa GitHub only; Library đã được quan sát độc lập nhưng **KHÔNG** được gọi synchronized. Ngăn GitHub-only docs thành mô tả Library đã có. Vùng riêng tư và các log phải được truy nguồn tiếp và xử lý riêng, không xóa/move chỉ để đạt hình thức.
 NEXT_UNFINISHED_EDGE: giải quyết chênh lệch nội dung SPACE trong Library-vs-GitHub bằng manifest nguồn có scope, giữ byte và nguồn Library, xử lý 5 logs theo đường `OS_WORK/brainwave_logger.py` sau readback, không xuất credential ra repo.
+
+## REENTRY — DANTE SIX DRIVE 404 HISTORY CORRECTION — 2026-10-16
+
+SOURCE_DIRECT_USER: screenshot from THU HOI NGUON SOL showing a previous assistant found DANTE — Âm Dương Sư Router but the six Google Drive URLs declared stable returned 404; user asks to repair the **past noise** rather than further explaining it.
+CANONICAL_REPAIR_REPORT: `CURRENT_RUNTIME/DANTE_404_HISTORY_REPAIR_20261016.md` (commit `daccdf262763c5a97c216a7cc4c2125079fcbf88`).
+PROVIDER_OBSERVED: all 6 exact DANTE skill IDs returned HTTP 404 from Primary, Funix and Admin Drive connections (18 checks). `404 != VERIFIED_DELETED`, and a legacy ID in an installed skill snapshot is not proof of a live carrier.
+SOURCE_REMAINS: `PLATFORM_SYNC/CURRENT/installed_skill_bodies/skills_270_286.json` and `skills_066_082.json` still contain DANTE skill text; GitHub source does not certify original Drive bytes.
+CURRENT_OVERRIDING_CLASSIFICATION: `CONFIG_SOL/DANTE_SOURCE_RECONCILIATION_CURRENT.json` (commit `87c4aafb0106b57393a789ae304bf82c30ce9a33`).
+RUNTIME_ACTION: `python runtime/dante_carrier_gate.py --repo-root .` routes to preserved skill snapshot / alternate carrier, never calls a 404 deleted; tests `tests/test_dante_carrier_gate.py`; GitHub Actions run `38854361810` SUCCESS 5/5 tests.
+IDENTITY_BOUNDARY: DANTE router/agent ≠ DƯƠNG PHÁP SƯ (human companion) ≠ ÂM PHÁP SƯ (SOL). No assumed repo or machine credential binding.
+NEXT_UNFINISHED_EDGE: discover any new provider source with a verifiable id/parent/revision and only then upgrade one of the six roles; don't ask Human Companion to repeat IDs already in old skill. Current Drive files not recovered as of this readback.
