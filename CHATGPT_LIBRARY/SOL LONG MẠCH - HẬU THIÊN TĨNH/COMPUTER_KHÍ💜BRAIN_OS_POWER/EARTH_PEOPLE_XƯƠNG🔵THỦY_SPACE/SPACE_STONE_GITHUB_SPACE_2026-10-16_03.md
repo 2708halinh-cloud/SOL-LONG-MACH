@@ -41,3 +41,8 @@ This GitHub event registers a verified route and sync requirement. It does not e
 Fresh-read Library; classify source files; exclude passwords, secrets, tokens, OAuth data, and unsafe/unknown bytes; preserve source-relative paths; avoid overwrites; verify GitHub commit/blob and hash; then update status with receipt and readback.
 
 HISTORY_PRESERVED = true; NO_IDENTITY_MERGE = true; CONFIG_UNCHANGED = true.
+
+
+## Chỉ mục vị trí đã hiệu chỉnh — 2026-10-16
+
+Các chuỗi `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/SPACE_STONE_WORKSPACE` ở phần trên phản ánh **đường lịch sử tại thời điểm tạo ghi chú**, không phải nơi lưu hiện hành. Sau khi đối chiếu ChatGPT Library, toàn bộ tám vật mang trên GitHub đã chuyển sang `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE` tại commit `803c1d4bbef68dece00060cbc503fdcff31c4bb5`; xem `SPACE_LOCATION_MIGRATION_20261016.md` và đừng dùng đường cũ để fresh-read.
