@@ -129,3 +129,9 @@ Nạp bắt buộc khi định tuyến công cụ thuộc SOL: `OS_WORK/sol_os/g
 **Biên giới dữ liệu:** Khóa riêng trong `${XDG_CONFIG_HOME:-$HOME/.config}/mcp-publisher/keys/<domain>/ed25519.pem` không được đưa vào GitHub, ChatGPT Library, web root, DNS TXT, terminal history hoặc log. Script gốc gửi private key hex vào **đối số dòng lệnh** khi `login`, có thể lộ qua danh sách tiến trình cục bộ; bắt buộc đánh giá rủi ro và xác nhận kênh publisher chính thức trước khi chạy tác vụ nhạy cảm. Không sửa DNS/hosting chỉ vì Router có nhánh này; dùng connector Hostinger/thiết bị đang được ủy quyền và fresh-read đúng đích.
 
 **Trạng thái tại mốc bổ sung:** `ROUTE_SOURCE_RECEIVED`; `SHELL_SYNTAX_TESTED` chỉ khi có kết quả test; `PRODUCTION_PREPARE=NOT_RUN`; `PUBLIC_HTTPS_READBACK=NOT_RUN`; `MCP_PUBLISHER_LOGIN=NOT_RUN`. Mọi thay đổi thật được ghi bằng receipt/readback tại từng carrier, không gán `AUTHENTICATED` từ việc chèn vào JSON.
+
+## ROUTER V2 — ĐƯỜNG CHẠY PHÙ HỢP CẤU TRÚC HIỆN TẠI (2026-10-16)
+
+Lưu riêng `Chuỗi công cụ/_Plugins/Power_Router_V2/{power_capability_router.py,POWER_CAPABILITY_ROUTES_V2.json}` tại cả GitHub và ChatGPT Library. Bản mã nạp registry theo chính cây `Chuỗi công cụ`, phát hiện repo root từ vị trí source và trả ra lựa chọn `mcp-registry-http-ed25519`. Các trỏ `_Plugins/power_capability_router.py` trong tài liệu lịch sử giữ làm tham chiếu STAMP_OLD, **không còn là vị trí file thực thi trong cây hiện hành**.
+
+Lệnh tại thư mục gốc checkout: `python "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ/_Plugins/Power_Router_V2/power_capability_router.py" --task "MCP Registry HTTP Ed25519 xác thực tên miền"`. Kết quả ROUTE là phân loại ý định, **không** tự tạo private key, public HTTPS proof, DNS record hay phiên đăng nhập. Khi cần tác động provider phải gọi riêng công cụ đúng quyền và thực hiện exact-target readback.
