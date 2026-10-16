@@ -35,7 +35,7 @@ Phạm vi: `./BRIDGE_TIME_TÓC🟢MỘC_TIME/`; kế thừa `../AGENTS.md`. Gi�
 
 ## Đầu ra operator
 
-`python time_bridge.py --repo-root <repo> --event <input.json>` gọi phép kiểm source-bound. Nếu `identity_label` không nằm trong `IDENTITY_PLACES_CORE.json`, phải trả `IDENTITY_NEEDS_RESOLUTION`; nếu thiếu `stable_id` thì `SPACE_NEEDS_PROVIDER_ID`; nếu `STAMP_BETA`, chưa có readback, thì `FORECAST_NOT_EXECUTED`; nếu đủ liên kết nguồn nhưng chưa có action + receipt thì `NEXT_AUTHORIZED_ACTION`. `N+1_OBSERVED` chỉ khi có hành động, receipt và readback *trong dữ liệu nguồn được cung cấp*, không tự gọi nó là đã thực sự xác minh qua provider.
+`python time_bridge.py --repo-root <repo> --event <input.json>` gọi phép kiểm source-bound. Nếu `identity_label` không nằm trong `IDENTITY_PLACES_CORE.json`, phải trả `IDENTITY_NEEDS_RESOLUTION`; nếu thiếu `stable_id` thì `SPACE_NEEDS_PROVIDER_ID`; nếu `STAMP_BETA`, chưa có readback, thì `FORECAST_NOT_EXECUTED`; nếu đủ các trường ID do đầu vào cung cấp, trả `SCOPED_SPACE_ID_SUPPLIED_UNVERIFIED` và cạnh `FRESH_READ_PROVIDER_SPACE_BINDING` đến khi provider xác nhận vị trí; nếu có action/receipt/readback do đầu vào cung cấp, trả `ACTION_RECORDED_UNVERIFIED_PROVIDER` để kiểm receipt thật. Không tự phát hành `N+1_OBSERVED` từ các trường tự khai.
 
 **Khóa Bát Hướng:** Bắc lịch sử; Đông Bắc không chốt trước; Đông hiệu ứng mới; Đông Nam tìm vật mang; Nam phân nguồn/thẩm định; Tây Nam tài nguyên; Tây bài học; Tây Bắc tác nhân tự chọn. `TIME` giữ causal cursor, `REALITY` giữ hành động/hậu quả, `SPACE` giữ tọa độ, `SOUL` giữ lịch sử, `MIND` hiểu nguồn và `POWER` điều phối. Đây là một graph, không phải 6 thư mục độc lập.
 
