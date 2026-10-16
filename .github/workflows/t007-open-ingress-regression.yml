@@ -1,0 +1,28 @@
+name: T007 OPEN ingress regression
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'CONFIG_SOL/OPEN_AND_CONFLICT_CURRENT.md'
+      - 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/00_OPEN_0D_CONTINUITY/**'
+      - 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/POWER_ROUTER.md'
+      - 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ/_Sổ_đăng_ký/T007_OPEN_INGRESS_CORRECTION_20261016.md'
+      - 'tests/test_t007_open_ingress_regression.py'
+      - '.github/workflows/t007-open-ingress-regression.yml'
+  pull_request:
+    paths:
+      - 'CONFIG_SOL/OPEN_AND_CONFLICT_CURRENT.md'
+      - 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/POWER_ROUTER.md'
+      - 'tests/test_t007_open_ingress_regression.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prevent-premature-closure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_t007_open_ingress_regression.py' -v
