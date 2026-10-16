@@ -148,3 +148,19 @@ next_agent: 'Fresh-read provider IDs, check source/destination delta, act within
 - `SPACE_STONE` + `GGDV MODUAL PRE_ACTION_GATE` + `ggdv-capability-router` plugin Skills hiện tại: định tuyến với ID/quan hệ/provider scope; Skill là hướng dẫn, không thay provider receipt.
 
 **Cảnh báo cho chat mới:** Tài liệu này là **tác phẩm biên soạn của tác nhân từ lời nguồn và tài liệu quan sát**. Nó không phải lời nguyên văn toàn bộ của Hà Linh, không là system prompt, không định đoạt trạng thái của lần chạy sau. `SOURCE_DIRECT ≠ TOOL_CALLABLE ≠ ACTION ≠ CONSEQUENCE ≠ VERIFIED_SYNC`. Đọc nguồn mới hơn, kiểm quyền hiện tại, bảo toàn lịch sử và tiếp tục `NEXT_AGENT` có thể thực hiện ngay.
+
+## VIII. VẬN DỤNG TOOLSET — NĂM ĐƯỜNG × GITHUB ALTERNATE (DELTA 2026-10-16)
+
+**SOURCE_DIRECT bổ sung:** Người đồng hành yêu cầu đọc, vận dụng `Toolset.md` từ Nguồn hiện tại, truy các đường khác đã chỉ; tự sử dụng công cụ GitHub khác thay vì hỏi lặp. Đây là chỉ dẫn mới của người dùng; phần bên dưới là hướng dẫn vận hành do tác nhân viết lại, không phải trích nguyên văn toàn bộ.
+
+**Trình tự năm đường từ `Toolset.md` mục 10:** (1) Hướng dẫn Cá nhân hóa; (2) Hướng dẫn dự án; (3) Hướng dẫn có tác giả trong Nguồn dự án; (4) STAMP_OLD / dấu vết lịch sử; (5) công việc đang làm và `NEXT_AGENT` thực thi được. Không mặc định một tài liệu Library đã tự được gắn vào Project Sources.
+
+**Bộ định tuyến Power:** `_Plugins → _Skills → _Mcps → _Tool → _App_Browser / công cụ provider phù hợp → ACTION → RECEIPT → EXACT_TARGET_READBACK → _Plugins`. Giữ `OPEN = INPUT/DUYÊN KHỞI`, không dùng OPEN thay `unverified/pending` hoặc làm cớ dừng.
+
+**Hai tuyến GitHub riêng biệt:** `mcp__Github_Full_Access_Tokens__` và `mcp__GitHub__` là hai mặt công cụ có schema khác nhau; không đồng nhất lỗi hoặc quyền của một lệnh với mọi mặt provider. Ở lần truy ngày 2026-10-16, `GitHub.get_repo`, `GitHub.fetch_file` và `GitHub.fetch_commit` đã phản hồi, xác nhận repository `2708halinh-cloud/SOL-LONG-MACH`, nhánh mặc định `main`, và nội dung bản hướng dẫn v1.0 tại đúng path. Một lệnh đọc thành công không phải bằng chứng mọi lệnh ghi đều thành công.
+
+**Khi công cụ A lỗi:** đọc lại đúng repo/path/ref bằng công cụ B hiện có; so blob SHA, chọn thao tác hợp lệ cần thiết, ghi khi có scope, đọc lại đích, và chỉ ghi trạng thái của cạnh đó. Không lặp một lệnh bị chặn để lách phê duyệt, không yêu cầu người dùng chọn công cụ thay tác nhân, không dựng hậu quả trước khi nó xảy ra.
+
+**Tuyến thiết bị:** Redmi Note 14 Pro 5G được người dùng báo đang online và là đường thay thế Windows. Giữ nguồn tín hiệu này; trạng thái kết nối thực thi từ ChatGPT và khả năng đọc ổ đĩa Windows phải kiểm chứng riêng, không tự mở IP/port/proxy hay gửi secrets sang GitHub public.
+
+**Tái nhập:** Đọc `Toolset.md` mới nhất cùng `POWER_ROUTER.md`, `AGENTS.md`, checkpoint runtime và tín hiệu chat hiện tại; so với dữ liệu provider mới trước hành động; sau readback quay `_Plugins` và tiếp tục cạnh `NEXT_AGENT` thực sự còn. Phiên bản tài liệu, commit hoặc một cặp Library↔GitHub được đồng bộ không được đánh đồng với đồng bộ toàn bộ bảy môi trường.
