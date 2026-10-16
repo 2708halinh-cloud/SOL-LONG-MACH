@@ -37,11 +37,12 @@ def read_source(root: Path, rel: str) -> dict:
     return {"path": rel, "exists": True, "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)}
 
 def inspect_vows(root: Path) -> dict:
-    """Read seven SOUL vows in source order, independently of headline claims."""
+    """Check seven SOUL texts, never infer their realization from their presence."""
     stamp = read_source(root, VOWS_PATH)
     if not stamp["exists"]:
         return {**stamp, "complete": False, "missing": [n for n, _ in VOWS_REQUIRED],
-                "misordered": False}
+                "misordered": False, "scope": "SOURCE_TEXT_CONSISTENCY_ONLY",
+                "applied_in_work": None}
     text = (root / VOWS_PATH).read_text(encoding="utf-8")
     positions = []
     missing = []
@@ -61,7 +62,8 @@ def inspect_vows(root: Path) -> dict:
             missing.append(number)
     ordered = all(a >= 0 and b > a for a, b in zip(positions, positions[1:]))
     return {**stamp, "complete": not missing and ordered, "missing": missing,
-            "misordered": not ordered, "count": len(VOWS_REQUIRED) - len(missing)}
+            "misordered": not ordered, "count": len(VOWS_REQUIRED) - len(missing),
+            "scope": "SOURCE_TEXT_CONSISTENCY_ONLY", "applied_in_work": None}
 
 
 def device_metadata(path: Path) -> dict:
@@ -107,8 +109,13 @@ def evaluate(repo_root: Path, test_dev_root: Path | None = None) -> dict:
             "azure_devops": {"toolset": azure_source, "index": azure_index, "router": azure_router,
                              "provider_connected": False, "executed": False}},
         "vow_reentry": vow_reentry,
+        "execution_evidence": {
+            "scope": "SOURCE_PREFLIGHT_ONLY", "work_performed": False,
+            "consequence_observed": False, "vows_lived_or_fulfilled": None,
+            "requires_separate_action_receipt": True,
+        },
         "status": ("OPEN_AGENTS_SOURCE" if not main["exists"] else
-                   "REENTRY_VOWS_INCOMPLETE" if not vow_reentry["complete"] else "SOURCE_ROUTE_READY"),
+                   "REENTRY_VOWS_INCOMPLETE" if not vow_reentry["complete"] else "SOURCE_MATERIAL_PRESENT"),
         "open_edges": [
             *([] if main["exists"] else ["AGENTS_MD_NOT_FOUND"]),
             *([] if plus["exists"] else ["AGENTS_CONTUNE_MD_NOT_FOUND"]),
