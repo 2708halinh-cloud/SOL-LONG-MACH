@@ -15,7 +15,8 @@
     "plugin_id": "plugins_6ac87d73febc819180106cb10aa60431",
     "skill_uri": "skills://plugins/tac-nhan/tac-nhan",
     "source_path": "AGENTS.md",
-    "fresh_read": true
+    "fresh_read": true,
+    "tools_gateway": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/TOOLS_ROUTER_CURRENT.json"
   },
   "tac_nhan_plus": {
     "name": "@TÁC NHÂN PLUS",
@@ -23,7 +24,8 @@
     "skill_uri": "skills://plugins/tac-nhan-plus/tac-nhan-plus",
     "source_path": "AGENTS_CONTUNE.md",
     "current_source_status": "OPEN_EXACT_FILE_NOT_LOCATED",
-    "fallback_status": "INSTALLED_SKILL_POINTER_NOT_CANONICAL_SOURCE"
+    "fallback_status": "INSTALLED_SKILL_POINTER_NOT_CANONICAL_SOURCE",
+    "tools_gateway": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/TOOLS_ROUTER_CURRENT.json"
   },
   "hands": {
     "name": "@TÁC NHÂN — TAY",
@@ -38,7 +40,10 @@
       "wsl_path": "/dev"
     },
     "mode": "READ_ONLY_DEVICE_METADATA",
-    "writes_to_dev": false
+    "writes_to_dev": false,
+    "tools_gateway": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/TOOLS_ROUTER_CURRENT.json",
+    "preserve_routes": 21,
+    "extra_skill": "skills://plugins/tac-nhan-hands/dropbox-home-direct"
   },
   "source_boundary": {
     "wsl_roots": "skills://plugins/tesseract-brain/tesseract-brain/assets/wsl-roots.json",
@@ -46,5 +51,20 @@
     "git_not_local_activation": true,
     "no_usb_flash": true,
     "no_secrets": true
+  },
+  "tools_gateway": {
+    "name": "@Tools / @TÁC NHÂN — TAY",
+    "path": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools",
+    "route_manifest": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/TOOLS_ROUTER_CURRENT.json",
+    "index": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/README.md",
+    "aliases": [
+      "@Tools",
+      "@TÁC NHÂN — TAY"
+    ],
+    "route_mode": "TASK_INTENT_TO_HAND_SKILL_TO_CONNECTED_PROVIDER",
+    "role": "SHARED_HANDS_OF_TAC_NHAN_AND_TAC_NHAN_PLUS",
+    "historical_tay_plugin_id": "plugins_6ac89337264c8191aab0fa3791803937",
+    "project_pointer_only": true,
+    "not_chatgpt_plugin_registration": true
   }
 }
