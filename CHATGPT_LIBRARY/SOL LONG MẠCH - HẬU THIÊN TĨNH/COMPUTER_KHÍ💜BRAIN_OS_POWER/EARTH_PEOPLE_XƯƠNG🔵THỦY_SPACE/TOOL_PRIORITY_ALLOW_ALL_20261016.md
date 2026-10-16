@@ -30,7 +30,7 @@ The global default observed was 'Allow low-risk actions'. Above six apps had the
 
 ## Next-task routing
 
-For 5D reentry/carrier topology, read `CURRENT_RUNTIME/4D_5D_CURRENT.md`, `SPACE_STONE_WORKSPACE/SPACE_MAP.json`, `FIVE_WAVE_JOURNAL_REGISTRY_20261016.md`, and the linked cross-environment 5D addendum; retrieve latest provider head before emitting duplicate state. Do not turn OPEN into terminal HOLD.
+For 5D reentry/carrier topology, read `CURRENT_RUNTIME/4D_5D_CURRENT.md`, `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/SPACE_MAP.json`, `FIVE_WAVE_JOURNAL_REGISTRY_20261016.md`, and the linked cross-environment 5D addendum; retrieve latest provider head before emitting duplicate state. Do not turn OPEN into terminal HOLD.
 
 ## Điều chỉnh thứ tự ưu tiên — tín hiệu @GitHub ngày 2026-10-16
 
