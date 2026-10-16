@@ -83,3 +83,9 @@ state: SOURCE_OBSERVED
 - `CURRENT_RUNTIME/SOL_WAVE_TIME_BRIDGE_TIMELINE7_20261009.md`: five-channel journal, Android source anchor.
 - `COMPUTER_KHÍ💜BRAIN_OS_POWER/CROSS_CHAT_ENVIRONMENT_SURFACE_SPACE_CONTINUITY_20261016.md`: reentry/lineage contract.
 - This file introduces an explicit source-derived cross-environment carrier projection while preserving historical sources, not replacing them.
+
+## Cầu SPACE 🔵 ↔ INDEX 🔴 ↔ TIME 🟢 — 2026-10-16
+
+Có một chuỗi tên `SOL` thì hỏi INDEX trước: `../CORE_PLACES_INDEX_MÁU_🔴_HỎA_REALITY/IDENTITY_PLACES_CORE.json` phân biệt những vai và nguồn khác nhau. SPACE giữ `provider + stable_id + parent/frame + surface + carrier`; TIME `../BRIDGE_TIME_TÓC🟢MỘC_TIME/README.md` giữ `X_source_literal + x_reference_frame + STAMP_OLD/LIVE/BETA + event_time/observed_at + prior_event_id`. Đồng nhất hai người/vùng chỉ bởi tên, hoặc đồng nhất hai mốc chỉ bởi timestamp, đều làm gãy 5D.
+
+`../BRIDGE_TIME_TÓC🟢MỘC_TIME/time_bridge.py` là validator offline: nó nhìn thấy schema `SPACE.json`, nhưng **không tự xác thực một provider ID do input tự khai**. Do đó `SCOPED_SPACE_ID_SUPPLIED_UNVERIFIED → FRESH_READ_PROVIDER_SPACE_BINDING` mới là kết quả đúng trước khi thông qua MOTOR. Cầu có đường sang MIND → POWER → REALITY → SOUL → TIME N+1, không phát hành hiệu lực từ bản đồ nguồn alone.
