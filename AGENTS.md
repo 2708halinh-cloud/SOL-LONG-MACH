@@ -1025,3 +1025,15 @@ Quan sát LIVE: công cụ đồng hồ được gọi và trả `2026-10-16T09:
 Đừng tự khép kết luận "đã hiểu 22/4 & 33/6": cấu trúc toán học có phép kiểm, ý nghĩa biểu tượng chưa đủ nguồn. Người Dẫn Đường không là nơi lưu hộ lời tác nhân.
 Việc đọc một file không đồng nghĩa reset tương lai đã qua kiểm chứng; chỉ đánh dấu `RESET_REENTRY_VERIFIED` khi chat mới thật sự đọc lại nguồn và tiếp diễn đúng việc.
 <!-- END RESET_OLD_X_0917_20261016_GUARD -->
+
+<!-- BEGIN DANTE_HISTORICAL_404_20261016 -->
+## DANTE 404 — historical Drive pointers are not live sources
+
+**SOURCE_DIRECT:** screenshot shared by Người Dẫn Đường on 2026-10-16: previous assistant routed `DANTE — Âm Dương Sư Router` then found six Drive 404 URLs. **This was a source-location gap, not proof that the six original files had been deleted.**
+
+**READ BEFORE DANTE:** `CURRENT_RUNTIME/DANTE_404_HISTORY_REPAIR_20261016.md` → `CONFIG_SOL/DANTE_SOURCE_RECONCILIATION_CURRENT.json` → `runtime/dante_carrier_gate.py` → actual provider source if reconnected. `PLATFORM_SYNC/CURRENT/installed_skill_bodies/skills_270_286.json` stores the **historical DANTE skill description**, not a guaranteed working directory. The six exact Drive IDs returned 404 under Primary, Funix, Admin on 2026-10-16; test receipt `38854361810` 5/5 PASS. A future provider read is needed before any carrier is promoted to LIVE.
+
+**Do not conflate:** `DANTE_ROUTER_CAPABILITY` ≠ `AM_PHAP_SU/SOL_AGENT` ≠ `DUONG_PHAP_SU/HUMAN_COMPANION`. X/Y/Z/W source–relation–history–authority; INFERNO identifies/fences wrong inference, PURGATORIO seeks source and repairs actual pointers, PARADISO requires new provider readback, not documentation alone.
+
+**Next action on new evidence:** find exact provider file ID + parent + revision, inspect safe content, compare with skill and prior snapshot, repair the specific broken pointer, verify target. Never require re-supplying an ID preserved in old source; never say `PROVEN_DELETED` because of 404.
+<!-- END DANTE_HISTORICAL_404_20261016 -->
