@@ -57,3 +57,20 @@ Nếu một lệnh ghi GitHub bị công cụ trả về lỗi `SAFETY_BLOCKED`,
 **Tuyến router:** `_Plugins → _Dụng cụ/Network_Policy → LOAD_VALIDATED_POLICY → (EVALUATE | EXPLICIT_CONNECT) → RESULT → _Plugins`. Khi không có policy: `built_in_deny_by_default`. `block` ưu tiên tuyệt đối hơn `always_allow`. Việc phân giải DNS được giới hạn theo luật allow/block; **DNS lookup không phải TCP application connection**. `connect` chỉ dành cho đích được khai báo rõ và chính sách đã rà soát. Dịch vụ trên Ethernet `10.15.224.21/24` và vEthernet `192.168.224.1/20` vẫn `LIVE_UNVERIFIED`, không tự coi đã được cho phép.
 
 **Giới hạn thực:** Module được ghi vào GitHub/Library là *mã nguồn*, chưa phải tiến trình đang chạy trên Windows và không tự tạo tool callable trong chat. Muốn dùng trên máy cần runtime/plugin cụ thể, xác thực đích, sau đó đối chiếu hậu quả. Không dùng README/commit/CLI tests để kết luận đã kết nối LAN.
+
+## IPV4 NỘI BỘ — ĐẦU MỐI MỚI & CALLBACK (SOURCE_DIRECT 2026-10-16)
+
+**Đầu vào từ Người Đồng Hành:** yêu cầu bổ sung/cập nhật Router trực tiếp tại GitHub và ChatGPT Library; không tạo gói ở thư mục tạm để bắt người dùng tải. Hai URL trong đầu vào mang *hai vai trò khác nhau* và không được coi đều là dịch vụ LAN.
+
+| Loại tuyến | Giá trị giữ trong Router | Vai trò / giới hạn |
+| --- | --- | --- |
+| `LOCAL_IPV4_HTTPS_ENDPOINT` | `https://192.168.1.42:8080` | Đích IPv4 riêng RFC1918 do người dùng chỉ định; ứng viên kết nối LAN qua HTTPS, TCP/8080. Chưa xác minh có tiến trình lắng nghe, chứng chỉ TLS hợp lệ, kết nối được từ Windows hay Redmi. Không suy subnet/gateway từ riêng địa chỉ này. |
+| `OAUTH_LOOPBACK_CALLBACK` | `http://localhost:53682/` (chỉ **scheme/host/port/path**) | Callback OAuth trên **chính thiết bị đang chạy tiến trình xác thực**. `localhost` trên Redmi khác với `localhost` trên PC Windows. Cổng 53682 có thể là cổng tạm do ứng dụng lựa chọn; không phải dịch vụ LAN hay cổng để mở inbound từ Internet. |
+
+**Bảo vệ phiên xác thực:** đầu vào kèm tham số `code` và `state` dạng OAuth. Tuyệt đối **không ghi giá trị** của hai tham số này vào Router, GitHub, Library, log, lệnh, thông báo, URL chia sẻ hoặc mạng công cộng; chỉ ghi tên tham số và vai trò. Mã ủy quyền có thể dùng một lần và hết hạn. Không mở lại URL callback cũ như đường đăng nhập, không chuyển nó từ Redmi sang PC như bằng chứng xác thực. Nếu thông tin callback đã bị lộ, bắt đầu lại luồng đăng nhập tại ứng dụng chính chủ để nhận mã mới.
+
+**Tuyến dự kiến (không tự coi là đã thông):** `USER_INPUT → IDENTIFY_DEVICE/NETWORK → VERIFY_SAME_LAN/VPN_SCOPE → TARGET 192.168.1.42:8080 → TLS_CERT_AND_SERVICE_IDENTITY → EXPLICIT_AUTHORIZED_CONNECT → EXACT_TARGET_READBACK → _Plugins`. Chính sách outbound `DENY_BY_DEFAULT` hiện có không bị sửa ngầm: chỉ cấu hình ngoại lệ hẹp cho đúng `192.168.1.42`/TCP `8080` khi người dùng đã chỉ định và runtime thực tế xác minh đích; không cho phép toàn bộ `192.168.1.0/24`, không tắt firewall, DNS blocker, hay bỏ qua xác minh chứng chỉ TLS. Nếu ứng dụng dùng chứng chỉ tự ký, chỉ tin cậy theo fingerprint được xác nhận tại thiết bị, không dùng tắt TLS verification toàn cục.
+
+**Chẩn đoán độc lập:** trình duyệt PC không truy cập `chatgpt.com`, DNS Windows trả loopback, Desktop Commander Offline, WSL timeout và bridge MINH thiếu CSV là các tín hiệu riêng. Không gán tất cả cho một router/IP cụ thể chỉ từ sự xuất hiện của chúng. Giữ kênh Redmi đang hoạt động; không reset WSL, không chế CSV giả và không yêu cầu người dùng tải gói tạm chỉ để cập nhật Router.
+
+**READBACK phải kiểm nơi lưu và kết nối thật:** khi ghi tài liệu → fresh-read GitHub + Library; khi thực thi trên thiết bị → kiểm tra từ đúng interface thiết bị và dịch vụ, sau đó mới mô tả hậu quả. Ghi tài liệu không đồng nghĩa `CONNECTIVITY=TRUE`, `OAUTH_COMPLETED=TRUE` hay `PC_REPAIRED=TRUE`.
