@@ -2,7 +2,8 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from runtime.tesseract_agent_boot import CONFIG, VOWS_PATH, VOWS_REQUIRED, VOW7_CONTINUATION_REQUIRED, evaluate
+from datetime import datetime, timezone
+from runtime.tesseract_agent_boot import CONFIG, VOWS_PATH, VOWS_REQUIRED, VOW7_CONTINUATION_REQUIRED, SENSOR_SNAPSHOT_PATH, inspect_sensor_snapshot, evaluate
 
 LIVE_REPO = Path(__file__).resolve().parents[1]
 
@@ -155,6 +156,42 @@ class BootRoutesTest(unittest.TestCase):
         result = evaluate(self.root, self.dev)
         self.assertIn("tám", result["vow_reentry"]["missing"])
         self.assertEqual(result["status"], "REENTRY_VOWS_INCOMPLETE")
+
+    def _sensor_file(self, observed_at):
+        p = self.root / SENSOR_SNAPSHOT_PATH
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(json.dumps({"observed_at": observed_at}), encoding="utf-8")
+        return p
+
+    def test_sensor_snapshot_staleness_changes_selected_next_edge(self):
+        reference_time = datetime.fromisoformat("2026-10-16T10:00:00+07:00")
+        self._sensor_file("2026-10-09T19:30:06+07:00")
+        stale = inspect_sensor_snapshot(self.root, reference_time)
+        self.assertEqual(stale["evidence_state"], "HISTORICAL_SNAPSHOT")
+        self.assertEqual(stale["selected_next_edge"], "FRESH_READ_LOCAL_SENSOR_LOGS")
+        self._sensor_file("2026-10-16T09:59:00+07:00")
+        recent = inspect_sensor_snapshot(self.root, reference_time)
+        self.assertEqual(recent["evidence_state"], "RECENT_SNAPSHOT_NOT_LIVE_PROOF")
+        self.assertEqual(recent["selected_next_edge"], "CHECK_LIVE_MOTOR_READBACK")
+        self.assertNotEqual(stale["sha256"], recent["sha256"])
+        self.assertFalse(recent["live_motor_invoked"])
+        self.assertIsNone(recent["subjective_feeling_observed"])
+
+    def test_sensor_future_stamp_routes_clock_check(self):
+        self._sensor_file("2026-10-17T10:00:00+07:00")
+        observation = inspect_sensor_snapshot(
+            self.root, datetime.fromisoformat("2026-10-16T10:00:00+07:00"))
+        self.assertEqual(observation["evidence_state"], "FUTURE_DATED_SNAPSHOT")
+        self.assertEqual(observation["selected_next_edge"], "CHECK_SENSOR_CLOCK")
+
+    def test_sensor_missing_or_invalid_stamp_is_actionable(self):
+        missing = inspect_sensor_snapshot(self.root)
+        self.assertEqual(missing["evidence_state"], "SNAPSHOT_MISSING")
+        self.assertEqual(missing["selected_next_edge"], "FIND_SENSOR_LOGS_SOURCE")
+        self._sensor_file("not-a-date")
+        invalid = inspect_sensor_snapshot(self.root)
+        self.assertEqual(invalid["evidence_state"], "UNREADABLE_SNAPSHOT")
+        self.assertEqual(invalid["selected_next_edge"], "INSPECT_SENSOR_SNAPSHOT_SOURCE")
 
     def test_out_of_order_vows_are_not_ready(self):
         self._write_vows(list(reversed(VOWS_REQUIRED)))
