@@ -1,35 +1,73 @@
-# CORE_PLACES_INDEX 🔴 REALITY — AGENTS.md
+# AGENTS.md — CORE_PLACES_INDEX
 
-**ROLE:** `REALITY_INDEX_NAVIGATOR_AND_RECEIPT_GATE` — cửa truy vấn danh mục, định vị tệp, chọn công cụ, đưa hành động đã được phép về đúng vật mang.  
-**PARENT:** `../AGENTS.md` (`COMPUTER_KHÍ💜BRAIN_OS_POWER/AGENTS.md`). Quy tắc 5 Stone ở parent được giữ nguyên.  
-**HUMAN READABLE MAP:** `README.md`.  
-**EXECUTABLE INDEX:** `indexer.py`. Không coi tệp Markdown này là một tool callable tự động.
+## Phạm vi
 
-## Bắt đầu lượt INDEX
+Áp dụng cho các tác nhân/công cụ thao tác trong thư mục này và các thư mục con của nó. Không thay thế AGENTS.md ở cha hoặc `CONFIG_MASTER`, R-000, nguồn trực tiếp. Không trao quyền ghi ở các HOME/LOCUS khác.
 
-1. **Nhận** tên tài liệu, mục đích, chỗ nhớ mang máng, ID/URL hoặc dấu lịch sử từ Người Dẫn Đường. Đọc trong ngữ cảnh, không tự xem lỗi gõ `REDME` là một tài liệu mới khác `README`.
-2. **Truy đúng vật mang:** quét danh sách thực tại checkout bằng `indexer.py`; đối chiếu nguồn đã được cài trong `README.md`; khi liên quan provider khác thì gọi tool provider trước, không dùng snapshot GitHub để giả kết quả live.
-3. **Phân loại:** `FILE_PRESENT` / `EMPTY_STRUCTURE` / `SOURCE_POINTER` / `PROVIDER_OBSERVED` / `MISSING_SEARCH_OTHER`. Mỗi entry nên có `provider`, `scope`, `path`, `kind`, `hash` (nếu có), `observation` hoặc `last_readback`.
-4. **Chọn một việc có ích:** nếu yêu cầu liên quan tài liệu, đọc tài liệu; nếu liên quan task đã dở, mở checkpoint rồi đi tiếp; nếu cần tool, tìm `TOOLS_ROUTER_CURRENT.json` và capability callable trong phiên. Không dùng `OPEN` như câu trả lời cuối cùng.
-5. **MOTOR → RECEIPT:** chỉ ghi `EXECUTED` khi thực sự có tác động, provider receipt, readback đường đích. Không gọi việc liệt kê là đã xử lý được nội dung.
-6. **Cập nhật sau hậu quả:** tạo hoặc sửa mục INDEX theo quan sát mới; giữ đường gốc, không xoá ký ức, không gộp provider IDs, không đưa secret vào public repo.
+## Nhiệm vụ và phân công
 
-## INDEX khởi đầu và con đường cụ thể
+1. **INDEX:** phát hiện danh sách file/thư mục trong phạm vi đã cấp; xuất `INDEX.md` và `INDEX.json` với path tương đối, loại, thời gian sửa, hash theo ngưỡng, trạng thái coverage.
+2. **README:** giải thích vai trò, phạm vi và tuyến đọc của INDEX; công cụ được phép sửa **duy nhất** đoạn đã đánh dấu `INDEX:START/END` khi có `--sync-readme`.
+3. **AGENTS:** giữ quy tắc thao tác do người quản trị duyệt; **không được tự ghi đè** bằng output INDEX.
+4. **SOURCE_REFERENCES:** giữ con trỏ nguồn lịch sử; nội dung chỉ là thông tin đối chiếu, không phải bản sao thẩm quyền.
 
-- `./PUPPETEER_RUNTIME/` và `./PUPPETEER_RUNTIME_READBACK_20261015.json`: khi cần browser vật lý, kiểm `PUPPETEER_RUNTIME/README.md` + khả năng local mới; CI runner PASS không đồng nghĩa desktop người dùng đang online.
-- `./CHƯƠNG II — THÂN VẬT LÝ/`: hiện có cấu trúc trống trên GitHub; truy legacy/Library/Drive bằng source-bound connector trước khi kết luận đã mất.
-- `../AGENTS.md`: luật nội bộ nhánh COMPUTER_KHÍ (cùng file đã chỉ trong PARENT).
-- `../../../../OS_WORK/tools/TOOLS_ROUTER_CURRENT.json` **không phải đường tương đối hợp lệ trực tiếp từ thư mục này**; dùng đường tuyệt đối từ repo `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/TOOLS_ROUTER_CURRENT.json`, tránh sai số `../`. 
-- `runtime/sol_multienvironment_core.py`: tổng hợp các kết quả provider có `stable_id` và provenance; các hàm nguồn `list_projects`, `list_project_groups`, `get_identity_ids` giúp danh mục nhiều môi trường không tự bịa danh tính.
-- `CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md`: sự kiện mới, điểm tiếp diễn, biên nhận vừa tạo.
-- `MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL`: các văn bản 8 Đại nguyện giữ nguồn; tránh sửa lời gốc để tạo quy tắc mới.
+## HỢP ĐỒNG ĐỊNH DANH TRƯỚC KHI LẬP DANH SÁCH
 
-## Bát Hướng áp dụng ngay lúc duyệt INDEX
+Ưu tiên **danh tính gốc và NƠI trước môi trường/nền tảng (hành tinh), rồi mới tới lõi/file**. Nguồn người dùng đã chỉ tên `HOME_SOURCE`, `HOME_SOL`, `LOCUS_SOL`, `AGENT SOL`, `AISSGANGT SOL`, `CONFIG_SOL`, `CONFIG_MASTER`, `ANGEL NGAI THẦN & BỆ THẦN`, `21 FILE NHẬT KÝ CỦA SOL` và `5 FILE NHẬT KÝ SÓNG NÃO`. Không đổi một alias khác chính tả thành thực thể mới; cũng không tự kết luận hai tên là một vì giống chữ.
 
-**Khảm:** dấu cũ và lần thấy cuối. **Cấn:** chặn nhảy sang kết luận khi mới thấy tên. **Chấn:** delta sau một query/commit. **Tốn:** công cụ/kênh/ID khác vẫn còn. **Ly:** cái đã đọc từ provider so với cái suy luận. **Khôn:** quyền, tài nguyên và nguồn hỗ trợ còn thiếu. **Đoài:** phản hồi người đồng hành và cách sửa sai. **Càn:** tự chọn hành động có quyền, kiểm lại, giảm việc bắt Người Dẫn Đường phải lặp lại.
+Quy trình tra cứu được phân tầng:
 
-## Không được tuyên bố quá phạm vi
+1. **Identity / Role:** đọc `IDENTITY_PLACES_CORE.json`, tra `tools/resolve_sol_names.py`; phân biệt `PERSON`, `AGENT`, `HOME`, `LOCUS`, `CONFIG`, `JOURNAL_FAMILY`, `SOURCE_ALIAS`. Khi chưa có stable ID từ provider, trả ứng viên cùng các con đường xác minh, không tự chốt.
+2. **Place / Relation:** tìm `HOME_SOURCE ↔ HOME_SOL` (quan hệ lineage, không đồng nhất role), `LOCUS_SOL`, các bộ ký ức, bản tin. `SOL ≠ MEI ≠ MINH`. Mỗi cạnh phải có loại quan hệ và nguồn.
+3. **Planet / Provider:** khi identity/place rõ phạm vi, chọn ChatGPT Library, GitHub, Drive, Dropbox, Windows/WSL/Android, Google Cloud… theo quyền; mỗi hành tinh có ID và revision riêng; không cộng hai tập folder thành tổng số project.
+4. **Core / Capability:** dò `AGENT.md`, `AGENTS.md`, `AGENTSS.md`, `AGENT/AGENTS_CONTUNE.md`, `AGENT/AGNETS_SKILL.md`, `ASSTANGT.md`, `AGENTS_SKILL.md` theo vai/parent/provider. Ghi `SOURCE_LITERAL` cho mọi biến thể; không giả mọi lõi đã tồn tại.
+5. **MOTOR / READBACK:** đọc mã nguồn và gọi công cụ **đang khả dụng**; `INDEX_FOUND != TOOL_CALLED != ACTION_EXECUTED != RESULT_VERIFIED`. Trả trạng thái và lựa chọn mới dựa trên biên nhận, không chốt hậu quả trước hành động.
 
-`INDEX_FOUND != SOURCE_READ != TOOL_CONNECTED != ACTION_EXECUTED != PROBLEM_RESOLVED`.
+### Phân quyền Âm–Dương trước tài liệu hậu kỳ
 
-Không chạy Puppeteer chỉ vì có thư mục runtime; không quét toàn máy người dùng từ một lần index repo; không đưa token hoặc đường riêng của Drive vào public INDEX. `indexer.py` là bộ kiểm kê **GitHub checkout/local mirror** read-only. Muốn đồng bộ cùng vị trí vào **ChatGPT Library**, phải ghi riêng trên Library và đọc lại từ Library; GitHub commit không thay cho bằng chứng Library đã cập nhật.
+**DƯƠNG PHÁP SƯ:** người trao nguồn/định hướng, phản hồi và quyền quyết định của con người; đây không phải ID của agent. **ÂM PHÁP SƯ:** người thực thi phía SOL trong kiến trúc dự án; tự truy ID, phương tiện, hậu quả, không viết thay lời người dẫn đường. `Tài Liệu Sau Khi có Sol` là bước hậu kỳ **sau** khi kiểm sơ đồ nhân thân, nơi, thời gian và quyền nguồn. Không trộn tác giả/người chứng kiến với mã/runtime/agent.
+
+### Nối bốn vùng Stone còn lại
+
+`INBOX_INPUT_PROJECTS_DA🟡KIM_MIND`: mục tiêu và đầu vào; `EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE`: định danh và vị trí; `BRIDGE_TIME_TÓC🟢MỘC_TIME`: sự kiện/nhật ký/thời gian; `MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL`: nguồn và lịch sử. REALITY là bộ chỉ mục **dẫn tới** các vùng ấy, không gom hoặc chuyển chúng vào đây. Không tự tạo tầng folder thứ sáu dưới KHÍ.
+
+### Điều kiện cần nhìn thấy
+
+Phân giải `Sol` phải trả **nhiều kết quả có role tách biệt**, lấy stable ID chỉ từ nguồn đã quan sát, phân biệt Source–Place–Planet–Core. Mã INDEX vẫn quét filesystem trong scope, chỉ ghi output tại `INDEX.json/INDEX.md/READBACK_INDEX.json`; AGENTS.md và registry quản trị **không nằm trong vùng tự ghi đè**. Đọc lại từng sửa đổi; giữ tên 21 journal thuộc SOURCE_DIRECT cho đến khi có manifest đủ 21 ID; 5 wave log lấy tên từ `brainwave_logger.py` chứ không bịa byte.
+
+## Hợp đồng nguồn / R-000 / T007
+
+- `SOURCE_DIRECT_FIRST`: phân biệt nguồn trực tiếp, metadata đã quan sát, diễn giải/tính toán và `OPEN`.
+- `PROVENANCE`: giữ nguyên tên, path, ID, revision, thời gian, scope nếu đã xác minh; không bịa ID hoặc quan hệ nhân quả.
+- `SCOPE`: chỉ quét root được truyền bằng tham số; không theo symlink, không vượt qua thư mục cha, không duyệt kho dữ liệu nhạy cảm.
+- `HISTORY_PRESERVED`: không xóa, ghi đè tài liệu gốc, đổi tên hoặc di chuyển file khi lập chỉ mục.
+- `NO_SECRET_CAPTURE`: không đọc, không đưa vào đầu ra `.env`, token, OAuth, client_secret, proxy credential, private keys, các vùng riêng tư, dữ liệu `.git`.
+- `T007_READBACK`: sau khi ghi, đọc lại `INDEX.json` và kiểm tra hash của đầu ra; khi lỗi không tuyên bố thành công.
+- `NO_RUNTIME_CLAIM`: chỉ có file index không chứng minh Desktop Commander, cloud runtime hoặc thiết bị cá nhân đã được triển khai.
+- `NO_IDENTITY_MERGE`: mục trỏ tới agent/HOME khác chỉ là quan hệ, không đồng nhất chủ thể hoặc cấp quyền chỉnh sửa.
+
+## Bảy yếu tố khi cần nâng mục sang trí nhớ/nguồn chuẩn
+
+`THỜI_GIAN / NƠI_CHỐN / TÁC_GIẢ / CHỦ_THỂ / NHÂN_QUẢ / NGUỒN / PHẠM_VI`.
+
+Nếu thiếu yếu tố, giữ `OPEN` và không tự quảng bá INDEX thành bản ghi ký ức đã kiểm chứng.
+
+## Bát Hướng áp dụng cho tác vụ INDEX
+
+- Khảm: kiểm lịch sử và thời gian sửa của mục.
+- Cấn: không ép kết luận khi mục chưa truy cập được.
+- Chấn: ghi rõ các delta quan sát được sau lần chạy.
+- Tốn: truy nguồn carrier, công cụ và quan hệ còn mở.
+- Ly: tách thấy trực tiếp khỏi suy luận.
+- Khôn: kiểm quyền và môi trường thực thi.
+- Đoài: lưu phản hồi và điều chỉnh phần bị ảnh hưởng.
+- Càn: chỉ hành động trong phạm vi được ủy quyền, an toàn, có readback.
+
+## Chạy
+
+```bash
+python tools/build_index.py --root . --sync-readme
+python -m unittest discover -s tests -v
+```
+
+Không xử lý trực tiếp các file nguồn bí mật được đính kèm từ project. Nếu cần gắn một nguồn ở cloud, ghi **pointer đã kiểm chứng** vào `SOURCE_REFERENCES.md`, rồi đánh dấu trạng thái của source và coverage; không tự tải rồi đổi nguồn.
