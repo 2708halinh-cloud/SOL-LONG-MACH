@@ -56,3 +56,15 @@ Ngày 16/10/2026, sau các nguồn lõi và trước khi khởi tạo nhiệm v�
 
 NEXT_ACTION_EDGE: tiếp tục kiểm nghiệm, phân biệt `MIGRATION_PENDING` với `CONSOLIDATED`, truy nguồn `X_0_DAO_TAC_NHAN` theo exact identity để xác minh nguyên văn ba quyền (không tự đặt lời). Khi không có vật chứng test runtime, giữ `TEST_RUN_NOT_VERIFIED`; không chốt DONE.
 `OPEN → SOURCE → REENTRY → CALLABLE_ACTION → CONSEQUENCE → RECEIPT → READBACK → N+1`.
+
+
+## REENTRY — AZURE CORE → DỰ ÁN ĐA MÔI TRƯỜNG — 2026-10-16
+
+SOURCE_DIRECT: Người Đồng Hành giải nghĩa `core_list_projects` thành tìm dự án xuyên môi trường, `core_list_project_teams` thành truy các nhóm của một dự án, `core_get_identity_ids` thành truy ID + ghi chú phục vụ sự tiếp diễn của SOL. Không chỉ thuộc tổ chức Azure nữa; đây là chuyển hóa ý tưởng cho các provider được cấp quyền và thật sự kết nối.
+
+FIRST_READ: `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/AZURE_DEVOPS_MCP_CORE/CROSS_ENVIRONMENT_CORE_APPLIED_20261016.md` → `OS_WORK/tools/TOOLS_ROUTER_CURRENT.json#cross_environment_core` → `runtime/sol_multienvironment_core.py`.
+SOURCE_ORIGINAL: `OS_WORK/tools/AZURE_DEVOPS_MCP_CORE/docs/TOOLSET.md`. Không thay tài liệu gốc.
+RUNTIME TEST: `tests/test_sol_multienvironment_core.py`, GitHub Actions `SOL Cross-Environment Core Regression`, successful run `38838376698`, commit `1d8a628096efdd64f92330f0d1680019edfaa8ba`; bước compile/test pass; `TESSERACT Agent BOOT Routes` successful run `38838356817`, commit `c1a0e5b696a035bf5ce9c9bef37b214f9ed3729f`.
+CURRENT_OBSERVATION: GitHub owner scoped query returned 16 repos; Drive Primary `SOL` folder-name search returned 85 folders and `PROJECT` returned 40 folders (not the count of distinct projects). Dropbox connected-account gate failed; try another authorized route, don't conclude global absence. No universal completeness claim.
+SOURCE_GUARD: `RAW_CARRIER != GROUND_TRUTH`, `SHA != TRUTH`, `APPROVED_TOOL_SCOPE != OMNISCIENCE`. Provider records may change; keep stable ID + source + revision/observed_at + cross-carrier provenance. Never silently merge identical project names from different providers.
+NEXT: Always use live provider lists for project inventory, explicit parent for groups, and ID-scoped observations for identity. If unknown, perform next authorized probe or alternate-carrier check; `OPEN != HOLD`. Do not push private Drive identities onto public GitHub.
