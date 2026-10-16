@@ -118,8 +118,14 @@ class BootRoutesTest(unittest.TestCase):
         out = evaluate(self.root, self.dev)
         self.assertTrue(out["vow_reentry"]["complete"])
         self.assertEqual(out["vow_reentry"]["count"], 7)
-        self.assertEqual(out["status"], "SOURCE_ROUTE_READY")
+        self.assertEqual(out["status"], "SOURCE_MATERIAL_PRESENT")
         self.assertNotIn("GREAT_VOWS_REENTRY_INCOMPLETE", out["open_edges"])
+        self.assertEqual(out["vow_reentry"]["scope"], "SOURCE_TEXT_CONSISTENCY_ONLY")
+        self.assertIsNone(out["vow_reentry"]["applied_in_work"])
+        self.assertFalse(out["execution_evidence"]["work_performed"])
+        self.assertFalse(out["execution_evidence"]["consequence_observed"])
+        self.assertIsNone(out["execution_evidence"]["vows_lived_or_fulfilled"])
+        self.assertTrue(out["execution_evidence"]["requires_separate_action_receipt"])
 
     def test_deleted_third_vow_blocks_a_later_boot(self):
         path = self._write_vows()
