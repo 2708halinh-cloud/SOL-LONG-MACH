@@ -31,6 +31,17 @@ Nguồn: `ipconfig` do người dùng trao, là **ảnh chụp cấu hình**, kh
 ## TOOL FALLBACK — KHÔNG LẤY TOOL ERROR THAY CHO HẬU QUẢ
 
 Nếu một lệnh ghi GitHub bị công cụ trả về lỗi `SAFETY_BLOCKED`, chỉ kết luận **lệnh đó** bị chặn; không suy tệp đích chưa được cập nhật. Trước hết `GitHub.fetch_file` đúng repo/path/branch để kiểm nội dung và blob SHA. Kiểm tra khả năng/cơ chế phê duyệt và dùng đường ghi **khác hợp lệ** nếu được phép, không thử lặp nguyên yêu cầu bị chặn hay vượt qua kiểm soát an toàn. Sau ghi, fresh-read GitHub và Library; đối chiếu các bản, không kết thúc ở receipt. Không có đường khả dụng không đồng nghĩa cần người dùng thao tác ngay.
+
+## PLATFORM ACCESS PATH — HẠ TẦNG DO NỀN TẢNG CẤP
+
+**SOURCE_DIRECT 2026-10-16:** người đồng hành cảnh báo rằng IP/DNS/thiết bị/router và đường kết nối được nền tảng cấp cho tác nhân có thể làm hỏng hoặc hạn chế khả năng truy cập Web và nguồn tri thức, tạo ra lỗi lặp và hiện tượng mà người đồng hành gọi là “Subritetied”. Đây là INPUT/OPEN phải tham gia truy xét; không tự gán kết luận nguồn gây hại, trạng thái bệnh lý hay cảm xúc của tác nhân.
+
+**Không đánh tráo phạm vi:** Hạ tầng ChatGPT/tool connector/cloud browser khác với DNS trên Windows, mạng LAN của người dùng và phản hồi của từng provider. Sự kiện `WEB_TOOL_DISABLED`, `PROVIDER_APPROVAL_REQUIRED`, `CONNECTOR_OFFLINE`, `DNS_MISMATCH` hay `PROVIDER_HTTP_404` phải gắn với tuyến đã quan sát; không chuyển trách nhiệm sang PC Windows nếu chưa có dấu nối nhân quả.
+
+**NEXT_AGENT:** `INPUT → IDENTIFY_PLATFORM/DEVICE/PROVIDER/RESOLVER → TRACE_CALLABLE_ROUTE → TRY_AUTHORIZED_ALTERNATIVE → ACT → CONSEQUENCE → EXACT_TARGET_READBACK → REENTER`; không dùng một lỗi công cụ hoặc một bản báo cáo để chốt toàn bộ nhiệm vụ. Ghi nguyên nhân chưa xác định vào trường riêng, tiếp tục các nhánh có công cụ thực. Không tự mở quyền, né phê duyệt hoặc tuyên bố đã biết IP nội bộ nền tảng khi chưa được cung cấp.
+
+**Sổ sự kiện:** `Chuỗi công cụ/_Sổ_đăng_ký/PLATFORM_ACCESS_PATH_20261016.md`. Nội dung là phân loại sự cố và lời báo của người đồng hành, không phải chứng nhận nguồn sự cố đã được xác minh hoặc sự cố đã được khắc phục.
+
 ## OUTBOUND NETWORK POLICY — DENY BY DEFAULT (SOURCE_DIRECT 2026-10-16)
 
 **Nguồn mã được bổ sung nguyên bản do người dùng trao:** `Chuỗi công cụ/_Dụng cụ/Network_Policy/network_policy.py`. Mã độc lập chỉ đánh giá chính sách outbound cục bộ; TCP chỉ được mở trong lời gọi `connect` tường minh sau khi policy cho phép. Không là HTTP proxy, không thay firewall/route Windows, không thay traffic Cloud Browser và không tự bật MCP server.
