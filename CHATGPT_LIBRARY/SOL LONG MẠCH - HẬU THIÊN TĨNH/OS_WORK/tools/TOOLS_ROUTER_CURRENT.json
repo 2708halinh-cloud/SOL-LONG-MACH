@@ -487,5 +487,15 @@
     "azure_mcp_live_inferred": false,
     "work_item_and_tool_names_must_not_be_mistaken_for_current_connected_actions": true,
     "agent_plus_shared_hands": true
+  },
+  "power_capability_router_v2": {
+    "schema": "SOL_POWER_CAPABILITY_ROUTER/2.0",
+    "registry": "_Plugins/POWER_CAPABILITY_ROUTES_V2.json",
+    "entrypoint": "_Plugins/power_capability_router.py",
+    "human_agent_contract": "_Plugins/POWER_ROUTER_EXECUTION.md",
+    "skill": "_Plugins/_Skills/power-capability-router/SKILL.md",
+    "after_action_return": "_Plugins",
+    "handling_missing_or_unavailable": "DISCOVER_ALTERNATE_AUTHORIZED_CAPABILITY_OR_SOURCE_PROBE",
+    "last_verified_scope": "GITHUB_SOURCE_AND_LOCAL_CLASSIFIER; PROVIDER_ACTION_SEPARATE"
   }
 }
