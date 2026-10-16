@@ -252,6 +252,28 @@
       ]
     },
     {
+      "id": "remote-desktop-connection-windows",
+      "aliases": [
+        "@Remote Desktop Connection",
+        "Remote Desktop Connection",
+        "mstsc",
+        "RDP",
+        "gambbrazil-sol100726.is"
+      ],
+      "group": "tools",
+      "kind": "REAL_RDP_PROFILE_AND_DNS_TCP_CHECK",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Remote_Desktop_Connection/rdp_router.py",
+      "default_computer": "gambbrazil-sol100726.is",
+      "profile": "Chuỗi công cụ/_Dụng cụ/Remote_Desktop_Connection/SOL_REMOTE_DESKTOP_DOMAIN.rdp",
+      "alternate_profile": "Chuỗi công cụ/_Dụng cụ/Remote_Desktop_Connection/SOL_REMOTE_DESKTOP_LAN_CANDIDATE.rdp",
+      "network_source": "Chuỗi công cụ/_Dụng cụ/Network_Policy/HOSTINGER_DNS_RDP_BINDINGS_CURRENT.json",
+      "active": true,
+      "force_active": true,
+      "rdp_connection_verified": false,
+      "next": "RESOLVE_COMPUTER_DNS_THEN_PROBE_TCP_3389; IF_FAIL_SELECT_VSCODE_TUNNEL_OR_GITHUB_SELFHOSTED; NEVER_ASSUME_GATEWAY_IS_PC",
+      "state": "TOOL_SOURCE_MATERIALIZED_RDP_REMOTE_CONNECTION_UNAVAILABLE_FROM_REDMI_20261017"
+    },
+    {
       "id": "system-router-policy",
       "aliases": [
         "system router",
@@ -357,6 +379,21 @@
       "kind": "WINDOWS_REGISTRY_UI_SOURCE_TO_SOL_FIVE_STONE_MAPPING",
       "next": "RESOLVE_HIVE_TO_SOL_BRANCH; NEVER_ASSUME_WINDOWS_REGISTRY_EDIT",
       "state": "MAPPING_SOURCE_CONFIRMED"
+    },
+    {
+      "id": "hostinger-dns-rdp-binding",
+      "aliases": [
+        "Hostinger DNS",
+        "gambbrazil.fun",
+        "cosmos.dns-parking.com",
+        "nova.dns-parking.com"
+      ],
+      "group": "tools",
+      "kind": "LIVE_HOSTINGER_DNS_READ_INVENTORY",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Network_Policy/HOSTINGER_DNS_RDP_BINDINGS_CURRENT.json",
+      "next": "READ_LIVE_HOSTINGER_ZONE_THEN_SEPARATE_DNS_NAMESERVERS_FROM_WINDOWS_RDP_HOST",
+      "state": "24_DNS_GROUPS_READ_ONLY_VERIFIED; NS_2_REGISTERED; RDP_NOT_CONNECTED",
+      "force_active": true
     }
   ],
   "observed_this_turn": {
