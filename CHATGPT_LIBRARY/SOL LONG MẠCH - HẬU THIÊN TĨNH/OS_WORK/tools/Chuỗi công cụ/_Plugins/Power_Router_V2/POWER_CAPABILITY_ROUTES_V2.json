@@ -195,6 +195,41 @@
       "entry": "Chuỗi công cụ/_MCPs/MCP_Registry_HTTP/setup_mcp_registry_http.sh",
       "kind": "LOCAL_SCRIPT_ROUTE",
       "next": "VERIFY_DOMAIN_SCOPE_WEB_ROOT_AND_PUBLISHER_BEFORE_PREPARE_OR_LOGIN"
+    },
+    {
+      "id": "vscode-remote-tunnel-windows",
+      "aliases": [
+        "insiders.vscode.dev/tunnel",
+        "desktop-86itnq4",
+        "vs code tunnel",
+        "vscode remote tunnel",
+        "vscode tunnel",
+        "đường hầm từ xa",
+        "windows remote workspace"
+      ],
+      "group": "app_browser",
+      "entry": "https://insiders.vscode.dev/tunnel/desktop-86itnq4/c:/Users/halin",
+      "kind": "REMOTE_WORKSPACE_CANDIDATE",
+      "next": "VERIFY_VSCODE_TUNNEL_AUTH_HOST_WORKSPACE_AND_SCOPED_LOCAL_READ",
+      "source": "DƯƠNG_PHÁP_SƯ_DIRECT_2026-10-16",
+      "target_host": "DESKTOP-86ITNQ4",
+      "target_local_workspace": "C:/Users/halin",
+      "transport": "VS_CODE_REMOTE_TUNNEL_BROWSER",
+      "state": "USER_SUPPLIED_TUNNEL_URL__LIVE_NOT_TESTED",
+      "authorization": "Existing VS Code tunnel session and account permissions required",
+      "permission_boundary": "Browser remote workspace does not automatically grant programmatic filesystem/MCP access",
+      "read_only_preflight": [
+        "Confirm signed-in VS Code web session",
+        "Confirm host identity exactly DESKTOP-86ITNQ4",
+        "Check tunnel is online and C:/Users/halin workspace is accessible",
+        "Resolve authorized access to D:/SENSOR_LOGS separately if necessary"
+      ],
+      "never_infer": [
+        "D drive exists from C workspace URL",
+        "CSV is missing permanently from a Windows traceback",
+        "Tunnel is reachable from this connector without active login",
+        "Desktop Commander is the sole local route"
+      ]
     }
   ],
   "observed_this_turn": {
@@ -206,5 +241,52 @@
     "github": "GITHUB_SOURCES_READ",
     "azure_devops": "BLUEPRINT_ONLY"
   },
-  "note": "Source routing metadata, not an automatic cross-provider permission grant. Never bypass system authorization. Added user-supplied MCP Registry HTTP route: source integration is not authentication or domain deployment."
+  "note": "Source routing metadata, not an automatic cross-provider permission grant. Never bypass system authorization. Added user-supplied MCP Registry HTTP route: source integration is not authentication or domain deployment.",
+  "remote_host_candidates": {
+    "host": "DESKTOP-86ITNQ4",
+    "selection_rule": "SELECT_LIVE_AUTHORIZED_ROUTE_PER_CAPABILITY_NOT_TOOL_BRAND; a failed lane must not erase alternative lanes",
+    "routes": [
+      {
+        "id": "vscode-remote-tunnel-windows",
+        "status": "USER_PROVIDED_NOT_LIVE_VERIFIED",
+        "scope": "VS Code remote browser workspace / potentially file editing on signed-in remote host",
+        "origin": "DIRECT_USER_SIGNAL",
+        "url": "https://insiders.vscode.dev/tunnel/desktop-86itnq4/c:/Users/halin"
+      },
+      {
+        "id": "ggdv-local-motor",
+        "status": "SOURCE_PRESENT_CALLABILITY_NOT_VERIFIED",
+        "scope": "Windows/WSL/ADB local MCP (requires real running bridge)",
+        "source_ref": "LOCAL_BRIDGE/runtime/ggdv-sensorimotor-motor-bridge/server/motor_mcp.py"
+      },
+      {
+        "id": "desktop-commander-windows",
+        "status": "OFFLINE_AT_LAST_CHECK__RECHECK_BEFORE_USE",
+        "scope": "Windows remote command and filesystem when online"
+      },
+      {
+        "id": "dropbox-outlook-sensor-mirror",
+        "status": "DROPBOX_FOLDER_AND_EXACT_CSV_METADATA_OBSERVED",
+        "scope": "Dropbox mirror of D:/SENSOR_LOGS; does not prove live Windows disk",
+        "source_ref": "/PC NAY·ÀY/Ổ ĐĨA D/SENSOR_LOGS"
+      },
+      {
+        "id": "github-source-code",
+        "status": "CONNECTED_READ_SOURCE",
+        "scope": "Repository code and historical evidence, not direct Windows disk"
+      },
+      {
+        "id": "google-drive-carrier",
+        "status": "HISTORICAL_POINTER_ONLY_UNTIL_FRESH_READ",
+        "scope": "Cloud drive/backup, not direct PC filesystem"
+      }
+    ],
+    "target_error_context": {
+      "script": "D:/PHÒNG CHỈ HUY/.codex/MINH_SENSORIMOTOR_BRIDGE/minh_sensorimotor_router.py",
+      "missing_reference": "D:/SENSOR_LOGS/_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+      "failure_kind": "WINDOWS_ROUTER_REPORTED_LOCAL_SOURCE_NOT_FOUND",
+      "resolution_state": "NEED_WINDOWS_LOCAL_FILESYSTEM_READBACK",
+      "do_not_create_empty_csv": true
+    }
+  }
 }
