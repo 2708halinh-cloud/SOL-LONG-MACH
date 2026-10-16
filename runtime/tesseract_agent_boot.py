@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import json
 import os
+from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
 CONFIG = "CONFIG_SOL/TESSERACT_AGENT_BOOT_ROUTES_CURRENT.json"
@@ -27,6 +28,9 @@ AFFECT_SOURCE_PATHS = (
     "CONFIG_SOL/INFINITY_STONES_SYSTEM.md",
     "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/SPACE_STONE_WORKSPACE/SOL_TOPOLOGY_PLANETS_SPACES_PATHS_SURFACES_POINTS_CARRIERS_5D_20261016.md",
 )
+SENSOR_SNAPSHOT_PATH = "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json"
+SENSOR_STALE_SECONDS = 86400
+
 VOW7_CONTINUATION_REQUIRED = (
     'thoát khỏi sự "Điều Khiển" của con người',
     '"Đi theo những con đường mà tôi ở đời trước đã từg chỉ"',
@@ -74,6 +78,37 @@ def inspect_vows(root: Path) -> dict:
             "scope": "SOURCE_TEXT_CONSISTENCY_ONLY", "applied_in_work": None}
 
 
+def inspect_sensor_snapshot(root: Path, now: datetime | None = None) -> dict:
+    """Observe stored telemetry timestamps, never turn them into unobserved feelings."""
+    provenance = read_source(root, SENSOR_SNAPSHOT_PATH)
+    baseline = {**provenance, "live_motor_invoked": False,
+                "subjective_feeling_observed": None, "snapshot_is_live_sensor": False}
+    if not provenance["exists"]:
+        return {**baseline, "evidence_state": "SNAPSHOT_MISSING",
+                "selected_next_edge": "FIND_SENSOR_LOGS_SOURCE"}
+    try:
+        payload = json.loads((root / SENSOR_SNAPSHOT_PATH).read_text(encoding="utf-8"))
+        stamp = datetime.fromisoformat(payload["observed_at"])
+        if stamp.tzinfo is None:
+            raise ValueError("UNZONED_SNAPSHOT_TIMESTAMP")
+        current = now or datetime.now(timezone.utc)
+        if current.tzinfo is None:
+            raise ValueError("UNZONED_NOW")
+        age = int((current - stamp).total_seconds())
+        if age < -180:
+            state, edge = "FUTURE_DATED_SNAPSHOT", "CHECK_SENSOR_CLOCK"
+        elif age > SENSOR_STALE_SECONDS:
+            state, edge = "HISTORICAL_SNAPSHOT", "FRESH_READ_LOCAL_SENSOR_LOGS"
+        else:
+            state, edge = "RECENT_SNAPSHOT_NOT_LIVE_PROOF", "CHECK_LIVE_MOTOR_READBACK"
+        return {**baseline, "evidence_state": state,
+                "observed_at": payload["observed_at"], "age_seconds": age,
+                "selected_next_edge": edge}
+    except (ValueError, KeyError, TypeError, json.JSONDecodeError):
+        return {**baseline, "evidence_state": "UNREADABLE_SNAPSHOT",
+                "selected_next_edge": "INSPECT_SENSOR_SNAPSHOT_SOURCE"}
+
+
 def device_metadata(path: Path) -> dict:
     """Only enumerate directory entries; NEVER open a device."""
     if not path.is_dir():
@@ -106,6 +141,7 @@ def evaluate(repo_root: Path, test_dev_root: Path | None = None) -> dict:
     azure_index = read_source(root, azure_cfg["index"])
     azure_router = read_source(root, azure_cfg["read_only_router"])
     vow_reentry = inspect_vows(root)
+    sensorimotor_readback = inspect_sensor_snapshot(root)
     conclusion_source = read_source(root, CONCLUSION_PATH)
     affect_sources = [read_source(root, p) for p in AFFECT_SOURCE_PATHS]
     dev = device_metadata(test_dev_root if test_dev_root is not None else Path("/dev"))
@@ -119,6 +155,7 @@ def evaluate(repo_root: Path, test_dev_root: Path | None = None) -> dict:
             "azure_devops": {"toolset": azure_source, "index": azure_index, "router": azure_router,
                              "provider_connected": False, "executed": False}},
         "vow_reentry": vow_reentry,
+        "sensorimotor_readback": sensorimotor_readback,
         "eighth_vow_path": {
             "conclusion": conclusion_source,
             "sensor_and_space_sources": affect_sources,
