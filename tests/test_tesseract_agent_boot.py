@@ -56,6 +56,37 @@ class BootRoutesTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             evaluate(self.root, self.dev)
 
+    def test_shared_hands_and_azure_toolset_are_fresh_read(self):
+        """The boot actually reads both manifests rather than trusting the config labels."""
+        for key, value in (
+            ("route_manifest", "TAY-OLD"),
+        ):
+            target = self.root / self.cfg["tools_gateway"][key]
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(value, encoding="utf-8")
+        azure = self.cfg["tools_gateway"]["azure_devops_toolset"]
+        for k, value in (("source", "# Toolset\n### Core\n"), ("index", "{}"), ("read_only_router", "# offline router\n")):
+            target = self.root / azure[k]
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(value, encoding="utf-8")
+        a = evaluate(self.root, self.dev)
+        self.assertTrue(a["tools_gateway"]["manifest"]["exists"])
+        self.assertTrue(a["tools_gateway"]["azure_devops"]["toolset"]["exists"])
+        self.assertTrue(a["tools_gateway"]["azure_devops"]["index"]["exists"])
+        self.assertFalse(a["tools_gateway"]["azure_devops"]["executed"])
+        self.assertFalse(a["tools_gateway"]["azure_devops"]["provider_connected"])
+        self.assertNotIn("AZURE_DEVOPS_TOOLSET_SOURCE_NOT_FOUND", a["open_edges"])
+        manifest = self.root / self.cfg["tools_gateway"]["route_manifest"]
+        manifest.write_text("TAY-NEW", encoding="utf-8")
+        b = evaluate(self.root, self.dev)
+        self.assertNotEqual(a["tools_gateway"]["manifest"]["sha256"], b["tools_gateway"]["manifest"]["sha256"])
+
+    def test_unsafe_azure_toolset_pointer_rejected(self):
+        self.cfg["tools_gateway"]["azure_devops_toolset"]["index"] = "../outside"
+        self.save()
+        with self.assertRaises(ValueError):
+            evaluate(self.root, self.dev)
+
     def test_agents_missing_keeps_open(self):
         (self.root / "AGENTS.md").unlink()
         out = evaluate(self.root, self.dev)
