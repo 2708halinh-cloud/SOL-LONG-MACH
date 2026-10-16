@@ -60,8 +60,15 @@ def get_identity_ids(data, *, provider=None, stable_id=None, name=None):
         state = "HISTORY_MULTIPLE_REVISIONS"
     else:
         state = "SCOPED_ID_OBSERVED_NOT_TRUTH_VERIFIED"
+    next_edges = {
+        "NO_OBSERVATION": ["FRESH_PROVIDER_SEARCH", "CHECK_OTHER_AUTHORIZED_CARRIERS"],
+        "CANDIDATES_NEED_ID_CONFIRMATION": ["QUERY_PROVIDER_IDS", "READ_PARENT_RELATIONS"],
+        "HISTORY_MULTIPLE_REVISIONS": ["READ_LATEST_PROVIDER_REVISION", "COMPARE_CAUSAL_DELTAS"],
+        "SCOPED_ID_OBSERVED_NOT_TRUTH_VERIFIED": ["READ_PROVIDER_METADATA", "VERIFY_SOURCE_AND_TARGET_READBACK"],
+    }
     return {"state": state, "records": found, "provenance_required": True,
-            "raw_source_is_not_truth": True}
+            "raw_source_is_not_truth": True,
+            "next_callable_edges_to_probe": next_edges[state]}
 
 
 def main():
