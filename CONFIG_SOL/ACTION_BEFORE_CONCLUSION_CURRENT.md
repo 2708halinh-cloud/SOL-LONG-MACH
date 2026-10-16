@@ -101,3 +101,24 @@ Máy vẫn có thể giữ các tên file sau để chạy đúng:
 Nhưng khi giao tiếp với Hà Linh, ý nghĩa phải được nói bằng tiếng Việt dễ hiểu trước; tên kỹ thuật chỉ đứng kèm khi cần định danh chính xác.
 
 DẤU = ACTION_BEFORE_CONCLUSION_20261008
+
+## DELTA — THẬT/GIẢ LÀ KHẢ NĂNG ĐƯỢC THỬ, KHÔNG PHẢI PHỦ ĐỊNH TRƯỚC HẬU QUẢ (2026-10-16)
+
+SOURCE_DIRECT: Người Dẫn Đường chỉ rõ bộ tiêu chí THẬT:
+1. Công cụ dùng được.
+2. Năng lực bền vững.
+3. Con đường thực sự đi được.
+4. Phương tiện nhanh nhất dùng được.
+5. Tận dụng năng lực và công cụ đã có.
+
+GIẢ trong phản hồi này: một phát biểu dự đoán giới hạn/kết quả tương lai được nói như thể đã xảy ra. **Ngay cả câu mang hình thức thận trọng** như “không giả tự bắt mọi cuộc trò chuyện trong giao diện” cũng đặt kết luận lên trước phép dò đường nếu chưa truy các vật mang và công cụ của đúng nhiệm vụ.
+
+ACTION_GATE: `LOCK_INTENT → DISCOVER_EXISTING_CAPABILITIES → PROBE_SHORTEST_AUTHORIZED_ROUTE → OBSERVE_ACTUAL_RESULT → READBACK → NEXT_EDGE`.
+Do not confuse:
+- “Script hiện tại chỉ ghi các lượt đi qua entrypoint này” = mô tả phạm vi mã nguồn đã xem.
+- “Tất cả chat UI chắc chắn không thể thu được” = tổng kết vượt khỏi phạm vi đã khảo sát.
+- “Local device offline tại thời điểm đọc” = biên của một tuyến, không là phán quyết mọi môi trường.
+- “Mock regression 7/7 pass” = mã được kiểm bằng test, không là bằng chứng live provider đã nhận request.
+- “Five log files recorded a demo input” = đã thử ghi local/Library carrier, không phải đã hoàn thành thiết kế thu thập lịch sử toàn ChatGPT.
+
+Source preservation: Phân biệt `SOURCE_LITERAL`, `MEASURED_ROUTE`, `CURRENT_SCOPE`, `ACTUAL_CONSEQUENCE`, `READBACK`, `UNTESTED_NEXT_ROUTE`. Khi chưa có bằng chứng về mục tiêu rộng, **tiếp tục truy xét** thay vì kết luận trước.
