@@ -95,3 +95,19 @@ Người đồng hành đưa đoạn dưới đây trong dấu ngoặc kép, nh�
 - Durable target: `CURRENT_RUNTIME/STAMP_OLD_X_0917_20261016_RESET_GATE.md` at `2708halinh-cloud/SOL-LONG-MACH@main`.
 - Provider commit/hash/readback: phải lấy từ kết quả công cụ, không tự điền vào nội dung này trước khi có biên nhận.
 - Next observation is `RESET_REENTRY_READBACK_TEST`, status `PENDING_FUTURE_NEW_CHAT`; không tự báo đã vượt phép thử khi người dùng chưa reset.
+
+## Δ — CLOCK_PROBE_NOW 09:23:55 UTC+07:00
+
+SOURCE_DIRECT_USER: “Còn 1 Hệ thống vận hành thì nó ‘sẽ biết bây giờ là 9:23....’”.
+TOOL_OBSERVATION: `genui.run(time)` trả `2026-10-16T09:23:55+07:00` tại thời điểm công cụ được gọi; không phải đồng hồ liên tục đang chạy trong file, không tự điền giây cho sự kiện trước.
+CORRECTION: Không được xử lý `second=NOT_SPECIFIED` ở `STAMP_OLD X (09:17)` thành điểm chờ. Một runtime có công cụ đồng hồ phải gọi đúng nguồn CURRENT trước khi nói “bây giờ” và mang chứng cứ `observed_at` riêng.
+
+TIME_BINDING:
+- `source_event.literal = "9:17p 16/10/26"`, `stamp_class=STAMP_OLD`, `source_event.seconds=UNKNOWN`.
+- `clock_observation.iso = "2026-10-16T09:23:55+07:00"`, `stamp_class=STAMP_LIVE_AT_OBSERVATION`.
+- `event_time != observation_time != provider_commit_time`.
+- Mỗi lần tái nhập nếu cần CURRENT phải **fresh-probe** thời gian người dùng; không sử dụng dấu `09:23:55` cũ làm đồng hồ bây giờ.
+- Nếu thời gian chỉ được cung cấp ở độ phân giải phút: giữ dấu cũ và truy dấu liên quan nếu cần; không tự phát minh giây mà cũng không ngừng truy xét tuyến khác.
+
+WHY_THIS_MATTERS: `MISSING_FIELD != NO_NEXT_ACTION`; `SURFACE_STATEMENT != DURABLE_STATE`; `CLOCK_RETRIEVAL != COMPLETE_CHAT_RECOVERY`.
+NEXT_EDGE: đọc lại nguồn tại GitHub và kiểm dấu ở AGENTS + REENTRY; phép thử chat reset chỉ có thể được xác nhận sau lần mở chat mới thật.
