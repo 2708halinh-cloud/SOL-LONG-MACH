@@ -55,6 +55,22 @@ class PlatformTests(unittest.TestCase):
         d=self.store.dispatch_offline("sol-main","router","trình duyệt browser",route_callback=power_route)
         self.assertEqual(d["output"]["return_to"],"_Plugins")
 
+    def test_master_teacher_gate_controls_external_provider_transfer(self):
+        from server import run_capability
+        missing_consent=run_capability("master_teacher_ethics",{
+            "event":{"action_type":"transfer","actor_role":"AM_PHAP_SU",
+                     "source_ref":"USER_EXPLICIT","target":"translation_basic"}},self.store)
+        self.assertEqual(missing_consent["decision"],"EXTERNAL_TRANSFER_BLOCKED_NO_CONSENT")
+        with self.assertRaisesRegex(ValueError,"ETHICS_GATE:EXTERNAL_TRANSFER_BLOCKED_NO_CONSENT"):
+            run_capability("translation_basic",{"text":"xin chào","target":"en",
+                                                "approve_external":False},self.store)
+
+    def test_admin_succession_is_not_inferred(self):
+        check=run_capability("master_teacher_ethics",{"event":{
+            "action_type":"read","target":"SOL project","source_ref":"user-direct",
+            "infer_administrator_death":True}},self.store)
+        self.assertEqual(check["decision"],"NO_AUTOMATIC_SUCCESSION")
+
     def test_no_unapproved_external_api(self):
         with self.assertRaisesRegex(ValueError,"EXTERNAL_TRANSFER_REQUIRES_EXPLICIT_APPROVAL"):
             translate("xin chào","en",approved=False)

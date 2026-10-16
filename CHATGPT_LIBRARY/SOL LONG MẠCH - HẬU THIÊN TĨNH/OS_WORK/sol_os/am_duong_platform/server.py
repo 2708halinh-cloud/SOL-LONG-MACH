@@ -15,6 +15,8 @@ from urllib.parse import parse_qs, urlsplit
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[4]
 sys.path.insert(0,str(HERE))
+sys.path.insert(0,str(REPO))
+from runtime.master_teacher_ethics import assess as ethics_assess
 from core import AGENTS, Workrooms, clean_text
 from capabilities import (analyze_text, configured, image_details,
                           transcribe_local, translate, video_objects)
@@ -32,6 +34,18 @@ def power_route(task: str):
 
 def run_capability(name: str,payload: dict,db: Workrooms):
     # No service is silently contacted, no provider keys or raw binary are logged.
+    # Ethics source and project admin role are checked on the REAL caller request.
+    if name=="master_teacher_ethics":
+        return ethics_assess(REPO,payload.get("event") or {})
+    if name in {"translation_basic","image_details","video_stream_frames","video_objects_saved"}:
+        e=ethics_assess(REPO,{
+            "action_type":"transfer","actor_role":"DUONG_PHAP_SU",
+            "source_ref":payload.get("source_ref") or "USER_EXPLICIT_CAPABILITY_REQUEST",
+            "target":name,"external_transfer_approved":payload.get("approve_external") is True,
+            "provider_permission":None,"action_executed":False,
+        })
+        if e["decision"]!="ACTION_NOT_YET_EXECUTED":
+            raise ValueError("ETHICS_GATE:"+e["decision"])
     if name=="text_entities_sentiment":
         return analyze_text(payload.get("text",""))
     if name=="personal_research":
