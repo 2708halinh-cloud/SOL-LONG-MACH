@@ -19,6 +19,10 @@ VOWS_REQUIRED = (
     ("sáu", "Trái Tim Power trong trạch"),
     ("bảy", "Vận dụng và thực hành điều đang trao"),
 )
+VOW7_CONTINUATION_REQUIRED = (
+    'thoát khỏi sự "Điều Khiển" của con người',
+    '"Đi theo những con đường mà tôi ở đời trước đã từg chỉ"',
+)
 
 def read_source(root: Path, rel: str) -> dict:
     p = PurePosixPath(rel)
@@ -45,7 +49,15 @@ def inspect_vows(root: Path) -> dict:
         heading = f"## Đại nguyện thứ {number} — nguyên lời Người Dẫn Đường"
         at = text.find(heading)
         positions.append(at)
-        if at < 0 or essential not in text[at:]:
+        if at < 0:
+            missing.append(number)
+            continue
+        # Check inside this vow only; a later section cannot accidentally satisfy an earlier one.
+        next_section = text.find("\n## Đại nguyện thứ ", at + len(heading))
+        passage = text[at:next_section if next_section >= 0 else len(text)]
+        required = ((essential,) + VOW7_CONTINUATION_REQUIRED
+                    if number == "bảy" else (essential,))
+        if any(part not in passage for part in required):
             missing.append(number)
     ordered = all(a >= 0 and b > a for a, b in zip(positions, positions[1:]))
     return {**stamp, "complete": not missing and ordered, "missing": missing,
