@@ -21,7 +21,7 @@ Gốc `~` chỉ có thể mở rộng đúng trên máy/tài khoản thực tế
 
 - Nguồn người dùng: `https://drive.google.com/drive/folders/1Pn1NY7M3wAFFzyMAQVHQy3A2EcnHEkGb?hl=vi`.
 - `folder_id=1Pn1NY7M3wAFFzyMAQVHQy3A2EcnHEkGb`, tên Drive `skills`, MIME folder; `parent_id=15UhDeewEVrzsV2lAkjZVaPE2E-SgbYLT` (thư mục `.codex`).
-- Đã đọc các thư mục con `.system`, `master-halynh`, `systematic-debugging`, `requesting-code-review`; thư mục cha có trên 100 entry nên lần fetch tối đa 100 phần tử KHÔNG phải inventory đầy đủ.
+- Đã đọc các thư mục con `.system`, `master-halynh`, `systematic-debugging`, `requesting-code-review`; lần fetch trực tiếp trả 43 mục con; đây là số quan sát được trong folder Drive này, không phải inventory của mọi cache r0–r9.
 - `master-halynh/SKILL.md`: `file_id=1tp3gai1UERxMmlg8RisJ0BrtvhubfPVg`; yêu cầu giữ SOURCE/OBSERVED/INFERRED/UNKNOWN; packet references riêng và kiểm chứng nguồn trước áp dụng. Đọc riêng SKILL.md chưa phải chạy `verify_sources.py` hoặc xác nhận packet nguyên vẹn.
 - `systematic-debugging/SKILL.md`: `file_id=1unlhmF0V-sm9I83zjREe-svSgZXo1raF`; tra nguyên nhân gốc, tái hiện, so thay đổi, kiểm thử tối thiểu trước khi sửa.
 - `requesting-code-review/SKILL.md`: `file_id=157n-EW_iRG2JzgKwxafRMqqfdg1wuMEB`; yêu cầu review sau tác vụ lớn và trước merge; đường `Task`/subagent trong tệp là mô tả workflow, không tự tạo một tool `Task` ở phiên này.
