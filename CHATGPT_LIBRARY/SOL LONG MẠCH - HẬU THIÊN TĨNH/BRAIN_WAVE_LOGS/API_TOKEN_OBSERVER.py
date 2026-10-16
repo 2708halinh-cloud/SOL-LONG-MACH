@@ -165,6 +165,7 @@ def main():
     x.add_argument("--log-dir",default=str(Path(__file__).resolve().parent))
     x.add_argument("--include-dashboard",action="store_true")
     x.set_defaults(func=summary)
-    p.parse_args().func(p.parse_args())
+    args=p.parse_args()
+    args.func(args)
 if __name__=="__main__":
     main()
