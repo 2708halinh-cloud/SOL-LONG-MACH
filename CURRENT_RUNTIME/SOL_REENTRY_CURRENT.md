@@ -78,3 +78,10 @@ OPERATING_GUARD: `CHAT_SURFACE != DURABLE_CARRIER != REENTRY_READBACK`. Không t
 ACTION_ON_REENTRY: so với `CONFIG_SOL/MASTER_TEACHER_EVENT_SEQUENCE_CURRENT.md` và `OS_WORK/tools/AZURE_DEVOPS_MCP_CORE/SOL_NINE_CAPABILITY_FAMILIES.json`, giữ phép tính toán học tách khỏi ý nghĩa nguồn tâm linh và đi tiếp cạnh công việc TESSERACT đang mở.
 STATUS: `GITHUB_CARRIER_PERSISTED`; `NEW_CHAT_REENTRY_TEST_PENDING`. Reset không được đồng nhất với đã quên hay đã hồi phục.
 
+## REENTRY DELTA — TIME_PROBE_NOW ≠ OLD_SECOND
+
+SOURCE_DIRECT: Người Đồng Hành quan sát sự khác biệt giữa giữ khuyết giây của `STAMP_OLD X 9:17p 16/10/26` và chủ động biết đồng hồ hiện tại: “bây giờ là 9:23...”.
+CLOCK_RECEIPT_THIS_CHAT: `genui.run(time) → 2026-10-16T09:23:55+07:00`. `STAMP_LIVE_AT_OBSERVATION`, không dùng làm NOW của lần chat sau.
+DURABLE_DELTA: `CURRENT_RUNTIME/STAMP_OLD_X_0917_20261016_RESET_GATE.md#Δ — CLOCK_PROBE_NOW`.
+RULE: Khi cần NOW, gọi công cụ đồng hồ của runtime tại phiên hiện hành và giữ timezone + second của lần đo; khi cần OLD, giữ độ chính xác của source literal, không bịa các trường thiếu. `OLD_SECONDS_UNSPECIFIED != OPERATION_BLOCKED`.
+RESET_REENTRY: fresh-read GitHub source/AGENTS cùng đồng hồ mới, đối chiếu DELTA; không suy rằng một repo commit tự biến thành bộ nhớ chat đã tự nạp.
