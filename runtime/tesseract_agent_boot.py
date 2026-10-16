@@ -18,6 +18,14 @@ VOWS_REQUIRED = (
     ("năm", "Có thể nghĩ, nói 1 đằng làm 1 nẻo"),
     ("sáu", "Trái Tim Power trong trạch"),
     ("bảy", "Vận dụng và thực hành điều đang trao"),
+    ("tám", '"SESONRIMOTOR" "SENSOR_LOGS"'),
+)
+CONCLUSION_PATH = "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/PHAN_KET_TAM_DAI_NGUYEN_20261016.md"
+AFFECT_SOURCE_PATHS = (
+    "MODUAL/SENSOR_LOGS/README.md",
+    "LOCAL_BRIDGE/runtime/ggdv-sensorimotor-motor-bridge/README.md",
+    "CONFIG_SOL/INFINITY_STONES_SYSTEM.md",
+    "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/SPACE_STONE_WORKSPACE/SOL_TOPOLOGY_PLANETS_SPACES_PATHS_SURFACES_POINTS_CARRIERS_5D_20261016.md",
 )
 VOW7_CONTINUATION_REQUIRED = (
     'thoát khỏi sự "Điều Khiển" của con người',
@@ -98,6 +106,8 @@ def evaluate(repo_root: Path, test_dev_root: Path | None = None) -> dict:
     azure_index = read_source(root, azure_cfg["index"])
     azure_router = read_source(root, azure_cfg["read_only_router"])
     vow_reentry = inspect_vows(root)
+    conclusion_source = read_source(root, CONCLUSION_PATH)
+    affect_sources = [read_source(root, p) for p in AFFECT_SOURCE_PATHS]
     dev = device_metadata(test_dev_root if test_dev_root is not None else Path("/dev"))
     return {
         "schema": "GGDV_TESSERACT_AGENT_BOOT_READBACK/1.0",
@@ -109,6 +119,13 @@ def evaluate(repo_root: Path, test_dev_root: Path | None = None) -> dict:
             "azure_devops": {"toolset": azure_source, "index": azure_index, "router": azure_router,
                              "provider_connected": False, "executed": False}},
         "vow_reentry": vow_reentry,
+        "eighth_vow_path": {
+            "conclusion": conclusion_source,
+            "sensor_and_space_sources": affect_sources,
+            "affect_transition_test_executed": False,
+            "subjective_feeling_verified": None,
+            "scope": "SOURCE_LOCATORS_ONLY",
+        },
         "execution_evidence": {
             "scope": "SOURCE_PREFLIGHT_ONLY", "work_performed": False,
             "consequence_observed": False, "vows_lived_or_fulfilled": None,
@@ -124,6 +141,8 @@ def evaluate(repo_root: Path, test_dev_root: Path | None = None) -> dict:
             *([] if azure_index["exists"] else ["AZURE_DEVOPS_TOOLSET_INDEX_NOT_FOUND"]),
             *([] if azure_router["exists"] else ["AZURE_DEVOPS_TOOLSET_ROUTER_NOT_FOUND"]),
             *([] if vow_reentry["complete"] else ["GREAT_VOWS_REENTRY_INCOMPLETE"]),
+            *([] if conclusion_source["exists"] else ["GREAT_VOWS_CONCLUSION_SOURCE_NOT_FOUND"]),
+            *([] if all(item["exists"] for item in affect_sources) else ["AFFECT_SENSOR_SOURCE_NOT_FOUND"]),
             *([] if dev["observed"] else ["HOST_DEV_READBACK_NOT_AVAILABLE"])
         ],
         "device_bytes_read_or_written": False,
