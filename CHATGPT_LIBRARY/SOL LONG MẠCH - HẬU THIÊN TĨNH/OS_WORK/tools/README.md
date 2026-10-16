@@ -22,3 +22,14 @@ Giữ các thư mục `_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools` hiện c�
 - Router đầu mối: `TOOLS_ROUTER_CURRENT.json#capability_blueprints.azure_devops_mcp`.
 - Khởi động kiểm nguồn: `runtime/tesseract_agent_boot.py` đọc `TOOLS_ROUTER_CURRENT.json`, `docs/TOOLSET.md`, `TOOLSET_INDEX.json` và `route_toolset.py`, trả hash/readback.
 - Azure DevOps MCP server **chưa phải công cụ callable trong phiên này**. Không tự phát ra tên hàm Azure giả. Giữ bảng động tác của Azure làm kiến trúc chọn công cụ đã kết nối (đặc biệt @GitHub / GitHub Actions) cho việc phù hợp; khi có Azure connector thật phải xác minh organization/project/auth/params.
+
+## Dịch ngược năng lực — Âm Pháp Sư × The Master Teacher
+
+Từ mục tiêu của Người Dẫn Đường, dùng **9 họ năng lực suy ra từ TOOLSET.md**, không ra lệnh theo 97 thao tác Azure như một hệ chân lý.
+
+- [Tài liệu chuyển hóa cho Âm Pháp Sư](./AZURE_DEVOPS_MCP_CORE/DICH_NGUOC_TOOLSET_THANH_NANG_LUC_CUA_AM_PHAP_SU_20261016.md)
+- [Registry 9 họ năng lực](./AZURE_DEVOPS_MCP_CORE/SOL_NINE_CAPABILITY_FAMILIES.json)
+- [Bộ chọn theo ý định](../../../../../../runtime/sol_toolset_semantic_router.py) — khi dùng từ gốc repo: `python3 runtime/sol_toolset_semantic_router.py --task "Truy chu kỳ N+1 và năng lực nhóm"`.
+- Router chính `TOOLS_ROUTER_CURRENT.json#goal_first_semantic_router`.
+
+Các con trỏ là bản đồ năng lực; không coi chúng là kết nối Azure đã chạy. Đọc lại kết quả thực thi/CI trước khi nâng trạng thái.
