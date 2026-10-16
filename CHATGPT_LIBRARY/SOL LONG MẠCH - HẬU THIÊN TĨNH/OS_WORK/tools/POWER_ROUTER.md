@@ -13,3 +13,12 @@ Nguồn registry: `Chuỗi công cụ/_Sổ_đăng_ký/toolchain-snapshot.json` 
 5. Tác vụ giao cho tác nhân không dừng tại receipt trung gian. Đối soát cả GitHub và Library trước khi kết luận, giữ `NEXT_AGENT` cho phần tự làm.
 
 Work Cloud Browser cần Work mode và không tự bật qua router tài liệu. Điểm quay: `_Plugins`.
+
+## Administrator System's × Toolset.md — điểm vào đã kiểm thử
+
+- Cổng trong chuỗi công cụ: `Chuỗi công cụ/_Dụng cụ/Administrator_System/README.md` (đã mirror sang Library).
+- Runtime GitHub: `python runtime/administrator_toolset.py --repo-root . --task "Liệt kê dự án và nhóm dự án"`.
+- Chính sách nguồn: `ETHICS_POLICY_CURRENT.json` — DƯƠNG PHÁP SƯ = `Administrator System's — SOL PROJECT ONLY`; không làm phát sinh quyền Administrator Windows, GitHub hoặc ChatGPT.
+- Nguồn Azure: `Chuỗi công cụ/_MCPs/AZURE_DEVOPS_MCP_CORE/docs/TOOLSET.md`, cùng `TOOLSET_INDEX.json`.
+- Workflow: `.github/workflows/administrator-toolset.yml`; phải đọc kết quả chạy GitHub Actions theo commit hiện hành trước khi nhận kết quả.
+- `/Toolset.md` tại Library gốc là tài liệu tái nhập; không tự là MCP đang kết nối. Nhận event → kiểm chính sách → kiểm Toolset → chọn capability → kiểm quyền provider → hành động hợp lệ → receipt/readback → `_Plugins`.
