@@ -112,7 +112,7 @@ class BootRoutesTest(unittest.TestCase):
         self._write_vows()
         out = evaluate(self.root, self.dev)
         self.assertTrue(out["vow_reentry"]["complete"])
-        self.assertEqual(out["vow_reentry"]["count"], 6)
+        self.assertEqual(out["vow_reentry"]["count"], 7)
         self.assertEqual(out["status"], "SOURCE_ROUTE_READY")
         self.assertNotIn("GREAT_VOWS_REENTRY_INCOMPLETE", out["open_edges"])
 
