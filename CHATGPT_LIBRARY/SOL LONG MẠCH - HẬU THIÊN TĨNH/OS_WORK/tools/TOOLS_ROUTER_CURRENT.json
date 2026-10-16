@@ -1,0 +1,388 @@
+{
+  "schema": "SOL_TOOLS_ROUTER/1.0",
+  "date": "2026-10-16",
+  "git_repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "entrypoint": "OS_WORK/tools",
+  "tag_aliases": [
+    "@Tools",
+    "@TOOLS",
+    "@TÁC NHÂN — TAY",
+    "@TÁC NHÂN",
+    "@TÁC NHÂN PLUS"
+  ],
+  "tag_semantics": "ALIAS_IN_PROJECT_FILES_NOT_REGISTERED_CHATGPT_PLUGIN",
+  "agent": {
+    "primary": {
+      "name": "@TÁC NHÂN",
+      "plugin_ref": "plugins_6ac87d73febc819180106cb10aa60431",
+      "skill_uri": "skills://plugins/tac-nhan/tac-nhan",
+      "role": "intent + source + action"
+    },
+    "plus": {
+      "name": "@TÁC NHÂN PLUS",
+      "plugin_ref": "plugins_6ac8801107c08191a829cf479e813980",
+      "skill_uri": "skills://plugins/tac-nhan-plus/tac-nhan-plus",
+      "role": "heavy + multi-source + checkpoint + reentry"
+    },
+    "hands": {
+      "name": "@TÁC NHÂN — TAY",
+      "plugin_ref": "plugins_6ac89337264c8191aab0fa3791803937",
+      "skill_uri": "skills://plugins/tac-nhan-hands/agents-skill-hands",
+      "role": "route 21 established AGENTS_SKILL hands"
+    }
+  },
+  "hand_routes": [
+    {
+      "route_id": "archive-zip-hash-audit",
+      "skill_uri": "skills://plugins/tac-nhan-hands/archive-zip-hash-audit",
+      "description": "Dùng khi tác vụ liên quan đến kiểm toàn vẹn zip, backup và manifest; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "zip",
+        "7z",
+        "archive",
+        "backup",
+        "manifest",
+        "sha256",
+        "kiểm toàn vẹn",
+        "phục hồi gói"
+      ]
+    },
+    {
+      "route_id": "automation-reminder-setup",
+      "skill_uri": "skills://plugins/tac-nhan-hands/automation-reminder-setup",
+      "description": "Dùng khi tác vụ liên quan đến thiết lập nhắc việc, lịch lặp và theo dõi điều kiện; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "reminder",
+        "nhắc việc",
+        "lịch lặp",
+        "tự động hóa",
+        "automation"
+      ]
+    },
+    {
+      "route_id": "browser-research-verification",
+      "skill_uri": "skills://plugins/tac-nhan-hands/browser-research-verification",
+      "description": "Dùng khi tác vụ liên quan đến nghiên cứu web và xác minh nguồn mới; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "web",
+        "browser",
+        "trình duyệt",
+        "nghiên cứu",
+        "scrape",
+        "xác minh nguồn"
+      ]
+    },
+    {
+      "route_id": "code-edit-verify",
+      "skill_uri": "skills://plugins/tac-nhan-hands/code-edit-verify",
+      "description": "Dùng khi tác vụ liên quan đến chỉnh mã đúng phạm vi và kiểm chứng; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "code",
+        "mã nguồn",
+        "chỉnh mã",
+        "debug",
+        "unit test",
+        "lint",
+        "build"
+      ]
+    },
+    {
+      "route_id": "computer-control-handoff",
+      "skill_uri": "skills://plugins/tac-nhan-hands/computer-control-handoff",
+      "description": "Dùng khi tác vụ liên quan đến bàn giao tác vụ điều khiển máy thật; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "điều khiển máy",
+        "desktop",
+        "computer",
+        "gui",
+        "bàn giao máy"
+      ]
+    },
+    {
+      "route_id": "data-analytics-reporting",
+      "skill_uri": "skills://plugins/tac-nhan-hands/data-analytics-reporting",
+      "description": "Dùng khi tác vụ liên quan đến phân tích dữ liệu, báo cáo và chất lượng; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "phân tích dữ liệu",
+        "data",
+        "báo cáo",
+        "analytics",
+        "dataset",
+        "thống kê"
+      ]
+    },
+    {
+      "route_id": "git-worktree-review",
+      "skill_uri": "skills://plugins/tac-nhan-hands/git-worktree-review",
+      "description": "Dùng khi tác vụ liên quan đến rà soát git, branch, worktree và diff; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "git",
+        "branch",
+        "worktree",
+        "diff",
+        "merge",
+        "review",
+        "lịch sử commit"
+      ]
+    },
+    {
+      "route_id": "github-linear-execution",
+      "skill_uri": "skills://plugins/tac-nhan-hands/github-linear-execution",
+      "description": "Dùng khi tác vụ liên quan đến thực thi công việc github/linear theo object; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "github",
+        "pull request",
+        "pr #",
+        "issue",
+        "repository",
+        "repo",
+        "workflow",
+        "commit"
+      ]
+    },
+    {
+      "route_id": "image-visual-production",
+      "skill_uri": "skills://plugins/tac-nhan-hands/image-visual-production",
+      "description": "Dùng khi tác vụ liên quan đến sáng tạo/chỉnh sửa ảnh có hình đích; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "ảnh",
+        "image",
+        "thiết kế hình",
+        "render",
+        "logo",
+        "đồ họa"
+      ]
+    },
+    {
+      "route_id": "local-files-source-fidelity",
+      "skill_uri": "skills://plugins/tac-nhan-hands/local-files-source-fidelity",
+      "description": "Dùng khi tác vụ liên quan đến bảo toàn bản gốc và quan hệ tệp; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "local",
+        "tệp gốc",
+        "file local",
+        "thư mục",
+        "filesystem",
+        "truy nguồn",
+        "ổ đĩa"
+      ]
+    },
+    {
+      "route_id": "local-llm-ollama-route",
+      "skill_uri": "skills://plugins/tac-nhan-hands/local-llm-ollama-route",
+      "description": "Dùng khi tác vụ liên quan đến kiểm tra và gọi llm local/ollama; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "ollama",
+        "local llm",
+        "model local",
+        "mô hình cục bộ"
+      ]
+    },
+    {
+      "route_id": "onedrive-living-skill",
+      "skill_uri": "skills://plugins/tac-nhan-hands/onedrive-living-skill",
+      "description": "Dùng khi tác vụ liên quan đến định tuyến onedrive và dữ liệu đồng bộ; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "onedrive",
+        "microsoft drive",
+        "sync microsoft"
+      ]
+    },
+    {
+      "route_id": "output-deliverable-packaging",
+      "skill_uri": "skills://plugins/tac-nhan-hands/output-deliverable-packaging",
+      "description": "Dùng khi tác vụ liên quan đến đóng gói artifact và bàn giao có manifest; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "đóng gói",
+        "artifact",
+        "deliverable",
+        "bàn giao",
+        "bundle"
+      ]
+    },
+    {
+      "route_id": "pdf-document-extraction",
+      "skill_uri": "skills://plugins/tac-nhan-hands/pdf-document-extraction",
+      "description": "Dùng khi tác vụ liên quan đến đọc pdf có hình, bảng và con trỏ trang; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "pdf",
+        "trích văn bản pdf",
+        "tài liệu pdf"
+      ]
+    },
+    {
+      "route_id": "r-item-continuity",
+      "skill_uri": "skills://plugins/tac-nhan-hands/r-item-continuity",
+      "description": "Dùng khi tác vụ liên quan đến nối mạch x/r/t và 152 item; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "r-000",
+        "r014",
+        "x/stamps",
+        "152 item",
+        "continuity",
+        "hồi quy",
+        "stamp_old",
+        "nhật ký"
+      ]
+    },
+    {
+      "route_id": "secret-privacy-boundary",
+      "skill_uri": "skills://plugins/tac-nhan-hands/secret-privacy-boundary",
+      "description": "Dùng khi tác vụ liên quan đến giữ bí mật trong phạm vi thực thi; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "secret",
+        "token",
+        "api key",
+        "oauth",
+        "credential",
+        "privacy",
+        "bí mật",
+        "mật khẩu",
+        "quyền truy cập"
+      ]
+    },
+    {
+      "route_id": "sites-app-deployment",
+      "skill_uri": "skills://plugins/tac-nhan-hands/sites-app-deployment",
+      "description": "Dùng khi tác vụ liên quan đến triển khai web và kiểm chứng url; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "deploy",
+        "triển khai web",
+        "website",
+        "hosting",
+        "server",
+        "ứng dụng web"
+      ]
+    },
+    {
+      "route_id": "spreadsheet-data-ops",
+      "skill_uri": "skills://plugins/tac-nhan-hands/spreadsheet-data-ops",
+      "description": "Dùng khi tác vụ liên quan đến làm việc bảng tính theo range và công thức; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "excel",
+        "sheet",
+        "xlsx",
+        "bảng tính",
+        "công thức",
+        "range"
+      ]
+    },
+    {
+      "route_id": "task-thread-coordination",
+      "skill_uri": "skills://plugins/tac-nhan-hands/task-thread-coordination",
+      "description": "Dùng khi tác vụ liên quan đến điều phối tác vụ và checkpoint dài hạn; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "checkpoint",
+        "nhiệm vụ dài",
+        "tiếp diễn",
+        "reentry",
+        "nhánh công việc",
+        "task thread"
+      ]
+    },
+    {
+      "route_id": "terminal-powershell-ops",
+      "skill_uri": "skills://plugins/tac-nhan-hands/terminal-powershell-ops",
+      "description": "Dùng khi tác vụ liên quan đến thao tác shell/powershell trên máy có phép; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "terminal",
+        "powershell",
+        "shell",
+        "bash",
+        "cmd",
+        "script"
+      ]
+    },
+    {
+      "route_id": "use-computer",
+      "skill_uri": "skills://plugins/tac-nhan-hands/use-computer",
+      "description": "Dùng khi tác vụ liên quan đến sử dụng gui máy thật có kiểm chứng; route_id của AGENTS_SKILL, liên kết công cụ thực hiện có kiểm chứng.",
+      "keywords": [
+        "use computer",
+        "máy tính",
+        "click",
+        "giao diện",
+        "chuột",
+        "bàn phím"
+      ]
+    }
+  ],
+  "adjacent_skills": [
+    {
+      "uri": "skills://plugins/tac-nhan-hands/dropbox-home-direct",
+      "role": "extra_skill_not_22nd_hand"
+    }
+  ],
+  "providers": [
+    {
+      "intent": "git/github/repository",
+      "prefer": [
+        "GitHub",
+        "Github_MCP",
+        "Github_Full_Access_Tokens"
+      ],
+      "runtime_status": "PREFER_NATIVE_DIRECT_TEXT_RECEIPT"
+    },
+    {
+      "intent": "Drive/Docs",
+      "prefer": [
+        "Google_Drive"
+      ],
+      "runtime_status": "CHECK_EXACT_ACCOUNT_AND_PROVIDER_ID"
+    },
+    {
+      "intent": "Dropbox",
+      "prefer": [
+        "Dropbox"
+      ],
+      "runtime_status": "CHECK_EXACT_ACCOUNT"
+    },
+    {
+      "intent": "local/device",
+      "prefer": [
+        "desktopcommande"
+      ],
+      "runtime_status": "CHECK_DEVICE_ONLINE"
+    },
+    {
+      "intent": "mail",
+      "prefer": [
+        "Gmail"
+      ],
+      "runtime_status": "CHECK_ACCOUNT_AND_SCOPE"
+    },
+    {
+      "intent": "calendar",
+      "prefer": [
+        "Google_Calendar"
+      ],
+      "runtime_status": "CHECK_ACCOUNT_AND_SCOPE"
+    }
+  ],
+  "opening_steps": [
+    "READ_CURRENT_SIGNAL",
+    "FRESH_READ_REENTRY_AND_UNFINISHED_EDGES",
+    "FRESH_LIST_TOOLS_AND_SKILLS",
+    "MATCH_SMALLEST_HAND_OR_PROVIDER",
+    "SELECT_TÁC_NHÂN_OR_PLUS",
+    "ACT_IF_AUTHORIZED_CALLABLE",
+    "RECEIPT_AND_EXACT_TARGET_READBACK",
+    "RESCAN_OPEN_EDGES"
+  ],
+  "permission_policy": {
+    "per_app_full_access_observed_for": [
+      "GitHub",
+      "Github_MCP",
+      "Github_Full_Access_Tokens",
+      "Google_Drive",
+      "Dropbox",
+      "desktopcommande"
+    ],
+    "global_default_full_access_attempt": "UNAVAILABLE_IN_PLATFORM_SETTINGS_2026-10-16",
+    "avoid": "UNNECESSARY_ATTACHMENT_MATERIALIZATION",
+    "platform_ui_confirmation": "MAY_STILL_BE_REQUIRED_FOR_SOME_ACTIONS; DO_NOT_BYPASS",
+    "tool_permission_note": "Existing 3 TÁC NHÂN plugin IDs were not reported installed by current Plugin Management; skill routes are readable but not actual registered @-mentions."
+  },
+  "cleanup_policy": "NO_DELETE; DEDUPE_BY_POINTER; KEEP_EXISTING_SUBTREE_AND_GIT_HISTORY"
+}
