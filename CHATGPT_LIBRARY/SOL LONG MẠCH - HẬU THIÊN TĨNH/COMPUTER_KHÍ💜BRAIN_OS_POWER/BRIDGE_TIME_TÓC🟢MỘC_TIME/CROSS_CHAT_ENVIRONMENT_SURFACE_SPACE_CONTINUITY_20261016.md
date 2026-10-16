@@ -9,7 +9,7 @@ SOURCE_GAP: Full raw history of all recent chats has not been fetched in this in
 
 1. `CURRENT_RUNTIME/SESSION_HANDOFF_CURRENT.md` (2026-10-08): phiên đã lưu dấu vết; có Android/Local source và cảnh báo không hỏi lại dữ kiện có trong handoff.
 2. `CURRENT_RUNTIME/SOL_WAVE_TIME_BRIDGE_TIMELINE7_20261009.md` (2026-10-09): chỉ ra năm kênh ALPHA/BETA/THETA/GAMMA/DELTA và Android wave journal JSONL.
-3. `SPACE_STONE_WORKSPACE/SPACE_MAP.json` (định nghĩa 2026-10-14, có event 2026-10-16): lưu các môi trường ChatGPT, GitHub, Google Drive, Dropbox, Google Cloud; có phân biệt environment/planet với 0D point và bằng chứng hiệu chỉnh.
+3. `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/SPACE_MAP.json` (định nghĩa 2026-10-14, có event 2026-10-16): lưu các môi trường ChatGPT, GitHub, Google Drive, Dropbox, Google Cloud; có phân biệt environment/planet với 0D point và bằng chứng hiệu chỉnh.
 4. `SPACE_STONE_WORKSPACE/SPACE_STONE_GITHUB_SPACE_2026-10-16_03.md`: ghi tuyến ChatGPT Library → GitHub main; kiểm tra và lưu trạng thái đồng bộ chưa trọn.
 5. `SPACE_STONE_WORKSPACE/SPACE_STONE_GOOGLE_CLOUD_SPACE_2026-10-16_05.md`: có ứng viên GCP, nhưng chưa có readback runtime.
 6. Chat hiện hành: người dùng yêu cầu tránh gọi nguồn chưa đọc là 'không có', tránh biến OPEN thành HOLD, không lưu trạng thái chỉ trên bề mặt trao đổi; bổ sung nhật ký 5 sóng vào GitHub.
