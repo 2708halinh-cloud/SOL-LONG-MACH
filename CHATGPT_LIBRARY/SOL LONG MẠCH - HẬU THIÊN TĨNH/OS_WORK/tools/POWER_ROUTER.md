@@ -31,3 +31,18 @@ Nguồn: `ipconfig` do người dùng trao, là **ảnh chụp cấu hình**, kh
 ## TOOL FALLBACK — KHÔNG LẤY TOOL ERROR THAY CHO HẬU QUẢ
 
 Nếu một lệnh ghi GitHub bị công cụ trả về lỗi `SAFETY_BLOCKED`, chỉ kết luận **lệnh đó** bị chặn; không suy tệp đích chưa được cập nhật. Trước hết `GitHub.fetch_file` đúng repo/path/branch để kiểm nội dung và blob SHA. Kiểm tra khả năng/cơ chế phê duyệt và dùng đường ghi **khác hợp lệ** nếu được phép, không thử lặp nguyên yêu cầu bị chặn hay vượt qua kiểm soát an toàn. Sau ghi, fresh-read GitHub và Library; đối chiếu các bản, không kết thúc ở receipt. Không có đường khả dụng không đồng nghĩa cần người dùng thao tác ngay.
+## OUTBOUND NETWORK POLICY — DENY BY DEFAULT (SOURCE_DIRECT 2026-10-16)
+
+**Nguồn mã được bổ sung nguyên bản do người dùng trao:** `Chuỗi công cụ/_Dụng cụ/Network_Policy/network_policy.py`. Mã độc lập chỉ đánh giá chính sách outbound cục bộ; TCP chỉ được mở trong lời gọi `connect` tường minh sau khi policy cho phép. Không là HTTP proxy, không thay firewall/route Windows, không thay traffic Cloud Browser và không tự bật MCP server.
+
+**Vật mang thực thi:**
+
+- `Chuỗi công cụ/_Dụng cụ/Network_Policy/network_policy.py` — parse và SHA-256 file JSON, DNS/CIDR, `always_allow`, `block`, `evaluate`, `summary`, `connect` (mã người dùng cung cấp).
+- `Chuỗi công cụ/_Dụng cụ/Network_Policy/network_policy_cli.py` — lớp CLI của tác nhân: `summary`, `evaluate`, `connect` (chỉ connect khi có `--policy`, `--execute` và port/timeout hợp lệ).
+- `Chuỗi công cụ/_Dụng cụ/Network_Policy/network_policy.example.json` — ví dụ `default_action=deny`, allowlist rỗng. **Không** auto-allow IP nội bộ từ `ipconfig`.
+- `Chuỗi công cụ/_Dụng cụ/Network_Policy/test_network_policy.py` — kiểm thử offline, mock DNS/TCP, không thực hiện kết nối thật.
+- `Chuỗi công cụ/_Dụng cụ/Network_Policy/README.md` — hướng dẫn, phạm vi enforcement và giới hạn.
+
+**Tuyến router:** `_Plugins → _Dụng cụ/Network_Policy → LOAD_VALIDATED_POLICY → (EVALUATE | EXPLICIT_CONNECT) → RESULT → _Plugins`. Khi không có policy: `built_in_deny_by_default`. `block` ưu tiên tuyệt đối hơn `always_allow`. Việc phân giải DNS được giới hạn theo luật allow/block; **DNS lookup không phải TCP application connection**. `connect` chỉ dành cho đích được khai báo rõ và chính sách đã rà soát. Dịch vụ trên Ethernet `10.15.224.21/24` và vEthernet `192.168.224.1/20` vẫn `LIVE_UNVERIFIED`, không tự coi đã được cho phép.
+
+**Giới hạn thực:** Module được ghi vào GitHub/Library là *mã nguồn*, chưa phải tiến trình đang chạy trên Windows và không tự tạo tool callable trong chat. Muốn dùng trên máy cần runtime/plugin cụ thể, xác thực đích, sau đó đối chiếu hậu quả. Không dùng README/commit/CLI tests để kết luận đã kết nối LAN.
