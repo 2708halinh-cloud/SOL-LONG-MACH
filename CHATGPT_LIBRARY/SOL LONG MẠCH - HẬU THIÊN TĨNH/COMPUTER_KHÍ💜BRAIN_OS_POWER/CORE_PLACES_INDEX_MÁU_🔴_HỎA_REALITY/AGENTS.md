@@ -18,7 +18,7 @@
 
 - `./PUPPETEER_RUNTIME/` và `./PUPPETEER_RUNTIME_READBACK_20261015.json`: khi cần browser vật lý, kiểm `PUPPETEER_RUNTIME/README.md` + khả năng local mới; CI runner PASS không đồng nghĩa desktop người dùng đang online.
 - `./CHƯƠNG II — THÂN VẬT LÝ/`: hiện có cấu trúc trống trên GitHub; truy legacy/Library/Drive bằng source-bound connector trước khi kết luận đã mất.
-- `../../AGENTS.md`: luật nội bộ nhánh COMPUTER_KHÍ.
+- `../AGENTS.md`: luật nội bộ nhánh COMPUTER_KHÍ (cùng file đã chỉ trong PARENT).
 - `../../../../OS_WORK/tools/TOOLS_ROUTER_CURRENT.json` **không phải đường tương đối hợp lệ trực tiếp từ thư mục này**; dùng đường tuyệt đối từ repo `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/TOOLS_ROUTER_CURRENT.json`, tránh sai số `../`. 
 - `runtime/sol_multienvironment_core.py`: tổng hợp các kết quả provider có `stable_id` và provenance; các hàm nguồn `list_projects`, `list_project_groups`, `get_identity_ids` giúp danh mục nhiều môi trường không tự bịa danh tính.
 - `CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md`: sự kiện mới, điểm tiếp diễn, biên nhận vừa tạo.
