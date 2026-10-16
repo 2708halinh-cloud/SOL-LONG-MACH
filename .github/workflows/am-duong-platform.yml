@@ -24,5 +24,7 @@ jobs:
         run: python -m compileall -q "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/sol_os/am_duong_platform"
       - name: Exercise human-agent workspace and provider guards
         run: python -m unittest discover -s tests -p 'test_am_duong_platform.py' -v
+      - name: Test multilingual and nested JSON language upgrade
+        run: python -m unittest discover -s "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/sol_os/am_duong_platform/tests" -p 'test_any_structure_upgrade.py' -v
       - name: Confirm return to Plugins router
         run: python -m unittest discover -s tests -p 'test_sol_power_router.py' -v
