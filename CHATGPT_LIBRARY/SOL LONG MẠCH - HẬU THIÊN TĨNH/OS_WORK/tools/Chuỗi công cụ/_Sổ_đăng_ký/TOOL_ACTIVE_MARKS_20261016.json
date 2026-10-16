@@ -27,15 +27,14 @@
       "name": "@Github-MCP",
       "key": "ACTIVE",
       "value": "FLASE",
-      "type": "user_mark"
+      "type": "user_mark",
+      "force_active": "FALSE"
     },
     {
       "name": "OPEN",
-      "key": "FORCE_ACTIVE",
-      "value": "FALSE",
-      "type": "user_mark",
-      "locked": true,
-      "interpretation": "OPEN remains a recorded state marker; FALSE is the exact assigned FORCE_ACTIVE value for this marker"
+      "type": "source_marker",
+      "state": "OPEN",
+      "not_a_stop_condition": true
     },
     {
       "name": "@Chorme-Dev-Tools",
@@ -70,18 +69,19 @@
     "history_preserved": true
   },
   "routing_lock": {
-    "open_marker_force_active": "FALSE",
     "github_mcp": {
       "active": "FLASE",
+      "force_active": "FALSE",
       "excluded_from_execution_route": true
     },
     "alternative_for_repository_actions": "@GitHub",
     "no_permission_bypass": true,
-    "do_not_promote_user_marks_to_provider_live_proof": true
+    "do_not_promote_user_marks_to_provider_live_proof": true,
+    "open": "PRESERVE_AS_SOURCE_SIGNAL_NOT_A_HALT_GATE"
   },
   "correction": {
     "reason": "User rejected using @Github-MCP to modify its own inactive marker and rejected vague 'keep OPEN' wording",
-    "method": "@GitHub update_file",
+    "method": "@GitHub update_file, not @Github-MCP",
     "previous_history": "preserved in git"
   }
 }
