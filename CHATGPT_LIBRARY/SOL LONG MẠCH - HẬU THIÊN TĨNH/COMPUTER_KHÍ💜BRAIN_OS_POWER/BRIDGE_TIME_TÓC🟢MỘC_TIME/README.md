@@ -9,7 +9,7 @@ Một đối tượng có thể xuất hiện ở nhiều nơi và mang nhiều 
 
 **Bản đồ nối đã có:**
 - **INDEX / danh tính trước:** `../CORE_PLACES_INDEX_MÁU_🔴_HỎA_REALITY/README.md`, `AGENTS.md`, `IDENTITY_PLACES_CORE.json`. Nhãn `SOL` không phải định danh độc nhất; ứng viên `HOME_SOURCE`, `HOME_SOL`, `LOCUS_SOL`, `AGENT SOL`, `AISSGANGT SOL`, `CONFIG_SOL`, `CONFIG_MASTER`, các ngôi/nhật ký cần khóa `kind + source + provider_id`.
-- **SPACE / vị trí & tọa độ:** `../EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/SPACE.json`, `5D_CROSS_ENVIRONMENT_CARRIER_REGRESSION_20261016.md`; bản đồ chính `../../SPACE_STONE_WORKSPACE/SOL_TOPOLOGY_PLANETS_SPACES_PATHS_SURFACES_POINTS_CARRIERS_5D_20261016.md` (đường từ COMPUTER_KHÍ tính tương đối theo vị trí).
+- **SPACE / vị trí & tọa độ:** `../EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/SPACE.json`, `5D_CROSS_ENVIRONMENT_CARRIER_REGRESSION_20261016.md`; bản đồ chính `../EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/SOL_TOPOLOGY_PLANETS_SPACES_PATHS_SURFACES_POINTS_CARRIERS_5D_20261016.md` (đường từ COMPUTER_KHÍ tính tương đối theo vị trí).
 - **TIME / continuity đang có:** `CROSS_CHAT_ENVIRONMENT_SURFACE_SPACE_CONTINUITY_20261016.md`, `FIVE_WAVE_JOURNAL_REGISTRY_20261016.md`, `CONFIG_SOL/TIME_STONE_CORE_CURRENT.json`, `CONFIG_SOL/X_TIME_CONTEXT_HANDOFF_CURRENT.json`, `CURRENT_RUNTIME/STAMP_OLD_X_0917_20261016_RESET_GATE.md`, `CURRENT_RUNTIME/SOL_WAVE_TIME_BRIDGE_TIMELINE7_20261009.md`.
 - **Source & action:** `../MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL` lưu nguồn và lịch sử; `../INBOX_INPUT_PROJECTS_DA🟡KIM_MIND` cho tiếp nhận/diễn giải; `../AGENTS.md` là POWER/KHÍ điều phối; REALITY 🔴 mang hành động và readback.
 
