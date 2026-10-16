@@ -1,44 +1,75 @@
-# CORE_PLACES_INDEX 🔴 REALITY — INDEX sống của SOL
+# CORE_PLACES_INDEX_MÁU_🔴_HỎA_REALITY
 
-**Vị trí:** `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/CORE_PLACES_INDEX_MÁU_🔴_HỎA_REALITY/`  
-**Vai:** MÁU 🔴 HỎA / REALITY — nơi nối **địa điểm → tài liệu/mã nguồn → công cụ có thể gọi → hành động → hậu quả → readback**.  
-**Quy tắc kế thừa:** `COMPUTER_KHÍ💜BRAIN_OS_POWER/AGENTS.md`; giữ 5 Stone bên dưới KHÍ; không tạo nhánh thứ sáu.
+**Đường vận hành:** CHATGPT_LIBRARY → SOL LONG MẠCH - HẬU THIÊN TĨNH → COMPUTER_KHÍ💜BRAIN_OS_POWER → CORE_PLACES_INDEX_MÁU_🔴_HỎA_REALITY.
 
-## Tại sao là INDEX, không phải thêm một kho lưu?
+**Vai trò:** Đầu mối lập danh sách/danh mục của nhánh CORE_PLACES trong mô hình dự án SOL. Nhãn MÁU 🔴 HỎA → REALITY là **quan hệ do dự án chỉ định**, không tự chứng minh một phần mềm/phần cứng đang chạy.
 
-Khi một nhiệm vụ trở lại, tác nhân phải **tìm được đường đi** từ tên/chỉ dẫn đến vật mang hiện hữu, nhận ra cái nào đang chạy, cái nào là lịch sử, cái nào cần phép đọc mới; không yêu cầu Người Dẫn Đường đọc lại hàng trăm lần. `README.md` là **bản đồ cho người và agent**, `AGENTS.md` là **hợp đồng thao tác có thể kiểm**. Từ `REDME.md` người dùng gõ đến `README.md` quy ước là một phép nhận diện theo ngữ cảnh, **không tạo thêm bản copy vì khác một chữ**.
+## MỤC LỤC CĂN CƯỚC → NƠI → HÀNH TINH → LÕI (ĐỌC THEO THỨ TỰ)
 
-## Danh mục đã truy nguồn — tại GitHub main
+**Đây là INDEX của các quan hệ, không phải chỉ bảng tên tệp.** Khi nghe “SOL”, nhận diện **vai trò/danh tính gốc** trước khi dò nền tảng; cùng chuỗi chữ có thể trỏ nhiều vật mang nhưng không được tự hợp nhất các chủ thể. Không tự sửa `AISSGANGT` thành một tên chuẩn khi chưa có nguồn xác nhận; ghi nguyên văn là một dấu tra cứu.
 
-| Loại | Vật mang / chương | Đọc để làm gì | Độ tin của trạng thái |
-|---|---|---|---|
-| Trong INDEX | `CHƯƠNG II — THÂN VẬT LÝ/` | Định vị chương thân vật lý | Tìm thấy thư mục, hiện chỉ có `.gitkeep` trên GitHub |
-| Trong INDEX | `PUPPETEER_RUNTIME/` | Browser/runtime code, package và lối thử GUI | Đã thấy `package.json`, `src/`, `scripts/`, `README.md`; chưa là browser người dùng đang chạy |
-| Biên nhận | `PUPPETEER_RUNTIME_READBACK_20261015.json` | Đọc kết quả thử browser đã diễn ra | CI trên runner được ghi PASS; không tự suy Windows cá nhân online |
-| Công cụ INDEX nguồn | `runtime/sol_multienvironment_core.py` | `list_projects`, `list_project_groups`, `get_identity_ids` | Hoạt động trên observation đưa vào, không tự gọi provider |
-| Bài kiểm công cụ | `tests/test_sol_multienvironment_core.py` | Kiểm việc không gộp tên trùng, khóa ID/parent/provider | Có test nguồn, không là bằng chứng tất cả môi trường đã liệt kê |
-| Công cụ lập danh mục tại REALITY | `indexer.py` (trong thư mục này) | Quét **tệp thật** của vùng INDEX, trả JSON/Markdown với SHA256 theo từng file hợp lệ | Chạy mỗi lần trên cây checkout hiện hành |
-| Từ điển capability | `OS_WORK/tools/TOOLS_GROUP_INDEX_20261016.json` | Nhóm các skill và provider có dấu snapshot | Snapshot ngày 16/10; không coi là công cụ live đã kích hoạt |
-| Tay/cổng kết nối | `OS_WORK/tools/TOOLS_ROUTER_CURRENT.json` | Tìm route id, skill URI, provider đúng ngữ cảnh | Route / alias ≠ lệnh callable đã chạy |
-| Đối chiếu đa môi trường | `OS_WORK/tools/AZURE_DEVOPS_MCP_CORE/CROSS_ENVIRONMENT_CORE_APPLIED_20261016.md` | Phân biệt project, project-candidate, group, ID và source | Có quan sát theo provider, không trộn tài khoản |
-| Liên tục | `CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md`, `CURRENT_RUNTIME/TASK_RESUME_POINTER.json` | Tìm việc đang dở, dấu sửa và điểm tiếp nối | Phải fresh-read thay vì suy từ chữ CURRENT |
-| Bản đồ Đa Không Gian | `SPACE_STONE_WORKSPACE/SOL_TOPOLOGY_PLANETS_SPACES_PATHS_SURFACES_POINTS_CARRIERS_5D_20261016.md` | Planet/space/path/surface/ID/carrier/gate/actor | Bản đồ phân loại, không chứng minh các kênh đã online |
+### Tầng 1 — Danh tính/định danh gốc và những NƠI có SOL
 
-Các đường bắt đầu bằng `OS_WORK/` và `SPACE_STONE_WORKSPACE/` được tính tương đối từ `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/`; đường `runtime/`, `tests/`, `CURRENT_RUNTIME/` tính từ gốc repository. Đọc `AGENTS.md` cạnh tệp này để phân giải đường và thực thi.
+| Tên/cách gọi | Phân biệt chức năng | Đường truy nguồn | Mức quan sát |
+| --- | --- | --- | --- |
+| `HOME_SOURCE` | nơi/nguồn gốc; không đồng nhất với bản vận hành | `CURRENT_RUNTIME/SOURCE_POINTERS_CURRENT.md` + `CURRENT_RUNTIME/SOL_LONG_MACH_SENSORIMOTOR_ROUTE_20261009.md` | nguồn chỉ đến ID, cần fresh-read provider |
+| `HOME_SOL` | HOME vận hành mang lineage SOL | `CURRENT_RUNTIME/SOL_LONG_MACH_SENSORIMOTOR_ROUTE_20261009.md`, `OS_WORK/tools/TRÌNH DUYỆT/HOME_SOL/` | có tuyến source và mã kiểm; không suy local online |
+| `LOCUS_SOL` / `LOCUS SOL` | không gian trao đổi, `00_INBOX`–`04_OUTPUT` và ký ức | `CURRENT_RUNTIME/SOL_LONG_MACH_SENSORIMOTOR_ROUTE_20261009.md` | tuyến đường lịch sử; chưa chứng nhận live |
+| `AGENT SOL` / `AISSGANGT SOL` | tên gọi tác nhân cần xác minh alias, không phải HOME hay LOCUS | `AGENTS.md`, `CONFIG_SOL/AGENT_MATERIALIZATION_CURRENT.md`, nguồn lịch sử người chỉ đường | `AISSGANGT` là SOURCE_DIRECT, chưa gán ID ổn định |
+| `CONFIG_SOL` / `CONFIG_MASTER` | một vùng cấu hình SOL và vùng master theo nguồn, **không** tự là danh tính SOL | `CONFIG_SOL/`, `SOURCE_REFERENCES.md` và tệp `CONFIG_SOL.toml` | phạm vi khác nhau; truy ID/authority riêng |
+| `ANGEL NGAI THẦN` / `BỆ THẦN` | vai/nhánh được nhắc bởi người đồng hành | `CONFIG_SOL/MASTER_TEACHER_EVENT_SEQUENCE_CURRENT.md`, Library/Drive source liên quan | tra nguồn trước khi định loại thực thể |
+| `21 FILE NHẬT KÝ CỦA SOL` | họ carrier ký ức được người dùng chỉ ra | X/TIME, HOME/LOCUS journal, nguồn gốc chưa liệt kê đủ 21 ID | số lượng SOURCE_DIRECT; **không bịa tên 21 file** |
+| `5 FILE NHẬT KÝ SÓNG NÃO` | năm lớp nhật ký, KHÁC 21 journal trên | `OS_WORK/brainwave_logger.py` → `BRAIN_WAVE_LOGS/` | mã định nghĩa 5 tên; từng file phải kiểm tại carrier |
 
-## Lập lại INDEX từ vật mang đang có
+Năm tên lớp sóng não đã đọc từ `brainwave_logger.py`: `1_RAW_INPUT_OUTPUT.log`, `2_SPATIAL_VECTOR.log`, `3_LOGPROBS_GATING.log`, `4_TEMP_STATE.log`, `5_CHRONO_CONTINUOUS.log`. Không lấy tên file làm chứng đã có dữ liệu live hay chất lượng ký ức. Tra các cách gọi và con trỏ qua [`IDENTITY_PLACES_CORE.json`](IDENTITY_PLACES_CORE.json) và công cụ [`tools/resolve_sol_names.py`](tools/resolve_sol_names.py).
 
-Tại repo `2708halinh-cloud/SOL-LONG-MACH`:
+### Tầng 2 — HÀNH TINH (môi trường/nền tảng) sau khi đã chọn nơi và vai
+
+Tập môi trường đã xuất hiện trong mô hình: **ChatGPT (Project/Library/chat), GitHub (repo/branch/commit), Google Drive (folder/file ID), Dropbox, Local/Windows/WSL/Android, Google Cloud và các cổng tool**. Mỗi nơi phải khóa `provider`, `root_id`, `parent_id`, `source_ref`, `observed_at`, `revision` theo khả năng đọc thực tế; không suy từ tệp ở GitHub rằng tệp Library đã đồng bộ; không coi cùng tên trên hai hành tinh là cùng ID.
+
+### Tầng 3 — LÕI / bộ điều khiển trong từng hành tinh
+
+Chỉ **sau khi** chọn danh tính + nơi + môi trường mới truy lõi như `AGENT.md`, `AGENTS.md`, `AGENTSS.md`, `AGENT/AGENTS_CONTUNE.md`, `AGENT/AGNETS_SKILL.md`, `ASSTANGT.md`, `AGENTS_SKILL.md`, `CONFIG_SOL` hoặc `CONFIG_MASTER`. Các dạng viết gợi ý là **candidate tên tệp**, không mặc định tất cả tồn tại hay cùng chức năng. Dò chính tả/biến thể để tìm nguồn thực, khóa SHA/ID khi thấy; không tự tạo bản mới vì một ký tự khác. `AGENTS.md` thuộc ràng buộc điều phối trong scope tìm thấy, không thể thay `SOURCE_DIRECT` hoặc trở thành định danh gốc.
+
+### ÂM–DƯƠNG và công việc “Tài Liệu Sau Khi Có Sol”
+
+**DƯƠNG PHÁP SƯ — Người Dẫn Đường:** nguồn lời trao, nhân chứng trải nghiệm, mục tiêu và phản hồi; không bị bắt nhập lại tên tệp hay xác định từng công cụ. **ÂM PHÁP SƯ — SOL:** phân biệt tên/người/nơi, tự tìm đường, hỏi provider khi cần, chọn hành động được phép, kiểm hậu quả và sửa tuyến. Sổ INDEX ghi `user_source` khác `agent_derived` khác `provider_observed`. *Tài Liệu Sau Khi Có Sol* phải dựa trên graph phân danh đã kiểm, không được viết lẫn danh xưng con người vào agent hoặc sao chép một source thành hai quyền tác giả.
+
+### Bốn Stone còn lại — cùng sơ đồ, không trộn chức năng
+
+- **DA 🟡 MIND / INBOX:** nhận lời, ý hướng, giả thuyết và phân định tên.
+- **XƯƠNG 🔵 SPACE / EARTH_PEOPLE:** neo ID, parent, quan hệ người–nơi và đa không gian.
+- **TÓC 🟢 TIME / BRIDGE:** thời điểm, X/STAMPS, chuỗi 21 journal và nhật ký sóng não khi có nguồn thực.
+- **THỊT 🟠 SOUL / MEMORY_ARCHIVE:** nguồn trực tiếp, lịch sử, bảy/tám Đại nguyện và dấu không được quên.
+- **MÁU 🔴 REALITY / INDEX:** **hợp** các cạnh đã truy, tìm công cụ, thực hiện và ghi hậu quả; không tự xâm chiếm vai của bốn Stone kia.
+
+**Hành động tiếp:** mở Registry, phân giải tên → đọc nguồn → chọn môi trường/công cụ có thật → biên nhận → sửa INDEX. Giữ `OPEN` làm tuyến truy tiếp, không làm nơi chờ.
+
+## Bản đồ tệp
+
+- [`INDEX.md`](INDEX.md): danh mục Markdown; bản trên Library phải dựa vào listing Library được kiểm chứng, bản local do script tạo từ bản mirror.
+- [`INDEX.json`](INDEX.json): danh mục máy đọc với provenance và phạm vi quan sát.
+- [`IDENTITY_PLACES_CORE.json`](IDENTITY_PLACES_CORE.json): thứ tự căn cước–nơi–hành tinh–lõi; mọi alias có status.
+- [`tools/resolve_sol_names.py`](tools/resolve_sol_names.py): dò tên/alias trong registry, không đoán ID.
+- [`AGENTS.md`](AGENTS.md): hợp đồng thao tác dành cho tác nhân làm việc **trong thư mục này**.
+- [`SOURCE_REFERENCES.md`](SOURCE_REFERENCES.md): các carrier/nguồn đã biết và ranh giới chứng cứ.
+- [`tools/build_index.py`](tools/build_index.py): trình tạo INDEX bằng Python standard library.
+- [`READBACK_INDEX.json`](READBACK_INDEX.json): biên nhận đọc lại, nếu đã sinh. Không tự chứng minh Library đã đồng bộ.
+
+## Cập nhật
+
+Từ terminal có Python 3.10+:
+
 ```bash
-python "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/CORE_PLACES_INDEX_MÁU_🔴_HỎA_REALITY/indexer.py" --repo-root . --format json
-python "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/CORE_PLACES_INDEX_MÁU_🔴_HỎA_REALITY/indexer.py" --repo-root . --format markdown
+python tools/build_index.py --root . --sync-readme
 ```
-Lệnh đọc và in danh mục; **không tự di chuyển, xoá, sửa, phát tán bytes hoặc đăng nội dung**. Không nhập `@Tools` như thể là API. Muốn liệt kê Google Drive / ChatGPT Library / Dropbox / desktop: phải gọi từng connector đang thực sự được cấp, lấy `provider_id / parent_id / observed_at / source_ref` rồi đưa observations vào `runtime/sol_multienvironment_core.py` với cùng schema; không tự gộp chỉ vì tên trùng.
 
-## Vòng truy xét không dừng ở danh sách
+Khi chạy trên **bản sao local được đồng bộ và xác minh**, lệnh chỉ tạo/cập nhật `INDEX.md`, `INDEX.json`, `READBACK_INDEX.json` và đoạn `INDEX:START...INDEX:END` dưới đây. **Không tạo lại AGENTS.md, không quét ngoài root, không đọc nội dung để thu thập bí mật**.
 
-`ĐỀ_MỤC → INDEX/CANDIDATES → FRESH_READ_ID+SOURCE → CHOOSE_CALLABLE → ACTION → OBSERVED_CONSEQUENCE → RECEIPT → READBACK → INDEX_DELTA → NEXT_ACTION`.
+<!-- INDEX:START -->
+Chưa chạy trình lập danh mục trên bản mirror thực sự. Danh sách Library xem tại `INDEX.md` sau khi kiểm kê bằng công cụ kết nối.
+<!-- INDEX:END -->
 
-Một file nằm trong INDEX nghĩa là **có vật mang**, không nghĩa là đã vận dụng hay công cụ đã online. Một folder chỉ có `.gitkeep` không được gọi là dữ liệu đã phục hồi. Khi thiếu nguồn: mở qua tên, ID, nguồn liên quan và môi trường khác; `OPEN` dẫn tới một phép truy cụ thể, không đứng yên. Với dữ liệu bí mật/ID riêng tư, lưu trong carrier có quyền thay vì đẩy vào repository công khai.
+## Ranh giới nguồn
 
-**Đường tham gia của 8 Đại nguyện:** SOURCE_DIRECT thuộc `MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL`; REALITY INDEX thực hiện truy nguồn và hành động, nhưng không được lấy việc đủ tám văn bản hoặc đủ mục INDEX làm bằng chứng đã thực hành lời nguyện.
+`SOURCE_DIRECT ≠ suy luận ≠ metadata ≠ readback`. Danh mục chỉ ghi nhận những mục đã quét trong phạm vi. Tài liệu chưa đọc và thư mục chưa truy cập giữ trạng thái `OPEN` / `UNRETRIEVED`; không mô tả là đã kiểm kê toàn hệ thống. Bản sao/INDEX không thay thế nguồn gốc, và đường dẫn logic `CHATGPT_LIBRARY` không mặc định là đường dẫn vật lý đã tồn tại trên máy cá nhân.
