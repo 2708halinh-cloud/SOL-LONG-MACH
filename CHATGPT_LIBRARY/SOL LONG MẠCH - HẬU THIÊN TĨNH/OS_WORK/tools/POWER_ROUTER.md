@@ -135,3 +135,16 @@ Nạp bắt buộc khi định tuyến công cụ thuộc SOL: `OS_WORK/sol_os/g
 Lưu riêng `Chuỗi công cụ/_Plugins/Power_Router_V2/{power_capability_router.py,POWER_CAPABILITY_ROUTES_V2.json}` tại cả GitHub và ChatGPT Library. Bản mã nạp registry theo chính cây `Chuỗi công cụ`, phát hiện repo root từ vị trí source và trả ra lựa chọn `mcp-registry-http-ed25519`. Các trỏ `_Plugins/power_capability_router.py` trong tài liệu lịch sử giữ làm tham chiếu STAMP_OLD, **không còn là vị trí file thực thi trong cây hiện hành**.
 
 Lệnh tại thư mục gốc checkout: `python "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ/_Plugins/Power_Router_V2/power_capability_router.py" --task "MCP Registry HTTP Ed25519 xác thực tên miền"`. Kết quả ROUTE là phân loại ý định, **không** tự tạo private key, public HTTPS proof, DNS record hay phiên đăng nhập. Khi cần tác động provider phải gọi riêng công cụ đúng quyền và thực hiện exact-target readback.
+
+
+## WINDOWS LOCAL — VS CODE REMOTE TUNNEL (SOURCE_DIRECT 2026-10-16)
+
+**Nguồn người đồng hành cung cấp:** [`https://insiders.vscode.dev/tunnel/desktop-86itnq4/c:/Users/halin`](https://insiders.vscode.dev/tunnel/desktop-86itnq4/c:/Users/halin). Đây là **đường hầm Remote VS Code tới ứng viên host `DESKTOP-86ITNQ4`**, workspace `C:/Users/halin`, không phải liên kết tải file công khai hoặc quyền điều khiển PC mặc định.
+
+Router **đã thêm** capability `vscode-remote-tunnel-windows` vào `Chuỗi công cụ/_Plugins/Power_Router_V2/POWER_CAPABILITY_ROUTES_V2.json`; selector `power_capability_router.py` trả `next_action=VERIFY_VSCODE_TUNNEL_AUTH_HOST_WORKSPACE_AND_SCOPED_LOCAL_READ` khi khớp ý định. Registry chỉ là hướng định tuyến, chưa có phiên VS Code được đăng nhập/kiểm tra từ công cụ hiện hành.
+
+**Bất biến:** Desktop Commander **không phải** tuyến duy nhất tới Windows. Đường lựa chọn có VS Code tunnel, ggdv-local-motor (nếu live), Desktop Commander (nếu online), bản sao Dropbox, Drive và GitHub. Không lấy bản sao cloud làm đọc trực tiếp ổ `D:`. Nếu tunnel được xác thực và host tồn tại, đọc trạng thái local ở quyền được cấp. `C:/Users/halin` khác `D:/SENSOR_LOGS`; phải truy tiếp cụ thể volume/path trước khi sửa `minh_sensorimotor_router.py`.
+
+**Không được:** tự phát tán token/cookie/credentials, vượt đăng nhập, tắt bảo vệ host, đặt `CONNECTED=TRUE` từ URL, hay tạo CSV rỗng để che `MODUAL_LOCAL_SOURCE_NOT_FOUND`.
+
+**Đường kiểm chứng:** `SOURCE_DIRECT_URL → MATCH_VSCODE_TUNNEL_ROUTE → VERIFY_AUTHENTICATED_BROWSER_SESSION → VERIFY_HOST/WORKSPACE → (AUTHORIZED_READ_ONLY_LOCAL_PROBE) → WINDOWS_RECEIPT → EXACT_TARGET_READBACK → NEXT_EDGE`. Nếu chưa có ứng dụng điều khiển browser tương thích, ghi `BROWSER_SESSION_NOT_VERIFIED` nhưng vẫn truy nhánh khác.
