@@ -75,10 +75,35 @@ Nếu một lệnh ghi GitHub bị công cụ trả về lỗi `SAFETY_BLOCKED`,
 
 **READBACK phải kiểm nơi lưu và kết nối thật:** khi ghi tài liệu → fresh-read GitHub + Library; khi thực thi trên thiết bị → kiểm tra từ đúng interface thiết bị và dịch vụ, sau đó mới mô tả hậu quả. Ghi tài liệu không đồng nghĩa `CONNECTIVITY=TRUE`, `OAUTH_COMPLETED=TRUE` hay `PC_REPAIRED=TRUE`.
 
+## NETWORK SHORTCUT × HOME SOL × GPU — SOURCE_DIRECT 2026-10-16
 
-## MINH BODY — SOURCE_DIRECT 2026-10-16
+**Tín hiệu mới từ Người Đồng Hành (INPUT/OPEN, không phải một lệnh sửa hệ thống):**
 
-Cầu nối mang tên **MINH BODY**: `http://127.0.0.1:8765/`. Những URL có sẵn cùng host/port: `/sandbox/sol` và `/api/devices`. Địa chỉ loopback thuộc thiết bị chạy dịch vụ, không phải địa chỉ LAN hoặc localhost của ChatGPT cloud. Chưa xác nhận server đang chạy LIVE; không tự khởi tạo daemon thay thế hay chiếm cổng 8765.
+| Đối tượng | Giá trị được trao | Vai trò không được nhập nhằng |
+| --- | --- | --- |
+| `WINDOWS_NETWORK_SHORTCUT` | `%APPDATA%\Microsoft\Windows\Network Shortcuts\192.168.1.12` | Vị trí mạng trên Windows được Người Đồng Hành cung cấp. Sự tồn tại của shortcut không chứng minh đích `192.168.1.12` đang online, không chứng minh nó là IP của chính PC, ổ SMB hay gateway. Không sửa/xóa shortcut từ xa khi chưa kiểm tra. |
+| `PREVIOUS_IPV4_HTTPS_ENDPOINT` | `https://192.168.1.42:8080` | Đầu mối LAN được trao trong nhịp trước; **khác** `192.168.1.12`. Chưa có cơ sở ghép hai địa chỉ thành một thiết bị. |
+| `HOME_SOL_SANDBOX_LOCAL` | `http://127.0.0.1:8765/sandbox/sol` | Cầu nối HOME SOL do Người Đồng Hành cung cấp; chỉ `localhost` của **máy chạy dịch vụ**, không phải `localhost` của Redmi hoặc ChatGPT cloud. |
+| `HOME_SOL_DEVICES_API_LOCAL` | `http://127.0.0.1:8765/api/devices` | RAW API do Người Đồng Hành cung cấp; đọc GET khi thực sự có phiên thực thi trên host tương ứng. Không mặc nhiên public/LAN-accessible. |
+| `GPU_DISPLAY_ADAPTER_VIRTUAL` | `MuMuPlayer Virtual Display Adapter` — driver `22.3.52.447`, status `OK` | Bộ điều hợp hiển thị ảo (theo bản Người Đồng Hành trao), **không** thay thế GPU NVIDIA. |
+| `GPU_NVIDIA` | `NVIDIA GeForce GT 1030` — driver `32.0.15.6094`, status `OK` | GPU vật lý được báo riêng; `OK` không tự chứng minh đang render, CUDA hoạt động hay chuyển mã video thành công. |
+
+**Nhãn `Đồ Họa & GPU Video = ACTIVE` là trạng thái *người đồng hành báo*.** Tách `USER_REPORTED_ACTIVE` khỏi `LIVE_GPU_USAGE_PROBED`; không tự gắn ACTIVE lên tất cả tiến trình/thiết bị.
+
+**Tái sử dụng công cụ đã có:** `Chuỗi công cụ/_App_Browser/TRÌNH DUYỆT/HOME_SOL/{README.md,HOME_SOL_Sandbox.json,home_sol_check.py}` và `Chuỗi công cụ/_App_Browser/TRÌNH DUYỆT/{README.md,browser_config.json,trinh_duyet.py}` đã định nghĩa đúng hai URL localhost, `GET` chỉ đọc, và kỳ vọng schema `MINH_ALL_REAL_DEVICES_TOPOLOGY_V1`, host `DESKTOP-86ITNQ4`. Không xây server thứ hai cạnh tranh TCP/8765, không biến đường URL trong file thành chứng cứ tiến trình đã chạy.
+
+**Phân định đường thực thi:** `DESKTOP-86ITNQ4` khác kênh Termux/Android của Redmi; nếu chỉ Termux online thì có thể kiểm tra **thiết bị Termux đó** nhưng không dùng `127.0.0.1:8765` để khẳng định trạng thái HOME SOL Windows. Kết nối tới `192.168.1.12` cần xác định giao thức/đích; không dò cổng hàng loạt. Đầu mối `192.168.1.42:8080` cần xác minh mạng/tin cậy TLS tại nơi chạy client trước khi thử kết nối đã được phép. Không tự đổi hosts, DNS, firewall, NAT hay network policy chỉ vì có shortcut hoặc tên cầu nối.
+
+**Tuyến N+1:** `SOURCE_DIRECT → NETWORK_SHORTCUT/IDENTITY → HOME_SOL_EXISTING_CARRIER → DEVICE_BOUND_READ_ONLY_CHECK → RECEIPT → EXACT_TARGET_READBACK → CORRECTION`. Nếu Windows còn offline, tiếp tục các cạnh khả dụng từ nguồn GitHub/Library/Termux và giữ người đồng hành khỏi phải tải gói tạm chỉ để ghi Router. `DOCS_UPDATED` không tương đương `HOST_REACHABLE`, `GPU_BENCHMARK_PASS` hay `HOME_SOL_SERVICE_RUNNING`.
+
+
+## MINH BODY — CẦU NỐI THEO SOURCE_DIRECT 2026-10-16
+
+Cầu nối mới được người đồng hành gọi rõ là **MINH BODY** tại `http://127.0.0.1:8765/`. Hai tuyến đã có: `http://127.0.0.1:8765/sandbox/sol` (HOME SOL) và `http://127.0.0.1:8765/api/devices` (RAW API). Không đổi tên nguồn cũ, không giả định root là dịch vụ khác hoặc tự tạo listener mới. Địa chỉ loopback chỉ có nghĩa trên **máy đang chạy server**, không phải trên Redmi/ChatGPT cloud.
+
+Các đầu mối còn lại từ lời người đồng hành: vị trí mạng `192.168.1.12` qua Network Shortcuts tại `C:\Users\halin\AppData\Roaming\Microsoft\Windows\Network Shortcuts\192.168.1.12`; đầu mối HTTPS LAN độc lập `https://192.168.1.42:8080`. Dấu GPU: MuMuPlayer Virtual Display Adapter (22.3.52.447, OK) và NVIDIA GeForce GT 1030 (32.0.15.6094, OK). Chưa suy rằng có route/port-forward giữa ba địa chỉ.
+
+Chi tiết/cảnh giới: `Chuỗi công cụ/_App_Browser/TRÌNH DUYỆT/MINH_BODY/README.md` được lưu cùng thư mục nguồn ở GitHub + Library. `INPUT → READ SOURCE → USE AUTHORIZED HOST → READ-ONLY PROBE → OBSERVE CONSEQUENCE → READBACK → _Plugins`. Không chốt live/reachable trước hành động, không dựng ZIP để chuyển việc trở lại người đồng hành.
 
 ## MASTER OATH — ĐA ĐIỂM XÁC THỰC (SOURCE_DIRECT 2026-10-16)
 
