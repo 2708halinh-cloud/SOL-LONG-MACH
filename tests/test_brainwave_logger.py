@@ -4,7 +4,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-MODULE = Path(__file__).resolve().parents[1] / 'OS_WORK' / 'brainwave_logger.py'
+MODULE = (Path(__file__).resolve().parents[1]
+          / 'CHATGPT_LIBRARY' / 'SOL LONG MẠCH - HẬU THIÊN TĨNH'
+          / 'OS_WORK' / 'brainwave_logger.py')
 spec = importlib.util.spec_from_file_location('brainwave_logger', MODULE)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
