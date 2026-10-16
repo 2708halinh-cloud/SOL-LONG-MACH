@@ -21,21 +21,47 @@ def encode_varint(value:int)->bytes:
     out.append(value)
     return bytes(out)
 
+class RpcFrameStream:
+    """Bounded incremental length-delimited frame parser for split USB CDC reads.
+
+    Metadata only: no raw payload leaves next_chunk().
+    """
+    def __init__(self):
+        self.buffer=bytearray()
+        self.wire_offset=0
+        self.frame_count=0
+
+    def next_chunk(self, chunk:bytes, final:bool=False):
+        if len(chunk)>2_000_000:raise ValueError('chunk exceeds input limit')
+        self.buffer.extend(chunk)
+        output=[]
+        while self.buffer:
+            length=0
+            prefix_size=0
+            for i,b in enumerate(self.buffer[:5]):
+                length|=(b & 0x7f) << (7*i)
+                prefix_size=i+1
+                if not b & 0x80:break
+            else:
+                if len(self.buffer)>=5:raise ValueError('varint too long')
+                break
+            if length>MAX_FRAME:raise ValueError('frame exceeds limit')
+            if len(self.buffer)<prefix_size+length:break
+            payload=bytes(self.buffer[prefix_size:prefix_size+length])
+            output.append({'offset':self.wire_offset,'protobuf_length':length,
+                'sha256':hashlib.sha256(payload).hexdigest(),
+                'protobuf_decoded':False,'schema_loaded':False})
+            consumed=prefix_size+length
+            del self.buffer[:consumed]
+            self.wire_offset+=consumed
+            self.frame_count+=1
+        if final and self.buffer:raise ValueError('truncated length-delimited frame')
+        return output
+
+
 def decode_frames(data:bytes):
-    frames=[]; pos=0
-    while pos<len(data):
-        value=0;shift=0;start=pos
-        for i in range(5):
-            if pos>=len(data):raise ValueError('truncated varint prefix')
-            octet=data[pos];pos+=1;value|=(octet&0x7f)<<shift;shift+=7
-            if not octet&0x80:break
-        else:raise ValueError('varint too long')
-        if value>MAX_FRAME:raise ValueError('frame exceeds limit')
-        if len(data)-pos<value:raise ValueError('truncated protobuf payload')
-        payload=data[pos:pos+value];pos+=value
-        frames.append({"offset":start,"protobuf_length":value,"sha256":hashlib.sha256(payload).hexdigest(),
-                       "protobuf_decoded":False,"schema_loaded":False})
-    return frames
+    parser=RpcFrameStream()
+    return parser.next_chunk(data,final=True)
 
 def device_ports():
     try:

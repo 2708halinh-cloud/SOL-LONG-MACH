@@ -2,11 +2,11 @@
   "schema": "SOL_UNLEASHED_INTEGRATION_LOCAL_TEST/1.0",
   "archive_sha256": "d0c5c75f790695ccc3b3fccb047a72b454d6694683625cc423114581c61be00f",
   "unittest_result": "PASS",
-  "tests_executed": 8,
+  "tests_executed": 13,
   "sensorimotor_chain": {
     "valid": true,
-    "events": 5,
-    "last_hash": "3b1a7ce9d4bc376b2c0adb88724a548c94886e4cc3e252ac44e0f08cc4aa5112",
+    "events": 8,
+    "last_hash": "061616021baa4e8dd24693bfb85061c8ad093fd7df1aa7af2ffbb6b54dc3cb18",
     "software_logs_only": true,
     "LLM_internal_state_observed": false
   },
@@ -38,7 +38,16 @@
     "unleashed_rpc_transport.py",
     "unleashed_sensorimotor.py",
     "unleashed_source.py",
-    "unleashed_source_index.py"
+    "unleashed_source_index.py",
+    "unleashed_sensorimotor_api.py",
+    "unleashed_submodule_sync.py",
+    "tests/test_runtime_readback.py",
+    "API_CURRENT_READBACK.json",
+    "SUBMODULE_CURRENT_READBACK.json",
+    "BUILD_CURRENT_READBACK.json"
   ],
-  "provider_sync_status": "AWAIT_PROVIDER_RECEIPT"
+  "provider_sync_status": "PENDING_CURRENT_WRITE_AND_READBACK",
+  "loopback_http_api": "PASS; GET readback/events; POST HTTP 405",
+  "rpc_incremental_framing": "PASS; fragmented varint and payload",
+  "submodule_inspection": "ARCHIVE_NOT_CHECKOUT; 12 declared; verified without clone"
 }

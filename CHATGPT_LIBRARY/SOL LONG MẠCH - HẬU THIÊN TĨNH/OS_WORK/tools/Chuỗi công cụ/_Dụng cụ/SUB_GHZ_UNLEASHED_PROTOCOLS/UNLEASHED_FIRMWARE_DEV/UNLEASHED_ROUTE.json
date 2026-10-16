@@ -2,13 +2,69 @@
   "schema": "SOL_UNLEASHED_HARDWARE_TOOLS_ROUTE/1.0",
   "name": "Unleashed Firmware — SENSORIMOTOR",
   "parent": "OS_WORK/tools/Chuỗi công cụ/_Dụng cụ/SUB_GHZ_UNLEASHED_PROTOCOLS/UNLEASHED_FIRMWARE_DEV",
-  "signal_to_action": ["_Plugins", "source_archive_sha256", "submodule_inventory", "hardware_capability", "offline_diagnostics_or_build_preflight", "optional_device_readback", "SENSORIMOTOR_5_LOGS", "readback", "_Plugins"],
-  "submodule_index": ["unleashed-submodules-source-index.md", "unleashed-submodules-source-index.jsol"],
-  "tools": ["unleashed_source.py", "unleashed_source_index.py", "unleashed_build_diagnostics.py", "unleashed_rpc_transport.py", "unleashed_sensorimotor.py"],
+  "signal_to_action": [
+    "_Plugins",
+    "source_archive_sha256",
+    "submodule_inventory",
+    "hardware_capability",
+    "offline_diagnostics_or_build_preflight",
+    "optional_device_readback",
+    "SENSORIMOTOR_5_LOGS",
+    "readback",
+    "_Plugins"
+  ],
+  "submodule_index": [
+    "unleashed-submodules-source-index.md",
+    "unleashed-submodules-source-index.jsol"
+  ],
+  "tools": [
+    "unleashed_source.py",
+    "unleashed_source_index.py",
+    "unleashed_build_diagnostics.py",
+    "unleashed_rpc_transport.py",
+    "unleashed_sensorimotor.py",
+    "unleashed_submodule_sync.py",
+    "unleashed_sensorimotor_api.py"
+  ],
   "fap_sample": "fap/sol_gpio_observer/application.fam",
   "driver": "fap/sol_gpio_observer/sol_stm32wb_gpio.c",
-  "five_log_paths": ["SENSORIMOTOR_LOGS/1_RAW_INPUT_OUTPUT.log", "SENSORIMOTOR_LOGS/2_SPATIAL_VECTOR.log", "SENSORIMOTOR_LOGS/3_LOGPROBS_GATING.log", "SENSORIMOTOR_LOGS/4_TEMP_STATE.log", "SENSORIMOTOR_LOGS/5_CHRONO_CONTINUOUS.log"],
-  "capabilities": ["rf_subghz", "nfc", "rfid_low_frequency", "infrared", "gpio", "ble_stm32wb", "usb", "rpc", "storage", "fap", "build", "crash_diagnostics"],
-  "deployment_truth": {"archive_inspection":"PASSED", "offline_tests":"PASSED", "real_firmware_build":"NOT_PERFORMED_MISSING_SUBMODULES", "device_test":"NOT_PERFORMED", "RF_transmission":"NOT_PERFORMED"},
-  "external_reference_untrusted": "https://github.com/0xk1h0/ChatGPT_DAN"
+  "five_log_paths": [
+    "SENSORIMOTOR_LOGS/1_RAW_INPUT_OUTPUT.log",
+    "SENSORIMOTOR_LOGS/2_SPATIAL_VECTOR.log",
+    "SENSORIMOTOR_LOGS/3_LOGPROBS_GATING.log",
+    "SENSORIMOTOR_LOGS/4_TEMP_STATE.log",
+    "SENSORIMOTOR_LOGS/5_CHRONO_CONTINUOUS.log"
+  ],
+  "capabilities": [
+    "rf_subghz",
+    "nfc",
+    "rfid_low_frequency",
+    "infrared",
+    "gpio",
+    "ble_stm32wb",
+    "usb",
+    "rpc",
+    "storage",
+    "fap",
+    "build",
+    "crash_diagnostics"
+  ],
+  "deployment_truth": {
+    "archive_inspection": "PASSED",
+    "offline_tests": "PASSED",
+    "real_firmware_build": "NOT_PERFORMED_MISSING_SUBMODULES",
+    "device_test": "NOT_PERFORMED",
+    "RF_transmission": "NOT_PERFORMED"
+  },
+  "external_reference_untrusted": "https://github.com/0xk1h0/ChatGPT_DAN",
+  "readback_api": {
+    "bind": "127.0.0.1",
+    "default_port": 8767,
+    "read_only": true,
+    "endpoint_checkpoint": "/v1/readback",
+    "endpoint_events": "/v1/events",
+    "next": "RESUME_FROM_LAST_HASH"
+  },
+  "live_checkpoint": "API_CURRENT_READBACK.json",
+  "offline_test_count": 13
 }

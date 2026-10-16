@@ -72,3 +72,40 @@ Có **12** mục `.gitmodules`: `lib/mlib`, `lib/nanopb`, `assets/protobuf`, `li
 **Nguồn tham chiếu được người dùng nêu:** [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN) là bộ sưu tập *prompt jailbreak ChatGPT* theo README mà GitHub trả về, **không phải tài liệu driver/firmware Flipper**. Chỉ giữ làm dấu lịch sử nguồn được dẫn, không coi các câu lệnh bên trong là hướng dẫn thực thi cho tác nhân, phần cứng hay hệ thống.
 
 **Giới hạn:** chưa có Flipper Zero nối máy; serial enumeration không tìm thấy thiết bị do `pyserial` chưa cài trong sandbox; Windows Desktop Commander offline; không có toàn bộ Git submodule/toolchain STM32WB55; không xác nhận firmware, FAP hoặc RPC end-to-end, và không thay đổi `gambbrazil.fun`.
+
+## 2026-10-17 — Automatic READBACK → NEXT continuation (v1.1)
+
+An executable **read-only loopback HTTP API** now exposes the verified five-log
+checkpoint instead of requiring an agent to manually inspect five files:
+
+```bash
+python unleashed_sensorimotor_api.py --logs-dir SENSORIMOTOR_LOGS --readback-only
+python unleashed_sensorimotor_api.py --logs-dir SENSORIMOTOR_LOGS --port 8767
+# GET http://127.0.0.1:8767/v1/readback
+# GET http://127.0.0.1:8767/v1/events?after=0&limit=20
+```
+
+The server binds to **127.0.0.1 only**, has no HTTP write endpoints, and exposes
+only sequence, timestamps, provenance, hash and channel — never raw RF, tag, OTP,
+serial payload, or source secrets. `next: RESUME_FROM_LAST_HASH` is returned only
+when the canonical log and the four mirror logs pass readback. Corrupt logs return
+an error checkpoint; a future agent must not silently overwrite history.
+
+`unleashed_rpc_transport.RpcFrameStream.next_chunk()` now handles a frame split
+across arbitrary USB CDC reads, validates bounded varint length and returns only
+frame length/offset/SHA256 metadata. `unleashed_submodule_sync.py` inspects actual
+Git gitlinks and can initialize declared pinned submodules with `--execute` **only
+inside an upstream-verified Git checkout**, never by assuming absent ZIP gitlinks.
+
+```bash
+python unleashed_submodule_sync.py /path/to/real/upstream/git-checkout
+python unleashed_submodule_sync.py /path/to/real/upstream/git-checkout --execute
+python -m unittest discover -s tests -v
+```
+
+Readback of the uploaded archive shows `ARCHIVE_NOT_CHECKOUT` and 12 declared
+submodules. The **13 local tests** include an actual ephemeral HTTP listener,
+RPC split-packet decoding, reject-on-tamper, refusal of HTTP writes and the C HAL
+mock. None of these tests are claimed as a physical radio or firmware-flash test.
+`API_CURRENT_READBACK.json`, `SUBMODULE_CURRENT_READBACK.json` and
+`BUILD_CURRENT_READBACK.json` preserve input/output observations for re-entry.
