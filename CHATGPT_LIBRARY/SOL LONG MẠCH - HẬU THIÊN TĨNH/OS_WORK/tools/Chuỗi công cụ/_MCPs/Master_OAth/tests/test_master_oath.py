@@ -14,6 +14,26 @@ spec.loader.exec_module(mod)
 
 
 class MasterOAthTests(unittest.TestCase):
+    def test_chatgpt_is_independent_provider(self):
+        data = mod.route("chatgpt", "search_conversations", connected=True)
+        self.assertEqual(data["url"], "https://chatgpt.com/")
+        self.assertFalse(data["browser_session_verified"])
+        self.assertTrue(data["connected_gmail_is_not_chatgpt_login"])
+
+    def test_browser_handoff_does_not_invent_login_or_cookie(self):
+        with patch.object(mod.webbrowser,"open",return_value=True) as browser:
+            data = mod.browser_handoff("chatgpt",open_browser=True)
+        browser.assert_called_once_with("https://chatgpt.com/")
+        self.assertFalse(data["logged_in"])
+        self.assertFalse(data["cookie_saved_by_master_oath"])
+        self.assertTrue(data["browser_open_reported"])
+
+    def test_custom_browser_url_cannot_embed_auth_data(self):
+        for url in ["http://unsafe.test/", "https://u:p@example.test/", "https://example.test/?code=abc", "https://example.test/#token"]:
+            with self.subTest(url=url), self.assertRaises(mod.AuthRouteError):
+                mod.browser_target("custom",url)
+        self.assertEqual(mod.browser_target("custom","https://example.test/"),"https://example.test/")
+
     def test_existing_hostinger_connector_is_preferred(self):
         route = mod.route("hostinger", "dns_records_list", connected=True, domain="gambbrazil.fun")
         self.assertEqual(route["next_agent"], "CALL_CONNECTED_HOSTINGER_PROVIDER")

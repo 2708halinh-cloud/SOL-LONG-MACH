@@ -14,12 +14,15 @@ import sys
 import urllib.error
 import urllib.request
 import webbrowser
+from urllib.parse import urlsplit
 from dataclasses import dataclass
 from typing import Any
 
 HOSTINGER_MCP_URL = "https://mcp.hostinger.com"
 HOSTINGER_LOGIN = "https://auth.hostinger.com/"
-ALLOWED_PROVIDER = {"hostinger", "gmail"}
+CHATGPT_LOGIN = "https://chatgpt.com/"
+ALLOWED_PROVIDER = {"hostinger", "gmail", "chatgpt"}
+CHATGPT_ACTIONS = {"open", "history_export", "search_conversations"}
 HOSTINGER_READ_OPS = {"dns_records_list", "dns_snapshots_list", "domains_forwarding_get"}
 MAX_HTTP_BYTES = 2_000_000
 
@@ -32,6 +35,15 @@ def route(provider: str, intent: str, *, connected: bool = False, domain: str = 
     provider = provider.lower().strip()
     if provider not in ALLOWED_PROVIDER:
         raise AuthRouteError("UNSUPPORTED_PROVIDER")
+    if provider == "chatgpt":
+        if intent not in CHATGPT_ACTIONS:
+            raise AuthRouteError("UNSUPPORTED_CHATGPT_ACTION")
+        return {"next_agent":"OPEN_CHATGPT_OFFICIAL_BROWSER", "url":CHATGPT_LOGIN,
+                "operation":intent, "identity":"PROVIDER_SESSION_ONLY",
+                "connected_gmail_is_not_chatgpt_login":True,
+                "browser_session_verified":False, "cookie_persistence":"BROWSER_OWNED_ONLY",
+                "export_search":"LOCAL_EXPORTED_CONVERSATIONS_AFTER_ACQUISITION",
+                "needs_browser":True}
     if provider == "hostinger":
         if intent not in HOSTINGER_READ_OPS:
             raise AuthRouteError("OPERATION_NOT_READONLY_APPROVED")
@@ -163,6 +175,34 @@ class _DenyRedirect(urllib.request.HTTPRedirectHandler):
         raise AuthRouteError("MCP_REDIRECT_REFUSED")
 
 
+def browser_target(provider: str, url: str = "") -> str:
+    """Official browser entry or an explicitly supplied HTTPS site; no auth-bearing URL."""
+    provider = provider.lower().strip()
+    if provider == "chatgpt":
+        if url and url.rstrip("/") != CHATGPT_LOGIN.rstrip("/"):
+            raise AuthRouteError("CHATGPT_URL_NOT_OFFICIAL")
+        return CHATGPT_LOGIN
+    if provider == "hostinger":
+        if url and url.rstrip("/") != HOSTINGER_LOGIN.rstrip("/"):
+            raise AuthRouteError("HOSTINGER_URL_NOT_OFFICIAL")
+        return HOSTINGER_LOGIN
+    if provider == "custom":
+        parsed = urlsplit(url)
+        if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or parsed.query or parsed.fragment:
+            raise AuthRouteError("INVALID_BROWSER_ENTRY_URL")
+        return url
+    raise AuthRouteError("UNSUPPORTED_BROWSER_PROVIDER")
+
+
+def browser_handoff(provider: str = "chatgpt", *, open_browser: bool = False, url: str = "") -> dict[str, Any]:
+    target = browser_target(provider, url)
+    opened = bool(webbrowser.open(target)) if open_browser else False
+    return {"url":target, "browser_open_attempted":open_browser,
+            "browser_open_reported":opened, "logged_in":False,
+            "cookie_saved_by_master_oath":False,
+            "next_agent":"OBSERVE_PROVIDER_UI_LOGIN_THEN_RETRIEVE_SOURCE"}
+
+
 def print_json(value: Any) -> None:
     print(json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True))
 
@@ -180,7 +220,9 @@ def main(argv: list[str] | None = None) -> int:
     v = sub.add_parser("summarize-dns")
     v.add_argument("--domain", required=True)
     b = sub.add_parser("browser-handoff")
-    b.add_argument("--open", action="store_true", help="open official provider login on current device")
+    b.add_argument("--provider", choices=["chatgpt","hostinger","custom"], default="chatgpt")
+    b.add_argument("--url", default="")
+    b.add_argument("--open", action="store_true", help="open site in current device browser; no login claims")
     sub.add_parser("status")
     args = ap.parse_args(argv)
     try:
@@ -195,10 +237,7 @@ def main(argv: list[str] | None = None) -> int:
         elif args.cmd == "summarize-dns":
             print_json(summarize_dns(sys.stdin.read(), args.domain))
         elif args.cmd == "browser-handoff":
-            if args.open:
-                webbrowser.open(HOSTINGER_LOGIN)
-            print_json({"url": HOSTINGER_LOGIN, "opened_by_user_request": bool(args.open),
-                        "password_and_otp_handled_by": "PROVIDER_UI_ONLY", "login_completed": False})
+            print_json(browser_handoff(args.provider, open_browser=args.open, url=args.url))
         else:
             print_json({"hostinger_mcp_url": HOSTINGER_MCP_URL, "bearer_available_in_process":
                         bool(os.environ.get("MASTER_OATH_HOSTINGER_BEARER")),

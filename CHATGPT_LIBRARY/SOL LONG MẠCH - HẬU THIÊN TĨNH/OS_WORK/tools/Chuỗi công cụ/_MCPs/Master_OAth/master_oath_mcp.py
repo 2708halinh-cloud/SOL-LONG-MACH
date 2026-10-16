@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 import os
 import sys
-from master_oath import AuthRouteError, RemoteMCP, HOSTINGER_LOGIN, HOSTINGER_MCP_URL, route, summarize_dns
+from master_oath import AuthRouteError, RemoteMCP, HOSTINGER_LOGIN, HOSTINGER_MCP_URL, route, summarize_dns, browser_handoff, CHATGPT_LOGIN
 
 TOOLS = [
     {"name":"master_oath_route","description":"Route Hostinger DNS or Gmail reads via already-connected provider before OAuth fallback.",
@@ -16,6 +16,8 @@ TOOLS = [
     {"name":"master_oath_summarize_dns","description":"Convert provider zone JSON to redacted DNS name/type/TTL summary.",
      "inputSchema":{"type":"object","properties":{"domain":{"type":"string"},"zone":{"type":"array"}},
         "required":["domain","zone"]}},
+    {"name":"master_oath_browser_handoff","description":"Prepare official ChatGPT, Hostinger or explicit HTTPS browser entry. Never captures password, cookies or claims login.",
+     "inputSchema":{"type":"object","properties":{"provider":{"type":"string","enum":["chatgpt","hostinger","custom"]},"url":{"type":"string"},"open":{"type":"boolean"}}}},
     {"name":"master_oath_status","description":"Check configured remote transport without exposing secrets or attempting login.",
      "inputSchema":{"type":"object","properties":{}}}
 ]
@@ -44,11 +46,13 @@ def dispatch(method: str, params: dict) -> dict | None:
             value = RemoteMCP(token).dns(args.get("domain", ""))
         elif name == "master_oath_summarize_dns":
             value = summarize_dns(args.get("zone"), args.get("domain", ""))
+        elif name == "master_oath_browser_handoff":
+            value = browser_handoff(args.get("provider", "chatgpt"),open_browser=bool(args.get("open",False)),url=args.get("url",""))
         elif name == "master_oath_status":
             value = {"hostinger_remote_url":HOSTINGER_MCP_URL,
                      "remote_token_present":bool(os.environ.get("MASTER_OATH_HOSTINGER_BEARER")),
                      "connected_chat_plugins":"USE_EXISTING_HOSTINGER_AND_GMAIL_TOOL_ROUTES",
-                     "login_fallback":HOSTINGER_LOGIN,"credential_persistence":False}
+                     "login_fallback":HOSTINGER_LOGIN,"chatgpt_browser_entry":CHATGPT_LOGIN,"credential_persistence":False}
         else:
             raise AuthRouteError("UNKNOWN_TOOL")
         return {"content":[{"type":"text","text":json.dumps(value,ensure_ascii=False,sort_keys=True)}],"isError":False}

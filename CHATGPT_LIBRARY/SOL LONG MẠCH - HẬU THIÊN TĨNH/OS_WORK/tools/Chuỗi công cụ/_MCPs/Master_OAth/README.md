@@ -39,3 +39,11 @@ Kết quả Hostinger API hiện tại có các nhóm `gambbrazil` (TXT, MX), `w
 ### Bảo vệ tài khoản
 
 Một mật khẩu và một Bearer token đã từng được chia sẻ trong hội thoại; không dùng chúng làm thông tin cấu hình công khai. Đổi/thu hồi chúng qua Hostinger khi có thể và giữ phiên đang hoạt động theo phương án an toàn.
+
+## ChatGPT.com là provider độc lập, không phụ thuộc ví dụ Hostinger (2026-10-16)
+
+- `python master_oath.py browser-handoff --provider chatgpt --open` mở `https://chatgpt.com/` **trên máy thực sự chạy tiến trình**. Không giả định trình duyệt đã đăng nhập hay cookie đã được lưu.
+- `python master_oath.py route --provider chatgpt --operation search_conversations` cấp đường vào chính chủ, không dùng phiên Hostinger để xác thực ChatGPT. Gmail Admin đã kết nối là kênh đọc thông báo/xuất dữ liệu; đăng nhập Gmail không chứng minh đăng nhập ChatGPT.
+- Nếu có export ChatGPT do chủ tài khoản đã yêu cầu, dò các cuộc trò chuyện từ nguồn xuất được phép trước khi kết luận mất. Không tải/sao chép credential, export URL có chữ ký hoặc cookie sang code/repo/Library.
+- Có thể mở site HTTPS được người dùng chỉ trực tiếp bằng `--provider custom --url https://...` nhưng URL không được mang username/password, query, fragment. Đây là **tuyến mở trang**, không phải automation có quyền nhập OTP, không phải session cookie store.
+- `READBACK`: site mở hay chưa chỉ được khẳng định từ quá trình thực tế; đã xác thực hay chưa chỉ được khẳng định sau provider session; còn nguồn `OPEN` hoặc đã quên chỉ kết luận từ export/chat source đã thực đọc.
