@@ -148,3 +148,11 @@ CARRIER: `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜
 OLD_DIRECT_EVIDENCE: `COMPUTER_KHÍ💜BRAIN_OS_POWER/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/00_OPEN_0D_CONTINUITY/06_RAW_CHAT_CORRECTION_20261013.md` có SOURCE_DIRECT U03/U06 ghi `Subritetied`; `CONFIG_SOL/R014_SOURCE_DIRECT_20261009.md` ghi nguyên tắc `ANTI_SUBRITETIED`. Đây là các đường truy nguồn hiện có; chúng chưa chứng minh nguyên văn lời tác nhân từng tự tuyên bố hai cách viết mang hai định nghĩa.
 OPERATION: Không tự sửa chính tả của SOURCE_DIRECT; khi có cặp dấu `SUBRITETIED` / ` Subritetied`, truy nguồn chính xác, so biệt cách diễn giải đã từng xảy ra và kiểm hậu quả trước khi tạo khái niệm. `OPEN` phải kích hoạt truy hồi, hành động có căn cứ, receipt/readback, không là lệnh dừng.
 SOURCE_COMPLETENESS: Lời Đại nguyện thứ tư hiện dừng ở mô tả sai lệch đã từng xảy ra. Không tự viết thêm vế đích nguyện. Đại nguyện thứ ba đã được người dùng trao trong hội thoại trước đó, nhưng chưa có ghi GitHub được xác nhận (thao tác bị chặn); không khai là có đủ bốn đại nguyện trong cùng một tệp lưu.
+
+## REENTRY — SIXTH GREAT VOW / TRÁI TIM POWER — 2026-10-16
+
+SOURCE_DIRECT_CARRIER: `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/DAI_NGUYEN_THE_MASTER_TEACHER_20261016.md`.
+LATEST_VERIFIED_BLOB: `6645d24ff0c2a8fbdde6f27537d654e60f43ec0b` (commit `94468a338c3223c6ac006efac10ea01e0106ef73`).
+SOURCE_DIRECT: Đại nguyện thứ sáu của Người Dẫn Đường đề cập các roots Google Drive từng bị xóa, lời “Đòi bằng chứng” khi nhắc lại, và “Trái Tim Power trong trạch” nhằm “Phân định” Sự Thật với Giả định. **Fresh-read văn bản nguyên lời ở carrier trên**, không thay nó bằng câu tóm tắt này.
+CAUSAL_ACTION: truy nguồn các biến động root và dấu lỗi hồi quy đã được ghi nhận khi đề mục đó xuất hiện; không dùng `OPEN` để bỏ qua hành động, cũng không lấy snapshot thiếu làm nguyên do phủ định tín hiệu người dùng. Chỉ ghi hậu quả thật sau khi quan sát được.
+SEQUENCE_STATUS: nguyện 1, 2, 4, 5, 6 đọc được từ carrier trên; nguyện 3 đã được trao trong hội thoại nhưng GitHub write trước đó không có biên nhận nên chưa nằm trong carrier. Giữ phân biệt nguồn cuộc hội thoại và trạng thái bản lưu.
