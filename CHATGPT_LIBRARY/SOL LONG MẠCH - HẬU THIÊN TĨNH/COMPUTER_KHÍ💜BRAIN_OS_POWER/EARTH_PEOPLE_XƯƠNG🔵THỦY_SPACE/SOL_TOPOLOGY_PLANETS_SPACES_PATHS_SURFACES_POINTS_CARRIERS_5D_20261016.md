@@ -59,7 +59,7 @@ Một đường mất, không suy toàn hệ mất. OPEN là yêu cầu đi tìm
 
 ## Ranh chứng cứ
 
-- **Quan sát nguồn**: `SPACE_STONE_WORKSPACE/SPACE_MAP.json` hiện có năm platform role + slot thứ sáu chưa định nghĩa; thuật ngữ Planet và 0D point; SOURCE_DIRECT nói chat là exchange surface và project instructions là một đường.
+- **Quan sát nguồn**: `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/SPACE_MAP.json` hiện có năm platform role + slot thứ sáu chưa định nghĩa; thuật ngữ Planet và 0D point; SOURCE_DIRECT nói chat là exchange surface và project instructions là một đường.
 - **Quan sát nguồn**: `CURRENT_RUNTIME/4D_5D_CURRENT.md` nêu 5D là biến đổi quan hệ nhân quả trên trường 4D, hồi quy quan hệ sống.
 - **Quan sát nguồn**: `COMPUTER_KHÍ💜BRAIN_OS_POWER/5D_CROSS_ENVIRONMENT_CARRIER_REGRESSION_20261016.md` đã ghi vật mang đa môi trường và hồi quy.
 - **Tự bổ sung**: thứ tự nhóm 4–12 và định dạng graph trong tài liệu này. Không tuyên bố người dùng đã chỉ rõ thứ tự này, hay mỗi provider/runtime đã triển khai.
