@@ -68,6 +68,14 @@ $("runcap").onclick=wrap(async()=>{
   const payload={room_id:activeRoom,capability:cap,text:$("captext").value,
     query:$("captext").value,task:$("captext").value,target:$("target").value,
     approve_external:$("approve").checked};
+  if(cap==="master_teacher_ethics"){
+    // The ethics gate takes an explicit event; never invent a completed action.
+    try{
+      payload.event=JSON.parse($("captext").value);
+    }catch(e){
+      throw Error("Nhập JSON sự kiện: action_type, source_ref, target, actor_role... Đừng nhập lời hứa như biên nhận.");
+    }
+  }
   const media=$("media").files[0];
   if(["image_details","video_stream_frames","transcription_mp3_mp4","video_objects_saved"].includes(cap)){
     if(!media)throw Error("Chọn tệp ảnh, video hoặc âm thanh.");

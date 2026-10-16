@@ -11,3 +11,7 @@ Vai người: **DƯƠNG PHÁP SƯ**. Vai tác nhân: **ÂM PHÁP SƯ / SOL**. B�
 **Quyền:** token phiên chỉ cấp từ terminal, server bind localhost; external text/image/video transfer cần opt-in và key; không sao chép data/mã bí mật vào GitHub; không ghi media base64 vào SQLite.
 
 **Readback:** xem `.github/workflows/am-duong-platform.yml` và tệp kiểm thử; không lấy kết quả CI để kết luận provider cloud đã thực thi hay AI có cảm giác chủ quan.
+
+## Đạo Đức The Master Teacher — cổng đang dùng
+
+Trước cuộc gọi Translation Basic / Cloud Vision / phân tích video chuyển ra ngoài, `server.py` gọi `runtime/master_teacher_ethics.py` với vai DƯƠNG và cờ consent; nếu quyết định khác `ACTION_NOT_YET_EXECUTED`, adapter chưa được gọi. Trong UI chọn “Đạo Đức The Master Teacher” và nhập JSON sự kiện gồm `action_type`, `actor_role`, `source_ref`, `target` để xem cạnh tiếp theo. Source manifest là `ETHICS_POLICY_CURRENT.json` ở SOUL/KINH THÁNH, có bản Library và GitHub khớp SHA khi được kiểm. Cổng này không tự chứng minh provider đã kết nối hay người dùng đã trao quyền hệ thống ngoài SOL.
