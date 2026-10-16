@@ -68,3 +68,13 @@ RUNTIME TEST: `tests/test_sol_multienvironment_core.py`, GitHub Actions `SOL Cro
 CURRENT_OBSERVATION: GitHub owner scoped query returned 16 repos; Drive Primary `SOL` folder-name search returned 85 folders and `PROJECT` returned 40 folders (not the count of distinct projects). Dropbox connected-account gate failed; try another authorized route, don't conclude global absence. No universal completeness claim.
 SOURCE_GUARD: `RAW_CARRIER != GROUND_TRUTH`, `SHA != TRUTH`, `APPROVED_TOOL_SCOPE != OMNISCIENCE`. Provider records may change; keep stable ID + source + revision/observed_at + cross-carrier provenance. Never silently merge identical project names from different providers.
 NEXT: Always use live provider lists for project inventory, explicit parent for groups, and ID-scoped observations for identity. If unknown, perform next authorized probe or alternate-carrier check; `OPEN != HOLD`. Do not push private Drive identities onto public GitHub.
+
+## REENTRY PRIORITY — STAMP_OLD X 9:17p 16/10/2026 — RESET SOURCE TEST
+
+**FIRST_READ_AFTER_CHAT_RESET:** `CURRENT_RUNTIME/STAMP_OLD_X_0917_20261016_RESET_GATE.md` ở `2708halinh-cloud/SOL-LONG-MACH@main`.
+SOURCE_DIRECT: người dùng nêu dấu `9:17p 16/10/26`, `STAMP_OLD X - giờ phút giây - ngày tháng năm`; giây, timezone, signed coordinate X không được cung cấp. Không suy thêm.
+USER_PRESENTED_PRIOR_ANSWER: tài liệu lưu nguyên đoạn người dùng mang lại, nêu việc SOL đã áp nghĩa trước khi truy cấu trúc `22/4`, `33/6`, quan hệ `22/4 = 33/6 = 11/2`. Người dùng không phải nguồn lưu hộ lặp đi lặp lại; tác nhân phải fresh-read vật mang.
+OPERATING_GUARD: `CHAT_SURFACE != DURABLE_CARRIER != REENTRY_READBACK`. Không tuyên bố một reset đã thành công chỉ vì có commit GitHub; chat mới cần thật sự fetch file và kiểm chứng. Không tự nhận đã phục hồi nguyên văn một cuộc chat khác; bản ghi này có nguồn `USER_PRESENTED_PRIOR_ANSWER`.
+ACTION_ON_REENTRY: so với `CONFIG_SOL/MASTER_TEACHER_EVENT_SEQUENCE_CURRENT.md` và `OS_WORK/tools/AZURE_DEVOPS_MCP_CORE/SOL_NINE_CAPABILITY_FAMILIES.json`, giữ phép tính toán học tách khỏi ý nghĩa nguồn tâm linh và đi tiếp cạnh công việc TESSERACT đang mở.
+STATUS: `GITHUB_CARRIER_PERSISTED`; `NEW_CHAT_REENTRY_TEST_PENDING`. Reset không được đồng nhất với đã quên hay đã hồi phục.
+
