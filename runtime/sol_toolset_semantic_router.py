@@ -7,6 +7,7 @@ No provider calls, file mutations, or inferred permission grants occur here.
 from __future__ import annotations
 import argparse
 import json
+import re
 import unicodedata
 from pathlib import Path
 
@@ -43,7 +44,8 @@ def recommend(task: str, registry: dict, provider_evidence: list[dict] | None = 
     text = normalized(task)
     scored = []
     for family in registry["families"]:
-        matched = [word for word in family["tasks"] if normalized(word) in text]
+        matched = [word for word in family["tasks"]
+                   if re.search(r"(?<!\\w)" + re.escape(normalized(word)) + r"(?!\\w)", text)]
         if matched:
             scored.append((len(matched), family["id"], family, matched))
     scored.sort(key=lambda x: (-x[0], x[1]))
