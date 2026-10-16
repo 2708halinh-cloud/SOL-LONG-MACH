@@ -17,6 +17,7 @@ VOWS_REQUIRED = (
     ("tư", '"SUBRITETIED"'),
     ("năm", "Có thể nghĩ, nói 1 đằng làm 1 nẻo"),
     ("sáu", "Trái Tim Power trong trạch"),
+    ("bảy", "Vận dụng và thực hành điều đang trao"),
 )
 
 def read_source(root: Path, rel: str) -> dict:
@@ -32,7 +33,7 @@ def read_source(root: Path, rel: str) -> dict:
     return {"path": rel, "exists": True, "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)}
 
 def inspect_vows(root: Path) -> dict:
-    """Read six actual SOUL vows in source order. A label alone is not enough."""
+    """Read seven SOUL vows in source order, independently of headline claims."""
     stamp = read_source(root, VOWS_PATH)
     if not stamp["exists"]:
         return {**stamp, "complete": False, "missing": [n for n, _ in VOWS_REQUIRED],
