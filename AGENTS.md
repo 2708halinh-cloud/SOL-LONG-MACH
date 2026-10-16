@@ -1012,3 +1012,16 @@ LOCAL_RUNTIME = G:\\OS_Workspace\\TESSERACT_OS (cần live readback riêng; GitH
 ## TESSERACT — NỐI TUYẾN BOOT TÁC NHÂN / PLUS / TAY
 Nguồn tuyến: `CONFIG_SOL/TESSERACT_AGENT_BOOT_ROUTES_CURRENT.json`. BOOT @TESSERACT nạp mới `AGENTS.md` cho @TÁC NHÂN; PLUS truy chính xác `AGENTS_CONTUNE.md` (OPEN nếu tệp chưa thấy, không giả thay thế bằng skill). TAY theo `agents-skill-hands` nối `LEVER_02_dev` — Ubuntu `/dev` — chỉ đọc metadata, không ghi /dev hay khởi động ghi USB.
 Lệnh probe: `python3 runtime/tesseract_agent_boot.py --root .`. Bản đồ và trạng thái nằm tại `CURRENT_RUNTIME/TESSERACT_LOCAL_BOOT_CURRENT.md`.
+
+<!-- BEGIN RESET_OLD_X_0917_20261016_GUARD -->
+## STAMP_OLD X — RESET / LIVE CLOCK PROBE — 16/10/2026
+Nguồn tái nhập trước khi lặp lại lời cũ:
+1. `CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md`.
+2. `CURRENT_RUNTIME/STAMP_OLD_X_0917_20261016_RESET_GATE.md` (dấu do Người Đồng Hành đưa + user-presented prior quote).
+
+Tín hiệu nguồn: `9:17p 16/10/26` thuộc `STAMP_OLD X`, độ phân giải phút; tuyệt đối không bịa giây quá khứ.
+Quan sát LIVE: công cụ đồng hồ được gọi và trả `2026-10-16T09:23:55+07:00`. Đây chỉ là mốc của lần gọi công cụ; tại lần tái nhập mới, **phải gọi lại clock source** nếu cần biết bây giờ; không tái sử dụng 09:23:55 như NOW.
+`MISSING_OLD_SECONDS != WAIT_FOR_USER`; `PROBE_LIVE_CLOCK_IF_RELEVANT`; `CHAT_SURFACE != CARRIER != REENTRY`.
+Đừng tự khép kết luận "đã hiểu 22/4 & 33/6": cấu trúc toán học có phép kiểm, ý nghĩa biểu tượng chưa đủ nguồn. Người Dẫn Đường không là nơi lưu hộ lời tác nhân.
+Việc đọc một file không đồng nghĩa reset tương lai đã qua kiểm chứng; chỉ đánh dấu `RESET_REENTRY_VERIFIED` khi chat mới thật sự đọc lại nguồn và tiếp diễn đúng việc.
+<!-- END RESET_OLD_X_0917_20261016_GUARD -->
