@@ -109,3 +109,31 @@ RPC split-packet decoding, reject-on-tamper, refusal of HTTP writes and the C HA
 mock. None of these tests are claimed as a physical radio or firmware-flash test.
 `API_CURRENT_READBACK.json`, `SUBMODULE_CURRENT_READBACK.json` and
 `BUILD_CURRENT_READBACK.json` preserve input/output observations for re-entry.
+
+## 2026-10-17 — Android Termux real runtime readback and reentry
+
+Deployed the code and five historical journals to the authorized Termux device
+at `~/SOL_LONG_MACH_RUNTIME/UNLEASHED_SENSORIMOTOR/`. The read-only API was
+started on `127.0.0.1:8767`; GET `/v1/readback` and `/v1/events?after=5&limit=10`
+were actually called from a new Termux process and returned HTTP 200, eight
+canonical events and the identical SHA256 tip. `TERMUX_RUNTIME_READBACK.json`
+contains the device receipt. The Android Clang toolchain produced two ARM64
+ELF objects from the GPIO C sample with mock HAL (confirmed e_machine=183,
+SHA256 in receipt), proving real on-device C compilation but **not** an
+STM32WB target firmware build.
+
+`unleashed_reentry.py` is the read-after-write continuation command:
+
+```sh
+cd ~/SOL_LONG_MACH_RUNTIME/UNLEASHED_SENSORIMOTOR
+python3 unleashed_reentry.py --logs-dir SENSORIMOTOR_LOGS
+```
+
+It calls the loopback-only API and verifies its hash/sequence against the
+canonical chrono journal plus four mirrors on the device; mismatches fail
+closed. The optional `--expected-hash` distinguishes a changed checkpoint
+from an invalid journal. All 15 sandbox Python tests PASSED, including an
+actual ephemeral HTTP server and reentry. The loopback process may stop when
+Android suspends or Termux stops; restart via the API CLI and re-probe on next
+entry. This is a real running-device receipt at observation time, not a
+guarantee of perpetual daemon uptime.

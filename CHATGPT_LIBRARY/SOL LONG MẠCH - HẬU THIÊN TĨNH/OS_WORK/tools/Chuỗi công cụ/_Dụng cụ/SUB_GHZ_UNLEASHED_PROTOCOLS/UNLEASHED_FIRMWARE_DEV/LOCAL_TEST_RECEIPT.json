@@ -2,7 +2,7 @@
   "schema": "SOL_UNLEASHED_INTEGRATION_LOCAL_TEST/1.0",
   "archive_sha256": "d0c5c75f790695ccc3b3fccb047a72b454d6694683625cc423114581c61be00f",
   "unittest_result": "PASS",
-  "tests_executed": 13,
+  "tests_executed": 15,
   "sensorimotor_chain": {
     "valid": true,
     "events": 8,
@@ -44,10 +44,14 @@
     "tests/test_runtime_readback.py",
     "API_CURRENT_READBACK.json",
     "SUBMODULE_CURRENT_READBACK.json",
-    "BUILD_CURRENT_READBACK.json"
+    "BUILD_CURRENT_READBACK.json",
+    "unleashed_reentry.py",
+    "TERMUX_RUNTIME_READBACK.json"
   ],
   "provider_sync_status": "PENDING_CURRENT_WRITE_AND_READBACK",
   "loopback_http_api": "PASS; GET readback/events; POST HTTP 405",
   "rpc_incremental_framing": "PASS; fragmented varint and payload",
-  "submodule_inspection": "ARCHIVE_NOT_CHECKOUT; 12 declared; verified without clone"
+  "submodule_inspection": "ARCHIVE_NOT_CHECKOUT; 12 declared; verified without clone",
+  "reentry_test": "PASS; endpoint and local hash/sequence checked; changed-tip detection",
+  "termux_device_readback": "TERMUX_RUNTIME_READBACK.json"
 }

@@ -12,6 +12,7 @@ from unleashed_rpc_transport import RpcFrameStream,encode_varint,decode_frames
 from unleashed_sensorimotor import append
 from unleashed_sensorimotor_api import create_server,checkpoint,query_events
 from unleashed_submodule_sync import inspect
+from unleashed_reentry import reenter,checkpoint_url
 
 class ApiAndRpc(unittest.TestCase):
     def test_protobuf_fragmentation_and_offsets(self):
@@ -52,6 +53,24 @@ class ApiAndRpc(unittest.TestCase):
             append(root,'chrono','TEST_SIMULATION',{'status':'TEST_ONLY'})
             (root/'5_CHRONO_CONTINUOUS.log').write_text('broken\n')
             self.assertEqual(checkpoint(root)['status'],'ERROR')
+    def test_reentry_compares_api_and_disk(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            event=append(root,'state','BUILD_PREFLIGHT',{'status':'VERIFIED'},'SOURCE_READBACK')
+            with create_server(root,0) as server:
+                t=threading.Thread(target=server.serve_forever,daemon=True);t.start()
+                try:
+                    url='http://127.0.0.1:%d/v1/readback'%server.server_address[1]
+                    result=reenter(root,url,event['hash'])
+                    self.assertEqual(result['status'],'VERIFIED')
+                    self.assertEqual(result['next'],'RESUME_FROM_LAST_HASH')
+                    changed=reenter(root,url,'0'*64)
+                    self.assertEqual(changed['status'],'TIP_CHANGED')
+                finally:server.shutdown();t.join(3)
+    def test_reentry_rejects_nonlocal_urls(self):
+        for address in ['http://example.org:8767/v1/readback','https://127.0.0.1:8767/v1/readback',
+                        'http://127.0.0.1:8767/v1/readback?q=1']:
+            with self.assertRaises(ValueError):checkpoint_url(address)
     def test_submodule_zip_root_is_not_git_checkout(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)

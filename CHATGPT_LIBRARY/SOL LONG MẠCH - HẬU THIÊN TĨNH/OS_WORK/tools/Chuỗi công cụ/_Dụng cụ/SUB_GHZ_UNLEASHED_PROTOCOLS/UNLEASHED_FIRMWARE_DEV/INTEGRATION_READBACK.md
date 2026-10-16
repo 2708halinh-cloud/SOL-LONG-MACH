@@ -40,3 +40,14 @@
   `last_hash` so the next agent can verify before acting.
 - Source archive ZIP is preserved. No implicit bootstrap, unauthorized flash or
   arbitrary network clone was used to fabricate submodule gitlinks.
+
+
+## TERMUX DEVICE CHECKPOINT / 2026-10-17
+
+The authorized online Termux device returned independent HTTP 200 from its
+127.0.0.1:8767 API for `/v1/readback` and `/v1/events`; eight events and tip
+`061616021baa4e8dd24693bfb85061c8ad093fd7df1aa7af2ffbb6b54dc3cb18`.
+Android Clang compiled both driver and app objects against mock HAL, then ELF
+metadata was read back as AArch64/183. `TERMUX_RUNTIME_READBACK.json` carries
+the checksums and host. Automatic reentry CLI was added with two new tests,
+raising deterministic offline suite to 15/15 PASS.
