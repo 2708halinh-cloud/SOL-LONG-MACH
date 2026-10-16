@@ -62,8 +62,11 @@ class PowerCapabilityRouterTests(unittest.TestCase):
     def test_storage_sync(self):
         self.check_route("Dropbox đồng bộ ChatGPT Library", "storage-sync")
 
+    def test_router_label_is_legitimate_alias(self):
+        self.check_route("bộ định tuyến công cụ", "call-tools")
+
     def test_unknown_keeps_concrete_discovery(self):
-        item = router.route("Một khả năng chưa định danh trong bộ định tuyến", ROOT)
+        item = router.route("Lập danh mục các hiện tượng thiên văn chưa có bộ gọi phù hợp", ROOT)
         self.assertEqual(item["candidates"], [])
         self.assertEqual(item["next_action"], "DISCOVER_SKILLS_AND_PROVIDER_CAPABILITIES")
         self.assertEqual(item["return_to"], "_Plugins")
