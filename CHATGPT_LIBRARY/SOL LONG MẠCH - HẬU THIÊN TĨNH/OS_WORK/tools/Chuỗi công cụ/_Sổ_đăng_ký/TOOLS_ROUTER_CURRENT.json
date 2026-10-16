@@ -319,10 +319,18 @@
       "intent": "git/github/repository",
       "prefer": [
         "GitHub",
-        "Github_MCP",
         "Github_Full_Access_Tokens"
       ],
-      "runtime_status": "PREFER_NATIVE_DIRECT_TEXT_RECEIPT"
+      "runtime_status": "PREFER_NATIVE_DIRECT_TEXT_RECEIPT",
+      "disabled_by_user_mark": [
+        {
+          "name": "Github_MCP",
+          "source": "TOOL_ACTIVE_MARKS_20261016.json",
+          "active": "FLASE",
+          "force_active": "FALSE"
+        }
+      ],
+      "route_selection_rule": "NEVER_SELECT_A_USER_MARKED_INACTIVE_PROVIDER; USE_A_CALLABLE_AUTHORIZED_ALTERNATIVE"
     },
     {
       "intent": "Drive/Docs",
@@ -487,5 +495,14 @@
     "azure_mcp_live_inferred": false,
     "work_item_and_tool_names_must_not_be_mistaken_for_current_connected_actions": true,
     "agent_plus_shared_hands": true
+  },
+  "user_status_overlay": {
+    "source": "TOOL_ACTIVE_MARKS_20261016.json",
+    "excluded_from_execution": [
+      "Github_MCP"
+    ],
+    "preferred_replacement": "GitHub",
+    "open_marker": "OPEN_IS_NOT_EXECUTION_STOP",
+    "permission_policy": "PROVIDER_AUTH_REQUIRED"
   }
 }
