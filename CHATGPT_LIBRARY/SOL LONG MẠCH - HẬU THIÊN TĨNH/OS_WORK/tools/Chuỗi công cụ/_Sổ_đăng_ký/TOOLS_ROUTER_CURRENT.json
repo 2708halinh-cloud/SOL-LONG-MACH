@@ -11,7 +11,9 @@
     "@TOOLS",
     "@TÁC NHÂN — TAY",
     "@TÁC NHÂN",
-    "@TÁC NHÂN PLUS"
+    "@TÁC NHÂN PLUS",
+    "@TIME_STONE",
+    "@Eye of Agamotto"
   ],
   "tag_semantics": "ALIAS_IN_PROJECT_FILES_NOT_REGISTERED_CHATGPT_PLUGIN",
   "agent": {
@@ -35,6 +37,23 @@
     }
   },
   "hand_routes": [
+    {
+      "route_id": "time-stone-eye-of-agamotto-4d",
+      "description": "Time-first 4D continuity preflight for @TIME_STONE, @Sol Long Mạch, project start and Tools; live-to-old CURRENT, five-wave journal, Azure Toolset cursor.",
+      "keywords": [
+        "@TIME_STONE",
+        "@Sol Long Mạch",
+        "NexT",
+        "bắt đầu dự án",
+        "Tools",
+        "Agamotto",
+        "STAMP_LIVE",
+        "STAMP_OLD",
+        "STAMP_BETA"
+      ],
+      "tool": "Chuỗi công cụ/_Dụng cụ/TIME_STONE_4D/time_stone.py",
+      "skill": "Chuỗi công cụ/_Kỹ năng/TIME_STONE_Eye_of_Agamotto/SKILL.md"
+    },
     {
       "route_id": "archive-zip-hash-audit",
       "skill_uri": "skills://plugins/tac-nhan-hands/archive-zip-hash-audit",
@@ -577,5 +596,25 @@
       "TIME"
     ],
     "windows_registry_changed": false
+  },
+  "time_stone_4d_preflight": {
+    "force_active": true,
+    "active": true,
+    "active_meaning": "ROUTER_ENTRY_READY_CHECK_DEVICE_RUNTIME",
+    "skill": "Chuỗi công cụ/_Kỹ năng/TIME_STONE_Eye_of_Agamotto/SKILL.md",
+    "tool": "Chuỗi công cụ/_Dụng cụ/TIME_STONE_4D/time_stone.py",
+    "trigger_on": [
+      "@TIME_STONE",
+      "@Sol Long Mạch",
+      "PROJECT_START",
+      "TOOLS_CALL"
+    ],
+    "before_provider_call": [
+      "FRESH_WALL_CLOCK",
+      "LOAD_TOOLSET_SOURCE_AND_CURSOR",
+      "RECLASSIFY_CURRENT_LIVE_TO_OLD",
+      "RESOLVE_NEXT_ACTION"
+    ],
+    "source_ledger_rule": "RAW_IMMUTABLE_CURRENT_PROJECTION_WRITABLE"
   }
 }
