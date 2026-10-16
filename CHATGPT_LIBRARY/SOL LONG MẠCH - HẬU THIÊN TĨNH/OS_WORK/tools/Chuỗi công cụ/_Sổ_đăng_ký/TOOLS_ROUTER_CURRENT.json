@@ -34,7 +34,30 @@
       "name": "@TÁC NHÂN — TAY",
       "plugin_ref": "plugins_6ac89337264c8191aab0fa3791803937",
       "skill_uri": "skills://plugins/tac-nhan-hands/agents-skill-hands",
-      "role": "route 21 established AGENTS_SKILL hands"
+      "role": "route 21 established AGENTS_SKILL hands",
+      "auth_skill": {
+        "name": "Master OAth",
+        "source_path": "Chuỗi công cụ/_Kỹ năng/master-oath/SKILL.md",
+        "github_path": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ/_Kỹ năng/master-oath/SKILL.md",
+        "activation": "TÁC NHÂN — TAY: authenticated browser workflow when account login or verification is needed",
+        "triggers": [
+          "Master OAth",
+          "master-oath",
+          "xác thực tài khoản",
+          "đăng nhập",
+          "Gmail OTP",
+          "mã xác minh",
+          "OAuth",
+          "browser login"
+        ],
+        "channels": [
+          "authorized browser",
+          "current-account Gmail when challenge actually exists",
+          "other authorized verification channel"
+        ],
+        "route": "_Plugins -> TÁC NHÂN — TAY -> Master OAth SKILL.md -> official login UI -> challenge if required -> resume task -> readback -> _Plugins",
+        "status": "PROJECT_ROUTER_LINK_NOT_CHATGPT_SKILL_INSTALLATION"
+      }
     }
   },
   "hand_routes": [
@@ -373,6 +396,22 @@
     {
       "uri": "skills://plugins/tac-nhan-hands/dropbox-home-direct",
       "role": "extra_skill_not_22nd_hand"
+    },
+    {
+      "name": "Master OAth",
+      "source_path": "Chuỗi công cụ/_Kỹ năng/master-oath/SKILL.md",
+      "role": "authentication_workflow_for_tac_nhan_tay_not_22nd_hand",
+      "triggers": [
+        "Master OAth",
+        "master-oath",
+        "xác thực tài khoản",
+        "đăng nhập",
+        "Gmail OTP",
+        "mã xác minh",
+        "OAuth",
+        "browser login"
+      ],
+      "status": "LINKED_IN_PROJECT_ROUTER"
     }
   ],
   "providers": [
