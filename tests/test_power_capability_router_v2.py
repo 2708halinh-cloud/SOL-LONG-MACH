@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import importlib.util
+import tempfile
+import shutil
 import unittest
 from pathlib import Path
 
@@ -71,6 +73,22 @@ class PowerCapabilityRouterTests(unittest.TestCase):
         self.assertEqual(item["next_action"], "DISCOVER_SKILLS_AND_PROVIDER_CAPABILITIES")
         self.assertEqual(item["return_to"], "_Plugins")
         self.assertEqual(item["never_terminal_label_only"], "OPEN_REQUIRES_NEXT_ACTION")
+
+    def test_portable_library_mirror_never_fakes_back_edge(self):
+        # GitHub-only manifest and return pointer may not exist in personal Library.
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            target = root / router.ROOT_REL / "_Plugins"
+            target.mkdir(parents=True)
+            current = SOURCE.parent
+            shutil.copy2(current / "POWER_CAPABILITY_ROUTES_V2.json", target)
+            output = router.route("GGDV Template Creator", root)
+            self.assertEqual(output["candidates"][0]["capability_id"], "ggdv-template-creator")
+            self.assertEqual(output["return_to"], "_Plugins")
+            self.assertFalse(output["back_edge_observed_in_checkout"])
+            self.assertFalse(output["cycle_closed_by_metadata"])
+            self.assertFalse(output["action_executed"])
+            self.assertIsNone(output["provider_receipt"])
 
     def test_refuse_empty_task(self):
         with self.assertRaises(ValueError):
