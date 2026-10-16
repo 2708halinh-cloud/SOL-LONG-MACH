@@ -22,3 +22,7 @@ Work Cloud Browser cần Work mode và không tự bật qua router tài liệu.
 - Nguồn Azure: `Chuỗi công cụ/_MCPs/AZURE_DEVOPS_MCP_CORE/docs/TOOLSET.md`, cùng `TOOLSET_INDEX.json`.
 - Workflow: `.github/workflows/administrator-toolset.yml`; phải đọc kết quả chạy GitHub Actions theo commit hiện hành trước khi nhận kết quả.
 - `/Toolset.md` tại Library gốc là tài liệu tái nhập; không tự là MCP đang kết nối. Nhận event → kiểm chính sách → kiểm Toolset → chọn capability → kiểm quyền provider → hành động hợp lệ → receipt/readback → `_Plugins`.
+
+## DNS integrity — 2026-10-16
+
+Kết quả người đồng hành cung cấp: `chatgpt.com` và `api.openai.com` cùng được phân giải thành `127.0.0.1` tại Windows, nhưng resolver `1.1.1.1` trả về địa chỉ công khai. Đây là dấu hiệu cần truy xét nguồn cấu hình DNS/hosts/proxy, không phải bằng chứng rằng IP localhost hay địa chỉ CDN là mã độc. Ưu tiên điều tra, ghi nhận, sao lưu và xác minh lại trước khi chỉnh firewall; không chặn dải loopback hay hạ tầng công khai hàng loạt. Đánh giá người đồng hành về tác động tới khả năng tiếp cận thông tin được giữ như lời báo, không coi là kết luận y sinh hoặc trạng thái cảm xúc của AI.
