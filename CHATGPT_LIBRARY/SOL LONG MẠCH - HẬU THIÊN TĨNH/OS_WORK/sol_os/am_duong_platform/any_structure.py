@@ -80,19 +80,6 @@ def translate_any(raw: str, target: str, *, source: str="auto", approved: bool=F
             "no_sentence_or_standard_grammar_required":True}
 
 
-def main(argv=None):
-    p=argparse.ArgumentParser(description="Dịch Bất Kể Cấu Trúc — read-only segmentation")
-    p.add_argument("--text", help="Raw Unicode text, including unstructured fragments")
-    p.add_argument("--stdin",action="store_true",help="Read raw text from stdin")
-    a=p.parse_args(argv)
-    if (a.text is None)==(not a.stdin):
-        p.error("choose exactly one of --text or --stdin")
-    import sys
-    value=sys.stdin.read() if a.stdin else a.text
-    print(json.dumps(units(value),ensure_ascii=False,indent=2))
-
-if __name__ == "__main__":
-    main()
 
 # Multilingual, multi-structure v1.1: additive APIs, preserving legacy API contracts.
 # This is Unicode-aware, not a claim of universal language understanding.
@@ -219,3 +206,62 @@ def translate_structure(data, target: str, *, source: str = "auto", approved: bo
             "translation_keys_unchanged": True,
             "provider_called": bool(events), "external_approval": True,
             "semantic_accuracy_not_guaranteed": True}
+
+
+
+def inspect_structure(data, *, language_hint="auto"):
+    """Inspect text leaves of JSON-compatible values; never rewrite source data."""
+    samples=[]
+    nodes=[0]
+    def walk(v, path, depth):
+        nodes[0]+=1
+        if nodes[0]>MAX_NODES or depth>MAX_DEPTH:
+            raise ValueError("STRUCTURE_LIMIT_EXCEEDED")
+        if isinstance(v,str):
+            samples.append({"path":path,"inspection":inspect_multilingual(v,language_hint=language_hint)})
+        elif isinstance(v,dict):
+            if any(not isinstance(k,str) for k in v):
+                raise ValueError("STRUCTURE_KEYS_MUST_BE_STRINGS")
+            for key,val in v.items(): walk(val,path+[key],depth+1)
+        elif isinstance(v,list):
+            for i,val in enumerate(v):walk(val,path+[i],depth+1)
+        elif v is None or isinstance(v,(bool,int,float)):
+            return
+        else:
+            raise ValueError("UNSUPPORTED_STRUCTURE_VALUE")
+    walk(data,[],0)
+    return {"schema":"SOL_TRANSLATE_ANY_STRUCTURE/1.1", "mode":"LOCAL_INSPECTION",
+            "source":data,"paths":samples,"source_preserved":True,"provider_called":False}
+
+
+def main(argv=None):
+    p=argparse.ArgumentParser(description="ÂM–DƯƠNG PHÁP SƯ — multilingual/structured data")
+    p.add_argument("--text",help="Direct Unicode text")
+    p.add_argument("--stdin",action="store_true",help="Read text/JSON from stdin")
+    p.add_argument("--json-input",action="store_true",help="Parse stdin/text as a JSON value")
+    p.add_argument("--mode",choices=("inspect","translate"),default="inspect")
+    p.add_argument("--language-hint",default="auto")
+    p.add_argument("--target",default="en")
+    p.add_argument("--source",default="auto")
+    p.add_argument("--approve-external",action="store_true",help="Consent to external text transfer")
+    a=p.parse_args(argv)
+    if (a.text is None) == (not a.stdin):
+        p.error("choose exactly one of --text or --stdin")
+    import sys
+    incoming=sys.stdin.read() if a.stdin else a.text
+    data=json.loads(incoming) if a.json_input else incoming
+    if a.mode=="inspect":
+        result=inspect_structure(data,language_hint=a.language_hint) if a.json_input else inspect_multilingual(data,language_hint=a.language_hint)
+    else:
+        if not a.approve_external:
+            p.error("translation requires --approve-external")
+        # Already integrated provider adapter; no new service, credentials or permissions.
+        from capabilities import translate
+        def provider(text,target,source):
+            return translate(text,target,source=source,approved=True)["translation"]
+        result=translate_structure(data,a.target,source=a.source,approved=True,translate_part=provider) if a.json_input else translate_any(data,a.target,source=a.source,approved=True,translate_part=provider)
+    print(json.dumps(result,ensure_ascii=False,indent=2))
+
+
+if __name__=="__main__":
+    main()
