@@ -1,0 +1,52 @@
+{
+  "schema": "SOL_SYSTEM_ROUTER/1.0",
+  "date": "2026-10-16",
+  "requested_scope": "USER_OWNED_WINDOWS_11_PRO",
+  "status": "SOURCE_UPDATED_NOT_APPLIED_WINDOWS_OFFLINE",
+  "severity": {
+    "light": "WARN",
+    "severe": "BLOCK"
+  },
+  "rules": {
+    "dns_roots": ["openai.com", "chatgpt.com", "oaistatic.com", "oaiusercontent.com", "oaistatsig.com", "openaimerge.com"],
+    "explicit_ip_addresses": [],
+    "dns_match": "EXACT_AND_SUBDOMAIN",
+    "ip_match": "EXPLICIT_IDENTIFIED_IPS_ONLY",
+    "warn_does_not_modify_network": true,
+    "block_requires_actual_host_enforcer": true,
+    "block_all_dynamic_ip_routes_verified": false
+  },
+  "lan_source_direct": {
+    "ethernet_ip_snapshot": "10.15.224.21/24",
+    "ethernet_gateway_snapshot": "10.15.224.83",
+    "hyperv_ip_snapshot": "192.168.224.1/20",
+    "network_shortcut_candidate": "192.168.1.12",
+    "lan_https_candidate": "https://192.168.1.42:8080",
+    "redmi_adb_candidate": "192.168.1.14:5556",
+    "windows_home_sol_loopback": ["http://127.0.0.1:8765/", "http://127.0.0.1:8765/sandbox/sol", "http://127.0.0.1:8765/api/devices"],
+    "connection_state": "UNVERIFIED; 192.168.1.42:8080 REFUSED_FROM_REDMI",
+    "do_not_equate_distinct_hosts": true
+  },
+  "hostinger": {
+    "role": "AUTHORITATIVE_DNS_FOR_OWNED_ZONE_NOT_WINDOWS_RECURSIVE_RESOLVER",
+    "zone": "gambbrazil.fun",
+    "agent_fqdn": "gambbrazil.gambbrazil.fun",
+    "agent_service": "HOSPOSIK",
+    "termux_dns_port": 15353,
+    "public_http_endpoint": "NOT_AVAILABLE",
+    "do_not_override_system_dns_without_resolver": true,
+    "do_not_change_public_zone_records": true
+  },
+  "windows_apply": {
+    "command": "Set-SolSystemRouter.ps1",
+    "default_mode": "Status",
+    "requires_explicit_apply_switch": true,
+    "hosts_exact_names_only": true,
+    "wildcard_and_dynamic_ip_block_requires_gateway_or_wfp": true,
+    "rollback_mode": "Rollback",
+    "filesystem_mutation_on_windows": "NOT_RUN",
+    "disk_format_mutation": "NEVER_REQUESTED"
+  },
+  "preserve_existing_sources": ["network_policy.py", "network_policy_cli.py", "policies/OPENAI_EGRESS.toml"],
+  "notes": "Router records the requested Windows network policy; it does not alter OpenAI/ChatGPT service infrastructure, enforce cross-device or Cloud Browser network settings, or expand provider permissions."
+}
