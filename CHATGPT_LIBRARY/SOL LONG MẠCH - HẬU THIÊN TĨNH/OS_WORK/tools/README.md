@@ -33,3 +33,10 @@ Từ mục tiêu của Người Dẫn Đường, dùng **9 họ năng lực suy 
 - Router chính `TOOLS_ROUTER_CURRENT.json#goal_first_semantic_router`.
 
 Các con trỏ là bản đồ năng lực; không coi chúng là kết nối Azure đã chạy. Đọc lại kết quả thực thi/CI trước khi nâng trạng thái.
+
+## Power Router V2 — Thực hành tại cửa Plugins
+
+- [Entry ở cấp Tools](./POWER_ROUTER_ENTRY_CURRENT.md), [router code](./_Plugins/power_capability_router.py), [11 capability families](./_Plugins/POWER_CAPABILITY_ROUTES_V2.json), [hợp đồng vận hành](./_Plugins/POWER_ROUTER_EXECUTION.md), [Agent Skill](./_Plugins/_Skills/power-capability-router/SKILL.md).
+- Return edge: `_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/RETURN_TO_PLUGINS.json`. Truy tên công cụ qua Registry → provider hiện có → quyền và schema → hành động có receipt/readback → quay về `_Plugins`.
+- `source route / local classification` không tạo quyền ChatGPT Plugin/MCP hoặc xác nhận một Azure DevOps session đã connected. `OPEN` luôn đi với next_probe cụ thể.
+- Hai mặt Library/GitHub phải đối chiếu riêng: bản Library V2 được mirror theo SHA cho mã, registry, skill và hợp đồng; các tệp legacy không mặc định có mặt ở cả hai.
