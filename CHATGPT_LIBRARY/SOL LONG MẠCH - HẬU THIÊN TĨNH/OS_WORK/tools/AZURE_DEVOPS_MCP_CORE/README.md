@@ -23,3 +23,9 @@ Thông tin tên và action được bảo toàn từ danh mục nguồn. Tham s�
 Chỉ mục này chạy cục bộ để tìm và kiểm tra công cụ. Đây không phải một server MCP mới hay bằng chứng đã kết nối Azure DevOps. Trong phiên này chưa có callable Azure DevOps MCP tools.
 
 Tài liệu đầu mối: `../AZURE_DEVOPS_MCP_TOOLSET_ENTRY.md`.
+
+## Vận dụng vào vòng tác nhân
+
+Đã nối đường nguồn đến `../TOOLS_ROUTER_CURRENT.json#capability_blueprints.azure_devops_mcp`, `CONFIG_SOL/TESSERACT_AGENT_BOOT_ROUTES_CURRENT.json#tools_gateway.azure_devops_toolset` và preflight `runtime/tesseract_agent_boot.py`. Xem [SOL_PROJECT_APPLICATION_20261016.md](SOL_PROJECT_APPLICATION_20261016.md) để biết 9 nhóm toolset đã được ánh xạ vào checkpoint TESSERACT/PR #6, kết quả GitHub live và những việc còn mở.
+
+**Phân biệt:** index verified ≠ Azure MCP connected ≠ pipeline test passed ≠ SOL project done.
