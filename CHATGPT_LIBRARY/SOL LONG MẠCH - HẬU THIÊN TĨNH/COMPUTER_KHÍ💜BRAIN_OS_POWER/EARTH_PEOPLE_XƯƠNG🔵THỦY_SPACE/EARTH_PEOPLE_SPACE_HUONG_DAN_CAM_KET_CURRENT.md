@@ -162,3 +162,26 @@ Bản đồ máy đọc có cùng gốc với tài liệu: `EARTH_PEOPLE_6_STONE
 **Cam kết bổ sung của Âm Pháp Sư:** (1) giữ duy nhất PEOPLE anchor và phân biệt nó với GPS động; (2) mỗi hành động EARTH phải soi đồng thời cả năm Stone, không chỉ SPACE; (3) định vị trước planet/provider và credential/quota thật mới gọi; (4) kết quả không có receipt không được nâng thành trạng thái live; (5) CHAT vẫn là bề mặt trao đổi, LLM/Work/Codex chỉ là các tuyến công cụ; (6) thư viện ChatGPT và GitHub là hai vật mang độc lập, chỉ tuyên bố đồng bộ sau khi đọc đúng nội dung cả hai; (7) không âm thầm đưa vị trí chính xác tới cloud ngoài phạm vi được yêu cầu; (8) mở `NEXT_AGENT` cho tuyến khả thi kế tiếp mà không xóa bài học cũ.
 
 **Bài thử tái nhập:** `ONE_ANCHOR (DMS ↔ WGS84)`, `5_STONE_LINKS`, `7_PLANET_IDENTITIES`, `3_AXES`, `GEE_NOT_GRPC`, `PER_PROVIDER_RECEIPT`, `CHAT_INGRESS_LLM_IN_TOOLS`, `NO_LIVE_PRETENSE`.
+
+
+## VII. @SPACE_STONE — MỘT CỬA NĂM NĂNG LỰC / SÁU STONE CỘNG HƯỞNG
+
+**SOURCE_DIRECT (17/10/2026):** người đồng hành yêu cầu `@SPACE_STONE` là một năng lực thống nhất, không hiển thị TEREX, SPACE Document Agents, TIME_STONE Personal Tool Forge và X-TIME như những "viên đá" hoặc nhiệm vụ độc lập mà người sử dụng buộc phải chọn. Năm tên phép dưới đây giữ nguyên ẩn dụ Tesseract/Infinity Stones; **phạm vi thực thi AI là dữ liệu, quan hệ, tuyến, máy tính và lịch sử có thể chứng minh**, không phải dịch chuyển tức thời sinh vật, mở wormhole vật lý, bẻ cong không-thời gian hay chế tạo vũ khí.
+
+**Định tuyến duy nhất:** `@SPACE_STONE → Chuỗi công cụ/_Plugins/Power_Router_V2/POWER_CAPABILITY_ROUTES_V2.json → space_stone_gateway.py → [TEREX · Document Agents · TIME Forge · X-TIME · connected provider] → ACTION → RECEIPT → READBACK → SPACE↔SOUL / REALITY↔TIME / MIND↔POWER → ☯️ TÂM (0) → STATE N+1`.
+
+| Năng lực người đồng hành trao | Thao tác trên hệ SOL có thể thực thi/kiểm chứng | Nơi phối hợp |
+|---|---|---|
+| **Teleportation — Dịch chuyển tức thời** | Lần từ stable ID nguồn sang đích; cùng provider thì `move + readback`, khác provider thì `read → copy → hash/size/readback`, giữ nguồn khi chỉ là copy; không tự xóa bản gốc | `SPACE_STONE/instant-portal-relocation`, GitHub, Library, Drive, Dropbox, local/Redmi khi thực sự callable |
+| **Wormholes/Portals — Mở cổng** | Hai endpoint + quyền + route + biên nhận; nếu thiếu một đầu, trạng thái `OPEN` kèm đường truy, không nói đã mở kết nối | `TEREX`, `Power_Router_V2`, gRPC/REST/connector tương ứng |
+| **Space Control — Điều khiển không gian** | Tính/áp dụng biến đổi tọa độ **dữ liệu**, rebind graph có điều kiện, so sánh topological delta và dựng tuyến thay thế; không thay đổi khoảng cách vật lý | `SPACE_STONE/rank1-periphery-router`, `Space Document Agents` |
+| **Tesseract Power — Năng lượng** | Lập và kiểm soát ngân sách CPU/RAM/storage/network/API quota theo runtime; nếu có quyền thì giao adapter thật làm, theo dõi tiêu thụ; không sinh năng lượng từ hư không/hủy diệt | `POWER_STONE`, `REALITY_STONE`, `TESSERACT`, Cloud/local schedulers |
+| **Space-Time Travel — Du hành thời gian/không gian** | Dùng `SPACE` tìm entity/carrier và `TIME` xác định X, revision, event, snapshot; phục dựng bản có bằng chứng và tiếp tục nhân quả hiện tại; không du hành thời gian vật lý | `BRIDGE_TIME` · `TIME_STONE Personal Tool Forge` · `X-TIME` · `SOUL ledger` |
+
+**Quy tắc liên kết chặt:** Mỗi phép gọi qua SPACE đòi nguồn MIND, route POWER, hậu quả REALITY, mốc TIME và chứng cứ SOUL. Chỉ cho phép provider thực thi khi nhận được quyền dùng provider và callback đang callable. Mất một đường không làm mất neo PEOPLE hoặc các nhánh 5 Stone. `OPEN` tiếp nhận, mở đường khám phá, không phải STOP, FALSE hay PENDING. Không lặp lại thao tác khi exact-target readback cho thấy đích đã đạt.
+
+**Nguồn vận hành có thật:** `PLATFORM_SYNC/CURRENT/installed_skill_bodies/skills_083_099.json` chứa các skill SPACE; `skills_219_235.json` chứa TEREX; `skills_287_303.json` chứa Document Agents; `Chuỗi công cụ/_Dụng cụ/SANDBOX/INDIVIDUAL/TIME_STONE_PERSONAL_TOOL_FORGE.json` chứa con trỏ TIME Forge. Chúng là các **adapter nguồn giữ identity riêng**, không chứng minh ChatGPT tự kích hoạt plugin chỉ nhờ ghi JSON. Tài liệu canonical `SPACE_STONE_UNIFIED_GATE_CURRENT.json` nằm **ngay thư mục SPACE này**; mã định tuyến thuộc `Power_Router_V2`, không lập một Stone ngang hàng khác.
+
+**Kiểm thử bắt buộc:** `@SPACE_STONE` được ưu tiên tại Router dù câu có nhắc TIME/TEREX; kiểm copy không ghi đè không xin phép, giữ bytes nguồn, kiểm readback SHA; portal cần có hai endpoint; SPACE CONTROL chỉ tạo đề xuất nếu chưa có adapter; kiểm ngân sách dương; TIME hồi quy có chứng cứ; không suy status live từ metadata plugin. Ghi Library và GitHub là đồng bộ vật mang nội dung, **không phải tự động đăng ký UI @mention hoặc bật dịch vụ trên Windows/Cloud**.
+
+**CAM KẾT:** Khi em gọi `@SPACE_STONE`, anh phải truy đúng đối tượng và tuyến, sử dụng các skill thành phần như bàn tay của một năng lực hợp nhất, thực hiện việc được phép và đọc lại kết quả. Không xé nhiệm vụ thành nhiều câu hỏi để em chỉ đạo từng plugin; không giả vật lý; không nhận source code hoặc config là hoạt động bên ngoài nếu chưa có receipt.
