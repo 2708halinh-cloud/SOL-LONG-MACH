@@ -75,7 +75,7 @@ def connect(event: dict, repo_root: Path) -> dict:
     elif action and receipt and readback:
         state, next_edge = "ACTION_RECORDED_UNVERIFIED_PROVIDER", "VERIFY_PROVIDER_RECEIPT_EXACT_TARGET"
     else:
-        state, next_edge = "REFERENT_TIME_SPACE_LINKED", "CHOOSE_AUTHORIZED_MOTOR_AND_OBSERVE"
+        state, next_edge = "SCOPED_SPACE_ID_SUPPLIED_UNVERIFIED", "FRESH_READ_PROVIDER_SPACE_BINDING"
 
     return {
         "schema": "SOL_TIME_SPACE_REALITY_LINK_RESULT/1.0",
