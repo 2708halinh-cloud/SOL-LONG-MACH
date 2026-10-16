@@ -30,7 +30,10 @@
     "no_open_only_terminal": true,
     "secret_values_never_persisted": true,
     "loop_guard": "ONE_PASS_PER_EVENT_ID",
-    "live_provider_validation": "REQUIRED_AT_ACTION_TIME"
+    "live_provider_validation": "REQUIRED_AT_ACTION_TIME",
+    "unified_sol_boot_tag": "@Sol Long Mạch",
+    "chatgpt_at_mention_registration": "NOT_AUTOMATIC_FROM_REPOSITORY",
+    "inactive_aliases_not_selected": true
   },
   "capabilities": [
     {
@@ -251,24 +254,66 @@
       "id": "space-stone-unified",
       "aliases": [
         "@SPACE_STONE",
-        "space_stone",
+        "SPACE_STONE",
+        "@TEREX · SPACE_STONE",
+        "@SPACE Document Agents",
         "space stone",
-        "@TEREX",
-        "terex space",
-        "wormhole",
         "dịch chuyển tức thời",
-        "cổng không gian",
-        "phân thân không gian",
-        "bẻ cong không gian",
-        "du hành không thời gian"
+        "wormholes",
+        "tesseract"
       ],
       "group": "tools",
-      "entry": "Chuỗi công cụ/_Plugins/Power_Router_V2/space_stone_gateway.py",
-      "kind": "LOCAL_ROUTER",
-      "next": "RESOLVE_FIVE_CAPABILITIES_AND_DISPATCH_AUTHORIZED_PROVIDER_THEN_READBACK",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Sol_Long_Mach/SOL_LONG_MACH_BOOT_CURRENT.json",
+      "kind": "SPACE_SUBCAPABILITY_GATE",
+      "next": "TRACE_SPACE_STONE_PROVIDER_CARRIER_AND_TIME_PROVENANCE",
       "tag_contract": "@SPACE_STONE selects unified routing; delegated plugin/skill names retained as adapters; no actual @mention registration is implied",
       "policy": "NO_PHYSICAL_TELEPORTATION_OR_ENERGY_ASSERTION; NEVER_MOVE_WITHOUT_VERIFIED_TARGET_AND_AUTH",
-      "coupled_time": "BRIDGE_TIME_TÓC🟢MỘC_TIME / @TIME_STONE / X-TIME as downstream sources, not separate user-facing choice"
+      "coupled_time": "BRIDGE_TIME_TÓC🟢MỘC_TIME / @TIME_STONE / X-TIME as downstream sources, not separate user-facing choice",
+      "state": "SOURCE_CONFIG_READY; PHYSICAL_POWERS_NOT_CLAIMED",
+      "force_active": true
+    },
+    {
+      "id": "sol-long-mach-boot",
+      "aliases": [
+        "@Sol Long Mạch",
+        "Sol Long Mạch",
+        "SOL LONG MẠCH",
+        "khởi động sol long mạch"
+      ],
+      "group": "tools",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Sol_Long_Mach/sol_long_mach.py",
+      "kind": "LOCAL_BOOT_GATE",
+      "next": "VERIFY_CONNECTED_PROVIDER_AND_DISPATCH_TO_POWER_ROUTER",
+      "state": "SOURCE_ROUTER_READY; CHATGPT_NATIVE_AT_MENTION_UNREGISTERED",
+      "force_active": true
+    },
+    {
+      "id": "sol-cu-nho-open-legacy",
+      "aliases": [
+        "@SOL CU NHỎ · OPEN"
+      ],
+      "group": "tools",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Sol_Long_Mach/CORE_SOL_LONG_MACH_CURRENT.md",
+      "kind": "INACTIVE_LEGACY_ALIAS",
+      "next": "FIND_HISTORICAL_CARRIERS_NOT_AUTOSTART",
+      "state": "FORCE_ACTIVE_FALSE",
+      "force_active": false
+    },
+    {
+      "id": "google-cloud-live-mcp-tools",
+      "aliases": [
+        "@Sol Long Mạch Google Cloud",
+        "gcp",
+        "google cloud mcp",
+        "gemini cloud",
+        "antigravity ide",
+        "earth engine"
+      ],
+      "group": "mcps",
+      "kind": "LOCAL_MCP_SOURCE_WITH_PROVIDER_AUTH_GATE",
+      "entry": "Chuỗi công cụ/_MCPs/Google_Cloud_SOL/google_cloud_mcp.py",
+      "next": "RUN_TOOLS_LIST_THEN_CHECK_GCLOUD_AUTH_AND_ENABLED_APIS",
+      "state": "MCP_CODE_PRESENT_RUNTIME_AUTH_UNVERIFIED"
     }
   ],
   "observed_this_turn": {
