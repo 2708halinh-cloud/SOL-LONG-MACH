@@ -1,5 +1,5 @@
 import importlib.util, json, pathlib, subprocess, sys, unittest
-SERVER = pathlib.Path(__file__).resolve().parents[1]/'tools/google_cloud/server.py'
+SERVER = pathlib.Path(__file__).resolve().parents[1]/'google_cloud_mcp.py'
 spec = importlib.util.spec_from_file_location('google_cloud_mcp', SERVER)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
