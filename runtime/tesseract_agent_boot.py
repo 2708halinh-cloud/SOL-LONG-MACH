@@ -47,6 +47,12 @@ def evaluate(repo_root: Path, test_dev_root: Path | None = None) -> dict:
         raise ValueError("DEV_WRITE_FORBIDDEN")
     main = read_source(root, cfg["tac_nhan"]["source_path"])
     plus = read_source(root, cfg["tac_nhan_plus"]["source_path"])
+    tools_cfg = cfg["tools_gateway"]
+    tools_manifest = read_source(root, tools_cfg["route_manifest"])
+    azure_cfg = tools_cfg["azure_devops_toolset"]
+    azure_source = read_source(root, azure_cfg["source"])
+    azure_index = read_source(root, azure_cfg["index"])
+    azure_router = read_source(root, azure_cfg["read_only_router"])
     dev = device_metadata(test_dev_root if test_dev_root is not None else Path("/dev"))
     return {
         "schema": "GGDV_TESSERACT_AGENT_BOOT_READBACK/1.0",
@@ -54,10 +60,17 @@ def evaluate(repo_root: Path, test_dev_root: Path | None = None) -> dict:
         "agent": main,
         "plus": {**plus, "skill_uri": cfg["tac_nhan_plus"]["skill_uri"], "skill_is_not_missing_source": True},
         "hands": {"skill_uri": cfg["hands"]["skill_uri"], "target_id": target["canonical_id"], "device_metadata": dev, "mode": "READ_ONLY"},
+        "tools_gateway": {"manifest": tools_manifest, "mode": "READ_ONLY_SOURCE_PREFLIGHT",
+            "azure_devops": {"toolset": azure_source, "index": azure_index, "router": azure_router,
+                             "provider_connected": False, "executed": False}},
         "status": "SOURCE_ROUTE_READY" if main["exists"] else "OPEN_AGENTS_SOURCE",
         "open_edges": [
             *([] if main["exists"] else ["AGENTS_MD_NOT_FOUND"]),
             *([] if plus["exists"] else ["AGENTS_CONTUNE_MD_NOT_FOUND"]),
+            *([] if tools_manifest["exists"] else ["TOOLS_ROUTER_MANIFEST_NOT_FOUND"]),
+            *([] if azure_source["exists"] else ["AZURE_DEVOPS_TOOLSET_SOURCE_NOT_FOUND"]),
+            *([] if azure_index["exists"] else ["AZURE_DEVOPS_TOOLSET_INDEX_NOT_FOUND"]),
+            *([] if azure_router["exists"] else ["AZURE_DEVOPS_TOOLSET_ROUTER_NOT_FOUND"]),
             *([] if dev["observed"] else ["HOST_DEV_READBACK_NOT_AVAILABLE"])
         ],
         "device_bytes_read_or_written": False,
