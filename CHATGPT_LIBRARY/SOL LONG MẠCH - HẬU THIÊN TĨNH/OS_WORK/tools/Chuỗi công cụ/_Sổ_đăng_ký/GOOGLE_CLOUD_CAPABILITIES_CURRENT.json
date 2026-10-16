@@ -1,14 +1,15 @@
 {
-  "schema": "SOL_GOOGLE_CLOUD_TOOLCHAIN/1.0",
+  "schema": "SOL_GOOGLE_CLOUD_TOOLCHAIN/1.1",
   "recorded_utc": "2026-10-17",
   "entry_tag": "@Sol Long Mạch",
   "owner_root": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools",
   "source_bundle": "GOOGLE_CLOUD_TOOLS_MCP_SKILL_WINDOWS_SOL_20261014.zip (ChatGPT Library)",
   "project_candidates": [
+    "utility-operand-504304-u4",
     "alert-tiger-508618-h7"
   ],
   "account_count_user_reported": 2,
-  "account_id_verification": "NOT_VERIFIED",
+  "account_id_verification": "TWO_OAUTH_CLIENT_PROJECT_CONFIGS_NOT_TWO_VERIFIED_ACCOUNTS",
   "redmi_observation": {
     "gcloud_cli": "ABSENT",
     "google_auth_sdk": "ABSENT",
@@ -57,5 +58,35 @@
     "zero_remote_cloud_calls_claimed": true,
     "check_two_accounts_on_authenticated_provider": "DO_NOT_ASSUME_TWO_ACCOUNTS_FROM_TWO_CREDENTIAL_FILES",
     "on_provider_success": "APPEND_RECEIPT_AND_READBACK_WITH_ACCOUNT_ALIAS_NO_TOKEN"
-  }
+  },
+  "oauth_clients_reported": [
+    {
+      "account_alias": "utility_operand",
+      "project_id": "utility-operand-504304-u4",
+      "credential_type": "installed_desktop",
+      "administrator_secret_ref": "AI_AGENT_ADMINISTRATOR/Google_Cloud/utility_operand/oauth_installed_client",
+      "cloudsdk_config_env": "SOL_ADMIN_GCP_UTILITY_CONFIG",
+      "client_config_source": "USER_DIRECT_CURRENT_CHAT",
+      "actual_provider_account_id": "NOT_VERIFIED",
+      "secret_backend_receipt": "ABSENT"
+    },
+    {
+      "account_alias": "alert_tiger",
+      "project_id": "alert-tiger-508618-h7",
+      "credential_type": "installed_desktop",
+      "administrator_secret_ref": "AI_AGENT_ADMINISTRATOR/Google_Cloud/alert_tiger/oauth_installed_client",
+      "cloudsdk_config_env": "SOL_ADMIN_GCP_ALERT_CONFIG",
+      "client_config_source": "USER_DIRECT_CURRENT_CHAT",
+      "actual_provider_account_id": "NOT_VERIFIED",
+      "secret_backend_receipt": "ABSENT"
+    }
+  ],
+  "admin_secret_store": {
+    "namespace": "AI_AGENT_ADMINISTRATOR/Google_Cloud",
+    "bind_mode": "RUNTIME_SECRET_PROVIDER",
+    "available_secret_provider": "NONE_CONNECTED_AT_CURRENT_INVOCATION",
+    "secret_values_in_registry": false,
+    "registration": "REQUIRES_VAULT_TOOL_TO_WRITE_AND_READBACK; DO_NOT_ASSERT_REGISTERED"
+  },
+  "two_project_selector": "Chuỗi công cụ/_MCPs/Google_Cloud_SOL/gcp_dual_project.py"
 }
