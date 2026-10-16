@@ -25,7 +25,7 @@ class PlatformTests(unittest.TestCase):
 
     def test_human_event_persists_with_correct_identity_and_provenance(self):
         e=self.store.add("sol-main","Hà Linh","DUONG_PHAP_SU","source",
-                         "Nhật ký trước đây","library://known")
+                         "Nhật ký trước đây",source_ref="library://known")
         self.assertEqual(e["role"],"DUONG_PHAP_SU")
         other=Workrooms(self.store.db)
         old=other.events("sol-main")

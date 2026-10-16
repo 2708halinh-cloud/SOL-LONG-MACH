@@ -25,3 +25,7 @@ Ghi nhận: 2026-10-14. Trạng thái liên kết: do người dùng cung cấp;
 - Tài liệu kết nối: `PUPPETEER_INTEGRATION.md`.
 - Trong bản clone: `git submodule update --init --recursive`.
 - Gắn mã nguồn không đồng nghĩa cài package, chạy trình duyệt hoặc kích hoạt MCP.
+
+## ÂM–DƯƠNG PHÁP SƯ — Multi-Agent Platform
+
+Bộ định tuyến tìm được cổng `_Plugins/_Skills/_Mcps/_Tool/_App/_App_Browser/AM_DUONG_PLATFORM/README.md` rồi quay về `_Plugins`. Mã vận hành cục bộ: `OS_WORK/sol_os/am_duong_platform/`; đây là cổng chọn nguồn, **không** phải bằng chứng API cloud đã chạy.
