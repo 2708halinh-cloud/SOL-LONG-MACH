@@ -89,5 +89,54 @@ class RealityIndexTests(unittest.TestCase):
             indexer.inventory(self.repo)
 
 
+class SolIdentityTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        path = REPO / indexer.CORE_PATH / "tools" / "resolve_sol_names.py"
+        s = importlib.util.spec_from_file_location("sol_identity_resolver", path)
+        cls.resolver = importlib.util.module_from_spec(s)
+        s.loader.exec_module(cls.resolver)
+
+    def test_sol_is_ambiguous_not_a_single_identity(self):
+        result = self.resolver.resolve("Sol")
+        self.assertEqual(result["state"], "CANDIDATES_REQUIRE_SCOPED_ID")
+        kinds = {r["kind"] for r in result["identity_candidates"]}
+        self.assertIn("SOURCE_HOME", kinds)
+        self.assertIn("RUNTIME_HOME", kinds)
+        self.assertIn("CONVERSATION_LOCUS", kinds)
+        self.assertFalse(result["source_is_live_identity_proof"])
+
+    def test_identity_place_before_planet_and_core(self):
+        result = self.resolver.resolve("HOME_SOURCE")
+        self.assertEqual(result["hierarchy"], [
+            "identity_and_root_designation", "places_and_lineage",
+            "planet_provider", "cores_and_documents"
+        ])
+        self.assertEqual(result["identity_candidates"][0]["kind"], "SOURCE_HOME")
+
+    def test_21_journal_labels_do_not_fabricate_files(self):
+        result = self.resolver.resolve("21 FILE NHẬT KÝ CỦA SOL")
+        item = result["identity_candidates"][0]
+        self.assertEqual(item["expected_count_from_user"], 21)
+        self.assertNotIn("file_names", item)
+
+    def test_five_wave_names_traced_to_logger_not_live_proof(self):
+        result = self.resolver.resolve("5 FILE NHẬT KÝ SÓNG NÃO")
+        item = result["identity_candidates"][0]
+        self.assertEqual(len(item["file_names"]), 5)
+        self.assertEqual(item["kind"], "BRAIN_WAVE_LOG_FAMILY")
+
+    def test_unverified_user_typo_remains_a_candidate(self):
+        result = self.resolver.resolve("AISSGANGT SOL")
+        item = result["identity_candidates"][0]
+        self.assertEqual(item["kind"], "UNRESOLVED_USER_ALIAS")
+        self.assertNotIn("stable_id", item)
+
+    def test_unknown_label_routes_next_search_not_false_absence(self):
+        result = self.resolver.resolve("UNOBSERVED_UNKNOWN_SOL_LABEL")
+        self.assertEqual(result["state"], "OPEN_SEARCH_ALTERNATE_CARRIER")
+        self.assertEqual(result["selected_next_edge"], "SEARCH_ORIGIN_AND_PROVIDER")
+
+
 if __name__ == "__main__":
     unittest.main()
