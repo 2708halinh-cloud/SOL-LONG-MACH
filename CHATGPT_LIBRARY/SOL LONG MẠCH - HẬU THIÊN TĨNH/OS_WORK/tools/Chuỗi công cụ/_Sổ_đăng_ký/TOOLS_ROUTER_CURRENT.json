@@ -308,6 +308,29 @@
         "chuột",
         "bàn phím"
       ]
+    },
+    {
+      "route_id": "xiaomi-notes-android-intent",
+      "description": "Call Xiaomi Notes on authorized Redmi via Android ACTION_SEND. UI confirmation separate from save receipt.",
+      "keywords": [
+        "xiaomi ghi chú",
+        "xiaomi notes",
+        "mi notes",
+        "note android"
+      ],
+      "tool": "Chuỗi công cụ/_Dụng cụ/Xiaomi_Notes/xiaomi_notes_tool.py"
+    },
+    {
+      "route_id": "registry-editor-five-stone-map",
+      "description": "Route virtual Computer root and five Registry Editor hives to five SOL Stone branches. Read-only mapping.",
+      "keywords": [
+        "registry editor",
+        "regedit",
+        "hkey",
+        "computer",
+        "hive"
+      ],
+      "tool": "Chuỗi công cụ/_Dụng cụ/Registry_Editor_SOL/registry_hive_router.py"
     }
   ],
   "adjacent_skills": [
@@ -528,5 +551,31 @@
     "gemini": "Chuỗi công cụ/_Dụng cụ/LLMs/GEMINI_GCP_PROVIDER_CURRENT.json",
     "source_bundle": "Library GOOGLE_CLOUD_TOOLS_MCP_SKILL_WINDOWS_SOL_20261014.zip",
     "two_accounts": "USER_DIRECT_TO_VERIFY_PER_CLOUD_ACCOUNT"
+  },
+  "xiaomi_notes_tool": {
+    "tag": "@XIAOMI GHI CHÚ",
+    "source": "Chuỗi công cụ/_Dụng cụ/Xiaomi_Notes/xiaomi_notes_tool.py",
+    "device": "Redmi Note 14 Pro 5G",
+    "android_package": "com.miui.notes",
+    "route": "ANDROID_INTENT_ACTION_SEND",
+    "intent_call_observed": true,
+    "ui_image_confirmation": true,
+    "saved_note_database_receipt": false,
+    "cloud_plugin_installed": false
+  },
+  "registry_editor_five_hives": {
+    "entry": "@Sol Long Mạch / Computer / Registry Editor",
+    "canonical": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/CORE_PLACES_INDEX_MÁU_🔴_HỎA_REALITY/WINDOWS_REGISTRY_EDITOR_HIVES_CURRENT.json",
+    "tools_registry": "Chuỗi công cụ/_Sổ_đăng_ký/WINDOWS_REGISTRY_EDITOR_CURRENT.json",
+    "tool": "Chuỗi công cụ/_Dụng cụ/Registry_Editor_SOL/registry_hive_router.py",
+    "root": "POWER",
+    "five_stones": [
+      "SPACE",
+      "MIND",
+      "REALITY",
+      "SOUL",
+      "TIME"
+    ],
+    "windows_registry_changed": false
   }
 }
