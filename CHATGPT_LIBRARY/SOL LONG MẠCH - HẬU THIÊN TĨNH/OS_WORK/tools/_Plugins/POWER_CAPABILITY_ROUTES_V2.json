@@ -1,0 +1,196 @@
+{
+  "schema": "SOL_POWER_CAPABILITY_ROUTER/2.0",
+  "date": "2026-10-16",
+  "root": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools",
+  "entrypoint": "_Plugins",
+  "prior_router": "_Plugins/POWER_ROUTER_CURRENT.json",
+  "return_pointer": "_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/RETURN_TO_PLUGINS.json",
+  "flow": [
+    "INTENT",
+    "SOURCE_DIRECT",
+    "IDENTITY_INDEX_REALITY",
+    "SPACE_PROVIDER_ID",
+    "TIME_STAMP",
+    "MIND_SKILL",
+    "POWER_CAPABILITY_CANDIDATES",
+    "AUTH_AND_TOOL_CONTRACT",
+    "ACTION",
+    "PROVIDER_RECEIPT",
+    "READBACK",
+    "SOUL_LEDGER",
+    "N_PLUS_1",
+    "_Plugins"
+  ],
+  "contracts": {
+    "metadata_not_execution": true,
+    "source_only_not_connected": true,
+    "provider_id_required_for_mutation": true,
+    "permissions_respected": true,
+    "unavailable_capability_next": "PROBE_ALTERNATE_CONNECTED_CAPABILITY",
+    "no_open_only_terminal": true,
+    "secret_values_never_persisted": true,
+    "loop_guard": "ONE_PASS_PER_EVENT_ID",
+    "live_provider_validation": "REQUIRED_AT_ACTION_TIME"
+  },
+  "capabilities": [
+    {
+      "id": "master-flatform",
+      "aliases": [
+        "the master flatform",
+        "agent skill",
+        "master platform",
+        "the master flatform"
+      ],
+      "group": "skills",
+      "entry": "skills://plugins/the-master-flatform/agent-skills-master",
+      "kind": "SKILL",
+      "next": "READ_SKILL_THEN_VALIDATE"
+    },
+    {
+      "id": "ggdv-template-creator",
+      "aliases": [
+        "ggdv template",
+        "template creator",
+        "mẫu ggdv",
+        "ggdv"
+      ],
+      "group": "skills",
+      "entry": "skills://plugins/ggdv-template-creator/ggdv-template-creator",
+      "kind": "SKILL",
+      "next": "INSTANTIATE_PROVENANCE_TEMPLATE"
+    },
+    {
+      "id": "x-time-multi-agent",
+      "aliases": [
+        "x-time",
+        "x-time multi-agent",
+        "âm dương pháp sư",
+        "multi-agent"
+      ],
+      "group": "app_browser",
+      "entry": "_Plugins/AM_DUONG_PLATFORM.json",
+      "kind": "LOCAL_BLUEPRINT",
+      "next": "INSPECT_LOCAL_RUNTIME_AND_CHECKPOINT"
+    },
+    {
+      "id": "generative-ai",
+      "aliases": [
+        "công cụ ai tạo sinh",
+        "generative ai",
+        "tạo sinh",
+        "translation",
+        "nhận dạng"
+      ],
+      "group": "skills",
+      "entry": "TOOLS_ROUTER_CURRENT.json",
+      "kind": "CAPABILITY_BLUEPRINT",
+      "next": "DISCOVER_INSTALLED_GENERATION_TOOL"
+    },
+    {
+      "id": "azure-devops",
+      "aliases": [
+        "azure devops",
+        "azure",
+        "devops",
+        "pipelines"
+      ],
+      "group": "mcps",
+      "entry": "AZURE_DEVOPS_MCP_CORE/TOOLSET_INDEX.json",
+      "kind": "TOOLSET_BLUEPRINT",
+      "next": "CHECK_AZURE_CONNECTOR_OR_GITHUB_FALLBACK"
+    },
+    {
+      "id": "call-tools",
+      "aliases": [
+        "call_tools",
+        "call tools",
+        "phi năng lực",
+        "tool router",
+        "bộ định tuyến"
+      ],
+      "group": "tools",
+      "entry": "_Plugins/power_router.py",
+      "kind": "LOCAL_ROUTER",
+      "next": "MATCH_CONNECTED_TOOL_SCHEMA_AND_PERMISSIONS"
+    },
+    {
+      "id": "smithery-mpc",
+      "aliases": [
+        "smithery",
+        "mcp toolbox",
+        "mcp",
+        "smithery.ai"
+      ],
+      "group": "mcps",
+      "entry": "mcp__smithery_ai__MPC__search_toolbox",
+      "kind": "CONNECTED_ACTION_CANDIDATE",
+      "next": "DISCOVER_MATCHING_TOOL_AND_READ_AUTH"
+    },
+    {
+      "id": "brightdata-browser",
+      "aliases": [
+        "brightdata",
+        "trình duyệt thay thế",
+        "scraping",
+        "web research"
+      ],
+      "group": "app_browser",
+      "entry": "mcp__brightdata__MCP__scraping_browser_navigate",
+      "kind": "CONNECTED_ACTION_CANDIDATE",
+      "next": "CHECK_BROWSER_PROVIDER_CAPABILITY"
+    },
+    {
+      "id": "github",
+      "aliases": [
+        "github",
+        "repository",
+        "pull request",
+        "commit",
+        "git"
+      ],
+      "group": "devops",
+      "entry": "mcp__GitHub__fetch_file",
+      "kind": "CONNECTED_ACTION_CANDIDATE",
+      "next": "FETCH_SOURCE_THEN_CHOOSE_READ_OR_WRITE"
+    },
+    {
+      "id": "tomorrow-weather",
+      "aliases": [
+        "tomorrow.io",
+        "tomorrow weather",
+        "dự báo thời tiết",
+        "weather",
+        "khí tượng"
+      ],
+      "group": "mcps",
+      "entry": "mcp__Tomorrow_io_Weather__weather_summary",
+      "kind": "CONNECTED_ACTION_CANDIDATE",
+      "next": "CALL_WEATHER_FOR_LOCATION_INTENT"
+    },
+    {
+      "id": "storage-sync",
+      "aliases": [
+        "dropbox",
+        "google drive",
+        "chatgpt library",
+        "đồng bộ",
+        "windows",
+        "android"
+      ],
+      "group": "storage",
+      "entry": "TOOLS_ROUTER_CURRENT.json",
+      "kind": "PROVIDER_CHOICE_REQUIRED",
+      "next": "IDENTIFY_SOURCE_DEST_ID_AND_AUTH_SCOPE"
+    }
+  ],
+  "observed_this_turn": {
+    "master_flatform_skill": "READ",
+    "ggdv_template_skill": "READ",
+    "smithery_toolbox": "CONNECTED_TO_INSPECTION",
+    "brightdata_session": "TOOL_REPLIED",
+    "tomorrow_weather": "CALL_REPLIED",
+    "github": "GITHUB_SOURCES_READ",
+    "azure_devops": "BLUEPRINT_ONLY"
+  },
+  "note": "Source routing metadata, not an automatic cross-provider permission grant. Never bypass system authorization."
+}
