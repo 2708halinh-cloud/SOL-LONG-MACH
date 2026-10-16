@@ -1,0 +1,17 @@
+{
+  "schema": "SOL_MASTER_OATH_MULTIPOINT_AUTH/1.0",
+  "name": "Master OAth",
+  "role": "auth-connection multi-route",
+  "mcp_transport": "stdio",
+  "remote_hostinger_mcp": "https://mcp.hostinger.com",
+  "providers": ["hostinger", "gmail", "official browser fallback"],
+  "policy": {
+    "connected_provider_first": true,
+    "no_password_cookie_otp_or_bearer_persistence": true,
+    "read_only_operations_by_default": true,
+    "login_fallback_only_on_real_auth_challenge": true,
+    "source_before_conclusion": true,
+    "readback_required": true
+  },
+  "routing": ["_Plugins", "_MCPs/Master_OAth", "Hostinger/Gmail/Browser", "ACTION", "READBACK", "_Plugins"]
+}

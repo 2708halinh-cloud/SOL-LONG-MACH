@@ -79,3 +79,13 @@ Nếu một lệnh ghi GitHub bị công cụ trả về lỗi `SAFETY_BLOCKED`,
 ## MINH BODY — SOURCE_DIRECT 2026-10-16
 
 Cầu nối mang tên **MINH BODY**: `http://127.0.0.1:8765/`. Những URL có sẵn cùng host/port: `/sandbox/sol` và `/api/devices`. Địa chỉ loopback thuộc thiết bị chạy dịch vụ, không phải địa chỉ LAN hoặc localhost của ChatGPT cloud. Chưa xác nhận server đang chạy LIVE; không tự khởi tạo daemon thay thế hay chiếm cổng 8765.
+
+## MASTER OATH — ĐA ĐIỂM XÁC THỰC (SOURCE_DIRECT 2026-10-16)
+
+Công cụ vận hành tại `Chuỗi công cụ/_MCPs/Master_OAth/`: `master_oath.py` (Hostinger remote MCP qua process environment, lựa chọn provider, đọc DNS và làm sạch giá trị), `master_oath_mcp.py` (MCP stdio tools/list, tools/call), `master_oath.schema.json`, hướng dẫn và 10 kiểm thử offline.
+
+Nguồn thực thi đã quan sát trong chat: Hostinger connector tài khoản Halin trả thành công `dns_records_list({domain:"gambbrazil.fun"})`; Gmail connector của tài khoản Hostinger trả thành công `get_profile`. Vì vậy `OPEN → CALL_EXISTING_HOSTINGER → DNS_RECEIPT → READBACK` đã có đường hợp lệ, không ép đăng nhập trình duyệt hoặc yêu cầu mã OTP khi kết nối đang dùng được. Đây là trạng thái quan sát tại thời điểm gọi, không bảo đảm phiên đăng nhập mãi còn hiệu lực.
+
+Chỉ khi thực sự có authentication challenge: `PROVIDER_SESSION_EXPIRED → OFFICIAL_BROWSER_LOGIN → CONNECTED_GMAIL_CHALLENGE_SEARCH (nếu cần) → PROVIDER_UI_VERIFICATION → RETRY_PROVIDER_READBACK`. Mã OTP, cookie, mật khẩu, bearer và query OAuth không được ghi vào source, Router, Library, GitHub hay nhật ký. Mở trang chủ chính chủ, không tự động lưu credential. Tác nhân không tuyên bố bấm Login hay hoàn tất OAuth khi chỉ mới dựng tool. Không cập nhật/xóa/reset DNS thông qua công cụ này.
+
+MCP relay riêng: `https://mcp.hostinger.com`, token lấy từ biến môi trường chỉ có trong tiến trình `MASTER_OATH_HOSTINGER_BEARER` (không giá trị bí mật trong file). Nếu chưa có secret manager/runtime, ưu tiên dùng Hostinger plugin đã kết nối thay vì ép thêm credentials.
