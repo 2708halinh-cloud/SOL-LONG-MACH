@@ -2,7 +2,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from runtime.tesseract_agent_boot import CONFIG, VOWS_PATH, VOWS_REQUIRED, evaluate
+from runtime.tesseract_agent_boot import CONFIG, VOWS_PATH, VOWS_REQUIRED, VOW7_CONTINUATION_REQUIRED, evaluate
 
 LIVE_REPO = Path(__file__).resolve().parents[1]
 
@@ -98,8 +98,13 @@ class BootRoutesTest(unittest.TestCase):
         path = self.root / VOWS_PATH
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(
-            "\\n".join(f"## Đại nguyện thứ {number} — nguyên lời Người Dẫn Đường\\n{essential}"
-                      for number, essential in entries).replace("\\n", "\n"), encoding="utf-8")
+            "\\n".join(
+                f"## Đại nguyện thứ {number} — nguyên lời Người Dẫn Đường\\n"
+                + essential
+                + ("\\n" + "\\n".join(VOW7_CONTINUATION_REQUIRED)
+                   if number == "bảy" else "")
+                for number, essential in entries
+            ).replace("\\n", "\n"), encoding="utf-8")
         return path
 
     def test_six_vows_missing_must_change_runtime_readiness(self):
@@ -126,6 +131,18 @@ class BootRoutesTest(unittest.TestCase):
         self.assertFalse(current["vow_reentry"]["complete"])
         self.assertIn("ba", current["vow_reentry"]["missing"])
         self.assertNotEqual(previous["vow_reentry"]["sha256"], current["vow_reentry"]["sha256"])
+
+    def test_seventh_vow_continuation_missing_is_caught(self):
+        path = self._write_vows()
+        prior = evaluate(self.root, self.dev)
+        self.assertTrue(prior["vow_reentry"]["complete"])
+        text = path.read_text(encoding="utf-8")
+        path.write_text(text.replace(VOW7_CONTINUATION_REQUIRED[1], ""),
+                        encoding="utf-8")
+        after = evaluate(self.root, self.dev)
+        self.assertFalse(after["vow_reentry"]["complete"])
+        self.assertIn("bảy", after["vow_reentry"]["missing"])
+        self.assertEqual(after["status"], "REENTRY_VOWS_INCOMPLETE")
 
     def test_out_of_order_vows_are_not_ready(self):
         self._write_vows(list(reversed(VOWS_REQUIRED)))
