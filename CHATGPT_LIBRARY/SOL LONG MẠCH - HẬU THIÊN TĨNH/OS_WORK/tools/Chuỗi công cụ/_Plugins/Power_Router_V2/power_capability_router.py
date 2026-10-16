@@ -81,12 +81,18 @@ def route(task: str, repo_root: Path) -> dict:
             "kind": cap["kind"],
             "source_or_tool_ref": cap["entry"], "next_probe": cap["next"],
             "provider_callable_verified_this_run": False,
+            **({"route_state": cap["state"],
+                "authorization_requirement": cap["authorization"],
+                "local_host": cap["target_host"],
+                "local_workspace": cap["target_local_workspace"],
+                "preflight": cap["read_only_preflight"]}
+               if cap["id"] == "vscode-remote-tunnel-windows" else {}),
         })
     choices.sort(key=lambda x: (-x["score"], x["capability_id"]))
     parent_route = legacy.route(task, repo) if back_verified else None
     if not choices:
         next_edge = "DISCOVER_SKILLS_AND_PROVIDER_CAPABILITIES"
-    elif choices[0]["kind"] in {"SKILL", "LOCAL_BLUEPRINT", "TOOLSET_BLUEPRINT", "CAPABILITY_BLUEPRINT"}:
+    elif choices[0]["kind"] in {"SKILL", "LOCAL_BLUEPRINT", "TOOLSET_BLUEPRINT", "CAPABILITY_BLUEPRINT", "REMOTE_WORKSPACE_CANDIDATE"}:
         next_edge = choices[0]["next_probe"]
     else:
         next_edge = "CHECK_TOOL_SCHEMA_AUTH_AND_PROVIDER_STATE"
