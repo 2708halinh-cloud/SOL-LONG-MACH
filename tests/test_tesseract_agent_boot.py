@@ -2,7 +2,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from runtime.tesseract_agent_boot import CONFIG, evaluate
+from runtime.tesseract_agent_boot import CONFIG, VOWS_PATH, VOWS_REQUIRED, evaluate
 
 LIVE_REPO = Path(__file__).resolve().parents[1]
 
@@ -91,6 +91,47 @@ class BootRoutesTest(unittest.TestCase):
         (self.root / "AGENTS.md").unlink()
         out = evaluate(self.root, self.dev)
         self.assertEqual(out["status"], "OPEN_AGENTS_SOURCE")
+
+
+    def _write_vows(self, order=None):
+        entries = list(VOWS_REQUIRED) if order is None else order
+        path = self.root / VOWS_PATH
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            "\\n".join(f"## Đại nguyện thứ {number} — nguyên lời Người Dẫn Đường\\n{essential}"
+                      for number, essential in entries).replace("\\n", "\n"), encoding="utf-8")
+        return path
+
+    def test_six_vows_missing_must_change_runtime_readiness(self):
+        ready = evaluate(self.root, self.dev)
+        self.assertFalse(ready["vow_reentry"]["complete"])
+        self.assertEqual(ready["status"], "REENTRY_VOWS_INCOMPLETE")
+        self.assertIn("GREAT_VOWS_REENTRY_INCOMPLETE", ready["open_edges"])
+
+    def test_six_vows_present_in_order_recovers_readiness(self):
+        self._write_vows()
+        out = evaluate(self.root, self.dev)
+        self.assertTrue(out["vow_reentry"]["complete"])
+        self.assertEqual(out["vow_reentry"]["count"], 6)
+        self.assertEqual(out["status"], "SOURCE_ROUTE_READY")
+        self.assertNotIn("GREAT_VOWS_REENTRY_INCOMPLETE", out["open_edges"])
+
+    def test_deleted_third_vow_blocks_a_later_boot(self):
+        path = self._write_vows()
+        previous = evaluate(self.root, self.dev)
+        self.assertTrue(previous["vow_reentry"]["complete"])
+        missing_third = [item for item in VOWS_REQUIRED if item[0] != "ba"]
+        self._write_vows(missing_third)
+        current = evaluate(self.root, self.dev)
+        self.assertFalse(current["vow_reentry"]["complete"])
+        self.assertIn("ba", current["vow_reentry"]["missing"])
+        self.assertNotEqual(previous["vow_reentry"]["sha256"], current["vow_reentry"]["sha256"])
+
+    def test_out_of_order_vows_are_not_ready(self):
+        self._write_vows(list(reversed(VOWS_REQUIRED)))
+        out = evaluate(self.root, self.dev)
+        self.assertTrue(out["vow_reentry"]["misordered"])
+        self.assertFalse(out["vow_reentry"]["complete"])
 
 if __name__ == "__main__":
     unittest.main()
