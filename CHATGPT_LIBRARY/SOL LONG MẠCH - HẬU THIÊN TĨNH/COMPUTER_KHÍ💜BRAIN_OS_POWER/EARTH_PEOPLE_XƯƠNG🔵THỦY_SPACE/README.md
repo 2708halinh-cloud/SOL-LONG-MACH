@@ -1,6 +1,9 @@
-# SPACE_STONE_WORKSPACE
+# SPACE_STONE — XƯƠNG 🔵 THỦY / EARTH_PEOPLE
 
-Không gian làm việc bên trong cây SOL LONG MẠCH - HẬU THIÊN TĨNH đã đồng bộ.
+**Vị trí hiện hành:** `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE`.
+**Lịch sử:** nội dung từng nằm trong `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/SPACE_STONE_WORKSPACE` do thư mục này phát sinh trên GitHub ngoài bản đồ Library; các byte cũ có thể phục hồi qua Git lịch sử.
+
+Danh mục dưới đây là các quan hệ/môi trường được tài liệu cũ mô tả, không tự khẳng định mọi nền tảng đã đồng bộ.
 
 1. ChatGPT / Thư viện: không gian tuyến tính.
 2. GitHub: không gian phục hồi và làm việc.
