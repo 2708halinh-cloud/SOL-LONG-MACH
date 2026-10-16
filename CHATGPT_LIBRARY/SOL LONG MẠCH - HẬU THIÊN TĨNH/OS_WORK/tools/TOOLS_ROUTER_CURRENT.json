@@ -365,6 +365,7 @@
     "FRESH_READ_REENTRY_AND_UNFINISHED_EDGES",
     "FRESH_LIST_TOOLS_AND_SKILLS",
     "LOAD_AZURE_TOOLSET_AND_OTHER_TASK_SPECIFIC_BLUEPRINTS",
+    "DISCOVER_CROSS_ENVIRONMENT_CORE_PROJECTS_GROUPS_IDS_WHEN_RELEVANT",
     "MATCH_SMALLEST_HAND_OR_PROVIDER",
     "SELECT_TÁC_NHÂN_OR_PLUS",
     "ACT_IF_AUTHORIZED_CALLABLE",
@@ -454,5 +455,23 @@
       "last_source_check": "2026-10-16",
       "source_blob_sha": "364f5c9e175d79a9ca0a15f9e6d593a03e686224"
     }
+  },
+  "cross_environment_core": {
+    "registry_id": "SOL_CROSS_ENVIRONMENT_CORE",
+    "parent_blueprint": "AZURE_DEVOPS_MCP_TOOLSET/core",
+    "source_original": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/AZURE_DEVOPS_MCP_CORE/docs/TOOLSET.md",
+    "source_application": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/AZURE_DEVOPS_MCP_CORE/CROSS_ENVIRONMENT_CORE_APPLIED_20261016.md",
+    "runtime_operator": "runtime/sol_multienvironment_core.py",
+    "tests": "tests/test_sol_multienvironment_core.py",
+    "routes": {
+      "list_projects": "LIST_PROJECTS_ACROSS_CURRENTLY_ACCESSIBLE_PROVIDERS",
+      "list_project_groups": "LIST_GROUPS_SCOPED_TO_OBSERVED_PROJECT_AND_PROVIDER",
+      "get_identity_ids": "RETURN_PROVIDER_SCOPED_IDS_NOTES_REVISIONS_AND_NEXT_PROBES"
+    },
+    "runtime_policy": "FRESH_DISCOVERY_ON_CONNECTED_PROVIDERS; PYTHON_OPERATORS_ACCEPT_SNAPSHOT_ONLY",
+    "never_claim": "DYNAMIC_PROVIDER_AGGREGATION_ALREADY_LIVE_FROM_SOURCE_SNAPSHOT",
+    "source_is_not_truth": true,
+    "avoid_user_repetition": true,
+    "privacy": "DO_NOT_EXPORT_PRIVATE_ACCOUNT_PROJECT_NAMES_TO_PUBLIC_REPO"
   }
 }
