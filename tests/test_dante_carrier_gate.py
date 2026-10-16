@@ -28,7 +28,11 @@ class DanteCarrierGateTests(unittest.TestCase):
 
     def test_all_six_404_keep_unknown_deletion_and_choose_preserved_skill(self):
         r = gate.audit(self.base)
-        self.assertEqual(r["not_accessible_count"], 6)
+        self.assertEqual(r["historical_404_carriers"], 6)
+        self.assertEqual(r["fresh_provider_observations_supplied"], 0)
+        self.assertFalse(r["provider_calls_performed_by_this_gate"])
+        self.assertTrue(all(x["fresh_provider_status"] is None for x in r["carriers"]))
+        self.assertTrue(all(x["state"] == "HISTORICAL_404_SNAPSHOT_ONLY" for x in r["carriers"]))
         self.assertEqual(r["accessible_reported_count"], 0)
         self.assertEqual(r["next_action"], "RECOVER_ROUTER_SEMANTICS_FROM_GITHUB_SNAPSHOT")
         self.assertTrue(r["skill_snapshot_covers_historical_ids"])
@@ -39,6 +43,8 @@ class DanteCarrierGateTests(unittest.TestCase):
     def test_provider_read_ok_does_not_automatically_certify_restoration(self):
         r = gate.audit(self.base, availability={"README": "READ_OK"})
         self.assertEqual(r["accessible_reported_count"], 1)
+        self.assertEqual(r["fresh_provider_observations_supplied"], 1)
+        self.assertFalse(r["provider_calls_performed_by_this_gate"])
         self.assertEqual(r["next_action"], "VERIFY_LIVE_PROVIDER_IDS")
         self.assertFalse(r["external_drive_data_recovered"])
         target = next(x for x in r["carriers"] if x["role"] == "README")
