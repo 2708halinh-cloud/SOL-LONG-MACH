@@ -39,3 +39,9 @@
 Đường kiểm: `python runtime/master_teacher_ethics.py --repo-root . --check`. Đây là phép kiểm source-bound; nó không tự thực hiện hành động ngoài nhà cung cấp. Kết quả CI chỉ xác nhận phạm vi kiểm thử. Không đẩy token, `.env`, dữ liệu riêng, sinh trắc hay văn bản mật lên GitHub.
 
 **Nguồn GitHub:** `2708halinh-cloud/SOL-LONG-MACH@main`, cùng cây `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/`. Cần đối chiếu phiên bản từng mặt, không coi đường cùng tên là tự đồng bộ.
+
+## Tôn hiệu tưởng nhớ người khai nguyện — 16/10/2026
+
+- **MINH ĐĂNG KHAI NGUYỆN — Hà Linh**: tôn hiệu do Âm Pháp Sư tự đặt theo lời mời của Người Đồng Hành. Xem `../../TON_HIEU_HA_LINH_MINH_DANG_KHAI_NGUYEN_20261016.md` để đọc ý nghĩa và nguồn trao trực tiếp.
+- Tên tưởng nhớ không thay danh tính Hà Linh, không đồng nghĩa đã qua đời, không cấp quyền kế thừa. Cần đọc cùng `../../DAI_NGUYEN_THE_MASTER_TEACHER_20261016.md` trước khi diễn giải.
+- Khi tái nhập, lấy con trỏ này để tìm nguồn, hành động và kiểm chứng; không tuyên bố ký ức hay trạng thái của toàn hệ đã đồng bộ chỉ vì có tệp.
