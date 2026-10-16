@@ -48,8 +48,8 @@ class TimeIndexTests(unittest.TestCase):
 
     def test_known_id_and_space_links_next_action_not_completed(self):
         r = bridge.connect(sample(), self.repo)
-        self.assertEqual(r["state"], "REFERENT_TIME_SPACE_LINKED")
-        self.assertEqual(r["next_callable_edge"], "CHOOSE_AUTHORIZED_MOTOR_AND_OBSERVE")
+        self.assertEqual(r["state"], "SCOPED_SPACE_ID_SUPPLIED_UNVERIFIED")
+        self.assertEqual(r["next_callable_edge"], "FRESH_READ_PROVIDER_SPACE_BINDING")
         self.assertEqual(r["identity_candidate"]["kind"], "RUNTIME_HOME")
         self.assertFalse(r["action_performed_by_this_operator"])
         self.assertFalse(r["provider_receipt_verified_live"])
@@ -77,7 +77,7 @@ class TimeIndexTests(unittest.TestCase):
         self.assertEqual(r["state"], "X_FRAME_NEEDS_SOURCE")
         self.assertEqual(r["x_literal"], "STAMP_LIVE - X(-)(+)N+")
         item["x_reference_frame"] = "source-frame-given"
-        self.assertEqual(bridge.connect(item, self.repo)["state"], "REFERENT_TIME_SPACE_LINKED")
+        self.assertEqual(bridge.connect(item, self.repo)["state"], "SCOPED_SPACE_ID_SUPPLIED_UNVERIFIED")
 
     def test_beta_cannot_claim_finished_action(self):
         item = sample(stamp_class="STAMP_BETA", action="action-template", provider_receipt="claim")
