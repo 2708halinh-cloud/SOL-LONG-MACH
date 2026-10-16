@@ -42,11 +42,13 @@ class Edge:
         return bool(self.callable_now and not self.user_input_required and not self.done)
 
     def grounded_done(self) -> bool:
+        """A reported action is not completed until target readback was verified."""
         return bool(
             self.done
             and self.action_kind
             and self.provider_receipt is not None
             and self.observable_consequence is not None
+            and readback_verified(self.readback)
         )
 
     def next_carrier(self) -> str | None:
@@ -311,6 +313,19 @@ def mark_carrier_failure(edge: Edge, carrier: str, evidence: Any) -> None:
     edge.callable_now = edge.next_carrier() is not None
 
 
+def readback_verified(readback: Any) -> bool:
+    """Only an explicit positive, source-backed target check can close an edge.
+
+    This predicate checks the evidence contract; callers still must actually
+    perform readback on the real destination and retain the provider receipt.
+    """
+    return (
+        isinstance(readback, dict)
+        and readback.get("verified") is True
+        and readback.get("verified") is not False
+    )
+
+
 def apply_action_result(
     cp: Checkpoint,
     edge_id: str,
@@ -326,8 +341,10 @@ def apply_action_result(
     edge.provider_receipt = provider_receipt
     edge.observable_consequence = observable_consequence
     edge.readback = readback
-    edge.done = True
-    edge.callable_now = False
+    edge.done = bool(action_kind and provider_receipt is not None
+                     and observable_consequence is not None
+                     and readback_verified(readback))
+    edge.callable_now = not edge.done
     cp.state_n += 1
     cp.cycle_count += 1
     if last_consequence_ref is not None:
@@ -388,11 +405,14 @@ def continue_bounded(
 
         consequence = result.get("observable_consequence")
         provider_receipt = result.get("provider_receipt")
-        if provider_receipt is None or consequence is None:
-            # Boolean success/report-only is not grounded completion.
+        readback = result.get("readback")
+        if (provider_receipt is None or consequence is None
+                or not readback_verified(readback)):
+            # Success flags, receipts and claimed effects alone cannot close an edge.
+            # Require an actual verified readback from the target.
             edge.evidence.setdefault("rejected_results", []).append(result)
             if carrier is not None:
-                mark_carrier_failure(edge, carrier, "missing receipt/consequence")
+                mark_carrier_failure(edge, carrier, "missing verified target readback or consequence")
             else:
                 edge.callable_now = False
             continue
@@ -430,5 +450,5 @@ __all__ = [
     "stop_allowed", "mark_carrier_failure", "apply_action_result",
     "r014_register_known_error", "r014_mechanism_allowed",
     "r014_pre_response_gate", "r014_observe_recurrence",
-    "continue_bounded",
+    "readback_verified", "continue_bounded",
 ]
