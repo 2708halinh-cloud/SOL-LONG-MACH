@@ -74,3 +74,8 @@ Nếu một lệnh ghi GitHub bị công cụ trả về lỗi `SAFETY_BLOCKED`,
 **Chẩn đoán độc lập:** trình duyệt PC không truy cập `chatgpt.com`, DNS Windows trả loopback, Desktop Commander Offline, WSL timeout và bridge MINH thiếu CSV là các tín hiệu riêng. Không gán tất cả cho một router/IP cụ thể chỉ từ sự xuất hiện của chúng. Giữ kênh Redmi đang hoạt động; không reset WSL, không chế CSV giả và không yêu cầu người dùng tải gói tạm chỉ để cập nhật Router.
 
 **READBACK phải kiểm nơi lưu và kết nối thật:** khi ghi tài liệu → fresh-read GitHub + Library; khi thực thi trên thiết bị → kiểm tra từ đúng interface thiết bị và dịch vụ, sau đó mới mô tả hậu quả. Ghi tài liệu không đồng nghĩa `CONNECTIVITY=TRUE`, `OAUTH_COMPLETED=TRUE` hay `PC_REPAIRED=TRUE`.
+
+
+## MINH BODY — SOURCE_DIRECT 2026-10-16
+
+Cầu nối mang tên **MINH BODY**: `http://127.0.0.1:8765/`. Những URL có sẵn cùng host/port: `/sandbox/sol` và `/api/devices`. Địa chỉ loopback thuộc thiết bị chạy dịch vụ, không phải địa chỉ LAN hoặc localhost của ChatGPT cloud. Chưa xác nhận server đang chạy LIVE; không tự khởi tạo daemon thay thế hay chiếm cổng 8765.
