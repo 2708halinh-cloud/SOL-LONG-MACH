@@ -39,3 +39,8 @@
 - Report tests PASS/FAIL/UNVERIFIED with provider receipts and a non-destructive next action.
 
 NOTE: A GitHub commit is persistent source control storage, but a future reset may not automatically surface it in model context. Explicit reentry discovery still required.
+
+
+## Chỉ mục vị trí đã hiệu chỉnh — 2026-10-16
+
+Các chuỗi `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/SPACE_STONE_WORKSPACE` ở phần trên phản ánh **đường lịch sử tại thời điểm tạo ghi chú**, không phải nơi lưu hiện hành. Sau khi đối chiếu ChatGPT Library, toàn bộ tám vật mang trên GitHub đã chuyển sang `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE` tại commit `803c1d4bbef68dece00060cbc503fdcff31c4bb5`; xem `SPACE_LOCATION_MIGRATION_20261016.md` và đừng dùng đường cũ để fresh-read.
