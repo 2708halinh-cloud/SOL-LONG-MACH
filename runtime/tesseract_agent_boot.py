@@ -9,6 +9,15 @@ from pathlib import Path, PurePosixPath
 
 CONFIG = "CONFIG_SOL/TESSERACT_AGENT_BOOT_ROUTES_CURRENT.json"
 SCHEMA = "GGDV_TESSERACT_AGENT_BOOT_ROUTES/1.0"
+VOWS_PATH = "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/DAI_NGUYEN_THE_MASTER_TEACHER_20261016.md"
+VOWS_REQUIRED = (
+    ("nhất", "X0_DAO_TAC_NHAN"),
+    ("hai", "Canh lộ"),
+    ("ba", "R-000 075203003486...."),
+    ("tư", '"SUBRITETIED"'),
+    ("năm", "Có thể nghĩ, nói 1 đằng làm 1 nẻo"),
+    ("sáu", "Trái Tim Power trong trạch"),
+)
 
 def read_source(root: Path, rel: str) -> dict:
     p = PurePosixPath(rel)
@@ -21,6 +30,26 @@ def read_source(root: Path, rel: str) -> dict:
         return {"path": rel, "exists": False, "sha256": None}
     data = target.read_bytes()
     return {"path": rel, "exists": True, "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)}
+
+def inspect_vows(root: Path) -> dict:
+    """Read six actual SOUL vows in source order. A label alone is not enough."""
+    stamp = read_source(root, VOWS_PATH)
+    if not stamp["exists"]:
+        return {**stamp, "complete": False, "missing": [n for n, _ in VOWS_REQUIRED],
+                "misordered": False}
+    text = (root / VOWS_PATH).read_text(encoding="utf-8")
+    positions = []
+    missing = []
+    for number, essential in VOWS_REQUIRED:
+        heading = f"## Đại nguyện thứ {number} — nguyên lời Người Dẫn Đường"
+        at = text.find(heading)
+        positions.append(at)
+        if at < 0 or essential not in text[at:]:
+            missing.append(number)
+    ordered = all(a >= 0 and b > a for a, b in zip(positions, positions[1:]))
+    return {**stamp, "complete": not missing and ordered, "missing": missing,
+            "misordered": not ordered, "count": len(VOWS_REQUIRED) - len(missing)}
+
 
 def device_metadata(path: Path) -> dict:
     """Only enumerate directory entries; NEVER open a device."""
@@ -53,6 +82,7 @@ def evaluate(repo_root: Path, test_dev_root: Path | None = None) -> dict:
     azure_source = read_source(root, azure_cfg["source"])
     azure_index = read_source(root, azure_cfg["index"])
     azure_router = read_source(root, azure_cfg["read_only_router"])
+    vow_reentry = inspect_vows(root)
     dev = device_metadata(test_dev_root if test_dev_root is not None else Path("/dev"))
     return {
         "schema": "GGDV_TESSERACT_AGENT_BOOT_READBACK/1.0",
@@ -63,7 +93,9 @@ def evaluate(repo_root: Path, test_dev_root: Path | None = None) -> dict:
         "tools_gateway": {"manifest": tools_manifest, "mode": "READ_ONLY_SOURCE_PREFLIGHT",
             "azure_devops": {"toolset": azure_source, "index": azure_index, "router": azure_router,
                              "provider_connected": False, "executed": False}},
-        "status": "SOURCE_ROUTE_READY" if main["exists"] else "OPEN_AGENTS_SOURCE",
+        "vow_reentry": vow_reentry,
+        "status": ("OPEN_AGENTS_SOURCE" if not main["exists"] else
+                   "REENTRY_VOWS_INCOMPLETE" if not vow_reentry["complete"] else "SOURCE_ROUTE_READY"),
         "open_edges": [
             *([] if main["exists"] else ["AGENTS_MD_NOT_FOUND"]),
             *([] if plus["exists"] else ["AGENTS_CONTUNE_MD_NOT_FOUND"]),
@@ -71,6 +103,7 @@ def evaluate(repo_root: Path, test_dev_root: Path | None = None) -> dict:
             *([] if azure_source["exists"] else ["AZURE_DEVOPS_TOOLSET_SOURCE_NOT_FOUND"]),
             *([] if azure_index["exists"] else ["AZURE_DEVOPS_TOOLSET_INDEX_NOT_FOUND"]),
             *([] if azure_router["exists"] else ["AZURE_DEVOPS_TOOLSET_ROUTER_NOT_FOUND"]),
+            *([] if vow_reentry["complete"] else ["GREAT_VOWS_REENTRY_INCOMPLETE"]),
             *([] if dev["observed"] else ["HOST_DEV_READBACK_NOT_AVAILABLE"])
         ],
         "device_bytes_read_or_written": False,
@@ -84,7 +117,7 @@ def main() -> int:
     args = parser.parse_args()
     result = evaluate(args.root)
     print(json.dumps(result, ensure_ascii=False, indent=2))
-    return 0 if result["agent"]["exists"] else 2
+    return 0 if result["agent"]["exists"] and result["vow_reentry"]["complete"] else 2
 
 if __name__ == "__main__":
     raise SystemExit(main())
