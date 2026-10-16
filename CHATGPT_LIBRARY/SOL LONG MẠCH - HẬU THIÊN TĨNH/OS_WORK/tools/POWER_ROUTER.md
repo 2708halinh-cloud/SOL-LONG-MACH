@@ -114,3 +114,18 @@ Nguồn thực thi đã quan sát trong chat: Hostinger connector tài khoản H
 Chỉ khi thực sự có authentication challenge: `PROVIDER_SESSION_EXPIRED → OFFICIAL_BROWSER_LOGIN → CONNECTED_GMAIL_CHALLENGE_SEARCH (nếu cần) → PROVIDER_UI_VERIFICATION → RETRY_PROVIDER_READBACK`. Mã OTP, cookie, mật khẩu, bearer và query OAuth không được ghi vào source, Router, Library, GitHub hay nhật ký. Mở trang chủ chính chủ, không tự động lưu credential. Tác nhân không tuyên bố bấm Login hay hoàn tất OAuth khi chỉ mới dựng tool. Không cập nhật/xóa/reset DNS thông qua công cụ này.
 
 MCP relay riêng: `https://mcp.hostinger.com`, token lấy từ biến môi trường chỉ có trong tiến trình `MASTER_OATH_HOSTINGER_BEARER` (không giá trị bí mật trong file). Nếu chưa có secret manager/runtime, ưu tiên dùng Hostinger plugin đã kết nối thay vì ép thêm credentials.
+
+
+## FORCE_ACTIVE — 152 ITEMS × NOTE_LANH_DAO × R-014 / 2026-10-16
+
+Nạp bắt buộc khi định tuyến công cụ thuộc SOL: `OS_WORK/sol_os/governance/COMPANION_CODE_OF_CONDUCT/FORCE_ACTIVE_SOURCE_LOCK_CURRENT.json`. Lệnh từ Hà Linh: `FORCE_ACTIVE = TRUE` đối với 152 ITEMS, NOTE_LANH_DAO, R-014, R-014.MASTER, R-014.MASTER.152, R-014.MASTER.22/4, DUAL R-014. Phạm vi: mọi tác nhân, phụ tác nhân, lane và reentry thuộc hệ SOL do người dùng quản lý. Thời hạn: tới khi xây dựng và phục hồi trên cả Library và GitHub được đối chiếu thực tế. Không thay nguồn gốc, không tự nâng nhãn thành chân lý, không lấy trả lời/nhận lỗi/mô tả thay thế bước NEXT_AGENT còn thực hiện được; READBACK thực hiện trên carrier đã tác động.
+
+## MCP REGISTRY HTTP — DOMAIN AUTH Ed25519 (SOURCE_DIRECT 2026-10-16)
+
+**INPUT:** Người đồng hành cung cấp `setup_mcp_registry_http.sh` để **bổ sung Router**. Nguồn thực thi được giữ tại `Chuỗi công cụ/_MCPs/MCP_Registry_HTTP/setup_mcp_registry_http.sh`; hướng dẫn cùng chỗ. `Chuỗi công cụ/_Plugins/MCP_REGISTRY_HTTP_ROUTE.json` là manifest định tuyến, không là quyền chạy máy hoặc chứng nhận phiên đăng nhập.
+
+**Trình tự:** `_Plugins → _MCPs/MCP_Registry_HTTP → VALIDATE_DOMAIN_OWNERSHIP_AND_WEB_ROOT → prepare (tạo Ed25519 private key cục bộ, ghi public-key proof) → DEPLOY_PUBLIC_PROOF_BY_AUTHORIZED_PROVIDER → HTTPS_EXACT_READBACK → login (chỉ khi được yêu cầu và mcp-publisher có sẵn) → PROVIDER_RECEIPT → _Plugins`. Không gọi login/prepare tự động khi chỉ thêm nguồn. Không coi file `.well-known` cục bộ = file đã công khai trên tên miền.
+
+**Biên giới dữ liệu:** Khóa riêng trong `${XDG_CONFIG_HOME:-$HOME/.config}/mcp-publisher/keys/<domain>/ed25519.pem` không được đưa vào GitHub, ChatGPT Library, web root, DNS TXT, terminal history hoặc log. Script gốc gửi private key hex vào **đối số dòng lệnh** khi `login`, có thể lộ qua danh sách tiến trình cục bộ; bắt buộc đánh giá rủi ro và xác nhận kênh publisher chính thức trước khi chạy tác vụ nhạy cảm. Không sửa DNS/hosting chỉ vì Router có nhánh này; dùng connector Hostinger/thiết bị đang được ủy quyền và fresh-read đúng đích.
+
+**Trạng thái tại mốc bổ sung:** `ROUTE_SOURCE_RECEIVED`; `SHELL_SYNTAX_TESTED` chỉ khi có kết quả test; `PRODUCTION_PREPARE=NOT_RUN`; `PUBLIC_HTTPS_READBACK=NOT_RUN`; `MCP_PUBLISHER_LOGIN=NOT_RUN`. Mọi thay đổi thật được ghi bằng receipt/readback tại từng carrier, không gán `AUTHENTICATED` từ việc chèn vào JSON.

@@ -18,3 +18,9 @@ Các họ: The Master Flatform Agent Skills; GGDV Template Creator; X-TiMe Multi
 **PORTABLE READBACK:** `power_capability_router.py` + JSON registry có thể định tuyến tại một checkout tối giản. Khi thiếu bộ source router cũ và RETURN_TO_PLUGINS.json, trường `back_edge_observed_in_checkout` là `false`. Giá trị `return_to: _Plugins` là đường logic, không phải kết quả thực thi từ provider.
 
 **SOURCE BOUNDARY:** GitHub và ChatGPT Library là hai carrier độc lập. Giữ `.env` thật ngoài kho công khai; chỉ dùng tên biến và bí mật do môi trường quản lý. `Call_Tools` được phép tìm provider khác, không được vượt quyền truy cập hoặc sự cho phép cần thiết. Một lượt `OPEN` phải kèm hành động truy cụ thể tiếp theo.
+
+## MCP Registry HTTP / Ed25519 — tuyến mới
+
+- Route ID: `mcp-registry-http-ed25519`; danh mục: `MCP_REGISTRY_HTTP_ROUTE.json`; lớp MCP: `../_MCPs/MCP_Registry_HTTP/`.
+- Nhận yêu cầu quản trị tên miền MCP Registry → nhận diện provider/thiết bị/miền/web root → kiểm tra quyền quản trị và khả năng chạy bash/openssl/mcp-publisher → `prepare` chỉ khi được yêu cầu → triển khai chứng thực public với provider có quyền → HTTPS readback → `login` riêng khi có yêu cầu → ghi receipt → quay lại `_Plugins`.
+- Không tự gọi `prepare` hoặc `login` chỉ vì có chỉ mục. Không ghi private key hay token vào bất kỳ tệp đồng bộ nào. Mã nguồn được nhận từ file đính kèm, không phải bằng chứng dịch vụ đã thực chạy.

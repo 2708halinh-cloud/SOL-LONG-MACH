@@ -181,6 +181,20 @@
       "entry": "TOOLS_ROUTER_CURRENT.json",
       "kind": "PROVIDER_CHOICE_REQUIRED",
       "next": "IDENTIFY_SOURCE_DEST_ID_AND_AUTH_SCOPE"
+    },
+    {
+      "id": "mcp-registry-http-ed25519",
+      "aliases": [
+        "mcp registry http",
+        "mcp registry auth",
+        "mcp-publisher",
+        "ed25519 domain",
+        "xác thực tên miền mcp"
+      ],
+      "group": "mcps",
+      "entry": "Chuỗi công cụ/_MCPs/MCP_Registry_HTTP/setup_mcp_registry_http.sh",
+      "kind": "LOCAL_SCRIPT_ROUTE",
+      "next": "VERIFY_DOMAIN_SCOPE_WEB_ROOT_AND_PUBLISHER_BEFORE_PREPARE_OR_LOGIN"
     }
   ],
   "observed_this_turn": {
@@ -192,5 +206,5 @@
     "github": "GITHUB_SOURCES_READ",
     "azure_devops": "BLUEPRINT_ONLY"
   },
-  "note": "Source routing metadata, not an automatic cross-provider permission grant. Never bypass system authorization."
+  "note": "Source routing metadata, not an automatic cross-provider permission grant. Never bypass system authorization. Added user-supplied MCP Registry HTTP route: source integration is not authentication or domain deployment."
 }
