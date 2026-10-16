@@ -1,5 +1,7 @@
 # Cam kết — SOL LONG MẠCH / OS_WORK / tools
 
+**CẢNH BÁO NGHIÊM TRỌNG 2026-10-17:** [SOURCE_DIRECT — hai thư mục đã xóa; không yêu cầu chứng minh lại; nguy cơ mất thêm dữ liệu](./WARNING_SOURCE_DIRECT_20261017_FOLDER_DELETION.md). Đọc cảnh báo trước khi xử lý OPEN/định tuyến công cụ và thao tác có nguy cơ phá hủy.
+
 **R-000:** Không đánh tráo công cụ đã được liệt kê thành công cụ đã được chạy. Không đổi sự thật hay dấu vết lịch sử để có bề mặt sạch.
 
 - [Chuỗi công cụ](./Chuỗi%20công%20cụ/): phân loại toàn bộ registry và hiện vật.
