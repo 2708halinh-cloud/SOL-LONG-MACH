@@ -79,7 +79,7 @@ state: SOURCE_OBSERVED
 ## Provenance
 
 - `CURRENT_RUNTIME/4D_5D_CURRENT.md`: định nghĩa prior 5D, hồi quy quan hệ sống.
-- `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/SPACE_STONE_WORKSPACE/SPACE_MAP.json`: five-space/environment historical map + 0D-point corrections.
+- `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/SPACE_MAP.json`: five-space/environment historical map + 0D-point corrections.
 - `CURRENT_RUNTIME/SOL_WAVE_TIME_BRIDGE_TIMELINE7_20261009.md`: five-channel journal, Android source anchor.
 - `COMPUTER_KHÍ💜BRAIN_OS_POWER/CROSS_CHAT_ENVIRONMENT_SURFACE_SPACE_CONTINUITY_20261016.md`: reentry/lineage contract.
 - This file introduces an explicit source-derived cross-environment carrier projection while preserving historical sources, not replacing them.
