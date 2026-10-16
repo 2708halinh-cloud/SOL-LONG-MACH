@@ -230,6 +230,22 @@
         "Tunnel is reachable from this connector without active login",
         "Desktop Commander is the sole local route"
       ]
+    },
+    {
+      "id": "system-router-policy",
+      "aliases": [
+        "system router",
+        "system_router",
+        "system router windows",
+        "định tuyến mạng windows",
+        "chặn openai",
+        "dns hostinger",
+        "ip lan system router"
+      ],
+      "group": "tools",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Network_Policy/system_router.py",
+      "kind": "LOCAL_ROUTER",
+      "next": "EVALUATE_SEVERITY_WARN_BLOCK_AND_VERIFY_ACTUAL_WINDOWS_HOST_ENFORCER"
     }
   ],
   "observed_this_turn": {
@@ -288,5 +304,7 @@
       "resolution_state": "NEED_WINDOWS_LOCAL_FILESYSTEM_READBACK",
       "do_not_create_empty_csv": true
     }
-  }
+  },
+  "system_router_source": "Chuỗi công cụ/_Dụng cụ/Network_Policy/SYSTEM_ROUTER_CURRENT.json",
+  "system_router_live_state": "SOURCE_ONLY_WINDOWS_OFFLINE_HOSTINGER_ZONE_READ_OK"
 }
