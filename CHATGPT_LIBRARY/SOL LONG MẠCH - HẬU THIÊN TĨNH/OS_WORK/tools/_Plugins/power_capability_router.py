@@ -30,24 +30,28 @@ def load(repo_root: Path):
     info = json.loads(source.read_text(encoding="utf-8"))
     if info.get("schema") != "SOL_POWER_CAPABILITY_ROUTER/2.0":
         raise ValueError("REGISTRY_SCHEMA_INVALID")
-    spec = importlib.util.spec_from_file_location("sol_original_power_router", tools / LEGACY)
-    legacy = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(legacy)
-    _, parent, back = legacy.load(repo)
-    if back.get("target", {}).get("name") != "_Plugins":
-        raise ValueError("RETURN_EDGE_NOT_PLUGINS")
-    if info.get("return_pointer") != parent.get("terminal_back_edge"):
-        raise ValueError("REGISTRY_BACK_EDGE_MISMATCH")
+    legacy = None
+    back_verified = False
+    if (tools / LEGACY).is_file() and (tools / info["prior_router"]).is_file():
+        spec = importlib.util.spec_from_file_location("sol_original_power_router", tools / LEGACY)
+        legacy = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(legacy)
+        _, parent, back = legacy.load(repo)
+        if back.get("target", {}).get("name") != "_Plugins":
+            raise ValueError("RETURN_EDGE_NOT_PLUGINS")
+        if info.get("return_pointer") != parent.get("terminal_back_edge"):
+            raise ValueError("REGISTRY_BACK_EDGE_MISMATCH")
+        back_verified = True
     ids = [x["id"] for x in info["capabilities"]]
     if len(ids) != len(set(ids)):
         raise ValueError("DUPLICATE_CAPABILITY_ID")
-    return repo, tools, info, legacy
+    return repo, tools, info, legacy, back_verified
 
 
 def route(task: str, repo_root: Path) -> dict:
     if not isinstance(task, str) or not task.strip():
         raise ValueError("TASK_REQUIRED")
-    repo, tools, info, legacy = load(repo_root)
+    repo, tools, info, legacy, back_verified = load(repo_root)
     normalized = normalize(task)
     choices = []
     for cap in info["capabilities"]:
@@ -56,22 +60,30 @@ def route(task: str, repo_root: Path) -> dict:
         )]
         if not hits:
             continue
-        portal = next((g["at"] for g in json.loads(
-            (tools / info["prior_router"]).read_text(encoding="utf-8")
-        )["groups"] if g["id"] == cap["group"]), None)
+        known_portals = {
+            "skills": "_Plugins/_Skills",
+            "mcps": "_Plugins/_Skills/_Mcps",
+            "tools": "_Plugins/_Skills/_Mcps/_Tool",
+            "app_browser": "_Plugins/_Skills/_Mcps/_Tool/_App/_App_Browser",
+            "devops": "_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/_DevOps",
+            "storage": "_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/_Storage",
+        }
+        portal = known_portals.get(cap["group"])
         if not portal:
             raise ValueError("UNKNOWN_CATEGORY:" + cap["group"])
-        if not (tools / portal).is_dir():
+        portal_exists = (tools / portal).is_dir()
+        if back_verified and not portal_exists:
             raise ValueError("CATEGORY_PORTAL_MISSING:" + cap["group"])
         choices.append({
             "capability_id": cap["id"], "matched_aliases": hits,
             "score": max(len(normalize(x)) for x in hits),
-            "category_portal": portal, "kind": cap["kind"],
+            "category_portal": portal, "portal_found_in_carrier": portal_exists,
+            "kind": cap["kind"],
             "source_or_tool_ref": cap["entry"], "next_probe": cap["next"],
             "provider_callable_verified_this_run": False,
         })
     choices.sort(key=lambda x: (-x["score"], x["capability_id"]))
-    parent_route = legacy.route(task, repo)
+    parent_route = legacy.route(task, repo) if back_verified else None
     if not choices:
         next_edge = "DISCOVER_SKILLS_AND_PROVIDER_CAPABILITIES"
     elif choices[0]["kind"] in {"SKILL", "LOCAL_BLUEPRINT", "TOOLSET_BLUEPRINT", "CAPABILITY_BLUEPRINT"}:
@@ -84,10 +96,11 @@ def route(task: str, repo_root: Path) -> dict:
         "entrypoint": "_Plugins",
         "candidates": choices,
         "next_action": next_edge,
-        "legacy_route": parent_route["selected_group"],
-        "return_to": parent_route["return_to"],
+        "legacy_route": parent_route["selected_group"] if parent_route else None,
+        "return_to": parent_route["return_to"] if parent_route else "_Plugins",
         "return_edge": info["return_pointer"],
-        "cycle_closed_by_metadata": parent_route["return_to"] == "_Plugins",
+        "cycle_closed_by_metadata": back_verified,
+        "back_edge_observed_in_checkout": back_verified,
         "action_executed": False,
         "provider_receipt": None,
         "readback": None,
