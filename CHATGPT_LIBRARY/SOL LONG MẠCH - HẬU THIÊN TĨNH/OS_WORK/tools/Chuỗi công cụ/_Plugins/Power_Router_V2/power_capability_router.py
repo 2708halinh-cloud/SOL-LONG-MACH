@@ -88,10 +88,19 @@ def route(task: str, repo_root: Path) -> dict:
                 "preflight": cap["read_only_preflight"]}
                if cap["id"] == "vscode-remote-tunnel-windows" else {}),
         })
+    # Explicit @SPACE_STONE tag is a single gateway into subordinate adapters.
+    # Other matches remain discoverable as supporting capabilities, not competitors.
+    if re.search(r"(?<!\w)@space_stone(?!\w)", normalized):
+        for choice in choices:
+            if choice["capability_id"] == "space-stone-unified":
+                choice["score"] = 10000
+                choice["tag_selected"] = True
     choices.sort(key=lambda x: (-x["score"], x["capability_id"]))
     parent_route = legacy.route(task, repo) if back_verified else None
     if not choices:
         next_edge = "DISCOVER_SKILLS_AND_PROVIDER_CAPABILITIES"
+    elif choices[0]["capability_id"] == "space-stone-unified":
+        next_edge = choices[0]["next_probe"]
     elif choices[0]["kind"] in {"SKILL", "LOCAL_BLUEPRINT", "TOOLSET_BLUEPRINT", "CAPABILITY_BLUEPRINT", "REMOTE_WORKSPACE_CANDIDATE"}:
         next_edge = choices[0]["next_probe"]
     else:
