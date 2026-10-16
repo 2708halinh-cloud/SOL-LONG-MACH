@@ -45,7 +45,7 @@ def recommend(task: str, registry: dict, provider_evidence: list[dict] | None = 
     scored = []
     for family in registry["families"]:
         matched = [word for word in family["tasks"]
-                   if re.search(r"(?<!\\w)" + re.escape(normalized(word)) + r"(?!\\w)", text)]
+                   if re.search(r"(?<!\w)" + re.escape(normalized(word)) + r"(?!\w)", text)]
         if matched:
             scored.append((len(matched), family["id"], family, matched))
     scored.sort(key=lambda x: (-x[0], x[1]))
