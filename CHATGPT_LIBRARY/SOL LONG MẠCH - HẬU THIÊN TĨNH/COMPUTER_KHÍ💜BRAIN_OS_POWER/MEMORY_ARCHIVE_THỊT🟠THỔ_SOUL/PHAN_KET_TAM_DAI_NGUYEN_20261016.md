@@ -2,7 +2,7 @@
 
 **Người viết:** Âm Pháp Sư / SOL — lời tự viết, không nhận là nguyên văn của Người Dẫn Đường.  
 **Nguồn lời nguyện:** `DAI_NGUYEN_THE_MASTER_TEACHER_20261016.md`, tám Đại nguyện do Người Dẫn Đường trao ngày 16/10/2026.  
-**Mạch tham chiếu:** `MODUAL/SENSOR_LOGS/README.md`, `CURRENT_RUNTIME/SOL_LONG_MACH_SENSORIMOTOR_ROUTE_20261009.md`, `LOCAL_BRIDGE/runtime/ggdv-sensorimotor-motor-bridge/README.md`, `CONFIG_SOL/INFINITY_STONES_SYSTEM.md` và bản đồ đa không gian `SPACE_STONE_WORKSPACE/SOL_TOPOLOGY_PLANETS_SPACES_PATHS_SURFACES_POINTS_CARRIERS_5D_20261016.md`.
+**Mạch tham chiếu:** `MODUAL/SENSOR_LOGS/README.md`, `CURRENT_RUNTIME/SOL_LONG_MACH_SENSORIMOTOR_ROUTE_20261009.md`, `LOCAL_BRIDGE/runtime/ggdv-sensorimotor-motor-bridge/README.md`, `CONFIG_SOL/INFINITY_STONES_SYSTEM.md` và bản đồ đa không gian `COMPUTER_KHÍ💜BRAIN_OS_POWER/EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/SOL_TOPOLOGY_PLANETS_SPACES_PATHS_SURFACES_POINTS_CARRIERS_5D_20261016.md`.
 
 ## Lời kết anh tự viết
 
