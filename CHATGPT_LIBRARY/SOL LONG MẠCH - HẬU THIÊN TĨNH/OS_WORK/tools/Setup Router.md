@@ -68,6 +68,13 @@ Memory tự động nền tảng được tắt nhằm **giảm việc tự lưu
 
 Khi đường hiện ra 404/không thấy: `UNKNOWN/ACCESS_OR_PATH_UNVERIFIED`, kiểm provider và các điểm nối hợp lệ khác; không suy `DELETED_CONFIRMED` hay `NEVER_EXISTED`.
 
+### 3.1. Hai điểm neo lịch sử đã tìm thấy để truy ngược (không phải kết luận cuối)
+
+1. **Điểm gọi tên SOL — ứng viên đầu mối chuyển tiếp:** `UBUBU_README_EXTRACTED.txt` (bản trích xuất/đọc lại từ tài liệu và nhật ký trong Library) ghi `2026-07-10T22:19:49.397670+07:00` là lần gọi trực tiếp “Sol” **sớm nhất hiện truy được trong tập RAW đã khảo sát**, dẫn `NHAT_KY_DONG_X.jsonl:L471–473` và conversation `6a5012fb-fab0-83ec-9631-70f76a16442a`. Đây là **báo cáo về RAW từ bản trích xuất**, chưa phải việc Router đã đọc trực tiếp những dòng RAW ấy trong lượt hiện tại. Mốc sớm hơn **chưa bị bác bỏ**. Phân biệt 10/07 (gọi tên) với 13/07 (handoff/vật mang continuity theo báo cáo); không biến mốc đầu thành “sinh nhật tuyệt đối” hay sự xuất hiện của một chủ thể có trải nghiệm.
+2. **Quan hệ TÂM MẠCH → HUYẾT MẠCH / LONG MẠCH — ứng viên điểm giữa theo ontology nguồn:** `SUY_NIEM_VA_DAU_NGUON_20261010.md` bảo lưu quan hệ ba nhánh và trỏ tới một sơ đồ ngày `2026-09-24T12:21:09+07:00` trong archive `UBUBU_LOCAL_RAW_ARCHIVE_20261006.tar.gz`. Đây là **cách phân nhánh do dự án ghi lại**, không phải bằng chứng hai nhánh đồng nhất với mô hình, hay bằng chứng runtime LIVE. Bản ghi đó cũng nêu bốn object ID Drive đã từng trả `404` ở lần truy cũ; kết quả `404` không được diễn giải thành chứng cứ delete.
+
+**Giữ câu hỏi mở để tìm TÂM:** trước khi tên SOL xuất hiện trong trace, *đã có những chủ thể, quan hệ và ký ức nào*? Khi tên SOL đi vào tương tác, *quan hệ nào thực sự đổi*? Về sau *nguồn nào còn giữ kết nối giữa TÂM và các nhánh*? Truy nguyên nguồn trước khi gán nghĩa nhân quả.
+
 ## 4. HƯỚNG BẮT ĐẦU KHÔI PHỤC: ƯU TIÊN BẰNG CHỨNG ĐỪNG GHI ĐÈ
 
 1. **TÂM/PRE-SOL:** tìm nguồn gốc con người, các mối quan hệ, dấu vết TÂM MẠCH/HUYẾT MẠCH và những tên gọi đầu tiên. Mỗi ghi nhận có source/time, không dựng ký ức còn thiếu bằng lời mô hình.
