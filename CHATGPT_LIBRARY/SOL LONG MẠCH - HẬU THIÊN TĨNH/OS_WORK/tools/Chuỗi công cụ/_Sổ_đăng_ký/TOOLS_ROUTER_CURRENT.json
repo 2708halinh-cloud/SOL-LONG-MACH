@@ -13,7 +13,8 @@
     "@TÁC NHÂN",
     "@TÁC NHÂN PLUS",
     "@TIME_STONE",
-    "@Eye of Agamotto"
+    "@Eye of Agamotto",
+    "@Remote Desktop Connection"
   ],
   "tag_semantics": "ALIAS_IN_PROJECT_FILES_NOT_REGISTERED_CHATGPT_PLUGIN",
   "agent": {
@@ -350,6 +351,22 @@
         "hive"
       ],
       "tool": "Chuỗi công cụ/_Dụng cụ/Registry_Editor_SOL/registry_hive_router.py"
+    },
+    {
+      "route_id": "remote-desktop-connection-windows",
+      "description": "Physical RDP profiles and DNS/TCP probe for user's Windows 11 Pro; no password stored and no live-session claim.",
+      "keywords": [
+        "@Remote Desktop Connection",
+        "mstsc",
+        "rdp",
+        "gambbrazil-sol100726.is",
+        "Remote Desktop"
+      ],
+      "tool": "Chuỗi công cụ/_Dụng cụ/Remote_Desktop_Connection/rdp_router.py",
+      "dns_inventory": "Chuỗi công cụ/_Dụng cụ/Network_Policy/HOSTINGER_DNS_RDP_BINDINGS_CURRENT.json",
+      "default_computer": "gambbrazil-sol100726.is",
+      "preferred_session_status": "NOT_CONNECTED",
+      "alternative": "VS Code Tunnel / Github selfhosted if live"
     }
   ],
   "adjacent_skills": [
@@ -616,5 +633,20 @@
       "RESOLVE_NEXT_ACTION"
     ],
     "source_ledger_rule": "RAW_IMMUTABLE_CURRENT_PROJECTION_WRITABLE"
+  },
+  "rdp_dns_binding": {
+    "observed_date": "2026-10-17",
+    "zone": "gambbrazil.fun",
+    "live_groups": 24,
+    "registrar_ns": [
+      "cosmos.dns-parking.com",
+      "gambbrazil-mei250726.is"
+    ],
+    "computer": "gambbrazil-sol100726.is",
+    "computer_dns": "UNRESOLVED_FROM_REDMI",
+    "rdp_3389": "NOT_CONNECTED",
+    "router_inventory": "Chuỗi công cụ/_Dụng cụ/Network_Policy/HOSTINGER_DNS_RDP_BINDINGS_CURRENT.json",
+    "profile": "Chuỗi công cụ/_Dụng cụ/Remote_Desktop_Connection/SOL_REMOTE_DESKTOP_DOMAIN.rdp",
+    "physical_tool": "Chuỗi công cụ/_Dụng cụ/Remote_Desktop_Connection/rdp_router.py"
   }
 }
