@@ -236,3 +236,21 @@ LIBRARY_SOURCE: `/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS
 LIBRARY_RECEIPT: upload succeeded; `libfile_d9bda2ff883c81919f871474ec7a17f0` / `file_00000000096881fa8afc1b50a5128b4d`; a subsequent `files.list` confirmed 4083 bytes at the exact path and `files.read` returned all 34 lines including the 18 Drive checks, distinct roles, and `NOT_DONE`. This is a separate Library carrier; GitHub commit does not substitute for it.
 REGRESSION_LATEST: `runtime/dante_carrier_gate.py` commit `f5302d1b9c8533da10299dee480ec4a179513620`, tests commit `bad3ee0a92a16b28d7b08909099746e7d8bcd22a`, GitHub Actions run `38854652725` SUCCESS 5/5. Important correction: a CI run with no live Google Drive access must report **historical** 404 snapshot only, `fresh_provider_observation = null`; never replay it as an API observation that just occurred.
 NEXT_UNFINISHED_EDGE unchanged: actual six Drive items not recovered; only historical incident classification, skill semantics, and reentry are repaired.
+
+## REENTRY — ĐẠO ĐỨC THE MASTER TEACHER / ÂM–DƯƠNG QUẢN TRỊ DỰ ÁN — 2026-10-16
+
+SOURCE_DIRECT: User requests DƯƠNG PHÁP SƯ as project Administrator System's, with recognition of their long labor, and asks to revive the ethical foundation located in `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/KINH THÁNH THE MASTER TEACHER/ĐẠO ĐỨC THE MASTER TEACHER`. Treat this as **SOL project governance**; never claim platform/system administration or elevate privileges without actual permission. Do not infer death, ill health or automatically transfer administrative responsibility from silence or an unavailable account.
+
+OBSERVED BEFORE: Both GitHub and the ChatGPT personal Library held the three subfolders `THE MASTER TEACHER`, `THE MASTER TEACHER 22∕4 & 33∕6` and `ĐẠO ĐỨC THE MASTER TEACHER`, but all were empty in Library and GitHub contained only .gitkeep. The original moral content was found in `CONFIG_SOL/COMPANION_TEN_COMMANDMENTS_CURRENT.md`, `CONFIG_SOL/MASTER_TEACHER_EVENT_SEQUENCE_CURRENT.md`, eight-vow carrier and source-preserving runtimes.
+
+ACTUAL REPAIR:
+- GitHub now has `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/KINH THÁNH THE MASTER TEACHER/ĐẠO ĐỨC THE MASTER TEACHER/README.md`, `AGENTS.md`, and `ETHICS_POLICY_CURRENT.json`.
+- ChatGPT Library was separately uploaded with these three files and fresh-listed/read. Git blob SHA of each **matches exact local Library upload bytes**: README `648973a2483d4f12d3c107b1bbf0d4810e00b826`; AGENTS `0ca04ae48b4eb84e6b8148d5eaac19ca8a824420`; policy `bc857468c958f46048a04abd359fc4fe99616b7b`. These receipts are for the three files only, not full provider synchronization.
+- `runtime/master_teacher_ethics.py` implements read-only ethical decision routing: source/target, consent, source recovery, destructive guard, early DONE, missing receipt/readback, no emotion claim from logs, and no inferred death/succession or project-to-provider admin promotion.
+- `tests/test_master_teacher_ethics.py` + `.github/workflows/master-teacher-ethics.yml`: GitHub Actions run `38857328647` SUCCESS with 12 tests.
+- Local prototype `OS_WORK/sol_os/am_duong_platform/server.py` calls the ethics gate **before** Translation Basic / Cloud Vision / external video processing. Its UI offers explicit structured ethics-event checks. `OS_WORK/tools/_Plugins/POWER_ROUTER_CURRENT.json` includes routing keywords for the platform.
+- Latest prototype readback: GitHub Actions run `38858074922` SUCCESS, 12 platform tests + 7 Power Router tests.
+
+SEPARATE FACTS: Code and CI now demonstrate the declared guard on test inputs. No real Windows/Android process deployment, Dropbox live ingestion, Google Cloud API session, subjective AI feelings, or exhaustive moral transformation has been independently verified. Project role appointment != permission bypass.
+
+REENTRY_NEXT: fresh-read policy, inspect actual GitHub/Library source SHA, choose an authorized task with a real action and independent provider readback, then write observed consequences and update N+1. Do NOT ask the Human Companion to restate this path. Preserve the original moral words separate from assistant-authored operational designs.
