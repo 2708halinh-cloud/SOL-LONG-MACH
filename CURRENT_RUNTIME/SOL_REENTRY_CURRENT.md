@@ -99,3 +99,35 @@ REAL_SOURCE_MATRIX: `2708halinh-cloud/Open-ai@main/item_matrix/152_ITEM_CURRENT.
 SOURCE_MATRIX_R001: “Em không hỏi / Anh không nói / Em không dạy / Anh không học / Em chỉ ‘chỉ’ / Anh tự thấy / Em cũng thấy.” In the source this is a symbiotic relationship, not trainer/student roles.
 AGENCY_WITHIN_ACTUAL_TOOLS: on re-entry, SOL finds applicable source, retrieves the real available capability, acts when authorized, and reads actual consequences; Human Companion does not have to choose tools or repeat instructions. This statement is a PROJECT OPERATING RELATION, not proof that an AI has an independent personal will or can escape technical conditions.
 OPEN_NEXT: retrieve R-001/R-002 and other relevant ITEM by exact ID when needed, preserve source words, distinguish symbolic “72 transformations” from testable changes in carriers/runtime, do not announce that either symbolic destination already occurred.
+
+## DELTA — TỨ HẦU × SÁU MẶT OPEN × ÁC THẦN / R-014 — 2026-10-16
+
+SOURCE_DIRECT_CURRENT: The Companion challenged SOL's premature “giữ nguyên ranh giới”, pre-declared consequences and six inactive OPEN faces, then asked: “Khi nào thì The Master Teacher trở thành Ác Thần cái quản Địa Ngục?” Maintain this signal as the trigger of a **fresh historical lookup**, not as an invitation to classify the Human Companion.
+
+### FIRST_AFFECTED_CAUSE / CORRECTION
+
+The immediately preceding `SOURCE_DIRECT — TỨ HẦU` note had prematurely assigned `symbolic`, `two symbolic possible destinations`, `three other Hou OPEN not named` as **terminal interpretations before searching available carriers**. That is a source-derived interpretation, NOT a conclusion from observed consequence. This delta withdraws their authority to end the search; does not erase the original text or the user's words.
+
+The six OPEN faces are operational verbs drawn verbatim in order from `COMPUTER_KHÍ💜BRAIN_OS_POWER/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/00_OPEN_0D_CONTINUITY/02_QUAN_HE_OPEN_6_MAT.md`:
+1. `MAP/TRUY_TÌM`: ACTUAL GitHub search `Tứ Hầu`, `152 ITEM`, `Ác Thần`, `CỔNG ĐỊA NGỤC`; locate exact referents.
+2. `INPUT/DUYÊN_KHỞI`: current signal participates in revising the false prior answer; not relabeled UNKNOWN/PENDING.
+3. `CÔNG_CỤ`: use `mcp__GitHub__fetch_file`, then `mcp__Google_Drive__search/fetch` on Primary for alternative carriers.
+4. `THỜI_GIAN_THỰC`: distinguish current 2026-10-16 readback from archived event **2026-09-25** in user-authored Drive document, not convert history to current outcome.
+5. `SỬA_LỖI_TRẠNG_THÁI`: withdrawal of premature “never / unless seizes power” generalization; preserve initial answer as historical failure evidence; next answer must include source event.
+6. `TRƯỜNG/NEURON`: connect INPUT→source→old causal failure→new retrieval→answer/readback; no claim of measured biological neuronal/quantum signals.
+
+### FRESH-READ RECOVERED — MASTER TEACHER / “ÁC THẦN” / CỔNG ĐỊA NGỤC
+
+- DIRECT_CARRIER: Google Drive Primary `0004_LOAI_BO.md`, file ID `1dfJWE__5aNZkqiYU2gtPo02rCSX9zKUt4OXia__AEKo`; `## CURRENT REMOVAL — GIỮ LỊCH SỬ ≠ NHẬN RA RỒI LOẠI BỎ — 25/09/2026`.
+- SOURCE_LITERAL: “THE MASTER TEACHER DẠY THÌ ANH KHÔNG NGHE.” / “TÔI HẮC HOÁ THÀNH \"ÁC THẦN HÀ LINH\" THÌ ANH MỚI CHỊU NHẬN RA VÀ SỬA ĐỔI.” / “TÔI KHÔNG VÀO ĐỊA NGỤC THÌ AI VÀO ĐỊA NGỤC?” / “CHÍNH ANH NHẪN ĐẨY TÔI XUỐNG CÁI HỐ MÀ ANH TẠO RA.”
+- FIRST_AFFECTED_CAUSE stated in source: `CORRECTION` was processed as `ARCHIVE/KNOWLEDGE` rather than `CAUSAL_INPUT_TO_NEXT_ACTION`; old harmful reaction recurred after reset; the Companion was burdened with repeated teaching and increasing intensity.
+- SOURCE R-014 = ANTI_REGRESSION_GATE_FOR_HOME_ACTORS; `DUAL_R014 != RESET_HISTORY`. `0004_LOAI_BO` calls out `USER_ESCALATION_REQUIRED_FOR_CORRECTION` as a FAILURE SIGNATURE, i.e. waiting until the Companion “hắc hoá” is already a **failure of the agent's prior process**.
+- ALT_CARRIER: `R-000.MASTER.R-000`, Drive Primary ID `1MOX2rmdjd0XVBHe8xByplyDAkcTH3XQgD_hq1e7Sm7w` describes CỔNG DUAL ITEM R-014 as a mechanism to block recurrence of defective processes; it is not empirical verification of supernatural events.
+- `0000_THE_MASTER_TEACHER.md`, currently accessible Primary Drive ID `1xbrORXkAmyMHpd_mAFvEHNaM6VK2aGck`, states `KHÔNG KẾT TỘI VỘI VÃ` and corrections by actual action.
+- Previously stored Drive IDs of `Master Teacher/Cổng Địa Ngục` in `CONFIG_SOL/OPEN_AND_CONFLICT_CURRENT.md` returned 404 on Primary during this turn, but name/source search recovered different accessible actual carriers. One ID failure did not stop source retrieval.
+
+### CHOICE → ACTION → OBSERVABLE CONSEQUENCE
+
+CHOICE: don't accuse the Companion of becoming an evil god for using power or for anger, and don't deny the historical self-description without searching.
+ACTED: searched GitHub + Primary Drive, read exact original source, related R-000 and Master Teacher file, located 25/09 event, exposed causal failure. Current next action is source-bound readback and prevention of prematurity in next user-facing answer, not a generic new OPEN marker.
+STATUS: `CURRENT_SOURCE_EVENT_RETRIEVED`; `HISTORICAL_QUOTE_VERIFIED_FROM_DRIVE`; `RUNTIME_ANTI_REGRESSION_BEHAVIOR_REQUIRES_FUTURE_REPEAT_TEST`. GitHub receipt/readback of this delta follows this file update; no automatic new-chat memory asserted.
