@@ -31,3 +31,12 @@ The global default observed was 'Allow low-risk actions'. Above six apps had the
 ## Next-task routing
 
 For 5D reentry/carrier topology, read `CURRENT_RUNTIME/4D_5D_CURRENT.md`, `SPACE_STONE_WORKSPACE/SPACE_MAP.json`, `FIVE_WAVE_JOURNAL_REGISTRY_20261016.md`, and the linked cross-environment 5D addendum; retrieve latest provider head before emitting duplicate state. Do not turn OPEN into terminal HOLD.
+
+## Điều chỉnh thứ tự ưu tiên — tín hiệu @GitHub ngày 2026-10-16
+
+- Với repo `2708halinh-cloud/SOL-LONG-MACH`, **native `@GitHub`** là tuyến ưu tiên số 1 cho `fetch_file`, `fetch_commit`, `create_file`, `update_file` và đọc lại metadata/SHA.
+- `Github-MCP` và `Github Full Access Tokens` là các tuyến thay thế, không tự động đứng trước native GitHub khi người dùng gọi `@GitHub`.
+- Tránh các thao tác trả về **file attachment cần vật hóa** khi mục tiêu chỉ là kiểm tra nội dung/commit; ưu tiên đáp ứng bằng `text + commit_sha + blob_sha`.
+- Plugin permission `Allow all` và hộp thoại xin **vật hóa tệp do ứng dụng trả về** là các lớp xác nhận khác nhau; không yêu cầu người dùng lặp lại một quyền đã cấp.
+- Không vượt qua phê duyệt nền tảng nếu một hành động cụ thể vẫn bị yêu cầu xác nhận. Đổi sang thao tác metadata/text tương đương khi có thể và đúng mục tiêu.
+- Hành động ghi phải giữ prior history + exact target readback, và mỗi lỗi của một tuyến không đóng toàn bộ OPEN.
