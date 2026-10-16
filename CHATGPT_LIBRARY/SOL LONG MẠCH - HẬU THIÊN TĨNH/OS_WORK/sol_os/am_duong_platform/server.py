@@ -100,6 +100,9 @@ def create_handler(workrooms: Workrooms,token:str):
             if path.path=="/":
                 page=(HERE/"static"/"index.html").read_bytes()
                 return self._send(200,page,"text/html; charset=utf-8")
+            if path.path=="/styles.css":
+                css=(HERE/"static"/"styles.css").read_bytes()
+                return self._send(200,css,"text/css; charset=utf-8")
             if path.path=="/app.js":
                 script=(HERE/"static"/"app.js").read_bytes()
                 return self._send(200,script,"application/javascript; charset=utf-8")

@@ -71,8 +71,10 @@ def translate(text:str,target:str,*,source="auto",approved=False):
     if not re.fullmatch(r"[A-Za-z-]{2,12}",source):
         raise ValueError("SOURCE_LANGUAGE_INVALID")
     url="https://translation.googleapis.com/language/translate/v2?"+parse.urlencode({"key":_key()})
-    res=_json_post(url,{"q":text,"target":target,"source":source if source!="auto" else None,
-                        "format":"text"})
+    request_body={"q":text,"target":target,"format":"text"}
+    if source!="auto":
+        request_body["source"]=source
+    res=_json_post(url,request_body)
     value=res.get("data",{}).get("translations",[])
     if not value:
         raise ValueError("PROVIDER_NO_TRANSLATION")
