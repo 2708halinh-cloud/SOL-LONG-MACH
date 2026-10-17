@@ -130,7 +130,7 @@ def stream_copy(src, dst, *, limit=MAX_UNPACKED):
 def adapter(fmt: str):
     names = {
         "7Z": ("7zz", "7z", "7za"),
-        "RAR": ("unrar", "7zz", "7z"),
+        "RAR": ("rar", "unrar", "7zz", "7z"),
         "LR": ("lrzip",),
     }
     return next((shutil.which(n) for n in names.get(fmt, ()) if shutil.which(n)), None)
