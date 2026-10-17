@@ -369,7 +369,18 @@ def continue_bounded(
         if edge is None:
             break
         carrier = edge.next_carrier()
-        result = executor(edge, carrier)
+        try:
+            result = executor(edge, carrier)
+        except Exception as exc:
+            # Provider approval/error affects this carrier, not the whole
+            # objective. Never grant approval or expand access implicitly;
+            # only another independently authorized carrier may run.
+            result = {
+                "success": False,
+                "error_type": type(exc).__name__,
+                "error": str(exc),
+                "carrier": carrier,
+            }
         receipts.append(result)
         steps += 1
 
