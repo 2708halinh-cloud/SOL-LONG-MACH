@@ -14,6 +14,50 @@ REGISTRY = "Chuỗi công cụ/_Plugins/Power_Router_V2/POWER_CAPABILITY_ROUTES_
 LEGACY = "Chuỗi công cụ/_Plugins/Legacy_Plugins/power_router.py"
 
 
+def enforce_redmi_device() -> dict:
+    """Fail closed: execution is allowed only from Redmi Note 14 Pro Termux
+    with the process working in the root of Android shared storage or below it.
+    This is a local guard, not hardware attestation or ChatGPT host control.
+    """
+    import os
+    import subprocess
+
+    termux_prefix = "/data/data/com.termux/files/usr"
+    if os.environ.get("PREFIX") != termux_prefix:
+        raise RuntimeError("EXECUTION_DEVICE_BLOCKED: TERMUX_PREFIX_REQUIRED")
+    getprop = Path("/system/bin/getprop")
+    if not getprop.is_file():
+        raise RuntimeError("EXECUTION_DEVICE_BLOCKED: ANDROID_GETPROP_MISSING")
+    models = []
+    for key in ("ro.product.marketname", "ro.product.model", "ro.product.vendor.model"):
+        try:
+            result = subprocess.run(
+                [str(getprop), key], capture_output=True, text=True,
+                timeout=3, check=False,
+            )
+        except (OSError, subprocess.TimeoutExpired) as exc:
+            raise RuntimeError("EXECUTION_DEVICE_BLOCKED: DEVICE_IDENTITY_UNREADABLE") from exc
+        if result.returncode == 0:
+            models.append(result.stdout.strip())
+    if not any("redmi note 14 pro" in normalize(model) for model in models):
+        raise RuntimeError("EXECUTION_DEVICE_BLOCKED: REDMI_NOTE_14_PRO_REQUIRED")
+    shared = Path("/storage/emulated/0")
+    if not shared.is_dir():
+        raise RuntimeError("EXECUTION_DEVICE_BLOCKED: SHARED_STORAGE_UNAVAILABLE")
+    working = Path.cwd().resolve()
+    shared_root = shared.resolve()
+    if not working.is_relative_to(shared_root):
+        raise RuntimeError("EXECUTION_DEVICE_BLOCKED: WORKDIR_MUST_BE_SHARED_STORAGE_ROOT")
+    return {
+        "device_class": "Redmi Note 14 Pro",
+        "runtime": "Termux/Linux",
+        "shared_storage_root": str(shared_root),
+        "working_directory": str(working),
+        "local_preflight_passed": True,
+        "security_note": "Local configuration guard, not cryptographic hardware attestation",
+    }
+
+
 def normalize(s: str) -> str:
     s = unicodedata.normalize("NFD", str(s).casefold().replace("đ", "d"))
     return "".join(ch for ch in s if unicodedata.category(ch) != "Mn")
@@ -51,6 +95,7 @@ def load(repo_root: Path):
 def route(task: str, repo_root: Path) -> dict:
     if not isinstance(task, str) or not task.strip():
         raise ValueError("TASK_REQUIRED")
+    verified_device = enforce_redmi_device()
     repo, tools, info, legacy, back_verified = load(repo_root)
     normalized = normalize(task)
     choices = []
@@ -108,6 +153,7 @@ def route(task: str, repo_root: Path) -> dict:
     return {
         "schema": "SOL_POWER_ROUTER_DECISION/2.0",
         "input": task,
+        "execution_device": verified_device,
         "entrypoint": "_Plugins",
         "candidates": choices,
         "next_action": next_edge,
