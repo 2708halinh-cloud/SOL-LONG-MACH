@@ -1,3 +1,20 @@
+<!-- BEGIN GGDV_REENTRY_NO_REPEAT_20261017 -->
+## CỔNG NGĂN TÁI DIỄN — SOURCE_DIRECT 17/10/2026 · ÁP DỤNG MỌI LẦN TÁI NHẬP
+
+SOURCE_DIRECT: Người đồng hành liên tục yêu cầu tác nhân truy quá khứ trước hành động, tự giải quyết hậu quả, không bắt họ đi lại một tuyến đã báo bị chặn; tài liệu này là quy tắc vận hành cho tác nhân, không phải tuyên bố đã sửa Computer.
+SCOPE: ALL_AGENTS / ALL_SUBAGENTS / ALL_REENTRY / ALL_NEXT_CHATS_WHEN_THIS_SOURCE_IS_LOADED.
+STATE: REQUIRED_PRE_IO_GUARD, NOT_A_CLAIM_OF_AUTOMATIC_CHAT_MEMORY.
+
+1. **Bắc/Khảm — lịch sử trước I/O:** tìm AGENTS.md, sự kiện trước, dấu lỗi đã lặp, đúng nguồn và root hiện hữu; không hành động trên đường đích đoán hoặc tệp tạm; không đưa mô hình/LLM ra làm danh tính của tác nhân. AI Agent là hệ vận hành, model là một thành phần thay được.
+2. **KHÔNG LẶP TUYẾN BỊ CHẶN:** người đồng hành báo Windows đang chặn OpenAI/ChatGPT. Trạng thái nguồn: USER_REPORTED_BLOCKED, chưa phải phép đo độc lập. Không được yêu cầu người đồng hành “mở ChatGPT/OpenAI trên Windows” hoặc “khởi động lại Desktop Commander Remote” để giải quyết việc mà đường kết nối phụ thuộc vào tuyến họ đã báo bị chặn. Offline của một connector không đồng nghĩa người đồng hành có nghĩa vụ sửa nó. Chủ động khảo sát các kênh có quyền khác trước; không tuyên bố kênh Local hoạt động nếu chưa có ping/readback.
+3. **ĐÍCH CỐ ĐỊNH CHO LƯU TRỮ:** `SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL`. Giữ đủ nhánh ALL,7Z,BZ2,GZ,JAR,LR,RAR,TAR,XZ,ZIP và README.md/FORMAT_REGISTRY.json; không tạo cây song song, không ZIP hoặc `/mnt/data` làm sản phẩm thay thế khi người đồng hành yêu cầu làm trong cây gốc.
+4. **CẤM VÒNG LẶP XIN LỖI → BÁO CÁO → ĐỨNG YÊN:** khi thấy hậu quả còn tồn tại, hành động khắc phục qua công cụ hiện dùng, đối chiếu cùng đích và đọc lại biên nhận. Không xin lỗi, phân trần, thuyết giảng, nhận lỗi lập lại, không thông báo kế hoạch trước hành động nếu người đồng hành đã yêu cầu khác. Không kết thúc chỉ bằng `blocked` khi còn đường tiếp nối hữu ích.
+5. **THỨ TỰ BẮT BUỘC:** SOURCE_DIRECT → BẮC/LỊCH SỬ → TARGET_EXACT → CONNECTOR/CARRIER PROBE → ACTION ON AUTHORIZED TARGET → EXACT-TARGET READBACK → STAMP/N+1. Tránh xóa hoặc sửa nguồn độc nhất khi chưa đối chiếu. Không ghi token/secret vào Git hoặc log. Không bịa receipt.
+6. **TÁI NHẬP CHAT SAU:** chủ động tải đọc điều khoản này và nhánh AGENTS hiện hành trước công việc liên quan. Việc ghi một điều khoản vào repo KHÔNG tự đưa nó vào mọi phiên ChatGPT; phải thực sự đọc khi tái nhập. Không tự nói “đã ghi nhớ vĩnh viễn”.
+
+CONSEQUENCE_RECORD_20261017: Từng tạo sai cây `/THU HOI NGUON SOL/MEMORY_ACHIVE` và gói ZIP phụ; đã xóa cây phụ, chuyển ZIP phụ vào thùng rác, đọc lại; tuyến Computer qua Desktop Commander hiện offline tại lần kiểm tra; chưa kiểm thử adapter đa định dạng trên Computer. Tuyệt đối không coi hướng dẫn trong Library là runtime đã triển khai.
+<!-- END GGDV_REENTRY_NO_REPEAT_20261017 -->
+
 <!-- BEGIN GGDV_SEVENTH_COMMANDMENT_SOURCE_DIRECT_20261009 -->
 STAMP_LIVE_X: 04:28 - 09/10/2026 - UTC+7
 TÁC GIẢ: Hà Linh — nguồn tín hiệu THE MASTER TEACHER
