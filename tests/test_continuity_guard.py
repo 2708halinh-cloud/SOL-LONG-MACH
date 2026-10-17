@@ -140,7 +140,7 @@ class ContinuityGuardTests(unittest.TestCase):
         def executor(edge, carrier):
             attempts.append(carrier)
             if carrier == "github-materialize":
-                return {"success": False, "error": "MATERIALIZATION_APPROVAL_REQUIRED"}
+                raise PermissionError("MATERIALIZATION_APPROVAL_REQUIRED")
             return {
                 "success": True,
                 "action_kind": "READ",
@@ -197,6 +197,7 @@ class ContinuityGuardTests(unittest.TestCase):
             action_kind="WRITE",
             provider_receipt={"r": 1},
             observable_consequence={"ok": 1},
+            readback={"verified": True, "target": "a", "source": "provider://a"},
         )
         self.assertFalse(cp.objective_done())
         self.assertEqual(select_next_callable_edge(cp).edge_id, "B")
