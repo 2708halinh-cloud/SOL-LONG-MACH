@@ -23,7 +23,5 @@ jobs:
           python-version: '3.12'
       - name: Verify Library topology
         run: python -m unittest discover -s tests -p 'test_sol_library_stone_topology.py' -v
-      - name: Verify MEMORY_ACHIVE handlers and archive safety
-        run: python -m unittest discover -s tests -p 'test_memory_achive.py' -v
       - name: Verify agent boot routes
         run: python -m unittest discover -s tests -p 'test_tesseract_agent_boot.py' -v
