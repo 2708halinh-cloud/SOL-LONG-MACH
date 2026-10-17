@@ -1,0 +1,113 @@
+{
+  "schema": "SOL_MULTIDIMENSIONAL_SPACE_SYNC/1.0",
+  "stamp": "2026-10-17",
+  "objective": "MULTI_DIMENSIONAL_SPACE_SYNC_NOT_BLIND_TWO_WAY_MIRROR",
+  "canonical": {
+    "device": "Redmi Note 14 Pro 5G",
+    "linux": "Android Termux",
+    "shared_storage_root": "/storage/emulated/0",
+    "sol_home": "/storage/emulated/0/SOL-LONG-MACH",
+    "workspace": "/storage/emulated/0/SOL-LONG-MACH/OS_Workspace",
+    "codex": "/storage/emulated/0/.codex"
+  },
+  "blocked_by_routing": {
+    "platform_tmp_home": false,
+    "platform_mnt_data_home": false,
+    "platform_sandbox_apply": false,
+    "interpretation": "Policy for project importer, not an OS-level shutdown of ChatGPT's hosting system."
+  },
+  "vertices": [
+    {
+      "id": "ANDROID_SHARED",
+      "type": "DEVICE_EXECUTION",
+      "role": "PRIMARY_HOME",
+      "live_session": "NOT_CONNECTED"
+    },
+    {
+      "id": "GITHUB",
+      "type": "VERSIONED_CODE",
+      "role": "SOURCE_AND_TOOLS",
+      "live_session": "CONNECTED"
+    },
+    {
+      "id": "CHATGPT_LIBRARY",
+      "type": "FILE_LIBRARY",
+      "role": "PRESERVED_SOURCE_ZIPS",
+      "live_session": "CONNECTED"
+    },
+    {
+      "id": "DROPBOX",
+      "type": "REMOTE_STORAGE",
+      "role": "EXISTING_SOURCE_ARCHIVES",
+      "live_session": "READABLE_ROOT"
+    },
+    {
+      "id": "GOOGLE_DRIVE",
+      "type": "CLOUD_FILES",
+      "role": "ADDITIONAL_SOURCE_OR_INDEX",
+      "live_session": "CONNECTED"
+    }
+  ],
+  "rules": {
+    "direction": "SOURCE_TO_SELECTED_TARGETS_PER_EDGE",
+    "no_implicit_reverse": true,
+    "no_automatic_deletion": true,
+    "no_automatic_overwrite": true,
+    "retain_conflicts": true,
+    "hash_per_artifact": true,
+    "receipt_per_destination": true,
+    "no_public_secret_material": true
+  },
+  "archives": [
+    {
+      "name": "SOL_GGDV_102_FILES_25_FOLDERS_20261013.zip",
+      "sha256": "f46671a8b1eaf0b4d3bc978df6a64225dc1dfc80abe12f92552a7cfd140a3dab",
+      "files": 104,
+      "archive_bytes": 1503420,
+      "destination": "04_KNOWLEDGE/SOURCE_ARCHIVES/SOL_GGDV_20261013",
+      "library_uploaded": true
+    },
+    {
+      "name": "X0_X12_DAO_TAC_NHAN_LOCAL_BUNDLE.zip",
+      "sha256": "52704b13a88a34d1791c0861fefcb4ab20cb5898ffdf869593332b946fe50062",
+      "files": 15,
+      "archive_bytes": 88723,
+      "destination": "OS_WORK/tools/SOURCE_ARCHIVES/X0_X12_DAO_TAC_NHAN",
+      "library_uploaded": true
+    },
+    {
+      "name": "X_RING_LOCAL_RUNTIME.zip",
+      "sha256": "6123898b694d83e6de9e497a0094ffb17d8856cb817b1fe31c4e2b8aa9fd289c",
+      "files": 16,
+      "archive_bytes": 28464,
+      "destination": "OS_WORK/tools/SOURCE_ARCHIVES/X_RING_LOCAL_RUNTIME",
+      "library_uploaded": true
+    },
+    {
+      "name": "unleashed-firmware-dev.zip",
+      "sha256": "d0c5c75f790695ccc3b3fccb047a72b454d6694683625cc423114581c61be00f",
+      "files": 4869,
+      "archive_bytes": 20245387,
+      "destination": "OS_WORK/tools/SUB_GHZ_UNLEASHED_PROTOCOLS/UNLEASHED_FIRMWARE_DEV/SOURCE_ARCHIVE",
+      "library_uploaded": false
+    }
+  ],
+  "excluded": [
+    ".ssh.zip",
+    "mcp-remote-v1.zip"
+  ],
+  "readback": {
+    "github_importer": true,
+    "github_entry": true,
+    "github_manifest": "AFTER_COMMIT_READBACK_REQUIRED",
+    "library_zip_imported_count": 3,
+    "android_apply": false,
+    "android_receipt": false,
+    "dropbox_write": false
+  },
+  "notes": [
+    "A project archive extraction under a staging directory is not Android execution.",
+    "WSL is a Windows feature. On Redmi use Termux, optionally an Ubuntu proot distro.",
+    "No original zip files are removed."
+  ]
+}
