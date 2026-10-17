@@ -39,7 +39,7 @@ class ArchiveTests(unittest.TestCase):
                 destination = root / ("restore-" + fmt)
                 result = mod.unpack(archive, destination)
                 self.assertEqual(result["status"], "PASS")
-                self.assertEqual((destination / "source.txt").read_bytes(), data.read_bytes())
+                self.assertEqual((destination / ("source.txt" if fmt in {"ZIP", "JAR", "TAR"} else archive.stem)).read_bytes(), data.read_bytes())
                 with self.assertRaisesRegex(mod.ArchiveError, "DESTINATION_EXISTS"):
                     mod.unpack(archive, destination)
             self.assertEqual(len(mod.inventory(root)["items"]), 6)
