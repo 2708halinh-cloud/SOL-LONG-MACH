@@ -118,6 +118,44 @@ class ContinuityGuardTests(unittest.TestCase):
         self.assertTrue(edge.callable_now)
         self.assertFalse(cp.objective_done())
 
+    def test_approval_required_carrier_uses_distinct_authorized_text_route(self):
+        # A provider/UI materialization approval is not silently granted.
+        # If another already-authorized text-only route exists, use that
+        # route without declaring the whole task blocked or asking again.
+        cp = Checkpoint(
+            objective_id="MATERIALIZE-APPROVAL",
+            source_marker="USER_DIRECT",
+            lineage_ref="R014",
+            edges=[
+                Edge(
+                    edge_id="FETCH-SOURCE",
+                    target="repository source",
+                    callable_now=True,
+                    candidate_carriers=["github-materialize", "github-direct-text"],
+                )
+            ],
+        )
+        attempts = []
+
+        def executor(edge, carrier):
+            attempts.append(carrier)
+            if carrier == "github-materialize":
+                return {"success": False, "error": "MATERIALIZATION_APPROVAL_REQUIRED"}
+            return {
+                "success": True,
+                "action_kind": "READ",
+                "provider_receipt": {"provider": carrier, "sha": "source-sha"},
+                "observable_consequence": {"target": edge.target, "retrieved": True},
+                "readback": {"verified": True, "target": edge.target, "source": carrier},
+            }
+
+        out = continue_bounded(cp, executor, max_steps=3)
+        self.assertEqual(attempts, ["github-materialize", "github-direct-text"])
+        self.assertTrue(out["objective_done"])
+        self.assertEqual(out["steps"], 2)
+        self.assertIsNone(out["user_token"])
+        self.assertEqual(len(cp.edges[0].evidence["carrier_failures"]), 1)
+
     def test_boolean_success_without_consequence_is_not_completion(self):
         cp = self.make_cp()
 
@@ -276,6 +314,7 @@ class ContinuityGuardTests(unittest.TestCase):
             cp, "A", action_kind="WRITE",
             provider_receipt={"commit": "sha"},
             observable_consequence={"changed": True},
+            readback={"verified": True, "target": "a", "source": "provider://target"},
         )
         r014_register_known_error(
             cp, mechanism_id="OLD_REACTION",
@@ -329,6 +368,7 @@ class ContinuityGuardTests(unittest.TestCase):
                 "success": True, "action_kind": "WRITE",
                 "provider_receipt": {"id": "r2"},
                 "observable_consequence": {"written": True},
+                "readback": {"verified": True, "target": "verified action", "source": "provider://target"},
             }
 
         output = continue_bounded(cp, executor, max_steps=5)
