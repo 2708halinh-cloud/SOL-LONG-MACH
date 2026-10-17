@@ -324,8 +324,8 @@ def unpack(archive: Path, destination: Path):
                         stream_copy(src, dst)
     return {"status": "PASS", "destination": str(destination),
             "source_sha256": sha256(archive),
-            "readback": sorted({"path": p.relative_to(destination).as_posix(), "sha256": sha256(p)}
-                               for p in destination.rglob("*") if p.is_file(), key=lambda x: x["path"])}
+            "readback": sorted(({"path": p.relative_to(destination).as_posix(), "sha256": sha256(p)}
+                               for p in destination.rglob("*") if p.is_file()), key=lambda x: x["path"])}
 
 
 def inventory(root: Path):
