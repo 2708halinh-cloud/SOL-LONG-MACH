@@ -10,8 +10,28 @@ class MCPTests(unittest.TestCase):
         self.assertEqual(result['result']['serverInfo']['name'],'Google Cloud')
     def test_list_tools(self):
         result=module.handle({'jsonrpc':'2.0','id':2,'method':'tools/list'})
-        self.assertEqual(len(result['result']['tools']),7)
-        self.assertEqual(len({x['name'] for x in result['result']['tools']}),7)
+        self.assertEqual(len(result['result']['tools']),8)
+        self.assertEqual(len({x['name'] for x in result['result']['tools']}),8)
+    def test_gcp_usage_analyse_offline(self):
+        from unittest.mock import patch
+        metrics = [
+            {"api":"Compute Engine API","requests":49,"error_percent":100},
+            {"api":"Cloud Storage API","requests":4,"error_percent":100},
+            {"api":"App Hub API","requests":15,"error_percent":0},
+        ]
+        with patch.object(module, "execute_gcloud", side_effect=AssertionError("PROVIDER_CALL_FORBIDDEN")):
+            response = module.handle({"jsonrpc":"2.0","id":9,"method":"tools/call",
+                "params":{"name":"gcp_usage_analyse","arguments":{"metrics":metrics}}})
+        self.assertFalse(response["result"]["isError"])
+        report = json.loads(response["result"]["content"][0]["text"])
+        self.assertEqual(report["estimated_failed_requests"], 53)
+        self.assertEqual(report["known_requests"], 68)
+        self.assertEqual(report["provider_api_calls"], 0)
+        self.assertEqual(report["cost"], "UNKNOWN_REQUIRES_BILLING_EVIDENCE")
+    def test_usage_guard_rejects_arbitrary_command(self):
+        response = module.handle({"jsonrpc":"2.0","id":10,"method":"tools/call",
+           "params":{"name":"gcp_usage_analyse","arguments":{"command":"gcloud compute instances list"}}})
+        self.assertTrue(response["result"]["isError"])
     def test_ping(self):
         self.assertEqual(module.handle({'jsonrpc':'2.0','id':3,'method':'ping'})['result'],{})
     def test_no_arbitrary_commands(self):

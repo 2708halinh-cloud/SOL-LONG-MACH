@@ -355,6 +355,25 @@
       "state": "MCP_CODE_PRESENT_RUNTIME_AUTH_UNVERIFIED"
     },
     {
+      "id": "google-cloud-usage-guard",
+      "aliases": [
+        "google cloud usage",
+        "gcp api error",
+        "gcp usage guard",
+        "lỗi API Google Cloud",
+        "Compute Engine 100%",
+        "Cloud Storage 100%"
+      ],
+      "group": "mcps",
+      "kind": "LOCAL_MCP_SOURCE_OFFLINE_DIAGNOSTIC",
+      "entry": "Chuỗi công cụ/_MCPs/Google_Cloud_SOL/google_cloud_mcp.py",
+      "tool": "gcp_usage_analyse",
+      "next": "CALL_GCP_USAGE_ANALYSE_WITH_USER_METRICS_NO_PROVIDER_REQUESTS",
+      "state": "SOURCE_PATCHED_REQUIRES_REDMi_RUNTIME_PROOF",
+      "requires_google_auth": false,
+      "policy": "NO_CLOUD_CALLS_NO_RETRIES_NO_SECRETS_NO_COST_ASSUMPTIONS"
+    },
+    {
       "id": "xiaomi-notes-android-intent",
       "aliases": [
         "@XIAOMI GHI CHÚ",

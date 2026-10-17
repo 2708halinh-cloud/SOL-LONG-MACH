@@ -5,7 +5,9 @@ Zero external Python dependencies. No tokens are read or printed by this server.
 """
 from __future__ import annotations
 
+import importlib.util
 import json
+from pathlib import Path
 import os
 import re
 import shutil
@@ -25,6 +27,7 @@ TOOLS: list[dict[str, Any]] = [
     {"name": "gcp_run_services_list", "description": "List Cloud Run services in the configured project (read-only).", "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False}},
     {"name": "gcp_compute_instances_list", "description": "List Compute Engine VM instances in the configured project (read-only).", "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False}},
     {"name": "gcp_enabled_apis_list", "description": "List enabled Google Cloud APIs in the configured project (read-only).", "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False}},
+    {"name": "gcp_usage_analyse", "description": "Analyse user-supplied Google Cloud dashboard metrics offline. Does not call Cloud APIs, retry failures, inspect credentials or assume cost.", "inputSchema": {"type": "object", "properties": {"metrics": {"type": "array", "maxItems": 300, "items": {"type": "object"}}}, "required": ["metrics"], "additionalProperties": False}},
 ]
 
 def selected_project() -> str:
@@ -63,6 +66,16 @@ def execute_gcloud(arguments: list[str], timeout: int = 40) -> Any:
 def dispatch(name: str, args: dict[str, Any]) -> Any:
     if name not in {t["name"] for t in TOOLS}:
         raise ValueError(f"Unknown tool: {name}")
+    if name == "gcp_usage_analyse":
+        if not isinstance(args, dict) or set(args) != {"metrics"}:
+            raise ValueError("GCP_USAGE_METRICS_REQUIRED")
+        source = Path(__file__).with_name("gcp_usage_guard.py")
+        spec = importlib.util.spec_from_file_location("sol_gcp_usage_guard", source)
+        if spec is None or spec.loader is None:
+            raise RuntimeError("GCP_USAGE_GUARD_SOURCE_MISSING")
+        guard = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(guard)
+        return guard.analyse(args["metrics"])
     if args:
         raise ValueError("This version takes no tool parameters; project is bound by SOL_GCP_PROJECT_ID")
     p = selected_project()
@@ -131,7 +144,7 @@ def handle(message: dict[str, Any]) -> dict[str, Any] | None:
         else:
             return make_response(request_id, error={"code": -32601, "message": "Method not found"})
         return make_response(request_id, result=result)
-    except (RuntimeError, ValueError) as e:
+    except (RuntimeError, ValueError, TypeError) as e:
         if method == "tools/call":
             return make_response(request_id, result={"content": [{"type": "text", "text": str(e)}], "isError": True})
         return make_response(request_id, error={"code": -32602, "message": str(e)})
