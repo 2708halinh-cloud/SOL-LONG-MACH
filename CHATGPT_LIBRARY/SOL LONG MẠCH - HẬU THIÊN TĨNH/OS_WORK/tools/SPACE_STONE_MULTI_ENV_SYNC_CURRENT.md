@@ -164,3 +164,15 @@ next_agent: 'Fresh-read provider IDs, check source/destination delta, act within
 **Tuyến thiết bị:** Redmi Note 14 Pro 5G được người dùng báo đang online và là đường thay thế Windows. Giữ nguồn tín hiệu này; trạng thái kết nối thực thi từ ChatGPT và khả năng đọc ổ đĩa Windows phải kiểm chứng riêng, không tự mở IP/port/proxy hay gửi secrets sang GitHub public.
 
 **Tái nhập:** Đọc `Toolset.md` mới nhất cùng `POWER_ROUTER.md`, `AGENTS.md`, checkpoint runtime và tín hiệu chat hiện tại; so với dữ liệu provider mới trước hành động; sau readback quay `_Plugins` và tiếp tục cạnh `NEXT_AGENT` thực sự còn. Phiên bản tài liệu, commit hoặc một cặp Library↔GitHub được đồng bộ không được đánh đồng với đồng bộ toàn bộ bảy môi trường.
+
+## DELTA — MULTIDIMENSIONAL SPACE SYNC — 2026-10-17
+
+SOURCE_DIRECT_CURRENT: Người Đồng Hành yêu cầu **Đồng bộ đa chiều không gian**, không còn mặc định đồng bộ hai chiều. Ưu tiên **Termux/Linux trên Redmi Note 14 Pro 5G** thực thi ở **bộ nhớ dùng chung** (/storage/emulated/0); bảo toàn cây /storage/emulated/0/SOL-LONG-MACH, OS_Workspace và /storage/emulated/0/.codex. Không chọn /mnt/data, /tmp hay môi trường tạm ChatGPT làm HOME.
+
+TỔNG HỢP CẠNH: SPACE_STONE = graph(carrier_identity, provider_namespace, source_hash, revision, authorized_route, target_readback). Chọn cạnh nguồn→đích có quyền, không ép mọi nhánh phản chiếu tức thời, không tự lan truyền xóa/ghi đè. Nếu khác nội dung/hash, giữ cả hai và truy lineage. Không nhầm GitHub, Library, Dropbox, Android, Drive là một thiết bị hay một ổ đĩa.
+
+RUNTIME BOUNDARY: Termux cung cấp Linux userspace trên Android; WSL là tính năng Linux của Windows, **không phải lớp cần tái cấu hình bên trong Redmi**. Có thể định tuyến riêng Ubuntu proot trong Termux khi đã kiểm tra thực tế và có phiên điều khiển thiết bị. Không tự chỉnh root, bootloader, phân vùng, DNS/firewall hoặc dữ liệu riêng.
+
+PROJECT POLICY: gói nguồn .ssh.zip/mcp-remote-v1.zip nằm ngoài đồng bộ công khai. Chỉ importer tại OS_WORK/tools/MULTISPACE_SYNC/sol_multispace_import.py mới được phép --apply vào /storage/emulated/0/SOL-LONG-MACH, với SHA-256 nguồn, giữ file cũ và receipt trong HOME. Đây là cơ chế ngăn dùng sandbox làm nguồn vận hành **ở cấp project**, không phải quyền tắt máy chủ nền tảng ChatGPT.
+
+OBSERVED: GitHub có importer + manifest; ChatGPT Library nhận bốn ZIP nguồn. Android trực tiếp chưa có receipt trong lượt này, Dropbox mới đọc nguồn, chưa có write receipt. Không ghi SYNCED cho đích chưa đọc lại được.
