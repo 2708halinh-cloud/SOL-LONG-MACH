@@ -1,1 +1,51 @@
-The requested file reference is not currently visible. Use files.search or files.list to rediscover the file, then retry with a returned ref_id or file_id.
+{
+  "schema": "SOL_SKILL_PRIORITY_POLICY/1.0",
+  "source": "USER_DIRECT_2026-10-17",
+  "scope": "SOL route selection and agent choice; not ChatGPT system-level plugin installation controls",
+  "precedence": [
+    "BLOCK_EXPLICIT_LEGACY_PLATFORM_SKILL",
+    "UNINSTALL_WHEN_PROVIDER_EXPOSES_EXACT_TARGET_OPERATION",
+    "PUT_OTHER_OLD_PLATFORM_SKILLS_AT_LAST_PRIORITY",
+    "PRESERVE_PERSONAL_RECENT_SKILLS"
+  ],
+  "blocked_exact_skill_uris": [
+    "skills://plugins/template-creator/template-creator"
+  ],
+  "blocked_tool_namespace_prefixes": [
+    "mcp__OpenAI_Platform__"
+  ],
+  "protected_personal_skill_uri_prefixes": [
+    "skills://plugins/ggdv-",
+    "skills://plugins/sol-",
+    "skills://plugins/x-time-",
+    "skills://plugins/tac-nhan-",
+    "skills://plugins/the-master-flatform/",
+    "skills://plugins/x-0-",
+    "skills://plugins/x-1-",
+    "skills://plugins/x-2-"
+  ],
+  "protected_exact_skill_uris": [
+    "skills://plugins/ggdv-template-creator/ggdv-template-creator",
+    "skills://plugins/ggdv-template-creator/locus-agents-angel-template"
+  ],
+  "lowest_priority_platform_skill_uri_prefixes": [
+    "skills://plugins/openai-templates/",
+    "skills://plugins/presentations-router/",
+    "skills://plugins/pdf-router/",
+    "skills://plugins/documents-router/",
+    "skills://plugins/spreadsheets-router/",
+    "skills://plugins/plugin-management/"
+  ],
+  "tiers": {
+    "protected_personal": 0,
+    "other_available": 20,
+    "platform_last_resort": 99
+  },
+  "classification": "No install time in skills.list. Do not classify a personal skill as obsolete from its name alone; protect it pending direct evidence. Unlisted platform skills cannot be auto-uninstalled by a source router.",
+  "provider_uninstall_readback": {
+    "OpenAI Platform": "not_installed",
+    "Template Creator": "not_uninstallable_included_by_default"
+  },
+  "enforcement_limit": "Tool/skill suppression and ranking apply when a SOL selector consumes this file. They do not uninstall or disable ChatGPT built-in platform capabilities.",
+  "status": "ROUTER_SOURCE_WIRED_GITHUB_AND_LIBRARY__REQUIRES_EXECUTION_ON_AUTHORIZED_REDMi_FOR_RUNTIME_READBACK"
+}
