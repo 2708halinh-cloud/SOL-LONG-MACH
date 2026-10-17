@@ -2,16 +2,28 @@
   "servers": {
     "chrome-devtools": {
       "command": "npx",
-      "args": ["-y","chrome-devtools-mcp@latest","--auto-connect","--channel=stable"],
-      "env": {"CHROME_DEVTOOLS_MCP_NO_USAGE_STATISTICS": "true"}
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--autoConnect",
+        "--channel=stable"
+      ],
+      "env": {
+        "CHROME_DEVTOOLS_MCP_NO_USAGE_STATISTICS": "true"
+      }
     },
     "windows-live-body": {
       "command": "python",
-      "args": ["${workspaceFolder}/.vscode/device/nervous/device_mcp_server.py"]
+      "args": [
+        "${workspaceFolder}/.vscode/device/nervous/device_mcp_server.py"
+      ]
     },
     "fastapi-nervous-clones": {
       "command": "python",
-      "args": ["${workspaceFolder}/.vscode/device/nervous/fastapi_mcp_server.py","8788"]
+      "args": [
+        "${workspaceFolder}/.vscode/device/nervous/fastapi_mcp_server.py",
+        "8788"
+      ]
     },
     "atlassian": {
       "type": "http",
