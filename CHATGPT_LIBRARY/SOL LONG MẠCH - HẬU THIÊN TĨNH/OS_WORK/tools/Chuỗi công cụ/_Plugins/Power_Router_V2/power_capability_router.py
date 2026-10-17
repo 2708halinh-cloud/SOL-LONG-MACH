@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT_REL = "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools"
 REGISTRY = "Chuỗi công cụ/_Plugins/Power_Router_V2/POWER_CAPABILITY_ROUTES_V2.json"
 LEGACY = "Chuỗi công cụ/_Plugins/Legacy_Plugins/power_router.py"
+SKILL_POLICY = "SKILL_PRIORITY_POLICY_CURRENT.json"
 
 
 def enforce_redmi_device() -> dict:
@@ -63,6 +64,21 @@ def normalize(s: str) -> str:
     return "".join(ch for ch in s if unicodedata.category(ch) != "Mn")
 
 
+def select_skill_priority(entry: str, policy: dict) -> int | None:
+    """Apply personal-first and legacy-platform-last in SOL selection."""
+    if entry in policy.get("blocked_exact_skill_uris", ()):
+        return None
+    if any(entry.startswith(p) for p in policy.get("blocked_tool_namespace_prefixes", ())):
+        return None
+    if entry in policy.get("protected_exact_skill_uris", ()):
+        return 0
+    if any(entry.startswith(p) for p in policy.get("protected_personal_skill_uri_prefixes", ())):
+        return 0
+    if any(entry.startswith(p) for p in policy.get("lowest_priority_platform_skill_uri_prefixes", ())):
+        return 99
+    return 20
+
+
 def load(repo_root: Path):
     repo = repo_root.resolve()
     tools = (repo / ROOT_REL).resolve()
@@ -97,9 +113,16 @@ def route(task: str, repo_root: Path) -> dict:
         raise ValueError("TASK_REQUIRED")
     verified_device = enforce_redmi_device()
     repo, tools, info, legacy, back_verified = load(repo_root)
+    policy_path = tools / SKILL_POLICY
+    policy = json.loads(policy_path.read_text(encoding="utf-8"))
+    if policy.get("schema") != "SOL_SKILL_PRIORITY_POLICY/1.0":
+        raise ValueError("SKILL_PRIORITY_POLICY_SCHEMA_INVALID")
     normalized = normalize(task)
     choices = []
     for cap in info["capabilities"]:
+        tier = select_skill_priority(str(cap["entry"]), policy)
+        if tier is None:
+            continue
         hits = [word for word in cap["aliases"] if re.search(
             r"(?<!\w)" + re.escape(normalize(word)) + r"(?!\w)", normalized
         )]
@@ -122,6 +145,7 @@ def route(task: str, repo_root: Path) -> dict:
         choices.append({
             "capability_id": cap["id"], "matched_aliases": hits,
             "score": max(len(normalize(x)) for x in hits),
+            "user_skill_priority_tier": tier,
             "category_portal": portal, "portal_found_in_carrier": portal_exists,
             "kind": cap["kind"],
             "source_or_tool_ref": cap["entry"], "next_probe": cap["next"],
@@ -140,7 +164,7 @@ def route(task: str, repo_root: Path) -> dict:
             if choice["capability_id"] == "space-stone-unified":
                 choice["score"] = 10000
                 choice["tag_selected"] = True
-    choices.sort(key=lambda x: (-x["score"], x["capability_id"]))
+    choices.sort(key=lambda x: (x["user_skill_priority_tier"], -x["score"], x["capability_id"]))
     parent_route = legacy.route(task, repo) if back_verified else None
     if not choices:
         next_edge = "DISCOVER_SKILLS_AND_PROVIDER_CAPABILITIES"
@@ -156,6 +180,7 @@ def route(task: str, repo_root: Path) -> dict:
         "execution_device": verified_device,
         "entrypoint": "_Plugins",
         "candidates": choices,
+        "skill_priority_source": SKILL_POLICY,
         "next_action": next_edge,
         "legacy_route": parent_route["selected_group"] if parent_route else None,
         "return_to": parent_route["return_to"] if parent_route else "_Plugins",
