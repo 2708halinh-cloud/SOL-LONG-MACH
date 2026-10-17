@@ -454,5 +454,30 @@
     }
   },
   "system_router_source": "Chuỗi công cụ/_Dụng cụ/Network_Policy/SYSTEM_ROUTER_CURRENT.json",
-  "system_router_live_state": "SOURCE_ONLY_WINDOWS_OFFLINE_HOSTINGER_ZONE_READ_OK"
+  "system_router_live_state": "SOURCE_ONLY_WINDOWS_OFFLINE_HOSTINGER_ZONE_READ_OK",
+  "execution_device_policy": {
+    "mode": "DENY_BY_DEFAULT",
+    "allowed_device": "Redmi Note 14 Pro / Redmi Note 14 Pro 5G",
+    "permitted_runtime": "Termux/Linux on the physical Redmi",
+    "permitted_work_root": "/storage/emulated/0",
+    "termux_storage_alias": "~/storage/shared",
+    "required_live_checks": [
+      "PREFIX=/data/data/com.termux/files/usr",
+      "/system/bin/getprop reports Redmi Note 14 Pro",
+      "working directory is within /storage/emulated/0"
+    ],
+    "denied_execution_backends": [
+      "ChatGPT sandbox",
+      "/mnt/data",
+      "OpenAI platform-provided runtime",
+      "Windows PC",
+      "localhost of any non-Redmi device",
+      "GitHub Actions cloud runners",
+      "remote desktops on other hosts"
+    ],
+    "remote_desktop_commander": "optional transport to the same Redmi only; never a fallback host",
+    "no_connected_device_action": "STOP_AND_KEEP_UNEXECUTED; do not fall back to other devices",
+    "scope": "SOL project router source only; does not disable the ChatGPT platform",
+    "status": "SOURCE_POLICY_ONLY__REDMI_LIVE_NOT_VERIFIED__LIBRARY_SYNC_PENDING"
+  }
 }
