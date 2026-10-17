@@ -1,5 +1,20 @@
 # POWER ROUTER — T007 / OPEN
 
+## DEVICE-ONLY EXECUTION GATE — REDMI NOTE 14 PRO / 2026-10-17
+
+**Lời người dùng trực tiếp (2026-10-17):** Thiết bị thực thi duy nhất là Redmi Note 14 Pro với Termux/Linux; làm việc tại root bộ nhớ dùng chung. Khi Remote Desktop Commander không nối được, KHÔNG được chuyển sang bất kỳ máy khác, bao gồm container/sandbox/localhost do nền tảng cung cấp.
+
+- `TARGET_DEVICE=REDMI_NOTE_14_PRO`; `TARGET_RUNTIME=TERMUX_LINUX`; `WORK_ROOT=/storage/emulated/0` (alias Termux `~/storage/shared`).
+- `EXECUTION_DEFAULT=DENY`: chỉ chạy khi kiểm trực tiếp trên máy có `PREFIX=/data/data/com.termux/files/usr`, Android `getprop` trả tên Redmi Note 14 Pro, và `cwd` nằm trong bộ nhớ dùng chung.
+- `FALLBACK_DEVICE=NONE`: offline hay không có kết nối = dừng thao tác thực thi; không dùng Windows, cloud runner, ChatGPT sandbox, `/mnt/data` hay `localhost` của host khác.
+- GitHub/Library là nơi lưu và quản trị **mã nguồn**, không phải thiết bị thực thi. Ghi chính sách vào repository KHÔNG chứng minh Router đã chạy trên Redmi hay đã cập nhật Library.
+- Cổng local `enforce_redmi_device()` trong `Chuỗi công cụ/_Plugins/Power_Router_V2/power_capability_router.py` từ chối trước khi nạp registry hoặc chọn công cụ. Đây là guard nguồn Python, KHÔNG phải chặn hạ tầng ChatGPT, không là xác thực phần cứng chống giả mạo.
+- Những tuyến Windows/RDP/VSCODE cũ giữ làm STAMP_OLD tham chiếu, không được chọn làm thiết bị thực thi hiện hành. Không chạy thử mã trên host ngoài Redmi để tuyên bố PASS.
+- Nhịp quan sát 2026-10-17: Desktop Commander trả 2 thiết bị `localhost` và `DESKTOP-86ITNQ4`, cả hai Offline, không có Redmi trong danh sách. `REDMI_LIVE_NOT_VERIFIED`; `GITHUB_SOURCE_UPDATED` chỉ sau receipt/readback; `LIBRARY_SYNC_PENDING` đến khi có thao tác/biên nhận tại Library.
+
+**Ranh giới kiểm soát:** chỉ áp dụng được cho đường định tuyến SOL mà mã này kiểm soát. Không thể tắt hoặc thay thế máy chủ thực tế của ChatGPT ở cấp hạ tầng từ Router dự án.
+
+
 `OPEN = TIẾP NHẬN TÍN HIỆU TRỰC TIẾP`: tín hiệu mới đi vào INPUT/INBOX và tham gia quan hệ trước khi đánh giá. OPEN không phải trạng thái chờ, chưa chứng minh hay lỗi. Không tự gán ý định, kết quả hoặc hậu quả trước hành động.
 
 Sáu mặt: MAP/TRUY TÌM; INPUT/DUYÊN KHỞI; CÔNG CỤ; THỜI GIAN THỰC; SỬA LỖI TRẠNG THÁI; TRƯỜNG/NEURON.
