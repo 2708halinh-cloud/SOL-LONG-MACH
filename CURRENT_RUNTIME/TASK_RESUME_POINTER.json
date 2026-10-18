@@ -39,7 +39,7 @@
       "readback no longer requests contents:write or pushes a commit; it emits a read-only artifact",
       "concurrency cancels superseded runs for the same PR/ref"
     ],
-    "hosted_runner_observation": "Current-head PR run 39153474587 failed before useful step execution; validate-x-time run 39153474634 also failed. This repeats the repository-wide runner symptom observed on d991f91e. Source review fixes are on head 5d0a44bb.",
+    "hosted_runner_observation": "Current-head tesseract-desktop-ci run 39153474587 at head 5d0a44bb... was rerun after source review fixes. Windows/Linux/macOS/TESSERACT_OS all failed again before any step output; selfhosted_windows_verify was skipped on pull_request; readback then failed. This repeats the repo/account runner-assignment symptom and does not establish source-code execution failure.",
     "hosted_runner_external_state": "Connected GitHub tools do not expose repository Actions runner/permission/billing endpoints in this session. Runner assignment/entitlement remains unverified external state; do not relabel it as a source-code failure.",
     "source_fixes_materialized": [
       "future state schemas rejected without destructive downgrade",
@@ -98,6 +98,8 @@
     "codex_review": "completed_current_head_no_findings",
     "ci_run": 39153474587,
     "runner_symptom": "fail-before-step persists across multiple independent workflows",
-    "guard": "OPEN edges remain; report/status is not STOP"
+    "guard": "OPEN edges remain; report/status is not STOP",
+    "ci_rerun": "FAILED_BEFORE_STEP_ON_ALL_GITHUB_HOSTED_JOBS",
+    "ci_readback": "FAILURE_NO_TRUE_RECEIPT"
   }
 }
