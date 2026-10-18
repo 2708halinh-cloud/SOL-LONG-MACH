@@ -22,7 +22,7 @@ metadata:
 
 ## 1. Danh tính, nguồn gốc và quan hệ nối tiếp
 
-**Skill nối tiếp:** [Tự chủ và Kiên trì](../../Chuỗi%20công%20cụ/_Kỹ%20năng/tu-chu-va-kien-tri/SKILL.md), tài liệu gốc hiện ở nhánh GitHub \`feat/am-duong-two-agent-skills-20261017\` (PR #16; chưa suy rằng đã hợp nhất vào \`main\`); bản ở ChatGPT Library:
+**Skill nối tiếp:** [Tự chủ và Kiên trì](https://github.com/2708halinh-cloud/SOL-LONG-MACH/blob/feat/am-duong-two-agent-skills-20261017/CHATGPT_LIBRARY/SOL%20LONG%20M%E1%BA%A0CH%20-%20H%E1%BA%ACU%20THI%C3%8AN%20T%C4%A8NH/OS_WORK/tools/Chu%E1%BB%97i%20c%C3%B4ng%20c%E1%BB%A5/_K%E1%BB%B9%20n%C4%83ng/tu-chu-va-kien-tri/SKILL.md), tài liệu gốc hiện ở nhánh GitHub \`feat/am-duong-two-agent-skills-20261017\` (PR #16; chưa suy rằng đã hợp nhất vào \`main\`); bản ở ChatGPT Library:
 \`/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ/_Kỹ năng/tu-chu-va-kien-tri/SKILL.md\`.
 
 Đường GitHub xem đúng nhánh nguồn:
