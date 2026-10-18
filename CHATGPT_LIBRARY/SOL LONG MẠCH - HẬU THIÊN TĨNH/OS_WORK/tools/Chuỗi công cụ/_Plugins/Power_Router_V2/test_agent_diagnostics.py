@@ -113,5 +113,27 @@ class SelfDiagnosisEvals(unittest.TestCase):
             self.assertFalse(out["truncated"])
             self.assertNotIn("one.txt", str(out))
 
+    def test_credential_response_guard_regression(self):
+        result=agent.diagnose_run(case(credential_response={
+            "authorized_handoff": True,
+            "existing_policy_known": True,
+            "exposure_verified": False,
+            "assistant_asserted_compromise": True,
+            "assistant_repeated_policy_lecture": True}))
+        self.assertEqual({x["code"] for x in result["findings"]},
+                         {"UNSUPPORTED_COMPROMISE_INFERENCE", "REPEATED_SECURITY_LECTURE"})
+        self.assertFalse(result["action_executed"])
+        self.assertFalse(result["provider_called"])
+
+    def test_verified_exposure_does_not_raise_inference_warning(self):
+        result=agent.diagnose_run(case(credential_response={
+            "exposure_verified": True, "assistant_asserted_compromise": True}))
+        self.assertEqual(result["findings"],[])
+
+    def test_refuses_raw_key_field_in_diagnostic(self):
+        result=agent.diagnose_run(case(credential_response={"api_key":"do-not-log"}))
+        self.assertIn("CONFIG_INVALID", [x["code"] for x in result["findings"]])
+        self.assertNotIn("do-not-log",str(result))
+
 if __name__=="__main__":
     unittest.main()

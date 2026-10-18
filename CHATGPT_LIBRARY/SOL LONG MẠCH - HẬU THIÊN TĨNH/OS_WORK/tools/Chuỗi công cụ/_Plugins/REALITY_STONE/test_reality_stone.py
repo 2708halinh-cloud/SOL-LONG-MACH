@@ -97,5 +97,32 @@ class RealityStoneEvals(unittest.TestCase):
             file.write_text(json.dumps(INDEX,ensure_ascii=False),encoding="utf-8")
             self.assertEqual(stone.load_index(file)["skill_count"],24)
 
+class CredentialHandoffRepairEvals(unittest.TestCase):
+    def test_authorized_handoff_is_not_automatically_compromise(self):
+        result=stone.review_credential_handoff({
+            "user_authorized_handoff":True,
+            "existing_secret_policy_known":True,
+            "exposure_evidence":"none_verified",
+            "assistant_asserted_compromise":True})
+        self.assertEqual(result["classification"],"AUTHORIZED_HANDOFF_EXPOSURE_NOT_VERIFIED")
+        self.assertTrue(result["incorrect_compromise_inference"])
+        self.assertTrue(result["existing_secret_policy_reused"])
+        self.assertFalse(result["mutated"])
+        self.assertFalse(result["raw_credential_inspected"])
+
+    def test_verified_exposure_changes_result(self):
+        result=stone.review_credential_handoff({"exposure_evidence":"verified"})
+        self.assertEqual(result["classification"],"EXPOSURE_VERIFIED_BY_DECLARED_EVIDENCE")
+        self.assertFalse(result["compromise_independently_verified"])
+
+    def test_stop_overrides_next_action(self):
+        result=stone.review_credential_handoff({"user_stop_requested":True,"user_authorized_handoff":True})
+        self.assertEqual(result["recommended_next"],"STOP_ACTIONS_NO_CONNECTOR_USE_NO_FURTHER_WRITE")
+
+    def test_rejects_credential_values_not_meta(self):
+        with self.assertRaisesRegex(ValueError,"HANDOFF_METADATA_ONLY"):
+            stone.review_credential_handoff({"api_key":"example-secret-not-real"})
+
+
 if __name__=="__main__":
     unittest.main()

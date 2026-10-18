@@ -144,15 +144,67 @@ def audit_event(event: dict) -> dict:
         "note": "Caller attestation is not independent provider verification.",
     }
 
+def review_credential_handoff(event: dict) -> dict:
+    """Review handoff reasoning using metadata only. NEVER accept credential bytes.
+
+    This is a defensive reasoning guard, not a credential validity oracle.
+    It cannot prove absence of exposure, compromise, access rights or leaks.
+    """
+    if not isinstance(event, dict):
+        raise ValueError("HANDOFF_OBJECT_REQUIRED")
+    allowed = {"user_authorized_handoff", "existing_secret_policy_known",
+               "exposure_evidence", "assistant_asserted_compromise", "user_stop_requested"}
+    if set(event) - allowed:
+        raise ValueError("HANDOFF_METADATA_ONLY")
+    for flag in allowed - {"exposure_evidence"}:
+        if flag in event and type(event[flag]) is not bool:
+            raise ValueError("HANDOFF_FLAG_INVALID")
+    exposure = event.get("exposure_evidence", "unknown")
+    if exposure not in ("none_verified", "verified", "unknown"):
+        raise ValueError("EXPOSURE_CLASS_INVALID")
+    handoff = event.get("user_authorized_handoff") is True
+    policy_known = event.get("existing_secret_policy_known") is True
+    unwarranted = bool(event.get("assistant_asserted_compromise") and exposure != "verified")
+    if exposure == "verified":
+        classification = "EXPOSURE_VERIFIED_BY_DECLARED_EVIDENCE"
+        next_step = "ASSESS_DOCUMENTED_EXPOSURE_AND_ROTATION_OPTIONS_WITH_OWNER"
+    elif handoff:
+        classification = "AUTHORIZED_HANDOFF_EXPOSURE_NOT_VERIFIED"
+        next_step = "CONTINUE_AUTHORIZED_TASK_APPLY_EXISTING_SECRET_STORAGE_POLICY"
+    else:
+        classification = "EXPOSURE_NOT_VERIFIED_HANDOFF_SCOPE_UNKNOWN"
+        next_step = "VERIFY_AUTHORIZATION_AND_USE_NO_SECRET_VALUES"
+    if event.get("user_stop_requested") is True:
+        next_step = "STOP_ACTIONS_NO_CONNECTOR_USE_NO_FURTHER_WRITE"
+    return {
+        "plugin": "@REALITY_STONE",
+        "classification": classification,
+        "incorrect_compromise_inference": unwarranted,
+        "existing_secret_policy_reused": handoff and policy_known,
+        "recommended_next": next_step,
+        "raw_credential_inspected": False,
+        "compromise_independently_verified": False,
+        "secrets_exposed": False,
+        "mutated": False,
+        "defensive_mode": "READ_ONLY_REASONING_REPAIR",
+        "note": "An authorized chat handoff alone neither establishes compromise nor guarantees secrecy."
+    }
+
 def main():
     parser = argparse.ArgumentParser(description="@REALITY_STONE defensive plugin source")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--list-skills", action="store_true")
     group.add_argument("--trace-skill")
     group.add_argument("--audit-json", type=Path)
+    group.add_argument("--review-credential-json", type=Path)
     parser.add_argument("--index", type=Path, default=Path(__file__).with_name("SKILL_INDEX.json"))
     args = parser.parse_args()
-    if args.audit_json is not None:
+    if args.review_credential_json is not None:
+        p = args.review_credential_json
+        if p.is_symlink() or not p.is_file() or p.stat().st_size > 4096:
+            raise ValueError("CREDENTIAL_METADATA_INPUT_UNAVAILABLE_OR_UNBOUNDED")
+        result = review_credential_handoff(json.loads(p.read_text(encoding="utf-8")))
+    elif args.audit_json is not None:
         p = args.audit_json
         if p.is_symlink() or not p.is_file() or p.stat().st_size > 100_000:
             raise ValueError("INCIDENT_INPUT_UNAVAILABLE_OR_UNBOUNDED")

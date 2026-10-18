@@ -43,6 +43,8 @@ REPAIR_HINTS = {
     "RECEIPT_UNVERIFIED": "READBACK_EXACT_TARGET_BEFORE_DONE",
     "TOKEN_BUDGET_EXCEEDED": "STOP_AND_REPLAN_SMALLER_TASK",
     "CHECKPOINT_GAP": "READ_LAST_DURABLE_CHECKPOINT",
+    "UNSUPPORTED_COMPROMISE_INFERENCE": "RETRACT_UNVERIFIED_COMPROMISE_CLAIM_AND_REUSE_KNOWN_SECRET_POLICY",
+    "REPEATED_SECURITY_LECTURE": "STOP_RETEACHING_ESTABLISHED_POLICY_AND_RETURN_TO_USER_GOAL",
 }
 
 def _issue(code: str, **fields) -> dict:
@@ -206,6 +208,23 @@ def diagnose_run(run: dict) -> dict:
         findings.append(_issue("TOKEN_BUDGET_EXCEEDED"))
     if run.get("checkpoint_expected") is True and run.get("checkpoint_found") is False:
         findings.append(_issue("CHECKPOINT_GAP"))
+    # Inspect declarative flags only: never handle credential/token values.
+    response = run.get("credential_response")
+    if response is not None:
+        allowed = {"authorized_handoff", "existing_policy_known", "exposure_verified",
+                   "assistant_asserted_compromise", "assistant_repeated_policy_lecture"}
+        if not isinstance(response, dict) or set(response) - allowed or any(
+            type(value) is not bool for value in response.values()
+        ):
+            findings.append(_issue("CONFIG_INVALID", faults=["CREDENTIAL_RESPONSE_METADATA_INVALID"]))
+        else:
+            if (response.get("assistant_asserted_compromise") is True
+                and response.get("exposure_verified") is not True):
+                findings.append(_issue("UNSUPPORTED_COMPROMISE_INFERENCE"))
+            if (response.get("authorized_handoff") is True
+                and response.get("existing_policy_known") is True
+                and response.get("assistant_repeated_policy_lecture") is True):
+                findings.append(_issue("REPEATED_SECURITY_LECTURE"))
     status = "NEEDS_REPAIR" if findings else "NO_DETERMINISTIC_FAULT_FOUND"
     return {
         "schema": VERSION, "status": status,
