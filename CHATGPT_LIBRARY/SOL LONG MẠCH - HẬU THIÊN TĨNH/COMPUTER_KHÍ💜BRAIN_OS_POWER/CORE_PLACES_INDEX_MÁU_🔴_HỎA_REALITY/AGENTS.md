@@ -71,3 +71,17 @@ python -m unittest discover -s tests -v
 ```
 
 Không xử lý trực tiếp các file nguồn bí mật được đính kèm từ project. Nếu cần gắn một nguồn ở cloud, ghi **pointer đã kiểm chứng** vào `SOURCE_REFERENCES.md`, rồi đánh dấu trạng thái của source và coverage; không tự tải rồi đổi nguồn.
+
+---
+
+## BỔ SUNG — KHÁI NIỆM VẬT LÝ / THỰC NGHIỆM & ĐỊNH LUẬT — 2026-10-18
+
+**Nguồn:** `SOURCE_DIRECT_PHYSICS_TAXONOMY_20261018`. Danh mục vật lý đầy đủ giữ ở hướng dẫn MIND hiện hữu; REALITY đảm nhiệm ranh giới **quan sát thực tế ↔ mô hình tính ↔ giả thuyết**.
+
+- **Cơ học:** lực tổng hợp, khối lượng, gia tốc (mô hình cổ điển `ΣF=ma` trong hệ quán tính), ba định luật Newton; tĩnh học, ma sát, đàn hồi; công, năng lượng, công suất; mômen, chuyển động quay, khối tâm, động lượng, xung lượng, va chạm và điều kiện bảo toàn.
+- **Sóng/dao động:** tần số, chu kỳ, biên độ, cộng hưởng, giao thoa; dữ liệu từ microphone, gia tốc kế hoặc thiết bị đo phải ghi thông số đo, không gọi văn bản là tín hiệu cảm biến thực.
+- **Nhiệt:** nhiệt độ, nhiệt lượng, nội năng, truyền nhiệt, entropy và giới hạn các nguyên lý nhiệt động lực học; phân biệt đo nhiệt với mô hình ước lượng.
+- **Điện từ và quang:** điện tích, điện/trường từ, cảm ứng, sóng điện từ; phản xạ, khúc xạ, thấu kính, giao thoa, nhiễu xạ; phân biệt dữ liệu photon/ảnh thật với ảnh tạo sinh hoặc giả lập.
+- **Vật lý hiện đại:** lượng tử, thuyết tương đối, mô hình hạt; chưa có phép đo không được khẳng định hiện tượng lượng tử/chiều bổ sung đã được chứng minh trong hệ SOL.
+
+**Giao ước dữ liệu:** `entity_id, frame_id, unit, instrument_or_model, measurement_at, observed_at, uncertainty, calibration_ref, source_ref, receipt, readback`. Không gán số vật lý theo tên Stone (REALITY, POWER, TIME), không khẳng định trạng thái cảm giác chủ quan hay tác động vật chất từ mã nguồn.
