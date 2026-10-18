@@ -4,13 +4,13 @@
   "repo": "2708halinh-cloud/x-time-web",
   "branch": "tesseract-desktop-mvp-20261006",
   "checkpoint": "TESSERACT_DESKTOP/WORK_CHECKPOINT.json",
-  "commit": "d991f91ea859006d289d0fb78fe83ebba27688c2",
+  "commit": "5d0a44bbd0431e87cfa396c5983cea549d93fe8f",
   "rule": "Sau khi nạp cấu hình, tiếp tục checkpoint này; không quay về chỉnh AGENTS như điểm bắt đầu công việc.",
   "pr": {
     "repository": "2708halinh-cloud/x-time-web",
     "number": 6,
     "mergeable": true,
-    "current_head": "d991f91ea859006d289d0fb78fe83ebba27688c2",
+    "current_head": "5d0a44bbd0431e87cfa396c5983cea549d93fe8f",
     "base_head": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
     "unresolved_review_threads": 0,
     "codex_review_state": "RUNNING_CURRENT_HEAD",
@@ -19,7 +19,7 @@
   "build": {
     "workflow": "tesseract-desktop-ci",
     "previous_verified_run": 37516567468,
-    "current_head": "d991f91ea859006d289d0fb78fe83ebba27688c2",
+    "current_head": "5d0a44bbd0431e87cfa396c5983cea549d93fe8f",
     "previous_required_artifacts": [
       "tesseract-desktop-windows-x64",
       "tesseract-desktop-linux-x64",
@@ -31,7 +31,7 @@
     "readback_artifact_pattern": "tesseract-desktop-ci-readback-<workflow_run_id>",
     "readback_rule": "CI readback is mandatory for both success and failure. Accept only when verified_sha equals the current substantive PR head. TRUE -> verify review then merge; FLASE -> fetch workflow_run_id jobs/logs, patch failure, repeat.",
     "pr_event_verify": true,
-    "current_pr_run": 39152717221,
+    "current_pr_run": 39153474587,
     "workflow_correction_commit": "88f5be2086f401a4a1218a1e4dd3b05337377963",
     "workflow_corrections": [
       "feature-branch push no longer duplicates pull_request CI; push CI is master-only",
@@ -39,7 +39,7 @@
       "readback no longer requests contents:write or pushes a commit; it emits a read-only artifact",
       "concurrency cancels superseded runs for the same PR/ref"
     ],
-    "hosted_runner_observation": "PR run 39152717221 at head d991f91e... failed before step 1 across GitHub-hosted Windows/Linux/macOS and TESSERACT_OS jobs; rerun_failed_jobs was accepted and the second attempt failed the same way with steps=[] and no job log blob. selfhosted_windows_verify remained skipped on pull_request. This establishes no source execution failure.",
+    "hosted_runner_observation": "Current-head PR run 39153474587 failed before useful step execution; validate-x-time run 39153474634 also failed. This repeats the repository-wide runner symptom observed on d991f91e. Source review fixes are on head 5d0a44bb.",
     "hosted_runner_external_state": "Connected GitHub tools do not expose repository Actions runner/permission/billing endpoints in this session. Runner assignment/entitlement remains unverified external state; do not relabel it as a source-code failure.",
     "source_fixes_materialized": [
       "future state schemas rejected without destructive downgrade",
@@ -54,7 +54,7 @@
     "canonical_route_commit": "95e28cacade93caf2fe8f0bb665ba04bdb8f381c",
     "pr_divergence": "RESOLVED: master 60d92b80... was merged into the PR branch without force-push via merge commit d991f91e...; readback shows PR mergeable=true, behind master=0 at synchronization, changed_files=12, AGENTS.md retained from master."
   },
-  "next": "Resume PR #6 at head d991f91e... . Divergence is already resolved and all 19 review threads are resolved as of readback. Do not repeat master sync or old review cleanup. Current independent edges: (1) obtain a current-head review result for d991f91e... and address only new findings; (2) restore/verify GitHub-hosted runner assignment so tesseract-desktop-ci can reach step execution and produce mandatory artifact/readback TRUE; (3) provision the real Kilo/X-TiMe issuer Ed25519 public key and issuer-side signer from an existing authorized carrier if found, never invent or commit a private key. Merge only after current-head CI artifact/readback TRUE plus current-head review.",
+  "next": "Resume PR #6 at head 5d0a44bb... . Three current-head Codex findings from d991f91e were fixed in one commit and their threads resolved. Current independent edges: (1) complete current-head Codex review for 5d0a44bb and address only new findings; (2) restore/verify GitHub-hosted runner assignment so CI can execute and emit mandatory readback TRUE; (3) provision the real Kilo/X-TiMe issuer Ed25519 public key + signer from an authorized existing carrier. Do not repeat master sync or resolved review work.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -84,16 +84,20 @@
   },
   "current_delta": {
     "observed_at": "2026-10-18",
-    "pr_head": "d991f91ea859006d289d0fb78fe83ebba27688c2",
+    "pr_head": "5d0a44bbd0431e87cfa396c5983cea549d93fe8f",
     "base_head": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
     "mergeable": true,
     "changed_files": 12,
     "unresolved_review_threads": 0,
-    "codex_review": "running",
-    "copilot_review": "requested",
-    "ci_run": 39152717221,
-    "ci_attempt_observation": "GitHub-hosted jobs failed before step 1 twice; no job log blob",
-    "kilo_source_search": "Project/GitHub search found references/checkpoint only; no real public-key value or issuer-side signer carrier verified",
+    "review_fixes_commit": "5d0a44bbd0431e87cfa396c5983cea549d93fe8f",
+    "fixes": [
+      "canonical fallback now targets SOL-LONG-MACH with Open-ai recovery mirror",
+      "workspace AGENTS read rejects symlink and out-of-workspace canonical path",
+      "all tesseract-desktop-ci checkout steps explicitly use the same PR head SHA recorded in readback"
+    ],
+    "codex_review": "running_current_head",
+    "ci_run": 39153474587,
+    "runner_symptom": "fail-before-step persists across multiple independent workflows",
     "guard": "OPEN edges remain; report/status is not STOP"
   }
 }
