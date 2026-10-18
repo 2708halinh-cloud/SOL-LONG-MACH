@@ -59,6 +59,57 @@ def enforce_redmi_device() -> dict:
     }
 
 
+WINDOWS_HYPERV_GATE_PROFILE = "Chuỗi công cụ/_Plugins/Power_Router_V2/SOL_WIN11_HYPERV_GATE.json"
+
+def inspect_windows_hyperv_gate(tools_root: Path, *, now=None) -> dict:
+    """Read a Windows target hypothesis; never connect, modify routes or assert liveness."""
+    import ipaddress
+    from datetime import datetime, timezone
+    root = tools_root.resolve()
+    path = root / WINDOWS_HYPERV_GATE_PROFILE
+    if path.is_symlink() or not path.resolve().is_relative_to(root):
+        raise ValueError("WINDOWS_TARGET_PROFILE_UNTRUSTED_PATH")
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if data.get("schema") != "SOL_WINDOWS_TARGET_ROUTING_PROFILE/1.0" or data.get("alias") != "SOL_WIN11_HYPERV_GATE":
+        raise ValueError("WINDOWS_TARGET_PROFILE_INVALID")
+    if data.get("target", {}).get("computer_name") != "DESKTOP-86ITNQ4":
+        raise ValueError("WINDOWS_TARGET_HOST_MISMATCH")
+    links = {link["id"]: link for link in data.get("links", [])}
+    if set(links) != {"remote_ndis", "hyperv_vethernet"}:
+        raise ValueError("WINDOWS_TARGET_LINKS_INVALID")
+    uplink, hyperv = links["remote_ndis"], links["hyperv_vethernet"]
+    for link in (uplink, hyperv):
+        net = ipaddress.ip_interface(f'{link["reported_ipv4"]}/{link["prefix_length"]}')
+        if not net.ip.is_private:
+            raise ValueError("WINDOWS_TARGET_NETWORK_NOT_PRIVATE")
+    if uplink.get("mode") != "DHCP" or ipaddress.ip_address(uplink["reported_gateway"]) not in ipaddress.ip_network(
+        f'{uplink["reported_ipv4"]}/{uplink["prefix_length"]}', strict=False
+    ):
+        raise ValueError("WINDOWS_TARGET_UPLINK_INVALID")
+    if hyperv.get("reported_gateway") is not None:
+        raise ValueError("WINDOWS_TARGET_HYPERV_GATEWAY_FORBIDDEN")
+    instant = now if now is not None else datetime.now(timezone.utc)
+    if instant.tzinfo is None:
+        raise ValueError("WINDOWS_TARGET_CLOCK_TZ_REQUIRED")
+    lease_expired = instant >= datetime.fromisoformat(uplink["dhcp_lease_expiry_local"])
+    return {
+        "alias": data["alias"],
+        "target_host": data["target"]["computer_name"],
+        "state": "ASSUMPTION_ONLY_NO_WINDOWS_READBACK",
+        "ndis_ipv4_last_reported": uplink["reported_ipv4"],
+        "ndis_lease_expired": lease_expired,
+        "ndis_current_recheck_required": True,
+        "hyperv_ipv4_last_reported": hyperv["reported_ipv4"],
+        "hyperv_gateway": None,
+        "service_ids": data["services"]["background_service_ids"],
+        "services_verified": False,
+        "qemu_verified": False,
+        "action_executed": False,
+        "next": "VALIDATE_WINDOWS_EXACT_HOST_AND_NETWORK_READ_ONLY",
+        "script": data["preflight"],
+    }
+
+
 def normalize(s: str) -> str:
     s = unicodedata.normalize("NFD", str(s).casefold().replace("đ", "d"))
     return "".join(ch for ch in s if unicodedata.category(ch) != "Mn")
@@ -157,6 +208,11 @@ def route(task: str, repo_root: Path) -> dict:
                 "preflight": cap["read_only_preflight"]}
                if cap["id"] == "vscode-remote-tunnel-windows" else {}),
         })
+    windows_gate = (
+        inspect_windows_hyperv_gate(tools)
+        if any(c["capability_id"] == "sol-win11-hyperv-gate" for c in choices)
+        else None
+    )
     # Explicit @SPACE_STONE tag is a single gateway into subordinate adapters.
     # Other matches remain discoverable as supporting capabilities, not competitors.
     if re.search(r"(?<!\w)@space_stone(?!\w)", normalized):
@@ -178,6 +234,7 @@ def route(task: str, repo_root: Path) -> dict:
         "schema": "SOL_POWER_ROUTER_DECISION/2.0",
         "input": task,
         "execution_device": verified_device,
+        "windows_target_route": windows_gate,
         "entrypoint": "_Plugins",
         "candidates": choices,
         "skill_priority_source": SKILL_POLICY,
