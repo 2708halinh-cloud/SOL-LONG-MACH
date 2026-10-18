@@ -49,7 +49,7 @@ In GitHub checkout the original `power_router.py` and `POWER_ROUTER_CURRENT.json
 
 **Mã thực thi đã gắn tại nhánh Power Router V2 đang có:**
 - [agent_diagnostics.py](./agent_diagnostics.py): phát hiện lặp ba bước trùng tham số, sai schema công cụ/ID ảo, goal drift, tín hiệu prompt injection chưa xác minh, timeout, retry quá ngưỡng, retry không idempotent, thiếu approval/role/biến môi trường, receipt chưa kiểm, tràn token, thiếu checkpoint. Xuất mã lỗi ổn định + bước sửa nguyên tử; **không** tự sửa trạng thái hệ, không gọi Cloud.
-- [test_agent_diagnostics.py](./test_agent_diagnostics.py): 36 trường hợp self-eval trong một phép kiểm bảng, và bộ kiểm riêng cho cấu hình, số học an toàn, chống thực thi mã trong biểu thức, thống kê dung lượng chỉ đọc.
+- [test_agent_diagnostics.py](./test_agent_diagnostics.py): 40 trường hợp self-eval trong một phép kiểm bảng, và bộ kiểm riêng cho cấu hình, số học an toàn, chống thực thi mã trong biểu thức, thống kê dung lượng chỉ đọc.
 - [POWER_CAPABILITY_ROUTES_V2.json](./POWER_CAPABILITY_ROUTES_V2.json): capability `agent-core-diagnostics` vào đúng vòng `_Plugins → ... → _Plugins`. Một route metadata **không** có nghĩa plugin ChatGPT được cài hoặc endpoint đang chạy.
 - Phân bổ trách nhiệm: **MIND** xác định nguồn/goal và schema; **SPACE** xác định vật mang, root và đích; **TIME** theo dõi số lần thử và checkpoint; **REALITY** kiểm timeout, hành động, receipt/readback; **SOUL** bảo toàn correction và dấu lịch sử; **POWER** chọn công cụ và ngăn vòng lặp.
 
@@ -99,4 +99,6 @@ python -m unittest test_agent_diagnostics
 
 `--diagnose` yêu cầu JSON sự kiện do agent thực sự cung cấp; **không** suy rằng tool chạy Langfuse hay có trace thật chỉ từ cấu hình. Mỗi lần khắc phục phải làm đúng việc nhỏ nhất ở carrier thật, lấy receipt và đọc lại; mô-đun không tự kết luận `DONE`. Không dùng chế độ Cloud/GitHub Action để tuyên bố đã chạy runtime SOL khi chính sách thiết bị hiện hành chỉ cho phép Redmi.
 
-**Đối chiếu test 2026-10-18:** Redmi Note 14 Pro 5G / Termux kiểm `36` eval scenarios và `5` phương thức unittest, kết quả pass tại thời điểm ghi nhận; lưu lịch sử commit GitHub và cần readback sau các thay đổi tiếp theo. `LANGFUSE_CONNECTED=false`, `LANGSMITH_CONNECTED=false` là trạng thái của mô-đun, không suy tình trạng mọi tài khoản.
+**Đối chiếu test 2026-10-18:** Redmi Note 14 Pro 5G / Termux kiểm `40` eval scenarios và `5` phương thức unittest, kết quả pass tại thời điểm ghi nhận; lưu lịch sử commit GitHub và cần readback sau các thay đổi tiếp theo. `LANGFUSE_CONNECTED=false`, `LANGSMITH_CONNECTED=false` là trạng thái của mô-đun, không suy tình trạng mọi tài khoản.
+
+**Mở rộng xác thực tham số:** tham số công cụ được kiểm theo danh mục `parameters`/`required` và quy tắc `parameter_rules` (kiểu dữ liệu, `max_length`, `enum`, `format=identifier`); từ chối giá trị không phù hợp bằng `PARAMETER_VALIDATION_FAILED`. Đây là kiểm tra ở lớp gọi công cụ, không thay thế SQL parameterization hay RBAC của hệ thống đích. Bốn tình huống kiểm mới nâng bộ eval thành **40 mẫu**.
