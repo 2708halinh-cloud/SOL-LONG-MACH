@@ -13,7 +13,7 @@
     "current_head": "5d0a44bbd0431e87cfa396c5983cea549d93fe8f",
     "base_head": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
     "unresolved_review_threads": 0,
-    "codex_review_state": "RUNNING_CURRENT_HEAD",
+    "codex_review_state": "COMPLETED_CURRENT_HEAD_NO_FINDINGS",
     "copilot_review_state": "REQUESTED_CURRENT_PR"
   },
   "build": {
@@ -54,7 +54,7 @@
     "canonical_route_commit": "95e28cacade93caf2fe8f0bb665ba04bdb8f381c",
     "pr_divergence": "RESOLVED: master 60d92b80... was merged into the PR branch without force-push via merge commit d991f91e...; readback shows PR mergeable=true, behind master=0 at synchronization, changed_files=12, AGENTS.md retained from master."
   },
-  "next": "Resume PR #6 at head 5d0a44bb... . Three current-head Codex findings from d991f91e were fixed in one commit and their threads resolved. Current independent edges: (1) complete current-head Codex review for 5d0a44bb and address only new findings; (2) restore/verify GitHub-hosted runner assignment so CI can execute and emit mandatory readback TRUE; (3) provision the real Kilo/X-TiMe issuer Ed25519 public key + signer from an authorized existing carrier. Do not repeat master sync or resolved review work.",
+  "next": "Resume PR #6 at head 5d0a44bb... . Current-head Codex review completed with no findings and zero unresolved threads. Remaining independent edges: (1) restore/verify GitHub-hosted runner assignment so tesseract-desktop-ci can execute and emit mandatory readback TRUE; (2) provision the real Kilo/X-TiMe issuer Ed25519 public key + signer from an authorized existing carrier. Do not repeat master sync or resolved review work.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -95,7 +95,7 @@
       "workspace AGENTS read rejects symlink and out-of-workspace canonical path",
       "all tesseract-desktop-ci checkout steps explicitly use the same PR head SHA recorded in readback"
     ],
-    "codex_review": "running_current_head",
+    "codex_review": "completed_current_head_no_findings",
     "ci_run": 39153474587,
     "runner_symptom": "fail-before-step persists across multiple independent workflows",
     "guard": "OPEN edges remain; report/status is not STOP"
