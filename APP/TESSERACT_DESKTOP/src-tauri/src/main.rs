@@ -12,6 +12,8 @@ use std::{
 };
 use tauri::State;
 
+mod ambient;
+
 const CURRENT_STATE_SCHEMA: &str = "TESSERACT_DESKTOP_STATE/1.1";
 
 const REQUIRED_SOURCES: [&str; 4] = [
@@ -837,6 +839,7 @@ fn main() {
         .manage(runtime)
         .invoke_handler(tauri::generate_handler![
             load_state,
+            ambient::ambient_snapshot,
             begin_kilo_connect,
             verify_kilo_session,
             skip_kilo,
