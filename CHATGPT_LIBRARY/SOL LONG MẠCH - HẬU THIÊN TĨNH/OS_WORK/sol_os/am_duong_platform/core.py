@@ -6,6 +6,7 @@ import re
 import sqlite3
 import threading
 import uuid
+from collections import deque
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -50,6 +51,19 @@ class Workrooms:
                 FOREIGN KEY(room_id) REFERENCES rooms(id)
             )""")
             c.execute("CREATE INDEX IF NOT EXISTS idx_events_room ON events(room_id,created_at)")
+            # Additive relation graph: reuse durable event IDs; do not duplicate payloads.
+            c.execute("""CREATE TABLE IF NOT EXISTS event_links (
+                source_event_id TEXT NOT NULL,
+                target_event_id TEXT NOT NULL,
+                relation TEXT NOT NULL,
+                evidence_ref TEXT NOT NULL,
+                created_at TEXT NOT NULL,
+                PRIMARY KEY(source_event_id,target_event_id,relation,evidence_ref),
+                FOREIGN KEY(source_event_id) REFERENCES events(id),
+                FOREIGN KEY(target_event_id) REFERENCES events(id)
+            )""")
+            c.execute("CREATE INDEX IF NOT EXISTS idx_links_source ON event_links(source_event_id)")
+            c.execute("CREATE INDEX IF NOT EXISTS idx_links_target ON event_links(target_event_id)")
             c.execute("INSERT OR IGNORE INTO rooms(id,title,created_at) VALUES(?,?,?)",
                       ("sol-main", "SOL — ÂM–DƯƠNG PHÁP SƯ", utc_now()))
 
@@ -147,3 +161,120 @@ class Workrooms:
                                   "scope":"LOCAL_EXECUTION_NOT_EXTERNAL_PROVIDER"})
         return {"assignment":assignment,"result":record,"output":output,
                 "executed_locally":True,"external_provider_called":False}
+
+
+    # Physical source/event keys remain in the original records; graph stores
+    # relations only. No agent/orchestrator, folder, or duplicated memory tree.
+    GRAPH_RELATIONS = frozenset({
+        "PRECEDES", "DERIVED_FROM", "REFERS_TO", "CORRECTS",
+        "OBSERVED_IN", "TOOL_OF", "SAME_SOURCE", "ASSOCIATED_WITH",
+    })
+
+    @staticmethod
+    def _graph_id(event_id: str) -> str:
+        if not isinstance(event_id, str) or not re.fullmatch(r"ev_[0-9a-f]{32}", event_id):
+            raise ValueError("EVENT_ID_INVALID")
+        return event_id
+
+    def link_events(self, source_event_id: str, target_event_id: str,
+                    relation: str, evidence_ref: str) -> dict:
+        """Assert a typed evidence-backed edge between real persisted events.
+
+        The evidence_ref is a source pointer, not proof that the claim is true.
+        Links are immutable and insertion of the same edge is idempotent.
+        """
+        src, dst = self._graph_id(source_event_id), self._graph_id(target_event_id)
+        if src == dst:
+            raise ValueError("SELF_EDGE_REFUSED")
+        if relation not in self.GRAPH_RELATIONS:
+            raise ValueError("RELATION_NOT_SUPPORTED")
+        evidence = clean_text(evidence_ref, "EVIDENCE_REF", 1024)
+        with self.lock, self._connect() as c:
+            rows = c.execute("SELECT id FROM events WHERE id IN (?,?)", (src, dst)).fetchall()
+            if len(rows) != 2:
+                raise ValueError("EDGE_ENDPOINT_NOT_PERSISTED")
+            if relation == "PRECEDES" and self._has_directed_path(c, dst, src):
+                raise ValueError("TIME_CYCLE_DETECTED")
+            cursor = c.execute(
+                "INSERT OR IGNORE INTO event_links VALUES (?,?,?,?,?)",
+                (src, dst, relation, evidence, utc_now()))
+        return {"source_event_id": src, "target_event_id": dst,
+                "relation": relation, "evidence_ref": evidence,
+                "created": cursor.rowcount == 1, "state": "LOCAL_SQLITE_READBACK_REQUIRED"}
+
+    @staticmethod
+    def _has_directed_path(c, start_id: str, goal_id: str) -> bool:
+        """Directed reachability for PRECEDES cycle prevention, no recursion."""
+        queue = deque([start_id])
+        visited = set()
+        while queue:
+            cur = queue.popleft()
+            if cur == goal_id:
+                return True
+            if cur in visited:
+                continue
+            visited.add(cur)
+            neighbors = c.execute(
+                "SELECT target_event_id FROM event_links "
+                "WHERE source_event_id=? AND relation='PRECEDES'",
+                (cur,)).fetchall()
+            queue.extend(row[0] for row in neighbors if row[0] not in visited)
+        return False
+
+    def shortest_connection(self, source_event_id: str, target_event_id: str,
+                            *, max_depth: int = 8, max_nodes: int = 256) -> dict:
+        """Bounded BFS on indexed adjacency: O(V+E) visited graph operations.
+
+        A reverse traversal is explicitly annotated; it is not a reverse claim.
+        No raw event text is copied into the route.
+        """
+        src, dst = self._graph_id(source_event_id), self._graph_id(target_event_id)
+        if type(max_depth) is not int or not 0 <= max_depth <= 16:
+            raise ValueError("DEPTH_BOUND_INVALID")
+        if type(max_nodes) is not int or not 1 <= max_nodes <= 4096:
+            raise ValueError("NODE_BOUND_INVALID")
+        with self.lock, self._connect() as c:
+            rows = c.execute("SELECT id FROM events WHERE id IN (?,?)", (src, dst)).fetchall()
+            if len(rows) != (1 if src == dst else 2):
+                raise ValueError("EVENT_ID_NOT_FOUND")
+            if src == dst:
+                return {"connected": True, "status": "SAME_EVENT", "node_ids": [src],
+                        "edges": [], "visited_nodes": 1}
+            visited = {src}
+            queue = deque([(src, [src], [])])
+            exhausted = False
+            while queue:
+                current, nodes, edges = queue.popleft()
+                if len(edges) >= max_depth:
+                    continue
+                neighbors = c.execute(
+                    """SELECT source_event_id,target_event_id,relation,evidence_ref
+                       FROM event_links WHERE source_event_id=? OR target_event_id=?
+                       ORDER BY created_at,source_event_id,target_event_id,relation,evidence_ref""",
+                    (current, current)).fetchall()
+                for link in neighbors:
+                    forward = link["source_event_id"] == current
+                    next_id = link["target_event_id"] if forward else link["source_event_id"]
+                    if next_id in visited:
+                        continue
+                    if len(visited) >= max_nodes:
+                        exhausted = True
+                        break
+                    visited.add(next_id)
+                    edge = {
+                        "source_event_id": link["source_event_id"],
+                        "target_event_id": link["target_event_id"],
+                        "relation": link["relation"], "evidence_ref": link["evidence_ref"],
+                        "traversal": "FORWARD" if forward else "REVERSE",
+                    }
+                    new_nodes, new_edges = nodes + [next_id], edges + [edge]
+                    if next_id == dst:
+                        return {"connected": True, "status": "CONNECTED",
+                                "node_ids": new_nodes, "edges": new_edges,
+                                "visited_nodes": len(visited)}
+                    queue.append((next_id, new_nodes, new_edges))
+                if exhausted:
+                    break
+            return {"connected": False,
+                    "status": "NODE_BUDGET_REACHED" if exhausted else "NO_PATH_WITHIN_DEPTH",
+                    "node_ids": [], "edges": [], "visited_nodes": len(visited)}
