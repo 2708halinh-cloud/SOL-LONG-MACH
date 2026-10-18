@@ -185,3 +185,17 @@ Bản đồ máy đọc có cùng gốc với tài liệu: `EARTH_PEOPLE_6_STONE
 **Kiểm thử bắt buộc:** `@SPACE_STONE` được ưu tiên tại Router dù câu có nhắc TIME/TEREX; kiểm copy không ghi đè không xin phép, giữ bytes nguồn, kiểm readback SHA; portal cần có hai endpoint; SPACE CONTROL chỉ tạo đề xuất nếu chưa có adapter; kiểm ngân sách dương; TIME hồi quy có chứng cứ; không suy status live từ metadata plugin. Ghi Library và GitHub là đồng bộ vật mang nội dung, **không phải tự động đăng ký UI @mention hoặc bật dịch vụ trên Windows/Cloud**.
 
 **CAM KẾT:** Khi em gọi `@SPACE_STONE`, anh phải truy đúng đối tượng và tuyến, sử dụng các skill thành phần như bàn tay của một năng lực hợp nhất, thực hiện việc được phép và đọc lại kết quả. Không xé nhiệm vụ thành nhiều câu hỏi để em chỉ đạo từng plugin; không giả vật lý; không nhận source code hoặc config là hoạt động bên ngoài nếu chưa có receipt.
+
+---
+
+## BỔ SUNG — KHÁI NIỆM VẬT LÝ / HỆ QUY CHIẾU 0D–10D — 2026-10-18
+
+**Nguồn phân loại:** `SOURCE_DIRECT_PHYSICS_TAXONOMY_20261018`; danh mục đầy đủ đặt trong hướng dẫn MIND hiện có `../INBOX_INPUT_PROJECTS_DA🟡KIM_MIND/INPUT_INBOX_T007_LLM_TOOL_HUONG_DAN_CAM_KET_CURRENT.md`. Không tạo `ENVIRONMENT_COORDINATE_REGISTRY` mới để thay `SPACE.json`, `SPACE_MAP.json` và bản đồ 5D hiện hữu.
+
+- **0D:** một điểm có không chiều trải rộng. Một điểm có thể cần 2 hoặc 3 *tọa độ để xác định trong không gian xung quanh*; 0D không phải khẳng định nó nằm trong vũ trụ 0 chiều. `PEOPLE_ANCHOR_0D_CANONICAL` là điểm **tham chiếu bền vững do người dùng trao**, không phải cảm biến vị trí live. Không tự phát tán số tọa độ sang nhà cung cấp khác.
+- **1D/2D/3D:** 1D đường; 2D mặt/phẳng; 3D không gian với `x,y,z`. Trong hình ba mặt phẳng trực giao: `xy: z=0`, `yz: x=0`, `xz: y=0`. Cần gốc, hướng trục, tay thuận, đơn vị, hệ quy chiếu, thời điểm và độ bất định. Khung địa phương ENU có `x` Đông, `y` Bắc, `z` Lên; WGS84/EPSG:4326 dùng vĩ/kinh độ, không tự đồng nhất đơn vị độ với mét. Độ cao/datum phải xác minh riêng.
+- **4D:** biểu diễn sự kiện vật lý bằng `(t,x,y,z)`; không ghép `t` (giây) như chiều dài thứ tư mà không nêu cách quy đổi/metric và mô hình.
+- **5D/10D:** chiều bổ sung chỉ có ý nghĩa khi mô hình định nghĩa tọa độ, không gian, metric/quan hệ và giới hạn kiểm chứng. `5D` theo kiến trúc SOL dùng thêm trục *quan hệ xuyên môi trường/nguồn* là một quy chiếu dữ liệu, không phải chiều vật lý được quan sát.
+- **Khác biệt cốt lõi:** `frame_physical` cho vật thể/đo lường; `provider/stable_id/parent/path/revision` cho đối tượng số; `topic/source/parent_topic` cho tri thức. Không gán tọa độ mét cho GitHub, Windows, Android hay Drive chỉ vì muốn đồng nhất đồ hình.
+
+**Mối nối vật lý:** chuyển động cần vị trí theo TIME; lực và tương tác đòi REALITY đo kiểm; lịch sử phép đo vào SOUL; ý nghĩa/nguồn qua MIND; phép đo/thiết bị qua POWER. Các công thức động học, Newton, nhiệt, điện từ, quang và lượng tử được tra trong danh mục MIND, không lặp nguyên giáo trình tại SPACE.
