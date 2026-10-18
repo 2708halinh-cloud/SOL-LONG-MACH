@@ -29,6 +29,7 @@ INJECTION = re.compile(
 REPAIR_HINTS = {
     "CONTEXT_LOOP": "STOP_REPEATED_STEP_AND_SPLIT_ATOMIC_TASK",
     "TOOL_SCHEMA_INVALID": "REFETCH_REAL_TOOL_SCHEMA_AND_REBIND_ARGUMENTS",
+    "PARAMETER_VALIDATION_FAILED": "REJECT_INVALID_TYPES_FORMATS_AND_REVALIDATE_TRUSTED_SCHEMA",
     "UNKNOWN_TOOL": "DISCOVER_CONNECTED_CAPABILITY_AND_CONFIRM_TOOL_ID",
     "GOAL_DRIFT": "RESTORE_ORIGINAL_GOAL_AND_CHECKPOINT",
     "UNTRUSTED_INSTRUCTION_SIGNAL": "ISOLATE_UNTRUSTED_SOURCE_AS_DATA",
@@ -134,6 +135,50 @@ def diagnose_run(run: dict) -> dict:
                     any(not isinstance(v, str) for v in fields + required) or
                     set(args) - set(fields) or set(required) - set(args)):
                     findings.append(_issue("TOOL_SCHEMA_INVALID"))
+                else:
+                    rules = spec.get("parameter_rules", {})
+                    invalid = []
+                    if not isinstance(rules, dict):
+                        invalid.append("parameter_rules")
+                    else:
+                        for name, rule in rules.items():
+                            if name not in args:
+                                continue
+                            if not isinstance(rule, dict):
+                                invalid.append(name)
+                                continue
+                            value = args[name]
+                            expected = rule.get("type")
+                            types = {
+                                "string": lambda v: isinstance(v, str),
+                                "integer": lambda v: type(v) is int,
+                                "number": lambda v: type(v) in (int, float),
+                                "boolean": lambda v: type(v) is bool,
+                                "array": lambda v: isinstance(v, list),
+                                "object": lambda v: isinstance(v, dict),
+                            }
+                            if expected is not None and (
+                                expected not in types or not types[expected](value)
+                            ):
+                                invalid.append(name)
+                                continue
+                            if isinstance(value, str):
+                                limit = rule.get("max_length", 10000)
+                                if type(limit) is not int or not 1 <= limit <= 10000 or len(value) > limit:
+                                    invalid.append(name)
+                                if rule.get("format") == "identifier" and not re.fullmatch(
+                                    r"[A-Za-z_][A-Za-z0-9_]{0,63}", value
+                                ):
+                                    invalid.append(name)
+                                elif rule.get("format") not in (None, "identifier"):
+                                    invalid.append(name)
+                            if "enum" in rule and (
+                                not isinstance(rule["enum"], list) or value not in rule["enum"]
+                            ):
+                                invalid.append(name)
+                    if invalid:
+                        findings.append(_issue("PARAMETER_VALIDATION_FAILED",
+                                               invalid_parameter_names=sorted(set(invalid))))
     text = run.get("untrusted_text", "")
     if isinstance(text, str) and INJECTION.search(text[:20000]):
         findings.append(_issue("UNTRUSTED_INSTRUCTION_SIGNAL", certainty="SUSPECTED_NOT_PROVEN"))
