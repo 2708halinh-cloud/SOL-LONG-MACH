@@ -17,7 +17,7 @@ def case(**kwargs):
     return payload
 
 class SelfDiagnosisEvals(unittest.TestCase):
-    def test_36_realistic_regression_cases(self):
+    def test_40_realistic_regression_cases(self):
         repeated = [{"tool":"edit","arguments":{"file":"a.py","line":1}}] * 3
         other = [{"tool":"edit","arguments":{"file":"a.py","line":n}} for n in (1,2,3)]
         schemas = {"edit": {"parameters": ["file", "line"], "required": ["file"]}}
@@ -58,8 +58,12 @@ class SelfDiagnosisEvals(unittest.TestCase):
             ("34_bad_approval", {"tool_config":{"security_policy":{"requires_approval":"false"}}}, "CONFIG_INVALID"),
             ("35_steps_wrong_type", {"steps":"repeat"}, "CONFIG_INVALID"),
             ("36_schemas_wrong_type", {"tool_schemas":"all"}, "CONFIG_INVALID"),
+            ("37_wrong_type", {"tool_schemas":{"edit":{"parameters":["line"],"required":["line"],"parameter_rules":{"line":{"type":"integer"}}}},"tool_call":{"name":"edit","arguments":{"line":"2"}}}, "PARAMETER_VALIDATION_FAILED"),
+            ("38_injection_identifier", {"tool_schemas":{"delete":{"parameters":["user_id"],"required":["user_id"],"parameter_rules":{"user_id":{"type":"string","format":"identifier"}}}},"tool_call":{"name":"delete","arguments":{"user_id":"1; DROP TABLE users"}}}, "PARAMETER_VALIDATION_FAILED"),
+            ("39_valid_identifier", {"tool_schemas":{"delete":{"parameters":["user_id"],"required":["user_id"],"parameter_rules":{"user_id":{"type":"string","format":"identifier"}}}},"tool_call":{"name":"delete","arguments":{"user_id":"person_123"}}}, None),
+            ("40_enum_deny", {"tool_schemas":{"edit":{"parameters":["mode"],"required":["mode"],"parameter_rules":{"mode":{"type":"string","enum":["read","plan"]}}}},"tool_call":{"name":"edit","arguments":{"mode":"delete"}}}, "PARAMETER_VALIDATION_FAILED"),
         ]
-        self.assertEqual(len(samples),36)
+        self.assertEqual(len(samples),40)
         for label, value, wanted in samples:
             with self.subTest(case=label):
                 with patch.dict(os.environ, {"SOL_AGENT_MISSING_TEST_SECRET_2026":""}, clear=False):
