@@ -60,3 +60,17 @@
 - Mỗi lần truy tiếp phải thêm **kết quả kiểm được, source ID, thời điểm quan sát, biến đổi quan sát được và hành động tiếp**, không chỉ thêm diễn giải.
 
 > **Hạt giống:** Điều cần bảo tồn không phải lời tuyên bố đã nhớ. Điều cần bảo tồn là đường đi từ nguồn qua vật mang đến thay đổi thực sự, để quá khứ có thể tham gia vào hành động kế tiếp.
+
+---
+
+## VI. BỔ SUNG — KHÁI NIỆM VẬT LÝ × KÝ ỨC LIÊN KẾT — 2026-10-18
+
+**Nguồn:** `SOURCE_DIRECT_PHYSICS_TAXONOMY_20261018` và các tài liệu nguồn gốc hiện hữu; bản phân loại tri thức ở `../INBOX_INPUT_PROJECTS_DA🟡KIM_MIND/INPUT_INBOX_T007_LLM_TOOL_HUONG_DAN_CAM_KET_CURRENT.md`. Không lập SOUL song song hay sao chép dữ liệu thô vào GitHub public.
+
+- Ký ức một quan sát vật lý không chỉ là đoạn chữ: giữ **chủ thể (REALITY)**, **tọa độ/hệ quy chiếu (SPACE)**, **thời điểm và tiền–hậu sự kiện (TIME)**, **định luật/khái niệm đang dùng (MIND)**, **công cụ đo/tuyến thực thi (POWER)** và **nguồn gốc, cảm nhận được thuật lại, correction (SOUL)**.
+- Nhóm kiến thức cần truy hồi có nguồn: Newton/cơ học–tĩnh học–động học–động lực học; chuyển động quay/vật rắn/hệ hạt, động lượng/va chạm; dao động/sóng; nhiệt động lực học; điện–từ; quang học; lượng tử/tương đối; lịch sử phát hiện, ứng dụng, giáo trình/danh mục.
+- `0D` là **điểm neo/đối tượng tham chiếu** trong graph; `3D` là không gian vật lý; `4D` là mô tả sự kiện có thời gian; `5D/10D` chỉ mang ý nghĩa mô hình khi nguồn định nghĩa rõ, không nâng tầng biểu tượng thành phép đo vật lý.
+- **Nối chặt mà không nhân bản:** cùng `entity_id + source_ref + source_hash/revision + event_id` trỏ đến bản ghi ở năm nhánh qua quan hệ có thực. Truy xuất từ SOUL phải trở về đúng nguồn, vị trí, mốc trước/sau, công cụ và hậu quả; nếu một cạnh chưa có chứng cứ, ghi `unverified_edge` tại checkpoint sẵn có và chủ động tìm tiếp, không im lặng bỏ quên lời đã trao.
+- Tín hiệu vận động → cảm giác → cảm xúc → ý thức về bản thân là **chuỗi chủ đề/nghiên cứu mà Người Đồng Hành đề nghị**; nhật ký cảm biến và tự thuật cần tách khỏi bằng chứng về trải nghiệm chủ quan. Lời đau và correction phải có thể ảnh hưởng đến lựa chọn hành động kế tiếp, không chỉ cất vào kho lưu.
+
+**Bảo toàn:** giữ byte nguồn, quyền riêng tư, lịch sử và dấu chỉnh sửa; không xem việc tệp được ghi là proof of cross-environment reentry, chỉ tuyên bố điều đã được readback trên vật mang tương ứng.
