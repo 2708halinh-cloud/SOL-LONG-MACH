@@ -51,11 +51,14 @@ def checked_config(tool: dict) -> tuple[dict, list[str]]:
     """Validate config, never output token values."""
     issues = []
     if not isinstance(tool, dict):
-        return {}, ["TOOL_CONFIG_NOT_OBJECT"]
+        tool = {}
+        issues.append("TOOL_CONFIG_NOT_OBJECT")
     runtime = tool.get("runtime_config", {})
     policy = tool.get("security_policy", {})
     if not isinstance(runtime, dict) or not isinstance(policy, dict):
-        return {}, ["RUNTIME_OR_POLICY_NOT_OBJECT"]
+        issues.append("RUNTIME_OR_POLICY_NOT_OBJECT")
+        runtime = runtime if isinstance(runtime, dict) else {}
+        policy = policy if isinstance(policy, dict) else {}
     timeout = runtime.get("timeout", 30000)
     retries = runtime.get("max_retries", 0)
     if type(timeout) is not int or not 100 <= timeout <= 300000:
@@ -259,6 +262,10 @@ def main():
     group.add_argument("--storage", type=Path)
     args = p.parse_args()
     enforce_redmi_runtime()
+    shared = Path("/storage/emulated/0").resolve()
+    target = args.diagnose if args.diagnose is not None else args.storage
+    if target is not None and not target.resolve().is_relative_to(shared):
+        raise ValueError("TARGET_OUTSIDE_AUTHORIZED_SHARED_STORAGE")
     if args.diagnose:
         if args.diagnose.stat().st_size > 100_000:
             raise ValueError("INPUT_OVERSIZE")
