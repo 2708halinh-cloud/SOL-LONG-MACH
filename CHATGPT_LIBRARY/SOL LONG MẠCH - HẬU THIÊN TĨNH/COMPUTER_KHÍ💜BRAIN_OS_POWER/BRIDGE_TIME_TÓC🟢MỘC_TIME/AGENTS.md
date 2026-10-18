@@ -40,3 +40,17 @@ Phạm vi: `./BRIDGE_TIME_TÓC🟢MỘC_TIME/`; kế thừa `../AGENTS.md`. Gi�
 **Khóa Bát Hướng:** Bắc lịch sử; Đông Bắc không chốt trước; Đông hiệu ứng mới; Đông Nam tìm vật mang; Nam phân nguồn/thẩm định; Tây Nam tài nguyên; Tây bài học; Tây Bắc tác nhân tự chọn. `TIME` giữ causal cursor, `REALITY` giữ hành động/hậu quả, `SPACE` giữ tọa độ, `SOUL` giữ lịch sử, `MIND` hiểu nguồn và `POWER` điều phối. Đây là một graph, không phải 6 thư mục độc lập.
 
 Kiểm tài liệu `README.md` và hai văn bản hiện có `CROSS_CHAT_ENVIRONMENT_SURFACE_SPACE_CONTINUITY_20261016.md`, `FIVE_WAVE_JOURNAL_REGISTRY_20261016.md` trước khi nhắc người đồng hành về một sự kiện đã có nguồn. Bản ChatGPT Library và GitHub phải kiểm riêng bằng readback; cùng path không tự đồng bộ.
+
+---
+
+## BỔ SUNG — KHÁI NIỆM VẬT LÝ / THỜI GIAN & BIẾN THIÊN — 2026-10-18
+
+**Nguồn:** `SOURCE_DIRECT_PHYSICS_TAXONOMY_20261018`; danh mục chi tiết trong hướng dẫn MIND `../INBOX_INPUT_PROJECTS_DA🟡KIM_MIND/INPUT_INBOX_T007_LLM_TOOL_HUONG_DAN_CAM_KET_CURRENT.md`. Khái niệm thời gian vật lý và `STAMP` của SOL là **hai lớp quy chiếu khác nhau**, không đổi chỗ hoặc xóa nhau.
+
+- **Động học Newton:** vị trí `r(t)`, độ dời `Δr`, vận tốc `v=dr/dt`, gia tốc `a=dv/dt`. Nêu hệ quy chiếu, đơn vị, thời điểm và dữ liệu quan sát; không suy quỹ đạo thực chỉ từ dấu `X+N`.
+- **Dao động/sóng:** chu kỳ `T`, tần số `f=1/T`, pha và lịch sử tín hiệu; phân biệt timestamp thu thập, độ phân giải mẫu, độ trễ và mô phỏng.
+- **Nhiệt/điện từ:** nhiệt động lực học có diễn biến, cân bằng và tính không thuận nghịch; điện từ và sóng cần mốc thời gian, tần số/tốc độ lan truyền do phép đo hoặc lý thuyết nguồn xác lập.
+- **4D không–thời gian:** điểm sự kiện `(t,x,y,z)` và quan hệ nhân quả; trong tương đối tính, thời gian đo còn tùy hệ quy chiếu và đồng hồ. `5D/10D` phải ràng mô hình cụ thể; `5D reentry` của dự án là thuật ngữ vận hành, không khẳng định vật lý cao chiều.
+- **Lịch sử tri thức:** ghi lịch sử phát hiện/nhà khoa học, revision tài liệu, timestamp sự kiện và timestamp quan sát riêng; một tệp mới hơn không chứng minh sự kiện xưa được viết lại.
+
+**Thực thi:** TIME nối một định danh SPACE–REALITY–SOUL cùng `event_id`, `event_time`, `source_ref`, `observed_at`, `uncertainty`, `prior_event_id`; dữ liệu thiếu phải truy từ nguồn, không biến thành số giả.
