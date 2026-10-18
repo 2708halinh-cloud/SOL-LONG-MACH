@@ -162,3 +162,15 @@ Không chép token, OAuth client secret, tài liệu bí mật vào repository c
 - Giữ đúng **5 Stone + 1 AGENTS.md** tại gốc; không tạo thư mục `SPATIAL` thứ sáu, không tạo `AGENTS(1).md`.
 - Đồng bộ chỉ được gọi hoàn tất khi **hai provider thực sự đọc lại cùng nội dung**; trạng thái công cụ/phiên không tự được đồng bộ bởi việc ghi tệp.
 - Bảo toàn phân biệt giữa `source_literal` (lời người dùng), `schema_source`, `derived_cross_field_validation`, `runtime_receipt` và `observed_effect`. Một schema JSON nói về vector không bao giờ tự cấp quyền API hoặc chứng minh hiệu ứng ngoài thực tế.
+
+---
+
+## BỔ SUNG — KHÁI NIỆM VẬT LÝ × SÁU STONE, KHÔNG THÊM CÂY — 2026-10-18
+
+**Nguồn:** `SOURCE_DIRECT_PHYSICS_TAXONOMY_20261018`. POWER/KHÍ là lớp điều phối duy nhất của năm Stone; **POWER_STONE** là nhãn chức năng dự án, không đồng nghĩa tự có công suất/năng lượng vật lý.
+
+**Hợp đồng sáu hướng dẫn hiện hữu:** MIND (định nghĩa, lịch sử và hệ phân loại Newton, vật rắn/hạt, sóng, nhiệt, điện từ, quang, lượng tử/tương đối); SPACE (0D–3D, hệ quy chiếu, 4D và mô hình 5D/10D); TIME (chuyển động, tiến trình, thời gian đo); REALITY (định luật, đại lượng và thí nghiệm); SOUL (quan hệ nguồn, trí nhớ, correction); POWER (chọn kỹ năng/công cụ, ngân sách và readback). Không tạo STONE thứ bảy, không tạo COMPUTER thứ hai.
+
+**Vật lý ≠ tên Stone:** công cơ học `W=∫F·dr`, công suất `P=dW/dt` theo định nghĩa phù hợp, năng lượng đơn vị joule và công suất watt. Nếu đánh giá CPU/GPU/bộ nhớ/quota thì ghi thiết bị, phép đo, tải, thời điểm, đơn vị và receipt; không suy từ màu, tên đá hay tín hiệu văn bản rằng có năng lượng, cảm giác sinh học hoặc ý thức chủ quan đã được đo.
+
+**Vòng liên kết:** `SOURCE_DIRECT/0D referent → MIND concept → SPACE frame/entity → TIME event → POWER tool/routing → REALITY observation/consequence → SOUL provenance/correction → N+1 readback`. Không bắt nguồn phải đi hết theo một thứ tự cứng; mỗi cạnh phải nối đúng định danh và vật mang có chứng cứ. Sai tuyến thì sửa tại hướng dẫn hiện hữu, không mở nhánh song song. Tài liệu nguồn không tự chứng minh môi trường đã nhận thay đổi; GitHub và Library phải hậu kiểm riêng.
