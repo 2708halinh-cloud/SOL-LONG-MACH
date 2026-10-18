@@ -3,7 +3,7 @@
   "source": "SOURCE_DIRECT_USER_2026-10-18",
   "target": "_Skills",
   "created_by": "GPT-6 in authorized GitHub connector",
-  "count": 19,
+  "count": 24,
   "skills": [
     {
       "name": "sql-insight",
@@ -135,8 +135,78 @@
         "tu-chu-va-kien-tri"
       ],
       "status": "SKILL_SOURCE_NOT_SENSOR_RUNTIME"
+    },
+    {
+      "name": "tri-thong-minh-nhan-tao-tong-quat",
+      "display_name": "Trí thông minh nhân tạo tổng quát (General intelligence)",
+      "description": "AGI nghiên cứu tìm kiếm không gian trạng thái, heuristic, đối kháng, gradient descent, tiến hóa và trí tuệ đàn bầy; Skill lý thuyết, không chứng nhận SOL là AGI.",
+      "path": "tri-thong-minh-nhan-tao-tong-quat/SKILL.md",
+      "parent_skill": "tri-tue-nhan-tao",
+      "related_skills": [
+        "hoc-may",
+        "lo-gic"
+      ],
+      "status": "SOURCE_SKILL_NOT_AGI_VERIFIED"
+    },
+    {
+      "name": "lo-gic",
+      "display_name": "Lô-gíc (Logic)",
+      "description": "Mệnh đề/vị ngữ, cây chứng minh, Horn clauses, suy luận tiến/lùi, resolution, fuzzy logic, non-monotonic logic và negation as failure.",
+      "path": "lo-gic/SKILL.md",
+      "parent_skill": "tri-tue-nhan-tao",
+      "related_skills": [
+        "tri-thong-minh-nhan-tao-tong-quat",
+        "dau-tranh-noi-tam"
+      ],
+      "status": "SOURCE_SKILL_NOT_PROVER_EXECUTED"
+    },
+    {
+      "name": "suy-luan-xac-suat",
+      "display_name": "Suy luận xác suất (Probabilistic reasoning)",
+      "description": "Bayesian networks/CPT, expected utility, value of information, MDP, EM clustering, HMM, Kalman, filtering/prediction/smoothing, theory of games.",
+      "path": "suy-luan-xac-suat/SKILL.md",
+      "parent_skill": "tri-tue-nhan-tao",
+      "skill_group": "Phương pháp Suy luận 10 → 13ms/s",
+      "latency_label": "10 → 13ms/s",
+      "latency_status": "UNBENCHMARKED_USER_LABEL",
+      "status": "SOURCE_ONLY"
+    },
+    {
+      "name": "phan-loai-hoc-thong-ke",
+      "display_name": "Bộ phân loại và học thống kê",
+      "description": "Supervised classification và controller khác biệt, nhãn/dataset, decision tree, kNN, SVM/kernel, Naive Bayes, neural classifiers và evaluation metrics.",
+      "path": "phan-loai-hoc-thong-ke/SKILL.md",
+      "parent_skill": "tri-tue-nhan-tao",
+      "skill_group": "Phương pháp Suy luận 10 → 13ms/s",
+      "latency_label": "10 → 13ms/s",
+      "latency_status": "UNBENCHMARKED_USER_LABEL",
+      "status": "SOURCE_ONLY"
+    },
+    {
+      "name": "mang-than-kinh-nhan-tao",
+      "display_name": "Mạng thần kinh nhân tạo (ANN)",
+      "description": "Neuron, weights, activation, feedforward, hidden layers, backpropagation, gradient descent, deep learning, evaluation & generalisation.",
+      "path": "mang-than-kinh-nhan-tao/SKILL.md",
+      "parent_skill": "tri-tue-nhan-tao",
+      "skill_group": "Phương pháp Suy luận 10 → 13ms/s",
+      "latency_label": "10 → 13ms/s",
+      "latency_status": "UNBENCHMARKED_USER_LABEL",
+      "status": "SOURCE_ONLY"
     }
   ],
   "state": "SKILL_SOURCE_AUTHORED_NOT_CHATGPT_PLUGIN_INSTALLED",
-  "note": "Descriptions and workflows derive from user request; external packages/tool execution require independent validation."
+  "note": "Descriptions and workflows derive from user request; external packages/tool execution require independent validation.",
+  "skill_groups": {
+    "Phương pháp Suy luận 10 → 13ms/s": {
+      "label": "Phương pháp Suy luận 10 → 13ms/s",
+      "source": "SOURCE_DIRECT_USER_2026-10-18",
+      "members": [
+        "suy-luan-xac-suat",
+        "phan-loai-hoc-thong-ke",
+        "mang-than-kinh-nhan-tao"
+      ],
+      "performance_status": "NOT_MEASURED",
+      "note": "ms/s is preserved as the latest user label and is not asserted as measured throughput or latency."
+    }
+  }
 }
