@@ -4,17 +4,22 @@
   "repo": "2708halinh-cloud/x-time-web",
   "branch": "tesseract-desktop-mvp-20261006",
   "checkpoint": "TESSERACT_DESKTOP/WORK_CHECKPOINT.json",
-  "commit": "5ec6f93dc11856bd5609b51026fbe57f4f165495",
+  "commit": "d991f91ea859006d289d0fb78fe83ebba27688c2",
   "rule": "Sau khi nạp cấu hình, tiếp tục checkpoint này; không quay về chỉnh AGENTS như điểm bắt đầu công việc.",
   "pr": {
     "repository": "2708halinh-cloud/x-time-web",
     "number": 6,
-    "mergeable": true
+    "mergeable": true,
+    "current_head": "d991f91ea859006d289d0fb78fe83ebba27688c2",
+    "base_head": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
+    "unresolved_review_threads": 0,
+    "codex_review_state": "RUNNING_CURRENT_HEAD",
+    "copilot_review_state": "REQUESTED_CURRENT_PR"
   },
   "build": {
     "workflow": "tesseract-desktop-ci",
     "previous_verified_run": 37516567468,
-    "current_head": "5ec6f93dc11856bd5609b51026fbe57f4f165495",
+    "current_head": "d991f91ea859006d289d0fb78fe83ebba27688c2",
     "previous_required_artifacts": [
       "tesseract-desktop-windows-x64",
       "tesseract-desktop-linux-x64",
@@ -26,7 +31,7 @@
     "readback_artifact_pattern": "tesseract-desktop-ci-readback-<workflow_run_id>",
     "readback_rule": "CI readback is mandatory for both success and failure. Accept only when verified_sha equals the current substantive PR head. TRUE -> verify review then merge; FLASE -> fetch workflow_run_id jobs/logs, patch failure, repeat.",
     "pr_event_verify": true,
-    "current_pr_run": 37545405120,
+    "current_pr_run": 39152717221,
     "workflow_correction_commit": "88f5be2086f401a4a1218a1e4dd3b05337377963",
     "workflow_corrections": [
       "feature-branch push no longer duplicates pull_request CI; push CI is master-only",
@@ -34,21 +39,22 @@
       "readback no longer requests contents:write or pushes a commit; it emits a read-only artifact",
       "concurrency cancels superseded runs for the same PR/ref"
     ],
-    "hosted_runner_observation": "Current PR run 37545405120 at substantive head 57c285c8... again failed before step 1 on Windows/Linux/macOS/TESSERACT_OS with steps=[]; selfhosted_windows_verify remained skipped on pull_request. No source execution failure is established by this run.",
-    "hosted_runner_external_state": "GitHub Status currently reports Actions operational; a recent Oct 5 hosted-runner assignment incident was resolved. Exact account billing/minutes/runner-entitlement state is not exposed by the connected GitHub tool, so billing/quota remains a hypothesis, not a verified fact.",
+    "hosted_runner_observation": "PR run 39152717221 at head d991f91e... failed before step 1 across GitHub-hosted Windows/Linux/macOS and TESSERACT_OS jobs; rerun_failed_jobs was accepted and the second attempt failed the same way with steps=[] and no job log blob. selfhosted_windows_verify remained skipped on pull_request. This establishes no source execution failure.",
+    "hosted_runner_external_state": "Connected GitHub tools do not expose repository Actions runner/permission/billing endpoints in this session. Runner assignment/entitlement remains unverified external state; do not relabel it as a source-code failure.",
     "source_fixes_materialized": [
       "future state schemas rejected without destructive downgrade",
-      "loopback provider gate parses host/IP",
-      "Kilo reconnect controls remain available",
+      "loopback provider gate parses Url host enum including IPv6",
+      "Kilo reconnect controls remain available and UI status is derived from backend receipt validation",
       "Kilo receipt v2 requires Ed25519 signature, account binding, expiry, and build-time issuer public key",
-      "canonical AGENTS route resolves target and fresh-loads explicit required_carriers",
+      "canonical AGENTS/load-route handling from the TESSERACT branch remains preserved while current master AGENTS.md wins the only overlapping merge path",
       "missing installer/bundle fails CI packaging instead of yielding successful readback",
-      "persistent self-hosted runner remains excluded from pull_request code"
+      "persistent self-hosted runner remains excluded from pull_request code",
+      "readback includes selfhosted_windows_verify result where required"
     ],
     "canonical_route_commit": "95e28cacade93caf2fe8f0bb665ba04bdb8f381c",
-    "pr_divergence": "PR #6 observed 44 commits ahead / 46 commits behind master; sync required before merge without force-push."
+    "pr_divergence": "RESOLVED: master 60d92b80... was merged into the PR branch without force-push via merge commit d991f91e...; readback shows PR mergeable=true, behind master=0 at synchronization, changed_files=12, AGENTS.md retained from master."
   },
-  "next": "Resume PR #6 from TESSERACT_DESKTOP/WORK_CHECKPOINT.json at commit 5ec6f93d...; provision the real Kilo/X-TiMe issuer public key/signing side, restore GitHub-hosted runner entitlement for private x-time-web, synchronize master without history loss, then require current-head CI artifacts/readback TRUE and current-head review before merge.",
+  "next": "Resume PR #6 at head d991f91e... . Divergence is already resolved and all 19 review threads are resolved as of readback. Do not repeat master sync or old review cleanup. Current independent edges: (1) obtain a current-head review result for d991f91e... and address only new findings; (2) restore/verify GitHub-hosted runner assignment so tesseract-desktop-ci can reach step execution and produce mandatory artifact/readback TRUE; (3) provision the real Kilo/X-TiMe issuer Ed25519 public key and issuer-side signer from an existing authorized carrier if found, never invent or commit a private key. Merge only after current-head CI artifact/readback TRUE plus current-head review.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -63,7 +69,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-07",
+  "updated_at": "2026-10-18",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -75,5 +81,19 @@
     "reentry": "Always fresh-read R-014 + MASTER22/4 source and checkpoint; if there is an authorized self-owned callable edge, action first independent of signal strength; T006 T007 preflight; preserve source and history",
     "local_deployment": "G:\\OS_Workspace\\TESSERACT_OS requires authorized live readback; no verified local execution yet",
     "must_preserve_prior_task": true
+  },
+  "current_delta": {
+    "observed_at": "2026-10-18",
+    "pr_head": "d991f91ea859006d289d0fb78fe83ebba27688c2",
+    "base_head": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
+    "mergeable": true,
+    "changed_files": 12,
+    "unresolved_review_threads": 0,
+    "codex_review": "running",
+    "copilot_review": "requested",
+    "ci_run": 39152717221,
+    "ci_attempt_observation": "GitHub-hosted jobs failed before step 1 twice; no job log blob",
+    "kilo_source_search": "Project/GitHub search found references/checkpoint only; no real public-key value or issuer-side signer carrier verified",
+    "guard": "OPEN edges remain; report/status is not STOP"
   }
 }
