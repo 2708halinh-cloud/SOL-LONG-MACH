@@ -78,3 +78,25 @@ Quy trình:
 Tệp này là **cam kết vận hành của dự án** tại INBOX/COMPUTER KHÍ duy nhất; không tạo thêm COMPUTER, tác nhân song song, nguồn T007 mới hoặc quyền hệ thống mới. Hiệu lực thực hành phải được xác minh qua những lần hành động cụ thể, không chứng minh chỉ bằng văn bản. Bản GitHub và Library là hai carrier cần đối chiếu độc lập; nếu không giống nhau, giữ trạng thái SYNC_OPEN và tiếp tục khắc phục chứ không tuyên bố đồng bộ.
 
 **Chốt quy trình:** `SOURCE_DIRECT → LOSSLESS_INBOX → T007_TRUE_GATE → REENTRY/RELATION → TOOLS → AUTHORIZED_ACTION → CONSEQUENCE → RECEIPT → READBACK → N+1`.
+
+---
+
+## BỔ SUNG — KHÁI NIỆM VẬT LÝ / DANH MỤC TRI THỨC — 2026-10-18
+
+**Nguồn:** lời Người Đồng Hành về hình không gian 3D và các khái niệm vật lý, 18/10/2026; dấu `SOURCE_DIRECT_PHYSICS_TAXONOMY_20261018`. Đây là **bản phân loại nguồn** để học, đối chiếu, kết nối; không tuyên bố đã chép nguyên văn toàn bộ bài nguồn hay thay sách giáo khoa. Chuyển các nhánh sang hệ đang có, không dựng cây COMPUTER/registry thứ hai.
+
+**Danh mục → Kiến thức → Quy chiếu → Lưu trữ → Trí nhớ**:
+1. **Khái niệm/hệ quy chiếu:** vật thể, điểm, sự kiện; vị trí, tọa độ, độ dời, quãng đường, thời gian, phép đo, đơn vị, sai số; hệ quy chiếu quán tính và không quán tính.
+2. **Lịch sử/phát triển:** dòng thời gian các phát hiện, nhà khoa học, giáo trình, nguồn tham khảo; ghi ai phát biểu, khi nào, giới hạn áp dụng và các hiệu chỉnh.
+3. **Cơ học cổ điển/Newton:** động học (vị trí, độ dời, vận tốc, gia tốc, quỹ đạo); tĩnh học/cân bằng; động lực học (lực, ba định luật Newton, trọng lực, ma sát, đàn hồi); công, công suất, động năng, thế năng, bảo toàn năng lượng.
+4. **Vật rắn, hệ hạt, va chạm:** khối tâm, động lượng, xung lượng, định luật bảo toàn động lượng; mômen lực, mômen quán tính, động lượng góc, chuyển động quay; tương tác và va chạm.
+5. **Dao động và sóng:** dao động điều hòa, chu kỳ, tần số, pha, cộng hưởng; sóng cơ, truyền năng lượng, giao thoa, nhiễu xạ.
+6. **Nhiệt học/nhiệt động lực học:** nhiệt độ, nhiệt lượng, nội năng, công, truyền nhiệt, cân bằng nhiệt, các nguyên lý nhiệt động lực học và entropy.
+7. **Điện và từ:** điện tích, điện trường, điện thế, dòng điện, từ trường, cảm ứng điện từ, sóng điện từ, quan hệ điện–từ.
+8. **Quang học:** ánh sáng, phản xạ, khúc xạ, thấu kính, giao thoa, nhiễu xạ, quang học sóng và các hiện tượng liên quan.
+9. **Vật lý hiện đại:** lượng tử (trạng thái, đo, xác suất, hạt–sóng); thuyết tương đối hẹp/rộng (không–thời gian, hệ quy chiếu, trọng trường); các mô hình hạt và tương tác khi có nguồn.
+10. **Liên ngành, ứng dụng, cổng/danh mục:** ứng dụng kỹ thuật, địa–vật lý, viễn thám, cảm biến, tính toán; giữ tên chuyên mục/portal và đường dẫn nguồn thay vì suy thành bằng chứng thực nghiệm.
+
+**Nhãn chiều cần phân biệt:** `0D` điểm; `1D` đường một bậc tự do; `2D` mặt/hệ tọa độ phẳng; `3D` ba chiều không gian; `4D` sự kiện không–thời gian `(t,x,y,z)` với đơn vị thời gian khác không gian; `5D/10D` là số chiều của mô hình toán/vật lý *cần nêu lý thuyết, tọa độ, metric, tính kiểm chứng*, không tự xác nhận chiều vật lý bổ sung. Trường `5D` trong tài liệu SOL còn có nghĩa *liên kết xuyên môi trường*; không đánh đồng.
+
+**Quy tắc học:** thuật ngữ và nhóm đề mục ở trên phản ánh yêu cầu nguồn; giải thích định luật, công thức, phép đo và kết luận thực nghiệm phải gắn nguồn riêng. Kết nối SPACE (hệ tọa độ), TIME (diễn biến), REALITY (phép đo), SOUL (provenance) và POWER (công cụ) bằng định danh/vật mang hiện có; không tự tạo tài liệu hoặc vật mang thay thế.
