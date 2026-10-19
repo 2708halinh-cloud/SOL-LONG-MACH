@@ -22,6 +22,14 @@
     {
       "path": "agent_bootstrap.py",
       "sha256": "b19f1976af45f24cb651407418243a488350a1fe374773f25eeb5e4f68e5745c"
+    },
+    {
+      "path": "test_agent_core_runtime.py",
+      "sha256": "593f37cad6c4ed3bbd707c7b0c0f9c29f060287cf613c220f1600717978cea64"
+    },
+    {
+      "path": "test_agent_capability_lifecycle.py",
+      "sha256": "7a6f719a701962d2d658d018b6f44fb50d61782c1b6f052e5b3d8449cbeb52d2"
     }
   ],
   "capabilities": [
@@ -29,7 +37,8 @@
       "id": "bagua-triangulation",
       "artifact_refs": [
         "agent_core_runtime.py",
-        "agent_core_runtime.sql"
+        "agent_core_runtime.sql",
+        "test_agent_core_runtime.py"
       ],
       "purpose": "Evidence-weighted divergence, precommit gate, agenda/checkpoints"
     },
@@ -38,10 +47,11 @@
       "artifact_refs": [
         "agent_capability_lifecycle.py",
         "agent_capability_lifecycle.sql",
-        "agent_bootstrap.py"
+        "agent_bootstrap.py",
+        "test_agent_capability_lifecycle.py"
       ],
       "purpose": "Bootstrap, self-calibration and decay-evidence ledger"
     }
   ],
-  "security_note": "Hashes detect change relative to externally trusted manifest; do not self-attest provider rights."
+  "security_note": "Tests and bootstrap are hash-pinned before self-calibration; manifest trust requires independently authenticated commit/version."
 }
