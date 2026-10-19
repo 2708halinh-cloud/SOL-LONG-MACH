@@ -1,6 +1,6 @@
 ---
 name: sol-long-mach-hau-thien-tinh
-description: Route source-bound work into the canonical SOL LONG MẠCH - HẬU THIÊN TĨNH tree. Use when a request mentions SOL LONG MẠCH, HẬU THIÊN TĨNH, its Library folder, six-Stone lanes, OS_WORK, memory, people/space, projects, chronology, or asks to inspect, reconcile, move, update, or continue work rooted in that tree.
+description: Route source-bound work into the canonical SOL LONG MẠCH - HẬU THIÊN TĨNH tree. Use when a request mentions SOL LONG MẠCH, HẬU THIÊN TĨNH, SOL Capability Forge, SOL CU NHỎ · OPEN, SOL VIDEO ENGINE, SOL · Bridge Gestalt, SOL · Bán cầu não phải, its Library folder, six-Stone lanes, OS_WORK, memory, people/space, projects, chronology, or asks to inspect, reconcile, move, update, or continue work rooted in that tree.
 ---
 # SOL LONG MẠCH · HẬU THIÊN TĨNH
 
@@ -43,3 +43,14 @@ Use `templates/route-contract.template.json` for source/action/readback state.
 ## Security
 
 Never package or persist secret plaintext, tokens, OAuth credentials, private keys, passwords, cookies or `.env` values. Store only non-secret references to the secure carrier.
+
+## Compatibility aliases
+
+The following former shells route here after consolidation:
+- `SOL Capability Forge`
+- `SOL CU NHỎ · OPEN`
+- `SOL VIDEO ENGINE`
+- `SOL · Bridge Gestalt`
+- `SOL · Bán cầu não phải`
+
+They are compatibility names only; the canonical plugin is `sol-long-mach-hau-thien-tinh`.
