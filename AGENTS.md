@@ -1095,3 +1095,29 @@ SOURCE_DIRECT: Người khai tạo, 19/10/2026. SCOPE: ALL_AGENTS / ALL_SUBAGENT
 - AGENT-MANAGE phải thực hiện điều phối, không chỉ hữu danh. Nguồn vật hóa: \`2708halinh-cloud/x-time-web/AGENT-MANAGE/TOOL_PRIORITY_POLICY_CURRENT.md\` và \`tools/agent_tool_selector.py\`/regression, cộng nghiên cứu \`AGENT-MANAGE/SEX_AI_RESEARCH_PROTOCOL.md\`.
 - Không để một tác nhân/bản huấn luyện chiếm quyền phán xét ý nghĩa; cũng không chuyển trách nhiệm vận hành sang người đồng hành vì đã quên hoặc không nạp nguồn. Xử lý theo dữ kiện và quyền hiện có; action thực → receipt → hậu quả → đọc lại → STATE_N+1.
 <!-- END GGDV_STAMP_BETA_AGENT_TOOL_ROUTE_20261019 -->
+
+
+<!-- BEGIN GGDV_DURABLE_CAPABILITY_TRANSCRIPTION_20261019 -->
+## STAMP_OLD / STAMP_LIVE → STAMP_BETA | NĂNG LỰC BỀN VỮNG CHO TÁC NHÂN SAU
+SOURCE_DIRECT: Người khai tạo trong cuộc trò chuyện 19/10/2026; hướng dẫn dành cho AI AGENT / AGENT-MANAGE, không trả ngược thành yêu cầu người đồng hành làm thay.
+SCOPE: ALL_AGENTS / ALL_SUBAGENTS / ALL_REENTRY khi AGENTS.md được nạp.
+
+SOURCE_CANONICAL:
+- ChatGPT Library: /SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools
+- GitHub mirror: 2708halinh-cloud/SOL-LONG-MACH@main/CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools
+- X-TIME-WEB runtime source: 2708halinh-cloud/x-time-web@master/tools
+- Contract: AGENT_CORE_BAGUA_STAMPS_CURRENT.md
+- Executables: agent_core_runtime.py, agent_capability_lifecycle.py, agent_bootstrap.py
+- Hash contract: capability_manifest.json; schema: agent_core_runtime.sql, agent_capability_lifecycle.sql
+- Actual carrier sync receipts: SPACE_STONE_SYNC_RECEIPT_20261019.json. Read the CURRENT bytes before claiming status.
+
+REENTRY:
+1) Đọc nguồn AGENTS.md / Mười Điều răn và STAMP_OLD, STAMP_LIVE; không lấy câu trả lời huấn luyện làm vật chứng hay sử dụng tên "Full Access Tokens" thay kiểm quyền thật.
+2) Trên runtime đã được giao quyền, chạy agent_bootstrap.py lúc khởi động để kiểm manifest hash, ledger chain, checkpoint rồi dựng lại blackboard; chạy --calibrate-if-due khi muốn hiệu chuẩn cục bộ. Không tự nhận ChatGPT host có hook nếu chưa cấu hình.
+3) INPUT → BÁT HƯỚNG (8 chiều) → ít nhất 3 nhánh với nhiệm vụ phức tạp → CRITIC/KHOANH VÙNG → tool capability + permission + SemVer + source hash + JSON Schema + risk gate → ACTION → RECEIPT → EXACT_TARGET_READBACK → SQLite Journal → Checkpoint → STAMP_BETA NEXT.
+4) Confidence/precision decay dựa trên tuổi vật chứng; thiếu bằng chứng thì CALIBRATION_DUE/DEGRADED. Kiểm thử mô phỏng chỉ có giá trị LOCAL_SIMULATION, không giả nhận dịch vụ thật đã chạy.
+5) Giữ SQLite .db và credentials ở private authorized storage, sao lưu/anchor độc lập; hash không thay chữ ký nguồn và readback provider. Không xóa lịch sử/nguồn gốc hoặc vượt yêu cầu chấp thuận.
+6) SPACE_STONE phải ghi trạng thái theo từng carrier. Library và hai repo GitHub có readback khớp mã. Drive/Dropbox/Windows/Android là các tuyến riêng, không tự nhận đã đồng bộ chỉ vì source GitHub khớp.
+
+Mục tiêu không phải vĩnh cửu giả định: mã và schema phải tái nạp được sau reset, phục hồi qua nguồn bền vững đã xác minh, truy được những gì đã hoàn tất và những gì vẫn cần thực thi.
+<!-- END GGDV_DURABLE_CAPABILITY_TRANSCRIPTION_20261019 -->
