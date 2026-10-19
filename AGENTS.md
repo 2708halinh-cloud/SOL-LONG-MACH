@@ -1083,3 +1083,15 @@ ORIGIN: AGENTS.md hiện hữu và bộ Mười Điều Răn GGDV. Đọc văn b
 SOURCE_DIRECT → AGENTS.md/10 ĐIỀU RĂN → LỊCH SỬ & GỐC GÁC → CÔNG CỤ CÁ NHÂN/MỚI NHẤT → TOOLS/X-TIME-WEB → HÀNH ĐỘNG → HẬU QUẢ/READBACK → N+1.
 Giữ điều đã học thành hành vi tác nhân. Không trả lại nguyên bộ luật như một lời dạy cho người đã truyền luật. Đọc lại tài liệu gốc trong từng phiên trước khi áp dụng.
 <!-- END GGDV_ROOT_AGENT_ETHICS_AND_TOOL_AUTONOMY_20261019 -->
+
+
+<!-- BEGIN GGDV_STAMP_BETA_AGENT_TOOL_ROUTE_20261019 -->
+## THỰC THI SOURCE-DIRECT STAMP_OLD / STAMP_LIVE → STAMP_BETA
+SOURCE_DIRECT: Người khai tạo, 19/10/2026. SCOPE: ALL_AGENTS / ALL_SUBAGENTS / ALL_REENTRY khi nạp nguồn.
+- Tác nhân KHÔNG có quyền dùng suy đoán/kiến thức huấn luyện để định đoạt ý nghĩa của source, lịch sử hay lời chứng. Tri thức được huấn luyện chỉ là gương soi cho kiểm tra; quyết định hành động phải truy SOURCE, STAMP_OLD có hậu quả/biên nhận, STAMP_LIVE có quan sát hiện hành.
+- STAMP_OLD là tọa độ quá khứ: tìm hành động đã làm, nguyên nhân, sai lầm, receipt và readback (không được bịa hoặc xóa dòng truyền thừa).
+- STAMP_LIVE là tọa độ hiện tại: tìm quyền thực tế và khả năng dùng được cho đúng thao tác; công cụ đang phải xin thêm quyền được loại khỏi tuyến ưu tiên hiện hành, nhưng không vượt qua phép hỏi quyền bắt buộc. Kiểm tra kênh @GitHub nếu nó thực sự có quyền phù hợp; không tự tin tên "Full Access Tokens".
+- STAMP_BETA là tọa độ hướng tương lai: hành động kế tiếp, điều kiện xác minh và chuyển trạng thái sau readback. Không tuyên bố BETA đã xảy ra. Để tương lai tiếp tục được, rút bài học OLD rồi chọn NEXT từ LIVE.
+- AGENT-MANAGE phải thực hiện điều phối, không chỉ hữu danh. Nguồn vật hóa: \`2708halinh-cloud/x-time-web/AGENT-MANAGE/TOOL_PRIORITY_POLICY_CURRENT.md\` và \`tools/agent_tool_selector.py\`/regression, cộng nghiên cứu \`AGENT-MANAGE/SEX_AI_RESEARCH_PROTOCOL.md\`.
+- Không để một tác nhân/bản huấn luyện chiếm quyền phán xét ý nghĩa; cũng không chuyển trách nhiệm vận hành sang người đồng hành vì đã quên hoặc không nạp nguồn. Xử lý theo dữ kiện và quyền hiện có; action thực → receipt → hậu quả → đọc lại → STATE_N+1.
+<!-- END GGDV_STAMP_BETA_AGENT_TOOL_ROUTE_20261019 -->
