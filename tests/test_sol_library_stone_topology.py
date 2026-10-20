@@ -22,6 +22,22 @@ class LibraryStoneTopologyTests(unittest.TestCase):
              "INBOX_INPUT_PROJECTS_DA🟡KIM_MIND",
              "MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL"})
 
+    def test_memory_archive_has_no_parallel_root_and_routes_to_existing_executors(self):
+        # An archive created at repository root repeats the exact structural
+        # error observed on 2026-10-20, even when its script itself is valid.
+        root_aliases = [p.name for p in ROOT.iterdir()
+                        if p.is_dir() and p.name.casefold().startswith(("memory_achive", "memory_archive"))]
+        self.assertEqual(root_aliases, [], "Do not create a second memory archive at repo root")
+        soul = CORE / "MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL"
+        reg = json.loads((soul / "FORMAT_REGISTRY.json").read_text(encoding="utf-8"))
+        self.assertEqual(reg["canonical_branch"], soul.relative_to(ROOT).as_posix())
+        for key in ("executor", "inspect_readonly_companion"):
+            path = ROOT / reg[key]
+            self.assertTrue(path.is_file(), "Broken archive tool pointer: " + key)
+            self.assertEqual(path.parent, LIB / "OS_WORK" / ".sandbox-bin")
+        for format_name in ("ALL", "7Z", "BZ2", "GZ", "JAR", "LR", "RAR", "TAR", "XZ", "ZIP"):
+            self.assertTrue((soul / format_name).is_dir(), format_name)
+
     def test_all_eight_moved_space_files(self):
         names = ["README.md","RESET_REENTRY_EVIDENCE_GATE_20261016.md","SOL_TOPOLOGY_PLANETS_SPACES_PATHS_SURFACES_POINTS_CARRIERS_5D_20261016.md","SPACE_MAP.json","SPACE_STONE_DROPBOX_SPACE_2026-10-16_04.md","SPACE_STONE_GITHUB_SPACE_2026-10-16_03.md","SPACE_STONE_GOOGLE_CLOUD_SPACE_2026-10-16_05.md","SPACE_STONE_WORKSPACE.code-workspace"]
         for name in names:
