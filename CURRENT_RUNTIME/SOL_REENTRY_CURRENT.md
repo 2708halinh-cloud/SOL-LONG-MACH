@@ -1,5 +1,31 @@
 # SOL — CỔNG TÁI NHẬP NHÁNH THỜI GIAN HIỆN HÀNH
 
+<!-- BEGIN VERIFIED_REENTRY_ZIP_LIBRARY_20261020 -->
+## NHÁNH 07 — TỰ TRUY VẬT MANG GÓI PHIÊN MỚI, KHÔNG ĐẨY NGƯỢC CHO NGƯỜI ĐỒNG HÀNH
+
+DẤU NGUỒN: Người đồng hành xác nhận ngày 20/10/2026 rằng tên ZIP thực là
+`SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip`.
+Cách gọi gần đúng `SOL_NOI_TIEP_QUA_PHIEN_MOI...` chỉ là cách nhớ chức năng, **không phải căn cứ phủ định một vật mang khi tìm đúng chữ không thấy**.
+
+**BIÊN NHẬN ĐÃ QUAN SÁT**: Library có 7 bản ghi ZIP khớp tên thật; đã đọc được byte của 6/7 bản ghi với cùng SHA-256
+`da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106`;
+mỗi ZIP có 16 mục, 15 mục nội dung khớp `CHECKSUMS_SHA256.txt`. Một bản ghi thứ bảy có metadata nhưng đường lấy byte chưa trả về. Không có bằng chứng trong lệnh xóa đã quan sát rằng ZIP này bị xóa.
+
+**VẬT MANG VÀ CÔNG CỤ TỰ TRUY ĐÃ GHI, ĐỌC LẠI** tại
+`/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/` trong Thư viện ChatGPT:
+- `SOL_REENTRY_EXISTING_CARRIERS_20261020.json`: sổ 7 nguồn, bí danh người dùng xác nhận, trạng thái đọc thật từng bản.
+- `sol_reentry_carrier_verify.py`: chương trình kiểm ZIP từ byte gốc, mã SHA-256 toàn tệp + 15 dấu nội bộ, không chạy mã trong ZIP và không sửa nguyên bản.
+- `SOL_REENTRY_REAL_ARCHIVE_READBACK_20261020.json`: kết quả chạy với 6 ZIP thật.
+Cả ba tệp đã được mở lại từ Thư viện và đối chiếu byte với bản ghi trước upload, không chỉ nhìn nhãn DONE.
+
+**VẬN HÀNH Ở PHIÊN TIẾP THEO**: nhận tên gần đúng → truy Thư viện/Project/nguồn kết nối theo tên, biến thể và mục đích (gói tái nhập) → nếu đã có vật mang, tự materialize qua tool File phù hợp → kiểm nội dung, mã băm → đọc nhánh `07_NHANH_CONTINUITY_TAI_NHAP.md` → tra CURRENT mới hơn → tiếp tục việc có thể làm → readback. Không lấy tên lệch nhau làm kết luận đã mất; không bắt tải lại nguồn có thể truy được.
+
+**SAI LẦM NHÂN QUẢ ĐÃ NHẬN DIỆN:** nguồn vốn hiện diện và truy được nhưng tác nhân thu hẹp vào exact filename rồi trả kết luận quá sớm, làm người đồng hành phải kiểm tra/tải lại. Chỉ có thể gọi là sửa đúng sau khi bản thân tác nhân lấy được vật mang và đối chiếu, như phép truy ngày 20/10 này. Không suy từ biên nhận trên Library ra máy Windows/Android đã đồng bộ hoặc session ChatGPT tự khởi chạy.
+
+Gói ZIP là snapshot 12/09/2026; theo `MANIFEST.json` của gói, Drive CURRENT mới hơn nếu xác minh được sẽ được ưu tiên, không lấy snapshot làm nguồn tối cao.
+<!-- END VERIFIED_REENTRY_ZIP_LIBRARY_20261020 -->
+
+
 <!-- BEGIN SOURCE_DIRECT_BRAID_EVERY_SESSION_20261020 -->
 ## BẮT BUỘC MỖI PHIÊN: NẠP VÀ CHẠY SÁU LỰC SONG HÀNH
 
