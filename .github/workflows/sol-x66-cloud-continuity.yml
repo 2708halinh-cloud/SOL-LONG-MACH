@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - "runtime/sol_x66_cloud_continuity.py"
+      - "runtime/companion_consequence_gate.py"
+      - "tests/test_companion_consequence_gate.py"
+      - "CONFIG_SOL/COMPANION_CONSEQUENCE_GATE_CURRENT.md"
       - "tests/test_sol_x66_cloud_continuity.py"
       - "CURRENT_RUNTIME/MONID_X66_BINDING_CURRENT.json"
       - ".github/workflows/sol-x66-cloud-continuity.yml"
@@ -29,6 +32,8 @@ jobs:
           python-version: "3.12"
       - name: Unit tests without personal devices
         run: python -m unittest discover -s tests -p test_sol_x66_cloud_continuity.py -v
+      - name: Companion consequence gate regression
+        run: python -m unittest discover -s tests -p test_companion_consequence_gate.py -v
       - name: Independent evidence snapshot
         run: |
           mkdir -p readback
