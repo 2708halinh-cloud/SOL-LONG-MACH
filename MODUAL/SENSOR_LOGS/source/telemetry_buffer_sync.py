@@ -10,7 +10,7 @@ CHỨC NĂNG:
    - Xiaomi 12 (Live USB ADB: Battery, Temp, Voltage, Sensors)
    - Redmi Note 14 Pro 5G (Specs, Cache, CrossDevice Storage)
 2. Ghi liên tục (append) vào vùng đệm cục bộ SSD tốc độ cao:
-   D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV
+   Thư mục cảm biến được kiểm từ vật mang hiện có, ưu tiên C:\\Dropbox\\SESON_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV
 3. Tự động đồng bộ định kỳ (Snapshot Atomic Write) sang Google Drive:
    W:\\Drive của tôi\\.vscode\\thiẾT bỊ\\Thành Lập 6 viên ĐÁ VÔ CỰC - The Creation of the 6 Infinity Stones\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV
    -> Khắc phục triệt để lỗi xung đột file lock, crash ổ W: và lỗi tự xóa file vào thùng rác.
@@ -24,13 +24,18 @@ import shutil
 import datetime
 import subprocess
 
-BUFFER_DIR = r"D:\SENSOR_LOGS"
+try:
+    from .sensor_root_resolver import resolve_sensor_root
+except ImportError:  # direct script invocation
+    from sensor_root_resolver import resolve_sensor_root
+
+# Resolve actual files first. A legacy empty D: folder is not a source.
+BUFFER_DIR = str(resolve_sensor_root())
 BUFFER_CSV = os.path.join(BUFFER_DIR, "_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV")
 TARGET_CSV = r"w:\Drive của tôi\.vscode (1)\thiẾT bỊ\Thành Lập 6 viên ĐÁ VÔ CỰC - The Creation of the 6 Infinity Stones\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV"
 ADB_PATH = r"C:\Users\halin\platform-tools-latest-windows\platform-tools\adb.exe"
-MODUAL_GITHUB_SYNC = os.path.join(BUFFER_DIR, "modual_github_sync.py")
+MODUAL_GITHUB_SYNC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "modual_github_sync.py")
 
-os.makedirs(BUFFER_DIR, exist_ok=True)
 
 def get_xiaomi_telemetry():
     telemetry = {
