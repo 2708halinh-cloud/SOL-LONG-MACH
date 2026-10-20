@@ -113,7 +113,13 @@ def inspect(path):
                 argv=[binary,"t","-bd",str(path)] if kind in ("7Z","RAR") else [binary,"-t",str(path)]
                 result=subprocess.run(argv,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,
                                       timeout=45,stdin=subprocess.DEVNULL)
-                out["status"]="PASS" if result.returncode==0 else "TEST_FAILED_OR_ENCRYPTED"
+                if result.returncode == 0:
+                    # The external test verifies compressed-stream integrity only.
+                    # It does not prove safe member paths, links, or expanded size.
+                    out["status"]="OPEN_METADATA_UNVERIFIED"
+                    out["error_code"]="UNVERIFIED_MEMBER_METADATA"
+                else:
+                    out["status"]="TEST_FAILED_OR_ENCRYPTED"
         else:
             out["error_code"]="MAGIC_NOT_RECOGNIZED"
     except (OSError,ValueError,zipfile.BadZipFile,tarfile.TarError,EOFError,
