@@ -23,7 +23,8 @@ EXT = {".csv", ".jsonl", ".log", ".tsv", ".txt"}
 
 def roots():
     home = Path.home()
-    return [Path(r"C:\Dropbox"), Path(r"D:\SESON_LOGS"), Path(r"D:\SENSOR_LOGS"),
+    return [home / "CrossDevice" / "Redmi Note 14 Pro 5G" / "03_KẾT_NỐI_THIẾT_BỊ",
+            Path(r"C:\Dropbox"), Path(r"D:\SESON_LOGS"), Path(r"D:\SENSOR_LOGS"),
             home / "Documents", home / "Dropbox", home / ".codex",
             Path(r"D:\PHÒNG CHỈ HUY\.codex"), Path(r"C:\Users\halin\.codex")]
 
