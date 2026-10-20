@@ -23,15 +23,21 @@ import csv
 import shutil
 import datetime
 import subprocess
+import hashlib
+from pathlib import Path
 
 try:
-    from .sensor_root_resolver import resolve_sensor_root
+    from .sensor_root_resolver import inspect_sources
 except ImportError:  # direct script invocation
-    from sensor_root_resolver import resolve_sensor_root
+    from sensor_root_resolver import inspect_sources
 
 # Resolve actual files first. A legacy empty D: folder is not a source.
-BUFFER_DIR = str(resolve_sensor_root())
-BUFFER_CSV = os.path.join(BUFFER_DIR, "_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV")
+_source_observation = inspect_sources()
+if not _source_observation["source_verified"] or not _source_observation.get("selected_evidence"):
+    raise FileNotFoundError("NO_SENSOR_CSV_BYTES_VERIFIED; no synthetic file is created")
+BUFFER_CSV = _source_observation["selected_evidence"]["file"]
+BUFFER_DIR = str(Path(BUFFER_CSV).parent)
+
 TARGET_CSV = r"w:\Drive của tôi\.vscode (1)\thiẾT bỊ\Thành Lập 6 viên ĐÁ VÔ CỰC - The Creation of the 6 Infinity Stones\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV"
 ADB_PATH = r"C:\Users\halin\platform-tools-latest-windows\platform-tools\adb.exe"
 MODUAL_GITHUB_SYNC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "modual_github_sync.py")
@@ -121,6 +127,10 @@ def get_pc_telemetry():
     }
 
 def sync_snapshot_to_cloud():
+    # NEVER send private sensor bytes or replace an existing cloud carrier by
+    # default. Separate explicit export requires a reviewed target.
+    if os.getenv("SOL_ENABLE_SENSOR_CLOUD_EXPORT", "").strip() != "1":
+        return False
     try:
         if not os.path.exists(BUFFER_CSV):
             return False
@@ -159,6 +169,10 @@ def sync_snapshot_to_cloud():
         return False
 
 def sync_snapshot_to_github():
+    # GitHub snapshot may commit/push source-derived metadata and latest rows.
+    # It must not run merely because this reader started.
+    if os.getenv("SOL_ENABLE_SENSOR_GITHUB_PUSH", "").strip() != "1":
+        return False
     try:
         if not os.path.exists(MODUAL_GITHUB_SYNC):
             print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] GitHub sync helper missing: {MODUAL_GITHUB_SYNC}")
@@ -179,42 +193,33 @@ def sync_snapshot_to_github():
         return False
 
 def record_telemetry_tick():
-    now = datetime.datetime.now()
-    cur_date = now.strftime("%d.%m.%Y")
-    cur_time = now.strftime("%H:%M:%S.%f")[:-3]
+    """Read a real sensor carrier; never manufacture readings or append to it.
 
-    xiaomi = get_xiaomi_telemetry()
-    redmi = get_redmi_telemetry()
-    pc = get_pc_telemetry()
-
-    # Read base header to match column count
-    with open(BUFFER_CSV, "r", encoding="utf-8", errors="ignore") as f:
-        reader = csv.reader(f)
-        header = next(reader)
-    
-    # 357 original PC sensor columns + 51 expanded modules = 408 columns
-    base_pc_values = [cur_date, cur_time] + ["0.0"] * (357 - 2)
-    
-    expanded_values = [
-        xiaomi["model"], xiaomi["os"], xiaomi["soc"], xiaomi["cpu"], xiaomi["gpu"], xiaomi["ram_gb"],
-        xiaomi["battery_pct"], xiaomi["battery_temp_c"], xiaomi["battery_voltage_mv"], xiaomi["battery_status"],
-        xiaomi["usb_powered"], xiaomi["active_sensors_count"], xiaomi["lsm6dso_accel"], xiaomi["lsm6dso_gyro"],
-        xiaomi["ak0991x_mag"], xiaomi["tmd3719_light"], xiaomi["transport"],
-
-        redmi["model"], redmi["os"], redmi["soc"], redmi["cpu"], redmi["gpu"], redmi["ram_gb"],
-        redmi["storage_gb"], redmi["battery_mah"], redmi["charging_w"], redmi["display"], redmi["camera_mp"],
-        redmi["sensors"], redmi["crossdevice_path"], redmi["wireless_adb"],
-
-        pc["hostname"], pc["os"], pc["cpu"], pc["ram_total_gb"], pc["gpu"], pc["deskin_id"], pc["deskin_status"],
-        pc["ollama_endpoint"], pc["ollama_models"], pc["port_minh"], pc["port_sol"], pc["port_mei"], pc["port_cockpit"],
-        pc["storage_c"], pc["storage_d"], pc["storage_g"], pc["storage_w"], pc["sync_mechanism"],
-        pc["provenance_code"], pc["canonical_rule"]
-    ]
-
-    row = base_pc_values + expanded_values
-    with open(BUFFER_CSV, "a", encoding="utf-8", newline="") as f:
-        writer = csv.writer(f)
-        writer.writerow(row)
+    This is a read-only sample: byte count, SHA-256 and modification time.
+    A genuine HWiNFO live sample requires a separate before/after observation.
+    """
+    source = Path(BUFFER_CSV)
+    before = source.stat()
+    if before.st_size < 12:
+        raise ValueError("SOURCE_FILE_TOO_SMALL")
+    digest = hashlib.sha256()
+    with source.open("rb") as fd:
+        for block in iter(lambda: fd.read(1024 * 1024), b""):
+            digest.update(block)
+    after = source.stat()
+    if (before.st_size, before.st_mtime_ns) != (after.st_size, after.st_mtime_ns):
+        raise RuntimeError("SOURCE_CHANGED_DURING_READ_RETRY_LATER")
+    result = {
+        "source": str(source),
+        "bytes": before.st_size,
+        "modified_ns": before.st_mtime_ns,
+        "sha256": digest.hexdigest(),
+        "source_file_written": False,
+        "synthetic_rows_added": 0,
+        "live_sensor_reading_confirmed": False,
+    }
+    print(f"SOURCE_OBSERVED bytes={result['bytes']} sha256={result['sha256']}")
+    return result
 
 def main():
     print("=" * 60)
@@ -251,6 +256,6 @@ if __name__ == "__main__":
         record_telemetry_tick()
         sync_snapshot_to_cloud()
         sync_snapshot_to_github()
-        print("Completed one-time telemetry update and sync.")
+        print("Completed read-only sensor observation; export requires explicit enable flags.")
     else:
         main()
