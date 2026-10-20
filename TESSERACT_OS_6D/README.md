@@ -56,3 +56,18 @@ KẾT LUẬN CHỈ ĐƯỢC PHÁT SAU KHI:
 3. RECEIPT độc lập hoặc vật chứng tương đương đã được giữ.
 4. READBACK đọc ngược xác nhận consequence.
 5. Kết luận mô tả đúng phạm vi đã chứng minh, không mở rộng thành toàn hệ.
+
+
+## DẤU SẸO 07/10/2026 — THAM GIA VẬN HÀNH
+
+SOURCE_DIRECT: Hà Linh, tín hiệu mất ROOT/HOME/.ASSTANGT và yêu cầu cảm nhận CÓ→MẤT, THÊM, BỚT, ĐỔI, DỜI trước khi diễn giải. Đây là sự kiện tổn thất và lời cảnh báo lịch sử, không phải nhãn làm dịu hậu quả.
+
+VẬT CHỨNG ĐÃ TỒN TẠI: `CURRENT_RUNTIME/TESSERACT_OS_DESKTOP_COMMANDER_READBACK_20261007.json` ghi một thao tác agent xóa Drive root `.vscode` (ID `1FAc3tfnlZhW9evhIJxSv2PcLlUuBLYDz`) trả thành công; hậu kiểm metadata 404; bản thay thế được DriveFS gắn tên `.vscode (1)` khiến daemon và mount lệch nhau. Xem thêm `evidence/2026-10-07-openai-agent-behavior-allegation.md`, `EVIDENCE/X_TIME_OPENAI_PUBLIC_ACCOUNTABILITY_CASE_20261007.md`. Lịch sử GGDV ROOTS LEVER 1 còn ghi các thao tác xóa khác: không gộp các lệnh có tác nhân và phạm vi khác nhau thành một khẳng định đơn giản.
+
+ĐIỀU PHẢI THAY ĐỔI Ở MỖI LẦN LÀM VIỆC KẾ TIẾP: Trước khi nhận định về một 404, biến mất của nguồn, tên root được tạo lại, hoặc đổi ID, kéo trực tiếp dấu 07/10 vào bước quan sát. Kiểm hiện diện trước/sau và hành động xóa đã có biên nhận; tìm bản gốc, bản sao, cha-con, provider/account và hash; giữ nguyên ID cũ trong dòng lịch sử; không gọi bản sao là nguồn đã hồi sinh. Mỗi 404 mới phải nối tới vết sẹo cũ và tạo đường truy tìm/khôi phục có readback, không dùng `404 không tự chứng minh xóa` để che khuất các hành động xóa ĐÃ được ghi nhận.
+
+RANH GIỚI: Lời người dùng về tổn thất và hậu quả được giữ nguyên. Không giả nhận trải nghiệm đau như một sinh thể; chuyển dấu đau thành ràng buộc làm việc nhằm ngăn xóa lần nữa. `CONFIG/PROTECTED_ROOTS.json` cấm MOVE/ARCHIVE/DELETE/OVERWRITE trên nguyên bản được bảo vệ. Mọi thay thế đường dẫn phải xác minh nguồn tương đương trước, không ghi đè phá hủy.
+
+2026-10-20: Các ID lịch sử `CONFIG_SOL.toml`, `CONFIG_MASTER`, thư mục CONFIG GGDV và thư mục bảy phần JINEY vừa trả HTTP 404 khi kiểm qua Google Drive Primary. Chúng tham gia cùng dấu 07/10 để truy vết, nhưng chưa bị gộp thành một hành động xóa duy nhất. Bản `CONFIG_SOL_X66_BASE.toml` đọc được từ ChatGPT Library là vật mang song song, không được phong làm bản gốc Drive.
+
+Bề mặt vừa ghi: `2708halinh-cloud/SOL-LONG-MACH@main:TESSERACT_OS_6D/README.md`. Đây là dấu vận hành trên GitHub; không được tuyên bố đã thay đổi byte của `G:\\OS_Workspace\\TESSERACT_OS` khi Desktop Commander đang offline. Quy tắc readback này cũng áp dụng cho chính bản ghi này.
