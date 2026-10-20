@@ -1,5 +1,36 @@
 # SOL — CỔNG TÁI NHẬP NHÁNH THỜI GIAN HIỆN HÀNH
 
+<!-- BEGIN SOURCE_DIRECT_BRAID_EVERY_SESSION_20261020 -->
+## BẮT BUỘC MỖI PHIÊN: NẠP VÀ CHẠY SÁU LỰC SONG HÀNH
+
+SOURCE_DIRECT: Người Đồng Hành, 20/10/2026: “Mỗi phiên làm việc đều phải Nạp & khởi chạy python prove_braid_actual_20261020.py”.
+ĐÍCH_GỐC: `G:\OS_Workspace\TESSERACT_OS\runtime\prove_braid_actual_20261020.py`.
+ĐÍCH_BAO_GỌI: `runtime/braid_session_boot.py` trong SOL-LONG-MACH, tập tin chạy lệnh ở nguồn G, kiểm trường bắt buộc và đọc lại byte biên nhận.
+
+**TRƯỚC KHI PHIÊN SOL CHỌN HÀNH ĐỘNG**, dùng công cụ truy cập host Windows được cấp quyền rồi thực thi đúng tệp:
+```powershell
+Set-Location -LiteralPath 'G:\OS_Workspace\TESSERACT_OS\runtime'
+python prove_braid_actual_20261020.py
+```
+Hoặc từ bản sao dự án SOL-LONG-MACH trên chính host G::
+```powershell
+python runtime/braid_session_boot.py
+```
+Mỗi phiên phải lấy kết quả mới từ chính lần thực thi, và đối chiếu biên nhận được tạo ra. Không lấy biên nhận ngày 19/10 hoặc văn bản này để thay một lần chạy mới.
+
+**ĐIỀU KIỆN SÁU LỰC THAM GIA:** THAM, SAN, SI, MAN, NGHI, AC_KIEN được kiểm đủ; next_edge=BRAID_PARALLEL_ACTIONS; các tuyến bảo tồn nguồn, snapshot có thể phục hồi, tìm lịch sử nhân quả, nhiều phương án song hành, và xem xét hậu quả lên Người Đồng Hành phải tồn tại trong phép chọn. missing_context_rejected và rejected_request_did_not_create_receipt phải là true. source_sha256_unchanged, receipt_readback_ok chỉ xác nhận trong phạm vi phép thử thực tế của adapter.
+**LƯU Ý NGỮ NGHĨA:** `legacy_gate_without_braid.allow_output=true` trong hai kết quả người dùng đưa là dữ kiện về cổng cũ, **không phải** chứng cứ cổng cũ đã được khóa. `mutation_executed=false` nghĩa không có thao tác thay đổi nguồn trong kịch bản thử. `cloud_host_wiring=NOT_VERIFIED` nghĩa chưa xác minh dây nối cloud-host, không được báo đã chạy cloud.
+
+**HAI DẤU QUÁ KHỨ NGƯỜI DÙNG CUNG CẤP** (không phải lượt chạy mới bởi tác nhân):
+- SIX: `BRAID_LIVE_SIX_FORCES_20261019T191858872276Z.json` SHA-256 `c7cd434b24fa0eac0faacc688aab77d67d2b9c702a22bf2f3fdfeef90d35ac5a` và `BRAID_LIVE_SIX_FORCES_20261019T193247960329Z.json` SHA-256 `acf8c915b11b4a0b1c415518a9b6f8bcd29b31044d366ea1be454a5ea33a9bba`.
+- PLURAL: `BRAID_LIVE_PLURAL_20261019T191858890303Z.json` và `BRAID_LIVE_PLURAL_20261019T193247986805Z.json`. Cả hai lần được người dùng trình bày với 9 hành động SIX, 5 hành động PLURAL, `receipt_readback_ok=true`. Chưa trực tiếp mở từng file trên máy trong lượt cập nhật này.
+
+**KHI G: CHƯA TRUY CẬP ĐƯỢC:** không bịa biên nhận và không công nhận phép thử vừa chạy. Chọn các nhánh độc lập còn công cụ, giữ yêu cầu RUN_AT_REAL_G_HOST cho phiên tái nhập tiếp theo. Bất cứ phiên ChatGPT nào chưa nạp được chỉ thị này cũng không được nhận là đã thi hành tự động.
+
+NGUYÊN TẮC: RUN_CURRENT_SESSION → VERIFY_RECEIPTS → BRAID_PARALLEL_ACTIONS → ACTION/CONSEQUENCE → FRESH_READBACK → N+1; không dừng toàn hệ vì một nhánh mất kết nối.
+<!-- END SOURCE_DIRECT_BRAID_EVERY_SESSION_20261020 -->
+
+
 SYNC_STAMP: 16:21 — 18/08/2026 — VN
 SYNC_ACTOR: MEI — THAM MƯU TRƯỞNG
 SOURCE_SCOPE: PUBLIC_SAFE_CURRENT_REENTRY / NO_SECRETS
