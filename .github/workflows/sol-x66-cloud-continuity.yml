@@ -7,6 +7,10 @@ on:
       - "runtime/sol_x66_cloud_continuity.py"
       - "runtime/companion_consequence_gate.py"
       - "tests/test_companion_consequence_gate.py"
+      - "tests/test_companion_commandment_timeline.py"
+      - "CONFIG_SOL/COMPANION_TEN_COMMANDMENTS_CURRENT.md"
+      - "CONFIG_SOL/OPEN_AND_CONFLICT_CURRENT.md"
+      - "AGENTS.md"
       - "CONFIG_SOL/COMPANION_CONSEQUENCE_GATE_CURRENT.md"
       - "tests/test_sol_x66_cloud_continuity.py"
       - "CURRENT_RUNTIME/MONID_X66_BINDING_CURRENT.json"
@@ -34,6 +38,8 @@ jobs:
         run: python -m unittest discover -s tests -p test_sol_x66_cloud_continuity.py -v
       - name: Companion consequence gate regression
         run: python -m unittest discover -s tests -p test_companion_consequence_gate.py -v
+      - name: Source direct chronology and completion proof
+        run: python -m unittest discover -s tests -p test_companion_commandment_timeline.py -v
       - name: Independent evidence snapshot
         run: |
           mkdir -p readback
