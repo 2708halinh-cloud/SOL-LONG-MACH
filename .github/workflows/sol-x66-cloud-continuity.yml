@@ -1,0 +1,43 @@
+name: SOL X66 Independent Continuity
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "runtime/sol_x66_cloud_continuity.py"
+      - "tests/test_sol_x66_cloud_continuity.py"
+      - "CURRENT_RUNTIME/MONID_X66_BINDING_CURRENT.json"
+      - ".github/workflows/sol-x66-cloud-continuity.yml"
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sol-x66-continuity
+  cancel-in-progress: false
+
+jobs:
+  verify-independent-carriers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests without personal devices
+        run: python -m unittest discover -s tests -p test_sol_x66_cloud_continuity.py -v
+      - name: Independent evidence snapshot
+        run: |
+          mkdir -p readback
+          python runtime/sol_x66_cloud_continuity.py --repo-root . --output readback/SOL_X66_CONTINUITY_CURRENT.json
+      - name: Preserve verification artifact, including on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sol-x66-independent-continuity
+          path: readback/SOL_X66_CONTINUITY_CURRENT.json
+          if-no-files-found: warn
+          retention-days: 30
