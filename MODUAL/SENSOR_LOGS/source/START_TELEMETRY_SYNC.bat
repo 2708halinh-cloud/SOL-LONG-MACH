@@ -5,5 +5,10 @@ echo TELEMETRY BUFFER & SNAPSHOT SYNC DAEMON - HOME_HALINH
 echo PROVENANCE: 075203003486_10152484_20260724124936
 echo CANONICAL: 0000_THE_MASTER_TEACHER.md - HÀ LINH (LÃNH ĐẠO)
 echo ====================================================================
-python D:\SENSOR_LOGS\telemetry_buffer_sync.py
+REM Run from the supplied script carrier. Python locates real C:/Dropbox data first.
+if not exist "%~dp0telemetry_buffer_sync.py" (
+  echo Cannot find telemetry_buffer_sync.py alongside this launcher.
+  exit /b 2
+)
+python "%~dp0telemetry_buffer_sync.py"
 pause
