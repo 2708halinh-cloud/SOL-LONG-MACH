@@ -123,7 +123,7 @@ def inspect(path):
         else:
             out["error_code"]="MAGIC_NOT_RECOGNIZED"
     except (OSError,ValueError,zipfile.BadZipFile,tarfile.TarError,EOFError,
-            lzma.LZMAError,bz2.BZ2Decompressor.__class__,subprocess.TimeoutExpired) as e:
+            lzma.LZMAError,subprocess.TimeoutExpired) as e:
         out["status"]="FAILED_SAFE"
         out["error_code"]=type(e).__name__
     return out
