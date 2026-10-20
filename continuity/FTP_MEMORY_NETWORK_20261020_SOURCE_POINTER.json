@@ -1,0 +1,68 @@
+{
+  "schema": "SOL_SOURCE_DIRECT_CONTINUITY_V1",
+  "observed_from": "DESKTOP-86ITNQ4",
+  "ftp": {
+    "source": "D:\\PHÒNG CHỈ HUY\\FTP_DEVICE_INVENTORY\\result_20261020_124556.json",
+    "analysis": "D:\\PHÒNG CHỈ HUY\\FTP_DEVICE_INVENTORY\\analysis_20261020_124556.json",
+    "scan_completed": false,
+    "observed_directories_excluding_root": 210,
+    "observed_files": 382,
+    "observed_empty_directories": 172,
+    "observed_zero_byte_files": 128,
+    "observed_known_file_bytes": 13424102992,
+    "recursively_empty_directories": null,
+    "root_samples": {
+      "X_TIME": {
+        "dirs": 19,
+        "files": 49
+      },
+      "XIANG": {
+        "dirs": 15,
+        "files": 19
+      },
+      "VAT_LIEU_01_NEN_TANG_DU_LIEU_HANH_VI_HA_LINH": {
+        "dirs": 1,
+        "files": 3
+      }
+    },
+    "pending": "rescan FTP paths timed out; no total count inferred"
+  },
+  "react_sources": {
+    "user_supplied": [
+      "tsconfig.json",
+      "App.tsx",
+      "src/components/tabs/TabNetworkConfig.tsx",
+      "src/components/tabs/TabTerminal.tsx"
+    ],
+    "located_in_current_x_time_web_repository": false,
+    "located_in_scanned_windows_root": false,
+    "code_hazards": [
+      "TabTerminal output produced by setTimeout static template, not command execution",
+      "TabNetworkConfig live markers are hardcoded",
+      "App.tsx imports need source dependency resolution"
+    ],
+    "next": "Find genuine React source tree before writing these files into build target"
+  },
+  "browser_permissions": {
+    "source": "user-provided historical allow/block lists",
+    "actual_permission_state": "not independently read from browser",
+    "live_reachability": "not established from permissions alone",
+    "conflicting_overrides": true
+  },
+  "local_memory": {
+    "repo": "2708halinh-cloud/x-time-web",
+    "module": "tools/memory-store.js",
+    "chat_gateway": "tools/server.js",
+    "browser": "main.js",
+    "tests": [
+      "tools/test-memory.mjs",
+      "tools/test-http-memory.mjs"
+    ],
+    "isolated_http_test": "HTTP_200_ACK_READBACK_PASS",
+    "system_index0_unit_test": "PASS",
+    "dev_store_plaintext": true,
+    "production_secret_storage": "Secure_Vault only",
+    "embeddings": "OPEN_NOT_IMPLEMENTED"
+  },
+  "rule": "Do not replace observations with assumed completed states."
+}
