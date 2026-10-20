@@ -141,13 +141,13 @@ def build_repo_snapshot() -> dict:
 
     readme = (
         "# MODUAL / SENSOR_LOGS — GitHub Current State\n\n"
-        f"OBSERVED_SENSOR_SOURCE: {SENSOR_ROOT}\\n\\n"
+        f"OBSERVED_SENSOR_SOURCE: {SENSOR_ROOT}\n\n"
         f"- {BULK_NAME}: bulk telemetry local carrier. Raw bytes remain on local/bulk storage; GitHub keeps digest + header + latest row.\n"
         f"- {LIVE_NAME}: live/intermediate MODUAL parameter carrier; copied into live/.\n"
         "- source/: executable control files that generate/sync MODUAL state.\n"
         "- MODUAL_PARAMETER_CURRENT.json: current compact state/readback.\n\n"
         "AUTO_SYNC:\n"
-        f"Sensor scripts run against verified source {SENSOR_ROOT}; no empty D: recreation.\\n\\n"
+        f"Sensor scripts run against verified source {SENSOR_ROOT}; no empty D: recreation.\n\n"
         "GitHub is used here as Law/State, not as the bulk telemetry store.\n"
     )
     (DEST_ROOT / "README.md").write_text(readme, encoding="utf-8")
