@@ -18,14 +18,17 @@ DEFAULT_CANDIDATES = (
     r"C:\Dropbox\SENSOR_LOGS",
     r"D:\SESON_LOGS",
     r"D:\SENSOR_LOGS",
+    Path.home() / "CrossDevice" / "Redmi Note 14 Pro 5G" / "03_KẾT_NỐI_THIẾT_BỊ",
 )
 SENSOR_TOKENS = ("sensor", "sesorimotor", "seson", "imu", "gyro",
-                 "accel", "temperature", "battery", "voltage")
+                 "accel", "temperature", "battery", "voltage",
+                 "cpu", "gpu", "nhiệt", "bộ nhớ", "core", "vid", "hwinfo")
 
 
 def candidate_roots() -> list[Path]:
+    file_override = os.environ.get("SOL_SENSOR_SOURCE_FILE", "").strip()
     override = os.environ.get("SOL_SENSOR_SOURCE_ROOT", "").strip()
-    candidates = ([override] if override else []) + list(DEFAULT_CANDIDATES)
+    candidates = ([file_override] if file_override else []) + ([override] if override else []) + list(DEFAULT_CANDIDATES)
     unique: dict[str, Path] = {}
     for name in candidates:
         unique.setdefault(os.path.normcase(os.path.normpath(name)).casefold(), Path(name))
@@ -48,8 +51,8 @@ def _check_csv(path: Path) -> dict | None:
             return None
         if len(sample) != len(header):
             return None
-        signature = (path.name + " " + " ".join(header[:100])).casefold()
-        if not any(token in signature for token in SENSOR_TOKENS):
+        signature = (path.name + " " + " ".join(header[:250])).casefold()
+        if sum(token in signature for token in SENSOR_TOKENS) < 2:
             return None
         digest = hashlib.sha256()
         with path.open("rb") as f:
@@ -64,7 +67,11 @@ def _check_csv(path: Path) -> dict | None:
 
 
 def _csv_files(root: Path, *, limit: int = 160) -> list[Path]:
-    if not root.is_dir() or root.is_symlink():
+    if root.is_symlink():
+        return []
+    if root.is_file() and root.suffix.casefold() == ".csv":
+        return [root]
+    if not root.is_dir():
         return []
     discovered: list[Path] = []
     checked = 0
