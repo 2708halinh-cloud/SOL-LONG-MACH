@@ -7,7 +7,13 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
-SENSOR_ROOT = Path(r"D:\SENSOR_LOGS")
+try:
+    from .sensor_root_resolver import resolve_sensor_root
+except ImportError:  # direct script invocation
+    from sensor_root_resolver import resolve_sensor_root
+
+# Live source has to be observed before any snapshot writes happen.
+SENSOR_ROOT = resolve_sensor_root()
 REPO_ROOT = Path(r"D:\SOL_LONG_MACH\MODEL\repo")
 DEST_ROOT = REPO_ROOT / "MODUAL" / "SENSOR_LOGS"
 SOURCE_DIR = DEST_ROOT / "source"
@@ -135,13 +141,13 @@ def build_repo_snapshot() -> dict:
 
     readme = (
         "# MODUAL / SENSOR_LOGS — GitHub Current State\n\n"
-        "SOURCE_DIRECT: D:\\SENSOR_LOGS\n\n"
+        f"OBSERVED_SENSOR_SOURCE: {SENSOR_ROOT}\\n\\n"
         f"- {BULK_NAME}: bulk telemetry local carrier. Raw bytes remain on local/bulk storage; GitHub keeps digest + header + latest row.\n"
         f"- {LIVE_NAME}: live/intermediate MODUAL parameter carrier; copied into live/.\n"
         "- source/: executable control files that generate/sync MODUAL state.\n"
         "- MODUAL_PARAMETER_CURRENT.json: current compact state/readback.\n\n"
         "AUTO_SYNC:\n"
-        "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py calls modual_github_sync.py on the same snapshot cadence.\n\n"
+        f"Sensor scripts run against verified source {SENSOR_ROOT}; no empty D: recreation.\\n\\n"
         "GitHub is used here as Law/State, not as the bulk telemetry store.\n"
     )
     (DEST_ROOT / "README.md").write_text(readme, encoding="utf-8")
