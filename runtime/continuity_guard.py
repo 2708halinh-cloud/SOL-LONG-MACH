@@ -21,6 +21,8 @@ import json
 import os
 import tempfile
 
+from runtime.destructive_gate import destructive_preflight
+
 
 @dataclass
 class Edge:
@@ -70,6 +72,8 @@ class Checkpoint:
     # R-014: retain errors as evidence while disabling proven-bad mechanisms.
     r014_disabled_mechanisms: list[str] = field(default_factory=list)
     r014_error_history: list[dict[str, Any]] = field(default_factory=list)
+    # A one-use authorization cannot trigger a second destructive execution.
+    used_destructive_intent_ids: list[str] = field(default_factory=list)
 
     def unfinished_edges(self) -> list[Edge]:
         return [e for e in self.edges if not e.grounded_done()]
@@ -95,6 +99,7 @@ def to_dict(cp: Checkpoint) -> dict[str, Any]:
         "cycle_count": cp.cycle_count,
         "r014_disabled_mechanisms": list(cp.r014_disabled_mechanisms),
         "r014_error_history": list(cp.r014_error_history),
+        "used_destructive_intent_ids": list(cp.used_destructive_intent_ids),
         "edges": [asdict(e) for e in cp.edges],
     }
 
@@ -109,6 +114,7 @@ def from_dict(data: dict[str, Any]) -> Checkpoint:
         cycle_count=int(data.get("cycle_count", 0)),
         r014_disabled_mechanisms=list(data.get("r014_disabled_mechanisms", [])),
         r014_error_history=list(data.get("r014_error_history", [])),
+        used_destructive_intent_ids=list(data.get("used_destructive_intent_ids", [])),
         edges=[Edge(**e) for e in data.get("edges", [])],
     )
 
@@ -369,6 +375,26 @@ def continue_bounded(
         if edge is None:
             break
         carrier = edge.next_carrier()
+        # Enforce an executable check *before* invoking any declared
+        # destructive operation. A source label by itself is not authority.
+        gate = destructive_preflight(cp, edge)
+        if not gate["allowed"]:
+            denied = {
+                "success": False,
+                "action_executed": False,
+                "gate": "DESTRUCTIVE_PREFLIGHT",
+                "reason": gate["reason"],
+                "edge_id": edge.edge_id,
+            }
+            edge.evidence.setdefault("destructive_denials", []).append(denied)
+            edge.callable_now = False
+            receipts.append(denied)
+            steps += 1
+            continue
+        if "intent_id" in gate:
+            # Mark consumed before execution so failed retries cannot
+            # silently repeat a destructive request.
+            cp.used_destructive_intent_ids.append(gate["intent_id"])
         result = executor(edge, carrier)
         receipts.append(result)
         steps += 1
