@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""User-supplied hierarchical file-graph SIMULATION and six-source projection gate.
+r"""User-supplied hierarchical file-graph SIMULATION and six-source projection gate.
 
 This module does not browse any real filesystem or call a language model.
 For actual Windows physical traversal, retain the existing
@@ -98,7 +98,7 @@ class HierarchicalNavigator:
         return {
             "ok": True, "reached": current_path, "steps": steps,
             "path_history": list(self.path_history),
-            "readback_verified": True, "proof_scope": "SIMULATED_GRAPH_ONLY",
+            "readback_verified": False, "simulation_verified": True, "proof_scope": "SIMULATED_GRAPH_ONLY",
         }
 
 
