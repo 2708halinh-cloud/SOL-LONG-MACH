@@ -160,18 +160,19 @@
   },
   "environments": [
     {
-      "environment_id": "REDMI_ANDROID_SHARED",
+      "environment_id": "XIAOMI12_ANDROID_SHARED",
       "realm": "DIGITAL",
       "coordinate": {
         "provider": "ANDROID_SHARED_STORAGE",
-        "device_or_runtime": "ANDROID_DEVICE_NOT_POSITIVELY_IDENTIFIED",
+        "device_or_runtime": "2201123G/cupid (Xiaomi 12)",
         "namespace": "USER_EMULATED_STORAGE",
-        "path_or_uri": "/storage/emulated/0/SOL-LONG-MACH/OS_Workspace"
+        "path_or_uri": "/storage/emulated/0/SOL-LONG-MACH/OS_Workspace",
+        "carrier_id": "Remote Desktop Commander device bcae1dd6-bf63-4f27-9476-d5621b590c16"
       },
-      "state": "EXACT_REQUESTED_PATH_CREATED_AND_READBACK_VERIFIED_ON_CONNECTED_TERMUX",
-      "source_kind": "USER_REQUEST_PLUS_DIRECT_PATH_PROBE",
+      "state": "XIAOMI12_WORKSPACE_CREATED_AND_TESTED",
+      "source_kind": "LIVE_PROBE_ON_XIAOMI12_NOT_REDMI",
       "readback_verified": true,
-      "readback_scope": "DIRECTORY_AND_2_FILES_ON_TERMUX_CONNECTED_ANDROID_ONLY; HARDWARE_IDENTITY_NOT_VERIFIED",
+      "readback_scope": "Created workspace and executed hierarchical_agent.py on Xiaomi 12 only; not evidence about the Redmi filesystem",
       "file_proofs": [
         {
           "relative_path": "capabilities/routing/hierarchical_agent.py",
@@ -181,19 +182,45 @@
           "real_fs_traversal_tested": false
         }
       ],
-      "connected_termux_python_version": "3.14.6"
+      "connected_termux_python_version": "3.14.6",
+      "gpu_metadata_source": "NONE_XIAOMI12_GPU_WAS_NOT_MEASURED_FOR_THIS_REPORT"
     },
     {
-      "environment_id": "TERMUX_LOCALHOST_CONNECTED",
+      "environment_id": "REDMI_NOTE14_PRO_ANDROID_SHARED",
+      "realm": "DIGITAL",
+      "coordinate": {
+        "provider": "ANDROID_SHARED_STORAGE",
+        "device_or_runtime": "24090RA29G / malachite (Redmi Note 14 Pro)",
+        "namespace": "REDMI_ANDROID_USER_EMULATED_STORAGE",
+        "carrier_id": "Remote Desktop Commander alternate authenticated link device 982bb1fa-a3e1-470d-bbd8-7957b1f195f4",
+        "path_or_uri": "/storage/emulated/0/SOL-LONG-MACH/OS_Workspace"
+      },
+      "state": "PREEXISTING_WORKSPACE_VERIFIED_ON_REDMI; GLESSY_TOML_WRITTEN_AND_PARSED_ON_REDMI",
+      "source_kind": "USER_ORIGIN_GPU_EXPORT_PLUS_DIRECT_REDMI_SHELL_VERIFICATION",
+      "gpu_source": "USER_EXPORT_FROM_REDMI_NOTE14_PRO_ANDROID16",
+      "gpu_metadata_not_independently_queried": true,
+      "device_identity_shell_verified": true,
+      "readback_verified": true,
+      "readback_scope": "getprop model 24090RA29G + device malachite; Glessy.toml read with Python tomllib; 7135 bytes; OpenGL 110 / EGL 37 / limits 16",
+      "glessy_sha256": "694be36313aff7cd999444cd2cfff2d7702d377dae395a7ae8266abe577e781f",
+      "preexisting_workspace_tools": [
+        "SPACE_TIME_RECONSTRUCTION",
+        "TIME_STONE",
+        "TOOL_CALL"
+      ],
+      "noninterchangeable_with": "XIAOMI12_ANDROID_SHARED"
+    },
+    {
+      "environment_id": "XIAOMI12_TERMUX_CONNECTED",
       "realm": "DIGITAL",
       "coordinate": {
         "provider": "ANDROID_TERMUX",
-        "device_or_runtime": "localhost",
+        "device_or_runtime": "2201123G/cupid (Xiaomi 12)",
         "namespace": "TERMUX_HOME",
         "path_or_uri": "/data/data/com.termux/files/home",
-        "carrier_id": "remote_desktop_commander_session"
+        "carrier_id": "Remote Desktop Commander device bcae1dd6-bf63-4f27-9476-d5621b590c16"
       },
-      "state": "DEVICE_ONLINE_READABLE",
+      "state": "TERMUX_SHELL_ON_XIAOMI12",
       "source_kind": "DIRECT_DEVICE_SHELL",
       "readback_verified": true
     },
@@ -286,6 +313,20 @@
       },
       "state": "NO_VERIFIED_GEOMETRIC_SAMPLE",
       "readback_verified": false
+    },
+    {
+      "environment_id": "REDMI_NOTE14_PRO_TERMUX",
+      "realm": "DIGITAL",
+      "coordinate": {
+        "provider": "ANDROID_TERMUX",
+        "device_or_runtime": "24090RA29G / malachite",
+        "namespace": "TERMUX_HOME",
+        "carrier_id": "Remote Desktop Commander link_6ad3cc00a7248191a5580a9e23009dd1 / device 982bb1fa-a3e1-470d-bbd8-7957b1f195f4",
+        "path_or_uri": "/data/data/com.termux/files/home"
+      },
+      "state": "INDEPENDENT_REMI_TERMUX_INSTANCE_OBSERVED",
+      "readback_verified": true,
+      "readback_scope": "getprop model/device and directory listing, not a full trace source byte read"
     }
   ],
   "relations": [
@@ -302,13 +343,13 @@
       "proof": "GET_/api/version_ON_WINDOWS_ONLY"
     },
     {
-      "from": "TERMUX_LOCALHOST_CONNECTED",
+      "from": "XIAOMI12_TERMUX_CONNECTED",
       "edge": "CAN_REACH",
       "to": "http://127.0.0.1:11434",
       "proof": "NEGATIVE_CONNECTION_REFUSED"
     },
     {
-      "from": "TERMUX_LOCALHOST_CONNECTED",
+      "from": "XIAOMI12_TERMUX_CONNECTED",
       "edge": "CAN_REACH",
       "to": "http://10.175.193.90:11434",
       "proof": "NEGATIVE_TIMEOUT"
@@ -318,6 +359,12 @@
       "edge": "CAN_REACH",
       "to": "http://10.175.193.90:11434",
       "proof": "NEGATIVE_TIMEOUT"
+    },
+    {
+      "from": "REDMI_NOTE14_PRO_TERMUX",
+      "edge": "OBSERVED_WORKSPACE_ON",
+      "to": "REDMI_NOTE14_PRO_ANDROID_SHARED",
+      "proof": "DIRECT_REDMI_GETPROP_AND_WORKSPACE_LIST"
     }
   ],
   "service_endpoints": {
@@ -362,16 +409,17 @@
     }
   },
   "operations": {
-    "deployment": "G_OS_WORKSPACE_AND_ANDROID_TARGET_DEPLOYED",
+    "deployment": "REDMI_GLESSY_CONFIRMED; XIAOMI12_NAVIGATOR_CONFIRMED; CARRIERS_DISTINCT",
     "permissions": "NO_SECRET_VALUES",
     "no_automatic_network_changes": true,
     "no_digital_xyz": true,
     "no_invented_source_hash": true,
     "no_fake_readback": true,
     "no_task_closure_on_one_action": true,
-    "android_run_receipt": "ANDROID_TEST_RESULT=PASS; 3 verified demo edges, failed hop refused, 6 user-asserted views preserved",
+    "android_run_receipt": "XIAOMI12 ONLY: hierarchical_agent.py 3-hop simulation PASS; not REDMI.",
     "do_not_identify_android_hardware_from_label": true,
-    "android_device_localhost_ollama_reachable": false,
-    "windows_ollama_loopback_reachable": true
+    "android_device_localhost_ollama_reachable": "XIAOMI12: YES via temporary SSH tunnel at 2026-10-21; REDMI: NOT TESTED",
+    "windows_ollama_loopback_reachable": true,
+    "source_attribution_correction": "GPU OpenGL/EGL data originate from user's REDMI NOTE 14 PRO 24090RA29G Android 16 export; comparison to XIAOMI12 2201123G was an incorrect assistant device selection, not inaccurate user data"
   }
 }
