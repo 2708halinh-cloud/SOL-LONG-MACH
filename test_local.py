@@ -3,7 +3,7 @@
 Cấu hình qua biến môi trường (không lưu mã bí mật vào mã nguồn):
   OLLAMA_BASE_URL  mặc định http://127.0.0.1:11434/v1
   OLLAMA_API_KEY   mặc định ollama (Ollama local thông thường không xác thực)
-  OLLAMA_MODEL     mặc định llama3
+  OLLAMA_MODEL     mặc định ggdv-human-sol-coder-lite:1.0
 """
 import os
 from openai import OpenAI
@@ -19,7 +19,7 @@ print("Đang kết nối tới Local Model...")
 
 try:
     response = client.chat.completions.create(
-        model=os.getenv("OLLAMA_MODEL", "llama3"),
+        model=os.getenv("OLLAMA_MODEL", "ggdv-human-sol-coder-lite:1.0"),
         messages=[
             {"role": "system", "content": "Bạn là một trợ lý AI hữu ích."},
             {"role": "user", "content": "Chào bạn, hãy giới thiệu ngắn gọn về bản thân bằng tiếng Việt."},
@@ -34,3 +34,4 @@ except Exception as e:
     print(f"\n[Lỗi kết nối]: {type(e).__name__}: {e}")
     print("Mẹo kiểm tra: hãy chắc chắn Ollama đang mở và model đã được tải.")
     print("Có thể kiểm tra model bằng lệnh: ollama list")
+    raise SystemExit(1)
