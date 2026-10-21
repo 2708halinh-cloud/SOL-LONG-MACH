@@ -304,6 +304,24 @@
         "Read original source checkpoint, preserve work already done, inspect exact target before taking action"
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary"
+    },
+    {
+      "id": "ANDROID_OLLAMA_LOCALHOST_CHAT_UI",
+      "status": "OPEN",
+      "goal": "Reconcile Android Chrome 'Sol ơi' page at http://127.0.0.1:11434 with live Ollama API on Windows; restore user-facing response without stale status or unwanted mixed language",
+      "observed": [
+        "Screenshot 2026-10-21 15:08 Android Chrome shows Sol ơi UI, green TRỰC TIẾP badge, mixed Vietnamese/French reply, later chat response pending",
+        "Fresh Windows Desktop Commander GET http://127.0.0.1:11434/ returned HTTP 200 text/plain 'Ollama is running'",
+        "Fresh Android Termux Remote Desktop Commander GET http://127.0.0.1:11434/ returned connection refused; no listening server observed on that port by curl",
+        "Android 127.0.0.1 is not Windows 127.0.0.1 unless explicit tunnel/forwarder; prior Windows Ollama API chat test worked"
+      ],
+      "next": [
+        "Identify which Android app/PWA/service worker served 'Sol ơi' and whether browser page is stale",
+        "Inspect intended Android ↔ Windows connection and routing through authorized tunnel only",
+        "Test chat API end-to-end from Android without exposing unauthenticated Ollama to public/LAN",
+        "Verify live UI state reflects actual backend and keep model prompt/language handling scoped"
+      ],
+      "guard": "Do not classify screenshot as model failure, assume default Ollama UI, or expose open Ollama socket; no destructive browser/cache reset without protecting history"
     }
   ],
   "session_receipts": {
