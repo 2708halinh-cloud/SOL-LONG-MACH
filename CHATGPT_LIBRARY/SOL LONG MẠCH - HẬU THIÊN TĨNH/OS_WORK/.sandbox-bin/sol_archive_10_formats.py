@@ -45,11 +45,18 @@ def stamp(name):
 def inspect(path):
     path=Path(path)
     out={"schema":"SOL_ARCHIVE_10_FORMATS_V1","basename":path.name,
-      "bytes":path.stat().st_size,"sha256":sha(path),"detected":fmt(path),
+      "bytes":None,"sha256":None,"detected":"UNRECOGNIZED",
       "stamp_old_candidates":stamp(path.name),"account":"ACCOUNT_UNVERIFIED",
       "sensitive_data_copied":False,"extraction_performed":False,
       "adapter":None,"status":"UNSUPPORTED","member_count":None,
       "expanded_bytes":None,"error_code":None}
+    # A missing or unreadable source must fail closed without aborting the batch.
+    try:
+        out.update(bytes=path.stat().st_size,sha256=sha(path),detected=fmt(path))
+    except (OSError, ValueError) as e:
+        out["status"]="FAILED_SAFE"
+        out["error_code"]=type(e).__name__
+        return out
     kind=out["detected"]
     try:
         if kind in ("ZIP","JAR"):
