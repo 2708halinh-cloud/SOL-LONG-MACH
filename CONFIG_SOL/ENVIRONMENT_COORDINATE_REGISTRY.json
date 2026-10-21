@@ -1,0 +1,362 @@
+{
+  "$schema": "SOL_ENVIRONMENT_COORDINATE_REGISTRY/1.0",
+  "entity_id": "ENT-T6D-NAV-GRAPH-2026",
+  "source": {
+    "kind": "USER_DIRECT_INSTRUCTION",
+    "origin_source_literal": "ingestion_gate_payload_03.txt",
+    "origin_source_file_readback": "UNVERIFIED",
+    "illustrative_hash_is_proof": false,
+    "directives": [
+      "SPACE_STONE owns environment, topology, position, relationship, address, carrier",
+      "TIME_STONE owns times, revision, event order, historic snapshots",
+      "EARTH_PEOPLE uses right-handed Cartesian 3D with time",
+      "DIGITAL uses topological identity coordinates, never coerced to x,y,z",
+      "COMPUTER_KHI_BRAIN_OS_POWER routes one source into six projections",
+      "OS_WORKSPACE receives tool, capability, skill, code, work",
+      "No platform-derived personal facts or unverified readback claims"
+    ]
+  },
+  "realms": {
+    "DIGITAL": {
+      "coordinate_type": "TOPOLOGICAL_IDENTITY",
+      "fields": [
+        "provider",
+        "account_or_tenant",
+        "device_or_runtime",
+        "namespace",
+        "carrier_id",
+        "parent_node_id",
+        "path_or_uri",
+        "revision"
+      ],
+      "spatial_edges": [
+        "CONTAINS",
+        "PARENT_OF",
+        "MOUNTED_ON",
+        "EXECUTES_ON",
+        "CONNECTED_BY",
+        "MIRRORED_TO"
+      ],
+      "rules": [
+        "Traversal requires a witnessed direct-parent edge",
+        "An address is not a confirmed connection",
+        "One provider namespace is not equivalent to another provider's localhost"
+      ]
+    },
+    "EARTH_PEOPLE": {
+      "coordinate_type": "RIGHT_HANDED_CARTESIAN_3D_PLUS_TIME",
+      "fields": [
+        "reference_frame_id",
+        "origin",
+        "x",
+        "y",
+        "z",
+        "units",
+        "timestamp",
+        "uncertainty"
+      ],
+      "frame": null,
+      "position": null,
+      "timestamp": null,
+      "state": "FRAME_AND_COORDINATES_NOT_SUPPLIED",
+      "rule": "Do not substitute an IP address, profile, or guessed location for a measured 3D coordinate"
+    }
+  },
+  "components": {
+    "SPACE_STONE": {
+      "responsibility": [
+        "environment",
+        "topology",
+        "position",
+        "relations",
+        "address",
+        "carrier"
+      ]
+    },
+    "TIME_STONE": {
+      "responsibility": [
+        "timestamp",
+        "revision",
+        "event_sequence",
+        "historical_snapshot"
+      ]
+    },
+    "COMPUTER_KHI_BRAIN_OS_POWER": {
+      "input": "PERSONAL_OR_CONVERSATION_EVENT_WITH_SOURCE_REF",
+      "operation": "DETERMINISTIC_SIX_VIEW_PROJECTION_NOT_MODEL_INFERENCE",
+      "same_origin_required": true
+    },
+    "OS_WORKSPACE": {
+      "accepts": [
+        "TOOL",
+        "CAPABILITY",
+        "SKILL",
+        "CODE",
+        "WORK"
+      ],
+      "verified_windows_root": "G:\\OS_Workspace"
+    }
+  },
+  "projections": {
+    "DA_MIND 🟡": {
+      "axis": "ARCHITECTURE_DESIGN",
+      "reads": [
+        "source_asserted_topic",
+        "source_asserted_perception_tags"
+      ],
+      "invent_inference": false
+    },
+    "MAU_REALITY 🔴": {
+      "axis": "SOURCE_OR_RECEIPT_GROUNDED_FACTS",
+      "reads": [
+        "facts_with_receipts",
+        "source_assertions_separately"
+      ],
+      "invent_inference": false
+    },
+    "THIT_SOUL 🟠": {
+      "axis": "CONTINUITY_AND_IDENTITY_ANCHOR",
+      "reads": [
+        "source_asserted_constraints",
+        "identity_anchor"
+      ],
+      "invent_inference": false
+    },
+    "XUONG_SPACE 🔵": {
+      "axis": "ENVIRONMENT_AND_TOPOLOGICAL_RELATIONS",
+      "reads": [
+        "verified_carriers",
+        "verified_parent_child_edges"
+      ],
+      "invent_inference": false
+    },
+    "TOC_TIME 🟢": {
+      "axis": "EVENT_AND_REVISION_CHAIN",
+      "reads": [
+        "timestamp",
+        "revision",
+        "source_event_order"
+      ],
+      "invent_inference": false
+    },
+    "KHI_POWER 🟣": {
+      "axis": "AUTHORIZED_CAPABILITY_AND_EFFECT",
+      "reads": [
+        "available_tools",
+        "execution_receipts"
+      ],
+      "invent_inference": false
+    }
+  },
+  "sample_payload": {
+    "entity_id": "ENT-T6D-NAV-GRAPH-2026",
+    "origin_source_literal": "ingestion_gate_payload_03.txt",
+    "source_reported_example_path": "C:\\Users\\Halin\\.config",
+    "example_is_simulated": true,
+    "sample_timestamp": "2026-10-21T08:28:00Z",
+    "sample_revision": 1,
+    "original_hash_verified": false,
+    "copy_to_android_verified": false
+  },
+  "environments": [
+    {
+      "environment_id": "REDMI_ANDROID_SHARED",
+      "realm": "DIGITAL",
+      "coordinate": {
+        "provider": "ANDROID_SHARED_STORAGE",
+        "device_or_runtime": "ANDROID_DEVICE_NOT_POSITIVELY_IDENTIFIED",
+        "namespace": "USER_EMULATED_STORAGE",
+        "path_or_uri": "/storage/emulated/0/SOL-LONG-MACH/OS_Workspace"
+      },
+      "state": "PATH_NOT_FOUND_ON_CONNECTED_TERMUX_DEVICE",
+      "source_kind": "USER_REQUEST_PLUS_DIRECT_PATH_PROBE",
+      "readback_verified": false
+    },
+    {
+      "environment_id": "TERMUX_LOCALHOST_CONNECTED",
+      "realm": "DIGITAL",
+      "coordinate": {
+        "provider": "ANDROID_TERMUX",
+        "device_or_runtime": "localhost",
+        "namespace": "TERMUX_HOME",
+        "path_or_uri": "/data/data/com.termux/files/home",
+        "carrier_id": "remote_desktop_commander_session"
+      },
+      "state": "DEVICE_ONLINE_READABLE",
+      "source_kind": "DIRECT_DEVICE_SHELL",
+      "readback_verified": true
+    },
+    {
+      "environment_id": "WINDOWS_DESKTOP_86ITNQ4",
+      "realm": "DIGITAL",
+      "coordinate": {
+        "provider": "WINDOWS_NTFS",
+        "device_or_runtime": "DESKTOP-86ITNQ4",
+        "namespace": "WINDOWS_HOST",
+        "path_or_uri": "D:\\SOL_LONG_MACH\\MODEL\\repo",
+        "carrier_id": "REMOTE_DESKTOP_COMMANDER"
+      },
+      "observed_ipv4_on_ethernet": "10.15.224.19/24",
+      "os_workspace": "G:\\OS_Workspace",
+      "state": "HOST_AND_CARRIER_VERIFIED",
+      "readback_verified": true
+    },
+    {
+      "environment_id": "WSL_LOCAL",
+      "realm": "DIGITAL",
+      "coordinate": {
+        "provider": "WINDOWS_WSL",
+        "device_or_runtime": "UNVERIFIED_IN_CURRENT_PROBE",
+        "namespace": "WSL",
+        "path_or_uri": null
+      },
+      "state": "UNVERIFIED",
+      "readback_verified": false
+    },
+    {
+      "environment_id": "GITHUB_SOL_LONG_MACH",
+      "realm": "DIGITAL",
+      "coordinate": {
+        "provider": "GITHUB",
+        "namespace": "REPOSITORY",
+        "path_or_uri": "2708halinh-cloud/SOL-LONG-MACH",
+        "carrier_id": "GITHUB_CONNECTOR"
+      },
+      "state": "REPO_READ_WRITE_VERIFIED_IN_CONVERSATION",
+      "readback_verified": true
+    },
+    {
+      "environment_id": "GOOGLE_DRIVE_DOT_CODEX",
+      "realm": "DIGITAL",
+      "coordinate": {
+        "provider": "GOOGLE_DRIVE",
+        "namespace": "DRIVE_FOLDER",
+        "carrier_id": "18P-i-4pCcRf6IdnPmrQJUWJZh8cBX9jm",
+        "path_or_uri": "https://drive.google.com/drive/folders/18P-i-4pCcRf6IdnPmrQJUWJZh8cBX9jm"
+      },
+      "state": "OLDER_CONFIG_LISTING_READBACK_VERIFIED",
+      "readback_verified": true
+    },
+    {
+      "environment_id": "CHATGPT_PROJECT",
+      "realm": "DIGITAL",
+      "coordinate": {
+        "provider": "CHATGPT",
+        "namespace": "PROJECT_CONTEXT",
+        "path_or_uri": "THU HOI NGUON SOL",
+        "carrier_id": "ACTIVE_CONVERSATION"
+      },
+      "state": "CONVERSATION_CONTEXT_NOT_SAME_AS_LOCAL_FILESYSTEM",
+      "readback_verified": true
+    },
+    {
+      "environment_id": "DROPBOX_CONNECTED",
+      "realm": "DIGITAL",
+      "coordinate": {
+        "provider": "DROPBOX",
+        "namespace": "CONNECTED_ACCOUNT",
+        "carrier_id": "MCP_DROPBOX",
+        "path_or_uri": null
+      },
+      "state": "CONNECTOR_AVAILABLE_EXACT_TARGET_UNVERIFIED",
+      "readback_verified": false
+    },
+    {
+      "environment_id": "EARTH_PEOPLE",
+      "realm": "EARTH_PEOPLE",
+      "coordinate": {
+        "reference_frame_id": null,
+        "origin": null,
+        "x": null,
+        "y": null,
+        "z": null,
+        "units": null,
+        "timestamp": null
+      },
+      "state": "NO_VERIFIED_GEOMETRIC_SAMPLE",
+      "readback_verified": false
+    }
+  ],
+  "relations": [
+    {
+      "from": "WINDOWS_DESKTOP_86ITNQ4",
+      "edge": "CONTAINS",
+      "to": "G:\\OS_Workspace",
+      "proof": "DIRECT_WINDOWS_FILESYSTEM"
+    },
+    {
+      "from": "WINDOWS_DESKTOP_86ITNQ4",
+      "edge": "EXECUTES",
+      "to": "OLLAMA_LOOPBACK_WINDOWS",
+      "proof": "GET_/api/version_ON_WINDOWS_ONLY"
+    },
+    {
+      "from": "TERMUX_LOCALHOST_CONNECTED",
+      "edge": "CAN_REACH",
+      "to": "http://127.0.0.1:11434",
+      "proof": "NEGATIVE_CONNECTION_REFUSED"
+    },
+    {
+      "from": "TERMUX_LOCALHOST_CONNECTED",
+      "edge": "CAN_REACH",
+      "to": "http://10.175.193.90:11434",
+      "proof": "NEGATIVE_TIMEOUT"
+    },
+    {
+      "from": "WINDOWS_DESKTOP_86ITNQ4",
+      "edge": "CAN_REACH",
+      "to": "http://10.175.193.90:11434",
+      "proof": "NEGATIVE_TIMEOUT"
+    }
+  ],
+  "service_endpoints": {
+    "local_model": {
+      "windows_verified_base_url": "http://127.0.0.1:11434/v1",
+      "lan_candidate_base_url": "http://10.175.193.90:11434/v1",
+      "lan_candidate_verified": false,
+      "api_key_from_env": "OLLAMA_API_KEY",
+      "api_key_value_persisted": false,
+      "model_name_from_env": "OLLAMA_MODEL",
+      "default_verified_local_model": "ggdv-human-sol-coder-lite:1.0",
+      "do_not_forward_personal_platform_data_to_remote_inference": true
+    },
+    "nextdns": {
+      "apply_status": "NOT_APPLIED",
+      "profiles": [
+        {
+          "id": "ed8a26",
+          "dot": "ed8a26.dns.nextdns.io",
+          "doh": "https://dns.nextdns.io/ed8a26",
+          "ipv4_dns": [
+            "45.90.28.77",
+            "45.90.30.77"
+          ],
+          "target_interface": "UNRESOLVED"
+        },
+        {
+          "id": "f9c9f9",
+          "dot": "f9c9f9.dns.nextdns.io",
+          "doh": "https://dns.nextdns.io/f9c9f9",
+          "ipv4_dns": [
+            "45.90.28.115",
+            "45.90.30.115"
+          ],
+          "target_interface": "UNRESOLVED"
+        }
+      ],
+      "linked_ip_updater_values_persisted": false,
+      "linked_ip_observed_from_user": "SOURCE_SUPPLIED_UNVERIFIED",
+      "user_reported_172_18_0_0_netmask_255_255_255_252": "SOURCE_REPORTED_NOT_LIVE_INTERFACE",
+      "remote_dns_changes_prohibited_until_target_verified": true
+    }
+  },
+  "operations": {
+    "deployment": "INITIAL_REGISTRY_SOURCE_READY",
+    "permissions": "NO_SECRET_VALUES",
+    "no_automatic_network_changes": true,
+    "no_digital_xyz": true,
+    "no_invented_source_hash": true,
+    "no_fake_readback": true,
+    "no_task_closure_on_one_action": true
+  }
+}
