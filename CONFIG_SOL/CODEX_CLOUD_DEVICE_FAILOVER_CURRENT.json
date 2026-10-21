@@ -38,7 +38,10 @@
       "file_id": "1t4XhF6-TGW69SFvqYi9ynBBHP8H2F-LL",
       "filename": "config.toml",
       "content_sha256": "UNKNOWN",
-      "same_bytes_as_local": "NOT_VERIFIED"
+      "same_bytes_as_local": "NO_SIZE_MISMATCH",
+      "byte_size": 4334,
+      "last_modified": "2026-08-31T01:35:17.097Z",
+      "latest_verified": false
     },
     "github": {
       "repo": "2708halinh-cloud/SOL-LONG-MACH",
@@ -59,7 +62,7 @@
   "offline_mcp_reentry": {
     "candidate_provider": "Google Drive connector",
     "source_file_id": "1t4XhF6-TGW69SFvqYi9ynBBHP8H2F-LL",
-    "condition": "Readable via authenticated Google Drive MCP even when desktop offline",
+    "condition": "Provider metadata and historical config.toml exist independently of connected Windows device; offline content read has not been exercised.",
     "limitation": "Historical local config replica only; not proven latest; cannot execute computer commands or access live Codex Cloud secret values while host offline",
     "validation_required": [
       "compare SHA-256 of actual file bytes",
@@ -71,5 +74,5 @@
   "no_overwrite": true,
   "no_secret_values": true,
   "metadata_only": true,
-  "next_state": "MCP_FALLBACK_POINTER_PRESENT_H_BACKUP_NOT_EXECUTED"
+  "next_state": "MCP_FALLBACK_POINTER_VERIFIED_OLDER_DRIVE_SNAPSHOT_H_UNWRITTEN"
 }
