@@ -73,7 +73,10 @@
         "Determine source-verified profile-to-interface role; prefer encrypted DNS without disrupting remote connectivity",
         "Test NextDNS endpoint identification and readback from target"
       ],
-      "guard": "Keep linked-IP update token private; do not trigger linked-IP update from non-target public IP or combine independent resolver profiles"
+      "guard": "Keep linked-IP update token private; do not trigger linked-IP update from non-target public IP or combine independent resolver profiles",
+      "live_progress": [
+        "Windows read-only RFC8484 DNS-over-HTTPS query returned HTTP 200 application/dns-message, response bytes 61"
+      ]
     },
     {
       "id": "NEXTDNS_F9C9F9",
@@ -87,7 +90,10 @@
         "Resolve target mapping and encrypted DNS without altering static IP/gateway or other profile",
         "Readback from intended interface/device"
       ],
-      "guard": "No cross-profile mixing; no linked-IP update token in public ledger"
+      "guard": "No cross-profile mixing; no linked-IP update token in public ledger",
+      "live_progress": [
+        "Windows read-only RFC8484 DNS-over-HTTPS query returned HTTP 200 application/dns-message, response bytes 61"
+      ]
     },
     {
       "id": "TESSERACT_REAL_BOOT",
@@ -321,7 +327,12 @@
         "Test chat API end-to-end from Android without exposing unauthenticated Ollama to public/LAN",
         "Verify live UI state reflects actual backend and keep model prompt/language handling scoped"
       ],
-      "guard": "Do not classify screenshot as model failure, assume default Ollama UI, or expose open Ollama socket; no destructive browser/cache reset without protecting history"
+      "guard": "Do not classify screenshot as model failure, assume default Ollama UI, or expose open Ollama socket; no destructive browser/cache reset without protecting history",
+      "live_progress": [
+        "Termux established TCP connection to Windows 10.15.224.19:22; SSH banner OpenSSH_for_Windows_9.5",
+        "Windows sshd Running Automatic; TCP loopback 22 verified",
+        "Termux openssh package install initiated; tunnel and app relay not yet proven"
+      ]
     },
     {
       "id": "SIX_PROJECTIONS_ENVIRONMENT_REGISTRY",
@@ -339,12 +350,19 @@
         "User example source_hash/readback_verified values explicitly not treated as receipts"
       ],
       "next": [
-        "Resolve existing Android OS_WORKSPACE target without creating speculative parallel trees",
-        "Verify physical provider-to-provider edges and source metadata independent of example claims",
-        "Apply encrypted DNS only on explicitly mapped interface with rollback and readback",
-        "Validate source ingestion and six projections against exact source file before marking content copied"
+        "Prove actual filesystem provider traversal with existing Windows hierarchical_graph_router.py (not simulated graph)",
+        "Trace six projection source file bytes and ingestion gate",
+        "Keep tool capability and environment registry source-bound; do not reset existing tasks"
       ],
-      "guard": "Do not call simulation physical navigation; no secret values in repo; never infer EARTH_PEOPLE coordinates or AI moral labels from platform content"
+      "guard": "Do not call simulation physical navigation; no secret values in repo; never infer EARTH_PEOPLE coordinates or AI moral labels from platform content",
+      "completed_substeps": [
+        "Android exact destination created: /storage/emulated/0/SOL-LONG-MACH/OS_Workspace/capabilities/routing",
+        "Android copied hierarchical_agent.py and ENVIRONMENT_COORDINATE_REGISTRY.json from existing GitHub source",
+        "Android Termux Python 3.14.6 smoke test passed: 3 direct-child hops, missing child blocked, 6 projections, no model inference",
+        "Android and Windows SHA-256 hierarchical_agent.py = 5ddefe3985ac321b5fc38f50ccf8f46b5828cb7fb98781ef2d3bf63dbe0750d9",
+        "Registry in GitHub updated with Android verified deployment, mirrored to G and Android; Android read_file returned updated 377-line file"
+      ],
+      "current_state": "ANDROID_CARRIER_AND_CODE_DEPLOYED_AND_TESTED; registry and 6D global expansion still OPEN"
     }
   ],
   "session_receipts": {
@@ -419,6 +437,22 @@
       "nextdns_applied": false,
       "android_target_written": false,
       "old_tasks_retained": true
+    },
+    {
+      "id": "ANDROID_SPACE_AND_NEXTDNS_DOH_20261021",
+      "scope": "Physical Windows and connected Android Termux",
+      "android_workspace_written_and_executed": true,
+      "android_local_storage_path": "/storage/emulated/0/SOL-LONG-MACH/OS_Workspace",
+      "android_sha256_code": "5ddefe3985ac321b5fc38f50ccf8f46b5828cb7fb98781ef2d3bf63dbe0750d9",
+      "android_runtime_test": "PASS",
+      "nextdns_doh_test": {
+        "ed8a26": "HTTP200 rfc8484",
+        "f9c9f9": "HTTP200 rfc8484"
+      },
+      "dns_configuration_changed": false,
+      "android_ollama_tunnel": "NOT_YET_ESTABLISHED",
+      "windows_ssh_port_reached_from_android": true,
+      "all_prior_tasks_preserved": true
     }
   ]
 }
