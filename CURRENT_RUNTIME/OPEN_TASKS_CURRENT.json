@@ -1,0 +1,170 @@
+{
+  "schema": "SOL_OPEN_TASKS_PARALLEL_LEDGER/1.0",
+  "provenance": {
+    "user_directive": "2026-10-21: TẤT CẢ YÊU CẦU CHƯA HOÀN THÀNH PHẢI NEO GIỮ, KHÔNG CHUYỂN QUA LÀM MỘT VIỆC XONG DỪNG LẠI",
+    "observed_at": "2026-10-21T14:39:07+07:00",
+    "source": "Current conversation + verified local device and GitHub readback",
+    "not_exhaustive_history": true
+  },
+  "invariants": {
+    "close_only_on": "EXACT_TARGET_ACTION + PROVIDER_OR_HOST_RECEIPT + OBSERVABLE_CONSEQUENCE + READBACK",
+    "preserve_all_open_tasks": true,
+    "one_task_done_does_not_end_cycle": true,
+    "host_offline_does_not_close_cloud_tasks": true,
+    "no_reset": true,
+    "no_blind_copy": true,
+    "no_secret_value_persistence": true,
+    "no_efi_data_overwrite": true,
+    "single_global_head_authority": false
+  },
+  "reentry_order": [
+    "Read AGENTS.md",
+    "Read CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+    "Read CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "Read CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md",
+    "Fresh-probe available providers and original sources",
+    "Advance all authorized independent edges; never mark other OPEN items DONE when one advances",
+    "Write exact-target receipts; update ledger and source pointers"
+  ],
+  "tasks": [
+    {
+      "id": "CLOUD_UNIVERSAL",
+      "status": "OPEN",
+      "goal": "Perform actual work inside user-created Codex Cloud universal environment for 2708halinh-cloud/SOL-LONG-MACH",
+      "observed": [
+        "2026-10-21 Cloud environment machine=universal, internet enabled, private, reported by user",
+        "Windows Codex CLI 0.163.0-alpha.10.2 was logged into ChatGPT",
+        "codex cloud list returned [] in CLI that may use legacy environment API",
+        "GitHub @codex review on PR#17 is not execution in specified universal environment"
+      ],
+      "next": [
+        "Resolve the cloud-v2 environment ID from authenticated supported Cloud access",
+        "Run read-only task inside exact universal environment and get actual task receipt"
+      ],
+      "guard": "Do not substitute GitHub PR review or chat sandbox for requested Cloud environment"
+    },
+    {
+      "id": "CODEX_CONFIG_PRIVATE_BACKUP",
+      "status": "OPEN",
+      "goal": "Copy current Codex Cloud environment configuration to requested H private assistant space and enable MCP fallback when desktop disconnected",
+      "observed": [
+        "H: was confirmed EFI System partition 4 GiB on KINGSTON alongside G:",
+        "Local D:\\PHÒNG CHỈ HUY\\.codex\\config.toml 12950 bytes, SHA-256 B68E2324E87421B9FAFF438F779762309BE813534AF3F1F389935ACF891CBB35",
+        "Google Drive .codex config.toml 4334 bytes modified 2026-08-31, stale",
+        "Public nonsecret failover pointer exists CONFIG_SOL/CODEX_CLOUD_DEVICE_FAILOVER_CURRENT.json"
+      ],
+      "next": [
+        "Find/create verified encrypted assistant private storage without touching EFI; keep H: target unresolved until its volume role reconciled",
+        "Source-bound export of actual Cloud config, never copy auth.json or secret values to public cloud/git",
+        "Readback backup via independent authenticated provider and verify actual offline retrieval"
+      ],
+      "guard": "Do not overwrite EFI H: or assume old Drive config is current"
+    },
+    {
+      "id": "NEXTDNS_ED8A26",
+      "status": "OPEN",
+      "goal": "Configure/test NextDNS profile ed8a26 on intended target",
+      "observed": [
+        "DoT hostname ed8a26.dns.nextdns.io; DoH https://dns.nextdns.io/ed8a26",
+        "Windows Ethernet ifIndex 10 currently used 45.90.28.0 and 45.90.30.0"
+      ],
+      "next": [
+        "Determine source-verified profile-to-interface role; prefer encrypted DNS without disrupting remote connectivity",
+        "Test NextDNS endpoint identification and readback from target"
+      ],
+      "guard": "Keep linked-IP update token private; do not trigger linked-IP update from non-target public IP or combine independent resolver profiles"
+    },
+    {
+      "id": "NEXTDNS_F9C9F9",
+      "status": "OPEN",
+      "goal": "Configure/test independent NextDNS profile f9c9f9 on intended target",
+      "observed": [
+        "DoT hostname f9c9f9.dns.nextdns.io; DoH https://dns.nextdns.io/f9c9f9",
+        "User-reported VNP 172.18.0.0/30 differs from live Windows Ethernet 10.15.224.19/24"
+      ],
+      "next": [
+        "Resolve target mapping and encrypted DNS without altering static IP/gateway or other profile",
+        "Readback from intended interface/device"
+      ],
+      "guard": "No cross-profile mixing; no linked-IP update token in public ledger"
+    },
+    {
+      "id": "TESSERACT_REAL_BOOT",
+      "status": "OPEN",
+      "goal": "Actually boot and verify TESSERACT_OS",
+      "observed": [
+        "UEFI boot files bootx64.efi, BCD, boot.sdi, boot.wim found on G and H",
+        "2026-10-10 UEFI receipt is asset preparation only",
+        "TESSERACT_BOOT.cmd prints BOOTED and opens WinPE maintenance shell; receipt not proof of OS boot",
+        "QEMU binary present but --version exited -1073741520",
+        "Get-VM requires elevated authorization, failed"
+      ],
+      "next": [
+        "Verify firmware/WinPE handoff safely by authorized non-destructive VM or one-time physical boot with independent receipt",
+        "Investigate QEMU dependency exit and alternative VM authorization without host reboot"
+      ],
+      "guard": "Do not run destructive UEFI finalizer/format or reboot connected host under remote-only session; preserve boot continuity"
+    },
+    {
+      "id": "WORKSPACE_32GB_DURABLE",
+      "status": "OPEN",
+      "goal": "Reclaim entire Linux /workspace 32 GiB as durable work storage",
+      "observed": [
+        "Current container /workspace exists on 32 GiB writable overlay with ~30 GiB available",
+        "/workspace/library-files, /workspace/scratch have mode 0755; /workspace/shared/downloads mode 0700",
+        "No proof overlay persists between instances; it is not Windows H: or G: partition",
+        "Windows Get-Partition has no distinct mounted 32GiB Workspace partition"
+      ],
+      "next": [
+        "Preserve existing /workspace structure and use it for current work without deleting original files",
+        "Establish durable backing/snapshot/mirror to authorized long-term carrier; verify cross-session readback before claiming persistence"
+      ],
+      "guard": "Do not reformat Windows volumes to recreate a cloud filesystem"
+    },
+    {
+      "id": "INHERITED_TESSERACT_DESKTOP",
+      "status": "OPEN_CARRIED",
+      "goal": "Continue pre-existing TESSERACT Desktop tasks without losing prior checkpoint",
+      "source": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+      "observed": [
+        "Earlier PR#6 workflow, reviewer and CI runner assignment issues remain explicitly recorded in prior checkpoint"
+      ],
+      "next": [
+        "Fresh-read original checkpoint and provider state; resume unresolved independent runner and issuer-key edges"
+      ],
+      "guard": "Do not overwrite or relabel inherited task done from this ledger"
+    },
+    {
+      "id": "HISTORICAL_BACKLOG_IMPORT",
+      "status": "OPEN_CARRIED",
+      "goal": "Preserve all other unfinished source-bound requests across prior conversations",
+      "sources": [
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+        "AGENTS.md",
+        "CONFIG_SOL/CODEX_CLOUD_DEVICE_FAILOVER_CURRENT.json"
+      ],
+      "next": [
+        "Scan existing ledgers and source carriers for all OPEN/FLASE/unfinished edges and add them without inventing states",
+        "Do not suppress old tasks because they are absent from a single chat window"
+      ],
+      "guard": "Not an assertion that eight entries cover every historical obligation"
+    }
+  ],
+  "session_receipts": {
+    "local_braid": {
+      "six_forces": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261021T073754621331Z.json",
+      "six_forces_sha256": "f4f1bea00959c280617e1a6c8aae90d325ad71d63957b6f693a067c6da662c43",
+      "plural": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261021T073754769935Z.json",
+      "receipt_readback_ok": true,
+      "not_claiming_cloud_execution": true
+    }
+  },
+  "sinks": {
+    "canonical": "GitHub:CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "local_mirror": "G:\\OS_Workspace\\TESSERACT_OS\\continuity\\OPEN_TASKS_CURRENT.json",
+    "cloud_workspace_mirror": "/workspace/library-files/OPEN_TASKS_CURRENT.json",
+    "sync": "MUST_READBACK_EACH_INDEPENDENTLY"
+  },
+  "current_status": "PARTIALLY_EXECUTED_ALL_OPEN_RETAINED"
+}
