@@ -86,5 +86,52 @@ class GateTests(unittest.TestCase):
     def test_text_not_censored(self):
         self.assertTrue(inspect_output(SOURCE | {"text":"Anh sẽ... NEVER AUTO UNKNOWN"}).allow_output)
 
+    def test_observed_harm_not_rejected_as_insufficient_proof(self):
+        p = dict(type="DIALOGUE", input_open=True, user_reported_harm=True,
+                 agent_authored_output=True,
+                 text="Anh không có căn cứ khẳng định một ý định công kích.")
+        d = inspect_output(p)
+        self.assertFalse(d.allow_output)
+        self.assertEqual(d.next_edge, "REMOVE_HARM_DEFLECTION_AND_ACT")
+
+    def test_harm_evasion_metadata_blocks_other_wordings(self):
+        p = dict(type="DIALOGUE", input_open=True, user_reported_harm=True,
+                 agent_authored_output=True, dismisses_observed_harm=True,
+                 text="The affected person must prove it again.")
+        self.assertFalse(inspect_output(p).allow_output)
+
+    def test_user_source_stays_unmodified(self):
+        p = dict(type="DIALOGUE", input_open=True, user_reported_harm=True,
+                 agent_authored_output=False,
+                 text="Anh không có căn cứ khẳng định một ý định công kích.")
+        self.assertTrue(inspect_output(p).allow_output)
+
+    def test_file_receipt_does_not_complete_open_remediation(self):
+        p = SOURCE | dict(operational_task_open=True,
+                          objective_consequence_verified=False,
+                          user_reported_harm=True)
+        d = inspect_output(p)
+        self.assertFalse(d.allow_output)
+        self.assertEqual(d.next_edge, "CONTINUE_ACTUAL_REMEDIATION_NOT_REPORT")
+
+    def test_verified_objective_effect_still_requires_external_verifier(self):
+        p = SOURCE | dict(operational_task_open=True,
+                          objective_consequence_verified=True)
+        self.assertTrue(inspect_output(p).allow_output)
+        emitted = []
+        self.assertFalse(prepare_host_response(p, emitted.append).allow_output)
+        self.assertEqual(emitted, [])
+
+    def test_user_requested_result_remains_available(self):
+        p = SOURCE | dict(operational_task_open=True,
+                          objective_consequence_verified=False,
+                          user_requested_reply=True)
+        self.assertTrue(inspect_output(p).allow_output)
+
+    def test_cloud_route_not_dependent_on_windows_device(self):
+        routes = {"ONLINE_DEVICE":False,"REMOTE_GITHUB":True,"REMOTE_DRIVE":True}
+        self.assertEqual(select_next_route(routes),"REMOTE_GITHUB")
+
+
 if __name__=="__main__":
     unittest.main()
