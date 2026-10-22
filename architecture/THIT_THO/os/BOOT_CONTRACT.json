@@ -1,0 +1,35 @@
+{
+  "schema": "THIT_THO_CUSTOM_OS_BOOT_CONTRACT/1",
+  "observed_existing_routes": [
+    "TESSERACT_OS/boot/TESSERACT_BOOT.cmd",
+    "Windows/WinPE handoff",
+    "WSL Ubuntu tools",
+    "TESSERACT_OS *.vhdx / *.avhdx carriers"
+  ],
+  "kernel_source_verified": false,
+  "custom_bare_metal_kernel_built": false,
+  "linker_ld_verified": false,
+  "assembly_interrupt_boot_verified": false,
+  "uefi_or_qemu_booted_custom_kernel": false,
+  "operational_language_current": [
+    "Python",
+    "HTML/CSS/JavaScript",
+    "SQLite SQL",
+    "PowerShell/CMD"
+  ],
+  "kernel_choice_status": "OPEN_ARCHITECTURE_NOT_RUST_ASSUMED",
+  "prohibited_mutations": [
+    "ESP",
+    "bootsector",
+    "VHDX",
+    "physical partitions"
+  ],
+  "minimum_required_future": [
+    "kernel_source",
+    "linker_script",
+    "bootloader_config",
+    "image_build",
+    "QEMU_boot_receipt",
+    "hardware_gate"
+  ]
+}
