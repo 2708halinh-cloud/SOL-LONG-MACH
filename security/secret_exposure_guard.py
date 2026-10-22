@@ -32,11 +32,18 @@ PATTERNS = {
     ),
 }
 def tracked_paths():
-    p = subprocess.run(
-        ["git", "-C", str(ROOT), "ls-files", "-z"],
-        capture_output=True, check=True
-    )
-    return [pathlib.PurePosixPath(x.decode("utf-8", errors="replace")) for x in p.stdout.split(b"\0") if x]
+    if (ROOT / ".git").exists():
+        p = subprocess.run(
+            ["git", "-C", str(ROOT), "ls-files", "-z"],
+            capture_output=True, check=True
+        )
+        return [pathlib.PurePosixPath(x.decode("utf-8", errors="replace")) for x in p.stdout.split(b"\0") if x]
+    # GitHub's source snapshot is independent of malformed legacy gitlinks.
+    return [
+        pathlib.PurePosixPath(path.relative_to(ROOT).as_posix())
+        for path in ROOT.rglob("*")
+        if path.is_file() and not path.is_symlink() and ".git" not in path.relative_to(ROOT).parts
+    ]
 
 def scan():
     failures = []
