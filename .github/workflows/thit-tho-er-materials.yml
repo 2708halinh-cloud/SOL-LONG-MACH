@@ -37,6 +37,33 @@ jobs:
           print("TESSERACT_THIT_THO_ER_SCHEMA_COMPILES_TRUE")
           print("TESSERACT_CUSTOM_KERNEL_NOT_ASSUMED_TRUE")
           PY
+      - name: Build and smoke-test isolated Web and SQLite image
+        shell: bash
+        run: |
+          docker build -f architecture/THIT_THO/deploy/Dockerfile -t thittho-er ./architecture/THIT_THO
+          docker run --rm -d --name thittho-er-ci -p 127.0.0.1:8765:8765 thittho-er
+          trap 'docker stop thittho-er-ci >/dev/null 2>&1 || true' EXIT
+          python3 - <<'PY'
+          import json, time, urllib.request
+          base="http://127.0.0.1:8765"
+          for attempt in range(20):
+              try:
+                  with urllib.request.urlopen(base+"/api/health",timeout=2) as response:
+                      assert response.status==200
+                  break
+              except Exception:
+                  if attempt==19:raise
+                  time.sleep(1)
+          with urllib.request.urlopen(base+"/api/state",timeout=5) as response:
+              assert response.status==200
+              state=json.loads(response.read())
+          assert state["schema"]=="TESSERACT_THIT_THO_ER_STATE/1"
+          assert set(("entities","relations","sources")) <= set(state)
+          with urllib.request.urlopen(base+"/",timeout=5) as response:
+              assert response.status==200
+              assert b"<!doctype html>" in response.read().lower()
+          print("THIT_THO_WEB_DOCKER_SQLITE_SMOKE_PASS")
+          PY
       - name: Produce source receipt without private content
         shell: bash
         run: |
