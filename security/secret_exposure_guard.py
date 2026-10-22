@@ -26,7 +26,7 @@ PATTERNS = {
     "slack_token": re.compile(r"\bxox[baprs]-[A-Za-z0-9-]{20,}\b"),
     "client_integration_secret": re.compile(r"\bci_live_[0-9a-zA-Z]{20,}\b"),
     "private_key_pem": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----"),
-    "url_embedded_password": re.compile(r"\b(?:https?|ftp)://[^/\s:@]+:[^/@\s]{8,}@"),
+    "url_embedded_password": re.compile(r"\b(?:https?|ftp)://[^/\s:@]+:[^/@\s]{8,}@[A-Za-z0-9.-]+"),
     "plaintext_secret_assignment": re.compile(
         r'''(?ix)(?<![\w])(?:api[_-]?key|access[_-]?token|refresh[_-]?token|client[_-]?secret|password|bearer[_-]?token)\s*["']?\s*[:=]\s*["'](?!YOUR_|REDACTED|MASKED|EXAMPLE|PLACEHOLDER|\$\{|<)[^"'\\\r\n]{16,}["']'''
     ),
