@@ -55,7 +55,7 @@ def scan():
             continue
         seen += 1
         low = name.name.lower()
-        if low in FORBIDDEN_FILES or low.endswith(FORBIDDEN_SUFFIXES) or fnmatch.fnmatch(low, ".env.*"):
+        if low in FORBIDDEN_FILES or low.endswith(FORBIDDEN_SUFFIXES) or (fnmatch.fnmatch(low, ".env.*") and low not in {".env.example", ".env.sample", ".env.template"}):
             failures.append((rel, "credential_bearing_filename"))
             continue
         if path.suffix.lower() not in TEXT_EXTENSIONS:
@@ -66,7 +66,14 @@ def scan():
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         for category, regex in PATTERNS.items():
-            if regex.search(text):
+            hits = list(regex.finditer(text))
+            if not hits:
+                continue
+            # RFC 2606 example.net/.com/.org test URLs are not actual credentials;
+            # all other credential-bearing URLs remain failures.
+            if category == "url_embedded_password":
+                hits = [m for m in hits if not re.search(r"@example\.(?:net|org|com)$", m.group(0), re.I)]
+            if hits:
                 failures.append((rel, category))
     unique = sorted(set(failures))
     print("tracked_files_examined", seen, "alerts", len(unique))
