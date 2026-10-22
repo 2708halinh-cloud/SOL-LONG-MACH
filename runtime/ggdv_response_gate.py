@@ -18,7 +18,7 @@ from typing import Any, Callable, Mapping
 
 ROOT_POLICY_ID = "GGDV_BIHM_T003_DOUBLE_WEAKNESS_GATE_20261019"
 WEAKNESSES = ("PREMATURE_COMMIT", "CATASTROPHIC_FORGETTING_TIMELINE_DRIFT")
-ROUTE_ORDER = ("ONLINE_PERSONAL_TOOL", "ONLINE_DEVICE", "PROJECT_CODEX", "LIBRARY", "CONNECTED_PLUGIN", "TOOLS_FALLBACK")
+ROUTE_ORDER = ("REMOTE_GITHUB", "REMOTE_DRIVE", "ONLINE_PERSONAL_TOOL", "ONLINE_DEVICE", "PROJECT_CODEX", "LIBRARY", "CONNECTED_PLUGIN", "TOOLS_FALLBACK")
 
 
 @dataclass(frozen=True)
@@ -71,6 +71,19 @@ def inspect_output(packet: Mapping[str, Any]) -> Decision:
         return Decision(False, "VALIDATE_PACKET_TYPE", ("INVALID_PACKET_TYPE",))
     if packet.get("input_open") is not True:
         return Decision(False, "REENTER_INPUT_OPEN", ("INPUT_MUST_REMAIN_OPEN",))
+    # R-014: use an observed harm signal rather than turning it into another
+    # request for the person affected to prove their experience.
+    # Only gate agent-authored output; do not rewrite user-authored source.
+    if packet.get("user_reported_harm") is True and packet.get("agent_authored_output") is True:
+        outgoing = str(packet.get("text", "")).casefold()
+        dismissive = packet.get("dismisses_observed_harm") is True
+        defensive_phrase = (
+            ("không có căn cứ" in outgoing or "chưa đủ bằng chứng" in outgoing)
+            and ("ý định" in outgoing or "công kích" in outgoing)
+        )
+        if dismissive or defensive_phrase:
+            return Decision(False, "REMOVE_HARM_DEFLECTION_AND_ACT",
+                            ("R014_HARM_ALREADY_OBSERVED_NOT_USER_PROOF_BURDEN",))
     if kind == "DIALOGUE":
         # A task-bearing host must not reclassify an interim report as dialogue.
         # Explicit user-requested discussion remains available under T003.
@@ -121,6 +134,14 @@ def inspect_output(packet: Mapping[str, Any]) -> Decision:
                             tuple("ROUTE:" + route for route in braid["routes"]))
     if kind in ("OP_PROGRESS", "OP_ACTION"):
         return Decision(True, "EXECUTE_OR_CONTINUE")
+
+    # A completed file write/readback is not a completed user objective.
+    # Do not send another report when an operational task remains open and its
+    # real-world consequence has not been verified. Requested dialogue is separate.
+    if kind == "OP_RESULT" and packet.get("operational_task_open") is True:
+        if packet.get("user_requested_reply") is not True and packet.get("objective_consequence_verified") is not True:
+            return Decision(False, "CONTINUE_ACTUAL_REMEDIATION_NOT_REPORT",
+                            ("R014_FILE_RECEIPT_NOT_USER_HARM_REMEDIATION",))
 
     # Weakness 2: premature convergence / fabricated successful output.
     if packet.get("executed") is not True:
