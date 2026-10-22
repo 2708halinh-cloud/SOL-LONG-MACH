@@ -62,9 +62,10 @@ def main():
     p.add_argument("--db",type=Path,required=True)
     p.add_argument("--host",default="127.0.0.1")
     p.add_argument("--port",type=int,default=8765)
+    p.add_argument("--container",action="store_true")
     a=p.parse_args()
-    if a.host not in ("127.0.0.1","localhost"):
-        raise SystemExit("HOST_LOOPBACK_ONLY")
+    if a.host not in ("127.0.0.1","localhost") and not (a.container and a.host=="0.0.0.0"):
+        raise SystemExit("HOST_LOOPBACK_ONLY_UNLESS_EXPLICIT_CONTAINER")
     ThreadingHTTPServer((a.host,a.port),handler(a.db)).serve_forever()
 
 if __name__=="__main__":
