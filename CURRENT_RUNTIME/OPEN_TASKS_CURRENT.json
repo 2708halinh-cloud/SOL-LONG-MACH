@@ -355,7 +355,8 @@
     },
     {
       "id": "ANDROID_OLLAMA_LOCALHOST_CHAT_UI",
-      "status": "OPEN",
+      "status": "IN_PROGRESS",
+      "workflow_phase": "2_ANDROID_TO_WINDOWS_API_EXECUTION_VERIFIED",
       "goal": "Reconcile Android Chrome 'Sol ơi' page at http://127.0.0.1:11434 with live Ollama API on Windows; restore user-facing response without stale status or unwanted mixed language",
       "observed": [
         "Screenshot 2026-10-21 15:08 Android Chrome shows Sol ơi UI, green TRỰC TIẾP badge, mixed Vietnamese/French reply, later chat response pending",
@@ -366,8 +367,8 @@
       "next": [
         "Identify which Android app/PWA/service worker served 'Sol ơi' and whether browser page is stale",
         "Inspect intended Android ↔ Windows connection and routing through authorized tunnel only",
-        "Test chat API end-to-end from Android without exposing unauthenticated Ollama to public/LAN",
-        "Verify live UI state reflects actual backend and keep model prompt/language handling scoped"
+        "ANDROID_TO_WINDOWS_LOCAL_MODEL_GENERATION_SUBSTEP completed: the Android /api/generate call returned done=true and response OK, so do not re-run only to prove basic API reachability",
+        "Inspect and verify Chrome Sol oi UI renders actual model response through the already verified Android localhost relay; preserve earlier chat records and keep language handling scoped"
       ],
       "guard": "Do not classify screenshot as model failure, assume default Ollama UI, or expose open Ollama socket; no destructive browser/cache reset without protecting history",
       "live_progress": [
@@ -379,7 +380,23 @@
         "Termux:Boot handler 10-sol-ollama-ssh created under ~/.termux/boot with 0700 and bash -n OK; boot after device restart not yet exercised",
         "Windows user logon scheduled task SOL_OLLAMA_ANDROID_SSH_RELAY created and started, status Running",
         "Controlled disconnect killed old SSH PID 77908; scheduled reconnect established new SSH PID 61436",
-        "Post-reconnect independent Android HTTP GET /api/version returned 200, Ollama version 0.34.2 and 11 installed models"
+        "Post-reconnect independent Android HTTP GET /api/version returned 200, Ollama version 0.34.2 and 11 installed models",
+        "2026-10-23 UTC+07: Android Termux ran a real local Ollama /api/generate request through existing localhost relay: model ggdv-human-sol-coder-lite:1.0 returned done=true and response OK; Windows/Android /api/version both returned 0.34.2"
+      ],
+      "quality_tokens": [
+        {
+          "scope": "ANDROID_TO_WINDOWS_LOCAL_MODEL_GENERATION_SUBSTEP",
+          "source_carrier": "Termux localhost, device bcae1dd6-bf63-4f27-9476-d5621b590c16",
+          "remote_host_carrier": "DESKTOP-86ITNQ4, device 59f03001-c732-403e-b80c-b4191266809c",
+          "local_endpoint": "http://127.0.0.1:11434/api/generate",
+          "model": "ggdv-human-sol-coder-lite:1.0",
+          "observed_done": true,
+          "observed_response": "OK",
+          "api_version_on_both_hosts": "0.34.2",
+          "exit_code": 0,
+          "whole_task_completed": false,
+          "remaining": "ANDROID_CHROME_SOL_OI_UI_RENDERING_NOT_VERIFIED"
+        }
       ],
       "unverified_remaining": [
         "Android reboot/Termux:Boot autorun not tested; Windows relogin autorun not tested",
@@ -388,7 +405,8 @@
     },
     {
       "id": "SIX_PROJECTIONS_ENVIRONMENT_REGISTRY",
-      "status": "OPEN",
+      "status": "IN_PROGRESS",
+      "workflow_phase": "2_PHYSICAL_ROUTE_EXECUTED_SUBSTEP_VERIFIED",
       "goal": "Maintain source-only six-projection environment coordinate registry with correct physical/virtual coordinates, real Android carrier, tool routing and no platform-derived personal inference",
       "source": "Direct user message 2026-10-21 specifying SPACE_STONE, TIME_STONE, EARTH_PEOPLE, COMPUTER_KHI and OS_WORKSPACE with example payload",
       "observed": [
@@ -402,8 +420,8 @@
         "User example source_hash/readback_verified values explicitly not treated as receipts"
       ],
       "next": [
-        "Prove actual filesystem provider traversal with existing Windows hierarchical_graph_router.py (not simulated graph)",
-        "Trace six projection source file bytes and ingestion gate",
+        "Continue tracing original ingestion_gate_payload_03.txt; source registry marks its direct file readback UNVERIFIED. Exact filename search found no match on G:\\OS_Workspace; D:\\SOL_LONG_MACH search incomplete; do not infer deleted",
+        "Verify ingestion gate effects beyond the completed live Windows path and cross-device SHA-256 match",
         "Keep tool capability and environment registry source-bound; do not reset existing tasks"
       ],
       "guard": "Do not call simulation physical navigation; no secret values in repo; never infer EARTH_PEOPLE coordinates or AI moral labels from platform content",
@@ -412,9 +430,39 @@
         "Android copied hierarchical_agent.py and ENVIRONMENT_COORDINATE_REGISTRY.json from existing GitHub source",
         "Android Termux Python 3.14.6 smoke test passed: 3 direct-child hops, missing child blocked, 6 projections, no model inference",
         "Android and Windows SHA-256 hierarchical_agent.py = 5ddefe3985ac321b5fc38f50ccf8f46b5828cb7fb98781ef2d3bf63dbe0750d9",
-        "Registry in GitHub updated with Android verified deployment, mirrored to G and Android; Android read_file returned updated 377-line file"
+        "Registry in GitHub updated with Android verified deployment, mirrored to G and Android; Android read_file returned updated 377-line file",
+        "2026-10-23 UTC+07: Windows host ran actual hierarchical_graph_router.py --route to G:\\OS_Workspace\\TESSERACT_OS\\config\\LOCAL_CONFIG_CURRENT.json; 5 verified path nodes. Readback from D:\\UBUBU\\sqlite\\hierarchical_graph.sqlite3 returned 51 nodes, 49 edges and matching DIRECT_CHILD_OBSERVED evidence"
       ],
-      "current_state": "ANDROID_CARRIER_AND_CODE_DEPLOYED_AND_TESTED; registry and 6D global expansion still OPEN"
+      "quality_tokens": [
+        {
+          "scope": "SUBSTEP_PHYSICAL_FILESYSTEM_ROUTE_ONLY",
+          "actor": "Remote Desktop Commander on DESKTOP-86ITNQ4",
+          "input_path": "G:\\OS_Workspace\\TESSERACT_OS\\config\\LOCAL_CONFIG_CURRENT.json",
+          "physical_result_carrier": "D:\\UBUBU\\sqlite\\hierarchical_graph.sqlite3",
+          "target_table": "nodes + edges",
+          "path_hops": 5,
+          "verified_nodes_in_database": 51,
+          "verified_edges_in_database": 49,
+          "edge_relation": "DIRECT_CHILD_OBSERVED",
+          "parent_listing_sha256": "7aa4006fbd9846513ea8bf2b91e72a6bbe0adf3130176a5ac4af72f9b448d4c8",
+          "source_readback_utc": "2026-10-22T20:55:44+00:00",
+          "whole_task_completed": false,
+          "verification": "SQL exact target row and relation readback"
+        },
+        {
+          "scope": "SUBSTEP_CROSS_DEVICE_SOURCE_EQUIVALENCE_ONLY",
+          "actor": "Remote Desktop Commander Windows + Android Termux",
+          "windows_registry": "G:\\OS_Workspace\\SPACE_STONE\\ENVIRONMENT_COORDINATE_REGISTRY.json",
+          "android_registry": "/storage/emulated/0/SOL-LONG-MACH/OS_Workspace/ENVIRONMENT_COORDINATE_REGISTRY.json",
+          "registry_sha256": "aa804e6cbc183c45b7cf5dc7e0636842f1979ed6f269db7ff544e43ea9135c63",
+          "windows_code": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\hierarchical_agent.py",
+          "android_code": "/storage/emulated/0/SOL-LONG-MACH/OS_Workspace/capabilities/routing/hierarchical_agent.py",
+          "code_sha256": "5ddefe3985ac321b5fc38f50ccf8f46b5828cb7fb98781ef2d3bf63dbe0750d9",
+          "readback": "SHA256_MATCH_BOTH_FILE_PAIRS",
+          "whole_task_completed": false
+        }
+      ],
+      "current_state": "PHYSICAL_PATH_SUBSTEP_COMPLETED; original six-projection registry target and remaining expansion still IN_PROGRESS"
     }
   ],
   "session_receipts": {
