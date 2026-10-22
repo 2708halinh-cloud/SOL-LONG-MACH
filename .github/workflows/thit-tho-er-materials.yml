@@ -1,0 +1,63 @@
+name: THIT THO Architecture Materials
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'architecture/THIT_THO/**'
+      - '.github/workflows/thit-tho-er-materials.yml'
+  schedule:
+    - cron: '37 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-and-schema:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate concrete material and compile schema
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, sqlite3, pathlib
+          root=pathlib.Path("architecture/THIT_THO")
+          for name in ("contracts/telemetry-event.schema.json", "os/BOOT_CONTRACT.json"):
+              json.loads((root/name).read_text(encoding="utf-8"))
+          d=json.loads((root/"os/BOOT_CONTRACT.json").read_text(encoding="utf-8"))
+          assert d["custom_bare_metal_kernel_built"] is False
+          sql=(root/"data/schema/001_er.sql").read_text(encoding="utf-8")
+          c=sqlite3.connect(":memory:")
+          c.executescript(sql)
+          names={r[0] for r in c.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+          assert {"sources","entities","relations","relation_participants","attribute_definitions"} <= names
+          assert c.execute("PRAGMA foreign_key_check").fetchall()==[]
+          print("TESSERACT_THIT_THO_ER_SCHEMA_COMPILES_TRUE")
+          print("TESSERACT_CUSTOM_KERNEL_NOT_ASSUMED_TRUE")
+          PY
+      - name: Produce source receipt without private content
+        shell: bash
+        run: |
+          mkdir -p readback
+          python3 - <<'PY'
+          import hashlib,json,pathlib,os
+          base=pathlib.Path("architecture/THIT_THO")
+          observed=[]
+          for name in ("data/schema/001_er.sql","contracts/telemetry-event.schema.json",
+                       "contracts/telemetry.proto","os/BOOT_CONTRACT.json","deploy/TLS_POLICY.md"):
+              p=base/name
+              observed.append({"source":name,"sha256":hashlib.sha256(p.read_bytes()).hexdigest()})
+          out={"schema":"THIT_THO_MATERIAL_READBACK/1","sources":observed,
+               "repo_head":os.getenv("GITHUB_SHA"),"local_OS_boot_claim":False,
+               "source_files_tested_not_entire_system_completed":True}
+          pathlib.Path("readback/THIT_THO_CURRENT.json").write_text(
+              json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          PY
+      - name: Preserve readback on independent GitHub host
+        uses: actions/upload-artifact@v4
+        with:
+          name: thit-tho-materials-readback
+          path: readback/THIT_THO_CURRENT.json
+          retention-days: 30
