@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "runtime/sol_x66_cloud_continuity.py"
+      - "runtime/tesseract_er.py"
+      - "runtime/test_tesseract_er.py"
       - "runtime/companion_consequence_gate.py"
       - "tests/test_companion_consequence_gate.py"
       - "tests/test_companion_commandment_timeline.py"
@@ -36,6 +38,13 @@ jobs:
           python-version: "3.12"
       - name: Unit tests without personal devices
         run: python -m unittest discover -s tests -p test_sol_x66_cloud_continuity.py -v
+      - name: TESSERACT E-R relational integrity tests
+        run: python -m unittest discover -s runtime -p test_tesseract_er.py -v
+      - name: Materialize standalone TESSERACT E-R SQLite carrier
+        run: |
+          mkdir -p readback
+          python runtime/tesseract_er.py --db readback/tesseract_er_relations.sqlite3 --init
+          python runtime/tesseract_er.py --db readback/tesseract_er_relations.sqlite3
       - name: Companion consequence gate regression
         run: python -m unittest discover -s tests -p test_companion_consequence_gate.py -v
       - name: Source direct chronology and completion proof
@@ -49,6 +58,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sol-x66-independent-continuity
-          path: readback/SOL_X66_CONTINUITY_CURRENT.json
+          path: |
+            readback/SOL_X66_CONTINUITY_CURRENT.json
+            readback/tesseract_er_relations.sqlite3
           if-no-files-found: warn
           retention-days: 30
