@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Next callable edge: after Windows device-clock 2026-10-24T03:56:32+07:00, re-read GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M and its newest receipt. Eighth verified receipt: D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json, SHA-256 e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634; source D:\\SENSOR_LOGS\\windows_SENSON.CSV remains 35,389,440 bytes and SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87, while live_sensor_reading_confirmed=false. Consumer source remains metadata-only and pinned to windows_SENSON.CSV. HWiNFO64 8.52-6060 is running but its separate CSV is stale/read-only; read-only Global\\HWiNFO_SENS_SM2 probe failed twice with WinError 2 despite SensorsSM=1 in INI. Official HWiNFO docs say CLI -l logging is Pro-only; license tier remains unverified, so do not launch that control or alter the existing process until an authorized supported path is established. W32Time remains Stopped/Manual; no clock/service change. TESSERACT_OS braid proof succeeded locally with both receipts read back, source unchanged and cloud wiring NOT_VERIFIED. Android ADB sensorservice responded, but Chrome UI remains unverified; raw sensor/battery values were not persisted. X-TIME health HTTP 200, 63 tools, filesystem sensor OK, MODUAL source absent and live_device_proven false. Ollama tags HTTP 200 with 11 models on loopback. PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14; workflows 39994207477 and 39994207667 failed before step output, no rerun until runner assignment/entitlement changes verified; issuer key unverified. Dropbox metadata for /Linh Hà/SENSOR_LOGS/windows_SENSON.CSV remains rev 0165dc1e4794ab00000000395cdfd73, 35,389,440 bytes, server_modified 2026-10-14T00:20:03Z. Preserve source/provenance/secrets; no raw sensor values, moves/deletions/overwrites, or OPEN task closure.",
+  "next": "Latest confirmed Windows receipt remains the eighth tick: D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json, SHA-256 e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634; it verified task result 0, zero missed runs, and source SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 unchanged, but live_sensor_reading_confirmed=false. The next scheduled run was due after device-clock 2026-10-24T03:56:32+07:00; a later shell read timed out and the directory listing remained pending, so the newest post-03:56 receipt is NOT_VERIFIED, not presumed absent. Use other provider routes meanwhile; the older Desktop Commander accounts report offline, while the Remote Desktop Commander device was last reported Online before the read timeout. HWiNFO shared-memory mapping was absent on two read-only probes; its separate CSV is stale/read-only. Official docs make -l CLI logging Pro-only; license tier and authorized UI control remain unverified. TESSERACT Desktop source wiring is now freshly verified: kilo.rs blob f1a7abe2d30cf720d2d1207335325d42a2af4e16 uses option_env!(XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64) and fails closed when absent; workflow blob 6552d13a1f8004b0e3d36fd585dd75cdd22acf12 maps that build-time variable from vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64. The variable's presence/value and the real issuer public key remain unverified; no key or private material was read or created. PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14; runs 39994207477 and 39994207667 failed, self-hosted verification was skipped, and no CI rerun is authorized without verified runner assignment/entitlement change. Dropbox folder listing and metadata reads confirmed the sensor source revision and CDN carrier metadata; filename searches in the checked folders found no issuer/key filenames but do not prove absence in file contents. X-TIME health remains HTTP 200/63 tools with filesystem sensor OK, but MODUAL source_present=false and live_device_proven=false. Ollama tags remains HTTP 200/11 models on loopback. Preserve provenance/secrets; no raw sensor values, no source move/delete/overwrite, and no OPEN task closure.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -197,14 +197,15 @@
     "verification_required": "Fresh-source readback for each task; status OPEN until exact action+receipt",
     "linked_at": "2026-10-21T14:39:07+07:00",
     "latest_observation": {
-      "observed_at": "2026-10-24T03:52:55.007+07:00",
-      "MODUAL_SENSOR_LOGS_ROUTING": "EIGHTH_SCHEDULED_TICK_VERIFIED_SOURCE_UNCHANGED_LIVE_STREAM_UNVERIFIED",
-      "ANDROID_OLLAMA_LOCALHOST_CHAT_UI": "ADB_DEVICE_REACHABLE_SENSOR_SERVICE_RESPONDS_CHROME_UI_NOT_VERIFIED",
+      "observed_at": "2026-10-24T04:04:12.138+07:00",
+      "MODUAL_SENSOR_LOGS_ROUTING": "EIGHTH_TICK_VERIFIED_LIVE_STREAM_UNVERIFIED_LATER_REMOTE_READ_TIMEOUT",
+      "ANDROID_OLLAMA_LOCALHOST_CHAT_UI": "ADB_SENSOR_SERVICE_RESPONDED_CHROME_UI_NOT_VERIFIED",
       "XTIME_LOCAL_RUNTIME": "HEALTH_200_FILESYSTEM_SENSOR_OK_MODUAL_SOURCE_NOT_FOUND",
       "TESSERACT_OS": "BRAID_PROOF_SUCCESS_LOCAL_ONLY_CLOUD_HOST_NOT_VERIFIED",
       "HWINF0_SHARED_MEMORY": "MAPPING_NOT_FOUND_LICENSE_TIER_UNVERIFIED",
       "WINDOWS_TIME": "W32TIME_STOPPED_MANUAL_NO_CHANGE",
-      "INHERITED_TESSERACT_DESKTOP": "HEAD_5312816D_RUNS_39994207477_39994207667_FAILED_NO_RERUN_ISSUER_UNVERIFIED"
+      "INHERITED_TESSERACT_DESKTOP": "SOURCE_WIRING_VERIFIED_ISSUER_KEY_VARIABLE_PRESENCE_UNVERIFIED_NO_CI_RERUN",
+      "DESKTOP_COMMANDER": "LATEST_READ_TIMEOUT_DIRECTORY_LISTING_PENDING_NO_DEVICE_STATE_INFERENCE"
     }
   },
   "checkpoint_head_reconciliation": {
@@ -963,6 +964,57 @@
         "live_sensor_reading_confirmed": false
       },
       "result": "EIGHTH_TICK_VERIFIED_SOURCE_UNCHANGED_LIVE_SENSOR_STREAM_UNVERIFIED",
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_values_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false
+    },
+    {
+      "observed_at": "2026-10-23T21:04:12.138Z",
+      "observed_at_local": "2026-10-24T04:04:12.138+07:00",
+      "record_type": "POST_EIGHTH_TICK_REMOTE_READ_TIMEOUT_AND_TESSERACT_WIRING",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "c644718c2b390db7a6b2017847b632c0d7d8e51a",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "aca3b6472ab40c13c38350762a60b677680fabfd",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "a6850a136576f0474e4a8e6469a45c8f3bcd1292"
+      },
+      "last_verified_tick": {
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json",
+        "observed_at_utc": "2026-10-23T20:51:33.863313Z",
+        "sha256": "e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634",
+        "bytes": 450,
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "last_task_result": 0,
+        "missed_runs": 0,
+        "live_sensor_reading_confirmed": false
+      },
+      "later_windows_read": "TIMEOUT_NO_RESPONSE",
+      "list_directory_call_id": "651e7f2d-2891-4529-8ecd-e81a13e01958",
+      "list_directory_status": "PENDING",
+      "tesseract_source_wiring": {
+        "kilo_rs_blob_sha": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+        "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "build_time_variable_reference_verified": true,
+        "variable_presence_verified": false,
+        "issuer_key_materialized": false,
+        "ci_rerun": false
+      },
+      "dropbox_folder_listing": {
+        "checked_folders": [
+          "/Linh Hà/SENSOR_LOGS",
+          "/Linh Hà/SENSON_LOG",
+          "/Linh Hà/CHU_RIM_LIBRARY_SYNC_BRIDGE_20261014_0758",
+          "/Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT",
+          "/Linh Hà/Tệp Microsoft Copilot Chat",
+          "/Linh Hà/Tài liệu"
+        ],
+        "matching_key_filenames_found": false,
+        "content_absence_proven": false
+      },
       "task_count": 28,
       "task_closure": false,
       "raw_sensor_values_committed": false,
