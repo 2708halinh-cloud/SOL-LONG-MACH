@@ -252,10 +252,14 @@ def main():
         time.sleep(30)
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "--once":
+    args = sys.argv[1:]
+    # Task Scheduler defaults to one finite observation; daemon mode is opt-in.
+    if args in ([], ["--once"]):
         record_telemetry_tick()
         sync_snapshot_to_cloud()
         sync_snapshot_to_github()
-        print("Completed read-only sensor observation; export requires explicit enable flags.")
-    else:
+        print("Completed one-shot sensor observation; export requires explicit enable flags.")
+    elif args == ["--loop"]:
         main()
+    else:
+        raise SystemExit("Usage: telemetry_buffer_sync.py [--once|--loop]")

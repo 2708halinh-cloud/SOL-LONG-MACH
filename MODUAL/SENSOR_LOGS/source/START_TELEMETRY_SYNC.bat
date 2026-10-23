@@ -10,5 +10,6 @@ if not exist "%~dp0telemetry_buffer_sync.py" (
   echo Cannot find telemetry_buffer_sync.py alongside this launcher.
   exit /b 2
 )
-python "%~dp0telemetry_buffer_sync.py"
+REM Explicit interactive daemon mode; Scheduled Task without arguments is one-shot.
+python "%~dp0telemetry_buffer_sync.py" --loop
 pause
