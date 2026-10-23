@@ -1638,6 +1638,68 @@
       "synthetic_rows_added": 0,
       "cloud_export_enabled": false,
       "github_export_enabled": false
+    },
+    "windows_tick_20261023T204633Z": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T204633942872Z.json",
+      "sha256": "6f730d5761718ee2edf337ff87b8d6727ba5bcdfac34a51215820246c84877bd",
+      "bytes": 450,
+      "exact_target_readback": true,
+      "json_valid": true,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_reading_confirmed": false
+    },
+    "local_braid_20261023T204503Z": {
+      "six": {
+        "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261023T204503294259Z.json",
+        "sha256": "608b97f81d60c3920bde877df60d4264677d108144ffca145227ff6067206f91",
+        "bytes": 3996,
+        "exact_target_readback": true
+      },
+      "plural": {
+        "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261023T204503466670Z.json",
+        "sha256": "28ea5264afc1286d8b827fff49d7031e02b23f0afd490d16b198c75237e9918e",
+        "bytes": 2407,
+        "exact_target_readback": true
+      },
+      "exit_code": 0,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "cloud_host_wiring": "NOT_VERIFIED"
+    },
+    "android_probe_20261024T205411Z": {
+      "adb_connected": true,
+      "model": "2201123G",
+      "android_version": "15",
+      "sensorservice_readback": true,
+      "active_sensor_family": "TMD3719 ambient-light",
+      "raw_sensor_values_persisted": false
+    },
+    "xtime_health_20261023T204857Z": {
+      "http_status": 200,
+      "pid": 20712,
+      "version": "0.9.0",
+      "runtime_tools": 63,
+      "filesystem_sensor_ok": true,
+      "modual_source_present": false,
+      "live_device_proven": false
+    },
+    "ollama_tags_20261023T204857Z": {
+      "tags_http_status": 200,
+      "model_count": 11,
+      "endpoint": "127.0.0.1:11434",
+      "loopback_only": true,
+      "chat_test_this_run": false
+    },
+    "hwinfo_shmem_probe_20261024": {
+      "mapping": "Global\\HWiNFO_SENS_SM2",
+      "attempts": 2,
+      "read_only": true,
+      "opened": false,
+      "winerror": 2,
+      "raw_sensor_values_read": false,
+      "official_license_reference": "https://www.hwinfo.com/licenses/",
+      "cli_logging_requires_pro": true,
+      "license_tier_verified": false
     }
   },
   "sinks": {
@@ -2753,6 +2815,116 @@
         "credentials_committed": false,
         "source_moved_or_deleted": false,
         "source_overwritten": false
+      }
+    },
+    {
+      "id": "SEVENTH_WINDOWS_TICK_BRAID_AND_PROVIDER_PROBES_20261024",
+      "kind": "WINDOWS_TICK_EXACT_READBACK_AND_INDEPENDENT_RUNTIME_PROBES",
+      "observed_at": "2026-10-24T03:48:57.705+07:00",
+      "source": "Remote Desktop Commander secondary account, Dropbox Outlook metadata, GitHub API, official HWiNFO documentation",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "c53e52a5dca50e5817dd5a7b2fb0fd6ad1596416",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "79f9355e32f0dab47da0935e8321922d875083d0",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "49c6b80f3f61bad53c83e41b326c9fb7821f60b3"
+      },
+      "results": {
+        "windows_tick": {
+          "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+          "state": "Ready",
+          "last_run_local": "2026-10-24T03:46:33+07:00",
+          "last_result": 0,
+          "missed_runs": 0,
+          "next_run_local_device_clock": "2026-10-24T03:51:32+07:00",
+          "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T204633942872Z.json",
+          "receipt_sha256": "6f730d5761718ee2edf337ff87b8d6727ba5bcdfac34a51215820246c84877bd",
+          "source_bytes": 35389440,
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "live_sensor_reading_confirmed": false,
+          "source_file_written": false,
+          "synthetic_rows_added": 0,
+          "cloud_export_enabled": false,
+          "github_export_enabled": false
+        },
+        "hwinfo": {
+          "process_pid": 17520,
+          "version": "8.52-6060",
+          "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+          "csv_bytes": 39922785,
+          "csv_last_write_utc": "2026-10-21T02:20:45.8565035Z",
+          "ini_sensors_sm": 1,
+          "shared_memory_mapping_opened": false,
+          "shared_memory_probe_winerror": 2,
+          "logging_cli_pro": "https://www.hwinfo.com/forum/threads/supported-command-line-parameters-in-hwinfo64-pro.8549/",
+          "license_tier_verified": false,
+          "logging_command_executed": false
+        },
+        "tesseract_braid": {
+          "script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+          "exit_code": 0,
+          "six_forces_actions": 9,
+          "plural_actions": 5,
+          "source_sha256_unchanged": true,
+          "mutation_executed": false,
+          "six_receipt_sha256": "608b97f81d60c3920bde877df60d4264677d108144ffca145227ff6067206f91",
+          "plural_receipt_sha256": "28ea5264afc1286d8b827fff49d7031e02b23f0afd490d16b198c75237e9918e",
+          "both_receipts_read_back": true,
+          "cloud_host_wiring": "NOT_VERIFIED"
+        },
+        "android": {
+          "adb_connected": true,
+          "model": "2201123G",
+          "android_version": "15",
+          "sensorservice_readback": true,
+          "active_sensor_family": "TMD3719 ambient-light",
+          "raw_sensor_and_battery_values_persisted": false,
+          "low_battery_and_elevated_temperature_observed": true
+        },
+        "xtime": {
+          "http_status": 200,
+          "pid": 20712,
+          "version": "0.9.0",
+          "runtime_tools": 63,
+          "filesystem_sensor_ok": true,
+          "modual_source_present": false,
+          "live_device_proven": false
+        },
+        "ollama": {
+          "tags_http_status": 200,
+          "model_count": 11,
+          "endpoint": "127.0.0.1:11434",
+          "loopback_only": true,
+          "chat_test_this_run": false
+        },
+        "tesseract_desktop": {
+          "pr": 6,
+          "state": "open",
+          "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+          "workflows": [
+            39994207477,
+            39994207667
+          ],
+          "workflow_conclusions": [
+            "failure",
+            "failure"
+          ],
+          "rerun_performed": false,
+          "runner_assignment_change_verified": false,
+          "issuer_public_key_verified": false
+        }
+      },
+      "state_boundary": "SEVENTH_TICK_VERIFIED_SOURCE_UNCHANGED_LIVE_HWINF0_STREAM_NOT_VERIFIED; ANDROID_ADB_SENSOR_SERVICE_REACHABLE; XTIME_HEALTH_200_MODUAL_BINDING_OPEN",
+      "next_callable_edge": "Continue exact-target Windows tick readback; verify HWiNFO license/UI path before using Pro-only -l logging; probe existing shared-memory availability after supported re-enable without exposing raw sensor values; continue Android Chrome UI and X-TIME MODUAL binding checks; do not rerun TESSERACT CI until runner assignment/entitlement change is verified.",
+      "invariants": {
+        "raw_sensor_rows_committed": false,
+        "raw_sensor_values_committed": false,
+        "battery_values_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "source_overwritten": false,
+        "open_tasks_closed": false,
+        "tesseract_ci_rerun": false
       }
     }
   ],
@@ -5683,6 +5855,101 @@
       "live_sensor_reading_confirmed": false,
       "source_mutated": false,
       "exports_enabled": false
+    },
+    {
+      "observed_at": "2026-10-23T20:48:57.705Z",
+      "record_type": "SEVENTH_WINDOWS_TICK_ANDROID_ADB_HWINF0_SHMEM_XTIME_OLLAMA_PROVIDER_OBSERVATION",
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true
+      },
+      "windows_tick": {
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state": "Ready",
+        "last_run_local": "2026-10-24T03:46:33+07:00",
+        "last_result": 0,
+        "missed_runs": 0,
+        "next_run_local_device_clock": "2026-10-24T03:51:32+07:00",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T204633942872Z.json",
+        "receipt_sha256": "6f730d5761718ee2edf337ff87b8d6727ba5bcdfac34a51215820246c84877bd",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "live_sensor_reading_confirmed": false,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_export_enabled": false,
+        "github_export_enabled": false
+      },
+      "hwinfo": {
+        "process_pid": 17520,
+        "version": "8.52-6060",
+        "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "csv_bytes": 39922785,
+        "csv_last_write_utc": "2026-10-21T02:20:45.8565035Z",
+        "ini_sensors_sm": 1,
+        "shared_memory_mapping_opened": false,
+        "shared_memory_probe_winerror": 2,
+        "logging_cli_pro": "https://www.hwinfo.com/forum/threads/supported-command-line-parameters-in-hwinfo64-pro.8549/",
+        "license_tier_verified": false,
+        "logging_command_executed": false
+      },
+      "android": {
+        "adb_connected": true,
+        "sensorservice_readback": true,
+        "active_sensor_family": "TMD3719 ambient-light",
+        "raw_sensor_values_persisted": false
+      },
+      "xtime": {
+        "http_status": 200,
+        "pid": 20712,
+        "version": "0.9.0",
+        "runtime_tools": 63,
+        "filesystem_sensor_ok": true,
+        "modual_source_present": false,
+        "live_device_proven": false
+      },
+      "ollama": {
+        "tags_http_status": 200,
+        "model_count": 11,
+        "endpoint": "127.0.0.1:11434",
+        "loopback_only": true,
+        "chat_test_this_run": false
+      },
+      "tesseract_braid": {
+        "script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+        "exit_code": 0,
+        "six_forces_actions": 9,
+        "plural_actions": 5,
+        "source_sha256_unchanged": true,
+        "mutation_executed": false,
+        "six_receipt_sha256": "608b97f81d60c3920bde877df60d4264677d108144ffca145227ff6067206f91",
+        "plural_receipt_sha256": "28ea5264afc1286d8b827fff49d7031e02b23f0afd490d16b198c75237e9918e",
+        "both_receipts_read_back": true,
+        "cloud_host_wiring": "NOT_VERIFIED"
+      },
+      "tesseract_desktop": {
+        "pr": 6,
+        "state": "open",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "workflows": [
+          39994207477,
+          39994207667
+        ],
+        "workflow_conclusions": [
+          "failure",
+          "failure"
+        ],
+        "rerun_performed": false,
+        "runner_assignment_change_verified": false,
+        "issuer_public_key_verified": false
+      },
+      "raw_sensor_values_committed": false,
+      "credentials_committed": false,
+      "open_tasks_closed": false
     }
   ]
 }
