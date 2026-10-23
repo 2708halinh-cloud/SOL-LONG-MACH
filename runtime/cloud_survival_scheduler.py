@@ -28,6 +28,8 @@ CLOUD_CHECKS=(
                            "architecture/THIT_THO/contracts/telemetry.proto",
                            "architecture/THIT_THO/os/BOOT_CONTRACT.json")),
     ("WINDOWS_REENTRY_READ_ONLY",("runtime/windows_c_survival_probe.ps1",)),
+    ("T005_HELLOHABIT_ANDROID",("runtime/hellohabit_t005_adapter.py",
+                               "integrations/android/hellohabit/manifest.binding.json")),
 )
 CURRENT_SIGNALS=(
     {"id":"USER_DIRECT_WINDOWS_C_FULL_CRASH_20261023",
@@ -92,6 +94,15 @@ def verify_contracts(root):
     return {"executed_on":"GITHUB_RUNNER_PYTHON","passed":True,
             "real_custom_kernel_boot_proven":False}
 
+def verify_t005(root):
+    from runtime.hellohabit_t005_adapter import inspect
+    receipt=inspect(root)
+    return {"passed":receipt["T005_package_identity_registered"],
+            "source_sha256":receipt["source_sha256"],
+            "android_app_installed":receipt["installed_on_android_proven"],
+            "app_identity":receipt["package"],
+            "real_habit_data_sync_proven":receipt["real_habit_data_sync_proven"]}
+
 def classify_open_ledger(root):
     data=json.loads((root/SOURCE_LEDGER).read_text(encoding="utf-8"))
     if not isinstance(data.get("tasks"),list):
@@ -115,6 +126,7 @@ def build(root,now,run_id,sha):
        "ER_SQL_SCHEMA":probe_er_schema(root),
        "R014_RESPONSE_REGRESSION":verify_r014(root),
        "THIT_THO_CONTRACTS":verify_contracts(root),
+       "T005_HELLOHABIT_ANDROID":verify_t005(root),
     }
     return {
       "schema":"SOL_STAMPS_SURVIVAL_INDEPENDENT_CONTINUATION_V1",
