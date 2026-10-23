@@ -1235,6 +1235,52 @@
       },
       "source": "runtime/destructive_gate.py; runtime/continuity_guard.py; tests/test_r014_root_protection.py",
       "task_closure": false
+    },
+    {
+      "id": "OPEN_ROUTING_SMALL_LEDGER_VALIDATION_20261023T203315+07",
+      "kind": "SOURCE_BOUND_GITHUB_CODE_AND_LIBRARY_READBACK",
+      "observed_at": "2026-10-23T20:33:15+07:00",
+      "action": {
+        "target_branch": "fix/open-task-routing-current-20261023",
+        "code_path": "tests/test_cloud_survival_scheduler.py",
+        "code_commit": "4595b52cc17e043e439cac03958f1985475daed8",
+        "readback_blob_sha": "be2f795c605010a615d08704c8456e1596b98eb5",
+        "test_added": "test_small_ledger_is_validated_without_27_item_threshold",
+        "assertion": "A valid one-task ledger is accepted; a one-task ledger missing assigned_agent_id is rejected with OPEN_TASK_WITHOUT_ASSIGNED_AGENT.",
+        "readback": "The added test is present on the target branch.",
+        "ci_status": "No workflow runs or commit status checks were returned for this exact commit at readback time; test execution by CI is not yet verified."
+      },
+      "source_observations": {
+        "main_branch_scheduler_blob": "6727e7b33f77e1b34c5d03ac49187466e55f868c",
+        "main_branch_gate": "if len(data[\"tasks\"]) >= 27",
+        "proposed_branch_scheduler_blob": "802cdf76ab5ff2558f52b1a27943a6a30d52af53",
+        "proposed_branch_gate": "if data[\"tasks\"]",
+        "divergence": "The threshold fix exists on the PR branch; main still contains the old gate until an approved merge.",
+        "library_archive": {
+          "primary_name": "ADMIN_PORTABLE_20261023.zip",
+          "size_bytes": 22493275,
+          "sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+          "sqlite_integrity_check": "ok",
+          "map_nguon_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+          "xiv_luong_tam_lines_read": "1067-1127",
+          "duplicate_alias_materialization": "denied; byte identity not asserted"
+        },
+        "library_export_scan": {
+          "visible_archive_items": 248,
+          "pages": 3,
+          "warning": "Recursive library listing reached folder traversal limit; some nested files may be omitted.",
+          "raw_jiney_funix_dat_nguyen_export_bytes_retrieved": false,
+          "interpretation": "No original export was established; absence from this listing is not proof of deletion."
+        },
+        "provider_boundary": "No Google Drive, Dropbox, or Takeout connector is exposed in the callable tool set for this run."
+      },
+      "invariant": {
+        "task_statuses_changed": false,
+        "source_tasks_closed": 0,
+        "windows_host_touched": false,
+        "private_chat_bytes_added_to_public_git": false,
+        "credentials_added_to_git": false
+      }
     }
   ],
   "energy_protection_current": {
