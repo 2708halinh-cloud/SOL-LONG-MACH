@@ -647,6 +647,19 @@
           "result": "PR_WORKFLOW_SKIP_CONDITION_CONFIRMED_RUNNER_AND_ISSUER_STILL_OPEN",
           "next_callable_edge": "Use an authorized Actions variable/runner control surface and issuer-side key carrier; do not rerun CI without verified runner-state change or invent a key.",
           "status_effect": "Keep OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T05:38:10+07:00",
+          "source": "Fresh GitHub org-scoped code searches for exact variable, issuer marker, and PEM public-key marker",
+          "actions_and_receipts": [
+            "Search for XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64 returned four references in SOL-LONG-MACH: README.md, main.rs, WORK_CHECKPOINT.json, and MODUAL_PARAMETER_CURRENT.json. All are wiring/checkpoint references, not a key literal.",
+            "Search for KILO_XTIME ED25519 returned trust-description and verifier/test references; search for BEGIN PUBLIC KEY KILO returned verification code, not PEM key material.",
+            "The linked GitHub connector exposes code/repository read operations but no Actions variables/secrets/runner-settings management/read tool in its available tool inventory. Presence/value of the Actions variable and runner assignment remain unverified.",
+            "No TESSERACT branch write or CI rerun was performed."
+          ],
+          "result": "CROSS_REPOSITORY_INDEXED_SEARCH_FOUND_REFERENCES_ONLY",
+          "next_callable_edge": "Verify the Actions variable and runner assignment through an authorized settings/control surface, or locate the issuer public key in an authorized issuer-owned carrier.",
+          "status_effect": "Keep OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
         }
       ]
     },
@@ -1828,6 +1841,15 @@
       "root_cause_proven": false,
       "source_mutation": false,
       "live_sensor_reading_confirmed": false
+    },
+    "tesseract_org_key_search_20261024T223810Z": {
+      "observed_at": "2026-10-24T05:38:10+07:00",
+      "scope": "GitHub org 2708halinh-cloud indexed code search",
+      "exact_variable_query_results": 4,
+      "results_are_variable_references_not_key_material": true,
+      "issuer_key_verified": false,
+      "actions_variables_control_surface_available": false,
+      "ci_rerun": false
     }
   },
   "sinks": {
@@ -3555,6 +3577,52 @@
       "conclusion": "Task Scheduler reports a terminated run (0x41306) after a prior running state (0x41301), with no new receipt after 22:01:44Z. Exact root cause is not established; no task settings or source changed.",
       "next_callable_edge": "When Windows route responds, inspect task history and time a one-shot invocation; verify the Python launcher and resolver read duration. Only adjust execution limit after cause is measured.",
       "status_effect": "Keep MODUAL task OPEN; live stream remains unverified."
+    },
+    {
+      "id": "TESSERACT_ISSUER_KEY_CROSS_REPOSITORY_SEARCH_20261024T223810Z",
+      "kind": "AUTHORIZED_GITHUB_ORG_SEARCH_FOR_ISSUER_TRUST_ANCHOR",
+      "observed_at": "2026-10-24T05:38:10+07:00",
+      "observed_at_utc": "2026-10-23T22:38:10Z",
+      "source": "GitHub code search scoped to org 2708halinh-cloud; no CI run or write to TESSERACT branch",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "8fc5e562b2ed6e3fd568bd270dfc1cf328d44ad7",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "dbad3ee996a96e050f3a4eb7970525568c4800f9",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "e8cc64f82030d8d31c25504734f4e1f982221b69"
+      },
+      "evidence": {
+        "search_scope": "2708halinh-cloud repositories accessible to linked GitHub connector",
+        "exact_variable_query": {
+          "query": "XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+          "results": [
+            "SOL-LONG-MACH/APP/TESSERACT_DESKTOP/README.md",
+            "SOL-LONG-MACH/APP/TESSERACT_DESKTOP/src-tauri/src/main.rs",
+            "SOL-LONG-MACH/APP/TESSERACT_DESKTOP/WORK_CHECKPOINT.json",
+            "SOL-LONG-MACH/MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json"
+          ],
+          "result_type": "variable references and prior checkpoint records only; no literal public key value"
+        },
+        "issuer_marker_query": {
+          "query": "KILO_XTIME ED25519",
+          "results": [
+            "README.md trust description",
+            "main.rs verification/test references"
+          ],
+          "key_material_found": false
+        },
+        "pem_marker_query": {
+          "query": "BEGIN PUBLIC KEY KILO",
+          "results": [
+            "main.rs receipt-verification code only"
+          ],
+          "pem_public_key_found": false
+        },
+        "interpretation": "Indexed code search did not find a provisioned issuer public key. This is not proof that the key is absent from Actions variables or another authorized provider."
+      },
+      "result": "NO_ISSUER_KEY_LITERAL_FOUND_IN_INDEXED_GITHUB_CODE_SCOPE",
+      "next_callable_edge": "Use an authorized GitHub Actions variables/settings control surface or issuer-owned carrier to verify the public trust anchor; do not invent a key and do not rerun CI without runner-state change.",
+      "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED / OPEN_NOT_PROVEN_COMPLETED."
     }
   ],
   "energy_protection_current": {
@@ -6767,6 +6835,16 @@
       "live_sensor_reading_confirmed": false,
       "task_settings_changed": false,
       "source_mutated": false
+    },
+    {
+      "observed_at": "2026-10-23T22:38:10Z",
+      "record_type": "TESSERACT_ISSUER_KEY_ORG_SEARCH",
+      "search_scope": "2708halinh-cloud",
+      "exact_variable_references": 4,
+      "pem_public_key_literal_found": false,
+      "issuer_key_absence_proven": false,
+      "ci_rerun": false,
+      "task_closed": false
     }
   ]
 }
