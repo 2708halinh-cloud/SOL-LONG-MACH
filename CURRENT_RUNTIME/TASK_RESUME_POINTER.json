@@ -4,22 +4,22 @@
   "repo": "2708halinh-cloud/x-time-web",
   "branch": "tesseract-desktop-mvp-20261006",
   "checkpoint": "TESSERACT_DESKTOP/WORK_CHECKPOINT.json",
-  "commit": "c41797b61ced8f152ff0833448d3a101fd13c158",
+  "commit": "5312816d5fe2b22e92302211b67f916b88a6fe14",
   "rule": "Sau khi nạp cấu hình, tiếp tục checkpoint này; không quay về chỉnh AGENTS như điểm bắt đầu công việc.",
   "pr": {
     "repository": "2708halinh-cloud/x-time-web",
     "number": 6,
     "mergeable": true,
-    "current_head": "c41797b61ced8f152ff0833448d3a101fd13c158",
-    "base_head": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
+    "current_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "base_head": "1dc5de36bc221d0a17c7601d67e2fe34e673f437",
     "unresolved_review_threads": 0,
-    "codex_review_state": "COMPLETED_CURRENT_HEAD_NO_FINDINGS",
-    "copilot_review_state": "REQUESTED_CURRENT_PR"
+    "codex_review_state": "PREVIOUS_HEAD_REVIEW_NOT_REVALIDATED_AFTER_SYNC",
+    "copilot_review_state": "PREVIOUS_REQUEST_NOT_REVALIDATED_AFTER_SYNC"
   },
   "build": {
     "workflow": "tesseract-desktop-ci",
     "previous_verified_run": 37516567468,
-    "current_head": "c41797b61ced8f152ff0833448d3a101fd13c158",
+    "current_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
     "previous_required_artifacts": [
       "tesseract-desktop-windows-x64",
       "tesseract-desktop-linux-x64",
@@ -31,7 +31,7 @@
     "readback_artifact_pattern": "tesseract-desktop-ci-readback-<workflow_run_id>",
     "readback_rule": "CI readback is mandatory for both success and failure. Accept only when verified_sha equals the current substantive PR head. TRUE -> verify review then merge; FLASE -> fetch workflow_run_id jobs/logs, patch failure, repeat.",
     "pr_event_verify": true,
-    "current_pr_run": 39975540379,
+    "current_pr_run": null,
     "workflow_correction_commit": "88f5be2086f401a4a1218a1e4dd3b05337377963",
     "workflow_corrections": [
       "feature-branch push no longer duplicates pull_request CI; push CI is master-only",
@@ -62,76 +62,21 @@
         "preserved_as_history": true
       }
     ],
-    "current_validation_run": 39975540284,
+    "current_validation_run": null,
     "current_head_run_readback": {
-      "observed_at": "2026-10-23T22:16:47.4916462+07:00",
-      "head": "c41797b61ced8f152ff0833448d3a101fd13c158",
-      "runs": [
-        {
-          "run_id": 39975540379,
-          "workflow": "tesseract-desktop-ci",
-          "conclusion": "failure",
-          "jobs": [
-            {
-              "id": 120489031057,
-              "name": "tesseract_os",
-              "conclusion": "failure",
-              "steps": null,
-              "logs_fetch": "BlobNotFound"
-            },
-            {
-              "id": 120489031162,
-              "name": "build (windows-latest, x86_64-pc-windows-msvc, windows-x64)",
-              "conclusion": "failure",
-              "steps": null
-            },
-            {
-              "id": 120489031197,
-              "name": "build (macos-14, aarch64-apple-darwin, macos-apple-silicon)",
-              "conclusion": "failure",
-              "steps": null
-            },
-            {
-              "id": 120489031208,
-              "name": "build (ubuntu-24.04, x86_64-unknown-linux-gnu, linux-x64)",
-              "conclusion": "failure",
-              "steps": null,
-              "logs_fetch": "BlobNotFound"
-            },
-            {
-              "id": 120489032534,
-              "name": "selfhosted_windows_verify",
-              "conclusion": "skipped"
-            },
-            {
-              "id": 120489325932,
-              "name": "readback",
-              "conclusion": "failure",
-              "steps": null
-            }
-          ]
-        },
-        {
-          "run_id": 39975540284,
-          "workflow": "validate-x-time",
-          "conclusion": "failure",
-          "jobs": [
-            {
-              "id": 120489030497,
-              "name": "verify",
-              "conclusion": "failure",
-              "steps": null,
-              "logs_fetch": "BlobNotFound"
-            }
-          ]
-        }
-      ],
+      "observed_at": "2026-10-23T17:20:03Z",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "runs_returned": [],
+      "commit_combined_statuses": [],
+      "interpretation": "No pull_request-triggered run/status was returned by the connector for this exact head at readback time; this is not a success result and does not authorize a manual rerun.",
       "rerun_performed": false,
-      "runner_assignment_change_verified": false,
-      "interpretation": "Current-head workflow runs are now recorded separately from historical run 39153474587. Jobs returned steps=null and sampled logs were unavailable with BlobNotFound; do not infer a source-code failure or rerun without verified runner assignment/entitlement change."
-    }
+      "runner_assignment_change_verified": false
+    },
+    "previous_head_pr_run": 39975540379,
+    "previous_head_validation_run": 39975540284,
+    "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Resume PR #6 at c41797b61ced8f152ff0833448d3a101fd13c158. Current-head workflows 39975540379 and 39975540284 remain failed with runner assignment change unverified; do not rerun. Directly scanned authorized Dropbox CDN body (41,993 bytes, SHA-256 b90e06f4...) and reentry ZIP (20,882 bytes, SHA-256 da1d4989..., 16 entries); no issuer-key markers found in those carriers. Continue only through other authorized existing carriers; do not invent key material.",
+  "next": "Resume PR #6 at 5312816d5fe2b22e92302211b67f916b88a6fe14. The feature branch is synchronized with current master 1dc5de36bc221d0a17c7601d67e2fe34e673f437 (0 behind); PR remains open and unmerged. No current-head PR workflow run/status was returned at readback. Do not manually rerun until runner assignment/entitlement changes are verified. Continue authorized issuer-key search; do not invent key material.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -146,7 +91,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-23",
+  "updated_at": "2026-10-24",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -246,5 +191,29 @@
       },
       "outcome": "NO_ISSUER_KEY_FOUND_IN_SCANNED_CARRIERS; PR REMAINS OPEN; NO CI RERUN"
     }
-  ]
+  ],
+  "latest_sync_observation": {
+    "observed_at_utc": "2026-10-23T17:20:03Z",
+    "source": "fresh GitHub branch refs, tree API, compare endpoint, and checkpoint readback",
+    "base_branch": "master",
+    "base_head": "1dc5de36bc221d0a17c7601d67e2fe34e673f437",
+    "branch": "tesseract-desktop-mvp-20261006",
+    "prior_branch_head": "c41797b61ced8f152ff0833448d3a101fd13c158",
+    "merge_commit": "4ba66d46e46a5944e414aa8abbcefdaf28ce26bb",
+    "checkpoint_update_commit": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "after_sync_compare": {
+      "status": "ahead",
+      "ahead_by": 59,
+      "behind_by": 0,
+      "merge_base": "1dc5de36bc221d0a17c7601d67e2fe34e673f437"
+    },
+    "changed_pr_paths": 12,
+    "overlapping_paths_with_base_delta": [],
+    "pr_state": "OPEN_NOT_MERGED",
+    "draft": false,
+    "ci_run_for_exact_head": "NOT_RETURNED_AT_READBACK",
+    "runner_assignment_change_verified": false,
+    "issuer_public_key_verified": false,
+    "ci_rerun": false
+  }
 }
