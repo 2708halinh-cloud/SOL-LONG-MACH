@@ -49,10 +49,20 @@ jobs:
           go mod verify
           go test ./... -v
           go vet ./...
-          go build ./cmd/hellocheck
-          test -x ./hellocheck
-          ./hellocheck address --hash160 0000000000000000000000000000000000000000
-          rm -f ./hellocheck
+          mkdir -p dist
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o dist/hellocheck-linux-amd64 ./cmd/hellocheck
+          CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o dist/hellocheck-windows-amd64.exe ./cmd/hellocheck
+          test -x dist/hellocheck-linux-amd64
+          ./dist/hellocheck-linux-amd64 address --hash160 0000000000000000000000000000000000000000
+          (cd dist && sha256sum hellocheck-* > SHA256SUMS)
+      - name: Retain compiled offline HelloCheck tools for independent use
+        if: github.event_name != 'schedule'
+        uses: actions/upload-artifact@v4
+        with:
+          name: hellocheck-offline-linux-windows-amd64
+          path: integrations/hellocheck/dist/
+          retention-days: 30
+          if-no-files-found: error
       - name: Execute source-bound cloud continuation without touching Windows
         run: |
           mkdir -p readback
