@@ -159,6 +159,7 @@ class ContinuityGuardTests(unittest.TestCase):
             action_kind="WRITE",
             provider_receipt={"r": 1},
             observable_consequence={"ok": 1},
+            readback={"verified": True, "source": "fake-target-test"},
         )
         self.assertFalse(cp.objective_done())
         self.assertEqual(select_next_callable_edge(cp).edge_id, "B")
@@ -276,6 +277,7 @@ class ContinuityGuardTests(unittest.TestCase):
             cp, "A", action_kind="WRITE",
             provider_receipt={"commit": "sha"},
             observable_consequence={"changed": True},
+            readback={"verified": True, "source": "fake-target-test"},
         )
         r014_register_known_error(
             cp, mechanism_id="OLD_REACTION",
@@ -329,6 +331,7 @@ class ContinuityGuardTests(unittest.TestCase):
                 "success": True, "action_kind": "WRITE",
                 "provider_receipt": {"id": "r2"},
                 "observable_consequence": {"written": True},
+                "readback": {"verified": True, "source": "fake-target-test"},
             }
 
         output = continue_bounded(cp, executor, max_steps=5)
