@@ -72,6 +72,26 @@ class CloudSurvivalTests(unittest.TestCase):
         self.assertTrue(configured)
         self.assertEqual(set(configured.values()),gitlink_paths)
 
+    def test_small_ledger_is_validated_without_27_item_threshold(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            ledger_path=root/"CURRENT_RUNTIME"/"OPEN_TASKS_CURRENT.json"
+            ledger_path.parent.mkdir(parents=True)
+            valid_task={"id":"SMALL_TASK","status":"OPEN",
+                        "assigned_subagent":"OPEN_ROUTER","assigned_agent_id":"agent-1",
+                        "real_execution_status":"OPEN_NOT_PROVEN_COMPLETED"}
+            ledger_path.write_text(json.dumps({"tasks":[valid_task]}),encoding="utf-8")
+            ledger,states,_=survivor.classify_open_ledger(root)
+            self.assertEqual([item["id"] for item in ledger["tasks"]],["SMALL_TASK"])
+            self.assertEqual(states,{"OPEN":1})
+
+            invalid_task={key:value for key,value in valid_task.items()
+                          if key!="assigned_agent_id"}
+            ledger_path.write_text(json.dumps({"tasks":[invalid_task]}),encoding="utf-8")
+            with self.assertRaisesRegex(ValueError,
+                                        "OPEN_TASK_WITHOUT_ASSIGNED_AGENT:SMALL_TASK"):
+                survivor.classify_open_ledger(root)
+
     def test_agent_route_rejects_missing_source_without_mutating_ledger(self):
         ledger,_,_=survivor.classify_open_ledger(ROOT)
         changed={"tasks":ledger["tasks"][:-1]}
