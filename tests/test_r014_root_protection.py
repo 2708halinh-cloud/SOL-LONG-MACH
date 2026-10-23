@@ -1,7 +1,7 @@
 """Source-grounded regression for 2026-10-07 GGDV carrier deletion."""
 import unittest
 
-from runtime.continuity_guard import Checkpoint, Edge
+from runtime.continuity_guard import Checkpoint, Edge, continue_bounded
 from runtime.destructive_gate import (
     destructive_preflight, protected_root_target, PROTECTED_ORIGINAL_DRIVE_IDS,
 )
@@ -54,6 +54,20 @@ class RootProtectionTests(unittest.TestCase):
     def test_read_only_not_blocked_by_destructive_gate(self):
         e=Edge(edge_id="X",target=".vscode",action_kind="READ")
         self.assertTrue(destructive_preflight(self.cp(),e)["allowed"])
+
+    def test_real_continuity_executor_never_calls_delete_on_original_drive_id(self):
+        calls = []
+        cp = self.cp()
+        cp.edges.append(self.edge("DELETE", "1FAc3tfnlZhW9evhIJxSv2PcLlUuBLYDz"))
+        cp.edges[0].callable_now = True
+        cp.edges[0].candidate_carriers = ["google-drive"]
+        result=continue_bounded(cp, lambda edge,carrier: calls.append((edge,carrier))
+                                or {"success":True}, max_steps=1)
+        self.assertEqual(calls, [])
+        self.assertEqual(result["receipts"][0]["reason"],"R014_PROTECTED_ORIGINAL_ROOT_20261007")
+        self.assertFalse(cp.objective_done())
+        self.assertFalse(cp.edges[0].grounded_done())
+        self.assertTrue(cp.edges[0].evidence["destructive_denials"])
 
     def test_reused_destructive_intent_rejected(self):
         cp=self.cp();cp.used_destructive_intent_ids.append("one-use-07oct")
