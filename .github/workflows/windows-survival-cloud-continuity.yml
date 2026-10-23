@@ -43,13 +43,8 @@ jobs:
       - name: Compile and test live HelloCheck Bitcoin TestNet Go sources
         working-directory: integrations/hellocheck
         run: |
-          go mod tidy
-          echo 'HELLOCHECK_GO_MOD_BEGIN'
-          cat go.mod
-          echo 'HELLOCHECK_GO_MOD_END'
-          echo 'HELLOCHECK_GO_SUM_BEGIN'
-          cat go.sum
-          echo 'HELLOCHECK_GO_SUM_END'
+          go mod download
+          go mod verify
           go test ./... -v
           go vet ./...
           go build ./cmd/hellocheck
