@@ -554,6 +554,20 @@
           "result": "TESSERACT_PR_BRANCH_SYNCED_WITH_CURRENT_MASTER; CI_AND_ISSUER_KEY_REMAIN_OPEN",
           "next_callable_edge": "Inspect naturally triggered current-head workflow run/readback when available. Do not manually rerun until runner assignment/entitlement change is verified; continue searching only authorized existing carriers for the real issuer public key.",
           "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED; branch synchronization is not build proof, key provisioning, or PR merge."
+        },
+        {
+          "observed_at": "2026-10-24T00:21:52+07:00",
+          "source": "GitHub Actions fresh readback on synchronized PR #6 head",
+          "actions_and_receipts": [
+            "Branch head 5312816d5fe2b22e92302211b67f916b88a6fe14 is 59 commits ahead and 0 behind current master 1dc5de36bc221d0a17c7601d67e2fe34e673f437; PR #6 remains open, unmerged, and not draft.",
+            "Naturally triggered tesseract-desktop-ci run 39994207477 failed; jobs: 3 platform builds, tesseract_os, and readback all failed with empty step arrays; selfhosted_windows_verify was skipped.",
+            "Naturally triggered validate-x-time run 39994207667 failed; verify job returned an empty step array.",
+            "Log retrieval for all failed jobs returned BlobNotFound; artifact lists for both runs were empty. No source step output or current-head readback artifact exists.",
+            "No manual workflow rerun was performed. Runner assignment/entitlement change remains unverified; issuer public key remains unverified."
+          ],
+          "result": "CURRENT_HEAD_CI_FAILED_BEFORE_STEP_OUTPUT_LOGS_UNAVAILABLE; SOURCE_CODE_FAILURE_NOT_ESTABLISHED",
+          "next_callable_edge": "Verify runner assignment/entitlement through an authorized control surface and continue source-bound issuer-key search. Do not rerun CI against the same unverified runner state; do not merge PR #6 until current-head TRUE readback and authorized issuer trust anchor exist.",
+          "status_effect": "Keep status OPEN_CARRIED and real_execution_status OPEN_NOT_PROVEN_COMPLETED. Branch synchronization and workflow failure do not close the task."
         }
       ]
     },
