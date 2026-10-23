@@ -1610,6 +1610,29 @@
       "prior_value_was_from": "BRAID_LIVE_PLURAL_20261023T124651965990Z.json",
       "correction_event_id": "X20261023151343206_PLURAL_RECEIPT_SHA_CORRECTION",
       "task_closure": false
+    },
+    {
+      "id": "FRESH_PROVIDER_READBACK_WINDOWS_TICK_TESSERACT_HEAD_20261023T221415",
+      "kind": "CURRENT_PROVIDER_READBACK_WINDOWS_TICK_AND_TESSERACT_CURRENT_HEAD",
+      "observed_at": "2026-10-23T22:14:15.8203959+07:00",
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "latest_tick_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T151134584403Z.json",
+        "receipt_sha256": "263e5a8cd073db820a6342d8d6379a03950f3a56f9cbf3b12736632907f3ea28",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "last_task_result": 0,
+        "live_sensor_reading_confirmed": false
+      },
+      "tesseract": {
+        "current_head": "c41797b61ced8f152ff0833448d3a101fd13c158",
+        "workflow_runs": [
+          39975540284,
+          39975540379
+        ],
+        "rerun_performed": false,
+        "issuer_key_verified": false
+      },
+      "task_closure": false
     }
   ],
   "energy_protection_current": {
@@ -3376,6 +3399,154 @@
         "Continue NPU actions A-E independently and retain their pending status."
       ],
       "prior_entry_policy": "Append-only; all prior observations and task states preserved."
+    },
+    {
+      "observed_at": "2026-10-23T22:14:15.8203959+07:00",
+      "record_type": "CURRENT_PROVIDER_READBACK_WINDOWS_TICK_AND_TESSERACT_CURRENT_HEAD",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "59cef77921dc09097d6ae488a0678d99b6fc73f4",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "4c65f09f5e4a8b23f237d2517522492074883810",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "89f1e525b2cf832e37ef2917fb7fe7809321ece0"
+      },
+      "provider": {
+        "name": "Dropbox Outlook",
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "bytes_downloaded_this_run": false,
+        "content_hash_verified_this_run": false
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "status": "ONLINE_DIRECT_READ_CONFIRMED",
+        "device_now_local": "2026-10-23T22:14:15.8203959+07:00",
+        "scheduled_task": {
+          "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+          "state": "Ready",
+          "enabled": true,
+          "last_run_device_local": "2026-10-23T22:11:33+07:00",
+          "last_result": 0,
+          "next_run_device_local": "2026-10-23T22:16:32+07:00"
+        },
+        "latest_receipt": {
+          "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T151134584403Z.json",
+          "bytes": 450,
+          "sha256": "263e5a8cd073db820a6342d8d6379a03950f3a56f9cbf3b12736632907f3ea28",
+          "exact_target_readback": true,
+          "json_valid": true,
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "source_file_written": false,
+          "synthetic_rows_added": 0,
+          "cloud_export_enabled": false,
+          "github_export_enabled": false,
+          "live_sensor_reading_confirmed": false
+        },
+        "source": {
+          "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+          "bytes": 35389440,
+          "last_modified_utc": "2026-10-23T08:45:56.2458701Z",
+          "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+        },
+        "w32time": {
+          "status": "Stopped",
+          "start_type": "Manual"
+        },
+        "hwinfo": {
+          "process_running": true,
+          "pid": 17520,
+          "enable_logging": 0,
+          "csv_bytes": 39922785,
+          "csv_last_modified_utc": "2026-10-21T02:20:45.8565035Z",
+          "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+          "live_stream_confirmed": false
+        }
+      },
+      "independent_branch": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "branch": "tesseract-desktop-mvp-20261006",
+        "current_head_from_resume_pointer": "c41797b61ced8f152ff0833448d3a101fd13c158",
+        "resume_pointer_blob_sha": "59cef77921dc09097d6ae488a0678d99b6fc73f4",
+        "workflow_runs_associated_with_current_head": [
+          {
+            "run_id": 39975540284,
+            "name": "validate-x-time",
+            "conclusion": "failure",
+            "job_id": 120489030497,
+            "job_name": "verify",
+            "steps": null,
+            "logs_fetch": "not_available_blob_not_found"
+          },
+          {
+            "run_id": 39975540379,
+            "name": "tesseract-desktop-ci",
+            "conclusion": "failure",
+            "jobs": [
+              {
+                "job_id": 120489031057,
+                "name": "tesseract_os",
+                "conclusion": "failure",
+                "steps": null,
+                "logs_fetch": "blob_not_found"
+              },
+              {
+                "job_id": 120489031162,
+                "name": "build_windows",
+                "conclusion": "failure",
+                "steps": null
+              },
+              {
+                "job_id": 120489031197,
+                "name": "build_macos",
+                "conclusion": "failure",
+                "steps": null
+              },
+              {
+                "job_id": 120489031208,
+                "name": "build_ubuntu",
+                "conclusion": "failure",
+                "steps": null
+              },
+              {
+                "job_id": 120489032534,
+                "name": "selfhosted_windows_verify",
+                "conclusion": "skipped"
+              },
+              {
+                "job_id": 120489325932,
+                "name": "readback",
+                "conclusion": "failure",
+                "steps": null
+              }
+            ],
+            "logs_fetch": "two_sampled_job_logs_returned_blob_not_found"
+          }
+        ],
+        "rerun_performed": false,
+        "runner_assignment_change_verified": false,
+        "issuer_key": "UNVERIFIED"
+      },
+      "state_boundary": "WINDOWS_DIRECT_READ_CONFIRMED_TICK_METADATA_ONLY; HWINF0_LOGGING_DISABLED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_CURRENT_HEAD_WORKFLOWS_FAIL_WITH_STEPS_UNAVAILABLE; ISSUER_KEY_UNVERIFIED",
+      "invariants": {
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "open_tasks_closed": false,
+        "tesseract_ci_rerun": false,
+        "task_statuses_changed": false
+      },
+      "next_action": [
+        "Read the Windows scheduled receipt after the device-clock target 2026-10-23T22:16:32+07:00; do not treat LastTaskResult alone as the receipt.",
+        "Continue HWiNFO logging via authorized UI/configuration route; require a changed CSV mtime/hash and sample evidence before marking live stream restored.",
+        "Continue issuer-key search through existing authorized carriers; the CDN body extracted from Dropbox is a Hostinger Website Builder shell (63 text characters), not issuer-key evidence.",
+        "Do not rerun TESSERACT CI until an authorized source verifies runner assignment/entitlement changed; current-head logs for sampled jobs were unavailable with BlobNotFound."
+      ],
+      "prior_entry_policy": "Append-only; prior observations, event records, and all OPEN task states preserved."
     }
   ]
 }
