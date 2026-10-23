@@ -9,6 +9,7 @@ on:
       - 'runtime/hellohabit_t005_adapter.py'
       - 'tests/test_hellohabit_t005_adapter.py'
       - 'integrations/android/hellohabit/**'
+      - 'integrations/hellocheck/**'
       - 'CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json'
       - '.github/workflows/windows-survival-cloud-continuity.yml'
   schedule:
@@ -35,6 +36,20 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_cloud_survival_scheduler.py' -v
       - name: Validate HelloHabit T005 split adapter without claiming app installation
         run: python -m unittest discover -s tests -p 'test_hellohabit_t005_adapter.py' -v
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+          cache: false
+      - name: Compile and test live HelloCheck Bitcoin TestNet Go sources
+        working-directory: integrations/hellocheck
+        run: |
+          go mod download
+          go test ./... -v
+          go vet ./...
+          go build ./cmd/hellocheck
+          test -x ./hellocheck
+          ./hellocheck address --hash160 0000000000000000000000000000000000000000
+          rm -f ./hellocheck
       - name: Execute source-bound cloud continuation without touching Windows
         run: |
           mkdir -p readback
