@@ -1735,6 +1735,16 @@
       "issuer_key_materialized": false,
       "private_key_read": false,
       "ci_rerun": false
+    },
+    "codex_config_historical_mock_route_20261024": {
+      "path": "/Linh Hà/Tệp Microsoft Copilot Chat/SOL_CODEX_CLI_ROTATE_v1.0.1_RECEIPT.json",
+      "modified": "2026-10-12T15:17:34Z",
+      "route_proof": "PASS",
+      "authorization_value": "PLACEHOLDER_ONLY",
+      "expected_mock_error": "MOCK_ROUTE_REACHED",
+      "current_config_verified": false,
+      "live_credentials_verified": false,
+      "secret_values_read": false
     }
   },
   "sinks": {
@@ -3103,6 +3113,79 @@
         "source_overwritten": false,
         "open_tasks_closed": false,
         "tesseract_ci_rerun": false
+      }
+    },
+    {
+      "id": "CODEX_CONFIG_PRIVATE_BACKUP_HISTORICAL_MOCK_ROUTE_REVIEW_20261024",
+      "kind": "CODEX_CONFIG_SOURCE_AUTHORITY_AND_HISTORICAL_RECEIPT_READBACK",
+      "observed_at": "2026-10-24T04:06:03+07:00",
+      "source": "Dropbox Outlook current source packet plus exact GitHub public failover pointer",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "590f9d68f41851d59361cc30a4516ef3199e3f96",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "aca3b6472ab40c13c38350762a60b677680fabfd",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "a6850a136576f0474e4a8e6469a45c8f3bcd1292",
+        "CONFIG_SOL/CODEX_CLOUD_DEVICE_FAILOVER_CURRENT.json": "b6e27cc58b42f3faf292d046371f4ba3c57049ee"
+      },
+      "evidence": {
+        "task_id": "CODEX_CONFIG_PRIVATE_BACKUP",
+        "task_state": "OPEN",
+        "source_authority": {
+          "path": "/Linh Hà/Tệp Microsoft Copilot Chat/00_SOURCE_AUTHORITY.md",
+          "modified": "2026-10-12T15:17:31Z",
+          "content_chars": 800,
+          "mode": "LOCAL_PACKET_ONLY",
+          "external_chat_or_raw_lookup_required": false
+        },
+        "session_ledger": {
+          "path": "/Linh Hà/Tệp Microsoft Copilot Chat/CURRENT_SESSION_04_LEDGER.json",
+          "modified": "2026-10-12T15:17:34Z",
+          "source_mode": "LOCAL_PACKET_ONLY",
+          "external_lookup": false,
+          "chat_history_lookup": false,
+          "raw_lookup": false,
+          "status": "CLOSED_FOR_HANDOFF"
+        },
+        "historical_mock_receipt": {
+          "path": "/Linh Hà/Tệp Microsoft Copilot Chat/SOL_CODEX_CLI_ROTATE_v1.0.1_RECEIPT.json",
+          "modified": "2026-10-12T15:17:34Z",
+          "route_proof": "PASS",
+          "authorization_value": "PLACEHOLDER_ONLY",
+          "expected_mock_error": "MOCK_ROUTE_REACHED",
+          "conclusion": "Historical custom-provider route proof only; not current Codex config or live credential proof."
+        },
+        "public_pointer": {
+          "path": "CONFIG_SOL/CODEX_CLOUD_DEVICE_FAILOVER_CURRENT.json",
+          "blob_sha": "b6e27cc58b42f3faf292d046371f4ba3c57049ee",
+          "local_config_size_bytes": 12950,
+          "local_config_sha256": "B68E2324E87421B9FAFF438F779762309BE813534AF3F1F389935ACF891CBB35",
+          "google_drive_replica_size_bytes": 4334,
+          "google_drive_replica_modified_utc": "2026-08-31T01:35:17.097Z",
+          "google_drive_replica_content_sha256": "UNKNOWN",
+          "google_drive_replica_latest_verified": false,
+          "target_h_partition_kind": "EFI_SYSTEM",
+          "target_h_write_result": "NOT_WRITTEN_BOOT_PARTITION_PROTECTION"
+        },
+        "current_execution_boundary": {
+          "local_config_read_this_run": false,
+          "auth_json_read": false,
+          "secret_values_read": false,
+          "google_drive_content_read_this_run": false,
+          "encrypted_backup_created": false,
+          "public_secret_copy_performed": false,
+          "reason": "Desktop read route timed out/pending; Drive connector not present in current tool inventory; historical receipt uses placeholder only."
+        },
+        "next_callable_edge": "When an authorized desktop or Drive route is available, read the current config.toml bytes only as needed for an encrypted backup, verify destination access control and offline readback, and never copy auth.json or secret values to public GitHub/Dropbox."
+      },
+      "conclusion": "Historical mock route is verified; current Codex config and encrypted offline backup are not verified. Keep task OPEN; no credential/config bytes copied.",
+      "invariants": {
+        "task_closed": false,
+        "auth_json_read": false,
+        "secret_values_read": false,
+        "encrypted_backup_created": false,
+        "public_secret_copy_performed": false,
+        "h_efi_partition_written": false
       }
     }
   ],
@@ -6182,6 +6265,58 @@
       "credentials_committed": false,
       "source_moved_or_deleted": false,
       "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-23T21:06:03Z",
+      "record_type": "CODEX_CONFIG_PRIVATE_BACKUP_SOURCE_PACKET_AND_MOCK_RECEIPT",
+      "source_authority": {
+        "path": "/Linh Hà/Tệp Microsoft Copilot Chat/00_SOURCE_AUTHORITY.md",
+        "modified": "2026-10-12T15:17:31Z",
+        "content_chars": 800,
+        "mode": "LOCAL_PACKET_ONLY",
+        "external_chat_or_raw_lookup_required": false
+      },
+      "session_ledger": {
+        "path": "/Linh Hà/Tệp Microsoft Copilot Chat/CURRENT_SESSION_04_LEDGER.json",
+        "modified": "2026-10-12T15:17:34Z",
+        "source_mode": "LOCAL_PACKET_ONLY",
+        "external_lookup": false,
+        "chat_history_lookup": false,
+        "raw_lookup": false,
+        "status": "CLOSED_FOR_HANDOFF"
+      },
+      "historical_mock_receipt": {
+        "path": "/Linh Hà/Tệp Microsoft Copilot Chat/SOL_CODEX_CLI_ROTATE_v1.0.1_RECEIPT.json",
+        "modified": "2026-10-12T15:17:34Z",
+        "route_proof": "PASS",
+        "authorization_value": "PLACEHOLDER_ONLY",
+        "expected_mock_error": "MOCK_ROUTE_REACHED",
+        "conclusion": "Historical custom-provider route proof only; not current Codex config or live credential proof."
+      },
+      "public_pointer": {
+        "path": "CONFIG_SOL/CODEX_CLOUD_DEVICE_FAILOVER_CURRENT.json",
+        "blob_sha": "b6e27cc58b42f3faf292d046371f4ba3c57049ee",
+        "local_config_size_bytes": 12950,
+        "local_config_sha256": "B68E2324E87421B9FAFF438F779762309BE813534AF3F1F389935ACF891CBB35",
+        "google_drive_replica_size_bytes": 4334,
+        "google_drive_replica_modified_utc": "2026-08-31T01:35:17.097Z",
+        "google_drive_replica_content_sha256": "UNKNOWN",
+        "google_drive_replica_latest_verified": false,
+        "target_h_partition_kind": "EFI_SYSTEM",
+        "target_h_write_result": "NOT_WRITTEN_BOOT_PARTITION_PROTECTION"
+      },
+      "current_execution_boundary": {
+        "local_config_read_this_run": false,
+        "auth_json_read": false,
+        "secret_values_read": false,
+        "google_drive_content_read_this_run": false,
+        "encrypted_backup_created": false,
+        "public_secret_copy_performed": false,
+        "reason": "Desktop read route timed out/pending; Drive connector not present in current tool inventory; historical receipt uses placeholder only."
+      },
+      "task_state": "OPEN",
+      "secret_values_read": false,
+      "public_secret_copy_performed": false
     }
   ]
 }
