@@ -1206,6 +1206,60 @@
       },
       "source": "runtime/destructive_gate.py; runtime/continuity_guard.py; tests/test_r014_root_protection.py",
       "task_closure": false
+    },
+    {
+      "observed_at": "2026-10-23T15:59:31+07:00",
+      "record_type": "PR21_SOURCE_AND_CLOUD_READBACK_NOT_TASK_CLOSURE",
+      "source_branch": "fix/open-task-routing-current-20261023",
+      "source_head_commit": "fadfe02020e2004cb177bec6a52b92387a06fc59",
+      "changed_targets": {
+        ".github/workflows/windows-survival-cloud-continuity.yml": "cb136cee9c77c177c7e1499f07b27daf21e3d977",
+        ".gitmodules": "5db7b8488ff9edbeb6182cfa3d3abaf4c1bcd61d",
+        "runtime/cloud_survival_scheduler.py": "802cdf76ab5ff2558f52b1a27943a6a30d52af53",
+        "tests/test_cloud_survival_scheduler.py": "d911c400953673831404e61fe70fd523b0cb33b2"
+      },
+      "provider_run": {
+        "id": 39921703685,
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/39921703685",
+        "result": "success",
+        "job_id": 120308220308,
+        "job_name": "continue-without-personal-devices"
+      },
+      "verified": {
+        "scheduler_tests": "8 passed",
+        "gitmodules_regression": "test_gitmodules_paths_match_tracked_gitlinks passed",
+        "hellohabit_adapter_tests": "4 passed",
+        "hellocheck_go_unit_tests": "11 passed",
+        "go_mod_verify": true,
+        "go_vet": true,
+        "linux_amd64_binary_built": true,
+        "windows_amd64_binary_built": true,
+        "continuation_artifact_id": 12487073934,
+        "continuation_artifact_sha256": "42f290915e704c70e22fc2f576e277fa05ee2caa3f9724f49a9066273e01bde3",
+        "source_tasks_carried_forward": 28,
+        "new_user_signals_carried": 3,
+        "windows_disk_cleanup_performed": false,
+        "windows_host_actions_blocked": true,
+        "bitcoin_testnet_broadcast_verified": false,
+        "autonomous_n8n_execution_verified": false
+      },
+      "branch_boundary": {
+        "main_ledger_blob_before_readback": "dfee1dc916739c52b56e72719a45dfcafe4458e2",
+        "branch_ledger_blob_before_append": "b92e837e68c8e47af115cb0399a4fbb0251ab65c",
+        "note": "Evidence belongs to this PR branch. Main remains a separate source until merge; CI success does not complete any source task."
+      },
+      "task_state_preserved": {
+        "task_count": 28,
+        "status_counts": {
+          "OPEN": 9,
+          "OPEN_CARRIED": 2,
+          "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 14,
+          "IN_PROGRESS": 3
+        },
+        "changed_task_statuses": [],
+        "tasks_closed": 0
+      },
+      "invariant": "Readback evidence only; no task status changed; no claim of Windows recovery, original-export recovery, TESSERACT Art integration, autonomous n8n execution, or Bitcoin broadcast."
     }
   ],
   "energy_protection_current": {
