@@ -555,7 +555,27 @@
       "delegation_mode": "NONCOERCIVE_SOURCE_BOUND",
       "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
       "assignment_carrier": "n8n:dataTable:rSPFIOWbS7cfNJ8z:SOL-HISTORICAL_BACKLOG_IMPORT",
-      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE"
+      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE",
+      "live_progress": [
+        {
+          "event_id": "HISTORICAL_BACKLOG_ID_RECONCILIATION_20261023T163509Z",
+          "observed_at": "2026-10-23T16:35:09Z",
+          "source": "Direct GitHub readback and ID-set comparison on current main",
+          "source_blobs": {
+            "offers": "306cec21246ae23e23b1dee382d0274856311329",
+            "current_ledger": "efdd396e5a546dbd7e12989b96f4ea6a09256a2d",
+            "inspected_main_commit": "09d76085736a5e91246ac8363d2db8030decc21d"
+          },
+          "actions_and_receipts": [
+            "Read CURRENT_RUNTIME/SUBAVENGERS_BIM_TASK_OFFERS_20261022.json; source_readback declares 24 task offers and status OFFERS_ONLY_DO_NOT_IMPERSONATE_AGENTS.",
+            "Compared all 24 task_id values in that carrier against the current 28 IDs in CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json; all 24 are present and no ID from this carrier is missing in the current ledger.",
+            "Enumerated the current GitHub main tree (1,608 entries, not truncated) and found the canonical ledger, resume pointer, current offer carrier, PR13 provenance, JINEY export trace and public-safe account-export index. This scan is repository-scoped and does not establish completeness of Library, Drive, Dropbox or physical disks."
+          ],
+          "result": "ALL_24_BIM_OFFER_IDS_PRESENT_IN_CURRENT_LEDGER; NO_NEW_TASK_ID_FROM_THIS_CARRIER",
+          "next_callable_edge": "Continue scanning remaining authorized source carriers and provider scopes; do not infer provider-wide completeness from this repository-only comparison.",
+          "status_effect": "Keep HISTORICAL_BACKLOG_IMPORT OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED; offers and ID reconciliation do not prove agent execution or close the task."
+        }
+      ]
     },
     {
       "id": "GOOGLE_CLOUD_ACTIONS_SECRET",
