@@ -1,6 +1,8 @@
 """Independent cloud survival and source-preserving OPEN continuity tests."""
 from __future__ import annotations
+import configparser
 import json
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -51,6 +53,19 @@ class CloudSurvivalTests(unittest.TestCase):
             self.assertFalse(item["stamp_beta_is_realized"])
             self.assertEqual(item["capability_offer"]["n8n_runtime"],
                              "DRAFT_MISSING_MODEL_AND_CREDENTIAL")
+
+    def test_gitmodules_paths_match_tracked_gitlinks(self):
+        config=configparser.ConfigParser()
+        loaded=config.read(ROOT/".gitmodules",encoding="utf-8")
+        self.assertTrue(loaded)
+        configured={section:config[section].get("path") for section in config.sections()
+                    if section.startswith('submodule "')}
+        tree=subprocess.run(["git","ls-tree","-r","HEAD"],cwd=ROOT,
+                            check=True,capture_output=True,text=True).stdout
+        gitlink_paths={line.split("\\t",1)[1] for line in tree.splitlines()
+                       if line.startswith("160000 commit ")}
+        self.assertTrue(configured)
+        self.assertEqual(set(configured.values()),gitlink_paths)
 
     def test_agent_route_rejects_missing_source_without_mutating_ledger(self):
         ledger,_,_=survivor.classify_open_ledger(ROOT)
