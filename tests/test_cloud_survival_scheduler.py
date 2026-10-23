@@ -63,10 +63,10 @@ class CloudSurvivalTests(unittest.TestCase):
         tree=subprocess.run(["git","-c","core.quotePath=false","ls-tree","-r","-z","HEAD"],
                             cwd=ROOT,check=True,capture_output=True,text=True).stdout
         gitlink_paths=set()
-        for entry in tree.split("\\0"):
+        for entry in tree.split("\0"):
             if not entry:
                 continue
-            metadata,path=entry.split("\\t",1)
+            metadata,path=entry.split("\t",1)
             if metadata.startswith("160000 commit "):
                 gitlink_paths.add(path)
         self.assertTrue(configured)
