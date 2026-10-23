@@ -1700,6 +1700,16 @@
       "official_license_reference": "https://www.hwinfo.com/licenses/",
       "cli_logging_requires_pro": true,
       "license_tier_verified": false
+    },
+    "windows_tick_20261023T205133Z": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json",
+      "sha256": "e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634",
+      "bytes": 450,
+      "exact_target_readback": true,
+      "json_valid": true,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_unchanged": true,
+      "live_sensor_reading_confirmed": false
     }
   },
   "sinks": {
@@ -2925,6 +2935,60 @@
         "source_overwritten": false,
         "open_tasks_closed": false,
         "tesseract_ci_rerun": false
+      }
+    },
+    {
+      "id": "EIGHTH_SCHEDULED_WINDOWS_TICK_20261024",
+      "kind": "SCHEDULED_WINDOWS_TICK_EXACT_TARGET_READBACK",
+      "observed_at": "2026-10-24T03:52:55.007+07:00",
+      "source": "Remote Desktop Commander direct Windows task/receipt/source readback; Dropbox Outlook metadata readback",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "76be893c6c86d352e7f12a9ab595f7d155089c22",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "e97f472a593180b456caa98ee6e14b88944ad329",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "415ef4703d6254ef4d3d460342aeda6633e3827d"
+      },
+      "windows": {
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state": "Ready",
+        "last_run_local": "2026-10-24T03:51:33+07:00",
+        "last_result": 0,
+        "missed_runs": 0,
+        "next_run_local_device_clock": "2026-10-24T03:56:32+07:00",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json",
+        "receipt_observed_at_utc": "2026-10-23T20:51:33.863313Z",
+        "receipt_bytes": 450,
+        "receipt_sha256": "e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634",
+        "exact_target_readback": true,
+        "json_valid": true,
+        "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_last_write_utc": "2026-10-23T08:45:56.2458701Z",
+        "source_unchanged": true,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_export_enabled": false,
+        "github_export_enabled": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "provider": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true
+      },
+      "state_boundary": "EIGHTH_TICK_VERIFIED_SOURCE_UNCHANGED_LIVE_SENSOR_STREAM_UNVERIFIED",
+      "next_callable_edge": "Read the next scheduled tick after device-clock 2026-10-24T03:56:32+07:00; continue supported HWiNFO live-source recovery without redirecting the pinned consumer or enabling exports.",
+      "invariants": {
+        "raw_sensor_rows_committed": false,
+        "raw_sensor_values_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "source_overwritten": false,
+        "open_tasks_closed": false
       }
     }
   ],
@@ -5946,6 +6010,30 @@
         "rerun_performed": false,
         "runner_assignment_change_verified": false,
         "issuer_public_key_verified": false
+      },
+      "raw_sensor_values_committed": false,
+      "credentials_committed": false,
+      "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-23T20:52:55.007Z",
+      "record_type": "EIGHTH_SCHEDULED_TICK_PROVIDER_OBSERVATION",
+      "windows": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json",
+        "receipt_sha256": "e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634",
+        "task_last_run": "2026-10-24T03:51:33+07:00",
+        "last_result": 0,
+        "missed_runs": 0,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_unchanged": true,
+        "live_sensor_reading_confirmed": false
+      },
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true
       },
       "raw_sensor_values_committed": false,
       "credentials_committed": false,
