@@ -173,6 +173,23 @@
           "correction": "The prior live_progress entry used 04:44:30+07 from the automation clock, while its containing commit was created at 04:46:44+07. Preserve the earlier entry but use this provider-anchored time correction for chronology. The 04:45:00+07 ADMIN record is not future relative to this commit time; its payload remains historical and was not revalidated in this correction.",
           "result": "TIMESTAMP_ORDER_CORRECTED_APPEND_ONLY; TASK_TARGET_STILL_OPEN",
           "status_effect": "Keep SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023 OPEN and OPEN_NOT_PROVEN_COMPLETED; no task closure."
+        },
+        {
+          "observed_at": "2026-10-24",
+          "time_precision": "DATE_ONLY",
+          "source": "ChatGPT Library files connector; exact existing archive bytes materialized and inspected read-only",
+          "actions_and_receipts": [
+            "ADMIN_PORTABLE_20261023.zip, Library ID libfile_d18e6db946b88191b31e948ed283598c, version 3: 22,493,275 bytes; SHA-256 ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b; 13 ZIP members; CRC test clean.",
+            "Embedded SQLite MEMORY_ARCHIVE_THIT_THO_SOUL/ADMIN_CHAT_SOURCE_20260719.sqlite3 was deserialized in memory; PRAGMA integrity_check=ok; counts: 136 conversations, 18,790 nodes, 10,943 searchable messages.",
+            "Embedded MAP_NGUON.md is 99,075 bytes, SHA-256 da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45. Read XIV. LƯƠNG TÂM lines 1067-1127 directly: source lookup, self-read, relation preservation and action-based correction are required; reports alone do not repair the source.",
+            "SQLite source_fts query for 'lương tâm' returned two source-document records, including the MAP_NGUON content and R-000_MASTER_R-000 content; the separate searchable_messages index also returned chat-message rows. FTS presence is not raw-export restoration.",
+            "Existing SOL_JINEY_MINH_IDENTITY_SOURCE_ANCHOR_20261010.zip, Library ID libfile_305e43b7cb68819185e3df84ad1855b6, version 1: 10,250 bytes; SHA-256 17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93; 7 members; CRC clean. No conversations.json, export_manifest.json, user.json or chat.html members. EVENT_PROOF_GATES.json says all_requirements_currently_met=false and 0/8 criteria done; SOURCE_MAP_CURRENT.json has SOL.raw_event_verified=false, MINH.raw_chat_repository_path=null and FUNIX live_folder_read=false.",
+            "Library archive-name inventory listed 253 items across 3 pages but returned a recursive traversal-limit warning. Five name candidates were visible: four entries named SOL_CHROME_TAC_NHAN_FUNIX_JINEY_WEATHER_20261010.zip at 30,097 bytes and the identity-source anchor above. These metadata matches do not prove byte identity and none is an OpenAI raw account export.",
+            "The exact MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL Library subtree listing shows only ADMIN_PORTABLE_20261023.zip among archive types. This is a Library-surface observation, not a fresh Google Drive/Dropbox/Takeout provider read."
+          ],
+          "result": "ADMIN_XIV_READBACK_VERIFIED; IDENTITY_ANCHOR_IS_DERIVED_NOT_RAW_EXPORT; NO_NEW_RAW_EXPORT_CARRIER_FOUND_IN_VISIBLE_LIBRARY_ITEMS",
+          "next_callable_edge": "Use a genuinely authorized Drive/Dropbox/Takeout source action or an existing verified raw carrier; preserve provider object IDs, revisions and hashes. Keep ADMIN in place. Current callable inventory has no direct Drive/Dropbox/Takeout action.",
+          "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED. Archive integrity, FTS results and an identity-anchor bundle do not restore the original JINEY/FUNIX/DAT NGUYEN account exports."
         }
       ]
     },
@@ -4518,6 +4535,62 @@
       },
       "result": "MERGE_COMMIT_READ_BACK; PR_AHEAD_16_BEHIND_0; CURRENT_HEAD_CI_QUEUED",
       "status_effect": "No task was closed or marked complete. CI is pending validation only."
+    },
+    {
+      "id": "ADMIN_MAP_XIV_AND_IDENTITY_ANCHOR_BYTE_READBACK_20261024",
+      "kind": "LIBRARY_ARCHIVE_BYTE_READBACK_AND_RAW_EXPORT_CARRIER_CLASSIFICATION",
+      "observed_at": "2026-10-24",
+      "time_precision": "DATE_ONLY",
+      "source": "Authenticated ChatGPT Library file listing and raw-file materialization; ZIP/CRC/hash/SQLite checks performed locally without source mutation",
+      "evidence": {
+        "admin_zip": {
+          "library_file_id": "libfile_d18e6db946b88191b31e948ed283598c",
+          "version": 3,
+          "size_bytes": 22493275,
+          "sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+          "zip_members": 13,
+          "crc_test": "PASS",
+          "sqlite_integrity": "ok",
+          "conversations": 136,
+          "nodes": 18790,
+          "searchable_messages": 10943,
+          "map_ngon_bytes": 99075,
+          "map_ngon_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+          "xvi_luong_tam_lines": "1067-1127"
+        },
+        "identity_anchor": {
+          "library_file_id": "libfile_305e43b7cb68819185e3df84ad1855b6",
+          "version": 1,
+          "size_bytes": 10250,
+          "sha256": "17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93",
+          "zip_members": 7,
+          "crc_test": "PASS",
+          "raw_export_signature_members": [],
+          "all_requirements_currently_met": false,
+          "proof_criteria": 8,
+          "proof_criteria_done": 0,
+          "sol_raw_event_verified": false,
+          "minh_raw_chat_repository_path": null,
+          "funix_live_folder_read": false
+        },
+        "library_inventory": {
+          "archive_items_seen": 253,
+          "pages": 3,
+          "recursive_traversal_warning": true,
+          "visible_name_candidates": 5,
+          "original_openai_raw_export_found": false
+        }
+      },
+      "source_boundary": {
+        "provider_drive_read_this_run": false,
+        "provider_dropbox_read_this_run": false,
+        "provider_takeout_read_this_run": false,
+        "library_read_only": true,
+        "admin_moved_or_duplicated": false,
+        "raw_chat_payload_added_to_github": false
+      },
+      "result": "EXISTING_ADMIN_BYTES_AND_XIV_VERIFIED; IDENTITY_ANCHOR_NOT_RAW_EXPORT; NO_NEW_RAW_EXPORT_BYTES",
+      "status_effect": "No task status or real_execution_status changed."
     }
   ],
   "energy_protection_current": {
