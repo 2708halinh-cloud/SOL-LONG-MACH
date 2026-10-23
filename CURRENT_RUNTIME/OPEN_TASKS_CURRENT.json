@@ -606,6 +606,20 @@
           "result": "TESSERACT_OS_LOCAL_BRAID_RECEIPTS_VERIFIED_TESSERACT_DESKTOP_ISSUER_AND_RUNNER_UNVERIFIED",
           "next_callable_edge": "Continue issuer-key search through authorized existing carriers and verify runner assignment/entitlement using an authorized control surface before any CI rerun; preserve PR #6 OPEN.",
           "status_effect": "Keep OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED; do not rerun CI or merge."
+        },
+        {
+          "observed_at": "2026-10-24T02:41:37.531+07:00",
+          "source": "Direct read-only scan on DESKTOP-86ITNQ4 plus fresh GitHub/Dropbox provider readback",
+          "actions_and_receipts": [
+            "Scanned 2,238 text files under G:\\OS_Workspace\\TESSERACT_OS (extensions JSON/TOML/YAML/ENV/Markdown/Rust/Python/PowerShell/CMD/TXT/INI, each under 2 MiB) for XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64, KILO_XTIME, and BEGIN PUBLIC KEY; zero files matched those exact markers.",
+            "Filename scan across G:\\OS_Workspace\\TESSERACT_OS and D:\\SENSOR_LOGS found one start_xtime_local.cmd filename candidate but no issuer/Kilo/Ed25519/PEM/public-key filename.",
+            "Dropbox Outlook direct-child listing of /Linh Hà/SENSOR_LOGS is complete at 56 entries; no issuer-key-named direct child.",
+            "GitHub code search across user:2708halinh-cloud returns references to XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64 in README.md, main.rs, WORK_CHECKPOINT.json, and the ledger; no provisioned key value found. Exact 'BEGIN PUBLIC KEY' + 'KILO_XTIME' query returned only a ledger note, not a key literal.",
+            "Current-head CI runs 39994207477 and 39994207667 remain failed before step output; no runner assignment change verified and no rerun performed."
+          ],
+          "result": "AUTHORIZED_LOCAL_TEXT_SCAN_NO_ISSUER_MARKER; ISSUER_KEY_AND_RUNNER_ASSIGNMENT_STILL_UNVERIFIED",
+          "next_callable_edge": "Continue with authorized issuer-side/provider carriers or Actions variable control surface if exposed; do not invent a key or rerun CI without runner-state change.",
+          "status_effect": "Keep OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
         }
       ]
     },
@@ -2282,6 +2296,32 @@
       "source_moved_or_deleted": false,
       "task_statuses_changed": false,
       "tesseract_ci_rerun": false
+    },
+    {
+      "id": "TESSERACT_ISSUER_LOCAL_SCAN_20261023194137",
+      "kind": "AUTHORIZED_LOCAL_ISSUER_MARKER_SCAN_AND_PROVIDER_RECHECK",
+      "observed_at": "2026-10-24T02:41:37.531+07:00",
+      "open_tasks_blob_before": "e0f5dd098912e5a76735f982e2677dd959127e3c",
+      "task_resume_pointer_blob_before": "7fcaaefe5796c71e90b0fbc9b61c03aeff13b57f",
+      "modual_blob_current": "a32954641558eef810646e5d7b86a6c547364226",
+      "scan": {
+        "root": "G:\\OS_Workspace\\TESSERACT_OS",
+        "text_files_scanned": 2238,
+        "exact_marker_files": 0,
+        "filename_key_candidates": 0
+      },
+      "provider": {
+        "dropbox_sensor_logs_children": 56,
+        "issuer_key_named_child": false,
+        "github_variable_refs": 4,
+        "key_value_found": false
+      },
+      "tesseract_ci_rerun": false,
+      "task_count": 28,
+      "task_closure": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "task_statuses_changed": false
     }
   ],
   "energy_protection_current": {
@@ -4989,6 +5029,54 @@
       "source_moved_or_deleted": false,
       "task_statuses_changed": false,
       "tesseract_ci_rerun": false
+    },
+    {
+      "observed_at": "2026-10-23T19:41:37.531Z",
+      "record_type": "TESSERACT_LOCAL_ISSUER_MARKER_SCAN_AND_PROVIDER_RECHECK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "7fcaaefe5796c71e90b0fbc9b61c03aeff13b57f",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "e0f5dd098912e5a76735f982e2677dd959127e3c",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "a32954641558eef810646e5d7b86a6c547364226"
+      },
+      "tesseract_local_scan": {
+        "root": "G:\\OS_Workspace\\TESSERACT_OS",
+        "text_files_scanned": 2238,
+        "exact_marker_files": 0,
+        "filename_candidates": [
+          "G:\\OS_Workspace\\TESSERACT_OS\\continuity\\AUTONOMOUS_LOCAL\\start_xtime_local.cmd"
+        ],
+        "candidate_is_key_file": false
+      },
+      "dropbox": {
+        "folder": "/Linh Hà/SENSOR_LOGS",
+        "direct_children": 56,
+        "listing_complete": true,
+        "issuer_key_named_child": false
+      },
+      "github_code_search": {
+        "variable_reference_matches": 4,
+        "provisioned_key_value_found": false,
+        "public_key_literal_found": false
+      },
+      "pr": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "number": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": [
+          39994207477,
+          39994207667
+        ],
+        "failed_before_step_output": true,
+        "rerun": false,
+        "runner_assignment_change_verified": false
+      },
+      "task_count": 28,
+      "task_closure": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "task_statuses_changed": false
     }
   ]
 }
