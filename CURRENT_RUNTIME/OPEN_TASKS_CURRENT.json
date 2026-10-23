@@ -2080,6 +2080,50 @@
       "scope": "Cloud tests/build and source-preservation guard only; not original-export recovery, Windows remediation, n8n execution, or live TestNet broadcast.",
       "task_statuses_changed": false,
       "task_closure": false
+    },
+    {
+      "id": "PR23_CURRENT_HEAD_CI_MERGE_REF_READBACK_20261024T010705",
+      "kind": "CURRENT_HEAD_CLOUD_CI_AND_ARTIFACT_EXACT_BYTE_READBACK",
+      "observed_at": "2026-10-24T01:07:05+07:00",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "pr_number": 23,
+      "pr_head_sha": "3fb6411d70b87c24ca8ecd94448bc2f275bd285e",
+      "base_sha": "936a410eb4d7558007371557828c517e7616d85b",
+      "merge_result_sha": "045b471137c530c0f678853ea98ce0bb96b8e3ea",
+      "merge_result_message": "Merge 3fb6411d70b87c24ca8ecd94448bc2f275bd285e into 936a410eb4d7558007371557828c517e7616d85b",
+      "validation_runs": [
+        {
+          "run_id": 40000491997,
+          "workflow": "Windows survival - independent OPEN continuation",
+          "conclusion": "success"
+        },
+        {
+          "run_id": 40000491884,
+          "workflow": "High-Threshold Secret Exposure Guard",
+          "conclusion": "success"
+        }
+      ],
+      "continuation_artifact": {
+        "artifact_id": 12522420239,
+        "name": "windows-survival-open-continuation",
+        "size_bytes": 3856,
+        "sha256": "738eb76acc554133af057735cf9b1ff6aa813645f8603ce93d8a34b2ab8dea37",
+        "zip_crc": "PASS",
+        "json_valid": true,
+        "receipt_run_id": "40000491997",
+        "receipt_commit_sha": "045b471137c530c0f678853ea98ce0bb96b8e3ea",
+        "source_tasks_carried_forward": 28,
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "real_testnet_transaction_broadcast": false,
+        "n8n_agents_autonomously_executed": false,
+        "critical_windows_mode": "HIGH_SAFETY_HOLD"
+      },
+      "validation_scope": "GitHub pull_request merge-result commit; this validates the current combined merge result, not a standalone PR-head-only build.",
+      "task_count": 28,
+      "task_statuses_changed": false,
+      "task_closure": false
     }
   ],
   "energy_protection_current": {
@@ -4561,6 +4605,41 @@
         "testnet_broadcast": false
       },
       "prior_entry_policy": "Append-only; source and task history preserved."
+    },
+    {
+      "observed_at": "2026-10-24T01:07:05+07:00",
+      "record_type": "PR23_CURRENT_HEAD_CI_AND_ARTIFACT_BYTE_READBACK",
+      "pr_number": 23,
+      "pr_head_sha": "3fb6411d70b87c24ca8ecd94448bc2f275bd285e",
+      "merge_result_sha": "045b471137c530c0f678853ea98ce0bb96b8e3ea",
+      "run_ids": [
+        40000491997,
+        40000491884
+      ],
+      "conclusions": [
+        "success",
+        "success"
+      ],
+      "artifact": {
+        "id": 12522420239,
+        "name": "windows-survival-open-continuation",
+        "size_bytes": 3856,
+        "sha256": "738eb76acc554133af057735cf9b1ff6aa813645f8603ce93d8a34b2ab8dea37",
+        "json_valid": true,
+        "zip_crc": "PASS"
+      },
+      "receipt": {
+        "source_tasks_carried_forward": 28,
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "real_testnet_transaction_broadcast": false,
+        "n8n_agents_autonomously_executed": false
+      },
+      "note": "GitHub Actions pull_request event checked the synthetic merge result 045b471..., whose message names PR head 3fb6411... and base 936a410.... Do not mislabel this as a standalone head-only run.",
+      "task_count": 28,
+      "task_statuses_changed": false,
+      "task_closure": false
     }
   ]
 }
