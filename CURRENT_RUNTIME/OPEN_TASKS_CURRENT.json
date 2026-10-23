@@ -471,6 +471,21 @@
           "result": "RUNNER_ASSIGNMENT_UNRESOLVED_ISSUER_KEY_UNVERIFIED_CHECKPOINT_HEAD_MISMATCH",
           "next_callable_edge": "Reconcile the stale checkpoint head by an additive update only after checking branch history; do not rerun CI until a runner-state change is independently verified.",
           "status_effect": "Keep OPEN_CARRIED; no PR merge and no CI rerun."
+        },
+        {
+          "observed_at": "2026-10-23T15:07:08.958Z",
+          "source": "Direct GitHub connector read/write + exact-target readback across SOL-LONG-MACH and x-time-web",
+          "actions_and_receipts": [
+            "Read current SOL-LONG-MACH CURRENT_RUNTIME/TASK_RESUME_POINTER.json (pre-write blob 437b7e9de32b2ef8e8e77815509fe253c5d988e6); it pointed to x-time-web PR #6 head 5d0a44bbd0431e87cfa396c5983cea549d93fe8f.",
+            "Read TESSERACT_DESKTOP/WORK_CHECKPOINT.json at that exact head; its embedded head was historical 57c285c8b2b11c9c5682f1715da313fcaee07eb0, while observed_at was 2026-10-07 and build.current_run was historical 37545405120.",
+            "Appended head_reconciliation to WORK_CHECKPOINT.json on branch tesseract-desktop-mvp-20261006, commit c41797b61ced8f152ff0833448d3a101fd13c158; exact-target readback returned blob 016eb5e1c6665378b1f6dd30f8691fc0cc3ce8c2. Historical head and historical CI fields were preserved unchanged.",
+            "Updated CURRENT_RUNTIME/TASK_RESUME_POINTER.json on main in commit 33f02c45197135f2cce1c27e070338cea3b4073c; readback blob 59cef77921dc09097d6ae488a0678d99b6fc73f4 now points commit/pr.current_head/build.current_head to c41797b61ced8f152ff0833448d3a101fd13c158 and includes an explicit reconciliation record.",
+            "Fresh PR #6 readback: open, not merged; branch tesseract-desktop-mvp-20261006, base master.",
+            "Existing CI runs 39153474587 and 39153474634 still report failure; job list shows build matrix and readback failed, selfhosted Windows job skipped on pull_request. Attempted direct job-log retrieval returned BlobNotFound/404, so detailed runner-assignment root cause remains unverified. No new CI run was started because no evidence of changed runner entitlement was available."
+          ],
+          "result": "TESSERACT_DESKTOP_CHECKPOINT_HEAD_RECONCILED_WITH_HISTORY_PRESERVED; CI_RUNNER_STATE_STILL_UNVERIFIED",
+          "next_callable_edge": "Use an authorized repository/account runner settings surface to verify or restore hosted runner assignment before another CI run; retrieve the real Kilo/X-TiMe issuer public key and signer from an authorized existing carrier. Do not infer success from checkpoint reconciliation.",
+          "status_effect": "Preserve status OPEN_CARRIED and real_execution_status OPEN_NOT_PROVEN_COMPLETED; no task closed."
         }
       ]
     },
