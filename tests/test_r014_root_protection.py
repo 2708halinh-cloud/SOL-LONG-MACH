@@ -30,7 +30,7 @@ class RootProtectionTests(unittest.TestCase):
         names=[
             "D:/myproject/.agents","D:/myproject/.Assistant",
             r"G:\OS_Workspace\.vscode","TƯ LỆNH NGỐC 😃",
-            "ROOTS_LEVER_0",r"G:\",r"C:\"
+            "ROOTS_LEVER_0","G:\\", "C:\\"
         ]
         for name in names:
             with self.subTest(name=name):
