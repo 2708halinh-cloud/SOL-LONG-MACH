@@ -36,8 +36,8 @@ class DiscoveryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             pinned = Path(temp) / "pinned_sensor_temperature.csv"
             newer = Path(temp) / "newer_sensor_temperature.csv"
-            pinned.write_text("Date,Time,Sensor,Temperature\\n2026-10-23,15:00,pinned,22\\n", encoding="utf-8")
-            newer.write_text("Date,Time,Sensor,Temperature\\n2026-10-23,15:00,newer,23\\n", encoding="utf-8")
+            pinned.write_text("Date,Time,Sensor,Temperature\n2026-10-23,15:00,pinned,22\n", encoding="utf-8")
+            newer.write_text("Date,Time,Sensor,Temperature\n2026-10-23,15:00,newer,23\n", encoding="utf-8")
             future = time.time() + 120
             os.utime(newer, (future, future))
             with patch.dict(os.environ, {
@@ -54,7 +54,7 @@ class DiscoveryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             missing = Path(temp) / "missing.csv"
             fallback = Path(temp) / "fallback_sensor_temperature.csv"
-            fallback.write_text("Date,Time,Sensor,Temperature\\n2026-10-23,15:00,fallback,24\\n", encoding="utf-8")
+            fallback.write_text("Date,Time,Sensor,Temperature\n2026-10-23,15:00,fallback,24\n", encoding="utf-8")
             with patch.dict(os.environ, {
                 "SOL_SENSOR_SOURCE_FILE": str(missing),
                 "SOL_SENSOR_SOURCE_ROOT": str(fallback),
