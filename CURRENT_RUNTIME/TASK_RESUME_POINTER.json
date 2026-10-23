@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Continue the next Windows tick after device-clock 2026-10-24T03:01:32+07:00 and read back the exact newest receipt; keep live sensor stream OPEN because the receipt says live_sensor_reading_confirmed=false. Investigate HWiNFO through a supported authorized logging route and use only an elevated authorized path for W32Time. Ollama /api/chat now returns HTTP 200, done=true, OK on loopback only; continue Android SSH/ADB relay and Chrome Sol ơi UI verification without exposing Ollama to LAN. X-TIME health is live at 127.0.0.1:8769 with 63 tools, but MODUAL source binding and live-device proof remain open. Dropbox fresh metadata read failed at connector account-link validation; do not treat prior metadata as fresh and switch to another authorized carrier. Keep PR #6 OPEN and do not rerun workflows 39994207477/39994207667 or 39153474587 until runner assignment/entitlement change is verified; issuer public key remains unverified.",
+  "next": "Continue the next Windows scheduled tick after device-clock 2026-10-24T03:01:32+07:00 and read back the exact newest receipt. The deployed consumer at D:\\SENSOR_LOGS\\telemetry_buffer_sync.py matches the current GitHub source body and is intentionally metadata-only: it hashes the pinned D:\\SENSOR_LOGS\\windows_SENSON.CSV and hardcodes live_sensor_reading_confirmed=false. The separate HWiNFO_WINDOWS.CSV remains stale/read-only and HWiNFO64.INI contains no logging/CSV path. Do not redirect the source or enable exports without a reviewed exact target; use a supported authorized HWiNFO logging control and verify before/after sample metadata. W32Time remains Stopped/Manual and requires an authorized elevated path. Ollama local chat is verified HTTP 200/done=true/OK on 127.0.0.1:11434 only; Android relay and Chrome UI remain open. X-TIME health is 200 at 127.0.0.1:8769 with 63 tools, but MODUAL binding/live-device proof remain open. Dropbox fresh metadata read remains unavailable because of connector account-link validation; use another authorized carrier. PR #6 workflows 39994207477 and 39994207667 remain failed; do not rerun them or 39153474587 without independently verified runner assignment/entitlement change; issuer key remains unverified.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -688,6 +688,40 @@
       },
       "state": "WINDOWS_TICK_VERIFIED_LIVE_SENSOR_STREAM_OPEN; OLLAMA_LOCAL_CHAT_VERIFIED_ANDROID_UI_OPEN; XTIME_LOCAL_HEALTH_VERIFIED_MODUAL_BINDING_OPEN; TESSERACT_CI_RUNNER_AND_ISSUER_OPEN",
       "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false
+    },
+    {
+      "observed_at": "2026-10-23T20:00:12.064Z",
+      "observed_at_local": "2026-10-24T03:00:12.064+07:00",
+      "record_type": "CONSUMER_CODE_AUDIT_CONFIRMS_METADATA_ONLY_AND_HWINF0_SOURCE_SEPARATION",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "a5e43b7a7b0363f57838450f98bb38b7fa0c3cac",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "736682cfe9777efc9c0252e6ff6622cd56193bc6",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "ca3efc82a15516fe71b3b9e9ab697d852f4a0a40"
+      },
+      "consumer": {
+        "github_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "local_path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+        "local_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+        "body_matches_github_after_final_newline_normalization": true,
+        "source_binding": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "behavior": "metadata-only stat+SHA256; hardcodes live_sensor_reading_confirmed=false",
+        "exports": "both guarded by explicit environment flags; latest receipt reports both disabled"
+      },
+      "hwinfo": {
+        "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "csv_last_write_utc": "2026-10-21T02:20:45.8565035Z",
+        "csv_attributes": "ReadOnly, Archive",
+        "ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
+        "ini_has_logging_or_csv_path": false,
+        "new_sample_confirmed": false
+      },
+      "result": "CONSUMER_METADATA_ONLY_CONFIRMED; HWINF0_LOGGING_AND_LIVE_SAMPLE_UNVERIFIED",
       "task_closure": false,
       "raw_sensor_rows_committed": false,
       "credentials_committed": false,
