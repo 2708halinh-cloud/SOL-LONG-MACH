@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "MODUAL: the previous scheduled run at 05:26:33+07 terminated with 0x41306. The next run at 05:31:33 was still Running at the last direct readback (device 05:33:44, result 0x41301, PID 71220), with no receipt newer than 2026-10-23T22:01:44.171458Z; later route probes failed, so current state is unverified. Resume direct task/process/receipt readback when the route responds; measure one-shot duration and Python launcher/source-read time before changing execution limits. TESSERACT PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14; runs 39994207477/39994207667 failed with empty step arrays and BlobNotFound logs; self-hosted verification is excluded on pull_request by workflow condition. Organization code search found only key references, not a public-key literal. Do not rerun CI without verified runner change and authorized issuer key.",
+  "next": "MODUAL: at the last direct readback (device 05:33:44+07), the 05:31:33 run was still Running (0x41301, PID 71220) and no receipt newer than 2026-10-23T22:01:44.171458Z existed; later device routes became unavailable, so current task state is unknown. Static source review confirms two full CSV hash passes per tick (resolver then consumer) against a PT2M task limit; this is a plausible but unproven bottleneck. When the route responds, time a one-shot with exports explicitly disabled before changing code/task settings. TESSERACT PR #6 remains OPEN; runs 39994207477/39994207667 fail with empty step arrays and BlobNotFound logs; selfhosted verification is skipped on pull_request. Organization code search found only variable references, not a key literal. Do not rerun CI without verified runner change and authorized issuer key.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -197,15 +197,15 @@
     "verification_required": "Fresh-source readback for each task; status OPEN until exact action+receipt",
     "linked_at": "2026-10-21T14:39:07+07:00",
     "latest_observation": {
-      "observed_at": "2026-10-24T05:40:28.404+07:00",
-      "MODUAL_SENSOR_LOGS_ROUTING": "LAST_READ_RUNNING_PID_71220_NO_RECEIPT_AFTER_22_01_44Z_LATER_ROUTE_UNAVAILABLE_CURRENT_STATE_UNVERIFIED",
+      "observed_at": "2026-10-24T05:42:26.612+07:00",
+      "MODUAL_SENSOR_LOGS_ROUTING": "LAST_READ_RUNNING_PID_71220_NO_RECEIPT_AFTER_22_01_44Z_DOUBLE_HASH_PLAUSIBLE_NOT_PROVEN_ROUTE_UNAVAILABLE",
       "ANDROID_OLLAMA_LOCALHOST_CHAT_UI": "PRIOR_ADB_SENSOR_SERVICE_RESPONDED_CHROME_UI_NOT_VERIFIED",
       "XTIME_LOCAL_RUNTIME": "PRIOR_HEALTH_200_FILESYSTEM_SENSOR_OK_MODUAL_SOURCE_NOT_FOUND",
       "TESSERACT_OS": "PRIOR_BRAID_LOCAL_IO_VERIFIED_CLOUD_HOST_NOT_VERIFIED",
       "HWINF0_SHARED_MEMORY": "PRIOR_MAPPING_NOT_FOUND_LICENSE_TIER_UNVERIFIED",
       "WINDOWS_TIME": "W32TIME_STOPPED_MANUAL_NO_CHANGE",
-      "INHERITED_TESSERACT_DESKTOP": "PR6_OPEN_CURRENT_RUNS_FAIL_EMPTY_STEPS_BLOB_NOT_FOUND_SELFHOSTED_SKIPPED_BY_PR_CONDITION_ORG_SEARCH_FOUND_REFERENCES_ONLY",
-      "DESKTOP_COMMANDER": "INTERMITTENT_READBACK; LAST TASK STATE RUNNING; LATER SHELL/DIRECTORY ROUTES NO_DEVICE",
+      "INHERITED_TESSERACT_DESKTOP": "PR6_OPEN_CURRENT_RUNS_FAIL_EMPTY_STEPS_BLOB_NOT_FOUND_SELFHOSTED_SKIPPED_BY_PR_CONDITION_ORG_SEARCH_REFERENCES_ONLY",
+      "DESKTOP_COMMANDER": "LAST_TASK_STATE_RUNNING_PID_71220_THEN_ROUTE_UNAVAILABLE_CURRENT_STATE_UNVERIFIED",
       "CODEX_CONFIG_PRIVATE_BACKUP": "HISTORICAL_MOCK_ROUTE_ONLY_CURRENT_CONFIG_UNREAD_ENCRYPTED_BACKUP_OPEN"
     }
   },
@@ -1203,6 +1203,39 @@
       },
       "result": "TICK_LONG_RUNNING_NO_RECEIPT_STATE_UNVERIFIED_ISSUER_KEY_OPEN",
       "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-23T22:42:26.612Z",
+      "type": "MODUAL_DOUBLE_HASH_CANDIDATE_AND_TESSERACT_KEY_SEARCH",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "9acf93f5c81e443b8244b32df1ee251ca5489b1c",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "367588274da8e4d345d4b40ef08a9da5d9c6efd3",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "e63cd6e872570addd40f8223768881e2c6d69a08"
+      },
+      "modual": {
+        "consumer_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "resolver_blob_sha": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+        "hash_passes": 2,
+        "execution_time_limit": "PT2M",
+        "root_cause_confirmed": false
+      },
+      "windows": {
+        "latest_receipt_utc": "2026-10-23T22:01:44.171458Z",
+        "last_direct_state": "Running",
+        "pid": 71220,
+        "route_later_unavailable": true
+      },
+      "tesseract": {
+        "pr": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "issuer_key_literal_found": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "DOUBLE_HASH_CANDIDATE_RECORDED_NO_UNPROVEN_FIX_APPLIED",
+      "open_tasks_closed": false
     }
   ],
   "latest_sync_observation": {
@@ -1234,14 +1267,14 @@
     ]
   },
   "latest_runtime_observation": {
-    "observed_at": "2026-10-24T05:40:28.404+07:00",
-    "observed_at_utc": "2026-10-23T22:40:28.404Z",
+    "observed_at": "2026-10-24T05:42:26.612+07:00",
+    "observed_at_utc": "2026-10-23T22:42:26.612Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "8fc5e562b2ed6e3fd568bd270dfc1cf328d44ad7",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "eb7ef297126318ced964e31dfbd4e81422c34af3",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "e63cd6e872570addd40f8223768881e2c6d69a08"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "9acf93f5c81e443b8244b32df1ee251ca5489b1c",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "367588274da8e4d345d4b40ef08a9da5d9c6efd3",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "e63cd6e872570addd40f8223768881e2c6d69a08"
     },
     "windows": {
       "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
@@ -1291,7 +1324,7 @@
       "failed_jobs_steps_empty": true,
       "windows_job_log": "BlobNotFound 404",
       "selfhosted_windows_verify": "SKIPPED_BY_PULL_REQUEST_CONDITION",
-      "github_org_search": "2708halinh-cloud exact variable query returned 4 references only; no public-key literal",
+      "github_org_search": "2708halinh-cloud exact variable query found 4 references only; no key literal",
       "issuer_key_verified": false,
       "issuer_absence_proven": false,
       "runner_assignment_change_verified": false,
@@ -1301,6 +1334,16 @@
     "ollama_tags_http_status": 200,
     "tesseract_pr6_open": true,
     "tesseract_ci_rerun": false,
-    "open_tasks_closed": false
+    "open_tasks_closed": false,
+    "modual_consumer_static_analysis": {
+      "consumer_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+      "resolver_blob_sha": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+      "full_csv_hash_passes_per_tick": 2,
+      "execution_time_limit": "PT2M",
+      "plausible_bottleneck": "DOUBLE_HASH_OF_35_389_440_BYTE_SOURCE",
+      "root_cause_confirmed": false,
+      "task_settings_changed": false,
+      "source_mutated": false
+    }
   }
 }
