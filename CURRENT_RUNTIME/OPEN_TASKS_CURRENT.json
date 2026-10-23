@@ -1391,6 +1391,69 @@
       "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
       "state": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
       "invariant": "No raw sensor rows or credentials committed; no source moved/deleted; no task closed; a metadata-only receipt is not proof of live HWiNFO readings."
+    },
+    {
+      "observed_at": "2026-10-23T16:42:00+07:00",
+      "record_type": "HWINF0_LIVE_LOGGING_PROBE_AND_READBACK_NOT_STREAM_RECOVERY",
+      "device": "DESKTOP-86ITNQ4",
+      "verified": {
+        "hwinfo_process_running": true,
+        "hwinfo_process_id": 17520,
+        "registry_key": "HKCU\\Software\\HWiNFO64\\Sensors",
+        "enable_logging": 0,
+        "logging_write_direct": 1,
+        "hwinfo_csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+        "hwinfo_csv_bytes": 39922785,
+        "hwinfo_csv_modified_local": "2026-10-21T09:20:45.8565035+07:00"
+      },
+      "action": {
+        "reference": "C:\\Program Files\\HWiNFO64\\HWiNFO Manual.pdf",
+        "manual_readback": "HWiNFO sensor logging CLI parameters are documented as Pro-version features; -l<filename>, -log_format=1 and -max_time=n.",
+        "attempted_command": "HWiNFO64.EXE -log_format=1 -max_time=15 -lD:\\SENSOR_LOGS\\state\\HWiNFO_LIVE_20261023T1642.csv",
+        "result": "No new process; no output CSV created after 15 seconds; existing HWiNFO process remained running."
+      },
+      "state": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
+      "next": "Do not overwrite Dropbox source. Need an authorized working HWiNFO logging control/session or confirmed Pro CLI entitlement and then verify a newly appended timestamp/row locally.",
+      "invariant": "No raw sensor rows or credentials exported; no source moved/deleted; no task closed."
+    },
+    {
+      "observed_at": "2026-10-23T16:42:00+07:00",
+      "record_type": "TESSERACT_ISSUER_CARRIER_SEARCH_ADDITIVE_NOT_RESOLVED",
+      "provider_search": {
+        "provider": "Dropbox Outlook",
+        "root": "/Linh Hà",
+        "recursive_inventory_entries": 1129,
+        "pagination_complete": true,
+        "filename_path_pattern": "issuer|ed25519|xtime|kilo|signer|public-key|private-key|tesseract|receipt",
+        "issuer_key_filename_found": false,
+        "note": "The inventory search covered names/paths only; it does not prove no key value exists inside unrelated files."
+      },
+      "targeted_content_readback": {
+        "relay_source": "/Linh Hà/SENSOR_LOGS/TESSERACT_OS_6D_RCLONE_RELAY_SOURCE.json",
+        "relay_source_chars": 291,
+        "cached_cdn_body": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_BODY_CURRENT.tmp",
+        "cached_cdn_body_chars": 63,
+        "cached_cdn_headers": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_HEADERS_CURRENT.txt",
+        "cached_cdn_headers_chars": 997,
+        "issuer_public_key_obtained": false,
+        "issuer_signer_obtained": false
+      },
+      "github_source_readback": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "branch": "tesseract-desktop-mvp-20261006",
+        "checkpoint_path": "TESSERACT_DESKTOP/WORK_CHECKPOINT.json",
+        "checkpoint_blob_sha": "68449eb3e64d076724958b4e9839e8502ac3e3cf",
+        "readme_path": "TESSERACT_DESKTOP/README.md",
+        "readme_blob_sha": "0a2959e8fea41c6e4fb14abd0ecda6ed0dc2dd7b",
+        "unresolved": "real XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64 and issuer-side signer"
+      },
+      "ci": {
+        "workflow_run_id": 39153474587,
+        "jobs_readback": "all hosted build jobs fail; selfhosted Windows verification skipped; readback failed",
+        "rerun": false
+      },
+      "task_state": "OPEN_CARRIED",
+      "invariant": "No key invented, no private material committed, no CI rerun, task remains OPEN."
     }
   ]
 }
