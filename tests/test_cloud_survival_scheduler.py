@@ -62,7 +62,7 @@ class CloudSurvivalTests(unittest.TestCase):
                     if section.startswith('submodule "')}
         tree=subprocess.run(["git","ls-tree","-r","HEAD"],cwd=ROOT,
                             check=True,capture_output=True,text=True).stdout
-        gitlink_paths={line.split("\\t",1)[1] for line in tree.splitlines()
+        gitlink_paths={line.split("\t",1)[1] for line in tree.splitlines()
                        if line.startswith("160000 commit ")}
         self.assertTrue(configured)
         self.assertEqual(set(configured.values()),gitlink_paths)
