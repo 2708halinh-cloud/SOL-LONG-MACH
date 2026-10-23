@@ -31,7 +31,7 @@
     "readback_artifact_pattern": "tesseract-desktop-ci-readback-<workflow_run_id>",
     "readback_rule": "CI readback is mandatory for both success and failure. Accept only when verified_sha equals the current substantive PR head. TRUE -> verify review then merge; FLASE -> fetch workflow_run_id jobs/logs, patch failure, repeat.",
     "pr_event_verify": true,
-    "current_pr_run": 39153474587,
+    "current_pr_run": 39975540379,
     "workflow_correction_commit": "88f5be2086f401a4a1218a1e4dd3b05337377963",
     "workflow_corrections": [
       "feature-branch push no longer duplicates pull_request CI; push CI is master-only",
@@ -52,7 +52,84 @@
       "readback includes selfhosted_windows_verify result where required"
     ],
     "canonical_route_commit": "95e28cacade93caf2fe8f0bb665ba04bdb8f381c",
-    "pr_divergence": "RESOLVED: master 60d92b80... was merged into the PR branch without force-push via merge commit d991f91e...; readback shows PR mergeable=true, behind master=0 at synchronization, changed_files=12, AGENTS.md retained from master."
+    "pr_divergence": "RESOLVED: master 60d92b80... was merged into the PR branch without force-push via merge commit d991f91e...; readback shows PR mergeable=true, behind master=0 at synchronization, changed_files=12, AGENTS.md retained from master.",
+    "prior_run_history": [
+      {
+        "run_id": 39153474587,
+        "head": "5d0a44bbd0431e87cfa396c5983cea549d93fe8f",
+        "observed_in_prior_current_delta": true,
+        "outcome": "hosted_jobs_failed_before_step_output; selfhosted_windows_verify_skipped; readback_failed",
+        "preserved_as_history": true
+      }
+    ],
+    "current_validation_run": 39975540284,
+    "current_head_run_readback": {
+      "observed_at": "2026-10-23T22:16:47.4916462+07:00",
+      "head": "c41797b61ced8f152ff0833448d3a101fd13c158",
+      "runs": [
+        {
+          "run_id": 39975540379,
+          "workflow": "tesseract-desktop-ci",
+          "conclusion": "failure",
+          "jobs": [
+            {
+              "id": 120489031057,
+              "name": "tesseract_os",
+              "conclusion": "failure",
+              "steps": null,
+              "logs_fetch": "BlobNotFound"
+            },
+            {
+              "id": 120489031162,
+              "name": "build (windows-latest, x86_64-pc-windows-msvc, windows-x64)",
+              "conclusion": "failure",
+              "steps": null
+            },
+            {
+              "id": 120489031197,
+              "name": "build (macos-14, aarch64-apple-darwin, macos-apple-silicon)",
+              "conclusion": "failure",
+              "steps": null
+            },
+            {
+              "id": 120489031208,
+              "name": "build (ubuntu-24.04, x86_64-unknown-linux-gnu, linux-x64)",
+              "conclusion": "failure",
+              "steps": null,
+              "logs_fetch": "BlobNotFound"
+            },
+            {
+              "id": 120489032534,
+              "name": "selfhosted_windows_verify",
+              "conclusion": "skipped"
+            },
+            {
+              "id": 120489325932,
+              "name": "readback",
+              "conclusion": "failure",
+              "steps": null
+            }
+          ]
+        },
+        {
+          "run_id": 39975540284,
+          "workflow": "validate-x-time",
+          "conclusion": "failure",
+          "jobs": [
+            {
+              "id": 120489030497,
+              "name": "verify",
+              "conclusion": "failure",
+              "steps": null,
+              "logs_fetch": "BlobNotFound"
+            }
+          ]
+        }
+      ],
+      "rerun_performed": false,
+      "runner_assignment_change_verified": false,
+      "interpretation": "Current-head workflow runs are now recorded separately from historical run 39153474587. Jobs returned steps=null and sampled logs were unavailable with BlobNotFound; do not infer a source-code failure or rerun without verified runner assignment/entitlement change."
+    }
   },
   "next": "Resume PR #6 at reconciled branch head c41797b61ced8f152ff0833448d3a101fd13c158. The checkpoint now explicitly separates historical head 57c285c8... from the resume-pointer head. Do not rerun CI until an authorized source verifies runner assignment/entitlement changed. Continue the independent issuer-key route only from an existing authorized carrier; do not invent key material.",
   "continuation_guard": {
@@ -125,5 +202,17 @@
       "rerun_authorized_by_evidence": false,
       "runner_assignment_state": "UNVERIFIED_EXTERNAL_STATE"
     }
-  }
+  },
+  "provider_readback_history": [
+    {
+      "observed_at": "2026-10-23T22:16:47.4916462+07:00",
+      "record_type": "CURRENT_HEAD_CI_RUN_IDS_READBACK",
+      "head": "c41797b61ced8f152ff0833448d3a101fd13c158",
+      "previous_current_pr_run": 39153474587,
+      "current_pr_run": 39975540379,
+      "current_validation_run": 39975540284,
+      "rerun_performed": false,
+      "runner_assignment_change_verified": false
+    }
+  ]
 }
