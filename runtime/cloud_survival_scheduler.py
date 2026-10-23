@@ -46,6 +46,64 @@ CURRENT_SIGNALS=(
      "target":"runtime/ggdv_response_gate.py","real_disk_cleanup_done":False},
 )
 
+
+# AISSTANGT MANAGE existing real n8n agent IDs; assignment != running.
+# All 27 IDs are literal canonical OPEN ledger IDs, not invented task instances.
+SUBAGENT_ROUTES = {
+ "SENSORY": {
+  "agent_id":"DEYtBtOQseTBhVHS",
+  "task_ids":(
+   "STAMP_TRIAD_LIVE_PARTICIPATION_AND_C_DRIVE_RELIEF_20261023",
+   "NEXTDNS_ED8A26","NEXTDNS_F9C9F9","HOSPOSIK_DOMAIN_MEMORY_RUNTIME",
+   "SOL_LOCAL_WSL_MCP_BRIDGE","MODUAL_SENSOR_LOGS_ROUTING",
+   "SOL_CHAT_BROWSER_MCP_FILE","WINDOWS_RECOVERY_DISK_SPACE",
+   "ANDROID_OLLAMA_LOCALHOST_CHAT_UI") },
+ "INTEGRITY": {
+  "agent_id":"ilcqwLMNUdrWjvrL",
+  "task_ids":(
+   "SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+   "HELLOCHECK_GO_TESTNET_R014_20261023","TESSERACT_REAL_BOOT",
+   "GOOGLE_CLOUD_ACTIONS_SECRET","TESSERACT_BOOT_AGENT_ROUTE",
+   "CODEX_SECRET_RUNTIME_VERSIONS") },
+ "OPEN_ROUTER": {
+  "agent_id":"eT5YnxcWNGLRZ8z8",
+  "task_ids":(
+   "CLOUD_UNIVERSAL","WORKSPACE_32GB_DURABLE",
+   "INHERITED_TESSERACT_DESKTOP","HISTORICAL_BACKLOG_IMPORT",
+   "SOL_PLUGIN_CONSOLIDATION","GITHUB_COPILOT_SPACE",
+   "SITES_SOL100726_REDIRECTS") },
+ "READBACK": {
+  "agent_id":"bwjoN3TfQ8Ao717P",
+  "task_ids":(
+   "CODEX_CONFIG_PRIVATE_BACKUP","LIBRARY_CROSS_PROVIDER_SYNC",
+   "SOL_SOURCE_12_CARRIERS","SOURCE_MATRIX_STONES_CROSS_SYNC",
+   "SIX_PROJECTIONS_ENVIRONMENT_REGISTRY") }
+}
+ORCHESTRATOR_N8N_ID="PF4LvfkI51NJjGZS"
+
+def reconcile_agent_tasks(ledger):
+    """Read all OPEN source IDs; emit per-item provider-facing routing state.
+    This is REAL routing material in a running GitHub Actions process, not proof
+    that any unauthenticated n8n draft Agent has executed a model turn.
+    """
+    ids=[str(t["id"]) for t in ledger["tasks"]]
+    if len(ids)!=len(set(ids)): raise ValueError("DUPLICATE_OPEN_TASK_ID")
+    allocated={}
+    for role,spec in SUBAGENT_ROUTES.items():
+        for item_id in spec["task_ids"]:
+            if item_id in allocated: raise ValueError("MULTIPLE_SUBAGENT_OWNERS_FOR_TASK")
+            allocated[item_id]=(role,spec["agent_id"])
+    missing=set(ids)-set(allocated)
+    stale=set(allocated)-set(ids)
+    if missing or stale:
+        raise ValueError("OPEN_TASK_ROUTING_DIVERGENCE missing=%r stale=%r"%(sorted(missing),sorted(stale)))
+    return [{"task_id":item_id,"status":next(t["status"] for t in ledger["tasks"] if t["id"]==item_id),
+             "capability_offer":{"role":allocated[item_id][0],"n8n_agent_id":allocated[item_id][1],
+                                 "n8n_runtime":"DRAFT_MISSING_MODEL_AND_CREDENTIAL"},
+             "cloud_fallback":"GITHUB_ACTIONS_AND_CURRENT_PROVIDER_WHEN_CALLABLE",
+             "source_task_closed":False,
+             "stamp_beta_is_realized":False} for item_id in ids]
+
 def fingerprint(root,relative):
     path=root/relative
     if path.is_symlink() or not path.is_file():
@@ -121,6 +179,7 @@ def classify_open_ledger(root):
 
 def build(root,now,run_id,sha):
     ledger,states,appended=classify_open_ledger(root)
+    routing=reconcile_agent_tasks(ledger)
     sources=[fingerprint(root,SOURCE_LEDGER)]
     for _,names in CLOUD_CHECKS:
         sources.extend(fingerprint(root,name) for name in names)
@@ -149,6 +208,9 @@ def build(root,now,run_id,sha):
       "STAMP_LIVE":{"cloud_actions":cloud_actions,
                     "all_cloud_actions_passed":all(x["passed"] for x in cloud_actions.values()),
                     "source_tasks_carried_forward":len(ledger["tasks"]),
+                    "subagent_offer_routes":routing,
+                    "routes_cover_all_source_tasks":len(routing)==len(ledger["tasks"]),
+                    "n8n_agents_autonomously_executed":False,
                     "supplementary_new_signals":appended,
                     "no_source_tasks_closed":True,
                     "critical_windows_mode":"HIGH_SAFETY_HOLD",
