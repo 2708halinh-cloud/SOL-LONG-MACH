@@ -251,8 +251,8 @@ def write_tick_receipt(result: dict, mode: str) -> dict:
     receipt_dir.mkdir(parents=True, exist_ok=True)
     filename = "WINDOWS_TICK_" + observed_at.strftime("%Y%m%dT%H%M%S%fZ") + ".json"
     target = receipt_dir / filename
-    encoded = json.dumps(receipt, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\\n"
-    with target.open("x", encoding="utf-8", newline="\\n") as stream:
+    encoded = json.dumps(receipt, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
+    with target.open("x", encoding="utf-8", newline="\n") as stream:
         stream.write(encoded)
         stream.flush()
         os.fsync(stream.fileno())
