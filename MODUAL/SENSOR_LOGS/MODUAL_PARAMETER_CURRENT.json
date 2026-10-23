@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-24T02:58:03.553+07:00",
+  "observed_at": "2026-10-24T03:00:12.064+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -2645,6 +2645,72 @@
         "open_tasks_closed": false,
         "tesseract_ci_rerun": false,
         "ollama_bound_to_loopback": true
+      }
+    },
+    {
+      "observed_at": "2026-10-24T03:00:12.064+07:00",
+      "record_type": "CONSUMER_CODE_AUDIT_CONFIRMS_METADATA_ONLY_AND_HWINF0_SOURCE_SEPARATION_20261024",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "a5e43b7a7b0363f57838450f98bb38b7fa0c3cac",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "ad38c5f17deb632bed3ad7ee383c5ac0a6d17caa",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "a0fdfbead17db51cfd76cb019b4bd9b1f2df6f4d"
+      },
+      "consumer_code_audit": {
+        "github_path": "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py",
+        "github_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "local_path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+        "local_bytes": 13245,
+        "local_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+        "local_text_matches_github_after_read_tool_trailing_newline_normalization": true,
+        "source_binding": "SOL_SENSOR_SOURCE_FILE is explicitly set to D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "record_telemetry_tick": "Reads file stat and SHA-256 only; does not parse sensor readings; hardcodes live_sensor_reading_confirmed=false",
+        "receipt_semantics": "Metadata-only receipt: byte count, mtime_ns, SHA-256, source_file_written=false, synthetic_rows_added=0",
+        "export_guards": {
+          "cloud": "SOL_ENABLE_SENSOR_CLOUD_EXPORT must equal 1",
+          "github": "SOL_ENABLE_SENSOR_GITHUB_PUSH must equal 1",
+          "latest_receipt_cloud_enabled": false,
+          "latest_receipt_github_enabled": false
+        },
+        "source_mutated": false
+      },
+      "hwinfo": {
+        "process_running": true,
+        "pid": 17520,
+        "csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+        "csv_bytes": 39922785,
+        "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "csv_last_write_utc": "2026-10-21T02:20:45.8565035Z",
+        "csv_attributes": [
+          "ReadOnly",
+          "Archive"
+        ],
+        "ini_path": "C:\\Program Files\\HWiNFO64\\HWiNFO64.INI",
+        "ini_bytes": 358,
+        "ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
+        "ini_contains": [
+          "OpenSensors=1",
+          "SensorsSM=1"
+        ],
+        "ini_has_logging_or_csv_path": false,
+        "fresh_registry_enable_logging_readback": false,
+        "new_sample_confirmed": false
+      },
+      "interpretation": {
+        "verified": "The current consumer is intentionally a metadata-only source observer and is pinned to windows_SENSON.CSV; the separate HWiNFO CSV is stale and not wired as this consumer's input.",
+        "not_verified": "HWiNFO live logging, new sensor sample, or live stream recovery.",
+        "next": "Use a supported authorized HWiNFO logging control and explicit before/after sample check; do not redirect the pinned source or enable cloud/GitHub export without a reviewed exact target."
+      },
+      "state": "OPEN_CONSUMER_METADATA_TICK_VERIFIED_HWINF0_LIVE_STREAM_NOT_VERIFIED",
+      "invariants": {
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "source_overwritten": false,
+        "open_tasks_closed": false
       }
     }
   ],
