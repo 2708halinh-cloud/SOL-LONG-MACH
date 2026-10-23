@@ -732,6 +732,95 @@
         "Verify a subsequent scheduled tick and exact receipt after 2026-10-23T19:56:32+07:00.",
         "Do not claim live sensor recovery until a new HWiNFO CSV sample is observed with before/after metadata and content-hash evidence."
       ]
+    },
+    {
+      "observed_at": "2026-10-23T20:04:51.326+07:00",
+      "record_type": "WINDOWS_TICK_125633_EXACT_READBACK_WITH_CLOCK_SYNC_BLOCKER",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "437b7e9de32b2ef8e8e77815509fe253c5d988e6",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "c0ec6b43d408aeacc9506c2cb785dca4e1849382"
+      },
+      "provider": {
+        "name": "Dropbox Outlook",
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "bytes_downloaded_this_run": false,
+        "content_hash_verified_this_run": false
+      },
+      "windows_target": {
+        "device": "DESKTOP-86ITNQ4",
+        "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "bytes": 35389440,
+        "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "last_write_local": "2026-10-23T15:45:56.2458701+07:00"
+      },
+      "scheduled_task": {
+        "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state": "Ready",
+        "enabled": true,
+        "last_run_device_local": "2026-10-23T19:56:33+07:00",
+        "last_result": 0,
+        "next_run_device_local": "2026-10-23T20:01:32+07:00",
+        "interval": "PT5M",
+        "note": "Device clock was approximately 5m15s behind the connected runtime at paired readback; next_run is device-clock local, not corrected wall-clock time."
+      },
+      "receipt": {
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T125633855868Z.json",
+        "bytes": 450,
+        "sha256": "40cd98f3cd375212daa1be8f83f1cd23730d41258237af67cf91a6eeff60fd86",
+        "exact_target_readback": true,
+        "json_valid": true,
+        "observed_at_utc": "2026-10-23T12:56:33.855868Z",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_export_enabled": false,
+        "github_export_enabled": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "clock_sync": {
+        "service": "W32Time",
+        "status": "Stopped",
+        "start_type": "Manual",
+        "configured_ntp_server": "time.nist.gov,0x9",
+        "ntp_client_enabled": 1,
+        "start_attempt": "FAILED",
+        "start_error": "Cannot open W32Time service on computer '.'.",
+        "resync_attempted": false,
+        "paired_runtime_local": "2026-10-23T20:04:04+07:00",
+        "paired_device_local": "2026-10-23T19:58:49+07:00",
+        "estimated_skew_seconds": 315
+      },
+      "hwinfo": {
+        "process_running": true,
+        "pid": 17520,
+        "version": "8.52",
+        "registry_enable_logging": 0,
+        "latest_csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+        "latest_csv_bytes": 39922785,
+        "latest_csv_modified_local": "2026-10-21T09:20:45.8565035+07:00",
+        "sensor_status_window_found": true,
+        "sensor_status_window_handle": 132490,
+        "sensor_status_window_visible": false,
+        "ui_automation_descendants": 0,
+        "show_window_attempted": true,
+        "visible_after_attempt": false,
+        "logging_configuration_changed": false,
+        "live_stream_confirmed": false
+      },
+      "state": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
+      "invariant": "Tick receipt and source hash read back; no source writes, synthetic rows, exports, source movement, or task closure. W32Time could not be started through current authorization; device clock remains skewed. HWiNFO logging remains disabled.",
+      "next_action": [
+        "Verify the next scheduled receipt after the device-clock target time 2026-10-23T20:01:32+07:00; interpret times against the observed clock skew.",
+        "Use an authorized elevated route to start/synchronize Windows Time only if permitted; do not bypass service permissions.",
+        "Continue HWiNFO logging investigation through a supported route; do not assume Pro CLI entitlement or claim live sensor recovery."
+      ]
     }
   ],
   "privacy_policy": {
