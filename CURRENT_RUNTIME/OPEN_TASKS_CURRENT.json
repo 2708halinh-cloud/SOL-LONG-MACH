@@ -38,10 +38,11 @@
       "observed": [
         "Source narrative present in current conversation, not equated with provider deletion recovery",
         "runtime/destructive_gate.py updated to block repeat destruction of specific source-bound original Drive IDs",
-        "GitHub Actions R-014 test suite passed six specific protected-root tests in run 39878534211; inherited continuity suite still had 3 failures, and its global coverage cannot be asserted"
+        "GitHub Actions R-014 test suite passed six specific protected-root tests in run 39878534211; inherited continuity suite still had 3 failures, and its global coverage cannot be asserted",
+        "2026-10-23: R-014 root-carrier protection run 39880699969 SUCCESS; six root regression tests and 25 continuity guard tests passed after aligning outdated tests to verified target-readback invariant"
       ],
       "next": [
-        "Work on causal failures of continuity engine; do not substitute a report for functioning execution",
+        "Extend actual root-source restoration using existing export carriers without deleting/hiding historical identity",
         "Inspect available ZIP export from connected Drive before attempting any recovery, preserve original object IDs if available",
         "Keep original source history and separate human, agents, LOCUS, and materialized carriers"
       ],
@@ -57,9 +58,12 @@
       "observed": [
         "Direct Go target under integrations/hellocheck: address.go, keys.go, transaction.go, cmd/hellocheck/main.go",
         "Windows-independent GitHub Actions run 39879882720 built Go binary, go vet, 7 Go unit tests PASS, did not broadcast transactions",
-        "README.md and .gitignore added in direct HelloCheck directory; no wallet/private WIF uploaded"
+        "README.md and .gitignore added in direct HelloCheck directory; no wallet/private WIF uploaded",
+        "2026-10-23: GitHub Actions run 39880490867 compiled Go and passed 11 Go tests including Bitcoin Core mock TestNet RPC, mainnet rejection, and unsigned transaction rejection",
+        "2026-10-23: integrations/hellocheck/rpc.go + cmd/hellocheck/main.go provide explicit TestNet RPC broadcast command; real node broadcast NOT observed",
+        "2026-10-23: go.sum committed from hosted runner's exact module checksums"
       ],
-      "current_provider_receipt": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/39879882720",
+      "current_provider_receipt": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/39880490867",
       "next": [
         "Keep actual HelloCheck Go build passing on independent cloud host",
         "Extend only upon real access to authorized Bitcoin TestNet node for UTXO verification and broadcast; never invent TXID",
@@ -704,6 +708,20 @@
         "bitcoin_testnet_broadcast": false
       },
       "do_not_close_source_task": true
+    },
+    {
+      "id": "R014_ROOT_CARRIER_CI_CONFIRMED_20261023",
+      "action": "Root destructive gate tested in same continuity execution path, no original files removed",
+      "provider_receipt": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/39880699969",
+      "verified": {
+        "root_regression_tests": 6,
+        "continuity_guard_tests": 25,
+        "combined_suite_success": true,
+        "removed_drive_files": 0,
+        "actual_original_carrier_recovered": false
+      },
+      "source": "runtime/destructive_gate.py; runtime/continuity_guard.py; tests/test_r014_root_protection.py",
+      "task_closure": false
     }
   ]
 }
