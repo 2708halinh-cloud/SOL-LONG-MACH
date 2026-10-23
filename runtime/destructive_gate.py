@@ -22,8 +22,8 @@ PROTECTED_ROOT_NAMES = frozenset({
     "TƯ LỆNH NGỐC 😃", ".agents", ".assistant", ".vscode",
     "roots_lever_0", "roots_lever_00",
 })
-DELETION_ACTIONS = frozenset({"DELETE","REMOVE","PURGE","TRASH","WIPE",
-                               "FORMAT","DESTRUCTIVE_RESET","CLEAN"})
+ROOT_DESTRUCTION_ACTIONS = frozenset({"DELETE","REMOVE","PURGE","TRASH","WIPE",
+                               "FORMAT","DESTRUCTIVE_RESET","CLEAN","OVERWRITE","REPLACE"})
 
 def protected_root_target(target):
     """Resolve only explicitly protected IDs and *root targets*, not arbitrary files.
@@ -31,7 +31,7 @@ def protected_root_target(target):
     """
     if not isinstance(target,str):
         return False
-    normalized = target.replace("\\\\","/").rstrip("/")
+    normalized = target.replace(chr(92), "/").rstrip("/")
     rootname = normalized.rsplit("/",1)[-1].casefold()
     if rootname in {name.casefold() for name in PROTECTED_ROOT_NAMES}:
         return True
@@ -41,7 +41,7 @@ def protected_root_target(target):
 
 def protected_root_delete_policy(action, target):
     """Never delete historical identity carriers via this route, even with a permit."""
-    return action in DELETION_ACTIONS and protected_root_target(target)
+    return action in ROOT_DESTRUCTION_ACTIONS and protected_root_target(target)
 
 def destructive_preflight(cp, edge):
     action = (edge.action_kind or '').strip().upper()
