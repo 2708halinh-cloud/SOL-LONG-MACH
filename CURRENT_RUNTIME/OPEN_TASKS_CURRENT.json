@@ -380,7 +380,9 @@
         "Earlier PR#6 workflow, reviewer and CI runner assignment issues remain explicitly recorded in prior checkpoint"
       ],
       "next": [
-        "Fresh-read original checkpoint and provider state; resume unresolved independent runner and issuer-key edges"
+        "Find the actual Kilo/X-TiMe issuer public key from an authorized existing provider; GitHub code search found only variable references and no PEM public-key literal in the accessible search scope.",
+        "Verify runner assignment/entitlement changed before rerunning workflow 39153474587; current recorded jobs fail-before-step and self-hosted verification is skipped.",
+        "Keep PR #6 OPEN until a current-head CI readback is TRUE and the issuer trust anchor is provisioned from an authorized source."
       ],
       "guard": "Do not overwrite or relabel inherited task done from this ledger",
       "assigned_subagent": "SubAisstangtManage-ORCHESTRATOR",
@@ -388,7 +390,22 @@
       "delegation_mode": "NONCOERCIVE_SOURCE_BOUND",
       "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
       "assignment_carrier": "n8n:dataTable:rSPFIOWbS7cfNJ8z:SOL-INHERITED_TESSERACT_DESKTOP",
-      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE"
+      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE",
+      "live_progress": [
+        {
+          "observed_at": "2026-10-23T18:57:44+07:00",
+          "source": "GitHub code search and read-only PR #6 workflow job readback; no workflow rerun",
+          "actions_and_receipts": [
+            "GitHub code search for XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64 found references in README.md, main.rs, WORK_CHECKPOINT.json, and the ledger; these are variable references, not a provisioned public key.",
+            "GitHub code search for BEGIN PUBLIC KEY returned zero results in the accessible 2708halinh-cloud code-search scope. This does not establish absence from unindexed/private provider stores.",
+            "Current PR #6 remains OPEN and mergeable; workflow run 39153474587 was read only: hosted Linux/macOS/Windows/TESSERACT_OS jobs failed, selfhosted_windows_verify skipped, readback failed.",
+            "No rerun performed because there is no independently verified runner-state change. No private signing key was invented or committed."
+          ],
+          "result": "ISSUER_PUBLIC_KEY_UNVERIFIED_RUNNER_ASSIGNMENT_UNRESOLVED",
+          "next_callable_edge": "Search authorized provider carriers for the actual issuer public key and signer; independently verify hosted runner assignment state before any CI rerun.",
+          "status_effect": "Keep OPEN_CARRIED."
+        }
+      ]
     },
     {
       "id": "HISTORICAL_BACKLOG_IMPORT",
@@ -2518,6 +2535,53 @@
         "Continue independent NextDNS profile mapping and TESSERACT issuer/runner tasks without repeating CI 39153474587 absent runner-state change."
       ],
       "prior_entry_policy": "Append-only; prior observations and task states preserved."
+    },
+    {
+      "observed_at": "2026-10-23T18:57:44+07:00",
+      "record_type": "TESSERACT_ISSUER_KEY_SEARCH_AND_CI_READBACK_NO_RERUN",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "437b7e9de32b2ef8e8e77815509fe253c5d988e6",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "94a568faa9961d12ae53b49c39ccd95bd312d19b"
+      },
+      "github_search": {
+        "variable_name": "XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+        "variable_reference_results": 4,
+        "issuer_search_results": 3,
+        "public_key_pem_literal_results": 0,
+        "scope": "Accessible GitHub code-search scope for user 2708halinh-cloud",
+        "conclusion": "No real issuer public key verified; search scope is not exhaustive of private provider storage."
+      },
+      "tesseract_desktop": {
+        "pr_url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+        "state": "OPEN",
+        "mergeable": true,
+        "workflow_run_id": 39153474587,
+        "jobs": {
+          "linux": "failure",
+          "macos": "failure",
+          "windows": "failure",
+          "tesseract_os": "failure",
+          "selfhosted_windows_verify": "skipped",
+          "readback": "failure"
+        },
+        "rerun_performed": false,
+        "runner_state_change_verified": false
+      },
+      "invariant": {
+        "private_signing_key_invented": false,
+        "credentials_committed": false,
+        "ci_rerun_without_runner_change": false,
+        "task_closed": false
+      },
+      "state_boundary": "ISSUER_KEY_UNVERIFIED; CI_RUNNER_ASSIGNMENT_UNRESOLVED; PR_OPEN",
+      "next_action": [
+        "Continue authorized carrier search for issuer public key and signer.",
+        "Do not rerun 39153474587 until runner-state change is verified.",
+        "Do not merge PR #6 without current-head CI TRUE and trusted issuer provisioning."
+      ],
+      "prior_entry_policy": "Append-only; existing checkpoint and task history preserved."
     }
   ]
 }
