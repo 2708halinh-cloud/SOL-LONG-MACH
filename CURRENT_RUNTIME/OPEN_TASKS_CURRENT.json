@@ -2023,6 +2023,63 @@
       "task_count": 28,
       "task_statuses_changed": false,
       "task_closure": false
+    },
+    {
+      "id": "STAMP_TIME_RECONCILIATION_20261024T010514",
+      "kind": "STAMP_LIVE_INVOCATION_TIME_VS_ACTION_TIME_RECONCILIATION",
+      "observed_at": "2026-10-24T01:05:14+07:00",
+      "source": "Runtime clock readback and GitHub Actions artifact timestamp",
+      "prior_entries": [
+        "PR21_DIVERGENCE_CLEAN_BRANCH_RECOVERY_20261024T005408",
+        "LIBRARY_EXPORT_CANDIDATE_BYTE_SCAN_20261024T005408"
+      ],
+      "correction": {
+        "prior_stamp": "2026-10-24T00:54:08+07:00",
+        "meaning": "scheduled-run invocation/start marker; not a separately measured timestamp for each later action",
+        "runtime_clock_utc": "2026-10-23T18:05:14.610063Z",
+        "runtime_clock_local": "2026-10-24T01:05:14.610160+07:00",
+        "latest_artifact_created_at_utc": "2026-10-23T18:03:54Z",
+        "exact_per_action_time_for_library_scan": "NOT_INDEPENDENTLY_MEASURED"
+      },
+      "policy": "Append-only correction; do not rewrite prior records or treat the invocation marker as an exact timestamp for every action.",
+      "task_statuses_changed": false,
+      "task_closure": false
+    },
+    {
+      "id": "PR23_CLEAN_HEAD_CI_ARTIFACT_READBACK_20261024T010514",
+      "kind": "GITHUB_ACTIONS_CLEAN_BASE_REPLACEMENT_VALIDATION",
+      "observed_at": "2026-10-24T01:05:14+07:00",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "pr_number": 23,
+      "validated_head": "7b30aa59144753192d6aa3769fad75d583fd7c9a",
+      "runs": [
+        {
+          "run_id": 40000105703,
+          "workflow": "Windows survival - independent OPEN continuation",
+          "conclusion": "success"
+        },
+        {
+          "run_id": 40000105966,
+          "workflow": "High-Threshold Secret Exposure Guard",
+          "conclusion": "success"
+        }
+      ],
+      "continuation_artifact": {
+        "artifact_id": 12520963569,
+        "name": "windows-survival-open-continuation",
+        "size_bytes": 3875,
+        "sha256": "705fd79e8542b84a66654161bfcfa8717a58e478175aa7b7687c7ea0e4d5a5b8",
+        "zip_crc": "PASS",
+        "json_valid": true,
+        "source_tasks_carried_forward": 28,
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "real_testnet_transaction_broadcast": false
+      },
+      "scope": "Cloud tests/build and source-preservation guard only; not original-export recovery, Windows remediation, n8n execution, or live TestNet broadcast.",
+      "task_statuses_changed": false,
+      "task_closure": false
     }
   ],
   "energy_protection_current": {
@@ -4477,6 +4534,33 @@
       "task_statuses_changed": false,
       "task_closure": false,
       "prior_entry_policy": "Append-only; no existing source or task history overwritten."
+    },
+    {
+      "observed_at": "2026-10-24T01:05:14+07:00",
+      "record_type": "STAMP_LIVE_TIME_RECONCILIATION_AND_PR23_CI_READBACK",
+      "clock": {
+        "utc": "2026-10-23T18:05:14.610063Z",
+        "local": "2026-10-24T01:05:14.610160+07:00",
+        "prior_invocation_marker": "2026-10-24T00:54:08+07:00",
+        "per_action_time_for_archive_scan": "NOT_INDEPENDENTLY_MEASURED",
+        "policy": "Preserve old entries; append correction, do not reinterpret invocation marker as exact action timestamp."
+      },
+      "ci": {
+        "pr_number": 23,
+        "validated_head": "7b30aa59144753192d6aa3769fad75d583fd7c9a",
+        "windows_survival_run": 40000105703,
+        "windows_survival_conclusion": "success",
+        "secret_guard_run": 40000105966,
+        "secret_guard_conclusion": "success",
+        "artifact_id": 12520963569,
+        "artifact_sha256": "705fd79e8542b84a66654161bfcfa8717a58e478175aa7b7687c7ea0e4d5a5b8",
+        "task_count": 28,
+        "task_closure": false,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "testnet_broadcast": false
+      },
+      "prior_entry_policy": "Append-only; source and task history preserved."
     }
   ]
 }
