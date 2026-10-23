@@ -574,11 +574,11 @@
       "status": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
       "goal": "Repair MODUAL telemetry source to Outlook Dropbox\\Linh Hà\\SENSOR_LOGS\\windows_SENSON.CSV and verify Windows Tick error gone",
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
-      "readback": "Latest scheduled receipt at device-local 19:56:33 returned LastTaskResult=0 and exact JSON readback. Device clock is approximately 315 seconds behind the connected runtime; W32Time is stopped and cannot be started with current service permissions. HWiNFO logging remains disabled and its CSV stale; live stream is not verified.",
+      "readback": "Latest exact receipt at device-local 20:01:34 is valid and LastTaskResult=0; source SHA unchanged. Windows device clock is approximately 314 seconds behind connected runtime. W32Time could not be started through current permissions. HWiNFO logging remains disabled and live sensor stream unverified.",
       "next": [
-        "Verify the next scheduled receipt after device-clock time 2026-10-23T20:01:32+07:00; account for the observed ~315-second device/runtime skew.",
-        "Use an authorized elevated route to start/synchronize W32Time to the configured NTP source if permitted; current Start-Service attempt failed and no resync was attempted.",
-        "Restore HWiNFO logging via a safely identifiable supported UI route or verified Pro entitlement; do not claim live sensor recovery until a new sample is read back."
+        "Verify the next scheduled receipt after device-clock time 2026-10-23T20:06:32+07:00; account for the approximately 314-second clock skew.",
+        "Use an authorized elevated route to start/synchronize W32Time if permitted; the current Start-Service attempt failed and no resync was attempted.",
+        "Continue HWiNFO logging investigation via a safely identifiable supported UI route or verified Pro entitlement; require a fresh sample and before/after evidence."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -667,6 +667,19 @@
           "result": "SCHEDULED_TICK_RECEIPT_VERIFIED_CLOCK_SYNC_PERMISSION_BLOCKED_HWINF0_LIVE_STREAM_UNVERIFIED",
           "next_callable_edge": "Verify the next tick after the device clock reaches 20:01:32+07:00 (accounting for the observed ~315-second skew); use an authorized elevated route to start/synchronize W32Time if permitted; continue HWiNFO logging via a safely identifiable supported route or verified Pro entitlement.",
           "status_effect": "Keep status OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED; the tick is a metadata-only receipt and does not prove live sensor updates."
+        },
+        {
+          "observed_at": "2026-10-23T20:08:29.954+07:00",
+          "source": "Remote Desktop Commander direct scheduled-task query and exact receipt readback; GitHub MODUAL readback",
+          "actions_and_receipts": [
+            "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M ran at device-local 2026-10-23T20:01:33+07:00 with LastTaskResult=0; next run is device-clock 20:06:32+07:00.",
+            "Exact receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T130134255063Z.json read back as valid JSON, 450 bytes, SHA-256 ab18ffb41fe599e48425103ab21019a34e7a4203be8e7de2ad716363bc3cd997. It reports source SHA 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87, no source write, zero synthetic rows, exports disabled, and live_sensor_reading_confirmed=false.",
+            "Paired clocks: connected runtime 2026-10-23T20:06:53+07:00 and Windows device 2026-10-23T20:01:39+07:00, approximately 314 seconds apart. W32Time remains Stopped/Manual; configured NTP is time.nist.gov,0x9; service start failed because the current tool identity could not open the service; no resync attempted.",
+            "HWiNFO 8.52 remains running with EnableLogging=0 and stale CSV last modified 2026-10-21T09:20:45.8565035+07:00. Exact Sensor Status window exists but is invisible; UI Automation returned no child controls and ShowWindow did not reveal it."
+          ],
+          "result": "SCHEDULED_TICK_130134_VERIFIED_DEVICE_CLOCK_SKEW_PERSISTS_LIVE_STREAM_UNVERIFIED",
+          "next_callable_edge": "Verify the next receipt after device-clock time 20:06:32+07:00; continue HWiNFO logging through a safely identifiable supported route; use only an authorized elevated route for W32Time service control.",
+          "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
         }
       ]
     },
@@ -2876,6 +2889,71 @@
         "Continue HWiNFO logging and TESSERACT issuer/runner investigations independently."
       ],
       "prior_entry_policy": "Append-only; preserve previous observations and task states."
+    },
+    {
+      "observed_at": "2026-10-23T20:08:29.954+07:00",
+      "record_type": "WINDOWS_TICK_130134_CLOCK_SKEW_AND_HWINF0_STATUS_READBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "437b7e9de32b2ef8e8e77815509fe253c5d988e6",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "d76c32f15046f7bde0d3d7e5ec9e5b91e750a470",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "967abc518f9e1dbe2d82fb7da73bc8fcb4ee41db"
+      },
+      "observations": {
+        "windows_tick": {
+          "device": "DESKTOP-86ITNQ4",
+          "status": "ONLINE",
+          "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+          "last_run_device_local": "2026-10-23T20:01:33+07:00",
+          "last_result": 0,
+          "next_run_device_local": "2026-10-23T20:06:32+07:00",
+          "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T130134255063Z.json",
+          "receipt_bytes": 450,
+          "receipt_sha256": "ab18ffb41fe599e48425103ab21019a34e7a4203be8e7de2ad716363bc3cd997",
+          "receipt_source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "source_file_written": false,
+          "synthetic_rows_added": 0,
+          "cloud_export_enabled": false,
+          "github_export_enabled": false,
+          "live_sensor_reading_confirmed": false
+        },
+        "clock_sync": {
+          "w32time_status": "Stopped",
+          "start_type": "Manual",
+          "configured_ntp_server": "time.nist.gov,0x9",
+          "ntp_client_enabled": true,
+          "paired_clock_skew_seconds_approx": 314,
+          "start_service_attempt": "FAILED_CANNOT_OPEN_SERVICE",
+          "resync_attempted": false
+        },
+        "hwinfo": {
+          "process_running": true,
+          "version": "8.52",
+          "enable_logging": 0,
+          "csv_bytes": 39922785,
+          "csv_last_modified_local": "2026-10-21T09:20:45.8565035+07:00",
+          "sensor_status_window_handle": 132490,
+          "sensor_status_window_visible": false,
+          "ui_automation_descendants": 0,
+          "show_window_effective": false,
+          "live_stream_confirmed": false
+        }
+      },
+      "invariant": {
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "w32time_started": false,
+        "open_tasks_closed": false
+      },
+      "state_boundary": "WINDOWS_TICK_METADATA_RECEIPTS_CONTINUE; DEVICE_CLOCK_SKEW_PERSISTS; HWINF0_LIVE_STREAM_NOT_VERIFIED",
+      "next_action": [
+        "Verify next scheduled tick after the device clock reaches 2026-10-23T20:06:32+07:00.",
+        "Use authorized elevation only for W32Time service start/synchronization.",
+        "Continue HWiNFO logging and independent TESSERACT issuer/runner investigation."
+      ],
+      "prior_entry_policy": "Append-only; prior observations and task states preserved."
     }
   ]
 }
