@@ -620,6 +620,19 @@
           "result": "AUTHORIZED_LOCAL_TEXT_SCAN_NO_ISSUER_MARKER; ISSUER_KEY_AND_RUNNER_ASSIGNMENT_STILL_UNVERIFIED",
           "next_callable_edge": "Continue with authorized issuer-side/provider carriers or Actions variable control surface if exposed; do not invent a key or rerun CI without runner-state change.",
           "status_effect": "Keep OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T02:55:05.591+07:00",
+          "source": "Direct local file readback, HTTP route probes, GitHub and Dropbox provider checks",
+          "actions_and_receipts": [
+            "Read start_xtime_local.cmd: it sets HOST=127.0.0.1, PORT=8769, then runs node tools\\server.js. Actual /api/health on 8769 returns HTTP 200; local status JSON's 8765 origin is stale/mismatched. Port 8765 root returns 200 but /api/health and /api/mcp return 404; correct health route is /api/health on 8769.",
+            "Actual X-TIME health reports 63 tools, MODUAL SEARCHED_NO_MATCH, live_device_proven=false. The configured https://192.168.1.42:8080 probe timed out; no production deployment was changed.",
+            "Local XTIME runtime has 19 files; 14 text files scanned for XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64, KILO_XTIME, BEGIN PUBLIC KEY, and ED25519 markers yielded zero matches. Separate TESSERACT_OS scan covered 2,238 text files with zero exact issuer markers; Dropbox SENSOR_LOGS direct listing is complete at 56 entries; GitHub search shows references only.",
+            "PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14. Runs 39994207477 and 39994207667 fail before step output; no runner assignment change verified and no CI rerun."
+          ],
+          "result": "LOCAL_XTIME_HEALTH_8769_VERIFIED_PRODUCTION_AND_ISSUER_KEY_UNVERIFIED",
+          "next_callable_edge": "Continue issuer-side search through authorized carriers; verify Actions runner assignment/entitlement before any CI rerun.",
+          "status_effect": "Keep OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
         }
       ]
     },
@@ -966,6 +979,18 @@
           "result": "THIRD_SCHEDULED_TICK_RECEIPT_VERIFIED_LIVE_SENSOR_STREAM_UNVERIFIED_HWINF0_LOGGING_CONFIG_STILL_UNRESOLVED",
           "next_callable_edge": "Read next receipt after device-clock 02:41:32+07; continue supported HWiNFO logging investigation and use only authorized elevated W32Time control.",
           "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
+        },
+        {
+          "observed_at": "2026-10-24T02:55:05.591+07:00",
+          "source": "Fresh Windows task/receipt readback and source hash check",
+          "actions_and_receipts": [
+            "Scheduled task ran at device-local 02:46:33+07, result 0, zero missed runs, next run 02:51:32+07.",
+            "Exact receipt WINDOWS_TICK_20261023T194635149194Z.json read back: 450 bytes, SHA-256 67a6f3bd2451dcb47c55f1e80b399caa4bdb83c4a2ce283105609c918986bd5f.",
+            "Receipt source hash remains 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87, source size 35,389,440 bytes, mtime unchanged; live_sensor_reading_confirmed=false, source writes/synthetic rows/cloud/GitHub exports all false."
+          ],
+          "result": "FOURTH_SCHEDULED_TICK_VERIFIED_LIVE_SENSOR_STREAM_UNVERIFIED",
+          "next_callable_edge": "Read next scheduled receipt after device-clock 02:51:32+07; continue HWiNFO supported logging route and authorized W32Time path.",
+          "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
         }
       ]
     },
@@ -1143,7 +1168,20 @@
       "live_progress": [
         "Termux established TCP connection to Windows 10.15.224.19:22; SSH banner OpenSSH_for_Windows_9.5",
         "Windows sshd Running Automatic; TCP loopback 22 verified",
-        "Termux openssh package install initiated; tunnel and app relay not yet proven"
+        "Termux openssh package install initiated; tunnel and app relay not yet proven",
+        {
+          "observed_at": "2026-10-24T02:55:05.591+07:00",
+          "source": "Direct Windows Remote Desktop Commander runtime checks",
+          "actions_and_receipts": [
+            "Ollama was absent before action: executable installed, no process/listener, GGDV_OLLAMA_LOCAL enabled but its configured action script G:\\FPGA_AI_LOCAL\\ai_local_neuron\\scripts\\khoi_dong_ollama.ps1 does not exist; Last Result -196608. No task definition was changed.",
+            "Started installed ollama.exe serve with OLLAMA_HOST=127.0.0.1:11434. Process PID 53724; GET / returned HTTP 200/17 bytes and GET /api/tags returned HTTP 200/5,091 bytes with 11 model entries. TCP endpoint reports local address 127.0.0.1, not LAN-bound.",
+            "SOL_OLLAMA_ANDROID_SSH_RELAY task remains Running but no ssh.exe process/connection exists to 10.15.224.83:8022; TCP probe false. Alternate 192.168.1.14:5556 is unreachable and adb.exe is not on PATH.",
+            "The local X-TIME server health endpoint http://127.0.0.1:8769/api/health returned 200, service x-time-web, PID 20712, 63 runtime tools. Its health reports MODUAL SEARCHED_NO_MATCH and live_device_proven=false. POST /api/chat local model test was still pending at last poll; no response success claimed."
+          ],
+          "result": "WINDOWS_OLLAMA_API_RESTORED_LOOPBACK_ONLY_ANDROID_RELAY_AND_CHAT_REPLY_UNVERIFIED",
+          "next_callable_edge": "Verify the pending local chat result; inspect the authorized relay route when peer connectivity is available. Do not expose Ollama beyond loopback or edit the missing scheduled-task script without a verified source.",
+          "status_effect": "Keep IN_PROGRESS / OPEN_NOT_PROVEN_COMPLETED."
+        }
       ],
       "verified_recovery_progress": [
         "Termux:Boot handler 10-sol-ollama-ssh created under ~/.termux/boot with 0700 and bash -n OK; boot after device restart not yet exercised",
@@ -2366,6 +2404,52 @@
       "w32time": "Stopped/Manual",
       "administrator": false,
       "hwinfo_ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "task_statuses_changed": false,
+      "tesseract_ci_rerun": false
+    },
+    {
+      "id": "FOURTH_TICK_OLLAMA_XTIME_20261023195505",
+      "kind": "FOURTH_WINDOWS_TICK_AND_PARALLEL_RUNTIME_EXACT_READBACK",
+      "observed_at": "2026-10-24T02:55:05.591+07:00",
+      "open_tasks_blob_before": "ca137cbb8e32ca6dcfc653807a9a284884f57627",
+      "modual_blob_after": "3caa247c0b9c41a1e481266cb912432b2100a65a",
+      "task_resume_pointer_blob_before": "a545ef62aac3e055271853575c261848704a0934",
+      "windows_receipt": {
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T194635149194Z.json",
+        "observed_at_utc": "2026-10-23T19:46:35.149194Z",
+        "bytes": 450,
+        "sha256": "67a6f3bd2451dcb47c55f1e80b399caa4bdb83c4a2ce283105609c918986bd5f",
+        "exact_target_readback": true,
+        "json_valid": true,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_bytes": 35389440,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "ollama": {
+        "process_pid": 53724,
+        "host": "127.0.0.1:11434",
+        "root_http": 200,
+        "tags_http": 200,
+        "models": 11,
+        "loopback_only": true,
+        "android_relay_peer_reachable": false,
+        "chat_reply_verified": false
+      },
+      "xtime": {
+        "health_url": "http://127.0.0.1:8769/api/health",
+        "health_http": 200,
+        "modual_state": "SEARCHED_NO_MATCH",
+        "live_device_proven": false
+      },
       "task_count": 28,
       "task_closure": false,
       "raw_sensor_rows_committed": false,
@@ -5163,6 +5247,67 @@
       "source_moved_or_deleted": false,
       "task_statuses_changed": false,
       "tesseract_ci_rerun": false
+    },
+    {
+      "observed_at": "2026-10-23T19:55:05.591Z",
+      "record_type": "FOURTH_WINDOWS_TICK_OLLAMA_AND_XTIME_RUNTIME_READBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "a545ef62aac3e055271853575c261848704a0934",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "ca137cbb8e32ca6dcfc653807a9a284884f57627",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "3caa247c0b9c41a1e481266cb912432b2100a65a"
+      },
+      "windows": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T194635149194Z.json",
+        "receipt_sha256": "67a6f3bd2451dcb47c55f1e80b399caa4bdb83c4a2ce283105609c918986bd5f",
+        "task_last_run": "2026-10-24T02:46:33+07:00",
+        "last_task_result": 0,
+        "missed_runs": 0,
+        "next_run_device_clock": "2026-10-24T02:51:32+07:00",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_unchanged": true,
+        "live_sensor_reading_confirmed": false
+      },
+      "ollama": {
+        "process_pid": 53724,
+        "host": "127.0.0.1:11434",
+        "root_http": 200,
+        "tags_http": 200,
+        "models": 11,
+        "loopback_only": true,
+        "chat_reply_verified": false,
+        "android_relay_peer_reachable": false
+      },
+      "xtime": {
+        "health_url": "http://127.0.0.1:8769/api/health",
+        "health_http": 200,
+        "pid": 20712,
+        "runtime_tools": 63,
+        "modual_state": "SEARCHED_NO_MATCH",
+        "live_device_proven": false,
+        "configured_port_mismatch": true,
+        "production_verified": false
+      },
+      "tesseract": {
+        "local_issuer_marker_files": 0,
+        "local_text_files_scanned": 2238,
+        "pr": 6,
+        "runs": [
+          39994207477,
+          39994207667
+        ],
+        "rerun": false,
+        "issuer_public_key_verified": false
+      },
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "task_statuses_changed": false,
+      "tesseract_ci_rerun": false,
+      "ollama_bound_to_loopback": true
     }
   ]
 }
