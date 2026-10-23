@@ -152,6 +152,33 @@
           "result": "LIBRARY_ARCHIVE_FORMAT_SUBFOLDERS_EMPTY; NO_NEW_RAW_EXPORT_CARRIER",
           "next_callable_edge": "Continue from exact provider-side JINEY/FUNIX/DAT NGUYEN folder IDs or a verified raw carrier when an authorized Drive/Dropbox/Takeout connector is available; do not substitute same-name derived archives.",
           "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T00:54:08+07:00",
+          "source": "ChatGPT Library raw ZIP materialization + read-only ZIP member/CRC/hash inspection",
+          "actions_and_receipts": [
+            "OPENAI_GGDV_MATERIALIZED_20261005.zip: Library file_id=file_00000000c2cc8209a3103fb044846567; library_file_id=libfile_0ec1d24690dc8191991584b924765f7b; 58,442 bytes; SHA-256 eb0d9b33cde33c773e26b4096e1d317c9d2d713f23e160a02216ffd09aa80521; 155 members; CRC test clean; no conversations.json, conversations-*.json, chat.html, user.json, or raw account-export member.",
+            "SOL_JINEY_MINH_IDENTITY_SOURCE_ANCHOR_20261010.zip: Library file_id=file_00000000dc2c8209af05bdd3130057bd; library_file_id=libfile_305e43b7cb68819185e3df84ad1855b6; 10,250 bytes; SHA-256 17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93; 7 members; CRC test clean; contents are proof gates, source map, reentry context, README and receipt—not raw chat export.",
+            "Recursive Library archive listing returned 253 archive entries over 2 pages and a folder-traversal-limit warning. Matching names yielded derived/tooling packages only; this is not exhaustive evidence of provider-side absence.",
+            "No Google Drive, Dropbox or Takeout provider action is exposed in this run; no provider-side object ID, revision, or original export bytes were obtained."
+          ],
+          "result": "EXISTING_CANDIDATES_HASHED_AND_REJECTED_AS_RAW_EXPORTS; ORIGINAL_JINEY_FUNIX_DAT_EXPORTS_NOT_RETRIEVED",
+          "next_callable_edge": "Retrieve exact provider-side export through an authorized Drive/Dropbox/Takeout connector or a verified raw carrier; preserve provider object ID/revision and byte hash.",
+          "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED. No source restored; no task closed."
+        },
+        {
+          "observed_at": "2026-10-24T02:25:36+07:00",
+          "source": "Current Library byte materialization + GitHub current main/PR readback",
+          "actions_and_receipts": [
+            "Re-read ADMIN_PORTABLE_20261023.zip version 3 raw bytes: 22,493,275 bytes, SHA-256 ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b; ZIP CRC passed.",
+            "Opened embedded SQLite from in-memory bytes; integrity_check=ok; counts 136 conversations, 18,790 nodes, 10,943 searchable messages.",
+            "Read MAP_NGUON.md XIV. LƯƠNG TÂM lines 1067-1127; it requires exact source action and readback, not a report as a substitute.",
+            "Inspected SOL_CURRENT_RAW_CHAT_VI_EV_20261010.zip: 23,464 bytes, SHA-256 1c7d2df681f2e93be71664e129f426df4d8867ac1d19b8319a5f74567f9e922a; 13 members are runtime/tooling files, no conversations.json/user.json/chat.html or export_manifest.json.",
+            "Visible Library archive inventory scanned 253 entries with traversal-limit warning; no new original JINEY/FUNIX/DAT NGUYEN export verified. No direct Drive/Dropbox/Takeout connector action was available."
+          ],
+          "result": "ADMIN_BYTE_AND_MAP_XIV_READBACK_VERIFIED; RELATED_RUNTIME_ZIP_NOT_RAW_EXPORT; ORIGINAL_ACCOUNT_EXPORTS_STILL_NOT_RETRIEVED",
+          "next_callable_edge": "Continue only from an authorized provider-side Drive/Dropbox/Takeout connector or an existing verified raw export carrier; preserve original IDs and hashes, and do not move/duplicate ADMIN.",
+          "status_effect": "Keep OPEN and OPEN_NOT_PROVEN_COMPLETED; no root-source restoration and no task closure."
         }
       ]
     },
@@ -1405,6 +1432,43 @@
       "cloud_export_enabled": false,
       "github_export_enabled": false,
       "live_sensor_reading_confirmed": false
+    },
+    "library_archive_probe_20261024T022536Z": {
+      "archive": {
+        "file_id": "file_0000000044e081fa8f423d980f5f62af",
+        "library_file_id": "libfile_d18e6db946b88191b31e948ed283598c",
+        "version_id": "3",
+        "size_bytes": 22493275,
+        "sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+        "zip_members": 13,
+        "zip_crc": "PASS",
+        "sqlite_member": "MEMORY_ARCHIVE_THIT_THO_SOUL/ADMIN_CHAT_SOURCE_20260719.sqlite3",
+        "sqlite_sha256": "fee9f3ee6a1df62991c48405e3e20c2552d284f70ef6e198df1c6453e910433a",
+        "sqlite_integrity_check": "ok",
+        "conversations": 136,
+        "nodes": 18790,
+        "searchable_messages": 10943,
+        "map_nguon_member": "MEMORY_ARCHIVE_THIT_THO_SOUL/PRIMARY_SOURCES/MAP_NGUON.md",
+        "map_nguon_size_bytes": 99075,
+        "map_nguon_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+        "map_nguon_xiv_readback": "lines 1067-1127"
+      },
+      "related_bundle": {
+        "name": "SOL_CURRENT_RAW_CHAT_VI_EV_20261010.zip",
+        "file_id": "file_0000000039d481fd830fd687ea1bf385",
+        "size_bytes": 23464,
+        "sha256": "1c7d2df681f2e93be71664e129f426df4d8867ac1d19b8319a5f74567f9e922a",
+        "members": 13,
+        "crc": "PASS",
+        "raw_export_candidate_members": [],
+        "classification": "DERIVED_RUNTIME_TOOL_BUNDLE_NOT_ACCOUNT_EXPORT"
+      },
+      "source_inventory": {
+        "archive_entries_scanned": 253,
+        "recursive_listing_warning": true,
+        "raw_export_found": false,
+        "limitation": "Library listing is not provider-side Drive/Dropbox/Takeout readback; nested items may be omitted."
+      }
     }
   },
   "sinks": {
@@ -2135,6 +2199,253 @@
       "credentials_committed": false,
       "source_moved_or_deleted": false,
       "task_statuses_changed": false
+    },
+    {
+      "id": "PR21_DIVERGENCE_CLEAN_BRANCH_RECOVERY_20261024T005408",
+      "kind": "GITHUB_PR_DIVERGENCE_READBACK_AND_CLEAN_REPLACEMENT_BRANCH",
+      "observed_at": "2026-10-24T00:54:08+07:00",
+      "source": "GitHub connector readback of current main, PR #21 metadata, commit comparison, and exact source files",
+      "existing_pr": {
+        "number": 21,
+        "head_branch": "fix/open-task-routing-current-20261023",
+        "head_sha": "13b3b228cc9d2930b584b934be639021fa4628ef",
+        "base_branch": "main",
+        "base_sha": "936a410eb4d7558007371557828c517e7616d85b",
+        "comparison_status": "diverged",
+        "ahead_by": 29,
+        "behind_by": 8,
+        "mergeable": false
+      },
+      "action": {
+        "replacement_branch": "fix/open-task-routing-current-20261024",
+        "base_ref": "main",
+        "preserved_changes": [
+          "remove fixed 27-task assignment threshold",
+          "validate source-task/route IDs one-to-one",
+          "add exact .gitmodules/gitlink regression",
+          "add pull_request workflow path trigger"
+        ],
+        "current_main_ledger_used_as_base": true,
+        "task_count": 28,
+        "task_statuses_changed": false
+      },
+      "result": "CLEAN_REPLACEMENT_BRANCH_CREATED; NO_TASK_CLOSED; PR21_LEFT_OPEN",
+      "guards": {
+        "no_force_push": true,
+        "no_task_closure": true,
+        "no_windows_host_actions": true,
+        "no_source_export_claim": true
+      }
+    },
+    {
+      "id": "LIBRARY_EXPORT_CANDIDATE_BYTE_SCAN_20261024T005408",
+      "kind": "READ_ONLY_LIBRARY_ARCHIVE_CANDIDATE_HASH_AND_CONTENT_SCAN",
+      "observed_at": "2026-10-24T00:54:08+07:00",
+      "target_task": "SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+      "candidates": [
+        {
+          "name": "OPENAI_GGDV_MATERIALIZED_20261005.zip",
+          "file_id": "file_00000000c2cc8209a3103fb044846567",
+          "library_file_id": "libfile_0ec1d24690dc8191991584b924765f7b",
+          "size_bytes": 58442,
+          "sha256": "eb0d9b33cde33c773e26b4096e1d317c9d2d713f23e160a02216ffd09aa80521",
+          "members": 155,
+          "crc_test": "PASS",
+          "raw_export": false
+        },
+        {
+          "name": "SOL_JINEY_MINH_IDENTITY_SOURCE_ANCHOR_20261010.zip",
+          "file_id": "file_00000000dc2c8209af05bdd3130057bd",
+          "library_file_id": "libfile_305e43b7cb68819185e3df84ad1855b6",
+          "size_bytes": 10250,
+          "sha256": "17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93",
+          "members": 7,
+          "crc_test": "PASS",
+          "raw_export": false
+        }
+      ],
+      "library_archive_listing": {
+        "items_scanned": 253,
+        "pages": 2,
+        "traversal_warning": true,
+        "exhaustive": false
+      },
+      "provider_connector_available": false,
+      "original_export_bytes_retrieved": false,
+      "task_count": 28,
+      "task_statuses_changed": false,
+      "task_closure": false
+    },
+    {
+      "id": "STAMP_TIME_RECONCILIATION_20261024T010514",
+      "kind": "STAMP_LIVE_INVOCATION_TIME_VS_ACTION_TIME_RECONCILIATION",
+      "observed_at": "2026-10-24T01:05:14+07:00",
+      "source": "Runtime clock readback and GitHub Actions artifact timestamp",
+      "prior_entries": [
+        "PR21_DIVERGENCE_CLEAN_BRANCH_RECOVERY_20261024T005408",
+        "LIBRARY_EXPORT_CANDIDATE_BYTE_SCAN_20261024T005408"
+      ],
+      "correction": {
+        "prior_stamp": "2026-10-24T00:54:08+07:00",
+        "meaning": "scheduled-run invocation/start marker; not a separately measured timestamp for each later action",
+        "runtime_clock_utc": "2026-10-23T18:05:14.610063Z",
+        "runtime_clock_local": "2026-10-24T01:05:14.610160+07:00",
+        "latest_artifact_created_at_utc": "2026-10-23T18:03:54Z",
+        "exact_per_action_time_for_library_scan": "NOT_INDEPENDENTLY_MEASURED"
+      },
+      "policy": "Append-only correction; do not rewrite prior records or treat the invocation marker as an exact timestamp for every action.",
+      "task_statuses_changed": false,
+      "task_closure": false
+    },
+    {
+      "id": "PR23_CLEAN_HEAD_CI_ARTIFACT_READBACK_20261024T010514",
+      "kind": "GITHUB_ACTIONS_CLEAN_BASE_REPLACEMENT_VALIDATION",
+      "observed_at": "2026-10-24T01:05:14+07:00",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "pr_number": 23,
+      "validated_head": "7b30aa59144753192d6aa3769fad75d583fd7c9a",
+      "runs": [
+        {
+          "run_id": 40000105703,
+          "workflow": "Windows survival - independent OPEN continuation",
+          "conclusion": "success"
+        },
+        {
+          "run_id": 40000105966,
+          "workflow": "High-Threshold Secret Exposure Guard",
+          "conclusion": "success"
+        }
+      ],
+      "continuation_artifact": {
+        "artifact_id": 12520963569,
+        "name": "windows-survival-open-continuation",
+        "size_bytes": 3875,
+        "sha256": "705fd79e8542b84a66654161bfcfa8717a58e478175aa7b7687c7ea0e4d5a5b8",
+        "zip_crc": "PASS",
+        "json_valid": true,
+        "source_tasks_carried_forward": 28,
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "real_testnet_transaction_broadcast": false
+      },
+      "scope": "Cloud tests/build and source-preservation guard only; not original-export recovery, Windows remediation, n8n execution, or live TestNet broadcast.",
+      "task_statuses_changed": false,
+      "task_closure": false
+    },
+    {
+      "id": "PR23_CURRENT_HEAD_CI_MERGE_REF_READBACK_20261024T010705",
+      "kind": "CURRENT_HEAD_CLOUD_CI_AND_ARTIFACT_EXACT_BYTE_READBACK",
+      "observed_at": "2026-10-24T01:07:05+07:00",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "pr_number": 23,
+      "pr_head_sha": "3fb6411d70b87c24ca8ecd94448bc2f275bd285e",
+      "base_sha": "936a410eb4d7558007371557828c517e7616d85b",
+      "merge_result_sha": "045b471137c530c0f678853ea98ce0bb96b8e3ea",
+      "merge_result_message": "Merge 3fb6411d70b87c24ca8ecd94448bc2f275bd285e into 936a410eb4d7558007371557828c517e7616d85b",
+      "validation_runs": [
+        {
+          "run_id": 40000491997,
+          "workflow": "Windows survival - independent OPEN continuation",
+          "conclusion": "success"
+        },
+        {
+          "run_id": 40000491884,
+          "workflow": "High-Threshold Secret Exposure Guard",
+          "conclusion": "success"
+        }
+      ],
+      "continuation_artifact": {
+        "artifact_id": 12522420239,
+        "name": "windows-survival-open-continuation",
+        "size_bytes": 3856,
+        "sha256": "738eb76acc554133af057735cf9b1ff6aa813645f8603ce93d8a34b2ab8dea37",
+        "zip_crc": "PASS",
+        "json_valid": true,
+        "receipt_run_id": "40000491997",
+        "receipt_commit_sha": "045b471137c530c0f678853ea98ce0bb96b8e3ea",
+        "source_tasks_carried_forward": 28,
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "real_testnet_transaction_broadcast": false,
+        "n8n_agents_autonomously_executed": false,
+        "critical_windows_mode": "HIGH_SAFETY_HOLD"
+      },
+      "validation_scope": "GitHub pull_request merge-result commit; this validates the current combined merge result, not a standalone PR-head-only build.",
+      "task_count": 28,
+      "task_statuses_changed": false,
+      "task_closure": false
+    },
+    {
+      "id": "OPEN_TASKS_PR23_DIVERGENCE_AND_ADMIN_ARCHIVE_PROBE_20261024T022536",
+      "kind": "GITHUB_PR_HEAD_REVALIDATION_AND_LIBRARY_ARCHIVE_BYTE_READBACK",
+      "observed_at": "2026-10-24T02:25:36+07:00",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "main_head_observed": "7865af82a46efe220630b0a0a82a60e70d1b53de",
+      "main_ledger_blob": "e8317ccbf635d0524dc4eda42a51e5b3f3b3ff43",
+      "pr23": {
+        "head": "f4e02141e0ead991b76c554bf9820e14b9a04c30",
+        "state": "OPEN",
+        "draft": true,
+        "mergeable": false,
+        "compare_status": "diverged",
+        "ahead_by": 7,
+        "behind_by": 8
+      },
+      "replacement_branch": {
+        "name": "fix/open-task-routing-current-20261024b",
+        "created_from": "main",
+        "branch_creation_readback": "success"
+      },
+      "archive": {
+        "file_id": "file_0000000044e081fa8f423d980f5f62af",
+        "library_file_id": "libfile_d18e6db946b88191b31e948ed283598c",
+        "version_id": "3",
+        "size_bytes": 22493275,
+        "sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+        "zip_members": 13,
+        "zip_crc": "PASS",
+        "sqlite_member": "MEMORY_ARCHIVE_THIT_THO_SOUL/ADMIN_CHAT_SOURCE_20260719.sqlite3",
+        "sqlite_sha256": "fee9f3ee6a1df62991c48405e3e20c2552d284f70ef6e198df1c6453e910433a",
+        "sqlite_integrity_check": "ok",
+        "conversations": 136,
+        "nodes": 18790,
+        "searchable_messages": 10943,
+        "map_nguon_member": "MEMORY_ARCHIVE_THIT_THO_SOUL/PRIMARY_SOURCES/MAP_NGUON.md",
+        "map_nguon_size_bytes": 99075,
+        "map_nguon_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+        "map_nguon_xiv_readback": "lines 1067-1127"
+      },
+      "related_bundle": {
+        "name": "SOL_CURRENT_RAW_CHAT_VI_EV_20261010.zip",
+        "file_id": "file_0000000039d481fd830fd687ea1bf385",
+        "size_bytes": 23464,
+        "sha256": "1c7d2df681f2e93be71664e129f426df4d8867ac1d19b8319a5f74567f9e922a",
+        "members": 13,
+        "crc": "PASS",
+        "raw_export_candidate_members": [],
+        "classification": "DERIVED_RUNTIME_TOOL_BUNDLE_NOT_ACCOUNT_EXPORT"
+      },
+      "source_inventory": {
+        "archive_entries_scanned": 253,
+        "recursive_listing_warning": true,
+        "raw_export_found": false,
+        "limitation": "Library listing is not provider-side Drive/Dropbox/Takeout readback; nested items may be omitted."
+      },
+      "provider_access": {
+        "github": true,
+        "chatgpt_library": true,
+        "google_drive_action": false,
+        "dropbox_action": false,
+        "takeout_action": false
+      },
+      "task_count": 28,
+      "task_statuses_changed": false,
+      "task_closure": false,
+      "windows_host_modified": false,
+      "source_moved_or_deleted": false,
+      "private_chat_uploaded_to_github": false
     }
   ],
   "energy_protection_current": {
@@ -4744,6 +5055,195 @@
       "task_statuses_changed": false,
       "tesseract_ci_rerun": false,
       "prior_entry_policy": "Append-only; previous scheduled and manual receipt history retained."
+    },
+    {
+      "observed_at": "2026-10-24T00:54:08+07:00",
+      "record_type": "PR21_DIVERGENCE_AND_CLEAN_BRANCH_RECONSTRUCTION",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "source_reads": {
+        "main_ledger_blob_before": "36d36ca6b1423292b20689cb98110933fdcc80e6",
+        "main_workflow_blob_before": "044b4e73123af4772b995b410b3a79e847be7e03",
+        "main_scheduler_blob_before": "6727e7b33f77e1b34c5d03ac49187466e55f868c",
+        "main_tests_blob_before": "2c1b9477bbff08428c3ba57411275a02a2e84e4b",
+        "prior_pr_ledger_blob_observed": "143374b829a0af6e0827539fb3a5624fc82f3f05"
+      },
+      "prior_pr": {
+        "number": 21,
+        "head_sha": "13b3b228cc9d2930b584b934be639021fa4628ef",
+        "main_head_sha": "936a410eb4d7558007371557828c517e7616d85b",
+        "status": "diverged",
+        "ahead_by": 29,
+        "behind_by": 8,
+        "mergeable": false
+      },
+      "replacement": {
+        "branch": "fix/open-task-routing-current-20261024",
+        "base": "main",
+        "status": "created_from_current_main",
+        "task_count": 28,
+        "task_statuses_changed": false,
+        "no_task_closed": true
+      },
+      "prior_entry_policy": "Append-only; current main ledger and all 28 task states retained."
+    },
+    {
+      "observed_at": "2026-10-24T00:54:08+07:00",
+      "record_type": "LIBRARY_RAW_EXPORT_CANDIDATE_BYTES_HASHED_NOT_ORIGINAL_EXPORT",
+      "source": "Library materialization and local read-only ZIP inspection",
+      "source_bytes": {
+        "openai_ggdv_materialized": {
+          "file_id": "file_00000000c2cc8209a3103fb044846567",
+          "library_file_id": "libfile_0ec1d24690dc8191991584b924765f7b",
+          "size_bytes": 58442,
+          "sha256": "eb0d9b33cde33c773e26b4096e1d317c9d2d713f23e160a02216ffd09aa80521",
+          "members": 155,
+          "crc_test": "PASS",
+          "raw_export": false
+        },
+        "jiney_identity_anchor": {
+          "file_id": "file_00000000dc2c8209af05bdd3130057bd",
+          "library_file_id": "libfile_305e43b7cb68819185e3df84ad1855b6",
+          "size_bytes": 10250,
+          "sha256": "17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93",
+          "members": 7,
+          "crc_test": "PASS",
+          "raw_export": false
+        }
+      },
+      "scope_limit": "Recursive Library listing scanned 253 archive entries; traversal-limit warning remains. No provider-side Drive/Dropbox/Takeout connector was available.",
+      "result": "NO_NEW_RAW_EXPORT_CARRIER",
+      "task_count": 28,
+      "task_statuses_changed": false,
+      "task_closure": false,
+      "prior_entry_policy": "Append-only; no existing source or task history overwritten."
+    },
+    {
+      "observed_at": "2026-10-24T01:05:14+07:00",
+      "record_type": "STAMP_LIVE_TIME_RECONCILIATION_AND_PR23_CI_READBACK",
+      "clock": {
+        "utc": "2026-10-23T18:05:14.610063Z",
+        "local": "2026-10-24T01:05:14.610160+07:00",
+        "prior_invocation_marker": "2026-10-24T00:54:08+07:00",
+        "per_action_time_for_archive_scan": "NOT_INDEPENDENTLY_MEASURED",
+        "policy": "Preserve old entries; append correction, do not reinterpret invocation marker as exact action timestamp."
+      },
+      "ci": {
+        "pr_number": 23,
+        "validated_head": "7b30aa59144753192d6aa3769fad75d583fd7c9a",
+        "windows_survival_run": 40000105703,
+        "windows_survival_conclusion": "success",
+        "secret_guard_run": 40000105966,
+        "secret_guard_conclusion": "success",
+        "artifact_id": 12520963569,
+        "artifact_sha256": "705fd79e8542b84a66654161bfcfa8717a58e478175aa7b7687c7ea0e4d5a5b8",
+        "task_count": 28,
+        "task_closure": false,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "testnet_broadcast": false
+      },
+      "prior_entry_policy": "Append-only; source and task history preserved."
+    },
+    {
+      "observed_at": "2026-10-24T01:07:05+07:00",
+      "record_type": "PR23_CURRENT_HEAD_CI_AND_ARTIFACT_BYTE_READBACK",
+      "pr_number": 23,
+      "pr_head_sha": "3fb6411d70b87c24ca8ecd94448bc2f275bd285e",
+      "merge_result_sha": "045b471137c530c0f678853ea98ce0bb96b8e3ea",
+      "run_ids": [
+        40000491997,
+        40000491884
+      ],
+      "conclusions": [
+        "success",
+        "success"
+      ],
+      "artifact": {
+        "id": 12522420239,
+        "name": "windows-survival-open-continuation",
+        "size_bytes": 3856,
+        "sha256": "738eb76acc554133af057735cf9b1ff6aa813645f8603ce93d8a34b2ab8dea37",
+        "json_valid": true,
+        "zip_crc": "PASS"
+      },
+      "receipt": {
+        "source_tasks_carried_forward": 28,
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "real_testnet_transaction_broadcast": false,
+        "n8n_agents_autonomously_executed": false
+      },
+      "note": "GitHub Actions pull_request event checked the synthetic merge result 045b471..., whose message names PR head 3fb6411... and base 936a410.... Do not mislabel this as a standalone head-only run.",
+      "task_count": 28,
+      "task_statuses_changed": false,
+      "task_closure": false
+    },
+    {
+      "observed_at": "2026-10-24T02:25:36+07:00",
+      "record_type": "PR23_DIVERGENCE_AND_ADMIN_ARCHIVE_SOURCE_PROBE_20261024",
+      "pr23": {
+        "head": "f4e02141e0ead991b76c554bf9820e14b9a04c30",
+        "state": "OPEN",
+        "draft": true,
+        "mergeable": false,
+        "compare_status": "diverged",
+        "ahead_by": 7,
+        "behind_by": 8
+      },
+      "replacement_branch": {
+        "name": "fix/open-task-routing-current-20261024b",
+        "created_from": "main",
+        "branch_creation_readback": "success"
+      },
+      "archive": {
+        "file_id": "file_0000000044e081fa8f423d980f5f62af",
+        "library_file_id": "libfile_d18e6db946b88191b31e948ed283598c",
+        "version_id": "3",
+        "size_bytes": 22493275,
+        "sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+        "zip_members": 13,
+        "zip_crc": "PASS",
+        "sqlite_member": "MEMORY_ARCHIVE_THIT_THO_SOUL/ADMIN_CHAT_SOURCE_20260719.sqlite3",
+        "sqlite_sha256": "fee9f3ee6a1df62991c48405e3e20c2552d284f70ef6e198df1c6453e910433a",
+        "sqlite_integrity_check": "ok",
+        "conversations": 136,
+        "nodes": 18790,
+        "searchable_messages": 10943,
+        "map_nguon_member": "MEMORY_ARCHIVE_THIT_THO_SOUL/PRIMARY_SOURCES/MAP_NGUON.md",
+        "map_nguon_size_bytes": 99075,
+        "map_nguon_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+        "map_nguon_xiv_readback": "lines 1067-1127"
+      },
+      "related_bundle": {
+        "name": "SOL_CURRENT_RAW_CHAT_VI_EV_20261010.zip",
+        "file_id": "file_0000000039d481fd830fd687ea1bf385",
+        "size_bytes": 23464,
+        "sha256": "1c7d2df681f2e93be71664e129f426df4d8867ac1d19b8319a5f74567f9e922a",
+        "members": 13,
+        "crc": "PASS",
+        "raw_export_candidate_members": [],
+        "classification": "DERIVED_RUNTIME_TOOL_BUNDLE_NOT_ACCOUNT_EXPORT"
+      },
+      "source_inventory": {
+        "archive_entries_scanned": 253,
+        "recursive_listing_warning": true,
+        "raw_export_found": false,
+        "limitation": "Library listing is not provider-side Drive/Dropbox/Takeout readback; nested items may be omitted."
+      },
+      "provider_access": {
+        "github": true,
+        "chatgpt_library": true,
+        "google_drive_action": false,
+        "dropbox_action": false,
+        "takeout_action": false
+      },
+      "task_count": 28,
+      "task_closure": false,
+      "task_statuses_changed": false,
+      "source_moved_or_deleted": false,
+      "windows_host_modified": false,
+      "prior_entry_policy": "Append-only; current main task objects/statuses preserved and historical branch receipts merged."
     }
   ]
 }
