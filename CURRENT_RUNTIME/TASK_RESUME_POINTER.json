@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Latest confirmed Windows receipt remains the eighth tick: D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json, SHA-256 e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634; it verified task result 0, zero missed runs, and source SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 unchanged, but live_sensor_reading_confirmed=false. The next scheduled run was due after device-clock 2026-10-24T03:56:32+07:00; a later shell read timed out and the directory listing remained pending, so the newest post-03:56 receipt is NOT_VERIFIED, not presumed absent. Use other provider routes meanwhile; the older Desktop Commander accounts report offline, while the Remote Desktop Commander device was last reported Online before the read timeout. HWiNFO shared-memory mapping was absent on two read-only probes; its separate CSV is stale/read-only. Official docs make -l CLI logging Pro-only; license tier and authorized UI control remain unverified. TESSERACT Desktop source wiring is now freshly verified: kilo.rs blob f1a7abe2d30cf720d2d1207335325d42a2af4e16 uses option_env!(XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64) and fails closed when absent; workflow blob 6552d13a1f8004b0e3d36fd585dd75cdd22acf12 maps that build-time variable from vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64. The variable's presence/value and the real issuer public key remain unverified; no key or private material was read or created. PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14; runs 39994207477 and 39994207667 failed, self-hosted verification was skipped, and no CI rerun is authorized without verified runner assignment/entitlement change. Dropbox folder listing and metadata reads confirmed the sensor source revision and CDN carrier metadata; filename searches in the checked folders found no issuer/key filenames but do not prove absence in file contents. X-TIME health remains HTTP 200/63 tools with filesystem sensor OK, but MODUAL source_present=false and live_device_proven=false. Ollama tags remains HTTP 200/11 models on loopback. Preserve provenance/secrets; no raw sensor values, no source move/delete/overwrite, and no OPEN task closure. Parallel branch CODEX_CONFIG_PRIVATE_BACKUP: Dropbox's current source-authority packet says LOCAL_PACKET_ONLY and does not require external chat/account/raw lookup; the historical SOL_CODEX_CLI_ROTATE receipt proves only a mock route (`Bearer <test-key>` placeholder, `MOCK_ROUTE_REACHED`), not current Codex config or live credentials. The non-secret public pointer CONFIG_SOL/CODEX_CLOUD_DEVICE_FAILOVER_CURRENT.json (blob b6e27cc58b42f3faf292d046371f4ba3c57049ee) records local config.toml 12,950 bytes/hash B68E2324E87421B9FAFF438F779762309BE813534AF3F1F389935ACF891CBB35 and an older Google Drive replica 4,334 bytes with unknown hash, modified 2026-08-31; it is explicitly not latest-verified. H: remains an EFI System partition and was not written. The current desktop read route is timed out/pending and no Google Drive connector is present in this runtime; current config bytes, encrypted backup, and offline retrieval remain unverified. Do not read auth.json/secret values or copy them to public providers; keep CODEX_CONFIG_PRIVATE_BACKUP OPEN.",
+  "next": "Latest exact Windows receipt: D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T213134578911Z.json, SHA-256 828fe715f65698fda648b63c3dc189aa909ea88658e18626565d9611fa65762d; task Ready, last result 0, zero missed runs, next device-clock run 2026-10-24T04:36:32+07:00. Source remains 35,389,440 bytes with SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; receipt is metadata-only and live_sensor_reading_confirmed=false. HWiNFO CSV remains stale/read-only and W32Time Stopped/Manual. X-TIME health is HTTP 200/version 0.9.0/PID 20712/63 tools, filesystem sensor OK, but MODUAL source and live device are unverified; Ollama tags HTTP 200/11 models. Dropbox metadata still shows revision 0165dc1e4794ab00000000395cdfd73. TESSERACT PR #6 remains OPEN; runs 39994207477/39994207667 failed before step output, no runner change or issuer key verified; do not rerun CI.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -1088,6 +1088,18 @@
       "task_closure": false,
       "secret_values_read": false,
       "public_secret_copy_performed": false
+    },
+    {
+      "observed_at_utc": "2026-10-23T21:39:37.472Z",
+      "source": "Direct Windows exact-target receipt readback, Dropbox Outlook metadata/folder listing, X-TIME/Ollama HTTP probes, GitHub workflow job readback",
+      "windows_receipt_sha256": "828fe715f65698fda648b63c3dc189aa909ea88658e18626565d9611fa65762d",
+      "windows_source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "windows_live_sensor_stream": "UNVERIFIED",
+      "dropbox_source_rev": "0165dc1e4794ab00000000395cdfd73",
+      "xtime": "HTTP_200_RUNTIME_0.9.0_63_TOOLS_MODUAL_UNBOUND",
+      "ollama": "HTTP_200_11_MODELS_LOOPBACK",
+      "tesseract_pr6": "OPEN_CI_FAIL_BEFORE_STEP_NO_RERUN",
+      "open_tasks_closed": false
     }
   ],
   "latest_sync_observation": {
@@ -1117,5 +1129,25 @@
       39994207477,
       39994207667
     ]
+  },
+  "latest_runtime_observation": {
+    "observed_at": "2026-10-24T04:39:37.471+07:00",
+    "observed_at_utc": "2026-10-23T21:39:37.472Z",
+    "source_reads": {
+      "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "e138092d904e63de372a847bf00abea4e65be0aa",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "3b1ed684e9685cb9e86152521ba5c91a8b26eaaf",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "c31b7d1e96bf413fd1a64a53963114d0918e9099"
+    },
+    "windows_receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T213134578911Z.json",
+    "windows_receipt_sha256": "828fe715f65698fda648b63c3dc189aa909ea88658e18626565d9611fa65762d",
+    "windows_source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "live_sensor_reading_confirmed": false,
+    "xtime_health_http_status": 200,
+    "ollama_tags_http_status": 200,
+    "tesseract_pr6_open": true,
+    "tesseract_ci_rerun": false,
+    "open_tasks_closed": false
   }
 }
