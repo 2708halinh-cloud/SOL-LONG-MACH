@@ -36,12 +36,14 @@ class CloudSurvivalTests(unittest.TestCase):
         self.assertTrue(state["STAMP_LIVE"]["cloud_actions"]["R014_RESPONSE_REGRESSION"]["passed"])
         self.assertTrue(state["STAMP_LIVE"]["cloud_actions"]["THIT_THO_CONTRACTS"]["passed"])
 
-    def test_all_27_source_open_nodes_have_single_real_subagent_route(self):
+    def test_all_current_source_open_nodes_have_single_real_subagent_route(self):
         ledger,_,_=survivor.classify_open_ledger(ROOT)
         routes=survivor.reconcile_agent_tasks(ledger)
-        self.assertEqual(len(ledger["tasks"]),27)
-        self.assertEqual(len(routes),27)
-        self.assertEqual(len(set(x["task_id"] for x in routes)),27)
+        source_ids={item["id"] for item in ledger["tasks"]}
+        routed_ids=[item["task_id"] for item in routes]
+        self.assertEqual(set(routed_ids),source_ids)
+        self.assertEqual(len(routed_ids),len(source_ids))
+        self.assertEqual(len(routed_ids),len(set(routed_ids)))
         self.assertEqual({x["capability_offer"]["role"] for x in routes},
                          {"SENSORY","INTEGRITY","OPEN_ROUTER","READBACK"})
         for item in routes:
