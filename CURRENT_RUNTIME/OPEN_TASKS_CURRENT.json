@@ -2011,6 +2011,68 @@
         "Do not rerun workflow 39153474587 until runner assignment or runner state changes are independently evidenced."
       ],
       "prior_entry_policy": "Append-only; prior observations and task states are preserved."
+    },
+    {
+      "observed_at": "2026-10-23T18:10:12+07:00",
+      "record_type": "ADDITIONAL_CARRIER_SCAN_AND_ALTERNATE_DEVICE_ROUTE_20261023T1810",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "437b7e9de32b2ef8e8e77815509fe253c5d988e6",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "8d8226362038ee26196faeca4cb9412e5cbe9546"
+      },
+      "additional_provider_results": {
+        "dropbox_sensor_logs_folder": {
+          "path": "/Linh Hà/SENSOR_LOGS",
+          "immediate_children": 56,
+          "has_more": false,
+          "current_source_present": {
+            "name": "windows_SENSON.CSV",
+            "size_bytes": 35389440,
+            "server_modified": "2026-10-14T00:20:03Z"
+          },
+          "consumer_present": {
+            "name": "telemetry_buffer_sync.py",
+            "size_bytes": 10707,
+            "server_modified": "2026-10-12T19:59:29Z"
+          },
+          "small_live_named_carrier": {
+            "name": "All_desktop_live.csv",
+            "size_bytes": 145,
+            "server_modified": "2026-10-12T19:59:12Z",
+            "treated_as_stale_not_replacement": true
+          }
+        },
+        "tesseract_cache_carriers": {
+          "body_path": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_BODY_CURRENT.tmp",
+          "metadata_size_bytes": 41993,
+          "extracted_text_chars": 63,
+          "key_match_found": false,
+          "content_readback_limitation": "Text extraction is far smaller than provider metadata size; absence of key in extracted text is not proof the underlying bytes contain none.",
+          "headers_path": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_HEADERS_CURRENT.txt",
+          "content_type": "text/html",
+          "captured_http_date": "Thu, 08 Oct 2026 13:33:14 GMT",
+          "issuer_key_verified": false
+        },
+        "alternate_desktop_route": {
+          "remote_desktop_commander_list_devices": "failed: linked account not eligible",
+          "desktop_commander_ping": "tool not found",
+          "authorized_device_action_this_run": false
+        }
+      },
+      "invariant": {
+        "no_raw_sensor_rows_uploaded_to_github": true,
+        "no_credentials_persisted": true,
+        "source_moved_or_deleted": false,
+        "open_tasks_closed": false
+      },
+      "state_boundary": "ADDITIONAL_DROPBOX_SCOPE_READ; ISSUER_KEY_UNVERIFIED; WINDOWS_DEVICE_READBACK_UNAVAILABLE",
+      "next_action": [
+        "Continue from callable GitHub/cloud carriers rather than waiting on the failed desktop connector.",
+        "Do not use All_desktop_live.csv or the extracted CDN body as a replacement for the provider-verified source or as proof of an issuer key.",
+        "On next authorized Windows connection, verify a new tick receipt and HWiNFO logging separately."
+      ],
+      "prior_entry_policy": "Append-only; this record supplements the prior provider observation."
     }
   ]
 }
