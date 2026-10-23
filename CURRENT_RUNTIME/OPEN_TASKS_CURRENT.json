@@ -29,6 +29,45 @@
   ],
   "tasks": [
     {
+      "id": "SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+      "status": "OPEN",
+      "source_kind": "USER_DIRECT_CURRENT_CHAT",
+      "source_time_local": "2026-10-23",
+      "source_ref": "Chat INBOX/INPUT: ITEM SUPER R-014 Subscribe & Reset source and 07/10 ROOTS LEVER 0 harm",
+      "goal": "Prevent known harmful action patterns, preserve user-described harm and source/identities, pursue recovery of 07/10 root carriers without substituting report or deletion",
+      "observed": [
+        "Source narrative present in current conversation, not equated with provider deletion recovery",
+        "runtime/destructive_gate.py updated to block repeat destruction of specific source-bound original Drive IDs",
+        "GitHub Actions R-014 test suite passed six specific protected-root tests in run 39878534211; inherited continuity suite still had 3 failures, and its global coverage cannot be asserted"
+      ],
+      "next": [
+        "Work on causal failures of continuity engine; do not substitute a report for functioning execution",
+        "Inspect available ZIP export from connected Drive before attempting any recovery, preserve original object IDs if available",
+        "Keep original source history and separate human, agents, LOCUS, and materialized carriers"
+      ],
+      "guard": "NO_HARM_DEFLECTION; NO_FALSE_COMPLETION; ORIGINAL_ROOTS_NOT_TO_BE_DESTROYED; USER_REPORTS_HARM_IS_ACTION_INPUT"
+    },
+    {
+      "id": "HELLOCHECK_GO_TESTNET_R014_20261023",
+      "status": "OPEN",
+      "source_kind": "USER_DIRECT_CURRENT_CHAT",
+      "source_time_local": "2026-10-23",
+      "source_ref": "Chat INBOX/INPUT: SUPER R-014 and HelloCheck keys.go/transaction.go source diff",
+      "goal": "Complete Go Bitcoin TestNet wallet, accurate P2PKH signing, UTXO verification and authorized broadcast workflow, without losing original R014/C-drive survival work",
+      "observed": [
+        "Direct Go target under integrations/hellocheck: address.go, keys.go, transaction.go, cmd/hellocheck/main.go",
+        "Windows-independent GitHub Actions run 39879882720 built Go binary, go vet, 7 Go unit tests PASS, did not broadcast transactions",
+        "README.md and .gitignore added in direct HelloCheck directory; no wallet/private WIF uploaded"
+      ],
+      "current_provider_receipt": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/39879882720",
+      "next": [
+        "Keep actual HelloCheck Go build passing on independent cloud host",
+        "Extend only upon real access to authorized Bitcoin TestNet node for UTXO verification and broadcast; never invent TXID",
+        "Continue SUPER R-014 root source restoration independently of TestNet feature"
+      ],
+      "guard": "OPEN != STOP; BUILD_PASS != BITCOIN_TESTNET_BROADCAST; NEVER_PUBLISH_WIF_OR_PRIVATE_KEYS; NO_C_DRIVE_DEPENDENCE; KEEP_07OCT_SOURCE"
+    },
+    {
       "id": "STAMP_TRIAD_LIVE_PARTICIPATION_AND_C_DRIVE_RELIEF_20261023",
       "status": "OPEN",
       "source_kind": "USER_DIRECT_CURRENT_CHAT",
@@ -645,6 +684,26 @@
       "untouched": "All open tasks statuses, source history, existing user files and secrets",
       "still_open": "Must wire the gate into an authorized active host route; this change cannot control first-party ChatGPT or all chat sessions",
       "no_task_closed": true
+    },
+    {
+      "id": "HELLOCHECK_TESTNET_GO_CI_20261023",
+      "kind": "GITHUB_RUNNER_REAL_COMPILATION_AND_TESTS_NOT_NETWORK_BROADCAST",
+      "action": "Direct Go source integrated and compiled independently of Windows host",
+      "provider_receipt": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/39879882720",
+      "executable_path": "integrations/hellocheck/cmd/hellocheck",
+      "source_go_files": [
+        "integrations/hellocheck/address.go",
+        "integrations/hellocheck/keys.go",
+        "integrations/hellocheck/transaction.go"
+      ],
+      "confirmed": {
+        "go_unit_tests_passed": 7,
+        "go_vet": true,
+        "go_build": true,
+        "utxo_verified": false,
+        "bitcoin_testnet_broadcast": false
+      },
+      "do_not_close_source_task": true
     }
   ]
 }
