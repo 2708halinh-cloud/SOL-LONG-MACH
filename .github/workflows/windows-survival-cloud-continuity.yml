@@ -6,6 +6,9 @@ on:
       - 'runtime/cloud_survival_scheduler.py'
       - 'runtime/windows_c_survival_probe.ps1'
       - 'tests/test_cloud_survival_scheduler.py'
+      - 'runtime/hellohabit_t005_adapter.py'
+      - 'tests/test_hellohabit_t005_adapter.py'
+      - 'integrations/android/hellohabit/**'
       - 'CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json'
       - '.github/workflows/windows-survival-cloud-continuity.yml'
   schedule:
@@ -30,6 +33,8 @@ jobs:
           python-version: '3.12'
       - name: Guard existing OPEN ledger and critical C threshold
         run: python -m unittest discover -s tests -p 'test_cloud_survival_scheduler.py' -v
+      - name: Validate HelloHabit T005 split adapter without claiming app installation
+        run: python -m unittest discover -s tests -p 'test_hellohabit_t005_adapter.py' -v
       - name: Execute source-bound cloud continuation without touching Windows
         run: |
           mkdir -p readback
