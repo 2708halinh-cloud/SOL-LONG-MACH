@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Latest route probe: Remote Desktop Commander initially reported DESKTOP-86ITNQ4 online and started read-only PID 48188, but output readback then returned no device currently online; separate Desktop Commander inventory reports offline. No new Windows tick receipt was read this run; do not infer task failure or relaunch a duplicate process while PID 48188 is unresolved. Dropbox source metadata remains verified at rev 0165dc1e4794ab00000000395cdfd73, 35,389,440 bytes. TESSERACT PR #6 remains open at head 5312816d5fe2b22e92302211b67f916b88a6fe14; current-head runs 39994207477/39994207667 fail with empty step arrays and BlobNotFound logs; self-hosted Windows verification is excluded on pull_request by workflow condition. Do not rerun CI without verified runner/entitlement change or authorized issuer public key.",
+  "next": "MODUAL: latest exact receipt is WINDOWS_TICK_20261023T220144171458Z.json (SHA-256 c4cf8f0ca86208e0fb73129a45b5e3fb2a597a62ee5226db106010798b664713); no newer receipt was found. Scheduled task run at device 05:26:33+07 ended with LastTaskResult 0x41306 (task terminated), process gone, ExecutionTimeLimit PT2M. Root cause is not yet proven; manual one-shot was not started because the connector returned no device online. When route responds, inspect task history and measure Python launcher/source-read duration before any task-setting change. TESSERACT PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14; runs 39994207477/39994207667 fail with empty step arrays and BlobNotFound logs; selfhosted Windows verify is skipped by the PR condition. Do not rerun CI without verified runner change and authorized issuer key.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -197,15 +197,15 @@
     "verification_required": "Fresh-source readback for each task; status OPEN until exact action+receipt",
     "linked_at": "2026-10-21T14:39:07+07:00",
     "latest_observation": {
-      "observed_at": "2026-10-24T05:30:37.480+07:00",
-      "MODUAL_SENSOR_LOGS_ROUTING": "WINDOWS_FOLLOWUP_PROCESS_48188_OUTPUT_PENDING_ROUTE_DIVERGENCE_LIVE_STREAM_UNVERIFIED",
+      "observed_at": "2026-10-24T05:36:25.996+07:00",
+      "MODUAL_SENSOR_LOGS_ROUTING": "SCHEDULED_RUN_TERMINATED_0x41306_NO_RECEIPT_AFTER_22_01_44Z_LIVE_STREAM_UNVERIFIED",
       "ANDROID_OLLAMA_LOCALHOST_CHAT_UI": "PRIOR_ADB_SENSOR_SERVICE_RESPONDED_CHROME_UI_NOT_VERIFIED",
       "XTIME_LOCAL_RUNTIME": "PRIOR_HEALTH_200_FILESYSTEM_SENSOR_OK_MODUAL_SOURCE_NOT_FOUND",
       "TESSERACT_OS": "PRIOR_BRAID_LOCAL_IO_VERIFIED_CLOUD_HOST_NOT_VERIFIED",
       "HWINF0_SHARED_MEMORY": "PRIOR_MAPPING_NOT_FOUND_LICENSE_TIER_UNVERIFIED",
-      "WINDOWS_TIME": "PRIOR_W32TIME_STOPPED_MANUAL_NO_CHANGE",
+      "WINDOWS_TIME": "W32TIME_STOPPED_MANUAL_NO_CHANGE",
       "INHERITED_TESSERACT_DESKTOP": "CURRENT_HEAD_RUNS_FAIL_EMPTY_STEPS_WINDOWS_LOG_BLOB_NOT_FOUND_SELFHOSTED_SKIPPED_BY_PR_CONDITION_ISSUER_AND_RUNNER_OPEN",
-      "DESKTOP_COMMANDER": "REMOTE_INVENTORY_ONLINE_THEN_READBACK_NO_DEVICE; SEPARATE_INVENTORY_OFFLINE; DO_NOT_INFER_TASK_STATE",
+      "DESKTOP_COMMANDER": "LIST_DIRECTORY_AND_POWERSHELL_READBACK_SUCCEEDED_INTERMITTENTLY; LATER_START_PROCESS_NO_DEVICE; NO_MANUAL_ONE_SHOT",
       "CODEX_CONFIG_PRIVATE_BACKUP": "HISTORICAL_MOCK_ROUTE_ONLY_CURRENT_CONFIG_UNREAD_ENCRYPTED_BACKUP_OPEN"
     }
   },
@@ -1135,6 +1135,41 @@
       },
       "result": "WINDOWS_FOLLOWUP_PENDING_TESSERACT_CI_GATE_CLARIFIED",
       "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-23T22:36:25.996Z",
+      "type": "SCHEDULED_TICK_TERMINATION_AND_TESSERACT_CI_GATE_READBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "1ea6332df829cb823884e8fd7b7e9d154f074e42",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "dbad3ee996a96e050f3a4eb7970525568c4800f9",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "e8cc64f82030d8d31c25504734f4e1f982221b69"
+      },
+      "windows": {
+        "latest_receipt_utc": "2026-10-23T22:01:44.171458Z",
+        "latest_receipt_sha256": "c4cf8f0ca86208e0fb73129a45b5e3fb2a597a62ee5226db106010798b664713",
+        "task_last_result_hex": "0x41306",
+        "task_state": "Ready",
+        "process_gone": true,
+        "execution_time_limit": "PT2M",
+        "live_sensor_reading_confirmed": false
+      },
+      "tesseract": {
+        "pr": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": [
+          39994207477,
+          39994207667
+        ],
+        "steps_empty": true,
+        "windows_log_blob_not_found": true,
+        "selfhosted_skipped_by_pr_condition": true,
+        "ci_rerun": false,
+        "issuer_key_verified": false
+      },
+      "result": "TICK_TERMINATED_WITHOUT_NEW_RECEIPT_ROOT_CAUSE_OPEN",
+      "open_tasks_closed": false
     }
   ],
   "latest_sync_observation": {
@@ -1166,30 +1201,38 @@
     ]
   },
   "latest_runtime_observation": {
-    "observed_at": "2026-10-24T05:30:37.480+07:00",
-    "observed_at_utc": "2026-10-23T22:30:37.480Z",
+    "observed_at": "2026-10-24T05:36:25.996+07:00",
+    "observed_at_utc": "2026-10-23T22:36:25.996Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "06a1ee7aa5854f9e54d635788f8a88137a8cea7f",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "742200e6a22251f72d2e21204a2fffa67497860a",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "57698f8c4d3d402b29026554aba35c36e81dcef1"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "1ea6332df829cb823884e8fd7b7e9d154f074e42",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "dbad3ee996a96e050f3a4eb7970525568c4800f9",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "e8cc64f82030d8d31c25504734f4e1f982221b69"
     },
     "windows": {
       "device": "DESKTOP-86ITNQ4",
-      "remote_route_inventory_first": "ONLINE",
-      "read_only_process_pid": 48188,
-      "output_readback": "PENDING_NO_DEVICE_CURRENTLY_ONLINE",
-      "separate_desktopcommande_inventory": "OFFLINE_LAST_SEEN_84H",
-      "latest_receipt_this_run": "NOT_READ",
-      "source_mutation": false,
-      "live_sensor_reading_confirmed": false
+      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "latest_receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T220144171458Z.json",
+      "latest_receipt_sha256": "c4cf8f0ca86208e0fb73129a45b5e3fb2a597a62ee5226db106010798b664713",
+      "latest_receipt_utc": "2026-10-23T22:01:44.171458Z",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "task_last_run": "2026-10-24T05:26:33+07:00",
+      "task_last_result_hex": "0x41306",
+      "task_state_after_run": "Ready",
+      "consumer_process_gone": true,
+      "no_new_receipt": true,
+      "execution_time_limit": "PT2M",
+      "manual_one_shot_attempt": "NOT_STARTED_CONNECTOR_NO_DEVICE",
+      "live_sensor_reading_confirmed": false,
+      "root_cause_proven": false
     },
     "dropbox": {
       "source_path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
-      "source_rev": "0165dc1e4794ab00000000395cdfd73",
-      "source_size_bytes": 35389440,
-      "source_server_modified_utc": "2026-10-14T00:20:03Z",
+      "rev": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
       "metadata_readback": true,
       "raw_bytes_downloaded": false
     },
@@ -1202,14 +1245,14 @@
         "39994207477": "failure",
         "39994207667": "failure"
       },
-      "failed_job_steps_empty": true,
+      "failed_jobs_steps_empty": true,
       "windows_job_log": "BlobNotFound 404",
       "selfhosted_windows_verify": "SKIPPED_BY_PULL_REQUEST_CONDITION",
-      "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
-      "issuer_key_value_verified": false,
+      "issuer_key_verified": false,
       "runner_assignment_change_verified": false,
       "ci_rerun": false
     },
+    "modual_task_status": "OPEN_SCHEDULED_TICK_TERMINATED_LIVE_STREAM_NOT_VERIFIED",
     "xtime_health_http_status": 200,
     "ollama_tags_http_status": 200,
     "tesseract_pr6_open": true,
