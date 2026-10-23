@@ -1,0 +1,15 @@
+{
+  email {
+    env CADDY_ACME_EMAIL
+  }
+}
+
+https://{$MCP_DOMAIN} {
+  encode zstd gzip
+  header {
+    X-Content-Type-Options nosniff
+    Referrer-Policy no-referrer
+    -Server
+  }
+  reverse_proxy mcp-gateway:8000
+}
