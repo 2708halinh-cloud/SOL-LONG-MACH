@@ -126,6 +126,20 @@
           "result": "ADMIN_PRIMARY_ZIP_AND_MAP_NGUON_XIV_READBACK_VERIFIED; SECOND_SAME_SIZE_LIBRARY_ENTRY_HASH_UNVERIFIED; NO_NEW_JINEY_FUNIX_DAT_RAW_EXPORT",
           "next_callable_edge": "Continue exact-source retrieval only through a genuinely authorized Drive/Dropbox/Takeout connector or an existing verified raw carrier; keep ADMIN folder and ZIP in place; do not infer byte identity from equal size or names.",
           "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED. Archive integrity and reading XIV do not restore missing original JINEY/FUNIX/DAT carriers."
+        },
+        {
+          "observed_at": "2026-10-24T00:20:03+07:00",
+          "source": "ChatGPT Library: exact existing carrier bytes materialized read-only and inspected; no direct Drive/Dropbox/Takeout connector exposed in this run",
+          "actions_and_receipts": [
+            "Materialized existing related carrier SOL_CHROME_TAC_NHAN_FUNIX_JINEY_WEATHER_20261010.zip from MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/SOURCE_DIRECT_20261018; size 30,097 bytes; SHA-256 a14f7301d1e9aead6562b78173280a96097876f3ca9c043d8b3e3dd65786a9ef.",
+            "Read-only ZIP integrity check passed: 18 members, CRC test clean. Contents are scripts/configuration/source maps and synthetic-input test notes; no OpenAI raw account-export archive is contained in this carrier.",
+            "Inspected README_VI.md, SOURCE_MAP_CURRENT_V1_2.json, SHA256_MANIFEST.json, and TEMP_REENTRY_CONTEXT_V1_2.json directly from archive bytes. They state raw chat was not read, Windows device read=false, and the source/account lineage remains uncorroborated by raw bytes.",
+            "Read existing Library source trace JINEY_OPENAI_EXPORT_SOURCE_TRACE_20261013.md and Dropbox mount audit 09_JINEY_RAW_ZIP_DROPBOX_D_MIRROR_20261013.md. These are historical provider readbacks, not a fresh Dropbox/Drive read in this run; the trace distinguishes historical 796-chat derived ZIPs from the still-unverified OpenAI-origin export.",
+            "Current tool inventory for this run exposes GitHub and ChatGPT Library, but no callable Google Drive, Dropbox, or Takeout source action."
+          ],
+          "result": "RELATED_TOOL_BUNDLE_BYTES_VERIFIED_NOT_RAW_EXPORT; ORIGINAL_ACCOUNT_EXPORT_BYTES_NOT_RETRIEVED",
+          "next_callable_edge": "Use an authorized provider connector or existing verified raw carrier to retrieve the exact original account export, preserving provider object ID, revision and byte hash. Do not substitute the 30,097-byte tooling ZIP or derived Markdown archives; keep ADMIN in place.",
+          "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED. No source restoration, no task closure."
         }
       ]
     },
@@ -525,6 +539,21 @@
           "result": "AUTHORIZED_EXISTING_CARRIERS_SCANNED_ISSUER_KEY_NOT_FOUND_IN_SCANNED_BYTES",
           "next_callable_edge": "Continue source-bound search in other authorized provider carriers; keep PR OPEN and do not rerun CI until runner assignment/entitlement changes are verified.",
           "status_effect": "Keep OPEN_CARRIED; no PR merge, no CI rerun, no key invented."
+        },
+        {
+          "observed_at": "2026-10-24T00:20:03+07:00",
+          "source": "fresh GitHub branch/ref/tree/compare readback; target repository 2708halinh-cloud/x-time-web",
+          "actions_and_receipts": [
+            "Before synchronization, PR #6 branch c41797b61ced8f152ff0833448d3a101fd13c158 and current master 1dc5de36bc221d0a17c7601d67e2fe34e673f437 were diverged: 57 branch-only commits and 56 master-only commits; common ancestor 60d92b8085cc34702805fc0cb42a1c5c346fca5d.",
+            "Compared the 12 PR-changed paths against 37 paths changed on master since the common ancestor; no overlapping paths. Built a new tree from the current master tree and overlaid the exact existing branch blobs/modes for the 12 PR-specific paths.",
+            "Created merge commit 4ba66d46e46a5944e414aa8abbcefdaf28ce26bb with current master as first parent and prior PR head as second parent; no force-push.",
+            "Appended sync reconciliation to TESSERACT_DESKTOP/WORK_CHECKPOINT.json without rewriting its historical 2026-10-07 head. Checkpoint-update commit: 5312816d5fe2b22e92302211b67f916b88a6fe14; checkpoint blob after readback: da48d057ce411d9b88d9e5036d947f0a24cb96d5.",
+            "Updated SOL-LONG-MACH CURRENT_RUNTIME/TASK_RESUME_POINTER.json to point at the synchronized head; pointer-update commit b924d6dd6f1f8a1b0618c8d77dd6a0eab0c39440; readback blob 23ab2293932e6972abc21f923309a67da0fec86d.",
+            "Post-sync compare: branch 5312816d5fe2b22e92302211b67f916b88a6fe14 is 59 commits ahead and 0 behind current master; PR #6 remains open and unmerged. No PR-triggered workflow run or combined status was returned for this exact head at readback time; no manual rerun was performed."
+          ],
+          "result": "TESSERACT_PR_BRANCH_SYNCED_WITH_CURRENT_MASTER; CI_AND_ISSUER_KEY_REMAIN_OPEN",
+          "next_callable_edge": "Inspect naturally triggered current-head workflow run/readback when available. Do not manually rerun until runner assignment/entitlement change is verified; continue searching only authorized existing carriers for the real issuer public key.",
+          "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED; branch synchronization is not build proof, key provisioning, or PR merge."
         }
       ]
     },
