@@ -44,6 +44,9 @@ jobs:
         working-directory: integrations/hellocheck
         run: |
           go mod tidy
+          echo 'HELLOCHECK_GO_MOD_BEGIN'
+          cat go.mod
+          echo 'HELLOCHECK_GO_MOD_END'
           echo 'HELLOCHECK_GO_SUM_BEGIN'
           cat go.sum
           echo 'HELLOCHECK_GO_SUM_END'
