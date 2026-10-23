@@ -1934,6 +1934,43 @@
       "source_moved_or_deleted": false,
       "tesseract_ci_rerun": false,
       "task_statuses_changed": false
+    },
+    {
+      "id": "PR21_DIVERGENCE_CLEAN_BRANCH_RECOVERY_20261024T005408",
+      "kind": "GITHUB_PR_DIVERGENCE_READBACK_AND_CLEAN_REPLACEMENT_BRANCH",
+      "observed_at": "2026-10-24T00:54:08+07:00",
+      "source": "GitHub connector readback of current main, PR #21 metadata, commit comparison, and exact source files",
+      "existing_pr": {
+        "number": 21,
+        "head_branch": "fix/open-task-routing-current-20261023",
+        "head_sha": "13b3b228cc9d2930b584b934be639021fa4628ef",
+        "base_branch": "main",
+        "base_sha": "936a410eb4d7558007371557828c517e7616d85b",
+        "comparison_status": "diverged",
+        "ahead_by": 29,
+        "behind_by": 8,
+        "mergeable": false
+      },
+      "action": {
+        "replacement_branch": "fix/open-task-routing-current-20261024",
+        "base_ref": "main",
+        "preserved_changes": [
+          "remove fixed 27-task assignment threshold",
+          "validate source-task/route IDs one-to-one",
+          "add exact .gitmodules/gitlink regression",
+          "add pull_request workflow path trigger"
+        ],
+        "current_main_ledger_used_as_base": true,
+        "task_count": 28,
+        "task_statuses_changed": false
+      },
+      "result": "CLEAN_REPLACEMENT_BRANCH_CREATED; NO_TASK_CLOSED; PR21_LEFT_OPEN",
+      "guards": {
+        "no_force_push": true,
+        "no_task_closure": true,
+        "no_windows_host_actions": true,
+        "no_source_export_claim": true
+      }
     }
   ],
   "energy_protection_current": {
@@ -4327,6 +4364,36 @@
       "tesseract_ci_rerun": false,
       "task_statuses_changed": false,
       "prior_entry_policy": "Append-only; receipts and prior task histories preserved."
+    },
+    {
+      "observed_at": "2026-10-24T00:54:08+07:00",
+      "record_type": "PR21_DIVERGENCE_AND_CLEAN_BRANCH_RECONSTRUCTION",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "source_reads": {
+        "main_ledger_blob_before": "36d36ca6b1423292b20689cb98110933fdcc80e6",
+        "main_workflow_blob_before": "044b4e73123af4772b995b410b3a79e847be7e03",
+        "main_scheduler_blob_before": "6727e7b33f77e1b34c5d03ac49187466e55f868c",
+        "main_tests_blob_before": "2c1b9477bbff08428c3ba57411275a02a2e84e4b",
+        "prior_pr_ledger_blob_observed": "143374b829a0af6e0827539fb3a5624fc82f3f05"
+      },
+      "prior_pr": {
+        "number": 21,
+        "head_sha": "13b3b228cc9d2930b584b934be639021fa4628ef",
+        "main_head_sha": "936a410eb4d7558007371557828c517e7616d85b",
+        "status": "diverged",
+        "ahead_by": 29,
+        "behind_by": 8,
+        "mergeable": false
+      },
+      "replacement": {
+        "branch": "fix/open-task-routing-current-20261024",
+        "base": "main",
+        "status": "created_from_current_main",
+        "task_count": 28,
+        "task_statuses_changed": false,
+        "no_task_closed": true
+      },
+      "prior_entry_policy": "Append-only; current main ledger and all 28 task states retained."
     }
   ]
 }
