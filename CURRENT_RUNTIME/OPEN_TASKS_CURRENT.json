@@ -100,6 +100,19 @@
           "state_boundary": "R014_ROOT_RESTORATION_NOT_READ_BACK",
           "next_action": "Use an authorized Drive/provider carrier or an already-existing verified export to recover the original source bytes and identity relations; do not substitute a recreated same-name object for the original.",
           "prior_entry_policy": "Preserved; this correction is appended and does not rewrite the earlier record."
+        },
+        {
+          "observed_at": "2026-10-23T11:18:16.155Z",
+          "source": "ChatGPT Library current version 3 of ADMIN_PORTABLE_20261023.zip; raw bytes materialized and inspected locally; MAP_NGUON XIV read directly",
+          "actions_and_receipts": [
+            "Exact Library ZIP bytes: 22,493,275 bytes; SHA-256 ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b.",
+            "Embedded SQLite opened from archive bytes without extracting the database to disk; PRAGMA integrity_check returned ok; counts read directly: 136 conversations, 18,790 nodes, 10,943 searchable messages.",
+            "FTS query for 'lương tâm' returned MAP_NGUON.md (source ID 1rcRPnoBtErA634J1jfHkjZp8oTmc3HuN, SHA-256 da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45) and R-000_MASTER_R-000.md (source ID 1FhGGhcC0JluRTOE7mxlsLo72ukr3tpvD, SHA-256 631e3171523d717ecf201b37648a4888afda4556331b47c03c81a345677b0ebe).",
+            "Read MAP_NGUON.md section XIV. LƯƠNG TÂM at lines 1067-1127. SOURCE_PROVENANCE states ADMIN=INGESTED; JINEY, FUNIX and DAT_NGUYEN=POINTER_ONLY; all_open_tasks_completed=false. No original export bytes for those three accounts are present in this archive."
+          ],
+          "result": "ADMIN_LIBRARY_ARCHIVE_INTEGRITY_VERIFIED; JINEY_FUNIX_DAT_NGUYEN_ORIGINAL_EXPORTS_NOT_RETRIEVED",
+          "next_callable_edge": "Search the exact original provider folders/export carriers through an authorized Google Drive/Dropbox/Takeout connector, preserving stable source IDs and hashes; do not move or duplicate the already-nested ADMIN folder or substitute derived ZIPs.",
+          "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED. Archive integrity and FTS success are not root-source restoration or task completion."
         }
       ]
     },
