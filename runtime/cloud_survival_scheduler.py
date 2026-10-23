@@ -95,6 +95,9 @@ def verify_contracts(root):
             "real_custom_kernel_boot_proven":False}
 
 def verify_t005(root):
+    import sys
+    if str(root) not in sys.path:
+        sys.path.insert(0,str(root))
     from runtime.hellohabit_t005_adapter import inspect
     receipt=inspect(root)
     return {"passed":receipt["T005_package_identity_registered"],
