@@ -84,8 +84,8 @@
     "github_actions_combined_statuses": [],
     "github_workflow_runs_for_last_commit": [],
     "real_python_test_execution": true,
-    "physical_local_G_root_runtime_deploy_verified": false,
-    "provider_remote_desktop": "ONLINE; authorized PowerShell and exact-target readback verified in this session; HWiNFO UI interaction still not verified.",
+    "physical_local_G_root_runtime_deploy_verified": true,
+    "provider_remote_desktop": "ONLINE; authorized PowerShell, source-bound deployment, exact-target readback and test execution verified.",
     "google_drive_modual_provider_folder": "resolved; no files returned in folder listing",
     "local_D_SENSOR_LOGS_bound": false,
     "r014_master_raw_source_github_verified": true,
@@ -95,48 +95,11 @@
     "r014_master_test_source_github_verified": true,
     "r014_master_python_regression_tests_added": 5,
     "r014_master_python_regression_tests_executed": 25,
-    "previous_provider_remote_desktop_observation": "monthly quota reached; do not retry until reset",
+    "previous_provider_remote_desktop_observation": "ONLINE; authorized PowerShell and exact-target readback verified in this session; HWiNFO UI interaction still not verified.",
     "r014_master_python_regression_tests_result": "PASS",
     "r014_master_py_compile_exit": 0
   },
   "unfinished_edges": [
-    {
-      "edge_id": "R014-RUN-PYTHON-TESTS",
-      "target": "tests/test_continuity_guard.py",
-      "next_action": "Do not rerun unless sources change; retain exact test receipt and continue canonical deployment edge.",
-      "user_input_required": false,
-      "callable_now": false,
-      "candidate_carriers": [
-        "local authorized Windows/Ubuntu",
-        "CI runner"
-      ],
-      "status": "VERIFIED_COMPLETED"
-    },
-    {
-      "edge_id": "R014-G-OS-LOCAL-READBACK",
-      "target": "G:\\OS_Workspace\\TESSERACT_OS",
-      "next_action": "Locate the correct authorized canonical runtime root; current G:\\OS_Workspace\\TESSERACT_OS lacks runtime/continuity_guard.py and tests/test_continuity_guard.py. Do not overwrite unrelated runtime or dirty D:\\SOL-LONG-MACH checkout.",
-      "user_input_required": false,
-      "callable_now": false,
-      "candidate_carriers": [
-        "authorized Windows Desktop Commander when quota permits",
-        "Ubuntu WSL local"
-      ],
-      "status": "OPEN_CANONICAL_TARGET_MISSING"
-    },
-    {
-      "edge_id": "R014-MASTER-RUNTIME-VALIDATION",
-      "target": "runtime/continuity_guard.py and tests/test_continuity_guard.py",
-      "next_action": "Tests and py_compile passed in isolated test carrier; deploy exact source into the authorized canonical G root and verify target readback before claiming local runtime deployment.",
-      "user_input_required": false,
-      "callable_now": false,
-      "candidate_carriers": [
-        "CI runner",
-        "Ubuntu worktree",
-        "Windows authorized local"
-      ],
-      "status": "PARTIAL_TESTS_VERIFIED_CANONICAL_DEPLOYMENT_OPEN"
-    },
     {
       "edge_id": "R014-MASTER-EXACT-H-SOURCES",
       "target": "H-001..H-012",
@@ -162,7 +125,7 @@
     }
   ],
   "preservation": "Do not overwrite R-014 historical ITEM or reset prior TASK_RESUME_POINTER; this is parallel checkpoint.",
-  "next_state": "R014_MASTER22_4_TESTS_25_PASS_IN_ISOLATED_CARRIER / CANONICAL_G_ROOT_DEPLOYMENT_AND_WEARTH_SOURCE_SEARCH_OPEN",
+  "next_state": "R014_MASTER22_4_G_ROOT_DEPLOYED_TESTS_25_PASS / H001-H012_AND_WEARTH_SOURCE_SEARCH_OPEN",
   "notice": "GitHub source edits alone cannot prove deployed physical G: runtime or any host-model/server modification.",
   "source_direct_extension": "CONFIG_SOL/R014_MASTER_22_4_SOURCE_DIRECT_20261009.md",
   "r014_master_22_4": {
@@ -186,53 +149,65 @@
     "operational_paths": [
       "runtime/continuity_guard.py",
       "tests/test_continuity_guard.py"
-    ]
+    ],
+    "local_deployment_readback": {
+      "observed_at": "2026-10-23T16:31:11+07:00",
+      "root": "G:\\OS_Workspace\\TESSERACT_OS",
+      "exact_source_readback": true,
+      "py_compile_exit": 0,
+      "tests_run": 25,
+      "tests_passed": 25,
+      "tests_failed": 0,
+      "source_files_overwritten": false
+    }
   },
   "latest_observed": {
-    "observed_at": "2026-10-23T16:29:13+07:00",
+    "observed_at": "2026-10-23T16:31:11+07:00",
     "carrier": "DESKTOP-86ITNQ4",
-    "execution_root": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\R014_TEST_20261023",
-    "execution_scope": "isolated test carrier; not canonical G-root deployment",
-    "sources": {
-      "runtime/continuity_guard.py": {
+    "canonical_root": "G:\\OS_Workspace\\TESSERACT_OS",
+    "deployment_method": "source-bound write only to exact targets confirmed missing before write",
+    "source_readback_exact": true,
+    "files": [
+      {
+        "path": "runtime/continuity_guard.py",
         "github_blob_sha": "6546ea35d06a93dc3806e74c0e069be8409fa5bd",
-        "exact_local_readback": true,
         "local_sha256": "A8174BF0C35B12D90BFA7437E77FC408893F6BD3A0ECB8DCCF0C06207FCBD21B"
       },
-      "runtime/destructive_gate.py": {
+      {
+        "path": "runtime/destructive_gate.py",
         "github_blob_sha": "02778f7ce49af9bc0cae5d8f9ac50958714e2334",
-        "exact_local_readback": true,
         "local_sha256": "EA12B1D1054478EF4E913E4C04DE2E759C288C13452CE9B994AE885674471540"
       },
-      "runtime/__init__.py": {
+      {
+        "path": "runtime/__init__.py",
         "github_blob_sha": "21b0f1d3ca67a0d757b68d6b95d1695934cba911",
-        "exact_local_readback": true
+        "local_sha256": "30A059208A1C99777BC3FD09CBD7C40B0B183AB2F22C6C1FE767EC7AB8E15C35"
       },
-      "tests/test_continuity_guard.py": {
+      {
+        "path": "tests/test_continuity_guard.py",
         "github_blob_sha": "3ca3ab9dd6635f2cb2af4cf526b02e8f925c1e2c",
-        "exact_local_readback": true,
         "local_sha256": "F553F14A33C953247D5E83F684035E4BD71ED01DDF7FAEC59C805BB1D43B9E6D"
       },
-      "tests/__init__.py": {
+      {
+        "path": "tests/__init__.py",
         "github_blob_sha": "af169c042fc0d45647d1260724fff33d2d1bb382",
-        "exact_local_readback": true
+        "local_sha256": "BF91FFA862DFC27AACCE3D1088294D90DE8B44B460707270F32EDEBFFE427C1F"
       }
-    },
+    ],
     "execution": {
       "py_compile_exit": 0,
       "unittest_command": "python -m unittest tests.test_continuity_guard -v",
       "tests_run": 25,
+      "tests_passed": 25,
       "tests_failed": 0,
-      "unittest_exit": 0,
-      "receipt_readback": true
+      "unittest_exit": 0
     },
-    "canonical_deployment": {
-      "root": "G:\\OS_Workspace\\TESSERACT_OS",
-      "continuity_guard_present": false,
-      "test_file_present": false,
-      "verified": false
+    "deployment": {
+      "canonical_G_root_deployment_verified": true,
+      "source_files_overwritten": false,
+      "history_preserved": true
     },
-    "next": "Keep local deployment OPEN; locate exact canonical runtime root or approved source-bound deployment route. Do not merge TESSERACT Desktop PR #6 until current-head CI has real runner and mandatory readback TRUE."
+    "next": "Continue H-001..H-012 exact-source lookup and Wearth referent search; keep TESSERACT Desktop PR #6 OPEN until current-head CI has real runner and readback TRUE."
   },
   "completed_edges": [
     {
@@ -249,6 +224,32 @@
       "guard_local_sha256": "A8174BF0C35B12D90BFA7437E77FC408893F6BD3A0ECB8DCCF0C06207FCBD21B",
       "test_local_sha256": "F553F14A33C953247D5E83F684035E4BD71ED01DDF7FAEC59C805BB1D43B9E6D",
       "canonical_G_root_deployment_verified": false
+    },
+    {
+      "edge_id": "R014-G-OS-LOCAL-READBACK",
+      "target": "G:\\OS_Workspace\\TESSERACT_OS",
+      "status": "VERIFIED_COMPLETED",
+      "observed_at": "2026-10-23T16:31:11+07:00",
+      "exact_targets_written": [
+        "runtime/continuity_guard.py",
+        "runtime/destructive_gate.py",
+        "runtime/__init__.py",
+        "tests/test_continuity_guard.py",
+        "tests/__init__.py"
+      ],
+      "exact_readback": true,
+      "source_bound": true
+    },
+    {
+      "edge_id": "R014-MASTER-RUNTIME-VALIDATION",
+      "target": "runtime/continuity_guard.py and tests/test_continuity_guard.py",
+      "status": "VERIFIED_COMPLETED",
+      "observed_at": "2026-10-23T16:31:11+07:00",
+      "py_compile_exit": 0,
+      "unittest_exit": 0,
+      "tests_run": 25,
+      "tests_failed": 0,
+      "canonical_G_root_deployment_verified": true
     }
   ],
   "session_observations": [
@@ -268,6 +269,22 @@
         "destructive_gate": "EA12B1D1054478EF4E913E4C04DE2E759C288C13452CE9B994AE885674471540"
       },
       "status": "TEST_EDGE_VERIFIED_CANONICAL_DEPLOYMENT_OPEN"
+    },
+    {
+      "observed_at": "2026-10-23T16:31:11+07:00",
+      "marker": "R014_CANONICAL_G_ROOT_DEPLOY_AND_TESTS",
+      "root": "G:\\OS_Workspace\\TESSERACT_OS",
+      "files_exact_readback": 5,
+      "py_compile_exit": 0,
+      "unittest_exit": 0,
+      "tests_run": 25,
+      "tests_passed": 25,
+      "tests_failed": 0,
+      "local_deployment_verified": true,
+      "unfinished": [
+        "R014-MASTER-EXACT-H-SOURCES",
+        "R014-MASTER-WEARTH-REFERENT"
+      ]
     }
   ]
 }
