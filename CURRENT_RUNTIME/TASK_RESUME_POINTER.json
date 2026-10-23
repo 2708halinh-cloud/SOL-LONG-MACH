@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Resume PR #6 at head 5312816d5fe2b22e92302211b67f916b88a6fe14. Runs 39994207477 and 39994207667 still fail before step output (steps=null, logs BlobNotFound); selfhosted_windows_verify skipped. No CI rerun until runner assignment/entitlement changes are verified. Issuer public key remains unverified; GitHub search returns variable references only and Dropbox's 56-entry SENSOR_LOGS direct listing has no issuer-key-named direct child. Independent TESSERACT_OS local braid proof passed with SIX SHA-256 9e3a404b693c0aa2c30e9f73bd31f9beff8d9eebdac2198379b7476c5889f6eb and PLURAL SHA-256 22597897d9f16c9cd8f47787cafaa84d3ca39c75c10e21b98c41c9b1abc1e3e1; cloud_host_wiring remains NOT_VERIFIED. Latest Windows scheduled receipt WINDOWS_TICK_20261023T193158877826Z.json was read back exactly, SHA-256 0d3ec7cb4968be9de95432c12bac04274cebea6bec3e499ad2f0303f33928d83; task result 0, zero missed runs, source unchanged, but live_sensor_reading_confirmed=false. Device clock skew approximately 320 seconds; W32Time Stopped/Manual and HWiNFO CSV remains stale/read-only. Keep all tasks OPEN and preserve historical checkpoint heads, source files, and secrets.",
+  "next": "Resume PR #6 at head 5312816d5fe2b22e92302211b67f916b88a6fe14. Current-head runs 39994207477 and 39994207667 still fail before step output; no runner assignment change verified, so do not rerun. Issuer key remains unverified after fresh GitHub code search, complete 56-entry Dropbox SENSOR_LOGS listing, and read-only local scan of 2,238 TESSERACT_OS text files; no exact XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64, KILO_XTIME, or BEGIN PUBLIC KEY marker was found in that local scan. Continue with an authorized issuer-side/provider carrier or Actions variable control surface if exposed; do not invent a key. Parallel MODUAL branch remains verified through receipt WINDOWS_TICK_20261023T193158877826Z.json (SHA-256 0d3ec7cb4968be9de95432c12bac04274cebea6bec3e499ad2f0303f33928d83), source unchanged, live_sensor_reading_confirmed=false; next scheduled device-clock run 02:36:32+07. Device clock skew is approximately 320 seconds; W32Time Stopped/Manual and HWiNFO CSV stale/read-only. Keep all tasks OPEN and preserve source history and secrets.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -475,6 +475,50 @@
       "task_count": 28,
       "task_closure": false,
       "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "prior_entry_policy": "Append-only; historical current_delta and checkpoint head preserved."
+    },
+    {
+      "observed_at": "2026-10-23T19:41:37.531Z",
+      "observed_at_local": "2026-10-24T02:41:37.531+07:00",
+      "record_type": "TESSERACT_ISSUER_LOCAL_SCAN_AND_PROVIDER_RECHECK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "7fcaaefe5796c71e90b0fbc9b61c03aeff13b57f",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "6a035d80580762bd67f6ad18e73ee6be1f9864ca",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "a32954641558eef810646e5d7b86a6c547364226"
+      },
+      "tesseract_local_scan": {
+        "root": "G:\\OS_Workspace\\TESSERACT_OS",
+        "text_files_scanned": 2238,
+        "exact_marker_files": 0,
+        "filename_key_candidates": 0
+      },
+      "dropbox": {
+        "folder": "/Linh Hà/SENSOR_LOGS",
+        "direct_children": 56,
+        "listing_complete": true,
+        "issuer_key_named_child": false
+      },
+      "github": {
+        "variable_reference_matches": 4,
+        "provisioned_key_value_found": false
+      },
+      "pr": {
+        "number": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": [
+          39994207477,
+          39994207667
+        ],
+        "failed_before_step_output": true,
+        "rerun": false,
+        "runner_assignment_change_verified": false
+      },
+      "task_count": 28,
+      "task_closure": false,
       "credentials_committed": false,
       "source_moved_or_deleted": false,
       "prior_entry_policy": "Append-only; historical current_delta and checkpoint head preserved."
