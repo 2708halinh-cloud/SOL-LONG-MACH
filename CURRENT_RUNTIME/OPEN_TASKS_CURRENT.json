@@ -463,7 +463,8 @@
         "Find the actual Kilo/X-TiMe issuer public key from an authorized existing provider; GitHub code search found only variable references and no PEM public-key literal in the accessible search scope.",
         "Verify runner assignment/entitlement changed before rerunning workflow 39153474587; current recorded jobs fail-before-step and self-hosted verification is skipped.",
         "Keep PR #6 OPEN until a current-head CI readback is TRUE and the issuer trust anchor is provisioned from an authorized source.",
-        "Resolve the WORK_CHECKPOINT.json embedded-head mismatch against the current resume pointer without rewriting historical evidence; do not rerun CI until runner assignment changes."
+        "Resolve the WORK_CHECKPOINT.json embedded-head mismatch against the current resume pointer without rewriting historical evidence; do not rerun CI until runner assignment changes.",
+        "Fresh current-head check confirms selfhosted Windows verification is excluded from pull_request events by workflow condition; current hosted failures have empty step arrays and BlobNotFound logs. Do not rerun CI without independently verified runner assignment/entitlement change."
       ],
       "guard": "Do not overwrite or relabel inherited task done from this ledger",
       "assigned_subagent": "SubAisstangtManage-ORCHESTRATOR",
@@ -633,6 +634,19 @@
           "result": "LOCAL_XTIME_HEALTH_8769_VERIFIED_PRODUCTION_AND_ISSUER_KEY_UNVERIFIED",
           "next_callable_edge": "Continue issuer-side search through authorized carriers; verify Actions runner assignment/entitlement before any CI rerun.",
           "status_effect": "Keep OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T05:30:37.480+07:00",
+          "source": "GitHub PR #6 API, exact workflow file, current-head run/job/step/log readback",
+          "actions_and_receipts": [
+            "PR #6 remains OPEN, unmerged, head 5312816d5fe2b22e92302211b67f916b88a6fe14; PR API base.sha remains 60d92b8085cc34702805fc0cb42a1c5c346fca5d.",
+            "Current-head runs 39994207477 and 39994207667 failed. Six jobs in the desktop CI run and one verify job in validate-x-time returned empty step arrays; Windows job log retrieval returned BlobNotFound 404.",
+            "Workflow .github/workflows/tesseract-desktop-ci.yml explicitly gates selfhosted_windows_verify with github.event_name != 'pull_request'; the job is expected to be skipped for PR-triggered runs. This does not verify hosted runner assignment or entitlement.",
+            "Workflow blob 6552d13a1f8004b0e3d36fd585dd75cdd22acf12 maps vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64; public-key material and variable presence/value remain unverified. No CI rerun."
+          ],
+          "result": "PR_WORKFLOW_SKIP_CONDITION_CONFIRMED_RUNNER_AND_ISSUER_STILL_OPEN",
+          "next_callable_edge": "Use an authorized Actions variable/runner control surface and issuer-side key carrier; do not rerun CI without verified runner-state change or invent a key.",
+          "status_effect": "Keep OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
         }
       ]
     },
@@ -755,7 +769,8 @@
       "next": [
         "Verify the next scheduled receipt after device-clock time 2026-10-24T04:36:32+07:00; compare receipt SHA/source SHA/mtime and preserve metadata-only interpretation.",
         "Investigate HWiNFO logging through an authorized supported route; the separate CSV remains stale/read-only and live sample is unverified.",
-        "Use only an authorized elevated route for W32Time; no service change or resync has been attempted."
+        "Use only an authorized elevated route for W32Time; no service change or resync has been attempted.",
+        "Latest route probe: read-only PID 48188 started but its output could not be read back after the connector reported no online device; do not infer task failure or relaunch duplicate process. Resume exact receipt readback when route responds."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -1041,6 +1056,18 @@
           ],
           "result": "SCHEDULED_TICK_VERIFIED_INDEPENDENT_RUNTIME_HEALTH_VERIFIED_LIVE_STREAM_UNVERIFIED",
           "next_callable_edge": "Read the next scheduled receipt after device-clock 04:36:32+07; continue HWiNFO/W32Time via authorized routes; pursue issuer key and runner assignment without rerunning CI until a runner change is verified.",
+          "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
+        },
+        {
+          "observed_at": "2026-10-24T05:30:37.480+07:00",
+          "source": "Fresh provider metadata + Desktop Commander route probe + GitHub exact-target readback",
+          "actions_and_receipts": [
+            "Dropbox Outlook metadata re-read: /Linh Hà/SENSOR_LOGS/windows_SENSON.CSV rev 0165dc1e4794ab00000000395cdfd73, 35,389,440 bytes, server_modified 2026-10-14T00:20:03Z; no source bytes downloaded.",
+            "Remote Desktop Commander initially reported DESKTOP-86ITNQ4 online and accepted a read-only PowerShell probe as PID 48188; subsequent read_process_output failed with 'No Desktop Commander device is currently online'. Separate Desktop Commander inventory reports the same named device offline (last seen 84h). No process output or new tick receipt was read back; no task-stop or source-change inference is made.",
+            "No source mutation, raw sensor copy, cloud export, GitHub sensor export, or task closure occurred."
+          ],
+          "result": "WINDOWS_EXACT_READBACK_PENDING_CONNECTOR_ROUTE_DIVERGENCE",
+          "next_callable_edge": "Do not launch a duplicate command while PID 48188 is unresolved. Resume output/receipt readback through an authorized responsive route; keep live sensor stream unverified.",
           "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
         }
       ]
@@ -1761,6 +1788,18 @@
       "current_config_verified": false,
       "live_credentials_verified": false,
       "secret_values_read": false
+    },
+    "desktop_route_probe_20261024T223037Z": {
+      "observed_at": "2026-10-24T05:30:37.480+07:00",
+      "device": "DESKTOP-86ITNQ4",
+      "read_only_process_pid": 48188,
+      "started": true,
+      "output_readback": false,
+      "error": "No Desktop Commander device is currently online",
+      "separate_inventory": "Desktop Commander reports offline, last seen 84h",
+      "windows_tick_receipt_readback": false,
+      "source_mutation": false,
+      "interpretation": "route inconsistency; no claim that Windows task stopped"
     }
   },
   "sinks": {
@@ -3364,6 +3403,71 @@
         "open_tasks_closed": false,
         "tesseract_ci_rerun": false
       }
+    },
+    {
+      "id": "PROVIDER_ROUTE_DIVERGENCE_AND_TESSERACT_CI_DIAGNOSIS_20261024T223037Z",
+      "kind": "FRESH_PROVIDER_READBACK_AND_INDEPENDENT_TESSERACT_CI_DIAGNOSIS",
+      "observed_at": "2026-10-24T05:30:37.480+07:00",
+      "observed_at_utc": "2026-10-23T22:30:37.480Z",
+      "source": "Fresh GitHub main reads, Dropbox Outlook metadata, Remote Desktop Commander inventories/process route, GitHub PR #6 workflow/job/step/log readback",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "06a1ee7aa5854f9e54d635788f8a88137a8cea7f",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "3b1ed684e9685cb9e86152521ba5c91a8b26eaaf",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "57698f8c4d3d402b29026554aba35c36e81dcef1"
+      },
+      "evidence": {
+        "windows_route": {
+          "device": "DESKTOP-86ITNQ4",
+          "first_inventory": "Remote Desktop Commander reported ONLINE, last seen about 1 minute",
+          "read_only_process_pid": 48188,
+          "process_result": "started; output not yet read back",
+          "readback_error": "No Desktop Commander device is currently online; registered device last seen 4 seconds",
+          "separate_inventory": "Desktop Commander reports same named device OFFLINE, last seen 84 hours",
+          "newest_tick_receipt_this_run": "NOT_READ",
+          "task_state_this_run": "NOT_READ",
+          "interpretation": "connector-specific device inventories conflict; no conclusion that task stopped or source changed"
+        },
+        "dropbox": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "bytes": 35389440,
+          "server_modified": "2026-10-14T00:20:03Z",
+          "metadata_readback": true,
+          "bytes_downloaded": false
+        },
+        "tesseract_desktop": {
+          "pr": 6,
+          "state": "OPEN",
+          "merged": false,
+          "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+          "base_sha_from_pr_api": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
+          "runs": {
+            "39994207477": {
+              "conclusion": "failure",
+              "jobs": 6,
+              "all_step_arrays_empty": true,
+              "selfhosted_windows_verify": "skipped"
+            },
+            "39994207667": {
+              "conclusion": "failure",
+              "jobs": 1,
+              "all_step_arrays_empty": true
+            }
+          },
+          "windows_job_log": "BlobNotFound 404",
+          "workflow_rule": "selfhosted_windows_verify condition excludes pull_request events; current PR run skip is by workflow condition, not evidence of a runner outage",
+          "variable_wiring": "workflow reads vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64; exact public-key query returns no indexed match",
+          "issuer_key_value_verified": false,
+          "runner_assignment_change_verified": false,
+          "ci_rerun": false,
+          "code_failure_established": false
+        }
+      },
+      "result": "WINDOWS_FOLLOWUP_READBACK_PENDING_TESSERACT_WORKFLOW_GATE_CLARIFIED",
+      "next_callable_edge": "Do not start a duplicate Windows process while PID 48188 remains unresolved; resume read-only output/receipt readback when route responds. For TESSERACT, verify runner assignment and authorized issuer public key through provider control surfaces before any CI rerun.",
+      "status_effect": "Keep MODUAL_SENSOR_LOGS_ROUTING OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED and INHERITED_TESSERACT_DESKTOP OPEN_CARRIED/OPEN_NOT_PROVEN_COMPLETED."
     }
   ],
   "energy_protection_current": {
@@ -6546,6 +6650,24 @@
       "raw_sensor_values_committed": false,
       "credentials_committed": false,
       "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-23T22:30:37.480Z",
+      "record_type": "WINDOWS_CONNECTOR_ROUTE_DIVERGENCE_AND_TESSERACT_WORKFLOW_DIAGNOSIS",
+      "dropbox_source_rev": "0165dc1e4794ab00000000395cdfd73",
+      "windows_readback": "PENDING_PROCESS_48188",
+      "tesseract_pr": 6,
+      "tesseract_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "workflow_runs": [
+        39994207477,
+        39994207667
+      ],
+      "job_steps_empty": true,
+      "windows_log_blob_not_found": true,
+      "selfhosted_job_skipped_by_pull_request_condition": true,
+      "runner_assignment_change_verified": false,
+      "issuer_key_verified": false,
+      "ci_rerun": false
     }
   ]
 }
