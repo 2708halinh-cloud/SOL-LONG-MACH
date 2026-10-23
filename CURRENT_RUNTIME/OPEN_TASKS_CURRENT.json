@@ -130,7 +130,20 @@
       "delegation_mode": "NONCOERCIVE_SOURCE_BOUND",
       "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
       "assignment_carrier": "n8n:dataTable:rSPFIOWbS7cfNJ8z:SOL-HELLOCHECK_GO_TESTNET_R014_20261023",
-      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE"
+      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE",
+      "live_progress": [
+        {
+          "observed_at": "2026-10-23T08:13:24Z",
+          "source": "GitHub Actions run 39923037130, job 120312612263, direct decoded log and artifact readback",
+          "actions_and_receipts": [
+            "Current PR head 164b1a2d7c72e89ec530230182d31ec667edbac6 compiled HelloCheck and passed go vet plus 11 Go tests, including TestBroadcastOnlyTestnetNodeAndExplicitAuthentication, TestRejectMainnetWithoutSending, and TestRejectUnsignedTransactionWithoutRPC.",
+            "Offline Linux/Windows-amd64 build artifact uploaded as artifact 12488386711; ZIP digest in provider log cb4fba49a834322d7fbba13f9dbfa16518dda6580f0178e6f2754758e3741561.",
+            "No actual Bitcoin node broadcast or transaction ID was observed; no transaction was broadcast."
+          ],
+          "result": "HOSTED_BUILD_AND_11_TESTS_PASS_REAL_TESTNET_NODE_AND_BROADCAST_NOT_VERIFIED",
+          "status_effect": "Keep OPEN and OPEN_NOT_PROVEN_COMPLETED; build/test success does not close HelloCheck."
+        }
+      ]
     },
     {
       "id": "STAMP_TRIAD_LIVE_PARTICIPATION_AND_C_DRIVE_RELIEF_20261023",
@@ -888,6 +901,18 @@
           ],
           "result": "ROUTING_AND_SUBMODULE_REGRESSION_TESTS_PASS_ART_RUNTIME_STILL_OPEN",
           "status_effect": "Keep IN_PROGRESS and OPEN_NOT_PROVEN_COMPLETED; no task closed."
+        },
+        {
+          "observed_at": "2026-10-23T08:13:24Z",
+          "source": "GitHub Actions run 39923037130, job 120312612263, direct decoded log and continuation artifact",
+          "actions_and_receipts": [
+            "Latest branch head passed 8 scheduler tests, including exact one-to-one route coverage for all 28 source tasks and test_gitmodules_paths_match_tracked_gitlinks.",
+            "Continuation artifact 12488765234 downloaded and independently inspected: ZIP 3,837 bytes, SHA-256 313dbefe5783f5d88a724edd154e7f7f82d88b874bfd57304752857aaac4de1b; member SURVIVAL_OPEN_CONTINUATION_CURRENT.json 20,655 bytes, SHA-256 a2d428ccd8420c7f5e25d28773c0ba3d104ecef8c6e05f9456ec6a83ed216f08.",
+            "Artifact carries 28 source tasks, routes_cover_all_source_tasks=true, no_source_tasks_closed=true, windows critical mode HIGH_SAFETY_HOLD, n8n_agents_autonomously_executed=false, all_objectives_completed=false."
+          ],
+          "result": "LATEST_CLOUD_ROUTE_AND_SUBMODULE_REGRESSION_PASS_TESSERACT_ART_RUNTIME_NOT_VERIFIED",
+          "runtime_boundary": "This workflow does not render the TESSERACT Art candidate in a real browser or verify original byte identity; those edges remain open.",
+          "status_effect": "Keep IN_PROGRESS and OPEN_NOT_PROVEN_COMPLETED; no source task closed."
         }
       ]
     }
@@ -946,6 +971,34 @@
         "all_objectives_completed": false
       },
       "note": "This second run verifies the ledger readback and regression suite on the updated branch; it does not close any source task or prove Windows/plugin/provider restoration."
+    },
+    "cloud_continuation_39923037130": {
+      "provider": "GitHub Actions",
+      "run_id": 39923037130,
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/39923037130",
+      "tested_head": "164b1a2d7c72e89ec530230182d31ec667edbac6",
+      "conclusion": "success",
+      "scheduler_tests": "8 passed; exact one-to-one route coverage and gitlink path regression",
+      "hellohabit_tests": "4 passed",
+      "hellocheck_tests": "11 Go tests passed; go vet passed",
+      "artifact": {
+        "id": 12488765234,
+        "name": "windows-survival-open-continuation",
+        "zip_bytes": 3837,
+        "zip_sha256": "313dbefe5783f5d88a724edd154e7f7f82d88b874bfd57304752857aaac4de1b",
+        "member": "SURVIVAL_OPEN_CONTINUATION_CURRENT.json",
+        "member_bytes": 20655,
+        "member_sha256": "a2d428ccd8420c7f5e25d28773c0ba3d104ecef8c6e05f9456ec6a83ed216f08",
+        "source_tasks_carried_forward": 28,
+        "routes_cover_all_source_tasks": true,
+        "no_source_tasks_closed": true,
+        "windows_disk_cleanup_performed": false,
+        "windows_host_actions_blocked": true,
+        "n8n_agents_autonomously_executed": false,
+        "real_testnet_transaction_broadcast": false,
+        "all_objectives_completed": false
+      },
+      "note": "Hosted validation and artifact readback only. Does not prove real Bitcoin node broadcast, n8n execution, Windows recovery, original export recovery, or TESSERACT Art browser integration."
     }
   },
   "sinks": {
