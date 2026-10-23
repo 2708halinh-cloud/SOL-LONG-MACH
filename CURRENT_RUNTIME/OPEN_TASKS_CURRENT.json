@@ -3736,6 +3736,97 @@
         "real_execution_status_remains": "OPEN_NOT_PROVEN_COMPLETED",
         "task_closure": false
       }
+    },
+    {
+      "id": "PR24_SECOND_MAIN_SYNC_20261024T044130Z",
+      "record_type": "PR24_SECOND_MAIN_SYNC_READBACK",
+      "observed_at": "2026-10-24T04:41:30+07:00",
+      "source": "Fresh GitHub compare and exact Git commit/tree readback",
+      "previous_main_head": "59c93b310f7fda7c76eb0a48b08f9a80132c0764",
+      "previous_pr_head": "a53d0642d7fc619b4087f6ef0a7355d79d16b6d1",
+      "merge_commit": "96573ff2dee3f4e946fb971e4ecece82dd92c1c1",
+      "merge_parents": [
+        "a53d0642d7fc619b4087f6ef0a7355d79d16b6d1",
+        "59c93b310f7fda7c76eb0a48b08f9a80132c0764"
+      ],
+      "compare_after": {
+        "status": "ahead",
+        "ahead_by": 12,
+        "behind_by": 0
+      },
+      "pr_after": {
+        "state": "OPEN",
+        "draft": true,
+        "merged": false,
+        "mergeable": true
+      },
+      "code_preserved": [
+        "pull_request workflow trigger",
+        "scheduler validates every nonempty ledger",
+        "small-ledger regression test",
+        "gitmodules/Gitlink regression test"
+      ],
+      "ledger_invariants": {
+        "task_count": 28,
+        "task_ids_unchanged": true,
+        "task_statuses_unchanged": true,
+        "task_real_execution_statuses_unchanged": true,
+        "task_closure": false
+      },
+      "result": "MAIN_ADVANCE_RECONCILED_WITH_TWO_PARENT_MERGE; OPEN_LEDGER_PRESERVED",
+      "next_callable_edge": "Keep PR #24 Draft. Continue source-bound provider tasks; do not close tasks from the merge or CI.",
+      "force_push": false,
+      "task_closure": false
+    },
+    {
+      "id": "PR24_SECOND_SYNC_CI_ARTIFACT_READBACK_20261023T214220Z",
+      "record_type": "PR24_SECOND_SYNC_CI_ARTIFACT_READBACK",
+      "observed_at": "2026-10-24T04:42:20+07:00",
+      "source": "GitHub Actions step-level readback plus downloaded artifact ZIP/JSON byte validation",
+      "github": {
+        "pr_number": 24,
+        "head_sha": "96573ff2dee3f4e946fb971e4ecece82dd92c1c1",
+        "synthetic_merge_sha": "6b1c704c71fe2514daec69feebcfc7525261ccf5",
+        "synthetic_merge_parents": [
+          "59c93b310f7fda7c76eb0a48b08f9a80132c0764",
+          "96573ff2dee3f4e946fb971e4ecece82dd92c1c1"
+        ],
+        "continuation_run_id": 40028604391,
+        "continuation_conclusion": "success",
+        "secret_guard_run_id": 40028604374,
+        "secret_guard_conclusion": "success",
+        "continuation_guard_run_id": 40028599241,
+        "continuation_guard_conclusion": "success",
+        "push_secret_guard_run_id": 40028599246,
+        "push_secret_guard_conclusion": "success"
+      },
+      "artifact": {
+        "id": 12532814066,
+        "name": "windows-survival-open-continuation",
+        "zip_bytes": 3847,
+        "zip_sha256": "af3407d29e684d710a86a1bffb0866479f26242d017b2d1f6e7898c2c80d00c6",
+        "crc_test": "PASS",
+        "member": "SURVIVAL_OPEN_CONTINUATION_CURRENT.json",
+        "member_bytes": 20726,
+        "member_sha256": "3ec8bd061205ba9217c4c8111b45a7d1ba8fcdc12e3db189efa00828f2782abe",
+        "json_parse": "PASS",
+        "source_task_count": 28,
+        "source_task_states": {
+          "IN_PROGRESS": 3,
+          "OPEN": 9,
+          "OPEN_CARRIED": 2,
+          "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+          "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1
+        },
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "windows_host_actions_blocked": true,
+        "bitcoin_testnet_broadcast": false
+      },
+      "result": "SECOND_SYNC_CLOUD_CI_AND_ARTIFACT_BYTES_VERIFIED; NO_TASK_CLOSED",
+      "next_callable_edge": "Do not infer Windows recovery, TestNet broadcast, or original export restoration from cloud CI. Keep original export retrieval and R-000 provider ID relation OPEN.",
+      "task_closure": false
     }
   ],
   "energy_protection_current": {
