@@ -1417,6 +1417,23 @@
       "exact_target_readback": true,
       "source_mutation": false,
       "task_closure": false
+    },
+    {
+      "id": "OPEN_ROUTING_FIX_CURRENT_MAIN_INTEGRATION_20261023T143404Z",
+      "kind": "CURRENT_MAIN_BASED_OPEN_ROUTING_FIX_AND_CI_READBACK",
+      "observed_at": "2026-10-23T14:34:04Z",
+      "source": "GitHub connector: exact branch tree, PR #21, workflow jobs/logs and artifact metadata readback",
+      "actions_and_receipts": [
+        "Created merge commit 3fdc67081bb611a6e6eed62000e47533ebdce767 with current main b7fd109aef2d179a61d26aef8481ea2f92f5bc94 as first parent and prior PR head b786ffff840825858cafab18eedef01307849e87 as second parent; tree uses current-main state plus only the PR versions of windows-survival-cloud-continuity.yml, cloud_survival_scheduler.py, and test_cloud_survival_scheduler.py.",
+        "PR #21 branch readback is now ahead of main by 26 commits and behind by 0; changed-file diff is limited to those three files. CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json and .gitmodules matched main before this append; no stale ledger snapshot was carried over.",
+        "Windows survival workflow run 39970630168 SUCCESS on commit 3fdc67081bb611a6e6eed62000e47533ebdce767. Nine scheduler tests passed, including small-ledger assignment validation and .gitmodules/gitlink equality; four HelloHabit adapter tests passed; HelloCheck Go tests, vet, and Linux/Windows builds passed.",
+        "Secret Exposure Guard run 39970630164 SUCCESS on the same commit; logs show .gitmodules path verification and the secret scan both passed.",
+        "Continuation readback reported open_tasks_carried_forward=28, new_user_signals_carried=3, windows_disk_cleanup_performed=false, windows_host_actions_blocked=true. Artifact 12508143544 (HelloCheck binary bundle, 5,996,910 bytes, ZIP digest 2508c07e51e2f094db4fd646cf24b15056743282094ee361a463d3ffff1d5513) and artifact 12508632282 (continuation receipt, 3,872 bytes, ZIP digest cd2dfd43b51d46ec61ca0e50248fe5a500d6d4cb59f53e57199df8bd892fa4a3) were created."
+      ],
+      "result": "OPEN_ROUTING_FIX_INTEGRATED_WITH_CURRENT_MAIN_CI_PASS_PR_DRAFT_UNMERGED",
+      "exact_target_readback": true,
+      "task_closure": false,
+      "status_effect": "No task status or real_execution_status changed; PR #21 remains OPEN/DRAFT and unmerged."
     }
   ],
   "energy_protection_current": {
