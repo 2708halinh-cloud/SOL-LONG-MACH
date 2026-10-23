@@ -950,6 +950,22 @@
           "result": "SCHEDULED_TICK_RECEIPT_VERIFIED_LIVE_SENSOR_STREAM_UNVERIFIED",
           "next_callable_edge": "Read the next scheduled receipt after device-clock 02:36:32+07; continue supported HWiNFO logging investigation and use only an authorized elevated route for W32Time.",
           "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
+        },
+        {
+          "observed_at": "2026-10-24T02:44:05.590+07:00",
+          "source": "Fresh Windows Scheduled Task and exact receipt readback; HWiNFO INI/config readback; fresh GitHub re-entry and ledger readback",
+          "actions_and_receipts": [
+            "Fresh-read AGENTS.md, SOL_REENTRY_CURRENT.md, TASK_RESUME_POINTER.json, OPEN_TASKS_CURRENT.json, and MODUAL_PARAMETER_CURRENT.json before this append.",
+            "Scheduled task GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M ran at device-local 2026-10-24T02:36:33+07:00; LastTaskResult=0, NumberOfMissedRuns=0, next device-clock run 02:41:32+07:00.",
+            "Exact receipt WINDOWS_TICK_20261023T193638382205Z.json read back: 450 bytes, SHA-256 9d4c513b444dba62910a697acfabd70a13e59bf2617b1b4f9d8e5390f9df6826. It matches source SHA 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; source remains 35,389,440 bytes and mtime unchanged.",
+            "Receipt reports live_sensor_reading_confirmed=false, source_file_written=false, synthetic_rows_added=0, cloud/github exports disabled.",
+            "HWiNFO64 PID 17520 remains running; HWiNFO_WINDOWS.CSV is 39,922,785 bytes, SHA-256 b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d, ReadOnly/Archive and last modified 2026-10-21T09:20:45.8565035+07.",
+            "HWiNFO64.INI exact readback: 358 bytes, SHA-256 7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16; contains OpenSensors=1, SensorsSM=1, no logging or CSV path. No config or registry changed.",
+            "Device/runtime clock comparison is approximately 337 seconds skew. W32Time remains Stopped/Manual and process is not Administrator; no service change or resync."
+          ],
+          "result": "THIRD_SCHEDULED_TICK_RECEIPT_VERIFIED_LIVE_SENSOR_STREAM_UNVERIFIED_HWINF0_LOGGING_CONFIG_STILL_UNRESOLVED",
+          "next_callable_edge": "Read next receipt after device-clock 02:41:32+07; continue supported HWiNFO logging investigation and use only authorized elevated W32Time control.",
+          "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
         }
       ]
     },
@@ -2322,6 +2338,41 @@
       "credentials_committed": false,
       "source_moved_or_deleted": false,
       "task_statuses_changed": false
+    },
+    {
+      "id": "WINDOWS_TICK_193638_READBACK_20261023194405",
+      "kind": "THIRD_SCHEDULED_WINDOWS_TICK_EXACT_TARGET_READBACK",
+      "observed_at": "2026-10-24T02:44:05.590+07:00",
+      "open_tasks_blob_before": "6a035d80580762bd67f6ad18e73ee6be1f9864ca",
+      "modual_blob_after": "0f93c1961a5690fc9b89d4188e3818aa921c05cf",
+      "task_resume_pointer_blob_before": "9ff699875910ad0823e6389903fd4fb915436ea3",
+      "receipt": {
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T193638382205Z.json",
+        "observed_at_utc": "2026-10-23T19:36:38.382205Z",
+        "bytes": 450,
+        "sha256": "9d4c513b444dba62910a697acfabd70a13e59bf2617b1b4f9d8e5390f9df6826",
+        "exact_target_readback": true,
+        "json_valid": true,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_bytes": 35389440,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "source_unchanged": true,
+      "clock_skew_seconds_approx": 337,
+      "w32time": "Stopped/Manual",
+      "administrator": false,
+      "hwinfo_ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "task_statuses_changed": false,
+      "tesseract_ci_rerun": false
     }
   ],
   "energy_protection_current": {
@@ -5077,6 +5128,41 @@
       "credentials_committed": false,
       "source_moved_or_deleted": false,
       "task_statuses_changed": false
+    },
+    {
+      "observed_at": "2026-10-23T19:44:05.590Z",
+      "record_type": "THIRD_SCHEDULED_WINDOWS_TICK_AND_HWINF0_CONFIG_READBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "9ff699875910ad0823e6389903fd4fb915436ea3",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "6a035d80580762bd67f6ad18e73ee6be1f9864ca",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "0f93c1961a5690fc9b89d4188e3818aa921c05cf"
+      },
+      "windows": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T193638382205Z.json",
+        "receipt_sha256": "9d4c513b444dba62910a697acfabd70a13e59bf2617b1b4f9d8e5390f9df6826",
+        "task_last_run": "2026-10-24T02:36:33+07:00",
+        "last_task_result": 0,
+        "missed_runs": 0,
+        "next_run_device_clock": "2026-10-24T02:41:32+07:00",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_unchanged": true,
+        "live_sensor_reading_confirmed": false,
+        "clock_skew_seconds_approx": 337,
+        "w32time": "Stopped/Manual",
+        "administrator": false,
+        "hwinfo_csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "hwinfo_ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
+        "hwinfo_new_sample_confirmed": false
+      },
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "task_statuses_changed": false,
+      "tesseract_ci_rerun": false
     }
   ]
 }
