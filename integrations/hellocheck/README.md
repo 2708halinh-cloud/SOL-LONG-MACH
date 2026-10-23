@@ -7,7 +7,7 @@ Mục tiêu gốc do Hà Linh đưa vào TESSERACT: dùng Go để tạo ví BTC
 - `keys.go`: dùng entropy mật mã từ secp256k1, khóa công khai nén 33 byte, HASH160 và địa chỉ TestNet P2PKH (`0x6f`); WIF riêng dùng `0xef`.
 - `address.go`: Base58Check bảo toàn byte 0, phân biệt mainnet/testnet và kiểm tra SHA256 kép.
 - `transaction.go`: TXID đảo byte khi tuần tự hóa, phiên bản 4 byte little-endian, scriptSig trống khi chưa ký, đầu ra P2PKH là **scriptPubKey**, phí và phần tiền thừa phải được khai báo rõ.
-- Ký TestNet P2PKH legacy bằng secp256k1 DER + SIGHASH_ALL (`0x01`), **không tự phát sóng**.
+- Ký TestNet P2PKH legacy bằng secp256k1 DER + SIGHASH_ALL (`0x01`), không tự phát sóng. `rpc.go` chỉ phát tới Bitcoin Core TestNet khi lệnh riêng có xác nhận `--confirm-testnet`, RPC xác thực và node khai báo đúng TestNet.
 - Thay mã Go lỗi thời `code.google.com/p/go.crypto/ripemd160`, `math/rand`, `"gotestcoin/base58"`/ `"hellobitcoin/base58"` bằng thư viện Go hiện hành và mã địa chỉ trực tiếp trong package.
 
 ## Dùng Go
@@ -31,7 +31,18 @@ Giao dịch nháp chỉ tạo khi xác định được UTXO TestNet thật, gi�
 go run ./cmd/hellocheck unsigned --txid <TXID_64_HEX> --vout 0 --input-sats 100000 --dest <TESTNET_P2PKH> --sats 90000 --fee 1000 --change <YOUR_TESTNET_P2PKH>
 ```
 
-Dùng `sign --wallet /private/path/hellocheck.wallet.json` thay cho `unsigned` để ký giao dịch đầu vào khớp ví. Đây **không** phải một lần kiểm tra UTXO từ mạng, không phát giao dịch và không khẳng định đã chuyển Bitcoin. Tính đúng của chuỗi và UTXO thực phải được xác nhận bằng một node TestNet tin cậy trước khi gửi.
+Dùng `sign --wallet /private/path/hellocheck.wallet.json` thay cho `unsigned` để tạo giao dịch có chữ ký trên máy mà ví được lưu; thao tác này chưa phát giao dịch.
+
+Để gửi qua **Bitcoin Core TestNet thật**, cần một nút Bitcoin Core đã kết nối TestNet, UTXO còn hiệu lực thuộc đúng ví, phí chính xác và tài khoản RPC. Kiểm tra trạng thái TestNet của node trước khi chủ động gửi:
+
+```sh
+export HELLOCHECK_RPC_USER='YOUR_BITCOIN_CORE_RPC_USER'
+export HELLOCHECK_RPC_PASSWORD='YOUR_BITCOIN_CORE_RPC_PASSWORD'
+go run ./cmd/hellocheck broadcast --rpc-url http://127.0.0.1:18332 --hex '<SIGNED_TX_HEX>' --confirm-testnet
+```
+
+Chương trình thực hiện `getblockchaininfo` để từ chối mainnet/regtest, sau đó mới gọi `sendrawtransaction`. Kho không chứa mật khẩu, WIF hay khóa riêng; tên biến môi trường chỉ là vị trí dữ liệu trên máy thật. CI chỉ sử dụng node RPC **giả lập trong tiến trình Go** và không chuyển Bitcoin lên bất kỳ mạng nào. Việc dựng/ký không tự xác minh UTXO; node TestNet mới xác thực giao dịch khi gửi.
+
 
 ## Nối tiếp R-000 / SUPER R-014
 
