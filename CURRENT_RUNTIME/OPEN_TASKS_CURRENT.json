@@ -775,7 +775,7 @@
     },
     {
       "id": "MODUAL_SENSOR_LOGS_ROUTING",
-      "status": "OPEN_SCHEDULED_TICK_TERMINATED_LIVE_STREAM_NOT_VERIFIED",
+      "status": "OPEN_SCHEDULED_TICK_LONG_RUNNING_NO_NEW_RECEIPT_LIVE_STREAM_NOT_VERIFIED",
       "goal": "Repair MODUAL telemetry source to Outlook Dropbox\\Linh Hà\\SENSOR_LOGS\\windows_SENSON.CSV and verify Windows Tick error gone",
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
       "readback": "Fresh Windows readback at 2026-10-23T23:42:29+07:00: scheduled task Ready/enabled; last run 23:41:33, result 0, next 23:46:32. Exact receipt WINDOWS_TICK_20261023T164134411872Z.json is valid, 450 bytes, SHA-256 b5c194f210f86042cb9f36dac8325ef113ed94fcca74a5aae4f94f36b53e0739. Source hash 9b25bd... unchanged. HWiNFO candidate at C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV remains 39,922,785 bytes, SHA-256 b890b591..., modified 2026-10-21T02:20:45.857Z, permissions 444; EnableLogging=0. W32Time remains Stopped/Manual. Tick verified; live stream unverified.",
@@ -784,13 +784,14 @@
         "Investigate HWiNFO logging through an authorized supported route; the separate CSV remains stale/read-only and live sample is unverified.",
         "Use only an authorized elevated route for W32Time; no service change or resync has been attempted.",
         "Latest route probe: read-only PID 48188 started but its output could not be read back after the connector reported no online device; do not infer task failure or relaunch duplicate process. Resume exact receipt readback when route responds.",
-        "Latest direct task/process readback: run at 05:26:33+07 terminated with LastTaskResult 0x41306; no receipt newer than 2026-10-23T22:01:44Z. ExecutionTimeLimit=PT2M. Root cause not proven; do not change task settings until one-shot duration/Python launcher are measured."
+        "Latest direct task/process readback: run at 05:26:33+07 terminated with LastTaskResult 0x41306; no receipt newer than 2026-10-23T22:01:44Z. ExecutionTimeLimit=PT2M. Root cause not proven; do not change task settings until one-shot duration/Python launcher are measured.",
+        "Latest direct state at device 05:33:44 showed run 05:31:33 still Running with PID 71220 and no receipt after 05:01:44Z; later route probes failed. Current state is unverified; resume exact readback when the route responds."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
       "assigned_agent_id": "DEYtBtOQseTBhVHS",
       "delegation_mode": "NONCOERCIVE_SOURCE_BOUND",
-      "real_execution_status": "OPEN_SCHEDULED_TICK_TERMINATED_LIVE_STREAM_NOT_VERIFIED",
+      "real_execution_status": "OPEN_SCHEDULED_TICK_LONG_RUNNING_NO_NEW_RECEIPT_LIVE_STREAM_NOT_VERIFIED",
       "assignment_carrier": "n8n:dataTable:rSPFIOWbS7cfNJ8z:SOL-MODUAL_SENSOR_LOGS_ROUTING",
       "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE",
       "live_progress": [
@@ -1096,6 +1097,19 @@
           "result": "SCHEDULED_TICK_RUN_TERMINATED_NO_NEW_RECEIPT_ROOT_CAUSE_OPEN",
           "next_callable_edge": "When the route is responsive, inspect task history and time a one-shot consumer invocation; verify Python launcher and source-read duration before considering an execution-time-limit change.",
           "status_effect": "Keep task OPEN; live sensor stream remains unverified."
+        },
+        {
+          "observed_at": "2026-10-24T05:40:28.404+07:00",
+          "source": "Direct Windows task/process readback followed by connector route failures",
+          "actions_and_receipts": [
+            "At device clock 05:33:44+07, GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M was Running; last run 05:31:33, next run 05:36:32, result 0x41301, missed runs 0, Python PID 71220.",
+            "The previous run at 05:26:33 ended with result 0x41306 and process gone by 05:29:34. No new receipt was present after WINDOWS_TICK_20261023T220144171458Z.json (SHA-256 c4cf8f0ca86208e0fb73129a45b5e3fb2a597a62ee5226db106010798b664713).",
+            "Subsequent shell and directory probes returned 'No Desktop Commander device is currently online'; therefore current status after the 05:33:44 readback is unknown. No manual one-shot or task-setting change was made.",
+            "Dropbox source metadata remains rev 0165dc1e4794ab00000000395cdfd73, 35,389,440 bytes; no raw source bytes were downloaded or published."
+          ],
+          "result": "TICK_LONG_RUNNING_NO_RECEIPT_LATEST_STATE_UNVERIFIED",
+          "next_callable_edge": "When route returns, inspect whether PID 71220 completed/terminated, verify the newest receipt and task history, and time one-shot execution before any configuration change.",
+          "status_effect": "Keep OPEN; live sensor stream unverified."
         }
       ]
     },
@@ -1850,6 +1864,21 @@
       "issuer_key_verified": false,
       "actions_variables_control_surface_available": false,
       "ci_rerun": false
+    },
+    "windows_tick_long_running_20261024T224028Z": {
+      "observed_at": "2026-10-24T05:40:28.404+07:00",
+      "last_direct_state": "Running",
+      "last_run": "2026-10-24T05:31:33+07:00",
+      "last_result_hex": "0x41301",
+      "consumer_pid": 71220,
+      "latest_receipt_utc": "2026-10-23T22:01:44.171458Z",
+      "latest_receipt_sha256": "c4cf8f0ca86208e0fb73129a45b5e3fb2a597a62ee5226db106010798b664713",
+      "no_newer_receipt": true,
+      "later_route_probe": "NO_DEVICE_CURRENTLY_ONLINE",
+      "current_task_state": "UNVERIFIED_AFTER_LAST_DIRECT_READBACK",
+      "root_cause_proven": false,
+      "source_mutation": false,
+      "live_sensor_reading_confirmed": false
     }
   },
   "sinks": {
@@ -3623,6 +3652,53 @@
       "result": "NO_ISSUER_KEY_LITERAL_FOUND_IN_INDEXED_GITHUB_CODE_SCOPE",
       "next_callable_edge": "Use an authorized GitHub Actions variables/settings control surface or issuer-owned carrier to verify the public trust anchor; do not invent a key and do not rerun CI without runner-state change.",
       "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED / OPEN_NOT_PROVEN_COMPLETED."
+    },
+    {
+      "id": "WINDOWS_TICK_LONG_RUNNING_NO_RECEIPT_20261024T224028Z",
+      "kind": "SCHEDULED_TICK_LONG_RUNNING_AND_CONNECTOR_ROUTE_LOSS",
+      "observed_at": "2026-10-24T05:40:28.404+07:00",
+      "observed_at_utc": "2026-10-23T22:40:28.404Z",
+      "source": "Remote Desktop Commander direct task/process readback, fresh directory listing, Dropbox metadata, GitHub code search",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "8fc5e562b2ed6e3fd568bd270dfc1cf328d44ad7",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "ec283ed57de3c605bc61e9b6637f7db71a45d710",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "e63cd6e872570addd40f8223768881e2c6d69a08"
+      },
+      "evidence": {
+        "last_direct_task_readback": {
+          "device_clock": "2026-10-24T05:33:44.0873063+07:00",
+          "state": "Running",
+          "last_run": "2026-10-24T05:31:33+07:00",
+          "next_run": "2026-10-24T05:36:32+07:00",
+          "last_result_hex": "0x41301",
+          "missed_runs": 0,
+          "consumer_pid": 71220
+        },
+        "previous_run_terminated": {
+          "device_clock": "2026-10-24T05:29:34.6956489+07:00",
+          "last_run": "2026-10-24T05:26:33+07:00",
+          "last_result_hex": "0x41306",
+          "process_gone": true
+        },
+        "latest_receipt": {
+          "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T220144171458Z.json",
+          "sha256": "c4cf8f0ca86208e0fb73129a45b5e3fb2a597a62ee5226db106010798b664713",
+          "observed_at_utc": "2026-10-23T22:01:44.171458Z",
+          "no_newer_receipt": true
+        },
+        "execution_time_limit": "PT2M",
+        "later_shell_and_directory_probes": "NO_DEVICE_CURRENTLY_ONLINE",
+        "root_cause_proven": false,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_bytes": 35389440,
+        "tesseract_global_key_search": "indexed references only; no key literal; issuer absence not proven",
+        "ci_rerun": false
+      },
+      "result": "SCHEDULED_TICK_LONG_RUNNING_WITHOUT_NEW_RECEIPT_LATEST_STATE_UNVERIFIED",
+      "next_callable_edge": "Resume direct task/process readback through an authorized responsive route, determine whether PID 71220 completed or was terminated, and measure one-shot source-read duration before modifying task settings.",
+      "status_effect": "Keep MODUAL_SENSOR_LOGS_ROUTING OPEN; live sensor stream unverified."
     }
   ],
   "energy_protection_current": {
@@ -6844,6 +6920,18 @@
       "pem_public_key_literal_found": false,
       "issuer_key_absence_proven": false,
       "ci_rerun": false,
+      "task_closed": false
+    },
+    {
+      "observed_at": "2026-10-23T22:40:28.404Z",
+      "record_type": "SCHEDULED_TICK_LONG_RUNNING_NO_RECEIPT",
+      "device_last_readback": "2026-10-24T05:33:44.0873063+07:00",
+      "task_last_run": "2026-10-24T05:31:33+07:00",
+      "task_last_result_hex": "0x41301",
+      "consumer_pid": 71220,
+      "latest_receipt_utc": "2026-10-23T22:01:44.171458Z",
+      "route_later_unavailable": true,
+      "root_cause_proven": false,
       "task_closed": false
     }
   ]
