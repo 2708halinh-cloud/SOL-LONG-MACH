@@ -427,18 +427,20 @@
     },
     {
       "id": "MODUAL_SENSOR_LOGS_ROUTING",
-      "status": "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK",
+      "status": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
       "goal": "Repair MODUAL telemetry source to Outlook Dropbox\\Linh Hà\\SENSOR_LOGS\\windows_SENSON.CSV and verify Windows Tick error gone",
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
-      "readback": "NOT_ESTABLISHED_IN_THIS_TURN",
+      "readback": "Verified: Dropbox content_hash matches D:\\SENSOR_LOGS\\windows_SENSON.CSV exactly; local consumer matches GitHub source and runs one-shot with exit 0; metadata-only receipt exact-readback succeeds; a new user-level five-minute task ran with result 0. Live HWiNFO sensor logging remains unverified (EnableLogging=0; HWiNFO_WINDOWS.CSV stale).",
       "next": [
-        "Read original source checkpoint, preserve work already done, inspect exact target before taking action"
+        "Verify the scheduled five-minute task's next automatic run and exact receipt readback; retain append-only receipt history.",
+        "Investigate/enable HWiNFO sensor logging through an authorized configuration/UI route without overwriting the verified Dropbox source; verify a new live CSV sample by before/after metadata and content hash.",
+        "Keep MODUAL_SENSOR_LOGS_ROUTING OPEN until a live sensor sample and downstream consumer consequence are independently verified."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
       "assigned_agent_id": "DEYtBtOQseTBhVHS",
       "delegation_mode": "NONCOERCIVE_SOURCE_BOUND",
-      "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
+      "real_execution_status": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
       "assignment_carrier": "n8n:dataTable:rSPFIOWbS7cfNJ8z:SOL-MODUAL_SENSOR_LOGS_ROUTING",
       "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE"
     },
@@ -1012,6 +1014,46 @@
       },
       "source": "runtime/destructive_gate.py; runtime/continuity_guard.py; tests/test_r014_root_protection.py",
       "task_closure": false
+    },
+    {
+      "id": "MODUAL_WINDOWS_TICK_AUTORUN_20261023T091633Z",
+      "kind": "WINDOWS_TICK_CONSUMER_AND_PERIODIC_RECEIPT_VERIFIED_LIVE_SENSOR_STREAM_OPEN",
+      "observed_at": "2026-10-23T16:20:54+07:00",
+      "source_commit": "1dd3617755153af4b5bc8cd8161835a253e70e22",
+      "source_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+      "provider": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+        "exact_windows_target_content_hash_match": true
+      },
+      "windows_target": {
+        "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "size_bytes": 35389440,
+        "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_unchanged": true
+      },
+      "receipt": {
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T091633398258Z.json",
+        "sha256": "fc710da18b635cdf94f604c7e896a0db8b9e2d97c67b98d5712dae0c060d93ee",
+        "exact_readback": true,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "live_sensor_reading_confirmed": false
+      },
+      "scheduled_task": {
+        "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "interval": "PT5M",
+        "last_run_local": "2026-10-23T16:16:32+07:00",
+        "last_result": 0,
+        "next_run_local": "2026-10-23T16:21:32+07:00",
+        "additive_task": true,
+        "original_task_preserved": true
+      },
+      "remaining_issue": "HWiNFO registry EnableLogging=0; HWiNFO_WINDOWS.CSV last modified 2026-10-21; live sensor stream not verified.",
+      "task_closure": false
     }
   ],
   "energy_protection_current": {
@@ -1216,6 +1258,20 @@
         "assigned_subagent": "SubAisstangtManage-OPEN-ROUTER"
       },
       "invariant": "No OPEN task closed; no Windows or physical-host action performed; successful cloud continuation is not Windows Tick recovery or TestNet broadcast proof."
+    },
+    {
+      "observed_at": "2026-10-23T16:20:54+07:00",
+      "record_type": "WINDOWS_TICK_EXACT_SOURCE_HASH_MATCH_AND_PERIODIC_CONSUMER_RECEIPT",
+      "provider_revision": "0165dc1e4794ab00000000395cdfd73",
+      "provider_content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+      "windows_target_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "consumer_commit": "1dd3617755153af4b5bc8cd8161835a253e70e22",
+      "scheduled_task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "last_result": 0,
+      "receipt_sha256": "fc710da18b635cdf94f604c7e896a0db8b9e2d97c67b98d5712dae0c060d93ee",
+      "live_sensor_stream_confirmed": false,
+      "source_preserved": true,
+      "raw_sensor_rows_committed": false
     }
   ]
 }
