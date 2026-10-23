@@ -140,6 +140,18 @@
           "result": "RELATED_TOOL_BUNDLE_BYTES_VERIFIED_NOT_RAW_EXPORT; ORIGINAL_ACCOUNT_EXPORT_BYTES_NOT_RETRIEVED",
           "next_callable_edge": "Use an authorized provider connector or existing verified raw carrier to retrieve the exact original account export, preserving provider object ID, revision and byte hash. Do not substitute the 30,097-byte tooling ZIP or derived Markdown archives; keep ADMIN in place.",
           "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED. No source restoration, no task closure."
+        },
+        {
+          "observed_at": "2026-10-24T00:23:00+07:00",
+          "source": "ChatGPT Library exact-folder listing; metadata-only readback",
+          "actions_and_receipts": [
+            "Listed the existing MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL compression/category folders 7Z, BZ2, GZ, JAR, LR, RAR, TAR, XZ, ZIP, ALL, and Archive recursively within the Library surface; each returned zero items, no next cursor, and no warning.",
+            "This result is scoped only to those Library folder paths. It does not establish that connected Drive/Dropbox provider folders are empty, and it does not establish that an original export was deleted.",
+            "No files were created, moved, duplicated, or deleted."
+          ],
+          "result": "LIBRARY_ARCHIVE_FORMAT_SUBFOLDERS_EMPTY; NO_NEW_RAW_EXPORT_CARRIER",
+          "next_callable_edge": "Continue from exact provider-side JINEY/FUNIX/DAT NGUYEN folder IDs or a verified raw carrier when an authorized Drive/Dropbox/Takeout connector is available; do not substitute same-name derived archives.",
+          "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED."
         }
       ]
     },
@@ -563,7 +575,8 @@
             "Naturally triggered tesseract-desktop-ci run 39994207477 failed; jobs: 3 platform builds, tesseract_os, and readback all failed with empty step arrays; selfhosted_windows_verify was skipped.",
             "Naturally triggered validate-x-time run 39994207667 failed; verify job returned an empty step array.",
             "Log retrieval for all failed jobs returned BlobNotFound; artifact lists for both runs were empty. No source step output or current-head readback artifact exists.",
-            "No manual workflow rerun was performed. Runner assignment/entitlement change remains unverified; issuer public key remains unverified."
+            "No manual workflow rerun was performed. Runner assignment/entitlement change remains unverified; issuer public key remains unverified.",
+            "Final current-head run readback was also persisted to CURRENT_RUNTIME/TASK_RESUME_POINTER.json in commit b712cdbc00a55e91dd47c03aa5f735b36dd6adb7; pointer blob SHA 71a139ef00ed93e40308d31f3cba7e9c5533bd93 confirms both run IDs and the no-rerun gate."
           ],
           "result": "CURRENT_HEAD_CI_FAILED_BEFORE_STEP_OUTPUT_LOGS_UNAVAILABLE; SOURCE_CODE_FAILURE_NOT_ESTABLISHED",
           "next_callable_edge": "Verify runner assignment/entitlement through an authorized control surface and continue source-bound issuer-key search. Do not rerun CI against the same unverified runner state; do not merge PR #6 until current-head TRUE readback and authorized issuer trust anchor exist.",
