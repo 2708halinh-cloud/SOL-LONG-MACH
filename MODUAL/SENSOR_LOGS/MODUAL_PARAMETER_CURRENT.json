@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-23T21:18:48+07:00",
+  "observed_at": "2026-10-23T22:16:21+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -990,6 +990,81 @@
         "When an already-authorized Windows carrier is available, read the newest scheduled receipt and HWiNFO CSV before/after metadata plus content hash.",
         "For TESSERACT Desktop, reconcile the stale WORK_CHECKPOINT embedded head against the current resume pointer without rewriting history; verify runner assignment/entitlement changed before any CI rerun.",
         "Continue locating the real issuer public key from authorized carriers; code search returning zero results is not proof it is absent from other providers."
+      ]
+    },
+    {
+      "observed_at": "2026-10-23T22:16:21+07:00",
+      "record_type": "WINDOWS_TICK_CURRENT_DEVICE_READBACK_HWINF0_STILL_STALE",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "59cef77921dc09097d6ae488a0678d99b6fc73f4",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "4c65f09f5e4a8b23f237d2517522492074883810",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "7a7b9b1a7c8286134ff8625360736e98549da48f"
+      },
+      "provider": {
+        "name": "Dropbox Outlook",
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "bytes_downloaded_this_run": false,
+        "content_hash_verified_this_run": false
+      },
+      "windows_device": {
+        "device": "DESKTOP-86ITNQ4",
+        "status": "ONLINE_DIRECT_READ_CONFIRMED",
+        "device_now_local": "2026-10-23T22:14:15.8203959+07:00",
+        "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "source_bytes": 35389440,
+        "source_last_modified_utc": "2026-10-23T08:45:56.2458701Z",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "scheduled_task": {
+          "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+          "state": "Ready",
+          "enabled": true,
+          "last_run_device_local": "2026-10-23T22:11:33+07:00",
+          "last_result": 0,
+          "next_run_device_local": "2026-10-23T22:16:32+07:00",
+          "interval": "PT5M"
+        },
+        "latest_receipt": {
+          "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T151134584403Z.json",
+          "bytes": 450,
+          "sha256": "263e5a8cd073db820a6342d8d6379a03950f3a56f9cbf3b12736632907f3ea28",
+          "exact_target_readback": true,
+          "json_valid": true,
+          "observed_at_utc": "2026-10-23T15:11:34.584403Z",
+          "source_sha256_matches": true,
+          "source_file_written": false,
+          "synthetic_rows_added": 0,
+          "cloud_export_enabled": false,
+          "github_export_enabled": false,
+          "live_sensor_reading_confirmed": false
+        },
+        "w32time": {
+          "status": "Stopped",
+          "start_type": "Manual"
+        },
+        "hwinfo": {
+          "process_running": true,
+          "pid": 17520,
+          "enable_logging": 0,
+          "csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+          "csv_bytes": 39922785,
+          "csv_last_modified_utc": "2026-10-21T02:20:45.8565035Z",
+          "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+          "live_stream_confirmed": false
+        }
+      },
+      "state": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
+      "invariant": "Fresh Windows direct read succeeded. Latest tick receipt is valid and source hash stable, but the next scheduled run had not yet occurred at device read time; HWiNFO logging remains disabled and its CSV remains stale. No raw rows, synthetic rows, cloud export, GitHub export, source move/delete, or task closure.",
+      "next_action": [
+        "Read the scheduled receipt after the device-clock target 2026-10-23T22:16:32+07:00; do not infer the run from task metadata alone.",
+        "Continue HWiNFO logging through an authorized UI/configuration route and require a new CSV sample plus before/after hash/mtime evidence.",
+        "Use an authorized elevated route for W32Time only; current read shows service Stopped and Manual."
       ]
     }
   ],
