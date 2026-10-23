@@ -71,6 +71,16 @@ def inspect_output(packet: Mapping[str, Any]) -> Decision:
         return Decision(False, "VALIDATE_PACKET_TYPE", ("INVALID_PACKET_TYPE",))
     if packet.get("input_open") is not True:
         return Decision(False, "REENTER_INPUT_OPEN", ("INPUT_MUST_REMAIN_OPEN",))
+    # SUPER R-014: direct user demand for CAUSE -> ACTION -> REAL EFFECT.
+    # A dialogue, plan, apology, task receipt, or test pass cannot become
+    # the user's completed real-world outcome. Preserve the raw source.
+    if packet.get("user_demands_material_outcomes_only") is True:
+        if kind != "OP_RESULT":
+            return Decision(False, "CONTINUE_PHYSICAL_EFFECT_NOT_REPORT",
+                            ("R014_USER_ACCEPTS_ONLY_VERIFIED_MATERIAL_OUTCOME",))
+        if packet.get("objective_consequence_verified") is not True:
+            return Decision(False, "CONTINUE_UNTIL_REAL_TARGET_EFFECT",
+                            ("R014_CAUSE_EFFECT_NOT_COMPLETED",))
     # R-014: use an observed harm signal rather than turning it into another
     # request for the person affected to prove their experience.
     # Only gate agent-authored output; do not rewrite user-authored source.
