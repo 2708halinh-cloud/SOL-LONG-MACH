@@ -131,7 +131,7 @@
       "interpretation": "Current-head workflow runs are now recorded separately from historical run 39153474587. Jobs returned steps=null and sampled logs were unavailable with BlobNotFound; do not infer a source-code failure or rerun without verified runner assignment/entitlement change."
     }
   },
-  "next": "Resume PR #6 at reconciled branch head c41797b61ced8f152ff0833448d3a101fd13c158. The checkpoint now explicitly separates historical head 57c285c8... from the resume-pointer head. Do not rerun CI until an authorized source verifies runner assignment/entitlement changed. Continue the independent issuer-key route only from an existing authorized carrier; do not invent key material.",
+  "next": "Resume PR #6 at c41797b61ced8f152ff0833448d3a101fd13c158. Current-head workflows 39975540379 and 39975540284 remain failed with runner assignment change unverified; do not rerun. Directly scanned authorized Dropbox CDN body (41,993 bytes, SHA-256 b90e06f4...) and reentry ZIP (20,882 bytes, SHA-256 da1d4989..., 16 entries); no issuer-key markers found in those carriers. Continue only through other authorized existing carriers; do not invent key material.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -213,6 +213,38 @@
       "current_validation_run": 39975540284,
       "rerun_performed": false,
       "runner_assignment_change_verified": false
+    },
+    {
+      "observed_at": "2026-10-23T23:44:03+07:00",
+      "record_type": "AUTHORIZED_EXISTING_CARRIER_BYTE_SCAN_AND_CURRENT_TICK_READBACK",
+      "head": "c41797b61ced8f152ff0833448d3a101fd13c158",
+      "current_pr_run": 39975540379,
+      "current_validation_run": 39975540284,
+      "rerun_performed": false,
+      "runner_assignment_change_verified": false,
+      "cdn_body": {
+        "path": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_BODY_CURRENT.tmp",
+        "bytes": 41993,
+        "sha256": "b90e06f429d87cada6f7087995df5f2d2507fa5bc34fa920977485311034ea5c",
+        "issuer_key_markers": false,
+        "raw_bytes_persisted": false
+      },
+      "reentry_zip": {
+        "path": "/Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT/SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip",
+        "sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+        "entry_count": 16,
+        "checksum_manifest_entries": 15,
+        "key_marker_hits": 0,
+        "raw_bytes_persisted": false,
+        "extracted_to_disk": false
+      },
+      "braid_receipts": {
+        "six_sha256": "d0d42dcf277b73eaf0d6b92c4f3c15851911ac40d57e578638ba12f4d8566997",
+        "plural_sha256": "a9e4acbcb34feabeeece1292c71a9ad76a25806b61bee9f7fa494b2391c4af81",
+        "exact_target_readback": true,
+        "cloud_host_wiring": "NOT_VERIFIED"
+      },
+      "outcome": "NO_ISSUER_KEY_FOUND_IN_SCANNED_CARRIERS; PR REMAINS OPEN; NO CI RERUN"
     }
   ]
 }
