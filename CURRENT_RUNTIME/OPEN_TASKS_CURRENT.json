@@ -473,6 +473,20 @@
           "result": "LEGACY_SUBMODULE_PATHS_CORRECTED_AND_REGRESSION_TEST_ADDED_CI_REGRESSION_PENDING",
           "next_callable_edge": "Inspect fresh Actions checks for the merged PR head; require the new gitlink regression test to run before claiming CI validation. Plugin installation and target-provider readback remain separate.",
           "status_effect": "Keep OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK; no plugin installation claimed and no task closed."
+        },
+        {
+          "observed_at": "2026-10-23T08:02:05Z",
+          "source": "GitHub Actions run 39921703685, job 120308220308; decoded job log and artifact readback",
+          "actions_and_receipts": [
+            "Corrected test parsing after first CI run showed Git's default core.quotePath quoting the Unicode/space paths; changed regression test to use git -c core.quotePath=false ls-tree -r -z HEAD and NUL-delimited records.",
+            "Final run 39921703685 succeeded. test_cloud_survival_scheduler.py ran 8 tests including test_gitmodules_paths_match_tracked_gitlinks; HelloHabit adapter ran 4 tests; HelloCheck Go compile/test/vet and cloud continuation steps all completed successfully.",
+            "Read back artifact windows-survival-open-continuation, artifact ID 12487073934, ZIP SHA-256 42f290915e704c70e22fc2f576e277fa05ee2caa3f9724f49a9066273e01bde3; contained SURVIVAL_OPEN_CONTINUATION_CURRENT.json, 20,658 bytes, SHA-256 0260b17241e4d0ca1d0bf2045b29c358119cb43886765ddef77dcbd5e5cd5589.",
+            "Artifact states source_tasks_carried_forward=28, routes_cover_all_source_tasks=true, no_source_tasks_closed=true, n8n_agents_autonomously_executed=false, windows_disk_cleanup_performed=false, windows_host_actions_blocked=true, real_testnet_transaction_broadcast=false.",
+            "High-Threshold Secret Exposure Guard run 39921703657 succeeded on the same tested head."
+          ],
+          "result": "GITMODULES_PATH_REGRESSION_TEST_PASSED_IN_HOSTED_CI",
+          "next_callable_edge": "Continue exact-source/plugin target readback and recover original JINEY/FUNIX/DAT NGUYEN export bytes only through an actually authorized provider; the CI pass is not plugin installation or source-export restoration.",
+          "status_effect": "Keep OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK; no task closed."
         }
       ]
     },
@@ -863,6 +877,17 @@
           ],
           "result": "CURRENT_MAIN_TESSERACT_ART_ASSIGNMENT_PRESERVED_OPEN_ROUTER",
           "status_effect": "Keep task IN_PROGRESS and OPEN_NOT_PROVEN_COMPLETED; no task closed."
+        },
+        {
+          "observed_at": "2026-10-23T08:02:05Z",
+          "source": "GitHub Actions run 39921703685, job 120308220308, current PR merge commit",
+          "actions_and_receipts": [
+            "The scheduler test suite passed 8 tests and verified exact one-to-one route ID coverage for all 28 current source tasks.",
+            "The new submodule regression test passed after using NUL-delimited git tree output to preserve Unicode path identity.",
+            "The source continuation artifact confirms all 28 tasks carried forward; it does not show autonomous n8n execution or TESSERACT Art integration."
+          ],
+          "result": "ROUTING_AND_SUBMODULE_REGRESSION_TESTS_PASS_ART_RUNTIME_STILL_OPEN",
+          "status_effect": "Keep IN_PROGRESS and OPEN_NOT_PROVEN_COMPLETED; no task closed."
         }
       ]
     }
@@ -874,6 +899,28 @@
       "plural": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261021T073754769935Z.json",
       "receipt_readback_ok": true,
       "not_claiming_cloud_execution": true
+    },
+    "cloud_continuation_39921703685": {
+      "provider": "GitHub Actions",
+      "run_id": 39921703685,
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/39921703685",
+      "tested_head": "fadfe02020e2004cb177bec6a52b92387a06fc59",
+      "conclusion": "success",
+      "scheduler_tests": "8 passed",
+      "hellohabit_tests": "4 passed",
+      "cloud_continuation_readback": {
+        "artifact_id": 12487073934,
+        "zip_sha256": "42f290915e704c70e22fc2f576e277fa05ee2caa3f9724f49a9066273e01bde3",
+        "member": "SURVIVAL_OPEN_CONTINUATION_CURRENT.json",
+        "member_sha256": "0260b17241e4d0ca1d0bf2045b29c358119cb43886765ddef77dcbd5e5cd5589",
+        "tasks_carried_forward": 28,
+        "no_source_tasks_closed": true,
+        "windows_disk_cleanup_performed": false,
+        "windows_host_actions_blocked": true,
+        "n8n_agents_autonomously_executed": false,
+        "real_testnet_transaction_broadcast": false
+      },
+      "note": "This receipt verifies the hosted checks and their generated artifact only; it does not close any source task."
     }
   },
   "sinks": {
