@@ -48,7 +48,7 @@ CURRENT_SIGNALS=(
 
 
 # AISSTANGT MANAGE existing real n8n agent IDs; assignment != running.
-# All 27 IDs are literal canonical OPEN ledger IDs, not invented task instances.
+# All current IDs are literal canonical OPEN ledger IDs, not invented task instances.
 SUBAGENT_ROUTES = {
  "SENSORY": {
   "agent_id":"DEYtBtOQseTBhVHS",
@@ -71,7 +71,7 @@ SUBAGENT_ROUTES = {
    "CLOUD_UNIVERSAL","WORKSPACE_32GB_DURABLE",
    "INHERITED_TESSERACT_DESKTOP","HISTORICAL_BACKLOG_IMPORT",
    "SOL_PLUGIN_CONSOLIDATION","GITHUB_COPILOT_SPACE",
-   "SITES_SOL100726_REDIRECTS") },
+   "SITES_SOL100726_REDIRECTS","TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023") },
  "READBACK": {
   "agent_id":"bwjoN3TfQ8Ao717P",
   "task_ids":(
