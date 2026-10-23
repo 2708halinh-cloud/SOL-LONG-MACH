@@ -31,7 +31,8 @@ try:
 except ImportError:  # direct script invocation
     from sensor_root_resolver import inspect_sources
 
-# Resolve actual files first. A legacy empty D: folder is not a source.
+# Pin this consumer to the provider-verified materialization. Fail closed; never auto-select another CSV.
+os.environ["SOL_SENSOR_SOURCE_FILE"] = r"D:\SENSOR_LOGS\windows_SENSON.CSV"
 _source_observation = inspect_sources()
 if not _source_observation["source_verified"] or not _source_observation.get("selected_evidence"):
     raise FileNotFoundError("NO_SENSOR_CSV_BYTES_VERIFIED; no synthetic file is created")
