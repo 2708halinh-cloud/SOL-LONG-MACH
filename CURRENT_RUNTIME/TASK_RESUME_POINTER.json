@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Read back the next Windows tick after device-clock 2026-10-24T03:06:32+07:00. Current consumer source has been inspected locally and on GitHub: it hashes only the pinned D:\\SENSOR_LOGS\\windows_SENSON.CSV and explicitly sets live_sensor_reading_confirmed=false; this is a metadata observer, not a live sensor reader. HWiNFO_WINDOWS.CSV remains a separate stale/read-only file and HWiNFO64.INI has no logging/CSV path. Next action is to use a supported authorized HWiNFO logging control, then verify a new sample by before/after metadata; do not redirect the pinned source or enable cloud/GitHub exports without exact-target review. W32Time remains Stopped/Manual with no Administrator rights in this session. Ollama /api/chat now returned HTTP 200, done=true, OK on 127.0.0.1:11434 only; continue Android relay/Chrome UI verification without LAN exposure. X-TIME health remains HTTP 200 at 127.0.0.1:8769 with 63 tools, but MODUAL source binding and live-device proof remain open. Dropbox metadata connector failed account-link validation, so use another authorized provider route rather than repeating the same failed call. PR #6 head 5312816d5fe2b22e92302211b67f916b88a6fe14 workflows 39994207477 and 39994207667 remain failed; do not rerun these or 39153474587 until runner assignment/entitlement change is verified; issuer public key remains unverified.",
+  "next": "Latest confirmed Windows receipt remains the eighth tick: D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json, SHA-256 e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634; it verified task result 0, zero missed runs, and source SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 unchanged, but live_sensor_reading_confirmed=false. The next scheduled run was due after device-clock 2026-10-24T03:56:32+07:00; a later shell read timed out and the directory listing remained pending, so the newest post-03:56 receipt is NOT_VERIFIED, not presumed absent. Use other provider routes meanwhile; the older Desktop Commander accounts report offline, while the Remote Desktop Commander device was last reported Online before the read timeout. HWiNFO shared-memory mapping was absent on two read-only probes; its separate CSV is stale/read-only. Official docs make -l CLI logging Pro-only; license tier and authorized UI control remain unverified. TESSERACT Desktop source wiring is now freshly verified: kilo.rs blob f1a7abe2d30cf720d2d1207335325d42a2af4e16 uses option_env!(XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64) and fails closed when absent; workflow blob 6552d13a1f8004b0e3d36fd585dd75cdd22acf12 maps that build-time variable from vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64. The variable's presence/value and the real issuer public key remain unverified; no key or private material was read or created. PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14; runs 39994207477 and 39994207667 failed, self-hosted verification was skipped, and no CI rerun is authorized without verified runner assignment/entitlement change. Dropbox folder listing and metadata reads confirmed the sensor source revision and CDN carrier metadata; filename searches in the checked folders found no issuer/key filenames but do not prove absence in file contents. X-TIME health remains HTTP 200/63 tools with filesystem sensor OK, but MODUAL source_present=false and live_device_proven=false. Ollama tags remains HTTP 200/11 models on loopback. Preserve provenance/secrets; no raw sensor values, no source move/delete/overwrite, and no OPEN task closure. Parallel branch CODEX_CONFIG_PRIVATE_BACKUP: Dropbox's current source-authority packet says LOCAL_PACKET_ONLY and does not require external chat/account/raw lookup; the historical SOL_CODEX_CLI_ROTATE receipt proves only a mock route (`Bearer <test-key>` placeholder, `MOCK_ROUTE_REACHED`), not current Codex config or live credentials. The non-secret public pointer CONFIG_SOL/CODEX_CLOUD_DEVICE_FAILOVER_CURRENT.json (blob b6e27cc58b42f3faf292d046371f4ba3c57049ee) records local config.toml 12,950 bytes/hash B68E2324E87421B9FAFF438F779762309BE813534AF3F1F389935ACF891CBB35 and an older Google Drive replica 4,334 bytes with unknown hash, modified 2026-08-31; it is explicitly not latest-verified. H: remains an EFI System partition and was not written. The current desktop read route is timed out/pending and no Google Drive connector is present in this runtime; current config bytes, encrypted backup, and offline retrieval remain unverified. Do not read auth.json/secret values or copy them to public providers; keep CODEX_CONFIG_PRIVATE_BACKUP OPEN.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -197,11 +197,16 @@
     "verification_required": "Fresh-source readback for each task; status OPEN until exact action+receipt",
     "linked_at": "2026-10-21T14:39:07+07:00",
     "latest_observation": {
-      "observed_at": "2026-10-24T02:58:03.553+07:00",
-      "MODUAL_SENSOR_LOGS_ROUTING": "FIFTH_SCHEDULED_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
-      "ANDROID_OLLAMA_LOCALHOST_CHAT_UI": "WINDOWS_LOCAL_CHAT_REPLY_VERIFIED_ANDROID_CHROME_UI_NOT_VERIFIED",
+      "observed_at": "2026-10-24T04:04:12.138+07:00",
+      "MODUAL_SENSOR_LOGS_ROUTING": "EIGHTH_TICK_VERIFIED_LIVE_STREAM_UNVERIFIED_LATER_REMOTE_READ_TIMEOUT",
+      "ANDROID_OLLAMA_LOCALHOST_CHAT_UI": "ADB_SENSOR_SERVICE_RESPONDED_CHROME_UI_NOT_VERIFIED",
       "XTIME_LOCAL_RUNTIME": "HEALTH_200_FILESYSTEM_SENSOR_OK_MODUAL_SOURCE_NOT_FOUND",
-      "INHERITED_TESSERACT_DESKTOP": "HEAD_5312816D_RUNS_39994207477_39994207667_FAILED_NO_RERUN"
+      "TESSERACT_OS": "BRAID_PROOF_SUCCESS_LOCAL_ONLY_CLOUD_HOST_NOT_VERIFIED",
+      "HWINF0_SHARED_MEMORY": "MAPPING_NOT_FOUND_LICENSE_TIER_UNVERIFIED",
+      "WINDOWS_TIME": "W32TIME_STOPPED_MANUAL_NO_CHANGE",
+      "INHERITED_TESSERACT_DESKTOP": "SOURCE_WIRING_VERIFIED_ISSUER_KEY_VARIABLE_PRESENCE_UNVERIFIED_NO_CI_RERUN",
+      "DESKTOP_COMMANDER": "LATEST_READ_TIMEOUT_DIRECTORY_LISTING_PENDING_NO_DEVICE_STATE_INFERENCE",
+      "CODEX_CONFIG_PRIVATE_BACKUP": "HISTORICAL_MOCK_ROUTE_ONLY_CURRENT_CONFIG_UNREAD_ENCRYPTED_BACKUP_AND_OFFLINE_READBACK_OPEN"
     }
   },
   "checkpoint_head_reconciliation": {
@@ -789,6 +794,300 @@
       "raw_sensor_rows_committed": false,
       "credentials_committed": false,
       "source_moved_or_deleted": false
+    },
+    {
+      "observed_at": "2026-10-23T20:37:41.856Z",
+      "observed_at_local": "2026-10-24T03:37:41.856+07:00",
+      "record_type": "HOST_TICK_RECEIPT_READBACK_AND_CLOUD_EVIDENCE_232",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "3d754f86e0e1c017b8f32b0088a476ae682928a8",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "79f9355e32f0dab47da0935e8321922d875083d0",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "0f640ebdd06809d7d04109577d628d8daf1bc6ec"
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T203135123932Z.json",
+        "receipt_observed_at_utc": "2026-10-23T20:31:35.123932Z",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_modified_ns": 1792745156245870000,
+        "source_unchanged": true,
+        "live_sensor_reading_confirmed": false,
+        "exports": {
+          "cloud_enabled": false,
+          "github_enabled": false
+        },
+        "mutations": {
+          "source_file_written": false,
+          "synthetic_rows_added": 0
+        }
+      },
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "workflow_active": true,
+        "latest_verified_execution_id": "110",
+        "latest_verified_execution_status": "success",
+        "latest_verified_execution_started_at": "2026-10-23T20:00:22.083Z",
+        "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+        "recovery_rows": 45,
+        "terminal_rows": 0,
+        "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+        "evidence_row_id": 232,
+        "evidence_event_id": "X20261023203135123_HOST",
+        "evidence_readback": true,
+        "project_credentials_visible": 0,
+        "agent_drafts_available_in_mcp": 5,
+        "published_agent_count": 0,
+        "tesseract_workflow_count": 0
+      },
+      "github": {
+        "repository": "2708halinh-cloud/SOL-LONG-MACH",
+        "head_at_observation": "9335dcc5668300ba538b6872c91a6a4dcfd797a9",
+        "combined_status_count": 0,
+        "ci_verified": false
+      },
+      "result": "HOST_TICK_RECEIPT_READBACK_VERIFIED; LIVE_SENSOR_UNCONFIRMED; CLOUD_AGENT_DISPATCH_BLOCKED",
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "next_callable_edge": "Read the next scheduled tick after device-clock 2026-10-24T03:36:32+07:00; keep the pinned source read-only and exports disabled; do not dispatch subagents until a published agent and scoped credential route are explicitly authorized; Android relay/UI remains unverified."
+    },
+    {
+      "observed_at": "2026-10-23T20:48:57.705Z",
+      "observed_at_local": "2026-10-24T03:48:57.705+07:00",
+      "record_type": "SEVENTH_TICK_AND_PARALLEL_PROVIDER_READBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "c53e52a5dca50e5817dd5a7b2fb0fd6ad1596416",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "e97f472a593180b456caa98ee6e14b88944ad329",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "49c6b80f3f61bad53c83e41b326c9fb7821f60b3"
+      },
+      "windows": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T204633942872Z.json",
+        "receipt_sha256": "6f730d5761718ee2edf337ff87b8d6727ba5bcdfac34a51215820246c84877bd",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_unchanged": true,
+        "live_sensor_reading_confirmed": false,
+        "last_task_result": 0,
+        "missed_runs": 0
+      },
+      "hwinfo": {
+        "version": "8.52-6060",
+        "shared_memory_mapping_opened": false,
+        "winerror": 2,
+        "sensors_sm_ini": 1,
+        "cli_logging_pro_only": true,
+        "license_tier_verified": false,
+        "raw_sensor_values_read": false
+      },
+      "android": {
+        "adb_connected": true,
+        "sensorservice_readback": true,
+        "raw_sensor_values_persisted": false
+      },
+      "xtime": {
+        "http_status": 200,
+        "runtime_tools": 63,
+        "filesystem_sensor_ok": true,
+        "modual_source_present": false,
+        "live_device_proven": false
+      },
+      "ollama": {
+        "tags_http_status": 200,
+        "model_count": 11,
+        "loopback_only": true
+      },
+      "tesseract_braid": {
+        "exit_code": 0,
+        "six_actions": 9,
+        "plural_actions": 5,
+        "receipts_readback": true,
+        "source_sha256_unchanged": true,
+        "mutation_executed": false,
+        "cloud_host_wiring": "NOT_VERIFIED"
+      },
+      "tesseract_desktop": {
+        "pr_state": "OPEN",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": [
+          39994207477,
+          39994207667
+        ],
+        "rerun": false,
+        "runner_assignment_change_verified": false,
+        "issuer_public_key_verified": false
+      },
+      "result": "SEVENTH_TICK_VERIFIED; HWINF0_LIVE_SOURCE_UNAVAILABLE_BY_READ_ONLY_PROBE; INDEPENDENT_BRAID_AND_ANDROID_ADB_PROBES_EXECUTED",
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_values_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false
+    },
+    {
+      "observed_at": "2026-10-23T20:52:55.007Z",
+      "observed_at_local": "2026-10-24T03:52:55.007+07:00",
+      "record_type": "EIGHTH_SCHEDULED_TICK_READBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "76be893c6c86d352e7f12a9ab595f7d155089c22",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "21b9a37709cdef94b5d3bdd76ea8520287a589b2",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "415ef4703d6254ef4d3d460342aeda6633e3827d"
+      },
+      "windows": {
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state": "Ready",
+        "last_run_local": "2026-10-24T03:51:33+07:00",
+        "last_result": 0,
+        "missed_runs": 0,
+        "next_run_local_device_clock": "2026-10-24T03:56:32+07:00",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json",
+        "receipt_observed_at_utc": "2026-10-23T20:51:33.863313Z",
+        "receipt_bytes": 450,
+        "receipt_sha256": "e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634",
+        "exact_target_readback": true,
+        "json_valid": true,
+        "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_last_write_utc": "2026-10-23T08:45:56.2458701Z",
+        "source_unchanged": true,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_export_enabled": false,
+        "github_export_enabled": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "result": "EIGHTH_TICK_VERIFIED_SOURCE_UNCHANGED_LIVE_SENSOR_STREAM_UNVERIFIED",
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_values_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false
+    },
+    {
+      "observed_at": "2026-10-23T21:04:12.138Z",
+      "observed_at_local": "2026-10-24T04:04:12.138+07:00",
+      "record_type": "POST_EIGHTH_TICK_REMOTE_READ_TIMEOUT_AND_TESSERACT_WIRING",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "c644718c2b390db7a6b2017847b632c0d7d8e51a",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "aca3b6472ab40c13c38350762a60b677680fabfd",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "a6850a136576f0474e4a8e6469a45c8f3bcd1292"
+      },
+      "last_verified_tick": {
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json",
+        "observed_at_utc": "2026-10-23T20:51:33.863313Z",
+        "sha256": "e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634",
+        "bytes": 450,
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "last_task_result": 0,
+        "missed_runs": 0,
+        "live_sensor_reading_confirmed": false
+      },
+      "later_windows_read": "TIMEOUT_NO_RESPONSE",
+      "list_directory_call_id": "651e7f2d-2891-4529-8ecd-e81a13e01958",
+      "list_directory_status": "PENDING",
+      "tesseract_source_wiring": {
+        "kilo_rs_blob_sha": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+        "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "build_time_variable_reference_verified": true,
+        "variable_presence_verified": false,
+        "issuer_key_materialized": false,
+        "ci_rerun": false
+      },
+      "dropbox_folder_listing": {
+        "checked_folders": [
+          "/Linh Hà/SENSOR_LOGS",
+          "/Linh Hà/SENSON_LOG",
+          "/Linh Hà/CHU_RIM_LIBRARY_SYNC_BRIDGE_20261014_0758",
+          "/Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT",
+          "/Linh Hà/Tệp Microsoft Copilot Chat",
+          "/Linh Hà/Tài liệu"
+        ],
+        "matching_key_filenames_found": false,
+        "content_absence_proven": false
+      },
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_values_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false
+    },
+    {
+      "observed_at": "2026-10-23T21:06:03Z",
+      "observed_at_local": "2026-10-24T04:06:03+07:00",
+      "record_type": "CODEX_CONFIG_PRIVATE_BACKUP_SOURCE_PACKET_AND_MOCK_ROUTE",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "590f9d68f41851d59361cc30a4516ef3199e3f96",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "b78971f07f804802999e12d620a25bc33e0402e2",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "a6850a136576f0474e4a8e6469a45c8f3bcd1292",
+        "CONFIG_SOL/CODEX_CLOUD_DEVICE_FAILOVER_CURRENT.json": "b6e27cc58b42f3faf292d046371f4ba3c57049ee"
+      },
+      "codex": {
+        "task_id": "CODEX_CONFIG_PRIVATE_BACKUP",
+        "task_state": "OPEN",
+        "source_authority": {
+          "path": "/Linh Hà/Tệp Microsoft Copilot Chat/00_SOURCE_AUTHORITY.md",
+          "modified": "2026-10-12T15:17:31Z",
+          "content_chars": 800,
+          "mode": "LOCAL_PACKET_ONLY",
+          "external_chat_or_raw_lookup_required": false
+        },
+        "session_ledger": {
+          "path": "/Linh Hà/Tệp Microsoft Copilot Chat/CURRENT_SESSION_04_LEDGER.json",
+          "modified": "2026-10-12T15:17:34Z",
+          "source_mode": "LOCAL_PACKET_ONLY",
+          "external_lookup": false,
+          "chat_history_lookup": false,
+          "raw_lookup": false,
+          "status": "CLOSED_FOR_HANDOFF"
+        },
+        "historical_mock_receipt": {
+          "path": "/Linh Hà/Tệp Microsoft Copilot Chat/SOL_CODEX_CLI_ROTATE_v1.0.1_RECEIPT.json",
+          "modified": "2026-10-12T15:17:34Z",
+          "route_proof": "PASS",
+          "authorization_value": "PLACEHOLDER_ONLY",
+          "expected_mock_error": "MOCK_ROUTE_REACHED",
+          "conclusion": "Historical custom-provider route proof only; not current Codex config or live credential proof."
+        },
+        "public_pointer": {
+          "path": "CONFIG_SOL/CODEX_CLOUD_DEVICE_FAILOVER_CURRENT.json",
+          "blob_sha": "b6e27cc58b42f3faf292d046371f4ba3c57049ee",
+          "local_config_size_bytes": 12950,
+          "local_config_sha256": "B68E2324E87421B9FAFF438F779762309BE813534AF3F1F389935ACF891CBB35",
+          "google_drive_replica_size_bytes": 4334,
+          "google_drive_replica_modified_utc": "2026-08-31T01:35:17.097Z",
+          "google_drive_replica_content_sha256": "UNKNOWN",
+          "google_drive_replica_latest_verified": false,
+          "target_h_partition_kind": "EFI_SYSTEM",
+          "target_h_write_result": "NOT_WRITTEN_BOOT_PARTITION_PROTECTION"
+        },
+        "current_execution_boundary": {
+          "local_config_read_this_run": false,
+          "auth_json_read": false,
+          "secret_values_read": false,
+          "google_drive_content_read_this_run": false,
+          "encrypted_backup_created": false,
+          "public_secret_copy_performed": false,
+          "reason": "Desktop read route timed out/pending; Drive connector not present in current tool inventory; historical receipt uses placeholder only."
+        },
+        "next_callable_edge": "When an authorized desktop or Drive route is available, read the current config.toml bytes only as needed for an encrypted backup, verify destination access control and offline readback, and never copy auth.json or secret values to public GitHub/Dropbox."
+      },
+      "result": "HISTORICAL_MOCK_ROUTE_VERIFIED_CURRENT_CONFIG_AND_ENCRYPTED_BACKUP_UNVERIFIED",
+      "task_closure": false,
+      "secret_values_read": false,
+      "public_secret_copy_performed": false
     }
   ],
   "latest_sync_observation": {
