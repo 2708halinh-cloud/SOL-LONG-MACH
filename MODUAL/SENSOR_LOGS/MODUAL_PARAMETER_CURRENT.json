@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-24T05:30:37.480+07:00",
+  "observed_at": "2026-10-24T05:36:25.996+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -65,7 +65,7 @@
       "report_is_historical_not_current_device_bytes": true
     },
     "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
-    "state": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
+    "state": "OPEN_SCHEDULED_TICK_TERMINATED_LIVE_STREAM_NOT_VERIFIED",
     "rule": "Do not overwrite existing Oct 09 local source metadata; do not call Dropbox CSV a working Windows Tick consumer; no raw sensor records or secrets committed; verify Windows Tick independently before closing."
   },
   "session_observations": [
@@ -3405,6 +3405,140 @@
       },
       "result": "PROVIDER_METADATA_VERIFIED_WINDOWS_FOLLOWUP_READBACK_PENDING_TESSERACT_CI_FAILURE_BEFORE_STEP_CONFIRMED",
       "next_callable_edge": "Resume read-only Windows process/receipt readback when the authorized route is responsive; meanwhile continue independent provider/runtime work. For TESSERACT, inspect authorized Actions runner controls and issuer-key carriers; do not rerun unchanged CI or infer source-code failure from empty step arrays."
+    },
+    {
+      "observed_at": "2026-10-24T05:36:25.996+07:00",
+      "observed_at_utc": "2026-10-23T22:36:25.996Z",
+      "record_type": "WINDOWS_TICK_TASK_TERMINATED_AND_EXACT_RECEIPT_AUDIT_20261024",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "1ea6332df829cb823884e8fd7b7e9d154f074e42",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "742200e6a22251f72d2e21204a2fffa67497860a",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "57698f8c4d3d402b29026554aba35c36e81dcef1"
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "exact_latest_receipt": {
+          "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T220144171458Z.json",
+          "bytes": 450,
+          "sha256": "c4cf8f0ca86208e0fb73129a45b5e3fb2a597a62ee5226db106010798b664713",
+          "observed_at_utc": "2026-10-23T22:01:44.171458Z",
+          "json_readback_via_running_powershell_probe": true,
+          "direct_read_file_call": "TIMED_OUT",
+          "source_bytes": 35389440,
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "source_modified_utc": "2026-10-23T08:45:56.2458701Z",
+          "source_file_written": false,
+          "synthetic_rows_added": 0,
+          "cloud_export_enabled": false,
+          "github_export_enabled": false,
+          "live_sensor_reading_confirmed": false
+        },
+        "task_state_observations": [
+          {
+            "device_clock": "2026-10-24T05:23:40.1468879+07:00",
+            "state": "Ready",
+            "last_run": "2026-10-24T05:21:33+07:00",
+            "next_run": "2026-10-24T05:26:32+07:00",
+            "last_result_decimal": 267014,
+            "last_result_hex": "0x41306",
+            "missed_runs": 0
+          },
+          {
+            "device_clock": "2026-10-24T05:27:53.6632914+07:00",
+            "state": "Running",
+            "last_run": "2026-10-24T05:26:33+07:00",
+            "next_run": "2026-10-24T05:31:32+07:00",
+            "last_result_decimal": 267009,
+            "last_result_hex": "0x41301",
+            "missed_runs": 0,
+            "consumer_pid": 7668,
+            "consumer_process": "python3.12.exe",
+            "cpu_seconds": 0,
+            "working_set_bytes": 3407872
+          },
+          {
+            "device_clock": "2026-10-24T05:29:34.6956489+07:00",
+            "state": "Ready",
+            "last_run": "2026-10-24T05:26:33+07:00",
+            "next_run": "2026-10-24T05:31:32+07:00",
+            "last_result_decimal": 267014,
+            "last_result_hex": "0x41306",
+            "missed_runs": 0,
+            "consumer_process_exists": false
+          }
+        ],
+        "execution_time_limit": "PT2M",
+        "latest_receipt_listing_stops_at": "2026-10-23T22:01:44.171458Z",
+        "no_new_receipt_after_last_run": true,
+        "consumer_source": {
+          "path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+          "bytes": 13245,
+          "sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+          "modified_utc": "2026-10-23T09:12:49.5766119Z"
+        },
+        "resolver_source": {
+          "path": "D:\\SENSOR_LOGS\\sensor_root_resolver.py",
+          "bytes": 7524,
+          "sha256": "117bcb01aefa908aac861f97c83dcccff7e84a5d080d771da09134378db98471",
+          "modified_utc": "2026-10-23T08:53:27.4969613Z"
+        },
+        "python_command": "C:\\Users\\halin\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+        "hwinfo": {
+          "pid": 17520,
+          "logging_enabled": false,
+          "csv_bytes": 39922785,
+          "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+          "modified_utc": "2026-10-21T02:20:45.8565035Z"
+        },
+        "w32time": {
+          "state": "Stopped",
+          "start_mode": "Manual",
+          "changed": false
+        },
+        "manual_consumer_attempt": {
+          "started": false,
+          "reason": "Remote Desktop Commander start_process returned No Desktop Commander device is currently online; no retry performed"
+        },
+        "interpretation": "The scheduled action started Python but did not produce a new receipt by the next read; Task Scheduler later reported 0x41306 and the process was gone. Exact root cause is not yet proven; inspect task history/Python startup/file-read timing before changing task settings.",
+        "source_mutation": false
+      },
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "raw_bytes_downloaded": false
+      },
+      "tesseract_desktop": {
+        "pr": 6,
+        "state": "OPEN",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": {
+          "39994207477": "failure",
+          "39994207667": "failure"
+        },
+        "failed_jobs_steps_empty": true,
+        "windows_job_log": "BlobNotFound 404",
+        "selfhosted_windows_verify": "SKIPPED_BY_PULL_REQUEST_CONDITION",
+        "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "issuer_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "invariants": {
+        "raw_sensor_values_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "source_overwritten": false,
+        "open_tasks_closed": false,
+        "tesseract_ci_rerun": false
+      },
+      "result": "SCHEDULED_CONSUMER_RUN_TERMINATED_WITHOUT_NEW_RECEIPT; ROOT_CAUSE_NOT_YET_PROVEN",
+      "next_callable_edge": "When the authorized Windows route responds, inspect the next scheduled run without duplicating a pending process; measure one-shot duration and Python launch path, compare receipt timestamps, then only adjust execution limits after the observed cause is established."
     }
   ],
   "privacy_policy": {
