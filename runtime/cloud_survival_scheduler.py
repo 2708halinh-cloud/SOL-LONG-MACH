@@ -174,8 +174,69 @@ def classify_open_ledger(root):
         states[state]=states.get(state,0)+1
     # Never change, drop or close an existing item. Augment on next-state only.
     present={str(item.get("id")) for item in data["tasks"]}
+    # The actual current 27 assignments are part of the executor's input,
+    # not five notional actor names added to a standalone report.
+    if len(data["tasks"]) >= 27:
+        for item in data["tasks"]:
+            if not item.get("assigned_subagent") or not item.get("assigned_agent_id"):
+                raise ValueError("OPEN_TASK_WITHOUT_ASSIGNED_AGENT:"+str(item.get("id")))
+            if item.get("real_execution_status") == "COMPLETED":
+                raise ValueError("TASK_CLOSED_WITHOUT_VERIFIED_CONSEQUENCE:"+str(item.get("id")))
     appended=[s for s in CURRENT_SIGNALS if s["id"] not in present]
     return data,states,appended
+
+def actual_task_selection(ledger, run_id):
+    """Choose the current callable edge without waking the user's Windows.
+    This selection changes what the hosted executor does; it does not close tasks.
+    """
+    items=ledger["tasks"]
+    host_sensitive=("WINDOWS","NEXTDNS","TESSERACT_REAL_BOOT","LOCAL_WSL",
+                    "ANDROID_OLLAMA","VHDX","BOOT_AGENT")
+    user_priorities=("WINDOWS_RECOVERY_DISK_SPACE",
+                     "SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+                     "HELLOCHECK_GO_TESTNET_R014_20261023")
+    by_id={t.get("id"):t for t in items}
+    priority=[by_id[key] for key in user_priorities if key in by_id]
+    eligible=[t for t in items if
+              t not in priority and not any(k in str(t.get("id","")) for k in host_sensitive)]
+    # Integer run IDs on GitHub produce a stable rotating slot. On manual
+    # nonnumeric invocation, use zero. No provider writes are triggered here.
+    slot=int(run_id) if str(run_id).isdigit() else 0
+    next_task=eligible[slot % len(eligible)] if eligible else None
+    selection=[{"id":t["id"],
+                "agent_id":t.get("assigned_agent_id"),
+                "subagent":t.get("assigned_subagent"),
+                "callability":"HOST_READBACK_REQUIRED" if t["id"]=="WINDOWS_RECOVERY_DISK_SPACE"
+                              else "GITHUB_SOURCE_ONLY" if t["id"] in
+                              ("SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+                               "HELLOCHECK_GO_TESTNET_R014_20261023")
+                              else "PROVIDER_SCOPE_CHECK_REQUIRED"}
+               for t in priority]
+    if next_task:
+        selection.append({"id":next_task["id"],
+                          "agent_id":next_task.get("assigned_agent_id"),
+                          "subagent":next_task.get("assigned_subagent"),
+                          "callability":"PROVIDER_SCOPE_CHECK_REQUIRED"})
+    return selection
+
+def verify_hellocheck_source(root):
+    """Directly check current Go source and configured TestNet network.
+    A source checksum is NOT a signed or broadcast blockchain transaction.
+    """
+    paths=("integrations/hellocheck/go.mod",
+           "integrations/hellocheck/transaction.go",
+           "integrations/hellocheck/rpc.go",
+           "integrations/hellocheck/cmd/hellocheck/main.go")
+    snapshots=[fingerprint(root,x) for x in paths]
+    if not all(x["exists"] for x in snapshots):
+        return {"passed":False,"reason":"HELLOCHECK_GO_SOURCE_MISSING"}
+    rpc=(root/paths[2]).read_text(encoding="utf-8")
+    passed=all(x in rpc for x in ("getblockchaininfo","sendrawtransaction",
+                                  'chain.Chain!="test"', 'chain.Chain!="testnet4"'))
+    return {"passed":passed,
+            "source_paths":snapshots,
+            "real_testnet_transaction_broadcast":False,
+            "rpc_secrets_in_artifact":False}
 
 def build(root,now,run_id,sha):
     ledger,states,appended=classify_open_ledger(root)
@@ -189,6 +250,7 @@ def build(root,now,run_id,sha):
        "R014_RESPONSE_REGRESSION":verify_r014(root),
        "THIT_THO_CONTRACTS":verify_contracts(root),
        "T005_HELLOHABIT_ANDROID":verify_t005(root),
+       "HELLOCHECK_GO_TESTNET_SOURCE":verify_hellocheck_source(root),
     }
     return {
       "schema":"SOL_STAMPS_SURVIVAL_INDEPENDENT_CONTINUATION_V1",
@@ -208,6 +270,8 @@ def build(root,now,run_id,sha):
       "STAMP_LIVE":{"cloud_actions":cloud_actions,
                     "all_cloud_actions_passed":all(x["passed"] for x in cloud_actions.values()),
                     "source_tasks_carried_forward":len(ledger["tasks"]),
+                    "live_subagent_selection":actual_task_selection(ledger,run_id),
+                    "permission_policy":"HIGHEST_GRANTED_PERSONAL_CONNECTOR_WITHIN_AUTHORIZED_SCOPE",
                     "subagent_offer_routes":routing,
                     "routes_cover_all_source_tasks":len(routing)==len(ledger["tasks"]),
                     "n8n_agents_autonomously_executed":False,
