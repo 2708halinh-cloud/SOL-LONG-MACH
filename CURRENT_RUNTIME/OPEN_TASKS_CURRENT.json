@@ -165,6 +165,14 @@
           "result": "R014_GUARD_REGRESSION_PASS_ROOT_CARRIER_RESTORATION_STILL_OPEN",
           "next_callable_edge": "Use an actually authorized Drive/Dropbox/Takeout connector or an already verified raw export carrier; preserve provider object IDs, revisions and hashes. Do not substitute derived archives or same-name recreated objects.",
           "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED; no task closure."
+        },
+        {
+          "observed_at": "2026-10-24T04:46:45+07:00",
+          "source": "GitHub provider timestamp readback for commit c1a1f4822c27c166731c0b7c4ec6dfff9475b63f",
+          "correction_event_id": "LEDGER_STAMP_TIMEBASE_CORRECTION_20261024T044645Z",
+          "correction": "The prior live_progress entry used 04:44:30+07 from the automation clock, while its containing commit was created at 04:46:44+07. Preserve the earlier entry but use this provider-anchored time correction for chronology. The 04:45:00+07 ADMIN record is not future relative to this commit time; its payload remains historical and was not revalidated in this correction.",
+          "result": "TIMESTAMP_ORDER_CORRECTED_APPEND_ONLY; TASK_TARGET_STILL_OPEN",
+          "status_effect": "Keep SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023 OPEN and OPEN_NOT_PROVEN_COMPLETED; no task closure."
         }
       ]
     },
@@ -221,6 +229,14 @@
           "result": "HELLOCHECK_CLOUD_BUILD_TESTS_AND_BINARY_HASHES_VERIFIED_TESTNET_UTXO_BROADCAST_UNVERIFIED",
           "next_callable_edge": "Use an authorized TestNet node for read-only UTXO verification when available; only broadcast with explicit authorization and never invent a TXID.",
           "status_effect": "Keep HELLOCHECK OPEN and OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T04:46:45+07:00",
+          "source": "GitHub provider timestamp readback for commit c1a1f4822c27c166731c0b7c4ec6dfff9475b63f",
+          "correction_event_id": "LEDGER_STAMP_TIMEBASE_CORRECTION_20261024T044645Z",
+          "correction": "The prior live_progress entry used 04:44:30+07 from the automation clock, while its containing commit was created at 04:46:44+07. Preserve the earlier entry but use this provider-anchored time correction for chronology. The 04:45:00+07 ADMIN record is not future relative to this commit time; its payload remains historical and was not revalidated in this correction.",
+          "result": "TIMESTAMP_ORDER_CORRECTED_APPEND_ONLY; TASK_TARGET_STILL_OPEN",
+          "status_effect": "Keep HELLOCHECK_GO_TESTNET_R014_20261023 OPEN and OPEN_NOT_PROVEN_COMPLETED; no task closure."
         }
       ]
     },
@@ -1801,6 +1817,14 @@
       "open_task_count": 28,
       "task_statuses_unchanged": true,
       "task_closure": false
+    },
+    "timestamp_correction_c1a1f482": {
+      "observed_at": "2026-10-24T04:46:45+07:00",
+      "commit_sha": "c1a1f4822c27c166731c0b7c4ec6dfff9475b63f",
+      "provider_time_anchor_utc": "2026-10-23T21:46:44Z",
+      "corrected_prior_event_id": "PR24_LATEST_HEAD_CI_ARTIFACT_AND_LEDGER_TIMESTAMP_AUDIT_20261024T044430Z",
+      "future_stamp_classification_superseded": true,
+      "prior_records_rewritten": false
     }
   },
   "sinks": {
@@ -3948,6 +3972,40 @@
       "next_callable_edge": "Keep source-export recovery and R-000 provider relation open until an authorized Drive/Dropbox/Takeout readback exists; keep TestNet UTXO/broadcast and live sensor stream unverified; do not rerun TESSERACT Desktop CI without a verified runner-assignment/entitlement change.",
       "task_closure": false,
       "prior_entry_policy": "Append-only; preserve all existing task states, prior events, and source identities."
+    },
+    {
+      "id": "LEDGER_STAMP_TIMEBASE_CORRECTION_20261024T044645Z",
+      "record_type": "STAMP_TIMEBASE_CORRECTION_APPEND_ONLY",
+      "observed_at": "2026-10-24T04:46:45+07:00",
+      "source": "GitHub commit API for c1a1f4822c27c166731c0b7c4ec6dfff9475b63f and PR #24 updated_at readback",
+      "time_anchor": {
+        "commit_sha": "c1a1f4822c27c166731c0b7c4ec6dfff9475b63f",
+        "commit_author_date_utc": "2026-10-23T21:46:44Z",
+        "commit_committer_date_utc": "2026-10-23T21:46:44Z",
+        "pr_updated_at_utc": "2026-10-23T21:46:45Z",
+        "equivalent_local_time": "2026-10-24T04:46:44+07:00"
+      },
+      "correction": {
+        "prior_event_id": "PR24_LATEST_HEAD_CI_ARTIFACT_AND_LEDGER_TIMESTAMP_AUDIT_20261024T044430Z",
+        "prior_observed_at": "2026-10-24T04:44:30+07:00",
+        "finding": "The automation runtime clock supplied for this turn lagged the actual GitHub write/readback time. The event's 04:44:30 stamp precedes the commit containing it and must not be treated as the exact completion time of the ledger write.",
+        "earlier_record_id": "ADMIN_R000_ID_ROLE_CORRECTION_20261024T0445Z",
+        "earlier_record_observed_at": "2026-10-24T04:45:00+07:00",
+        "corrected_interpretation": "At the provider-anchored commit time 04:46:44+07, the 04:45 record was already in the past. The earlier 'future stamp' classification was a false positive caused by using the stale automation clock as the time anchor. Its payload was not revalidated in this correction; only its timestamp ordering is corrected.",
+        "preserve_prior_records": true,
+        "no_retroactive_rewrite": true
+      },
+      "result": "TIMEBASE_CORRECTION_APPEND_ONLY; FUTURE_STAMP_FLAG_SUPERSEDED_BY_PROVIDER_TIME_ANCHOR",
+      "task_effect": {
+        "task_count": 28,
+        "task_statuses_changed": false,
+        "task_closure": false,
+        "source_export_retrieval_completed": false,
+        "windows_host_action_performed": false,
+        "bitcoin_testnet_broadcast": false
+      },
+      "next_callable_edge": "Use provider timestamps from exact readbacks as the live time anchor; keep original export retrieval, R-000 provider identity relation, live sensor stream and TestNet readback open.",
+      "prior_entry_policy": "Append-only; previous records remain intact and this entry corrects their temporal interpretation without changing their bytes."
     }
   ],
   "energy_protection_current": {
