@@ -417,12 +417,14 @@
       "goal": "Continue pre-existing TESSERACT Desktop tasks without losing prior checkpoint",
       "source": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
       "observed": [
-        "Earlier PR#6 workflow, reviewer and CI runner assignment issues remain explicitly recorded in prior checkpoint"
+        "Earlier PR#6 workflow, reviewer and CI runner assignment issues remain explicitly recorded in prior checkpoint",
+        "2026-10-23 21:18+07:00: fresh read of PR #6 workflow run 39153474587 still shows hosted jobs fail before step output, selfhosted verification skipped, readback failure, zero artifacts; no rerun. Accessible code search returned zero results for issuer-key variable and issuer/Ed25519 terms. Current resume pointer head 5d0a44bb... differs from older head embedded in WORK_CHECKPOINT.json (57c285c8...)."
       ],
       "next": [
         "Find the actual Kilo/X-TiMe issuer public key from an authorized existing provider; GitHub code search found only variable references and no PEM public-key literal in the accessible search scope.",
         "Verify runner assignment/entitlement changed before rerunning workflow 39153474587; current recorded jobs fail-before-step and self-hosted verification is skipped.",
-        "Keep PR #6 OPEN until a current-head CI readback is TRUE and the issuer trust anchor is provisioned from an authorized source."
+        "Keep PR #6 OPEN until a current-head CI readback is TRUE and the issuer trust anchor is provisioned from an authorized source.",
+        "Resolve the WORK_CHECKPOINT.json embedded-head mismatch against the current resume pointer without rewriting historical evidence; do not rerun CI until runner assignment changes."
       ],
       "guard": "Do not overwrite or relabel inherited task done from this ledger",
       "assigned_subagent": "SubAisstangtManage-ORCHESTRATOR",
@@ -456,6 +458,19 @@
           "result": "PR_OPEN_RUNNER_ASSIGNMENT_UNRESOLVED_ISSUER_KEY_UNVERIFIED",
           "next_callable_edge": "Continue authorized issuer public-key/signer carrier investigation and obtain source-backed runner-state change before any CI rerun.",
           "status_effect": "Keep OPEN_CARRIED; no key invented, no PR merge, no CI rerun."
+        },
+        {
+          "observed_at": "2026-10-23T21:18:48+07:00",
+          "source": "GitHub PR #6 read-only job/artifact readback, workflow and kilo.rs fetch, scoped code search",
+          "actions_and_receipts": [
+            "Workflow 39153474587: Linux/macOS/Windows/TESSERACT_OS failures, selfhosted_windows_verify skipped, readback failed; zero artifacts.",
+            "Workflow blob SHA 6552d13a1f8004b0e3d36fd585dd75cdd22acf12 and kilo.rs blob SHA f1a7abe2d30cf720d2d1207335325d42a2af4e16 were read at the target branch.",
+            "Code search returned zero results for the public-key variable and issuer/Ed25519 query in accessible indexed scope; this is not proof no key exists in another provider.",
+            "Resume pointer current head 5d0a44bbd0431e87cfa396c5983cea549d93fe8f differs from WORK_CHECKPOINT.json embedded head 57c285c8b2b11c9c5682f1715da313fcaee07eb0."
+          ],
+          "result": "RUNNER_ASSIGNMENT_UNRESOLVED_ISSUER_KEY_UNVERIFIED_CHECKPOINT_HEAD_MISMATCH",
+          "next_callable_edge": "Reconcile the stale checkpoint head by an additive update only after checking branch history; do not rerun CI until a runner-state change is independently verified.",
+          "status_effect": "Keep OPEN_CARRIED; no PR merge and no CI rerun."
         }
       ]
     },
@@ -578,7 +593,8 @@
       "next": [
         "Verify the next scheduled receipt after device-clock time 2026-10-23T20:06:32+07:00; account for the approximately 314-second clock skew.",
         "Use an authorized elevated route to start/synchronize W32Time if permitted; the current Start-Service attempt failed and no resync was attempted.",
-        "Continue HWiNFO logging investigation via a safely identifiable supported UI route or verified Pro entitlement; require a fresh sample and before/after evidence."
+        "Continue HWiNFO logging investigation via a safely identifiable supported UI route or verified Pro entitlement; require a fresh sample and before/after evidence.",
+        "Current observation: both authorized Desktop Commander inventories report Windows and localhost OFFLINE; do not treat the 20:01 historical tick receipt as a current readback."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -680,6 +696,18 @@
           "result": "SCHEDULED_TICK_130134_VERIFIED_DEVICE_CLOCK_SKEW_PERSISTS_LIVE_STREAM_UNVERIFIED",
           "next_callable_edge": "Verify the next receipt after device-clock time 20:06:32+07:00; continue HWiNFO logging through a safely identifiable supported route; use only an authorized elevated route for W32Time service control.",
           "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
+        },
+        {
+          "observed_at": "2026-10-23T21:18:48+07:00",
+          "source": "GitHub main exact-target reads + Dropbox Outlook metadata + both Desktop Commander device inventories",
+          "actions_and_receipts": [
+            "Fresh provider metadata readback confirms /Linh Hà/SENSOR_LOGS/windows_SENSON.CSV revision 0165dc1e4794ab00000000395cdfd73, 35,389,440 bytes, server_modified 2026-10-14T00:20:03Z; no bytes downloaded.",
+            "Desktop Commander and Remote Desktop Commander both report DESKTOP-86ITNQ4 OFFLINE (last seen 76h) and localhost OFFLINE (last seen 1h). No current Windows Scheduled Task or receipt readback occurred this run.",
+            "The prior exact receipt and source hash remain historical evidence only; live sensor stream remains unverified."
+          ],
+          "result": "PROVIDER_METADATA_FRESH_DEVICE_OFFLINE_NO_NEW_TICK_READBACK",
+          "next_callable_edge": "Continue authorized cloud/provider work; on an available authorized Windows route, inspect newest tick receipt and HWiNFO before/after file metadata/hash.",
+          "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED; no task closure."
         }
       ]
     },
@@ -1371,6 +1399,23 @@
       "source_sha256_unchanged": true,
       "mutation_executed": false,
       "cloud_host_wiring": "NOT_VERIFIED",
+      "task_closure": false
+    },
+    {
+      "id": "PROVIDER_AND_TESSERACT_READBACK_20261023T141848Z",
+      "kind": "FRESH_PROVIDER_READ_DEVICE_INVENTORY_AND_INDEPENDENT_TESSERACT_SOURCE_READBACK",
+      "observed_at": "2026-10-23T21:18:48+07:00",
+      "actions_and_receipts": [
+        "Fresh-read all four required SOL-LONG-MACH reentry sources on main; blob SHAs matched the fetched current refs.",
+        "Dropbox Outlook metadata for the exact windows_SENSON.CSV path matched the recorded revision and size; no bytes were downloaded and no content hash was asserted.",
+        "Both Desktop Commander device inventories report DESKTOP-86ITNQ4 and localhost OFFLINE; no new Windows tick or HWiNFO readback was possible in this run.",
+        "Read TESSERACT PR #6 workflow job list and artifact list without rerunning CI; jobs remain fail-before-step/skipped and artifacts count is zero.",
+        "Read TESSERACT workflow and kilo.rs at exact branch paths; searched the accessible GitHub code index for the issuer public-key variable and issuer/Ed25519 references, with zero results in that search scope.",
+        "Found a provenance mismatch: current resume pointer identifies PR head 5d0a44bbd0431e87cfa396c5983cea549d93fe8f, while WORK_CHECKPOINT.json embeds older head 57c285c8b2b11c9c5682f1715da313fcaee07eb0. No PR branch write or CI rerun was made."
+      ],
+      "result": "PROVIDER_METADATA_VERIFIED_DEVICE_OFFLINE_TESSERACT_RUNNER_AND_ISSUER_STILL_OPEN",
+      "exact_target_readback": true,
+      "source_mutation": false,
       "task_closure": false
     }
   ],
@@ -2954,6 +2999,99 @@
         "Continue HWiNFO logging and independent TESSERACT issuer/runner investigation."
       ],
       "prior_entry_policy": "Append-only; prior observations and task states preserved."
+    },
+    {
+      "observed_at": "2026-10-23T21:18:48+07:00",
+      "record_type": "CURRENT_PROVIDER_FRESH_READ_DEVICE_OFFLINE_TESSERACT_DESKTOP_READBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "437b7e9de32b2ef8e8e77815509fe253c5d988e6",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "e66dc04e81567454b26a32d83a0fc2ccb4a4283b",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "7a7b9b1a7c8286134ff8625360736e98549da48f"
+      },
+      "provider": {
+        "name": "Dropbox Outlook",
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "bytes_downloaded_this_run": false,
+        "content_hash_verified_this_run": false
+      },
+      "device_access": {
+        "desktop_commander_inventory_readback": true,
+        "remote_desktop_commander_inventory_readback": true,
+        "DESKTOP_86ITNQ4": {
+          "status": "OFFLINE",
+          "last_seen_ago": "76h"
+        },
+        "localhost": {
+          "status": "OFFLINE",
+          "last_seen_ago": "1h"
+        },
+        "older_DESKTOP_registration": {
+          "status": "OFFLINE",
+          "last_seen_ago": "302h"
+        },
+        "windows_target_readback_this_run": false,
+        "latest_tick_receipt_is_historical": true
+      },
+      "last_verified_windows_snapshot_not_revalidated": {
+        "target": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "bytes": 35389440,
+        "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "last_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T130134255063Z.json",
+        "last_verified_receipt_sha256": "ab18ffb41fe599e48425103ab21019a34e7a4203be8e7de2ad716363bc3cd997",
+        "live_sensor_reading_confirmed": false
+      },
+      "independent_branch": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "current_head_from_resume_pointer": "5d0a44bbd0431e87cfa396c5983cea549d93fe8f",
+        "checkpoint_blob_sha": "68449eb3e64d076724958b4e9839e8502ac3e3cf",
+        "checkpoint_embedded_head": "57c285c8b2b11c9c5682f1715da313fcaee07eb0",
+        "checkpoint_embedded_head_is_stale_vs_pointer": true,
+        "workflow_run_id": 39153474587,
+        "jobs": {
+          "linux": "failure_before_step_output",
+          "macos": "failure_before_step_output",
+          "windows": "failure_before_step_output",
+          "tesseract_os": "failure_before_step_output",
+          "selfhosted_windows_verify": "skipped",
+          "readback": "failure"
+        },
+        "artifacts": 0,
+        "code_search": {
+          "query_public_key_variable_total": 0,
+          "query_issuer_ed25519_total": 0,
+          "scope": "accessible GitHub code-search results for 2708halinh-cloud/x-time-web"
+        },
+        "rerun_performed": false,
+        "source_code_changed": false
+      },
+      "state_boundary": "WINDOWS_TARGET_NOT_READ_THIS_RUN_DEVICE_OFFLINE; DROPBOX_METADATA_VERIFIED_BYTES_NOT_FETCHED; TESSERACT_RUNNER_STATE_UNCHANGED_ISSUER_KEY_UNVERIFIED",
+      "invariants": {
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "open_tasks_closed": false,
+        "tesseract_ci_rerun": false
+      },
+      "next_action": [
+        "Continue on connected provider/GitHub branches while Windows endpoints are offline; do not represent historical tick receipt as a current device read.",
+        "When an already-authorized Windows carrier is available, read the newest scheduled receipt and HWiNFO CSV before/after metadata plus content hash.",
+        "For TESSERACT Desktop, reconcile the stale WORK_CHECKPOINT embedded head against the current resume pointer without rewriting history; verify runner assignment/entitlement changed before any CI rerun.",
+        "Continue locating the real issuer public key from authorized carriers; code search returning zero results is not proof it is absent from other providers."
+      ],
+      "exact_target_readback": {
+        "modual_parameter_current": true,
+        "modual_blob_sha": "7a7b9b1a7c8286134ff8625360736e98549da48f",
+        "modual_commit_sha": "6a40f251391e3d9b761918d360ee629a7df0edca"
+      },
+      "prior_entry_policy": "Append-only; all prior observations and task states preserved."
     }
   ]
 }
