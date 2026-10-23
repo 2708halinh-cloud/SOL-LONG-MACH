@@ -4591,6 +4591,38 @@
       },
       "result": "EXISTING_ADMIN_BYTES_AND_XIV_VERIFIED; IDENTITY_ANCHOR_NOT_RAW_EXPORT; NO_NEW_RAW_EXPORT_BYTES",
       "status_effect": "No task status or real_execution_status changed."
+    },
+    {
+      "id": "PR24_PROVIDER_TIMEBASE_CORRECTION_20261024",
+      "kind": "APPEND_ONLY_PROVIDER_TIMESTAMP_CORRECTION",
+      "observed_at": "2026-10-24",
+      "time_precision": "DATE_ONLY",
+      "source": "GitHub Git commit metadata readback for merge commit 04e7281 and its readback commit 2d848e8",
+      "corrected_event_ids": [
+        "PR24_CURRENT_MAIN_RECONCILIATION_20261024T062425Z",
+        "PR24_RECONCILIATION_READBACK_20261024T062425Z"
+      ],
+      "correction": {
+        "prior_observed_at_value": "2026-10-24T06:24:25+07:00",
+        "reason": "That value came from the automation run-start clock, not the time of the GitHub action/readback; it precedes the provider-created commits and must not be used as the event time.",
+        "merge_commit": {
+          "sha": "04e72812231d8545317ac84e033e4d077b3a08b3",
+          "committer_date_utc": "2026-10-23T23:27:32Z"
+        },
+        "readback_commit": {
+          "sha": "2d848e8023e5e37c72116469afccda1dc3fe3ec3",
+          "committer_date_utc": "2026-10-23T23:28:01Z"
+        },
+        "bounded_interval_for_ref_update_and_readback": {
+          "lower_bound_utc": "2026-10-23T23:27:32Z",
+          "upper_bound_utc": "2026-10-23T23:28:01Z",
+          "exact_instant_recorded": false
+        },
+        "prior_records_rewritten": false,
+        "chronology_policy": "Keep original entries for provenance; use this provider-anchored interval when interpreting the action/readback chronology."
+      },
+      "result": "TIMESTAMP_CORRECTION_APPEND_ONLY; ORIGINAL_RECORDS_PRESERVED",
+      "status_effect": "No task status, real_execution_status, source object, or task closure changed."
     }
   ],
   "energy_protection_current": {
