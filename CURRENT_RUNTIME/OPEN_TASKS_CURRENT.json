@@ -152,6 +152,19 @@
           "result": "LIBRARY_ARCHIVE_FORMAT_SUBFOLDERS_EMPTY; NO_NEW_RAW_EXPORT_CARRIER",
           "next_callable_edge": "Continue from exact provider-side JINEY/FUNIX/DAT NGUYEN folder IDs or a verified raw carrier when an authorized Drive/Dropbox/Takeout connector is available; do not substitute same-name derived archives.",
           "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T04:44:30+07:00",
+          "source": "GitHub Actions run 40028802500, Secret Exposure Guard run 40028802537, downloaded artifact 12534146778; exact ZIP/JSON CRC and SHA-256 readback",
+          "actions_and_receipts": [
+            "Windows survival continuation workflow succeeded on PR #24 head fccfd8ea809bf8e75ef5a1a77b4ad09677e4d3eb; Secret Exposure Guard also succeeded on the same head.",
+            "Artifact 12534146778 is 3,848 bytes, SHA-256 2e2bde74632f6187dca3d0526074e1e419fa06ec785065b463220a0e104762a3; CRC test passed. Embedded JSON is 20,759 bytes, SHA-256 abdf1ac89caedc99d4e61dcba6a65a0070d7973671d89bd7ad08c7c0f5922148; JSON parsing passed.",
+            "The hosted R-014 response regression reported 36 tests passed. This verifies guard behavior only; no original Drive root or JINEY/FUNIX/DAT NGUYEN export bytes were retrieved, and no provider-side restoration consequence was observed.",
+            "Ledger temporal audit found a pre-existing record timestamped 04:45:00+07, 30 seconds later than this turn's 04:44:30+07 runtime observation. It is preserved but not treated as a live event in this turn."
+          ],
+          "result": "R014_GUARD_REGRESSION_PASS_ROOT_CARRIER_RESTORATION_STILL_OPEN",
+          "next_callable_edge": "Use an actually authorized Drive/Dropbox/Takeout connector or an already verified raw export carrier; preserve provider object IDs, revisions and hashes. Do not substitute derived archives or same-name recreated objects.",
+          "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED; no task closure."
         }
       ]
     },
@@ -195,6 +208,19 @@
           "result": "HELLOCHECK_CLOUD_BUILD_AND_TESTS_PASS_TESTNET_UTXO_AND_BROADCAST_NOT_VERIFIED",
           "next_callable_edge": "Use an actually authorized Bitcoin Core TestNet provider for read-only UTXO verification if available; do not broadcast a transaction or invent a TXID.",
           "status_effect": "Keep status OPEN and real_execution_status OPEN_NOT_PROVEN_COMPLETED; hosted build/tests do not prove live TestNet UTXO verification or broadcast."
+        },
+        {
+          "observed_at": "2026-10-24T04:44:30+07:00",
+          "source": "GitHub Actions run 40028802500 and downloaded artifact 12534540169; ZIP CRC and embedded SHA256SUMS readback",
+          "actions_and_receipts": [
+            "Cloud continuation Go compile/test step succeeded on PR #24 head fccfd8ea809bf8e75ef5a1a77b4ad09677e4d3eb.",
+            "Artifact 12534540169 is 5,996,904 bytes, SHA-256 d80e4f21514bf217984779149117bac7c5ee294e309c88fa5171e97478f6d1f5; CRC test passed and the archive contains SHA256SUMS plus Linux and Windows amd64 binaries.",
+            "Recomputed SHA-256 values match the embedded manifest for hellocheck-linux-amd64 (7cad2479bdf877e42830bd142e85905b36fa35027c2351671c0a5909ad2d0b47) and hellocheck-windows-amd64.exe (0c636362b1bb32b387b967ccb680b2635c49c4ccc39b576b30507e5c4bb7339d).",
+            "No authorized Bitcoin Core TestNet UTXO read or real transaction broadcast was performed; no TXID is claimed."
+          ],
+          "result": "HELLOCHECK_CLOUD_BUILD_TESTS_AND_BINARY_HASHES_VERIFIED_TESTNET_UTXO_BROADCAST_UNVERIFIED",
+          "next_callable_edge": "Use an authorized TestNet node for read-only UTXO verification when available; only broadcast with explicit authorization and never invent a TXID.",
+          "status_effect": "Keep HELLOCHECK OPEN and OPEN_NOT_PROVEN_COMPLETED."
         }
       ]
     },
@@ -1761,6 +1787,20 @@
       "current_config_verified": false,
       "live_credentials_verified": false,
       "secret_values_read": false
+    },
+    "github_actions_continuation_40028802500": {
+      "observed_at": "2026-10-24T04:44:30+07:00",
+      "run_id": 40028802500,
+      "head_sha": "fccfd8ea809bf8e75ef5a1a77b4ad09677e4d3eb",
+      "continuation_artifact_id": 12534146778,
+      "continuation_zip_sha256": "2e2bde74632f6187dca3d0526074e1e419fa06ec785065b463220a0e104762a3",
+      "continuation_json_sha256": "abdf1ac89caedc99d4e61dcba6a65a0070d7973671d89bd7ad08c7c0f5922148",
+      "hellocheck_artifact_id": 12534540169,
+      "hellocheck_zip_sha256": "d80e4f21514bf217984779149117bac7c5ee294e309c88fa5171e97478f6d1f5",
+      "hellocheck_embedded_sha256s_match": true,
+      "open_task_count": 28,
+      "task_statuses_unchanged": true,
+      "task_closure": false
     }
   },
   "sinks": {
@@ -3827,6 +3867,87 @@
       "result": "SECOND_SYNC_CLOUD_CI_AND_ARTIFACT_BYTES_VERIFIED; NO_TASK_CLOSED",
       "next_callable_edge": "Do not infer Windows recovery, TestNet broadcast, or original export restoration from cloud CI. Keep original export retrieval and R-000 provider ID relation OPEN.",
       "task_closure": false
+    },
+    {
+      "id": "PR24_LATEST_HEAD_CI_ARTIFACT_AND_LEDGER_TIMESTAMP_AUDIT_20261024T044430Z",
+      "record_type": "PR24_LATEST_HEAD_CI_ARTIFACT_AND_LEDGER_TIMESTAMP_AUDIT",
+      "observed_at": "2026-10-24T04:44:30+07:00",
+      "source": "GitHub Actions run metadata, job readback, downloaded artifact ZIP bytes, and current branch ledger readback",
+      "github": {
+        "repo": "2708halinh-cloud/SOL-LONG-MACH",
+        "pr_number": 24,
+        "head_sha": "fccfd8ea809bf8e75ef5a1a77b4ad09677e4d3eb",
+        "base_sha": "59c93b310f7fda7c76eb0a48b08f9a80132c0764",
+        "continuation_run_id": 40028802500,
+        "continuation_conclusion": "success",
+        "secret_guard_run_id": 40028802537,
+        "secret_guard_conclusion": "success",
+        "event": "pull_request"
+      },
+      "continuation_artifact": {
+        "id": 12534146778,
+        "name": "windows-survival-open-continuation",
+        "zip_bytes": 3848,
+        "zip_sha256": "2e2bde74632f6187dca3d0526074e1e419fa06ec785065b463220a0e104762a3",
+        "crc_test": "PASS",
+        "member": "SURVIVAL_OPEN_CONTINUATION_CURRENT.json",
+        "member_bytes": 20759,
+        "member_sha256": "abdf1ac89caedc99d4e61dcba6a65a0070d7973671d89bd7ad08c7c0f5922148",
+        "json_parse": "PASS",
+        "execution_commit_sha": "8e770a11351517dec11da5be328ba2d6e2439b65",
+        "source_task_count": 28,
+        "source_task_states": {
+          "OPEN": 9,
+          "OPEN_CARRIED": 2,
+          "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+          "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+          "IN_PROGRESS": 3
+        },
+        "all_cloud_actions_passed": true,
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "windows_host_actions_blocked": true,
+        "bitcoin_testnet_broadcast": false
+      },
+      "hellocheck_artifact": {
+        "id": 12534540169,
+        "name": "hellocheck-offline-linux-windows-amd64",
+        "zip_bytes": 5996904,
+        "zip_sha256": "d80e4f21514bf217984779149117bac7c5ee294e309c88fa5171e97478f6d1f5",
+        "crc_test": "PASS",
+        "members": [
+          "SHA256SUMS",
+          "hellocheck-linux-amd64",
+          "hellocheck-windows-amd64.exe"
+        ],
+        "embedded_sha256_checks": {
+          "hellocheck-linux-amd64": "7cad2479bdf877e42830bd142e85905b36fa35027c2351671c0a5909ad2d0b47",
+          "hellocheck-windows-amd64.exe": "0c636362b1bb32b387b967ccb680b2635c49c4ccc39b576b30507e5c4bb7339d"
+        },
+        "sha256sum_matches": true,
+        "live_testnet_utxo_or_broadcast_verified": false
+      },
+      "tests": {
+        "r014_response_regression": "PASS; 36 tests",
+        "hellocheck_go_compile_and_tests": "PASS; workflow step succeeded",
+        "er_sql_schema": "PASS; 12 tables found",
+        "hellohabit_t005_adapter": "PASS; app installation and real habit-data sync not proven"
+      },
+      "timestamp_anomaly": {
+        "source_record_id": "ADMIN_R000_ID_ROLE_CORRECTION_20261024T0445Z",
+        "source_record_observed_at": "2026-10-24T04:45:00+07:00",
+        "current_runtime_observed_at": "2026-10-24T04:44:30+07:00",
+        "delta_seconds": 30,
+        "classification": "FUTURE_STAMP_RELATIVE_TO_THIS_RUNTIME_READBACK; NOT_ACCEPTED_AS_STAMP_LIVE_IN_THIS_TURN",
+        "prior_record_preserved": true,
+        "archive_payload_revalidated_in_this_turn": false,
+        "action": "Preserve the prior record without rewriting it; require a later source-bound readback before treating its timestamp as a live event."
+      },
+      "result": "LATEST_CLOUD_CI_AND_ARTIFACT_BYTES_VERIFIED; LEDGER_TIMESTAMP_ANOMALY_FLAGGED; ORIGINAL_EXPORT_RETRIEVAL_AND_LIVE_DEVICE_EDGES_STILL_OPEN",
+      "next_callable_edge": "Keep source-export recovery and R-000 provider relation open until an authorized Drive/Dropbox/Takeout readback exists; keep TestNet UTXO/broadcast and live sensor stream unverified; do not rerun TESSERACT Desktop CI without a verified runner-assignment/entitlement change.",
+      "task_closure": false,
+      "prior_entry_policy": "Append-only; preserve all existing task states, prior events, and source identities."
     }
   ],
   "energy_protection_current": {
