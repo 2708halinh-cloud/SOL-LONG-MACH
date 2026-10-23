@@ -1521,6 +1521,108 @@
         "Continue HWiNFO logging investigation using the verified CrossDevice path; require fresh sample and before/after mtime/hash evidence.",
         "Continue issuer-key search from authorized carriers outside the scanned Dropbox body and reentry ZIP; do not rerun TESSERACT PR CI until runner assignment or entitlement change is verified."
       ]
+    },
+    {
+      "observed_at": "2026-10-23T18:25:00.838Z",
+      "record_type": "FRESH_PROVIDER_METADATA_AND_DEVICE_ROUTE_PROBE_20261024",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "71a139ef00ed93e40308d31f3cba7e9c5533bd93",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "36d36ca6b1423292b20689cb98110933fdcc80e6",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "25a64506fafe76649990e466fe9ce4fee2eccdb4"
+      },
+      "provider": {
+        "name": "Dropbox Outlook",
+        "sensor_source": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true,
+          "bytes_downloaded_this_run": false,
+          "content_hash_verified_this_run": false
+        },
+        "sensor_logs_folder": {
+          "path": "/Linh Hà/SENSOR_LOGS",
+          "direct_children_count": 56,
+          "has_more": false,
+          "listing_complete": true
+        },
+        "relay_source_carrier": {
+          "path": "/Linh Hà/SENSOR_LOGS/TESSERACT_OS_6D_RCLONE_RELAY_SOURCE.json",
+          "extracted_text_readback": true,
+          "metadata_server_modified_utc": "2026-10-12T19:59:31Z",
+          "declared_source": "D:\\SENSOR_LOGS",
+          "declared_target": "W:\\Drive của tôi\\.Assistant\\LONG MẠCH SOL - HẬU THIÊN TĨNH\\SOL CU NHỎ\\TESSERACT_OS_6D",
+          "declared_carrier": "RCLONE_TO_CLOUD_MOUNT_W",
+          "live_relay_execution_verified": false
+        }
+      },
+      "windows_device": {
+        "device": "DESKTOP-86ITNQ4",
+        "remote_device_discovery": "ONLINE",
+        "primary_desktop_commander_discovery": "OFFLINE",
+        "command_readback_attempted": true,
+        "command_readback_result": "NOT_AVAILABLE_THIS_RUN: tool rejected action with linked-account eligibility error",
+        "direct_windows_read_this_run": false,
+        "new_tick_receipt_readback": false,
+        "latest_tick_receipt_is_historical": true,
+        "live_sensor_stream": "NOT_VERIFIED"
+      },
+      "independent_branch": {
+        "tesseract_desktop": {
+          "repository": "2708halinh-cloud/x-time-web",
+          "pr": 6,
+          "state": "OPEN_NOT_MERGED",
+          "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+          "current_head_runs": [
+            {
+              "run_id": 39994207477,
+              "workflow": "tesseract-desktop-ci",
+              "conclusion": "failure",
+              "job_steps_returned": 0,
+              "logs_fetch": "BlobNotFound"
+            },
+            {
+              "run_id": 39994207667,
+              "workflow": "validate-x-time",
+              "conclusion": "failure",
+              "job_steps_returned": 0,
+              "logs_fetch": "BlobNotFound"
+            }
+          ],
+          "rerun_performed": false,
+          "runner_assignment_change_verified": false,
+          "exact_issuer_variable_search_results_in_repo": 0,
+          "issuer_public_key_verified": false
+        },
+        "dropbox_carrier_probe": {
+          "direct_children_scanned": 56,
+          "issuer_key_named_file_found": false,
+          "relay_source_json_read": true,
+          "cdn_headers_read": true,
+          "cdn_headers_result": "HTTP 200, Content-Type text/html, X-Powered-By HostingerWebsiteBuilder",
+          "conclusion": "Existing carriers read so far do not verify the issuer key; absence at other providers is not inferred."
+        }
+      },
+      "state_boundary": "DROPBOX_SOURCE_METADATA_VERIFIED; REMOTE_DEVICE_DISCOVERY_ONLINE_BUT_COMMAND_READBACK_UNAVAILABLE; NO_NEW_WINDOWS_TICK_READBACK; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_CURRENT_HEAD_RUNS_FAIL_WITHOUT_STEP_OUTPUT; ISSUER_KEY_UNVERIFIED",
+      "invariants": {
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "source_overwritten": false,
+        "open_tasks_closed": false,
+        "tesseract_ci_rerun": false
+      },
+      "next_action": [
+        "Resolve the authorized Remote Desktop Commander action route and read the exact latest scheduled receipt before making any claim about a new tick.",
+        "Continue HWiNFO logging investigation only after direct device readback is available; require new sample and before/after metadata/hash evidence.",
+        "Continue issuer-key search through additional authorized carriers; do not infer absence from the scanned Dropbox folder or incomplete body extraction.",
+        "Do not rerun TESSERACT PR workflows until runner assignment/entitlement change is verified."
+      ],
+      "prior_entry_policy": "Append-only; prior observations and receipts preserved. No raw sensor rows or credentials added."
     }
   ],
   "privacy_policy": {
