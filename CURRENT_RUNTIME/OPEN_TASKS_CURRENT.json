@@ -3462,6 +3462,69 @@
       "result": "POST_SYNC_CLOUD_CI_AND_ARTIFACT_BYTES_VERIFIED; NO_TASK_CLOSED",
       "next_callable_edge": "Keep PR #24 Draft pending review. Continue original JINEY/FUNIX/DAT NGUYEN export retrieval through an actually authorized Drive/Dropbox/Takeout connector or verified raw carrier.",
       "task_closure": false
+    },
+    {
+      "id": "ADMIN_R000_SOURCE_ID_DIVERGENCE_20261024T0440Z",
+      "record_type": "ADMIN_R000_SOURCE_ID_DIVERGENCE_READBACK",
+      "observed_at": "2026-10-24T04:40:00+07:00",
+      "source": "Raw bytes of Library ADMIN_PORTABLE_20261023.zip; embedded SQLite read in memory; MAP_NGUON XIV read directly",
+      "stamp_old": {
+        "archive_source_drive_id": "1L-dPm80fxtYYNglx4ux5L-EhSSgm78xw",
+        "historical_r000_canonical_id_in_R000_MD": "1YSJslORRY9xZ-XBAmYIYeewmaCeoRFbwU_dYxfozx34",
+        "locator_state": "NOT_FOUND_ADMIN_AND_PRIMARY_NOT_RESTORED"
+      },
+      "stamp_live": {
+        "library_file_id": "libfile_d18e6db946b88191b31e948ed283598c",
+        "zip_bytes": 22493275,
+        "zip_sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+        "zip_members": 13,
+        "crc_test": "PASS",
+        "map_nguon_bytes": 99075,
+        "map_nguon_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+        "map_nguon_section_xiv_lines": "1067-1127",
+        "sqlite_bytes": 73379840,
+        "sqlite_sha256": "fee9f3ee6a1df62991c48405e3e20c2552d284f70ef6e198df1c6453e910433a",
+        "sqlite_integrity_check": "ok",
+        "counts": {
+          "conversations": 136,
+          "nodes": 18790,
+          "searchable_messages": 10943,
+          "source_texts": 2
+        },
+        "fts_query": "lương tâm",
+        "fts_matches": [
+          {
+            "file_name": "MAP_NGUON.md",
+            "drive_id": "1rcRPnoBtErA634J1jfHkjZp8oTmc3HuN",
+            "bytes": 99075,
+            "sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45"
+          },
+          {
+            "file_name": "R-000_MASTER_R-000.md",
+            "drive_id": "1FhGGhcC0JluRTOE7mxlsLo72ukr3tpvD",
+            "bytes": 64173,
+            "sha256": "631e3171523d717ecf201b37648a4888afda4556331b47c03c81a345677b0ebe"
+          }
+        ],
+        "source_provenance_r000_pdf": {
+          "file_name": "R-000 — SỰ THẬT — BẢN HIỆN HÀNH DUY NHẤT.pdf",
+          "drive_id": "1_AqZO_PR_YFaj0PHW6L2lt809UZUXjNo",
+          "bytes": 175614,
+          "sha256": "8296d07b6f9476b3df25df6c0d1bfe2e5d6c0d8aba00d2d400ff608db4960d0a"
+        }
+      },
+      "stamp_beta": {
+        "possible_relation_between_r000_ids": "UNVERIFIED; DO_NOT_ALIAS",
+        "note": "The R-000 Markdown points to historical ID 1YSJ..., while SOURCE_PROVENANCE lists the included canonical-named PDF under 1_AqZO...; no current Drive object/revision readback proves these IDs identical."
+      },
+      "result": "ADMIN_BYTES_AND_FTS_VERIFIED; R000_CANONICAL_SOURCE_ID_RELATION_REQUIRES_PROVIDER_READBACK",
+      "next_callable_edge": "Through an authorized Google Drive provider, read metadata/content for both IDs 1YSJslORRY9xZ-XBAmYIYeewmaCeoRFbwU_dYxfozx34 and 1_AqZO_PR_YFaj0PHW6L2lt809UZUXjNo, compare revisions and hashes, preserve both identities, and correct only the exact locator after target readback. No Drive provider action is exposed in this run.",
+      "task_effect": {
+        "task_id": "SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+        "status_remains": "OPEN",
+        "real_execution_status_remains": "OPEN_NOT_PROVEN_COMPLETED",
+        "task_closure": false
+      }
     }
   ],
   "energy_protection_current": {
