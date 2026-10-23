@@ -1,38 +1,41 @@
-"""Regression checks for the existing sensor snapshot carriers.
+"""Regression checks for sensor snapshot privacy and execution safety.
 
-Runs without Windows and never edits source data. Live logging and exact
-physical paths still require observing the actual connected device.
+Runs on a hosted Python runner without Windows, provider credentials, or source
+sensor bytes. Live stream behavior still requires exact-target device readback.
 """
 from __future__ import annotations
+
 import ast
 import csv
-import io
+import json
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "source" / "telemetry_buffer_sync.py"
+SYNC_HELPER = ROOT / "source" / "modual_github_sync.py"
+STATE = ROOT / "MODUAL_PARAMETER_CURRENT.json"
+
 
 def rows(name: str) -> list[list[str]]:
     with (ROOT / name).open("r", encoding="utf-8-sig", newline="") as f:
         return list(csv.reader(f))
 
-class SensorSnapshotIntegrity(unittest.TestCase):
-    def test_bulk_header_and_row_width(self):
-        header = rows("BULK_HEADER_CURRENT.csv")[0]
-        snapshot = rows("BULK_LATEST_CURRENT.csv")
-        self.assertEqual(len(header), 408)
-        self.assertEqual(len(snapshot), 2)
-        self.assertEqual(snapshot[0], header)
-        self.assertEqual(len(snapshot[1]), len(header))
 
-    def test_live_header_and_row_width(self):
-        header = rows("LIVE_HEADER_CURRENT.csv")[0]
+class SensorSnapshotIntegrity(unittest.TestCase):
+    def test_bulk_snapshot_is_header_only(self):
+        header = rows("BULK_HEADER_CURRENT.csv")
+        snapshot = rows("BULK_LATEST_CURRENT.csv")
+        self.assertEqual(len(header), 1)
+        self.assertEqual(len(header[0]), 408)
+        self.assertEqual(snapshot, header)
+
+    def test_live_snapshot_is_header_only(self):
+        header = rows("LIVE_HEADER_CURRENT.csv")
         snapshot = rows("LIVE_LATEST_CURRENT.csv")
-        self.assertEqual(len(header), 358)
-        self.assertEqual(len(snapshot), 2)
-        self.assertEqual(snapshot[0], header)
-        self.assertEqual(len(snapshot[1]), len(header))
+        self.assertEqual(len(header), 1)
+        self.assertEqual(len(header[0]), 358)
+        self.assertEqual(snapshot, header)
 
     def test_source_reader_never_appends_synthetic_sensor_rows(self):
         source = SOURCE.read_text(encoding="utf-8")
@@ -50,6 +53,33 @@ class SensorSnapshotIntegrity(unittest.TestCase):
         content = SOURCE.read_text(encoding="utf-8")
         self.assertIn("SOL_ENABLE_SENSOR_CLOUD_EXPORT", content)
         self.assertIn("SOL_ENABLE_SENSOR_GITHUB_PUSH", content)
+
+    def test_scheduler_default_is_finite_and_loop_is_explicit(self):
+        content = SOURCE.read_text(encoding="utf-8")
+        self.assertIn('if args in ([], ["--once"]):', content)
+        self.assertIn('elif args == ["--loop"]:', content)
+        self.assertIn('Usage: telemetry_buffer_sync.py [--once|--loop]', content)
+
+    def test_sync_helper_does_not_stage_raw_latest_rows(self):
+        content = SYNC_HELPER.read_text(encoding="utf-8")
+        self.assertNotIn("_last_nonempty_line", content)
+        self.assertNotIn('"latest_row"', content)
+        self.assertNotIn("bulk_latest", content)
+        self.assertIn('"live_raw_committed": False', content)
+        self.assertIn('"raw_sensor_rows_committed": False', content)
+        self.assertIn("for key, value in previous_state.items()", content)
+        self.assertIn("if key not in state", content)
+
+    def test_current_state_has_header_only_publication_policy(self):
+        state = json.loads(STATE.read_text(encoding="utf-8"))
+        policy = state["sync_policy"]
+        self.assertNotIn("latest_row", policy["bulk_representation"])
+        self.assertFalse(policy["live_raw_committed"])
+        self.assertFalse(policy["latest_row_committed"])
+        self.assertFalse(state["privacy_policy"]["raw_sensor_rows_committed"])
+        self.assertTrue(state.get("session_observations"))
+        self.assertTrue(state.get("independent_provider_continuation"))
+
 
 if __name__ == "__main__":
     unittest.main()

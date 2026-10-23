@@ -48,7 +48,7 @@ CURRENT_SIGNALS=(
 
 
 # AISSTANGT MANAGE existing real n8n agent IDs; assignment != running.
-# Every ID is a literal canonical OPEN ledger ID, not an invented task instance.
+# All current IDs are literal canonical OPEN ledger IDs, not invented task instances.
 SUBAGENT_ROUTES = {
  "SENSORY": {
   "agent_id":"DEYtBtOQseTBhVHS",
@@ -64,7 +64,6 @@ SUBAGENT_ROUTES = {
    "SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
    "HELLOCHECK_GO_TESTNET_R014_20261023","TESSERACT_REAL_BOOT",
    "GOOGLE_CLOUD_ACTIONS_SECRET","TESSERACT_BOOT_AGENT_ROUTE",
-   "TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
    "CODEX_SECRET_RUNTIME_VERSIONS") },
  "OPEN_ROUTER": {
   "agent_id":"eT5YnxcWNGLRZ8z8",
@@ -72,7 +71,7 @@ SUBAGENT_ROUTES = {
    "CLOUD_UNIVERSAL","WORKSPACE_32GB_DURABLE",
    "INHERITED_TESSERACT_DESKTOP","HISTORICAL_BACKLOG_IMPORT",
    "SOL_PLUGIN_CONSOLIDATION","GITHUB_COPILOT_SPACE",
-   "SITES_SOL100726_REDIRECTS") },
+   "SITES_SOL100726_REDIRECTS","TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023") },
  "READBACK": {
   "agent_id":"bwjoN3TfQ8Ao717P",
   "task_ids":(
@@ -175,8 +174,7 @@ def classify_open_ledger(root):
         states[state]=states.get(state,0)+1
     # Never change, drop or close an existing item. Augment on next-state only.
     present={str(item.get("id")) for item in data["tasks"]}
-        # All current assignments are part of the executor's input,
-    # not five notional actor names added to a standalone report.
+    # Validate every current source task; ledger size is not a routing contract.
     if data["tasks"]:
         for item in data["tasks"]:
             if not item.get("assigned_subagent") or not item.get("assigned_agent_id"):

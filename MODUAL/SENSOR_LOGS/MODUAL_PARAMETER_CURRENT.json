@@ -28,11 +28,17 @@
       "sha256",
       "bytes",
       "modified_at",
-      "header",
-      "latest_row"
+      "header"
     ],
-    "live_raw_committed": true,
-    "control_files_committed": true
+    "live_raw_committed": false,
+    "control_files_committed": true,
+    "live_representation": [
+      "sha256",
+      "bytes",
+      "modified_at",
+      "header"
+    ],
+    "latest_row_committed": false
   },
   "independent_provider_continuation": {
     "record_type": "ADDITIVE_SOURCE_PROVENANCE_NOT_LOCAL_SYNC",
@@ -61,5 +67,39 @@
     "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
     "state": "OPEN_PROVIDER_CARRIER_RESOLVED_WINDOWS_TICK_NOT_VERIFIED",
     "rule": "Do not overwrite existing Oct 09 local source metadata; do not call Dropbox CSV a working Windows Tick consumer; no raw sensor records or secrets committed; verify Windows Tick independently before closing."
+  },
+  "session_observations": [
+    {
+      "observed_at": "2026-10-23T14:28:09+07:00",
+      "record_type": "ADDITIVE_PROVIDER_AND_CONNECTOR_OBSERVATION_NOT_SYNC",
+      "provider": {
+        "name": "Dropbox Outlook",
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "bytes_downloaded": false,
+        "content_hash_verified": false
+      },
+      "device_carrier": {
+        "connector": "Desktop Commander",
+        "observed_devices": [
+          "localhost",
+          "DESKTOP-86ITNQ4"
+        ],
+        "reported_status": "OFFLINE",
+        "direct_windows_runtime_readback_this_run": false
+      },
+      "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
+      "state": "OPEN_PROVIDER_CARRIER_RESOLVED_WINDOWS_TICK_NOT_VERIFIED",
+      "guard": "No raw sensor bytes or credentials recorded; no source copied, moved, or deleted; provider metadata is not proof of a live consumer."
+    }
+  ],
+  "privacy_policy": {
+    "current_snapshot_files": "HEADER_ONLY",
+    "raw_sensor_rows_committed": false,
+    "historical_git_versions_rewritten": false
   }
 }
