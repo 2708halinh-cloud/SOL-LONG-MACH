@@ -1104,6 +1104,32 @@
         }
       },
       "invariant": "All task statuses remain OPEN/OPEN_CARRIED; no source bytes or credentials copied; no task closed; no claim of Windows Tick recovery."
+    },
+    {
+      "observed_at": "2026-10-23T14:32:00+07:00",
+      "record_type": "TESSERACT_ISSUER_CARRIER_SEARCH_PARTIAL_NOT_RESOLVED",
+      "source_readback": {
+        "APP/TESSERACT_DESKTOP/WORK_CHECKPOINT.json": {
+          "blob_sha": "68449eb3e64d076724958b4e9839e8502ac3e3cf",
+          "unfinished_items": 5
+        },
+        "APP/TESSERACT_DESKTOP/README.md": {
+          "blob_sha": "67007c84d90cdb8628c3c2d93e59b940870e13a6",
+          "key_variable": "XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+          "private_signer_policy": "not invented or committed"
+        }
+      },
+      "provider_search": {
+        "primary_dropbox_search": "tool schema validation failed before search execution",
+        "alternate_listing": "Used list_folder on current Dropbox root mounts and selected existing project/source folders",
+        "matching_issuer_or_ed25519_filename_in_inspected_immediate_entries": false,
+        "exhaustive_dropbox_search": false,
+        "issuer_public_key_value_obtained": false,
+        "signer_obtained": false
+      },
+      "next": "Continue through an authorized provider/carrier for the real public key and issuer-side signer; do not synthesize a key, expose private material, or rerun CI 39153474587 until runner assignment changes.",
+      "task_state": "OPEN_CARRIED",
+      "no_task_closed": true
     }
   ]
 }
