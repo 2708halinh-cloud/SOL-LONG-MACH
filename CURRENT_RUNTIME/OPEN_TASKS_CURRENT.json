@@ -241,12 +241,36 @@
         "Windows Ethernet ifIndex 10 currently used 45.90.28.0 and 45.90.30.0"
       ],
       "next": [
-        "Determine source-verified profile-to-interface role; prefer encrypted DNS without disrupting remote connectivity",
-        "Test NextDNS endpoint identification and readback from target"
+        "Map the observed active NextDNS profile fp7945a91d9257b334 to intended target NEXTDNS_ED8A26 using an authorized provider source; no DNS settings were changed.",
+        "Preserve existing IP/gateway and remote connectivity while verifying profile-to-interface binding.",
+        "Read back the intended profile and target interface before any configuration change."
       ],
       "guard": "Keep linked-IP update token private; do not trigger linked-IP update from non-target public IP or combine independent resolver profiles",
       "live_progress": [
-        "Windows read-only RFC8484 DNS-over-HTTPS query returned HTTP 200 application/dns-message, response bytes 61"
+        "Windows read-only RFC8484 DNS-over-HTTPS query returned HTTP 200 application/dns-message, response bytes 61",
+        {
+          "observed_at": "2026-10-23T18:56:16+07:00",
+          "source": "Direct read-only PowerShell DNS interface inspection and https://test.nextdns.io response on DESKTOP-86ITNQ4",
+          "observations": {
+            "interface": "Ethernet",
+            "dns_servers": [
+              "45.90.28.0",
+              "45.90.30.0"
+            ],
+            "endpoint_http_status": 200,
+            "endpoint_status": "ok",
+            "protocol": "DOH",
+            "profile": "fp7945a91d9257b334",
+            "dest_ip": "45.90.30.0",
+            "anycast": true,
+            "server": "vultr-tyo-1",
+            "client_name": "unknown-doh",
+            "configuration_changed": false
+          },
+          "result": "NEXTDNS_ENDPOINT_REACHABLE_ACTIVE_PROFILE_NOT_MAPPED_TO_REQUESTED_TARGET",
+          "next_callable_edge": "Resolve source-backed mapping between the active profile fp7945a91d9257b334, the intended profile identifiers, and the exact interface/device; do not change DNS settings until mapping is verified.",
+          "status_effect": "Keep OPEN."
+        }
       ],
       "assigned_subagent": "SubAisstangtManage-SENSORY",
       "assigned_agent_id": "DEYtBtOQseTBhVHS",
@@ -264,12 +288,36 @@
         "User-reported VNP 172.18.0.0/30 differs from live Windows Ethernet 10.15.224.19/24"
       ],
       "next": [
-        "Resolve target mapping and encrypted DNS without altering static IP/gateway or other profile",
-        "Readback from intended interface/device"
+        "Map the observed active NextDNS profile fp7945a91d9257b334 to intended target NEXTDNS_F9C9F9 using an authorized provider source; no DNS settings were changed.",
+        "Preserve existing IP/gateway and remote connectivity while verifying profile-to-interface binding.",
+        "Read back the intended profile and target interface before any configuration change."
       ],
       "guard": "No cross-profile mixing; no linked-IP update token in public ledger",
       "live_progress": [
-        "Windows read-only RFC8484 DNS-over-HTTPS query returned HTTP 200 application/dns-message, response bytes 61"
+        "Windows read-only RFC8484 DNS-over-HTTPS query returned HTTP 200 application/dns-message, response bytes 61",
+        {
+          "observed_at": "2026-10-23T18:56:16+07:00",
+          "source": "Direct read-only PowerShell DNS interface inspection and https://test.nextdns.io response on DESKTOP-86ITNQ4",
+          "observations": {
+            "interface": "Ethernet",
+            "dns_servers": [
+              "45.90.28.0",
+              "45.90.30.0"
+            ],
+            "endpoint_http_status": 200,
+            "endpoint_status": "ok",
+            "protocol": "DOH",
+            "profile": "fp7945a91d9257b334",
+            "dest_ip": "45.90.30.0",
+            "anycast": true,
+            "server": "vultr-tyo-1",
+            "client_name": "unknown-doh",
+            "configuration_changed": false
+          },
+          "result": "NEXTDNS_ENDPOINT_REACHABLE_ACTIVE_PROFILE_NOT_MAPPED_TO_REQUESTED_TARGET",
+          "next_callable_edge": "Resolve source-backed mapping between the active profile fp7945a91d9257b334, the intended profile identifiers, and the exact interface/device; do not change DNS settings until mapping is verified.",
+          "status_effect": "Keep OPEN."
+        }
       ],
       "assigned_subagent": "SubAisstangtManage-SENSORY",
       "assigned_agent_id": "DEYtBtOQseTBhVHS",
@@ -2335,6 +2383,53 @@
         "Continue authorized issuer-key carrier investigation and do not rerun CI 39153474587 without verified runner-state change."
       ],
       "prior_entry_policy": "Append-only; prior observations and task states preserved."
+    },
+    {
+      "observed_at": "2026-10-23T18:56:16+07:00",
+      "record_type": "NEXTDNS_ENDPOINT_LIVE_READBACK_PROFILE_MAPPING_UNRESOLVED",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "437b7e9de32b2ef8e8e77815509fe253c5d988e6",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "921be4d03bbc603b948335b208d6ff6044625f09"
+      },
+      "provider_observation": {
+        "device": "DESKTOP-86ITNQ4",
+        "interface": "Ethernet",
+        "dns_servers": [
+          "45.90.28.0",
+          "45.90.30.0"
+        ],
+        "endpoint": "https://test.nextdns.io",
+        "http_status": 200,
+        "response_status": "ok",
+        "protocol": "DOH",
+        "active_profile": "fp7945a91d9257b334",
+        "dest_ip": "45.90.30.0",
+        "anycast": true,
+        "server": "vultr-tyo-1",
+        "client_name": "unknown-doh",
+        "target_profiles": [
+          "ed8a26",
+          "f9c9f9"
+        ],
+        "mapping_verified": false,
+        "dns_configuration_changed": false
+      },
+      "invariant": {
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "dns_configuration_changed": false,
+        "open_tasks_closed": false
+      },
+      "state_boundary": "NEXTDNS_ENDPOINT_REACHABLE; ACTIVE_PROFILE_MAPPING_UNRESOLVED",
+      "next_action": [
+        "Verify which authorized provider profile maps to fp7945a91d9257b334.",
+        "Do not change DNS servers, gateway, or profile until exact target mapping is source-backed.",
+        "Continue Windows Tick and TESSERACT branches independently."
+      ],
+      "prior_entry_policy": "Append-only; existing observations and task states preserved."
     }
   ]
 }
