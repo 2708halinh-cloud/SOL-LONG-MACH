@@ -991,6 +991,18 @@
           "result": "FOURTH_SCHEDULED_TICK_VERIFIED_LIVE_SENSOR_STREAM_UNVERIFIED",
           "next_callable_edge": "Read next scheduled receipt after device-clock 02:51:32+07; continue HWiNFO supported logging route and authorized W32Time path.",
           "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
+        },
+        {
+          "observed_at": "2026-10-24T02:58:03.553+07:00",
+          "source": "Direct Windows task/receipt readback and current provider probes",
+          "actions_and_receipts": [
+            "Latest scheduled receipt WINDOWS_TICK_20261023T195637645914Z.json was read at exact path, 450 bytes, SHA-256 e02fb1dcd27d433116de53a28c4c37c2ecdc7ff95b4189f1a6044be2e42dced.",
+            "Task GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M last ran at device-local 02:56:33+07 with result 0, zero missed runs; next device-clock run 03:01:32+07.",
+            "Source CSV remains 35,389,440 bytes with unchanged SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; receipt says live_sensor_reading_confirmed=false.",
+            "HWiNFO CSV remains 39,922,785 bytes, unchanged SHA-256 b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d, ReadOnly/Archive; no new sample. W32Time remains Stopped/Manual; no elevation attempted."
+          ],
+          "result": "FIFTH_SCHEDULED_TICK_VERIFIED_LIVE_STREAM_OPEN",
+          "status_effect": "Keep OPEN; no raw sensor rows or credentials committed."
         }
       ]
     },
@@ -1180,6 +1192,18 @@
           ],
           "result": "WINDOWS_OLLAMA_API_RESTORED_LOOPBACK_ONLY_ANDROID_RELAY_AND_CHAT_REPLY_UNVERIFIED",
           "next_callable_edge": "Verify the pending local chat result; inspect the authorized relay route when peer connectivity is available. Do not expose Ollama beyond loopback or edit the missing scheduled-task script without a verified source.",
+          "status_effect": "Keep IN_PROGRESS / OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T02:58:03.553+07:00",
+          "source": "Direct Windows Remote Desktop Commander runtime readback",
+          "actions_and_receipts": [
+            "Ollama root and /api/tags returned HTTP 200 with 11 models; process PID 53724 listens on 127.0.0.1:11434 only.",
+            "POST /api/chat using ggdv-human-sol-coder-lite:1.0 returned HTTP 200, done=true, response OK, eval_count=2.",
+            "This verifies Windows-local model generation only. Android SSH/ADB relay and Chrome Sol ơi UI rendering remain unverified.",
+            "X-TIME health endpoint on 127.0.0.1:8769 returned HTTP 200 with 63 runtime tools; MODUAL source absent and live device not proven."
+          ],
+          "result": "WINDOWS_LOCAL_OLLAMA_CHAT_REPLY_VERIFIED_ANDROID_UI_RELAY_OPEN",
           "status_effect": "Keep IN_PROGRESS / OPEN_NOT_PROVEN_COMPLETED."
         }
       ],
@@ -1516,6 +1540,49 @@
       "cloud_export_enabled": false,
       "github_export_enabled": false,
       "live_sensor_reading_confirmed": false
+    },
+    "windows_tick_20261024T195637Z": {
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T195637645914Z.json",
+      "observed_at_utc": "2026-10-23T19:56:37.645914Z",
+      "receipt_sha256": "e02fb1dcd27d433116de53a28c4c37c2ecdc7ff95b4189f1a6044be2e42dced",
+      "receipt_bytes": 450,
+      "exact_target_readback": true,
+      "json_valid": true,
+      "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_unchanged": true,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false,
+      "live_sensor_reading_confirmed": false
+    },
+    "ollama_chat_20261024": {
+      "host": "DESKTOP-86ITNQ4",
+      "endpoint": "http://127.0.0.1:11434/api/chat",
+      "http_status": 200,
+      "model": "ggdv-human-sol-coder-lite:1.0",
+      "done": true,
+      "response": "OK",
+      "eval_count": 2,
+      "loopback_only": true,
+      "android_chrome_ui_verified": false,
+      "android_relay_verified": false
+    },
+    "xtime_health_20261024": {
+      "endpoint": "http://127.0.0.1:8769/api/health",
+      "http_status": 200,
+      "pid": 20712,
+      "runtime_version": "0.9.0",
+      "runtime_tools": 63,
+      "filesystem_sensor_ok": true,
+      "native_events_seen": 172,
+      "emitted_events": 84,
+      "self_causal_events": 44,
+      "last_error": null,
+      "modual_source_present": false,
+      "live_device_proven": false
     }
   },
   "sinks": {
@@ -2457,6 +2524,82 @@
       "source_moved_or_deleted": false,
       "task_statuses_changed": false,
       "tesseract_ci_rerun": false
+    },
+    {
+      "id": "FIFTH_TICK_OLLAMA_XTIME_20261024T195637Z",
+      "kind": "FIFTH_SCHEDULED_WINDOWS_TICK_AND_INDEPENDENT_LOCAL_RUNTIME_READBACK",
+      "observed_at": "2026-10-24T02:58:03.553+07:00",
+      "source": "Remote Desktop Commander exact-target Windows readback; live Ollama and X-TIME HTTP endpoints; GitHub current-head workflow readback",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "7e45eb9ff9b6afba6964ae245fb646770653b78a",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "7666ba7b876eb78e934f56b90f4e2c1400b041ab",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "a0fdfbead17db51cfd76cb019b4bd9b1f2df6f4d"
+      },
+      "windows": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T195637645914Z.json",
+        "receipt_sha256": "e02fb1dcd27d433116de53a28c4c37c2ecdc7ff95b4189f1a6044be2e42dced",
+        "task_last_run_local": "2026-10-24T02:56:33+07:00",
+        "last_task_result": 0,
+        "missed_runs": 0,
+        "next_run_device_clock": "2026-10-24T03:01:32+07:00",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_unchanged": true,
+        "live_sensor_reading_confirmed": false,
+        "w32time": "Stopped/Manual",
+        "administrator": false,
+        "hwinfo_csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "hwinfo_new_sample_confirmed": false
+      },
+      "independent_branches": {
+        "ollama": {
+          "root_http": 200,
+          "tags_http": 200,
+          "model_count": 11,
+          "model": "ggdv-human-sol-coder-lite:1.0",
+          "chat_http": 200,
+          "done": true,
+          "response": "OK",
+          "listener": "127.0.0.1 only",
+          "android_relay_verified": false
+        },
+        "xtime": {
+          "health_http": 200,
+          "runtime_tools": 63,
+          "filesystem_sensor_ok": true,
+          "modual_source_present": false,
+          "live_device_proven": false
+        },
+        "tesseract_desktop": {
+          "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+          "run_ids": [
+            39994207477,
+            39994207667
+          ],
+          "conclusions": [
+            "failure",
+            "failure"
+          ],
+          "rerun": false,
+          "runner_assignment_change_verified": false,
+          "issuer_public_key_verified": false
+        }
+      },
+      "connector_boundary": {
+        "dropbox_fresh_metadata_readback": false,
+        "error": "link_id must identify an eligible linked account",
+        "prior_verified_metadata_retained": true
+      },
+      "result": "SCHEDULED_TICK_RECEIPT_VERIFIED; OLLAMA_CHAT_REPLY_VERIFIED_LOOPBACK_ONLY; XTIME_HEALTH_VERIFIED; LIVE_SENSOR_STREAM_AND_ANDROID_UI_OPEN",
+      "invariants": {
+        "task_closure": false,
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "source_overwritten": false,
+        "tesseract_ci_rerun": false
+      }
     }
   ],
   "energy_protection_current": {
@@ -5308,6 +5451,59 @@
       "task_statuses_changed": false,
       "tesseract_ci_rerun": false,
       "ollama_bound_to_loopback": true
+    },
+    {
+      "observed_at": "2026-10-23T19:58:03.553Z",
+      "record_type": "FIFTH_WINDOWS_TICK_OLLAMA_CHAT_XTIME_HEALTH_AND_TESSERACT_RUN_READBACK",
+      "windows": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T195637645914Z.json",
+        "receipt_sha256": "e02fb1dcd27d433116de53a28c4c37c2ecdc7ff95b4189f1a6044be2e42dced",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_unchanged": true,
+        "last_task_result": 0,
+        "missed_runs": 0,
+        "live_sensor_reading_confirmed": false,
+        "w32time": "Stopped/Manual",
+        "hwinfo_new_sample_confirmed": false
+      },
+      "ollama": {
+        "endpoint": "http://127.0.0.1:11434/api/chat",
+        "http_status": 200,
+        "model": "ggdv-human-sol-coder-lite:1.0",
+        "done": true,
+        "response": "OK",
+        "loopback_only": true,
+        "android_relay_verified": false
+      },
+      "xtime": {
+        "health_http_status": 200,
+        "runtime_tools": 63,
+        "filesystem_sensor_ok": true,
+        "modual_source_present": false,
+        "live_device_proven": false
+      },
+      "tesseract": {
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": [
+          39994207477,
+          39994207667
+        ],
+        "conclusions": [
+          "failure",
+          "failure"
+        ],
+        "rerun": false
+      },
+      "dropbox": {
+        "fresh_metadata_readback": false,
+        "connector_error": "link_id must identify an eligible linked account",
+        "historical_metadata_not_promoted_to_fresh": true
+      },
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false
     }
   ]
 }
