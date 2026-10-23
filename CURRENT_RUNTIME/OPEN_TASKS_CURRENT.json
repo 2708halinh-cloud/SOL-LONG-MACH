@@ -1330,6 +1330,67 @@
       "live_sensor_stream_confirmed": false,
       "source_preserved": true,
       "raw_sensor_rows_committed": false
+    },
+    {
+      "observed_at": "2026-10-23T16:40:47.720692+07:00",
+      "record_type": "WINDOWS_TICK_MANUAL_ONESHOT_RECEIPT_EXACT_READBACK_NOT_TASK_CLOSURE",
+      "provider_readback": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_verified": true,
+        "prior_verified_content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d"
+      },
+      "windows_target": {
+        "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "size_bytes": 35389440,
+        "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_unchanged": true
+      },
+      "consumer": {
+        "source_repo": "2708halinh-cloud/SOL-LONG-MACH",
+        "source_path": "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py",
+        "source_commit": "1dd3617755153af4b5bc8cd8161835a253e70e22",
+        "source_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "local_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+        "local_matches_github_source": true,
+        "invocation": "python telemetry_buffer_sync.py --once",
+        "exit_code": 0
+      },
+      "receipt": {
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T094047720692Z.json",
+        "bytes": 450,
+        "sha256": "b05d130f582f558a9ff5c4f83064b258589ec9d4fca131569c1c4a75990064dd",
+        "exact_readback": true,
+        "json_valid": true,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_export_enabled": false,
+        "github_export_enabled": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "scheduled_task": {
+        "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state": "Ready",
+        "enabled": true,
+        "last_run_local": "2026-10-23T16:36:33+07:00",
+        "last_result": 0,
+        "next_run_local": "2026-10-23T16:41:32+07:00",
+        "interval": "PT5M"
+      },
+      "live_stream_diagnostic": {
+        "hwinfo_process_running": true,
+        "registry_enable_logging": 0,
+        "hwinfo_csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+        "hwinfo_csv_bytes": 39922785,
+        "hwinfo_csv_modified_local": "2026-10-21T09:20:45.8565035+07:00",
+        "live_stream_confirmed": false
+      },
+      "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
+      "state": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
+      "invariant": "No raw sensor rows or credentials committed; no source moved/deleted; no task closed; a metadata-only receipt is not proof of live HWiNFO readings."
     }
   ]
 }
