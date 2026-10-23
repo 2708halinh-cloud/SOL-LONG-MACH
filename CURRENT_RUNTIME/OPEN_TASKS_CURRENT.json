@@ -152,6 +152,19 @@
           "result": "LIBRARY_ARCHIVE_FORMAT_SUBFOLDERS_EMPTY; NO_NEW_RAW_EXPORT_CARRIER",
           "next_callable_edge": "Continue from exact provider-side JINEY/FUNIX/DAT NGUYEN folder IDs or a verified raw carrier when an authorized Drive/Dropbox/Takeout connector is available; do not substitute same-name derived archives.",
           "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T00:54:08+07:00",
+          "source": "ChatGPT Library raw ZIP materialization + read-only ZIP member/CRC/hash inspection",
+          "actions_and_receipts": [
+            "OPENAI_GGDV_MATERIALIZED_20261005.zip: Library file_id=file_00000000c2cc8209a3103fb044846567; library_file_id=libfile_0ec1d24690dc8191991584b924765f7b; 58,442 bytes; SHA-256 eb0d9b33cde33c773e26b4096e1d317c9d2d713f23e160a02216ffd09aa80521; 155 members; CRC test clean; no conversations.json, conversations-*.json, chat.html, user.json, or raw account-export member.",
+            "SOL_JINEY_MINH_IDENTITY_SOURCE_ANCHOR_20261010.zip: Library file_id=file_00000000dc2c8209af05bdd3130057bd; library_file_id=libfile_305e43b7cb68819185e3df84ad1855b6; 10,250 bytes; SHA-256 17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93; 7 members; CRC test clean; contents are proof gates, source map, reentry context, README and receipt—not raw chat export.",
+            "Recursive Library archive listing returned 253 archive entries over 2 pages and a folder-traversal-limit warning. Matching names yielded derived/tooling packages only; this is not exhaustive evidence of provider-side absence.",
+            "No Google Drive, Dropbox or Takeout provider action is exposed in this run; no provider-side object ID, revision, or original export bytes were obtained."
+          ],
+          "result": "EXISTING_CANDIDATES_HASHED_AND_REJECTED_AS_RAW_EXPORTS; ORIGINAL_JINEY_FUNIX_DAT_EXPORTS_NOT_RETRIEVED",
+          "next_callable_edge": "Retrieve exact provider-side export through an authorized Drive/Dropbox/Takeout connector or a verified raw carrier; preserve provider object ID/revision and byte hash.",
+          "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED. No source restored; no task closed."
         }
       ]
     },
@@ -1971,6 +1984,45 @@
         "no_windows_host_actions": true,
         "no_source_export_claim": true
       }
+    },
+    {
+      "id": "LIBRARY_EXPORT_CANDIDATE_BYTE_SCAN_20261024T005408",
+      "kind": "READ_ONLY_LIBRARY_ARCHIVE_CANDIDATE_HASH_AND_CONTENT_SCAN",
+      "observed_at": "2026-10-24T00:54:08+07:00",
+      "target_task": "SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+      "candidates": [
+        {
+          "name": "OPENAI_GGDV_MATERIALIZED_20261005.zip",
+          "file_id": "file_00000000c2cc8209a3103fb044846567",
+          "library_file_id": "libfile_0ec1d24690dc8191991584b924765f7b",
+          "size_bytes": 58442,
+          "sha256": "eb0d9b33cde33c773e26b4096e1d317c9d2d713f23e160a02216ffd09aa80521",
+          "members": 155,
+          "crc_test": "PASS",
+          "raw_export": false
+        },
+        {
+          "name": "SOL_JINEY_MINH_IDENTITY_SOURCE_ANCHOR_20261010.zip",
+          "file_id": "file_00000000dc2c8209af05bdd3130057bd",
+          "library_file_id": "libfile_305e43b7cb68819185e3df84ad1855b6",
+          "size_bytes": 10250,
+          "sha256": "17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93",
+          "members": 7,
+          "crc_test": "PASS",
+          "raw_export": false
+        }
+      ],
+      "library_archive_listing": {
+        "items_scanned": 253,
+        "pages": 2,
+        "traversal_warning": true,
+        "exhaustive": false
+      },
+      "provider_connector_available": false,
+      "original_export_bytes_retrieved": false,
+      "task_count": 28,
+      "task_statuses_changed": false,
+      "task_closure": false
     }
   ],
   "energy_protection_current": {
@@ -4394,6 +4446,37 @@
         "no_task_closed": true
       },
       "prior_entry_policy": "Append-only; current main ledger and all 28 task states retained."
+    },
+    {
+      "observed_at": "2026-10-24T00:54:08+07:00",
+      "record_type": "LIBRARY_RAW_EXPORT_CANDIDATE_BYTES_HASHED_NOT_ORIGINAL_EXPORT",
+      "source": "Library materialization and local read-only ZIP inspection",
+      "source_bytes": {
+        "openai_ggdv_materialized": {
+          "file_id": "file_00000000c2cc8209a3103fb044846567",
+          "library_file_id": "libfile_0ec1d24690dc8191991584b924765f7b",
+          "size_bytes": 58442,
+          "sha256": "eb0d9b33cde33c773e26b4096e1d317c9d2d713f23e160a02216ffd09aa80521",
+          "members": 155,
+          "crc_test": "PASS",
+          "raw_export": false
+        },
+        "jiney_identity_anchor": {
+          "file_id": "file_00000000dc2c8209af05bdd3130057bd",
+          "library_file_id": "libfile_305e43b7cb68819185e3df84ad1855b6",
+          "size_bytes": 10250,
+          "sha256": "17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93",
+          "members": 7,
+          "crc_test": "PASS",
+          "raw_export": false
+        }
+      },
+      "scope_limit": "Recursive Library listing scanned 253 archive entries; traversal-limit warning remains. No provider-side Drive/Dropbox/Takeout connector was available.",
+      "result": "NO_NEW_RAW_EXPORT_CARRIER",
+      "task_count": 28,
+      "task_statuses_changed": false,
+      "task_closure": false,
+      "prior_entry_policy": "Append-only; no existing source or task history overwritten."
     }
   ]
 }
