@@ -1710,6 +1710,31 @@
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
       "source_unchanged": true,
       "live_sensor_reading_confirmed": false
+    },
+    "remote_followup_timeout_20261024T2104Z": {
+      "observed_at": "2026-10-24T04:04:12.138+07:00",
+      "device": "DESKTOP-86ITNQ4",
+      "last_verified_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json",
+      "last_verified_tick_sha256": "e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634",
+      "later_read_attempt": "timeout_no_response",
+      "directory_listing_call_id": "651e7f2d-2891-4529-8ecd-e81a13e01958",
+      "directory_listing_status": "pending_on_second_poll",
+      "no_new_tick_claimed": true,
+      "source_mutation": false
+    },
+    "tesseract_key_wiring_readback_20261024": {
+      "repo": "2708halinh-cloud/x-time-web",
+      "branch": "tesseract-desktop-mvp-20261006",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "kilo_rs_blob_sha": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+      "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+      "checkpoint_blob_sha": "da48d057ce411d9b88d9e5036d947f0a24cb96d5",
+      "workflow_variable_reference_verified": true,
+      "variable_presence_verified": false,
+      "variable_value_read": false,
+      "issuer_key_materialized": false,
+      "private_key_read": false,
+      "ci_rerun": false
     }
   },
   "sinks": {
@@ -2989,6 +3014,95 @@
         "source_moved_or_deleted": false,
         "source_overwritten": false,
         "open_tasks_closed": false
+      }
+    },
+    {
+      "id": "POST_EIGHTH_TICK_READ_TIMEOUT_AND_TESSERACT_WIRING_20261024",
+      "kind": "PRESERVE_LAST_VERIFIED_TICK_AND_ADVANCE_INDEPENDENT_TESSERACT_BRANCH",
+      "observed_at": "2026-10-24T04:04:12.138+07:00",
+      "source": "Remote Desktop Commander read attempts, fresh GitHub PR-branch source reads, Dropbox Outlook folder listings and metadata",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "c644718c2b390db7a6b2017847b632c0d7d8e51a",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "21b9a37709cdef94b5d3bdd76ea8520287a589b2",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "a6850a136576f0474e4a8e6469a45c8f3bcd1292"
+      },
+      "windows": {
+        "last_verified_tick": {
+          "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json",
+          "observed_at_utc": "2026-10-23T20:51:33.863313Z",
+          "sha256": "e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634",
+          "bytes": 450,
+          "source_bytes": 35389440,
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "last_task_result": 0,
+          "missed_runs": 0,
+          "live_sensor_reading_confirmed": false
+        },
+        "later_read_attempt": "timeout_no_response",
+        "list_directory_call_id": "651e7f2d-2891-4529-8ecd-e81a13e01958",
+        "list_directory_status": "pending",
+        "latest_state_after_eighth_tick": "NOT_VERIFIED",
+        "inference": "No new receipt claimed; no inference that device is offline or scheduled task stopped."
+      },
+      "tesseract_desktop": {
+        "repo": "2708halinh-cloud/x-time-web",
+        "branch": "tesseract-desktop-mvp-20261006",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "kilo_rs_blob_sha": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+        "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "checkpoint_blob_sha": "da48d057ce411d9b88d9e5036d947f0a24cb96d5",
+        "code_reads_build_time_variable": "XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+        "code_fails_closed_if_missing": "KILO_TRUSTED_ISSUER_KEY_NOT_CONFIGURED_AT_BUILD",
+        "workflow_maps_from": "vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+        "variable_presence_verified": false,
+        "variable_value_read": false,
+        "issuer_key_materialized": false,
+        "private_key_read": false,
+        "pr_state": "OPEN",
+        "workflow_runs": [
+          39994207477,
+          39994207667
+        ],
+        "rerun": false
+      },
+      "dropbox_search": {
+        "sensor_source": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size": 35389440,
+          "server_modified": "2026-10-14T00:20:03Z"
+        },
+        "cdn_carrier": {
+          "path": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_BODY_CURRENT.tmp",
+          "rev": "0165daa22c5d85c0000000395cdfd73",
+          "size": 41993,
+          "server_modified": "2026-10-12T19:59:29Z"
+        },
+        "listing_route_used": "list_folder",
+        "checked_folders": [
+          "/Linh Hà/SENSOR_LOGS",
+          "/Linh Hà/SENSON_LOG",
+          "/Linh Hà/CHU_RIM_LIBRARY_SYNC_BRIDGE_20261014_0758",
+          "/Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT",
+          "/Linh Hà/Tệp Microsoft Copilot Chat",
+          "/Linh Hà/Tài liệu"
+        ],
+        "matching_key_filenames_found": false,
+        "content_absence_proven": false,
+        "search_tool_schema_rejected_query_with_max_results": true
+      },
+      "state_boundary": "LAST_VERIFIED_WINDOWS_TICK_RETAINED; REMOTE_READ_ROUTE_TEMPORARILY_UNRESPONSIVE; TESSERACT_SOURCE_WIRING_VERIFIED_BUT_ISSUER_KEY_AND_VARIABLE_PRESENCE_UNVERIFIED",
+      "next_callable_edge": "Continue with authorized provider reads while Desktop Commander is unresponsive; when the Windows route returns, read the latest receipt after 2026-10-24T03:56:32+07:00. Do not retry CI without verified runner change and do not invent/provision a key without the authorized issuer source.",
+      "invariants": {
+        "raw_sensor_rows_committed": false,
+        "raw_sensor_values_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "source_overwritten": false,
+        "open_tasks_closed": false,
+        "tesseract_ci_rerun": false
       }
     }
   ],
@@ -6037,6 +6151,36 @@
       },
       "raw_sensor_values_committed": false,
       "credentials_committed": false,
+      "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-23T21:04:12.138Z",
+      "record_type": "REMOTE_WINDOWS_READ_ROUTE_TIMEOUT_AND_TESSERACT_SOURCE_WIRING",
+      "windows": {
+        "last_verified_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T205133863313Z.json",
+        "last_verified_tick_sha256": "e53882e21967bd41346f88d554704efb3f9e2f105f3e8955e1fb48df5a6b8634",
+        "later_read_attempt": "timeout_no_response",
+        "latest_after_03_56_32_not_verified": true
+      },
+      "tesseract": {
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "kilo_rs_blob_sha": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+        "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "workflow_variable_reference_verified": true,
+        "variable_presence_verified": false,
+        "issuer_key_materialized": false,
+        "ci_rerun": false
+      },
+      "dropbox": {
+        "sensor_rev": "0165dc1e4794ab00000000395cdfd73",
+        "carrier_rev": "0165daa22c5d85c0000000395cdfd73",
+        "checked_folder_listing_only": true,
+        "matching_key_filenames_found": false,
+        "content_absence_proven": false
+      },
+      "raw_sensor_values_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
       "open_tasks_closed": false
     }
   ]
