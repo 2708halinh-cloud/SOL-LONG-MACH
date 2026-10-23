@@ -241,9 +241,9 @@
         "Windows Ethernet ifIndex 10 currently used 45.90.28.0 and 45.90.30.0"
       ],
       "next": [
-        "Map the observed active NextDNS profile fp7945a91d9257b334 to intended target NEXTDNS_ED8A26 using an authorized provider source; no DNS settings were changed.",
-        "Preserve existing IP/gateway and remote connectivity while verifying profile-to-interface binding.",
-        "Read back the intended profile and target interface before any configuration change."
+        "Map active profile fp7945a91d9257b334 to intended target NEXTDNS_ED8A26 from an authorized provider/configuration source; local user.config contains no target profile ID.",
+        "Preserve the existing Ethernet DNS servers and gateway until mapping is verified.",
+        "Read back the intended profile-to-interface association before any configuration change."
       ],
       "guard": "Keep linked-IP update token private; do not trigger linked-IP update from non-target public IP or combine independent resolver profiles",
       "live_progress": [
@@ -270,6 +270,26 @@
           "result": "NEXTDNS_ENDPOINT_REACHABLE_ACTIVE_PROFILE_NOT_MAPPED_TO_REQUESTED_TARGET",
           "next_callable_edge": "Resolve source-backed mapping between the active profile fp7945a91d9257b334, the intended profile identifiers, and the exact interface/device; do not change DNS settings until mapping is verified.",
           "status_effect": "Keep OPEN."
+        },
+        {
+          "observed_at": "2026-10-23T19:02:38+07:00",
+          "source": "Read-only Windows service/process/config inspection after the successful NextDNS test endpoint probe",
+          "observations": {
+            "service_name": "NextDNSService",
+            "service_display_name": "NextDNS DNS53 to DoH proxy.",
+            "service_running": true,
+            "client_process_running": true,
+            "client_path": "C:\\Program Files (x86)\\NextDNS\\NextDNS.exe",
+            "local_user_config_present": true,
+            "local_config_contains_target_ids": false,
+            "active_endpoint_profile": "fp7945a91d9257b334",
+            "intended_profile": "NEXTDNS_ED8A26",
+            "mapping_verified": false,
+            "dns_configuration_changed": false
+          },
+          "result": "NEXTDNS_SERVICE_RUNNING_BUT_TARGET_PROFILE_MAPPING_UNRESOLVED",
+          "next_callable_edge": "Use an authorized NextDNS profile source or the app's exact current configuration to map the active profile to the intended target; do not change DNS settings based on inference.",
+          "status_effect": "Keep OPEN."
         }
       ],
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -288,9 +308,9 @@
         "User-reported VNP 172.18.0.0/30 differs from live Windows Ethernet 10.15.224.19/24"
       ],
       "next": [
-        "Map the observed active NextDNS profile fp7945a91d9257b334 to intended target NEXTDNS_F9C9F9 using an authorized provider source; no DNS settings were changed.",
-        "Preserve existing IP/gateway and remote connectivity while verifying profile-to-interface binding.",
-        "Read back the intended profile and target interface before any configuration change."
+        "Map active profile fp7945a91d9257b334 to intended target NEXTDNS_F9C9F9 from an authorized provider/configuration source; local user.config contains no target profile ID.",
+        "Preserve the existing Ethernet DNS servers and gateway until mapping is verified.",
+        "Read back the intended profile-to-interface association before any configuration change."
       ],
       "guard": "No cross-profile mixing; no linked-IP update token in public ledger",
       "live_progress": [
@@ -316,6 +336,26 @@
           },
           "result": "NEXTDNS_ENDPOINT_REACHABLE_ACTIVE_PROFILE_NOT_MAPPED_TO_REQUESTED_TARGET",
           "next_callable_edge": "Resolve source-backed mapping between the active profile fp7945a91d9257b334, the intended profile identifiers, and the exact interface/device; do not change DNS settings until mapping is verified.",
+          "status_effect": "Keep OPEN."
+        },
+        {
+          "observed_at": "2026-10-23T19:02:38+07:00",
+          "source": "Read-only Windows service/process/config inspection after the successful NextDNS test endpoint probe",
+          "observations": {
+            "service_name": "NextDNSService",
+            "service_display_name": "NextDNS DNS53 to DoH proxy.",
+            "service_running": true,
+            "client_process_running": true,
+            "client_path": "C:\\Program Files (x86)\\NextDNS\\NextDNS.exe",
+            "local_user_config_present": true,
+            "local_config_contains_target_ids": false,
+            "active_endpoint_profile": "fp7945a91d9257b334",
+            "intended_profile": "NEXTDNS_F9C9F9",
+            "mapping_verified": false,
+            "dns_configuration_changed": false
+          },
+          "result": "NEXTDNS_SERVICE_RUNNING_BUT_TARGET_PROFILE_MAPPING_UNRESOLVED",
+          "next_callable_edge": "Use an authorized NextDNS profile source or the app's exact current configuration to map the active profile to the intended target; do not change DNS settings based on inference.",
           "status_effect": "Keep OPEN."
         }
       ],
@@ -524,9 +564,9 @@
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
       "readback": "Two automatic five-minute scheduled runs verified with LastTaskResult=0 and valid metadata-only receipts. Dropbox content_hash matches exact D:\\SENSOR_LOGS\\windows_SENSON.CSV bytes. HWiNFO is running but HKCU\\Software\\HWiNFO64\\Sensors\\EnableLogging=0; HWiNFO_WINDOWS.CSV remains stale. Live sensor stream not verified.",
       "next": [
-        "Verify the scheduled tick after 2026-10-23T19:01:32+07:00 and read back its exact receipt and LastTaskResult.",
-        "Resolve HWiNFO logging via the documented Sensor Status > Logging start route if the exact UI can be safely reached, or verify Pro entitlement before CLI logging.",
-        "Require a genuinely new HWiNFO sample and before/after content-hash evidence; keep task OPEN until live freshness is independently verified."
+        "Verify the scheduled tick after 2026-10-23T19:06:32+07:00 and read back the exact receipt, source hash, and LastTaskResult.",
+        "HWiNFO 8.52 is running with EnableLogging=0 and a stale CSV; manual documents GUI Sensor Status > Logging start, but current remote window handles are invisible and expose no UI Automation controls.",
+        "Do not claim live sensor recovery until a new HWiNFO CSV sample is observed with before/after metadata and content-hash evidence."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -587,6 +627,19 @@
           ],
           "result": "SCHEDULED_TICK_RECEIPT_VERIFIED_LIVE_STREAM_UNVERIFIED",
           "next_callable_edge": "Verify next scheduled receipt after 19:01:32+07:00; use a supported, authorized HWiNFO UI logging route only when the exact window/control can be identified safely.",
+          "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
+        },
+        {
+          "observed_at": "2026-10-23T19:04:02+07:00",
+          "source": "Direct Windows scheduled-task query, directory listing, and exact receipt readback",
+          "actions_and_receipts": [
+            "The scheduled task ran at 19:01:33+07:00 with result 0 and next run 19:06:32+07:00.",
+            "Exact receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T120133662864Z.json was read directly; SHA-256 6b2ba3e1fd3e18430a1a29e95d9a7dae06a2deaa24cbc1b543edc93f0a1d2a2b; 450 bytes; valid JSON.",
+            "Receipt source SHA equals the observed Windows source SHA; source_file_written=false, synthetic_rows_added=0, cloud_enabled=false, github_enabled=false.",
+            "HWiNFO Sensor Status and main windows exist but remain invisible to the authorized remote process; UI Automation exposes no descendants. No UI click, registry change, or CLI logging attempt was made."
+          ],
+          "result": "SCHEDULED_TICK_VERIFIED_HWINF0_LIVE_STREAM_UNVERIFIED",
+          "next_callable_edge": "Continue checking scheduled receipts; pursue HWiNFO GUI logging only through a safely identifiable interactive window or verify Pro entitlement before CLI logging.",
           "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
         }
       ]
@@ -2582,6 +2635,74 @@
         "Do not merge PR #6 without current-head CI TRUE and trusted issuer provisioning."
       ],
       "prior_entry_policy": "Append-only; existing checkpoint and task history preserved."
+    },
+    {
+      "observed_at": "2026-10-23T19:04:02+07:00",
+      "record_type": "WINDOWS_TICK_120133_AND_NEXTDNS_SERVICE_CONFIG_READBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "437b7e9de32b2ef8e8e77815509fe253c5d988e6",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "923301bd52393f70dbb47d94e4905fc130937a61"
+      },
+      "observations": {
+        "windows_tick": {
+          "device": "DESKTOP-86ITNQ4",
+          "status": "ONLINE",
+          "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+          "last_run_local": "2026-10-23T19:01:33+07:00",
+          "last_result": 0,
+          "next_run_local": "2026-10-23T19:06:32+07:00",
+          "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T120133662864Z.json",
+          "receipt_sha256": "6b2ba3e1fd3e18430a1a29e95d9a7dae06a2deaa24cbc1b543edc93f0a1d2a2b",
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "live_sensor_reading_confirmed": false
+        },
+        "hwinfo": {
+          "version": "8.52",
+          "process_running": true,
+          "enable_logging": 0,
+          "csv_last_modified_local": "2026-10-21T09:20:45.8565035+07:00",
+          "manual_cli_logging_pro_only": true,
+          "ui_logging_route": "Sensor Status > Logging start",
+          "sensor_window_visible": false,
+          "main_window_visible": false,
+          "ui_automation_descendants": 0,
+          "registry_or_ui_mutation": false
+        },
+        "nextdns": {
+          "service_running": true,
+          "client_process_running": true,
+          "dns_servers": [
+            "45.90.28.0",
+            "45.90.30.0"
+          ],
+          "endpoint_http_status": 200,
+          "active_profile": "fp7945a91d9257b334",
+          "local_user_config_bytes": 1176,
+          "local_user_config_target_profile_found": false,
+          "target_profiles": [
+            "ed8a26",
+            "f9c9f9"
+          ],
+          "mapping_verified": false,
+          "dns_configuration_changed": false
+        }
+      },
+      "invariant": {
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "dns_configuration_changed": false,
+        "open_tasks_closed": false
+      },
+      "state_boundary": "WINDOWS_TICK_WORKS_LIVE_HWINF0_STREAM_UNVERIFIED; NEXTDNS_ACTIVE_PROFILE_MAPPING_UNRESOLVED",
+      "next_action": [
+        "Read the next scheduled tick after 19:06:32+07:00.",
+        "Resolve HWiNFO logging via a safe interactive route or verified Pro entitlement.",
+        "Map NextDNS active profile fp7945a91d9257b334 to the intended target without altering DNS configuration."
+      ],
+      "prior_entry_policy": "Append-only; prior observations and task states preserved."
     }
   ]
 }
