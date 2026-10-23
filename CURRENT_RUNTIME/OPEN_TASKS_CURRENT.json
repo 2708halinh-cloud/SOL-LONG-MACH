@@ -126,6 +126,21 @@
           "result": "ADMIN_PRIMARY_ZIP_AND_MAP_NGUON_XIV_READBACK_VERIFIED; SECOND_SAME_SIZE_LIBRARY_ENTRY_HASH_UNVERIFIED; NO_NEW_JINEY_FUNIX_DAT_RAW_EXPORT",
           "next_callable_edge": "Continue exact-source retrieval only through a genuinely authorized Drive/Dropbox/Takeout connector or an existing verified raw carrier; keep ADMIN folder and ZIP in place; do not infer byte identity from equal size or names.",
           "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED. Archive integrity and reading XIV do not restore missing original JINEY/FUNIX/DAT carriers."
+        },
+        {
+          "event_id": "R014_GUARD_AND_CURRENT_ROUTING_CI_20261023T164546Z",
+          "observed_at": "2026-10-23T16:45:46Z",
+          "source": "GitHub Actions pull_request runs 39989345855 and 39989345904; exact artifact readback",
+          "actions_and_receipts": [
+            "Windows survival continuation run 39989345855 completed SUCCESS on pull-request head 062345d310e778f3372bc7f8c9c61f0221f8c834; its log reports scheduler tests 9/9 and HelloHabit adapter tests 4/4, then all five cloud actions passed.",
+            "Downloaded continuation artifact 12516687664; ZIP size 3,848 bytes, SHA-256 c9f86385c75cbfc7bddf6dcab457a718e41d1c4e8fe717423de2f3d39b25df5a. Embedded SURVIVAL_OPEN_CONTINUATION_CURRENT.json is 20,736 bytes, SHA-256 9dd3cdfc5f7133d2a7d7c91a5ff998b227b59eb00a18e0eb950b1a54d8683fb8.",
+            "Parsed the artifact JSON directly: 28 source tasks preserved, all 28 have one route, all five cloud actions passed, n8n_agents_autonomously_executed=false, no_source_tasks_closed=true, host OS disk modified=false, and all_objectives_completed=false.",
+            "Secret Exposure Guard run 39989345904 completed SUCCESS; the exact .gitmodules-to-gitlink check and secret scan steps succeeded.",
+            "This validates cloud guard/build behavior only; it does not restore the R-014 original Drive roots, retrieve JINEY/FUNIX/DAT export bytes, or prove live n8n execution."
+          ],
+          "result": "R014_GUARD_AND_CURRENT_ROUTING_CLOUD_VALIDATED; ORIGINAL_ROOT_RESTORATION_NOT_COMPLETED",
+          "next_callable_edge": "Continue exact original root/export retrieval only through an authorized Drive/Dropbox/Takeout source; keep existing ADMIN folder and ZIP in place.",
+          "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED. CI and artifact readback do not satisfy root-source restoration."
         }
       ]
     },
@@ -555,7 +570,27 @@
       "delegation_mode": "NONCOERCIVE_SOURCE_BOUND",
       "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
       "assignment_carrier": "n8n:dataTable:rSPFIOWbS7cfNJ8z:SOL-HISTORICAL_BACKLOG_IMPORT",
-      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE"
+      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE",
+      "live_progress": [
+        {
+          "event_id": "HISTORICAL_BACKLOG_ID_RECONCILIATION_20261023T163509Z",
+          "observed_at": "2026-10-23T16:35:09Z",
+          "source": "Direct GitHub readback and ID-set comparison on current main",
+          "source_blobs": {
+            "offers": "306cec21246ae23e23b1dee382d0274856311329",
+            "current_ledger": "efdd396e5a546dbd7e12989b96f4ea6a09256a2d",
+            "inspected_main_commit": "09d76085736a5e91246ac8363d2db8030decc21d"
+          },
+          "actions_and_receipts": [
+            "Read CURRENT_RUNTIME/SUBAVENGERS_BIM_TASK_OFFERS_20261022.json; source_readback declares 24 task offers and status OFFERS_ONLY_DO_NOT_IMPERSONATE_AGENTS.",
+            "Compared all 24 task_id values in that carrier against the current 28 IDs in CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json; all 24 are present and no ID from this carrier is missing in the current ledger.",
+            "Enumerated the current GitHub main tree (1,608 entries, not truncated) and found the canonical ledger, resume pointer, current offer carrier, PR13 provenance, JINEY export trace and public-safe account-export index. This scan is repository-scoped and does not establish completeness of Library, Drive, Dropbox or physical disks."
+          ],
+          "result": "ALL_24_BIM_OFFER_IDS_PRESENT_IN_CURRENT_LEDGER; NO_NEW_TASK_ID_FROM_THIS_CARRIER",
+          "next_callable_edge": "Continue scanning remaining authorized source carriers and provider scopes; do not infer provider-wide completeness from this repository-only comparison.",
+          "status_effect": "Keep HISTORICAL_BACKLOG_IMPORT OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED; offers and ID reconciliation do not prove agent execution or close the task."
+        }
+      ]
     },
     {
       "id": "GOOGLE_CLOUD_ACTIONS_SECRET",
