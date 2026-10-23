@@ -24,6 +24,7 @@ import shutil
 import datetime
 import subprocess
 import hashlib
+import json
 from pathlib import Path
 
 try:
@@ -222,6 +223,47 @@ def record_telemetry_tick():
     print(f"SOURCE_OBSERVED bytes={result['bytes']} sha256={result['sha256']}")
     return result
 
+
+def write_tick_receipt(result: dict, mode: str) -> dict:
+    """Persist a unique metadata-only receipt; never copy sensor rows."""
+    observed_at = datetime.datetime.now(datetime.timezone.utc)
+    receipt = {
+        "schema": "GGDV_WINDOWS_TICK_RECEIPT/1.0",
+        "observed_at_utc": observed_at.isoformat(timespec="microseconds").replace("+00:00", "Z"),
+        "mode": mode,
+        "source": {
+            "path": result["source"],
+            "bytes": result["bytes"],
+            "modified_ns": result["modified_ns"],
+            "sha256": result["sha256"],
+        },
+        "mutations": {
+            "source_file_written": False,
+            "synthetic_rows_added": 0,
+        },
+        "live_sensor_reading_confirmed": False,
+        "exports": {
+            "cloud_enabled": os.getenv("SOL_ENABLE_SENSOR_CLOUD_EXPORT", "").strip() == "1",
+            "github_enabled": os.getenv("SOL_ENABLE_SENSOR_GITHUB_PUSH", "").strip() == "1",
+        },
+    }
+    receipt_dir = Path(__file__).resolve().parent / "state"
+    receipt_dir.mkdir(parents=True, exist_ok=True)
+    filename = "WINDOWS_TICK_" + observed_at.strftime("%Y%m%dT%H%M%S%fZ") + ".json"
+    target = receipt_dir / filename
+    encoded = json.dumps(receipt, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\\n"
+    with target.open("x", encoding="utf-8", newline="\\n") as stream:
+        stream.write(encoded)
+        stream.flush()
+        os.fsync(stream.fileno())
+    readback = target.read_text(encoding="utf-8")
+    if readback != encoded:
+        raise RuntimeError("TICK_RECEIPT_EXACT_READBACK_FAILED")
+    digest = hashlib.sha256(readback.encode("utf-8")).hexdigest()
+    print(f"TICK_RECEIPT path={target} bytes={len(readback.encode('utf-8'))} sha256={digest} readback_ok=true")
+    return {"path": str(target), "bytes": len(readback.encode("utf-8")), "sha256": digest}
+
+
 def main():
     print("=" * 60)
     print("TELEMETRY BUFFER & SNAPSHOT SYNC DAEMON ACTIVE")
@@ -237,7 +279,7 @@ def main():
     tick_count = 0
     while True:
         try:
-            record_telemetry_tick()
+            write_tick_receipt(record_telemetry_tick(), mode="loop")
             tick_count += 1
             # Every 10 ticks (~5 minutes if sleep 30s), trigger cloud snapshot
             if tick_count % 10 == 0:
@@ -256,7 +298,7 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     # Task Scheduler defaults to one finite observation; daemon mode is opt-in.
     if args in ([], ["--once"]):
-        record_telemetry_tick()
+        write_tick_receipt(record_telemetry_tick(), mode="once")
         sync_snapshot_to_cloud()
         sync_snapshot_to_github()
         print("Completed one-shot sensor observation; export requires explicit enable flags.")
