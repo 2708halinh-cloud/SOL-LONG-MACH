@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Resume PR #6 at 5312816d5fe2b22e92302211b67f916b88a6fe14. Branch is synchronized with master (0 behind). Current-head runs 39994207477 and 39994207667 failed before step output; job logs returned BlobNotFound and no readback artifact exists. Do not rerun until runner assignment/entitlement change is verified. Continue authorized issuer-key search; do not invent key material.",
+  "next": "Resume PR #6 at head 5312816d5fe2b22e92302211b67f916b88a6fe14. Current master ref is 1dc5de36bc221d0a17c7601d67e2fe34e673f437; compare confirms 59 ahead / 0 behind. PR API base.sha returned 60d92b8085cc34702805fc0cb42a1c5c346fca5d, so retain and investigate that metadata discrepancy rather than rewriting history. Current-head runs 39994207477 and 39994207667 failed before step output; logs BlobNotFound, no artifacts, self-hosted Windows verification skipped. Do not rerun until runner assignment/entitlement changes are verified. Continue authorized issuer-key search; no key is verified. Parallel MODUAL readback: scheduled Windows receipt WINDOWS_TICK_20261023T183137829064Z.json SHA-256 75e584956ae20aa36880eceeef1597e12ebb2e885d019250ee0b9b2e167fc225, consumer exit 0, but live sensor reading remains unverified and device clock is ~322 seconds behind runtime; W32Time is Stopped/Manual and current process is not Administrator.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -256,6 +256,82 @@
         "cloud_host_wiring": "NOT_VERIFIED"
       },
       "outcome": "NO_ISSUER_KEY_FOUND_IN_SCANNED_CARRIERS; PR REMAINS OPEN; NO CI RERUN"
+    },
+    {
+      "observed_at": "2026-10-23T18:40:17.615Z",
+      "observed_at_local": "2026-10-24T01:40:17+07:00",
+      "record_type": "WINDOWS_TICK_AND_CURRENT_HEAD_TESSERACT_RECHECK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "71a139ef00ed93e40308d31f3cba7e9c5533bd93",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "699b5283682a48c39fe821585e1ce07f971854b9",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "c12f1275a72509ba86040dd0c62b38a985e5fc35"
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T183137829064Z.json",
+        "receipt_sha256": "75e584956ae20aa36880eceeef1597e12ebb2e885d019250ee0b9b2e167fc225",
+        "task_last_run_device_local": "2026-10-24T01:31:33+07:00",
+        "task_last_result": 0,
+        "task_next_run_device_clock": "2026-10-24T01:36:32+07:00",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "live_sensor_reading_confirmed": false,
+        "clock_skew_seconds_approx": 322,
+        "w32time": "Stopped/Manual",
+        "administrator": false,
+        "hwinfo_enable_logging": 0,
+        "hwinfo_csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d"
+      },
+      "tesseract": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "state": "OPEN_NOT_MERGED",
+        "branch_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "current_master_ref": "1dc5de36bc221d0a17c7601d67e2fe34e673f437",
+        "compare": {
+          "status": "ahead",
+          "ahead_by": 59,
+          "behind_by": 0,
+          "merge_base": "1dc5de36bc221d0a17c7601d67e2fe34e673f437"
+        },
+        "pr_api_base_sha": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
+        "base_sha_discrepancy": true,
+        "current_head_runs": [
+          {
+            "run_id": 39994207477,
+            "workflow": "tesseract-desktop-ci",
+            "conclusion": "failure",
+            "steps": null,
+            "logs": "BlobNotFound"
+          },
+          {
+            "run_id": 39994207667,
+            "workflow": "validate-x-time",
+            "conclusion": "failure",
+            "steps": null,
+            "logs": "BlobNotFound"
+          }
+        ],
+        "rerun_performed": false,
+        "runner_assignment_change_verified": false,
+        "issuer_public_key_verified": false,
+        "historical_checkpoint_head": "57c285c8b2b11c9c5682f1715da313fcaee07eb0",
+        "historical_checkpoint_preserved": true
+      },
+      "independent_braid": {
+        "six_receipt_sha256": "17f0f04aeb68bc3e75c2ecef038c139f8b8338ba93897613f1413c0dbe50a620",
+        "plural_receipt_sha256": "a129c3c236e2b5d090d6e0ee0581533382c7948e5d92c9f4a480d844c5dc8b3a",
+        "exact_target_readback": true,
+        "source_sha256_unchanged": true,
+        "mutation_executed": false,
+        "cloud_host_wiring": "NOT_VERIFIED"
+      },
+      "open_tasks_count": 28,
+      "task_closure": false,
+      "tesseract_ci_rerun": false,
+      "secrets_persisted": false,
+      "prior_entry_policy": "Append-only; historical current_delta and embedded checkpoint head were not rewritten."
     }
   ],
   "latest_sync_observation": {
