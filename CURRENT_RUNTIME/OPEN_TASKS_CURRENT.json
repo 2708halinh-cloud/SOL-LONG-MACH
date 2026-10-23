@@ -2754,6 +2754,60 @@
         "source_moved_or_deleted": false,
         "source_overwritten": false
       }
+    },
+    {
+      "id": "PR24_CURRENT_MAIN_RECONCILIATION_20261023201537Z",
+      "kind": "OPEN_ROUTING_FIX_RECONCILED_TO_CURRENT_MAIN",
+      "observed_at": "2026-10-24T03:15:37+07:00",
+      "source": "Fresh authenticated GitHub readback of main, PR #24, source files and re-entry guards",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "3d754f86e0e1c017b8f32b0088a476ae682928a8",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_append": "79f9355e32f0dab47da0935e8321922d875083d0",
+        ".github/workflows/windows-survival-cloud-continuity.yml_branch": "cb1a8fa79a1ba306f0a7b442838e45d4b248b1af",
+        "runtime/cloud_survival_scheduler.py_branch": "fe99f77fa6eb540712c3754cc3f9d46153d3eeea",
+        "tests/test_cloud_survival_scheduler.py_branch": "be2f795c605010a615d08704c8456e1596b98eb5"
+      },
+      "github": {
+        "main_head_before": "9335dcc5668300ba538b6872c91a6a4dcfd797a9",
+        "main_tree": "8eeb125938c14c68d8c3049c74e791e788a31243",
+        "pr_number": 24,
+        "pr_old_head": "4e63d66b9f05cb3c2f15510b9f3555acee23350b",
+        "pr_old_base": "7865af82a46efe220630b0a0a82a60e70d1b53de",
+        "compare_status": "diverged",
+        "ahead_by": 4,
+        "behind_by": 23,
+        "previous_pr_mergeable": false,
+        "branch_ref_verified_equal_to_pr_head": true
+      },
+      "action": {
+        "merge_commit_parent_order": [
+          "current_main_first_parent",
+          "previous_pr_head_second_parent"
+        ],
+        "tree_base": "current main tree",
+        "carried_changes": [
+          "workflow adds pull_request path trigger including .gitmodules",
+          "scheduler validates assigned agent on every non-empty ledger rather than only at 27+ tasks",
+          "tests cover small-ledger rejection and configured submodule paths matching tracked Gitlinks"
+        ],
+        "ledger_policy": "preserve current main ledger and append this event; do not copy stale PR ledger",
+        "force_push": false
+      },
+      "result": "RECONCILIATION_COMMIT_CREATED_WITH_CURRENT_MAIN_LEDGER; CI_PENDING",
+      "next_callable_edge": "Read back updated PR head and ancestry, inspect PR-triggered CI and exact job steps/logs; keep PR open and all source tasks open.",
+      "invariants": {
+        "task_count": 28,
+        "task_ids_unchanged": true,
+        "task_statuses_unchanged": true,
+        "task_real_execution_statuses_unchanged": true,
+        "task_closure": false,
+        "windows_disk_cleanup_performed": false,
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "original_export_bytes_retrieved": false
+      }
     }
   ],
   "energy_protection_current": {
