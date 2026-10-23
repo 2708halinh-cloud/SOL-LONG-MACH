@@ -1666,6 +1666,23 @@
       "historical_run_preserved": 39153474587,
       "rerun_performed": false,
       "task_closure": false
+    },
+    {
+      "id": "FRESH_PROVIDER_READBACK_AND_INDEPENDENT_HELLOCHECK_20261023",
+      "kind": "CURRENT_PROVIDER_READBACK_AND_INDEPENDENT_BRANCH_CHECK",
+      "observed_at": "2026-10-23T23:08:40.656+07:00",
+      "current_open_tasks_blob_before": "cfbbdb8802ed1350762d9bc5213dd9344ff68ca4",
+      "source_provider_metadata_readback": true,
+      "windows_device_inventory_readback": true,
+      "tesseract_pr_and_current_head_workflow_readback": true,
+      "hellocheck_workflow_job_readback": true,
+      "task_count_before": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "tesseract_ci_rerun": false,
+      "task_statuses_changed": false
     }
   ],
   "energy_protection_current": {
@@ -3777,6 +3794,116 @@
         "source_moved_or_deleted": false
       },
       "prior_entry_policy": "Append-only; historical run 39153474587 retained with its original head and outcome."
+    },
+    {
+      "observed_at": "2026-10-23T23:08:40.656+07:00",
+      "record_type": "FRESH_PROVIDER_READBACK_WINDOWS_OFFLINE_DROPBOX_METADATA_AND_INDEPENDENT_HELLOCHECK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "2c4932defef846ae3060d7a7d9e736fb30aa600e",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "cfbbdb8802ed1350762d9bc5213dd9344ff68ca4",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "165c0bb4805191ff316b82c94e03162f34bb61fa"
+      },
+      "provider": {
+        "name": "Dropbox Outlook",
+        "source": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true,
+          "bytes_downloaded_this_run": false,
+          "content_hash_verified_this_run": false
+        },
+        "consumer": {
+          "path": "/Linh Hà/SENSOR_LOGS/telemetry_buffer_sync.py",
+          "file_id": "id:gvG29tEleJwAAAAAAAACEA",
+          "rev": "0165daa22c5d85b0000000395cdfd73",
+          "size_bytes": 10707,
+          "server_modified_utc": "2026-10-12T19:59:29Z",
+          "metadata_readback": true
+        },
+        "sensor_logs_folder": {
+          "path": "/Linh Hà/SENSOR_LOGS",
+          "direct_children_count": 56,
+          "has_more": false,
+          "key_named_candidate_found": false
+        }
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "desktop_commander_status": "OFFLINE",
+        "desktop_commander_last_seen_hours_ago": 78,
+        "localhost_status": "OFFLINE",
+        "localhost_last_seen_hours_ago": 3,
+        "direct_windows_read_this_run": false,
+        "new_tick_receipt_readback": false,
+        "latest_known_tick_receipt_remains_historical": true,
+        "live_sensor_stream": "NOT_VERIFIED"
+      },
+      "independent_branch": {
+        "tesseract_desktop": {
+          "repository": "2708halinh-cloud/x-time-web",
+          "pr": 6,
+          "state": "OPEN",
+          "head": "c41797b61ced8f152ff0833448d3a101fd13c158",
+          "current_head_workflows": [
+            {
+              "run_id": 39975540284,
+              "name": "validate-x-time",
+              "conclusion": "failure"
+            },
+            {
+              "run_id": 39975540379,
+              "name": "tesseract-desktop-ci",
+              "conclusion": "failure"
+            }
+          ],
+          "rerun_performed": false,
+          "runner_assignment_change_verified": false,
+          "issuer_carrier_probe": {
+            "provider": "Dropbox Outlook",
+            "body_path": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_BODY_CURRENT.tmp",
+            "body_metadata_size_bytes": 41993,
+            "extracted_text_chars": 63,
+            "extracted_text_identity": "Hostinger Website Builder shell",
+            "headers_path": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_HEADERS_CURRENT.txt",
+            "headers_text_chars": 997,
+            "issuer_key_found_in_extracted_text": false,
+            "original_bytes_fully_verified": false,
+            "issuer_key_status": "UNVERIFIED"
+          }
+        },
+        "hellocheck": {
+          "repository": "2708halinh-cloud/SOL-LONG-MACH",
+          "workflow_run_id": 39880490867,
+          "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/39880490867",
+          "status": "completed",
+          "conclusion": "success",
+          "job": "continue-without-personal-devices",
+          "all_13_reported_steps": "success",
+          "live_testnet_node_or_broadcast_verified": false,
+          "task_status_remains_open": true
+        }
+      },
+      "state_boundary": "DROPBOX_SOURCE_METADATA_VERIFIED; WINDOWS_DIRECT_READ_UNAVAILABLE_THIS_RUN; NO_NEW_TICK_READBACK; TESSERACT_ISSUER_KEY_UNVERIFIED; HELLOCHECK_CLOUD_TESTS_SUCCESS_TESTNET_BROADCAST_NOT_VERIFIED",
+      "invariants": {
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "open_tasks_closed": false,
+        "tesseract_ci_rerun": false,
+        "task_statuses_changed": false
+      },
+      "next_action": [
+        "On the next authorized Windows connection, read the exact latest scheduled receipt and compare its source hash; do not infer a new tick from historical data.",
+        "Continue the issuer-key search only through authorized provider carriers; the 63-character extracted CDN body is not complete evidence for the 41,993-byte object.",
+        "Keep TESSERACT PR #6 open and do not rerun its failing workflows until runner assignment or entitlement change is verified.",
+        "Continue HelloCheck against an authorized TestNet node only when one is available; do not invent a transaction ID."
+      ],
+      "prior_entry_policy": "Append-only; no task statuses or historical receipts overwritten."
     }
   ]
 }
