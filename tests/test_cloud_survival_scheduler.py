@@ -60,10 +60,15 @@ class CloudSurvivalTests(unittest.TestCase):
         self.assertTrue(loaded)
         configured={section:config[section].get("path") for section in config.sections()
                     if section.startswith('submodule "')}
-        tree=subprocess.run(["git","ls-tree","-r","HEAD"],cwd=ROOT,
-                            check=True,capture_output=True,text=True).stdout
-        gitlink_paths={line.split("\t",1)[1] for line in tree.splitlines()
-                       if line.startswith("160000 commit ")}
+        tree=subprocess.run(["git","-c","core.quotePath=false","ls-tree","-r","-z","HEAD"],
+                            cwd=ROOT,check=True,capture_output=True,text=True).stdout
+        gitlink_paths=set()
+        for entry in tree.split("\\0"):
+            if not entry:
+                continue
+            metadata,path=entry.split("\\t",1)
+            if metadata.startswith("160000 commit "):
+                gitlink_paths.add(path)
         self.assertTrue(configured)
         self.assertEqual(set(configured.values()),gitlink_paths)
 
