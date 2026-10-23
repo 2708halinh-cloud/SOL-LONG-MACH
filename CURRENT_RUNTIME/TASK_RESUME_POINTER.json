@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Resume PR #6 at head 5312816d5fe2b22e92302211b67f916b88a6fe14. Current-head runs 39994207477 and 39994207667 still fail before step output; no runner assignment change verified, so do not rerun CI. Issuer public key remains unverified after GitHub search, a complete 56-entry Dropbox SENSOR_LOGS listing, and read-only scan of 2,238 TESSERACT_OS text files with zero exact issuer markers. Independent TESSERACT_OS braid proof passed locally; cloud_host_wiring NOT_VERIFIED. Latest Windows scheduled receipt WINDOWS_TICK_20261023T193638382205Z.json was read back exactly (SHA-256 9d4c513b444dba62910a697acfabd70a13e59bf2617b1b4f9d8e5390f9df6826); task result 0, zero missed runs, source hash/mtime unchanged, but live_sensor_reading_confirmed=false. HWiNFO CSV remains stale/read-only; HWiNFO64.INI readback has no logging/CSV path. Device clock skew ~337 seconds; W32Time Stopped/Manual. Keep all tasks OPEN and preserve history/secrets.",
+  "next": "Resume PR #6 at head 5312816d5fe2b22e92302211b67f916b88a6fe14; runs 39994207477 and 39994207667 still fail before step output, no runner change verified, so do not rerun CI. Issuer key remains unverified after GitHub search, complete Dropbox 56-entry SENSOR_LOGS listing, and 2,238-file local TESSERACT_OS text scan with zero exact markers. Independent local TESSERACT_OS braid proof passed; cloud_host_wiring NOT_VERIFIED. Parallel MODUAL branch: latest scheduled receipt WINDOWS_TICK_20261023T194635149194Z.json SHA-256 67a6f3bd2451dcb47c55f1e80b399caa4bdb83c4a2ce283105609c918986bd5f; task result 0, zero missed runs, source unchanged, live sensor reading false. Parallel Ollama branch: ollama.exe serve now responds on loopback 127.0.0.1:11434 (root and /api/tags HTTP 200, 11 models); Android SSH reverse tunnel remains unverified because 10.15.224.83:8022 and 192.168.1.14:5556 are unreachable. Local X-TIME /api/health on 127.0.0.1:8769 returns 200, 63 tools, but MODUAL source not found and live device not proven; /api/chat reply still pending. HWiNFO CSV remains stale/read-only; W32Time Stopped/Manual. Keep all tasks OPEN and preserve history/secrets.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -549,6 +549,53 @@
         "administrator": false,
         "hwinfo_csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
         "hwinfo_ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16"
+      },
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "prior_entry_policy": "Append-only; current_delta and historical checkpoint head preserved."
+    },
+    {
+      "observed_at": "2026-10-23T19:55:05.591Z",
+      "observed_at_local": "2026-10-24T02:55:05.591+07:00",
+      "record_type": "FOURTH_WINDOWS_TICK_OLLAMA_AND_XTIME_READBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "a545ef62aac3e055271853575c261848704a0934",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "7666ba7b876eb78e934f56b90f4e2c1400b041ab",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "3caa247c0b9c41a1e481266cb912432b2100a65a"
+      },
+      "windows": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T194635149194Z.json",
+        "receipt_sha256": "67a6f3bd2451dcb47c55f1e80b399caa4bdb83c4a2ce283105609c918986bd5f",
+        "task_last_run": "2026-10-24T02:46:33+07:00",
+        "last_task_result": 0,
+        "missed_runs": 0,
+        "next_run_device_clock": "2026-10-24T02:51:32+07:00",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_unchanged": true,
+        "live_sensor_reading_confirmed": false
+      },
+      "ollama": {
+        "process_pid": 53724,
+        "host": "127.0.0.1:11434",
+        "root_http": 200,
+        "tags_http": 200,
+        "models": 11,
+        "loopback_only": true,
+        "chat_reply_verified": false,
+        "android_relay_peer_reachable": false
+      },
+      "xtime": {
+        "health_url": "http://127.0.0.1:8769/api/health",
+        "health_http": 200,
+        "runtime_tools": 63,
+        "modual_state": "SEARCHED_NO_MATCH",
+        "live_device_proven": false,
+        "production_verified": false
       },
       "task_count": 28,
       "task_closure": false,
