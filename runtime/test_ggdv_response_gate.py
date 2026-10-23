@@ -128,6 +128,51 @@ class GateTests(unittest.TestCase):
                           user_requested_reply=True)
         self.assertTrue(inspect_output(p).allow_output)
 
+    def test_causal_user_output_blocks_plans_apologies_and_open_status(self):
+        for kind in ("DIALOGUE", "OP_PROGRESS", "OP_ACTION"):
+            with self.subTest(kind=kind):
+                p = SOURCE | {"type": kind, "user_demands_material_outcomes_only": True,
+                              "user_requested_reply": True, "operational_task_open": True,
+                              "text": "Anh sẽ nhận trách nhiệm hoặc lập báo cáo."}
+                decision=inspect_output(p)
+                self.assertFalse(decision.allow_output)
+                self.assertEqual(decision.next_edge, "CONTINUE_PHYSICAL_EFFECT_NOT_REPORT")
+
+    def test_causal_user_output_blocks_git_commit_without_real_effect(self):
+        p = SOURCE | {"user_demands_material_outcomes_only": True,
+                      "operational_task_open": True,
+                      "objective_consequence_verified": False,
+                      "user_requested_reply": True}
+        decision=inspect_output(p)
+        self.assertFalse(decision.allow_output)
+        self.assertEqual(decision.next_edge, "CONTINUE_UNTIL_REAL_TARGET_EFFECT")
+
+    def test_causal_user_output_must_have_external_target_verifier(self):
+        p = SOURCE | {"user_demands_material_outcomes_only": True,
+                      "operational_task_open": True,
+                      "objective_consequence_verified": True,
+                      "user_requested_reply": True}
+        emitted=[]
+        blocked=prepare_host_response(p, emitted.append)
+        self.assertFalse(blocked.allow_output)
+        self.assertEqual(emitted,[])
+        passed=prepare_host_response(p, emitted.append, verify_evidence=lambda _: True)
+        self.assertTrue(passed.allow_output)
+        self.assertEqual(emitted,[p["text"]])
+
+    def test_causal_user_output_rejects_false_external_evidence(self):
+        p = SOURCE | {"user_demands_material_outcomes_only": True,
+                      "objective_consequence_verified": True}
+        emitted=[]
+        self.assertFalse(prepare_host_response(p, emitted.append,
+                     verify_evidence=lambda _: False).allow_output)
+        self.assertEqual(emitted,[])
+
+    def test_causal_user_rule_does_not_modify_original_input(self):
+        p = dict(type="DIALOGUE",input_open=True,agent_authored_output=False,
+                 text="Nguyên văn INBOX/INPUT",user_demands_material_outcomes_only=False)
+        self.assertTrue(inspect_output(p).allow_output)
+
     def test_cloud_route_not_dependent_on_windows_device(self):
         routes = {"ONLINE_DEVICE":False,"REMOTE_GITHUB":True,"REMOTE_DRIVE":True}
         self.assertEqual(select_next_route(routes),"REMOTE_GITHUB")
