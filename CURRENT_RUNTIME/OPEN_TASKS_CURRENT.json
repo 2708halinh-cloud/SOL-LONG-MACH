@@ -3525,6 +3525,40 @@
         "real_execution_status_remains": "OPEN_NOT_PROVEN_COMPLETED",
         "task_closure": false
       }
+    },
+    {
+      "id": "ADMIN_R000_ID_ROLE_CORRECTION_20261024T0445Z",
+      "record_type": "ADMIN_R000_ID_ROLE_CORRECTION_APPEND_ONLY",
+      "observed_at": "2026-10-24T04:45:00+07:00",
+      "supersedes_event_id": "ADMIN_R000_SOURCE_ID_DIVERGENCE_20261024T0440Z",
+      "source_reads": {
+        "CURRENT_RUNTIME/R-000_CURRENT.md": "a087257ce475a18848342eab481c8ae47bc402e7",
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "ADMIN_PORTABLE_20261023.zip": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b"
+      },
+      "correction": {
+        "prior_classification": "The previous event called 1YSJ... historical based on the embedded archive locator.",
+        "verified_repo_roles": {
+          "AGENTS.md:R000_SOURCE_ID": "1D9OwoqTIxqg3iCmCi8htsSWpES0yRHOvfC4c4vpCkNE",
+          "AGENTS.md:CURRENT_R000_OPERATIONAL_MIRROR_DRIVE_ID": "1YSJslORRY9xZ-XBAmYIYeewmaCeoRFbwU_dYxfozx34",
+          "CURRENT_RUNTIME/R-000_CURRENT.md:CANONICAL_DRIVE_ID": "1YSJslORRY9xZ-XBAmYIYeewmaCeoRFbwU_dYxfozx34"
+        },
+        "embedded_archive_roles": {
+          "SOURCE_PROVENANCE.json:R-000 PDF drive_id": "1_AqZO_PR_YFaj0PHW6L2lt809UZUXjNo",
+          "source_carrier_locator:R-000 canonical ID historical": "1YSJslORRY9xZ-XBAmYIYeewmaCeoRFbwU_dYxfozx34",
+          "source_carrier_locator state": "NOT_FOUND_ADMIN_AND_PRIMARY_NOT_RESTORED"
+        },
+        "corrected_interpretation": "1YSJ... is still the repository's current operational-mirror/canonical pointer; its provider existence is not verified in this run. 1D9O... is separately labeled R000_SOURCE_ID. 1_AqZO... is the PDF carrier included in ADMIN. The three IDs have distinct recorded roles and must not be aliased or substituted without provider-side identity/revision/hash readback.",
+        "no_retroactive_rewrite": true
+      },
+      "result": "R000_SOURCE_ROOT_MIRROR_AND_ARCHIVE_PDF_IDS_DISTINGUISHED; PROVIDER_RELATION_UNVERIFIED",
+      "next_callable_edge": "With an authorized Drive connector, read provider metadata for 1D9OwoqTIxqg3iCmCi8htsSWpES0yRHOvfC4c4vpCkNE, 1YSJslORRY9xZ-XBAmYIYeewmaCeoRFbwU_dYxfozx34, and 1_AqZO_PR_YFaj0PHW6L2lt809UZUXjNo. Compare actual names, parent IDs, revisions and byte hashes; only then correct the locator. Preserve the existing ADMIN archive and extracted folder.",
+      "task_effect": {
+        "task_id": "SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+        "status_remains": "OPEN",
+        "real_execution_status_remains": "OPEN_NOT_PROVEN_COMPLETED",
+        "task_closure": false
+      }
     }
   ],
   "energy_protection_current": {
