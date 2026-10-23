@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-24T02:55:05.591+07:00",
+  "observed_at": "2026-10-24T02:58:03.553+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -2481,6 +2481,162 @@
         }
       },
       "state_boundary": "FOURTH_SCHEDULED_TICK_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED; WINDOWS_OLLAMA_API_LOOPBACK_RESPONDS; ANDROID_REVERSE_TUNNEL_UNVERIFIED; XTIME_HEALTH_AT_8769_VERIFIED; PRODUCTION_DEPLOYMENT_UNVERIFIED",
+      "invariants": {
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "source_overwritten": false,
+        "open_tasks_closed": false,
+        "tesseract_ci_rerun": false,
+        "ollama_bound_to_loopback": true
+      }
+    },
+    {
+      "observed_at": "2026-10-24T02:58:03.553+07:00",
+      "observed_at_utc": "2026-10-23T19:58:03.553Z",
+      "record_type": "FIFTH_SCHEDULED_WINDOWS_TICK_AND_PARALLEL_OLLAMA_XTIME_READBACK_20261024",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "7e45eb9ff9b6afba6964ae245fb646770653b78a",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "7666ba7b876eb78e934f56b90f4e2c1400b041ab",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "3caa247c0b9c41a1e481266cb912432b2100a65a"
+      },
+      "provider": {
+        "dropbox_outlook": {
+          "fresh_metadata_readback": false,
+          "connector_result": "link_id must identify an eligible linked account",
+          "prior_verified_source": {
+            "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+            "rev": "0165dc1e4794ab00000000395cdfd73",
+            "size_bytes": 35389440,
+            "server_modified_utc": "2026-10-14T00:20:03Z"
+          },
+          "interpretation": "Prior metadata retained as historical provider evidence; no fresh Dropbox result claimed in this observation."
+        }
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "direct_readback": true,
+        "device_clock_at_readback": "2026-10-24T02:58:03.553+07:00",
+        "scheduled_task": {
+          "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+          "state": "Ready",
+          "enabled": true,
+          "last_run_local": "2026-10-24T02:56:33+07:00",
+          "last_task_result": 0,
+          "number_of_missed_runs": 0,
+          "next_run_local": "2026-10-24T03:01:32+07:00"
+        },
+        "latest_scheduled_receipt": {
+          "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T195637645914Z.json",
+          "observed_at_utc": "2026-10-23T19:56:37.645914Z",
+          "bytes": 450,
+          "sha256": "e02fb1dcd27d433116de53a28c4c37c2ecdc7ff95b4189f1a6044be2e42dced",
+          "exact_target_readback": true,
+          "json_valid": true,
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "source_bytes": 35389440,
+          "source_file_written": false,
+          "synthetic_rows_added": 0,
+          "cloud_enabled": false,
+          "github_enabled": false,
+          "live_sensor_reading_confirmed": false
+        },
+        "source": {
+          "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+          "bytes": 35389440,
+          "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "last_write_utc": "2026-10-23T08:45:56.2458701Z",
+          "unchanged": true
+        },
+        "w32time": {
+          "state": "Stopped",
+          "start_mode": "Manual",
+          "administrator": false,
+          "service_control_changed": false,
+          "resync_attempted": false
+        },
+        "hwinfo": {
+          "process_running": true,
+          "pid": 17520,
+          "csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+          "csv_bytes": 39922785,
+          "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+          "csv_last_write_utc": "2026-10-21T02:20:45.856Z",
+          "attributes": [
+            "ReadOnly",
+            "Archive"
+          ],
+          "new_sample_confirmed": false
+        }
+      },
+      "independent_branches": {
+        "ollama": {
+          "host": "127.0.0.1:11434",
+          "root_http_status": 200,
+          "tags_http_status": 200,
+          "models_count": 11,
+          "process_pid": 53724,
+          "listener_scope": "loopback only",
+          "loaded_model": "ggdv-human-sol-coder-lite:1.0",
+          "model_parameters": "1.5B Q4_K_M",
+          "chat_probe": {
+            "method": "POST /api/chat",
+            "http_status": 200,
+            "done": true,
+            "response": "OK",
+            "eval_count": 2
+          },
+          "android_relay_peer_reachable": false,
+          "result": "WINDOWS_LOCAL_OLLAMA_CHAT_REPLY_VERIFIED_ANDROID_RELAY_UNVERIFIED"
+        },
+        "xtime": {
+          "health_url": "http://127.0.0.1:8769/api/health",
+          "health_http_status": 200,
+          "pid": 20712,
+          "runtime_version": "0.9.0",
+          "runtime_tools": 63,
+          "filesystem_sensor": {
+            "ok": true,
+            "native_watch_mode": "fs.watch:recursive",
+            "native_events_seen": 172,
+            "emitted_events": 84,
+            "self_causal_events": 44,
+            "last_error": null,
+            "event_bus": "G:\\FPGA_AI_LOCAL\\inetpub\\XTIME_LOCAL_LIVE_20261020\\runtime\\sensorimotor-fs-events.jsonl"
+          },
+          "modual_source_present": false,
+          "live_device_proven": false,
+          "last_direct_event_tail_sequences": [
+            78,
+            79,
+            82
+          ],
+          "result": "XTIME_LOCAL_HEALTH_AND_FILESYSTEM_SENSOR_STATUS_VERIFIED_MODUAL_BINDING_OPEN"
+        },
+        "tesseract_desktop": {
+          "repository": "2708halinh-cloud/x-time-web",
+          "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+          "runs": [
+            {
+              "id": 39994207477,
+              "workflow": "tesseract-desktop-ci",
+              "conclusion": "failure"
+            },
+            {
+              "id": 39994207667,
+              "workflow": "validate-x-time",
+              "conclusion": "failure"
+            }
+          ],
+          "rerun": false,
+          "runner_assignment_change_verified": false,
+          "issuer_public_key_verified": false,
+          "result": "CURRENT_HEAD_WORKFLOWS_STILL_FAILED_NO_RERUN"
+        }
+      },
+      "state_boundary": "FIFTH_TICK_RECEIPT_VERIFIED_SOURCE_UNCHANGED_LIVE_SENSOR_STREAM_UNVERIFIED; OLLAMA_CHAT_REPLY_VERIFIED_LOOPBACK_ONLY; XTIME_HEALTH_VERIFIED_MODUAL_BINDING_OPEN",
       "invariants": {
         "raw_sensor_rows_committed": false,
         "credentials_committed": false,
