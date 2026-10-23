@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-09T19:30:06.511769+07:00",
+  "observed_at": "2026-10-23T21:18:48+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -909,6 +909,87 @@
         "Verify the next scheduled receipt after the device-clock target 2026-10-23T20:06:32+07:00; device clock is approximately 314 seconds behind the connected runtime.",
         "Use an authorized elevated route to start/synchronize W32Time if permitted; no permission bypass and no resync was attempted.",
         "Continue HWiNFO logging investigation; require a new CSV sample and before/after evidence before marking the live stream restored."
+      ]
+    },
+    {
+      "observed_at": "2026-10-23T21:18:48+07:00",
+      "record_type": "PROVIDER_METADATA_FRESH_READ_AND_DEVICE_AVAILABILITY_NOT_SYNC",
+      "source_id": "DROPBOX_OUTLOOK:/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "437b7e9de32b2ef8e8e77815509fe253c5d988e6",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "e66dc04e81567454b26a32d83a0fc2ccb4a4283b"
+      },
+      "provider": {
+        "name": "Dropbox Outlook",
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "bytes_downloaded_this_run": false,
+        "content_hash_verified_this_run": false
+      },
+      "device_access": {
+        "desktop_commander_inventory_readback": true,
+        "remote_desktop_commander_inventory_readback": true,
+        "DESKTOP_86ITNQ4": {
+          "status": "OFFLINE",
+          "last_seen_ago": "76h"
+        },
+        "localhost": {
+          "status": "OFFLINE",
+          "last_seen_ago": "1h"
+        },
+        "older_DESKTOP_registration": {
+          "status": "OFFLINE",
+          "last_seen_ago": "302h"
+        },
+        "windows_target_readback_this_run": false,
+        "latest_tick_receipt_is_historical": true
+      },
+      "last_verified_windows_snapshot_not_revalidated": {
+        "target": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "bytes": 35389440,
+        "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "last_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T130134255063Z.json",
+        "last_verified_receipt_sha256": "ab18ffb41fe599e48425103ab21019a34e7a4203be8e7de2ad716363bc3cd997",
+        "live_sensor_reading_confirmed": false
+      },
+      "independent_branch": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "current_head_from_resume_pointer": "5d0a44bbd0431e87cfa396c5983cea549d93fe8f",
+        "checkpoint_blob_sha": "68449eb3e64d076724958b4e9839e8502ac3e3cf",
+        "checkpoint_embedded_head": "57c285c8b2b11c9c5682f1715da313fcaee07eb0",
+        "checkpoint_embedded_head_is_stale_vs_pointer": true,
+        "workflow_run_id": 39153474587,
+        "jobs": {
+          "linux": "failure_before_step_output",
+          "macos": "failure_before_step_output",
+          "windows": "failure_before_step_output",
+          "tesseract_os": "failure_before_step_output",
+          "selfhosted_windows_verify": "skipped",
+          "readback": "failure"
+        },
+        "artifacts": 0,
+        "code_search": {
+          "query_public_key_variable_total": 0,
+          "query_issuer_ed25519_total": 0,
+          "scope": "accessible GitHub code-search results for 2708halinh-cloud/x-time-web"
+        },
+        "rerun_performed": false,
+        "source_code_changed": false
+      },
+      "state": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
+      "invariant": "No device readback in this run; metadata only; no raw sensor rows or credentials; no source move/delete; no task closure.",
+      "next_action": [
+        "Continue on connected provider/GitHub branches while Windows endpoints are offline; do not represent historical tick receipt as a current device read.",
+        "When an already-authorized Windows carrier is available, read the newest scheduled receipt and HWiNFO CSV before/after metadata plus content hash.",
+        "For TESSERACT Desktop, reconcile the stale WORK_CHECKPOINT embedded head against the current resume pointer without rewriting history; verify runner assignment/entitlement changed before any CI rerun.",
+        "Continue locating the real issuer public key from authorized carriers; code search returning zero results is not proof it is absent from other providers."
       ]
     }
   ],
