@@ -1030,5 +1030,80 @@
     "r014": "APPLY_EXISTING_DESTRUCTIVE_GATE_AND_RESPONSE_REGRESSION",
     "laws_12": "SOURCE_POINTER_0002_BAT_BIEN_MD_UNREAD_VERBATIM; DO_NOT_INVENT_LAW_LIST",
     "completion_guard": "TASK_CLOSE_REQUIRES_PHYSICAL_OR_PROVIDER_CONSEQUENCE_READBACK; ROUTING_RECEIPT_IS_NOT_COMPLETION"
-  }
+  },
+  "provider_observation_history": [
+    {
+      "observed_at": "2026-10-23T14:28:09+07:00",
+      "record_type": "FRESH_PROVIDER_PROBE_NOT_TASK_CLOSURE",
+      "canonical_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "437b7e9de32b2ef8e8e77815509fe253c5d988e6",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_append": "18418efb08a8c4e2471e0ff9b60eac48f04e9bd0",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_append": "4b4fd7e2af8983a201d58482592d2e4a27e82ef5"
+      },
+      "provider_readback": {
+        "name": "Dropbox Outlook",
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_verified": true,
+        "bytes_downloaded": false
+      },
+      "carrier_probe": {
+        "connector": "Desktop Commander",
+        "devices": [
+          "localhost",
+          "DESKTOP-86ITNQ4"
+        ],
+        "status": "OFFLINE",
+        "direct_windows_task_readback_this_run": false
+      },
+      "independent_open_branches": {
+        "tesseract_desktop": {
+          "repo": "2708halinh-cloud/x-time-web",
+          "pr": 6,
+          "state": "OPEN",
+          "head": "5d0a44bbd0431e87cfa396c5983cea549d93fe8f",
+          "workflow_run_id": 39153474587,
+          "job_results": {
+            "build-linux": "failure_before_steps",
+            "build-macos": "failure_before_steps",
+            "build-windows": "failure_before_steps",
+            "tesseract_os": "failure_before_steps",
+            "selfhosted_windows_verify": "skipped",
+            "readback": "failure"
+          },
+          "action": "Read-only workflow job readback; CI was not rerun.",
+          "unresolved": [
+            "authorized GitHub-hosted runner assignment",
+            "real issuer public-key carrier and issuer-side signer"
+          ]
+        },
+        "r014_root_protection": {
+          "workflow_run_id": 39880699969,
+          "result": "success",
+          "verified_steps": [
+            "Deny repeated ROOTS and Drive-ID destruction",
+            "Verify continuity caller honors destructive gate"
+          ],
+          "task_closed": false
+        },
+        "hellocheck": {
+          "workflow_run_id": 39880490867,
+          "result": "success",
+          "verified_steps": [
+            "Guard existing OPEN ledger and critical C threshold",
+            "Compile and test live HelloCheck Bitcoin TestNet Go sources",
+            "Execute source-bound cloud continuation without touching Windows"
+          ],
+          "broadcast_verified": false,
+          "task_closed": false
+        }
+      },
+      "invariant": "All task statuses remain OPEN/OPEN_CARRIED; no source bytes or credentials copied; no task closed; no claim of Windows Tick recovery."
+    }
+  ]
 }
