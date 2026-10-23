@@ -333,6 +333,85 @@
         "live_sensor_stream_confirmed": false
       },
       "invariant": "Periodic metadata-only tick is working; it is not proof of live HWiNFO readings. No raw sensor rows or credentials committed; no source moved/deleted; task remains OPEN."
+    },
+    {
+      "observed_at": "2026-10-23T17:59:30+07:00",
+      "record_type": "WINDOWS_TICK_MANUAL_AND_SCHEDULED_RECEIPTS_EXACT_READBACK_NOT_LIVE_STREAM",
+      "source_provider": {
+        "name": "Dropbox Outlook",
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_verified": true
+      },
+      "windows_target": {
+        "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "size_bytes": 35389440,
+        "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "last_write_local": "2026-10-23T15:45:56.2458701+07:00",
+        "unchanged": true
+      },
+      "consumer": {
+        "path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+        "github_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "local_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+        "manual_once_exit_code": 0
+      },
+      "receipts": [
+        {
+          "mode": "manual_once",
+          "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T105034294208Z.json",
+          "bytes": 450,
+          "sha256": "83946664eaeed63ffb2152ea7a58b25e661c4b0c3384cc0c369e276d528807c0",
+          "exact_target_readback": true,
+          "source_file_written": false,
+          "synthetic_rows_added": 0,
+          "cloud_export_enabled": false,
+          "github_export_enabled": false,
+          "live_sensor_reading_confirmed": false
+        },
+        {
+          "mode": "scheduled_once",
+          "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T105133561522Z.json",
+          "bytes": 450,
+          "sha256": "92fd87271d69661762b48990999659996cb839c1f20c2cb67b530a683857ef63",
+          "exact_target_readback": true,
+          "source_file_written": false,
+          "synthetic_rows_added": 0,
+          "cloud_export_enabled": false,
+          "github_export_enabled": false,
+          "live_sensor_reading_confirmed": false
+        }
+      ],
+      "scheduled_task": {
+        "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state": "Ready",
+        "enabled": true,
+        "trigger_interval": "PT5M",
+        "last_run_local": "2026-10-23T17:51:33+07:00",
+        "last_result": 0,
+        "next_run_local": "2026-10-23T17:56:32+07:00"
+      },
+      "live_stream_diagnostic": {
+        "hwinfo_process_running": true,
+        "hwinfo_process_id": 17520,
+        "registry_enable_logging": 0,
+        "logging_write_direct": 1,
+        "hwinfo_csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+        "hwinfo_csv_bytes": 39922785,
+        "hwinfo_csv_modified_local": "2026-10-21T09:20:45.8565035+07:00",
+        "hwinfo_csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "hwinfo_ini_has_logging_path": false,
+        "cli_logging_parameters": "installed manual labels CLI logging Pro-version-only; entitlement not verified",
+        "live_stream_confirmed": false
+      },
+      "invariants": {
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "task_closed": false
+      }
     }
   ],
   "privacy_policy": {
