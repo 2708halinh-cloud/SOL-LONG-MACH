@@ -63,7 +63,8 @@ class SensorSnapshotIntegrity(unittest.TestCase):
     def test_sync_helper_does_not_stage_raw_latest_rows(self):
         content = SYNC_HELPER.read_text(encoding="utf-8")
         self.assertNotIn("_last_nonempty_line", content)
-        self.assertNotIn("latest_row", content)
+        self.assertNotIn('"latest_row"', content)
+        self.assertNotIn("bulk_latest", content)
         self.assertIn('"live_raw_committed": False', content)
         self.assertIn('"raw_sensor_rows_committed": False', content)
         self.assertIn("for key, value in previous_state.items()", content)
