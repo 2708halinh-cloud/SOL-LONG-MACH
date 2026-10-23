@@ -31,7 +31,7 @@
     "readback_artifact_pattern": "tesseract-desktop-ci-readback-<workflow_run_id>",
     "readback_rule": "CI readback is mandatory for both success and failure. Accept only when verified_sha equals the current substantive PR head. TRUE -> verify review then merge; FLASE -> fetch workflow_run_id jobs/logs, patch failure, repeat.",
     "pr_event_verify": true,
-    "current_pr_run": null,
+    "current_pr_run": 39994207477,
     "workflow_correction_commit": "88f5be2086f401a4a1218a1e4dd3b05337377963",
     "workflow_corrections": [
       "feature-branch push no longer duplicates pull_request CI; push CI is master-only",
@@ -62,21 +62,87 @@
         "preserved_as_history": true
       }
     ],
-    "current_validation_run": null,
+    "current_validation_run": 39994207667,
     "current_head_run_readback": {
-      "observed_at": "2026-10-23T17:20:03Z",
+      "observed_at": "2026-10-24T00:21:52+07:00",
       "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-      "runs_returned": [],
-      "commit_combined_statuses": [],
-      "interpretation": "No pull_request-triggered run/status was returned by the connector for this exact head at readback time; this is not a success result and does not authorize a manual rerun.",
+      "runs": [
+        {
+          "run_id": 39994207477,
+          "workflow": "tesseract-desktop-ci",
+          "event": "pull_request",
+          "conclusion": "failure",
+          "jobs": [
+            {
+              "id": 120553389474,
+              "name": "build (macos-14, aarch64-apple-darwin, macos-apple-silicon)",
+              "conclusion": "failure",
+              "steps": [],
+              "logs_fetch": "BlobNotFound"
+            },
+            {
+              "id": 120553389661,
+              "name": "build (windows-latest, x86_64-pc-windows-msvc, windows-x64)",
+              "conclusion": "failure",
+              "steps": [],
+              "logs_fetch": "BlobNotFound"
+            },
+            {
+              "id": 120553389829,
+              "name": "build (ubuntu-24.04, x86_64-unknown-linux-gnu, linux-x64)",
+              "conclusion": "failure",
+              "steps": [],
+              "logs_fetch": "BlobNotFound"
+            },
+            {
+              "id": 120553390017,
+              "name": "tesseract_os",
+              "conclusion": "failure",
+              "steps": [],
+              "logs_fetch": "BlobNotFound"
+            },
+            {
+              "id": 120553391899,
+              "name": "selfhosted_windows_verify",
+              "conclusion": "skipped",
+              "steps": []
+            },
+            {
+              "id": 120553405219,
+              "name": "readback",
+              "conclusion": "failure",
+              "steps": [],
+              "logs_fetch": "BlobNotFound"
+            }
+          ],
+          "artifacts": []
+        },
+        {
+          "run_id": 39994207667,
+          "workflow": "validate-x-time",
+          "event": "pull_request",
+          "conclusion": "failure",
+          "jobs": [
+            {
+              "id": 120553389148,
+              "name": "verify",
+              "conclusion": "failure",
+              "steps": [],
+              "logs_fetch": "BlobNotFound"
+            }
+          ],
+          "artifacts": []
+        }
+      ],
       "rerun_performed": false,
-      "runner_assignment_change_verified": false
+      "runner_assignment_change_verified": false,
+      "interpretation": "Both workflows were naturally triggered on the exact synchronized head, but every failed job returned no steps and log retrieval returned BlobNotFound; no readback artifact exists. This is not source-code test output and does not establish a code defect. Do not rerun until runner assignment/entitlement change is verified."
     },
     "previous_head_pr_run": 39975540379,
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Resume PR #6 at 5312816d5fe2b22e92302211b67f916b88a6fe14. The feature branch is synchronized with current master 1dc5de36bc221d0a17c7601d67e2fe34e673f437 (0 behind); PR remains open and unmerged. No current-head PR workflow run/status was returned at readback. Do not manually rerun until runner assignment/entitlement changes are verified. Continue authorized issuer-key search; do not invent key material.",
+  "next": "Resume PR #6 at 5312816d5fe2b22e92302211b67f916b88a6fe14. Branch is synchronized with master (0 behind). Current-head runs 39994207477 and 39994207667 failed before step output; job logs returned BlobNotFound and no readback artifact exists. Do not rerun until runner assignment/entitlement change is verified. Continue authorized issuer-key search; do not invent key material.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -211,9 +277,13 @@
     "overlapping_paths_with_base_delta": [],
     "pr_state": "OPEN_NOT_MERGED",
     "draft": false,
-    "ci_run_for_exact_head": "NOT_RETURNED_AT_READBACK",
+    "ci_run_for_exact_head": "CURRENT_HEAD_RUNS_FAILED_BEFORE_STEP_OUTPUT",
     "runner_assignment_change_verified": false,
     "issuer_public_key_verified": false,
-    "ci_rerun": false
+    "ci_rerun": false,
+    "current_head_runs": [
+      39994207477,
+      39994207667
+    ]
   }
 }
