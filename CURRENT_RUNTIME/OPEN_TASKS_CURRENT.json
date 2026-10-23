@@ -507,9 +507,9 @@
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
       "readback": "Two automatic five-minute scheduled runs verified with LastTaskResult=0 and valid metadata-only receipts. Dropbox content_hash matches exact D:\\SENSOR_LOGS\\windows_SENSON.CSV bytes. HWiNFO is running but HKCU\\Software\\HWiNFO64\\Sensors\\EnableLogging=0; HWiNFO_WINDOWS.CSV remains stale. Live sensor stream not verified.",
       "next": [
-        "Verify the scheduled tick after 2026-10-23T18:56:32+07:00 and read back its exact receipt, source hash, and LastTaskResult.",
-        "Resolve HWiNFO logging using the documented Sensor Status > Logging start route if the exact UI can be safely reached, or verify Pro entitlement before using CLI logging parameters.",
-        "Require a genuinely new HWiNFO sample and before/after metadata/content-hash evidence; keep this task OPEN until live freshness is independently verified."
+        "Verify the scheduled tick after 2026-10-23T19:01:32+07:00 and read back its exact receipt and LastTaskResult.",
+        "Resolve HWiNFO logging via the documented Sensor Status > Logging start route if the exact UI can be safely reached, or verify Pro entitlement before CLI logging.",
+        "Require a genuinely new HWiNFO sample and before/after content-hash evidence; keep task OPEN until live freshness is independently verified."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -557,6 +557,19 @@
           ],
           "result": "SCHEDULED_TICK_VERIFIED_HWINF0_LIVE_STREAM_UNVERIFIED",
           "next_callable_edge": "Read the next scheduled receipt after 18:56:32+07:00. Investigate a safe, documented HWiNFO GUI route or verify Pro entitlement before any CLI logging attempt.",
+          "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
+        },
+        {
+          "observed_at": "2026-10-23T18:57:44+07:00",
+          "source": "Fresh Windows Scheduled Task query and direct read of the newest exact receipt",
+          "actions_and_receipts": [
+            "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M ran at 18:56:33+07:00; LastTaskResult=0; next run 19:01:32+07:00.",
+            "Exact receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T115633669382Z.json read directly: valid JSON, 450 bytes, SHA-256 aed3807c0652732ef54d592e6ad4c10063e5c3aa323aa16796397f9ed0f55768.",
+            "Receipt source SHA matches observed Windows CSV SHA 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; no source write, no synthetic rows, exports disabled.",
+            "Live HWiNFO sample is still not confirmed: EnableLogging=0 and latest known HWiNFO CSV timestamp remains 2026-10-21."
+          ],
+          "result": "SCHEDULED_TICK_RECEIPT_VERIFIED_LIVE_STREAM_UNVERIFIED",
+          "next_callable_edge": "Verify next scheduled receipt after 19:01:32+07:00; use a supported, authorized HWiNFO UI logging route only when the exact window/control can be identified safely.",
           "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
         }
       ]
@@ -2430,6 +2443,81 @@
         "Continue Windows Tick and TESSERACT branches independently."
       ],
       "prior_entry_policy": "Append-only; existing observations and task states preserved."
+    },
+    {
+      "observed_at": "2026-10-23T18:57:44+07:00",
+      "record_type": "WINDOWS_SCHEDULED_TICK_115633_READBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "437b7e9de32b2ef8e8e77815509fe253c5d988e6",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "63e5ff4571a9dcdeee51eb974b8beb767af851cd"
+      },
+      "provider_observations": {
+        "windows": {
+          "device": "DESKTOP-86ITNQ4",
+          "status": "ONLINE",
+          "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+          "source_bytes": 35389440,
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "source_last_write_local": "2026-10-23T15:45:56.2458701+07:00",
+          "scheduled_task": {
+            "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+            "state": "Ready",
+            "enabled": true,
+            "last_run_local": "2026-10-23T18:56:33+07:00",
+            "last_result": 0,
+            "next_run_local": "2026-10-23T19:01:32+07:00",
+            "interval": "PT5M"
+          },
+          "receipt": {
+            "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T115633669382Z.json",
+            "bytes": 450,
+            "sha256": "aed3807c0652732ef54d592e6ad4c10063e5c3aa323aa16796397f9ed0f55768",
+            "exact_target_readback": true,
+            "json_valid": true,
+            "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+            "source_file_written": false,
+            "synthetic_rows_added": 0,
+            "live_sensor_reading_confirmed": false
+          },
+          "hwinfo": {
+            "process_running": true,
+            "version": "8.52",
+            "enable_logging": 0,
+            "latest_known_csv_modified_local": "2026-10-21T09:20:45.8565035+07:00",
+            "live_stream_confirmed": false
+          }
+        },
+        "nextdns": {
+          "endpoint_http_status": 200,
+          "active_profile": "fp7945a91d9257b334",
+          "target_profile_mapping_verified": false,
+          "dns_configuration_changed": false
+        },
+        "tesseract_os_braid": {
+          "six_forces_receipt_sha256": "52bef56146a0832529285e24887daf857e8e94e8f1cae3c543a722cf51c7145d",
+          "receipt_readback": true,
+          "plural_receipt_readback": true,
+          "cloud_host_wiring": "NOT_VERIFIED"
+        }
+      },
+      "verified": {
+        "scheduled_tick_receipt_readback": true,
+        "consumer_exit_code_zero_previous_run": true,
+        "live_sensor_stream_confirmed": false,
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "open_tasks_closed": false
+      },
+      "state_boundary": "SCHEDULED_TICK_WORKS; HWINF0_LIVE_STREAM_NOT_VERIFIED",
+      "next_action": [
+        "Read the next scheduled receipt after 19:01:32+07:00.",
+        "Resolve the HWiNFO logging UI/entitlement safely.",
+        "Continue independent NextDNS profile mapping and TESSERACT issuer/runner tasks without repeating CI 39153474587 absent runner-state change."
+      ],
+      "prior_entry_policy": "Append-only; prior observations and task states preserved."
     }
   ]
 }
