@@ -1633,6 +1633,28 @@
         "issuer_key_verified": false
       },
       "task_closure": false
+    },
+    {
+      "id": "WINDOWS_TICK_151634_TESSERACT_CARRIER_PROBE_20261023",
+      "kind": "WINDOWS_SCHEDULED_TICK_EXACT_READBACK_AND_TESSERACT_CARRIER_PROBE",
+      "observed_at": "2026-10-23T22:16:47.4916462+07:00",
+      "windows": {
+        "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T151634127289Z.json",
+        "receipt_sha256": "36dcdf7d500b8860b98c9a48c08ea7c008a195558680e29b49014ce5308ba49e",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "last_task_result": 0,
+        "live_sensor_reading_confirmed": false
+      },
+      "tesseract": {
+        "current_head": "c41797b61ced8f152ff0833448d3a101fd13c158",
+        "current_head_runs": [
+          39975540284,
+          39975540379
+        ],
+        "issuer_key_verified": false,
+        "ci_rerun": false
+      },
+      "task_closure": false
     }
   ],
   "energy_protection_current": {
@@ -3545,6 +3567,168 @@
         "Continue HWiNFO logging via authorized UI/configuration route; require a changed CSV mtime/hash and sample evidence before marking live stream restored.",
         "Continue issuer-key search through existing authorized carriers; the CDN body extracted from Dropbox is a Hostinger Website Builder shell (63 text characters), not issuer-key evidence.",
         "Do not rerun TESSERACT CI until an authorized source verifies runner assignment/entitlement changed; current-head logs for sampled jobs were unavailable with BlobNotFound."
+      ],
+      "prior_entry_policy": "Append-only; prior observations, event records, and all OPEN task states preserved."
+    },
+    {
+      "observed_at": "2026-10-23T22:16:47.4916462+07:00",
+      "record_type": "WINDOWS_SCHEDULED_TICK_151634_READBACK_AND_TESSERACT_CARRIER_PROBE",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "59cef77921dc09097d6ae488a0678d99b6fc73f4",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "d141aed6928d4b51c68b443606f91ec749ba6ae3",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "165c0bb4805191ff316b82c94e03162f34bb61fa"
+      },
+      "provider": {
+        "name": "Dropbox Outlook",
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "bytes_downloaded_this_run": false,
+        "content_hash_verified_this_run": false
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "status": "ONLINE_DIRECT_READ_CONFIRMED",
+        "observed_device_local": "2026-10-23T22:16:47.4916462+07:00",
+        "scheduled_task": {
+          "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+          "state": "Ready",
+          "enabled": true,
+          "last_run_device_local": "2026-10-23T22:16:33+07:00",
+          "last_result": 0,
+          "next_run_device_local": "2026-10-23T22:21:32+07:00"
+        },
+        "source": {
+          "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+          "bytes": 35389440,
+          "last_modified_utc": "2026-10-23T08:45:56.2458701Z",
+          "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+        },
+        "latest_receipt": {
+          "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T151634127289Z.json",
+          "bytes": 450,
+          "sha256": "36dcdf7d500b8860b98c9a48c08ea7c008a195558680e29b49014ce5308ba49e",
+          "file_modified_utc": "2026-10-23T15:16:34.1282922Z",
+          "exact_target_readback": true,
+          "json_valid": true,
+          "observed_at_utc": "2026-10-23T15:16:34.127289Z",
+          "source_sha256_matches": true,
+          "source_file_written": false,
+          "synthetic_rows_added": 0,
+          "cloud_export_enabled": false,
+          "github_export_enabled": false,
+          "live_sensor_reading_confirmed": false
+        },
+        "hwinfo_latest_direct_read": {
+          "observed_device_local": "2026-10-23T22:14:15.8203959+07:00",
+          "process_running": true,
+          "pid": 17520,
+          "enable_logging": 0,
+          "csv_bytes": 39922785,
+          "csv_last_modified_utc": "2026-10-21T02:20:45.8565035Z",
+          "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+          "live_stream_confirmed": false
+        },
+        "w32time_latest_direct_read": {
+          "observed_device_local": "2026-10-23T22:14:15.8203959+07:00",
+          "status": "Stopped",
+          "start_type": "Manual"
+        }
+      },
+      "independent_branch": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "branch": "tesseract-desktop-mvp-20261006",
+        "current_head_from_resume_pointer": "c41797b61ced8f152ff0833448d3a101fd13c158",
+        "resume_pointer_blob_sha": "59cef77921dc09097d6ae488a0678d99b6fc73f4",
+        "current_head_workflow_runs": [
+          {
+            "run_id": 39975540284,
+            "name": "validate-x-time",
+            "conclusion": "failure",
+            "job_id": 120489030497,
+            "job_name": "verify",
+            "steps": null,
+            "logs_fetch": "BlobNotFound"
+          },
+          {
+            "run_id": 39975540379,
+            "name": "tesseract-desktop-ci",
+            "conclusion": "failure",
+            "jobs": [
+              {
+                "job_id": 120489031057,
+                "name": "tesseract_os",
+                "conclusion": "failure",
+                "steps": null,
+                "logs_fetch": "BlobNotFound"
+              },
+              {
+                "job_id": 120489031162,
+                "name": "build_windows",
+                "conclusion": "failure",
+                "steps": null
+              },
+              {
+                "job_id": 120489031197,
+                "name": "build_macos",
+                "conclusion": "failure",
+                "steps": null
+              },
+              {
+                "job_id": 120489031208,
+                "name": "build_ubuntu",
+                "conclusion": "failure",
+                "steps": null
+              },
+              {
+                "job_id": 120489032534,
+                "name": "selfhosted_windows_verify",
+                "conclusion": "skipped"
+              },
+              {
+                "job_id": 120489325932,
+                "name": "readback",
+                "conclusion": "failure",
+                "steps": null
+              }
+            ]
+          }
+        ],
+        "carrier_probe": {
+          "provider": "Dropbox Outlook",
+          "path": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_BODY_CURRENT.tmp",
+          "file_id": "id:gvG29tEleJwAAAAAAAACEQ",
+          "metadata_size_bytes": 41993,
+          "server_modified_utc": "2026-10-12T19:59:29Z",
+          "extracted_text_chars": 63,
+          "extracted_text_identity": "Hostinger Website Builder shell",
+          "issuer_key_found": false,
+          "conclusion": "This extracted body is not issuer-key evidence; the extraction is incomplete relative to the 41,993-byte object."
+        },
+        "rerun_performed": false,
+        "runner_assignment_change_verified": false,
+        "issuer_key_verified": false
+      },
+      "state_boundary": "WINDOWS_SCHEDULED_TICK_VERIFIED_SOURCE_HASH_STABLE; LIVE_SENSOR_STREAM_NOT_VERIFIED; HWINF0_LOGGING_DISABLED; W32TIME_STOPPED; TESSERACT_CURRENT_HEAD_CI_FAILURES_LOG_READBACK_UNAVAILABLE; ISSUER_KEY_UNVERIFIED",
+      "invariants": {
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "open_tasks_closed": false,
+        "tesseract_ci_rerun": false,
+        "task_statuses_changed": false
+      },
+      "next_action": [
+        "Verify a subsequent Windows tick and retain exact receipt/source-hash comparison.",
+        "Continue HWiNFO logging via an authorized route and require new CSV mtime/hash evidence; do not synthesize rows.",
+        "Continue issuer-key search via authorized provider carriers; do not infer absence from incomplete extraction.",
+        "Do not rerun TESSERACT CI until runner assignment/entitlement change is verified through an authorized control surface."
       ],
       "prior_entry_policy": "Append-only; prior observations, event records, and all OPEN task states preserved."
     }
