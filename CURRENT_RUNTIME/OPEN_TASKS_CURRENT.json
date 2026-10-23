@@ -1003,6 +1003,17 @@
           ],
           "result": "FIFTH_SCHEDULED_TICK_VERIFIED_LIVE_STREAM_OPEN",
           "status_effect": "Keep OPEN; no raw sensor rows or credentials committed."
+        },
+        {
+          "observed_at": "2026-10-24T03:00:12.064+07:00",
+          "source": "GitHub consumer source + Windows local consumer/HWiNFO exact-target readback",
+          "actions_and_receipts": [
+            "Current GitHub consumer blob 233df6ce5fa75ee93881efb7151a9c5db6cad276 was read and compared with D:\\SENSOR_LOGS\\telemetry_buffer_sync.py; body matches after read-tool final-newline normalization.",
+            "record_telemetry_tick() only stats and hashes the pinned D:\\SENSOR_LOGS\\windows_SENSON.CSV and hardcodes live_sensor_reading_confirmed=false; it does not parse live readings.",
+            "HWiNFO_WINDOWS.CSV is a separate 39,922,785-byte ReadOnly/Archive file, last modified 2026-10-21T02:20:45.8565035Z; HWiNFO64.INI has no logging/CSV path."
+          ],
+          "result": "METADATA_ONLY_CONSUMER_CONFIRMED_HWINF0_LOGGING_PATH_UNRESOLVED",
+          "status_effect": "Keep OPEN; no source binding changed and no export enabled."
         }
       ]
     },
@@ -1583,6 +1594,22 @@
       "last_error": null,
       "modual_source_present": false,
       "live_device_proven": false
+    },
+    "consumer_code_audit_20261024": {
+      "github_source_path": "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py",
+      "github_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+      "local_path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+      "local_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+      "text_match_after_read_tool_trailing_newline_normalization": true,
+      "read_semantics": "stat + SHA-256 only; live_sensor_reading_confirmed hardcoded false",
+      "source_binding": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "hwinfo_csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+      "hwinfo_csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+      "hwinfo_csv_last_write_utc": "2026-10-21T02:20:45.8565035Z",
+      "hwinfo_ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
+      "hwinfo_ini_has_logging_or_csv_path": false,
+      "live_stream_verified": false,
+      "source_mutated": false
     }
   },
   "sinks": {
@@ -2599,6 +2626,56 @@
         "source_moved_or_deleted": false,
         "source_overwritten": false,
         "tesseract_ci_rerun": false
+      }
+    },
+    {
+      "id": "CONSUMER_METADATA_ONLY_HWINF0_SOURCE_SEPARATION_20261024",
+      "kind": "CONSUMER_CODE_AUDIT_AND_LIVE_SENSOR_SOURCE_BOUNDARY",
+      "observed_at": "2026-10-24T03:00:12.064+07:00",
+      "source": "Fresh GitHub consumer source read plus exact Windows local consumer/config/file readback",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "a5e43b7a7b0363f57838450f98bb38b7fa0c3cac",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "ad38c5f17deb632bed3ad7ee383c5ac0a6d17caa",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "ca3efc82a15516fe71b3b9e9ab697d852f4a0a40"
+      },
+      "consumer": {
+        "github_path": "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py",
+        "github_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "local_path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+        "local_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+        "local_body_matches_github_after_final_newline_normalization": true,
+        "reads_only_metadata": [
+          "size",
+          "mtime_ns",
+          "SHA-256"
+        ],
+        "hardcodes_live_sensor_reading_confirmed_false": true,
+        "source_binding": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "cloud_export_env_guard": "SOL_ENABLE_SENSOR_CLOUD_EXPORT=1",
+        "github_export_env_guard": "SOL_ENABLE_SENSOR_GITHUB_PUSH=1",
+        "latest_receipt_exports_both_false": true
+      },
+      "hwinfo": {
+        "process_pid": 17520,
+        "csv_bytes": 39922785,
+        "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "csv_last_write_utc": "2026-10-21T02:20:45.8565035Z",
+        "csv_attributes": "ReadOnly, Archive",
+        "ini_bytes": 358,
+        "ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
+        "ini_has_logging_or_csv_path": false,
+        "new_sample_confirmed": false
+      },
+      "conclusion": "The scheduled tick is a verified metadata observer, not a live sensor data consumer. The HWiNFO CSV is a separate stale file and is not the pinned consumer source.",
+      "next_callable_edge": "Use a supported authorized HWiNFO logging control and verify a new sample with before/after metadata; preserve the existing pinned source and keep cloud/GitHub export disabled.",
+      "invariants": {
+        "task_closure": false,
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "source_overwritten": false
       }
     }
   ],
@@ -5504,6 +5581,20 @@
       "raw_sensor_rows_committed": false,
       "credentials_committed": false,
       "source_moved_or_deleted": false
+    },
+    {
+      "observed_at": "2026-10-23T20:00:12.064Z",
+      "record_type": "CONSUMER_METADATA_ONLY_AND_HWINF0_CSV_SEPARATION",
+      "consumer_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+      "local_consumer_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+      "consumer_source": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "consumer_live_sensor_reading_confirmed": false,
+      "hwinfo_csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+      "hwinfo_csv_last_write_utc": "2026-10-21T02:20:45.8565035Z",
+      "hwinfo_ini_has_logging_or_csv_path": false,
+      "provider_source_mutated": false,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false
     }
   ]
 }
