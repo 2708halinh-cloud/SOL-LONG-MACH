@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Read back the next Windows tick after device-clock 2026-10-24T03:06:32+07:00. Current consumer source has been inspected locally and on GitHub: it hashes only the pinned D:\\SENSOR_LOGS\\windows_SENSON.CSV and explicitly sets live_sensor_reading_confirmed=false; this is a metadata observer, not a live sensor reader. HWiNFO_WINDOWS.CSV remains a separate stale/read-only file and HWiNFO64.INI has no logging/CSV path. Next action is to use a supported authorized HWiNFO logging control, then verify a new sample by before/after metadata; do not redirect the pinned source or enable cloud/GitHub exports without exact-target review. W32Time remains Stopped/Manual with no Administrator rights in this session. Ollama /api/chat now returned HTTP 200, done=true, OK on 127.0.0.1:11434 only; continue Android relay/Chrome UI verification without LAN exposure. X-TIME health remains HTTP 200 at 127.0.0.1:8769 with 63 tools, but MODUAL source binding and live-device proof remain open. Dropbox metadata connector failed account-link validation, so use another authorized provider route rather than repeating the same failed call. PR #6 head 5312816d5fe2b22e92302211b67f916b88a6fe14 workflows 39994207477 and 39994207667 remain failed; do not rerun these or 39153474587 until runner assignment/entitlement change is verified; issuer public key remains unverified.",
+  "next": "Read back the next Windows tick after device-clock 2026-10-24T03:36:32+07:00. Current consumer source has been inspected locally and on GitHub: it hashes only the pinned D:\\SENSOR_LOGS\\windows_SENSON.CSV and explicitly sets live_sensor_reading_confirmed=false; this is a metadata observer, not a live sensor reader. HWiNFO_WINDOWS.CSV remains a separate stale/read-only file and HWiNFO64.INI has no logging/CSV path. Next action is to use a supported authorized HWiNFO logging control, then verify a new sample by before/after metadata; do not redirect the pinned source or enable cloud/GitHub exports without exact-target review. W32Time remains Stopped/Manual with no Administrator rights in this session. Ollama /api/chat now returned HTTP 200, done=true, OK on 127.0.0.1:11434 only; continue Android relay/Chrome UI verification without LAN exposure. X-TIME health remains HTTP 200 at 127.0.0.1:8769 with 63 tools, but MODUAL source binding and live-device proof remain open. Dropbox metadata connector failed account-link validation, so use another authorized provider route rather than repeating the same failed call. PR #6 head 5312816d5fe2b22e92302211b67f916b88a6fe14 workflows 39994207477 and 39994207667 remain failed; do not rerun these or 39153474587 until runner assignment/entitlement change is verified; issuer public key remains unverified.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -789,6 +789,67 @@
       "raw_sensor_rows_committed": false,
       "credentials_committed": false,
       "source_moved_or_deleted": false
+    },
+    {
+      "observed_at": "2026-10-23T20:37:41.856Z",
+      "observed_at_local": "2026-10-24T03:37:41.856+07:00",
+      "record_type": "HOST_TICK_RECEIPT_READBACK_AND_CLOUD_EVIDENCE_232",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "3d754f86e0e1c017b8f32b0088a476ae682928a8",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "79f9355e32f0dab47da0935e8321922d875083d0",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "0f640ebdd06809d7d04109577d628d8daf1bc6ec"
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T203135123932Z.json",
+        "receipt_observed_at_utc": "2026-10-23T20:31:35.123932Z",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_modified_ns": 1792745156245870000,
+        "source_unchanged": true,
+        "live_sensor_reading_confirmed": false,
+        "exports": {
+          "cloud_enabled": false,
+          "github_enabled": false
+        },
+        "mutations": {
+          "source_file_written": false,
+          "synthetic_rows_added": 0
+        }
+      },
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "workflow_active": true,
+        "latest_verified_execution_id": "110",
+        "latest_verified_execution_status": "success",
+        "latest_verified_execution_started_at": "2026-10-23T20:00:22.083Z",
+        "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+        "recovery_rows": 45,
+        "terminal_rows": 0,
+        "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+        "evidence_row_id": 232,
+        "evidence_event_id": "X20261023203135123_HOST",
+        "evidence_readback": true,
+        "project_credentials_visible": 0,
+        "agent_drafts_available_in_mcp": 5,
+        "published_agent_count": 0,
+        "tesseract_workflow_count": 0
+      },
+      "github": {
+        "repository": "2708halinh-cloud/SOL-LONG-MACH",
+        "head_at_observation": "9335dcc5668300ba538b6872c91a6a4dcfd797a9",
+        "combined_status_count": 0,
+        "ci_verified": false
+      },
+      "result": "HOST_TICK_RECEIPT_READBACK_VERIFIED; LIVE_SENSOR_UNCONFIRMED; CLOUD_AGENT_DISPATCH_BLOCKED",
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "next_callable_edge": "Read the next scheduled tick after device-clock 2026-10-24T03:36:32+07:00; keep the pinned source read-only and exports disabled; do not dispatch subagents until a published agent and scoped credential route are explicitly authorized; Android relay/UI remains unverified."
     }
   ],
   "latest_sync_observation": {
