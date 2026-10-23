@@ -1014,6 +1014,18 @@
           ],
           "result": "METADATA_ONLY_CONSUMER_CONFIRMED_HWINF0_LOGGING_PATH_UNRESOLVED",
           "status_effect": "Keep OPEN; no source binding changed and no export enabled."
+        },
+        {
+          "observed_at": "2026-10-24T03:03:23.306+07:00",
+          "source": "Fresh Windows Scheduled Task and exact receipt readback",
+          "actions_and_receipts": [
+            "Latest scheduled receipt WINDOWS_TICK_20261023T200135409855Z.json is valid JSON, 450 bytes, SHA-256 558222e07224c3a1df229299415f362c8e54c1dfc04b571edaf31a7de5671ba0.",
+            "Task last ran at device-local 03:01:33+07, result 0, zero missed runs; next device-clock run 03:06:32+07.",
+            "Source SHA-256 remains 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87, size 35,389,440 bytes; live_sensor_reading_confirmed=false.",
+            "Code audit confirms this consumer only reads source metadata; HWiNFO CSV remains a separate stale file."
+          ],
+          "result": "SIXTH_SCHEDULED_TICK_VERIFIED_LIVE_SENSOR_STREAM_OPEN",
+          "status_effect": "Keep OPEN; no source change or export."
         }
       ]
     },
@@ -1610,6 +1622,22 @@
       "hwinfo_ini_has_logging_or_csv_path": false,
       "live_stream_verified": false,
       "source_mutated": false
+    },
+    "windows_tick_20261023T200135Z": {
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T200135409855Z.json",
+      "observed_at_utc": "2026-10-23T20:01:35.409855Z",
+      "receipt_sha256": "558222e07224c3a1df229299415f362c8e54c1dfc04b571edaf31a7de5671ba0",
+      "receipt_bytes": 450,
+      "exact_target_readback": true,
+      "json_valid": true,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "source_unchanged": true,
+      "live_sensor_reading_confirmed": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false
     }
   },
   "sinks": {
@@ -2670,6 +2698,55 @@
       },
       "conclusion": "The scheduled tick is a verified metadata observer, not a live sensor data consumer. The HWiNFO CSV is a separate stale file and is not the pinned consumer source.",
       "next_callable_edge": "Use a supported authorized HWiNFO logging control and verify a new sample with before/after metadata; preserve the existing pinned source and keep cloud/GitHub export disabled.",
+      "invariants": {
+        "task_closure": false,
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "source_overwritten": false
+      }
+    },
+    {
+      "id": "SIXTH_SCHEDULED_TICK_20261023T200135Z",
+      "kind": "SIXTH_SCHEDULED_WINDOWS_TICK_EXACT_TARGET_READBACK",
+      "observed_at": "2026-10-24T03:03:23.306+07:00",
+      "source": "Remote Desktop Commander direct Windows task and receipt readback",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "e2f017f964b79533c2dad7cff4f81a975eff276d",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "736682cfe9777efc9c0252e6ff6622cd56193bc6",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "0f640ebdd06809d7d04109577d628d8daf1bc6ec"
+      },
+      "task": {
+        "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state": "Ready",
+        "enabled": true,
+        "last_run_local": "2026-10-24T03:01:33+07:00",
+        "last_result": 0,
+        "missed_runs": 0,
+        "next_run_device_clock": "2026-10-24T03:06:32+07:00"
+      },
+      "receipt": {
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T200135409855Z.json",
+        "sha256": "558222e07224c3a1df229299415f362c8e54c1dfc04b571edaf31a7de5671ba0",
+        "bytes": 450,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_bytes": 35389440,
+        "source_unchanged": true,
+        "live_sensor_reading_confirmed": false,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false
+      },
+      "consumer": {
+        "github_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "local_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+        "metadata_only": true,
+        "source_binding": "D:\\SENSOR_LOGS\\windows_SENSON.CSV"
+      },
+      "conclusion": "Sixth scheduled metadata-only tick receipt verified; source unchanged; live sensor stream remains unverified.",
       "invariants": {
         "task_closure": false,
         "raw_sensor_rows_committed": false,
@@ -5595,6 +5672,17 @@
       "provider_source_mutated": false,
       "cloud_export_enabled": false,
       "github_export_enabled": false
+    },
+    {
+      "observed_at": "2026-10-23T20:03:23.306Z",
+      "record_type": "SIXTH_SCHEDULED_WINDOWS_TICK_READBACK",
+      "receipt_sha256": "558222e07224c3a1df229299415f362c8e54c1dfc04b571edaf31a7de5671ba0",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "task_last_result": 0,
+      "missed_runs": 0,
+      "live_sensor_reading_confirmed": false,
+      "source_mutated": false,
+      "exports_enabled": false
     }
   ]
 }
