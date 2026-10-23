@@ -1555,6 +1555,40 @@
       "task_state_effect": "NONE",
       "task_closure": false,
       "invariant": "Do not equate a PR, prior CI, archive readback, or report with completion of source restoration or any OPEN task."
+    },
+    {
+      "observed_at": "2026-10-23",
+      "record_type": "PR22_SECRET_GUARD_READBACK_NOT_SUBMODULE_TEST_OR_TASK_CLOSURE",
+      "provider_run": {
+        "id": 39938448582,
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/39938448582",
+        "job_id": 120363683472,
+        "conclusion": "success",
+        "source_head_before_ledger_append": "989a59fbf7c8a6edca6b8428f42acee329af2720"
+      },
+      "verified": {
+        "secret_guard_source_snapshot_downloaded": true,
+        "tracked_files_examined": 1234,
+        "alerts": 0,
+        "source_commit": "989a59fbf7c8a6edca6b8428f42acee329af2720",
+        "workflow_step_scope": "secret exposure scan only",
+        "gitmodules_path_regression_on_current_pr": false
+      },
+      "current_task_state": {
+        "task_count": 28,
+        "status_counts": {
+          "OPEN": 9,
+          "OPEN_CARRIED": 2,
+          "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+          "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+          "IN_PROGRESS": 3
+        },
+        "task_statuses_changed": 0,
+        "tasks_closed": 0
+      },
+      "result": "SECRET_GUARD_SUCCESS_CURRENT_PR_HEAD; SUBMODULE_PATH_REGRESSION_NOT_YET_RUN_ON_PR22",
+      "next": "Wait for an applicable source-path regression run; do not merge or claim main fixed solely from the secret guard.",
+      "invariant": "CI success is scoped to its named scan; task completion requires exact target consequence and readback."
     }
   ]
 }
