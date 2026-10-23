@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-24T04:39:37.471+07:00",
+  "observed_at": "2026-10-24T05:30:37.480+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -3305,6 +3305,106 @@
         "open_tasks_closed": false,
         "tesseract_ci_rerun": false
       }
+    },
+    {
+      "observed_at": "2026-10-24T05:30:37.480+07:00",
+      "observed_at_utc": "2026-10-23T22:30:37.480Z",
+      "record_type": "FRESH_PROVIDER_READBACK_AND_DESKTOP_ROUTE_DIVERGENCE_20261024",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "06a1ee7aa5854f9e54d635788f8a88137a8cea7f",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "3b1ed684e9685cb9e86152521ba5c91a8b26eaaf",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "c31b7d1e96bf413fd1a64a53963114d0918e9099"
+      },
+      "provider": {
+        "dropbox_outlook": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true,
+          "raw_bytes_downloaded": false
+        },
+        "telemetry_buffer_sync_py": {
+          "path": "/Linh Hà/SENSOR_LOGS/telemetry_buffer_sync.py",
+          "file_id": "id:gvG29tEleJwAAAAAAAACEA",
+          "rev": "0165daa22c5d85b0000000395cdfd73",
+          "size_bytes": 10707,
+          "server_modified_utc": "2026-10-12T19:59:29Z",
+          "metadata_readback": true
+        }
+      },
+      "desktop_route": {
+        "device": "DESKTOP-86ITNQ4",
+        "remote_desktop_commander_inventory_first_observation": "ONLINE last_seen_about_1m",
+        "read_only_process_start": {
+          "pid": 48188,
+          "shell": "powershell",
+          "purpose": "read scheduled task, latest tick receipts, source hash, HWiNFO process and W32Time state",
+          "result": "PROCESS_STARTED_OUTPUT_PENDING"
+        },
+        "subsequent_readback": {
+          "tool": "Remote_Desktop_Commander.read_process_output",
+          "result": "NO_DEVICE_CURRENTLY_ONLINE",
+          "last_seen_reported": "4s"
+        },
+        "separate_desktopcommande_inventory": "OFFLINE last_seen_84h",
+        "latest_receipt_readback_this_run": false,
+        "task_state_readback_this_run": false,
+        "inference": "connector inventories disagree; do not infer current Windows task state from inventory alone",
+        "source_mutation": false
+      },
+      "tesseract_desktop": {
+        "repo": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "state": "OPEN",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "base_api_sha": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
+        "runs": [
+          {
+            "id": 39994207477,
+            "conclusion": "failure",
+            "jobs": [
+              "build macOS failed with empty steps",
+              "build Windows failed with empty steps",
+              "build Linux failed with empty steps",
+              "tesseract_os failed with empty steps",
+              "selfhosted_windows_verify skipped",
+              "readback failed with empty steps"
+            ]
+          },
+          {
+            "id": 39994207667,
+            "conclusion": "failure",
+            "jobs": [
+              "verify failed with empty steps"
+            ]
+          }
+        ],
+        "failed_windows_job_log": "BlobNotFound 404",
+        "selfhosted_windows_condition": "if github.event_name != 'pull_request'; this PR-triggered run skips the self-hosted verification job by workflow design",
+        "workflow_variable_reference_verified": true,
+        "issuer_key_value_or_variable_presence_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false,
+        "source_code_failure_established": false
+      },
+      "github_search": {
+        "exact_key_query_on_x_time_web_default_branch": "no results",
+        "interpretation": "search index result only; not proof key absent from authorized provider carriers"
+      },
+      "invariants": {
+        "raw_sensor_values_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "source_overwritten": false,
+        "open_tasks_closed": false,
+        "tesseract_ci_rerun": false
+      },
+      "result": "PROVIDER_METADATA_VERIFIED_WINDOWS_FOLLOWUP_READBACK_PENDING_TESSERACT_CI_FAILURE_BEFORE_STEP_CONFIRMED",
+      "next_callable_edge": "Resume read-only Windows process/receipt readback when the authorized route is responsive; meanwhile continue independent provider/runtime work. For TESSERACT, inspect authorized Actions runner controls and issuer-key carriers; do not rerun unchanged CI or infer source-code failure from empty step arrays."
     }
   ],
   "privacy_policy": {
