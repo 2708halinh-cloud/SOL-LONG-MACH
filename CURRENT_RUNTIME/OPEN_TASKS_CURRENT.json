@@ -1110,6 +1110,19 @@
           "result": "TICK_LONG_RUNNING_NO_RECEIPT_LATEST_STATE_UNVERIFIED",
           "next_callable_edge": "When route returns, inspect whether PID 71220 completed/terminated, verify the newest receipt and task history, and time one-shot execution before any configuration change.",
           "status_effect": "Keep OPEN; live sensor stream unverified."
+        },
+        {
+          "observed_at": "2026-10-24T05:42:12.302+07:00",
+          "source": "Exact GitHub source reads plus Windows task result/receipt timeline",
+          "actions_and_receipts": [
+            "Static read of sensor_root_resolver._check_csv shows a full SHA-256 pass over the pinned CSV after header/sample validation.",
+            "telemetry_buffer_sync.record_telemetry_tick then performs a second full SHA-256 pass over the same 35,389,440-byte CSV before writing a receipt.",
+            "The task execution limit is PT2M; one run was terminated with 0x41306 and the following run remained Running at the last direct readback without a new receipt. Double hashing is a plausible bottleneck, not yet a proven root cause.",
+            "No code, task settings, source CSV, HWiNFO configuration, or W32Time state was changed."
+          ],
+          "result": "DOUBLE_HASH_PATH_CONFIRMED_ROOT_CAUSE_UNCONFIRMED",
+          "next_callable_edge": "Time a one-shot with exports explicitly disabled when the Windows route returns; then optimize digest reuse or adjust the execution limit only if measured evidence supports it.",
+          "status_effect": "Keep OPEN_SCHEDULED_TICK_LONG_RUNNING_NO_NEW_RECEIPT_LIVE_STREAM_NOT_VERIFIED."
         }
       ]
     },
@@ -3699,6 +3712,44 @@
       "result": "SCHEDULED_TICK_LONG_RUNNING_WITHOUT_NEW_RECEIPT_LATEST_STATE_UNVERIFIED",
       "next_callable_edge": "Resume direct task/process readback through an authorized responsive route, determine whether PID 71220 completed or was terminated, and measure one-shot source-read duration before modifying task settings.",
       "status_effect": "Keep MODUAL_SENSOR_LOGS_ROUTING OPEN; live sensor stream unverified."
+    },
+    {
+      "id": "MODUAL_DOUBLE_HASH_STATIC_DIAGNOSIS_20261024",
+      "kind": "STATIC_SOURCE_ANALYSIS_OF_LONG_RUNNING_CONSUMER",
+      "observed_at": "2026-10-24T05:42:12.302+07:00",
+      "observed_at_utc": "2026-10-23T22:42:12.302Z",
+      "source": "GitHub exact fetch of MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py and sensor_root_resolver.py plus direct Windows task run observations",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "9acf93f5c81e443b8244b32df1ee251ca5489b1c",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "eb7ef297126318ced964e31dfbd4e81422c34af3",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "e63cd6e872570addd40f8223768881e2c6d69a08"
+      },
+      "evidence": {
+        "consumer": {
+          "path": "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py",
+          "blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+          "local_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7"
+        },
+        "resolver": {
+          "path": "MODUAL/SENSOR_LOGS/source/sensor_root_resolver.py",
+          "blob_sha": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+          "local_sha256": "117bcb01aefa908aac861f97c83dcccff7e84a5d080d771da09134378db98471"
+        },
+        "double_read": {
+          "first": "telemetry_buffer_sync.py sets SOL_SENSOR_SOURCE_FILE then calls inspect_sources(); sensor_root_resolver._check_csv hashes the full pinned CSV after reading header/sample row",
+          "second": "record_telemetry_tick() hashes the same full CSV again to create the receipt",
+          "source_bytes": 35389440,
+          "execution_time_limit": "PT2M",
+          "interpretation": "double full-file hash is a plausible contributor to the observed long run/termination, but not proven without a timed one-shot; slow storage, launcher behavior, or another I/O wait remain possible"
+        },
+        "latest_device_state": "last direct readback at device 05:33:44 showed PID 71220 running; later route unavailable; no new receipt after 2026-10-23T22:01:44.171458Z",
+        "source_or_task_changed": false
+      },
+      "result": "DOUBLE_HASH_STATIC_PATH_IDENTIFIED_AS_CANDIDATE_NOT_CONFIRMED_ROOT_CAUSE",
+      "next_callable_edge": "When device route returns, time a one-shot with both exports explicitly disabled and compare receipt creation time; if the two-pass hash is the bottleneck, optimize to reuse verified digest/evidence or adjust execution limit only after measured duration and safe task behavior.",
+      "status_effect": "Keep MODUAL task OPEN; no code or task settings changed."
     }
   ],
   "energy_protection_current": {
@@ -6933,6 +6984,17 @@
       "route_later_unavailable": true,
       "root_cause_proven": false,
       "task_closed": false
+    },
+    {
+      "observed_at": "2026-10-23T22:42:12.302Z",
+      "record_type": "MODUAL_CONSUMER_DOUBLE_HASH_STATIC_REVIEW",
+      "consumer_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+      "resolver_blob_sha": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+      "full_csv_hash_passes_per_tick": 2,
+      "execution_time_limit": "PT2M",
+      "root_cause_confirmed": false,
+      "source_mutated": false,
+      "task_settings_changed": false
     }
   ]
 }
