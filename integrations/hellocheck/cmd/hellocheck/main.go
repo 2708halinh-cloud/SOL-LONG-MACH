@@ -2,6 +2,7 @@
 // By default it never contacts any blockchain node and never prints private keys.
 package main
 import (
+ "context"
  "encoding/hex"
  "encoding/json"
  "errors"
@@ -20,7 +21,7 @@ type walletFile struct{
  WIF string `json:"wif"`
 }
 func fail(err error){fmt.Fprintln(os.Stderr,"HelloCheck:",err);os.Exit(2)}
-func usage(){fmt.Fprintln(os.Stderr,"usage: hellocheck create --wallet /private/path.json | address --hash160 HEX | inspect --address ADDRESS | unsigned --txid TXID --vout N --input-sats N --dest ADDRESS --sats N --fee N [--change ADDRESS] | sign --wallet /private/path.json --txid TXID --vout N --input-sats N --dest ADDRESS --sats N --fee N [--change ADDRESS]");os.Exit(2)}
+func usage(){fmt.Fprintln(os.Stderr,"usage: hellocheck create --wallet /private/path.json | address --hash160 HEX | inspect --address ADDRESS | unsigned --txid TXID --vout N --input-sats N --dest ADDRESS --sats N --fee N [--change ADDRESS] | sign --wallet /private/path.json --txid TXID --vout N --input-sats N --dest ADDRESS --sats N --fee N [--change ADDRESS] | broadcast --hex SIGNED_TX_HEX --confirm-testnet [--rpc-url http://127.0.0.1:18332]");os.Exit(2)}
 func openWallet(path string)(walletFile,error){
  if path==""{return walletFile{},errors.New("wallet path is required")}
  info,err:=os.Stat(path)
@@ -94,6 +95,17 @@ func main(){
    fmt.Println("UNSIGNED_TRANSACTION_NOT_BROADCASTABLE")
   }
   fmt.Println(hex.EncodeToString(raw))
+ case "broadcast":
+  f:=flag.NewFlagSet("broadcast",flag.ExitOnError)
+  node:=f.String("rpc-url","http://127.0.0.1:18332","Bitcoin Core TestNet RPC endpoint")
+  raw:=f.String("hex","","hex-encoded SIGNED legacy TestNet transaction")
+  confirm:=f.Bool("confirm-testnet",false,"explicitly approve TestNet broadcast")
+  _=f.Parse(os.Args[2:])
+  if !*confirm{fail(errors.New("--confirm-testnet must be explicitly set"))}
+  txid,err:=hc.BroadcastTestnet(context.Background(),*node,hc.RPCAuth{
+   User:os.Getenv("HELLOCHECK_RPC_USER"), Password:os.Getenv("HELLOCHECK_RPC_PASSWORD")},*raw)
+  if err!=nil{fail(err)}
+  fmt.Println("BITCOIN_TESTNET_NODE_ACCEPTED_TXID",txid)
  default:usage()
  }
 }
