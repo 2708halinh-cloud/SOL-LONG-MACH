@@ -1655,6 +1655,17 @@
         "ci_rerun": false
       },
       "task_closure": false
+    },
+    {
+      "id": "TESSERACT_CURRENT_HEAD_RUN_POINTER_RECONCILIATION_20261023",
+      "kind": "RESUME_POINTER_CI_RUN_READBACK_RECONCILIATION",
+      "observed_at": "2026-10-23T22:16:47.4916462+07:00",
+      "current_head": "c41797b61ced8f152ff0833448d3a101fd13c158",
+      "current_pr_run": 39975540379,
+      "current_validation_run": 39975540284,
+      "historical_run_preserved": 39153474587,
+      "rerun_performed": false,
+      "task_closure": false
     }
   ],
   "energy_protection_current": {
@@ -3731,6 +3742,41 @@
         "Do not rerun TESSERACT CI until runner assignment/entitlement change is verified through an authorized control surface."
       ],
       "prior_entry_policy": "Append-only; prior observations, event records, and all OPEN task states preserved."
+    },
+    {
+      "observed_at": "2026-10-23T22:16:47.4916462+07:00",
+      "record_type": "TESSERACT_CURRENT_HEAD_CI_RUN_POINTER_RECONCILIATION",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "2c4932defef846ae3060d7a7d9e736fb30aa600e",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "3f96de26950c37d53caf82a05f7508a6fe35f8d5",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "165c0bb4805191ff316b82c94e03162f34bb61fa"
+      },
+      "tesseract": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "head": "c41797b61ced8f152ff0833448d3a101fd13c158",
+        "previous_recorded_run": 39153474587,
+        "current_pr_run": 39975540379,
+        "current_validation_run": 39975540284,
+        "both_current_head_runs_conclusion": "failure",
+        "jobs_steps": null,
+        "sampled_logs": "BlobNotFound",
+        "selfhosted_windows_verify": "skipped",
+        "rerun_performed": false,
+        "runner_assignment_change_verified": false,
+        "issuer_key_verified": false
+      },
+      "state_boundary": "CURRENT_HEAD_CI_RUN_IDS_RECONCILED_IN_RESUME_POINTER; RUNNER_ENTITLEMENT_UNVERIFIED; NO_RERUN; ISSUER_KEY_OPEN",
+      "invariants": {
+        "open_tasks_closed": false,
+        "task_statuses_changed": false,
+        "tesseract_ci_rerun": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false
+      },
+      "prior_entry_policy": "Append-only; historical run 39153474587 retained with its original head and outcome."
     }
   ]
 }
