@@ -499,6 +499,19 @@
           "result": "TESSERACT_DESKTOP_CHECKPOINT_HEAD_RECONCILED_WITH_HISTORY_PRESERVED; CI_RUNNER_STATE_STILL_UNVERIFIED",
           "next_callable_edge": "Use an authorized repository/account runner settings surface to verify or restore hosted runner assignment before another CI run; retrieve the real Kilo/X-TiMe issuer public key and signer from an authorized existing carrier. Do not infer success from checkpoint reconciliation.",
           "status_effect": "Preserve status OPEN_CARRIED and real_execution_status OPEN_NOT_PROVEN_COMPLETED; no task closed."
+        },
+        {
+          "observed_at": "2026-10-23T23:34:07.6273485+07:00",
+          "source": "Fresh GitHub PR/workflow/code-search readback + Dropbox Outlook direct folder listing + live local braid execution",
+          "actions_and_receipts": [
+            "PR #6 remains OPEN at head c41797b61ced8f152ff0833448d3a101fd13c158; current-head runs 39975540284 (validate-x-time) and 39975540379 (tesseract-desktop-ci) remain failed.",
+            "Code search for the key variable returned four references (README.md, main.rs, WORK_CHECKPOINT.json, OPEN_TASKS_CURRENT.json); BEGIN PUBLIC KEY search returned only OPEN_TASKS_CURRENT.json, not a provisioned key literal. No CI rerun was performed.",
+            "Dropbox Outlook /Linh Hà/SENSOR_LOGS direct-child listing completed with 56 entries; no issuer-key-named file in this folder. This does not establish absence from other provider locations.",
+            "The current session executed the local braid script and read back both exact receipt files with SHA-256 d0d42dcf... and a9e4acbc...; source hash unchanged and no mutation executed. Cloud-host wiring remains unverified."
+          ],
+          "result": "PR_RUNNER_AND_ISSUER_KEY_OPEN_BRAID_LOCAL_RECEIPTS_VERIFIED",
+          "next_callable_edge": "Continue searching authorized carriers outside the already-listed SENSOR_LOGS folder; do not rerun PR CI until runner assignment/entitlement change is independently verified.",
+          "status_effect": "Keep OPEN_CARRIED; no PR merge, no CI rerun, no key invented."
         }
       ]
     },
@@ -617,12 +630,11 @@
       "status": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
       "goal": "Repair MODUAL telemetry source to Outlook Dropbox\\Linh Hà\\SENSOR_LOGS\\windows_SENSON.CSV and verify Windows Tick error gone",
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
-      "readback": "Latest exact receipt at device-local 20:01:34 is valid and LastTaskResult=0; source SHA unchanged. Windows device clock is approximately 314 seconds behind connected runtime. W32Time could not be started through current permissions. HWiNFO logging remains disabled and live sensor stream unverified.",
+      "readback": "Fresh Windows readback at 2026-10-23T23:34:07+07:00: scheduled task GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M Ready/enabled, last run 23:31:33, result 0, next 23:36:32. Exact receipt WINDOWS_TICK_20261023T163135054550Z.json is valid, 450 bytes, SHA-256 2b4344346cfe6ca64f9af93d93e01b398a8b9a06575d2988e15d6bb684c98300. Source hash 9b25bd... remains unchanged. HWiNFO candidate is C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV, 39,922,785 bytes, hash b890b591... last modified 2026-10-21T02:20:45Z; EnableLogging=0. W32Time remains Stopped/Manual. Tick is verified; live stream is not.",
       "next": [
-        "Verify the next scheduled receipt after device-clock time 2026-10-23T20:06:32+07:00; account for the approximately 314-second clock skew.",
-        "Use an authorized elevated route to start/synchronize W32Time if permitted; the current Start-Service attempt failed and no resync was attempted.",
-        "Continue HWiNFO logging investigation via a safely identifiable supported UI route or verified Pro entitlement; require a fresh sample and before/after evidence.",
-        "Current observation: both authorized Desktop Commander inventories report Windows and localhost OFFLINE; do not treat the 20:01 historical tick receipt as a current readback."
+        "Verify the next scheduled receipt after device-clock time 2026-10-23T23:36:32+07:00 and compare exact source hash/mtime.",
+        "Use the verified CrossDevice HWiNFO_WINDOWS.CSV path for before/after checks; pursue a supported UI route or verify Pro entitlement before changing logging.",
+        "Use only an authorized elevated route for W32Time; current service is Stopped/Manual and no resync was attempted."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -736,6 +748,23 @@
           "result": "PROVIDER_METADATA_FRESH_DEVICE_OFFLINE_NO_NEW_TICK_READBACK",
           "next_callable_edge": "Continue authorized cloud/provider work; on an available authorized Windows route, inspect newest tick receipt and HWiNFO before/after file metadata/hash.",
           "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED; no task closure."
+        },
+        {
+          "observed_at": "2026-10-23T23:34:07.6273485+07:00",
+          "source": "Remote Desktop Commander direct Windows readback + Dropbox Outlook metadata readback + GitHub exact-target reads",
+          "actions_and_receipts": [
+            "Fresh-read AGENTS.md, SOL_REENTRY_CURRENT.md, TASK_RESUME_POINTER.json and OPEN_TASKS_CURRENT.json; current blob SHAs are preserved in the MODUAL session observation.",
+            "Dropbox Outlook metadata confirms windows_SENSON.CSV revision 0165dc1e4794ab00000000395cdfd73, 35,389,440 bytes, server_modified 2026-10-14T00:20:03Z; no source bytes downloaded.",
+            "Scheduled task GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M is Ready/enabled; last run 23:31:33+07:00, LastTaskResult=0, next run 23:36:32+07:00.",
+            "Exact receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T163135054550Z.json read back valid, 450 bytes, SHA-256 2b4344346cfe6ca64f9af93d93e01b398a8b9a06575d2988e15d6bb684c98300; source hash 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches; source file not written, no synthetic rows, exports disabled, live_sensor_reading_confirmed=false.",
+            "Ran the consumer once with --once; exit code 0 and exact receipt WINDOWS_TICK_20261023T163128553919Z.json was read back; scheduled receipt after it confirms task execution at 23:31:33+07:00.",
+            "Executed G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py; both new receipts were read back and hashed: SIX d0d42dcf... (3996 bytes), PLURAL a9e4acbc... (2407 bytes), source_sha256_unchanged=true, mutation_executed=false; cloud_host_wiring remains NOT_VERIFIED.",
+            "Located the HWiNFO CSV at C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV; 39,922,785 bytes, SHA-256 b890b591..., last modified 2026-10-21T02:20:45.8565035Z. HWiNFO64 PID 17520 is running but EnableLogging=0; no new sample confirmed.",
+            "W32Time is Stopped/Manual; no privileged service change or resync was attempted."
+          ],
+          "result": "WINDOWS_TICK_SCHEDULED_RECEIPT_VERIFIED_HWINF0_LIVE_STREAM_UNVERIFIED_BRAID_LOCAL_IO_VERIFIED",
+          "next_callable_edge": "Read the next scheduled receipt after 23:36:32+07:00, then pursue HWiNFO logging through a verified authorized route; keep task OPEN until a new live sample is proven.",
+          "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
         }
       ]
     },
@@ -1677,6 +1706,63 @@
       "tesseract_pr_and_current_head_workflow_readback": true,
       "hellocheck_workflow_job_readback": true,
       "task_count_before": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "tesseract_ci_rerun": false,
+      "task_statuses_changed": false
+    },
+    {
+      "id": "WINDOWS_TICK_AND_TESSERACT_BRAID_20261023T233407",
+      "kind": "AUTHORIZED_DEVICE_TICK_READBACK_AND_INDEPENDENT_BRAID_EXECUTION",
+      "observed_at": "2026-10-23T23:34:07.6273485+07:00",
+      "current_open_tasks_blob_before": "73fc329e2e263a589ad7f753a33c3375f3fdf2de",
+      "modual_blob_before": "165c0bb4805191ff316b82c94e03162f34bb61fa",
+      "modual_blob_after": "974a7a154103f296e5636fdbd657163c4506ab19",
+      "windows_receipt": {
+        "observed_at_utc": "2026-10-23T16:31:35.054550Z",
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T163135054550Z.json",
+        "bytes": 450,
+        "sha256": "2b4344346cfe6ca64f9af93d93e01b398a8b9a06575d2988e15d6bb684c98300",
+        "json_valid": true,
+        "exact_target_readback": true,
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_last_write_utc": "2026-10-23T08:45:56.2458701Z",
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_export_enabled": false,
+        "github_export_enabled": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "braid_receipts": {
+        "observed_at_utc": "2026-10-23T16:29:54.408649+00:00",
+        "six_receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261023T162954397620Z.json",
+        "six_bytes": 3996,
+        "six_sha256": "d0d42dcf277b73eaf0d6b92c4f3c15851911ac40d57e578638ba12f4d8566997",
+        "plural_receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261023T162954449713Z.json",
+        "plural_bytes": 2407,
+        "plural_sha256": "a9e4acbcb34feabeeece1292c71a9ad76a25806b61bee9f7fa494b2391c4af81",
+        "exact_target_readback": true,
+        "source_sha256_unchanged": true,
+        "mutation_executed": false,
+        "cloud_host_wiring": "NOT_VERIFIED"
+      },
+      "tesseract_pr_head": "c41797b61ced8f152ff0833448d3a101fd13c158",
+      "tesseract_current_workflow_runs": [
+        {
+          "run_id": 39975540284,
+          "workflow": "validate-x-time",
+          "conclusion": "failure"
+        },
+        {
+          "run_id": 39975540379,
+          "workflow": "tesseract-desktop-ci",
+          "conclusion": "failure"
+        }
+      ],
+      "task_count": 28,
       "task_closure": false,
       "raw_sensor_rows_committed": false,
       "credentials_committed": false,
@@ -3904,6 +3990,75 @@
         "Continue HelloCheck against an authorized TestNet node only when one is available; do not invent a transaction ID."
       ],
       "prior_entry_policy": "Append-only; no task statuses or historical receipts overwritten."
+    },
+    {
+      "observed_at": "2026-10-23T23:34:07.6273485+07:00",
+      "record_type": "WINDOWS_SCHEDULED_TICK_AND_BRAID_FRESH_READBACK_TESSERACT_PROVIDER_CHECK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "2c4932defef846ae3060d7a7d9e736fb30aa600e",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "73fc329e2e263a589ad7f753a33c3375f3fdf2de",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "165c0bb4805191ff316b82c94e03162f34bb61fa"
+      },
+      "provider": {
+        "dropbox_outlook_sensor_source": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true,
+          "bytes_downloaded": false
+        },
+        "windows": {
+          "remote_desktop_commander": "ONLINE",
+          "primary_desktop_commander": "OFFLINE",
+          "scheduled_task_last_run": "2026-10-23T23:31:33+07:00",
+          "scheduled_task_last_result": 0,
+          "scheduled_task_next_run": "2026-10-23T23:36:32+07:00",
+          "latest_receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T163135054550Z.json",
+          "latest_receipt_sha256": "2b4344346cfe6ca64f9af93d93e01b398a8b9a06575d2988e15d6bb684c98300",
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "live_sensor_reading_confirmed": false,
+          "hwinfo_enable_logging": 0,
+          "hwinfo_csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+          "hwinfo_csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+          "w32time": "Stopped/Manual"
+        }
+      },
+      "independent_branch": {
+        "tesseract_braid_receipts": {
+          "six_sha256": "d0d42dcf277b73eaf0d6b92c4f3c15851911ac40d57e578638ba12f4d8566997",
+          "plural_sha256": "a9e4acbcb34feabeeece1292c71a9ad76a25806b61bee9f7fa494b2391c4af81",
+          "exact_target_readback": true,
+          "source_sha256_unchanged": true,
+          "mutation_executed": false,
+          "cloud_host_wiring": "NOT_VERIFIED"
+        },
+        "tesseract_desktop": {
+          "pr": 6,
+          "state": "open",
+          "head": "c41797b61ced8f152ff0833448d3a101fd13c158",
+          "runs": [
+            39975540284,
+            39975540379
+          ],
+          "conclusions": [
+            "failure",
+            "failure"
+          ],
+          "rerun_performed": false,
+          "issuer_key_found": false
+        }
+      },
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "tesseract_ci_rerun": false,
+      "task_statuses_changed": false,
+      "prior_entry_policy": "Append-only; new observations added without replacing earlier receipts or task history."
     }
   ]
 }
