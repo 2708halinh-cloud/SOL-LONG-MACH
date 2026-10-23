@@ -174,9 +174,8 @@ def classify_open_ledger(root):
         states[state]=states.get(state,0)+1
     # Never change, drop or close an existing item. Augment on next-state only.
     present={str(item.get("id")) for item in data["tasks"]}
-    # The actual current 27 assignments are part of the executor's input,
-    # not five notional actor names added to a standalone report.
-    if len(data["tasks"]) >= 27:
+    # Validate every current source task; ledger size is not a routing contract.
+    if data["tasks"]:
         for item in data["tasks"]:
             if not item.get("assigned_subagent") or not item.get("assigned_agent_id"):
                 raise ValueError("OPEN_TASK_WITHOUT_ASSIGNED_AGENT:"+str(item.get("id")))
