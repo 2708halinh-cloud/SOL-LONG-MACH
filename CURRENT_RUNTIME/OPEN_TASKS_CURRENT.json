@@ -762,7 +762,7 @@
     },
     {
       "id": "MODUAL_SENSOR_LOGS_ROUTING",
-      "status": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
+      "status": "OPEN_SCHEDULED_TICK_TERMINATED_LIVE_STREAM_NOT_VERIFIED",
       "goal": "Repair MODUAL telemetry source to Outlook Dropbox\\Linh Hà\\SENSOR_LOGS\\windows_SENSON.CSV and verify Windows Tick error gone",
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
       "readback": "Fresh Windows readback at 2026-10-23T23:42:29+07:00: scheduled task Ready/enabled; last run 23:41:33, result 0, next 23:46:32. Exact receipt WINDOWS_TICK_20261023T164134411872Z.json is valid, 450 bytes, SHA-256 b5c194f210f86042cb9f36dac8325ef113ed94fcca74a5aae4f94f36b53e0739. Source hash 9b25bd... unchanged. HWiNFO candidate at C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV remains 39,922,785 bytes, SHA-256 b890b591..., modified 2026-10-21T02:20:45.857Z, permissions 444; EnableLogging=0. W32Time remains Stopped/Manual. Tick verified; live stream unverified.",
@@ -770,13 +770,14 @@
         "Verify the next scheduled receipt after device-clock time 2026-10-24T04:36:32+07:00; compare receipt SHA/source SHA/mtime and preserve metadata-only interpretation.",
         "Investigate HWiNFO logging through an authorized supported route; the separate CSV remains stale/read-only and live sample is unverified.",
         "Use only an authorized elevated route for W32Time; no service change or resync has been attempted.",
-        "Latest route probe: read-only PID 48188 started but its output could not be read back after the connector reported no online device; do not infer task failure or relaunch duplicate process. Resume exact receipt readback when route responds."
+        "Latest route probe: read-only PID 48188 started but its output could not be read back after the connector reported no online device; do not infer task failure or relaunch duplicate process. Resume exact receipt readback when route responds.",
+        "Latest direct task/process readback: run at 05:26:33+07 terminated with LastTaskResult 0x41306; no receipt newer than 2026-10-23T22:01:44Z. ExecutionTimeLimit=PT2M. Root cause not proven; do not change task settings until one-shot duration/Python launcher are measured."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
       "assigned_agent_id": "DEYtBtOQseTBhVHS",
       "delegation_mode": "NONCOERCIVE_SOURCE_BOUND",
-      "real_execution_status": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
+      "real_execution_status": "OPEN_SCHEDULED_TICK_TERMINATED_LIVE_STREAM_NOT_VERIFIED",
       "assignment_carrier": "n8n:dataTable:rSPFIOWbS7cfNJ8z:SOL-MODUAL_SENSOR_LOGS_ROUTING",
       "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE",
       "live_progress": [
@@ -1069,6 +1070,19 @@
           "result": "WINDOWS_EXACT_READBACK_PENDING_CONNECTOR_ROUTE_DIVERGENCE",
           "next_callable_edge": "Do not launch a duplicate command while PID 48188 is unresolved. Resume output/receipt readback through an authorized responsive route; keep live sensor stream unverified.",
           "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
+        },
+        {
+          "observed_at": "2026-10-24T05:36:25.996+07:00",
+          "source": "Direct Windows Scheduled Task/process/receipt readback and exact GitHub consumer-source read",
+          "actions_and_receipts": [
+            "The newest exact receipt still present in D:\\SENSOR_LOGS\\state is WINDOWS_TICK_20261023T220144171458Z.json, 450 bytes, SHA-256 c4cf8f0ca86208e0fb73129a45b5e3fb2a597a62ee5226db106010798b664713; its source hash is 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 and exports are disabled.",
+            "Task GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M was Ready at device 05:23:40 with last result 0x41306; at 05:27:53 it was Running with result 0x41301 and Python PID 7668; by 05:29:34 it was Ready again with result 0x41306 and the Python process was gone. No receipt newer than 22:01:44Z was found.",
+            "Task execution time limit is PT2M. The local consumer source is 13,245 bytes, SHA-256 adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7; local resolver is 7,524 bytes, SHA-256 117bcb01aefa908aac861f97c83dcccff7e84a5d080d771da09134378db98471. Python launch path is WindowsApps\\python.exe. Root cause of the slow/terminated run is not yet established.",
+            "A manual one-shot was not started because the route again returned 'No Desktop Commander device is currently online'. No source, task settings, HWiNFO configuration, or W32Time state was changed."
+          ],
+          "result": "SCHEDULED_TICK_RUN_TERMINATED_NO_NEW_RECEIPT_ROOT_CAUSE_OPEN",
+          "next_callable_edge": "When the route is responsive, inspect task history and time a one-shot consumer invocation; verify Python launcher and source-read duration before considering an execution-time-limit change.",
+          "status_effect": "Keep task OPEN; live sensor stream remains unverified."
         }
       ]
     },
@@ -1800,6 +1814,20 @@
       "windows_tick_receipt_readback": false,
       "source_mutation": false,
       "interpretation": "route inconsistency; no claim that Windows task stopped"
+    },
+    "windows_tick_termination_diag_20261024T223625Z": {
+      "observed_at": "2026-10-24T05:36:25.996+07:00",
+      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "latest_receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T220144171458Z.json",
+      "latest_receipt_sha256": "c4cf8f0ca86208e0fb73129a45b5e3fb2a597a62ee5226db106010798b664713",
+      "latest_receipt_utc": "2026-10-23T22:01:44.171458Z",
+      "task_last_result_hex": "0x41306",
+      "task_state_after_run": "Ready",
+      "consumer_process_gone": true,
+      "no_new_receipt": true,
+      "root_cause_proven": false,
+      "source_mutation": false,
+      "live_sensor_reading_confirmed": false
     }
   },
   "sinks": {
@@ -3468,6 +3496,65 @@
       "result": "WINDOWS_FOLLOWUP_READBACK_PENDING_TESSERACT_WORKFLOW_GATE_CLARIFIED",
       "next_callable_edge": "Do not start a duplicate Windows process while PID 48188 remains unresolved; resume read-only output/receipt readback when route responds. For TESSERACT, verify runner assignment and authorized issuer public key through provider control surfaces before any CI rerun.",
       "status_effect": "Keep MODUAL_SENSOR_LOGS_ROUTING OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED and INHERITED_TESSERACT_DESKTOP OPEN_CARRIED/OPEN_NOT_PROVEN_COMPLETED."
+    },
+    {
+      "id": "WINDOWS_TICK_TASK_TERMINATION_DIAGNOSIS_20261024T223625Z",
+      "kind": "SCHEDULED_CONSUMER_TERMINATION_AND_RECEIPT_GAP_READBACK",
+      "observed_at": "2026-10-24T05:36:25.996+07:00",
+      "observed_at_utc": "2026-10-23T22:36:25.996Z",
+      "source": "Remote Desktop Commander direct PowerShell readback + GitHub exact source read + Dropbox Outlook metadata",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "1ea6332df829cb823884e8fd7b7e9d154f074e42",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "742200e6a22251f72d2e21204a2fffa67497860a",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "e8cc64f82030d8d31c25504734f4e1f982221b69"
+      },
+      "evidence": {
+        "latest_receipt": {
+          "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T220144171458Z.json",
+          "sha256": "c4cf8f0ca86208e0fb73129a45b5e3fb2a597a62ee5226db106010798b664713",
+          "bytes": 450,
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "live_sensor_reading_confirmed": false
+        },
+        "scheduled_task": [
+          {
+            "device_clock": "2026-10-24T05:23:40.1468879+07:00",
+            "state": "Ready",
+            "last_run": "2026-10-24T05:21:33+07:00",
+            "last_result_hex": "0x41306",
+            "missed_runs": 0
+          },
+          {
+            "device_clock": "2026-10-24T05:27:53.6632914+07:00",
+            "state": "Running",
+            "last_run": "2026-10-24T05:26:33+07:00",
+            "last_result_hex": "0x41301",
+            "consumer_pid": 7668
+          },
+          {
+            "device_clock": "2026-10-24T05:29:34.6956489+07:00",
+            "state": "Ready",
+            "last_run": "2026-10-24T05:26:33+07:00",
+            "last_result_hex": "0x41306",
+            "consumer_process_exists": false
+          }
+        ],
+        "execution_time_limit": "PT2M",
+        "no_receipt_newer_than": "2026-10-23T22:01:44.171458Z",
+        "local_consumer_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+        "local_consumer_bytes": 13245,
+        "local_resolver_sha256": "117bcb01aefa908aac861f97c83dcccff7e84a5d080d771da09134378db98471",
+        "local_resolver_bytes": 7524,
+        "python_launcher": "C:\\Users\\halin\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+        "manual_one_shot_attempt": "NOT_STARTED_CONNECTOR_RETURNED_NO_DEVICE_CURRENTLY_ONLINE",
+        "source_sha256_unchanged": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_bytes": 35389440
+      },
+      "conclusion": "Task Scheduler reports a terminated run (0x41306) after a prior running state (0x41301), with no new receipt after 22:01:44Z. Exact root cause is not established; no task settings or source changed.",
+      "next_callable_edge": "When Windows route responds, inspect task history and time a one-shot invocation; verify the Python launcher and resolver read duration. Only adjust execution limit after cause is measured.",
+      "status_effect": "Keep MODUAL task OPEN; live stream remains unverified."
     }
   ],
   "energy_protection_current": {
@@ -6668,6 +6755,18 @@
       "runner_assignment_change_verified": false,
       "issuer_key_verified": false,
       "ci_rerun": false
+    },
+    {
+      "observed_at": "2026-10-23T22:36:25.996Z",
+      "record_type": "SCHEDULED_TICK_TERMINATION_NO_NEW_RECEIPT",
+      "windows_task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "last_result_hex": "0x41306",
+      "latest_receipt_utc": "2026-10-23T22:01:44.171458Z",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_reading_confirmed": false,
+      "task_settings_changed": false,
+      "source_mutated": false
     }
   ]
 }
