@@ -1,0 +1,46 @@
+name: Windows survival - independent OPEN continuation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'runtime/cloud_survival_scheduler.py'
+      - 'runtime/windows_c_survival_probe.ps1'
+      - 'tests/test_cloud_survival_scheduler.py'
+      - 'CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json'
+      - '.github/workflows/windows-survival-cloud-continuity.yml'
+  schedule:
+    - cron: '7 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: windows-survival-independent-continuation
+  cancel-in-progress: false
+
+jobs:
+  continue-without-personal-devices:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Guard existing OPEN ledger and critical C threshold
+        run: python -m unittest discover -s tests -p 'test_cloud_survival_scheduler.py' -v
+      - name: Execute source-bound cloud continuation without touching Windows
+        run: |
+          mkdir -p readback
+          python runtime/cloud_survival_scheduler.py --repo-root . --output readback/SURVIVAL_OPEN_CONTINUATION_CURRENT.json
+      - name: Retain runner execution receipt even on failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-survival-open-continuation
+          path: readback/SURVIVAL_OPEN_CONTINUATION_CURRENT.json
+          retention-days: 30
+          if-no-files-found: warn
