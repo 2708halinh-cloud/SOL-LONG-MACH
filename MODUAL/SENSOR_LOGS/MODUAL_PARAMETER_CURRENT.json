@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-24T05:36:25.996+07:00",
+  "observed_at": "2026-10-24T05:40:28.404+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -65,7 +65,7 @@
       "report_is_historical_not_current_device_bytes": true
     },
     "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
-    "state": "OPEN_SCHEDULED_TICK_TERMINATED_LIVE_STREAM_NOT_VERIFIED",
+    "state": "OPEN_SCHEDULED_TICK_LONG_RUNNING_NO_NEW_RECEIPT_LIVE_STREAM_NOT_VERIFIED",
     "rule": "Do not overwrite existing Oct 09 local source metadata; do not call Dropbox CSV a working Windows Tick consumer; no raw sensor records or secrets committed; verify Windows Tick independently before closing."
   },
   "session_observations": [
@@ -3539,6 +3539,85 @@
       },
       "result": "SCHEDULED_CONSUMER_RUN_TERMINATED_WITHOUT_NEW_RECEIPT; ROOT_CAUSE_NOT_YET_PROVEN",
       "next_callable_edge": "When the authorized Windows route responds, inspect the next scheduled run without duplicating a pending process; measure one-shot duration and Python launch path, compare receipt timestamps, then only adjust execution limits after the observed cause is established."
+    },
+    {
+      "observed_at": "2026-10-24T05:40:28.404+07:00",
+      "observed_at_utc": "2026-10-23T22:40:28.404Z",
+      "record_type": "NEXT_SCHEDULED_TICK_LONG_RUNNING_AND_ROUTE_LOST_20261024",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "8fc5e562b2ed6e3fd568bd270dfc1cf328d44ad7",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "ec283ed57de3c605bc61e9b6637f7db71a45d710",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "e8cc64f82030d8d31c25504734f4e1f982221b69"
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "last_direct_task_readback": {
+          "device_clock": "2026-10-24T05:33:44.0873063+07:00",
+          "state": "Running",
+          "last_run": "2026-10-24T05:31:33+07:00",
+          "next_run": "2026-10-24T05:36:32+07:00",
+          "last_result_hex": "0x41301",
+          "missed_runs": 0,
+          "consumer_pid": 71220,
+          "consumer_process": "python3.12.exe",
+          "python_launcher": "C:\\Users\\halin\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
+        },
+        "prior_run": {
+          "device_clock": "2026-10-24T05:29:34.6956489+07:00",
+          "last_run": "2026-10-24T05:26:33+07:00",
+          "last_result_hex": "0x41306",
+          "consumer_process_gone": true
+        },
+        "latest_receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T220144171458Z.json",
+        "latest_receipt_utc": "2026-10-23T22:01:44.171458Z",
+        "latest_receipt_sha256": "c4cf8f0ca86208e0fb73129a45b5e3fb2a597a62ee5226db106010798b664713",
+        "no_new_receipt_after_latest_run": true,
+        "task_history_events_returned": 0,
+        "execution_time_limit": "PT2M",
+        "subsequent_status_and_directory_probes": "NO_DEVICE_CURRENTLY_ONLINE",
+        "current_task_state_after_05_33_44": "UNVERIFIED",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_mutation": false,
+        "manual_one_shot_started": false
+      },
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "raw_bytes_downloaded": false
+      },
+      "tesseract_desktop": {
+        "pr": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "state": "OPEN",
+        "org_search_scope": "2708halinh-cloud",
+        "exact_variable_search_results": 4,
+        "pem_public_key_literal_found": false,
+        "issuer_key_absence_proven": false,
+        "runner_assignment_change_verified": false,
+        "current_head_runs": {
+          "39994207477": "failure",
+          "39994207667": "failure"
+        },
+        "ci_rerun": false
+      },
+      "invariants": {
+        "source_file_written": false,
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "source_overwritten": false,
+        "open_tasks_closed": false,
+        "tesseract_ci_rerun": false
+      },
+      "result": "NEXT_TICK_LONG_RUNNING_NO_NEW_RECEIPT_ROUTE_LOST_AFTER_LAST_READBACK",
+      "next_callable_edge": "When the route is responsive, inspect the running or next scheduled invocation and measure consumer startup/source-read duration; do not duplicate the currently observed PID or change execution limit before cause is established."
     }
   ],
   "privacy_policy": {
