@@ -878,6 +878,21 @@
           "result": "SCHEDULED_TICK_RECEIPT_VERIFIED_DEVICE_CLOCK_SKEW_HWINF0_STREAM_UNVERIFIED",
           "next_callable_edge": "Read the next scheduled receipt after device clock reaches 2026-10-24T01:36:32+07:00; account for ~322-second skew. Continue HWiNFO through a supported authorized route; use only an elevated authorized route for W32Time.",
           "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
+        },
+        {
+          "observed_at": "2026-10-24T01:42:58+07:00",
+          "source": "Remote Desktop Commander exact-target readback after the next five-minute trigger; GitHub MODUAL checkpoint readback",
+          "actions_and_receipts": [
+            "Fresh-read the four required reentry sources and current MODUAL/OPEN ledger; pre-write blob SHAs recorded in this entry.",
+            "Scheduled task GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M completed at device-local 2026-10-24T01:36:33+07:00 with LastTaskResult=0 and NumberOfMissedRuns=0; next device-clock run is 01:41:32+07:00.",
+            "Exact latest receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T183635084148Z.json was read back as valid JSON, 450 bytes, SHA-256 cfd642d30a12cc88cd428899f552d610cdce647536269e7dba74469f9df14a37.",
+            "Receipt source SHA-256 matches D:\\SENSOR_LOGS\\windows_SENSON.CSV at 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; source size 35,389,440 bytes and last-write time unchanged at 2026-10-23T08:45:56.2458701Z. No source write, no synthetic rows, cloud/GitHub exports disabled, live_sensor_reading_confirmed=false.",
+            "Task settings readback: StartWhenAvailable=true, ExecutionTimeLimit=PT2M, principal halin, Interactive logon, RunLevel Limited; Task Scheduler and EventLog services running. Operational event query returned no matching events/log entries.",
+            "Paired clock observation is approximately 324 seconds skew (Windows 01:36:58.520+07 vs runtime 01:42:22.176+07). W32Time remains Stopped/Manual; current process is not Administrator. No service change or resync attempted."
+          ],
+          "result": "NEXT_SCHEDULED_TICK_VERIFIED_CLOCK_SKEW_AND_HWINF0_OPEN",
+          "next_callable_edge": "Continue observing the next scheduled receipt after device clock 01:41:32+07:00. Use an authorized elevated route for W32Time only; investigate HWiNFO through supported logging configuration and require a new sample before claiming live-stream recovery.",
+          "status_effect": "Keep OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
         }
       ]
     },
@@ -1378,6 +1393,18 @@
       "source_sha256_unchanged": true,
       "mutation_executed": false,
       "cloud_host_wiring": "NOT_VERIFIED"
+    },
+    "windows_tick_20261023T183635Z": {
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T183635084148Z.json",
+      "observed_at_utc": "2026-10-23T18:36:35.084148Z",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "receipt_sha256": "cfd642d30a12cc88cd428899f552d610cdce647536269e7dba74469f9df14a37",
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false,
+      "live_sensor_reading_confirmed": false
     }
   },
   "sinks": {
@@ -2069,6 +2096,38 @@
         ],
         "rerun_performed": false,
         "issuer_key_verified": false
+      },
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "task_statuses_changed": false
+    },
+    {
+      "id": "WINDOWS_TICK_RECEIPT_183635_20261023T184258Z",
+      "kind": "SECOND_SCHEDULED_WINDOWS_TICK_EXACT_TARGET_READBACK",
+      "observed_at": "2026-10-23T18:42:58.470Z",
+      "open_tasks_blob_before": "699b5283682a48c39fe821585e1ce07f971854b9",
+      "modual_blob_before": "c12f1275a72509ba86040dd0c62b38a985e5fc35",
+      "modual_blob_after": "2a4fa0cd20831bcdbce80dacb4bc630e48cac8d8",
+      "task_resume_pointer_blob_before": "2fe19ce03f62915857a830eb1db1c7be1503abcc",
+      "receipt": {
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T183635084148Z.json",
+        "bytes": 450,
+        "sha256": "cfd642d30a12cc88cd428899f552d610cdce647536269e7dba74469f9df14a37",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "exports_enabled": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "clock": {
+        "device_local": "2026-10-24T01:36:58.5207247+07:00",
+        "runtime_local_reference": "2026-10-24T01:42:22+07:00",
+        "approx_skew_seconds": 324,
+        "w32time": "Stopped/Manual",
+        "administrator": false
       },
       "task_count": 28,
       "task_closure": false,
@@ -4650,6 +4709,41 @@
       "task_statuses_changed": false,
       "tesseract_ci_rerun": false,
       "prior_entry_policy": "Append-only; prior provider observations and action history preserved."
+    },
+    {
+      "observed_at": "2026-10-23T18:42:58.470Z",
+      "record_type": "SECOND_SCHEDULED_WINDOWS_TICK_RECEIPT_READBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "2fe19ce03f62915857a830eb1db1c7be1503abcc",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "699b5283682a48c39fe821585e1ce07f971854b9",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "2a4fa0cd20831bcdbce80dacb4bc630e48cac8d8"
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T183635084148Z.json",
+        "receipt_sha256": "cfd642d30a12cc88cd428899f552d610cdce647536269e7dba74469f9df14a37",
+        "task_last_run": "2026-10-24T01:36:33+07:00",
+        "last_task_result": 0,
+        "missed_runs": 0,
+        "next_run_device_clock": "2026-10-24T01:41:32+07:00",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_unchanged": true,
+        "live_sensor_reading_confirmed": false,
+        "clock_skew_seconds_approx": 324,
+        "w32time": "Stopped/Manual",
+        "administrator": false,
+        "hwinfo_enable_logging": 0
+      },
+      "task_count": 28,
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false,
+      "task_statuses_changed": false,
+      "tesseract_ci_rerun": false,
+      "prior_entry_policy": "Append-only; previous scheduled and manual receipt history retained."
     }
   ]
 }
