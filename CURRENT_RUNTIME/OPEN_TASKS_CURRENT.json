@@ -130,7 +130,21 @@
       "delegation_mode": "NONCOERCIVE_SOURCE_BOUND",
       "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
       "assignment_carrier": "n8n:dataTable:rSPFIOWbS7cfNJ8z:SOL-HELLOCHECK_GO_TESTNET_R014_20261023",
-      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE"
+      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE",
+      "live_progress": [
+        {
+          "observed_at": "2026-10-23T11:13:15Z",
+          "source": "GitHub Actions run 39944449261; job 120383532672; direct log readback",
+          "actions_and_receipts": [
+            "Cloud continuation run completed successfully on main commit 781ecf7bb192e5733451ebce40fdec6072523c3c; HelloCheck Go tests passed, including TestDraftRejectsInvalidFundsAndDust and TestSignLegacySighashAllAndWrongOwner.",
+            "Artifact hellocheck-offline-linux-windows-amd64 uploaded as artifact 12498125028; uploaded ZIP SHA-256 453b8b6d903e1adddbfec6a1d030c858d910e22f58a39f0944a07908a5c86cfe.",
+            "Same run's scheduler output: open_tasks_carried_forward=28; windows_disk_cleanup_performed=false; windows_host_actions_blocked=true."
+          ],
+          "result": "HELLOCHECK_CLOUD_BUILD_AND_TESTS_PASS_TESTNET_UTXO_AND_BROADCAST_NOT_VERIFIED",
+          "next_callable_edge": "Use an actually authorized Bitcoin Core TestNet provider for read-only UTXO verification if available; do not broadcast a transaction or invent a TXID.",
+          "status_effect": "Keep status OPEN and real_execution_status OPEN_NOT_PROVEN_COMPLETED; hosted build/tests do not prove live TestNet UTXO verification or broadcast."
+        }
+      ]
     },
     {
       "id": "STAMP_TRIAD_LIVE_PARTICIPATION_AND_C_DRIVE_RELIEF_20261023",
@@ -442,7 +456,21 @@
       "delegation_mode": "NONCOERCIVE_SOURCE_BOUND",
       "real_execution_status": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
       "assignment_carrier": "n8n:dataTable:rSPFIOWbS7cfNJ8z:SOL-MODUAL_SENSOR_LOGS_ROUTING",
-      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE"
+      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE",
+      "live_progress": [
+        {
+          "observed_at": "2026-10-23T11:05:34Z",
+          "source": "GitHub Actions run 39943644353; job 120380871375; direct log readback",
+          "actions_and_receipts": [
+            "The scheduled MODUAL sensor-snapshot-integrity job completed successfully at commit b9dda80ae909d1c295757dcc2dd339d65d375319.",
+            "11 tests passed for read-only snapshot privacy/execution safety, source resolution, no fake source, and prevention of synthetic sensor rows.",
+            "This workflow did not read the live Outlook/Dropbox source or obtain a new HWiNFO sensor sample; no live stream freshness was established."
+          ],
+          "result": "SCHEDULED_CI_PASS_LIVE_SENSOR_STREAM_STILL_UNVERIFIED",
+          "next_callable_edge": "Obtain authorized host/provider readback of the exact Dropbox source and a fresh HWiNFO sample with before/after metadata and content hash; do not overwrite the source or stale carrier.",
+          "status_effect": "Keep status OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED; CI success is not live sensor verification."
+        }
+      ]
     },
     {
       "id": "SOL_PLUGIN_CONSOLIDATION",
