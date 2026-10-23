@@ -4456,6 +4456,68 @@
       },
       "result": "MERGE_TREE_PREPARED; PROVIDER_READBACK_PENDING",
       "status_effect": "No task statuses changed; no task closed."
+    },
+    {
+      "id": "PR24_RECONCILIATION_READBACK_20261024T062425Z",
+      "kind": "OPEN_ROUTING_PR_RECONCILIATION_PROVIDER_READBACK",
+      "observed_at": "2026-10-24T06:24:25+07:00",
+      "observed_at_utc": "2026-10-23T23:24:25Z",
+      "source": "Fresh authenticated GitHub ref, PR, compare, workflow, scheduler and ledger readbacks after non-force merge",
+      "provider_readback": {
+        "main_ref_sha": "af91fcf208064aab8f1221aab0144dd1b77003a7",
+        "pr_branch_ref_sha": "04e72812231d8545317ac84e033e4d077b3a08b3",
+        "merge_commit_sha": "04e72812231d8545317ac84e033e4d077b3a08b3",
+        "merge_commit_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/commit/04e72812231d8545317ac84e033e4d077b3a08b3",
+        "parent_order": [
+          "af91fcf208064aab8f1221aab0144dd1b77003a7",
+          "2fa524bd5aca06a75acad39df7948159401f1f9e"
+        ],
+        "compare": {
+          "status": "ahead",
+          "ahead_by": 16,
+          "behind_by": 0
+        },
+        "pr": {
+          "number": 24,
+          "state": "open",
+          "draft": true,
+          "merged": false,
+          "mergeable": true,
+          "mergeable_state": "unstable"
+        },
+        "current_head_runs": [
+          {
+            "id": 40039799971,
+            "name": "Windows survival - independent OPEN continuation",
+            "status": "queued"
+          },
+          {
+            "id": 40039799991,
+            "name": "High-Threshold Secret Exposure Guard",
+            "status": "queued"
+          }
+        ]
+      },
+      "source_blobs": {
+        "ledger_before_readback": "f25ab1df0a940a2b433fb32cdf583b6406329de6",
+        "workflow": "cb1a8fa79a1ba306f0a7b442838e45d4b248b1af",
+        "scheduler": "fe99f77fa6eb540712c3754cc3f9d46153d3eeea",
+        "tests": "be2f795c605010a615d08704c8456e1596b98eb5"
+      },
+      "invariants": {
+        "task_count": 28,
+        "task_ids_unchanged": true,
+        "task_statuses_unchanged": true,
+        "task_real_execution_statuses_unchanged": true,
+        "task_closure": false,
+        "force_push": false,
+        "windows_host_touched": false,
+        "windows_disk_modified": false,
+        "private_chat_payloads_added": false,
+        "credentials_added": false
+      },
+      "result": "MERGE_COMMIT_READ_BACK; PR_AHEAD_16_BEHIND_0; CURRENT_HEAD_CI_QUEUED",
+      "status_effect": "No task was closed or marked complete. CI is pending validation only."
     }
   ],
   "energy_protection_current": {
