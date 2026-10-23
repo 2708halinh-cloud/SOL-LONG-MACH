@@ -104,7 +104,43 @@ def _csv_files(root: Path, *, limit: int = 160) -> list[Path]:
 
 def inspect_sources(candidates: Iterable[Path] | None = None,
                     now: datetime | None = None) -> dict:
-    roots = list(candidates) if candidates is not None else candidate_roots()
+    # An explicit file pin is authoritative. If it is missing or invalid,
+    # fail closed instead of silently selecting a different/newer CSV.
+    if candidates is None:
+        explicit_file = os.environ.get("SOL_SENSOR_SOURCE_FILE", "").strip()
+        if explicit_file:
+            pinned = Path(explicit_file)
+            evidence = _check_csv(pinned)
+            checked = [{"path": str(pinned),
+                        "verified_csv_count": 1 if evidence else 0,
+                        "newest_evidence": evidence,
+                        "explicit_file_override": True}]
+            if evidence is None:
+                return {"selected_source": str(pinned),
+                        "selected_evidence": None,
+                        "checked": checked,
+                        "mutated_files": 0,
+                        "wsl_invoked": False,
+                        "source_verified": False,
+                        "live_stream_confirmed": False,
+                        "source_override_mode": "EXACT_FILE"}
+            clock = now or datetime.now(timezone.utc)
+            if clock.tzinfo is None:
+                raise ValueError("CLOCK_TIMEZONE_REQUIRED")
+            age_seconds = clock.timestamp() - evidence["modified_ns"] / 1e9
+            return {"selected_source": str(pinned),
+                    "selected_evidence": evidence,
+                    "observed_file_age_seconds": round(age_seconds, 2),
+                    "live_stream_confirmed": False,
+                    "source_verified": True,
+                    "checked": checked,
+                    "mutated_files": 0,
+                    "wsl_invoked": False,
+                    "source_override_mode": "EXACT_FILE"}
+        roots = candidate_roots()
+    else:
+        roots = list(candidates)
+
     checked: list[dict] = []
     verified: list[tuple[int, Path, dict]] = []
     for root in roots:
@@ -119,7 +155,9 @@ def inspect_sources(candidates: Iterable[Path] | None = None,
     if not verified:
         return {"selected_source": None, "selected_evidence": None,
                 "checked": checked, "mutated_files": 0,
-                "wsl_invoked": False, "source_verified": False}
+                "wsl_invoked": False, "source_verified": False,
+                "live_stream_confirmed": False,
+                "source_override_mode": "AUTO_DISCOVERY"}
     _, selected, evidence = max(verified, key=lambda p: p[0])
     clock = now or datetime.now(timezone.utc)
     if clock.tzinfo is None:
@@ -128,9 +166,8 @@ def inspect_sources(candidates: Iterable[Path] | None = None,
     return {"selected_source": str(selected), "selected_evidence": evidence,
             "observed_file_age_seconds": round(age_seconds, 2),
             "live_stream_confirmed": False, "source_verified": True,
-            "checked": checked, "mutated_files": 0, "wsl_invoked": False}
-
-
+            "checked": checked, "mutated_files": 0, "wsl_invoked": False,
+            "source_override_mode": "AUTO_DISCOVERY"}
 def resolve_sensor_root(candidates: Iterable[Path] | None = None) -> Path:
     result = inspect_sources(candidates)
     if not result["source_verified"]:
