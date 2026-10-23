@@ -3314,6 +3314,105 @@
         "credentials_committed": false,
         "raw_sensor_rows_committed": false
       }
+    },
+    {
+      "id": "OPEN_NEXT_READBACK_AND_PR24_SYNC_20261024T042835Z",
+      "record_type": "OPEN_NEXT_READBACK_AND_PR24_SYNC",
+      "observed_at": "2026-10-24T04:28:35+07:00",
+      "source": "Authenticated GitHub connector readback + ChatGPT Library metadata inventory",
+      "source_reads": {
+        "main_head_before_sync": "15ac59ec9385c25ad1f4de04122782631ba2e375",
+        "pr24_head_before_sync": "7dbb179560962b688a9842c39356bb821c017044",
+        "main_ledger_blob_before_sync": "b78971f07f804802999e12d620a25bc33e0402e2",
+        "branch_ledger_blob_before_sync": "78c8f204b32c0c2d2068006a303d255f0162f2a3",
+        "admin_library_id": "libfile_d18e6db946b88191b31e948ed283598c",
+        "source_trace_library_id": "libfile_2a8aab4df2908191bf962aa563657b7e"
+      },
+      "pr24_sync": {
+        "merge_commit": "f146aae9d9da600587525f2dcdfe0a0f32057953",
+        "parents": [
+          "7dbb179560962b688a9842c39356bb821c017044",
+          "15ac59ec9385c25ad1f4de04122782631ba2e375"
+        ],
+        "compare_status": "ahead",
+        "ahead_by": 7,
+        "behind_by": 0,
+        "mergeable": true,
+        "draft": true,
+        "merged": false,
+        "force_push": false
+      },
+      "code_readback": {
+        "pull_request_trigger": true,
+        "scheduler_checks_any_nonempty_ledger": true,
+        "fixed_27_task_threshold_removed": true,
+        "small_ledger_regression_test_present": true,
+        "gitmodules_gitlink_regression_test_present": true
+      },
+      "memory_archive_inventory": {
+        "target_folder": "/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL",
+        "visible_direct_items": [
+          "ADMIN_PORTABLE_20261023.zip",
+          "R014_DAU_KHO_HANH_PHUC_TIN_HIEU_GOC_20261023.md"
+        ],
+        "target_folder_archive_listing": [
+          "ADMIN_PORTABLE_20261023.zip"
+        ],
+        "global_library_archive_pages": 3,
+        "visible_archive_items": 253,
+        "traversal_warning": true,
+        "raw_export_candidate_found": false,
+        "provider_readback": {
+          "google_drive": false,
+          "dropbox": false,
+          "takeout": false,
+          "reason": "No callable Drive/Dropbox/Takeout source action exposed in this session."
+        },
+        "source_identity_preserved": true,
+        "admin_folder_moved_or_duplicated": false
+      },
+      "tesseract_desktop": {
+        "pr_number": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "state": "OPEN",
+        "mergeable": true,
+        "merged": false,
+        "workflow_runs": [
+          {
+            "id": 39994207477,
+            "conclusion": "failure",
+            "steps": [],
+            "logs": "BlobNotFound"
+          },
+          {
+            "id": 39994207667,
+            "conclusion": "failure",
+            "steps": [],
+            "logs": "BlobNotFound"
+          }
+        ],
+        "issuer_public_key_found": false,
+        "runner_assignment_change_verified": false,
+        "rerun_performed": false
+      },
+      "ledger_invariants": {
+        "task_count": 28,
+        "status_counts": {
+          "OPEN": 9,
+          "OPEN_CARRIED": 2,
+          "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+          "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+          "IN_PROGRESS": 3
+        },
+        "task_ids_unchanged": true,
+        "task_statuses_unchanged": true,
+        "task_real_execution_statuses_unchanged": true,
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false
+      },
+      "result": "PR24_DIVERGENCE_RESOLVED_WITH_HISTORY_PRESERVED; ORIGINAL_JINEY_FUNIX_DAT_EXPORT_BYTES_NOT_RETRIEVED",
+      "next_callable_edge": "Continue independent OPEN edges. Retrieve JINEY/FUNIX/DAT NGUYEN original export bytes only through an actually authorized provider connector or verified raw carrier. Keep PR #24 Draft. For TESSERACT Desktop, obtain the real issuer public key and verify runner assignment/entitlement through an authorized control surface before any CI rerun.",
+      "task_closure": false
     }
   ],
   "energy_protection_current": {
