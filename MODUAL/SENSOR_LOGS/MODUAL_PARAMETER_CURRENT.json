@@ -65,7 +65,7 @@
       "report_is_historical_not_current_device_bytes": true
     },
     "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
-    "state": "OPEN_PROVIDER_CARRIER_RESOLVED_WINDOWS_TICK_NOT_VERIFIED",
+    "state": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
     "rule": "Do not overwrite existing Oct 09 local source metadata; do not call Dropbox CSV a working Windows Tick consumer; no raw sensor records or secrets committed; verify Windows Tick independently before closing."
   },
   "session_observations": [
@@ -95,6 +95,78 @@
       "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
       "state": "OPEN_PROVIDER_CARRIER_RESOLVED_WINDOWS_TICK_NOT_VERIFIED",
       "guard": "No raw sensor bytes or credentials recorded; no source copied, moved, or deleted; provider metadata is not proof of a live consumer."
+    },
+    {
+      "observed_at": "2026-10-23T16:20:54+07:00",
+      "record_type": "ADDITIVE_PROVIDER_CONTENT_HASH_AND_WINDOWS_TICK_PERIODIC_RECEIPT_NOT_LIVE_STREAM",
+      "provider": {
+        "name": "Dropbox Outlook",
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+        "metadata_readback": true,
+        "content_hash_verified_against_windows_target": true,
+        "bytes_downloaded_this_run": false
+      },
+      "device_carrier": {
+        "connector": "Desktop Commander",
+        "device": "DESKTOP-86ITNQ4",
+        "status": "ONLINE",
+        "exact_target": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "size_bytes": 35389440,
+        "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "dropbox_content_hash_matches": true,
+        "modified_local": "2026-10-23T15:45:56.2458701+07:00",
+        "column_count": 354
+      },
+      "consumer": {
+        "source_repo": "2708halinh-cloud/SOL-LONG-MACH",
+        "source_path": "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py",
+        "source_commit": "1dd3617755153af4b5bc8cd8161835a253e70e22",
+        "source_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "local_source_sha256": "ADB646A0B779374BC636CE8F310ECA264B9844D5A0D63078128D17DC357E54A7",
+        "local_matches_github_source": true,
+        "one_shot_exit_code": 0,
+        "metadata_only_receipt": true,
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T091633398258Z.json",
+        "receipt_sha256": "fc710da18b635cdf94f604c7e896a0db8b9e2d97c67b98d5712dae0c060d93ee",
+        "receipt_bytes": 450,
+        "receipt_exact_readback": true,
+        "receipt_json_valid": true,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_export_enabled": false,
+        "github_export_enabled": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "scheduled_task": {
+        "existing_task": "GGDV_MODUAL_SENSOR_LOGS_AUTO_SYNC",
+        "existing_task_last_result": 0,
+        "existing_task_trigger": "LOGON_ONLY",
+        "modify_existing_task_result": "ACCESS_DENIED; existing task left unchanged",
+        "additive_task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "additive_task_state": "Ready",
+        "additive_task_interval": "PT5M",
+        "last_run_local": "2026-10-23T16:16:32+07:00",
+        "last_result": 0,
+        "next_run_local": "2026-10-23T16:21:32+07:00"
+      },
+      "live_stream_diagnostic": {
+        "hwinfo_process_running": true,
+        "hwinfo_process_started_local": "2026-10-23T09:47:50.3802264+07:00",
+        "hwinfo_registry_enable_logging": 0,
+        "hwinfo_csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+        "hwinfo_csv_bytes": 39922785,
+        "hwinfo_csv_modified_local": "2026-10-21T09:20:45.8565035+07:00",
+        "live_stream_confirmed": false,
+        "cli_probe_created_file": false
+      },
+      "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
+      "state": "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
+      "guard": "Metadata-only receipts and exact source hash are verified; do not claim live sensor recovery; do not copy raw sensor rows or credentials to GitHub; do not delete/move source."
     }
   ],
   "privacy_policy": {
