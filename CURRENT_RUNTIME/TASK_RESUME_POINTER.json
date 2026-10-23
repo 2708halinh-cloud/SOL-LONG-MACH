@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Continue the next Windows scheduled tick after device-clock 2026-10-24T03:01:32+07:00 and read back the exact newest receipt. The deployed consumer at D:\\SENSOR_LOGS\\telemetry_buffer_sync.py matches the current GitHub source body and is intentionally metadata-only: it hashes the pinned D:\\SENSOR_LOGS\\windows_SENSON.CSV and hardcodes live_sensor_reading_confirmed=false. The separate HWiNFO_WINDOWS.CSV remains stale/read-only and HWiNFO64.INI contains no logging/CSV path. Do not redirect the source or enable exports without a reviewed exact target; use a supported authorized HWiNFO logging control and verify before/after sample metadata. W32Time remains Stopped/Manual and requires an authorized elevated path. Ollama local chat is verified HTTP 200/done=true/OK on 127.0.0.1:11434 only; Android relay and Chrome UI remain open. X-TIME health is 200 at 127.0.0.1:8769 with 63 tools, but MODUAL binding/live-device proof remain open. Dropbox fresh metadata read remains unavailable because of connector account-link validation; use another authorized carrier. PR #6 workflows 39994207477 and 39994207667 remain failed; do not rerun them or 39153474587 without independently verified runner assignment/entitlement change; issuer key remains unverified.",
+  "next": "Read back the next Windows tick after device-clock 2026-10-24T03:06:32+07:00. Current consumer source has been inspected locally and on GitHub: it hashes only the pinned D:\\SENSOR_LOGS\\windows_SENSON.CSV and explicitly sets live_sensor_reading_confirmed=false; this is a metadata observer, not a live sensor reader. HWiNFO_WINDOWS.CSV remains a separate stale/read-only file and HWiNFO64.INI has no logging/CSV path. Next action is to use a supported authorized HWiNFO logging control, then verify a new sample by before/after metadata; do not redirect the pinned source or enable cloud/GitHub exports without exact-target review. W32Time remains Stopped/Manual with no Administrator rights in this session. Ollama /api/chat now returned HTTP 200, done=true, OK on 127.0.0.1:11434 only; continue Android relay/Chrome UI verification without LAN exposure. X-TIME health remains HTTP 200 at 127.0.0.1:8769 with 63 tools, but MODUAL source binding and live-device proof remain open. Dropbox metadata connector failed account-link validation, so use another authorized provider route rather than repeating the same failed call. PR #6 head 5312816d5fe2b22e92302211b67f916b88a6fe14 workflows 39994207477 and 39994207667 remain failed; do not rerun these or 39153474587 until runner assignment/entitlement change is verified; issuer public key remains unverified.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -722,6 +722,69 @@
         "new_sample_confirmed": false
       },
       "result": "CONSUMER_METADATA_ONLY_CONFIRMED; HWINF0_LOGGING_AND_LIVE_SAMPLE_UNVERIFIED",
+      "task_closure": false,
+      "raw_sensor_rows_committed": false,
+      "credentials_committed": false,
+      "source_moved_or_deleted": false
+    },
+    {
+      "observed_at": "2026-10-23T20:03:23.306Z",
+      "observed_at_local": "2026-10-24T03:03:23.306+07:00",
+      "record_type": "SIXTH_SCHEDULED_WINDOWS_TICK_AND_CONSUMER_ROOT_CAUSE_READBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "e2f017f964b79533c2dad7cff4f81a975eff276d",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "79f9355e32f0dab47da0935e8321922d875083d0",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "0f640ebdd06809d7d04109577d628d8daf1bc6ec"
+      },
+      "windows": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T200135409855Z.json",
+        "receipt_sha256": "558222e07224c3a1df229299415f362c8e54c1dfc04b571edaf31a7de5671ba0",
+        "task_last_run_local": "2026-10-24T03:01:33+07:00",
+        "last_task_result": 0,
+        "missed_runs": 0,
+        "next_run_device_clock": "2026-10-24T03:06:32+07:00",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_unchanged": true,
+        "live_sensor_reading_confirmed": false
+      },
+      "consumer": {
+        "github_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "local_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+        "metadata_only": true,
+        "hardcodes_live_sensor_reading_confirmed_false": true,
+        "source_binding": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "exports_disabled": true
+      },
+      "hwinfo": {
+        "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "csv_last_write_utc": "2026-10-21T02:20:45.8565035Z",
+        "csv_attributes": "ReadOnly, Archive",
+        "ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
+        "ini_has_logging_or_csv_path": false,
+        "new_sample_confirmed": false
+      },
+      "parallel": {
+        "ollama_chat_http": 200,
+        "ollama_chat_done": true,
+        "ollama_response": "OK",
+        "ollama_loopback_only": true,
+        "android_ui_verified": false,
+        "xtime_health_http": 200,
+        "xtime_runtime_tools": 63,
+        "xtime_modual_source_present": false,
+        "tesseract_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "tesseract_runs": [
+          39994207477,
+          39994207667
+        ],
+        "tesseract_ci_rerun": false,
+        "runner_assignment_change_verified": false,
+        "issuer_public_key_verified": false
+      },
+      "result": "SIXTH_TICK_VERIFIED_METADATA_ONLY_CONSUMER_CONFIRMED_LIVE_SENSOR_STREAM_OPEN",
+      "task_count": 28,
       "task_closure": false,
       "raw_sensor_rows_committed": false,
       "credentials_committed": false,
