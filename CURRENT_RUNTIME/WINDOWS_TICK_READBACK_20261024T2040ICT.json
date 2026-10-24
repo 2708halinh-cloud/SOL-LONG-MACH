@@ -1,0 +1,164 @@
+{
+  "schema": "SOL_WINDOWS_TICK_READBACK/1.0",
+  "observed_at_utc": "2026-10-24T13:42:42.804Z",
+  "observed_at_local": "2026-10-24T20:42:42.804+07:00",
+  "record_type": "POST_BOUNDARY_WINDOWS_TICK_AND_LOCAL_SCRIPT_READBACK",
+  "source_reads_before_write": {
+    "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "52e69fd97cb82184f6e12089babaaed76295b576",
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "e959c5cb24f6c97270db4c651cef9b9c2df002f2",
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "ec813ed5e138ad6ee9ed741176261f6fd45b7b6f"
+  },
+  "windows_tick": {
+    "device": "DESKTOP-86ITNQ4",
+    "route": "REMOTE_DESKTOP_COMMANDER_ALTERNATE_LINK",
+    "device_online_in_latest_device_list": true,
+    "latest_tick": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T132648889472Z.json",
+    "tick_observed_at_utc": "2026-10-24T13:26:48.889472Z",
+    "tick_file_bytes": 450,
+    "tick_content_readback_verified": true,
+    "tick_sha256": null,
+    "tick_sha256_recomputed_this_turn": false,
+    "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+    "source_bytes": 35389440,
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_hash_matches_prior_verified_direct_hash": true,
+    "source_hash_recomputed_this_turn": false,
+    "source_modified_at_utc": "2026-10-23T08:45:56.2458701Z",
+    "live_sensor_reading_confirmed": false,
+    "source_file_written": false,
+    "synthetic_rows_added": 0,
+    "cloud_enabled": false,
+    "github_enabled": false,
+    "task_info_observed_at_local": "2026-10-24T20:26:56.3886603+07:00",
+    "task_last_run_local": "2026-10-24T20:26:33+07:00",
+    "task_last_result": "0x0",
+    "task_next_run_local": "2026-10-24T20:31:32+07:00",
+    "missed_runs": 0,
+    "task_state_current": "NOT_RE_READ_AT_20:26",
+    "last_known_task_state": "Ready",
+    "last_known_task_state_observed_at_local": "2026-10-24T20:13:08.119+07:00",
+    "receipt_delay_from_task_last_run_seconds_approx": 15.889472,
+    "interpretation": "Tick receipt confirms a metadata-only source hash observation, not a live hardware sample or data-consumer recovery."
+  },
+  "local_consumer_script": {
+    "path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+    "content_readback_verified": true,
+    "readback_line_count": 308,
+    "readback_char_count": 13238,
+    "last_verified_bytes_from_prior_checkpoint": 13245,
+    "last_verified_sha256_from_prior_checkpoint": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+    "sha256_recomputed_this_turn": false,
+    "behavior_observed_in_content": [
+      "record_telemetry_tick reads and hashes the configured source file and checks size/mtime stability; it does not call the defined Xiaomi/Redmi/PC telemetry functions.",
+      "write_tick_receipt writes a unique metadata-only JSON receipt and exact-readbacks it.",
+      "sync_snapshot_to_cloud requires SOL_ENABLE_SENSOR_CLOUD_EXPORT=1 before any copy/replace path.",
+      "sync_snapshot_to_github requires SOL_ENABLE_SENSOR_GITHUB_PUSH=1 before invoking the GitHub sync helper.",
+      "--once calls both sync functions, but their explicit environment guards remain in place."
+    ],
+    "manually_executed_this_turn": false,
+    "equivalence_to_historical_dropbox_copy": "NOT_VERIFIED",
+    "historical_dropbox_copy": {
+      "path": "/Linh Hà/SENSOR_LOGS/telemetry_buffer_sync.py",
+      "revision": "0165daa22c5d85b0000000395cdfd73",
+      "bytes": 10707,
+      "export_guards_absent": true,
+      "executed": false
+    }
+  },
+  "consumer": {
+    "current_probe": "STARTED_BUT_RESULT_NOT_READ_BACK",
+    "health": "UNVERIFIED",
+    "prior_observations": "Health routes timed out and no listener lines were observed at 2026-10-24T20:06:23+07; prior transport observations conflicted.",
+    "service_or_configuration_changed": false
+  },
+  "providers": {
+    "dropbox": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_readback_this_turn": true
+    },
+    "xtime": {
+      "last_verified_at_local": "2026-10-24T20:00:16+07:00",
+      "http_status": 200,
+      "modual_source_present": true,
+      "live_device_proven": false,
+      "refreshed_this_turn": false
+    },
+    "ollama": {
+      "last_verified_at_local": "2026-10-24T20:00:16+07:00",
+      "http_status": 200,
+      "model_count": 11,
+      "refreshed_this_turn": false
+    },
+    "android": {
+      "last_verified_at_local": "2026-10-24T20:08:14+07:00",
+      "usb_device_serial": "1056285",
+      "model": "2201123G",
+      "read_only_battery_query_succeeded": true,
+      "wireless_heartbeat_verified": false,
+      "refreshed_this_turn": false
+    },
+    "hwinfo": {
+      "last_verified_at_local": "2026-10-24T20:00:16+07:00",
+      "process_running": true,
+      "csv_bytes": 39922785,
+      "csv_modified_local": "2026-10-21T09:20:45.8565035+07:00",
+      "live_stream_confirmed": false,
+      "refreshed_this_turn": false
+    }
+  },
+  "independent_cloud": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "execution_id": "136",
+    "status": "success",
+    "started_at_utc": "2026-10-24T13:00:22.080Z",
+    "stopped_at_utc": "2026-10-24T13:00:24.193Z",
+    "receipt_row_id": 279,
+    "receipt_event_id": "X20261024130024041_CLOUD",
+    "receipt_state": "OPEN_WORK_REMAINS",
+    "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "host_operations": 0,
+    "tasks_closed": 0,
+    "exact_node_readback": true
+  },
+  "tesseract": {
+    "repository": "2708halinh-cloud/x-time-web",
+    "pr": 6,
+    "last_known_state": "OPEN_NOT_MERGED",
+    "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "workflow_runs": {
+      "39994207477": {
+        "status": "failure",
+        "jobs": [
+          "build macos-14 failure",
+          "build windows-latest failure",
+          "build ubuntu-24.04 failure",
+          "tesseract_os failure",
+          "selfhosted_windows_verify skipped",
+          "readback failure"
+        ],
+        "artifacts": 0
+      },
+      "39994207667": {
+        "status": "failure",
+        "jobs": [
+          "verify failure"
+        ],
+        "artifacts": 0
+      }
+    },
+    "ci_rerun_performed": false,
+    "issuer_public_key_verified": false,
+    "runner_assignment_change_verified": false,
+    "note": "A fetch of .github/workflows/tesseract-desktop.yml at ref main returned no commit for ref main; this is not evidence that the repository or workflow is absent."
+  },
+  "result": "WINDOWS_TICK_132648_RECEIPT_READBACK; TASK_LAST_RESULT_0X0; RECEIPT_HASH_NOT_RECOMPUTED; LIVE_SENSOR_STREAM_NOT_VERIFIED; CONSUMER_HEALTH_UNVERIFIED; N8N_ROW279_VERIFIED; TESSERACT_RUNS_NOT_RETRIED; ALL_OPEN_RETAINED",
+  "next_edge": "Read the next exact Windows Tick receipt and current task state; recompute the direct source hash and current local script hash; retrieve the pending 8080 probe result through an authorized remote read path; pursue a genuine HWiNFO or authorized Android live-sensor sample; verify TESSERACT issuer public key and runner assignment before any CI rerun."
+}
