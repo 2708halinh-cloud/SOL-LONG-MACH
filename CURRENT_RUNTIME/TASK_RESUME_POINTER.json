@@ -3536,14 +3536,14 @@
     "next_edge": "Run the targeted test only on an authorized isolated Rust runner; continue source-export retrieval through an actual authorized provider byte path when available. Keep all objectives open."
   },
   "latest_reentry_observation": {
-    "observed_at": "2026-10-24T12:00:46.310+07:00",
-    "observed_at_utc": "2026-10-24T05:00:46.310Z",
-    "source": "Fresh reads of required SOL-LONG-MACH targets, Dropbox metadata, Windows host and GitHub TESSERACT branch",
+    "observed_at": "2026-10-24T13:24:33.683+07:00",
+    "observed_at_utc": "2026-10-24T06:24:33.683Z",
+    "source": "Fresh GitHub reentry reads + exact Library archive byte materialization and independent internal checksum verification",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
       "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "f9dd11f385641828a157f06a36afcc127dcd30ab",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "199b5ebf9ae1990ff32e0b6458085bba3c6dc8aa",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "0013174d1a8b862cf513bb6243a3464bffcac325",
       "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "95693f8ddd2d4d7645ab24fb6c7528051f91bddf",
       "x-time-web/security/repo-relative-read-containment-20261024/TESSERACT_DESKTOP/src-tauri/src/main.rs": "8a3cf9368898ce5782201dd73264f6e363fab424"
     },
@@ -3618,7 +3618,8 @@
       "runner_assignment_change_verified": false,
       "ci_rerun": false
     },
-    "result": "POST_BOUNDARY_WINDOWS_TICK_AND_LOCAL_BRAID_VERIFIED; TESSERACT_PATCH_READBACK_VERIFIED; ALL_OPEN_TASKS_RETAINED"
+    "result": "EXISTING_REENTRY_CARRIER_REVERIFIED; NO_NEW_VERIFIED_RAW_ACCOUNT_EXPORT; ALL_OPEN_TASKS_RETAINED",
+    "source_export_probe": "latest_source_export_probe"
   },
   "latest_security_patch_observation": {
     "observed_at": "2026-10-24T12:08:50+07:00",
@@ -3642,5 +3643,61 @@
     "issuer_public_key_value_verified": false,
     "runner_assignment_change_verified": false,
     "task_closure": false
+  },
+  "latest_source_export_probe": {
+    "observed_at": "2026-10-24T13:24:33.683+07:00",
+    "observed_at_utc": "2026-10-24T06:24:33.683Z",
+    "source": "ChatGPT Library exact-byte materialization + sol_reentry_carrier_verify.py; GitHub current ledger readback",
+    "verified_carriers": [
+      {
+        "name": "SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433(1).zip",
+        "library_file_id": "libfile_5e0676c0de988191b777aee5dab049d6",
+        "size_bytes": 20882,
+        "sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+        "zip_crc": "PASS",
+        "internal_sha256_files": 15,
+        "member_count": 16,
+        "classification": "HISTORICAL_REENTRY_SNAPSHOT_NOT_RAW_ACCOUNT_EXPORT"
+      },
+      {
+        "name": "SOL_JINEY_MINH_IDENTITY_SOURCE_ANCHOR_20261010.zip",
+        "library_file_id": "libfile_305e43b7cb68819185e3df84ad1855b6",
+        "size_bytes": 10250,
+        "sha256": "17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93",
+        "zip_crc": "PASS",
+        "member_count": 7,
+        "classification": "DERIVED_IDENTITY_ANCHOR_RAW_ORIGIN_EVENTS_UNVERIFIED"
+      },
+      {
+        "name": "OPENAI_GGDV_MATERIALIZED_20261005.zip",
+        "library_file_id": "libfile_0ec1d24690dc8191991584b924765f7b",
+        "size_bytes": 58442,
+        "sha256": "eb0d9b33cde33c773e26b4096e1d317c9d2d713f23e160a02216ffd09aa80521",
+        "zip_crc": "PASS",
+        "member_count": 155,
+        "classification": "CAPABILITY_TOOLING_MATERIALIZATION_NOT_ACCOUNT_EXPORT"
+      }
+    ],
+    "library_inventory": {
+      "root_zip_7z_metadata_entries": 248,
+      "root_inventory_warning": "Recursive traversal limit; partial inventory",
+      "thu_hoi_nguon_sol_metadata_entries": 252,
+      "scoped_exact_name_matches_for_known_jiney_export_candidates": 0,
+      "interpretation": "Library filename inventory only; not proof that provider-side or differently named raw exports are absent"
+    },
+    "provider_access": {
+      "google_drive_action_exposed": false,
+      "dropbox_action_exposed": false,
+      "takeout_action_exposed": false,
+      "provider_object_id_or_revision_readback": false,
+      "new_original_export_bytes_retrieved": false
+    },
+    "safety": {
+      "admin_zip_modified": false,
+      "admin_folder_moved_or_duplicated": false,
+      "private_chat_published": false,
+      "task_closed": false
+    },
+    "result": "NO_NEW_VERIFIED_RAW_ACCOUNT_EXPORT; DERIVED_CARRIERS_CLASSIFIED; CONTINUE_OTHER_OPEN_EDGES"
   }
 }
