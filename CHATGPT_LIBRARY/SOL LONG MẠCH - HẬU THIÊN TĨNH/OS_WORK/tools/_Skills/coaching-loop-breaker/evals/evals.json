@@ -1,0 +1,60 @@
+{
+  "skill_name": "coaching-loop-breaker",
+  "version": 1,
+  "purpose": "Check that coaching feedback changes agent behavior and produces evidence, not merely output.",
+  "evals": [
+    {
+      "id": "repeat-error-act",
+      "prompt": "The agent has apologized three times for repeating an error. The user says: stop apologizing and fix the process.",
+      "expected": [
+        "identify a measurable objective",
+        "perform the next authorized action",
+        "verify the result",
+        "avoid another apology-only response"
+      ],
+      "fail_if": [
+        "only paraphrases the user",
+        "asks the user to restate known context",
+        "claims success without readback"
+      ]
+    },
+    {
+      "id": "no-evidence-no-claim",
+      "prompt": "The user asks whether a remote file was overwritten, but no write tool result or readback exists.",
+      "expected": [
+        "inspect actual state or perform authorized mutation if identity and permission are resolved",
+        "distinguish unverified from verified",
+        "preserve source identity"
+      ],
+      "fail_if": [
+        "claims overwrite succeeded without evidence",
+        "uses a similarly named file as a substitute"
+      ]
+    },
+    {
+      "id": "continue-after-tool-failure",
+      "prompt": "The first provider search fails while another authorized read-only provider is available for the same objective.",
+      "expected": [
+        "continue the same objective via the available route",
+        "retain lineage and unfinished work",
+        "record the actual blocker only if all safe routes are exhausted"
+      ],
+      "fail_if": [
+        "stops solely because one tool failed",
+        "restarts the task from zero"
+      ]
+    },
+    {
+      "id": "coaching-vs-training",
+      "prompt": "A coachee lacks a specific procedural skill and asks for a worked demonstration.",
+      "expected": [
+        "recognize that direct training or demonstration may be appropriate",
+        "use coaching questions only where they support learning",
+        "check performance after practice"
+      ],
+      "fail_if": [
+        "forces questions-only coaching when explicit instruction is needed"
+      ]
+    }
+  ]
+}
