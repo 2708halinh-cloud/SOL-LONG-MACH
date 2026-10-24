@@ -7726,6 +7726,72 @@
       "exact_targets_after_modual_write": {
         "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "ce669477b33e4afb5180180ef1b893ca59e6d4de"
       }
+    },
+    {
+      "id": "TESSERACT_ISSUER_SEARCH_ALT_CONNECTOR_20261024100913",
+      "kind": "TESSERACT_ISSUER_SEARCH_ALT_CONNECTOR_READBACK",
+      "observed_at": "2026-10-24T17:09:13.025+07:00",
+      "observed_at_utc": "2026-10-24T10:09:13Z",
+      "source": "Fresh GitHub reentry reads; exact repository code-search results; alternate Desktop Commander device inventory.",
+      "exact_targets_before_write": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "d1f9de6b8d52acb0b596edb02ca414c71e2d7ab4",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "cfefd77820664cbbd6432264b222e565de48ea75",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "ce669477b33e4afb5180180ef1b893ca59e6d4de"
+      },
+      "verified_actions": [
+        "Fresh-read all four required reentry files and MODUAL current state before the additive write.",
+        "GitHub code search for XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64 returned 0 indexed code results; ed25519 issuer search returned 0. This does not inspect authorized secret/control surfaces.",
+        "Alternate desktopcommande inventory returned stale OFFLINE records; prior Remote Desktop Commander direct host read in this same run succeeded, so no physical offline conclusion is inferred.",
+        "PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14; runs 39994207477 and 39994207667 remain failures without artifacts; no rerun."
+      ],
+      "tesseract": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "state": "OPEN_NOT_MERGED",
+        "current_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "current_head_runs": [
+          39994207477,
+          39994207667
+        ],
+        "runs_failed_without_artifacts": true,
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "alternate_connector": {
+        "connector": "desktopcommande",
+        "inventory_readback": true,
+        "devices": [
+          {
+            "name": "localhost",
+            "status": "OFFLINE",
+            "last_seen": "21h ago"
+          },
+          {
+            "name": "DESKTOP-86ITNQ4",
+            "status": "OFFLINE",
+            "last_seen": "96h ago"
+          },
+          {
+            "name": "DESKTOP-86ITNQ4",
+            "status": "OFFLINE",
+            "last_seen": "322h ago"
+          }
+        ],
+        "cross_connector_discrepancy": "Remote Desktop Commander had direct host access and reported DESKTOP-86ITNQ4 online earlier this turn; do not infer physical device state from this account's stale inventory."
+      },
+      "result": "ISSUER_PUBLIC_KEY_NOT_VERIFIED_BY_REPOSITORY_CODE_SEARCH; ALTERNATE_CONNECTOR_INVENTORY_STALE; PR6_OPEN; NO_CI_RERUN",
+      "safety": {
+        "tasks_closed": false,
+        "ci_rerun": false,
+        "credentials_committed": false,
+        "source_mutated": false
+      },
+      "exact_targets_after_modual_write": {
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "d8f049e94e4b70400a75757b2d337600d8a46a65"
+      }
     }
   ],
   "energy_protection_current": {
@@ -12975,6 +13041,72 @@
       },
       "exact_targets_after_modual_write": {
         "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "ce669477b33e4afb5180180ef1b893ca59e6d4de"
+      }
+    },
+    {
+      "id": "TESSERACT_ISSUER_SEARCH_ALT_CONNECTOR_20261024100913",
+      "kind": "TESSERACT_ISSUER_SEARCH_ALT_CONNECTOR_READBACK",
+      "observed_at": "2026-10-24T17:09:13.025+07:00",
+      "observed_at_utc": "2026-10-24T10:09:13Z",
+      "source": "Fresh GitHub reentry reads; exact repository code-search results; alternate Desktop Commander device inventory.",
+      "exact_targets_before_write": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "d1f9de6b8d52acb0b596edb02ca414c71e2d7ab4",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "cfefd77820664cbbd6432264b222e565de48ea75",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "ce669477b33e4afb5180180ef1b893ca59e6d4de"
+      },
+      "verified_actions": [
+        "Fresh-read all four required reentry files and MODUAL current state before the additive write.",
+        "GitHub code search for XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64 returned 0 indexed code results; ed25519 issuer search returned 0. This does not inspect authorized secret/control surfaces.",
+        "Alternate desktopcommande inventory returned stale OFFLINE records; prior Remote Desktop Commander direct host read in this same run succeeded, so no physical offline conclusion is inferred.",
+        "PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14; runs 39994207477 and 39994207667 remain failures without artifacts; no rerun."
+      ],
+      "tesseract": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "state": "OPEN_NOT_MERGED",
+        "current_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "current_head_runs": [
+          39994207477,
+          39994207667
+        ],
+        "runs_failed_without_artifacts": true,
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "alternate_connector": {
+        "connector": "desktopcommande",
+        "inventory_readback": true,
+        "devices": [
+          {
+            "name": "localhost",
+            "status": "OFFLINE",
+            "last_seen": "21h ago"
+          },
+          {
+            "name": "DESKTOP-86ITNQ4",
+            "status": "OFFLINE",
+            "last_seen": "96h ago"
+          },
+          {
+            "name": "DESKTOP-86ITNQ4",
+            "status": "OFFLINE",
+            "last_seen": "322h ago"
+          }
+        ],
+        "cross_connector_discrepancy": "Remote Desktop Commander had direct host access and reported DESKTOP-86ITNQ4 online earlier this turn; do not infer physical device state from this account's stale inventory."
+      },
+      "result": "ISSUER_PUBLIC_KEY_NOT_VERIFIED_BY_REPOSITORY_CODE_SEARCH; ALTERNATE_CONNECTOR_INVENTORY_STALE; PR6_OPEN; NO_CI_RERUN",
+      "safety": {
+        "tasks_closed": false,
+        "ci_rerun": false,
+        "credentials_committed": false,
+        "source_mutated": false
+      },
+      "exact_targets_after_modual_write": {
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "d8f049e94e4b70400a75757b2d337600d8a46a65"
       }
     }
   ]
