@@ -2,8 +2,8 @@
   "schema": "SOL_OPEN_TASKS_PARALLEL_LEDGER/1.0",
   "provenance": {
     "user_directive": "2026-10-21: TẤT CẢ YÊU CẦU CHƯA HOÀN THÀNH PHẢI NEO GIỮ, KHÔNG CHUYỂN QUA LÀM MỘT VIỆC XONG DỪNG LẠI",
-    "observed_at": "2026-10-21T14:39:07+07:00",
-    "source": "Current conversation + verified local device and GitHub readback",
+    "observed_at": "2026-10-24T11:59:30.468+07:00",
+    "source": "Current conversation + fresh Windows host receipt/hash readback, provider probes, and GitHub source/PR readback",
     "not_exhaustive_history": true,
     "historical_backfill": "2026-10-21: 14 additional user requests indexed from earlier conversation sources; provider states must be rechecked before action or closure"
   },
@@ -756,6 +756,26 @@
           "result": "SYMLINK_ESCAPE_CONTAINMENT_PATCH_COMMITTED_ON_ISOLATED_BRANCH; EXACT_SOURCE_READBACK_MATCHES; TESTS_NOT_RUN; PR6_UNCHANGED",
           "next_callable_edge": "Run the added regression test and the existing Rust suite in an authorized runner without exposing the persistent self-hosted Windows host to pull-request code. Fresh-read the actual issuer public key through the authorized issuer/control surface and verify hosted runner entitlement before any CI rerun or PR update.",
           "status_effect": "Keep status OPEN_CARRIED and real_execution_status OPEN_NOT_PROVEN_COMPLETED. Do not close on branch creation or source readback; PR #6 remains unchanged and open."
+        },
+        {
+          "observed_at": "2026-10-24T11:59:30.468+07:00",
+          "observed_at_utc": "2026-10-24T04:59:30.468Z",
+          "source": "Fresh GitHub PR #6, workflow run, branch compare, commit diff and exact source readback",
+          "repo": "2708halinh-cloud/x-time-web",
+          "branch": "security/repo-relative-read-containment-20261024",
+          "commit": "3550541c75b3b791a3953a8ae5eb7a32a585f0e8",
+          "file": "TESSERACT_DESKTOP/src-tauri/src/main.rs",
+          "file_blob_sha": "8a3cf9368898ce5782201dd73264f6e363fab424",
+          "actions_and_receipts": [
+            "Source readback matches commit file blob SHA 8a3cf9368898ce5782201dd73264f6e363fab424. Diff adds canonical-root containment for required carriers, route target, AGENTS and resume checkpoint, plus a Unix symlink-escape regression test.",
+            "Compare against exact PR #6 head 5312816d5fe2b22e92302211b67f916b88a6fe14: isolated branch ahead_by=1, behind_by=0; no PR update made.",
+            "PR #6 remains OPEN, head 5312816d5fe2b22e92302211b67f916b88a6fe14, mergeable_state unstable. Current head runs 39994207477 and 39994207667 remain failed; no artifacts reported; no rerun triggered.",
+            "Current Windows host has no rustc or cargo command available. Tests were not executed; persistent host was not used to execute PR code. No authorized isolated runner entitlement change was verified.",
+            "Issuer public key value and runner assignment/entitlement remain unverified; no key invented and no CI rerun."
+          ],
+          "result": "SYMLINK_ESCAPE_CONTAINMENT_PATCH_EXACT_READBACK_STATIC_REVIEW_RECORDED_TESTS_NOT_RUN_PR6_UNCHANGED",
+          "next_callable_edge": "Run the regression and Rust suite only on an authorized isolated runner; obtain the real issuer public key from an authorized issuer/control surface and verify runner entitlement before any CI rerun or PR update.",
+          "status_effect": "Keep OPEN_CARRIED; branch readback is not test proof and PR #6 remains unchanged."
         }
       ]
     },
@@ -884,7 +904,8 @@
         "After device clock 10:06:32+07, read exact latest tick receipt. Investigate supported HWiNFO logging path and alternate ADB executable/carrier; do not change services or task settings without authorization.",
         "After device clock 10:11:32+07, read the next exact tick receipt. Continue supported HWiNFO logging setup and alternate ADB carrier discovery without changing services/task settings.",
         "After device clock 11:11:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare receipt.source.sha256 to a fresh direct hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change.",
-        "After device clock 11:16:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare nested receipt.source.sha256 against a fresh direct source hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change."
+        "After device clock 11:16:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare nested receipt.source.sha256 against a fresh direct source hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change.",
+        "After device clock 11:56:32+07, read the exact newest receipt and Scheduled Task state and compare the nested source hash to a fresh direct hash; continue HWiNFO/Android live-source proof without changing task settings or W32Time."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -1492,6 +1513,23 @@
           "result": "POST_BOUNDARY_WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_ISSUER_RUNNER_UNVERIFIED",
           "next_callable_edge": "After device clock 11:16:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare nested receipt.source.sha256 against a fresh direct source hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change.",
           "status_effect": "Keep task OPEN; metadata tick verified, live sensor stream not verified."
+        },
+        {
+          "observed_at": "2026-10-24T11:51:58.6126612+07:00",
+          "observed_at_utc": "2026-10-24T04:51:58.6126612Z",
+          "source": "Direct Windows task/receipt/source readback + executed local braid adapter + fresh provider probes",
+          "actions_and_receipts": [
+            "Scheduled Task GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M is Ready and enabled; last run 11:51:33+07 result 0x0, next 11:56:32+07, missed runs 0, execution limit PT2M.",
+            "Exact receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T045143119113Z.json, 450 bytes, SHA-256 1df0010ed2e7a2f4b84239adeafafa1a38c062e83a5bb5d7236c8efd57aad59d, observed 2026-10-24T04:51:43.119113Z.",
+            "Fresh direct source hash D:\\SENSOR_LOGS\\windows_SENSON.CSV: 35389440 bytes, SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; nested receipt source hash matches.",
+            "Receipt confirms source_file_written=false, synthetic_rows_added=0, cloud_enabled=false, github_enabled=false, live_sensor_reading_confirmed=false.",
+            "Ran python prove_braid_actual_20261020.py on G: host; exit 0. SIX receipt SHA-256 db83656bfeb92d4acc90addd6eca07583ed8f72b770ec278a459541902ed70e0 with 9 read-only actions; PLURAL receipt SHA-256 f4714acbe63cef824a0ec03156ed57bda839fafc618ee7b69ebe70698e1b789d with 5 actions; both exact receipt hashes read back. cloud_host_wiring remains NOT_VERIFIED.",
+            "Fresh provider probes: X-TiMe loopback /api/health HTTP 200, PID 20712, version 0.9.0, 63 runtime tools, but MODUAL source_present=false and live_device_proven=false; Ollama /api/tags HTTP 200 with 11 models; Android 192.168.1.14:5556 TCP timeout without inferring device-off state; W32Time remains Stopped/Manual.",
+            "Recursive search for *HWiNFO*.CSV under D:\\SENSOR_LOGS returned no matches in that search scope; no deletion inferred and no source changed."
+          ],
+          "result": "POST_BOUNDARY_TICK_RECEIPT_AND_BRAID_LOCAL_RUN_VERIFIED_LIVE_SENSOR_STREAM_NOT_VERIFIED",
+          "next_callable_edge": "After device clock 11:56:32+07, read the exact newest receipt and Scheduled Task state, compare nested source SHA-256 to a fresh direct hash; continue locating the supported HWiNFO logging carrier and authorized Android/ADB route without changing sources, task settings, or W32Time.",
+          "status_effect": "Keep OPEN; metadata tick is verified but no live sensor sample or connected MODUAL consumer is proven."
         }
       ],
       "observed": [
@@ -1702,6 +1740,20 @@
             "X-TIME health endpoint on 127.0.0.1:8769 returned HTTP 200 with 63 runtime tools; MODUAL source absent and live device not proven."
           ],
           "result": "WINDOWS_LOCAL_OLLAMA_CHAT_REPLY_VERIFIED_ANDROID_UI_RELAY_OPEN",
+          "status_effect": "Keep IN_PROGRESS / OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T11:59:30.468+07:00",
+          "observed_at_utc": "2026-10-24T04:59:30.468Z",
+          "source": "Direct Windows provider probes via Remote Desktop Commander",
+          "actions_and_receipts": [
+            "Ollama /api/tags returned HTTP 200 with 11 models on loopback 127.0.0.1:11434.",
+            "X-TiMe /api/health returned HTTP 200, PID 20712, runtime version 0.9.0, 63 runtime tools; its response explicitly reports MODUAL source_present=false and live_device_proven=false.",
+            "Android wireless ADB target 192.168.1.14:5556 timed out; heartbeat not verified and device-off state not inferred.",
+            "No Chrome/PWA UI rendering test was performed in this read-only provider probe; previously verified Windows-local model generation is not repeated or reclassified."
+          ],
+          "result": "WINDOWS_LOCAL_OLLAMA_AND_XTIME_HTTP_HEALTH_VERIFIED_ANDROID_RELAY_AND_UI_REMAIN_OPEN",
+          "next_callable_edge": "Continue the authorized Android-to-Windows relay/UI trace without repeating the already verified basic Ollama generation call; preserve chat history and avoid assuming a timeout means device-off.",
           "status_effect": "Keep IN_PROGRESS / OPEN_NOT_PROVEN_COMPLETED."
         }
       ],
