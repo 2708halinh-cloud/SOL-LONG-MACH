@@ -39,7 +39,7 @@ jobs:
           lrzip -h 2>&1 | head -n 4 || true
           {
             printf 'python='; python --version 2>&1
-            printf 'packages:\\n'; dpkg-query -W -f='${Package}=${Version}\\n' p7zip-full unrar lrzip
+            printf 'packages:\n'; dpkg-query -W -f='${Package}=${Version}\n' p7zip-full unrar lrzip
             printf '7z='; 7z i 2>&1 | grep -m1 '^7-Zip'
             printf 'unrar='; unrar -? 2>&1 | grep -m1 '^UNRAR'
             printf 'lrzip='; lrzip -h 2>&1 | grep -m1 '^lrzip version'
