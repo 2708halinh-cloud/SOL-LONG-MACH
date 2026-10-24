@@ -6477,6 +6477,34 @@
       "result": "TEST_EXPECTATION_CORRECTED;READBACK_VERIFIED;CI_PENDING;PR_OPEN",
       "action": "FIX_ARCHIVE_TOPOLOGY_TEST_EXPECTATION_WITHOUT_SOURCE_MUTATION",
       "observation_type": "INDEPENDENT_BRANCH_ACTION"
+    },
+    {
+      "id": "TESSERACT_ISSUER_WIRING_READBACK_20261025T0518ICT",
+      "observed_at": "2026-10-25T05:18:01+07:00",
+      "observed_at_utc": "2026-10-24T22:18:01Z",
+      "source": "Exact PR #6 head source readback; Rust issuer verification and workflow variable wiring; current workflow runs/artifacts readback.",
+      "checkpoint_file": "CURRENT_RUNTIME/TESSERACT_ISSUER_WIRING_READBACK_20261025T0518ICT.json",
+      "checkpoint_blob_sha": "cc2ff92d6809010e542648a2e3e4b0907c0bd663",
+      "checkpoint_commit": "6b7fc978e73824b0d62513e343fd4813baee6a26",
+      "ledger_commit": "545fa3530e30081ecb09309d9d258776379b5330",
+      "pr": 6,
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "rust_blob_sha": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+      "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+      "build_time_variable_reference_verified": true,
+      "actual_public_key_value_read": false,
+      "actual_public_key_verified": false,
+      "runner_assignment_change_verified": false,
+      "ci_runs_failed": [
+        39994207477,
+        39994207667
+      ],
+      "artifacts": 0,
+      "ci_rerun": false,
+      "tasks_closed": 0,
+      "result": "BUILD_TIME_ISSUER_VARIABLE_REFERENCE_VERIFIED;REAL_KEY_VALUE_AND_RUNNER_ASSIGNMENT_UNVERIFIED",
+      "action": "TRACE_TESSERACT_ISSUER_KEY_WIRING_WITHOUT_SECRET_READ_OR_CI_RERUN",
+      "observation_type": "INDEPENDENT_BRANCH_READBACK"
     }
   ],
   "latest_sync_observation": {
@@ -9669,19 +9697,20 @@
     "source_reads_before_write": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "c43411f80dfcdb3f1d6c47a2e5f971ab5d2536bd",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "9a69a6288de8b9846e6fc70a6d9377a9d2535ec5",
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "823524c1ad256e33f5df40f537159556e56d43b1",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "9f70c88f09e101ea1cb9eb3996f959d8fbaa0e29",
       "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "da4edd17c31dbe9e6898a5617d6f493dfa335dcb"
     },
-    "action": "Fresh-read mandatory source and provider states; exact-read n8n row 318; inspected PR #28 topology job log, traced the failure to an over-strict test expectation, changed only that test on the existing PR branch, and read back the exact new blob.",
-    "outcome": "ARCHIVE_TOPOLOGY_TEST_EXPECTATION_CORRECTED;NEW_HEAD_READBACK_VERIFIED;CI_PENDING;ALL_TASKS_OPEN",
-    "checkpoint_file": "CURRENT_RUNTIME/ARCHIVE_PR28_TOPOLOGY_FIX_20261025T0518ICT.json",
-    "checkpoint_blob_sha": "03101b05e9443d19ff182b1f3e6f72eec3dabf76",
-    "checkpoint_commit": "de099e950dd043ae01ba0d55e568a012d7d86620",
+    "action": "Read TESSERACT PR #6 exact current-head Rust verifier, CI variable reference and WORK_CHECKPOINT; confirmed fail-closed build-time key path; appended readback evidence to source ledger and resume pointer without reading secrets or rerunning CI.",
+    "outcome": "ISSUER_VARIABLE_REFERENCE_VERIFIED;ACTUAL_KEY_AND_RUNNER_UNVERIFIED;CI_NOT_RERUN;ALL_TASKS_OPEN",
+    "checkpoint_file": "CURRENT_RUNTIME/TESSERACT_ISSUER_WIRING_READBACK_20261025T0518ICT.json",
+    "checkpoint_blob_sha": "cc2ff92d6809010e542648a2e3e4b0907c0bd663",
+    "checkpoint_commit": "6b7fc978e73824b0d62513e343fd4813baee6a26",
     "source_reads_after_other_writes": {
-      "OPEN_TASKS_CURRENT.json": "9a69a6288de8b9846e6fc70a6d9377a9d2535ec5",
+      "OPEN_TASKS_CURRENT.json": "9f70c88f09e101ea1cb9eb3996f959d8fbaa0e29",
       "MODUAL_PARAMETER_CURRENT.json": "da4edd17c31dbe9e6898a5617d6f493dfa335dcb",
-      "PROVIDER_READBACK_20261025T0518ICT.json": "ebea79cc9e6da2c7713b4b9b295011ff67342066"
+      "PROVIDER_READBACK_20261025T0518ICT.json": "ebea79cc9e6da2c7713b4b9b295011ff67342066",
+      "ARCHIVE_PR28_TOPOLOGY_FIX_20261025T0518ICT.json": "03101b05e9443d19ff182b1f3e6f72eec3dabf76"
     }
   },
   "latest_security_patch_observation": {
@@ -12472,5 +12501,26 @@
     "tasks_closed": 0,
     "checkpoint_file": "CURRENT_RUNTIME/ARCHIVE_PR28_TOPOLOGY_FIX_20261025T0518ICT.json",
     "checkpoint_blob_sha": "03101b05e9443d19ff182b1f3e6f72eec3dabf76"
+  },
+  "latest_tesseract_issuer_wiring_readback": {
+    "observed_at": "2026-10-25T05:18:01+07:00",
+    "repository": "2708halinh-cloud/x-time-web",
+    "pr": 6,
+    "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "rust_blob_sha": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+    "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+    "build_time_variable_reference_verified": true,
+    "public_key_value_read": false,
+    "public_key_verified": false,
+    "runner_assignment_change_verified": false,
+    "ci_runs_failed": [
+      39994207477,
+      39994207667
+    ],
+    "artifacts": 0,
+    "ci_rerun": false,
+    "checkpoint_file": "CURRENT_RUNTIME/TESSERACT_ISSUER_WIRING_READBACK_20261025T0518ICT.json",
+    "checkpoint_blob_sha": "cc2ff92d6809010e542648a2e3e4b0907c0bd663",
+    "tasks_closed": 0
   }
 }
