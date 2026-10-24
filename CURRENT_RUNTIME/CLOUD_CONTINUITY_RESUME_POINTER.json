@@ -2,40 +2,46 @@
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.1",
   "state": "OPEN_WORK_REMAINS",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2157ICT.json",
-    "blob_sha": "91bc0d6fc0e6d01962e0963d3d9664f2daa24616",
-    "commit_sha": "1c93846226548c57c270a3d37f84f5cd51b2b4f6",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2330ICT.json",
+    "blob_sha": "e5f1cfa11fab1d5232e95649b2b34e025fc3493e",
+    "commit_sha": "a8e6cd2ef80080ed12d881d9bbf70a5db411345e",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2150ICT.json",
-    "blob_sha": "1bef0c38d95da7ea3f899d874129606c5fab4f75",
-    "commit_sha": "994f2aa764c0b325eecf1825654a4eb374b58573"
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2157ICT.json",
+    "blob_sha": "91bc0d6fc0e6d01962e0963d3d9664f2daa24616",
+    "commit_sha": "1c93846226548c57c270a3d37f84f5cd51b2b4f6"
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
-    "latest_verified_execution_id": "138",
+    "latest_verified_execution_id": "142",
     "execution_status": "success",
-    "cloud_scan_row_id": 284,
-    "source_registry_readback_row_id": 286,
-    "latest_host_tick_row_id": 287,
+    "latest_scheduled_execution_id": "141",
+    "latest_scheduled_execution_status": "success",
+    "cloud_scan_row_id": 291,
+    "host_android_readback_row_id": 296,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_row_count": 287,
+    "evidence_table_row_count": 296,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "project_id": "6qKpRmicIGHA5snY",
     "pending_tasks": 45,
     "closed_tasks": 0,
     "project_credentials": 0,
-    "model_binding_verified": false
+    "model_binding_verified": false,
+    "publish_or_dispatch_performed": false
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
-    "last_verified_tick": "WINDOWS_TICK_20261024T145135810448Z.json",
-    "tick_sha256": "AD5F4CA5AEED80655FB85098F15FE10F541F9FE819F509DDB69D0FC852BDC020",
+    "last_verified_tick": "WINDOWS_TICK_20261024T162634152945Z.json",
+    "tick_sha256": "8096CEDC9EAA7D6BB509DC81CAC316597AB2579A6289F9B15E49ED4DB73893D5",
     "source_sha256": "9B25BD723DCE06344432597CC4F300053EA5ACBF76BDD2AB4F38BF4A1BF34B87",
     "source_sha_matches_tick": true,
     "live_sensor_reading_confirmed": false,
-    "next_task_run_host_local": "2026-10-24T21:56:32+07:00"
+    "task_state": "Ready",
+    "task_last_run_local": "2026-10-24T23:26:33+07:00",
+    "task_last_result": 0,
+    "next_task_run_host_local": "2026-10-24T23:31:32+07:00",
+    "host_clock_alignment_verified": false
   },
   "source_registry": {
     "task_id": "SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY",
@@ -44,11 +50,11 @@
     "source_blob_sha1": "9ffdc2da742bd9ad07fbdfb8b27fcd8c8cf8b74e"
   },
   "next": [
-    "Read exact Windows tick after host-local 21:56:32; direct-hash source and preserve live_sensor_reading_confirmed=false until genuine live sample.",
-    "Obtain authorized raw readback for ingestion_gate_payload_03.txt; do not infer deletion from repository search absence.",
-    "Keep Android heartbeat UNKNOWN until authorized device/app route responds.",
-    "Do not dispatch agents without verified model and credential binding.",
-    "Keep archive-format task OPEN until real 7Z/RAR/LR fixture verification."
+    "Read the newest Windows tick after host-local 2026-10-24T23:31:32+07:00; recompute source CSV SHA-256 and preserve live_sensor_reading_confirmed=false until a genuine live sample.",
+    "Inspect Android sensor-event section/timestamps across samples; whole-dump hash change alone does not prove a live sensor stream.",
+    "Obtain authorized raw-source readback for ingestion_gate_payload_03.txt; keep SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY OPEN.",
+    "Continue cloud-eligible OPEN tasks without agent dispatch until model and credential binding are verified.",
+    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN until real 7Z/RAR/LR fixture verification."
   ],
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -59,5 +65,11 @@
     "no_cache_or_meta_db_deletion": true,
     "no_secret_values": true,
     "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "android": {
+    "adb_device_count": 1,
+    "sensorservice_dump_changed": true,
+    "live_sensor_stream_verified": false,
+    "raw_sensor_values_persisted": false
   }
 }
