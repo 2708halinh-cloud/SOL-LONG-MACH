@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "MODUAL: four recent scheduled ticks all returned result 0 and receipts, but receipt delays were 4.657s, 9.619s, 99.156s, and 9.438s. Latest receipt WINDOWS_TICK_20261024T002642437612Z.json SHA-256 C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961 matches source SHA 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Direct full hash measured 1.747s and actual read-only Python import/resolver+record path 1.022s with exports set to 0; double hashing alone does not explain the long run. TaskScheduler Operational log exists but is disabled, so event-level cause cannot be read; no log settings were changed. Next scheduled run after device 07:31:32+07: read exact receipt and task state. HWiNFO mapping unavailable; its CSV stale/read-only. ADB 192.168.1.14:5556 refuses connection; other Xiaomi sensor inventory is not live values. Dropbox reentry ZIP raw SHA da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106, 16 entries, no issuer markers; no key value found. TESSERACT PR #6 remains OPEN and no CI rerun until runner assignment changes.",
+  "next": "On the next responsive Windows read, reconcile pending read-only task/source/receipt calls and inspect the exact newest receipt plus Scheduled Task state before launching any duplicate. If timing is still variable, inspect TaskScheduler Operational log enablement and exact task action timing before changing code or task settings. Continue authorized issuer-side key and runner-entitlement investigation independently; do not rerun PR #6 CI until a runner assignment/entitlement change is verified.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -157,7 +157,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24",
+  "updated_at": "2026-10-24T07:53:42+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -197,16 +197,16 @@
     "verification_required": "Fresh-source readback for each task; status OPEN until exact action+receipt",
     "linked_at": "2026-10-21T14:39:07+07:00",
     "latest_observation": {
-      "observed_at": "2026-10-24T05:42:26.612+07:00",
-      "MODUAL_SENSOR_LOGS_ROUTING": "LAST_READ_RUNNING_PID_71220_NO_RECEIPT_AFTER_22_01_44Z_DOUBLE_HASH_PLAUSIBLE_NOT_PROVEN_ROUTE_UNAVAILABLE",
-      "ANDROID_OLLAMA_LOCALHOST_CHAT_UI": "PRIOR_ADB_SENSOR_SERVICE_RESPONDED_CHROME_UI_NOT_VERIFIED",
-      "XTIME_LOCAL_RUNTIME": "PRIOR_HEALTH_200_FILESYSTEM_SENSOR_OK_MODUAL_SOURCE_NOT_FOUND",
-      "TESSERACT_OS": "PRIOR_BRAID_LOCAL_IO_VERIFIED_CLOUD_HOST_NOT_VERIFIED",
-      "HWINF0_SHARED_MEMORY": "PRIOR_MAPPING_NOT_FOUND_LICENSE_TIER_UNVERIFIED",
+      "observed_at": "2026-10-24T07:53:42+07:00",
+      "MODUAL_SENSOR_LOGS_ROUTING": "REMOTE_DEVICE_REPORTED_ONLINE_BUT_EXACT_READBACK_TIMEOUT_OR_PENDING; LAST_VERIFIED_RECEIPT_20261024T002642437612Z; LIVE_STREAM_UNVERIFIED",
+      "ANDROID_OLLAMA_LOCALHOST_CHAT_UI": "PRIOR_ADB_TARGET_192_168_1_14_5556_REFUSED; CHROME_UI_NOT_VERIFIED",
+      "XTIME_LOCAL_RUNTIME": "PRIOR_HEALTH_200_MODUAL_SOURCE_NOT_FOUND_LIVE_DEVICE_NOT_PROVEN",
+      "TESSERACT_OS": "BRAID_SCRIPT_ATTEMPTED_THIS_TURN_REMOTE_TIMEOUT_OUTCOME_UNKNOWN; PRIOR_RECEIPTS_REMAIN_HISTORICAL_ONLY",
+      "HWINF0_SHARED_MEMORY": "MAPPING_NOT_FOUND; SEPARATE_CSV_STALE_READ_ONLY",
       "WINDOWS_TIME": "W32TIME_STOPPED_MANUAL_NO_CHANGE",
-      "INHERITED_TESSERACT_DESKTOP": "PR6_OPEN_CURRENT_RUNS_FAIL_EMPTY_STEPS_BLOB_NOT_FOUND_SELFHOSTED_SKIPPED_BY_PR_CONDITION_ORG_SEARCH_REFERENCES_ONLY",
-      "DESKTOP_COMMANDER": "LAST_TASK_STATE_RUNNING_PID_71220_THEN_ROUTE_UNAVAILABLE_CURRENT_STATE_UNVERIFIED",
-      "CODEX_CONFIG_PRIVATE_BACKUP": "HISTORICAL_MOCK_ROUTE_ONLY_CURRENT_CONFIG_UNREAD_ENCRYPTED_BACKUP_OPEN"
+      "INHERITED_TESSERACT_DESKTOP": "PR6_OPEN_CURRENT_RUNS_FAIL_EMPTY_STEPS_ZERO_ARTIFACTS; ISSUER_KEY_UNVERIFIED; RUNNER_CHANGE_UNVERIFIED; NO_RERUN",
+      "DESKTOP_COMMANDER": "REMOTE_ACCOUNT_LISTED_DEVICE_ONLINE_BUT_READ_ONLY_COMMANDS_TIMED_OUT; CURRENT_TASK_STATE_UNVERIFIED",
+      "CODEX_CONFIG_PRIVATE_BACKUP": "CURRENT_CONFIG_BACKUP_TASK_OPEN; NO_NEW_READBACK_THIS_TURN"
     }
   },
   "checkpoint_head_reconciliation": {
@@ -1680,6 +1680,61 @@
       },
       "result": "TICK_SUCCESS_VARIABLE_DURATION_EVENT_LOG_DISABLED_READONLY_CONSUMER_FAST_ISSUER_CARRIER_SCANNED",
       "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-24T07:53:42+07:00",
+      "observed_at_utc": "2026-10-24T00:53:42Z",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "e2a4e4c42a4600ec0566d8b685af4a0363b6c7b1",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "c4e460f575d78cfe1b18833c9fd2885d6ed78a29",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "8866f46c428adfb7981e05df9f1e9c48ff95d4bb"
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "remote_inventory": "ONLINE",
+        "direct_readback_status": "TIMEOUT_OR_PENDING",
+        "last_verified_task_state": "Ready",
+        "last_verified_device_clock": "2026-10-24T07:28:10.1807687+07:00",
+        "last_verified_run_local": "2026-10-24T07:26:33+07:00",
+        "last_verified_result": "0x0",
+        "last_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T002642437612Z.json",
+        "last_verified_receipt_sha256": "C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961",
+        "latest_run_after_07_31_32_verified": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "provider_reads": {
+        "dropbox_source": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true
+        },
+        "dropbox_folder": {
+          "path": "/Linh Hà/SENSOR_LOGS",
+          "direct_entries": 56,
+          "has_more": false
+        },
+        "bounded_key_scan": {
+          "toolkit_txt_chars": 61032,
+          "cdn_body_chars": 63,
+          "marker_hits": 0,
+          "scope": "two extracted text files plus direct folder names only"
+        },
+        "tesseract": {
+          "pr": 6,
+          "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+          "run_39994207477": "failure_empty_steps_no_artifacts",
+          "run_39994207667": "failure_empty_steps_no_artifacts",
+          "issuer_public_key_verified": false,
+          "runner_assignment_change_verified": false,
+          "ci_rerun": false
+        }
+      },
+      "result": "WINDOWS_READBACK_ROUTE_TIMEOUT_AFTER_LAST_VERIFIED_RECEIPT; DROPBOX_BOUNDED_SCAN_NO_ISSUER_KEY; TESSERACT_CI_UNCHANGED",
+      "open_tasks_closed": false
     }
   ],
   "latest_sync_observation": {
@@ -1711,106 +1766,58 @@
     ]
   },
   "latest_runtime_observation": {
-    "observed_at": "2026-10-24T07:29:35.205+07:00",
-    "observed_at_utc": "2026-10-24T00:29:35.205Z",
+    "observed_at": "2026-10-24T07:53:42+07:00",
+    "observed_at_utc": "2026-10-24T00:53:42Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "5d1b04c3b4beb68e6ed4403286e84580d3dc6671",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "46fbbc62a40dba673d64216bfe6c781f813146aa",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "5d5b3eb16a344aa647325a938005584557230057"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "e2a4e4c42a4600ec0566d8b685af4a0363b6c7b1",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "c4e460f575d78cfe1b18833c9fd2885d6ed78a29",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "8866f46c428adfb7981e05df9f1e9c48ff95d4bb"
     },
     "windows": {
-      "device_clock": "2026-10-24T07:28:10.1807687+07:00",
-      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
-      "state": "Ready",
-      "last_run": "2026-10-24T07:26:33+07:00",
-      "next_run": "2026-10-24T07:31:32+07:00",
-      "result": "0x0",
-      "missed_runs": 0,
-      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T002642437612Z.json",
-      "receipt_sha256": "C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961",
-      "receipt_utc": "2026-10-24T00:26:42.437612Z",
-      "source_bytes": 35389440,
-      "source_mtime_utc": "2026-10-23T08:45:56.2458701Z",
-      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-      "source_matches_receipt": true,
-      "live_sensor_reading_confirmed": false,
-      "recent_receipt_delays_seconds": [
-        4.656548,
-        9.618988,
-        99.156252,
-        9.437612
-      ]
+      "device": "DESKTOP-86ITNQ4",
+      "remote_inventory": "ONLINE",
+      "direct_readback_status": "TIMEOUT_OR_PENDING",
+      "last_verified_task_state": "Ready",
+      "last_verified_device_clock": "2026-10-24T07:28:10.1807687+07:00",
+      "last_verified_run_local": "2026-10-24T07:26:33+07:00",
+      "last_verified_result": "0x0",
+      "last_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T002642437612Z.json",
+      "last_verified_receipt_sha256": "C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961",
+      "latest_run_after_07_31_32_verified": false,
+      "live_sensor_reading_confirmed": false
     },
-    "timing_diagnostics": {
-      "local_drive": "D: fixed NTFS",
-      "single_hash_ms": 1747,
-      "read_only_python_import_resolver_seconds": 0.782,
-      "read_only_record_tick_seconds": 0.24,
-      "total_python_seconds": 1.022,
-      "powershell_wall_seconds": 4.122,
-      "exit_code": 0,
-      "exports_explicitly_disabled": true,
-      "source_mutated": false,
-      "double_hash_root_cause": "NOT_PROVEN; direct code path is fast and cannot explain the intermittent ~99s scheduled run alone"
+    "provider_reads": {
+      "dropbox_source": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true
+      },
+      "dropbox_folder": {
+        "path": "/Linh Hà/SENSOR_LOGS",
+        "direct_entries": 56,
+        "has_more": false
+      },
+      "bounded_key_scan": {
+        "toolkit_txt_chars": 61032,
+        "cdn_body_chars": 63,
+        "marker_hits": 0,
+        "scope": "two extracted text files plus direct folder names only"
+      },
+      "tesseract": {
+        "pr": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "run_39994207477": "failure_empty_steps_no_artifacts",
+        "run_39994207667": "failure_empty_steps_no_artifacts",
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      }
     },
-    "scheduler_diagnostics": {
-      "task_scheduler_operational_log_exists": true,
-      "enabled": false,
-      "record_count": null,
-      "recent_matching_events": 0,
-      "log_settings_changed": false
-    },
-    "hwinfo": {
-      "pid": 17520,
-      "present": true,
-      "shared_memory_opened": false,
-      "win32_error": 2,
-      "csv_bytes": 39922785,
-      "csv_mtime_utc": "2026-10-21T02:20:45.8565035Z",
-      "csv_read_only": true
-    },
-    "android": {
-      "wireless_target": "192.168.1.14:5556",
-      "connect_result": "actively refused (10061)",
-      "existing_device": "1056285",
-      "model": "2201123G",
-      "android_version": "15",
-      "sensor_inventory_observed": true,
-      "live_sample_values": false,
-      "modual_binding": false
-    },
-    "dropbox_issuer_carrier": {
-      "path": "/Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT/SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip",
-      "rev": "0165daa5e44669e0000000395cdfd73",
-      "size_bytes": 20882,
-      "server_modified_utc": "2026-10-12T20:16:07Z",
-      "raw_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
-      "entry_count": 16,
-      "key_marker_hits": 0,
-      "bytes_persisted_to_disk": false
-    },
-    "tesseract": {
-      "pr": 6,
-      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-      "run_39994207477": "failure",
-      "run_39994207667": "failure",
-      "issuer_key_value_verified": false,
-      "runner_assignment_change_verified": false,
-      "ci_rerun": false
-    },
-    "braid": {
-      "exit_code": 0,
-      "six_actions": 9,
-      "plural_actions": 5,
-      "source_sha256_unchanged": true,
-      "mutation_executed": false,
-      "six_receipt_sha256": "5c39c6cd05e909f41fe62276e0bbd9acc67d0fd180adab5dac9d2bf0bcfe212e",
-      "readback_ok": true,
-      "cloud_host_wiring": "NOT_VERIFIED"
-    },
-    "result": "TICK_SUCCESS_VARIABLE_DURATION_EVENT_LOG_DISABLED_READONLY_CONSUMER_FAST_ISSUER_CARRIER_SCANNED",
+    "result": "WINDOWS_READBACK_ROUTE_TIMEOUT_AFTER_LAST_VERIFIED_RECEIPT; DROPBOX_BOUNDED_SCAN_NO_ISSUER_KEY; TESSERACT_CI_UNCHANGED",
     "open_tasks_closed": false
   }
 }
