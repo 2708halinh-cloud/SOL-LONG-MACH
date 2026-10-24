@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-24T09:02:26.720+07:00",
+  "observed_at": "2026-10-24T09:16:05.645+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -4461,6 +4461,135 @@
       "invariants": {
         "source_mutated": false,
         "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "task_settings_changed": false,
+        "open_tasks_closed": false
+      }
+    },
+    {
+      "observed_at": "2026-10-24T09:16:05.645+07:00",
+      "observed_at_utc": "2026-10-24T02:16:05.645Z",
+      "record_type": "THIRD_POST_RECOVERY_TICK_AND_ANDROID_XTIME_CONSUMER_BINDING_READBACK_20261024",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "10471dab0b1a85833f8474974db41cc899bb96c7",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "9c948f06db84b1f462fda553fef8386534748aff",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "b25f38b6451fea818a67863fabc751a16cdee276",
+        "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py_GitHub_blob": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "MODUAL/SENSOR_LOGS/source/sensor_root_resolver.py_GitHub_blob": "9b082c5c96ea13d02af35c23519653ad2e78d119"
+      },
+      "windows_tick": {
+        "device": "DESKTOP-86ITNQ4",
+        "device_clock_at_read": "2026-10-24T09:09:52.6326892+07:00",
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state": "Ready",
+        "last_run": "2026-10-24T09:06:34+07:00",
+        "last_result": "0x0",
+        "next_run": "2026-10-24T09:11:32+07:00",
+        "missed_runs": 0,
+        "receipt": "WINDOWS_TICK_20261024T020641408304Z.json",
+        "receipt_bytes": 450,
+        "receipt_sha256": "34C7BAC25CE1ABB29624A91C53E0CF7D642B77112243FAAC25BDBFFC09E265A8",
+        "receipt_observed_at_utc": "2026-10-24T02:06:41.408304Z",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_mtime_utc": "2026-10-23T08:45:56.2458701Z",
+        "receipt_source_hash_matches_direct_hash": true,
+        "source_mutated": false,
+        "synthetic_rows_added": 0,
+        "cloud_export_enabled": false,
+        "github_export_enabled": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "consumer_provenance": {
+        "local_telemetry_buffer_sync_git_blob": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "github_telemetry_buffer_sync_git_blob": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "local_sensor_root_resolver_git_blob": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+        "github_sensor_root_resolver_git_blob": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+        "local_script_bytes": 13245,
+        "one_shot_path_calls_get_xiaomi_telemetry": false,
+        "one_shot_path_actions": [
+          "record_telemetry_tick metadata read",
+          "write_tick_receipt",
+          "sync_snapshot_to_cloud gated by SOL_ENABLE_SENSOR_CLOUD_EXPORT",
+          "sync_snapshot_to_github gated by SOL_ENABLE_SENSOR_GITHUB_PUSH"
+        ],
+        "consequence": "The scheduled --once receipt verifies CSV metadata only; the defined Android telemetry helper is not invoked by the one-shot branch."
+      },
+      "android": {
+        "configured_adb_path": "C:\\Users\\halin\\platform-tools-latest-windows\\platform-tools\\adb.exe",
+        "adb_path_exists": true,
+        "adb_device_serial": "1056285",
+        "adb_device_state": "device",
+        "product": "cupid_global",
+        "model": "2201123G",
+        "battery_query_exit_code": 0,
+        "sensorservice_query_exit_code": 0,
+        "sensor_history_headers": 11,
+        "history_counts": {
+          "accelerometer": 13,
+          "gyroscope": 10,
+          "ambient_light": 12,
+          "rotation_vector": 10
+        },
+        "two_snapshot_interval_seconds": 6,
+        "event_section_changed": false,
+        "active_sensor_client_lines": 88,
+        "android_clock_samples": [
+          "2026-10-24T09:13:11+0700",
+          "2026-10-24T09:13:17+0700"
+        ],
+        "windows_clock_samples": [
+          "2026-10-24T09:08:04.0954643+07:00",
+          "2026-10-24T09:08:44.7121841+07:00"
+        ],
+        "raw_battery_values_persisted": false,
+        "raw_sensor_values_persisted": false,
+        "live_sensor_sample_confirmed": false,
+        "note": "ADB is not on PATH but the exact ADB_PATH embedded in the consumer exists and reaches the phone. Sensor inventory/history is present, but the observed event-section summary did not change across the two snapshots; do not claim a fresh sensor sample."
+      },
+      "xtime": {
+        "health_http_status": 200,
+        "pid": 20712,
+        "version": "0.9.0",
+        "runtime_tools": 63,
+        "filesystem_endpoint_http_status": 200,
+        "native_events_seen": 209,
+        "emitted_events": 102,
+        "self_causal_events": 56,
+        "recent_event_count": 103,
+        "last_error": null,
+        "all_desktop_endpoint_http_status": 200,
+        "state": "SOURCE_PATH_OPEN_EVENT_BUS_READY",
+        "source_present": false,
+        "configured_path": null,
+        "resolved_path": null,
+        "adapter": "G:\\FPGA_AI_LOCAL\\inetpub\\XTIME_LOCAL_LIVE_20261020\\tools\\all_desktop_sensorimotor.py",
+        "event_bus": "G:\\FPGA_AI_LOCAL\\inetpub\\XTIME_LOCAL_LIVE_20261020\\runtime\\sensorimotor-fs-events.jsonl",
+        "sensorimotor_endpoint": "TIMEOUT_AFTER_4S_ON_SECOND_PROBE",
+        "no_source_file_created": true
+      },
+      "hwinfo": {
+        "process_id": 17520,
+        "responding": true,
+        "config_path": "C:\\Program Files\\HWiNFO64\\HWiNFO64.INI",
+        "config_sha256": "7C619799D5B7D89EAFF4291EB0316DB9F2A18EBA046EE3BDF1DC6C8BFC59CC16",
+        "sensors_shared_memory_setting": 1,
+        "logging_csv_settings_found_in_checked_config": false,
+        "hwinfo_named_csv_found_under_D_SENSOR_LOGS": false,
+        "scope_note": "Recursive search was restricted to D:\\SENSOR_LOGS; it returned only windows_SENSON.CSV. This does not prove no HWiNFO CSV exists elsewhere.",
+        "shared_memory_open_result": "WIN32ERROR_2_PREVIOUSLY_VERIFIED",
+        "w32time": "Stopped/Manual",
+        "task_scheduler_operational_log_enabled": false,
+        "current_shell_elevated": false
+      },
+      "result": "TICK_RECEIPT_VERIFIED_ANDROID_ADB_REACHABLE_CONSUMER_ONE_SHOT_METADATA_ONLY_XTIME_MODUAL_BINDING_ABSENT",
+      "next_callable_edge": "At device clock 09:11:32+07, reconcile the next tick and exact receipt. For consumer repair, preserve the current script/blob and add a separately tested, metadata-only Android sensor probe path only after confirming how to prove a fresh event without storing raw values. Do not modify scheduled task or W32Time; TaskScheduler Operational logging requires an authorized elevated route. Keep X-TIME MODUAL binding OPEN because source_present=false.",
+      "invariants": {
+        "source_mutated": false,
+        "raw_sensor_values_committed": false,
         "credentials_committed": false,
         "source_moved_or_deleted": false,
         "task_settings_changed": false,
