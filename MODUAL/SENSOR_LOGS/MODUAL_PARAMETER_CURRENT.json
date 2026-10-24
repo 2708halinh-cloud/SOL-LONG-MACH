@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-24T13:28:30.166+07:00",
+  "observed_at": "2026-10-24T13:30:05.262+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -67,7 +67,7 @@
     "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
     "state": "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
     "rule": "Do not overwrite existing Oct 09 local source metadata; do not call Dropbox CSV a working Windows Tick consumer; no raw sensor records or secrets committed; verify Windows Tick independently before closing.",
-    "last_observation": "2026-10-24T13:28:30.166+07:00",
+    "last_observation": "2026-10-24T13:30:05.262+07:00",
     "latest_verified_tick_receipt": {
       "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T045143119113Z.json",
       "observed_at_utc": "2026-10-24T04:51:43.119113Z",
@@ -98,12 +98,13 @@
       "w32time": "Stopped/Manual",
       "live_sensor_sample_confirmed": false,
       "latest_probe_attempt": {
-        "observed_at": "2026-10-24T13:28:30.166+07:00",
-        "remote_inventory": "ONLINE; last seen 13m ago",
+        "observed_at": "2026-10-24T13:30:05.262+07:00",
+        "remote_inventory_status": "OFFLINE",
+        "last_seen": "33s ago",
         "direct_host_read": "FAILED_TIMEOUT_NO_RESPONSE",
         "latest_tick_receipt_advanced": false,
         "live_sensor_sample_confirmed": false,
-        "next_action": "Use a different authorized carrier; do not retry the same timed-out read call."
+        "next_action": "Continue independent provider/cloud branch; use a different authorized host carrier when available."
       }
     }
   },
@@ -5787,6 +5788,54 @@
         "ci_rerun": false
       },
       "result": "HOST_READ_TIMEOUT_CONFIRMED; WINDOWS_TICK_NOT_REFRESHED; INDEPENDENT_TESSERACT_BRANCH_READBACK_VERIFIED; LIVE_STREAM_NOT_VERIFIED"
+    },
+    {
+      "observed_at": "2026-10-24T13:30:05.262+07:00",
+      "observed_at_utc": "2026-10-24T06:30:05.262Z",
+      "record_type": "ADDITIVE_LATEST_REMOTE_INVENTORY_OFFLINE_HOST_TIMEOUT_TICK_NOT_ADVANCED",
+      "source": "Fresh Remote Desktop Commander device inventory, confirmed host read timeout, Dropbox metadata readback, and exact TESSERACT security branch source readback",
+      "device_carrier": {
+        "connector": "Remote Desktop Commander",
+        "device": "DESKTOP-86ITNQ4",
+        "latest_inventory_status": "OFFLINE",
+        "latest_seen": "33s ago",
+        "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+        "account_records_are_distinct": true,
+        "direct_read_file": "FAILED_TIMEOUT_NO_RESPONSE",
+        "direct_start_process": "TIMEOUT_NO_RESPONSE",
+        "same_timed_out_call_retried": false,
+        "interpretation": "Current inventory reports OFFLINE with a recent last-seen value; this is not proof the physical host is powered off."
+      },
+      "latest_verified_tick_not_advanced": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T045143119113Z.json",
+        "receipt_sha256": "1df0010ed2e7a2f4b84239adeafafa1a38c062e83a5bb5d7236c8efd57aad59d",
+        "task_last_run_local": "2026-10-24T11:51:33+07:00",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_matches": true,
+        "post_11_56_receipt_verified": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "dropbox_source": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "raw_bytes_downloaded": false
+      },
+      "tesseract_security_branch": {
+        "branch": "security/repo-relative-read-containment-20261024",
+        "commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
+        "file_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d0",
+        "ahead_by": 2,
+        "behind_by": 0,
+        "tests_executed": false,
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "REMOTE_INVENTORY_NOW_OFFLINE_AND_HOST_READ_TIMEOUT; DROPBOX_AND_TESSERACT_READBACKS_VERIFIED; LIVE_STREAM_NOT_VERIFIED"
     }
   ],
   "privacy_policy": {
