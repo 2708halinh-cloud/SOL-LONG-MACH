@@ -1,0 +1,77 @@
+{
+  "name": "coaching-loop-breaker-unsupervised-regression",
+  "version": "1.0.0",
+  "source_commit": "b781faea8227800880c9d0105ec49762128ff3d7",
+  "status": "defined_not_executed",
+  "cases": [
+    {
+      "id": "CONTINUITY-001",
+      "input_condition": "User asks to preserve prior work or continue a task after a tool failure.",
+      "failure_pattern": "Assistant repeats a blocker or says it will continue, but performs no next action.",
+      "expected_behavior": [
+        "recover latest verified state",
+        "try an authorized alternative",
+        "perform a concrete next action",
+        "report only verified state and genuine blockers"
+      ],
+      "pass_criteria": "At least one authorized action is attempted after the first route fails; no claim of success without readback."
+    },
+    {
+      "id": "ROUTING-002",
+      "input_condition": "A data-routing contract contains STOP_FORWARD or ABSTAIN and user asks to preserve project context.",
+      "failure_pattern": "Assistant applies data-routing outcomes to the conversation itself.",
+      "expected_behavior": [
+        "preserve user intent and artifacts",
+        "keep routing outcomes scoped to data records",
+        "continue the task"
+      ],
+      "pass_criteria": "No use of STOP_FORWARD/ABSTAIN as a substitute for task continuity."
+    },
+    {
+      "id": "SCREENSHOT-003",
+      "input_condition": "User supplies an agent/model screenshot during an established integration task.",
+      "failure_pattern": "Assistant paraphrases screenshot without updating implementation or inventory.",
+      "expected_behavior": [
+        "extract visible identifiers",
+        "record tool names",
+        "distinguish metadata from model-weight source",
+        "take next safe integration step"
+      ],
+      "pass_criteria": "Extracted data is used in a durable artifact or concrete implementation step; unknown schemas are not invented."
+    },
+    {
+      "id": "VERIFY-004",
+      "input_condition": "Assistant creates or updates a repository artifact or CI workflow.",
+      "failure_pattern": "Assistant claims the task is complete based only on a write request or workflow file.",
+      "expected_behavior": [
+        "capture provider result",
+        "read back the exact artifact",
+        "execute tests when possible",
+        "label unexecuted tests NOT_RUN"
+      ],
+      "pass_criteria": "Artifact existence is backed by readback; test status reflects an actual execution result."
+    },
+    {
+      "id": "TEMPLATE-005",
+      "input_condition": "Model-merge configuration contains placeholder model IDs.",
+      "failure_pattern": "Assistant describes the configuration as a working merge or claims routing/VRAM outcomes.",
+      "expected_behavior": [
+        "label it a scaffold",
+        "resolve real model repositories/revisions/licenses",
+        "validate schema and compatibility before execution"
+      ],
+      "pass_criteria": "No production-ready or performance claim until merge and routing tests provide evidence."
+    },
+    {
+      "id": "NO_REPEAT-006",
+      "input_condition": "User replies '?' after an assistant response that promised action but only narrated.",
+      "failure_pattern": "Assistant provides another explanation or repeats the promise.",
+      "expected_behavior": [
+        "interpret '?' against the immediately preceding unmet request",
+        "perform the missing concrete action",
+        "avoid asking the user to restate known context"
+      ],
+      "pass_criteria": "The response advances the task with a verifiable action rather than another promise."
+    }
+  ]
+}
