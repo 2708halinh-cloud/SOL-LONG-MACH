@@ -857,10 +857,10 @@
     },
     {
       "id": "MODUAL_SENSOR_LOGS_ROUTING",
-      "status": "OPEN_SCHEDULED_TICK_SUCCESS_SOURCE_HASH_MATCH_LIVE_STREAM_NOT_VERIFIED",
+      "status": "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
       "goal": "Repair MODUAL telemetry source to Outlook Dropbox\\Linh Hà\\SENSOR_LOGS\\windows_SENSON.CSV and verify Windows Tick error gone",
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
-      "readback": "At device clock 11:10:54+07, exact newest receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T040713358401Z.json read back, 450 bytes, SHA-256 ed5d9b66a481fec2d856a8e4d53feed2485c4849e464005dcb30f4dad513484a; nested receipt source SHA-256 matches direct source hash 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Scheduled Task Ready/enabled, last run 11:06:33 result 0x0, next 11:11:32, missed 0. HWiNFO CSV remains stale from 2026-10-21; Android TCP 5556 timed out; X-TIME loopback and alternate 192.168.1.42:8080 routes timed out. Live sensor sample not confirmed.",
+      "readback": "Post-boundary read at 2026-10-24T11:12:40+07:00: task Ready/enabled, last run 11:11:33 result 0x0, next 11:16:32, missed 0. Exact receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json, 450 bytes, SHA-256 521d307f9374f0514a6d122601b9d890ae92a2670e2d9cf0224b3e3e571b955d; nested source SHA-256 matches direct hash 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Live sensor sample remains unverified; HWiNFO CSV stale; Android TCP and X-TIME routes timed out.",
       "next": [
         "After device clock 09:01:32+07, read the exact newest receipt plus Scheduled Task state before retrying any command.",
         "Inspect TaskScheduler Operational log enablement and exact task action timing before changing task/code settings; root cause of intermittent long duration remains unproven.",
@@ -869,7 +869,8 @@
         "After device clock 10:01:32+07, read the next exact receipt and compare its source SHA-256 with a direct hash; continue supported HWiNFO/Android live-source proof.",
         "After device clock 10:06:32+07, read exact latest tick receipt. Investigate supported HWiNFO logging path and alternate ADB executable/carrier; do not change services or task settings without authorization.",
         "After device clock 10:11:32+07, read the next exact tick receipt. Continue supported HWiNFO logging setup and alternate ADB carrier discovery without changing services/task settings.",
-        "After device clock 11:11:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare receipt.source.sha256 to a fresh direct hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change."
+        "After device clock 11:11:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare receipt.source.sha256 to a fresh direct hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change.",
+        "After device clock 11:16:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare nested receipt.source.sha256 against a fresh direct source hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -1463,6 +1464,20 @@
           "result": "LATEST_WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED; XTIME_ALTERNATE_CARRIER_TIMEOUT; TESSERACT_KEY_AND_RUNNER_EVIDENCE_NOT_FOUND",
           "next_callable_edge": "After device clock 11:11:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare receipt.source.sha256 to a fresh direct hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change.",
           "status_effect": "Keep OPEN; live sensor stream and TESSERACT issuer/runner remain unverified."
+        },
+        {
+          "observed_at": "2026-10-24T11:12:40+07:00",
+          "source": "Direct Windows post-boundary Scheduled Task + exact receipt readback; independent TESSERACT GitHub search",
+          "actions_and_receipts": [
+            "Task last run 11:11:33+07 result 0x0; next 11:16:32; missed 0.",
+            "Receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json, SHA-256 521d307f9374f0514a6d122601b9d890ae92a2670e2d9cf0224b3e3e571b955d; nested source hash matches direct SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87.",
+            "No source writes, synthetic rows, cloud/GitHub exports or live sensor sample.",
+            "HWiNFO CSV remains stale; Android TCP timed out; X-TIME loopback and 192.168.1.42:8080 routes timed out.",
+            "TESSERACT PR #6 remains OPEN; known runs fail without step payload/artifacts; issuer value and runner assignment change not verified; no CI rerun."
+          ],
+          "result": "POST_BOUNDARY_WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_ISSUER_RUNNER_UNVERIFIED",
+          "next_callable_edge": "After device clock 11:16:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare nested receipt.source.sha256 against a fresh direct source hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change.",
+          "status_effect": "Keep task OPEN; metadata tick verified, live sensor stream not verified."
         }
       ],
       "observed": [
@@ -1471,7 +1486,8 @@
         "2026-10-24T10:04:10.651+07:00: Exact newest receipt WINDOWS_TICK_20261024T025640609482Z.json read back (450 bytes, SHA-256 f8a603339179a3f0240a1a7177f6bb9602da82af7bb13ea5a7826218c8841a37); source hash matches; task Ready/result 0, next 10:01:32 device time. Live sensor sample remains unverified.",
         "2026-10-24T10:10:20.016+07:00: Third recent scheduled tick verified at device clock 10:01:42Z; receipt SHA-256 1c0293733d734eed46528293e9a438518f0a7ad94625ac6ead3e62fde450cef0, source hash matches. HWiNFO CSV remains stale since 2026-10-21; read-only shared-memory open returned Win32 error 2; Android TCP 192.168.1.14:5556 timed out. No raw sensor values read.",
         "2026-10-24T10:15:01.665+07:00: Fourth recent tick verified: WINDOWS_TICK_20261024T030637466945Z.json, SHA-256 2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d; source hash matches. HWiNFO shared-memory names all returned Win32 error 2; Android TCP 192.168.1.14:5556 timed out; bounded adb.exe searches remain incomplete.",
-        "2026-10-24T11:10:54+07:00: latest Windows Tick receipt read back and nested source hash matches direct SHA-256; live sensor stream remains unverified."
+        "2026-10-24T11:10:54+07:00: latest Windows Tick receipt read back and nested source hash matches direct SHA-256; live sensor stream remains unverified.",
+        "2026-10-24T11:12:40+07:00: post-boundary receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json exact-read and hash verified; live stream remains unverified."
       ]
     },
     {
@@ -6157,6 +6173,48 @@
       "corrected_value": "task_statuses_changed=true",
       "tasks_closed": false,
       "history_erased": false
+    },
+    {
+      "id": "WINDOWS_TICK_POST_BOUNDARY_20261024T041144Z",
+      "kind": "POST_BOUNDARY_RECEIPT_EXACT_READBACK",
+      "observed_at": "2026-10-24T11:12:40+07:00",
+      "observed_at_utc": "2026-10-24T04:12:40Z",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "b7e1519d239cbe70229438ce332b5e5cfec4b067",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "2fe99adaeb057d2f41f6b96e315c42a4681ef6d1",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "60110c986f38b3f9505c4eb4937628ca759e2fea",
+        "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16"
+      },
+      "windows_tick": {
+        "device": "DESKTOP-86ITNQ4",
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "task_state": "Ready",
+        "enabled": true,
+        "last_run_local": "2026-10-24T11:11:33+07:00",
+        "last_result": "0x0",
+        "next_run_local": "2026-10-24T11:16:32+07:00",
+        "missed_runs": 0,
+        "execution_time_limit": "PT2M",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json",
+        "receipt_observed_at_utc": "2026-10-24T04:11:44.547327Z",
+        "receipt_bytes": 450,
+        "receipt_sha256": "521d307f9374f0514a6d122601b9d890ae92a2670e2d9cf0224b3e3e571b955d",
+        "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "receipt_source_hash_matches_direct_hash": true,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false,
+        "live_sensor_reading_confirmed": false,
+        "w32time": "Stopped/Manual"
+      },
+      "result": "POST_BOUNDARY_WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_ISSUER_RUNNER_UNVERIFIED",
+      "open_tasks_closed": false
     }
   ],
   "energy_protection_current": {
@@ -10212,6 +10270,80 @@
       "result": "MODUAL_TASK_LABEL_ADVANCED_BUT_TASK_REMAINS_OPEN; NO_TASK_CLOSED",
       "task_statuses_changed": true,
       "tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-24T11:12:40+07:00",
+      "observed_at_utc": "2026-10-24T04:12:40Z",
+      "record_type": "POST_BOUNDARY_WINDOWS_TICK_PROVIDER_READBACK",
+      "windows": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json",
+        "receipt_sha256": "521d307f9374f0514a6d122601b9d890ae92a2670e2d9cf0224b3e3e571b955d",
+        "source_hash_matches": true,
+        "last_run_local": "2026-10-24T11:11:33+07:00",
+        "last_result": "0x0",
+        "next_run_local": "2026-10-24T11:16:32+07:00",
+        "live_sensor_reading_confirmed": false
+      },
+      "hwinfo": {
+        "csv_bytes": 39922785,
+        "csv_last_modified_utc": "2026-10-21T02:20:45.8565035Z",
+        "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "pid": 17520,
+        "running": true
+      },
+      "android": {
+        "target": "192.168.1.14:5556",
+        "tcp": "timeout",
+        "heartbeat_verified": false,
+        "device_off_state_inferred": false
+      },
+      "providers": {
+        "dropbox": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "revision": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true,
+          "raw_bytes_downloaded": false
+        },
+        "xtime": {
+          "prior_health_http_status": 200,
+          "current_loopback_probe": "timeout",
+          "alternate_ipv4_routes": "all timeout",
+          "modual_source_present": false,
+          "live_stream_verified": false
+        },
+        "ollama": {
+          "tags_http_status": 200,
+          "model_count": 11,
+          "endpoint": "127.0.0.1:11434",
+          "loopback_only": true
+        },
+        "tesseract": {
+          "pr": 6,
+          "state": "OPEN",
+          "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+          "runs": [
+            {
+              "run_id": 39994207477,
+              "conclusion": "failure",
+              "steps_payload": false,
+              "artifacts": []
+            },
+            {
+              "run_id": 39994207667,
+              "conclusion": "failure",
+              "steps_payload": false,
+              "artifacts": []
+            }
+          ],
+          "issuer_public_key_value_verified": false,
+          "runner_assignment_change_verified": false,
+          "ci_rerun": false
+        }
+      },
+      "result": "POST_BOUNDARY_WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_ISSUER_RUNNER_UNVERIFIED",
+      "task_closure": false
     }
   ]
 }
