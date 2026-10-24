@@ -39,9 +39,10 @@ jobs:
           lrzip -h 2>&1 | head -n 4 || true
           {
             printf 'python='; python --version 2>&1
-            printf '7z='; 7z i 2>&1 | sed -n '1p'
-            printf 'unrar='; unrar 2>&1 | sed -n '1p'
-            printf 'lrzip='; lrzip -h 2>&1 | sed -n '1p'
+            printf 'packages:\\n'; dpkg-query -W -f='${Package}=${Version}\\n' p7zip-full unrar lrzip
+            printf '7z='; 7z i 2>&1 | grep -m1 '^7-Zip'
+            printf 'unrar='; unrar -? 2>&1 | grep -m1 '^UNRAR'
+            printf 'lrzip='; lrzip -h 2>&1 | grep -m1 '^lrzip version'
           } > tool-versions.txt
       - name: Run mocked external-adapter and safety regressions
         run: python -m unittest tests.test_sol_archive_10_formats -v
