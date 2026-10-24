@@ -930,6 +930,18 @@
           "result": "SECURITY_BRANCH_READBACK_OK; PR_OPEN; ISSUER_RUNNER_UNVERIFIED",
           "next_callable_edge": "Verify issuer public key and runner assignment via authorized control surfaces before tests; do not rerun CI yet.",
           "status_effect": "Keep OPEN_CARRIED; do not merge or close."
+        },
+        {
+          "observed_at": "2026-10-25T05:45:47+07:00",
+          "source": "Fresh PR #6 issue state, head-associated workflow runs and exact artifact-list readback.",
+          "actions_and_receipts": [
+            "PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14.",
+            "Runs 39994207477 and 39994207667 remain failed; artifact queries returned zero artifacts for both.",
+            "Build-time reference to XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64 was verified previously; the actual public-key value, Actions variable control surface and runner assignment remain unverified."
+          ],
+          "result": "TESSERACT_CI_FAILURES_PRESERVED; ISSUER_VALUE_AND_RUNNER_ASSIGNMENT_UNVERIFIED",
+          "next_callable_edge": "Continue authorized issuer-variable/key and runner-assignment discovery; do not rerun CI until a real configuration or runner change is verified.",
+          "status_effect": "Keep task OPEN_CARRIED; no key generated, no secret read, no PR merge."
         }
       ],
       "live_progress_last": "PR6_OPEN_DRAFT_SAFETY_HOLD; SECURITY_BRANCH_5_COMMITS_AHEAD_NOT_IN_PR; CURRENT_HEAD_CI_FAILURES_UNCHANGED; ISSUER_AND_RUNNER_UNVERIFIED",
@@ -1902,6 +1914,18 @@
           "result": "MANUAL_METADATA_TICK_VERIFIED;SCHEDULED_WRAPPER_NOT_YET_RECOVERED;TRACE_NEXT_RUN_PENDING",
           "next_callable_edge": "Read telemetry_buffer_sync_wrapper_trace.log after the next scheduled run; verify the new scheduled Tick and direct CSV hash. If the trace stops at a stage, fix only that verified stage.",
           "status_effect": "Keep OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
+        },
+        {
+          "observed_at": "2026-10-25T05:45:47+07:00",
+          "source": "Fresh Dropbox Outlook metadata, n8n exact row 318, and both Desktop Commander device inventories.",
+          "actions_and_receipts": [
+            "Dropbox source metadata still reports revision 0165dc1e4794ab00000000395cdfd73, 35,389,440 bytes, server_modified 2026-10-14T00:20:03Z.",
+            "n8n execution 151 succeeded and exact row 318 was read back as OPEN_WORK_REMAINS with HOST_HEARTBEAT_NOT_PROBED.",
+            "Both Desktop Commander inventories report registered devices offline; this is connector inventory only. No new Windows host receipt or consumer trace was read in this turn."
+          ],
+          "result": "PROVIDER_METADATA_AND_CLOUD_ROW_VERIFIED; CURRENT_WINDOWS_TICK_AND_LIVE_SENSOR_STREAM_NOT_REPROBED",
+          "next_callable_edge": "Use an authorized alternate host carrier to read the latest Tick and consumer receipt without modifying the source CSV.",
+          "status_effect": "Keep OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED; no source write or task closure."
         }
       ],
       "observed": "2026-10-24 07:53:42+07: fresh Remote Desktop inventory reported ONLINE, but exact read-only task/source/receipt readbacks timed out or remained pending. Last verified receipt remains WINDOWS_TICK_20261024T002642437612Z.json (SHA-256 C40E4F5A...); no newer receipt or current task state is claimed. Dropbox source metadata remains revision 0165dc1e4794ab00000000395cdfd73, 35,389,440 bytes. Live sensor stream remains unverified.,2026-10-24T10:00:36.940+07:00: Direct readback verified WINDOWS_TICK_20261024T025157723328Z.json (450 bytes, SHA-256 5ebdd3be8c3dc57822cf43398aff160f8bfa412b2b99abca08d791c97efe9979); source hash matches, task Ready/result 0, next 09:56:32 device time. Receipt remains metadata-only; live sensor stream not verified.,2026-10-24T10:04:10.651+07:00: Exact newest receipt WINDOWS_TICK_20261024T025640609482Z.json read back (450 bytes, SHA-256 f8a603339179a3f0240a1a7177f6bb9602da82af7bb13ea5a7826218c8841a37); source hash matches; task Ready/result 0, next 10:01:32 device time. Live sensor sample remains unverified.,2026-10-24T10:10:20.016+07:00: Third recent scheduled tick verified at device clock 10:01:42Z; receipt SHA-256 1c0293733d734eed46528293e9a438518f0a7ad94625ac6ead3e62fde450cef0, source hash matches. HWiNFO CSV remains stale since 2026-10-21; read-only shared-memory open returned Win32 error 2; Android TCP 192.168.1.14:5556 timed out. No raw sensor values read.,2026-10-24T10:15:01.665+07:00: Fourth recent tick verified: WINDOWS_TICK_20261024T030637466945Z.json, SHA-256 2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d; source hash matches. HWiNFO shared-memory names all returned Win32 error 2; Android TCP 192.168.1.14:5556 timed out; bounded adb.exe searches remain incomplete.,2026-10-24T11:10:54+07:00: latest Windows Tick receipt read back and nested source hash matches direct SHA-256; live sensor stream remains unverified.,2026-10-24T11:12:40+07:00: post-boundary receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json exact-read and hash verified; live stream remains unverified.,Fresh host readback in this run: Desktop Commander secondary account reports DESKTOP-86ITNQ4 online (device 59f03001-c732-403e-b80c-b4191266809c). Latest content-verified tick is D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T054636519945Z.json (450 bytes; SHA-256 34CBD91747AACF4097600FDB1F26E8ACF40724B213F83D8B55B8A63CC171040E); its source hash matches a fresh direct hash of D:\\SENSOR_LOGS\\windows_SENSON.CSV (35,389,440 bytes; SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87). Tick reports live_sensor_reading_confirmed=false, cloud_enabled=false, github_enabled=false, source_file_written=false, synthetic_rows_added=0. Read-only task query: GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M=Ready, LastRunTime 12:56:33 local, LastTaskResult=267014, NextRunTime 13:06:32; GGDV_MINH_SENSORIMOTOR_BRIDGE=Running, LastRunTime 12:59:01, LastTaskResult=267009, NextRunTime 13:04:00. A later directory listing returned WINDOWS_TICK_20261024T060739300534Z.json; exact content readback call 0be8f618-65fd-488c-9ea8-09edf3da7aec was still executing as of 2026-10-24T06:16:18.813932Z, so that newer tick's contents/hash remain UNVERIFIED. Host-side ADB command was not found in PATH and TCP 192.168.1.14:5556 returned False; this does not prove Android is offline. No task/service/clock settings were changed.,2026-10-24T16:03:53+07:00: exact Windows Tick receipt WINDOWS_TICK_20261024T085149255349Z.json read back (450 bytes; SHA-256 4574E449B12809AC6BB70309989314054B642CB528E1602C9F13A5331BF3C744); nested source SHA matches direct CSV SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Scheduled task ran 15:51:34+07, result 0x0, next 15:56:32, zero missed runs; receipt arrived 15.26s after start. A prior 15:41:34 run returned 0x41306 without an attributable receipt; Task Scheduler Operational log is disabled, so cause remains unproven. Manual telemetry_buffer_sync.py --once exited 0 in 4.86s and wrote only a metadata receipt. X-TIME HTTP 200: source_present=true, live_device_proven=false, state=SOURCE_PRESENT; Ollama 200/11 models; Android TCP false, heartbeat unverified; HWiNFO CSV remains stale since 2026-10-21. Dropbox source metadata is verified unchanged; direct-child candidates All_desktop_live.csv (145 bytes, 2026-10-12), Sensors_Output.txt (63 bytes, 2026-10-13), and telemetry_buffer_sync.py (10,707 bytes, 2026-10-12) are historical metadata, not live proof. Braid script exit 0 with exact receipt hashes; n8n execution 127 success and event row 269 exact-readback, while HOST_HEARTBEAT_NOT_PROBED remains explicit. No raw sensor data/secrets copied; task remains OPEN.,2026-10-24T19:41:32+07: Windows Tick receipt WINDOWS_TICK_20261024T123744771353Z.json exact-readback SHA-256 feb47f13e80576c4876104bcf0285e47f8a3247f32e692a65fb6b16f9b2b4622; direct CSV SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches. Scheduled task last run 19:36:34+07 returned 0x0; live_sensor_reading_confirmed=false.,2026-10-24T19:49:09+07: latest receipt WINDOWS_TICK_20261024T124634868138Z.json verified at 450 bytes; SHA-256 feb4cfce54e24d6fdee2fe5b75ba024039b0b4360e1651cbe0bc9e7d6aeb825f. Fresh direct CSV SHA matches. Task last run 19:46:33+07 result 0x0; receipt followed start by 1.868s; live sensor remains unverified.,2026-10-24T23:38:42.8165710+07:00: direct tick receipt/hash readback and provider probes appended in CURRENT_RUNTIME/PROVIDER_READBACK_20261024T2338ICT.json; live stream remains unverified.,2026-10-24T23:45:06.4477898+07:00: new exact Tick and Android event-section digest observation appended; live stream remains unverified.,2026-10-24T23:48:41.3743778+07:00: newest Tick receipt and direct source hash verified; no live sensor stream claim.,2026-10-25T03:49:59.248+07:00: wrapper used a zero-length WindowsApps Python alias with no matching child; changed only the wrapper interpreter path to verified C:\\ProgramData\\anaconda3\\python.exe after preserving a hash-identical backup. Post-patch Tick remains unverified.,2026-10-25T03:59:21.775+07:00: manual metadata-only consumer succeeded and source hash matched; scheduled wrapper still stalled after interpreter path change, so stage tracing was added for the next run. Live sensor stream remains unverified. | 2026-10-25 05:18 ICT: primary and secondary Desktop Commander inventories both show devices offline; secondary exact directory read failed with NO_DESKTOP_COMMANDER_DEVICE_CURRENTLY_ONLINE. Last direct host readback remains 04:23 ICT; current tick not re-probed.",
@@ -2529,6 +2553,19 @@
           "result": "PORTABLE_ADMIN_RUNTIME_VERIFIED_ON_ISOLATED_LINUX; SOURCE_LOCATOR_IDENTITY_AND_ORIGINAL_EXPORT_RECOVERY_REMAIN_OPEN",
           "next_callable_edge": "Use an authorized Drive/Dropbox/Takeout provider readback to compare metadata and exact bytes for the two MAP_NGUON candidate objects and search for the actual original export ZIPs; preserve both identities. Separately use an authorized Windows host connector to validate the host runtime and a post-03:01:32 Tick. Do not treat this Linux test or CI as Windows-host evidence.",
           "status_effect": "Keep status OPEN and real_execution_status OPEN_NOT_PROVEN_COMPLETED. This runtime readback does not recover original JINEY/FUNIX/DAT NGUYEN exports and does not close the task."
+        },
+        {
+          "observed_at": "2026-10-25T05:45:47+07:00",
+          "source": "Fresh GitHub branch source readback, workflow runs/jobs/artifact readback, and PR #28 issue state readback.",
+          "actions_and_receipts": [
+            "Read tests/test_sol_library_stone_topology.py on branch fix/archive-real-fixtures-20261025; blob SHA f42232285dfd9396de4ad1d20274029ba2245a75. The assertion allows the authorized BRAIN_WAVE_LOGS sibling and still rejects SPACE_STONE_WORKSPACE.",
+            "Commit 945eeca3419be2b7151d5761eb5aadfa65c31434 has three completed successful GitHub Actions runs: topology 40138464127/job verify-stone-folders; read-only adapters 40138464130/job readonly-adapters; secret guard 40138464176/job secret-guard.",
+            "Read-only adapter run artifact sol-archive-real-fixture-readback id 12577588524, 959 bytes, unexpired; artifact metadata head_sha matches commit 945eeca3419be2b7151d5761eb5aadfa65c31434.",
+            "PR #28 remains OPEN. This turn did not verify that PR #28's current head equals the tested branch commit, and did not re-read branch divergence; no merge or force-push."
+          ],
+          "result": "THREE_CI_RUNS_SUCCESS_ON_TESTED_BRANCH_COMMIT; PR HEAD RELATION AND DIVERGENCE RECONCILIATION STILL OPEN",
+          "next_callable_edge": "Fetch exact current PR #28 head and compare branch ancestry/divergence. Reconcile only with a safe non-force update or clean re-cut after exact head readback; preserve OPEN until current-head CI and target-host/isolated fixture validation are verified.",
+          "status_effect": "Keep status OPEN and real_execution_status OPEN_NOT_PROVEN_COMPLETED."
         }
       ]
     }
@@ -3713,6 +3750,13 @@
       "primary_route": "OFFLINE",
       "secondary_route": "OFFLINE",
       "latest_direct_host_readback": "2026-10-25T04:23:47.498+07:00",
+      "tasks_closed": 0
+    },
+    "provider_readback_20261025T0545ICT": {
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0545ICT.json",
+      "checkpoint_blob_sha": "a174335d81b8236043d8343d709bb582919abe80",
+      "checkpoint_commit": "ddd67f9008e15c347688af3d98cdbfd7af242fcd",
+      "status": "READBACK_PENDING_AFTER_APPEND",
       "tasks_closed": 0
     }
   },
@@ -10697,6 +10741,53 @@
       "result": "ALTERNATE_HOST_ROUTE_ATTEMPTED;NO_ONLINE_DEVICE;WINDOWS_TICK_CURRENT_CYCLE_UNVERIFIED",
       "action": "RETRY_AUTHORIZED_HOST_READ_VIA_SECONDARY_REMOTE_ACCOUNT",
       "observation_type": "PROVIDER_READBACK"
+    },
+    {
+      "id": "PROVIDER_READBACK_20261025T0545ICT",
+      "observed_at": "2026-10-25T05:45:47+07:00",
+      "observed_at_utc": "2026-10-24T22:45:47Z",
+      "source": "Fresh mandatory GitHub reads; Dropbox Outlook metadata; n8n execution 151 and exact row 318; Desktop Commander inventories; Archive branch workflow/job/artifact readbacks; TESSERACT PR/head workflow/artifact readbacks.",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0545ICT.json",
+      "checkpoint_blob_sha": "a174335d81b8236043d8343d709bb582919abe80",
+      "checkpoint_commit": "ddd67f9008e15c347688af3d98cdbfd7af242fcd",
+      "action": "FRESH_PROVIDER_READBACK_AND_INDEPENDENT_ARCHIVE_BRANCH_CI_VERIFICATION",
+      "tasks_closed": 0,
+      "archive": {
+        "branch": "fix/archive-real-fixtures-20261025",
+        "tested_commit": "945eeca3419be2b7151d5761eb5aadfa65c31434",
+        "runs": [
+          40138464127,
+          40138464130,
+          40138464176
+        ],
+        "all_conclusions": "success",
+        "pr28_head_relation_verified": false,
+        "merge": false,
+        "force_push": false
+      },
+      "n8n": {
+        "execution_id": "151",
+        "row_id": 318,
+        "event_id": "X20261024220024058_CLOUD",
+        "state": "OPEN_WORK_REMAINS",
+        "exact_row_readback": true
+      },
+      "windows_tick": {
+        "latest_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T212204946757Z.json",
+        "current_cycle": "NOT_REPROBED_THIS_TURN",
+        "live_sensor_reading_confirmed": false
+      },
+      "tesseract": {
+        "pr": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs_failed": [
+          39994207477,
+          39994207667
+        ],
+        "artifacts": 0,
+        "public_key_value_verified": false,
+        "runner_assignment_change_verified": false
+      }
     }
   ],
   "energy_protection_current": {
@@ -18871,6 +18962,53 @@
       "result": "ALTERNATE_HOST_ROUTE_ATTEMPTED;NO_ONLINE_DEVICE;WINDOWS_TICK_CURRENT_CYCLE_UNVERIFIED",
       "action": "RETRY_AUTHORIZED_HOST_READ_VIA_SECONDARY_REMOTE_ACCOUNT",
       "observation_type": "PROVIDER_READBACK"
+    },
+    {
+      "id": "PROVIDER_READBACK_20261025T0545ICT",
+      "observed_at": "2026-10-25T05:45:47+07:00",
+      "observed_at_utc": "2026-10-24T22:45:47Z",
+      "source": "Fresh mandatory GitHub reads; Dropbox Outlook metadata; n8n execution 151 and exact row 318; Desktop Commander inventories; Archive branch workflow/job/artifact readbacks; TESSERACT PR/head workflow/artifact readbacks.",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0545ICT.json",
+      "checkpoint_blob_sha": "a174335d81b8236043d8343d709bb582919abe80",
+      "checkpoint_commit": "ddd67f9008e15c347688af3d98cdbfd7af242fcd",
+      "action": "FRESH_PROVIDER_READBACK_AND_INDEPENDENT_ARCHIVE_BRANCH_CI_VERIFICATION",
+      "tasks_closed": 0,
+      "archive": {
+        "branch": "fix/archive-real-fixtures-20261025",
+        "tested_commit": "945eeca3419be2b7151d5761eb5aadfa65c31434",
+        "runs": [
+          40138464127,
+          40138464130,
+          40138464176
+        ],
+        "all_conclusions": "success",
+        "pr28_head_relation_verified": false,
+        "merge": false,
+        "force_push": false
+      },
+      "n8n": {
+        "execution_id": "151",
+        "row_id": 318,
+        "event_id": "X20261024220024058_CLOUD",
+        "state": "OPEN_WORK_REMAINS",
+        "exact_row_readback": true
+      },
+      "windows_tick": {
+        "latest_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T212204946757Z.json",
+        "current_cycle": "NOT_REPROBED_THIS_TURN",
+        "live_sensor_reading_confirmed": false
+      },
+      "tesseract": {
+        "pr": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs_failed": [
+          39994207477,
+          39994207667
+        ],
+        "artifacts": 0,
+        "public_key_value_verified": false,
+        "runner_assignment_change_verified": false
+      }
     }
   ]
 }
