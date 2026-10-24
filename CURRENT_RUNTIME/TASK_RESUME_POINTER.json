@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T16:10:20.219Z",
+  "updated_at": "2026-10-24T16:12:29.005Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -4476,6 +4476,20 @@
         "new_verified_bytes": 0,
         "provider_readback": false
       },
+      "task_closures": 0
+    },
+    {
+      "id": "ADMIN_PORTABLE_BYTE_SQLITE_AND_MAP_NGUON_ID_RELATION_READBACK",
+      "kind": "LIBRARY_ARCHIVE_BYTE_READBACK",
+      "observed_at": "2026-10-24T23:12:29+07:00",
+      "library_file_id": "libfile_d18e6db946b88191b31e948ed283598c",
+      "archive_sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+      "sqlite_integrity_check": "ok",
+      "map_nguon_source_id_discrepancy": [
+        "1rcRPnoBtErA634J1jfHkjZp8oTmc3HuN",
+        "1WRp3AK2fpT66LckjclEWfvgqF9fDCOKz"
+      ],
+      "provider_readback_available": false,
       "task_closures": 0
     }
   ],
@@ -9168,5 +9182,53 @@
     "exact_art_source_identity": "UNRESOLVED",
     "real_browser_runtime": "UNVERIFIED",
     "status_effect": "KEEP_OPEN"
+  },
+  "latest_admin_archive_readback": {
+    "stamp_class": "STAMP_LIVE",
+    "observed_at": "2026-10-24T23:12:29+07:00",
+    "library_path": "/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/ADMIN_PORTABLE_20261023.zip",
+    "file_id": "file_0000000044e081fa8f423d980f5f62af",
+    "library_file_id": "libfile_d18e6db946b88191b31e948ed283598c",
+    "version_id": "3",
+    "size_bytes": 22493275,
+    "sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+    "zip_members": 13,
+    "zip_crc": "PASS",
+    "sqlite": {
+      "member": "MEMORY_ARCHIVE_THIT_THO_SOUL/ADMIN_CHAT_SOURCE_20260719.sqlite3",
+      "integrity_check": "ok",
+      "conversations": 136,
+      "nodes": 18790,
+      "searchable_messages": 10943,
+      "source_texts": 2,
+      "source_carrier_locator_rows": 8
+    },
+    "map_nguon": {
+      "member": "MEMORY_ARCHIVE_THIT_THO_SOUL/PRIMARY_SOURCES/MAP_NGUON.md",
+      "bytes": 99075,
+      "sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+      "xiv_luong_tam_lines": "1067-1127",
+      "fts_query": "lương tâm",
+      "fts_results": [
+        "MAP_NGUON.md",
+        "R-000_MASTER_R-000.md"
+      ]
+    },
+    "identity_discrepancy": {
+      "ingested_map_nguon_drive_id": "1rcRPnoBtErA634J1jfHkjZp8oTmc3HuN",
+      "separate_locator_row": "MAP_NGUON current read",
+      "locator_drive_id": "1WRp3AK2fpT66LckjclEWfvgqF9fDCOKz",
+      "locator_state": "READ_XIV_LUONG_TAM_SOURCE",
+      "resolved": false,
+      "reason": "No live Drive provider metadata/content readback for both IDs in this tool session; preserve both identities."
+    },
+    "admin_folder_relation": {
+      "folder_id": "1VP1rcmLmSKX3wZ5GxLk2RnoyQPweZbMp",
+      "destination_id": "18Fxp7c6VAB9xUz1UZtfSdhmbXapZmHnl",
+      "source_provenance": "ALREADY_DIRECT_CHILD_OF_ARCHIVE",
+      "move_or_duplicate_performed": false
+    },
+    "result": "ADMIN_ARCHIVE_AND_SQLITE_INTEGRITY_REVERIFIED; MAP_NGUON_ID_RELATION_DISCREPANCY_PRESERVED_OPEN; NO_RAW_EXPORT_RECOVERED",
+    "task_effect": "No task closed."
   }
 }
