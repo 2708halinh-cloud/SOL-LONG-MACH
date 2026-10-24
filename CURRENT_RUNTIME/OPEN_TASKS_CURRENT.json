@@ -713,6 +713,19 @@
           "result": "TESSERACT_CURRENT_HEAD_CONFIRMED_ISSUER_KEY_AND_RUNNER_ENTITLEMENT_STILL_UNVERIFIED",
           "next_callable_edge": "Continue through an authorized issuer-side carrier or Actions variable control surface and repository/account runner settings; rerun only after a runner assignment/entitlement change is verified.",
           "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T09:00:57.048+07:00",
+          "source": "Fresh exact-path Dropbox Outlook fetches and GitHub indexed code searches",
+          "actions_and_receipts": [
+            "Fetched extracted text from /Linh Hà/SENSOR_LOGS/TESSERACT_OS_6D_RCLONE_RELAY_SOURCE.json (291 characters; server_modified 2026-10-12T19:59:31Z), TESSERACT_CDN_HEADERS_CURRENT.txt (997 characters; same modification time), TESSERACT_CDN_BODY_CURRENT.tmp (63 characters; modified 2026-10-12T19:59:29Z), and TOOLKIT.TXT (61,032 characters; modified 2026-10-12T19:59:31Z). Bounded issuer/Ed25519/public-key/KILO_XTIME/signer/signing-key/base64/runner marker scan returned zero hits in all four extracted texts.",
+            "GitHub code search: exact XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64 query returned four references; Ed25519/public-key query returned six related indexed results; KILO_XTIME returned three results; exact XTIME_KILO_SESSION_RECEIPT/2.0 returned two; SigningKey + KILO_XTIME returned one. Results point to README/main.rs/checkpoint/ledger references, not a provisioned issuer key value.",
+            "The Dropbox search endpoint rejected the query request at schema validation; direct exact-path fetches and GitHub code search were used as alternate routes. This bounded scan does not prove absence of an authorized issuer-side carrier elsewhere.",
+            "PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14. Runs 39994207477 and 39994207667 remain failed; no runner assignment/entitlement change was verified. No CI rerun and no key was generated or committed."
+          ],
+          "result": "BOUNDED_DROPBOX_AND_GITHUB_ISSUER_SEARCH_NO_KEY_VALUE_VERIFIED",
+          "next_callable_edge": "Continue through an authorized issuer-side carrier or GitHub Actions variable control surface and repository/account runner settings. Do not rerun CI until runner assignment/entitlement change is verified; do not infer key absence beyond scanned carriers.",
+          "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
         }
       ]
     },
@@ -2178,6 +2191,47 @@
       "source_mutation": false,
       "cloud_export": false,
       "github_export": false
+    },
+    "tesseract_dropbox_carrier_scan_20261024020057": {
+      "observed_at": "2026-10-24T09:00:57.048+07:00",
+      "dropbox_files": [
+        {
+          "path": "/Linh Hà/SENSOR_LOGS/TESSERACT_OS_6D_RCLONE_RELAY_SOURCE.json",
+          "server_modified": "2026-10-12T19:59:31Z",
+          "extracted_chars": 291,
+          "issuer_marker_hits": 0
+        },
+        {
+          "path": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_HEADERS_CURRENT.txt",
+          "server_modified": "2026-10-12T19:59:31Z",
+          "extracted_chars": 997,
+          "issuer_marker_hits": 0
+        },
+        {
+          "path": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_BODY_CURRENT.tmp",
+          "server_modified": "2026-10-12T19:59:29Z",
+          "extracted_chars": 63,
+          "issuer_marker_hits": 0
+        },
+        {
+          "path": "/Linh Hà/SENSOR_LOGS/TOOLKIT.TXT",
+          "server_modified": "2026-10-12T19:59:31Z",
+          "extracted_chars": 61032,
+          "issuer_marker_hits": 0
+        }
+      ],
+      "github_search": {
+        "exact_variable_refs": 4,
+        "ed25519_related": 6,
+        "kilo_xtime": 3,
+        "receipt_schema": 2,
+        "signing_key_kilo_xtime": 1,
+        "issuer_key_value_verified": false
+      },
+      "pr": 6,
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "runner_assignment_change_verified": false,
+      "ci_rerun": false
     }
   },
   "sinks": {
@@ -4221,6 +4275,26 @@
       "source_mutated": false,
       "credentials_committed": false,
       "open_tasks_closed": false
+    },
+    {
+      "id": "TESSERACT_AUTHORIZED_CARRIER_SCAN_20261024020057",
+      "kind": "ISSUER_KEY_BOUNDED_PROVIDER_SCAN",
+      "observed_at": "2026-10-24T09:00:57.048+07:00",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "e5feaa1d5ae36b5f0e8f8e4f2c2e4a29b651dad9",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "a696967501b6eea67c9ecf41c0ac37718f724147",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "5e900bc237f98070702613bab7b8db1c1b8c1fea"
+      },
+      "actions_and_receipts": [
+        "Fetched four exact Dropbox candidate files and scanned extracted text; zero issuer/public-key/signing markers in these bounded carriers.",
+        "Searched indexed GitHub code across the user's organization; results are references to verifier/checkpoint code, not key material.",
+        "No Actions variable control surface or runner settings control surface is exposed in callable GitHub tools; no key material was generated or committed; CI not rerun."
+      ],
+      "result": "ISSUER_KEY_VALUE_NOT_FOUND_IN_SCANNED_CARRIERS; AUTHORIZED_ISSUER_CONTROL_SURFACE_STILL_REQUIRED",
+      "open_tasks_closed": false,
+      "credentials_committed": false
     }
   ],
   "energy_protection_current": {
@@ -7726,6 +7800,32 @@
         "w32time": "Stopped/Manual"
       },
       "result": "TICK_SUCCESS_READBACK_VERIFIED_LIVE_SENSOR_STREAM_OPEN"
+    },
+    {
+      "observed_at": "2026-10-24T09:00:57.048+07:00",
+      "record_type": "TESSERACT_ISSUER_KEY_BOUNDED_DROPBOX_AND_GITHUB_SCAN",
+      "dropbox": {
+        "files_scanned": 4,
+        "marker_hits": 0,
+        "server_modified_range": "2026-10-12T19:59:29Z..2026-10-12T19:59:31Z",
+        "raw_bytes_materialized": false,
+        "absence_proven": false
+      },
+      "github": {
+        "exact_variable_refs": 4,
+        "ed25519_related_results": 6,
+        "kilo_xtime_results": 3,
+        "receipt_schema_results": 2,
+        "signing_key_kilo_xtime_results": 1,
+        "issuer_public_key_value_verified": false
+      },
+      "tesseract_pr6": {
+        "state": "OPEN",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "BOUNDED_SCAN_NO_KEY_VALUE_FOUND_NOT_GLOBAL_ABSENCE_PROOF"
     }
   ]
 }
