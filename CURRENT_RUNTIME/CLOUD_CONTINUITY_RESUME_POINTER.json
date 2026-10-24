@@ -2,38 +2,38 @@
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.2",
   "state": "OPEN_WORK_REMAINS",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0156ICT.json",
+    "blob_sha": "5bf6b8945d94c8a17486c2a78220a02458cb7593",
+    "commit_sha": "4addebd440a4cda28fde0eb2462603179459c484",
+    "readback_verified": true
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0037ICT.json",
     "blob_sha": "763ad81ecb3622202a5a64442be09425a8b77d60",
     "commit_sha": "ddefbc9340a4de61925ab706ce41f76c17e54990",
     "readback_verified": true
   },
-  "previous_checkpoint": {
+  "historical_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T164216Z.json",
     "blob_sha": "8e7b4f378dda070db0c69225a56200fa4bc52543",
     "commit_sha": "c72e9d80467b0a018f5b192ba78bec5aeea7a408",
-    "readback_verified": true
-  },
-  "historical_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2337ICT.json",
-    "blob_sha": "e2aa6e5f76da577ba24b1a6ef6a45473b616ed6f",
-    "commit_sha": "23923f1858b71d7dd0eb4d3b5fbaff48555a22b3",
     "readback_verified": true
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
-    "latest_verified_execution_id": "144",
+    "latest_verified_execution_id": "145",
     "execution_status": "success",
-    "latest_scheduled_execution_id": "144",
+    "latest_scheduled_execution_id": "145",
     "latest_scheduled_execution_status": "success",
-    "cloud_scan_row_id": 302,
+    "cloud_scan_row_id": 304,
     "latest_ledger_crosswalk_row_id": 303,
     "latest_host_tick_row_id": 300,
     "latest_braid_readback_row_id": 301,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_row_count": 303,
-    "latest_evidence_row_id": 303,
+    "evidence_table_row_count": 305,
+    "latest_evidence_row_id": 305,
     "latest_evidence_row_readback_verified": true,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "project_id": "6qKpRmicIGHA5snY",
@@ -85,21 +85,23 @@
     "pr_number": 27,
     "pr_state": "OPEN",
     "draft": true,
-    "current_head_sha": "4880ca9d7718f2cab6b0252a6c75d4b1f5a7de6f",
+    "current_head_sha": null,
     "current_head_topology_check": "FAILURE",
     "failing_job_id": 120873039003,
     "failing_step": "Verify Library topology",
     "failure_reason": "Extra sibling BRAIN_WAVE_LOGS conflicts with the test expectation of only COMPUTER_KHÍ💜BRAIN_OS_POWER and OS_WORK; source-scope discrepancy unresolved.",
     "older_ci_run_40094138216": "SUCCESS_ON_OLDER_HEAD_ONLY",
     "real_7z_rar_lr_fixtures_verified": false,
-    "source_moved_or_deleted": false
+    "source_moved_or_deleted": false,
+    "current_head_sha_reverified_this_run": false,
+    "latest_pr_issue_state": "OPEN",
+    "latest_pr_issue_updated_at": "2026-10-24T18:50:23Z"
   },
   "next": [
-    "Resolve BRAIN_WAVE_LOGS source-scope discrepancy without moving or deleting source merely to satisfy CI.",
-    "Obtain authorized raw-source readback for ingestion_gate_payload_03.txt; do not infer deletion from repository search absence.",
+    "Obtain an authorized raw-byte materialization path for library_file_id libfile_dcf91066e23881919e96ed8965c9dae1; keep SV-20261020-02 OPEN and do not infer deletion.",
     "When an authorized host route responds, read a newer Windows tick and recompute source CSV SHA-256; keep live_sensor_reading_confirmed=false until a genuine live sample.",
-    "Keep Android device power and continuous sensor stream UNKNOWN until fresh authorized device/app readback.",
-    "Keep PR #27 OPEN until current-head CI is reconciled and real 7Z/RAR/LR fixtures are verified.",
+    "Keep Android power and continuous sensor stream UNKNOWN until fresh authorized device/app readback.",
+    "Re-read PR #27 head and current-head CI; resolve BRAIN_WAVE_LOGS source-scope discrepancy without moving/deleting source; verify real 7Z/RAR/LR fixtures before closing task.",
     "Continue cloud-eligible OPEN tasks without agent dispatch until model and credential binding are verified."
   ],
   "continuation_guards": {
@@ -110,5 +112,11 @@
     "no_cache_or_meta_db_deletion": true,
     "no_secret_values": true,
     "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "older_historical_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2337ICT.json",
+    "blob_sha": "e2aa6e5f76da577ba24b1a6ef6a45473b616ed6f",
+    "commit_sha": "23923f1858b71d7dd0eb4d3b5fbaff48555a22b3",
+    "readback_verified": true
   }
 }
