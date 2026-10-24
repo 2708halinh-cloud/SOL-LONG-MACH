@@ -846,6 +846,20 @@
           "result": "PR6_OPEN_CI_FAILS_NO_ARTIFACTS_SECURITY_PATCH_READ_BACK_TESTS_NOT_RUN_ISSUER_AND_RUNNER_UNVERIFIED",
           "next_callable_edge": "Obtain the actual issuer public key and runner assignment through authorized control surfaces. Run Rust regression tests only on an authorized isolated runner; do not rerun CI until runner assignment/entitlement change is verified.",
           "status_effect": "Keep OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T22:19:50+07:00",
+          "source": "Fresh GitHub readback and source-bound edit on security branch; no runtime execution",
+          "actions_and_receipts": [
+            "Fetched TESSERACT_DESKTOP/src-tauri/src/main.rs on security/repo-relative-read-containment-20261024; prior blob af1a16270cb9ff90c5a7f34d5d56ae4343fc5eca.",
+            "Updated local_resume_checkpoint to call validate_repo_relative_path before joining/probing the filesystem, so drive-qualified Windows paths are rejected before even the is_file metadata probe.",
+            "Added regression test resume_checkpoint_rejects_windows_drive_paths_before_probe for C:\\\\Windows\\\\win.ini and C:/Windows/win.ini.",
+            "Commit 835a54565d764b6573b28848ce16bbd3b97afa09; readback blob 1f010f1577a6683b45b64c881117caafceda604c; fetched file content matched the written content.",
+            "Rust tests were not run; rustc/cargo and authorized runner assignment remain unverified. No workflow was triggered."
+          ],
+          "result": "RESUME_CHECKPOINT_DRIVE_PATH_REJECTED_BEFORE_PROBE; REGRESSION_ADDED; RUST_TESTS_NOT_RUN",
+          "next_callable_edge": "Obtain the actual issuer public key and verify hosted runner assignment/entitlement through authorized control surfaces; then run cargo test on an authorized isolated runner and read back the exact tested head.",
+          "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED. Source edit/readback is not runtime test or task completion."
         }
       ]
     },
