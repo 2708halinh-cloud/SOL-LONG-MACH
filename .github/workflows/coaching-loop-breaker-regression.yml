@@ -1,0 +1,23 @@
+name: Coaching Loop Breaker Regression
+
+on:
+  push:
+    branches:
+      - coaching/loop-breaker-20261025
+    paths:
+      - 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/_Skills/coaching-loop-breaker/evals/**'
+      - 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/_Skills/coaching-loop-breaker/scripts/**'
+      - '.github/workflows/coaching-loop-breaker-regression.yml'
+  workflow_dispatch:
+
+jobs:
+  validate-regression-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Validate regression cases
+        run: |
+          python "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/_Skills/coaching-loop-breaker/scripts/validate_regression.py"
