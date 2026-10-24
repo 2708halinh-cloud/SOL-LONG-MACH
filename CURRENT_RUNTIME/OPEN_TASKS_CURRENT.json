@@ -152,6 +152,20 @@
           "result": "LIBRARY_ARCHIVE_FORMAT_SUBFOLDERS_EMPTY; NO_NEW_RAW_EXPORT_CARRIER",
           "next_callable_edge": "Continue from exact provider-side JINEY/FUNIX/DAT NGUYEN folder IDs or a verified raw carrier when an authorized Drive/Dropbox/Takeout connector is available; do not substitute same-name derived archives.",
           "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T08:28:58+07:00",
+          "source": "Fresh ChatGPT Library listing/materialization attempts in current automation invocation",
+          "actions_and_receipts": [
+            "Listed the Library ZIP/7z/tar/gz surface in three pages: 100 + 100 + 53 = 253 metadata entries. Every page returned the warning 'Recursive library listing reached the folder traversal limit; some nested files may be omitted.' This is explicitly partial inventory, not proof of provider absence.",
+            "Found SOL_CURRENT_RAW_CHAT_VI_EV_20261010.zip (Library ID libfile_374bde5e54648191b64eafc4349923b6, listed size 23,464 bytes) under the historical THU HOI NGUON SOL path. Raw-byte materialization was denied: no byte hash, member list, account lineage, or OpenAI-export identity can be verified. It is not accepted as a JINEY/FUNIX/DAT NGUYEN raw export.",
+            "Re-probed the same-size secondary ADMIN archive (Library ID libfile_97fa7b5d0fb481918807c61b476151dc, version 2; 22,493,275 bytes): raw-byte materialization denied. Also found SOL_MEMORY_ARCHIVE_CROSS_ACCOUNT_REENTRY_PRIVATE_20261022.zip (13,089,122 bytes), whose raw-byte materialization was denied. Neither was copied or treated as byte-identical/new source.",
+            "The matching name SOL_CHROME_TAC_NHAN_FUNIX_JINEY_WEATHER_20261010.zip appears in four Library locations at 30,097 bytes. This is a tooling carrier already classified by prior byte inspection, not proof of an OpenAI account export.",
+            "No authorized Google Drive, Dropbox, or Takeout provider operation is available in this invocation. No original provider object, revision, raw bytes, or new hash was retrieved."
+          ],
+          "result": "NO_NEW_VERIFIED_RAW_ACCOUNT_EXPORT; LIBRARY_INVENTORY_PARTIAL; SEVERAL_EXISTING_CARRIERS_HAVE_NO_AUTHORIZED_RAW_BYTE_PATH",
+          "next_callable_edge": "Continue exact source retrieval only through an authorized Drive/Dropbox/Takeout provider or a verified raw carrier. Preserve stable provider IDs and hashes; do not substitute same-name tooling archives or infer byte identity from equal sizes.",
+          "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED. No source restored and no task closed."
         }
       ]
     },
@@ -672,6 +686,20 @@
           "result": "DROPBOX_REENTRY_ZIP_EXACT_BYTES_MATCH_LIBRARY_NO_ISSUER_KEY_MARKERS",
           "next_callable_edge": "Continue through authorized issuer-side carrier or GitHub Actions variable control surface; do not invent key material. Do not rerun CI until runner assignment/entitlement change is verified.",
           "status_effect": "Keep TESSERACT Desktop OPEN; key provisioning and current-head CI remain unresolved."
+        },
+        {
+          "observed_at": "2026-10-24T08:28:58+07:00",
+          "source": "Fresh GitHub connector readback: x-time-web PR #6, workflow runs, branch comparison, review comments, and source files",
+          "actions_and_receipts": [
+            "Fresh compare of master to tesseract-desktop-mvp-20261006 reports ahead_by=59, behind_by=0, merge base/base head 1dc5de36bc221d0a17c7601d67e2fe34e673f437, and 12 changed TESSERACT Desktop paths. The compare wrapper did not return the resolved branch head SHA; the old 5312816 checkpoint head is not assumed to be current.",
+            "PR #6 remains OPEN. The known runs associated with checkpoint head 5312816d5fe2b22e92302211b67f916b88a6fe14 are tesseract-desktop-ci #39994207477 and validate-x-time #39994207667; both failed. Build matrix and tesseract_os jobs have failure conclusions with empty step arrays, selfhosted_windows_verify was skipped on pull_request, readback failed, and no artifact was returned. Fetching job logs returned GitHub BlobNotFound 404; therefore source-step failure and current-branch-head CI result are not established.",
+            "Read TESSERACT_DESKTOP/src-tauri/src/kilo.rs: receipt verification requires an Ed25519 public key at compile time from XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64 and fails closed if absent. The workflow reads vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64. Exact GitHub code searches and Library searches found no issuer key carrier; this is a search result, not proof that no authorized issuer-side carrier exists.",
+            "PR comments 6367998091, 6370632166, and 6370647519 report Codex code-review usage limits. The newest returned Codex review reviewed commit 5d0a44bbd0; no fresh review receipt for the current branch head was found.",
+            "The available callable GitHub tools do not expose Actions variable management or hosted-runner entitlement controls. No key was invented, no secret was written, and no CI rerun was triggered without evidence that runner assignment/entitlement changed."
+          ],
+          "result": "TESSERACT_PR_OPEN_BRANCH_SYNCED_59_AHEAD_0_BEHIND; ISSUER_KEY_AND_RUNNER_ENTITLEMENT_UNVERIFIED; CURRENT_HEAD_CI_AND_REVIEW_NOT_VERIFIED",
+          "next_callable_edge": "Use an authorized issuer-side carrier or GitHub Actions variable control surface to obtain/provision the real public key; use the authorized repository/account control surface to verify runner assignment/entitlement. Then identify the exact current PR head, run/read back CI on that SHA, obtain a fresh review, and only then consider merge.",
+          "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED. CI failure/absence of logs, branch synchronization, or review-limit notices do not close the task."
         }
       ]
     },
