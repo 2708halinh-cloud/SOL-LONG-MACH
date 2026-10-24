@@ -2297,6 +2297,45 @@
       "github_export": false,
       "host_minus_device_seconds": 310.9,
       "w32time": "Stopped/Manual"
+    },
+    "github_actions_continuation_40028802500": {
+      "observed_at": "2026-10-24T04:44:30+07:00",
+      "run_id": 40028802500,
+      "head_sha": "fccfd8ea809bf8e75ef5a1a77b4ad09677e4d3eb",
+      "continuation_artifact_id": 12534146778,
+      "continuation_zip_sha256": "2e2bde74632f6187dca3d0526074e1e419fa06ec785065b463220a0e104762a3",
+      "continuation_json_sha256": "abdf1ac89caedc99d4e61dcba6a65a0070d7973671d89bd7ad08c7c0f5922148",
+      "hellocheck_artifact_id": 12534540169,
+      "hellocheck_zip_sha256": "d80e4f21514bf217984779149117bac7c5ee294e309c88fa5171e97478f6d1f5",
+      "hellocheck_embedded_sha256s_match": true,
+      "open_task_count": 28,
+      "task_statuses_unchanged": true,
+      "task_closure": false
+    },
+    "timestamp_correction_c1a1f482": {
+      "observed_at": "2026-10-24T04:46:45+07:00",
+      "commit_sha": "c1a1f4822c27c166731c0b7c4ec6dfff9475b63f",
+      "provider_time_anchor_utc": "2026-10-23T21:46:44Z",
+      "corrected_prior_event_id": "PR24_LATEST_HEAD_CI_ARTIFACT_AND_LEDGER_TIMESTAMP_AUDIT_20261024T044430Z",
+      "future_stamp_classification_superseded": true,
+      "prior_records_rewritten": false
+    },
+    "library_raw_export_probe_20261024": {
+      "observed_at": "2026-10-24T09:39:44+07:00",
+      "result": "NO_NEW_RAW_EXPORT_BYTES",
+      "raw_bytes_materialized": false,
+      "provider_object_or_revision_readback": false,
+      "source_or_destination_mutated": false
+    },
+    "pr24_current_main_divergence_20261024": {
+      "observed_at": "2026-10-24T09:39:44+07:00",
+      "main_head": "996143f37522a66747e68f015494109df9f3fe36",
+      "pr_head": "13d1b61b2071604bdc2892732179defa4dc3fef0",
+      "ahead_by": 21,
+      "behind_by": 59,
+      "mergeable": false,
+      "replacement_patch_required": true,
+      "task_closure": false
     }
   },
   "sinks": {
@@ -4456,6 +4495,908 @@
       "source_mutated": false,
       "credentials_committed": false,
       "open_tasks_closed": false
+    },
+    {
+      "id": "PR24_CURRENT_MAIN_RECONCILIATION_20261023201537Z",
+      "kind": "OPEN_ROUTING_FIX_RECONCILED_TO_CURRENT_MAIN",
+      "observed_at": "2026-10-24T03:15:37+07:00",
+      "source": "Fresh authenticated GitHub readback of main, PR #24, source files and re-entry guards",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "3d754f86e0e1c017b8f32b0088a476ae682928a8",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_append": "79f9355e32f0dab47da0935e8321922d875083d0",
+        ".github/workflows/windows-survival-cloud-continuity.yml_branch": "cb1a8fa79a1ba306f0a7b442838e45d4b248b1af",
+        "runtime/cloud_survival_scheduler.py_branch": "fe99f77fa6eb540712c3754cc3f9d46153d3eeea",
+        "tests/test_cloud_survival_scheduler.py_branch": "be2f795c605010a615d08704c8456e1596b98eb5"
+      },
+      "github": {
+        "main_head_before": "9335dcc5668300ba538b6872c91a6a4dcfd797a9",
+        "main_tree": "8eeb125938c14c68d8c3049c74e791e788a31243",
+        "pr_number": 24,
+        "pr_old_head": "4e63d66b9f05cb3c2f15510b9f3555acee23350b",
+        "pr_old_base": "7865af82a46efe220630b0a0a82a60e70d1b53de",
+        "compare_status": "diverged",
+        "ahead_by": 4,
+        "behind_by": 23,
+        "previous_pr_mergeable": false,
+        "branch_ref_verified_equal_to_pr_head": true
+      },
+      "action": {
+        "merge_commit_parent_order": [
+          "current_main_first_parent",
+          "previous_pr_head_second_parent"
+        ],
+        "tree_base": "current main tree",
+        "carried_changes": [
+          "workflow adds pull_request path trigger including .gitmodules",
+          "scheduler validates assigned agent on every non-empty ledger rather than only at 27+ tasks",
+          "tests cover small-ledger rejection and configured submodule paths matching tracked Gitlinks"
+        ],
+        "ledger_policy": "preserve current main ledger and append this event; do not copy stale PR ledger",
+        "force_push": false
+      },
+      "result": "RECONCILIATION_COMMIT_CREATED_WITH_CURRENT_MAIN_LEDGER; CI_PENDING",
+      "next_callable_edge": "Read back updated PR head and ancestry, inspect PR-triggered CI and exact job steps/logs; keep PR open and all source tasks open.",
+      "invariants": {
+        "task_count": 28,
+        "task_ids_unchanged": true,
+        "task_statuses_unchanged": true,
+        "task_real_execution_statuses_unchanged": true,
+        "task_closure": false,
+        "windows_disk_cleanup_performed": false,
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "original_export_bytes_retrieved": false
+      }
+    },
+    {
+      "id": "PR24_CI_READBACK_20261023201749Z",
+      "kind": "PR24_CURRENT_HEAD_CLOUD_CI_AND_ARTIFACT_READBACK",
+      "observed_at": "2026-10-24T03:17:49+07:00",
+      "source": "Direct GitHub Actions job-step/log/artifact readback for exact PR branch head",
+      "source_reads": {
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_append": "a9cd526f1647edcc73500f61a267bcb28b693425",
+        "PR24_head": "e6e599af1d9cfd7b89e6d755ae093d83890cf3f1",
+        "PR24_commit_tree": "b1e4603811ca5cb0cececae40e71f8f6a542d1d6"
+      },
+      "github": {
+        "pr_number": 24,
+        "head_sha": "e6e599af1d9cfd7b89e6d755ae093d83890cf3f1",
+        "main_head_at_comparison": "9335dcc5668300ba538b6872c91a6a4dcfd797a9",
+        "compare_status": "ahead",
+        "ahead_by": 5,
+        "behind_by": 0,
+        "mergeable": true,
+        "draft": true,
+        "merged": false
+      },
+      "ci": {
+        "continuation_run_id": 40017868019,
+        "continuation_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40017868019",
+        "continuation_conclusion": "success",
+        "secret_guard_run_id": 40017868008,
+        "secret_guard_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40017868008",
+        "secret_guard_conclusion": "success",
+        "continuation_tests": {
+          "open_scheduler_tests": "9/9",
+          "hellohabit_adapter_tests": "4/4",
+          "hellocheck_go_tests": "11/11",
+          "go_vet": true,
+          "linux_windows_build": true,
+          "gitmodules_vs_gitlinks": true,
+          "cloud_actions_passed": [
+            "ER_SQL_SCHEMA",
+            "HELLOCHECK_GO_TESTNET_SOURCE",
+            "R014_RESPONSE_REGRESSION",
+            "T005_HELLOHABIT_ANDROID",
+            "THIT_THO_CONTRACTS"
+          ]
+        },
+        "artifact": {
+          "id": 12528643556,
+          "name": "windows-survival-open-continuation",
+          "zip_bytes": 3849,
+          "zip_sha256": "e5159251fed80360b368ce7b847103be0f71491c3976043d0751bf033ee44942",
+          "member": "SURVIVAL_OPEN_CONTINUATION_CURRENT.json",
+          "member_bytes": 20759,
+          "member_sha256": "8650c31da6339a2e2993bc8b0f2fc1b6c87c719c6ccbb242c513a553860d4771",
+          "open_tasks_carried_forward": 28,
+          "no_source_tasks_closed": true,
+          "all_objectives_completed": false,
+          "windows_disk_cleanup_performed": false,
+          "windows_host_actions_blocked": true,
+          "bitcoin_testnet_broadcast": false
+        }
+      },
+      "result": "PR24_CLOUD_CI_AND_SECRET_GUARD_PASS; NO_SOURCE_TASK_CLOSED",
+      "next_callable_edge": "Continue source-bound open edges; original JINEY/FUNIX/DAT NGUYEN export bytes still require a provider read; keep PR draft until review.",
+      "invariants": {
+        "task_count": 28,
+        "task_ids_unchanged": true,
+        "task_statuses_unchanged": true,
+        "task_real_execution_statuses_unchanged": true,
+        "task_closure": false,
+        "original_export_bytes_retrieved": false,
+        "windows_disk_cleanup_performed": false,
+        "credentials_committed": false,
+        "raw_sensor_rows_committed": false
+      }
+    },
+    {
+      "id": "OPEN_NEXT_READBACK_AND_PR24_SYNC_20261024T042835Z",
+      "record_type": "OPEN_NEXT_READBACK_AND_PR24_SYNC",
+      "observed_at": "2026-10-24T04:28:35+07:00",
+      "source": "Authenticated GitHub connector readback + ChatGPT Library metadata inventory",
+      "source_reads": {
+        "main_head_before_sync": "15ac59ec9385c25ad1f4de04122782631ba2e375",
+        "pr24_head_before_sync": "7dbb179560962b688a9842c39356bb821c017044",
+        "main_ledger_blob_before_sync": "b78971f07f804802999e12d620a25bc33e0402e2",
+        "branch_ledger_blob_before_sync": "78c8f204b32c0c2d2068006a303d255f0162f2a3",
+        "admin_library_id": "libfile_d18e6db946b88191b31e948ed283598c",
+        "source_trace_library_id": "libfile_2a8aab4df2908191bf962aa563657b7e"
+      },
+      "pr24_sync": {
+        "merge_commit": "f146aae9d9da600587525f2dcdfe0a0f32057953",
+        "parents": [
+          "7dbb179560962b688a9842c39356bb821c017044",
+          "15ac59ec9385c25ad1f4de04122782631ba2e375"
+        ],
+        "compare_status": "ahead",
+        "ahead_by": 7,
+        "behind_by": 0,
+        "mergeable": true,
+        "draft": true,
+        "merged": false,
+        "force_push": false
+      },
+      "code_readback": {
+        "pull_request_trigger": true,
+        "scheduler_checks_any_nonempty_ledger": true,
+        "fixed_27_task_threshold_removed": true,
+        "small_ledger_regression_test_present": true,
+        "gitmodules_gitlink_regression_test_present": true
+      },
+      "memory_archive_inventory": {
+        "target_folder": "/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL",
+        "visible_direct_items": [
+          "ADMIN_PORTABLE_20261023.zip",
+          "R014_DAU_KHO_HANH_PHUC_TIN_HIEU_GOC_20261023.md"
+        ],
+        "target_folder_archive_listing": [
+          "ADMIN_PORTABLE_20261023.zip"
+        ],
+        "global_library_archive_pages": 3,
+        "visible_archive_items": 253,
+        "traversal_warning": true,
+        "raw_export_candidate_found": false,
+        "provider_readback": {
+          "google_drive": false,
+          "dropbox": false,
+          "takeout": false,
+          "reason": "No callable Drive/Dropbox/Takeout source action exposed in this session."
+        },
+        "source_identity_preserved": true,
+        "admin_folder_moved_or_duplicated": false
+      },
+      "tesseract_desktop": {
+        "pr_number": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "state": "OPEN",
+        "mergeable": true,
+        "merged": false,
+        "workflow_runs": [
+          {
+            "id": 39994207477,
+            "conclusion": "failure",
+            "steps": [],
+            "logs": "BlobNotFound"
+          },
+          {
+            "id": 39994207667,
+            "conclusion": "failure",
+            "steps": [],
+            "logs": "BlobNotFound"
+          }
+        ],
+        "issuer_public_key_found": false,
+        "runner_assignment_change_verified": false,
+        "rerun_performed": false
+      },
+      "ledger_invariants": {
+        "task_count": 28,
+        "status_counts": {
+          "OPEN": 9,
+          "OPEN_CARRIED": 2,
+          "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+          "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+          "IN_PROGRESS": 3
+        },
+        "task_ids_unchanged": true,
+        "task_statuses_unchanged": true,
+        "task_real_execution_statuses_unchanged": true,
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false
+      },
+      "result": "PR24_DIVERGENCE_RESOLVED_WITH_HISTORY_PRESERVED; ORIGINAL_JINEY_FUNIX_DAT_EXPORT_BYTES_NOT_RETRIEVED",
+      "next_callable_edge": "Continue independent OPEN edges. Retrieve JINEY/FUNIX/DAT NGUYEN original export bytes only through an actually authorized provider connector or verified raw carrier. Keep PR #24 Draft. For TESSERACT Desktop, obtain the real issuer public key and verify runner assignment/entitlement through an authorized control surface before any CI rerun.",
+      "task_closure": false
+    },
+    {
+      "id": "PR24_POST_SYNC_CI_ARTIFACT_READBACK_20261023T213605Z",
+      "record_type": "PR24_POST_SYNC_CI_ARTIFACT_READBACK",
+      "observed_at": "2026-10-24T04:36:05+07:00",
+      "source": "Direct GitHub Actions job/log metadata and downloaded artifact ZIP bytes",
+      "github": {
+        "pr_number": 24,
+        "head_sha": "1fb4aa1c0d377c827be73d1a4911bbea4a8ff3c4",
+        "synthetic_merge_sha": "7e7ded7f91e2ce9599a2aa18a093b2ae94f51740",
+        "synthetic_merge_parents": [
+          "15ac59ec9385c25ad1f4de04122782631ba2e375",
+          "1fb4aa1c0d377c827be73d1a4911bbea4a8ff3c4"
+        ],
+        "continuation_run_id": 40027823965,
+        "continuation_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40027823965",
+        "continuation_conclusion": "success",
+        "secret_guard_run_id": 40027823963,
+        "secret_guard_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40027823963",
+        "secret_guard_conclusion": "success",
+        "runner_job_steps_all_success": true
+      },
+      "artifact": {
+        "id": 12533317850,
+        "name": "windows-survival-open-continuation",
+        "zip_bytes": 3846,
+        "zip_sha256": "1649feac51fdab28a1003b620750e9f47186bc128e24de33ba41ca185abdc926",
+        "crc_test": "PASS",
+        "member": "SURVIVAL_OPEN_CONTINUATION_CURRENT.json",
+        "member_bytes": 20731,
+        "member_sha256": "cddbb2f56de12662f03148d89b7889176cade913ab514b1ed7bd700da8576345",
+        "json_parse": "PASS",
+        "source_task_count": 28,
+        "source_task_states": {
+          "IN_PROGRESS": 3,
+          "OPEN": 9,
+          "OPEN_CARRIED": 2,
+          "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+          "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1
+        },
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "windows_host_actions_blocked": true,
+        "bitcoin_testnet_broadcast": false
+      },
+      "result": "POST_SYNC_CLOUD_CI_AND_ARTIFACT_BYTES_VERIFIED; NO_TASK_CLOSED",
+      "next_callable_edge": "Keep PR #24 Draft pending review. Continue original JINEY/FUNIX/DAT NGUYEN export retrieval through an actually authorized Drive/Dropbox/Takeout connector or verified raw carrier.",
+      "task_closure": false
+    },
+    {
+      "id": "ADMIN_R000_SOURCE_ID_DIVERGENCE_20261024T0440Z",
+      "record_type": "ADMIN_R000_SOURCE_ID_DIVERGENCE_READBACK",
+      "observed_at": "2026-10-24T04:40:00+07:00",
+      "source": "Raw bytes of Library ADMIN_PORTABLE_20261023.zip; embedded SQLite read in memory; MAP_NGUON XIV read directly",
+      "stamp_old": {
+        "archive_source_drive_id": "1L-dPm80fxtYYNglx4ux5L-EhSSgm78xw",
+        "historical_r000_canonical_id_in_R000_MD": "1YSJslORRY9xZ-XBAmYIYeewmaCeoRFbwU_dYxfozx34",
+        "locator_state": "NOT_FOUND_ADMIN_AND_PRIMARY_NOT_RESTORED"
+      },
+      "stamp_live": {
+        "library_file_id": "libfile_d18e6db946b88191b31e948ed283598c",
+        "zip_bytes": 22493275,
+        "zip_sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+        "zip_members": 13,
+        "crc_test": "PASS",
+        "map_nguon_bytes": 99075,
+        "map_nguon_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+        "map_nguon_section_xiv_lines": "1067-1127",
+        "sqlite_bytes": 73379840,
+        "sqlite_sha256": "fee9f3ee6a1df62991c48405e3e20c2552d284f70ef6e198df1c6453e910433a",
+        "sqlite_integrity_check": "ok",
+        "counts": {
+          "conversations": 136,
+          "nodes": 18790,
+          "searchable_messages": 10943,
+          "source_texts": 2
+        },
+        "fts_query": "lương tâm",
+        "fts_matches": [
+          {
+            "file_name": "MAP_NGUON.md",
+            "drive_id": "1rcRPnoBtErA634J1jfHkjZp8oTmc3HuN",
+            "bytes": 99075,
+            "sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45"
+          },
+          {
+            "file_name": "R-000_MASTER_R-000.md",
+            "drive_id": "1FhGGhcC0JluRTOE7mxlsLo72ukr3tpvD",
+            "bytes": 64173,
+            "sha256": "631e3171523d717ecf201b37648a4888afda4556331b47c03c81a345677b0ebe"
+          }
+        ],
+        "source_provenance_r000_pdf": {
+          "file_name": "R-000 — SỰ THẬT — BẢN HIỆN HÀNH DUY NHẤT.pdf",
+          "drive_id": "1_AqZO_PR_YFaj0PHW6L2lt809UZUXjNo",
+          "bytes": 175614,
+          "sha256": "8296d07b6f9476b3df25df6c0d1bfe2e5d6c0d8aba00d2d400ff608db4960d0a"
+        }
+      },
+      "stamp_beta": {
+        "possible_relation_between_r000_ids": "UNVERIFIED; DO_NOT_ALIAS",
+        "note": "The R-000 Markdown points to historical ID 1YSJ..., while SOURCE_PROVENANCE lists the included canonical-named PDF under 1_AqZO...; no current Drive object/revision readback proves these IDs identical."
+      },
+      "result": "ADMIN_BYTES_AND_FTS_VERIFIED; R000_CANONICAL_SOURCE_ID_RELATION_REQUIRES_PROVIDER_READBACK",
+      "next_callable_edge": "Through an authorized Google Drive provider, read metadata/content for both IDs 1YSJslORRY9xZ-XBAmYIYeewmaCeoRFbwU_dYxfozx34 and 1_AqZO_PR_YFaj0PHW6L2lt809UZUXjNo, compare revisions and hashes, preserve both identities, and correct only the exact locator after target readback. No Drive provider action is exposed in this run.",
+      "task_effect": {
+        "task_id": "SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+        "status_remains": "OPEN",
+        "real_execution_status_remains": "OPEN_NOT_PROVEN_COMPLETED",
+        "task_closure": false
+      }
+    },
+    {
+      "id": "PR24_SECOND_MAIN_SYNC_20261024T044130Z",
+      "record_type": "PR24_SECOND_MAIN_SYNC_READBACK",
+      "observed_at": "2026-10-24T04:41:30+07:00",
+      "source": "Fresh GitHub compare and exact Git commit/tree readback",
+      "previous_main_head": "59c93b310f7fda7c76eb0a48b08f9a80132c0764",
+      "previous_pr_head": "a53d0642d7fc619b4087f6ef0a7355d79d16b6d1",
+      "merge_commit": "96573ff2dee3f4e946fb971e4ecece82dd92c1c1",
+      "merge_parents": [
+        "a53d0642d7fc619b4087f6ef0a7355d79d16b6d1",
+        "59c93b310f7fda7c76eb0a48b08f9a80132c0764"
+      ],
+      "compare_after": {
+        "status": "ahead",
+        "ahead_by": 12,
+        "behind_by": 0
+      },
+      "pr_after": {
+        "state": "OPEN",
+        "draft": true,
+        "merged": false,
+        "mergeable": true
+      },
+      "code_preserved": [
+        "pull_request workflow trigger",
+        "scheduler validates every nonempty ledger",
+        "small-ledger regression test",
+        "gitmodules/Gitlink regression test"
+      ],
+      "ledger_invariants": {
+        "task_count": 28,
+        "task_ids_unchanged": true,
+        "task_statuses_unchanged": true,
+        "task_real_execution_statuses_unchanged": true,
+        "task_closure": false
+      },
+      "result": "MAIN_ADVANCE_RECONCILED_WITH_TWO_PARENT_MERGE; OPEN_LEDGER_PRESERVED",
+      "next_callable_edge": "Keep PR #24 Draft. Continue source-bound provider tasks; do not close tasks from the merge or CI.",
+      "force_push": false,
+      "task_closure": false
+    },
+    {
+      "id": "PR24_SECOND_SYNC_CI_ARTIFACT_READBACK_20261023T214220Z",
+      "record_type": "PR24_SECOND_SYNC_CI_ARTIFACT_READBACK",
+      "observed_at": "2026-10-24T04:42:20+07:00",
+      "source": "GitHub Actions step-level readback plus downloaded artifact ZIP/JSON byte validation",
+      "github": {
+        "pr_number": 24,
+        "head_sha": "96573ff2dee3f4e946fb971e4ecece82dd92c1c1",
+        "synthetic_merge_sha": "6b1c704c71fe2514daec69feebcfc7525261ccf5",
+        "synthetic_merge_parents": [
+          "59c93b310f7fda7c76eb0a48b08f9a80132c0764",
+          "96573ff2dee3f4e946fb971e4ecece82dd92c1c1"
+        ],
+        "continuation_run_id": 40028604391,
+        "continuation_conclusion": "success",
+        "secret_guard_run_id": 40028604374,
+        "secret_guard_conclusion": "success",
+        "continuation_guard_run_id": 40028599241,
+        "continuation_guard_conclusion": "success",
+        "push_secret_guard_run_id": 40028599246,
+        "push_secret_guard_conclusion": "success"
+      },
+      "artifact": {
+        "id": 12532814066,
+        "name": "windows-survival-open-continuation",
+        "zip_bytes": 3847,
+        "zip_sha256": "af3407d29e684d710a86a1bffb0866479f26242d017b2d1f6e7898c2c80d00c6",
+        "crc_test": "PASS",
+        "member": "SURVIVAL_OPEN_CONTINUATION_CURRENT.json",
+        "member_bytes": 20726,
+        "member_sha256": "3ec8bd061205ba9217c4c8111b45a7d1ba8fcdc12e3db189efa00828f2782abe",
+        "json_parse": "PASS",
+        "source_task_count": 28,
+        "source_task_states": {
+          "IN_PROGRESS": 3,
+          "OPEN": 9,
+          "OPEN_CARRIED": 2,
+          "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+          "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1
+        },
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "windows_host_actions_blocked": true,
+        "bitcoin_testnet_broadcast": false
+      },
+      "result": "SECOND_SYNC_CLOUD_CI_AND_ARTIFACT_BYTES_VERIFIED; NO_TASK_CLOSED",
+      "next_callable_edge": "Do not infer Windows recovery, TestNet broadcast, or original export restoration from cloud CI. Keep original export retrieval and R-000 provider ID relation OPEN.",
+      "task_closure": false
+    },
+    {
+      "id": "PR24_LATEST_HEAD_CI_ARTIFACT_AND_LEDGER_TIMESTAMP_AUDIT_20261024T044430Z",
+      "record_type": "PR24_LATEST_HEAD_CI_ARTIFACT_AND_LEDGER_TIMESTAMP_AUDIT",
+      "observed_at": "2026-10-24T04:44:30+07:00",
+      "source": "GitHub Actions run metadata, job readback, downloaded artifact ZIP bytes, and current branch ledger readback",
+      "github": {
+        "repo": "2708halinh-cloud/SOL-LONG-MACH",
+        "pr_number": 24,
+        "head_sha": "fccfd8ea809bf8e75ef5a1a77b4ad09677e4d3eb",
+        "base_sha": "59c93b310f7fda7c76eb0a48b08f9a80132c0764",
+        "continuation_run_id": 40028802500,
+        "continuation_conclusion": "success",
+        "secret_guard_run_id": 40028802537,
+        "secret_guard_conclusion": "success",
+        "event": "pull_request"
+      },
+      "continuation_artifact": {
+        "id": 12534146778,
+        "name": "windows-survival-open-continuation",
+        "zip_bytes": 3848,
+        "zip_sha256": "2e2bde74632f6187dca3d0526074e1e419fa06ec785065b463220a0e104762a3",
+        "crc_test": "PASS",
+        "member": "SURVIVAL_OPEN_CONTINUATION_CURRENT.json",
+        "member_bytes": 20759,
+        "member_sha256": "abdf1ac89caedc99d4e61dcba6a65a0070d7973671d89bd7ad08c7c0f5922148",
+        "json_parse": "PASS",
+        "execution_commit_sha": "8e770a11351517dec11da5be328ba2d6e2439b65",
+        "source_task_count": 28,
+        "source_task_states": {
+          "OPEN": 9,
+          "OPEN_CARRIED": 2,
+          "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+          "OPEN_CONSUMER_TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+          "IN_PROGRESS": 3
+        },
+        "all_cloud_actions_passed": true,
+        "no_source_tasks_closed": true,
+        "all_objectives_completed": false,
+        "host_os_disk_modified": false,
+        "windows_host_actions_blocked": true,
+        "bitcoin_testnet_broadcast": false
+      },
+      "hellocheck_artifact": {
+        "id": 12534540169,
+        "name": "hellocheck-offline-linux-windows-amd64",
+        "zip_bytes": 5996904,
+        "zip_sha256": "d80e4f21514bf217984779149117bac7c5ee294e309c88fa5171e97478f6d1f5",
+        "crc_test": "PASS",
+        "members": [
+          "SHA256SUMS",
+          "hellocheck-linux-amd64",
+          "hellocheck-windows-amd64.exe"
+        ],
+        "embedded_sha256_checks": {
+          "hellocheck-linux-amd64": "7cad2479bdf877e42830bd142e85905b36fa35027c2351671c0a5909ad2d0b47",
+          "hellocheck-windows-amd64.exe": "0c636362b1bb32b387b967ccb680b2635c49c4ccc39b576b30507e5c4bb7339d"
+        },
+        "sha256sum_matches": true,
+        "live_testnet_utxo_or_broadcast_verified": false
+      },
+      "tests": {
+        "r014_response_regression": "PASS; 36 tests",
+        "hellocheck_go_compile_and_tests": "PASS; workflow step succeeded",
+        "er_sql_schema": "PASS; 12 tables found",
+        "hellohabit_t005_adapter": "PASS; app installation and real habit-data sync not proven"
+      },
+      "timestamp_anomaly": {
+        "source_record_id": "ADMIN_R000_ID_ROLE_CORRECTION_20261024T0445Z",
+        "source_record_observed_at": "2026-10-24T04:45:00+07:00",
+        "current_runtime_observed_at": "2026-10-24T04:44:30+07:00",
+        "delta_seconds": 30,
+        "classification": "FUTURE_STAMP_RELATIVE_TO_THIS_RUNTIME_READBACK; NOT_ACCEPTED_AS_STAMP_LIVE_IN_THIS_TURN",
+        "prior_record_preserved": true,
+        "archive_payload_revalidated_in_this_turn": false,
+        "action": "Preserve the prior record without rewriting it; require a later source-bound readback before treating its timestamp as a live event."
+      },
+      "result": "LATEST_CLOUD_CI_AND_ARTIFACT_BYTES_VERIFIED; LEDGER_TIMESTAMP_ANOMALY_FLAGGED; ORIGINAL_EXPORT_RETRIEVAL_AND_LIVE_DEVICE_EDGES_STILL_OPEN",
+      "next_callable_edge": "Keep source-export recovery and R-000 provider relation open until an authorized Drive/Dropbox/Takeout readback exists; keep TestNet UTXO/broadcast and live sensor stream unverified; do not rerun TESSERACT Desktop CI without a verified runner-assignment/entitlement change.",
+      "task_closure": false,
+      "prior_entry_policy": "Append-only; preserve all existing task states, prior events, and source identities."
+    },
+    {
+      "id": "ADMIN_R000_ID_ROLE_CORRECTION_20261024T0445Z",
+      "record_type": "ADMIN_R000_ID_ROLE_CORRECTION_APPEND_ONLY",
+      "observed_at": "2026-10-24T04:45:00+07:00",
+      "supersedes_event_id": "ADMIN_R000_SOURCE_ID_DIVERGENCE_20261024T0440Z",
+      "source_reads": {
+        "CURRENT_RUNTIME/R-000_CURRENT.md": "a087257ce475a18848342eab481c8ae47bc402e7",
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "ADMIN_PORTABLE_20261023.zip": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b"
+      },
+      "correction": {
+        "prior_classification": "The previous event called 1YSJ... historical based on the embedded archive locator.",
+        "verified_repo_roles": {
+          "AGENTS.md:R000_SOURCE_ID": "1D9OwoqTIxqg3iCmCi8htsSWpES0yRHOvfC4c4vpCkNE",
+          "AGENTS.md:CURRENT_R000_OPERATIONAL_MIRROR_DRIVE_ID": "1YSJslORRY9xZ-XBAmYIYeewmaCeoRFbwU_dYxfozx34",
+          "CURRENT_RUNTIME/R-000_CURRENT.md:CANONICAL_DRIVE_ID": "1YSJslORRY9xZ-XBAmYIYeewmaCeoRFbwU_dYxfozx34"
+        },
+        "embedded_archive_roles": {
+          "SOURCE_PROVENANCE.json:R-000 PDF drive_id": "1_AqZO_PR_YFaj0PHW6L2lt809UZUXjNo",
+          "source_carrier_locator:R-000 canonical ID historical": "1YSJslORRY9xZ-XBAmYIYeewmaCeoRFbwU_dYxfozx34",
+          "source_carrier_locator state": "NOT_FOUND_ADMIN_AND_PRIMARY_NOT_RESTORED"
+        },
+        "corrected_interpretation": "1YSJ... is still the repository's current operational-mirror/canonical pointer; its provider existence is not verified in this run. 1D9O... is separately labeled R000_SOURCE_ID. 1_AqZO... is the PDF carrier included in ADMIN. The three IDs have distinct recorded roles and must not be aliased or substituted without provider-side identity/revision/hash readback.",
+        "no_retroactive_rewrite": true
+      },
+      "result": "R000_SOURCE_ROOT_MIRROR_AND_ARCHIVE_PDF_IDS_DISTINGUISHED; PROVIDER_RELATION_UNVERIFIED",
+      "next_callable_edge": "With an authorized Drive connector, read provider metadata for 1D9OwoqTIxqg3iCmCi8htsSWpES0yRHOvfC4c4vpCkNE, 1YSJslORRY9xZ-XBAmYIYeewmaCeoRFbwU_dYxfozx34, and 1_AqZO_PR_YFaj0PHW6L2lt809UZUXjNo. Compare actual names, parent IDs, revisions and byte hashes; only then correct the locator. Preserve the existing ADMIN archive and extracted folder.",
+      "task_effect": {
+        "task_id": "SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+        "status_remains": "OPEN",
+        "real_execution_status_remains": "OPEN_NOT_PROVEN_COMPLETED",
+        "task_closure": false
+      }
+    },
+    {
+      "id": "LEDGER_STAMP_TIMEBASE_CORRECTION_20261024T044645Z",
+      "record_type": "STAMP_TIMEBASE_CORRECTION_APPEND_ONLY",
+      "observed_at": "2026-10-24T04:46:45+07:00",
+      "source": "GitHub commit API for c1a1f4822c27c166731c0b7c4ec6dfff9475b63f and PR #24 updated_at readback",
+      "time_anchor": {
+        "commit_sha": "c1a1f4822c27c166731c0b7c4ec6dfff9475b63f",
+        "commit_author_date_utc": "2026-10-23T21:46:44Z",
+        "commit_committer_date_utc": "2026-10-23T21:46:44Z",
+        "pr_updated_at_utc": "2026-10-23T21:46:45Z",
+        "equivalent_local_time": "2026-10-24T04:46:44+07:00"
+      },
+      "correction": {
+        "prior_event_id": "PR24_LATEST_HEAD_CI_ARTIFACT_AND_LEDGER_TIMESTAMP_AUDIT_20261024T044430Z",
+        "prior_observed_at": "2026-10-24T04:44:30+07:00",
+        "finding": "The automation runtime clock supplied for this turn lagged the actual GitHub write/readback time. The event's 04:44:30 stamp precedes the commit containing it and must not be treated as the exact completion time of the ledger write.",
+        "earlier_record_id": "ADMIN_R000_ID_ROLE_CORRECTION_20261024T0445Z",
+        "earlier_record_observed_at": "2026-10-24T04:45:00+07:00",
+        "corrected_interpretation": "At the provider-anchored commit time 04:46:44+07, the 04:45 record was already in the past. The earlier 'future stamp' classification was a false positive caused by using the stale automation clock as the time anchor. Its payload was not revalidated in this correction; only its timestamp ordering is corrected.",
+        "preserve_prior_records": true,
+        "no_retroactive_rewrite": true
+      },
+      "result": "TIMEBASE_CORRECTION_APPEND_ONLY; FUTURE_STAMP_FLAG_SUPERSEDED_BY_PROVIDER_TIME_ANCHOR",
+      "task_effect": {
+        "task_count": 28,
+        "task_statuses_changed": false,
+        "task_closure": false,
+        "source_export_retrieval_completed": false,
+        "windows_host_action_performed": false,
+        "bitcoin_testnet_broadcast": false
+      },
+      "next_callable_edge": "Use provider timestamps from exact readbacks as the live time anchor; keep original export retrieval, R-000 provider identity relation, live sensor stream and TestNet readback open.",
+      "prior_entry_policy": "Append-only; previous records remain intact and this entry corrects their temporal interpretation without changing their bytes."
+    },
+    {
+      "id": "PR24_CURRENT_MAIN_RECONCILIATION_20261024T062425Z",
+      "kind": "OPEN_ROUTING_PR_RECONCILED_TO_LATEST_MAIN",
+      "observed_at": "2026-10-24T06:24:25+07:00",
+      "source": "Fresh authenticated GitHub API readback of main/PR refs, compare endpoint, workflow run and exact file blobs",
+      "source_reads": {
+        "main_ledger_before": "367588274da8e4d345d4b40ef08a9da5d9c6efd3",
+        "pr_ledger_before": "cf336c744e0354ef83e3e7b1c8128299e246523b",
+        "workflow_main": "044b4e73123af4772b995b410b3a79e847be7e03",
+        "scheduler_main": "6727e7b33f77e1b34c5d03ac49187466e55f868c",
+        "tests_main": "2c1b9477bbff08428c3ba57411275a02a2e84e4b"
+      },
+      "github": {
+        "main_head_before": "af91fcf208064aab8f1221aab0144dd1b77003a7",
+        "prior_pr_head": "2fa524bd5aca06a75acad39df7948159401f1f9e",
+        "compare_status": "diverged",
+        "ahead_by": 15,
+        "behind_by": 12,
+        "mergeable_before": false,
+        "previous_run": {
+          "id": 40029286922,
+          "conclusion": "success",
+          "head_sha": "2fa524bd5aca06a75acad39df7948159401f1f9e",
+          "artifact_ids": [
+            12534825153,
+            12534037798
+          ]
+        },
+        "previous_run_scope": "successful validation of old PR head only; not current-head CI proof"
+      },
+      "action": {
+        "merge_parent_order": [
+          "current main first parent",
+          "previous PR head second parent"
+        ],
+        "tree_base": "current main tree",
+        "carried_changes": [
+          "Add pull_request path trigger to windows-survival-cloud-continuity workflow, including .gitmodules",
+          "Validate every non-empty ledger instead of using a fixed 27-task threshold",
+          "Retain small-ledger and .gitmodules/Gitlink regression tests"
+        ],
+        "ledger_merge_policy": "Current main remains authoritative for task status, real_execution_status and next routes. Append branch-only live_progress, session receipts and verified action events; preserve main-only provider observations. No task state is copied backward from the stale PR branch.",
+        "force_push": false
+      },
+      "reconciliation_counts": {
+        "tasks": 28,
+        "task_live_progress_entries_appended": 4,
+        "session_receipts_appended": 2,
+        "verified_action_events_appended": 10,
+        "provider_observation_history_appended": 0
+      },
+      "invariants": {
+        "task_ids_unchanged": true,
+        "task_statuses_unchanged": true,
+        "task_real_execution_statuses_unchanged": true,
+        "task_closure": false,
+        "private_chat_payloads_added": false,
+        "credentials_added": false,
+        "windows_host_touched": false,
+        "windows_disk_modified": false
+      },
+      "result": "MERGE_TREE_PREPARED; PROVIDER_READBACK_PENDING",
+      "status_effect": "No task statuses changed; no task closed."
+    },
+    {
+      "id": "PR24_RECONCILIATION_READBACK_20261024T062425Z",
+      "kind": "OPEN_ROUTING_PR_RECONCILIATION_PROVIDER_READBACK",
+      "observed_at": "2026-10-24T06:24:25+07:00",
+      "observed_at_utc": "2026-10-23T23:24:25Z",
+      "source": "Fresh authenticated GitHub ref, PR, compare, workflow, scheduler and ledger readbacks after non-force merge",
+      "provider_readback": {
+        "main_ref_sha": "af91fcf208064aab8f1221aab0144dd1b77003a7",
+        "pr_branch_ref_sha": "04e72812231d8545317ac84e033e4d077b3a08b3",
+        "merge_commit_sha": "04e72812231d8545317ac84e033e4d077b3a08b3",
+        "merge_commit_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/commit/04e72812231d8545317ac84e033e4d077b3a08b3",
+        "parent_order": [
+          "af91fcf208064aab8f1221aab0144dd1b77003a7",
+          "2fa524bd5aca06a75acad39df7948159401f1f9e"
+        ],
+        "compare": {
+          "status": "ahead",
+          "ahead_by": 16,
+          "behind_by": 0
+        },
+        "pr": {
+          "number": 24,
+          "state": "open",
+          "draft": true,
+          "merged": false,
+          "mergeable": true,
+          "mergeable_state": "unstable"
+        },
+        "current_head_runs": [
+          {
+            "id": 40039799971,
+            "name": "Windows survival - independent OPEN continuation",
+            "status": "queued"
+          },
+          {
+            "id": 40039799991,
+            "name": "High-Threshold Secret Exposure Guard",
+            "status": "queued"
+          }
+        ]
+      },
+      "source_blobs": {
+        "ledger_before_readback": "f25ab1df0a940a2b433fb32cdf583b6406329de6",
+        "workflow": "cb1a8fa79a1ba306f0a7b442838e45d4b248b1af",
+        "scheduler": "fe99f77fa6eb540712c3754cc3f9d46153d3eeea",
+        "tests": "be2f795c605010a615d08704c8456e1596b98eb5"
+      },
+      "invariants": {
+        "task_count": 28,
+        "task_ids_unchanged": true,
+        "task_statuses_unchanged": true,
+        "task_real_execution_statuses_unchanged": true,
+        "task_closure": false,
+        "force_push": false,
+        "windows_host_touched": false,
+        "windows_disk_modified": false,
+        "private_chat_payloads_added": false,
+        "credentials_added": false
+      },
+      "result": "MERGE_COMMIT_READ_BACK; PR_AHEAD_16_BEHIND_0; CURRENT_HEAD_CI_QUEUED",
+      "status_effect": "No task was closed or marked complete. CI is pending validation only."
+    },
+    {
+      "id": "ADMIN_MAP_XIV_AND_IDENTITY_ANCHOR_BYTE_READBACK_20261024",
+      "kind": "LIBRARY_ARCHIVE_BYTE_READBACK_AND_RAW_EXPORT_CARRIER_CLASSIFICATION",
+      "observed_at": "2026-10-24",
+      "time_precision": "DATE_ONLY",
+      "source": "Authenticated ChatGPT Library file listing and raw-file materialization; ZIP/CRC/hash/SQLite checks performed locally without source mutation",
+      "evidence": {
+        "admin_zip": {
+          "library_file_id": "libfile_d18e6db946b88191b31e948ed283598c",
+          "version": 3,
+          "size_bytes": 22493275,
+          "sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+          "zip_members": 13,
+          "crc_test": "PASS",
+          "sqlite_integrity": "ok",
+          "conversations": 136,
+          "nodes": 18790,
+          "searchable_messages": 10943,
+          "map_ngon_bytes": 99075,
+          "map_ngon_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+          "xvi_luong_tam_lines": "1067-1127"
+        },
+        "identity_anchor": {
+          "library_file_id": "libfile_305e43b7cb68819185e3df84ad1855b6",
+          "version": 1,
+          "size_bytes": 10250,
+          "sha256": "17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93",
+          "zip_members": 7,
+          "crc_test": "PASS",
+          "raw_export_signature_members": [],
+          "all_requirements_currently_met": false,
+          "proof_criteria": 8,
+          "proof_criteria_done": 0,
+          "sol_raw_event_verified": false,
+          "minh_raw_chat_repository_path": null,
+          "funix_live_folder_read": false
+        },
+        "library_inventory": {
+          "archive_items_seen": 253,
+          "pages": 3,
+          "recursive_traversal_warning": true,
+          "visible_name_candidates": 5,
+          "original_openai_raw_export_found": false
+        }
+      },
+      "source_boundary": {
+        "provider_drive_read_this_run": false,
+        "provider_dropbox_read_this_run": false,
+        "provider_takeout_read_this_run": false,
+        "library_read_only": true,
+        "admin_moved_or_duplicated": false,
+        "raw_chat_payload_added_to_github": false
+      },
+      "result": "EXISTING_ADMIN_BYTES_AND_XIV_VERIFIED; IDENTITY_ANCHOR_NOT_RAW_EXPORT; NO_NEW_RAW_EXPORT_BYTES",
+      "status_effect": "No task status or real_execution_status changed."
+    },
+    {
+      "id": "PR24_PROVIDER_TIMEBASE_CORRECTION_20261024",
+      "kind": "APPEND_ONLY_PROVIDER_TIMESTAMP_CORRECTION",
+      "observed_at": "2026-10-24",
+      "time_precision": "DATE_ONLY",
+      "source": "GitHub Git commit metadata readback for merge commit 04e7281 and its readback commit 2d848e8",
+      "corrected_event_ids": [
+        "PR24_CURRENT_MAIN_RECONCILIATION_20261024T062425Z",
+        "PR24_RECONCILIATION_READBACK_20261024T062425Z"
+      ],
+      "correction": {
+        "prior_observed_at_value": "2026-10-24T06:24:25+07:00",
+        "reason": "That value came from the automation run-start clock, not the time of the GitHub action/readback; it precedes the provider-created commits and must not be used as the event time.",
+        "merge_commit": {
+          "sha": "04e72812231d8545317ac84e033e4d077b3a08b3",
+          "committer_date_utc": "2026-10-23T23:27:32Z"
+        },
+        "readback_commit": {
+          "sha": "2d848e8023e5e37c72116469afccda1dc3fe3ec3",
+          "committer_date_utc": "2026-10-23T23:28:01Z"
+        },
+        "bounded_interval_for_ref_update_and_readback": {
+          "lower_bound_utc": "2026-10-23T23:27:32Z",
+          "upper_bound_utc": "2026-10-23T23:28:01Z",
+          "exact_instant_recorded": false
+        },
+        "prior_records_rewritten": false,
+        "chronology_policy": "Keep original entries for provenance; use this provider-anchored interval when interpreting the action/readback chronology."
+      },
+      "result": "TIMESTAMP_CORRECTION_APPEND_ONLY; ORIGINAL_RECORDS_PRESERVED",
+      "status_effect": "No task status, real_execution_status, source object, or task closure changed."
+    },
+    {
+      "id": "PR24_MAIN_SYNC_MERGE_READBACK_20261024",
+      "kind": "GITHUB_PR_BRANCH_SYNC_EXACT_READBACK",
+      "observed_at": "2026-10-24T00:34:05.904Z",
+      "source": "Authenticated GitHub connector: git ref, compare, PR metadata, and ledger file readback",
+      "action": {
+        "merge_commit_sha": "bf4864ee9ff69a895386fab8296ab3215839d908",
+        "main_parent_sha": "701c02d1c860464ffd247305b2f98e1ad5b6ee6c",
+        "previous_pr_head_sha": "cb4206467d683c14b7b05e9d29e55b8c357cb9df",
+        "merged_tree_sha": "a0fed77a4382f135fb3b1fd2d5c07a74be585fe6",
+        "merged_ledger_blob_sha": "0fc103301620627401b15fe31eab16c36624ea60"
+      },
+      "readback": {
+        "current_pr_head_sha": "bf4864ee9ff69a895386fab8296ab3215839d908",
+        "ahead_by": 20,
+        "behind_by": 0,
+        "mergeable": true,
+        "draft": true,
+        "task_count": 28,
+        "statuses_preserved": true,
+        "open_tasks_closed": false,
+        "ci_runs_triggered": [
+          40045582643,
+          40045582528
+        ],
+        "ci_completion": "PENDING_AT_READBACK"
+      },
+      "stamp_class": "STAMP_LIVE"
+    },
+    {
+      "id": "CURRENT_SOURCE_PROBE_AND_PR24_DIVERGENCE_20261024T023944Z",
+      "kind": "CURRENT_SOURCE_PROBE_AND_ROUTING_DIVERGENCE",
+      "observed_at": "2026-10-24T09:39:44+07:00",
+      "observed_at_utc": "2026-10-24T02:39:44Z",
+      "source": "Fresh GitHub connector readback and ChatGPT Library metadata/materialization probe",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "6e4a747f8a36389b7b4f8234171a5140d0540694",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_main_blob_before_write": "81408996889f3772fcd1120e2bc904c9425dca91",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_prior_PR24_branch_blob": "5cfa330a0016d7d26b32884e1b8fd5740fa022f4"
+      },
+      "github": {
+        "current_main_head": "996143f37522a66747e68f015494109df9f3fe36",
+        "PR24": {
+          "number": 24,
+          "state": "open",
+          "draft": true,
+          "head": "13d1b61b2071604bdc2892732179defa4dc3fef0",
+          "base": "main",
+          "ahead_by": 21,
+          "behind_by": 59,
+          "mergeable": false,
+          "changed_paths": [
+            ".github/workflows/windows-survival-cloud-continuity.yml",
+            "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+            "runtime/cloud_survival_scheduler.py",
+            "tests/test_cloud_survival_scheduler.py"
+          ],
+          "code_delta": {
+            "main_scheduler_condition": "if len(data[\"tasks\"]) >= 27:",
+            "prior_branch_scheduler_condition": "if data[\"tasks\"]:",
+            "main_workflow_has_pull_request_trigger": false,
+            "prior_branch_workflow_has_pull_request_trigger": true,
+            "prior_branch_adds_small_ledger_and_gitlink_regression_tests": true
+          },
+          "task_state_divergence": {
+            "task_id": "MODUAL_SENSOR_LOGS_ROUTING",
+            "main_status": "OPEN_SCHEDULED_TICK_RECENT_SUCCESS_INTERMITTENT_DURATION_LIVE_STREAM_NOT_VERIFIED",
+            "prior_branch_status": "OPEN_SCHEDULED_TICK_INTERMITTENT_LONG_DURATION_LIVE_STREAM_NOT_VERIFIED",
+            "main_real_execution_status": "OPEN_TICK_RECENT_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
+            "prior_branch_real_execution_status": "OPEN_SCHEDULED_TICK_LONG_RUNNING_NO_NEW_RECEIPT_LIVE_STREAM_NOT_VERIFIED"
+          }
+        }
+      },
+      "library_probe": {
+        "candidate_archive_probes": [
+          {
+            "kind": "secondary same-size ADMIN-named archive",
+            "listed_bytes": 22493275,
+            "raw_byte_materialization": "DENIED_NO_AUTHORIZED_RAW_BYTE_PATH",
+            "sha256_obtained": false
+          },
+          {
+            "kind": "cross-account reentry archive",
+            "listed_bytes": 13089122,
+            "raw_byte_materialization": "DENIED_NO_AUTHORIZED_RAW_BYTE_PATH",
+            "sha256_obtained": false
+          }
+        ],
+        "new_raw_export_bytes_retrieved": false,
+        "new_provider_object_or_revision_readback": false,
+        "direct_provider_actions_available": {
+          "google_drive": false,
+          "dropbox": false,
+          "takeout": false
+        },
+        "files_moved_or_duplicated": false,
+        "primary_ADMIN_archive_touched": false
+      },
+      "result": "NO_NEW_RAW_EXPORT_BYTES; PR24_CURRENT_MAIN_DIVERGENCE_RECONFIRMED; MAIN_TASK_STATES_PRESERVED",
+      "next_callable_edge": "Prepare a clean replacement patch from current main for the nonempty-ledger guard, exact route-ID assertions, small-ledger and .gitmodules/Gitlink regression tests, and pull_request trigger. Keep the original source-export task OPEN until a real authorized Drive/Dropbox/Takeout source yields byte, stable ID/revision and target readback.",
+      "task_effect": {
+        "task_count": 28,
+        "task_ids_preserved": true,
+        "statuses_preserved_from_current_main": true,
+        "open_tasks_closed": false,
+        "source_restoration_completed": false
+      }
     }
   ],
   "energy_protection_current": {
@@ -8259,6 +9200,36 @@
         "credentials_committed": false,
         "open_tasks_closed": false
       }
+    },
+    {
+      "observed_at": "2026-10-24T00:34:05.904Z",
+      "record_type": "PR24_MAIN_SYNC_READBACK",
+      "current_head_sha": "bf4864ee9ff69a895386fab8296ab3215839d908",
+      "main_head_sha": "701c02d1c860464ffd247305b2f98e1ad5b6ee6c",
+      "behind_by": 0,
+      "task_count": 28,
+      "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-24T09:39:44+07:00",
+      "observed_at_utc": "2026-10-24T02:39:44Z",
+      "record_type": "LIBRARY_RAW_EXPORT_PROBE_AND_PR24_DIVERGENCE_20261024",
+      "github": {
+        "main_head": "996143f37522a66747e68f015494109df9f3fe36",
+        "PR24_head": "13d1b61b2071604bdc2892732179defa4dc3fef0",
+        "PR24_ahead_by": 21,
+        "PR24_behind_by": 59,
+        "PR24_mergeable": false,
+        "task_count": 28
+      },
+      "library": {
+        "secondary_ADMIN_named_archive_materialized": false,
+        "cross_account_archive_materialized": false,
+        "new_raw_export_bytes": false,
+        "provider_revision_readback": false,
+        "direct_drive_dropbox_takeout_action_available": false
+      },
+      "result": "NO_NEW_RAW_EXPORT_BYTES; STALE_PR24_BRANCH_AND_TASK_STATE_DIVERGENCE_OBSERVED; TASKS_REMAIN_OPEN"
     }
   ]
 }
