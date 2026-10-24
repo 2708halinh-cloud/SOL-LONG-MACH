@@ -6543,6 +6543,27 @@
       "result": "TOPOLOGY_TEST_PASS;ARCHIVE_ADAPTERS_PASS;SECRET_GUARD_PASS;PR_REMAINS_DIVERGED_AND_OPEN",
       "action": "VERIFY_POST_FIX_ARCHIVE_CI_AND_PRESERVE_BRANCH_DIVERGENCE_GUARD",
       "observation_type": "INDEPENDENT_BRANCH_VERIFICATION"
+    },
+    {
+      "id": "HOST_ROUTE_REPROBE_20261025T0518ICT",
+      "observed_at": "2026-10-25T05:18:01+07:00",
+      "observed_at_utc": "2026-10-24T22:18:01Z",
+      "source": "Fresh device inventory from primary and secondary Desktop Commander accounts; secondary exact directory-read attempt; remote-call registry.",
+      "checkpoint_file": "CURRENT_RUNTIME/HOST_ROUTE_REPROBE_20261025T0518ICT.json",
+      "checkpoint_blob_sha": "2a134bf3497aaf36ba1f458dfb9315f4cc3d11d5",
+      "checkpoint_commit": "de76508904e1f6b4e4aa64b1eb7322db7e644506",
+      "ledger_commit": "e58482828da4abed71999cf7bc51be3d1237327b",
+      "primary_devices": "ALL_OFFLINE",
+      "secondary_devices": "ALL_OFFLINE;DESKTOP_LAST_SEEN_39M",
+      "exact_directory_read": "NO_DESKTOP_COMMANDER_DEVICE_CURRENTLY_ONLINE",
+      "last_direct_host_readback": "2026-10-25T04:23:47.498+07:00",
+      "physical_host_power_state": "UNKNOWN",
+      "current_tick_cycle": "NOT_REPROBED",
+      "source_mutation": false,
+      "tasks_closed": 0,
+      "result": "ALTERNATE_HOST_ROUTE_ATTEMPTED;NO_ONLINE_DEVICE;WINDOWS_TICK_CURRENT_CYCLE_UNVERIFIED",
+      "action": "RETRY_AUTHORIZED_HOST_READ_VIA_SECONDARY_REMOTE_ACCOUNT",
+      "observation_type": "PROVIDER_READBACK"
     }
   ],
   "latest_sync_observation": {
@@ -9735,22 +9756,21 @@
     "source_reads_before_write": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "a1bae4c5d349c4240c093f45e5b85319576cc0fa",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "f68260835b4e0a0ce843398ba12e2e0f4aad801b",
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "25eb85be6b3cf99f803a200a397e48a8e1ae5341",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "db087a8c97381ec1bb3e0e4e06aa2870447ca54d",
       "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "da4edd17c31dbe9e6898a5617d6f493dfa335dcb"
     },
-    "action": "Fresh-read mandatory source and provider states; fixed the over-strict Archive PR #28 topology test after reading the exact CI failure; exact-read the corrected test; verified the new head's topology, archive-adapter and secret-guard jobs all succeeded; compared branch divergence.",
-    "outcome": "ARCHIVE_PR28_TOPOLOGY_AND_ADAPTERS_PASS;SECRET_GUARD_PASS;BRANCH_8_AHEAD_65_BEHIND;PR_OPEN_NO_MERGE;ALL_TASKS_OPEN",
-    "checkpoint_file": "CURRENT_RUNTIME/ARCHIVE_PR28_TOPOLOGY_VERIFICATION_20261025T0518ICT.json",
-    "checkpoint_blob_sha": "b7df83ab9562f179706a9cd2ce1dc66edb46cc3d",
-    "checkpoint_commit": "eb0d62c6da7747da45bac252209fd3d5f77f9115",
+    "action": "After successful independent Archive/TESSERACT work, retried host access through the secondary Remote Desktop Commander account; inventory showed DESKTOP last seen 39m but offline, and exact directory read returned no online device. Recorded result without inferring host power state.",
+    "outcome": "HOST_ROUTE_RETRY_RECORDED;WINDOWS_TICK_CURRENT_CYCLE_UNVERIFIED;INDEPENDENT_BRANCHES_ADVANCED;ALL_TASKS_OPEN",
+    "checkpoint_file": "CURRENT_RUNTIME/HOST_ROUTE_REPROBE_20261025T0518ICT.json",
+    "checkpoint_blob_sha": "2a134bf3497aaf36ba1f458dfb9315f4cc3d11d5",
+    "checkpoint_commit": "de76508904e1f6b4e4aa64b1eb7322db7e644506",
     "source_reads_after_other_writes": {
-      "OPEN_TASKS_CURRENT.json": "f68260835b4e0a0ce843398ba12e2e0f4aad801b",
+      "OPEN_TASKS_CURRENT.json": "db087a8c97381ec1bb3e0e4e06aa2870447ca54d",
       "MODUAL_PARAMETER_CURRENT.json": "da4edd17c31dbe9e6898a5617d6f493dfa335dcb",
       "PROVIDER_READBACK_20261025T0518ICT.json": "ebea79cc9e6da2c7713b4b9b295011ff67342066",
-      "ARCHIVE_PR28_TOPOLOGY_FIX_20261025T0518ICT.json": "03101b05e9443d19ff182b1f3e6f72eec3dabf76",
-      "TESSERACT_ISSUER_WIRING_READBACK_20261025T0518ICT.json": "cc2ff92d6809010e542648a2e3e4b0907c0bd663",
-      "ARCHIVE_PR28_TOPOLOGY_VERIFICATION_20261025T0518ICT.json": "b7df83ab9562f179706a9cd2ce1dc66edb46cc3d"
+      "ARCHIVE_PR28_TOPOLOGY_VERIFICATION_20261025T0518ICT.json": "b7df83ab9562f179706a9cd2ce1dc66edb46cc3d",
+      "TESSERACT_ISSUER_WIRING_READBACK_20261025T0518ICT.json": "cc2ff92d6809010e542648a2e3e4b0907c0bd663"
     }
   },
   "latest_security_patch_observation": {
@@ -12586,5 +12606,17 @@
     "tasks_closed": 0,
     "checkpoint_file": "CURRENT_RUNTIME/ARCHIVE_PR28_TOPOLOGY_VERIFICATION_20261025T0518ICT.json",
     "checkpoint_blob_sha": "b7df83ab9562f179706a9cd2ce1dc66edb46cc3d"
+  },
+  "latest_host_route_reprobe_20261025T0518ICT": {
+    "observed_at": "2026-10-25T05:18:01+07:00",
+    "primary_inventory": "ALL_REGISTERED_DEVICES_OFFLINE",
+    "secondary_inventory": "ALL_REGISTERED_DEVICES_OFFLINE;DESKTOP_LAST_SEEN_39M",
+    "secondary_directory_read": "NO_DESKTOP_COMMANDER_DEVICE_CURRENTLY_ONLINE",
+    "last_direct_host_readback": "2026-10-25T04:23:47.498+07:00",
+    "current_tick_cycle": "NOT_REPROBED",
+    "physical_host_power_state": "UNKNOWN",
+    "checkpoint_file": "CURRENT_RUNTIME/HOST_ROUTE_REPROBE_20261025T0518ICT.json",
+    "checkpoint_blob_sha": "2a134bf3497aaf36ba1f458dfb9315f4cc3d11d5",
+    "tasks_closed": 0
   }
 }
