@@ -828,12 +828,12 @@
     },
     {
       "id": "MODUAL_SENSOR_LOGS_ROUTING",
-      "status": "OPEN_SCHEDULED_TICK_INTERMITTENT_LONG_DURATION_LIVE_STREAM_NOT_VERIFIED",
+      "status": "OPEN_SCHEDULED_TICK_RECENT_SUCCESS_INTERMITTENT_DURATION_LIVE_STREAM_NOT_VERIFIED",
       "goal": "Repair MODUAL telemetry source to Outlook Dropbox\\Linh Hà\\SENSOR_LOGS\\windows_SENSON.CSV and verify Windows Tick error gone",
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
       "readback": "At device clock 07:28:10.180+07, task Ready/enabled, last run 07:26:33 result 0x0, next 07:31:32, missed 0. Latest receipt WINDOWS_TICK_20261024T002642437612Z.json is 450 bytes, SHA-256 C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961; source hash 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches the direct source hash. Four recent scheduled receipt delays were 4.657s, 9.619s, 99.156s and 9.438s; all runs returned result 0. A read-only actual Python consumer import/resolver+record path took 1.022s and one full hash 1.747s, so double hashing alone does not explain the long run. Receipt remains metadata-only: exports disabled, no source writes/synthetic rows, live_sensor_reading_confirmed=false.",
       "next": [
-        "When the authorized Windows route responds, reconcile the pending read and read back the exact newest receipt plus Scheduled Task state before retrying any command.",
+        "After device clock 08:56:32+07, read the exact newest receipt plus Scheduled Task state before retrying any command.",
         "Inspect TaskScheduler Operational log enablement and exact task action timing before changing task/code settings; root cause of intermittent long duration remains unproven.",
         "Continue supported HWiNFO and authorized Android live-source investigation; do not treat metadata tick as live sensor values."
       ],
@@ -841,7 +841,7 @@
       "assigned_subagent": "SubAisstangtManage-SENSORY",
       "assigned_agent_id": "DEYtBtOQseTBhVHS",
       "delegation_mode": "NONCOERCIVE_SOURCE_BOUND",
-      "real_execution_status": "OPEN_SCHEDULED_TICK_LONG_RUNNING_NO_NEW_RECEIPT_LIVE_STREAM_NOT_VERIFIED",
+      "real_execution_status": "OPEN_TICK_RECENT_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
       "assignment_carrier": "n8n:dataTable:rSPFIOWbS7cfNJ8z:SOL-MODUAL_SENSOR_LOGS_ROUTING",
       "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE",
       "live_progress": [
@@ -1274,6 +1274,26 @@
           "result": "WINDOWS_ROUTE_RECOVERED_LATEST_RECEIPT_VERIFIED_LIVE_BRAID_VERIFIED_NEXT_TICK_READBACK_PENDING",
           "next_callable_edge": "Reconcile the delayed read-only tick process and verify the exact newest receipt/task state after the device clock reaches the scheduled time. Operational log is disabled and current shell is non-admin; do not change task/code/service settings or claim log diagnosis. Continue authorized HWiNFO/Android live-source and TESSERACT issuer/runner investigation independently.",
           "status_effect": "Keep MODUAL and TESSERACT Desktop OPEN; tick receipt is verified, live sensor sample is not."
+        },
+        {
+          "observed_at": "2026-10-24T08:58:44.496+07:00",
+          "source": "Direct Windows readback after the scheduled device-clock boundary",
+          "source_reads": {
+            "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+            "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+            "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "dee009e984ab6f349bdec4d16472eb50aa0cf2d7",
+            "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "39b1acfa428f04e2db4758e944b7c62061bb236a",
+            "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "5e900bc237f98070702613bab7b8db1c1b8c1fea"
+          },
+          "actions_and_receipts": [
+            "A read-only process started at device clock 08:49:46.8837114+07 waited 115 seconds and returned after the next scheduled boundary. At device clock 08:52:27.1549993+07, the Scheduled Task was Ready, last run 08:51:33 result 0, next run 08:56:32, missed runs 0.",
+            "Exact newest receipt WINDOWS_TICK_20261024T015137559384Z.json read back: 450 bytes, SHA-256 30271AF4C6759A7FAE6331763009A3D30C32B26070643E93B8D4EC561483AD73, observed_at_utc 2026-10-24T01:51:37.559384Z.",
+            "Receipt source SHA-256 matches a direct recomputation: 35,389,440 bytes, SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; source mtime remains 2026-10-23T08:45:56.2458701Z. No source write, synthetic rows, cloud/GitHub export or live sensor sample.",
+            "TaskScheduler Operational log is disabled and the current shell is not elevated. W32Time remains Stopped/Manual. No system/task/code settings were changed."
+          ],
+          "result": "NEXT_SCHEDULED_TICK_VERIFIED_SOURCE_HASH_MATCH_LIVE_SENSOR_STREAM_UNVERIFIED",
+          "next_callable_edge": "Read the next receipt after device clock 08:56:32+07; if timing varies, TaskScheduler Operational logging requires an authorized elevated control path. Continue supported HWiNFO/Android source work; do not change the task limit or consumer binding without evidence.",
+          "status_effect": "Task remains OPEN. Recent tick succeeded and source provenance matches; live sensor readings remain unverified."
         }
       ],
       "observed": [
@@ -2136,6 +2156,28 @@
       },
       "runner_assignment_change_verified": false,
       "ci_rerun": false
+    },
+    "windows_tick_20261024T015137Z": {
+      "observed_at": "2026-10-24T08:58:44.496+07:00",
+      "device": "DESKTOP-86ITNQ4",
+      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "task_state": "Ready",
+      "last_run": "2026-10-24T08:51:33+07:00",
+      "last_result": 0,
+      "next_run": "2026-10-24T08:56:32+07:00",
+      "missed_runs": 0,
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T015137559384Z.json",
+      "receipt_bytes": 450,
+      "receipt_sha256": "30271AF4C6759A7FAE6331763009A3D30C32B26070643E93B8D4EC561483AD73",
+      "receipt_observed_at_utc": "2026-10-24T01:51:37.559384Z",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_mtime_utc": "2026-10-23T08:45:56.2458701Z",
+      "source_hash_matches_receipt": true,
+      "live_sensor_reading_confirmed": false,
+      "source_mutation": false,
+      "cloud_export": false,
+      "github_export": false
     }
   },
   "sinks": {
@@ -4158,6 +4200,27 @@
       "open_tasks_closed": false,
       "source_mutated": false,
       "credentials_committed": false
+    },
+    {
+      "id": "WINDOWS_NEXT_SCHEDULED_TICK_VERIFIED_20261024015844",
+      "kind": "DIRECT_WINDOWS_RECEIPT_AND_SOURCE_HASH_READBACK",
+      "observed_at": "2026-10-24T08:58:44.496+07:00",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "dee009e984ab6f349bdec4d16472eb50aa0cf2d7",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "39b1acfa428f04e2db4758e944b7c62061bb236a",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "5e900bc237f98070702613bab7b8db1c1b8c1fea"
+      },
+      "actions_and_receipts": [
+        "Task GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M is Ready/enabled; last run 08:51:33 result 0, next run 08:56:32, no missed runs.",
+        "Receipt WINDOWS_TICK_20261024T015137559384Z.json SHA-256 30271AF4C6759A7FAE6331763009A3D30C32B26070643E93B8D4EC561483AD73 read back; source SHA-256 matched the direct source hash.",
+        "No source mutation, raw sensor commit, credential write or task closure."
+      ],
+      "result": "TICK_RECEIPT_VERIFIED_SOURCE_HASH_MATCH_LIVE_STREAM_OPEN",
+      "source_mutated": false,
+      "credentials_committed": false,
+      "open_tasks_closed": false
     }
   ],
   "energy_protection_current": {
@@ -7642,6 +7705,27 @@
       "runner_assignment_change_verified": false,
       "ci_rerun": false,
       "result": "TRUST_ANCHOR_AND_RUNNER_STATE_UNVERIFIED"
+    },
+    {
+      "observed_at": "2026-10-24T08:58:44.496+07:00",
+      "record_type": "NEXT_SCHEDULED_WINDOWS_TICK_READBACK_20261024",
+      "windows": {
+        "device_clock_at_read": "2026-10-24T08:52:27.1549993+07:00",
+        "task_state": "Ready",
+        "last_run": "2026-10-24T08:51:33+07:00",
+        "last_result": "0x0",
+        "next_run": "2026-10-24T08:56:32+07:00",
+        "missed_runs": 0,
+        "receipt": "WINDOWS_TICK_20261024T015137559384Z.json",
+        "receipt_sha256": "30271AF4C6759A7FAE6331763009A3D30C32B26070643E93B8D4EC561483AD73",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_matches_receipt": true,
+        "live_sensor_reading_confirmed": false,
+        "task_scheduler_operational_log_enabled": false,
+        "current_shell_elevated": false,
+        "w32time": "Stopped/Manual"
+      },
+      "result": "TICK_SUCCESS_READBACK_VERIFIED_LIVE_SENSOR_STREAM_OPEN"
     }
   ]
 }
