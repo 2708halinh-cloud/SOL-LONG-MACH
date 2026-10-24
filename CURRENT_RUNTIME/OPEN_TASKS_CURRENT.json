@@ -726,6 +726,22 @@
           "result": "BOUNDED_DROPBOX_AND_GITHUB_ISSUER_SEARCH_NO_KEY_VALUE_VERIFIED",
           "next_callable_edge": "Continue through an authorized issuer-side carrier or GitHub Actions variable control surface and repository/account runner settings. Do not rerun CI until runner assignment/entitlement change is verified; do not infer key absence beyond scanned carriers.",
           "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "event_id": "TESSERACT_PR6_CURRENT_HEAD_REVIEW_REQUEST_20261024T095638+0700",
+          "observed_at": "2026-10-24T09:56:38+07:00",
+          "source": "Fresh authenticated GitHub connector readback and exact-target PR conversation write/readback",
+          "actions_and_receipts": [
+            "Read PR #6 metadata: state=open, merged=false, draft=false, head=5312816d5fe2b22e92302211b67f916b88a6fe14, base=master at 60d92b8085cc34702805fc0cb42a1c5c346fca5d, mergeable=true. PR is ready-for-review rather than draft, but remains unmerged.",
+            "Fetched current-head workflow runs 39994207477 (tesseract-desktop-ci) and 39994207667 (validate-x-time): both completed with failure. Build matrix jobs and TESSERACT_OS failed with empty step arrays; selfhosted_windows_verify was skipped for pull_request. No source-code failure was inferred from pre-step failures.",
+            "Read current branch .github/workflows/tesseract-desktop-ci.yml (blob 6552d13a1f8004b0e3d36fd585dd75cdd22acf12) and TESSERACT_DESKTOP/src-tauri/src/kilo.rs (blob f1a7abe2d30cf720d2d1207335325d42a2af4e16). Receipt verification is signature/account/expiry bound and fails closed when the trusted issuer key is absent; endpoint host parsing includes IPv4/IPv6 loopback. A real issuer key is still not available through the scanned authorized carriers.",
+            "Review readback: existing Codex reviews are for earlier commits, latest observed reviewed commit d991f91ea8; no review receipt for current head 5312816d5fe2b22e92302211b67f916b88a6fe14. Existing Codex bot comments report review usage limits.",
+            "Action: posted @codex review request on PR #6 for exact current head 5312816d5fe2b22e92302211b67f916b88a6fe14, comment ID 6379021564. Read back the exact comment through fetch_issue_comments. No newer bot review response observed at readback time.",
+            "Library source-trace readback remains historical: JINEY original OpenAI export not verified; the 796-chat Markdown ZIPs and tooling bundles are not accepted as raw exports. The currently callable tools expose GitHub and ChatGPT Library, but no Google Drive, Dropbox, or Takeout provider action for fresh raw-byte retrieval."
+          ],
+          "result": "CURRENT_HEAD_REVIEW_REQUEST_POSTED_AND_READ_BACK; CURRENT_HEAD_CI_FAILED_BEFORE_STEPS; ISSUER_KEY_AND_RUNNER_ENTITLEMENT_UNVERIFIED; RAW_EXPORT_NOT_RECOVERED",
+          "next_callable_edge": "Continue other authorized routes while waiting for a current-head review receipt. Do not rerun CI until a fresh provider readback proves runner assignment/entitlement changed; obtain the actual issuer public key from an authorized issuer-side carrier or GitHub Actions variable control surface. Continue raw export retrieval only through an authorized Drive/Dropbox/Takeout action or a verified raw carrier.",
+          "status_effect": "Keep status OPEN_CARRIED and real_execution_status OPEN_NOT_PROVEN_COMPLETED. This ledger receipt, review request, PR readiness, and CI failure do not close the task."
         }
       ]
     },
