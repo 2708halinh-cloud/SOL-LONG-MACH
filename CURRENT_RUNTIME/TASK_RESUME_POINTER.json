@@ -157,7 +157,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T09:28:15.672+07:00",
+  "updated_at": "2026-10-24T09:29:05.110+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -1852,6 +1852,67 @@
       },
       "result": "WINDOWS_TICK_VERIFIED_SOURCE_HASH_MATCH; DEVICE_CLOCK_OFFSET_310_9S_OBSERVED_W32TIME_STOPPED_MANUAL; ANDROID_RECENT_SENSOR_EVENT_SECTION_UNCHANGED_LIVE_SAMPLE_OPEN; TESSERACT_PR6_OPEN_NO_CI_RERUN",
       "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-24T09:29:05.110+07:00",
+      "observed_at_utc": "2026-10-24T02:29:05.110Z",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "6b3cd10bf82b8e39f30cdbed13300077f4a6371c",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "779a67c57009bea146e133b0a151d20c85ca29eb",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "0ab7701fa6c06874c77a48539024157366e150ee",
+        "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276"
+      },
+      "android_probe_route_failure_and_recovery": {
+        "recorded_at": "2026-10-24T09:29:05.110+07:00",
+        "recorded_at_utc": "2026-10-24T02:29:05.110Z",
+        "record_type": "ANDROID_SENSOR_PROBE_HASH_API_COMPATIBILITY_FALLBACK",
+        "source_reads": {
+          "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+          "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+          "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "6b3cd10bf82b8e39f30cdbed13300077f4a6371c",
+          "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "5eba662f886caa9fda04af462d345348763da90d",
+          "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "881eed73757f9f80cb70681e793254647526f708",
+          "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276"
+        },
+        "failed_attempt": {
+          "method": "[System.Security.Cryptography.SHA256]::HashData(...)",
+          "error": "Method invocation failed because System.Security.Cryptography.SHA256 does not contain a method named HashData.",
+          "consequence": "The read-only diagnostic exited before its second snapshot; no file or service was changed."
+        },
+        "recovery": {
+          "method": "SHA256Managed.ComputeHash in memory",
+          "adb_exit_codes": [
+            0,
+            0
+          ],
+          "snapshot_interval_seconds": 6,
+          "snapshot_line_counts": [
+            358,
+            358
+          ],
+          "whole_snapshot_changed": true,
+          "recent_event_section_line_counts": [
+            74,
+            74
+          ],
+          "recent_event_section_sha256": "6b6c2a563b33d10040685e8025fdd7f8317d1d35a94dcd64f943a28ab796196c",
+          "recent_event_section_changed": false,
+          "raw_sensor_output_persisted": false,
+          "raw_sensor_output_returned": false,
+          "live_sensor_sample_confirmed": false
+        },
+        "result": "PROBE_ROUTE_RECOVERED_READ_ONLY; EVENT_SECTION_UNCHANGED; LIVE_SENSOR_SAMPLE_NOT_CONFIRMED",
+        "invariants": {
+          "source_mutated": false,
+          "credentials_committed": false,
+          "raw_sensor_values_committed": false,
+          "open_tasks_closed": false
+        }
+      },
+      "result": "ANDROID_PROBE_ROUTE_FAILURE_PRESERVED_AND_FALLBACK_VERIFIED; LIVE_SENSOR_SAMPLE_OPEN",
+      "open_tasks_closed": false
     }
   ],
   "latest_sync_observation": {
@@ -2112,120 +2173,64 @@
     "next_edge": "VERIFY_NEXT_HOST_TICK_AND_LIVE_SENSOR; RESOLVE_ANDROID_HEARTBEAT; CONTINUE_TESSERACT_ONLY_AFTER_ISSUER_KEY_AND_RUNNER_ENTITLEMENT_READBACK"
   },
   "latest_reentry_observation": {
-    "observed_at": "2026-10-24T09:28:15.672+07:00",
-    "observed_at_utc": "2026-10-24T02:28:15.672Z",
+    "observed_at": "2026-10-24T09:29:05.110+07:00",
+    "observed_at_utc": "2026-10-24T02:29:05.110Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "10471dab0b1a85833f8474974db41cc899bb96c7",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "5eba662f886caa9fda04af462d345348763da90d",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "881eed73757f9f80cb70681e793254647526f708",
-      "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
-      "MODUAL/SENSOR_LOGS/source/sensor_root_resolver.py": "9b082c5c96ea13d02af35c23519653ad2e78d119",
-      "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
-      "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "6b3cd10bf82b8e39f30cdbed13300077f4a6371c",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "779a67c57009bea146e133b0a151d20c85ca29eb",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "0ab7701fa6c06874c77a48539024157366e150ee",
+      "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276"
     },
-    "windows": {
-      "device": "DESKTOP-86ITNQ4",
-      "route": "Remote Desktop Commander",
-      "device_status": "ONLINE at latest device listing; direct process/read_file calls succeeded",
-      "device_clock_at_read": "2026-10-24T09:21:58.0003936+07:00",
-      "host_reference_utc": "2026-10-24T02:27:08.914Z",
-      "host_minus_device_seconds": 310.9,
-      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
-      "task_state": "Ready",
-      "enabled": true,
-      "last_run_device_local": "2026-10-24T09:21:34+07:00",
-      "last_result": "0x0",
-      "next_run_device_local": "2026-10-24T09:26:32+07:00",
-      "missed_runs": 0,
-      "execution_time_limit": "PT2M",
-      "multiple_instances_setting": "IgnoreNew",
-      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T022138064743Z.json",
-      "receipt_bytes": 450,
-      "receipt_sha256": "17063be3228a90475c7e9307419616f263cf3a96521c8c26fa476a859e071ef9",
-      "receipt_observed_at_utc": "2026-10-24T02:21:38.064743Z",
-      "source_bytes": 35389440,
-      "source_mtime_utc": "2026-10-23T08:45:56.2458701Z",
-      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-      "receipt_source_hash_matches_direct_hash": true,
-      "source_mutated": false,
-      "synthetic_rows_added": 0,
-      "cloud_export_enabled": false,
-      "github_export_enabled": false,
-      "live_sensor_reading_confirmed": false,
-      "w32time_status": "Stopped (Get-Service returned status 1)",
-      "w32time_start_type": "Manual",
-      "w32time_query_error": "The service has not been started (0x80070426)",
-      "time_service_changed": false
-    },
-    "android": {
-      "adb_path": "C:\\Users\\halin\\platform-tools-latest-windows\\platform-tools\\adb.exe",
-      "serial": "1056285",
-      "dumpsys_sensorservice_exit_codes": [
-        0,
-        0
-      ],
-      "snapshots_interval_seconds": 6,
-      "snapshot_line_counts": [
-        358,
-        358
-      ],
-      "snapshot_sha256_changed": true,
-      "recent_event_section_line_counts": [
-        74,
-        74
-      ],
-      "recent_event_section_sha256": "6b6c2a563b33d10040685e8025fdd7f8317d1d35a94dcd64f943a28ab796196c",
-      "recent_event_section_changed": false,
-      "raw_sensor_output_persisted": false,
-      "raw_sensor_output_returned": false,
-      "live_sensor_sample_confirmed": false,
-      "note": "A whole dumpsys snapshot changed, but the Recent Sensor events section remained byte-identical across 6 seconds; this is not evidence of a fresh sensor sample."
-    },
-    "consumer_provenance": {
-      "github_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
-      "resolver_blob_sha": "9b082c5c96ea13d02af35c23519653ad2e78d119",
-      "one_shot_calls_get_xiaomi_telemetry": false,
-      "helper_observation": "get_xiaomi_telemetry() has literal device/sensor inventory and sensor-online fields; battery fields may be refreshed from `adb shell dumpsys battery`, but that is not a live sensor sample. The scheduled --once path does not call this helper.",
-      "one_shot_behavior": "record_telemetry_tick reads CSV metadata/hash and writes a receipt; cloud/GitHub exports remain gated off."
-    },
-    "providers": {
-      "dropbox_outlook": {
-        "account_identity_readback": "halinh270803@outlook.com.vn",
-        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
-        "rev": "0165dc1e4794ab00000000395cdfd73",
-        "size_bytes": 35389440,
-        "server_modified_utc": "2026-10-14T00:20:03Z",
-        "metadata_readback": true
+    "android_probe_route_failure_and_recovery": {
+      "recorded_at": "2026-10-24T09:29:05.110+07:00",
+      "recorded_at_utc": "2026-10-24T02:29:05.110Z",
+      "record_type": "ANDROID_SENSOR_PROBE_HASH_API_COMPATIBILITY_FALLBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "6b3cd10bf82b8e39f30cdbed13300077f4a6371c",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "5eba662f886caa9fda04af462d345348763da90d",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "881eed73757f9f80cb70681e793254647526f708",
+        "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276"
       },
-      "xtime": {
-        "health_http_status": 200,
-        "pid": 20712,
-        "modual_source_present_last_verified": false,
-        "last_verified_at": "2026-10-24T09:16:05.645+07:00"
+      "failed_attempt": {
+        "method": "[System.Security.Cryptography.SHA256]::HashData(...)",
+        "error": "Method invocation failed because System.Security.Cryptography.SHA256 does not contain a method named HashData.",
+        "consequence": "The read-only diagnostic exited before its second snapshot; no file or service was changed."
       },
-      "ollama": {
-        "tags_http_status": 200,
-        "model_count": 11,
-        "loopback_only": true
+      "recovery": {
+        "method": "SHA256Managed.ComputeHash in memory",
+        "adb_exit_codes": [
+          0,
+          0
+        ],
+        "snapshot_interval_seconds": 6,
+        "snapshot_line_counts": [
+          358,
+          358
+        ],
+        "whole_snapshot_changed": true,
+        "recent_event_section_line_counts": [
+          74,
+          74
+        ],
+        "recent_event_section_sha256": "6b6c2a563b33d10040685e8025fdd7f8317d1d35a94dcd64f943a28ab796196c",
+        "recent_event_section_changed": false,
+        "raw_sensor_output_persisted": false,
+        "raw_sensor_output_returned": false,
+        "live_sensor_sample_confirmed": false
       },
-      "tesseract_desktop": {
-        "repository": "2708halinh-cloud/x-time-web",
-        "pr": 6,
-        "state": "OPEN",
-        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-        "workflow_run_39994207477": "failure; job steps/logs unavailable; no artifacts",
-        "workflow_run_39994207667": "failure; job steps/logs unavailable; no artifacts",
-        "selfhosted_windows_verify": "skipped for pull_request by workflow condition",
-        "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
-        "kilo_source_blob_sha": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
-        "issuer_public_key_value_verified": false,
-        "runner_assignment_change_verified": false,
-        "ci_rerun": false
+      "result": "PROBE_ROUTE_RECOVERED_READ_ONLY; EVENT_SECTION_UNCHANGED; LIVE_SENSOR_SAMPLE_NOT_CONFIRMED",
+      "invariants": {
+        "source_mutated": false,
+        "credentials_committed": false,
+        "raw_sensor_values_committed": false,
+        "open_tasks_closed": false
       }
     },
-    "result": "WINDOWS_TICK_VERIFIED_SOURCE_HASH_MATCH; DEVICE_CLOCK_OFFSET_310_9S_OBSERVED_W32TIME_STOPPED_MANUAL; ANDROID_RECENT_SENSOR_EVENT_SECTION_UNCHANGED_LIVE_SAMPLE_OPEN; TESSERACT_PR6_OPEN_NO_CI_RERUN",
+    "result": "ANDROID_PROBE_ROUTE_FAILURE_PRESERVED_AND_FALLBACK_VERIFIED; LIVE_SENSOR_SAMPLE_OPEN",
     "open_tasks_closed": false
   }
 }
