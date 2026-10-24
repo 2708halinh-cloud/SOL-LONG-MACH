@@ -2,8 +2,8 @@
   "schema": "SOL_OPEN_TASKS_PARALLEL_LEDGER/1.0",
   "provenance": {
     "user_directive": "2026-10-21: TẤT CẢ YÊU CẦU CHƯA HOÀN THÀNH PHẢI NEO GIỮ, KHÔNG CHUYỂN QUA LÀM MỘT VIỆC XONG DỪNG LẠI",
-    "observed_at": "2026-10-24T12:08:50+07:00",
-    "source": "Current conversation + fresh GitHub source/branch readback; append-only TESSERACT route-symlink regression; no provider/host readback",
+    "observed_at": "2026-10-24T13:21:40.669+07:00",
+    "source": "Current conversation + fresh GitHub/n8n reads; read-only Windows host execution and receipt/hash readback; newest tick directory entry found but its exact content readback remains pending; Android TCP/ADB probe inconclusive; no task closure, no sensor-live claim, no CI success claim. Base HEAD observed before checkpoint update: 1fe15adfaeb1e736a09ea3227d217e861537c5ba.",
     "not_exhaustive_history": true,
     "historical_backfill": "2026-10-21: 14 additional user requests indexed from earlier conversation sources; provider states must be rechecked before action or closure"
   },
@@ -909,6 +909,7 @@
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
       "readback": "Post-boundary read at 2026-10-24T11:12:40+07:00: task Ready/enabled, last run 11:11:33 result 0x0, next 11:16:32, missed 0. Exact receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json, 450 bytes, SHA-256 521d307f9374f0514a6d122601b9d890ae92a2670e2d9cf0224b3e3e571b955d; nested source SHA-256 matches direct hash 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Live sensor sample remains unverified; HWiNFO CSV stale; Android TCP and X-TIME routes timed out.",
       "next": [
+        "FIRST NEXT: complete exact readback of D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T060739300534Z.json; compare its nested source.sha256 with a fresh direct CSV hash; verify whether the 13:06:32 scheduled tick completed. Do not infer content from directory listing; continue HWiNFO/live-sensor proof without changing task/service/clock settings.",
         "After device clock 09:01:32+07, read the exact newest receipt plus Scheduled Task state before retrying any command.",
         "Inspect TaskScheduler Operational log enablement and exact task action timing before changing task/code settings; root cause of intermittent long duration remains unproven.",
         "Continue supported HWiNFO and authorized Android live-source investigation; do not treat metadata tick as live sensor values.",
@@ -1552,7 +1553,8 @@
         "2026-10-24T10:10:20.016+07:00: Third recent scheduled tick verified at device clock 10:01:42Z; receipt SHA-256 1c0293733d734eed46528293e9a438518f0a7ad94625ac6ead3e62fde450cef0, source hash matches. HWiNFO CSV remains stale since 2026-10-21; read-only shared-memory open returned Win32 error 2; Android TCP 192.168.1.14:5556 timed out. No raw sensor values read.",
         "2026-10-24T10:15:01.665+07:00: Fourth recent tick verified: WINDOWS_TICK_20261024T030637466945Z.json, SHA-256 2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d; source hash matches. HWiNFO shared-memory names all returned Win32 error 2; Android TCP 192.168.1.14:5556 timed out; bounded adb.exe searches remain incomplete.",
         "2026-10-24T11:10:54+07:00: latest Windows Tick receipt read back and nested source hash matches direct SHA-256; live sensor stream remains unverified.",
-        "2026-10-24T11:12:40+07:00: post-boundary receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json exact-read and hash verified; live stream remains unverified."
+        "2026-10-24T11:12:40+07:00: post-boundary receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json exact-read and hash verified; live stream remains unverified.",
+        "Fresh host readback in this run: Desktop Commander secondary account reports DESKTOP-86ITNQ4 online (device 59f03001-c732-403e-b80c-b4191266809c). Latest content-verified tick is D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T054636519945Z.json (450 bytes; SHA-256 34CBD91747AACF4097600FDB1F26E8ACF40724B213F83D8B55B8A63CC171040E); its source hash matches a fresh direct hash of D:\\SENSOR_LOGS\\windows_SENSON.CSV (35,389,440 bytes; SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87). Tick reports live_sensor_reading_confirmed=false, cloud_enabled=false, github_enabled=false, source_file_written=false, synthetic_rows_added=0. Read-only task query: GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M=Ready, LastRunTime 12:56:33 local, LastTaskResult=267014, NextRunTime 13:06:32; GGDV_MINH_SENSORIMOTOR_BRIDGE=Running, LastRunTime 12:59:01, LastTaskResult=267009, NextRunTime 13:04:00. A later directory listing returned WINDOWS_TICK_20261024T060739300534Z.json; exact content readback call 0be8f618-65fd-488c-9ea8-09edf3da7aec was still executing as of 2026-10-24T06:16:18.813932Z, so that newer tick's contents/hash remain UNVERIFIED. Host-side ADB command was not found in PATH and TCP 192.168.1.14:5556 returned False; this does not prove Android is offline. No task/service/clock settings were changed."
       ]
     },
     {
@@ -1717,9 +1719,11 @@
         "Screenshot 2026-10-21 15:08 Android Chrome shows Sol ơi UI, green TRỰC TIẾP badge, mixed Vietnamese/French reply, later chat response pending",
         "Fresh Windows Desktop Commander GET http://127.0.0.1:11434/ returned HTTP 200 text/plain 'Ollama is running'",
         "Fresh Android Termux Remote Desktop Commander GET http://127.0.0.1:11434/ returned connection refused; no listening server observed on that port by curl",
-        "Android 127.0.0.1 is not Windows 127.0.0.1 unless explicit tunnel/forwarder; prior Windows Ollama API chat test worked"
+        "Android 127.0.0.1 is not Windows 127.0.0.1 unless explicit tunnel/forwarder; prior Windows Ollama API chat test worked",
+        "Fresh read-only connectivity probe from DESKTOP-86ITNQ4: adb executable not found in PATH; TCP 192.168.1.14:5556 returned False. Treat Android heartbeat as UNVERIFIED, not OFFLINE; no Android app-owned/Termux bridge or Chrome UI readback was performed in this run."
       ],
       "next": [
+        "FIRST NEXT: locate an authorized ADB executable or app-owned Termux bridge, then verify the Android-to-Windows relay and Sol ơi UI end-to-end; preserve existing chat records and do not alter services/ports without permission.",
         "Identify which Android app/PWA/service worker served 'Sol ơi' and whether browser page is stale",
         "Inspect intended Android ↔ Windows connection and routing through authorized tunnel only",
         "ANDROID_TO_WINDOWS_LOCAL_MODEL_GENERATION_SUBSTEP completed: the Android /api/generate call returned done=true and response OK, so do not re-run only to prove basic API reachability",
