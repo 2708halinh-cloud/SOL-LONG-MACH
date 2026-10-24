@@ -1,0 +1,50 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.0",
+  "state": "OPEN_WORK_REMAINS",
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2150ICT.json",
+    "blob_sha": "1bef0c38d95da7ea3f899d874129606c5fab4f75",
+    "commit_sha": "994f2aa764c0b325eecf1825654a4eb374b58573",
+    "readback_verified": true
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "execution_id": "138",
+    "status": "success",
+    "cloud_evidence_row_id": 284,
+    "host_evidence_row_id": 285,
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "pending_tasks": 45,
+    "closed_tasks": 0
+  },
+  "host": {
+    "device": "DESKTOP-86ITNQ4",
+    "last_verified_tick": "WINDOWS_TICK_20261024T144636529102Z.json",
+    "tick_sha256": "B1AE7840724C9CAE8BB3478F68DFAED040445CA8E4533727276167FFA794A087",
+    "source_sha256": "9B25BD723DCE06344432597CC4F300053EA5ACBF76BDD2AB4F38BF4A1BF34B87",
+    "source_sha_matches_tick": true,
+    "live_sensor_reading_confirmed": false,
+    "next_task_run_host_local": "2026-10-24T21:51:32+07:00"
+  },
+  "next": [
+    "Read exact next Windows tick after host-local 21:51:32; direct-hash source CSV and preserve live_sensor_reading_confirmed=false unless live sample is proven.",
+    "Keep Android heartbeat unverified until an authorized device/app route responds.",
+    "Continue independent cloud-eligible OPEN edges; do not dispatch agents without verified model and credential binding.",
+    "Keep archive-format task OPEN until real 7Z/RAR/LR fixture verification."
+  ],
+  "continuation_guards": {
+    "preserve_statuses": [
+      "OPEN",
+      "IN_PROGRESS",
+      "ASSIGNED_DRAFT_WAITING_CREDENTIAL"
+    ],
+    "preserve_global_pointer": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+    "no_google_drive_writes": true,
+    "no_source_mutation": true,
+    "no_process_termination": true,
+    "no_cache_or_meta_db_deletion": true,
+    "no_secret_values": true,
+    "cloud_heartbeat_is_not_host_heartbeat": true
+  }
+}
