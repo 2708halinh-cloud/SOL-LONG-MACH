@@ -175,3 +175,10 @@ TESSERACT_OS 6D:
 - Direct Library listing of the exact `SOURCE_DIRECT_20261018` folder returned 10 items, no pagination and no warning. All 10 original byte carriers were materialized read-only; every size and SHA-256 matched the embedded manifest (10/10).
 - This proves byte integrity of that preserved source set only. The set includes derived/tooling and reentry carriers; it does **not** prove an original OpenAI account export for JINEY, FUNIX or DAT NGUYEN was recovered. No source was moved, duplicated, rewritten or uploaded to GitHub; no task status changed.
 - Exact Drive/Dropbox/Takeout provider reads remain necessary to retrieve raw export bytes and provider object/revision metadata. No such provider operation is exposed by the currently callable tools in this run.
+
+
+## OAUTH CLIENT MATERIAL SEPARATION CHECK — 2026-10-24T21:31:30+07:00
+
+- A repository-wide GitHub code search for the two known OAuth client-config filename prefixes returned only two metadata/reference files in `SOL-LONG-MACH`; no raw client-config file was returned by the search.
+- Readback of `workspace-action-gate/config.json` (blob `0e147fedd71cf81e9739509aaad9204c64a43f6f`) shows `secret_material_embedded=false` and `secrets_policy=SECRET_REF_ONLY`. Its healthcheck (blob `2560f1dbe766a656e5b155b1315f9f723aaa5f56`) asserts the same reference-only boundary.
+- This is a scoped code-search/readback, **not** proof that every repository history or external system is free of credentials. No credential value was read, copied, logged or written. No GitHub Actions secret was changed; the authorized secret-control surface is not exposed in this run.
