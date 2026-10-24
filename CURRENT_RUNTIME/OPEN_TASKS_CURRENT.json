@@ -457,12 +457,13 @@
       "source": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
       "observed": [
         "Earlier PR#6 workflow, reviewer and CI runner assignment issues remain explicitly recorded in prior checkpoint",
-        "2026-10-23 21:18+07:00: fresh read of PR #6 workflow run 39153474587 still shows hosted jobs fail before step output, selfhosted verification skipped, readback failure, zero artifacts; no rerun. Accessible code search returned zero results for issuer-key variable and issuer/Ed25519 terms. Current resume pointer head 5d0a44bb... differs from older head embedded in WORK_CHECKPOINT.json (57c285c8...)."
+        "2026-10-23 21:18+07:00: fresh read of PR #6 workflow run 39153474587 still shows hosted jobs fail before step output, selfhosted verification skipped, readback failure, zero artifacts; no rerun. Accessible code search returned zero results for issuer-key variable and issuer/Ed25519 terms. Current resume pointer head 5d0a44bb... differs from older head embedded in WORK_CHECKPOINT.json (57c285c8...).",
+        "2026-10-24 07:53:42+07: current-head PR #6 readback still OPEN at 5312816d5fe2b22e92302211b67f916b88a6fe14. Runs 39994207477/39994207667 still fail with no step summaries/log URLs and zero artifacts. Dropbox /Linh Hà/SENSOR_LOGS listing is complete at 56 direct entries; bounded scans of TOOLKIT.TXT and TESSERACT_CDN_BODY_CURRENT.tmp found no issuer/key markers. GitHub code search finds references, not a provisioned key. No runner assignment change verified; no CI rerun."
       ],
       "next": [
-        "Obtain the actual issuer public key through an authorized issuer-side provider or authenticated GitHub Actions variable control surface; existing Dropbox reentry ZIP raw bytes match the verified Library carrier and contain no issuer-key markers.",
-        "Verify GitHub-hosted runner assignment/entitlement changed before any CI rerun. Current-head runs 39994207477 and 39994207667 fail with empty steps; do not repeat CI #39153474587.",
-        "Keep PR #6 OPEN until an authorized trust anchor is provisioned and a current-head CI readback is TRUE."
+        "Obtain the actual issuer public key from an authorized issuer-side carrier or authenticated GitHub Actions variable control surface; do not invent key material.",
+        "Verify hosted runner assignment/entitlement changed before any CI rerun.",
+        "Keep PR #6 OPEN until an authorized trust anchor is provisioned and current-head CI readback is TRUE."
       ],
       "guard": "Do not overwrite or relabel inherited task done from this ledger",
       "assigned_subagent": "SubAisstangtManage-ORCHESTRATOR",
@@ -791,11 +792,9 @@
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
       "readback": "At device clock 07:28:10.180+07, task Ready/enabled, last run 07:26:33 result 0x0, next 07:31:32, missed 0. Latest receipt WINDOWS_TICK_20261024T002642437612Z.json is 450 bytes, SHA-256 C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961; source hash 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches the direct source hash. Four recent scheduled receipt delays were 4.657s, 9.619s, 99.156s and 9.438s; all runs returned result 0. A read-only actual Python consumer import/resolver+record path took 1.022s and one full hash 1.747s, so double hashing alone does not explain the long run. Receipt remains metadata-only: exports disabled, no source writes/synthetic rows, live_sensor_reading_confirmed=false.",
       "next": [
-        "Read next exact receipt after device clock 2026-10-24T07:31:32+07 and compare source hash/mtime.",
-        "If another run approaches PT2M, inspect TaskScheduler Operational log enablement and exact task action timing before changing code/task settings. Do not treat double hashing as root cause; direct measured code path is fast.",
-        "Continue supported HWiNFO logging/shared-memory route; mapping probes are absent and the separate CSV remains stale/read-only.",
-        "Continue Android sampling only through a reachable authorized target; 192.168.1.14:5556 refused connection and the connected Xiaomi sensor inventory is not live sample data.",
-        "Keep TESSERACT Desktop PR #6 OPEN; the Dropbox reentry ZIP was byte-verified but contained no issuer-key markers. Do not rerun CI until runner assignment/entitlement change is verified and the issuer public key is authorized."
+        "When the authorized Windows route responds, reconcile the pending read and read back the exact newest receipt plus Scheduled Task state before retrying any command.",
+        "Inspect TaskScheduler Operational log enablement and exact task action timing before changing task/code settings; root cause of intermittent long duration remains unproven.",
+        "Continue supported HWiNFO and authorized Android live-source investigation; do not treat metadata tick as live sensor values."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -1213,6 +1212,9 @@
           "next_callable_edge": "Read the next exact receipt after device clock 07:31:32+07. If duration varies again, inspect TaskScheduler Operational log enablement and exact task action timing; do not alter task settings based on an unproven hypothesis. Continue authorized HWiNFO and Android live-source investigation.",
           "status_effect": "Keep task OPEN; tick is succeeding but timing varies and no live sensor sample is confirmed."
         }
+      ],
+      "observed": [
+        "2026-10-24 07:53:42+07: fresh Remote Desktop inventory reported ONLINE, but exact read-only task/source/receipt readbacks timed out or remained pending. Last verified receipt remains WINDOWS_TICK_20261024T002642437612Z.json (SHA-256 C40E4F5A...); no newer receipt or current task state is claimed. Dropbox source metadata remains revision 0165dc1e4794ab00000000395cdfd73, 35,389,440 bytes. Live sensor stream remains unverified."
       ]
     },
     {
@@ -3959,6 +3961,28 @@
       "result": "FOURTH_RECENT_TICK_SUCCESS_VARIABLE_DURATION_RETAINED_LIVE_STREAM_UNVERIFIED",
       "next_callable_edge": "Read the next exact receipt after device clock 07:31:32+07. If duration varies again, inspect TaskScheduler Operational log enablement and exact task action timing; do not alter task settings based on an unproven hypothesis. Continue authorized HWiNFO and Android live-source investigation.",
       "status_effect": "Keep task OPEN; tick is succeeding but timing varies and no live sensor sample is confirmed."
+    },
+    {
+      "id": "CURRENT_PROVIDER_REENTRY_WINDOWS_TIMEOUT_TESSERACT_CARRIER_SCAN_20261024",
+      "kind": "PROVIDER_READBACK_AND_INDEPENDENT_BRANCH_VERIFICATION",
+      "observed_at": "2026-10-24T07:53:42+07:00",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "e2a4e4c42a4600ec0566d8b685af4a0363b6c7b1",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "46fbbc62a40dba673d64216bfe6c781f813146aa",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "8866f46c428adfb7981e05df9f1e9c48ff95d4bb"
+      },
+      "actions_and_receipts": [
+        "Fresh Remote Desktop Commander inventory reported DESKTOP-86ITNQ4 ONLINE with last seen about one minute before the probe. A read-only PowerShell task/source/receipt probe returned timeout/no response; process inventory remained pending and then timed out; exact prior receipt read remained pending. No newer receipt was read, so current Scheduled Task state is unknown rather than assumed stopped.",
+        "Last verified Windows state remains the 07:28:10+07 readback: task Ready/enabled, last run 07:26:33 result 0x0, next run 07:31:32, zero missed runs. Exact receipt WINDOWS_TICK_20261024T002642437612Z.json was 450 bytes, SHA-256 C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961; source SHA 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; live_sensor_reading_confirmed=false.",
+        "Attempted the required G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py execution through the authorized remote route; tool returned timeout/no response and did not provide a process/receipt result. Outcome is unknown; do not claim a new braid receipt and do not retry until the pending route is reconciled.",
+        "Dropbox Outlook metadata readback confirms /Linh Hà/SENSOR_LOGS/windows_SENSON.CSV still rev 0165dc1e4794ab00000000395cdfd73, 35,389,440 bytes, server_modified 2026-10-14T00:20:03Z. Direct folder listing completed with 56 entries and has_more=false. Extracted TOOLKIT.TXT (61,032 characters) and TESSERACT_CDN_BODY_CURRENT.tmp (63 characters) had zero hits for issuer, Ed25519, public-key, signer, Kilo, X-TiMe, or base64 markers. This bounded scan does not prove absence elsewhere in Dropbox.",
+        "Fresh GitHub current-head readback confirms PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14. Runs 39994207477 and 39994207667 remain failures with no step summaries/log URLs and zero artifacts. Exact build-variable search returned four references, not a provisioned key value; BEGIN PUBLIC KEY search returned zero results. No runner-assignment change was verified and no CI rerun was performed."
+      ],
+      "result": "WINDOWS_ROUTE_TIMEOUT_LAST_RECEIPT_RETAINED_DROPBOX_BOUNDED_SCAN_NO_ISSUER_KEY_TESSERACT_CI_NOT_RERUN",
+      "next_callable_edge": "When the authorized Windows route responds, reconcile the pending exact receipt/task reads before any new command; inspect TaskScheduler Operational log state and task action timing before changing settings/code. Continue authorized issuer-key search and obtain an authorized runner-state change before CI rerun.",
+      "status_effect": "MODUAL_SENSOR_LOGS_ROUTING and INHERITED_TESSERACT_DESKTOP remain OPEN; no tasks closed."
     }
   ],
   "energy_protection_current": {
@@ -7363,6 +7387,34 @@
         "root_cause_confirmed": false
       },
       "result": "TICK_SUCCESS_VARIABLE_DURATION_LIVE_STREAM_OPEN"
+    },
+    {
+      "observed_at": "2026-10-24T07:53:42+07:00",
+      "record_type": "CURRENT_PROVIDER_REENTRY_WINDOWS_ROUTE_TIMEOUT_AND_TESSERACT_ISSUER_SCAN",
+      "windows": {
+        "last_verified_receipt": "WINDOWS_TICK_20261024T002642437612Z.json",
+        "last_verified_receipt_sha256": "C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961",
+        "current_readback": "TIMEOUT_OR_PENDING",
+        "current_task_state": "UNKNOWN_NOT_ASSUMED_STOPPED",
+        "live_sensor_reading_confirmed": false
+      },
+      "dropbox": {
+        "source_rev": "0165dc1e4794ab00000000395cdfd73",
+        "source_size_bytes": 35389440,
+        "folder_entries": 56,
+        "folder_listing_complete": true,
+        "bounded_issuer_marker_hits": 0
+      },
+      "tesseract": {
+        "pr": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "run_39994207477": "failure_empty_steps_no_artifacts",
+        "run_39994207667": "failure_empty_steps_no_artifacts",
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "WINDOWS_ROUTE_TIMEOUT_LAST_RECEIPT_RETAINED_DROPBOX_BOUNDED_SCAN_NO_ISSUER_KEY_TESSERACT_CI_NOT_RERUN"
     }
   ]
 }
