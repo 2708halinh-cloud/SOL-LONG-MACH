@@ -2,8 +2,8 @@
   "schema": "SOL_OPEN_TASKS_PARALLEL_LEDGER/1.0",
   "provenance": {
     "user_directive": "2026-10-21: TẤT CẢ YÊU CẦU CHƯA HOÀN THÀNH PHẢI NEO GIỮ, KHÔNG CHUYỂN QUA LÀM MỘT VIỆC XONG DỪNG LẠI",
-    "observed_at": "2026-10-24T23:05:02+07:00",
-    "source": "Fresh exact ADMIN Library byte/SQLite readback and MAP_NGUON XIV read; append-only R-014 evidence for source-locator identity discrepancy; no task closure. | 2026-10-24 23:05 ICT: direct Windows Tick/source hash and provider readback, Dropbox exact metadata, Braid receipt hashes, n8n execution 141 row 290, TESSERACT PR/branch/issuer search; append-only evidence, no task closure.",
+    "observed_at": "2026-10-24T23:14:01.6641664+07:00",
+    "source": "Fresh exact ADMIN Library byte/SQLite readback and MAP_NGUON XIV read; append-only R-014 evidence for source-locator identity discrepancy; no task closure. | 2026-10-24 23:05 ICT: direct Windows Tick/source hash and provider readback, Dropbox exact metadata, Braid receipt hashes, n8n execution 141 row 290, TESSERACT PR/branch/issuer search; append-only evidence, no task closure. | 2026-10-24 23:14 ICT: fresh post-boundary Tick receipt at 16:11:34Z, direct CSV hash match, task 0x0, X-TIME endpoints timeout with no listener at latest probe; append-only, no closure.",
     "not_exhaustive_history": true,
     "historical_backfill": "2026-10-21: 14 additional user requests indexed from earlier conversation sources; provider states must be rechecked before action or closure"
   },
@@ -1011,11 +1011,10 @@
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
       "readback": "Post-boundary read at 2026-10-24T20:09:11+07:00: task Ready/enabled, last run 20:06:34 result 0x0, next 20:11:32, missed 0. Exact receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T130636999565Z.json, 450 bytes, SHA-256 1127d053f459d011c013a55899810c1a8a16ac3ff21631f2f348e0be753772fd; fresh direct source SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches. Tick remains metadata-only; live sensor stream not verified. HWiNFO CSV stale since 2026-10-21; USB ADB device 2201123G responds but Redmi wireless target unverified. Consumer 8080 health remains unverified after HTTP timeouts and conflicting transport observations.",
       "next": [
-        "After 2026-10-24T23:06:32+07:00, read the newest exact Windows Tick receipt and Scheduled Task state; recompute the direct CSV SHA-256 and compare the nested receipt hash.",
-        "Map the intended X-TIME health listener separately from MTAgentService, which owns port 8080 in the current readback; do not stop or reconfigure either service without exact-target confirmation.",
-        "Find a supported HWiNFO logging carrier or an authorized genuine Android live-sensor sample; keep live_sensor_reading_confirmed=false until a real sample is verified.",
-        "Continue TESSERACT issuer public-key and runner-assignment verification through authorized control surfaces; do not rerun CI without verified runner change.",
-        "Keep all 45 cloud recovery tasks pending until each has exact-target action, provider/host receipt, observable consequence and readback."
+        "After 2026-10-24T23:16:32+07:00, read the newest exact Tick receipt and task state and recompute the direct source SHA-256.",
+        "Investigate the changing 8080 listener state: prior readback showed MTAgentService, latest readback found no listener while X-TIME health timed out. Identify the intended consumer process/port without stopping or reconfiguring services.",
+        "Locate a supported HWiNFO logging carrier or verify a genuine sample from the intended Android device; keep live_sensor_reading_confirmed=false until proven.",
+        "Continue TESSERACT issuer/runner verification and cloud continuity; do not rerun CI without verified runner change and keep all 45 recovery rows pending."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -1729,6 +1728,27 @@
           "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2301ICT.json",
           "checkpoint_blob_sha": "f25139c649d951434dd968803292aea969699145",
           "checkpoint_commit": "e5e97bacf1546ff5f84307ff789bdf952024b312"
+        },
+        {
+          "id": "WINDOWS_TICK_READBACK_20261024T2314ICT",
+          "observed_at": "2026-10-24T23:14:01.6641664+07:00",
+          "source": "Exact host post-boundary readback",
+          "actions_and_receipts": [
+            "Verified WINDOWS_TICK_20261024T161134310423Z.json; SHA-256 e755c7ced8483ec16dd9fd2f91d90d3180a5bd39a273d62d24b8ce4c60f04613.",
+            "Direct CSV SHA-256 recomputed as 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; matches receipt.",
+            "Task Ready/Enabled, last result 0x0, next run 23:16:32 +07; live_sensor_reading_confirmed remains false.",
+            "At 23:14:01 both X-TIME health endpoints timed out and no 8080 listener was found; earlier same-turn probe had identified MTAgentService on 8080, so listener state varies. No service/task/config changes."
+          ],
+          "previous_next": [
+            "After 2026-10-24T23:06:32+07:00, read the newest exact Windows Tick receipt and Scheduled Task state; recompute the direct CSV SHA-256 and compare the nested receipt hash.",
+            "Map the intended X-TIME health listener separately from MTAgentService, which owns port 8080 in the current readback; do not stop or reconfigure either service without exact-target confirmation.",
+            "Find a supported HWiNFO logging carrier or an authorized genuine Android live-sensor sample; keep live_sensor_reading_confirmed=false until a real sample is verified.",
+            "Continue TESSERACT issuer public-key and runner-assignment verification through authorized control surfaces; do not rerun CI without verified runner change.",
+            "Keep all 45 cloud recovery tasks pending until each has exact-target action, provider/host receipt, observable consequence and readback."
+          ],
+          "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2314ICT.json",
+          "checkpoint_blob_sha": "b376458e71bb65e2701550c675a051118d6ebe1c",
+          "checkpoint_commit": "c1ff401ccfe25ec47d68961c2129b8da4f722c6e"
         }
       ],
       "observed": [
@@ -3305,6 +3325,19 @@
       "n8n_event_id": "X20261024160023966_CLOUD",
       "pending_rows": 45,
       "host_heartbeat_probed": false,
+      "tasks_closed": 0
+    },
+    "WINDOWS_TICK_READBACK_20261024T2314ICT": {
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2314ICT.json",
+      "checkpoint_blob_sha": "b376458e71bb65e2701550c675a051118d6ebe1c",
+      "checkpoint_commit": "c1ff401ccfe25ec47d68961c2129b8da4f722c6e",
+      "verified_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T161134310423Z.json",
+      "verified_tick_sha256": "e755c7ced8483ec16dd9fd2f91d90d3180a5bd39a273d62d24b8ce4c60f04613",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches_receipt": true,
+      "live_sensor_reading_confirmed": false,
+      "listener_8080_currently_observed": false,
+      "prior_listener_owner": "MTAgentService",
       "tasks_closed": 0
     }
   },
@@ -8893,6 +8926,19 @@
       "checkpoint_blob_sha": "1b72f399ba684b9801ab41fc4bd9d217ee9d4b91",
       "checkpoint_commit": "a0404c085119a87eeca967350e9cc54676a7f2f8",
       "result": "N8N_EXEC141_ROW290_EXACT_READBACK; 45_PENDING; HOST_HEARTBEAT_NOT_PROBED; TESSERACT_PR6_OPEN; SECURITY_BRANCH_5_AHEAD",
+      "tasks_closed": 0,
+      "raw_sensor_data_committed": false,
+      "credentials_committed": false,
+      "ci_rerun": false
+    },
+    {
+      "id": "WINDOWS_TICK_READBACK_20261024T2314ICT",
+      "observed_at": "2026-10-24T23:14:01.6641664+07:00",
+      "source": "Remote Desktop Commander post-boundary receipt/task/source hash and consumer probe",
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2314ICT.json",
+      "checkpoint_blob_sha": "b376458e71bb65e2701550c675a051118d6ebe1c",
+      "checkpoint_commit": "c1ff401ccfe25ec47d68961c2129b8da4f722c6e",
+      "result": "TICK_161134_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER_AT_2314; OLLAMA_HTTP200_11_MODELS; LIVE_SENSOR_STREAM_NOT_VERIFIED",
       "tasks_closed": 0,
       "raw_sensor_data_committed": false,
       "credentials_committed": false,
@@ -15057,6 +15103,151 @@
         "run_39994207667": "failure",
         "artifacts": 0,
         "rerun_performed": false
+      }
+    },
+    {
+      "id": "WINDOWS_TICK_READBACK_20261024T2314ICT",
+      "observed_at": "2026-10-24T23:14:01.6641664+07:00",
+      "source": "Remote Desktop Commander post-boundary exact tick receipt/task/source hash readback; current X-TIME/Ollama/listener probe",
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2314ICT.json",
+      "checkpoint_blob_sha": "b376458e71bb65e2701550c675a051118d6ebe1c",
+      "checkpoint_commit": "c1ff401ccfe25ec47d68961c2129b8da4f722c6e",
+      "result": "TICK_161134_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER_AT_2314; OLLAMA_HTTP200_11_MODELS; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+      "tasks_closed": 0,
+      "raw_sensor_data_committed": false,
+      "credentials_committed": false,
+      "ci_rerun": false,
+      "windows_tick": {
+        "observed_at": "2026-10-24T16:14:01.6641664Z",
+        "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+        "record_type": "POST_BOUNDARY_TICK_AND_PROVIDER_READBACK; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+        "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2314ICT.json",
+        "checkpoint_blob_sha": "b376458e71bb65e2701550c675a051118d6ebe1c",
+        "checkpoint_commit": "c1ff401ccfe25ec47d68961c2129b8da4f722c6e",
+        "provider_status_last_verified_at": "2026-10-24T16:14:01.6641664Z",
+        "latest_tick": "WINDOWS_TICK_20261024T161134310423Z.json",
+        "tick_sha256": "e755c7ced8483ec16dd9fd2f91d90d3180a5bd39a273d62d24b8ce4c60f04613",
+        "source_csv_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_recomputed_this_turn": true,
+        "source_hash_matches_receipt": true,
+        "source_bytes": 35389440,
+        "task_last_run_local": "2026-10-24T23:11:33+07:00",
+        "task_last_result": "0x0",
+        "task_next_run_local": "2026-10-24T23:16:32+07:00",
+        "task_state": "Ready",
+        "task_enabled": true,
+        "missed_runs": 0,
+        "live_sensor_reading_confirmed": false,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false,
+        "consumer_probe": {
+          "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+          "loopback_result": "TIMEOUT",
+          "lan_result": "TIMEOUT",
+          "listener_8080": false,
+          "service_down_inferred": false,
+          "configuration_changed": false
+        },
+        "previous_listener_observation": {
+          "owner": "MTAgentService",
+          "pid": 4932,
+          "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2301ICT.json"
+        },
+        "result": "TICK_161134_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER_AT_2314; OLLAMA_HTTP200_11_MODELS; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+        "tasks_closed": 0
+      },
+      "providers": {
+        "observed_at": "2026-10-24T16:14:01.6641664Z",
+        "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+        "device": "DESKTOP-86ITNQ4",
+        "connector_status": "ONLINE_CONFIRMED_BY_DIRECT_COMMAND",
+        "device_status": "Online",
+        "task_observation": {
+          "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+          "task_name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+          "state": "Ready",
+          "enabled": true,
+          "last_run_local": "2026-10-24T23:11:33+07:00",
+          "last_result": "0x0",
+          "next_run_local": "2026-10-24T23:16:32+07:00",
+          "missed_runs": 0
+        },
+        "latest_receipt": {
+          "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T161134310423Z.json",
+          "observed_at_utc": "2026-10-24T16:11:34.310423Z",
+          "bytes": 450,
+          "sha256": "e755c7ced8483ec16dd9fd2f91d90d3180a5bd39a273d62d24b8ce4c60f04613",
+          "content_readback": true,
+          "sha256_verified": true,
+          "source_bytes": 35389440,
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "source_sha256_recomputed_this_turn": true,
+          "source_hash_matches_receipt": true,
+          "source_last_write_local": "2026-10-23T15:45:56.2458701+07:00",
+          "live_sensor_reading_confirmed": false,
+          "source_file_written": false,
+          "synthetic_rows_added": 0,
+          "cloud_enabled": false,
+          "github_enabled": false,
+          "task_last_run_local": "2026-10-24T23:11:33+07:00",
+          "task_last_result": "0x0",
+          "task_next_run_local": "2026-10-24T23:16:32+07:00",
+          "task_state": "Ready",
+          "task_enabled": true,
+          "missed_runs": 0,
+          "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2314ICT.json",
+          "checkpoint_blob_sha": "b376458e71bb65e2701550c675a051118d6ebe1c",
+          "checkpoint_commit": "c1ff401ccfe25ec47d68961c2129b8da4f722c6e"
+        },
+        "consumer": {
+          "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+          "loopback_endpoint": "http://127.0.0.1:8080/api/health",
+          "loopback_result": "TIMEOUT",
+          "lan_endpoint": "http://192.168.1.42:8080/api/health",
+          "lan_result": "TIMEOUT",
+          "listener_8080": false,
+          "health": "UNVERIFIED_TIMEOUT_NO_LISTENER_AT_PROBE",
+          "prior_listener_owner": "MTAgentService",
+          "prior_listener_pid": 4932,
+          "service_down_inferred": false,
+          "configuration_changed": false
+        },
+        "ollama": {
+          "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+          "http_status": 200,
+          "model_count": 11
+        },
+        "android": {
+          "target": "192.168.1.14:5556",
+          "tcp_connect_success": false,
+          "attached_device_count": 1,
+          "attached_device_model": "2201123G",
+          "target_identity_verified": false,
+          "live_sensor_stream_verified": false,
+          "raw_sensor_values_persisted": false
+        },
+        "hwinfo": {
+          "process_running": true,
+          "pid": 17520,
+          "config_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
+          "config_flags": {
+            "SensorsSM": 1,
+            "ServerRole": 1,
+            "SnapshotPolling": 1,
+            "Autorun": 1
+          },
+          "matching_csv_found_in_D_SENSOR_LOGS": false,
+          "live_stream_confirmed": false
+        },
+        "dropbox": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "revision": "0165dc1e4794ab00000000395cdfd73",
+          "bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true
+        }
       }
     }
   ]
