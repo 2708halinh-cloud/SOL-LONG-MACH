@@ -6567,6 +6567,28 @@
       "source_mutated": false,
       "raw_sensor_values_persisted": false,
       "credentials_committed": false
+    },
+    {
+      "id": "GITHUB_HEAD_REFERENCE_CORRECTION_20261024063802994",
+      "kind": "APPEND_ONLY_GITHUB_HEAD_REFERENCE_CORRECTION",
+      "observed_at": "2026-10-24T13:38:02.994+07:00",
+      "observed_at_utc": "2026-10-24T06:38:02.994Z",
+      "source": "Fresh GitHub search_commits and compare_commits readback after the previous ledger write.",
+      "exact_targets_before_write": {
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "2dc5a01f2d3c571724a22744ddca7f0c12ee06c1",
+        "prior_event": "CLOUD_CI_N8N_READBACK_20261024063445085"
+      },
+      "verified_actions": [
+        "Re-queried latest repository commits after detecting that concurrent commits advanced main during the run.",
+        "Compared tested commit bf4864ee9ff69a895386fab8296ab3215839d908 against latest observed commit 1d181a092643160dc19b9ae3ff365ec4f11fded7; comparison remains diverged.",
+        "Preserved the earlier observation and appended this correction instead of rewriting history."
+      ],
+      "result": "HEAD_REFERENCE_CORRECTED_APPEND_ONLY; CI_SUCCESS_REMAINS_BRANCH_SCOPED; CURRENT_MAIN_CI_NOT_VERIFIED",
+      "github_ledger_task_count": 28,
+      "tasks_closed": false,
+      "source_mutated": false,
+      "raw_sensor_values_persisted": false,
+      "credentials_committed": false
     }
   ],
   "energy_protection_current": {
@@ -10851,6 +10873,25 @@
         "dispatch_enabled": false
       },
       "result": "TWO_CLOUD_RUNS_SUCCESS_ON_DIVERGED_BRANCH; ARTIFACT_DIGEST_MATCHED; NOT_CURRENT_MAIN_CI_PROOF; N8N_SCAN_SUCCESS; 45_RECOVERY_TASKS_REMAIN_OPEN"
+    },
+    {
+      "observed_at": "2026-10-24T13:38:02.994+07:00",
+      "observed_at_utc": "2026-10-24T06:38:02.994Z",
+      "record_type": "APPEND_ONLY_GITHUB_HEAD_REFERENCE_CORRECTION",
+      "correction_of": "CLOUD_CI_N8N_READBACK_20261024063445085",
+      "prior_field": "github.current_observed_main_head",
+      "prior_value": "60c3c638bb34f31b927afbf385e26fdd37c90c01",
+      "correction": "The 60c3c638 SHA was the comparison target fetched earlier in the run, not the latest main commit at the time the ledger event was written. A fresh commit search then returned 1d181a092643160dc19b9ae3ff365ec4f11fded7 as the latest observed commit.",
+      "latest_observed_main_commit": "1d181a092643160dc19b9ae3ff365ec4f11fded7",
+      "tested_commit": "bf4864ee9ff69a895386fab8296ab3215839d908",
+      "comparison": {
+        "status": "diverged",
+        "ahead_by": 112,
+        "behind_by": 20,
+        "merge_base": "701c02d1c860464ffd247305b2f98e1ad5b6ee6c"
+      },
+      "interpretation": "The two successful cloud runs and matching artifact apply to the tested diverged branch commit only; they do not establish CI success for the latest main commit. No task status is advanced or closed.",
+      "tasks_closed": false
     }
   ]
 }
