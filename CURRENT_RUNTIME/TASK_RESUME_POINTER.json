@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Obtain the real TESSERACT issuer public key through an authorized control surface and verify runner assignment before any CI rerun. Continue Windows Tick exact-target readback after the 16:56:32+07 boundary through an authorized host route; latest verified receipt remains 2026-10-24T09:52:03.879982Z until a newer one is read back. Continue HWiNFO/Android carrier discovery and preserve all 28 GitHub tasks and 45 n8n recovery rows.",
+  "next": "Use an authorized exact-target host route to read D:\\SENSOR_LOGS\\telemetry_buffer_sync.py and compare it with Dropbox revision 0165daa22c5d85b0000000395cdfd73 before any execution; the Dropbox copy's --once path appends telemetry and invokes cloud/GitHub sync, so do not execute it as a substitute. Read the newest Windows Tick receipt after 16:56:32+07; latest verified receipt remains 2026-10-24T09:52:03.879982Z. Continue HWiNFO/Android carrier discovery. Obtain the real TESSERACT issuer public key and verify runner assignment before any CI rerun; preserve all 28 GitHub tasks and 45 n8n recovery rows.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T17:09:13.025+07:00",
+  "updated_at": "2026-10-24T17:12:36.227+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -146,7 +146,7 @@
     "linked_at": "2026-10-21T14:39:07+07:00",
     "latest_observation": {
       "observed_at": "2026-10-24T17:04:39.360+07:00",
-      "MODUAL_SENSOR_LOGS_ROUTING": "WINDOWS_TICK_095203_RECEIPT_AND_SOURCE_HASH_VERIFIED; NEXT_TICK_READBACK_NOT_VERIFIED; LIVE_STREAM_UNVERIFIED",
+      "MODUAL_SENSOR_LOGS_ROUTING": "LATEST_VERIFIED_TICK_20261024T095203879982Z; POST_BOUNDARY_READBACK_NOT_VERIFIED; DROPBOX_SCRIPT_REV_0165daa22c5d85b0000000395cdfd73 IS A MUTATING HISTORICAL CARRIER; LOCAL SCRIPT EQUIVALENCE NOT VERIFIED",
       "ANDROID_OLLAMA_LOCALHOST_CHAT_UI": "OLLAMA_HTTP_200_11_MODELS; ANDROID_TCP_5556_FALSE; HEARTBEAT_UNVERIFIED",
       "XTIME_LOCAL_RUNTIME": "HTTP_200_MODUAL_SOURCE_PRESENT; LIVE_DEVICE_PROVEN_FALSE",
       "INHERITED_TESSERACT_DESKTOP": "PR6_OPEN_HEAD_5312816; REPO_CODE_SEARCH_ZERO_MATCHES_FOR_ISSUER_MARKERS; AUTHORIZED_ISSUER_KEY_AND_RUNNER_ASSIGNMENT_UNVERIFIED; NO_CI_RERUN",
@@ -3794,6 +3794,43 @@
         "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "d8f049e94e4b70400a75757b2d337600d8a46a65",
         "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "3b45c27c99b2e65b64fa1523f7d58cba573a58a4"
       }
+    },
+    {
+      "observed_at": "2026-10-24T17:12:36.227+07:00",
+      "record_type": "DROPBOX_TELEMETRY_SCRIPT_SAFETY_READBACK",
+      "script_observation": {
+        "path": "/Linh Hà/SENSOR_LOGS/telemetry_buffer_sync.py",
+        "file_id": "id:gvG29tEleJwAAAAAAAACEA",
+        "rev": "0165daa22c5d85b0000000395cdfd73",
+        "size_bytes": 10707,
+        "server_modified_utc": "2026-10-12T19:59:29Z",
+        "extracted_text_chars": 10582,
+        "extracted_text_lines": 253,
+        "code_paths_verified": [
+          "record_telemetry_tick() appends to BUFFER_CSV (open mode 'a')",
+          "sync_snapshot_to_cloud() copies BUFFER_CSV to a W: target and replaces the target",
+          "sync_snapshot_to_github() invokes MODUAL_GITHUB_SYNC when present",
+          "--once calls record_telemetry_tick(), sync_snapshot_to_cloud(), and sync_snapshot_to_github()"
+        ],
+        "evidence_basis": "Dropbox extracted text; not a raw-byte hash and not proof of current local Windows file equality."
+      },
+      "local_host": {
+        "exact_local_script_path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+        "local_source_readback_this_turn": "NOT_VERIFIED_AFTER_HOST_CONNECTOR_INTERNAL_ERRORS",
+        "scheduled_task_action_historical": "python.exe D:\\SENSOR_LOGS\\telemetry_buffer_sync.py --once",
+        "latest_verified_receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T095203879982Z.json",
+        "latest_verified_receipt_sha256": "45991BE02267FD17191FEF62C7F88705B6C442D5E6B1B8340D617EDD6010B865",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "post_boundary_receipt": "NOT_VERIFIED"
+      },
+      "safety_decision": "DO_NOT_EXECUTE_OR_SUBSTITUTE_THE_STALE_DROPBOX_SCRIPT. It can append telemetry rows and perform cloud/GitHub synchronization; current local script identity and behavior must be verified on an authorized host before any code execution or repair.",
+      "result": "STALE_PROVIDER_SCRIPT_MUTATING_BEHAVIOR_IDENTIFIED; LOCAL_EQUIVALENCE_UNVERIFIED; NO_EXECUTION_OR_SOURCE_CHANGE",
+      "source_mutated": false,
+      "script_executed": false,
+      "source_reads_after_modual_and_open_write": {
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "dbca61bb61a9575e9325efd8b28d12bd88fef73a",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "ef70feaf03acc3debdd28b8a7060bb99b52e190a"
+      }
     }
   ],
   "latest_sync_observation": {
@@ -6602,20 +6639,20 @@
     "next_edge": "After 15:46:32+07, read the newest exact Windows tick and recompute the source SHA; if the telemetry task again returns 0x41306 or no tick appears, inspect telemetry_buffer_sync.py and task execution history read-only (Task Scheduler Operational log is disabled) without changing task settings or terminating processes. Preserve the 45 n8n recovery rows and 28 GitHub task ledger independently. X-TIME confirms the source file is present but live_device_proven=false; do not claim live sensor activity. Android heartbeat remains unverified. Continue only cloud-safe OPEN tasks; do not publish agents without valid model/credential binding and explicit approval."
   },
   "latest_reentry_observation": {
-    "observed_at": "2026-10-24T17:09:13.025+07:00",
-    "observed_at_utc": "2026-10-24T10:09:13Z",
+    "observed_at": "2026-10-24T17:12:36.227+07:00",
+    "observed_at_utc": "2026-10-24T10:12:36Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "d1f9de6b8d52acb0b596edb02ca414c71e2d7ab4",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "cfefd77820664cbbd6432264b222e565de48ea75",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "ce669477b33e4afb5180180ef1b893ca59e6d4de"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "9379e5b7676edf25fbbfaa676a4dee63296cc61f",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "3b45c27c99b2e65b64fa1523f7d58cba573a58a4",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "d8f049e94e4b70400a75757b2d337600d8a46a65"
     },
-    "action": "Repository issuer-key code search and alternate connector inventory readback after the Windows host's post-boundary probe failed internally.",
-    "outcome": "ISSUER_PUBLIC_KEY_NOT_VERIFIED_BY_REPOSITORY_CODE_SEARCH; ALTERNATE_CONNECTOR_INVENTORY_STALE; PR6_OPEN; NO_CI_RERUN",
+    "action": "Read Dropbox telemetry script metadata and extracted code to determine whether it is safe to use as a substitute for the local tick script.",
+    "outcome": "STALE_PROVIDER_SCRIPT_MUTATING_BEHAVIOR_IDENTIFIED; LOCAL_EQUIVALENCE_UNVERIFIED; NO_EXECUTION_OR_SOURCE_CHANGE",
     "source_reads_after_write": {
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "d8f049e94e4b70400a75757b2d337600d8a46a65",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "3b45c27c99b2e65b64fa1523f7d58cba573a58a4"
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "dbca61bb61a9575e9325efd8b28d12bd88fef73a",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "ef70feaf03acc3debdd28b8a7060bb99b52e190a"
     }
   },
   "latest_security_patch_observation": {
