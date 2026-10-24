@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "MODUAL: latest tick at 07:21:33 device time eventually returned result 0 and receipt WINDOWS_TICK_20261024T002312156252Z.json (SHA-256 afa37ac1d2b2cf722e2fee87a41f2e659137e997a9cc5cd9acbbc43807d9bbb5) at 07:23:12.156Z, ~99.156s after task LastRunTime. Direct source hash matches receipt. One full hash measured 1.747s; a read-only execution of the actual module import/resolver plus record_telemetry_tick() measured 1.022s with exports explicitly 0, no receipt/source mutation. Thus double hashing alone does not explain the intermittent long scheduled run; root cause remains OPEN. Next scheduled run after device clock 07:26:32+07: read exact receipt and task state, and inspect task events/process I/O if duration is again long. HWiNFO shared memory remains inaccessible; its CSV is stale/read-only; intended ADB 192.168.1.14:5556 refused connection. The connected Xiaomi sensor inventory is not a live sample. TESSERACT issuer path: Dropbox raw ZIP carrier exact SHA da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106, 16 entries, no key markers, no bytes persisted; no actual issuer key value found. PR #6 stays OPEN and no CI rerun until runner assignment changes.",
+  "next": "MODUAL: four recent scheduled ticks all returned result 0 and receipts, but receipt delays were 4.657s, 9.619s, 99.156s, and 9.438s. Latest receipt WINDOWS_TICK_20261024T002642437612Z.json SHA-256 C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961 matches source SHA 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Direct full hash measured 1.747s and actual read-only Python import/resolver+record path 1.022s with exports set to 0; double hashing alone does not explain the long run. TaskScheduler Operational log exists but is disabled, so event-level cause cannot be read; no log settings were changed. Next scheduled run after device 07:31:32+07: read exact receipt and task state. HWiNFO mapping unavailable; its CSV stale/read-only. ADB 192.168.1.14:5556 refuses connection; other Xiaomi sensor inventory is not live values. Dropbox reentry ZIP raw SHA da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106, 16 entries, no issuer markers; no key value found. TESSERACT PR #6 remains OPEN and no CI rerun until runner assignment changes.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -1577,6 +1577,109 @@
       },
       "result": "INTERMITTENT_TICK_DELAY_UNEXPLAINED_READONLY_CONSUMER_FAST_DROPBOX_ISSUER_CARRIER_SCANNED",
       "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-24T00:29:35.205Z",
+      "type": "FOUR_RECENT_TICKS_VARIABLE_DURATION_SCHEDULER_LOG_DISABLED_AND_ISSUER_CARRIER_SCAN",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "5d1b04c3b4beb68e6ed4403286e84580d3dc6671",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "46fbbc62a40dba673d64216bfe6c781f813146aa",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "5d5b3eb16a344aa647325a938005584557230057"
+      },
+      "windows": {
+        "device_clock": "2026-10-24T07:28:10.1807687+07:00",
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state": "Ready",
+        "last_run": "2026-10-24T07:26:33+07:00",
+        "next_run": "2026-10-24T07:31:32+07:00",
+        "result": "0x0",
+        "missed_runs": 0,
+        "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T002642437612Z.json",
+        "receipt_sha256": "C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961",
+        "receipt_utc": "2026-10-24T00:26:42.437612Z",
+        "source_bytes": 35389440,
+        "source_mtime_utc": "2026-10-23T08:45:56.2458701Z",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_matches_receipt": true,
+        "live_sensor_reading_confirmed": false,
+        "recent_receipt_delays_seconds": [
+          4.656548,
+          9.618988,
+          99.156252,
+          9.437612
+        ]
+      },
+      "timing_diagnostics": {
+        "local_drive": "D: fixed NTFS",
+        "single_hash_ms": 1747,
+        "read_only_python_import_resolver_seconds": 0.782,
+        "read_only_record_tick_seconds": 0.24,
+        "total_python_seconds": 1.022,
+        "powershell_wall_seconds": 4.122,
+        "exit_code": 0,
+        "exports_explicitly_disabled": true,
+        "source_mutated": false,
+        "double_hash_root_cause": "NOT_PROVEN; direct code path is fast and cannot explain the intermittent ~99s scheduled run alone"
+      },
+      "scheduler_diagnostics": {
+        "task_scheduler_operational_log_exists": true,
+        "enabled": false,
+        "record_count": null,
+        "recent_matching_events": 0,
+        "log_settings_changed": false
+      },
+      "hwinfo": {
+        "pid": 17520,
+        "present": true,
+        "shared_memory_opened": false,
+        "win32_error": 2,
+        "csv_bytes": 39922785,
+        "csv_mtime_utc": "2026-10-21T02:20:45.8565035Z",
+        "csv_read_only": true
+      },
+      "android": {
+        "wireless_target": "192.168.1.14:5556",
+        "connect_result": "actively refused (10061)",
+        "existing_device": "1056285",
+        "model": "2201123G",
+        "android_version": "15",
+        "sensor_inventory_observed": true,
+        "live_sample_values": false,
+        "modual_binding": false
+      },
+      "dropbox_issuer_carrier": {
+        "path": "/Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT/SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip",
+        "rev": "0165daa5e44669e0000000395cdfd73",
+        "size_bytes": 20882,
+        "server_modified_utc": "2026-10-12T20:16:07Z",
+        "raw_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+        "entry_count": 16,
+        "key_marker_hits": 0,
+        "bytes_persisted_to_disk": false
+      },
+      "tesseract": {
+        "pr": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "run_39994207477": "failure",
+        "run_39994207667": "failure",
+        "issuer_key_value_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "braid": {
+        "exit_code": 0,
+        "six_actions": 9,
+        "plural_actions": 5,
+        "source_sha256_unchanged": true,
+        "mutation_executed": false,
+        "six_receipt_sha256": "5c39c6cd05e909f41fe62276e0bbd9acc67d0fd180adab5dac9d2bf0bcfe212e",
+        "readback_ok": true,
+        "cloud_host_wiring": "NOT_VERIFIED"
+      },
+      "result": "TICK_SUCCESS_VARIABLE_DURATION_EVENT_LOG_DISABLED_READONLY_CONSUMER_FAST_ISSUER_CARRIER_SCANNED",
+      "open_tasks_closed": false
     }
   ],
   "latest_sync_observation": {
@@ -1608,44 +1711,56 @@
     ]
   },
   "latest_runtime_observation": {
-    "observed_at": "2026-10-24T07:25:42+07:00",
-    "observed_at_utc": "2026-10-24T00:25:42Z",
+    "observed_at": "2026-10-24T07:29:35.205+07:00",
+    "observed_at_utc": "2026-10-24T00:29:35.205Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "e48b49248ddbcd09a62997c2d5c7abf09b5873cd",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "5be781c41577dceb9e0c19860907d37a9c2f17ba",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "5f0b7610e1eb210f822b3887110683a0ef4270f9"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "5d1b04c3b4beb68e6ed4403286e84580d3dc6671",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "46fbbc62a40dba673d64216bfe6c781f813146aa",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "5d5b3eb16a344aa647325a938005584557230057"
     },
     "windows": {
+      "device_clock": "2026-10-24T07:28:10.1807687+07:00",
       "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
-      "device_clock_at_last_read": "2026-10-24T07:23:43.3666789+07:00",
-      "state_at_last_read": "Ready",
-      "last_run": "2026-10-24T07:21:33+07:00",
-      "next_run": "2026-10-24T07:26:32+07:00",
+      "state": "Ready",
+      "last_run": "2026-10-24T07:26:33+07:00",
+      "next_run": "2026-10-24T07:31:32+07:00",
       "result": "0x0",
       "missed_runs": 0,
-      "latest_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T002312156252Z.json",
-      "receipt_sha256": "afa37ac1d2b2cf722e2fee87a41f2e659137e997a9cc5cd9acbbc43807d9bbb5",
-      "receipt_utc": "2026-10-24T00:23:12.156252Z",
-      "receipt_delay_seconds": 99.156,
+      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T002642437612Z.json",
+      "receipt_sha256": "C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961",
+      "receipt_utc": "2026-10-24T00:26:42.437612Z",
       "source_bytes": 35389440,
       "source_mtime_utc": "2026-10-23T08:45:56.2458701Z",
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-      "source_hash_matches_receipt": true,
-      "live_sensor_reading_confirmed": false
+      "source_matches_receipt": true,
+      "live_sensor_reading_confirmed": false,
+      "recent_receipt_delays_seconds": [
+        4.656548,
+        9.618988,
+        99.156252,
+        9.437612
+      ]
     },
     "timing_diagnostics": {
-      "volume": "D: fixed NTFS",
+      "local_drive": "D: fixed NTFS",
       "single_hash_ms": 1747,
-      "direct_python_import_resolver_seconds": 0.782,
-      "record_tick_seconds": 0.24,
+      "read_only_python_import_resolver_seconds": 0.782,
+      "read_only_record_tick_seconds": 0.24,
       "total_python_seconds": 1.022,
       "powershell_wall_seconds": 4.122,
       "exit_code": 0,
       "exports_explicitly_disabled": true,
       "source_mutated": false,
-      "interpretation": "Direct code path is fast in this probe; it does not explain the intermittent 99.156-second scheduled run. Root cause remains unproven."
+      "double_hash_root_cause": "NOT_PROVEN; direct code path is fast and cannot explain the intermittent ~99s scheduled run alone"
+    },
+    "scheduler_diagnostics": {
+      "task_scheduler_operational_log_exists": true,
+      "enabled": false,
+      "record_count": null,
+      "recent_matching_events": 0,
+      "log_settings_changed": false
     },
     "hwinfo": {
       "pid": 17520,
@@ -1657,7 +1772,7 @@
       "csv_read_only": true
     },
     "android": {
-      "target": "192.168.1.14:5556",
+      "wireless_target": "192.168.1.14:5556",
       "connect_result": "actively refused (10061)",
       "existing_device": "1056285",
       "model": "2201123G",
@@ -1695,7 +1810,7 @@
       "readback_ok": true,
       "cloud_host_wiring": "NOT_VERIFIED"
     },
-    "result": "INTERMITTENT_TICK_DELAY_UNEXPLAINED_READONLY_CONSUMER_FAST_DROPBOX_ISSUER_CARRIER_SCANNED",
+    "result": "TICK_SUCCESS_VARIABLE_DURATION_EVENT_LOG_DISABLED_READONLY_CONSUMER_FAST_ISSUER_CARRIER_SCANNED",
     "open_tasks_closed": false
   }
 }
