@@ -39,7 +39,7 @@ class ReadOnlyExternalAdapterTests(unittest.TestCase):
         self.assertEqual(run_mock.call_args.kwargs["timeout"], 45)
 
     def test_7z_uses_test_mode_without_extracting(self):
-        path = self.archive("fixture.7z", b"7z\\xbc\\xaf'\\x1c".encode("latin-1"))
+        path = self.archive("fixture.7z", bytes.fromhex("377abcaf271c"))
         with patch.object(mod.shutil, "which", side_effect=lambda n: "/usr/bin/7zz" if n == "7zz" else None), \
              patch.object(mod.subprocess, "run", return_value=SimpleNamespace(returncode=0)) as run:
             result = mod.inspect(path)
@@ -49,7 +49,7 @@ class ReadOnlyExternalAdapterTests(unittest.TestCase):
         self.assert_read_only_command(run, ["/usr/bin/7zz", "t", "-bd"], path)
 
     def test_rar_prefers_unrar_test_mode(self):
-        path = self.archive("fixture.rar", b"Rar!\\x1a\\x07".encode("latin-1"))
+        path = self.archive("fixture.rar", bytes.fromhex("526172211a07"))
         with patch.object(mod.shutil, "which", side_effect=lambda n: "/usr/bin/unrar" if n == "unrar" else None), \
              patch.object(mod.subprocess, "run", return_value=SimpleNamespace(returncode=0)) as run:
             result = mod.inspect(path)
