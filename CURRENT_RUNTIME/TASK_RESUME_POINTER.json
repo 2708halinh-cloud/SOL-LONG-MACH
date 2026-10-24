@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "MODUAL: after 2026-10-24T23:51:32+07, exact-read the next Tick receipt and recompute direct CSV SHA-256. Latest verified receipt at 23:48:41+07 is WINDOWS_TICK_20261024T164634219800Z.json, SHA 0436d7b164c227d5b1a1da532f8959b21aa7494992f8363ff45d40dcd64d99ca; source hash matches, task result 0x0. Current provider checkpoint PROVIDER_READBACK_20261024T2345ICT.json holds the latest X-TIME/Android/HWiNFO/Dropbox/Ollama/TESSERACT probes. Keep live_sensor_reading_confirmed=false until a genuine sample is verified; do not rerun CI without runner assignment change.",
+  "next": "MODUAL: use an authorized alternate host carrier for the next Windows Tick receipt and direct CSV SHA-256; latest direct tick remains WINDOWS_TICK_20261024T164634219800Z.json at 2026-10-24T16:46:34.219800Z, source hash match verified, live_sensor_reading_confirmed=false. Current connector inventory reports devices Offline but does not prove physical device state. Cloud: n8n execution 145 SUCCESS, exact row 304 X20261024180023983_CLOUD read back; 45 recovery rows and 45 pending; HOST_HEARTBEAT_NOT_PROBED. TESSERACT PR #6 stays OPEN; issuer public key and runner assignment unverified, do not rerun CI without verified runner change. Archive PR #27 current head 23731f7978bbc2ddb41f61e9d0a06ca968cb1fae has no PR-triggered run returned; current topology test preserves BRAIN_WAVE_LOGS; do not treat the earlier failure as current-head result. Keep all source tasks OPEN.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T17:53:11Z",
+  "updated_at": "2026-10-24T18:11:44.393Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -5051,6 +5051,84 @@
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
       "live_sensor_reading_confirmed": false,
       "tasks_closed": 0
+    },
+    {
+      "id": "PROVIDER_READBACK_20261025T0111ICT",
+      "observed_at": "2026-10-25T01:11:44.393+07:00",
+      "observed_at_utc": "2026-10-24T18:11:44.393Z",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0111ICT.json",
+      "checkpoint_blob_sha": "84cb4e9f0f1bf479eb4d54e757fbc9d88207d4f3",
+      "checkpoint_commit": "36468c6d25faedef8aedc83844ba554796cf72da",
+      "source": "Fresh GitHub source reads, Dropbox metadata, n8n execution/row, Desktop Commander inventory, and GitHub PR #6/#27 readbacks",
+      "result": "N8N_ROW_304_VERIFIED;DROPBOX_METADATA_RECONFIRMED;HOST_TICK_NOT_FRESH;LIVE_SENSOR_UNVERIFIED;TESSERACT_ISSUER_RUNNER_UNVERIFIED;ARCHIVE_PR27_CURRENT_HEAD_NO_CI_RESULT",
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "revision": "0165dc1e4794ab00000000395cdfd73",
+        "bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true
+      },
+      "desktop_commander_connector_snapshot": {
+        "accounts_checked": [
+          "Primary",
+          "mmmm"
+        ],
+        "device_statuses": [
+          "localhost Offline; last seen 29h",
+          "DESKTOP-86ITNQ4 Offline; last seen 104h",
+          "DESKTOP-86ITNQ4 Offline; last seen 330h"
+        ],
+        "physical_device_state_proven": false
+      },
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "execution_id": "145",
+        "status": "success",
+        "row_id": 304,
+        "event_id": "X20261024180023983_CLOUD",
+        "exact_row_readback": true,
+        "state": "OPEN_WORK_REMAINS",
+        "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+        "recovery_rows": 45,
+        "pending_rows": 45,
+        "host_operations": 0,
+        "tasks_closed": 0
+      },
+      "xtime_ollama": {
+        "refreshed_this_turn": false,
+        "last_verified_snapshot": "CURRENT_RUNTIME/PROVIDER_READBACK_20261024T2345ICT.json",
+        "xtime_live_device_proven": false
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "open",
+        "draft": true,
+        "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": [
+          39994207477,
+          39994207667
+        ],
+        "runs_failed": true,
+        "artifacts": 0,
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "archive_pr27": {
+        "state": "open",
+        "draft": true,
+        "head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
+        "topology_test_blob_sha": "6208f9edbe1886814870ba96c8da0b8a27141e30",
+        "current_head_pr_triggered_runs_returned": 0,
+        "current_test_preserves_BRAIN_WAVE_LOGS_sibling": true,
+        "real_archive_fixtures_verified_on_target_host": false,
+        "task_closed": false
+      },
+      "tasks_closed": 0,
+      "raw_sensor_data_committed": false,
+      "credentials_committed": false,
+      "source_deleted_or_moved": false,
+      "host_config_changed": false
     }
   ],
   "latest_sync_observation": {
@@ -8125,26 +8203,55 @@
       "pending_rows": 45,
       "host_operations": 0,
       "tasks_closed": 0
+    },
+    {
+      "observed_at": "2026-10-25T01:11:44.393+07:00",
+      "observed_at_utc": "2026-10-24T18:11:44.393Z",
+      "record_type": "N8N_EXECUTION_145_EXACT_ROW_304_READBACK",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0111ICT.json",
+      "checkpoint_blob_sha": "84cb4e9f0f1bf479eb4d54e757fbc9d88207d4f3",
+      "checkpoint_commit": "36468c6d25faedef8aedc83844ba554796cf72da",
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+      "execution_id": "145",
+      "status": "success",
+      "started_at_utc": "2026-10-24T18:00:22.082Z",
+      "stopped_at_utc": "2026-10-24T18:00:24.140Z",
+      "receipt_table_id": "Sk0EFJK5NzWVpBvm",
+      "project_id": "6qKpRmicIGHA5snY",
+      "receipt_row_id": 304,
+      "receipt_event_id": "X20261024180023983_CLOUD",
+      "occurred_at_utc": "2026-10-24T18:00:23.983Z",
+      "exact_row_readback": true,
+      "state": "OPEN_WORK_REMAINS",
+      "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+      "recovery_rows": 45,
+      "pending_rows": 45,
+      "host_heartbeat_probed": false,
+      "host_operations": 0,
+      "tasks_closed": 0,
+      "raw_sensor_data_committed": false,
+      "credentials_committed": false
     }
   ],
   "latest_continuity_readback": {
-    "observed_at": "2026-10-24T23:05:02+07:00",
-    "observed_at_utc": "2026-10-24T16:05:02Z",
-    "record_type": "N8N_EXECUTION_141_EXACT_ROW_290_READBACK",
-    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2303ICT.json",
-    "checkpoint_blob_sha": "1b72f399ba684b9801ab41fc4bd9d217ee9d4b91",
-    "checkpoint_commit": "a0404c085119a87eeca967350e9cc54676a7f2f8",
+    "observed_at": "2026-10-25T01:11:44.393+07:00",
+    "observed_at_utc": "2026-10-24T18:11:44.393Z",
+    "record_type": "N8N_EXECUTION_145_EXACT_ROW_304_READBACK",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0111ICT.json",
+    "checkpoint_blob_sha": "84cb4e9f0f1bf479eb4d54e757fbc9d88207d4f3",
+    "checkpoint_commit": "36468c6d25faedef8aedc83844ba554796cf72da",
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
-    "execution_id": "141",
+    "execution_id": "145",
     "status": "success",
-    "started_at_utc": "2026-10-24T16:00:22.078Z",
-    "stopped_at_utc": "2026-10-24T16:00:24.111Z",
+    "started_at_utc": "2026-10-24T18:00:22.082Z",
+    "stopped_at_utc": "2026-10-24T18:00:24.140Z",
     "receipt_table_id": "Sk0EFJK5NzWVpBvm",
     "project_id": "6qKpRmicIGHA5snY",
-    "receipt_row_id": 290,
-    "receipt_event_id": "X20261024160023966_CLOUD",
-    "occurred_at_utc": "2026-10-24T16:00:23.966Z",
+    "receipt_row_id": 304,
+    "receipt_event_id": "X20261024180023983_CLOUD",
+    "occurred_at_utc": "2026-10-24T18:00:23.983Z",
     "exact_row_readback": true,
     "state": "OPEN_WORK_REMAINS",
     "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
@@ -8157,20 +8264,25 @@
     "credentials_committed": false
   },
   "latest_reentry_observation": {
-    "observed_at": "2026-10-24T17:12:36.227+07:00",
-    "observed_at_utc": "2026-10-24T10:12:36Z",
-    "source_reads": {
+    "observed_at": "2026-10-25T01:11:44.393+07:00",
+    "observed_at_utc": "2026-10-24T18:11:44.393Z",
+    "source_reads_before_write": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "9379e5b7676edf25fbbfaa676a4dee63296cc61f",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "3b45c27c99b2e65b64fa1523f7d58cba573a58a4",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "d8f049e94e4b70400a75757b2d337600d8a46a65"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "9080ec571f1e857cf660e5c755306be19f37d58f",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "de78c18e6c7216d69d82927968874b4ba8aab3b0",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "bd0e3a451b086655b8317c196a40e2a1f5d58611"
     },
-    "action": "Read Dropbox telemetry script metadata and extracted code to determine whether it is safe to use as a substitute for the local tick script.",
-    "outcome": "STALE_PROVIDER_SCRIPT_MUTATING_BEHAVIOR_IDENTIFIED; LOCAL_EQUIVALENCE_UNVERIFIED; NO_EXECUTION_OR_SOURCE_CHANGE",
-    "source_reads_after_write": {
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "dbca61bb61a9575e9325efd8b28d12bd88fef73a",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "ef70feaf03acc3debdd28b8a7060bb99b52e190a"
+    "action": "Fresh-read mandatory SOL-LONG-MACH files and provider states; exact-read n8n execution 145 and row 304; append provider observation to MODUAL and OPEN_TASKS; record current PR #6 and PR #27 states.",
+    "outcome": "N8N_ROW_304_VERIFIED; Dropbox source metadata unchanged; current host Tick not freshly accessible; device connector inventory is not physical-offline proof; no task status changed.",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0111ICT.json",
+    "checkpoint_blob_sha": "84cb4e9f0f1bf479eb4d54e757fbc9d88207d4f3",
+    "checkpoint_commit": "36468c6d25faedef8aedc83844ba554796cf72da",
+    "source_reads_after_other_writes": {
+      "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "de78c18e6c7216d69d82927968874b4ba8aab3b0",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "bd0e3a451b086655b8317c196a40e2a1f5d58611"
     }
   },
   "latest_security_patch_observation": {
@@ -8237,23 +8349,23 @@
     "status_effect": "Keep SUPER_R014 OPEN; do not substitute derived ZIPs or change ADMIN location."
   },
   "latest_cloud_continuity_readback": {
-    "observed_at": "2026-10-24T16:45:06.4477898Z",
-    "observed_at_local": "2026-10-24T23:45:06.4477898+07:00",
-    "record_type": "N8N_EXECUTION_143_EXACT_ROW_299_READBACK",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261024T2345ICT.json",
-    "checkpoint_blob_sha": "88add2b7124254766082ccabf2518a985ee5f6bf",
-    "checkpoint_commit": "90b86772f54727ac77374cbc675ba690c0158381",
+    "observed_at": "2026-10-25T01:11:44.393+07:00",
+    "observed_at_utc": "2026-10-24T18:11:44.393Z",
+    "record_type": "N8N_EXECUTION_145_EXACT_ROW_304_READBACK",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0111ICT.json",
+    "checkpoint_blob_sha": "84cb4e9f0f1bf479eb4d54e757fbc9d88207d4f3",
+    "checkpoint_commit": "36468c6d25faedef8aedc83844ba554796cf72da",
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
-    "execution_id": "143",
+    "execution_id": "145",
     "status": "success",
-    "started_at_utc": "2026-10-24T16:42:14.275Z",
-    "stopped_at_utc": "2026-10-24T16:42:16.216Z",
+    "started_at_utc": "2026-10-24T18:00:22.082Z",
+    "stopped_at_utc": "2026-10-24T18:00:24.140Z",
     "receipt_table_id": "Sk0EFJK5NzWVpBvm",
     "project_id": "6qKpRmicIGHA5snY",
-    "receipt_row_id": 299,
-    "receipt_event_id": "X20261024164216076_CLOUD",
-    "occurred_at_utc": "2026-10-24T16:42:16.076Z",
+    "receipt_row_id": 304,
+    "receipt_event_id": "X20261024180023983_CLOUD",
+    "occurred_at_utc": "2026-10-24T18:00:23.983Z",
     "exact_row_readback": true,
     "state": "OPEN_WORK_REMAINS",
     "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
@@ -8263,9 +8375,7 @@
     "host_operations": 0,
     "tasks_closed": 0,
     "raw_sensor_data_committed": false,
-    "credentials_committed": false,
-    "latest_table_row_id": 300,
-    "latest_table_event_id": "X20261024164134153_WINDOWS_TICK_READBACK"
+    "credentials_committed": false
   },
   "cloud_continuity": {
     "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2117ICT.json",
@@ -9323,22 +9433,29 @@
       "checkpoint_commit": "cf3f2b947e9cb6337eccbc68205338e10df6544c",
       "result": "TICK_VERIFIED_SOURCE_HASH_MATCH;LIVE_SENSOR_STREAM_NOT_VERIFIED",
       "next_callable_edge": "Read next Tick after 23:51:32+07; continue genuine sensor-source verification."
+    },
+    {
+      "id": "PROVIDER_READBACK_20261025T0111ICT",
+      "observed_at": "2026-10-24T18:11:44.393Z",
+      "observed_at_local": "2026-10-25T01:11:44.393+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0111ICT.json",
+      "checkpoint_blob_sha": "84cb4e9f0f1bf479eb4d54e757fbc9d88207d4f3",
+      "checkpoint_commit": "36468c6d25faedef8aedc83844ba554796cf72da",
+      "result": "N8N_ROW_304_VERIFIED;DROPBOX_METADATA_RECONFIRMED;HOST_TICK_NOT_FRESH;LIVE_SENSOR_UNVERIFIED;TESSERACT_ISSUER_RUNNER_UNVERIFIED;ARCHIVE_PR27_CURRENT_HEAD_NO_CI_RESULT",
+      "next_callable_edge": "Use alternate authorized host carrier for fresh Tick; continue TESSERACT issuer/runner verification; obtain current-head CI evidence or isolated test for archive PR #27."
     }
   ],
   "latest_tesseract_runner_issuer_probe": {
-    "observed_at_local": "2026-10-24T23:45:06.4477898+07:00",
+    "observed_at_local": "2026-10-25T01:11:44.393+07:00",
+    "observed_at_utc": "2026-10-24T18:11:44.393Z",
     "repository": "2708halinh-cloud/x-time-web",
     "pr": 6,
     "pr_state": "open",
+    "draft": true,
     "merged": false,
     "pr_head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-    "security_branch": "security/repo-relative-read-containment-20261024",
-    "security_main_rs_blob_sha": "7b7f90ffe7b9996254d9f690a3575656185d49dd",
-    "pr_branch_main_rs_blob_sha": "1843a1dcd686f0a6edd78c327156833e7f4678b5",
-    "comparison_base": "tesseract-desktop-mvp-20261006",
-    "ahead_by": 5,
-    "behind_by": 0,
     "issuer_key_variable_reference": "vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+    "issuer_key_code_search_results": 0,
     "issuer_public_key_verified": false,
     "runner_assignment_change_verified": false,
     "run_39994207477": {
@@ -10328,5 +10445,103 @@
       },
       "status_effect": "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN until its authoritative task record/target is read back; do not close solely because CI passed."
     }
-  ]
+  ],
+  "latest_provider_readback": {
+    "id": "PROVIDER_READBACK_20261025T0111ICT",
+    "observed_at": "2026-10-25T01:11:44.393+07:00",
+    "observed_at_utc": "2026-10-24T18:11:44.393Z",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0111ICT.json",
+    "checkpoint_blob_sha": "84cb4e9f0f1bf479eb4d54e757fbc9d88207d4f3",
+    "checkpoint_commit": "36468c6d25faedef8aedc83844ba554796cf72da",
+    "source": "Fresh GitHub source reads, Dropbox metadata, n8n execution/row, Desktop Commander inventory, and GitHub PR #6/#27 readbacks",
+    "result": "N8N_ROW_304_VERIFIED;DROPBOX_METADATA_RECONFIRMED;HOST_TICK_NOT_FRESH;LIVE_SENSOR_UNVERIFIED;TESSERACT_ISSUER_RUNNER_UNVERIFIED;ARCHIVE_PR27_CURRENT_HEAD_NO_CI_RESULT",
+    "dropbox": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_readback": true
+    },
+    "desktop_commander_connector_snapshot": {
+      "accounts_checked": [
+        "Primary",
+        "mmmm"
+      ],
+      "device_statuses": [
+        "localhost Offline; last seen 29h",
+        "DESKTOP-86ITNQ4 Offline; last seen 104h",
+        "DESKTOP-86ITNQ4 Offline; last seen 330h"
+      ],
+      "physical_device_state_proven": false
+    },
+    "n8n": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "145",
+      "status": "success",
+      "row_id": 304,
+      "event_id": "X20261024180023983_CLOUD",
+      "exact_row_readback": true,
+      "state": "OPEN_WORK_REMAINS",
+      "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+      "recovery_rows": 45,
+      "pending_rows": 45,
+      "host_operations": 0,
+      "tasks_closed": 0
+    },
+    "xtime_ollama": {
+      "refreshed_this_turn": false,
+      "last_verified_snapshot": "CURRENT_RUNTIME/PROVIDER_READBACK_20261024T2345ICT.json",
+      "xtime_live_device_proven": false
+    },
+    "tesseract": {
+      "pr": 6,
+      "state": "open",
+      "draft": true,
+      "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "runs": [
+        39994207477,
+        39994207667
+      ],
+      "runs_failed": true,
+      "artifacts": 0,
+      "issuer_public_key_verified": false,
+      "runner_assignment_change_verified": false,
+      "ci_rerun": false
+    },
+    "archive_pr27": {
+      "state": "open",
+      "draft": true,
+      "head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
+      "topology_test_blob_sha": "6208f9edbe1886814870ba96c8da0b8a27141e30",
+      "current_head_pr_triggered_runs_returned": 0,
+      "current_test_preserves_BRAIN_WAVE_LOGS_sibling": true,
+      "real_archive_fixtures_verified_on_target_host": false,
+      "task_closed": false
+    },
+    "tasks_closed": 0,
+    "raw_sensor_data_committed": false,
+    "credentials_committed": false,
+    "source_deleted_or_moved": false,
+    "host_config_changed": false
+  },
+  "latest_archive_pr_current_head_probe": {
+    "observed_at_local": "2026-10-25T01:11:44.393+07:00",
+    "observed_at_utc": "2026-10-24T18:11:44.393Z",
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "pr": 27,
+    "pr_state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
+    "base": "main",
+    "updated_at_utc": "2026-10-24T17:55:14Z",
+    "topology_test_path": "tests/test_sol_library_stone_topology.py",
+    "topology_test_blob_sha": "6208f9edbe1886814870ba96c8da0b8a27141e30",
+    "current_test_preserves_BRAIN_WAVE_LOGS_sibling": true,
+    "current_test_rejects_SPACE_STONE_WORKSPACE_root_alias": true,
+    "current_head_pr_triggered_runs_returned": 0,
+    "previous_topology_failure_predates_current_head_update": true,
+    "real_archive_fixtures_verified_on_target_host": false,
+    "task_closed": false
+  }
 }
