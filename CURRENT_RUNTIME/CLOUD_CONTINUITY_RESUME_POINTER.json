@@ -2,15 +2,15 @@
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.2",
   "state": "OPEN_WORK_REMAINS",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_202610250337ICT.json",
-    "blob_sha": "2a64965129285f140018fa0f58d019c67020b1e7",
-    "commit_sha": "79f6e92ab65e190ec3797ada33e5b19508532582",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_202610250344ICT.json",
+    "blob_sha": "3d4179e8b49902295164f4b9760827289dd010be",
+    "commit_sha": "58e42415ea27de950a3932e8509a16b233b3ad0e",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0258ICT.json",
-    "blob_sha": "f392509546167314bd588ec820b75efbb53f8cd5",
-    "commit_sha": "693425d25fd790d4697aeafbe278939d6e132c7f",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_202610250337ICT.json",
+    "blob_sha": "2a64965129285f140018fa0f58d019c67020b1e7",
+    "commit_sha": "79f6e92ab65e190ec3797ada33e5b19508532582",
     "readback_verified": true
   },
   "historical_checkpoint": {
@@ -46,8 +46,9 @@
   },
   "archive_task": 27,
   "next": [
-    "Recheck the Windows tick and scheduled task after the overrun; do not terminate the running task.",
-    "Locate the exact MODUAL bulk source by SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 and size 89814328 bytes; do not substitute the differently hashed RAW_VAULT candidate.",
+    "Recheck the Windows task after the next scheduled interval; capture a new tick only if the task completes normally, and do not terminate it.",
+    "Diagnose why the one-shot task reports 0x41306 with no new tick; the TaskScheduler Operational log is disabled, so cause remains UNKNOWN.",
+    "Locate the exact MODUAL bulk source by SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 and size 89814328 bytes; do not substitute the RAW_VAULT candidate.",
     "Find an authorized raw-byte route for the third Project ZIP; keep SV-20261020-02 OPEN and preserve provider identity.",
     "Continue original-export discovery for JINEY, FUNIX, and DAT NGUYEN; do not relabel identity-anchor ZIPs as original exports.",
     "Keep PR #27-#30 OPEN/Draft; no merge or force-push while their branches remain diverged from main.",
@@ -74,8 +75,8 @@
     "commit_sha": "23923f1858b71d7dd0eb4d3b5fbaff48555a22b3",
     "readback_verified": true
   },
-  "updated_at": "2026-10-25T03:38:51+07:00",
-  "observed_at": "2026-10-25T03:38:51+07:00",
+  "updated_at": "2026-10-25T03:44:45+07:00",
+  "observed_at": "2026-10-25T03:44:45+07:00",
   "older_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0156ICT.json",
     "blob_sha": "5bf6b8945d94c8a17486c2a78220a02458cb7593",
@@ -95,21 +96,25 @@
     "synthetic_rows_added": 0,
     "cloud_enabled": false,
     "github_enabled": false,
-    "task_state": "Running",
-    "task_last_run_local": "2026-10-25T03:26:33+07:00",
-    "task_last_result": "0x41301",
-    "task_next_run_local_reported": "2026-10-25T03:31:32+07:00",
+    "task_state": "Ready",
+    "task_last_run_local": "2026-10-25T03:31:33+07:00",
+    "task_last_result": "0x41306",
+    "task_next_run_local_reported": "2026-10-25T03:36:32+07:00",
     "next_run_elapsed_at_readback": true,
+    "task_execution_limit": "PT4M",
+    "multiple_instances_policy": "IgnoreNew",
     "missed_runs": 0,
-    "task_settings_changed": false,
-    "process_terminated": false
+    "task_scheduler_operational_log_enabled": false,
+    "task_termination_cause": "UNKNOWN",
+    "process_terminated_by_agent": false,
+    "task_settings_changed": false
   },
   "latest_provider_readback": {
-    "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_202610250337ICT.json",
-    "checkpoint_blob_sha": "2a64965129285f140018fa0f58d019c67020b1e7",
-    "checkpoint_commit_sha": "79f6e92ab65e190ec3797ada33e5b19508532582",
+    "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_202610250344ICT.json",
+    "checkpoint_blob_sha": "3d4179e8b49902295164f4b9760827289dd010be",
+    "checkpoint_commit_sha": "58e42415ea27de950a3932e8509a16b233b3ad0e",
     "exact_target_readback": true,
-    "observed_at": "2026-10-25T03:38:51+07:00"
+    "observed_at": "2026-10-25T03:44:45+07:00"
   },
   "latest_n8n_readback": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -128,6 +133,11 @@
     "provider_readback_row_id": 314,
     "provider_readback_event_id": "X202610250337_PROVIDER_READBACK",
     "provider_readback_exact_readback": true,
+    "host_task_readback_row_id": 315,
+    "host_task_readback_event_id": "X202610250343_HOST_TASK_READBACK",
+    "host_task_readback_exact_readback": true,
+    "latest_evidence_row_id": 315,
+    "evidence_row_count": 315,
     "tasks_closed": 0
   },
   "latest_braid_readback": {
@@ -246,7 +256,7 @@
   },
   "latest_github_pr_readback": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_observed_before_checkpoint": "a4d46a4b28fdeefa373202daef8798ec72b1ab4a",
+    "main_head_observed_before_checkpoint": "fa39252331ca9bee19933a4bbd563d858c64b116",
     "prs": [
       {
         "number": 27,
@@ -300,5 +310,20 @@
     ],
     "archive_task_status": "OPEN",
     "no_force_push_or_merge": true
+  },
+  "latest_host_task_readback": {
+    "n8n_row_id": 315,
+    "event_id": "X202610250343_HOST_TASK_READBACK",
+    "exact_readback": true,
+    "task_last_result": "0x41306",
+    "task_state": "Ready",
+    "no_new_tick": true,
+    "task_scheduler_operational_log_enabled": false,
+    "source_sha256s": {
+      "run_telemetry_buffer_sync.ps1": "c081986028b17d039ed20a590a60db33197184dbfbb945391a42a049d674d9cf",
+      "telemetry_buffer_sync.py": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+      "sensor_root_resolver.py": "117bcb01aefa908aac861f97c83dcccff7e84a5d080d771da09134378db98471",
+      "verify_dropbox_content_hash_20261023.py": "cdfb682fadc7ebadffa6a929ae984cdbcb4426ae03e1368c2e31836ef12ed6d0"
+    }
   }
 }
