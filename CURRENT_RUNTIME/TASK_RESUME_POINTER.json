@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Read the next tick after the host-local scheduled boundary 17:26:32+07; compare source SHA. Preserve live_sensor_reading_confirmed=false until a live sample is proven. Android remains unverified.",
+  "next": "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T1843ICT.json. Verify the newest host tick and Scheduled Task after the elapsed 18:41:32 boundary on the next responsive read; do not run the task manually or change configuration. Keep live_sensor_reading_confirmed=false and Android unverified until independently proven. Continue cloud-safe OPEN edges; do not publish Agents without explicit approval.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T10:40:00Z",
+  "updated_at": "2026-10-24T11:43:07Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -6846,54 +6846,49 @@
     "result": "NO_NEW_VERIFIED_RAW_ACCOUNT_EXPORT; DERIVED_CARRIERS_CLASSIFIED; CONTINUE_OTHER_OPEN_EDGES"
   },
   "latest_cloud_continuity_readback": {
-    "observed_at": "2026-10-24T10:29:22.577Z",
-    "observed_at_local": "2026-10-24T17:29:22.577+07:00",
-    "record_type": "CLOUD_SCAN_131_EXACT_ROW273_READBACK",
-    "source": "Fresh n8n execution 131 and exact row 273; post-boundary Windows tick/source/task readback; Braid read-only receipts; GitHub local-script source comparison.",
-    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T1728ICT.json",
-    "checkpoint_file_blob_sha": "e63f0c106ce95d7cfeb517a428719c348ee9e2bf",
-    "checkpoint_commit": "d17a1e972adb99002ae59949a3d7fd971f0a21d4",
+    "observed_at": "2026-10-24T11:43:07Z",
+    "observed_at_local": "2026-10-24T18:43:07+07:00",
+    "record_type": "CLOUD_SCAN_133_ROW275_PLUS_POST_BOUNDARY_HOST_READBACK",
+    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T1843ICT.json",
+    "checkpoint_file_blob_sha": "b4b6906dda15cbf9b800ec0c18688b4809d51243",
+    "checkpoint_commit": "17b3f9ad87d2f33e4020faa3388b0c4dc949e04a",
     "n8n": {
       "workflow_id": "BogzhFUDbRp7kuwh",
       "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
       "active": true,
-      "execution_id": "131",
+      "execution_id": "133",
       "status": "success",
-      "mode": "trigger",
-      "started_at": "2026-10-24T10:00:22.076Z",
-      "stopped_at": "2026-10-24T10:00:24.130Z",
+      "started_at": "2026-10-24T11:00:22.072Z",
+      "stopped_at": "2026-10-24T11:00:24.096Z",
       "receipt_table_id": "Sk0EFJK5NzWVpBvm",
-      "receipt_row_id": 273,
-      "receipt_event_id": "X20261024100023975_CLOUD",
-      "receipt_state": "OPEN_WORK_REMAINS",
+      "receipt_row_id": 275,
+      "receipt_event_id": "X20261024110023952_CLOUD",
+      "state": "OPEN_WORK_REMAINS",
       "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+      "exact_row_readback": true,
       "recovery_table_id": "rSPFIOWbS7cfNJ8z",
       "recovery_rows": 45,
       "nonterminal_rows": 45,
-      "user_task_rows": 27,
-      "host_heartbeat_probed": false,
-      "host_operations": 0,
-      "tasks_closed": false,
-      "exact_row_readback": true
+      "tasks_closed": 0
     },
-    "result": "N8N_131_ROW273_VERIFIED; WINDOWS_TICK_102154_SOURCE_HASH_MATCH; LIVE_SENSOR_NOT_VERIFIED; ANDROID_HEARTBEAT_UNVERIFIED"
+    "result": "N8N_133_ROW275_VERIFIED; POST_BOUNDARY_HOST_TICK_READ; LIVE_SENSOR_NOT_VERIFIED; ANDROID_UNVERIFIED"
   },
   "cloud_continuity": {
-    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T1735ICT.json",
-    "checkpoint_blob_sha": "0860b5a20c883bd3dfa0e797ce4a1b0423bcbf61",
-    "checkpoint_commit": "9f345ae3615eaa11830bcd6d82c6d0fc5b918a2a",
-    "observed_at_utc": "2026-10-24T10:35:19.942Z",
+    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T1843ICT.json",
+    "checkpoint_blob_sha": "b4b6906dda15cbf9b800ec0c18688b4809d51243",
+    "checkpoint_commit": "17b3f9ad87d2f33e4020faa3388b0c4dc949e04a",
+    "observed_at_utc": "2026-10-24T11:43:07Z",
     "workflow_id": "BogzhFUDbRp7kuwh",
-    "execution_id": "132",
+    "execution_id": "133",
     "receipt_table_id": "Sk0EFJK5NzWVpBvm",
-    "receipt_row_id": 274,
-    "receipt_event_id": "X20261024103519785_CLOUD",
+    "receipt_row_id": 275,
+    "receipt_event_id": "X20261024110023952_CLOUD",
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_rows": 45,
     "pending_rows": 45,
     "state": "OPEN_WORK_REMAINS",
     "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
-    "last_action": "CLOUD_SCAN_AND_READBACK_ONLY; NO_HOST_PROBE; NO_TASK_CLOSURE"
+    "last_action": "CLOUD_SCAN_AND_READBACK; POST_BOUNDARY_HOST_READ; NO_TASK_CLOSURE"
   },
   "independent_cloud_edges": {
     "checkpoint_file": "CURRENT_RUNTIME/CLOUD_INDEPENDENT_EDGES_READBACK_20261024T1740ICT.json",
@@ -6906,5 +6901,21 @@
     "repository_visibility": "public",
     "verbatim_source_write": "BLOCKED_BY_PUBLIC_REPO_PRIVACY_GUARD",
     "dns_changes": "NOT_PERFORMED"
+  },
+  "latest_host_probe": {
+    "observed_at_local": "2026-10-24T18:43:07+07:00",
+    "device": "DESKTOP-86ITNQ4",
+    "route": "REMOTE_DESKTOP_COMMANDER",
+    "device_list": "ONLINE_LAST_SEEN_7M",
+    "latest_tick": "WINDOWS_TICK_20261024T113658136365Z.json",
+    "tick_observed_at_utc": "2026-10-24T11:36:58.136365Z",
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_hash_matches_direct_read": true,
+    "live_sensor_reading_confirmed": false,
+    "scheduled_task_last_run_local": "2026-10-24T18:36:33+07:00",
+    "scheduled_task_next_run_reported_local": "2026-10-24T18:41:32+07:00",
+    "latest_compound_probe": "TIMED_OUT_NO_RESULT",
+    "android_heartbeat": "UNVERIFIED",
+    "task_status_changed": false
   }
 }
