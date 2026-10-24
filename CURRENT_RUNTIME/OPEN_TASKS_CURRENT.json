@@ -6215,6 +6215,35 @@
       },
       "result": "POST_BOUNDARY_WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_ISSUER_RUNNER_UNVERIFIED",
       "open_tasks_closed": false
+    },
+    {
+      "id": "CHECKPOINT_REFERENCE_AND_STATUS_AUDIT_CORRECTION_20261024T041330Z",
+      "kind": "APPEND_ONLY_CHECKPOINT_AUDIT_CORRECTION",
+      "observed_at": "2026-10-24T11:13:30+07:00",
+      "observed_at_utc": "2026-10-24T04:13:30Z",
+      "source": "Fresh exact-target GitHub reads after post-boundary checkpoint write",
+      "correction_of_record_observed_at": "2026-10-24T11:12:40+07:00",
+      "corrections": {
+        "modual_blob_sha_after_write": {
+          "previous_recorded": "7817650efd22c0a28d1ef13d8de16075410e2938",
+          "verified_exact_target": "0658eaa98ec239e3ac8e41abbc9b892f57a019c6"
+        },
+        "task_statuses_changed": {
+          "previous_recorded": false,
+          "corrected": true,
+          "reason": "The MODUAL task status label advanced to OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED; the task remains OPEN."
+        }
+      },
+      "current_exact_targets": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "0658eaa98ec239e3ac8e41abbc9b892f57a019c6",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_correction": "7817650efd22c0a28d1ef13d8de16075410e2938",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_correction": "9cabf6357d2282d80e935b54c96d8f95adb3dcc9"
+      },
+      "task_count": 28,
+      "tasks_closed": false,
+      "history_erased": false
     }
   ],
   "energy_protection_current": {
@@ -10344,6 +10373,14 @@
       },
       "result": "POST_BOUNDARY_WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_ISSUER_RUNNER_UNVERIFIED",
       "task_closure": false
+    },
+    {
+      "observed_at": "2026-10-24T11:13:30+07:00",
+      "observed_at_utc": "2026-10-24T04:13:30Z",
+      "record_type": "CHECKPOINT_REFERENCE_AND_STATUS_AUDIT_CORRECTION",
+      "result": "MODUAL_BLOB_REFERENCE_CORRECTED; STATUS_LABEL_CHANGE_RECORDED; TASK_REMAINS_OPEN",
+      "task_statuses_changed": true,
+      "tasks_closed": false
     }
   ]
 }
