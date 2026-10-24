@@ -4431,6 +4431,31 @@
       "source_mutated": false,
       "credentials_committed": false,
       "open_tasks_closed": false
+    },
+    {
+      "id": "FRESH_XTIME_OLLAMA_READBACK_093029",
+      "kind": "DIRECT_LOCAL_PROVIDER_HEALTH_READBACK",
+      "observed_at": "2026-10-24T09:30:29.298+07:00",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "5753a1feea27770c99d7ec73b114677ecda32ffc",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "779a67c57009bea146e133b0a151d20c85ca29eb",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "0ab7701fa6c06874c77a48539024157366e150ee",
+        "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16"
+      },
+      "actions_and_receipts": [
+        "GET http://127.0.0.1:8769/api/health returned HTTP 200; filesystem sensor ok=true and last_error=null, while MODUAL and all-desktop source_present remain false.",
+        "GET http://127.0.0.1:11434/api/tags returned HTTP 200 with 11 models; endpoint is loopback only.",
+        "Windows latest verified tick remains 09:21:34 device-local with result 0 and exact receipt/source hash match; next device-clock tick 09:26:32 was still pending at the last task read.",
+        "TESSERACT PR #6 and current-head workflow results re-read; no CI rerun, issuer key and runner assignment remain unverified."
+      ],
+      "result": "XTIME_HEALTH_VERIFIED_MODUAL_SOURCE_ABSENT; OLLAMA_HEALTH_VERIFIED; WINDOWS_NEXT_TICK_PENDING; TESSERACT_PR6_OPEN_NO_CI_RERUN",
+      "source_mutated": false,
+      "credentials_committed": false,
+      "open_tasks_closed": false
     }
   ],
   "energy_protection_current": {
@@ -8133,6 +8158,105 @@
         "source_mutated": false,
         "credentials_committed": false,
         "raw_sensor_values_committed": false,
+        "open_tasks_closed": false
+      }
+    },
+    {
+      "observed_at": "2026-10-24T09:30:29.298+07:00",
+      "observed_at_utc": "2026-10-24T02:30:29.298Z",
+      "record_type": "FRESH_XTIME_OLLAMA_AND_WINDOWS_PROVIDER_READBACK_20261024",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "5753a1feea27770c99d7ec73b114677ecda32ffc",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "779a67c57009bea146e133b0a151d20c85ca29eb",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "0ab7701fa6c06874c77a48539024157366e150ee",
+        "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16"
+      },
+      "windows_tick": {
+        "device": "DESKTOP-86ITNQ4",
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "last_verified_device_clock": "2026-10-24T09:21:58.0003936+07:00",
+        "state": "Ready",
+        "enabled": true,
+        "last_run": "2026-10-24T09:21:34+07:00",
+        "last_result": "0x0",
+        "next_run": "2026-10-24T09:26:32+07:00",
+        "missed_runs": 0,
+        "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T022138064743Z.json",
+        "receipt_sha256": "17063be3228a90475c7e9307419616f263cf3a96521c8c26fa476a859e071ef9",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_matches": true,
+        "live_sensor_reading_confirmed": false,
+        "w32time": "Stopped/Manual",
+        "measured_host_device_offset_seconds": 310.9
+      },
+      "xtime": {
+        "observed_at_device_local": "2026-10-24T09:24:39.2031810+07:00",
+        "health_http_status": 200,
+        "ok": true,
+        "service": "x-time-web",
+        "runtime_version": "0.9.0",
+        "pid": 20712,
+        "runtime_tools": 63,
+        "modual": {
+          "source_present": false,
+          "live_device_proven": false,
+          "state": "SEARCHED_NO_MATCH",
+          "note": "MODUAL carrier not found in configured/local candidate paths."
+        },
+        "filesystem_sensor": {
+          "ok": true,
+          "native_watch_mode": "fs.watch:recursive",
+          "native_events_seen": 213,
+          "emitted_events": 102,
+          "self_causal_events": 56,
+          "recent_event_count": 103,
+          "last_error": null
+        },
+        "all_desktop_sensorimotor": {
+          "source_present": false,
+          "configured_path": null,
+          "resolved_path": null,
+          "state": "SOURCE_PATH_OPEN_EVENT_BUS_READY",
+          "adapter": "G:\\FPGA_AI_LOCAL\\inetpub\\XTIME_LOCAL_LIVE_20261020\\tools\\all_desktop_sensorimotor.py",
+          "event_bus": "G:\\FPGA_AI_LOCAL\\inetpub\\XTIME_LOCAL_LIVE_20261020\\runtime\\sensorimotor-fs-events.jsonl"
+        }
+      },
+      "ollama": {
+        "observed_at_device_local": "2026-10-24T09:24:24.4139574+07:00",
+        "tags_http_status": 200,
+        "model_count": 11,
+        "endpoint": "127.0.0.1:11434",
+        "loopback_only": true
+      },
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "OPEN",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "run_39994207477": "failure; no job step logs or artifacts",
+        "run_39994207667": "failure; no job step logs or artifacts",
+        "selfhosted_windows_verify": "skipped by pull_request condition",
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "XTIME_HEALTH_VERIFIED_MODUAL_SOURCE_ABSENT; OLLAMA_HEALTH_VERIFIED; WINDOWS_NEXT_TICK_PENDING; TESSERACT_PR6_OPEN_NO_CI_RERUN",
+      "next_callable_edge": "At device clock 09:26:32+07, read the next exact tick receipt and task state. X-TIME is healthy but reports MODUAL source absent and no all-desktop source path; keep binding OPEN. W32Time remains Stopped/Manual with a measured ~311-second host/device offset, and the shell is non-elevated; do not change service/task settings without authorized elevation. Continue Android live-sample proof and TESSERACT issuer/runner checks; do not rerun CI without verified runner assignment change.",
+      "invariants": {
+        "source_mutated": false,
+        "raw_sensor_values_persisted": false,
+        "credentials_committed": false,
         "open_tasks_closed": false
       }
     }
