@@ -1,0 +1,285 @@
+{
+  "schema": "GGDV_SOL_PROVIDER_READBACK/1.0",
+  "id": "PROVIDER_READBACK_20261025T0423ICT",
+  "observed_at": "2026-10-25T04:23:47.498+07:00",
+  "observed_at_utc": "2026-10-24T21:23:47.498Z",
+  "source": "Fresh mandatory GitHub reads; Windows scheduled Tick/consumer/trace exact-target readback; read-only CSV schema and timestamp audit without emitting sensor values; ADB sensorservice digest/time comparison; X-TIME/Ollama probes; Dropbox metadata; n8n row 317; current archive/TESSERACT PR/job/artifact readbacks.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0418ICT.json",
+    "blob_sha": "43670fc9d9ea64a0c4df53e7499b0425d4e90b22",
+    "commit": "61f1f4cb9aaf26bb589eb6447d4b0245468eaa46"
+  },
+  "mandatory_source_reads_before_write": {
+    "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "4c398f0423df53f7d3c76904fce3f029696f0897",
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "463fcb6b3e8d1db30884a16667f6b838b6b021b0",
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "cea6d82779627686793681bf5b4f2a766743efcc"
+  },
+  "windows_tick": {
+    "host": "DESKTOP-86ITNQ4",
+    "task_name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+    "task_state": "Ready",
+    "task_enabled": true,
+    "task_execution_limit": "PT4M",
+    "task_last_run_local": "2026-10-25T04:21:33+07:00",
+    "task_last_result": "0x0",
+    "task_next_run_local": "2026-10-25T04:26:32+07:00",
+    "missed_runs": 0,
+    "consecutive_post_patch_scheduled_successes": 3,
+    "latest_receipt": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T212204946757Z.json",
+      "observed_at_utc": "2026-10-24T21:22:04.946757Z",
+      "bytes": 450,
+      "sha256": "653c6cfa07177efee93c3c3912c35165f3a3287406bc37d287e23b3da9626aac",
+      "exact_content_readback": true,
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches_direct_recomputed_hash": true,
+      "live_sensor_reading_confirmed": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_enabled": false,
+      "github_enabled": false
+    },
+    "latest_consumer_receipt": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261024T212203037Z.json",
+      "bytes": 1824,
+      "sha256": "470dcd51b1d4f5e3c58c01889d0da2a38f90a31a327e7ad997f4bb40017b51da",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "consumer_hash_matches_verifier": true,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "consumer_wrapper": {
+      "path": "D:\\SENSOR_LOGS\\run_telemetry_buffer_sync.ps1",
+      "sha256": "61c2cc88f283518035c0aef521a8548128456f8cae99df2bf31b542dc91d1a64",
+      "interpreter": "C:\\ProgramData\\anaconda3\\python.exe",
+      "interpreter_version": "3.14.6",
+      "trace_path": "D:\\SENSOR_LOGS\\state\\telemetry_buffer_sync_wrapper_trace.log",
+      "latest_trace_sequence_utc": [
+        "2026-10-24T21:21:56.8479251Z START",
+        "2026-10-24T21:22:00.2472000Z PRECHECKS_OK",
+        "2026-10-24T21:22:02.4686699Z VERIFIER_END exit=0 lines=1",
+        "2026-10-24T21:22:03.0912176Z CONSUMER_BEGIN",
+        "2026-10-24T21:22:05.2504099Z CONSUMER_END exit=0 lines=3",
+        "2026-10-24T21:22:05.6672134Z RECEIPT_READBACK_OK"
+      ],
+      "scheduled_post_patch_run_verified": true,
+      "task_settings_changed": false,
+      "process_terminated": false
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z",
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+    },
+    "content_audit": {
+      "parser": "Python csv reader; local in-memory only",
+      "delimiter": "comma",
+      "header_fields": 354,
+      "data_rows_after_header": 18303,
+      "header_first_line_sha256": "cea2e411424f87d425802c6934372812ba278a953ca9453b79612a8471ceec0e",
+      "first_date_time": [
+        "13.10.2026",
+        "20:54:8.351"
+      ],
+      "last_date_time": [
+        "14.10.2026",
+        "7:15:21.078"
+      ],
+      "dropbox_server_modified_utc": "2026-10-14T00:20:03Z",
+      "last_sample_precedes_provider_modified_by_approx_seconds": 281.922,
+      "interpretation": "CSV content ends on 2026-10-14 while local copy mtime is 2026-10-23; it is not a current live sensor stream.",
+      "raw_sensor_values_emitted": false,
+      "raw_sensor_values_persisted": false
+    },
+    "interpretation": "Three consecutive scheduled post-patch metadata-consumer runs succeeded and source hashes agree. The CSV's last sample timestamp is 2026-10-14; live sensor ingestion remains unverified."
+  },
+  "providers": {
+    "dropbox": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_readback": true,
+      "raw_csv_downloaded": false
+    },
+    "xtime": {
+      "endpoint": "127.0.0.1:8769",
+      "health_status": 200,
+      "modual_schema_status": 200,
+      "sensorimotor_status": 200,
+      "source_present": true,
+      "header_count": 354,
+      "signals_count": 2,
+      "live_device_proven": false
+    },
+    "ollama": {
+      "endpoint": "127.0.0.1:11434/api/tags",
+      "http_status": 200,
+      "model_count": 11
+    },
+    "android": {
+      "adb_device_listed": true,
+      "serial": "1056285",
+      "model": "2201123G",
+      "prior_recent_sensor_event_digest": "cd8faee5c2c6cd4f1da49640f26d4a8d0178e0ce4a4b4c8987699b949ee2f2a0",
+      "current_digest": "2763e2ef762cb9ecdde07aef20de57a181848ea36cdcc5001452c4453125eeed",
+      "recent_sensor_event_lines": 373,
+      "clock_tokens": 314,
+      "numeric_timestamp_tokens": 99,
+      "digest_changed_since_prior_probe": true,
+      "digest_changed_across_8_second_pair": false,
+      "recent_event_clock_tokens_first": "05:43:49.684",
+      "last": "05:43:42",
+      "wall_clock_tokens_found": false,
+      "live_sensor_stream_verified": false,
+      "raw_sensor_values_emitted": false,
+      "raw_sensor_values_persisted": false
+    },
+    "hwinfo": {
+      "path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+      "bytes": 39922785,
+      "last_write_utc": "2026-10-21T02:20:45.8565035Z",
+      "fresh_sample_proven": false
+    }
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "execution_id": "150",
+    "status": "success",
+    "table_id": "Sk0EFJK5NzWVpBvm",
+    "row_id": 317,
+    "event_id": "X20261024210023954_CLOUD",
+    "exact_row_readback": true,
+    "state": "OPEN_WORK_REMAINS",
+    "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "tasks_closed": 0
+  },
+  "archive": {
+    "pr27": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
+      "mergeable": false,
+      "current_head_runs": 0
+    },
+    "pr28": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "bf553018dd59affb1d4ea2b120cad3ea7a0565ff",
+      "run_id": 40118137014,
+      "conclusion": "success",
+      "artifact_id": 12570136939
+    },
+    "pr29": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "86e208ff05c06cf0e5dfabfc6481218dc10bc96c",
+      "topology_run": 40118465586,
+      "topology_conclusion": "success",
+      "secret_guard_run": 40118465608,
+      "secret_guard_conclusion": "success"
+    },
+    "pr30": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "c904d650c25465c83d347e8308b4ea6086badf73",
+      "run_id": 40122933638,
+      "conclusion": "success",
+      "artifact_ids": [
+        12572161021,
+        12572111071
+      ],
+      "mergeable": false
+    },
+    "all_left_open": true,
+    "force_push": false,
+    "merge": false
+  },
+  "tesseract": {
+    "repository": "2708halinh-cloud/x-time-web",
+    "pr": 6,
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "prior_runs": [
+      39994207477,
+      39994207667
+    ],
+    "prior_runs_conclusion": "failure",
+    "artifacts": 0,
+    "issuer_public_key_verified": false,
+    "runner_assignment_change_verified": false,
+    "ci_rerun": false
+  },
+  "braid": {
+    "script_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+    "exit_code": 0,
+    "six_forces": {
+      "receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T211349422585Z.json",
+      "bytes": 3996,
+      "sha256": "2966fc33d960c8376df2feaa367877bd0a1304973f100f2dbf2a7254ff41f8e8",
+      "receipt_readback_ok": true,
+      "executed_action_count": 9,
+      "all_six_examined": true,
+      "mutation_executed": false,
+      "source_sha256_unchanged": true
+    },
+    "plural": {
+      "receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261024T211349573909Z.json",
+      "bytes": 2407,
+      "sha256": "02f32a5e58d5d00289083d97eaea2d86f97ab079b6e4d58c39f0a05bae435c82",
+      "receipt_readback_ok": true,
+      "executed_action_count": 5,
+      "requested_mutation_executed": false,
+      "source_sha256_unchanged": true
+    },
+    "cloud_host_wiring": "NOT_VERIFIED"
+  },
+  "ledger": {
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "tasks_closed": 0
+  },
+  "safety": {
+    "raw_sensor_data_committed": false,
+    "credentials_committed": false,
+    "source_deleted_or_moved": false,
+    "source_csv_written": false,
+    "synthetic_rows_added": 0,
+    "cloud_export_enabled": false,
+    "github_export_enabled": false,
+    "task_settings_changed": false,
+    "process_terminated": false,
+    "force_push_or_merge": false,
+    "tasks_closed": 0
+  },
+  "result": "WINDOWS_TICK_THREE_CONSECUTIVE_POST_PATCH_RUNS_VERIFIED;CSV_CONTENT_STALE_TO_2026-10-14;LIVE_SENSOR_INGESTION_NOT_VERIFIED;N8N_ROW_317_VERIFIED;ARCHIVE_BRANCH_RUNS_VERIFIED;BRAID_EXECUTED_AND_READBACK;ALL_TASKS_OPEN",
+  "next": [
+    "After the next scheduled boundary at 2026-10-25T04:26:32+07:00, re-read the newest Tick receipt, task result, and consumer trace.",
+    "Continue locating a real current sensor carrier; the CSV content ends at 2026-10-14 despite its 2026-10-23 local copy mtime.",
+    "Investigate the Android sensorservice timestamp basis and HWiNFO fresh-sample route without persisting raw values.",
+    "Continue TESSERACT PR #6 issuer public-key and runner-assignment discovery; do not rerun failed CI without a verified runner change.",
+    "Keep all tasks and PRs open until their own completion evidence exists."
+  ]
+}
