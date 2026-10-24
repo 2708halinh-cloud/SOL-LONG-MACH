@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "On the next responsive Windows read, reconcile pending read-only task/source/receipt calls and inspect the exact newest receipt plus Scheduled Task state before launching any duplicate. If timing is still variable, inspect TaskScheduler Operational log enablement and exact task action timing before changing code or task settings. Continue authorized issuer-side key and runner-entitlement investigation independently; do not rerun PR #6 CI until a runner assignment/entitlement change is verified.",
+  "next": "The Windows route has responded and the exact receipt after the 08:51:32 device-clock boundary is verified. Next, read the newest receipt and Scheduled Task state after device clock 08:56:32+07 before any retry; compare the source SHA again. TaskScheduler Operational logging is disabled and this shell is non-elevated, so no event-log or task/code/service setting changes are authorized from this session. Continue the issuer-side public-key and runner-assignment/entitlement investigation independently; do not rerun PR #6 CI without verified runner-state change.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -157,7 +157,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T07:53:42+07:00",
+  "updated_at": "2026-10-24T08:59:13.320+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -1993,5 +1993,74 @@
       "status": "UNVERIFIED_NOT_SUCCESS"
     },
     "next_edge": "VERIFY_NEXT_HOST_TICK_AND_LIVE_SENSOR; RESOLVE_ANDROID_HEARTBEAT; CONTINUE_TESSERACT_ONLY_AFTER_ISSUER_KEY_AND_RUNNER_ENTITLEMENT_READBACK"
+  },
+  "latest_reentry_observation": {
+    "observed_at": "2026-10-24T08:59:13.320+07:00",
+    "observed_at_utc": "2026-10-24T01:59:13.320Z",
+    "source_reads": {
+      "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "dee009e984ab6f349bdec4d16472eb50aa0cf2d7",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "a696967501b6eea67c9ecf41c0ac37718f724147",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "5e900bc237f98070702613bab7b8db1c1b8c1fea"
+    },
+    "windows": {
+      "device": "DESKTOP-86ITNQ4",
+      "device_clock_at_read": "2026-10-24T08:52:27.1549993+07:00",
+      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "last_run": "2026-10-24T08:51:33+07:00",
+      "last_result": "0x0",
+      "next_run": "2026-10-24T08:56:32+07:00",
+      "missed_runs": 0,
+      "receipt": "WINDOWS_TICK_20261024T015137559384Z.json",
+      "receipt_sha256": "30271AF4C6759A7FAE6331763009A3D30C32B26070643E93B8D4EC561483AD73",
+      "receipt_source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "direct_source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_match": true,
+      "live_sensor_reading_confirmed": false,
+      "task_scheduler_operational_log_enabled": false,
+      "current_shell_elevated": false,
+      "w32time": "Stopped/Manual"
+    },
+    "independent_braid": {
+      "script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+      "exit_code": 0,
+      "six_actions": 9,
+      "plural_actions": 5,
+      "six_receipt_sha256": "07f91248f92d7b70f624f8ea7a023d02fbbcd06a7b7ceaf14d990bdf9b540e71",
+      "receipt_readback_ok": true,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "cloud_host_wiring": "NOT_VERIFIED"
+    },
+    "providers": {
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z"
+      },
+      "xtime": {
+        "http_status": 200,
+        "modual_source_present": false,
+        "live_device_proven": false
+      },
+      "ollama": {
+        "http_status": 200,
+        "model_count": 11,
+        "loopback_only": true
+      },
+      "tesseract_pr6": {
+        "state": "OPEN",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs_39994207477": "failure",
+        "runs_39994207667": "failure",
+        "issuer_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      }
+    },
+    "result": "WINDOWS_NEXT_TICK_VERIFIED_SOURCE_HASH_MATCH_LIVE_SENSOR_STREAM_OPEN; BRAID_RECEIPTS_VERIFIED; ALL_OPEN_TASKS_RETAINED"
   }
 }
