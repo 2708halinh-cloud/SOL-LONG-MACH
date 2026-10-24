@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "At the next reachable checkpoint, verify the exact tick receipt after device clock 10:06:32+07. Three recent ticks succeeded and matched the CSV hash, but all are metadata-only. HWiNFO CSV is stale and the read-only shared-memory mapping was not found; Android TCP 192.168.1.14:5556 timed out and adb.exe was not found in the bounded search. Continue alternate routes; keep W32Time unchanged without elevation and do not rerun TESSERACT CI without verified runner change.",
+  "next": "At the next reachable checkpoint, read the exact tick receipt after device clock 10:11:32+07. Four recent scheduled ticks succeeded and matched the CSV hash, but remain metadata-only. HWiNFO CSV is stale and no tested shared-memory name exists; Android TCP timed out and bounded adb.exe searches were inconclusive. Continue alternate routes without treating these as proof the device is off. TESSERACT PR #6 remains OPEN; do not rerun CI without verified runner-assignment change.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T10:10:20.016+07:00",
+  "updated_at": "2026-10-24T10:15:01.665+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -2033,6 +2033,34 @@
       },
       "result": "TICK_VERIFIED_LIVE_SOURCE_UNVERIFIED",
       "task_closure": false
+    },
+    {
+      "observed_at": "2026-10-24T10:15:01.665+07:00",
+      "observed_at_utc": "2026-10-24T03:15:01.665Z",
+      "record_type": "WINDOWS_TICK_HWIN​​FO_ANDROID_SCAN",
+      "windows": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T030637466945Z.json",
+        "receipt_sha256": "2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d",
+        "source_hash_matches": true,
+        "live_sensor_reading_confirmed": false
+      },
+      "hwinfo": {
+        "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "last_modified_utc": "2026-10-21T02:20:45.8565035Z",
+        "shared_memory_all_win32_error": 2
+      },
+      "android": {
+        "tcp_5556": "timeout",
+        "bounded_adb_searches": {
+          "C:\\Users\\halin": 0,
+          "D:\\": 0,
+          "G:\\": 0
+        },
+        "search_incomplete": true,
+        "heartbeat_verified": false
+      },
+      "result": "TICK_VERIFIED_LIVE_SOURCE_UNVERIFIED",
+      "task_closure": false
     }
   ],
   "latest_sync_observation": {
@@ -2064,33 +2092,33 @@
     ]
   },
   "latest_runtime_observation": {
-    "observed_at": "2026-10-24T10:10:20.016+07:00",
-    "observed_at_utc": "2026-10-24T03:10:20.016Z",
+    "observed_at": "2026-10-24T10:15:01.665+07:00",
+    "observed_at_utc": "2026-10-24T03:15:01.665Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
       "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
       "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
       "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "def9be81e4259263af74a1768511c49d36a2b238",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "bc3165c99b81b15d233cdb8710d68112a3946557",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "53bcb5ec6e83ef7cda11d3d6b06c0ce5210f36d4"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "40e179db929475466747212818559ba6234a8606",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "0e6857c074a5e76b55aa69c11a29e1b4558a7563",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "29087215f4f63041956ef95782e788407d082e43"
     },
     "windows": {
       "device": "DESKTOP-86ITNQ4",
       "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
       "task_state": "Ready",
       "enabled": true,
-      "last_run_local": "2026-10-24T10:01:33+07:00",
+      "last_run_local": "2026-10-24T10:06:33+07:00",
       "last_result": "0x0",
-      "next_run_local": "2026-10-24T10:06:32+07:00",
+      "next_run_local": "2026-10-24T10:11:32+07:00",
       "missed_runs": 0,
       "execution_time_limit": "PT2M",
-      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T030142653446Z.json",
-      "receipt_observed_at_utc": "2026-10-24T03:01:42.653446Z",
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T030637466945Z.json",
+      "receipt_observed_at_utc": "2026-10-24T03:06:37.466945Z",
       "receipt_bytes": 450,
-      "receipt_sha256": "1c0293733d734eed46528293e9a438518f0a7ad94625ac6ead3e62fde450cef0",
-      "approximate_run_to_receipt_seconds": 9.65,
+      "receipt_sha256": "2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d",
+      "approximate_run_to_receipt_seconds": 4.47,
       "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
       "source_bytes": 35389440,
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
@@ -2103,7 +2131,6 @@
       "w32time": "Stopped/Manual"
     },
     "hwinfo": {
-      "observed_at_utc": "2026-10-24T03:00:59.3859844Z",
       "process_running": true,
       "pid": 17520,
       "csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
@@ -2114,11 +2141,17 @@
       "ini_bytes": 358,
       "ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
       "ini_last_modified_utc": "2026-10-23T02:46:58.0293558Z",
-      "config_contains_sensors_sm": true,
-      "config_contains_csv_or_logging_path": false,
-      "shared_memory_name": "Global\\HWiNFO_SENS_SM2",
-      "read_only_open_succeeded": false,
-      "open_win32_error": 2,
+      "sensors_sm_setting": true,
+      "csv_or_logging_path_present": false,
+      "shared_memory_names_tested": [
+        "Global\\HWiNFO_SENS_SM2",
+        "Local\\HWiNFO_SENS_SM2",
+        "HWiNFO_SENS_SM2",
+        "Global\\HWiNFO_SENS_SM",
+        "Local\\HWiNFO_SENS_SM",
+        "HWiNFO_SENS_SM"
+      ],
+      "shared_memory_readonly_open_results": "all returned Win32 error 2",
       "raw_sensor_values_read": false,
       "memory_written": false
     },
@@ -2126,11 +2159,15 @@
       "target": "192.168.1.14:5556",
       "tcp_connect": false,
       "tcp_error": "timeout",
-      "adb_found_in_standard_paths": false,
-      "search_under_user_profile_matches": 0,
-      "search_completeness": "may be incomplete; bounded search stopped after 3 seconds",
       "heartbeat_verified": false,
-      "device_off_state_inferred": false
+      "device_off_state_inferred": false,
+      "adb_exe_standard_paths_found": false,
+      "bounded_searches": {
+        "C:\\Users\\halin": 0,
+        "D:\\": 0,
+        "G:\\": 0
+      },
+      "search_limit_note": "each remote file search stopped after 3 seconds; results may be incomplete"
     },
     "local_braid": {
       "six_forces_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T025033285338Z.json",
@@ -2171,12 +2208,12 @@
         "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
         "runs": [
           {
-            "run_id": 39994207477,
+            "id": 39994207477,
             "conclusion": "failure",
             "artifacts": []
           },
           {
-            "run_id": 39994207667,
+            "id": 39994207667,
             "conclusion": "failure",
             "artifacts": []
           }
@@ -2186,7 +2223,7 @@
         "ci_rerun": false
       }
     },
-    "result": "THIRD_RECENT_TICK_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+    "result": "FOURTH_RECENT_TICK_VERIFIED_SOURCE_HASH_MATCH; LIVE_SENSOR_STREAM_NOT_VERIFIED",
     "open_tasks_closed": false
   },
   "continuity_readback_history": [
@@ -2761,16 +2798,145 @@
       },
       "result": "THIRD_RECENT_TICK_VERIFIED; HWIN​​FO_SHARED_MEMORY_NOT_FOUND; ANDROID_TCP_UNAVAILABLE; LIVE_SENSOR_STREAM_UNVERIFIED",
       "next_edge": "Verify next tick after device clock 10:06:32+07. Continue authorized HWiNFO/ADB route discovery; do not change W32Time/task settings or rerun CI without verified permission/runner evidence."
+    },
+    {
+      "observed_at": "2026-10-24T10:15:01.665+07:00",
+      "observed_at_utc": "2026-10-24T03:15:01.665Z",
+      "source": "Direct Windows tick receipt + HWiNFO shared-memory name scan + bounded Android ADB path scan",
+      "prior_checkpoint": {
+        "task_resume_pointer_blob_sha_before_write": "40e179db929475466747212818559ba6234a8606",
+        "open_tasks_blob_sha_after_write": "0e6857c074a5e76b55aa69c11a29e1b4558a7563",
+        "modual_blob_sha_after_write": "29087215f4f63041956ef95782e788407d082e43",
+        "task_count": 28,
+        "task_statuses_changed": false,
+        "tasks_closed": false
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "task_state": "Ready",
+        "enabled": true,
+        "last_run_local": "2026-10-24T10:06:33+07:00",
+        "last_result": "0x0",
+        "next_run_local": "2026-10-24T10:11:32+07:00",
+        "missed_runs": 0,
+        "execution_time_limit": "PT2M",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T030637466945Z.json",
+        "receipt_observed_at_utc": "2026-10-24T03:06:37.466945Z",
+        "receipt_bytes": 450,
+        "receipt_sha256": "2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d",
+        "approximate_run_to_receipt_seconds": 4.47,
+        "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "current_direct_hash_matches": true,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false,
+        "live_sensor_reading_confirmed": false,
+        "w32time": "Stopped/Manual"
+      },
+      "hwinfo": {
+        "process_running": true,
+        "pid": 17520,
+        "csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+        "csv_bytes": 39922785,
+        "csv_last_modified_utc": "2026-10-21T02:20:45.8565035Z",
+        "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "ini_path": "C:\\Program Files\\HWiNFO64\\HWiNFO64.INI",
+        "ini_bytes": 358,
+        "ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
+        "ini_last_modified_utc": "2026-10-23T02:46:58.0293558Z",
+        "sensors_sm_setting": true,
+        "csv_or_logging_path_present": false,
+        "shared_memory_names_tested": [
+          "Global\\HWiNFO_SENS_SM2",
+          "Local\\HWiNFO_SENS_SM2",
+          "HWiNFO_SENS_SM2",
+          "Global\\HWiNFO_SENS_SM",
+          "Local\\HWiNFO_SENS_SM",
+          "HWiNFO_SENS_SM"
+        ],
+        "shared_memory_readonly_open_results": "all returned Win32 error 2",
+        "raw_sensor_values_read": false,
+        "memory_written": false
+      },
+      "android": {
+        "target": "192.168.1.14:5556",
+        "tcp_connect": false,
+        "tcp_error": "timeout",
+        "heartbeat_verified": false,
+        "device_off_state_inferred": false,
+        "adb_exe_standard_paths_found": false,
+        "bounded_searches": {
+          "C:\\Users\\halin": 0,
+          "D:\\": 0,
+          "G:\\": 0
+        },
+        "search_limit_note": "each remote file search stopped after 3 seconds; results may be incomplete"
+      },
+      "braid": {
+        "six_forces_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T025033285338Z.json",
+        "six_forces_sha256": "d53d6b16849ab8a8986031a2d4054c488e9c4a9ae33f4c461aac9af26bda994a",
+        "six_forces_actions": 9,
+        "all_six_examined": true,
+        "missing_context_rejected": true,
+        "rejected_request_did_not_create_receipt": true,
+        "plural_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261024T025033349117Z.json",
+        "plural_sha256": "ccc1e4dc7051b10693780880f2e258f169e52e67611507bc15d1d98a8446f3ad",
+        "plural_actions": 5,
+        "exact_target_readback": true,
+        "source_sha256_unchanged": true,
+        "mutation_executed": false,
+        "cloud_host_wiring": "NOT_VERIFIED"
+      },
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "OPEN",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": [
+          {
+            "id": 39994207477,
+            "conclusion": "failure",
+            "artifacts": []
+          },
+          {
+            "id": 39994207667,
+            "conclusion": "failure",
+            "artifacts": []
+          }
+        ],
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "safety": {
+        "no_source_mutation": true,
+        "no_raw_sensor_values_persisted": true,
+        "no_credentials_persisted": true,
+        "no_ci_rerun": true,
+        "all_open_tasks_retained": true
+      },
+      "result": "FOURTH_RECENT_TICK_VERIFIED; HWIN​​FO_SHARED_MEMORY_NAMES_NOT_FOUND; ANDROID_ROUTE_UNVERIFIED; TESSERACT_CI_UNCHANGED",
+      "next_edge": "Verify the next exact receipt after device clock 10:11:32+07. Continue authorized HWiNFO/ADB route discovery. Keep W32Time unchanged without elevation and do not rerun CI without runner-assignment evidence."
     }
   ],
   "latest_continuity_readback": {
-    "observed_at": "2026-10-24T10:10:20.016+07:00",
-    "observed_at_utc": "2026-10-24T03:10:20.016Z",
-    "source": "Direct Windows tick receipt + HWiNFO shared-memory and Android TCP probes + exact GitHub readbacks",
+    "observed_at": "2026-10-24T10:15:01.665+07:00",
+    "observed_at_utc": "2026-10-24T03:15:01.665Z",
+    "source": "Direct Windows tick receipt + HWiNFO shared-memory name scan + bounded Android ADB path scan",
     "prior_checkpoint": {
-      "task_resume_pointer_blob_sha_before_write": "def9be81e4259263af74a1768511c49d36a2b238",
-      "open_tasks_blob_sha_after_write": "bc3165c99b81b15d233cdb8710d68112a3946557",
-      "modual_blob_sha_after_write": "53bcb5ec6e83ef7cda11d3d6b06c0ce5210f36d4",
+      "task_resume_pointer_blob_sha_before_write": "40e179db929475466747212818559ba6234a8606",
+      "open_tasks_blob_sha_after_write": "0e6857c074a5e76b55aa69c11a29e1b4558a7563",
+      "modual_blob_sha_after_write": "29087215f4f63041956ef95782e788407d082e43",
       "task_count": 28,
       "task_statuses_changed": false,
       "tasks_closed": false
@@ -2780,16 +2946,16 @@
       "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
       "task_state": "Ready",
       "enabled": true,
-      "last_run_local": "2026-10-24T10:01:33+07:00",
+      "last_run_local": "2026-10-24T10:06:33+07:00",
       "last_result": "0x0",
-      "next_run_local": "2026-10-24T10:06:32+07:00",
+      "next_run_local": "2026-10-24T10:11:32+07:00",
       "missed_runs": 0,
       "execution_time_limit": "PT2M",
-      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T030142653446Z.json",
-      "receipt_observed_at_utc": "2026-10-24T03:01:42.653446Z",
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T030637466945Z.json",
+      "receipt_observed_at_utc": "2026-10-24T03:06:37.466945Z",
       "receipt_bytes": 450,
-      "receipt_sha256": "1c0293733d734eed46528293e9a438518f0a7ad94625ac6ead3e62fde450cef0",
-      "approximate_run_to_receipt_seconds": 9.65,
+      "receipt_sha256": "2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d",
+      "approximate_run_to_receipt_seconds": 4.47,
       "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
       "source_bytes": 35389440,
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
@@ -2802,7 +2968,6 @@
       "w32time": "Stopped/Manual"
     },
     "hwinfo": {
-      "observed_at_utc": "2026-10-24T03:00:59.3859844Z",
       "process_running": true,
       "pid": 17520,
       "csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
@@ -2813,11 +2978,17 @@
       "ini_bytes": 358,
       "ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
       "ini_last_modified_utc": "2026-10-23T02:46:58.0293558Z",
-      "config_contains_sensors_sm": true,
-      "config_contains_csv_or_logging_path": false,
-      "shared_memory_name": "Global\\HWiNFO_SENS_SM2",
-      "read_only_open_succeeded": false,
-      "open_win32_error": 2,
+      "sensors_sm_setting": true,
+      "csv_or_logging_path_present": false,
+      "shared_memory_names_tested": [
+        "Global\\HWiNFO_SENS_SM2",
+        "Local\\HWiNFO_SENS_SM2",
+        "HWiNFO_SENS_SM2",
+        "Global\\HWiNFO_SENS_SM",
+        "Local\\HWiNFO_SENS_SM",
+        "HWiNFO_SENS_SM"
+      ],
+      "shared_memory_readonly_open_results": "all returned Win32 error 2",
       "raw_sensor_values_read": false,
       "memory_written": false
     },
@@ -2825,11 +2996,15 @@
       "target": "192.168.1.14:5556",
       "tcp_connect": false,
       "tcp_error": "timeout",
-      "adb_found_in_standard_paths": false,
-      "search_under_user_profile_matches": 0,
-      "search_completeness": "may be incomplete; bounded search stopped after 3 seconds",
       "heartbeat_verified": false,
-      "device_off_state_inferred": false
+      "device_off_state_inferred": false,
+      "adb_exe_standard_paths_found": false,
+      "bounded_searches": {
+        "C:\\Users\\halin": 0,
+        "D:\\": 0,
+        "G:\\": 0
+      },
+      "search_limit_note": "each remote file search stopped after 3 seconds; results may be incomplete"
     },
     "braid": {
       "six_forces_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T025033285338Z.json",
@@ -2859,12 +3034,12 @@
       "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
       "runs": [
         {
-          "run_id": 39994207477,
+          "id": 39994207477,
           "conclusion": "failure",
           "artifacts": []
         },
         {
-          "run_id": 39994207667,
+          "id": 39994207667,
           "conclusion": "failure",
           "artifacts": []
         }
@@ -2880,37 +3055,37 @@
       "no_ci_rerun": true,
       "all_open_tasks_retained": true
     },
-    "result": "THIRD_RECENT_TICK_VERIFIED; HWIN​​FO_SHARED_MEMORY_NOT_FOUND; ANDROID_TCP_UNAVAILABLE; LIVE_SENSOR_STREAM_UNVERIFIED",
-    "next_edge": "Verify next tick after device clock 10:06:32+07. Continue authorized HWiNFO/ADB route discovery; do not change W32Time/task settings or rerun CI without verified permission/runner evidence."
+    "result": "FOURTH_RECENT_TICK_VERIFIED; HWIN​​FO_SHARED_MEMORY_NAMES_NOT_FOUND; ANDROID_ROUTE_UNVERIFIED; TESSERACT_CI_UNCHANGED",
+    "next_edge": "Verify the next exact receipt after device clock 10:11:32+07. Continue authorized HWiNFO/ADB route discovery. Keep W32Time unchanged without elevation and do not rerun CI without runner-assignment evidence."
   },
   "latest_reentry_observation": {
-    "observed_at": "2026-10-24T10:10:20.016+07:00",
-    "observed_at_utc": "2026-10-24T03:10:20.016Z",
+    "observed_at": "2026-10-24T10:15:01.665+07:00",
+    "observed_at_utc": "2026-10-24T03:15:01.665Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
       "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
       "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
       "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "def9be81e4259263af74a1768511c49d36a2b238",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "bc3165c99b81b15d233cdb8710d68112a3946557",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "53bcb5ec6e83ef7cda11d3d6b06c0ce5210f36d4"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "40e179db929475466747212818559ba6234a8606",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "0e6857c074a5e76b55aa69c11a29e1b4558a7563",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "29087215f4f63041956ef95782e788407d082e43"
     },
     "windows_tick": {
       "device": "DESKTOP-86ITNQ4",
       "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
       "task_state": "Ready",
       "enabled": true,
-      "last_run_local": "2026-10-24T10:01:33+07:00",
+      "last_run_local": "2026-10-24T10:06:33+07:00",
       "last_result": "0x0",
-      "next_run_local": "2026-10-24T10:06:32+07:00",
+      "next_run_local": "2026-10-24T10:11:32+07:00",
       "missed_runs": 0,
       "execution_time_limit": "PT2M",
-      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T030142653446Z.json",
-      "receipt_observed_at_utc": "2026-10-24T03:01:42.653446Z",
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T030637466945Z.json",
+      "receipt_observed_at_utc": "2026-10-24T03:06:37.466945Z",
       "receipt_bytes": 450,
-      "receipt_sha256": "1c0293733d734eed46528293e9a438518f0a7ad94625ac6ead3e62fde450cef0",
-      "approximate_run_to_receipt_seconds": 9.65,
+      "receipt_sha256": "2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d",
+      "approximate_run_to_receipt_seconds": 4.47,
       "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
       "source_bytes": 35389440,
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
@@ -2923,7 +3098,6 @@
       "w32time": "Stopped/Manual"
     },
     "hwinfo": {
-      "observed_at_utc": "2026-10-24T03:00:59.3859844Z",
       "process_running": true,
       "pid": 17520,
       "csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
@@ -2934,11 +3108,17 @@
       "ini_bytes": 358,
       "ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
       "ini_last_modified_utc": "2026-10-23T02:46:58.0293558Z",
-      "config_contains_sensors_sm": true,
-      "config_contains_csv_or_logging_path": false,
-      "shared_memory_name": "Global\\HWiNFO_SENS_SM2",
-      "read_only_open_succeeded": false,
-      "open_win32_error": 2,
+      "sensors_sm_setting": true,
+      "csv_or_logging_path_present": false,
+      "shared_memory_names_tested": [
+        "Global\\HWiNFO_SENS_SM2",
+        "Local\\HWiNFO_SENS_SM2",
+        "HWiNFO_SENS_SM2",
+        "Global\\HWiNFO_SENS_SM",
+        "Local\\HWiNFO_SENS_SM",
+        "HWiNFO_SENS_SM"
+      ],
+      "shared_memory_readonly_open_results": "all returned Win32 error 2",
       "raw_sensor_values_read": false,
       "memory_written": false
     },
@@ -2946,11 +3126,15 @@
       "target": "192.168.1.14:5556",
       "tcp_connect": false,
       "tcp_error": "timeout",
-      "adb_found_in_standard_paths": false,
-      "search_under_user_profile_matches": 0,
-      "search_completeness": "may be incomplete; bounded search stopped after 3 seconds",
       "heartbeat_verified": false,
-      "device_off_state_inferred": false
+      "device_off_state_inferred": false,
+      "adb_exe_standard_paths_found": false,
+      "bounded_searches": {
+        "C:\\Users\\halin": 0,
+        "D:\\": 0,
+        "G:\\": 0
+      },
+      "search_limit_note": "each remote file search stopped after 3 seconds; results may be incomplete"
     },
     "local_braid": {
       "six_forces_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T025033285338Z.json",
@@ -2990,12 +3174,12 @@
       "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
       "runs": [
         {
-          "run_id": 39994207477,
+          "id": 39994207477,
           "conclusion": "failure",
           "artifacts": []
         },
         {
-          "run_id": 39994207667,
+          "id": 39994207667,
           "conclusion": "failure",
           "artifacts": []
         }
