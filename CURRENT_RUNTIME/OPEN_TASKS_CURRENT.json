@@ -2274,6 +2274,29 @@
       "source_mutation": false,
       "cloud_export": false,
       "github_export": false
+    },
+    "windows_tick_20261024T022138Z_verified": {
+      "observed_at": "2026-10-24T09:28:15.672+07:00",
+      "device": "DESKTOP-86ITNQ4",
+      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "task_state": "Ready",
+      "last_run": "2026-10-24T09:21:34+07:00",
+      "last_result": 0,
+      "next_run": "2026-10-24T09:26:32+07:00",
+      "missed_runs": 0,
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T022138064743Z.json",
+      "receipt_bytes": 450,
+      "receipt_sha256": "17063be3228a90475c7e9307419616f263cf3a96521c8c26fa476a859e071ef9",
+      "receipt_observed_at_utc": "2026-10-24T02:21:38.064743Z",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches_receipt": true,
+      "live_sensor_reading_confirmed": false,
+      "source_mutation": false,
+      "cloud_export": false,
+      "github_export": false,
+      "host_minus_device_seconds": 310.9,
+      "w32time": "Stopped/Manual"
     }
   },
   "sinks": {
@@ -4355,6 +4378,34 @@
         "No source mutation, credentials, raw sensor values or task closure."
       ],
       "result": "TICK_RECEIPT_VERIFIED_SOURCE_HASH_MATCH_LIVE_STREAM_OPEN",
+      "source_mutated": false,
+      "credentials_committed": false,
+      "open_tasks_closed": false
+    },
+    {
+      "id": "WINDOWS_TICK_ANDROID_EVENT_SECTION_092815",
+      "kind": "DIRECT_WINDOWS_TICK_AND_ANDROID_SENSOR_EVENT_SECTION_READBACK",
+      "observed_at": "2026-10-24T09:28:15.672+07:00",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "10471dab0b1a85833f8474974db41cc899bb96c7",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "9c948f06db84b1f462fda553fef8386534748aff",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "96797809dd5ae3670564636234293efada7e32a7",
+        "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "MODUAL/SENSOR_LOGS/source/sensor_root_resolver.py": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+        "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16"
+      },
+      "actions_and_receipts": [
+        "Fresh-read AGENTS.md, SOL_REENTRY_CURRENT.md, TASK_RESUME_POINTER.json, OPEN_TASKS_CURRENT.json and MODUAL_PARAMETER_CURRENT.json from main before updating the checkpoint.",
+        "Remote Desktop Commander directly read DESKTOP-86ITNQ4: Scheduled Task Ready/enabled, last run 09:21:34 device-local result 0x0, next 09:26:32, zero missed runs.",
+        "Exact receipt WINDOWS_TICK_20261024T022138064743Z.json read back: 450 bytes, SHA-256 17063be3228a90475c7e9307419616f263cf3a96521c8c26fa476a859e071ef9; direct source SHA matched 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87.",
+        "Same-operation host/device clock comparison observed 310.9 seconds difference; W32Time Stopped/Manual and w32tm status query reported service not started. No service/task setting was changed.",
+        "ADB dumpsys sensorservice returned exit 0 twice; recent-event section hash was identical over 6 seconds. Raw sensor output was neither returned nor persisted; no live sample claimed.",
+        "Re-read Dropbox source metadata and TESSERACT workflow/source. PR #6 remains OPEN; no CI rerun, no issuer key or runner assignment change verified."
+      ],
+      "result": "WINDOWS_TICK_VERIFIED_SOURCE_HASH_MATCH; DEVICE_CLOCK_OFFSET_310_9S_OBSERVED_W32TIME_STOPPED_MANUAL; ANDROID_RECENT_SENSOR_EVENT_SECTION_UNCHANGED_LIVE_SAMPLE_OPEN; TESSERACT_PR6_OPEN_NO_CI_RERUN",
       "source_mutated": false,
       "credentials_committed": false,
       "open_tasks_closed": false
@@ -7910,6 +7961,111 @@
         "w32time": "Stopped/Manual"
       },
       "result": "TICK_SUCCESS_READBACK_VERIFIED_LIVE_SENSOR_STREAM_OPEN"
+    },
+    {
+      "observed_at": "2026-10-24T09:28:15.672+07:00",
+      "record_type": "WINDOWS_TICK_CLOCK_OFFSET_ANDROID_EVENT_SECTION_AND_TESSERACT_READBACK_20261024",
+      "windows_tick": {
+        "device": "DESKTOP-86ITNQ4",
+        "route": "Remote Desktop Commander",
+        "device_status": "ONLINE at latest device listing; direct process/read_file calls succeeded",
+        "device_clock_at_read": "2026-10-24T09:21:58.0003936+07:00",
+        "host_reference_utc": "2026-10-24T02:27:08.914Z",
+        "host_minus_device_seconds": 310.9,
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "task_state": "Ready",
+        "enabled": true,
+        "last_run_device_local": "2026-10-24T09:21:34+07:00",
+        "last_result": "0x0",
+        "next_run_device_local": "2026-10-24T09:26:32+07:00",
+        "missed_runs": 0,
+        "execution_time_limit": "PT2M",
+        "multiple_instances_setting": "IgnoreNew",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T022138064743Z.json",
+        "receipt_bytes": 450,
+        "receipt_sha256": "17063be3228a90475c7e9307419616f263cf3a96521c8c26fa476a859e071ef9",
+        "receipt_observed_at_utc": "2026-10-24T02:21:38.064743Z",
+        "source_bytes": 35389440,
+        "source_mtime_utc": "2026-10-23T08:45:56.2458701Z",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "receipt_source_hash_matches_direct_hash": true,
+        "source_mutated": false,
+        "synthetic_rows_added": 0,
+        "cloud_export_enabled": false,
+        "github_export_enabled": false,
+        "live_sensor_reading_confirmed": false,
+        "w32time_status": "Stopped (Get-Service returned status 1)",
+        "w32time_start_type": "Manual",
+        "w32time_query_error": "The service has not been started (0x80070426)",
+        "time_service_changed": false
+      },
+      "android": {
+        "adb_path": "C:\\Users\\halin\\platform-tools-latest-windows\\platform-tools\\adb.exe",
+        "serial": "1056285",
+        "dumpsys_sensorservice_exit_codes": [
+          0,
+          0
+        ],
+        "snapshots_interval_seconds": 6,
+        "snapshot_line_counts": [
+          358,
+          358
+        ],
+        "snapshot_sha256_changed": true,
+        "recent_event_section_line_counts": [
+          74,
+          74
+        ],
+        "recent_event_section_sha256": "6b6c2a563b33d10040685e8025fdd7f8317d1d35a94dcd64f943a28ab796196c",
+        "recent_event_section_changed": false,
+        "raw_sensor_output_persisted": false,
+        "raw_sensor_output_returned": false,
+        "live_sensor_sample_confirmed": false,
+        "note": "A whole dumpsys snapshot changed, but the Recent Sensor events section remained byte-identical across 6 seconds; this is not evidence of a fresh sensor sample."
+      },
+      "consumer_provenance": {
+        "github_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "resolver_blob_sha": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+        "one_shot_calls_get_xiaomi_telemetry": false,
+        "helper_observation": "get_xiaomi_telemetry() has literal device/sensor inventory and sensor-online fields; battery fields may be refreshed from `adb shell dumpsys battery`, but that is not a live sensor sample. The scheduled --once path does not call this helper.",
+        "one_shot_behavior": "record_telemetry_tick reads CSV metadata/hash and writes a receipt; cloud/GitHub exports remain gated off."
+      },
+      "providers": {
+        "dropbox_outlook": {
+          "account_identity_readback": "halinh270803@outlook.com.vn",
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true
+        },
+        "xtime": {
+          "health_http_status": 200,
+          "pid": 20712,
+          "modual_source_present_last_verified": false,
+          "last_verified_at": "2026-10-24T09:16:05.645+07:00"
+        },
+        "ollama": {
+          "tags_http_status": 200,
+          "model_count": 11,
+          "loopback_only": true
+        },
+        "tesseract_desktop": {
+          "repository": "2708halinh-cloud/x-time-web",
+          "pr": 6,
+          "state": "OPEN",
+          "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+          "workflow_run_39994207477": "failure; job steps/logs unavailable; no artifacts",
+          "workflow_run_39994207667": "failure; job steps/logs unavailable; no artifacts",
+          "selfhosted_windows_verify": "skipped for pull_request by workflow condition",
+          "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+          "kilo_source_blob_sha": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+          "issuer_public_key_value_verified": false,
+          "runner_assignment_change_verified": false,
+          "ci_rerun": false
+        }
+      },
+      "result": "WINDOWS_TICK_VERIFIED_SOURCE_HASH_MATCH; DEVICE_CLOCK_OFFSET_310_9S_OBSERVED_W32TIME_STOPPED_MANUAL; ANDROID_RECENT_SENSOR_EVENT_SECTION_UNCHANGED_LIVE_SAMPLE_OPEN; TESSERACT_PR6_OPEN_NO_CI_RERUN"
     }
   ]
 }
