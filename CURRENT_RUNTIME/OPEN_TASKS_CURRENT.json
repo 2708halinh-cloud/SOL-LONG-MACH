@@ -6456,6 +6456,61 @@
       "source_mutated": false,
       "raw_sensor_values_persisted": false,
       "credentials_committed": false
+    },
+    {
+      "id": "LATEST_REMOTE_INVENTORY_OFFLINE_READBACK_20261024063024",
+      "kind": "APPEND_ONLY_PROVIDER_INVENTORY_CHANGE_AND_CONTINUATION",
+      "observed_at": "2026-10-24T13:30:24.728+07:00",
+      "observed_at_utc": "2026-10-24T06:30:24.728Z",
+      "source": "Fresh Remote Desktop Commander inventory plus exact-target GitHub and Dropbox readbacks",
+      "exact_targets_before_write": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "0cd639540b3e7208a20f4277661d5022b2d503c5",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "7e5005271f6206e907fc9c01947ae949a051416e",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_readback": "b6af983747c143f6e25cc3860f6c87aff1432395"
+      },
+      "verified_actions": [
+        "Fresh-read the latest Remote Desktop Commander inventory; it reports DESKTOP-86ITNQ4 OFFLINE with last-seen 33s ago.",
+        "Confirmed that the direct read_file call ended in timeout and the separate read-only start_process probe also timed out; did not retry the same call.",
+        "Retained 11:51:33+07 as the latest verified Windows Tick; no later receipt or live sensor sample is claimed.",
+        "Re-read exact Dropbox source metadata and the TESSERACT security branch source; both exact-target reads succeeded."
+      ],
+      "provider_state": {
+        "windows": {
+          "inventory_status": "OFFLINE",
+          "last_seen": "33s ago",
+          "host_read_status": "FAILED_TIMEOUT_NO_RESPONSE",
+          "last_verified_run_local": "2026-10-24T11:51:33+07:00",
+          "post_11_56_receipt_verified": false,
+          "live_sensor_reading_confirmed": false
+        },
+        "dropbox": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true,
+          "raw_bytes_downloaded": false
+        },
+        "tesseract": {
+          "branch": "security/repo-relative-read-containment-20261024",
+          "commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
+          "file_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d0",
+          "ahead_by": 2,
+          "behind_by": 0,
+          "tests_executed": false,
+          "issuer_public_key_verified": false,
+          "runner_assignment_change_verified": false,
+          "ci_rerun": false
+        }
+      },
+      "result": "LATEST_INVENTORY_OFFLINE_AND_HOST_TIMEOUT_RECORDED; INDEPENDENT_DROPBOX_AND_TESSERACT_BRANCH_CONTINUED",
+      "task_count": 28,
+      "tasks_closed": false,
+      "source_mutated": false,
+      "raw_sensor_values_persisted": false,
+      "credentials_committed": false
     }
   ],
   "energy_protection_current": {
@@ -10625,6 +10680,20 @@
       "ci_rerun": false,
       "task_closure": false,
       "result": "CURRENT_TICK_NOT_REFRESHED; LIVE_STREAM_NOT_VERIFIED"
+    },
+    {
+      "observed_at": "2026-10-24T13:30:24.728+07:00",
+      "observed_at_utc": "2026-10-24T06:30:24.728Z",
+      "record_type": "LATEST_REMOTE_INVENTORY_OFFLINE_HOST_TIMEOUT",
+      "inventory_status": "OFFLINE",
+      "last_seen": "33s ago",
+      "direct_host_read": "FAILED_TIMEOUT_NO_RESPONSE",
+      "windows_last_verified_run_local": "2026-10-24T11:51:33+07:00",
+      "windows_post_11_56_receipt_verified": false,
+      "dropbox_metadata_readback": true,
+      "tesseract_security_branch_readback": true,
+      "task_closure": false,
+      "result": "DEVICE_ACCESS_NOT_REFRESHED; INDEPENDENT PROVIDER WORK CONTINUES"
     }
   ]
 }
