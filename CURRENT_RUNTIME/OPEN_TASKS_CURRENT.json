@@ -2348,6 +2348,17 @@
       },
       "prior_record_rewritten": false,
       "task_closure": false
+    },
+    "pr25_replacement_patch_20261024": {
+      "observed_at": "2026-10-24T09:48:50+07:00",
+      "pr": 25,
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/25",
+      "branch": "fix/open-task-routing-current-main-20261024c",
+      "main_head": "6ac89fed09b0f20bbcbafb8fc124690dc3a34b86",
+      "pre_receipt_head": "d03679c070a7c084efff14d9fb7b163a35285903",
+      "current_head_ci_verified": false,
+      "review_verified": false,
+      "task_closure": false
     }
   },
   "sinks": {
@@ -5438,6 +5449,61 @@
         "task_ids_preserved": true,
         "statuses_preserved": true,
         "open_tasks_closed": false
+      }
+    },
+    {
+      "id": "PR25_CURRENT_MAIN_REPLACEMENT_PATCH_CREATED_20261024T024850Z",
+      "kind": "OPEN_ROUTING_REPLACEMENT_PATCH_CREATED_AND_READBACK_PENDING",
+      "observed_at": "2026-10-24T09:48:50+07:00",
+      "observed_at_utc": "2026-10-24T02:48:50Z",
+      "source": "Authenticated GitHub connector; PR creation response and exact file readbacks",
+      "source_reads": {
+        "main_ledger_blob_before_reconciliation": "91b3816749fbf0c5f92bc64d63bb47634fbbcd30",
+        "runtime/cloud_survival_scheduler.py_after_write": "fe99f77fa6eb540712c3754cc3f9d46153d3eeea",
+        "tests/test_cloud_survival_scheduler.py_after_write": "775cf533878e2a9ea7f8f53debcc8c11583e47f8",
+        ".github/workflows/windows-survival-cloud-continuity.yml_after_write": "cb1a8fa79a1ba306f0a7b442838e45d4b248b1af"
+      },
+      "github": {
+        "main_head": "6ac89fed09b0f20bbcbafb8fc124690dc3a34b86",
+        "replacement_branch": "fix/open-task-routing-current-main-20261024c",
+        "replacement_branch_head_before_ledger_receipt": "d03679c070a7c084efff14d9fb7b163a35285903",
+        "commits": [
+          "fc9bb29db833e356a6917f6243f2a25b6659a2ea",
+          "a930043fa9485533bbc766dc4c919a85fee391db",
+          "d03679c070a7c084efff14d9fb7b163a35285903"
+        ],
+        "PR25": {
+          "number": 25,
+          "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/25",
+          "state": "open",
+          "draft": true,
+          "base": "main",
+          "base_sha": "6ac89fed09b0f20bbcbafb8fc124690dc3a34b86",
+          "head": "d03679c070a7c084efff14d9fb7b163a35285903",
+          "changed_files": 3,
+          "ahead_by": 3,
+          "behind_by": 0,
+          "mergeable_readback_at_creation": false
+        },
+        "changes": {
+          "nonempty_ledger_guard": true,
+          "exact_task_route_id_assertions": true,
+          "one_task_ledger_regression": true,
+          "gitmodules_gitlink_regression": true,
+          "pull_request_workflow_trigger": true,
+          "no_private_chat_payloads": true,
+          "no_credentials": true
+        }
+      },
+      "result": "CURRENT_MAIN_REPLACEMENT_PR_CREATED; CODE_READBACK_VERIFIED; CI_AND_REVIEW_NOT_YET_PROVEN",
+      "next_callable_edge": "Read back the updated PR head after appending this receipt, inspect current-head workflow runs and review state, and keep the PR draft/open until actual CI and review evidence is available. Keep original-export and live-sensor tasks OPEN.",
+      "task_effect": {
+        "task_count": 28,
+        "task_ids_preserved": true,
+        "statuses_preserved_from_main": true,
+        "open_tasks_closed": false,
+        "original_export_retrieval_completed": false,
+        "live_sensor_stream_verified": false
       }
     }
   ],
@@ -9292,6 +9358,22 @@
       },
       "result": "TIME_PRECISION_CORRECTED_APPEND_ONLY; ORIGINAL_SOURCE_PROBE_EVENT_PRESERVED",
       "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-24T09:48:50+07:00",
+      "observed_at_utc": "2026-10-24T02:48:50Z",
+      "record_type": "PR25_CURRENT_MAIN_REPLACEMENT_PATCH_CREATED",
+      "github": {
+        "pr": 25,
+        "branch": "fix/open-task-routing-current-main-20261024c",
+        "main_head": "6ac89fed09b0f20bbcbafb8fc124690dc3a34b86",
+        "pre_receipt_head": "d03679c070a7c084efff14d9fb7b163a35285903",
+        "ahead_by": 3,
+        "behind_by": 0,
+        "draft": true,
+        "merged": false
+      },
+      "result": "REPLACEMENT_PATCH_OPEN; CURRENT_HEAD_CI_AND_REVIEW_PENDING; NO_TASK_CLOSED"
     }
   ]
 }
