@@ -7792,6 +7792,74 @@
       "exact_targets_after_modual_write": {
         "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "d8f049e94e4b70400a75757b2d337600d8a46a65"
       }
+    },
+    {
+      "id": "DROPBOX_TELEMETRY_SCRIPT_SAFETY_20261024101236",
+      "kind": "DROPBOX_TELEMETRY_SCRIPT_SAFETY_READBACK",
+      "observed_at": "2026-10-24T17:12:36.227+07:00",
+      "observed_at_utc": "2026-10-24T10:12:36Z",
+      "source": "Dropbox exact metadata and extracted-text readback; no script execution and no source mutation.",
+      "exact_targets_before_write": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "9379e5b7676edf25fbbfaa676a4dee63296cc61f",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "3b45c27c99b2e65b64fa1523f7d58cba573a58a4",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "d8f049e94e4b70400a75757b2d337600d8a46a65"
+      },
+      "verified_actions": [
+        "Fresh-read all four required reentry files and MODUAL current state before the additive write.",
+        "Read exact Dropbox metadata for telemetry_buffer_sync.py: rev 0165daa22c5d85b0000000395cdfd73, 10,707 bytes, modified 2026-10-12T19:59:29Z.",
+        "Inspected extracted script control flow: --once appends telemetry to BUFFER_CSV and calls cloud and GitHub sync helpers. This is extracted-text evidence, not a raw-byte hash.",
+        "Did not execute or substitute the Dropbox copy; local D:\\SENSOR_LOGS\\telemetry_buffer_sync.py equivalence remains unverified.",
+        "Latest verified local tick remains 2026-10-24T09:52:03.879982Z with source hash match; post-16:56:32+07 receipt is not verified.",
+        "TESSERACT PR #6 remains open; issuer public key and runner assignment remain unverified; no CI rerun."
+      ],
+      "script_observation": {
+        "observed_at": "2026-10-24T17:12:36.227+07:00",
+        "observed_at_utc": "2026-10-24T10:12:36Z",
+        "record_type": "DROPBOX_TELEMETRY_SCRIPT_CARRIER_SAFETY_READBACK",
+        "source": "Fresh Dropbox exact metadata and extracted-text readback of /Linh Hà/SENSOR_LOGS/telemetry_buffer_sync.py.",
+        "dropbox_script": {
+          "path": "/Linh Hà/SENSOR_LOGS/telemetry_buffer_sync.py",
+          "file_id": "id:gvG29tEleJwAAAAAAAACEA",
+          "rev": "0165daa22c5d85b0000000395cdfd73",
+          "size_bytes": 10707,
+          "server_modified_utc": "2026-10-12T19:59:29Z",
+          "extracted_text_chars": 10582,
+          "extracted_text_lines": 253,
+          "code_paths_verified": [
+            "record_telemetry_tick() appends to BUFFER_CSV (open mode 'a')",
+            "sync_snapshot_to_cloud() copies BUFFER_CSV to a W: target and replaces the target",
+            "sync_snapshot_to_github() invokes MODUAL_GITHUB_SYNC when present",
+            "--once calls record_telemetry_tick(), sync_snapshot_to_cloud(), and sync_snapshot_to_github()"
+          ],
+          "evidence_basis": "Dropbox extracted text; not a raw-byte hash and not proof of current local Windows file equality."
+        },
+        "local_host": {
+          "exact_local_script_path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+          "local_source_readback_this_turn": "NOT_VERIFIED_AFTER_HOST_CONNECTOR_INTERNAL_ERRORS",
+          "scheduled_task_action_historical": "python.exe D:\\SENSOR_LOGS\\telemetry_buffer_sync.py --once",
+          "latest_verified_receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T095203879982Z.json",
+          "latest_verified_receipt_sha256": "45991BE02267FD17191FEF62C7F88705B6C442D5E6B1B8340D617EDD6010B865",
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "post_boundary_receipt": "NOT_VERIFIED"
+        },
+        "safety_decision": "DO_NOT_EXECUTE_OR_SUBSTITUTE_THE_STALE_DROPBOX_SCRIPT. It can append telemetry rows and perform cloud/GitHub synchronization; current local script identity and behavior must be verified on an authorized host before any code execution or repair.",
+        "result": "STALE_PROVIDER_SCRIPT_MUTATING_BEHAVIOR_IDENTIFIED; LOCAL_EQUIVALENCE_UNVERIFIED; NO_EXECUTION_OR_SOURCE_CHANGE",
+        "next_callable_edge": "Use an authorized exact-target host route to read D:\\SENSOR_LOGS\\telemetry_buffer_sync.py and compare its hash/content with the Dropbox revision; then verify the current task action and consumer without running the Dropbox copy."
+      },
+      "result": "STALE_PROVIDER_SCRIPT_MUTATING_BEHAVIOR_IDENTIFIED; LOCAL_EQUIVALENCE_UNVERIFIED; NO_EXECUTION_OR_SOURCE_CHANGE",
+      "safety": {
+        "source_mutated": false,
+        "script_executed": false,
+        "raw_sensor_values_committed": false,
+        "credentials_committed": false,
+        "tasks_closed": false,
+        "ci_rerun": false
+      },
+      "exact_targets_after_modual_write": {
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "dbca61bb61a9575e9325efd8b28d12bd88fef73a"
+      }
     }
   ],
   "energy_protection_current": {
@@ -13107,6 +13175,74 @@
       },
       "exact_targets_after_modual_write": {
         "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "d8f049e94e4b70400a75757b2d337600d8a46a65"
+      }
+    },
+    {
+      "id": "DROPBOX_TELEMETRY_SCRIPT_SAFETY_20261024101236",
+      "kind": "DROPBOX_TELEMETRY_SCRIPT_SAFETY_READBACK",
+      "observed_at": "2026-10-24T17:12:36.227+07:00",
+      "observed_at_utc": "2026-10-24T10:12:36Z",
+      "source": "Dropbox exact metadata and extracted-text readback; no script execution and no source mutation.",
+      "exact_targets_before_write": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "9379e5b7676edf25fbbfaa676a4dee63296cc61f",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "3b45c27c99b2e65b64fa1523f7d58cba573a58a4",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "d8f049e94e4b70400a75757b2d337600d8a46a65"
+      },
+      "verified_actions": [
+        "Fresh-read all four required reentry files and MODUAL current state before the additive write.",
+        "Read exact Dropbox metadata for telemetry_buffer_sync.py: rev 0165daa22c5d85b0000000395cdfd73, 10,707 bytes, modified 2026-10-12T19:59:29Z.",
+        "Inspected extracted script control flow: --once appends telemetry to BUFFER_CSV and calls cloud and GitHub sync helpers. This is extracted-text evidence, not a raw-byte hash.",
+        "Did not execute or substitute the Dropbox copy; local D:\\SENSOR_LOGS\\telemetry_buffer_sync.py equivalence remains unverified.",
+        "Latest verified local tick remains 2026-10-24T09:52:03.879982Z with source hash match; post-16:56:32+07 receipt is not verified.",
+        "TESSERACT PR #6 remains open; issuer public key and runner assignment remain unverified; no CI rerun."
+      ],
+      "script_observation": {
+        "observed_at": "2026-10-24T17:12:36.227+07:00",
+        "observed_at_utc": "2026-10-24T10:12:36Z",
+        "record_type": "DROPBOX_TELEMETRY_SCRIPT_CARRIER_SAFETY_READBACK",
+        "source": "Fresh Dropbox exact metadata and extracted-text readback of /Linh Hà/SENSOR_LOGS/telemetry_buffer_sync.py.",
+        "dropbox_script": {
+          "path": "/Linh Hà/SENSOR_LOGS/telemetry_buffer_sync.py",
+          "file_id": "id:gvG29tEleJwAAAAAAAACEA",
+          "rev": "0165daa22c5d85b0000000395cdfd73",
+          "size_bytes": 10707,
+          "server_modified_utc": "2026-10-12T19:59:29Z",
+          "extracted_text_chars": 10582,
+          "extracted_text_lines": 253,
+          "code_paths_verified": [
+            "record_telemetry_tick() appends to BUFFER_CSV (open mode 'a')",
+            "sync_snapshot_to_cloud() copies BUFFER_CSV to a W: target and replaces the target",
+            "sync_snapshot_to_github() invokes MODUAL_GITHUB_SYNC when present",
+            "--once calls record_telemetry_tick(), sync_snapshot_to_cloud(), and sync_snapshot_to_github()"
+          ],
+          "evidence_basis": "Dropbox extracted text; not a raw-byte hash and not proof of current local Windows file equality."
+        },
+        "local_host": {
+          "exact_local_script_path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+          "local_source_readback_this_turn": "NOT_VERIFIED_AFTER_HOST_CONNECTOR_INTERNAL_ERRORS",
+          "scheduled_task_action_historical": "python.exe D:\\SENSOR_LOGS\\telemetry_buffer_sync.py --once",
+          "latest_verified_receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T095203879982Z.json",
+          "latest_verified_receipt_sha256": "45991BE02267FD17191FEF62C7F88705B6C442D5E6B1B8340D617EDD6010B865",
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "post_boundary_receipt": "NOT_VERIFIED"
+        },
+        "safety_decision": "DO_NOT_EXECUTE_OR_SUBSTITUTE_THE_STALE_DROPBOX_SCRIPT. It can append telemetry rows and perform cloud/GitHub synchronization; current local script identity and behavior must be verified on an authorized host before any code execution or repair.",
+        "result": "STALE_PROVIDER_SCRIPT_MUTATING_BEHAVIOR_IDENTIFIED; LOCAL_EQUIVALENCE_UNVERIFIED; NO_EXECUTION_OR_SOURCE_CHANGE",
+        "next_callable_edge": "Use an authorized exact-target host route to read D:\\SENSOR_LOGS\\telemetry_buffer_sync.py and compare its hash/content with the Dropbox revision; then verify the current task action and consumer without running the Dropbox copy."
+      },
+      "result": "STALE_PROVIDER_SCRIPT_MUTATING_BEHAVIOR_IDENTIFIED; LOCAL_EQUIVALENCE_UNVERIFIED; NO_EXECUTION_OR_SOURCE_CHANGE",
+      "safety": {
+        "source_mutated": false,
+        "script_executed": false,
+        "raw_sensor_values_committed": false,
+        "credentials_committed": false,
+        "tasks_closed": false,
+        "ci_rerun": false
+      },
+      "exact_targets_after_modual_write": {
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "dbca61bb61a9575e9325efd8b28d12bd88fef73a"
       }
     }
   ]
