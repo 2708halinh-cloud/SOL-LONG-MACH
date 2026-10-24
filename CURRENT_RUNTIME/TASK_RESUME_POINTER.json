@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "MODUAL: scheduled metadata tick now succeeds at 07:11:33 device time, result 0, zero missed runs; exact receipt WINDOWS_TICK_20261024T001137656548Z.json SHA-256 CDC0936178E493D8AAFF9B8C5062FA8F8F2F1D0F5B08460ABEE955CA825A3BFF confirms source hash 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 and disables exports/writes; live_sensor_reading_confirmed remains false. Next trigger at device 07:16:32+07 was pending at last direct read. HWiNFO process PID 17520 exists, but all four read-only shared-memory name probes return Win32Error 2 and its separate CSV remains stale/read-only. ADB target 192.168.1.14:5556 refuses connection; device 1056285 is Xiaomi 2201123G/Android 15 and sensorservice inventory is not a live sample. Independent TESSERACT_OS braid proof passed with readback; cloud wiring remains NOT_VERIFIED. TESSERACT Desktop PR #6 stays OPEN; do not rerun CI until runner assignment changes and issuer public key is authorized.",
+  "next": "MODUAL: two consecutive recent scheduled metadata ticks (07:11:33 and 07:16:33 device time) returned result 0 with new receipts. Latest receipt WINDOWS_TICK_20261024T001642618988Z.json SHA-256 408FD5B28B85FC7AFC6F42D0DB375A341498A8829C4CB3BD8A9FB24C919D0417; direct source hash recomputed at 07:19:08.966+07 matches the receipt (35,389,440 bytes, mtime 2026-10-23T08:45:56.2458701Z, SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87). The next device-clock run is 07:21:32+07; verify the next exact receipt. live_sensor_reading_confirmed remains false. HWiNFO shared-memory names are inaccessible (Win32Error 2) and its separate CSV is stale/read-only. Wireless ADB target 192.168.1.14:5556 refuses connection; the connected Xiaomi 2201123G sensor inventory is not a live sample. The TESSERACT_OS braid proof passed with exact receipt readback, but cloud wiring is NOT_VERIFIED. TESSERACT Desktop PR #6 remains OPEN; no issuer key value or runner change is verified; no CI rerun.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -1401,6 +1401,91 @@
       },
       "result": "WINDOWS_TICK_SUCCESS_AND_BRAID_VERIFIED_LIVE_SENSOR_STREAM_OPEN",
       "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-24T00:19:08.966Z",
+      "type": "SECOND_CONSECUTIVE_TICK_SUCCESS_DIRECT_SOURCE_HASH_MATCH",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "c000ed3a9d2ffcb88f7069da3a76219b634a2865",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "a456061be07d4721642c929e204b09ccb1ba7d85",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "d26284307d677fc509a83858c585856a1becaf58"
+      },
+      "windows": {
+        "device_clock": "2026-10-24T07:19:08.9664958+07:00",
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state": "Ready",
+        "last_run": "2026-10-24T07:16:33+07:00",
+        "next_run": "2026-10-24T07:21:32+07:00",
+        "result": "0x0",
+        "missed_runs": 0,
+        "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T001642618988Z.json",
+        "receipt_sha256": "408FD5B28B85FC7AFC6F42D0DB375A341498A8829C4CB3BD8A9FB24C919D0417",
+        "receipt_utc": "2026-10-24T00:16:42.618988Z",
+        "source_bytes": 35389440,
+        "source_mtime_utc": "2026-10-23T08:45:56.2458701Z",
+        "source_sha256_directly_recomputed": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_matches_receipt": true,
+        "live_sensor_reading_confirmed": false
+      },
+      "hwinfo": {
+        "pid": 17520,
+        "present": true,
+        "mapping_opened": false,
+        "win32_error": 2,
+        "csv_bytes": 39922785,
+        "csv_mtime_utc": "2026-10-21T02:20:45.8565035Z",
+        "csv_read_only": true
+      },
+      "android": {
+        "wireless_target": "192.168.1.14:5556",
+        "connect_result": "actively refused (10061)",
+        "existing_device": "1056285",
+        "model": "2201123G",
+        "android_version": "15",
+        "sensor_inventory_observed": true,
+        "live_sample_values": false,
+        "modual_binding": false
+      },
+      "providers": {
+        "dropbox": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z"
+        },
+        "xtime": {
+          "http_status": 200,
+          "modual_source_present": false,
+          "live_device_proven": false
+        },
+        "ollama": {
+          "http_status": 200,
+          "loopback_only": true
+        },
+        "tesseract": {
+          "pr": 6,
+          "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+          "run_39994207477": "failure",
+          "run_39994207667": "failure",
+          "issuer_key_value_verified": false,
+          "runner_assignment_change_verified": false,
+          "ci_rerun": false
+        }
+      },
+      "braid": {
+        "exit_code": 0,
+        "six_actions": 9,
+        "plural_actions": 5,
+        "source_sha256_unchanged": true,
+        "mutation_executed": false,
+        "six_receipt_sha256": "5c39c6cd05e909f41fe62276e0bbd9acc67d0fd180adab5dac9d2bf0bcfe212e",
+        "readback_ok": true,
+        "cloud_host_wiring": "NOT_VERIFIED"
+      },
+      "result": "SECOND_CONSECUTIVE_TICK_SUCCESS_SOURCE_HASH_MATCH_BRAID_VERIFIED_LIVE_STREAM_OPEN",
+      "open_tasks_closed": false
     }
   ],
   "latest_sync_observation": {
@@ -1432,35 +1517,36 @@
     ]
   },
   "latest_runtime_observation": {
-    "observed_at": "2026-10-24T07:15:50+07:00",
-    "observed_at_utc": "2026-10-24T00:15:50Z",
+    "observed_at": "2026-10-24T07:19:08.966+07:00",
+    "observed_at_utc": "2026-10-24T00:19:08.966Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "56f64661a5274d8fef73cb01d44c77f77830556e",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "d433d5afb7a575dd0932dddd8fb5bd95ba68e53d",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "57e815ad57fd0f55e9d3fa807ff3aedb2be82326"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "c000ed3a9d2ffcb88f7069da3a76219b634a2865",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "a456061be07d4721642c929e204b09ccb1ba7d85",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "d26284307d677fc509a83858c585856a1becaf58"
     },
     "windows": {
+      "device_clock": "2026-10-24T07:19:08.9664958+07:00",
       "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
-      "device": "DESKTOP-86ITNQ4",
-      "device_clock": "2026-10-24T07:12:28.0033638+07:00",
       "state": "Ready",
-      "last_run": "2026-10-24T07:11:33+07:00",
-      "next_run": "2026-10-24T07:16:32+07:00",
+      "last_run": "2026-10-24T07:16:33+07:00",
+      "next_run": "2026-10-24T07:21:32+07:00",
       "result": "0x0",
       "missed_runs": 0,
-      "limit": "PT2M",
-      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T001137656548Z.json",
-      "receipt_sha256": "CDC0936178E493D8AAFF9B8C5062FA8F8F2F1D0F5B08460ABEE955CA825A3BFF",
-      "receipt_utc": "2026-10-24T00:11:37.656548Z",
+      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T001642618988Z.json",
+      "receipt_sha256": "408FD5B28B85FC7AFC6F42D0DB375A341498A8829C4CB3BD8A9FB24C919D0417",
+      "receipt_utc": "2026-10-24T00:16:42.618988Z",
       "source_bytes": 35389440,
-      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_mtime_utc": "2026-10-23T08:45:56.2458701Z",
+      "source_sha256_directly_recomputed": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_matches_receipt": true,
       "live_sensor_reading_confirmed": false
     },
     "hwinfo": {
-      "process_pid": 17520,
-      "shared_memory_probe_opened": false,
+      "pid": 17520,
+      "present": true,
+      "mapping_opened": false,
       "win32_error": 2,
       "csv_bytes": 39922785,
       "csv_mtime_utc": "2026-10-21T02:20:45.8565035Z",
@@ -1471,9 +1557,8 @@
       "connect_result": "actively refused (10061)",
       "existing_device": "1056285",
       "model": "2201123G",
-      "manufacturer": "Xiaomi",
       "android_version": "15",
-      "sensor_inventory": "56 h/w sensors listed",
+      "sensor_inventory_observed": true,
       "live_sample_values": false,
       "modual_binding": false
     },
@@ -1482,8 +1567,7 @@
         "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
         "rev": "0165dc1e4794ab00000000395cdfd73",
         "size_bytes": 35389440,
-        "server_modified_utc": "2026-10-14T00:20:03Z",
-        "metadata_readback": true
+        "server_modified_utc": "2026-10-14T00:20:03Z"
       },
       "xtime": {
         "http_status": 200,
@@ -1499,9 +1583,9 @@
         "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
         "run_39994207477": "failure",
         "run_39994207667": "failure",
-        "rerun_performed": false,
+        "issuer_key_value_verified": false,
         "runner_assignment_change_verified": false,
-        "issuer_key_verified": false
+        "ci_rerun": false
       }
     },
     "braid": {
@@ -1514,7 +1598,7 @@
       "readback_ok": true,
       "cloud_host_wiring": "NOT_VERIFIED"
     },
-    "result": "WINDOWS_TICK_SUCCESS_AND_BRAID_VERIFIED_LIVE_SENSOR_STREAM_OPEN",
+    "result": "SECOND_CONSECUTIVE_TICK_SUCCESS_SOURCE_HASH_MATCH_BRAID_VERIFIED_LIVE_STREAM_OPEN",
     "open_tasks_closed": false
   }
 }
