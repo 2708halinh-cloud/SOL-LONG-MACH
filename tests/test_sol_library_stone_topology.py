@@ -9,9 +9,11 @@ CORE = LIB / "COMPUTER_KHÍ💜BRAIN_OS_POWER"
 SPACE = CORE / "EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE"
 
 class LibraryStoneTopologyTests(unittest.TestCase):
-    def test_two_github_library_roots(self):
+    def test_canonical_library_roots_allow_brain_wave_logs_sibling(self):
+        # BRAIN_WAVE_LOGS is an authorized sibling; the forbidden parallel
+        # root is SPACE_STONE_WORKSPACE, not every third directory.
         self.assertEqual({p.name for p in LIB.iterdir() if p.is_dir()},
-                         {"COMPUTER_KHÍ💜BRAIN_OS_POWER", "OS_WORK"})
+                         {"COMPUTER_KHÍ💜BRAIN_OS_POWER", "OS_WORK", "BRAIN_WAVE_LOGS"})
         self.assertFalse((LIB / "SPACE_STONE_WORKSPACE").exists())
 
     def test_computer_five_stones_and_one_agents(self):
