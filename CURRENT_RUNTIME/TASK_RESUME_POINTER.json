@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "The Windows route has responded and the exact receipt after the 08:51:32 device-clock boundary is verified. Next, read the newest receipt and Scheduled Task state after device clock 08:56:32+07 before any retry; compare the source SHA again. TaskScheduler Operational logging is disabled and this shell is non-elevated, so no event-log or task/code/service setting changes are authorized from this session. Continue the issuer-side public-key and runner-assignment/entitlement investigation independently; do not rerun PR #6 CI without verified runner-state change.",
+  "next": "After the verified 08:51:33 device-clock run, the next scheduled boundary is 08:56:32+07; read the newest receipt and task state once that device clock boundary has passed, then compare the source SHA. TaskScheduler Operational logging is disabled and the current shell is non-elevated; do not change task/code/service settings from this session. Continue the TESSERACT issuer-key and runner-assignment investigation through an authorized issuer carrier or Actions/repository control surface. The bounded Dropbox/GitHub search found no key value in scanned carriers; do not infer global absence. Do not rerun PR #6 CI until runner assignment/entitlement change is verified.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -157,7 +157,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T08:59:13.320+07:00",
+  "updated_at": "2026-10-24T09:01:20.477+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -2061,6 +2061,60 @@
         "ci_rerun": false
       }
     },
-    "result": "WINDOWS_NEXT_TICK_VERIFIED_SOURCE_HASH_MATCH_LIVE_SENSOR_STREAM_OPEN; BRAID_RECEIPTS_VERIFIED; ALL_OPEN_TASKS_RETAINED"
+    "result": "WINDOWS_NEXT_TICK_VERIFIED_SOURCE_HASH_MATCH_LIVE_SENSOR_STREAM_OPEN; BRAID_RECEIPTS_VERIFIED; ALL_OPEN_TASKS_RETAINED",
+    "tesseract_carrier_scan": {
+      "observed_at": "2026-10-24T09:01:20.477+07:00",
+      "observed_at_utc": "2026-10-24T02:01:20.477Z",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "e5feaa1d5ae36b5f0e8f8e4f2c2e4a29b651dad9",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "596f839fd6abec0640efdd866bcdc6dd4e0cad0f",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "5e900bc237f98070702613bab7b8db1c1b8c1fea"
+      },
+      "dropbox_scans": [
+        {
+          "path": "/Linh Hà/SENSOR_LOGS/TESSERACT_OS_6D_RCLONE_RELAY_SOURCE.json",
+          "modified": "2026-10-12T19:59:31Z",
+          "extracted_chars": 291,
+          "marker_hits": 0
+        },
+        {
+          "path": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_HEADERS_CURRENT.txt",
+          "modified": "2026-10-12T19:59:31Z",
+          "extracted_chars": 997,
+          "marker_hits": 0
+        },
+        {
+          "path": "/Linh Hà/SENSOR_LOGS/TESSERACT_CDN_BODY_CURRENT.tmp",
+          "modified": "2026-10-12T19:59:29Z",
+          "extracted_chars": 63,
+          "marker_hits": 0
+        },
+        {
+          "path": "/Linh Hà/SENSOR_LOGS/TOOLKIT.TXT",
+          "modified": "2026-10-12T19:59:31Z",
+          "extracted_chars": 61032,
+          "marker_hits": 0
+        }
+      ],
+      "github_search_counts": {
+        "exact_build_variable_refs": 4,
+        "ed25519_related": 6,
+        "kilo_xtime": 3,
+        "receipt_schema": 2,
+        "signing_key_kilo_xtime": 1
+      },
+      "issuer_public_key_value_verified": false,
+      "pr6": {
+        "state": "OPEN",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "run_39994207477": "failure",
+        "run_39994207667": "failure",
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "BOUNDED_ISSUER_SEARCH_NO_KEY_VALUE_IN_SCANNED_CARRIERS_NOT_GLOBAL_ABSENCE_PROOF"
+    }
   }
 }
