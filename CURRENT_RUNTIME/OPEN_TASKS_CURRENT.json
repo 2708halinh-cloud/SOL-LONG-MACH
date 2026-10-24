@@ -2,7 +2,7 @@
   "schema": "SOL_OPEN_TASKS_PARALLEL_LEDGER/1.0",
   "provenance": {
     "user_directive": "2026-10-21: TẤT CẢ YÊU CẦU CHƯA HOÀN THÀNH PHẢI NEO GIỮ, KHÔNG CHUYỂN QUA LÀM MỘT VIỆC XONG DỪNG LẠI",
-    "observed_at": "2026-10-24T22:10:48.058+07:00",
+    "observed_at": "2026-10-24T22:12:54.171+07:00",
     "source": "Fresh Library byte probe + GitHub source search; append-only evidence for R-014 source recovery and TESSERACT Art source identity; no task closure.",
     "not_exhaustive_history": true,
     "historical_backfill": "2026-10-21: 14 additional user requests indexed from earlier conversation sources; provider states must be rechecked before action or closure"
@@ -3192,6 +3192,15 @@
       "newer_receipt_name_seen_unverified": "WINDOWS_TICK_20261024T145654596476Z.json",
       "n8n_event_id": "X20261024144945910_CLOUD",
       "live_sensor_reading_confirmed": false,
+      "tasks_closed": 0
+    },
+    "CLOUD_CONTINUITY_READBACK_20261024T2212ICT": {
+      "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2212ICT.json",
+      "checkpoint_blob_sha": "029035d4f390006431e3d0517586fdae067277d0",
+      "checkpoint_commit": "2543955f1dc0d1d47519c3c091904283b275e7b2",
+      "n8n_execution_id": "139",
+      "n8n_row_id": 288,
+      "n8n_event_id": "X20261024150024024_CLOUD",
       "tasks_closed": 0
     }
   },
@@ -8741,6 +8750,19 @@
       "checkpoint_blob_sha": "5dc4de54ca6baf9e6e0a68c6ecbb0051df2a6702",
       "checkpoint_commit": "0f21db0a7563f78cb473a0d3e75ec708e276b4da",
       "result": "VERIFIED_TICK_145135_RECEIPT_AND_SOURCE_HASH_MATCH; NEWER_RECEIPT_145654_LISTED_BUT_NOT_VERIFIED; XTIME_HTTP200_SOURCE_PRESENT; OLLAMA_HTTP200_11_MODELS; ADB_DEVICE_RESPONDS_BUT_RECENT_SENSOR_EVENTS_UNCHANGED_ACROSS_4S; CONSUMER_8080_UNVERIFIED_NO_LISTENER_OBSERVED; N8N_ROW284_VERIFIED; TESSERACT_PR6_OPEN",
+      "tasks_closed": 0,
+      "raw_sensor_data_committed": false,
+      "credentials_committed": false,
+      "ci_rerun": false
+    },
+    {
+      "id": "CLOUD_CONTINUITY_READBACK_20261024T2212ICT",
+      "observed_at": "2026-10-24T22:12:54.171+07:00",
+      "source": "n8n execution 139 and exact data-table row 288 readback; independent provider observations",
+      "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2212ICT.json",
+      "checkpoint_blob_sha": "029035d4f390006431e3d0517586fdae067277d0",
+      "checkpoint_commit": "2543955f1dc0d1d47519c3c091904283b275e7b2",
+      "result": "N8N_EXECUTION_139_AND_ROW_288_EXACT_READBACK_VERIFIED; OPEN_WORK_REMAINS; HOST_HEARTBEAT_NOT_PROBED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_PR6_OPEN",
       "tasks_closed": 0,
       "raw_sensor_data_committed": false,
       "credentials_committed": false,
@@ -14719,6 +14741,42 @@
         "run_39994207667_artifacts": 0,
         "ci_rerun": false,
         "tasks_closed": 0
+      }
+    },
+    {
+      "id": "CLOUD_CONTINUITY_READBACK_20261024T2212ICT",
+      "observed_at": "2026-10-24T22:12:54.171+07:00",
+      "source": "n8n execution 139 and exact data-table row 288 readback; independent provider observations",
+      "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2212ICT.json",
+      "checkpoint_blob_sha": "029035d4f390006431e3d0517586fdae067277d0",
+      "checkpoint_commit": "2543955f1dc0d1d47519c3c091904283b275e7b2",
+      "result": "N8N_EXECUTION_139_AND_ROW_288_EXACT_READBACK_VERIFIED; OPEN_WORK_REMAINS; HOST_HEARTBEAT_NOT_PROBED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_PR6_OPEN",
+      "tasks_closed": 0,
+      "raw_sensor_data_committed": false,
+      "credentials_committed": false,
+      "ci_rerun": false,
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "execution_id": "139",
+        "status": "success",
+        "row_id": 288,
+        "event_id": "X20261024150024024_CLOUD",
+        "state": "OPEN_WORK_REMAINS",
+        "pending_rows": 45,
+        "host_heartbeat_probed": false,
+        "tasks_closed": 0
+      },
+      "prior_tick_checkpoint": {
+        "path": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2210ICT.json",
+        "sha": "5dc4de54ca6baf9e6e0a68c6ecbb0051df2a6702",
+        "live_sensor_reading_confirmed": false
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "OPEN_NOT_MERGED",
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
       }
     }
   ]
