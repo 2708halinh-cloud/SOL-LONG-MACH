@@ -775,15 +775,16 @@
     },
     {
       "id": "MODUAL_SENSOR_LOGS_ROUTING",
-      "status": "OPEN_SCHEDULED_TICK_RECEIPTS_RESUMED_LIVE_STREAM_NOT_VERIFIED",
+      "status": "OPEN_SCHEDULED_TICK_SUCCESS_LIVE_STREAM_NOT_VERIFIED",
       "goal": "Repair MODUAL telemetry source to Outlook Dropbox\\Linh Hà\\SENSOR_LOGS\\windows_SENSON.CSV and verify Windows Tick error gone",
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
-      "readback": "Fresh direct readback at device clock 2026-10-24T07:09:41.3836621+07: task Ready/enabled, last run 07:06:33 result 0, missed runs 0, next run 07:11:32, PT2M limit. Exact latest receipt WINDOWS_TICK_20261024T000645771199Z.json is 450 bytes, SHA-256 86C0C43E3F33074C126E91F14308591983A48679AE955CCD0ECE399CDD3654A; source SHA 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87, size 35,389,440, mtime 2026-10-23T08:45:56.2458701Z. Receipt reports exports disabled, no source writes/synthetic rows, live_sensor_reading_confirmed=false. X-TIME health HTTP 200 but MODUAL source_present=false/live_device_proven=false. Live stream remains unverified.",
+      "readback": "Fresh direct readback at device clock 2026-10-24T07:12:28.0033638+07: task Ready/enabled, last run 07:11:33 result 0x0, zero missed runs, next 07:16:32, PT2M limit. Exact latest receipt WINDOWS_TICK_20261024T001137656548Z.json is 450 bytes, SHA-256 CDC0936178E493D8AAFF9B8C5062FA8F8F2F1D0F5B08460ABEE955CA825A3BFF; source SHA 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87, size 35,389,440 bytes. Receipt exports disabled, no source writes/synthetic rows, live_sensor_reading_confirmed=false. Four read-only HWiNFO shared-memory names were absent (Win32Error 2); separate HWiNFO CSV remains stale/read-only. Wireless ADB 192.168.1.14:5556 refused connection; connected Xiaomi 2201123G sensor inventory is not a live sample and is not bound to MODUAL.",
       "next": [
-        "Re-probe Windows after device clock passes 2026-10-24T07:11:32+07; read newest receipt and task state. If next receipt is missing and NextRunTime is stale relative to device clock, inspect TaskScheduler events/process state before any manual invocation.",
-        "Investigate supported HWiNFO logging/shared-memory path; separate CSV remains stale/read-only and no live sample is confirmed.",
+        "After device clock passes 2026-10-24T07:16:32+07, read the next exact receipt and recompute source hash/mtime. Keep historical long-run cause unresolved unless a measured one-shot proves it.",
+        "Investigate supported HWiNFO logging/shared-memory configuration without changing current process or registry; do not consume the stale read-only CSV as live data.",
+        "Continue the Android route only via an authorized reachable device; the intended 192.168.1.14:5556 target refused connection. Existing device 1056285 is Xiaomi 2201123G, and its sensor inventory alone does not prove live sample capture.",
         "Use only an authorized elevated route for W32Time; do not change service or resync without permission.",
-        "Keep TESSERACT PR #6 OPEN; do not rerun CI until runner assignment/entitlement change is verified and an authorized issuer public key is available."
+        "Keep TESSERACT PR #6 OPEN; do not rerun CI until runner assignment/entitlement change is verified and the issuer public key is provisioned from an authorized source."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -1138,6 +1139,22 @@
           "result": "NEWER_SCHEDULED_RECEIPT_VERIFIED_BRAID_PROOF_VERIFIED_LIVE_SENSOR_STREAM_STILL_UNVERIFIED",
           "next_callable_edge": "Re-probe task and newest receipt after device clock passes 07:11:32+07. If the next trigger has no receipt and task remains Ready with a stale next-run time relative to device clock, inspect scheduler events and process state before any manual invocation. Continue authorized HWiNFO logging/issuer-key investigation independently.",
           "status_effect": "Keep OPEN; a newer scheduled metadata receipt and independent local braid proof are verified, but live sensor readings and cloud-host wiring are not."
+        },
+        {
+          "observed_at": "2026-10-24T07:15:50+07:00",
+          "source": "Direct Windows tick/receipt readback, HWiNFO mapping probe, ADB device/sensorservice probe, fresh GitHub ledger reads",
+          "actions_and_receipts": [
+            "At device clock 2026-10-24T07:12:28.0033638+07, scheduled task was Ready/enabled; last run 07:11:33, result 0x0, missed 0, next run 07:16:32, PT2M limit, MultipleInstances=IgnoreNew.",
+            "Exact newest receipt WINDOWS_TICK_20261024T001137656548Z.json read back at 450 bytes, SHA-256 CDC0936178E493D8AAFF9B8C5062FA8F8F2F1D0F5B08460ABEE955CA825A3BFF; observed_at_utc 2026-10-24T00:11:37.656548Z.",
+            "Receipt source hash 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87, bytes 35,389,440; exports disabled, source_file_written=false, synthetic_rows_added=0, live_sensor_reading_confirmed=false.",
+            "The receipt timestamp is about 4.66 seconds after the task's reported LastRunTime; this indicates this invocation produced a receipt quickly but is not a measured process-runtime trace. Earlier long/terminated runs remain unexplained; double hashing is only a candidate, not proven root cause.",
+            "HWiNFO64 PID 17520 exists; four read-only OpenFileMapping probes for Global/local HWiNFO_SENS_SM2/SM all failed with Win32Error 2. HWiNFO CSV remains 39,922,785 bytes, ReadOnly/Archive, last modified 2026-10-21T02:20:45.8565035Z.",
+            "ADB executable located at C:\\Users\\halin\\platform-tools-latest-windows\\platform-tools\\adb.exe. Wireless target 192.168.1.14:5556 refused connection (10061). Existing ADB device 1056285 identifies as Xiaomi 2201123G, Android 15; dumpsys sensorservice returned sensor inventory (56 h/w sensors) but no live sample values or MODUAL binding.",
+            "TESSERACT_OS braid proof remains verified from the earlier same-session execution; no cloud wiring claim."
+          ],
+          "result": "SCHEDULED_TICK_SUCCESS_CONFIRMED_LIVE_STREAM_UNVERIFIED_HWINF0_SHARED_MEMORY_UNAVAILABLE_ANDROID_TARGET_REFUSED",
+          "next_callable_edge": "After device clock passes 07:16:32+07, read next scheduled receipt and recompute the 35,389,440-byte source hash. If tick continues to succeed, keep the historical long-run cause unresolved rather than blaming double hashing. Continue only supported HWiNFO/Android routes; do not change service, logging, task, or source without a proven path.",
+          "status_effect": "Keep task OPEN; latest metadata tick succeeded, but no live sensor sample has been read or consumed."
         }
       ]
     },
@@ -3791,6 +3808,30 @@
       "result": "NEWER_SCHEDULED_RECEIPT_VERIFIED_BRAID_PROOF_VERIFIED_LIVE_SENSOR_STREAM_STILL_UNVERIFIED",
       "next_callable_edge": "Re-probe task and newest receipt after device clock passes 07:11:32+07. If the next trigger has no receipt and task remains Ready with a stale next-run time relative to device clock, inspect scheduler events and process state before any manual invocation. Continue authorized HWiNFO logging/issuer-key investigation independently.",
       "status_effect": "Keep OPEN; a newer scheduled metadata receipt and independent local braid proof are verified, but live sensor readings and cloud-host wiring are not."
+    },
+    {
+      "id": "MODUAL_TICK_SUCCESS_HWINF0_MAPPING_ABSENT_ANDROID_ALTERNATE_PROBED_20261024",
+      "kind": "DIRECT_WINDOWS_TICK_AND_PROVIDER_PROBE",
+      "observed_at": "2026-10-24T07:15:50+07:00",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "56f64661a5274d8fef73cb01d44c77f77830556e",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "0be4631329b723cfc7b0737c9dbf48f481d0e1b5",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "57e815ad57fd0f55e9d3fa807ff3aedb2be82326"
+      },
+      "actions_and_receipts": [
+        "At device clock 2026-10-24T07:12:28.0033638+07, scheduled task was Ready/enabled; last run 07:11:33, result 0x0, missed 0, next run 07:16:32, PT2M limit, MultipleInstances=IgnoreNew.",
+        "Exact newest receipt WINDOWS_TICK_20261024T001137656548Z.json read back at 450 bytes, SHA-256 CDC0936178E493D8AAFF9B8C5062FA8F8F2F1D0F5B08460ABEE955CA825A3BFF; observed_at_utc 2026-10-24T00:11:37.656548Z.",
+        "Receipt source hash 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87, bytes 35,389,440; exports disabled, source_file_written=false, synthetic_rows_added=0, live_sensor_reading_confirmed=false.",
+        "The receipt timestamp is about 4.66 seconds after the task's reported LastRunTime; this indicates this invocation produced a receipt quickly but is not a measured process-runtime trace. Earlier long/terminated runs remain unexplained; double hashing is only a candidate, not proven root cause.",
+        "HWiNFO64 PID 17520 exists; four read-only OpenFileMapping probes for Global/local HWiNFO_SENS_SM2/SM all failed with Win32Error 2. HWiNFO CSV remains 39,922,785 bytes, ReadOnly/Archive, last modified 2026-10-21T02:20:45.8565035Z.",
+        "ADB executable located at C:\\Users\\halin\\platform-tools-latest-windows\\platform-tools\\adb.exe. Wireless target 192.168.1.14:5556 refused connection (10061). Existing ADB device 1056285 identifies as Xiaomi 2201123G, Android 15; dumpsys sensorservice returned sensor inventory (56 h/w sensors) but no live sample values or MODUAL binding.",
+        "TESSERACT_OS braid proof remains verified from the earlier same-session execution; no cloud wiring claim."
+      ],
+      "result": "SCHEDULED_TICK_SUCCESS_CONFIRMED_LIVE_STREAM_UNVERIFIED_HWINF0_SHARED_MEMORY_UNAVAILABLE_ANDROID_TARGET_REFUSED",
+      "next_callable_edge": "After device clock passes 07:16:32+07, read next scheduled receipt and recompute the 35,389,440-byte source hash. If tick continues to succeed, keep the historical long-run cause unresolved rather than blaming double hashing. Continue only supported HWiNFO/Android routes; do not change service, logging, task, or source without a proven path.",
+      "status_effect": "Keep task OPEN; latest metadata tick succeeded, but no live sensor sample has been read or consumed."
     }
   ],
   "energy_protection_current": {
@@ -7082,6 +7123,39 @@
         "issuer_key_verified": false
       },
       "result": "RECEIPTS_PROGRESS_AND_BRAID_VERIFIED_LIVE_STREAM_OPEN"
+    },
+    {
+      "observed_at": "2026-10-24T00:15:50Z",
+      "record_type": "WINDOWS_TICK_SUCCESS_HWINF0_MAPPING_ABSENT_ANDROID_TARGET_REFUSED",
+      "windows": {
+        "task_state": "Ready",
+        "last_run": "2026-10-24T07:11:33+07:00",
+        "result": "0x0",
+        "next_run": "2026-10-24T07:16:32+07:00",
+        "missed_runs": 0,
+        "receipt": "WINDOWS_TICK_20261024T001137656548Z.json",
+        "receipt_sha256": "CDC0936178E493D8AAFF9B8C5062FA8F8F2F1D0F5B08460ABEE955CA825A3BFF",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "live_sensor_reading_confirmed": false
+      },
+      "hwinfo": {
+        "pid": 17520,
+        "shared_memory_opened": false,
+        "win32_error": 2,
+        "csv_bytes": 39922785,
+        "csv_mtime_utc": "2026-10-21T02:20:45.8565035Z",
+        "csv_read_only": true
+      },
+      "android": {
+        "wireless_target": "192.168.1.14:5556",
+        "connect_error": 10061,
+        "existing_device": "1056285",
+        "model": "2201123G",
+        "android_version": "15",
+        "sensor_inventory_observed": true,
+        "live_sample_values": false
+      },
+      "result": "SCHEDULED_TICK_SUCCESS_LIVE_STREAM_OPEN"
     }
   ]
 }
