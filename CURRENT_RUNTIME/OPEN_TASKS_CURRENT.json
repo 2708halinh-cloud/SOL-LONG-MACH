@@ -460,11 +460,9 @@
         "2026-10-23 21:18+07:00: fresh read of PR #6 workflow run 39153474587 still shows hosted jobs fail before step output, selfhosted verification skipped, readback failure, zero artifacts; no rerun. Accessible code search returned zero results for issuer-key variable and issuer/Ed25519 terms. Current resume pointer head 5d0a44bb... differs from older head embedded in WORK_CHECKPOINT.json (57c285c8...)."
       ],
       "next": [
-        "Find the actual Kilo/X-TiMe issuer public key from an authorized existing provider; GitHub code search found only variable references and no PEM public-key literal in the accessible search scope.",
-        "Verify runner assignment/entitlement changed before rerunning workflow 39153474587; current recorded jobs fail-before-step and self-hosted verification is skipped.",
-        "Keep PR #6 OPEN until a current-head CI readback is TRUE and the issuer trust anchor is provisioned from an authorized source.",
-        "Resolve the WORK_CHECKPOINT.json embedded-head mismatch against the current resume pointer without rewriting historical evidence; do not rerun CI until runner assignment changes.",
-        "Fresh current-head check confirms selfhosted Windows verification is excluded from pull_request events by workflow condition; current hosted failures have empty step arrays and BlobNotFound logs. Do not rerun CI without independently verified runner assignment/entitlement change."
+        "Obtain the actual issuer public key through an authorized issuer-side provider or authenticated GitHub Actions variable control surface; existing Dropbox reentry ZIP raw bytes match the verified Library carrier and contain no issuer-key markers.",
+        "Verify GitHub-hosted runner assignment/entitlement changed before any CI rerun. Current-head runs 39994207477 and 39994207667 fail with empty steps; do not repeat CI #39153474587.",
+        "Keep PR #6 OPEN until an authorized trust anchor is provisioned and a current-head CI readback is TRUE."
       ],
       "guard": "Do not overwrite or relabel inherited task done from this ledger",
       "assigned_subagent": "SubAisstangtManage-ORCHESTRATOR",
@@ -660,6 +658,19 @@
           "result": "CROSS_REPOSITORY_INDEXED_SEARCH_FOUND_REFERENCES_ONLY",
           "next_callable_edge": "Verify the Actions variable and runner assignment through an authorized settings/control surface, or locate the issuer public key in an authorized issuer-owned carrier.",
           "status_effect": "Keep OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T07:25:42+07:00",
+          "source": "Dropbox Outlook exact carrier metadata + single-use download link + in-memory ZIP scan on authorized Windows device; fresh GitHub search",
+          "actions_and_receipts": [
+            "Exact Dropbox object path /Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT/SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip, rev 0165daa5e44669e0000000395cdfd73, 20,882 bytes, modified 2026-10-12T20:16:07Z.",
+            "Downloaded bytes into memory only; SHA-256 da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106, 16 ZIP entries, no key/issuer/Ed25519/public-key markers in entry text. This matches the previously verified Library carrier hash. No bytes persisted to disk.",
+            "Current GitHub search returns README and source references for the trust-anchor variable but no actual public-key value; exact variable query in x-time-web returned no results. This does not prove issuer key absence in all providers.",
+            "Runs 39994207477 and 39994207667 still fail with empty step output; no runner assignment change verified; no CI rerun."
+          ],
+          "result": "DROPBOX_REENTRY_ZIP_EXACT_BYTES_MATCH_LIBRARY_NO_ISSUER_KEY_MARKERS",
+          "next_callable_edge": "Continue through authorized issuer-side carrier or GitHub Actions variable control surface; do not invent key material. Do not rerun CI until runner assignment/entitlement change is verified.",
+          "status_effect": "Keep TESSERACT Desktop OPEN; key provisioning and current-head CI remain unresolved."
         }
       ]
     },
@@ -775,16 +786,16 @@
     },
     {
       "id": "MODUAL_SENSOR_LOGS_ROUTING",
-      "status": "OPEN_SCHEDULED_TICK_SUCCESS_LIVE_STREAM_NOT_VERIFIED",
+      "status": "OPEN_SCHEDULED_TICK_INTERMITTENT_LONG_DURATION_LIVE_STREAM_NOT_VERIFIED",
       "goal": "Repair MODUAL telemetry source to Outlook Dropbox\\Linh Hà\\SENSOR_LOGS\\windows_SENSON.CSV and verify Windows Tick error gone",
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
-      "readback": "At device clock 2026-10-24T07:18:48.236+07, task Ready/enabled, last run 07:16:33 result 0x0, zero missed runs, next 07:21:32. Exact newest receipt WINDOWS_TICK_20261024T001642618988Z.json is 450 bytes, SHA-256 408FD5B28B85FC7AFC6F42D0DB375A341498A8829C4CB3BD8A9FB24C919D0417. Direct source hash recomputed at 07:19:08.966+07 matches receipt: 35,389,440 bytes, mtime 2026-10-23T08:45:56.2458701Z, SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Exports disabled, no source writes/synthetic rows, live_sensor_reading_confirmed=false. HWiNFO shared-memory mapping probes remain absent and its separate CSV remains stale/read-only. Wireless ADB target 192.168.1.14:5556 refused connection; other Xiaomi sensor inventory is not a live sample.",
+      "readback": "Latest direct Windows readback at 07:23:43.366+07: task Ready, last run 07:21:33 result 0x0, next 07:26:32, missed 0. Receipt WINDOWS_TICK_20261024T002312156252Z.json is 450 bytes, SHA-256 afa37ac1d2b2cf722e2fee87a41f2e659137e997a9cc5cd9acbbc43807d9bbb5; timestamp is about 99.156 seconds after task LastRunTime. Direct source hash at 07:24:16.583+07 matches receipt (35,389,440 bytes, mtime 2026-10-23T08:45:56.2458701Z, SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87). One hash took 1.747s; the direct Python import/resolver plus record_telemetry_tick path took 1.022s with exports set to 0 and no source mutation. The intermittent long scheduled invocation is not explained by double hashing alone. HWiNFO shared memory remains unavailable and its separate CSV stale/read-only; live_sensor_reading_confirmed=false.",
       "next": [
-        "Read the next exact receipt after device clock 2026-10-24T07:21:32+07 and recompute source hash/mtime. Keep earlier long-run cause unresolved unless a measured trace proves it.",
-        "Continue supported HWiNFO logging/shared-memory investigation without changing the running process, registry, or stale CSV.",
-        "Continue authorized Android sampling only through a reachable target; do not treat the Xiaomi 2201123G sensor inventory as live readings or bind it to MODUAL.",
-        "Use only an authorized elevated route for W32Time; do not change service or resync without permission.",
-        "Keep TESSERACT PR #6 OPEN; no current issuer public key value or runner assignment change is verified. Do not rerun CI until the runner change is verified."
+        "Read next scheduled receipt after device clock 2026-10-24T07:26:32+07 and compare source hash/mtime. If the next invocation again approaches PT2M, capture task scheduler events and Python process I/O metrics before changing anything.",
+        "Do not claim double hashing is the root cause: one full hash measured 1.747s and direct import/resolver+record path measured 1.022s. Keep intermittent delay unresolved.",
+        "Continue supported HWiNFO logging/shared-memory path; do not switch to stale ReadOnly CSV or modify the running process/registry without a supported authorized route.",
+        "Continue Android sampling only through a reachable authorized target; 192.168.1.14:5556 refused connection and the Xiaomi 2201123G sensor inventory is not live sample data.",
+        "Keep TESSERACT Desktop PR #6 OPEN; the verified Dropbox reentry ZIP contains no issuer-key markers. Seek a current authorized issuer carrier and verified runner assignment; do not rerun CI until runner change is verified."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -1171,6 +1182,21 @@
           "result": "SECOND_CONSECUTIVE_TICK_SUCCESS_SOURCE_HASH_MATCH_LIVE_STREAM_UNVERIFIED",
           "next_callable_edge": "Read next scheduled receipt after device clock 07:21:32+07 and compare source hash/mtime again. Do not attribute earlier long runs to double hashing without timing evidence. Continue authorized HWiNFO and issuer-key paths; no CI rerun until runner assignment changes.",
           "status_effect": "Keep OPEN. Scheduled metadata tick is currently healthy across two consecutive runs; live sensor values and consumer binding remain unverified."
+        },
+        {
+          "observed_at": "2026-10-24T07:25:42+07:00",
+          "source": "Direct Windows timing probe, exact receipt/source hash readback, and Dropbox raw ZIP in-memory scan",
+          "actions_and_receipts": [
+            "Latest Windows tick receipt WINDOWS_TICK_20261024T002312156252Z.json is 450 bytes, SHA-256 afa37ac1d2b2cf722e2fee87a41f2e659137e997a9cc5cd9acbbc43807d9bbb5; task last run 07:21:33 result 0x0, next 07:26:32, missed runs 0. Receipt timestamp 07:23:12.156Z is about 99.156 seconds after LastRunTime.",
+            "Direct source SHA-256 measured at 07:24:16.583+07 was 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 for 35,389,440 bytes, mtime 2026-10-23T08:45:56.2458701Z; it matches the receipt source hash.",
+            "D: is a local fixed NTFS volume (850,260,914,176 bytes total, 210,938,580,992 bytes free). One full Get-FileHash pass took 1,747 ms.",
+            "Read-only direct Python path using the same WindowsApps launcher imported telemetry_buffer_sync and called record_telemetry_tick without writing a receipt or invoking exports. Exit 0; import/resolver 0.782s, record_tick 0.240s, total Python 1.022s, PowerShell wall 4.122s; both export env vars explicitly 0; source hash unchanged, no source write/synthetic rows, live flag false. Thus double hashing alone does not explain the intermittent ~99-second scheduled run; root cause remains unproven.",
+            "Downloaded the exact Dropbox carrier in memory only: /Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT/SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip, rev 0165daa5e44669e0000000395cdfd73, 20,882 bytes, server_modified 2026-10-12T20:16:07Z. Raw SHA-256 da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106; 16 entries; no hits for issuer, Ed25519, BEGIN PUBLIC KEY, public_key, KILO_XTIME, or the exact build variable in any extracted ZIP entry. Bytes were not persisted to disk; this exact SHA matches the previously verified Library ZIP.",
+            "GitHub search on current accessible repository sources found README/code references describing the build-time issuer variable, but no actual public-key value. PR #6 runs 39994207477 and 39994207667 remain failed with empty step arrays; no runner assignment change verified, no CI rerun."
+          ],
+          "result": "TICK_SUCCESS_VARIABLE_DURATION_HASH_PATH_FAST; DROPBOX_REENTRY_ZIP_BYTE_IDENTITY_VERIFIED_NO_ISSUER_KEY_MARKERS",
+          "next_callable_edge": "Read next scheduled receipt after device clock 07:26:32+07. If the next tick again takes near the PT2M limit, inspect scheduler event IDs, Python process start and I/O metrics; do not alter task settings based on the double-hash hypothesis. Continue searching authorized issuer carriers; keep PR #6 open.",
+          "status_effect": "Keep MODUAL and TESSERACT Desktop tasks open. The carrier ZIP is verified but contains no issuer-key marker; no issuer key or cloud-host wiring has been established."
         }
       ]
     },
@@ -3872,6 +3898,29 @@
       "result": "SECOND_CONSECUTIVE_TICK_SUCCESS_SOURCE_HASH_MATCH_LIVE_STREAM_UNVERIFIED",
       "next_callable_edge": "Read next scheduled receipt after device clock 07:21:32+07 and compare source hash/mtime again. Do not attribute earlier long runs to double hashing without timing evidence. Continue authorized HWiNFO and issuer-key paths; no CI rerun until runner assignment changes.",
       "status_effect": "Keep OPEN. Scheduled metadata tick is currently healthy across two consecutive runs; live sensor values and consumer binding remain unverified."
+    },
+    {
+      "id": "MODUAL_TIMED_CONSUMER_PROBE_AND_TESSERACT_DROPBOX_CARRIER_SCAN_20261024",
+      "kind": "READ_ONLY_CONSUMER_TIMING_AND_RAW_CARRIER_INSPECTION",
+      "observed_at": "2026-10-24T07:25:42+07:00",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "e48b49248ddbcd09a62997c2d5c7abf09b5873cd",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "a456061be07d4721642c929e204b09ccb1ba7d85",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "5f0b7610e1eb210f822b3887110683a0ef4270f9"
+      },
+      "actions_and_receipts": [
+        "Latest Windows tick receipt WINDOWS_TICK_20261024T002312156252Z.json is 450 bytes, SHA-256 afa37ac1d2b2cf722e2fee87a41f2e659137e997a9cc5cd9acbbc43807d9bbb5; task last run 07:21:33 result 0x0, next 07:26:32, missed runs 0. Receipt timestamp 07:23:12.156Z is about 99.156 seconds after LastRunTime.",
+        "Direct source SHA-256 measured at 07:24:16.583+07 was 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 for 35,389,440 bytes, mtime 2026-10-23T08:45:56.2458701Z; it matches the receipt source hash.",
+        "D: is a local fixed NTFS volume (850,260,914,176 bytes total, 210,938,580,992 bytes free). One full Get-FileHash pass took 1,747 ms.",
+        "Read-only direct Python path using the same WindowsApps launcher imported telemetry_buffer_sync and called record_telemetry_tick without writing a receipt or invoking exports. Exit 0; import/resolver 0.782s, record_tick 0.240s, total Python 1.022s, PowerShell wall 4.122s; both export env vars explicitly 0; source hash unchanged, no source write/synthetic rows, live flag false. Thus double hashing alone does not explain the intermittent ~99-second scheduled run; root cause remains unproven.",
+        "Downloaded the exact Dropbox carrier in memory only: /Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT/SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip, rev 0165daa5e44669e0000000395cdfd73, 20,882 bytes, server_modified 2026-10-12T20:16:07Z. Raw SHA-256 da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106; 16 entries; no hits for issuer, Ed25519, BEGIN PUBLIC KEY, public_key, KILO_XTIME, or the exact build variable in any extracted ZIP entry. Bytes were not persisted to disk; this exact SHA matches the previously verified Library ZIP.",
+        "GitHub search on current accessible repository sources found README/code references describing the build-time issuer variable, but no actual public-key value. PR #6 runs 39994207477 and 39994207667 remain failed with empty step arrays; no runner assignment change verified, no CI rerun."
+      ],
+      "result": "TICK_SUCCESS_VARIABLE_DURATION_HASH_PATH_FAST; DROPBOX_REENTRY_ZIP_BYTE_IDENTITY_VERIFIED_NO_ISSUER_KEY_MARKERS",
+      "next_callable_edge": "Read next scheduled receipt after device clock 07:26:32+07. If the next tick again takes near the PT2M limit, inspect scheduler event IDs, Python process start and I/O metrics; do not alter task settings based on the double-hash hypothesis. Continue searching authorized issuer carriers; keep PR #6 open.",
+      "status_effect": "Keep MODUAL and TESSERACT Desktop tasks open. The carrier ZIP is verified but contains no issuer-key marker; no issuer key or cloud-host wiring has been established."
     }
   ],
   "energy_protection_current": {
@@ -7213,6 +7262,40 @@
         "live_sensor_reading_confirmed": false
       },
       "result": "TICK_SUCCESS_SOURCE_HASH_MATCH_LIVE_STREAM_OPEN"
+    },
+    {
+      "observed_at": "2026-10-24T00:25:42Z",
+      "record_type": "TIMED_CONSUMER_PATH_AND_DROPBOX_REENTRY_ZIP_SCAN",
+      "windows": {
+        "last_run": "2026-10-24T07:21:33+07:00",
+        "result": "0x0",
+        "receipt": "WINDOWS_TICK_20261024T002312156252Z.json",
+        "receipt_sha256": "afa37ac1d2b2cf722e2fee87a41f2e659137e997a9cc5cd9acbbc43807d9bbb5",
+        "receipt_delay_seconds": 99.156,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "hash_duration_ms": 1747,
+        "python_readonly_path_seconds": 1.022,
+        "root_cause_confirmed": false
+      },
+      "dropbox_carrier": {
+        "path": "/Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT/SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip",
+        "rev": "0165daa5e44669e0000000395cdfd73",
+        "size_bytes": 20882,
+        "raw_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+        "entry_count": 16,
+        "key_marker_hits": 0,
+        "raw_bytes_persisted": false
+      },
+      "tesseract": {
+        "pr": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "run_39994207477": "failure",
+        "run_39994207667": "failure",
+        "issuer_key_value_verified": false,
+        "runner_assignment_change_verified": false,
+        "rerun_performed": false
+      },
+      "result": "LONG_TICK_ROOT_CAUSE_OPEN_CARRIER_ZIP_NO_KEY_MARKERS"
     }
   ]
 }
