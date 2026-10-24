@@ -867,7 +867,8 @@
         "Continue supported HWiNFO and authorized Android live-source investigation; do not treat metadata tick as live sensor values.",
         "After device clock 09:56:32+07, re-read the exact newest receipt and task state; continue HWiNFO/Android live-source proof. Do not alter W32Time or task settings without authorized elevation.",
         "After device clock 10:01:32+07, read the next exact receipt and compare its source SHA-256 with a direct hash; continue supported HWiNFO/Android live-source proof.",
-        "After device clock 10:06:32+07, read exact latest tick receipt. Investigate supported HWiNFO logging path and alternate ADB executable/carrier; do not change services or task settings without authorization."
+        "After device clock 10:06:32+07, read exact latest tick receipt. Investigate supported HWiNFO logging path and alternate ADB executable/carrier; do not change services or task settings without authorization.",
+        "After device clock 10:11:32+07, read the next exact tick receipt. Continue supported HWiNFO logging setup and alternate ADB carrier discovery without changing services/task settings."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -1422,13 +1423,38 @@
           "result": "TICK_RECEIPT_VERIFIED; HWIN​​FO_LIVE_PATH_NOT_PRESENT; ANDROID_ROUTE_UNVERIFIED; MODUAL_LIVE_STREAM_NOT_VERIFIED",
           "next_callable_edge": "Verify next scheduled receipt after 10:06:32+07; continue authorized HWiNFO/ADB route discovery.",
           "status_effect": "Keep MODUAL OPEN. Scheduled tick is healthy at recent boundaries, but it remains metadata-only."
+        },
+        {
+          "observed_at": "2026-10-24T10:15:01.665+07:00",
+          "observed_at_utc": "2026-10-24T03:15:01.665Z",
+          "source": "Direct Windows tick receipt readback plus read-only HWiNFO shared-memory and ADB path probes",
+          "source_reads": {
+            "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+            "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+            "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+            "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+            "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+            "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "40e179db929475466747212818559ba6234a8606",
+            "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "bc3165c99b81b15d233cdb8710d68112a3946557",
+            "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "29087215f4f63041956ef95782e788407d082e43"
+          },
+          "actions_and_receipts": [
+            "Exact receipt WINDOWS_TICK_20261024T030637466945Z.json read back: 450 bytes, SHA-256 2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d, observed_at_utc 2026-10-24T03:06:37.466945Z. Source CSV direct hash matches: 35,389,440 bytes, SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87.",
+            "Task Ready/enabled, last run 10:06:33+07, result 0x0, next 10:11:32+07, missed runs 0. No source write, synthetic rows, cloud/GitHub export or live sensor sample.",
+            "HWiNFO64 PID 17520 runs, but CSV remains stale since 2026-10-21T02:20:45.8565035Z. All six plausible shared-memory names failed read-only open with Win32 error 2. INI has SensorsSM=1 but no CSV/logging path.",
+            "Android TCP 192.168.1.14:5556 timed out. adb.exe not found in standard paths; bounded searches under C:\\Users\\halin, D:\\ and G:\\ returned no matches but may be incomplete. Device-off state is not inferred."
+          ],
+          "result": "FOURTH_RECENT_TICK_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+          "next_callable_edge": "Verify next tick after device clock 10:11:32+07; continue authorized HWiNFO/ADB route discovery.",
+          "status_effect": "Keep MODUAL OPEN; recent scheduled tick metadata is stable, direct live stream is not proven."
         }
       ],
       "observed": [
         "2026-10-24 07:53:42+07: fresh Remote Desktop inventory reported ONLINE, but exact read-only task/source/receipt readbacks timed out or remained pending. Last verified receipt remains WINDOWS_TICK_20261024T002642437612Z.json (SHA-256 C40E4F5A...); no newer receipt or current task state is claimed. Dropbox source metadata remains revision 0165dc1e4794ab00000000395cdfd73, 35,389,440 bytes. Live sensor stream remains unverified.",
         "2026-10-24T10:00:36.940+07:00: Direct readback verified WINDOWS_TICK_20261024T025157723328Z.json (450 bytes, SHA-256 5ebdd3be8c3dc57822cf43398aff160f8bfa412b2b99abca08d791c97efe9979); source hash matches, task Ready/result 0, next 09:56:32 device time. Receipt remains metadata-only; live sensor stream not verified.",
         "2026-10-24T10:04:10.651+07:00: Exact newest receipt WINDOWS_TICK_20261024T025640609482Z.json read back (450 bytes, SHA-256 f8a603339179a3f0240a1a7177f6bb9602da82af7bb13ea5a7826218c8841a37); source hash matches; task Ready/result 0, next 10:01:32 device time. Live sensor sample remains unverified.",
-        "2026-10-24T10:10:20.016+07:00: Third recent scheduled tick verified at device clock 10:01:42Z; receipt SHA-256 1c0293733d734eed46528293e9a438518f0a7ad94625ac6ead3e62fde450cef0, source hash matches. HWiNFO CSV remains stale since 2026-10-21; read-only shared-memory open returned Win32 error 2; Android TCP 192.168.1.14:5556 timed out. No raw sensor values read."
+        "2026-10-24T10:10:20.016+07:00: Third recent scheduled tick verified at device clock 10:01:42Z; receipt SHA-256 1c0293733d734eed46528293e9a438518f0a7ad94625ac6ead3e62fde450cef0, source hash matches. HWiNFO CSV remains stale since 2026-10-21; read-only shared-memory open returned Win32 error 2; Android TCP 192.168.1.14:5556 timed out. No raw sensor values read.",
+        "2026-10-24T10:15:01.665+07:00: Fourth recent tick verified: WINDOWS_TICK_20261024T030637466945Z.json, SHA-256 2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d; source hash matches. HWiNFO shared-memory names all returned Win32 error 2; Android TCP 192.168.1.14:5556 timed out; bounded adb.exe searches remain incomplete."
       ]
     },
     {
@@ -2599,6 +2625,57 @@
         "heartbeat_verified": false,
         "device_off_state_inferred": false
       }
+    },
+    "windows_tick_20261024T030637Z_verified": {
+      "device": "DESKTOP-86ITNQ4",
+      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "task_state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-24T10:06:33+07:00",
+      "last_result": "0x0",
+      "next_run_local": "2026-10-24T10:11:32+07:00",
+      "missed_runs": 0,
+      "execution_time_limit": "PT2M",
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T030637466945Z.json",
+      "receipt_observed_at_utc": "2026-10-24T03:06:37.466945Z",
+      "receipt_bytes": 450,
+      "receipt_sha256": "2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d",
+      "approximate_run_to_receipt_seconds": 4.47,
+      "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "current_direct_hash_matches": true,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_enabled": false,
+      "github_enabled": false,
+      "live_sensor_reading_confirmed": false,
+      "w32time": "Stopped/Manual"
+    },
+    "hwinfo_shared_memory_name_scan_20261024T030550Z": {
+      "names_tested": [
+        "Global\\HWiNFO_SENS_SM2",
+        "Local\\HWiNFO_SENS_SM2",
+        "HWiNFO_SENS_SM2",
+        "Global\\HWiNFO_SENS_SM",
+        "Local\\HWiNFO_SENS_SM",
+        "HWiNFO_SENS_SM"
+      ],
+      "all_win32_error": 2,
+      "read_only": true,
+      "raw_sensor_values_read": false,
+      "memory_written": false
+    },
+    "android_adb_path_scan_20261024": {
+      "tcp_target": "192.168.1.14:5556",
+      "tcp_result": "timeout",
+      "bounded_searches": {
+        "C:\\Users\\halin": 0,
+        "D:\\": 0,
+        "G:\\": 0
+      },
+      "search_limit_note": "each remote file search stopped after 3 seconds; results may be incomplete",
+      "device_off_state_inferred": false
     }
   },
   "sinks": {
@@ -5892,6 +5969,87 @@
         "search_completeness": "may be incomplete; bounded search stopped after 3 seconds",
         "heartbeat_verified": false,
         "device_off_state_inferred": false
+      },
+      "result": "TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
+      "open_tasks_closed": false
+    },
+    {
+      "id": "FOURTH_TICK_AND_HWIN​​FO_ANDROID_ROUTE_SCAN_20261024T030637Z",
+      "kind": "WINDOWS_TICK_AND_LIVE_SOURCE_ROUTE_SCAN",
+      "observed_at": "2026-10-24T10:15:01.665+07:00",
+      "observed_at_utc": "2026-10-24T03:15:01.665Z",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "29087215f4f63041956ef95782e788407d082e43"
+      },
+      "windows_tick": {
+        "device": "DESKTOP-86ITNQ4",
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "task_state": "Ready",
+        "enabled": true,
+        "last_run_local": "2026-10-24T10:06:33+07:00",
+        "last_result": "0x0",
+        "next_run_local": "2026-10-24T10:11:32+07:00",
+        "missed_runs": 0,
+        "execution_time_limit": "PT2M",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T030637466945Z.json",
+        "receipt_observed_at_utc": "2026-10-24T03:06:37.466945Z",
+        "receipt_bytes": 450,
+        "receipt_sha256": "2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d",
+        "approximate_run_to_receipt_seconds": 4.47,
+        "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "current_direct_hash_matches": true,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false,
+        "live_sensor_reading_confirmed": false,
+        "w32time": "Stopped/Manual"
+      },
+      "hwinfo": {
+        "process_running": true,
+        "pid": 17520,
+        "csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+        "csv_bytes": 39922785,
+        "csv_last_modified_utc": "2026-10-21T02:20:45.8565035Z",
+        "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "ini_path": "C:\\Program Files\\HWiNFO64\\HWiNFO64.INI",
+        "ini_bytes": 358,
+        "ini_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
+        "ini_last_modified_utc": "2026-10-23T02:46:58.0293558Z",
+        "sensors_sm_setting": true,
+        "csv_or_logging_path_present": false,
+        "shared_memory_names_tested": [
+          "Global\\HWiNFO_SENS_SM2",
+          "Local\\HWiNFO_SENS_SM2",
+          "HWiNFO_SENS_SM2",
+          "Global\\HWiNFO_SENS_SM",
+          "Local\\HWiNFO_SENS_SM",
+          "HWiNFO_SENS_SM"
+        ],
+        "shared_memory_readonly_open_results": "all returned Win32 error 2",
+        "raw_sensor_values_read": false,
+        "memory_written": false
+      },
+      "android": {
+        "target": "192.168.1.14:5556",
+        "tcp_connect": false,
+        "tcp_error": "timeout",
+        "heartbeat_verified": false,
+        "device_off_state_inferred": false,
+        "adb_exe_standard_paths_found": false,
+        "bounded_searches": {
+          "C:\\Users\\halin": 0,
+          "D:\\": 0,
+          "G:\\": 0
+        },
+        "search_limit_note": "each remote file search stopped after 3 seconds; results may be incomplete"
       },
       "result": "TICK_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
       "open_tasks_closed": false
@@ -9826,6 +9984,42 @@
         "heartbeat_verified": false
       },
       "result": "METADATA_TICK_VERIFIED_LIVE_SOURCE_UNVERIFIED",
+      "task_closure": false
+    },
+    {
+      "observed_at": "2026-10-24T10:15:01.665+07:00",
+      "observed_at_utc": "2026-10-24T03:15:01.665Z",
+      "record_type": "WINDOWS_TICK_HWIN​​FO_ANDROID_ROUTE_SCAN",
+      "windows": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T030637466945Z.json",
+        "receipt_sha256": "2243d132064509161fd30bd33a5358f6f60dcc9c8fad6e9f52d7f39de9c2a42d",
+        "source_hash_matches": true,
+        "live_sensor_reading_confirmed": false
+      },
+      "hwinfo": {
+        "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+        "last_modified_utc": "2026-10-21T02:20:45.8565035Z",
+        "shared_memory_names_tested": [
+          "Global\\HWiNFO_SENS_SM2",
+          "Local\\HWiNFO_SENS_SM2",
+          "HWiNFO_SENS_SM2",
+          "Global\\HWiNFO_SENS_SM",
+          "Local\\HWiNFO_SENS_SM",
+          "HWiNFO_SENS_SM"
+        ],
+        "all_win32_error": 2
+      },
+      "android": {
+        "tcp_5556": "timeout",
+        "adb_searches": {
+          "C:\\Users\\halin": 0,
+          "D:\\": 0,
+          "G:\\": 0
+        },
+        "search_incomplete": true,
+        "heartbeat_verified": false
+      },
+      "result": "TICK_VERIFIED_LIVE_SOURCE_UNVERIFIED",
       "task_closure": false
     }
   ]
