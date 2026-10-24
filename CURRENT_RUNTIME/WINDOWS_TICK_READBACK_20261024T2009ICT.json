@@ -1,0 +1,178 @@
+{
+  "schema": "SOL_WINDOWS_TICK_READBACK/1.0",
+  "observed_at": "2026-10-24T20:09:11.3476279+07:00",
+  "observed_at_utc": "2026-10-24T13:09:11.3476279Z",
+  "source": "REMOTE_DESKTOP_COMMANDER_EXACT_TARGET_READBACK",
+  "exact_targets_before_write": {
+    "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "2883db45bab155fd341ff946c10be7090a498605",
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "4d6f6b9f680e7b029290973f1b7246b0e9e858a2",
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "737538cb4c0d6f9df1303ca4a3f55de9b6b63a2a"
+  },
+  "host": {
+    "device": "DESKTOP-86ITNQ4",
+    "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+    "route": "Remote Desktop Commander alternate linked account",
+    "online_at_last_device_inventory": true
+  },
+  "task": {
+    "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+    "state": "Ready",
+    "enabled": true,
+    "last_run_local": "2026-10-24T20:06:34+07:00",
+    "last_result": "0x0",
+    "next_run_local": "2026-10-24T20:11:32+07:00",
+    "missed_runs": 0,
+    "execution_time_limit": "PT2M",
+    "action_executable": "C:\\Users\\halin\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+    "action_arguments": "\"D:\\SENSOR_LOGS\\telemetry_buffer_sync.py\" --once",
+    "working_directory": "D:\\SENSOR_LOGS",
+    "scheduler_operational_log_enabled": false
+  },
+  "latest_receipt": {
+    "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T130636999565Z.json",
+    "observed_at_utc": "2026-10-24T13:06:36.999565Z",
+    "bytes": 450,
+    "sha256": "1127d053f459d011c013a55899810c1a8a16ac3ff21631f2f348e0be753772fd",
+    "exact_content_readback": true,
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_recomputed_at_readback": true,
+      "receipt_source_hash_matches": true,
+      "modified_at_utc": "2026-10-23T08:45:56.2458701Z"
+    },
+    "mutations": {
+      "source_file_written": false,
+      "synthetic_rows_added": 0
+    },
+    "exports": {
+      "cloud_enabled": false,
+      "github_enabled": false
+    },
+    "live_sensor_reading_confirmed": false,
+    "receipt_minus_task_start_seconds": 2.999565
+  },
+  "prior_run_timing_comparison": {
+    "prior_task_start_local": "2026-10-24T20:01:34+07:00",
+    "prior_receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T130217604618Z.json",
+    "prior_receipt_observed_at_utc": "2026-10-24T13:02:17.604618Z",
+    "prior_receipt_sha256": "76a963918b44322b252421a4b222caea0c7a54ca33cb4ae4890230c90476a001",
+    "prior_receipt_delay_seconds": 43.604618,
+    "prior_task_completion_readback_local": "2026-10-24T20:02:56.745+07:00",
+    "prior_final_result": "0x0",
+    "interpretation": "Variable receipt latency observed; root cause not proven. No task, service, clock, or script settings changed."
+  },
+  "provider_readback": {
+    "dropbox": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_readback": true
+    },
+    "xtime": {
+      "endpoint": "http://127.0.0.1:8769/api/health",
+      "http_status": 200,
+      "modual_source_present": true,
+      "live_device_proven": false,
+      "observed_header_count": 354,
+      "non_empty_headers": 353
+    },
+    "ollama": {
+      "endpoint": "http://127.0.0.1:11434/api/tags",
+      "http_status": 200,
+      "model_count": 11,
+      "loopback_only": true
+    },
+    "hwinfo": {
+      "process_running": true,
+      "pid": 17520,
+      "csv_path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV",
+      "csv_bytes": 39922785,
+      "csv_modified_local": "2026-10-21T09:20:45.8565035+07:00",
+      "csv_sha256": "b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d",
+      "live_sample_verified": false
+    },
+    "android_adb": {
+      "adb_executable_exists": true,
+      "attached_device_serial": "1056285",
+      "attached_device_model": "2201123G",
+      "read_only_battery_query_succeeded": true,
+      "wireless_redmi_target": "192.168.1.14:5556",
+      "wireless_tcp_reachable": false,
+      "redmi_heartbeat_verified": false,
+      "raw_battery_values_persisted": false
+    }
+  },
+  "consumer_diagnosis": {
+    "local_script": {
+      "path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+      "bytes": 13245,
+      "sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+      "exact_source_readback": true,
+      "behavior": "Pinned CSV validation and SHA-256 metadata receipt; record_telemetry_tick does not invoke get_xiaomi_telemetry, get_redmi_telemetry, or get_pc_telemetry.",
+      "code_path_observation": "sensor_root_resolver.inspect_sources hashes the pinned CSV during import; record_telemetry_tick hashes it again. This is a possible contributor to variable duration, not a proven root cause."
+    },
+    "historical_dropbox_script": {
+      "path": "/Linh Hà/SENSOR_LOGS/telemetry_buffer_sync.py",
+      "revision": "0165daa22c5d85b0000000395cdfd73",
+      "bytes": 10707,
+      "server_modified_utc": "2026-10-12T19:59:29Z",
+      "extracted_text_chars": 10582,
+      "byte_hash_verified": false,
+      "equivalent_to_local_script": false,
+      "finding": "Historical --once path calls cloud and GitHub sync functions without the current SOL_ENABLE_SENSOR_CLOUD_EXPORT / SOL_ENABLE_SENSOR_GITHUB_PUSH guards; code includes shutil.copyfile and os.replace.",
+      "action": "Do not execute or deploy this historical copy."
+    },
+    "health_routes": {
+      "observed_at_local": "2026-10-24T20:01:36+07:00",
+      "http_requests_timed_out": [
+        "http://127.0.0.1:8080/",
+        "http://127.0.0.1:8080/health",
+        "http://127.0.0.1:8080/api/health",
+        "https://192.168.1.42:8080/"
+      ],
+      "netstat_no_listener_lines_for_8080_at": "2026-10-24T20:06:23.931+07:00",
+      "earlier_tcp_probe_reported_open_at": "2026-10-24T20:00:16+07:00",
+      "conclusion": "Conflicting transport observations; consumer HTTP health remains unverified. No service/config change made."
+    }
+  },
+  "braid": {
+    "script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+    "exit_code": 0,
+    "six": {
+      "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T125908918811Z.json",
+      "bytes": 3996,
+      "sha256": "cba158fdb7a3987ee19413cb190024d3ccfc29f207651ef371ead2e3c6b2b045",
+      "exact_readback": true,
+      "receipt_readback_ok": true,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "actions": 9
+    },
+    "plural": {
+      "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261024T125908998999Z.json",
+      "bytes": 2407,
+      "sha256": "24b28a7f92dc09bb07e738f3a2d830579c0058bd164770a5df6f786c1a902e14",
+      "exact_readback": true,
+      "receipt_readback_ok": true,
+      "actions": 5
+    },
+    "cloud_host_wiring": "NOT_VERIFIED"
+  },
+  "safety": {
+    "raw_sensor_values_committed": false,
+    "credentials_committed": false,
+    "source_csv_modified": false,
+    "historical_dropbox_script_executed": false,
+    "task_configuration_changed": false,
+    "service_configuration_changed": false,
+    "clock_changed": false,
+    "ci_rerun": false,
+    "tasks_closed": 0
+  },
+  "next_edge": "After the 20:11:32+07 boundary, read the newest exact receipt and Scheduled Task state. Continue diagnosing variable receipt latency and the non-responsive 8080 health routes without changing task/service/clock settings. The current tick is metadata-only; pursue a genuine HWiNFO or authorized Android live-sensor sample separately."
+}
