@@ -6523,6 +6523,50 @@
       "source_mutated": false,
       "raw_sensor_values_persisted": false,
       "credentials_committed": false
+    },
+    {
+      "id": "CLOUD_CI_N8N_READBACK_20261024063445085",
+      "kind": "APPEND_ONLY_CLOUD_CI_AND_N8N_READBACK",
+      "observed_at": "2026-10-24T13:34:45.085+07:00",
+      "observed_at_utc": "2026-10-24T06:34:45.085Z",
+      "source": "Authenticated GitHub commit/run/job/artifact readback plus local SHA-256 of downloaded artifact; n8n workflow execution, task table, credential, and agent reads.",
+      "exact_targets_before_write": {
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "f5c61d54b31f4537fe21e018810ad4c058954677",
+        "GitHub tested commit": "bf4864ee9ff69a895386fab8296ab3215839d908",
+        "n8n workflow": "BogzhFUDbRp7kuwh",
+        "n8n recovery table": "rSPFIOWbS7cfNJ8z"
+      },
+      "verified_actions": [
+        "Fetched commit bf4864ee9ff69a895386fab8296ab3215839d908 and verified its source diff.",
+        "Fetched associated GitHub workflow runs #40045582643 and #40045582528; both completed SUCCESS and each job's steps all report success.",
+        "Downloaded artifact 12541431184 and verified its ZIP SHA-256 equals the provider artifact digest; internal JSON SHA-256 recorded.",
+        "Read the embedded receipt: 28 source tasks carried forward; no source tasks closed; host-heavy tasks remained blocked; no n8n agent autonomously executed.",
+        "Re-read n8n workflow active state, production execution #121, all 45 recovery rows, zero user-accessible project credentials, and five unpublished agent drafts."
+      ],
+      "provider_state": {
+        "github": {
+          "tested_commit": "bf4864ee9ff69a895386fab8296ab3215839d908",
+          "tested_branch": "fix/open-task-routing-current-20261024b",
+          "comparison_to_observed_main": "DIVERGED",
+          "current_main_ci_verified": false
+        },
+        "n8n": {
+          "workflow_active": true,
+          "execution_121": "SUCCESS",
+          "recovery_rows": 45,
+          "pending_rows": 45,
+          "project_user_credentials": 0,
+          "agents_published": 0,
+          "dispatch_enabled": false
+        }
+      },
+      "result": "TWO_CLOUD_RUNS_SUCCESS_ON_DIVERGED_BRANCH; ARTIFACT_DIGEST_MATCHED; NOT_CURRENT_MAIN_CI_PROOF; N8N_SCAN_SUCCESS; 45_RECOVERY_TASKS_REMAIN_OPEN",
+      "github_ledger_task_count": 28,
+      "n8n_recovery_task_count": 45,
+      "tasks_closed": false,
+      "source_mutated": false,
+      "raw_sensor_values_persisted": false,
+      "credentials_committed": false
     }
   ],
   "energy_protection_current": {
@@ -10706,6 +10750,107 @@
       "tesseract_security_branch_readback": true,
       "task_closure": false,
       "result": "DEVICE_ACCESS_NOT_REFRESHED; INDEPENDENT PROVIDER WORK CONTINUES"
+    },
+    {
+      "observed_at": "2026-10-24T13:34:45.085+07:00",
+      "observed_at_utc": "2026-10-24T06:34:45.085Z",
+      "record_type": "GITHUB_CLOUD_RUN_AND_N8N_LEDGER_READBACK",
+      "source": "Authenticated GitHub commit/run/job/artifact readback plus local SHA-256 of downloaded artifact; n8n workflow execution, task table, credential, and agent reads.",
+      "github": {
+        "tested_commit": "bf4864ee9ff69a895386fab8296ab3215839d908",
+        "tested_branch": "fix/open-task-routing-current-20261024b",
+        "current_observed_main_head": "60c3c638bb34f31b927afbf385e26fdd37c90c01",
+        "comparison": {
+          "status": "diverged",
+          "ahead_by": 102,
+          "behind_by": 20
+        },
+        "runs": [
+          {
+            "id": 40045582643,
+            "name": "High-Threshold Secret Exposure Guard",
+            "status": "completed",
+            "conclusion": "success",
+            "job_id": 120726417727,
+            "all_steps_success": true,
+            "artifact_ids": []
+          },
+          {
+            "id": 40045582528,
+            "name": "Windows survival - independent OPEN continuation",
+            "status": "completed",
+            "conclusion": "success",
+            "job_id": 120726417363,
+            "all_steps_success": true,
+            "artifact_ids": [
+              12541431184
+            ]
+          }
+        ],
+        "artifact": {
+          "id": 12541431184,
+          "name": "windows-survival-open-continuation",
+          "digest": "sha256:9569d4e4ed1ece5778b206a41ec26a9fe35a838c13eb18003d93ea5ebd195539",
+          "downloaded_zip_sha256": "9569d4e4ed1ece5778b206a41ec26a9fe35a838c13eb18003d93ea5ebd195539",
+          "member": "SURVIVAL_OPEN_CONTINUATION_CURRENT.json",
+          "member_sha256": "cfbe2c40b5c68fd9c40109a60f3f4400bd83dceb327de6457b94c11bec025c2c",
+          "recorded_head_sha": "bf4864ee9ff69a895386fab8296ab3215839d908",
+          "source_tasks_carried_forward": 28,
+          "no_source_tasks_closed": true,
+          "all_cloud_actions_passed": true,
+          "real_testnet_transaction_broadcast": false,
+          "android_app_installed": false,
+          "real_habit_data_sync_proven": false,
+          "host_heavy_tasks_allowed": false,
+          "n8n_agents_autonomously_executed": false
+        }
+      },
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+        "active": true,
+        "latest_verified_execution": {
+          "id": "121",
+          "status": "success",
+          "started_at": "2026-10-24T06:00:22.080Z",
+          "stopped_at": "2026-10-24T06:00:24.124Z"
+        },
+        "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+        "project_id": "6qKpRmicIGHA5snY",
+        "recovery_rows": 45,
+        "pending_rows": 45,
+        "project_user_credentials": 0,
+        "agents": [
+          {
+            "id": "bwjoN3TfQ8Ao717P",
+            "name": "SubAisstangtManage-READBACK",
+            "published": false
+          },
+          {
+            "id": "PF4LvfkI51NJjGZS",
+            "name": "AISSTANGT-MANAGE-ORCHESTRATOR",
+            "published": false
+          },
+          {
+            "id": "eT5YnxcWNGLRZ8z8",
+            "name": "SubAisstangtManage-OPEN-ROUTER",
+            "published": false
+          },
+          {
+            "id": "ilcqwLMNUdrWjvrL",
+            "name": "SubAisstangtManage-INTEGRITY",
+            "published": false
+          },
+          {
+            "id": "DEYtBtOQseTBhVHS",
+            "name": "SubAisstangtManage-SENSORY",
+            "published": false
+          }
+        ],
+        "tasks_closed": false,
+        "dispatch_enabled": false
+      },
+      "result": "TWO_CLOUD_RUNS_SUCCESS_ON_DIVERGED_BRANCH; ARTIFACT_DIGEST_MATCHED; NOT_CURRENT_MAIN_CI_PROOF; N8N_SCAN_SUCCESS; 45_RECOVERY_TASKS_REMAIN_OPEN"
     }
   ]
 }
