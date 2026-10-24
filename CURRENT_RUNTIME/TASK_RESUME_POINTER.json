@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T14:24:39.473Z",
+  "updated_at": "2026-10-24T14:17:52.844Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -4226,6 +4226,67 @@
         "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2102ICT.json": "d737c2e0230a03b5b687a6747b95de0d62958c69"
       },
       "result": "WINDOWS_TICK_140136_RECEIPT_AND_SOURCE_HASH_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED; CONSUMER_HEALTH_UNVERIFIED; N8N_ROW280_VERIFIED; TESSERACT_OPEN"
+    },
+    {
+      "id": "CONSUMER_PROCESS_PROBE_20261024211752",
+      "kind": "CONSUMER_AND_PROVIDER_READBACK",
+      "observed_at": "2026-10-24T21:17:52.844+07:00",
+      "source": "Remote Desktop Commander alternate-link read-only HTTP/port/process probe; fresh Dropbox metadata; n8n latest table row readback; GitHub PR #6/job summaries",
+      "consumer": {
+        "observed_at": "2026-10-24T21:17:52.844+07:00",
+        "endpoint_loopback": "http://127.0.0.1:8080/api/health",
+        "loopback_http_status": 0,
+        "loopback_timeout_seconds": 2,
+        "endpoint_ipv4": "http://192.168.1.42:8080/api/health",
+        "ipv4_http_status": 0,
+        "ipv4_timeout_seconds": 2,
+        "endpoint_https_ipv4": "https://192.168.1.42:8080/api/health",
+        "https_result": "NO_HTTP_RESPONSE",
+        "listener_8080": "NO_LISTENER_LINES_OBSERVED",
+        "process_commandline_filter_matches": [
+          "chrome.exe:81988",
+          "cmd.exe:78556",
+          "powershell.exe:11872"
+        ],
+        "matching_application_process_identified": false,
+        "health": "UNVERIFIED_TIMEOUT_NO_8080_OWNER_IDENTIFIED",
+        "service_down_inferred": false,
+        "configuration_changed": false
+      },
+      "ollama": {
+        "endpoint": "http://127.0.0.1:11434/api/tags",
+        "http_status": 200,
+        "model_count": 11,
+        "process_pid": 53724
+      },
+      "hwinfo": {
+        "process_running": true,
+        "pid": 17520,
+        "current_csv_path_verified": false
+      },
+      "android": {
+        "adb_on_path": false,
+        "common_paths_found": false,
+        "heartbeat_verified": false,
+        "device_off_inferred": false
+      },
+      "n8n": {
+        "latest_host_tick_row_id": 283,
+        "latest_host_tick_event_id": "X20261024141708337_HOST_TICK",
+        "latest_tick_sha256": "76ED571E16DCA39B855834A40AECF8296266EFEA994BCEA3FDB457AB19E10C5F",
+        "source_hash_matches": true
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "OPEN_NOT_MERGED",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "security_branch_ahead_by": 3,
+        "behind_by": 0,
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "CONSUMER_8080_TIMEOUT_NO_OWNER_IDENTIFIED; OLLAMA_HTTP200_11_MODELS; HWiNFO_PROCESS_RUNNING; ADB_PATH_UNRESOLVED; ALL_OPEN_RETAINED"
     }
   ],
   "latest_sync_observation": {
@@ -7400,7 +7461,7 @@
     "dns_changes": "NOT_PERFORMED"
   },
   "latest_host_probe": {
-    "observed_at": "2026-10-24T21:17:08.337+07:00",
+    "observed_at": "2026-10-24T21:17:52.844+07:00",
     "device": "DESKTOP-86ITNQ4",
     "route": "REMOTE_DESKTOP_COMMANDER_ALTERNATE_LINK",
     "device_online": true,
@@ -7419,9 +7480,21 @@
     "live_sensor_reading_confirmed": false,
     "source_file_written": false,
     "synthetic_rows_added": 0,
-    "consumer_8080": "NOT_PROBED_THIS_TURN",
+    "consumer_8080": "UNVERIFIED_TIMEOUT_NO_8080_OWNER_IDENTIFIED",
     "android_adb_in_path": false,
-    "android_tcp_5556": false
+    "android_tcp_5556": false,
+    "consumer_probe_observed_at": "2026-10-24T21:17:52.844+07:00",
+    "loopback_http_status": 0,
+    "ipv4_http_status": 0,
+    "listener_8080": "NONE_OBSERVED",
+    "matching_application_process_identified": false,
+    "ollama_http_status": 200,
+    "ollama_model_count": 11,
+    "hwinfo_process_running": true,
+    "hwinfo_pid": 17520,
+    "hwinfo_csv_path_verified": false,
+    "adb_executable_on_path": false,
+    "android_offline_inferred": false
   },
   "latest_agent_gate_readback": {
     "observed_at_utc": "2026-10-24T14:19:44.320Z",
@@ -8224,11 +8297,65 @@
       "consumer_8080": "NOT_PROBED_THIS_TURN",
       "android_adb_in_path": false,
       "android_tcp_5556": false
+    },
+    {
+      "observed_at": "2026-10-24T14:17:52.844Z",
+      "observed_at_local": "2026-10-24T21:17:52.844+07:00",
+      "record_type": "CONSUMER_PROCESS_OWNER_PROBE_AND_PROVIDER_STATUS",
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2117ICT.json",
+      "checkpoint_blob_sha": "dbeebebc034b68fad7ac842ba71f71fdd65e2dfc",
+      "checkpoint_commit": "c5bcaa73b4f01afa19ade8f9f103791370740756",
+      "consumer": {
+        "observed_at": "2026-10-24T21:17:52.844+07:00",
+        "endpoint_loopback": "http://127.0.0.1:8080/api/health",
+        "loopback_http_status": 0,
+        "loopback_timeout_seconds": 2,
+        "endpoint_ipv4": "http://192.168.1.42:8080/api/health",
+        "ipv4_http_status": 0,
+        "ipv4_timeout_seconds": 2,
+        "endpoint_https_ipv4": "https://192.168.1.42:8080/api/health",
+        "https_result": "NO_HTTP_RESPONSE",
+        "listener_8080": "NO_LISTENER_LINES_OBSERVED",
+        "process_commandline_filter_matches": [
+          "chrome.exe:81988",
+          "cmd.exe:78556",
+          "powershell.exe:11872"
+        ],
+        "matching_application_process_identified": false,
+        "health": "UNVERIFIED_TIMEOUT_NO_8080_OWNER_IDENTIFIED",
+        "service_down_inferred": false,
+        "configuration_changed": false
+      },
+      "ollama": {
+        "http_status": 200,
+        "model_count": 11
+      },
+      "hwinfo": {
+        "process_running": true,
+        "pid": 17520,
+        "hwinfo_csv_path_verified": false
+      },
+      "android": {
+        "adb_on_path": false,
+        "device_off_inferred": false
+      },
+      "n8n": {
+        "latest_host_tick_row_id": 283,
+        "latest_host_tick_event_id": "X20261024141708337_HOST_TICK"
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "OPEN_NOT_MERGED",
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "CONSUMER_8080_TIMEOUT_NO_OWNER_IDENTIFIED; OLLAMA_HTTP200_11_MODELS; HWiNFO_PROCESS_RUNNING; ADB_PATH_UNRESOLVED; ALL_OPEN_RETAINED"
     }
   ],
   "latest_tesseract_runner_issuer_probe": {
-    "observed_at": "2026-10-24T21:02:56.456+07:00",
-    "source": "Fresh GitHub PR #6 metadata, security branch source readback and compare against PR head; issuer-key search on default branch",
+    "observed_at": "2026-10-24T21:17:52.844+07:00",
+    "source": "Fresh GitHub PR #6 metadata, security branch compare, and current failed workflow job/step summaries",
     "repository": "2708halinh-cloud/x-time-web",
     "pr": 6,
     "state": "OPEN_NOT_MERGED",
@@ -8244,7 +8371,9 @@
     "runner_assignment_change_verified": false,
     "ci_rerun": false,
     "rust_tests_executed": false,
-    "next_edge": "Obtain issuer public key and runner assignment through authorized control surfaces; do not rerun CI without verified runner change."
+    "next_edge": "Obtain issuer public key and runner assignment through authorized control surfaces; do not rerun CI without verified runner change.",
+    "job_steps_empty": true,
+    "artifacts": 0
   },
   "latest_tick_readback": {
     "observed_at": "2026-10-24T14:17:08.337Z",
@@ -8253,7 +8382,7 @@
     "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2117ICT.json",
     "checkpoint_blob_sha": "1a3a8e5809f5e0d6a51fbf9d56452fb789fa27af",
     "checkpoint_commit": "e71f5348df28f33ecdf207d5e478adbf954edd99",
-    "provider_status_last_verified_at": "2026-10-24T14:00:24.160Z",
+    "provider_status_last_verified_at": "2026-10-24T14:17:52.844Z",
     "latest_tick": "WINDOWS_TICK_20261024T141637185163Z.json",
     "tick_sha256": "76ED571E16DCA39B855834A40AECF8296266EFEA994BCEA3FDB457AB19E10C5F",
     "previous_tick_sha256": "4147F6C2CA01D1DD73650924DE8734339F99C7EA2C6DF08DBB996A2FBD18B5B6",
@@ -8261,18 +8390,42 @@
     "task_last_run_local": "2026-10-24T21:16:34+07:00",
     "task_last_result": "0",
     "task_next_run_local": "2026-10-24T21:21:32+07:00",
-    "result": "TICK_141637_RECEIPT_AND_DIRECT_SOURCE_HASH_VERIFIED; TASK_READY_LAST_RESULT_0; LIVE_SENSOR_STREAM_NOT_VERIFIED; ANDROID_UNVERIFIED; BRAID_RECEIPTS_VERIFIED; ALL_OPEN_RETAINED"
+    "result": "TICK_141637_RECEIPT_AND_DIRECT_SOURCE_HASH_VERIFIED; TASK_READY_LAST_RESULT_0; LIVE_SENSOR_STREAM_NOT_VERIFIED; ANDROID_UNVERIFIED; BRAID_RECEIPTS_VERIFIED; ALL_OPEN_RETAINED",
+    "consumer_probe": {
+      "observed_at": "2026-10-24T21:17:52.844+07:00",
+      "endpoint_loopback": "http://127.0.0.1:8080/api/health",
+      "loopback_http_status": 0,
+      "loopback_timeout_seconds": 2,
+      "endpoint_ipv4": "http://192.168.1.42:8080/api/health",
+      "ipv4_http_status": 0,
+      "ipv4_timeout_seconds": 2,
+      "endpoint_https_ipv4": "https://192.168.1.42:8080/api/health",
+      "https_result": "NO_HTTP_RESPONSE",
+      "listener_8080": "NO_LISTENER_LINES_OBSERVED",
+      "process_commandline_filter_matches": [
+        "chrome.exe:81988",
+        "cmd.exe:78556",
+        "powershell.exe:11872"
+      ],
+      "matching_application_process_identified": false,
+      "health": "UNVERIFIED_TIMEOUT_NO_8080_OWNER_IDENTIFIED",
+      "service_down_inferred": false,
+      "configuration_changed": false
+    },
+    "local_script_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+    "consumer_health": "UNVERIFIED_TIMEOUT_NO_8080_OWNER_IDENTIFIED"
   },
   "latest_consumer_script_probe": {
-    "observed_at": "2026-10-24T21:02:56.456+07:00",
+    "observed_at": "2026-10-24T21:17:52.844+07:00",
     "local": {
       "path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
       "bytes": 13245,
+      "last_write_local": "2026-10-23T16:12:49+07:00",
       "sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
       "content_readback_verified": true,
       "sha256_recomputed_this_turn": true,
       "manually_executed": false,
-      "behavior": "metadata-only source hash/receipt; telemetry functions not called by the one-shot path; exports gated by explicit environment flags"
+      "behavior": "metadata-only source hash/receipt; telemetry functions not called by the one-shot path; cloud/GitHub export helpers require explicit environment flags"
     },
     "historical_dropbox": {
       "path": "/Linh Hà/SENSOR_LOGS/telemetry_buffer_sync.py",
@@ -8281,15 +8434,38 @@
       "raw_byte_hash_verified": false,
       "export_guards_absent": true,
       "copy_replace_code_present": true,
-      "executed": false
+      "executed": false,
+      "local_historical_equivalence": "NOT_VERIFIED"
     },
     "live_sample_verified": false,
-    "consumer_health": "UNVERIFIED_TIMEOUT_NO_LISTENER_OBSERVED",
-    "port_8080_listener": "NONE_OBSERVED",
+    "consumer_health": "UNVERIFIED_TIMEOUT_NO_8080_OWNER_IDENTIFIED",
+    "consumer_probe": {
+      "observed_at": "2026-10-24T21:17:52.844+07:00",
+      "endpoint_loopback": "http://127.0.0.1:8080/api/health",
+      "loopback_http_status": 0,
+      "loopback_timeout_seconds": 2,
+      "endpoint_ipv4": "http://192.168.1.42:8080/api/health",
+      "ipv4_http_status": 0,
+      "ipv4_timeout_seconds": 2,
+      "endpoint_https_ipv4": "https://192.168.1.42:8080/api/health",
+      "https_result": "NO_HTTP_RESPONSE",
+      "listener_8080": "NO_LISTENER_LINES_OBSERVED",
+      "process_commandline_filter_matches": [
+        "chrome.exe:81988",
+        "cmd.exe:78556",
+        "powershell.exe:11872"
+      ],
+      "matching_application_process_identified": false,
+      "health": "UNVERIFIED_TIMEOUT_NO_8080_OWNER_IDENTIFIED",
+      "service_down_inferred": false,
+      "configuration_changed": false
+    },
     "hwinfo_process_running": true,
     "hwinfo_pid": 17520,
     "hwinfo_csv_path_verified": false,
-    "android_adb_executable_on_path": false
+    "android_adb_executable_on_path": false,
+    "android_common_paths_found": false,
+    "android_offline_inferred": false
   },
   "latest_open_routing_pr26_sync": {
     "observed_at_utc": "2026-10-24T13:36:32Z",
