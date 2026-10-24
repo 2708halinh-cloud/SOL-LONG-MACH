@@ -1,0 +1,85 @@
+name: SOL Archive Read-only Adapters
+on:
+  pull_request:
+    paths:
+      - 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py'
+      - 'tests/test_sol_archive_10_formats.py'
+      - 'tests/verify_real_archive_fixtures.py'
+      - '.github/workflows/archive-readonly-adapters.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py'
+      - 'tests/test_sol_archive_10_formats.py'
+      - 'tests/verify_real_archive_fixtures.py'
+      - '.github/workflows/archive-readonly-adapters.yml'
+permissions:
+  contents: read
+jobs:
+  readonly-adapters:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install real external archive validators
+        run: |
+          if command -v add-apt-repository >/dev/null 2>&1; then
+            sudo add-apt-repository -y multiverse
+          fi
+          sudo apt-get update
+          sudo apt-get install -y p7zip-full unrar lrzip
+          command -v 7z
+          command -v unrar
+          command -v lrzip
+          7z i | sed -n '1,8p'
+          unrar -? 2>&1 | head -n 4 || true
+          lrzip -h 2>&1 | head -n 4 || true
+          {
+            printf 'python='; python --version 2>&1
+            printf 'packages:\n'; dpkg-query -W -f='${Package}=${Version}\n' p7zip-full unrar lrzip
+            printf '7z='; 7z i 2>&1 | grep -m1 '^7-Zip'
+            printf 'unrar='; unrar -? 2>&1 | grep -m1 '^UNRAR'
+            printf 'lrzip='; lrzip -h 2>&1 | grep -m1 '^lrzip version'
+          } > tool-versions.txt
+      - name: Run mocked external-adapter and safety regressions
+        run: python -m unittest tests.test_sol_archive_10_formats -v
+      - name: Run native fixture self-test
+        run: python 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py' --fixture-test
+      - name: Verify ten-format capability schema
+        run: |
+          python 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py' --capabilities > capabilities.json
+          python - <<'PY'
+          import json
+          d=json.load(open("capabilities.json",encoding="utf-8"))
+          assert len(d["formats"]) == 10
+          assert {"ALL","7Z","BZ2","GZ","JAR","LR","RAR","TAR","XZ","ZIP"} == set(d["formats"])
+          print("SOL_ARCHIVE_10_FORMAT_CAPABILITIES_SCHEMA_PASS")
+          PY
+      - name: Generate approved 7Z and LRzip fixtures; fetch pinned public RAR fixture
+        run: |
+          set -euo pipefail
+          tmp="$(mktemp -d)"
+          trap 'rm -rf "$tmp"' EXIT
+          printf 'SOL archive read-only real fixture\n' > "$tmp/payload.txt"
+          7z a -t7z -bd "$tmp/fixture.7z" "$tmp/payload.txt" >/dev/null
+          lrzip -o "$tmp/fixture.lrz" "$tmp/payload.txt"
+          curl -fsSL --retry 2 --connect-timeout 10 --max-time 30 \
+            -o "$tmp/fixture.rar" \
+            'https://raw.githubusercontent.com/markokr/rarfile/d2f7df6fc843dae356fd6b0a85971dc36fd6e757/test/files/rar3-subdirs.rar'
+          actual="$(git hash-object "$tmp/fixture.rar")"
+          test "$actual" = "f4d032ef5da82cb2b926d7716713013fdf7fbc3f"
+          python tests/verify_real_archive_fixtures.py \
+            "$tmp/fixture.7z" "$tmp/fixture.rar" "$tmp/fixture.lrz" \
+            | tee real-fixture-readback.json
+      - name: Upload hash-bound fixture and tool receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: sol-archive-real-fixture-readback
+          path: |
+            real-fixture-readback.json
+            tool-versions.txt
+          if-no-files-found: error
+          retention-days: 14
