@@ -2,27 +2,28 @@
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.1",
   "state": "OPEN_WORK_REMAINS",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T164216Z.json",
+    "blob_sha": "8e7b4f378dda070db0c69225a56200fa4bc52543",
+    "commit_sha": "c72e9d80467b0a018f5b192ba78bec5aeea7a408",
+    "readback_verified": true
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2337ICT.json",
     "blob_sha": "e2aa6e5f76da577ba24b1a6ef6a45473b616ed6f",
     "commit_sha": "23923f1858b71d7dd0eb4d3b5fbaff48555a22b3",
     "readback_verified": true
   },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2330ICT.json",
-    "blob_sha": "e5f1cfa11fab1d5232e95649b2b34e025fc3493e",
-    "commit_sha": "a8e6cd2ef80080ed12d881d9bbf70a5db411345e"
-  },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
-    "latest_verified_execution_id": "142",
+    "latest_verified_execution_id": "143",
     "execution_status": "success",
     "latest_scheduled_execution_id": "141",
     "latest_scheduled_execution_status": "success",
-    "cloud_scan_row_id": 291,
+    "cloud_scan_row_id": 299,
     "latest_ledger_crosswalk_row_id": 297,
-    "latest_host_tick_row_id": 298,
+    "latest_host_tick_row_id": 300,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_row_count": 298,
+    "evidence_table_row_count": 301,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "project_id": "6qKpRmicIGHA5snY",
     "pending_tasks": 45,
@@ -33,20 +34,22 @@
     "status_divergences_preserved": 2,
     "project_credentials": 0,
     "model_binding_verified": false,
-    "publish_or_dispatch_performed": false
+    "publish_or_dispatch_performed": false,
+    "latest_braid_readback_row_id": 301
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
-    "last_verified_tick": "WINDOWS_TICK_20261024T163134179629Z.json",
-    "tick_sha256": "5FD018A547FD0F6A6F9172594E1FD22172C296E98A757BC4E701586A0358AD61",
+    "last_verified_tick": "WINDOWS_TICK_20261024T164134153602Z.json",
+    "tick_sha256": "5A9A0D5085A682F1D745401944D943C7E7533DF4C96C5357CA97D6266C2162B3",
     "source_sha256": "9B25BD723DCE06344432597CC4F300053EA5ACBF76BDD2AB4F38BF4A1BF34B87",
     "source_sha_matches_tick": true,
     "live_sensor_reading_confirmed": false,
     "task_state": "Ready",
-    "task_last_run_local": "2026-10-24T23:31:33+07:00",
+    "task_last_run_local": "2026-10-24T23:41:33+07:00",
     "task_last_result": 0,
-    "next_task_run_host_local": "2026-10-24T23:36:32+07:00",
-    "host_clock_alignment_verified": false
+    "next_task_run_host_local": "2026-10-24T23:46:32+07:00",
+    "host_clock_alignment_verified": false,
+    "host_probe_local": "2026-10-24T23:42:02.7831263+07:00"
   },
   "source_registry": {
     "task_id": "SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY",
@@ -56,10 +59,11 @@
     "source_blob_sha1": "9ffdc2da742bd9ad07fbdfb8b27fcd8c8cf8b74e"
   },
   "next": [
-    "Read the newest Windows tick after host-local 2026-10-24T23:36:32+07:00; recompute source CSV SHA-256 and keep live_sensor_reading_confirmed=false until a genuine live sample.",
-    "Inspect Android sensor-event section/timestamps across samples; whole-dump hash change alone is inconclusive.",
-    "Preserve 28/28 cross-ledger ID matches, 17 n8n-only historical tasks, and two status divergences without auto-normalizing.",
-    "Obtain authorized raw-source readback for ingestion_gate_payload_03.txt.",
+    "Read the next Windows tick after host-local 2026-10-24T23:46:32+07:00; recompute source CSV SHA-256 and preserve live_sensor_reading_confirmed=false until a genuine live sample.",
+    "Keep Android device power and sensor stream UNKNOWN until an authorized device/app route responds.",
+    "Obtain authorized raw-source readback for ingestion_gate_payload_03.txt; do not infer deletion from repository search absence.",
+    "Review actual host gate enforcement and cloud-host wiring; this local adapter run does not prove system-wide enforcement.",
+    "Preserve 28/28 cross-ledger matches, 17 n8n-only historical tasks, and both status divergences.",
     "Continue cloud-eligible OPEN tasks without dispatch until model and credential binding are verified.",
     "Keep archive-format task OPEN until real 7Z/RAR/LR fixture verification."
   ],
@@ -74,9 +78,25 @@
     "cloud_heartbeat_is_not_host_heartbeat": true
   },
   "android": {
-    "adb_device_count": 1,
-    "sensorservice_dump_changed": true,
+    "adb_path_available": false,
+    "adb_device_count": null,
+    "tcp_target": "192.168.1.14:5556",
+    "tcp_reachable": false,
+    "observed_host_local": "2026-10-24T23:42:21.3821028+07:00",
+    "device_power_state": "UNKNOWN",
     "live_sensor_stream_verified": false,
     "raw_sensor_values_persisted": false
+  },
+  "braid": {
+    "wrapper_execution": "REAL_LOCAL_SUBPROCESS_FINISHED",
+    "session_braid_validated": true,
+    "checks_passed": 12,
+    "checks_total": 12,
+    "six_receipt_sha256": "5800C1DA712242910D590846D39E1FDD8D97A042BB7D539BC0693067E422258A",
+    "plural_receipt_sha256": "8D2CE24D9F56A5AD305166F655D465C03B4C293A92F28E9B20E51A44AA9D8727",
+    "source_sha256_unchanged": true,
+    "requested_mutation_executed": false,
+    "host_gate_enforcement": "NOT_VERIFIED",
+    "cloud_host_wiring": "NOT_VERIFIED"
   }
 }
