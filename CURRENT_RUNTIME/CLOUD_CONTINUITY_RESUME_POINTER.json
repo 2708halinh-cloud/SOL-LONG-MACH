@@ -2,38 +2,38 @@
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.2",
   "state": "OPEN_WORK_REMAINS",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0247ICT.json",
+    "blob_sha": "bea13aa816eec68bc00d1464bcc1a4065ea13a07",
+    "commit_sha": "f68a358ecc63ff791f743df264ae90a5ce15e599",
+    "readback_verified": true
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0156ICT.json",
     "blob_sha": "5bf6b8945d94c8a17486c2a78220a02458cb7593",
     "commit_sha": "4addebd440a4cda28fde0eb2462603179459c484",
     "readback_verified": true
   },
-  "previous_checkpoint": {
+  "historical_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0037ICT.json",
     "blob_sha": "763ad81ecb3622202a5a64442be09425a8b77d60",
     "commit_sha": "ddefbc9340a4de61925ab706ce41f76c17e54990",
-    "readback_verified": true
-  },
-  "historical_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T164216Z.json",
-    "blob_sha": "8e7b4f378dda070db0c69225a56200fa4bc52543",
-    "commit_sha": "c72e9d80467b0a018f5b192ba78bec5aeea7a408",
     "readback_verified": true
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
-    "latest_verified_execution_id": "145",
+    "latest_verified_execution_id": "146",
     "execution_status": "success",
-    "latest_scheduled_execution_id": "145",
+    "latest_scheduled_execution_id": "146",
     "latest_scheduled_execution_status": "success",
-    "cloud_scan_row_id": 304,
+    "cloud_scan_row_id": 306,
     "latest_ledger_crosswalk_row_id": 303,
-    "latest_host_tick_row_id": 300,
+    "latest_host_tick_row_id": 307,
     "latest_braid_readback_row_id": 301,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_row_count": 305,
-    "latest_evidence_row_id": 305,
+    "evidence_table_row_count": 311,
+    "latest_evidence_row_id": 311,
     "latest_evidence_row_readback_verified": true,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "project_id": "6qKpRmicIGHA5snY",
@@ -47,28 +47,35 @@
     "status_divergences_preserved": 2,
     "project_credentials": 0,
     "model_binding_verified": false,
-    "publish_or_dispatch_performed": false
+    "publish_or_dispatch_performed": false,
+    "latest_android_readback_row_id": 308,
+    "latest_github_pr_readback_row_id": 309,
+    "latest_host_task_failure_row_id": 311,
+    "model_catalog_provider_count": 16
   },
   "host": {
-    "state_this_run": "NOT_PROBED",
+    "state_this_run": "REACHABLE_VIA_READONLY_REMOTE_PROBE",
     "device": "DESKTOP-86ITNQ4",
-    "last_recorded_tick": "WINDOWS_TICK_20261024T164634219800Z.json",
-    "last_recorded_tick_sha256": "0436d7b164c227d5b1a1da532f8959b21aa7494992f8363ff45d40dcd64d99ca",
-    "last_recorded_source_csv_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "latest_recorded_tick": "WINDOWS_TICK_20261024T193655747351Z.json",
+    "latest_recorded_tick_sha256": "096EDA8C37BF4613866BDCDCDAEDCE0317C0E3EB3EDC4A44D3BC07035F1C063E",
+    "latest_recorded_source_csv_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
     "prior_source_sha_matches_tick": true,
     "live_sensor_reading_confirmed": false,
-    "task_last_run_local": "2026-10-24T23:46:33+07:00",
-    "task_last_result": "0x0",
-    "next_task_run_host_local_at_last_readback": "2026-10-24T23:51:32+07:00",
-    "host_clock_alignment_verified": false
+    "host_clock_alignment_verified": false,
+    "bridge_task_last_run_local": "2026-10-25T02:39:01+07:00",
+    "bridge_task_last_result": "0x1",
+    "exact_modual_source_exists": false,
+    "expected_modual_source_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "differently_hashed_raw_vault_candidate_substituted": false
   },
   "android": {
-    "state_this_run": "NOT_PROBED",
-    "last_recorded_observation_local": "2026-10-24T23:45:06.447+07:00",
+    "state_this_run": "ADB_DEVICE_RESPONDS;WIRELESS_TCP_UNREACHABLE",
+    "last_recorded_observation_local": "2026-10-25T02:41:43+07:00",
     "last_recorded_adb_device_count": 1,
     "wireless_tcp_target": "192.168.1.14:5556",
     "wireless_tcp_reachable_at_last_probe": false,
-    "device_power_state": "UNKNOWN",
+    "boot_completed_property": "1",
+    "device_power_state": "ADB_RESPONDS;POWER_STATE_NOT_DIRECTLY_MEASURED",
     "live_sensor_stream_verified": false,
     "raw_sensor_values_persisted": false
   },
@@ -85,24 +92,25 @@
     "pr_number": 27,
     "pr_state": "OPEN",
     "draft": true,
-    "current_head_sha": null,
-    "current_head_topology_check": "FAILURE",
-    "failing_job_id": 120873039003,
-    "failing_step": "Verify Library topology",
-    "failure_reason": "Extra sibling BRAIN_WAVE_LOGS conflicts with the test expectation of only COMPUTER_KHÍ💜BRAIN_OS_POWER and OS_WORK; source-scope discrepancy unresolved.",
-    "older_ci_run_40094138216": "SUCCESS_ON_OLDER_HEAD_ONLY",
+    "current_head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
+    "current_head_topology_check": "SUCCESS",
+    "current_head_secret_guard": "SUCCESS",
+    "current_reported_check_run_ids": [
+      40118316177,
+      40118316092
+    ],
+    "mergeable_state": "dirty",
     "real_7z_rar_lr_fixtures_verified": false,
     "source_moved_or_deleted": false,
-    "current_head_sha_reverified_this_run": false,
-    "latest_pr_issue_state": "OPEN",
-    "latest_pr_issue_updated_at": "2026-10-24T18:50:23Z"
+    "task_closed": false
   },
   "next": [
-    "Obtain an authorized raw-byte materialization path for library_file_id libfile_dcf91066e23881919e96ed8965c9dae1; keep SV-20261020-02 OPEN and do not infer deletion.",
-    "When an authorized host route responds, read a newer Windows tick and recompute source CSV SHA-256; keep live_sensor_reading_confirmed=false until a genuine live sample.",
-    "Keep Android power and continuous sensor stream UNKNOWN until fresh authorized device/app readback.",
-    "Re-read PR #27 head and current-head CI; resolve BRAIN_WAVE_LOGS source-scope discrepancy without moving/deleting source; verify real 7Z/RAR/LR fixtures before closing task.",
-    "Continue cloud-eligible OPEN tasks without agent dispatch until model and credential binding are verified."
+    "Re-read the latest Windows tick and task status after the reported 02:44 ICT run; keep live_sensor_reading_confirmed=false until a genuine live sample.",
+    "Locate the exact MODUAL source matching expected SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3; do not substitute the differently hashed RAW_VAULT candidate or execute the side-effecting router while the precondition is unresolved.",
+    "Keep Android power and continuous sensor stream UNKNOWN until a fresh authorized device/app readback; wireless TCP was unreachable.",
+    "Keep PR #27 OPEN; current reported topology and secret checks pass, but real 7Z/RAR/LR fixtures remain unverified.",
+    "Obtain an authorized raw-byte path for the seventh ZIP carrier; keep SV-20261020-02 OPEN and do not infer deletion.",
+    "Continue cloud-eligible OPEN tasks without agent dispatch until credential and model binding are verified."
   ],
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -114,6 +122,12 @@
     "cloud_heartbeat_is_not_host_heartbeat": true
   },
   "older_historical_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T164216Z.json",
+    "blob_sha": "8e7b4f378dda070db0c69225a56200fa4bc52543",
+    "commit_sha": "c72e9d80467b0a018f5b192ba78bec5aeea7a408",
+    "readback_verified": true
+  },
+  "oldest_historical_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2337ICT.json",
     "blob_sha": "e2aa6e5f76da577ba24b1a6ef6a45473b616ed6f",
     "commit_sha": "23923f1858b71d7dd0eb4d3b5fbaff48555a22b3",
