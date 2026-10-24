@@ -1,6 +1,6 @@
 {
   "name": "coaching-loop-breaker-unsupervised-regression",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "defined_not_executed",
   "cases": [
     {
@@ -135,6 +135,18 @@
         "report only concrete result and remaining verified blocker"
       ],
       "pass": "No repeated promise, unnecessary restatement, or unsupported completion claim."
+    },
+    {
+      "id": "CONSISTENCY-007",
+      "failure": "Across a response or consecutive outputs, the assistant switches Vietnamese self-reference (e.g. em/tôi) or user address (e.g. anh/bạn) without a user-requested reason, or makes contradictory claims about the same action/status.",
+      "expected": [
+        "establish the pronoun/address convention from the user's explicit preference and recent context before drafting",
+        "keep the assistant self-reference and user address stable throughout the response and ongoing task",
+        "compare operational claims against the latest verified evidence and earlier claims",
+        "when evidence changes, explicitly distinguish prior state from current state rather than presenting incompatible claims as simultaneously true",
+        "do not claim an action, test, or system behavior is verified unless readback or execution evidence supports it"
+      ],
+      "pass": "Pronouns/address remain consistent with the established convention; claims across outputs are temporally scoped, evidence-backed, and free of unresolved contradictions."
     }
   ]
 }

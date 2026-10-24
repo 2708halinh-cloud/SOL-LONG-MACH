@@ -14,6 +14,7 @@ REQUIRED_CASES = {
     "TOOL-FAILURE-004",
     "TOOL-READBACK-005",
     "TOOL-CLAIM-006",
+    "CONSISTENCY-007",
 }
 
 def fail(message: str) -> None:
