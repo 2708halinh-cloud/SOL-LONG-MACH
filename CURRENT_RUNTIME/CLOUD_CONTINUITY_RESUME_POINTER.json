@@ -2,15 +2,15 @@
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.2",
   "state": "OPEN_WORK_REMAINS",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_202610250344ICT.json",
-    "blob_sha": "3d4179e8b49902295164f4b9760827289dd010be",
-    "commit_sha": "58e42415ea27de950a3932e8509a16b233b3ad0e",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_202610250349ICT.json",
+    "blob_sha": "d375bae758b5ca2e67f832dc76b9b91648d8232f",
+    "commit_sha": "9c9935a94d9b06711d3e73805c5817477ba8d785",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_202610250337ICT.json",
-    "blob_sha": "2a64965129285f140018fa0f58d019c67020b1e7",
-    "commit_sha": "79f6e92ab65e190ec3797ada33e5b19508532582",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_202610250344ICT.json",
+    "blob_sha": "3d4179e8b49902295164f4b9760827289dd010be",
+    "commit_sha": "58e42415ea27de950a3932e8509a16b233b3ad0e",
     "readback_verified": true
   },
   "historical_checkpoint": {
@@ -19,7 +19,7 @@
     "commit_sha": "ddefbc9340a4de61925ab706ce41f76c17e54990",
     "readback_verified": true
   },
-  "n8n": "148",
+  "n8n": "149",
   "host": "WINDOWS_TICK_20261024T201142438223Z.json",
   "android": {
     "state_this_run": "ADB_DEVICE_RESPONDS;WIRELESS_TCP_UNREACHABLE;SENSOR_SECTION_DIGEST_CHANGED",
@@ -46,12 +46,13 @@
   },
   "archive_task": 27,
   "next": [
-    "Recheck the Windows task after the next scheduled interval; capture a new tick only if the task completes normally, and do not terminate it.",
-    "Diagnose why the one-shot task reports 0x41306 with no new tick; the TaskScheduler Operational log is disabled, so cause remains UNKNOWN.",
+    "Resume from this checkpoint and inspect the next actual n8n execution before assuming cloud state is unchanged.",
+    "Retry the Windows tick/task readback only after a fresh device check; the previous query timed out and current task state is UNKNOWN.",
+    "Resolve the Hostinger Primary-versus-Halin account choice before any DNS write.",
+    "Obtain a private authorized carrier for Chỉ dẫn từ Hà Linh.md; do not reconstruct or publish the original guide from derivative text.",
     "Locate the exact MODUAL bulk source by SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 and size 89814328 bytes; do not substitute the RAW_VAULT candidate.",
-    "Find an authorized raw-byte route for the third Project ZIP; keep SV-20261020-02 OPEN and preserve provider identity.",
-    "Continue original-export discovery for JINEY, FUNIX, and DAT NGUYEN; do not relabel identity-anchor ZIPs as original exports.",
-    "Keep PR #27-#30 OPEN/Draft; no merge or force-push while their branches remain diverged from main.",
+    "Find an authorized raw-byte route for the third Project ZIP; keep SV-20261020-02 OPEN.",
+    "Keep PR #27-#30 OPEN/Draft; no merge or force-push while branches are diverged.",
     "Preserve all 45 n8n recovery rows and every OPEN/IN_PROGRESS task state."
   ],
   "continuation_guards": {
@@ -61,7 +62,8 @@
     "no_process_termination": true,
     "no_cache_or_meta_db_deletion": true,
     "no_secret_values": true,
-    "cloud_heartbeat_is_not_host_heartbeat": true
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "no_force_push_or_merge": true
   },
   "older_historical_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T164216Z.json",
@@ -75,8 +77,8 @@
     "commit_sha": "23923f1858b71d7dd0eb4d3b5fbaff48555a22b3",
     "readback_verified": true
   },
-  "updated_at": "2026-10-25T03:44:45+07:00",
-  "observed_at": "2026-10-25T03:44:45+07:00",
+  "updated_at": "2026-10-25T03:49:24+07:00",
+  "observed_at": "2026-10-25T03:49:24+07:00",
   "older_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0156ICT.json",
     "blob_sha": "5bf6b8945d94c8a17486c2a78220a02458cb7593",
@@ -96,48 +98,47 @@
     "synthetic_rows_added": 0,
     "cloud_enabled": false,
     "github_enabled": false,
-    "task_state": "Ready",
-    "task_last_run_local": "2026-10-25T03:31:33+07:00",
-    "task_last_result": "0x41306",
-    "task_next_run_local_reported": "2026-10-25T03:36:32+07:00",
-    "next_run_elapsed_at_readback": true,
-    "task_execution_limit": "PT4M",
-    "multiple_instances_policy": "IgnoreNew",
-    "missed_runs": 0,
+    "last_successful_task_state": "Ready",
+    "last_run_local": "2026-10-25T03:31:33+07:00",
+    "last_result": "0x41306",
+    "next_run_local_reported": "2026-10-25T03:36:32+07:00",
     "task_scheduler_operational_log_enabled": false,
     "task_termination_cause": "UNKNOWN",
+    "later_readonly_task_query": "TIMEOUT_NO_STATE_CLAIM",
     "process_terminated_by_agent": false,
     "task_settings_changed": false
   },
   "latest_provider_readback": {
-    "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_202610250344ICT.json",
-    "checkpoint_blob_sha": "3d4179e8b49902295164f4b9760827289dd010be",
-    "checkpoint_commit_sha": "58e42415ea27de950a3932e8509a16b233b3ad0e",
+    "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_202610250349ICT.json",
+    "checkpoint_blob_sha": "d375bae758b5ca2e67f832dc76b9b91648d8232f",
+    "checkpoint_commit_sha": "9c9935a94d9b06711d3e73805c5817477ba8d785",
     "exact_target_readback": true,
-    "observed_at": "2026-10-25T03:44:45+07:00"
+    "observed_at": "2026-10-25T03:49:24+07:00"
   },
   "latest_n8n_readback": {
     "workflow_id": "BogzhFUDbRp7kuwh",
-    "execution_id": "148",
+    "execution_id": "149",
     "status": "success",
-    "event_id": "X20261024200023944_CLOUD",
+    "mode": "trigger",
+    "started_at_utc": "2026-10-24T20:44:46.484Z",
+    "stopped_at_utc": "2026-10-24T20:44:48.479Z",
+    "event_id": "X20261024204448325_CLOUD",
     "table_id": "Sk0EFJK5NzWVpBvm",
-    "row_id": 313,
+    "row_id": 316,
     "exact_row_readback": true,
     "state": "OPEN_WORK_REMAINS",
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_rows": 45,
     "pending_rows": 45,
+    "selected_cloud_eligible_count": 6,
     "host_heartbeat_probed_by_cloud_workflow": false,
     "separate_readonly_host_probe_this_run": true,
     "provider_readback_row_id": 314,
     "provider_readback_event_id": "X202610250337_PROVIDER_READBACK",
-    "provider_readback_exact_readback": true,
     "host_task_readback_row_id": 315,
     "host_task_readback_event_id": "X202610250343_HOST_TASK_READBACK",
-    "host_task_readback_exact_readback": true,
-    "latest_evidence_row_id": 315,
-    "evidence_row_count": 315,
+    "latest_evidence_row_id": 316,
+    "evidence_row_count": 316,
     "tasks_closed": 0
   },
   "latest_braid_readback": {
@@ -256,15 +257,16 @@
   },
   "latest_github_pr_readback": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_observed_before_checkpoint": "fa39252331ca9bee19933a4bbd563d858c64b116",
+    "main_head_before_checkpoint": "1a322148917cc7e8496354f91a8ce3793c410924",
     "prs": [
       {
         "number": 27,
         "state": "OPEN",
         "draft": true,
         "head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
-        "pr_triggered_runs_returned": 0,
-        "merged": false
+        "mergeable": false,
+        "merged": false,
+        "pr_triggered_runs_returned": 0
       },
       {
         "number": 28,
@@ -273,9 +275,8 @@
         "head_sha": "bf553018dd59affb1d4ea2b120cad3ea7a0565ff",
         "real_fixture_run_id": 40118137014,
         "real_fixture_run_conclusion": "success",
-        "runner": "ephemeral Ubuntu 24.04",
         "ahead_of_main": 7,
-        "behind_main": 23,
+        "behind_main": 27,
         "mergeable": false,
         "merged": false
       },
@@ -289,7 +290,7 @@
         "secret_guard_run_id": 40118465608,
         "secret_guard_conclusion": "success",
         "ahead_of_main": 1,
-        "behind_main": 22,
+        "behind_main": 26,
         "mergeable": false,
         "merged": false
       },
@@ -303,7 +304,7 @@
         "secret_guard_run_id": 40122933659,
         "secret_guard_conclusion": "success",
         "ahead_of_main": 5,
-        "behind_main": 13,
+        "behind_main": 17,
         "mergeable": false,
         "merged": false
       }
@@ -315,15 +316,19 @@
     "n8n_row_id": 315,
     "event_id": "X202610250343_HOST_TASK_READBACK",
     "exact_readback": true,
-    "task_last_result": "0x41306",
+    "last_successful_observation_local": "2026-10-25T03:43:40+07:00",
     "task_state": "Ready",
+    "last_result": "0x41306",
     "no_new_tick": true,
     "task_scheduler_operational_log_enabled": false,
-    "source_sha256s": {
-      "run_telemetry_buffer_sync.ps1": "c081986028b17d039ed20a590a60db33197184dbfbb945391a42a049d674d9cf",
-      "telemetry_buffer_sync.py": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
-      "sensor_root_resolver.py": "117bcb01aefa908aac861f97c83dcccff7e84a5d080d771da09134378db98471",
-      "verify_dropbox_content_hash_20261023.py": "cdfb682fadc7ebadffa6a929ae984cdbcb4426ae03e1368c2e31836ef12ed6d0"
-    }
+    "later_query_timed_out": true,
+    "current_state_after_timeout": "UNKNOWN"
+  },
+  "independent_cloud_blockers": {
+    "hostinger_dns": "TOOL_REQUIRED_ACCOUNT_SELECTION_PRIMARY_OR_HALIN; no DNS operation executed",
+    "browser_bridge_guide": "Chỉ dẫn từ Hà Linh.md target not found on main; source locator indicates private Dropbox URLs and local bridge paths; no public write or reconstruction",
+    "plugin_consolidation": "target install/readback not established; no publish/install/decommission",
+    "github_copilot_space": "actual Space access not verified; setup artifacts are not proof of connected sources",
+    "wsl_mcp_bridge": "host-specific end-to-end action not verified"
   }
 }
