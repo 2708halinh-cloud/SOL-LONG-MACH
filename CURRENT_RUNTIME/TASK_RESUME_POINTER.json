@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "MODUAL: use an authorized alternate host carrier for the next Windows Tick receipt and direct CSV SHA-256; latest direct tick remains WINDOWS_TICK_20261024T164634219800Z.json at 2026-10-24T16:46:34.219800Z, source hash match verified, live_sensor_reading_confirmed=false. Current connector inventory reports devices Offline but does not prove physical device state. Cloud: n8n execution 145 SUCCESS, exact row 304 X20261024180023983_CLOUD read back; 45 recovery rows and 45 pending; HOST_HEARTBEAT_NOT_PROBED. TESSERACT PR #6 stays OPEN; issuer public key and runner assignment unverified, do not rerun CI without verified runner change. Archive PR #27 current head 23731f7978bbc2ddb41f61e9d0a06ca968cb1fae has no PR-triggered run returned; current topology test preserves BRAIN_WAVE_LOGS; do not treat the earlier failure as current-head result. Keep all source tasks OPEN.",
+  "next": "MODUAL: obtain an authorized alternate host readback for the later Windows Tick receipt and direct CSV SHA-256; do not treat the connector inventory as physical power state. Independent branch: PR #27 source pointers were read back but no CI run or archive-fixture test was executed; seek an authorized isolated runner. TESSERACT PR #6: issuer public key and runner assignment remain unverified; do not rerun CI without verified runner change. Preserve all OPEN tasks.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T18:11:44.393Z",
+  "updated_at": "2026-10-24T18:40:00.499Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -5129,6 +5129,145 @@
       "credentials_committed": false,
       "source_deleted_or_moved": false,
       "host_config_changed": false
+    },
+    {
+      "id": "PROVIDER_READBACK_20261025T0139ICT",
+      "observed_at": "2026-10-25T01:40:00+07:00",
+      "observed_at_utc": "2026-10-24T18:40:00.499Z",
+      "source": "Fresh GitHub re-entry reads, Dropbox Outlook metadata, n8n execution/row/task-table readback, Desktop Commander inventory, GitHub TESSERACT jobs/artifacts and Archive PR #27 exact-source readback.",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0139ICT.json",
+      "checkpoint_blob_sha": "50f36f4a156aec583bd8506f9b2f99e18d045b4e",
+      "checkpoint_commit": "0e9f6b701b987cf5932ff1bdcd3c24c46e0adaf7",
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "account_scope": "Outlook-linked account",
+        "revision": "0165dc1e4794ab00000000395cdfd73",
+        "bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "raw_csv_downloaded": false
+      },
+      "desktop_commander": {
+        "accounts_checked": [
+          "Primary",
+          "mmmm"
+        ],
+        "devices": [
+          {
+            "name": "localhost",
+            "status": "Offline",
+            "last_seen": "29h ago"
+          },
+          {
+            "name": "DESKTOP-86ITNQ4",
+            "status": "Offline",
+            "last_seen": "105h ago"
+          },
+          {
+            "name": "DESKTOP-86ITNQ4",
+            "status": "Offline",
+            "last_seen": "330h ago"
+          }
+        ],
+        "interpretation": "Connector inventory only; physical device power state not proven. No fresh host command or Tick receipt in this turn."
+      },
+      "windows_tick": {
+        "fresh_host_readback_this_turn": false,
+        "latest_directly_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T164634219800Z.json",
+        "receipt_sha256": "0436d7b164c227d5b1a1da532f8959b21aa7494992f8363ff45d40dcd64d99ca",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_matches_receipt": true,
+        "live_sensor_reading_confirmed": false,
+        "next_edge": "Use a permitted alternate host carrier to read the later receipt and recalculate the source hash."
+      },
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+        "latest_execution_id": "145",
+        "execution_status": "success",
+        "started_at_utc": "2026-10-24T18:00:22.082Z",
+        "stopped_at_utc": "2026-10-24T18:00:24.140Z",
+        "table_id": "Sk0EFJK5NzWVpBvm",
+        "project_id": "6qKpRmicIGHA5snY",
+        "exact_row_id": 304,
+        "exact_event_id": "X20261024180023983_CLOUD",
+        "exact_row_readback": true,
+        "state": "OPEN_WORK_REMAINS",
+        "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+        "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+        "recovery_rows": 45,
+        "pending_rows_reported_by_receipt": 45,
+        "sample_statuses": [
+          "IN_PROGRESS",
+          "OPEN_ROUTED_NONCOERCIVE"
+        ],
+        "literal_status_filter_OPEN_matches": 0,
+        "host_operations": 0,
+        "tasks_closed": 0
+      },
+      "tesseract_desktop": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "pr_state": "open",
+        "pr_head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": {
+          "39994207477": {
+            "conclusion": "failure",
+            "jobs": {
+              "failed": 5,
+              "skipped": 1
+            },
+            "artifacts": 0
+          },
+          "39994207667": {
+            "conclusion": "failure",
+            "jobs": {
+              "failed": 1
+            },
+            "artifacts": 0
+          }
+        },
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "archive_pr27": {
+        "repository": "2708halinh-cloud/SOL-LONG-MACH",
+        "pr": 27,
+        "pr_state": "open",
+        "pr_head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
+        "current_head_topology_test_blob_sha": "6208f9edbe1886814870ba96c8da0b8a27141e30",
+        "registry_blob_sha": "f642bae2bd44aad09aa014ee20698ccb01f9e4f7",
+        "executor_blob_sha": "4c2cec1c4f2e2451e13cf396874347ba3b8f3af0",
+        "inspect_companion_blob_sha": "da7660bccfe6aa2b4bebc03f4eb0744e9b16f190",
+        "brainwave_logger_blob_sha": "4272ef7eabaa2f646c520bd64f37c5dc290c9321",
+        "space_map_blob_sha": "935abcb6fca375085642abfd7a93dbf52581c45c",
+        "required_source_file_readbacks": 14,
+        "required_source_files_missing": 0,
+        "canonical_branch_matches_registry": true,
+        "workspace_folder_matches_space_map": true,
+        "brainwave_logger_routes_to_sibling_BRAIN_WAVE_LOGS": true,
+        "current_head_pr_triggered_workflow_runs": 0,
+        "local_or_host_tests_executed": false,
+        "real_archive_fixtures_verified": false
+      },
+      "other_provider_status": {
+        "xtime_refreshed_this_turn": false,
+        "xtime_last_verified_health_http": 200,
+        "xtime_live_device_proven": false,
+        "ollama_refreshed_this_turn": false,
+        "ollama_last_verified_http": 200,
+        "ollama_last_verified_model_count": 11,
+        "android_refreshed_this_turn": false,
+        "hwinfo_refreshed_this_turn": false
+      },
+      "tasks_closed": 0,
+      "raw_sensor_data_committed": false,
+      "credentials_committed": false,
+      "source_deleted_or_moved": false,
+      "host_config_changed": false,
+      "result": "N8N_EXECUTION_145_AND_ROW_304_RECONFIRMED;DROPBOX_METADATA_UNCHANGED;HOST_TICK_NOT_FRESH;PR27_SOURCE_POINTERS_READ_BACK_BUT_TEST_NOT_EXECUTED;TESSERACT_ISSUER_RUNNER_UNVERIFIED;ALL_TASKS_REMAIN_OPEN"
     }
   ],
   "latest_sync_observation": {
@@ -8349,23 +8488,20 @@
     "status_effect": "Keep SUPER_R014 OPEN; do not substitute derived ZIPs or change ADMIN location."
   },
   "latest_cloud_continuity_readback": {
-    "observed_at": "2026-10-25T01:11:44.393+07:00",
-    "observed_at_utc": "2026-10-24T18:11:44.393Z",
+    "observed_at": "2026-10-25T01:40:00+07:00",
+    "observed_at_utc": "2026-10-24T18:40:00.499Z",
     "record_type": "N8N_EXECUTION_145_EXACT_ROW_304_READBACK",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0111ICT.json",
-    "checkpoint_blob_sha": "84cb4e9f0f1bf479eb4d54e757fbc9d88207d4f3",
-    "checkpoint_commit": "36468c6d25faedef8aedc83844ba554796cf72da",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0139ICT.json",
+    "checkpoint_blob_sha": "50f36f4a156aec583bd8506f9b2f99e18d045b4e",
+    "checkpoint_commit": "0e9f6b701b987cf5932ff1bdcd3c24c46e0adaf7",
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "execution_id": "145",
     "status": "success",
-    "started_at_utc": "2026-10-24T18:00:22.082Z",
-    "stopped_at_utc": "2026-10-24T18:00:24.140Z",
     "receipt_table_id": "Sk0EFJK5NzWVpBvm",
     "project_id": "6qKpRmicIGHA5snY",
     "receipt_row_id": 304,
     "receipt_event_id": "X20261024180023983_CLOUD",
-    "occurred_at_utc": "2026-10-24T18:00:23.983Z",
     "exact_row_readback": true,
     "state": "OPEN_WORK_REMAINS",
     "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
@@ -8373,9 +8509,7 @@
     "pending_rows": 45,
     "host_heartbeat_probed": false,
     "host_operations": 0,
-    "tasks_closed": 0,
-    "raw_sensor_data_committed": false,
-    "credentials_committed": false
+    "tasks_closed": 0
   },
   "cloud_continuity": {
     "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2117ICT.json",
@@ -9446,28 +9580,31 @@
     }
   ],
   "latest_tesseract_runner_issuer_probe": {
-    "observed_at_local": "2026-10-25T01:11:44.393+07:00",
-    "observed_at_utc": "2026-10-24T18:11:44.393Z",
+    "observed_at": "2026-10-25T01:40:00+07:00",
     "repository": "2708halinh-cloud/x-time-web",
     "pr": 6,
-    "pr_state": "open",
-    "draft": true,
-    "merged": false,
-    "pr_head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-    "issuer_key_variable_reference": "vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
-    "issuer_key_code_search_results": 0,
+    "state": "open",
+    "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "runs": {
+      "39994207477": {
+        "conclusion": "failure",
+        "jobs": {
+          "failed": 5,
+          "skipped": 1
+        },
+        "artifacts": 0
+      },
+      "39994207667": {
+        "conclusion": "failure",
+        "jobs": {
+          "failed": 1
+        },
+        "artifacts": 0
+      }
+    },
     "issuer_public_key_verified": false,
     "runner_assignment_change_verified": false,
-    "run_39994207477": {
-      "conclusion": "failure",
-      "artifacts": 0
-    },
-    "run_39994207667": {
-      "conclusion": "failure",
-      "artifacts": 0
-    },
-    "ci_rerun": false,
-    "tasks_closed": 0
+    "ci_rerun": false
   },
   "latest_tick_readback": {
     "observed_at": "2026-10-24T16:48:41.3743778Z",
@@ -10447,101 +10584,164 @@
     }
   ],
   "latest_provider_readback": {
-    "id": "PROVIDER_READBACK_20261025T0111ICT",
-    "observed_at": "2026-10-25T01:11:44.393+07:00",
-    "observed_at_utc": "2026-10-24T18:11:44.393Z",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0111ICT.json",
-    "checkpoint_blob_sha": "84cb4e9f0f1bf479eb4d54e757fbc9d88207d4f3",
-    "checkpoint_commit": "36468c6d25faedef8aedc83844ba554796cf72da",
-    "source": "Fresh GitHub source reads, Dropbox metadata, n8n execution/row, Desktop Commander inventory, and GitHub PR #6/#27 readbacks",
-    "result": "N8N_ROW_304_VERIFIED;DROPBOX_METADATA_RECONFIRMED;HOST_TICK_NOT_FRESH;LIVE_SENSOR_UNVERIFIED;TESSERACT_ISSUER_RUNNER_UNVERIFIED;ARCHIVE_PR27_CURRENT_HEAD_NO_CI_RESULT",
+    "id": "PROVIDER_READBACK_20261025T0139ICT",
+    "observed_at": "2026-10-25T01:40:00+07:00",
+    "observed_at_utc": "2026-10-24T18:40:00.499Z",
+    "source": "Fresh GitHub re-entry reads, Dropbox Outlook metadata, n8n execution/row/task-table readback, Desktop Commander inventory, GitHub TESSERACT jobs/artifacts and Archive PR #27 exact-source readback.",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0139ICT.json",
+    "checkpoint_blob_sha": "50f36f4a156aec583bd8506f9b2f99e18d045b4e",
+    "checkpoint_commit": "0e9f6b701b987cf5932ff1bdcd3c24c46e0adaf7",
     "dropbox": {
       "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "account_scope": "Outlook-linked account",
       "revision": "0165dc1e4794ab00000000395cdfd73",
       "bytes": 35389440,
       "server_modified_utc": "2026-10-14T00:20:03Z",
-      "metadata_readback": true
+      "metadata_readback": true,
+      "raw_csv_downloaded": false
     },
-    "desktop_commander_connector_snapshot": {
+    "desktop_commander": {
       "accounts_checked": [
         "Primary",
         "mmmm"
       ],
-      "device_statuses": [
-        "localhost Offline; last seen 29h",
-        "DESKTOP-86ITNQ4 Offline; last seen 104h",
-        "DESKTOP-86ITNQ4 Offline; last seen 330h"
+      "devices": [
+        {
+          "name": "localhost",
+          "status": "Offline",
+          "last_seen": "29h ago"
+        },
+        {
+          "name": "DESKTOP-86ITNQ4",
+          "status": "Offline",
+          "last_seen": "105h ago"
+        },
+        {
+          "name": "DESKTOP-86ITNQ4",
+          "status": "Offline",
+          "last_seen": "330h ago"
+        }
       ],
-      "physical_device_state_proven": false
+      "interpretation": "Connector inventory only; physical device power state not proven. No fresh host command or Tick receipt in this turn."
+    },
+    "windows_tick": {
+      "fresh_host_readback_this_turn": false,
+      "latest_directly_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T164634219800Z.json",
+      "receipt_sha256": "0436d7b164c227d5b1a1da532f8959b21aa7494992f8363ff45d40dcd64d99ca",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches_receipt": true,
+      "live_sensor_reading_confirmed": false,
+      "next_edge": "Use a permitted alternate host carrier to read the later receipt and recalculate the source hash."
     },
     "n8n": {
       "workflow_id": "BogzhFUDbRp7kuwh",
-      "execution_id": "145",
-      "status": "success",
-      "row_id": 304,
-      "event_id": "X20261024180023983_CLOUD",
+      "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+      "latest_execution_id": "145",
+      "execution_status": "success",
+      "started_at_utc": "2026-10-24T18:00:22.082Z",
+      "stopped_at_utc": "2026-10-24T18:00:24.140Z",
+      "table_id": "Sk0EFJK5NzWVpBvm",
+      "project_id": "6qKpRmicIGHA5snY",
+      "exact_row_id": 304,
+      "exact_event_id": "X20261024180023983_CLOUD",
       "exact_row_readback": true,
       "state": "OPEN_WORK_REMAINS",
       "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+      "recovery_table_id": "rSPFIOWbS7cfNJ8z",
       "recovery_rows": 45,
-      "pending_rows": 45,
+      "pending_rows_reported_by_receipt": 45,
+      "sample_statuses": [
+        "IN_PROGRESS",
+        "OPEN_ROUTED_NONCOERCIVE"
+      ],
+      "literal_status_filter_OPEN_matches": 0,
       "host_operations": 0,
       "tasks_closed": 0
     },
-    "xtime_ollama": {
-      "refreshed_this_turn": false,
-      "last_verified_snapshot": "CURRENT_RUNTIME/PROVIDER_READBACK_20261024T2345ICT.json",
-      "xtime_live_device_proven": false
-    },
-    "tesseract": {
+    "tesseract_desktop": {
+      "repository": "2708halinh-cloud/x-time-web",
       "pr": 6,
-      "state": "open",
-      "draft": true,
-      "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-      "runs": [
-        39994207477,
-        39994207667
-      ],
-      "runs_failed": true,
-      "artifacts": 0,
+      "pr_state": "open",
+      "pr_head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "runs": {
+        "39994207477": {
+          "conclusion": "failure",
+          "jobs": {
+            "failed": 5,
+            "skipped": 1
+          },
+          "artifacts": 0
+        },
+        "39994207667": {
+          "conclusion": "failure",
+          "jobs": {
+            "failed": 1
+          },
+          "artifacts": 0
+        }
+      },
       "issuer_public_key_verified": false,
       "runner_assignment_change_verified": false,
       "ci_rerun": false
     },
     "archive_pr27": {
-      "state": "open",
-      "draft": true,
-      "head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
-      "topology_test_blob_sha": "6208f9edbe1886814870ba96c8da0b8a27141e30",
-      "current_head_pr_triggered_runs_returned": 0,
-      "current_test_preserves_BRAIN_WAVE_LOGS_sibling": true,
-      "real_archive_fixtures_verified_on_target_host": false,
-      "task_closed": false
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "pr": 27,
+      "pr_state": "open",
+      "pr_head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
+      "current_head_topology_test_blob_sha": "6208f9edbe1886814870ba96c8da0b8a27141e30",
+      "registry_blob_sha": "f642bae2bd44aad09aa014ee20698ccb01f9e4f7",
+      "executor_blob_sha": "4c2cec1c4f2e2451e13cf396874347ba3b8f3af0",
+      "inspect_companion_blob_sha": "da7660bccfe6aa2b4bebc03f4eb0744e9b16f190",
+      "brainwave_logger_blob_sha": "4272ef7eabaa2f646c520bd64f37c5dc290c9321",
+      "space_map_blob_sha": "935abcb6fca375085642abfd7a93dbf52581c45c",
+      "required_source_file_readbacks": 14,
+      "required_source_files_missing": 0,
+      "canonical_branch_matches_registry": true,
+      "workspace_folder_matches_space_map": true,
+      "brainwave_logger_routes_to_sibling_BRAIN_WAVE_LOGS": true,
+      "current_head_pr_triggered_workflow_runs": 0,
+      "local_or_host_tests_executed": false,
+      "real_archive_fixtures_verified": false
+    },
+    "other_provider_status": {
+      "xtime_refreshed_this_turn": false,
+      "xtime_last_verified_health_http": 200,
+      "xtime_live_device_proven": false,
+      "ollama_refreshed_this_turn": false,
+      "ollama_last_verified_http": 200,
+      "ollama_last_verified_model_count": 11,
+      "android_refreshed_this_turn": false,
+      "hwinfo_refreshed_this_turn": false
     },
     "tasks_closed": 0,
     "raw_sensor_data_committed": false,
     "credentials_committed": false,
     "source_deleted_or_moved": false,
-    "host_config_changed": false
+    "host_config_changed": false,
+    "result": "N8N_EXECUTION_145_AND_ROW_304_RECONFIRMED;DROPBOX_METADATA_UNCHANGED;HOST_TICK_NOT_FRESH;PR27_SOURCE_POINTERS_READ_BACK_BUT_TEST_NOT_EXECUTED;TESSERACT_ISSUER_RUNNER_UNVERIFIED;ALL_TASKS_REMAIN_OPEN"
   },
   "latest_archive_pr_current_head_probe": {
-    "observed_at_local": "2026-10-25T01:11:44.393+07:00",
-    "observed_at_utc": "2026-10-24T18:11:44.393Z",
+    "observed_at_local": "2026-10-25T01:40:00+07:00",
+    "observed_at_utc": "2026-10-24T18:40:00.499Z",
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
     "pr": 27,
     "pr_state": "open",
-    "draft": true,
-    "merged": false,
     "head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
-    "base": "main",
-    "updated_at_utc": "2026-10-24T17:55:14Z",
     "topology_test_path": "tests/test_sol_library_stone_topology.py",
     "topology_test_blob_sha": "6208f9edbe1886814870ba96c8da0b8a27141e30",
-    "current_test_preserves_BRAIN_WAVE_LOGS_sibling": true,
-    "current_test_rejects_SPACE_STONE_WORKSPACE_root_alias": true,
+    "registry_blob_sha": "f642bae2bd44aad09aa014ee20698ccb01f9e4f7",
+    "executor_blob_sha": "4c2cec1c4f2e2451e13cf396874347ba3b8f3af0",
+    "inspect_companion_blob_sha": "da7660bccfe6aa2b4bebc03f4eb0744e9b16f190",
+    "required_source_file_readbacks": 14,
+    "required_source_files_missing": 0,
+    "canonical_branch_matches_registry": true,
+    "workspace_folder_matches_space_map": true,
+    "brainwave_logger_routes_to_sibling_BRAIN_WAVE_LOGS": true,
     "current_head_pr_triggered_runs_returned": 0,
-    "previous_topology_failure_predates_current_head_update": true,
     "real_archive_fixtures_verified_on_target_host": false,
+    "local_or_host_tests_executed": false,
     "task_closed": false
   }
 }
