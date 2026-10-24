@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-24T07:25:42+07:00",
+  "observed_at": "2026-10-24T07:28:10+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -4046,6 +4046,133 @@
       "result": "TICK_RECEIPT_VERIFIED_LONG_RUN_INTERMITTENT_DELAY_NOT_EXPLAINED_HASH_PATH_FAST_LIVE_STREAM_UNVERIFIED",
       "next_callable_edge": "Read the next scheduled tick after device clock 07:26:32+07. If it runs long again, inspect TaskScheduler operational events and process timing; do not change execution limit or code based on the double-hash hypothesis because the direct read-only path measured 1.022 seconds. Continue HWiNFO and authorized Android source investigation.",
       "status_effect": "Keep MODUAL OPEN. Tick result is 0 and source hash matches, but intermittent duration remains unexplained and live sensor reading is false."
+    },
+    {
+      "observed_at": "2026-10-24T07:28:10+07:00",
+      "observed_at_utc": "2026-10-24T00:28:10Z",
+      "record_type": "THIRD_CONSECUTIVE_TICK_SUCCESS_AFTER_VARIABLE_DURATION_RUN_20261024",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "5d1b04c3b4beb68e6ed4403286e84580d3dc6671",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "5be781c41577dceb9e0c19860907d37a9c2f17ba",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "5f0b7610e1eb210f822b3887110683a0ef4270f9"
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "device_clock": "2026-10-24T07:28:10.1807687+07:00",
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state": "Ready",
+        "enabled": true,
+        "last_run": "2026-10-24T07:26:33+07:00",
+        "next_run": "2026-10-24T07:31:32+07:00",
+        "last_result": "0x0",
+        "missed_runs": 0,
+        "execution_time_limit": "PT2M",
+        "latest_receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T002642437612Z.json",
+        "latest_receipt_utc": "2026-10-24T00:26:42.437612Z",
+        "latest_receipt_bytes": 450,
+        "latest_receipt_sha256": "C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961",
+        "receipt_delay_after_last_run_seconds": 9.437612,
+        "source_bytes": 35389440,
+        "source_mtime_utc": "2026-10-23T08:45:56.2458701Z",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_direct_recomputed_at": "2026-10-24T07:24:16.5834125+07:00",
+        "receipt_source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_matches_receipt": true,
+        "exports": {
+          "cloud_enabled": false,
+          "github_enabled": false
+        },
+        "mutations": {
+          "source_file_written": false,
+          "synthetic_rows_added": 0
+        },
+        "live_sensor_reading_confirmed": false,
+        "duration_history": {
+          "2026-10-24T07:11:33+07:00": {
+            "receipt": "WINDOWS_TICK_20261024T001137656548Z.json",
+            "delay_seconds": 4.656548,
+            "result": "0x0"
+          },
+          "2026-10-24T07:16:33+07:00": {
+            "receipt": "WINDOWS_TICK_20261024T001642618988Z.json",
+            "delay_seconds": 9.618988,
+            "result": "0x0"
+          },
+          "2026-10-24T07:21:33+07:00": {
+            "receipt": "WINDOWS_TICK_20261024T002312156252Z.json",
+            "delay_seconds": 99.156252,
+            "result": "0x0"
+          },
+          "2026-10-24T07:26:33+07:00": {
+            "receipt": "WINDOWS_TICK_20261024T002642437612Z.json",
+            "delay_seconds": 9.437612,
+            "result": "0x0"
+          }
+        }
+      },
+      "timing_diagnostics": {
+        "single_full_source_sha256_ms": 1747,
+        "read_only_python_import_resolver_seconds": 0.782,
+        "read_only_record_tick_seconds": 0.24,
+        "read_only_python_total_seconds": 1.022,
+        "powershell_wall_seconds": 4.122,
+        "exit_code": 0,
+        "exports_explicitly_disabled": true,
+        "root_cause_confirmed": false,
+        "interpretation": "Three recent scheduled ticks produced receipts within about 4.7-9.6 seconds, while one intervening tick took about 99.2 seconds but still returned 0. Direct hash and the actual read-only Python path are fast; double hashing alone does not explain the intermittent delay."
+      },
+      "hwinfo": {
+        "pid": 17520,
+        "present": true,
+        "mapping_opened": false,
+        "win32_error": 2,
+        "csv_bytes": 39922785,
+        "csv_mtime_utc": "2026-10-21T02:20:45.8565035Z",
+        "csv_read_only": true,
+        "live_sample_confirmed": false
+      },
+      "android": {
+        "wireless_target": "192.168.1.14:5556",
+        "connect_result": "actively refused (10061)",
+        "existing_device": "1056285",
+        "model": "2201123G",
+        "android_version": "15",
+        "sensor_inventory_observed": true,
+        "live_sample_values": false,
+        "modual_binding": false
+      },
+      "providers": {
+        "dropbox": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true,
+          "raw_bytes_downloaded": false
+        },
+        "xtime": {
+          "http_status": 200,
+          "modual_source_present": false,
+          "live_device_proven": false
+        },
+        "ollama": {
+          "http_status": 200,
+          "loopback_only": true
+        }
+      },
+      "invariants": {
+        "source_mutated": false,
+        "raw_sensor_rows_committed": false,
+        "credentials_committed": false,
+        "source_moved_or_deleted": false,
+        "task_settings_changed": false,
+        "open_tasks_closed": false
+      },
+      "result": "THREE_OF_FOUR_RECENT_TICKS_FAST_ONE_LONG_SUCCESS_ROOT_CAUSE_OPEN_LIVE_STREAM_UNVERIFIED",
+      "next_callable_edge": "Read next receipt after device clock 07:31:32+07. If duration varies again, inspect TaskScheduler Operational log enablement and task action timing; do not change the execution limit or code until a causal trace is available. Continue supported HWiNFO/Android live-source investigation.",
+      "status_effect": "Keep MODUAL OPEN. Scheduled metadata tick succeeds but has variable duration; live_sensor_reading_confirmed remains false."
     }
   ],
   "privacy_policy": {
