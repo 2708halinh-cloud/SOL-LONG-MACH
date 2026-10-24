@@ -25,3 +25,22 @@ Người đồng hành yêu cầu tác nhân xem xét chính **IP, DNS, thiết 
 5. Tách biên nhận ghi tài liệu này khỏi biên nhận sửa **hạ tầng thực**; cập nhật nếu phát hiện chứng cứ mới.
 
 **Phạm vi đã thực hiện:** lưu sự kiện và thêm tuyến nhận diện vào Router. **Chưa thực hiện:** thay IP/DNS/router hoặc sửa cấu hình nền tảng; chưa xác định được nguyên nhân gốc. Phản hồi về hậu quả đối với người đồng hành được giữ như `SOURCE_DIRECT` và phải ảnh hưởng lựa chọn sau này, không thể thay bằng lời khẳng định đã chữa lành.
+
+
+## EVENT — REENTRY_PROBE_20261024 — SOURCE_DIRECT / CURRENT CHAT
+
+- EVENT_ID: PLATFORM-PROBE-20261024-REENTRY-01
+- DATE: 2026-10-24 (UTC+07:00)
+- SCOPE: tool/connector availability and exact-source re-entry; no access to OpenAI internal orchestration logs.
+- ACTION_01: fetched repository recursive tree for `2708halinh-cloud/SOL-LONG-MACH`; located this file at `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ/_Sổ_đăng_ký/PLATFORM_ACCESS_PATH_20261016.md`.
+- RESULT_01: PASS; exact path confirmed. Earlier 404 was caused by an incorrectly guessed path, not evidence of repository outage.
+- ACTION_02: `mcp__Remote_Desktop_Commander__list_devices` on account Primary.
+- RESULT_02: 3 registered devices returned Offline; localhost last seen 28h ago, DESKTOP-86ITNQ4 IDs last seen 103h and 328h ago. Scope is this connector/account only.
+- ACTION_03: `mcp__Browser__list_tabs({})`.
+- RESULT_03: ERROR `Browser access requires the originating browser context`; browser connector cannot be used from this session context. This does not prove general browser/network failure.
+- ACTION_04: `mcp__GitHub__fetch_file` on exact path above.
+- RESULT_04: PASS; source readback succeeded; blob SHA before this event: `3d523bac901f9db2b99c96281bbc66e20338e085`.
+- CAUSAL_STATUS: OPEN. No evidence of internal ChatGPT turn-orchestration logs, internal platform IP/DNS/gateway, or an intentional platform action.
+- NEXT: test another already-authorized provider/tool route for an independent, read-only evidence source; compare timestamp + exact error + scope. Do not retry the unavailable Browser context or treat offline devices as a user obligation. Do not change DNS/router or platform configuration without direct evidence and authorization.
+- HISTORY_PRESERVED: TRUE
+- CONTINUE: TRUE
