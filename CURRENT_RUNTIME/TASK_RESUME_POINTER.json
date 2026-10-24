@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T1843ICT.json. Latest agent validation is CURRENT_RUNTIME/AGENT_GATE_READBACK_20261024T1845ICT.json: all five drafts still require an explicit model and valid credential/binding; do not publish without explicit approval. On the next responsive host read, verify the newest tick and Scheduled Task after the elapsed 18:41:32 boundary; keep live_sensor_reading_confirmed=false and Android unverified until independently proven.",
+  "next": "Resume from the latest cloud continuity readback for independent cloud edges. For TESSERACT Desktop, preserve PR #6 OPEN and continue the untested path-containment patch at security/repo-relative-read-containment-20261024 commit b5770b5358e8d41082c95ef87fa270fc947cd4da; run Rust tests only on an authorized runner, and do not merge without current-head CI readback and verified issuer public key. For MODUAL, obtain a fresh host receipt after the 18:41:32 ICT boundary; live sensor stream and Android heartbeat remain unverified.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -6746,48 +6746,23 @@
     }
   },
   "latest_security_patch_observation": {
-    "observed_at": "2026-10-24T14:50:26.710+07:00",
-    "observed_at_local": "2026-10-24T14:50:26.710+07:00",
-    "source": "Fresh GitHub branch file, workflow, branch ref, PR #6, compare endpoint, latest workflow runs, job and step readbacks.",
+    "stamp_class": "STAMP_LIVE",
+    "observed_date_local": "2026-10-24",
     "repo": "2708halinh-cloud/x-time-web",
     "branch": "security/repo-relative-read-containment-20261024",
-    "commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
+    "commit": "b5770b5358e8d41082c95ef87fa270fc947cd4da",
     "file": "TESSERACT_DESKTOP/src-tauri/src/main.rs",
-    "file_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d0",
-    "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
-    "compare_to": "tesseract-desktop-mvp-20261006",
-    "ahead_by": 2,
-    "behind_by": 0,
-    "route_target_symlink_regression_present": true,
-    "checkout_uses_pull_request_head_sha_at_lines": [
-      50,
-      93,
-      130
-    ],
-    "pr6_state": "OPEN",
-    "pr6_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-    "latest_runs": [
-      {
-        "run_id": 39994207477,
-        "conclusion": "failure",
-        "build_steps": 0,
-        "readback_steps": 0,
-        "artifacts": []
-      },
-      {
-        "run_id": 39994207667,
-        "conclusion": "failure",
-        "artifacts": []
-      }
-    ],
-    "selfhosted_windows_verify": "SKIPPED",
-    "issuer_variable_references": 2,
-    "repository_code_search_matches": 0,
-    "issuer_public_key_value_verified": false,
-    "runner_assignment_change_verified": false,
-    "tests_executed": false,
-    "ci_rerun": false,
-    "task_closure": false
+    "file_blob_sha": "af1a16270cb9ff90c5a7f34d5d56ae4343fc5eca",
+    "change": "Reject Windows drive-qualified paths (e.g. C:\\Windows\\win.ini) before repo-relative resolution; add regression assertions for drive-letter paths.",
+    "readback": "Commit diff and branch file were fetched from GitHub and matched the new blob SHA.",
+    "validation": {
+      "rust_tests_executed": false,
+      "reason": "This runtime has no rustc or cargo.",
+      "workflow_runs_for_commit": [],
+      "ci_triggered": false
+    },
+    "status_effect": "No task closure. Security patch remains untested and separate from PR #6.",
+    "next": "Run cargo test --manifest-path TESSERACT_DESKTOP/src-tauri/Cargo.toml on an authorized runner; verify current-head CI and issuer public key before considering PR or merge."
   },
   "latest_source_export_probe": {
     "observed_at": "2026-10-24T13:24:33.683+07:00",
