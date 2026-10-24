@@ -1,0 +1,20 @@
+# Starter template. Replace placeholders with verified repository IDs/revisions.
+# Check this schema against the pinned upstream MergeKit-MoE release.
+base_model: REPLACE_WITH_VERIFIED_MIXTRAL_BASE_MODEL
+experts:
+  - source_model: REPLACE_WITH_VERIFIED_EXPERT_MODEL_ID_1
+    positive_prompts:
+      - "Classify a SQL record using its declared schema, table names, columns, and typed fields."
+      - "Route structured data transformation and schema-alignment tasks."
+    negative_prompts:
+      - "Do not select this expert for unrelated conversational writing."
+      - "Do not select this expert when schema or provenance is missing."
+  - source_model: REPLACE_WITH_VERIFIED_EXPERT_MODEL_ID_2
+    positive_prompts:
+      - "Analyze SQL queries, joins, constraints, and database integrity."
+      - "Route query reasoning and database diagnostics tasks."
+    negative_prompts:
+      - "Do not select this expert for unrelated general chat."
+      - "Do not select this expert when SQL provenance is missing."
+gate_mode: hidden
+dtype: bfloat16

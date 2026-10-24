@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "SQL-to-expert routing contract for TESSERACT FrankenMoE",
+  "record_required_fields": [
+    "record_id",
+    "source_uri",
+    "source_sha256",
+    "schema_id",
+    "payload_type",
+    "created_at"
+  ],
+  "routing_evidence": {
+    "positive_prompts": "Required per expert; describe in-domain inputs.",
+    "negative_prompts": "Required per expert; describe exclusions and ambiguity.",
+    "hidden_state_source": "Final-layer representation from a pinned tokenizer/model revision.",
+    "normalization": "Use exact tokenizer and prompt template pinned in build receipt."
+  },
+  "policy": {
+    "missing_provenance": "STOP_FORWARD",
+    "schema_validation_failure": "QUARANTINE",
+    "low_route_confidence": "ABSTAIN",
+    "multiple_experts": "Top-k routing only when configured and measured",
+    "sql_execution": "Never execute generated SQL without independent authorization and query policy validation"
+  },
+  "receipt_required_fields": [
+    "config_sha256",
+    "base_model_revision",
+    "expert_revisions",
+    "mergekit_version",
+    "build_command",
+    "exit_code",
+    "output_manifest_sha256",
+    "evaluation_report_sha256"
+  ]
+}
