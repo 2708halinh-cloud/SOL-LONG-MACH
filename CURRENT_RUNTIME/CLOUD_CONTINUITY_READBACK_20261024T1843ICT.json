@@ -1,0 +1,140 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.1",
+  "run_started_at_utc": "2026-10-24T11:43:07Z",
+  "observed_at_local": "2026-10-24T18:43:07+07:00",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T1831ICT.json",
+    "blob_sha": "8084fc29a08e65c8f15f3c4d4b860d874ddb44eb",
+    "repository_head_at_read": "e124624b7ab07e9a869cf254b043b81ba2679a6d",
+    "resume_pointer_blob_sha_at_read": "94e22f7346991f5ae31cbbe6970f8400a294be61"
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "latest_execution": {
+      "id": "133",
+      "status": "success",
+      "mode": "trigger",
+      "started_at_utc": "2026-10-24T11:00:22.072Z",
+      "stopped_at_utc": "2026-10-24T11:00:24.096Z"
+    },
+    "receipt_table_id": "Sk0EFJK5NzWVpBvm",
+    "latest_receipt_row_id": 275,
+    "latest_receipt_event_id": "X20261024110023952_CLOUD",
+    "latest_receipt_state": "OPEN_WORK_REMAINS",
+    "latest_receipt_evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "latest_receipt_exact_readback": true,
+    "recovery_table": {
+      "id": "rSPFIOWbS7cfNJ8z",
+      "project_id": "6qKpRmicIGHA5snY",
+      "row_count": 45,
+      "nonterminal_count": 45,
+      "user_task_rows": 27,
+      "terminal_rows": 0,
+      "status_counts": {
+        "ASSIGNED_DRAFT_WAITING_CREDENTIAL": 5,
+        "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN": 1,
+        "OPEN_RAW_HASH_AND_CLOUD_TRANSFER": 1,
+        "OPEN_QEMU_C_DISCOVERY": 1,
+        "GUARD_APPLIED_FIVE_AGENT_DRAFTS_ACCOUNT_LEVEL_PAUSE_OPEN": 1,
+        "OPEN_SOURCE_DIRECT_TIMESTAMP": 1,
+        "OPEN_ANDROID_SOURCE_ACCESS": 1,
+        "OPEN_END_TO_END_USER_SESSION": 1,
+        "OPEN_CREDENTIAL_BINDING_AND_AUTH_TEST": 1,
+        "OPEN_7Z_RAR_LR": 1,
+        "SOURCE_BYTES_VERIFIED_FUTURE_SYNC_OPEN": 1,
+        "OPEN_HOST_ROUTING_AND_UI_READBACK": 1,
+        "OPEN_HOST_INTEGRATION_AND_INDEPENDENT_TEST": 1,
+        "OPEN_ROUTED_NONCOERCIVE": 27,
+        "IN_PROGRESS": 1
+      }
+    },
+    "scan_selection": {
+      "cloud_eligible_count": 8,
+      "selected_ids": [
+        "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+        "SV-20261020-01",
+        "SV-20261020-02",
+        "SV-20261020-03",
+        "SV-20261020-04",
+        "SV-20261020-05",
+        "SV-20261020-01-READBACK",
+        "SV-20261020-ROOTS-ARCHIVES"
+      ],
+      "tasks_closed_by_scan": 0,
+      "host_operations_by_scan": 0
+    }
+  },
+  "host_readback": {
+    "device": "DESKTOP-86ITNQ4",
+    "device_list_state": "ONLINE_LAST_SEEN_7M_AT_LATEST_LIST_READ",
+    "later_compound_readonly_probe": "TIMED_OUT_NO_RESULT",
+    "latest_tick_filename": "WINDOWS_TICK_20261024T113658136365Z.json",
+    "latest_tick_observed_at_utc": "2026-10-24T11:36:58.136365Z",
+    "latest_tick_sha256": "NOT_VERIFIED",
+    "source": {
+      "basename": "windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "direct_hash_readback_matches_tick": true,
+      "modified_utc": "2026-10-23T08:45:56.2458701Z",
+      "changed": false
+    },
+    "tick_claims": {
+      "live_sensor_reading_confirmed": false,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0
+    },
+    "scheduled_task_readback": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "last_run_local": "2026-10-24T18:36:33+07:00",
+      "next_run_reported_local": "2026-10-24T18:41:32+07:00",
+      "next_run_was_already_elapsed_at_run_start": true,
+      "last_result": "0",
+      "missed_runs_reported": 0,
+      "cause_of_no_newer_tick": "NOT_ESTABLISHED"
+    },
+    "interpretation": "Fresh post-18:26 host tick was read and its source digest matched a direct source hash. No newer tick appeared in the directory snapshot. A later compound read-only probe timed out; current host responsiveness is therefore not proven."
+  },
+  "android": {
+    "current_heartbeat": "UNVERIFIED",
+    "compound_tcp_probe": "TIMED_OUT_NO_RESULT",
+    "device_off_inferred": false
+  },
+  "agent_gate": {
+    "project_id": "6qKpRmicIGHA5snY",
+    "draft_agents": 5,
+    "published_agents": 0,
+    "user_accessible_credentials": 0,
+    "gateway_credits_available": true,
+    "gateway_covers_relevant_langchain_openai_nodes": true,
+    "openai_catalog_count": 41,
+    "openai_catalog_verified": false,
+    "config_mutations": 0,
+    "agents_published_or_dispatched": 0,
+    "blocker": "No user-selected model binding; catalog is unverified; publication requires explicit approval."
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "visibility": "public",
+    "head_at_read": "e124624b7ab07e9a869cf254b043b81ba2679a6d",
+    "combined_status_count": 0,
+    "ci_success_claimed": false,
+    "resume_pointer_blob_sha_before_update": "94e22f7346991f5ae31cbbe6970f8400a294be61"
+  },
+  "safety": {
+    "recovery_task_statuses_changed": false,
+    "tasks_closed": 0,
+    "source_csv_modified": false,
+    "host_task_settings_changed": false,
+    "processes_cache_or_meta_db_deleted": false,
+    "google_drive_written": false,
+    "secrets_persisted": false,
+    "public_source_materialization": false
+  },
+  "result": "N8N_133_ROW275_VERIFIED; 45_RECOVERY_ROWS_NONTERMINAL; POST_BOUNDARY_WINDOWS_TICK_READ_AND_SOURCE_HASH_MATCH; LIVE_SENSOR_NOT_VERIFIED; ANDROID_UNVERIFIED; AGENT_PUBLICATION_BLOCKED",
+  "next": "Resume from this checkpoint. On the next responsive host read, inspect the newest tick and Scheduled Task state after the elapsed 18:41:32 boundary; do not run the task manually or change its configuration. Keep live_sensor_reading_confirmed=false until a live sample is independently proven. Keep Android unverified until a successful current device-level probe. Continue cloud-only OPEN edges; do not publish Agents without explicit approval."
+}
