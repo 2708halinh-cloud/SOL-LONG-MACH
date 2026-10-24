@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T15:10:48.058Z",
+  "updated_at": "2026-10-24T15:12:54.172Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -4433,6 +4433,31 @@
       "next_callable_edge": "Use an authorized host route when available to read and hash WINDOWS_TICK_20261024T145654596476Z.json and check whether a later receipt exists; then confirm task state after 21:56:32+07. In parallel continue identifying the 8080 consumer, HWiNFO CSV carrier, and TESSERACT issuer/runner control surface.",
       "record_type": "WINDOWS_TICK_READBACK_WITH_NEWER_RECEIPT_PENDING_AND_INDEPENDENT_PROVIDER_READBACK",
       "previous_verified_tick_sha256": "76ED571E16DCA39B855834A40AECF8296266EFEA994BCEA3FDB457AB19E10C5F"
+    },
+    {
+      "id": "CLOUD_CONTINUITY_READBACK_20261024T2212ICT",
+      "observed_at": "2026-10-24T15:12:54.172Z",
+      "observed_at_local": "2026-10-24T22:12:54.171+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2212ICT.json",
+      "checkpoint_blob_sha": "029035d4f390006431e3d0517586fdae067277d0",
+      "checkpoint_commit": "2543955f1dc0d1d47519c3c091904283b275e7b2",
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+        "execution_id": "139",
+        "status": "success",
+        "receipt_table_id": "Sk0EFJK5NzWVpBvm",
+        "receipt_row_id": 288,
+        "receipt_event_id": "X20261024150024024_CLOUD",
+        "recovery_rows": 45,
+        "pending_rows": 45,
+        "state": "OPEN_WORK_REMAINS",
+        "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+        "host_heartbeat_probed": false,
+        "host_operations": 0,
+        "tasks_closed": 0
+      },
+      "result": "N8N_EXECUTION_139_AND_ROW_288_EXACT_READBACK_VERIFIED; OPEN_WORK_REMAINS; HOST_HEARTBEAT_NOT_PROBED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_PR6_OPEN"
     }
   ],
   "latest_sync_observation": {
@@ -4464,14 +4489,14 @@
     ]
   },
   "latest_runtime_observation": {
-    "id": "WINDOWS_TICK_READBACK_20261024T2210ICT",
-    "observed_at": "2026-10-24T15:10:48.058Z",
-    "observed_at_local": "2026-10-24T22:10:48.058+07:00",
-    "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2210ICT.json",
-    "checkpoint_blob_sha": "5dc4de54ca6baf9e6e0a68c6ecbb0051df2a6702",
-    "checkpoint_commit": "0f21db0a7563f78cb473a0d3e75ec708e276b4da",
-    "result": "VERIFIED_TICK_145135_RECEIPT_AND_SOURCE_HASH_MATCH; NEWER_RECEIPT_145654_LISTED_BUT_NOT_VERIFIED; XTIME_HTTP200_SOURCE_PRESENT; OLLAMA_HTTP200_11_MODELS; ADB_DEVICE_RESPONDS_BUT_RECENT_SENSOR_EVENTS_UNCHANGED_ACROSS_4S; CONSUMER_8080_UNVERIFIED_NO_LISTENER_OBSERVED; N8N_ROW284_VERIFIED; TESSERACT_PR6_OPEN",
-    "next_callable_edge": "Use an authorized host route when available to read and hash WINDOWS_TICK_20261024T145654596476Z.json and check whether a later receipt exists; then confirm task state after 21:56:32+07. In parallel continue identifying the 8080 consumer, HWiNFO CSV carrier, and TESSERACT issuer/runner control surface."
+    "id": "CLOUD_CONTINUITY_READBACK_20261024T2212ICT",
+    "observed_at": "2026-10-24T15:12:54.172Z",
+    "observed_at_local": "2026-10-24T22:12:54.171+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2212ICT.json",
+    "checkpoint_blob_sha": "029035d4f390006431e3d0517586fdae067277d0",
+    "checkpoint_commit": "2543955f1dc0d1d47519c3c091904283b275e7b2",
+    "result": "N8N_EXECUTION_139_AND_ROW_288_EXACT_READBACK_VERIFIED; OPEN_WORK_REMAINS; HOST_HEARTBEAT_NOT_PROBED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_PR6_OPEN",
+    "next_callable_edge": "Continue Windows Tick exact receipt/hash readback when host route returns; independently keep TESSERACT issuer/runner verification open."
   },
   "continuity_readback_history": [
     {
@@ -7441,19 +7466,35 @@
       "pending_rows": 45,
       "host_heartbeat_probed": false,
       "tasks_closed": 0
+    },
+    {
+      "id": "CLOUD_CONTINUITY_READBACK_20261024T2212ICT",
+      "observed_at": "2026-10-24T15:12:54.172Z",
+      "observed_at_local": "2026-10-24T22:12:54.171+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2212ICT.json",
+      "checkpoint_blob_sha": "029035d4f390006431e3d0517586fdae067277d0",
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "139",
+      "receipt_table_id": "Sk0EFJK5NzWVpBvm",
+      "receipt_row_id": 288,
+      "receipt_event_id": "X20261024150024024_CLOUD",
+      "state": "OPEN_WORK_REMAINS",
+      "pending_rows": 45,
+      "host_heartbeat_probed": false,
+      "tasks_closed": 0
     }
   ],
   "latest_continuity_readback": {
-    "observed_at": "2026-10-24T15:10:48.058Z",
-    "observed_at_local": "2026-10-24T22:10:48.058+07:00",
-    "record_type": "N8N_EXECUTION_138_EXACT_ROW_READBACK",
+    "observed_at": "2026-10-24T15:12:54.172Z",
+    "observed_at_local": "2026-10-24T22:12:54.171+07:00",
+    "record_type": "N8N_EXECUTION_139_EXACT_ROW_288_READBACK",
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
-    "execution_id": "138",
+    "execution_id": "139",
     "status": "success",
     "receipt_table_id": "Sk0EFJK5NzWVpBvm",
-    "receipt_row_id": 284,
-    "receipt_event_id": "X20261024144945910_CLOUD",
+    "receipt_row_id": 288,
+    "receipt_event_id": "X20261024150024024_CLOUD",
     "recovery_rows": 45,
     "pending_rows": 45,
     "state": "OPEN_WORK_REMAINS",
@@ -7461,9 +7502,9 @@
     "host_heartbeat_probed": false,
     "host_operations": 0,
     "tasks_closed": 0,
-    "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2210ICT.json",
-    "checkpoint_blob_sha": "5dc4de54ca6baf9e6e0a68c6ecbb0051df2a6702",
-    "checkpoint_commit": "0f21db0a7563f78cb473a0d3e75ec708e276b4da"
+    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2212ICT.json",
+    "checkpoint_blob_sha": "029035d4f390006431e3d0517586fdae067277d0",
+    "checkpoint_commit": "2543955f1dc0d1d47519c3c091904283b275e7b2"
   },
   "latest_reentry_observation": {
     "observed_at": "2026-10-24T17:12:36.227+07:00",
@@ -7558,16 +7599,16 @@
     "result": "NO_NEW_VERIFIED_RAW_ACCOUNT_EXPORT; DERIVED_CARRIERS_CLASSIFIED; CONTINUE_OTHER_OPEN_EDGES"
   },
   "latest_cloud_continuity_readback": {
-    "observed_at": "2026-10-24T15:10:48.058Z",
-    "observed_at_local": "2026-10-24T22:10:48.058+07:00",
-    "record_type": "N8N_EXECUTION_138_EXACT_ROW_READBACK",
+    "observed_at": "2026-10-24T15:12:54.172Z",
+    "observed_at_local": "2026-10-24T22:12:54.171+07:00",
+    "record_type": "N8N_EXECUTION_139_EXACT_ROW_288_READBACK",
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
-    "execution_id": "138",
+    "execution_id": "139",
     "status": "success",
     "receipt_table_id": "Sk0EFJK5NzWVpBvm",
-    "receipt_row_id": 284,
-    "receipt_event_id": "X20261024144945910_CLOUD",
+    "receipt_row_id": 288,
+    "receipt_event_id": "X20261024150024024_CLOUD",
     "recovery_rows": 45,
     "pending_rows": 45,
     "state": "OPEN_WORK_REMAINS",
@@ -7575,9 +7616,9 @@
     "host_heartbeat_probed": false,
     "host_operations": 0,
     "tasks_closed": 0,
-    "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2210ICT.json",
-    "checkpoint_blob_sha": "5dc4de54ca6baf9e6e0a68c6ecbb0051df2a6702",
-    "checkpoint_commit": "0f21db0a7563f78cb473a0d3e75ec708e276b4da"
+    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2212ICT.json",
+    "checkpoint_blob_sha": "029035d4f390006431e3d0517586fdae067277d0",
+    "checkpoint_commit": "2543955f1dc0d1d47519c3c091904283b275e7b2"
   },
   "cloud_continuity": {
     "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2117ICT.json",
@@ -8521,6 +8562,14 @@
       "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2210ICT.json",
       "checkpoint_blob_sha": "5dc4de54ca6baf9e6e0a68c6ecbb0051df2a6702",
       "result": "VERIFIED_TICK_145135_RECEIPT_AND_SOURCE_HASH_MATCH; NEWER_RECEIPT_145654_LISTED_BUT_NOT_VERIFIED; XTIME_HTTP200_SOURCE_PRESENT; OLLAMA_HTTP200_11_MODELS; ADB_DEVICE_RESPONDS_BUT_RECENT_SENSOR_EVENTS_UNCHANGED_ACROSS_4S; CONSUMER_8080_UNVERIFIED_NO_LISTENER_OBSERVED; N8N_ROW284_VERIFIED; TESSERACT_PR6_OPEN"
+    },
+    {
+      "id": "CLOUD_CONTINUITY_READBACK_20261024T2212ICT",
+      "observed_at": "2026-10-24T15:12:54.172Z",
+      "observed_at_local": "2026-10-24T22:12:54.171+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2212ICT.json",
+      "checkpoint_blob_sha": "029035d4f390006431e3d0517586fdae067277d0",
+      "result": "N8N_EXECUTION_139_AND_ROW_288_EXACT_READBACK_VERIFIED; OPEN_WORK_REMAINS; HOST_HEARTBEAT_NOT_PROBED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_PR6_OPEN"
     }
   ],
   "latest_tesseract_runner_issuer_probe": {
