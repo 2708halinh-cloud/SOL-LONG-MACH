@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T1843ICT.json. Verify the newest host tick and Scheduled Task after the elapsed 18:41:32 boundary on the next responsive read; do not run the task manually or change configuration. Keep live_sensor_reading_confirmed=false and Android unverified until independently proven. Continue cloud-safe OPEN edges; do not publish Agents without explicit approval.",
+  "next": "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T1843ICT.json. Latest agent validation is CURRENT_RUNTIME/AGENT_GATE_READBACK_20261024T1845ICT.json: all five drafts still require an explicit model and valid credential/binding; do not publish without explicit approval. On the next responsive host read, verify the newest tick and Scheduled Task after the elapsed 18:41:32 boundary; keep live_sensor_reading_confirmed=false and Android unverified until independently proven.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T11:43:07Z",
+  "updated_at": "2026-10-24T11:50:42.342Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -6917,5 +6917,23 @@
     "latest_compound_probe": "TIMED_OUT_NO_RESULT",
     "android_heartbeat": "UNVERIFIED",
     "task_status_changed": false
+  },
+  "latest_agent_gate_readback": {
+    "file": "CURRENT_RUNTIME/AGENT_GATE_READBACK_20261024T1845ICT.json",
+    "blob_sha": "0aa9d2e10ac056fae96be2e9236c0ce9d9c94e7a",
+    "commit": "bb3c4031aab2265a5408b7cdcfd35e153799f7d2",
+    "observed_at_utc": "2026-10-24T11:50:42.342Z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "draft_agents": 5,
+    "valid_agents": 0,
+    "missing_fields": [
+      "model",
+      "credential"
+    ],
+    "user_accessible_credentials": 0,
+    "gateway_credits_available": true,
+    "model_catalog_verified": false,
+    "published_agents": 0,
+    "result": "VALIDATION_CONFIRMED; NO_CONFIG_MUTATION; NO_PUBLICATION"
   }
 }
