@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-24T13:22:59.317+07:00",
+  "observed_at": "2026-10-24T13:28:30.166+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -67,7 +67,7 @@
     "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
     "state": "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
     "rule": "Do not overwrite existing Oct 09 local source metadata; do not call Dropbox CSV a working Windows Tick consumer; no raw sensor records or secrets committed; verify Windows Tick independently before closing.",
-    "last_observation": "2026-10-24T13:22:59.317+07:00",
+    "last_observation": "2026-10-24T13:28:30.166+07:00",
     "latest_verified_tick_receipt": {
       "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T045143119113Z.json",
       "observed_at_utc": "2026-10-24T04:51:43.119113Z",
@@ -98,11 +98,12 @@
       "w32time": "Stopped/Manual",
       "live_sensor_sample_confirmed": false,
       "latest_probe_attempt": {
-        "observed_at": "2026-10-24T13:22:59.317+07:00",
-        "remote_desktop_inventory": "One account reports ONLINE (last seen 8m); another account reports OFFLINE (last seen 92h); records kept distinct.",
-        "direct_host_read": "PENDING_OR_TIMEOUT",
+        "observed_at": "2026-10-24T13:28:30.166+07:00",
+        "remote_inventory": "ONLINE; last seen 13m ago",
+        "direct_host_read": "FAILED_TIMEOUT_NO_RESPONSE",
         "latest_tick_receipt_advanced": false,
-        "live_sensor_sample_confirmed": false
+        "live_sensor_sample_confirmed": false,
+        "next_action": "Use a different authorized carrier; do not retry the same timed-out read call."
       }
     }
   },
@@ -5737,6 +5738,55 @@
         "ci_rerun": false
       },
       "result": "DROPBOX_METADATA_AND_TESSERACT_SECURITY_BRANCH_READBACK_VERIFIED; WINDOWS_POST_11_56_TICK_NOT_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED"
+    },
+    {
+      "observed_at": "2026-10-24T13:28:30.166+07:00",
+      "observed_at_utc": "2026-10-24T06:28:30.166Z",
+      "record_type": "ADDITIVE_REMOTE_HOST_READ_TIMEOUT_CONFIRMED_TICK_NOT_ADVANCED",
+      "source": "Remote Desktop Commander get_tool_result confirmed read_file timeout; separate read-only PowerShell probe timed out; fresh Dropbox metadata and TESSERACT GitHub branch readback",
+      "device_carrier": {
+        "connector": "Remote Desktop Commander",
+        "device": "DESKTOP-86ITNQ4",
+        "latest_inventory": "ONLINE; last seen 13m ago",
+        "direct_calls": {
+          "start_process": "TIMEOUT_NO_RESPONSE",
+          "read_file_call_id": "89a9de65-c139-46ed-a896-3890bcd2323a",
+          "read_file_result": "FAILED_TIMEOUT_NO_RESPONSE",
+          "same_call_retried": false
+        },
+        "last_verified_tick_not_advanced": {
+          "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T045143119113Z.json",
+          "receipt_sha256": "1df0010ed2e7a2f4b84239adeafafa1a38c062e83a5bb5d7236c8efd57aad59d",
+          "task_last_run_local": "2026-10-24T11:51:33+07:00",
+          "source_bytes": 35389440,
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "live_sensor_reading_confirmed": false,
+          "interpretation": "Last verified receipt retained; no later tick or live sample inferred."
+        }
+      },
+      "dropbox_source": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "raw_bytes_downloaded": false
+      },
+      "tesseract_security_branch": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "branch": "security/repo-relative-read-containment-20261024",
+        "commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
+        "file_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d0",
+        "ahead_by": 2,
+        "behind_by": 0,
+        "route_target_symlink_regression_present": true,
+        "tests_executed": false,
+        "existing_pr_run_39994207477": "failure; six jobs failed or skipped; no artifacts",
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "HOST_READ_TIMEOUT_CONFIRMED; WINDOWS_TICK_NOT_REFRESHED; INDEPENDENT_TESSERACT_BRANCH_READBACK_VERIFIED; LIVE_STREAM_NOT_VERIFIED"
     }
   ],
   "privacy_policy": {
