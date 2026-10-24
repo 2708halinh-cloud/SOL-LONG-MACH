@@ -4409,6 +4409,28 @@
       "source_mutated": false,
       "credentials_committed": false,
       "open_tasks_closed": false
+    },
+    {
+      "id": "ANDROID_PROBE_ROUTE_FALLBACK_092905",
+      "kind": "READ_ONLY_ANDROID_SENSOR_PROBE_ROUTE_FALLBACK",
+      "observed_at": "2026-10-24T09:29:05.110+07:00",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "6b3cd10bf82b8e39f30cdbed13300077f4a6371c",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "5eba662f886caa9fda04af462d345348763da90d",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "881eed73757f9f80cb70681e793254647526f708",
+        "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276"
+      },
+      "actions_and_receipts": [
+        "Initial in-memory hash probe failed on unsupported SHA256.HashData method; command exited before completing the second snapshot and made no writes.",
+        "Switched to SHA256Managed.ComputeHash and completed two ADB dumpsys sensorservice reads successfully.",
+        "Recent Sensor events section was identical across six seconds; no fresh sensor sample claimed and no raw output persisted or returned."
+      ],
+      "result": "PROBE_ROUTE_RECOVERED_EVENT_SECTION_UNCHANGED_LIVE_SAMPLE_OPEN",
+      "source_mutated": false,
+      "credentials_committed": false,
+      "open_tasks_closed": false
     }
   ],
   "energy_protection_current": {
@@ -8066,6 +8088,53 @@
         }
       },
       "result": "WINDOWS_TICK_VERIFIED_SOURCE_HASH_MATCH; DEVICE_CLOCK_OFFSET_310_9S_OBSERVED_W32TIME_STOPPED_MANUAL; ANDROID_RECENT_SENSOR_EVENT_SECTION_UNCHANGED_LIVE_SAMPLE_OPEN; TESSERACT_PR6_OPEN_NO_CI_RERUN"
+    },
+    {
+      "recorded_at": "2026-10-24T09:29:05.110+07:00",
+      "recorded_at_utc": "2026-10-24T02:29:05.110Z",
+      "record_type": "ANDROID_SENSOR_PROBE_HASH_API_COMPATIBILITY_FALLBACK",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "6b3cd10bf82b8e39f30cdbed13300077f4a6371c",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "5eba662f886caa9fda04af462d345348763da90d",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "881eed73757f9f80cb70681e793254647526f708",
+        "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276"
+      },
+      "failed_attempt": {
+        "method": "[System.Security.Cryptography.SHA256]::HashData(...)",
+        "error": "Method invocation failed because System.Security.Cryptography.SHA256 does not contain a method named HashData.",
+        "consequence": "The read-only diagnostic exited before its second snapshot; no file or service was changed."
+      },
+      "recovery": {
+        "method": "SHA256Managed.ComputeHash in memory",
+        "adb_exit_codes": [
+          0,
+          0
+        ],
+        "snapshot_interval_seconds": 6,
+        "snapshot_line_counts": [
+          358,
+          358
+        ],
+        "whole_snapshot_changed": true,
+        "recent_event_section_line_counts": [
+          74,
+          74
+        ],
+        "recent_event_section_sha256": "6b6c2a563b33d10040685e8025fdd7f8317d1d35a94dcd64f943a28ab796196c",
+        "recent_event_section_changed": false,
+        "raw_sensor_output_persisted": false,
+        "raw_sensor_output_returned": false,
+        "live_sensor_sample_confirmed": false
+      },
+      "result": "PROBE_ROUTE_RECOVERED_READ_ONLY; EVENT_SECTION_UNCHANGED; LIVE_SENSOR_SAMPLE_NOT_CONFIRMED",
+      "invariants": {
+        "source_mutated": false,
+        "credentials_committed": false,
+        "raw_sensor_values_committed": false,
+        "open_tasks_closed": false
+      }
     }
   ]
 }
