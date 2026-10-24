@@ -2337,6 +2337,18 @@
       "replacement_patch_required": true,
       "task_closure": false
     },
+    "timebase_correction_current_source_probe_20261024": {
+      "observed_at": "2026-10-24T09:52:49+07:00",
+      "corrected_event_id": "CURRENT_SOURCE_PROBE_AND_PR24_DIVERGENCE_20261024T023944Z",
+      "exact_action_timestamp_available": false,
+      "observation_interval_utc": {
+        "lower_bound": "2026-10-24T02:39:44Z",
+        "upper_bound": "2026-10-24T02:48:01Z",
+        "upper_bound_basis": "GitHub provider created_at for commit 6ac89fed09b0f20bbcbafb8fc124690dc3a34b86"
+      },
+      "prior_record_rewritten": false,
+      "task_closure": false
+    },
     "pr25_replacement_patch_20261024": {
       "observed_at": "2026-10-24T09:48:50+07:00",
       "pr": 25,
@@ -5407,6 +5419,36 @@
         "statuses_preserved_from_current_main": true,
         "open_tasks_closed": false,
         "source_restoration_completed": false
+      }
+    },
+    {
+      "id": "STAMP_TIMEBASE_CORRECTION_CURRENT_SOURCE_PROBE_20261024T025232Z",
+      "record_type": "STAMP_TIMEBASE_CORRECTION_APPEND_ONLY",
+      "observed_at": "2026-10-24T09:52:49+07:00",
+      "observed_at_utc": "2026-10-24T02:52:49.007Z",
+      "corrected_event_id": "CURRENT_SOURCE_PROBE_AND_PR24_DIVERGENCE_20261024T023944Z",
+      "source_reads": {
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_correction": "91b3816749fbf0c5f92bc64d63bb47634fbbcd30",
+        "commit_with_original_event": "6ac89fed09b0f20bbcbafb8fc124690dc3a34b86"
+      },
+      "correction": {
+        "prior_observed_at": "2026-10-24T09:39:44+07:00",
+        "classification": "STAMP_OLD_AUTOMATION_TURN_START_NOT_EXACT_ACTION_TIME",
+        "exact_action_timestamp_available": false,
+        "defensible_observation_interval_utc": {
+          "lower_bound": "2026-10-24T02:39:44Z",
+          "upper_bound": "2026-10-24T02:48:01Z",
+          "upper_bound_basis": "GitHub provider created_at for commit 6ac89fed09b0f20bbcbafb8fc124690dc3a34b86"
+        },
+        "prior_record_rewritten": false,
+        "no_future_event_claimed": true
+      },
+      "result": "TIME_PRECISION_CORRECTED_APPEND_ONLY; ORIGINAL_SOURCE_PROBE_EVENT_PRESERVED",
+      "task_effect": {
+        "task_count": 28,
+        "task_ids_preserved": true,
+        "statuses_preserved": true,
+        "open_tasks_closed": false
       }
     },
     {
@@ -9296,6 +9338,26 @@
         "direct_drive_dropbox_takeout_action_available": false
       },
       "result": "NO_NEW_RAW_EXPORT_BYTES; STALE_PR24_BRANCH_AND_TASK_STATE_DIVERGENCE_OBSERVED; TASKS_REMAIN_OPEN"
+    },
+    {
+      "observed_at": "2026-10-24T09:52:49+07:00",
+      "observed_at_utc": "2026-10-24T02:52:49.007Z",
+      "record_type": "STAMP_TIMEBASE_CORRECTION_CURRENT_SOURCE_PROBE",
+      "corrected_event_id": "CURRENT_SOURCE_PROBE_AND_PR24_DIVERGENCE_20261024T023944Z",
+      "time_precision": {
+        "prior_observed_at": "2026-10-24T09:39:44+07:00",
+        "classification": "STAMP_OLD_AUTOMATION_TURN_START_NOT_EXACT_ACTION_TIME",
+        "exact_action_timestamp_available": false,
+        "defensible_observation_interval_utc": {
+          "lower_bound": "2026-10-24T02:39:44Z",
+          "upper_bound": "2026-10-24T02:48:01Z",
+          "upper_bound_basis": "GitHub provider created_at for commit 6ac89fed09b0f20bbcbafb8fc124690dc3a34b86"
+        },
+        "prior_record_rewritten": false,
+        "no_future_event_claimed": true
+      },
+      "result": "TIME_PRECISION_CORRECTED_APPEND_ONLY; ORIGINAL_SOURCE_PROBE_EVENT_PRESERVED",
+      "open_tasks_closed": false
     },
     {
       "observed_at": "2026-10-24T09:48:50+07:00",
