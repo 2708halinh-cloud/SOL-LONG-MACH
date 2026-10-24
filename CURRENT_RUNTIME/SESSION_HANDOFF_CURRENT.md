@@ -166,3 +166,12 @@ TESSERACT_OS 6D:
 - The Dropbox search tool rejected its schema when `link_id` was combined with search filters; this is a connector validation issue, not a negative source search. Continue using exact-path metadata/listing or another authorized route rather than repeating the same malformed search.
 - Historical expected raw ZIP SHA-256 remains `da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106`. The Dropbox bytes were not downloaded or hashed in this run; preserve the source task as OPEN and do not claim byte identity from matching metadata alone. No Google Drive write was made.
 - Next edge: obtain the raw ZIP through an authorized binary route and compare SHA-256 without exposing a temporary download URL in logs; separately follow the source-bound export-ready notices for JINEY/FUNIX/DAT_NGUYEN when an authorized mail/provider read route is available.
+
+
+## LIBRARY SOURCE_DIRECT_20261018 MANIFEST RECHECK — 2026-10-24T21:30:50+07:00
+
+- Read-only Library materialization of `SOL_PAST_SPACE_EXPLORER_20261018.html`: 40,810 bytes; SHA-256 `3721aa4681bfc7782ee40d6e482fe56fac5a3f24f2458ea24ed68b876d8d6830`.
+- Its embedded manifest identifies `SOURCE_DIRECT_20261018`, `source_origin=TEN_PRESERVED_UPLOADED_FILES`, `files_verifiable=10`, and explicitly retains the limitation `NO_RAW_JINEY_EXPORT_VERIFIED`.
+- Direct Library listing of the exact `SOURCE_DIRECT_20261018` folder returned 10 items, no pagination and no warning. All 10 original byte carriers were materialized read-only; every size and SHA-256 matched the embedded manifest (10/10).
+- This proves byte integrity of that preserved source set only. The set includes derived/tooling and reentry carriers; it does **not** prove an original OpenAI account export for JINEY, FUNIX or DAT NGUYEN was recovered. No source was moved, duplicated, rewritten or uploaded to GitHub; no task status changed.
+- Exact Drive/Dropbox/Takeout provider reads remain necessary to retrieve raw export bytes and provider object/revision metadata. No such provider operation is exposed by the currently callable tools in this run.
