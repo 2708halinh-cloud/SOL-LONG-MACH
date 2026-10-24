@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "At device clock 09:26:32+07, read the next exact tick receipt and task state. X-TIME is healthy but reports MODUAL source absent and no all-desktop source path; keep binding OPEN. W32Time remains Stopped/Manual with a measured ~311-second host/device offset, and the shell is non-elevated; do not change service/task settings without authorized elevation. Continue Android live-sample proof and TESSERACT issuer/runner checks; do not rerun CI without verified runner assignment change.",
+  "next": "The direct read-only host readback confirmed a newer tick at device clock 09:31:35+07 and task state Ready; its reported next run is 09:36:32+07 while the host clock trails the run-start reference. At the next reachable checkpoint, verify the next tick and a real sensor sample; Android TCP 192.168.1.14:5556 still does not respond and adb is absent. Keep all tasks OPEN/IN_PROGRESS; do not alter clock/task settings, source CSV, processes, cache, Meta.db, or Drive. Continue TESSERACT only after issuer key and runner entitlement are verified.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -157,7 +157,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T09:30:29.298+07:00",
+  "updated_at": "2026-10-24T09:36:13+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -2218,53 +2218,147 @@
         "status": "UNVERIFIED_NOT_SUCCESS"
       },
       "next_edge": "VERIFY_NEXT_HOST_TICK_AND_LIVE_SENSOR; RESOLVE_ANDROID_HEARTBEAT; CONTINUE_TESSERACT_ONLY_AFTER_ISSUER_KEY_AND_RUNNER_ENTITLEMENT_READBACK"
+    },
+    {
+      "observed_at_utc": "2026-10-24T02:36:13.000Z",
+      "source": "direct read-only secondary Remote Desktop Commander host readback + n8n execution 116 and table readback + GitHub main checkpoint",
+      "prior_checkpoint": {
+        "task_resume_pointer_blob_sha_before_write": "6e4a747f8a36389b7b4f8234171a5140d0540694",
+        "open_tasks_current_blob_sha": "81408996889f3772fcd1120e2bc904c9425dca91",
+        "github_head_before_write": "996143f37522a66747e68f015494109df9f3fe36",
+        "n8n_workflow_id": "BogzhFUDbRp7kuwh",
+        "n8n_execution_id": "116",
+        "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+        "continuity_evidence_table_id": "Sk0EFJK5NzWVpBvm",
+        "prior_evidence_rows": [
+          252
+        ]
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "connection": "ONLINE via secondary Remote Desktop Commander account; primary account devices offline",
+        "host_observed_at_utc": "2026-10-24T02:33:53.3540851Z",
+        "tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T023135187705Z.json",
+        "tick_observed_at_utc": "2026-10-24T02:31:35.187705Z",
+        "tick_sha256": "63E0B304C6E4F26E8BBE5E98196B70E914D7FC4C36E7331F54210568921EC0D3",
+        "scheduled_task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "task_state": "Ready",
+        "task_enabled": true,
+        "last_run_device_local": "2026-10-24T09:31:33+07:00",
+        "last_task_result": 0,
+        "next_run_device_local": "2026-10-24T09:36:32+07:00",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_last_write_utc": "2026-10-23T08:45:56.2458701Z",
+        "live_sensor_reading_confirmed": false,
+        "cloud_enabled": false,
+        "github_enabled": false,
+        "source_file_written": false,
+        "synthetic_rows_added": 0
+      },
+      "android": {
+        "adb_path": null,
+        "tcp_192_168_1_14_5556": false,
+        "device_off_state_inferred": false,
+        "heartbeat": "UNVERIFIED"
+      },
+      "n8n": {
+        "workflow_active": true,
+        "execution_id": "116",
+        "execution_status": "success",
+        "execution_started_at": "2026-10-24T02:00:22.081Z",
+        "execution_stopped_at": "2026-10-24T02:00:24.181Z",
+        "recovery_rows": 45,
+        "all_recovery_rows_still_nonterminal": true,
+        "tasks_closed": false,
+        "evidence_row_before_write": 252
+      },
+      "github": {
+        "head_before_write": "996143f37522a66747e68f015494109df9f3fe36",
+        "open_tasks_blob_sha": "81408996889f3772fcd1120e2bc904c9425dca91",
+        "open_task_objects": 28,
+        "ci_before_checkpoint_update": "UNVERIFIED; combined status empty and available PR-triggered run query empty"
+      },
+      "safety": {
+        "no_source_mutation": true,
+        "no_clock_or_task_change": true,
+        "no_process_termination": true,
+        "no_secret_readback_or_persistence": true,
+        "no_google_drive_write": true,
+        "no_task_status_changed": true
+      },
+      "next_edge": "VERIFY_NEXT_HOST_TICK_AFTER_DEVICE_REPORTED_2026-10-24T09:36:32+07:00; VERIFY_LIVE_SENSOR_SAMPLE; RESOLVE_ANDROID_HEARTBEAT; KEEP_ALL_TASKS_OPEN"
     }
   ],
   "latest_continuity_readback": {
-    "observed_at_utc": "2026-10-24T01:35:24.530Z",
-    "source": "fresh compare/readback after concurrent GitHub ledger append",
+    "observed_at_utc": "2026-10-24T02:36:13.000Z",
+    "source": "direct read-only secondary Remote Desktop Commander host readback + n8n execution 116 and table readback + GitHub main checkpoint",
     "prior_checkpoint": {
-      "task_resume_pointer_blob_sha_before_write": "ec4195a5b58602be752600ff571d2a37f4c960f3",
-      "open_tasks_current_blob_sha": "de74c3295c092723e7292c090ad283fc0fb73418",
-      "github_head_before_write": "29beb2cec47ce01c3f3ba46a000a59a6a0bfacdf",
+      "task_resume_pointer_blob_sha_before_write": "6e4a747f8a36389b7b4f8234171a5140d0540694",
+      "open_tasks_current_blob_sha": "81408996889f3772fcd1120e2bc904c9425dca91",
+      "github_head_before_write": "996143f37522a66747e68f015494109df9f3fe36",
       "n8n_workflow_id": "BogzhFUDbRp7kuwh",
-      "n8n_execution_id": "115",
+      "n8n_execution_id": "116",
       "recovery_table_id": "rSPFIOWbS7cfNJ8z",
       "continuity_evidence_table_id": "Sk0EFJK5NzWVpBvm",
-      "evidence_rows": [
-        247,
-        248,
-        249,
-        250
+      "prior_evidence_rows": [
+        252
       ]
     },
-    "concurrent_commit": {
-      "sha": "29beb2cec47ce01c3f3ba46a000a59a6a0bfacdf",
-      "message": "ledger: append fresh raw-carrier and TESSERACT provider readbacks",
-      "changed_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
-      "additions": 28,
-      "deletions": 0,
-      "tesseract_status": "OPEN_CARRIED; OPEN_NOT_PROVEN_COMPLETED",
-      "issuer_key_verified": false,
-      "runner_assignment_change_verified": false,
-      "ci_rerun": false
+    "windows": {
+      "device": "DESKTOP-86ITNQ4",
+      "connection": "ONLINE via secondary Remote Desktop Commander account; primary account devices offline",
+      "host_observed_at_utc": "2026-10-24T02:33:53.3540851Z",
+      "tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T023135187705Z.json",
+      "tick_observed_at_utc": "2026-10-24T02:31:35.187705Z",
+      "tick_sha256": "63E0B304C6E4F26E8BBE5E98196B70E914D7FC4C36E7331F54210568921EC0D3",
+      "scheduled_task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "task_state": "Ready",
+      "task_enabled": true,
+      "last_run_device_local": "2026-10-24T09:31:33+07:00",
+      "last_task_result": 0,
+      "next_run_device_local": "2026-10-24T09:36:32+07:00",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_last_write_utc": "2026-10-23T08:45:56.2458701Z",
+      "live_sensor_reading_confirmed": false,
+      "cloud_enabled": false,
+      "github_enabled": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0
     },
-    "status": {
-      "n8n_recovery_rows": 45,
-      "git_ledger_task_objects": 28,
-      "task_statuses_changed_by_this_readback": false,
-      "no_task_closed": true,
-      "android_heartbeat": "UNVERIFIED; adb missing; TCP 192.168.1.14:5556 false",
-      "host_tick_sha256": "635EF62C3DCD24872224A9104ECAD3707455302F99221A804212E115A3ECABD2",
-      "sensor_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-      "live_sensor_reading_confirmed": false
+    "android": {
+      "adb_path": null,
+      "tcp_192_168_1_14_5556": false,
+      "device_off_state_inferred": false,
+      "heartbeat": "UNVERIFIED"
     },
-    "ci": {
-      "current_head_status_entries": 0,
-      "queried_pr_workflow_runs": 0,
-      "status": "UNVERIFIED_NOT_SUCCESS"
+    "n8n": {
+      "workflow_active": true,
+      "execution_id": "116",
+      "execution_status": "success",
+      "execution_started_at": "2026-10-24T02:00:22.081Z",
+      "execution_stopped_at": "2026-10-24T02:00:24.181Z",
+      "recovery_rows": 45,
+      "all_recovery_rows_still_nonterminal": true,
+      "tasks_closed": false,
+      "evidence_row_before_write": 252
     },
-    "next_edge": "VERIFY_NEXT_HOST_TICK_AND_LIVE_SENSOR; RESOLVE_ANDROID_HEARTBEAT; CONTINUE_TESSERACT_ONLY_AFTER_ISSUER_KEY_AND_RUNNER_ENTITLEMENT_READBACK"
+    "github": {
+      "head_before_write": "996143f37522a66747e68f015494109df9f3fe36",
+      "open_tasks_blob_sha": "81408996889f3772fcd1120e2bc904c9425dca91",
+      "open_task_objects": 28,
+      "ci_before_checkpoint_update": "UNVERIFIED; combined status empty and available PR-triggered run query empty"
+    },
+    "safety": {
+      "no_source_mutation": true,
+      "no_clock_or_task_change": true,
+      "no_process_termination": true,
+      "no_secret_readback_or_persistence": true,
+      "no_google_drive_write": true,
+      "no_task_status_changed": true
+    },
+    "next_edge": "VERIFY_NEXT_HOST_TICK_AFTER_DEVICE_REPORTED_2026-10-24T09:36:32+07:00; VERIFY_LIVE_SENSOR_SAMPLE; RESOLVE_ANDROID_HEARTBEAT; KEEP_ALL_TASKS_OPEN"
   },
   "latest_reentry_observation": {
     "observed_at": "2026-10-24T09:30:29.298+07:00",
