@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Continue without resetting open tasks: poll existing Remote Desktop Commander read_file call 89a9de65-c139-46ed-a896-3890bcd2323a; do not repeat it while pending. If it returns, read the newest Windows Tick receipt and Scheduled Task and compare the exact source hash. Until then retain 11:51:33+07 as the last verified tick and do not infer live sensor data. Refresh X-TiMe/Ollama only through an actually reachable host route; prior health reads are historical for this turn. Continue TESSERACT issuer-key and runner-assignment discovery; the security branch is two commits ahead, zero behind, but Rust tests remain unrun. Do not rerun PR #6 CI without verified runner/entitlement change. Continue Android/HWiNFO carrier discovery independently. Preserve source history and keep all tasks OPEN.",
+  "next": "The direct host calls timed out; do not retry the same Remote Desktop Commander read_file call 89a9de65-c139-46ed-a896-3890bcd2323a. Keep 11:51:33+07 as the last verified Windows Tick and do not infer a later receipt or live sensor sample. Continue independent authorized work: refresh Dropbox metadata, inspect X-TiMe/Ollama only via a reachable route, and continue TESSERACT issuer-key/runner-assignment discovery. The security branch is two commits ahead and zero behind, but Rust tests remain unrun and PR #6 CI must not be rerun until a runner/entitlement change is verified. Continue Android/HWiNFO carrier discovery. Preserve history, source bytes, secrets, and all OPEN statuses.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -2262,6 +2262,42 @@
       },
       "result": "DROPBOX_METADATA_AND_TESSERACT_BRANCH_VERIFIED; WINDOWS_POST_BOUNDARY_TICK_AND_LIVE_STREAM_UNVERIFIED",
       "task_closure": false
+    },
+    {
+      "observed_at": "2026-10-24T13:27:42.303+07:00",
+      "observed_at_utc": "2026-10-24T06:27:42.303Z",
+      "record_type": "REMOTE_HOST_READ_TIMEOUT_CONFIRMED_SWITCH_TO_INDEPENDENT_CLOUD_BRANCH",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "5ba8c0babc7730311a88b0e5ff16e725e9aa1ef3",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_current": "0013174d1a8b862cf513bb6243a3464bffcac325",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_current": "24e54a069f3435e576cdbda3f5be597c8b80766b"
+      },
+      "windows": {
+        "direct_start_process": "TIMEOUT_NO_RESPONSE",
+        "direct_read_file": "FAILED_TIMEOUT_NO_RESPONSE",
+        "read_file_call_id": "89a9de65-c139-46ed-a896-3890bcd2323a",
+        "do_not_retry_same_call": true,
+        "latest_verified_tick_local": "2026-10-24T11:51:33+07:00",
+        "post_11_56_receipt_verified": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "independent_branch": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "branch": "security/repo-relative-read-containment-20261024",
+        "commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
+        "file_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d0",
+        "ahead_by": 2,
+        "behind_by": 0,
+        "existing_pr_run_39994207477": "failure; no artifacts",
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "tests_executed": false,
+        "ci_rerun": false
+      },
+      "result": "HOST_READ_TIMEOUT_CONFIRMED; CONTINUED_INDEPENDENT_TESSERACT_BRANCH_AND_GITHUB_READBACK; ALL_TASKS_OPEN",
+      "task_closure": false
     }
   ],
   "latest_sync_observation": {
@@ -3585,56 +3621,40 @@
     "next_edge": "Run the targeted test only on an authorized isolated Rust runner; continue source-export retrieval through an actual authorized provider byte path when available. Keep all objectives open."
   },
   "latest_reentry_observation": {
-    "observed_at": "2026-10-24T13:26:06.135+07:00",
-    "observed_at_utc": "2026-10-24T06:26:06.135Z",
-    "record_type": "REENTRY_PROVIDER_AND_TESSERACT_BRANCH_READBACK",
+    "observed_at": "2026-10-24T13:27:42.303+07:00",
+    "observed_at_utc": "2026-10-24T06:27:42.303Z",
+    "record_type": "REMOTE_HOST_READ_TIMEOUT_CONFIRMED_SWITCH_TO_INDEPENDENT_CLOUD_BRANCH",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "a5c70d75130528fd1195e062db8ec234710f1a10",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_readback": "0013174d1a8b862cf513bb6243a3464bffcac325",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_readback": "24e54a069f3435e576cdbda3f5be597c8b80766b",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_readback_blob_sha_at_observation": "a5c70d75130528fd1195e062db8ec234710f1a10"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "5ba8c0babc7730311a88b0e5ff16e725e9aa1ef3",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_current": "0013174d1a8b862cf513bb6243a3464bffcac325",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_current": "24e54a069f3435e576cdbda3f5be597c8b80766b"
     },
     "windows": {
-      "last_verified_run_local": "2026-10-24T11:51:33+07:00",
-      "last_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T045143119113Z.json",
+      "direct_start_process": "TIMEOUT_NO_RESPONSE",
+      "direct_read_file": "FAILED_TIMEOUT_NO_RESPONSE",
+      "read_file_call_id": "89a9de65-c139-46ed-a896-3890bcd2323a",
+      "do_not_retry_same_call": true,
+      "latest_verified_tick_local": "2026-10-24T11:51:33+07:00",
       "post_11_56_receipt_verified": false,
-      "direct_host_read": "PENDING_OR_TIMEOUT",
       "live_sensor_reading_confirmed": false
     },
-    "dropbox": {
-      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
-      "rev": "0165dc1e4794ab00000000395cdfd73",
-      "size_bytes": 35389440,
-      "server_modified_utc": "2026-10-14T00:20:03Z",
-      "metadata_readback": true,
-      "raw_bytes_downloaded": false
-    },
-    "remote_desktop_accounts": {
-      "primary": "ONLINE; last seen 8m ago",
-      "alternate": "OFFLINE; last seen 92h ago",
-      "records_distinct": true
-    },
-    "tesseract": {
-      "repo": "2708halinh-cloud/x-time-web",
+    "independent_branch": {
+      "repository": "2708halinh-cloud/x-time-web",
       "branch": "security/repo-relative-read-containment-20261024",
       "commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
-      "file_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d",
+      "file_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d0",
       "ahead_by": 2,
       "behind_by": 0,
-      "tests_executed": false,
-      "pr6_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-      "pr6_run_39994207477": "failure; six jobs failed or skipped; no artifacts",
-      "pr6_run_39994207667": "failure; no rerun",
+      "existing_pr_run_39994207477": "failure; no artifacts",
       "issuer_public_key_verified": false,
       "runner_assignment_change_verified": false,
+      "tests_executed": false,
       "ci_rerun": false
     },
-    "result": "DROPBOX_METADATA_AND_TESSERACT_BRANCH_VERIFIED; WINDOWS_POST_BOUNDARY_TICK_AND_LIVE_STREAM_UNVERIFIED",
-    "task_closure": false,
-    "source": "Fresh GitHub and Library source readback; archive hashes verified; pointer checkpoint reconciled after sequential writes",
-    "latest_checkpoint_update_commit_sha": "ad3c6543113961f525dc6cdecc519c3a42639052"
+    "result": "HOST_READ_TIMEOUT_CONFIRMED; CONTINUED_INDEPENDENT_TESSERACT_BRANCH_AND_GITHUB_READBACK; ALL_TASKS_OPEN",
+    "task_closure": false
   },
   "latest_security_patch_observation": {
     "observed_at": "2026-10-24T12:08:50+07:00",
