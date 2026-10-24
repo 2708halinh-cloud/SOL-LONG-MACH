@@ -2,8 +2,8 @@
   "schema": "SOL_OPEN_TASKS_PARALLEL_LEDGER/1.0",
   "provenance": {
     "user_directive": "2026-10-21: TẤT CẢ YÊU CẦU CHƯA HOÀN THÀNH PHẢI NEO GIỮ, KHÔNG CHUYỂN QUA LÀM MỘT VIỆC XONG DỪNG LẠI",
-    "observed_at": "2026-10-24T11:59:30.468+07:00",
-    "source": "Current conversation + fresh Windows host receipt/hash readback, provider probes, and GitHub source/PR readback",
+    "observed_at": "2026-10-24T12:08:50+07:00",
+    "source": "Current conversation + fresh GitHub source/branch readback; append-only TESSERACT route-symlink regression; no provider/host readback",
     "not_exhaustive_history": true,
     "historical_backfill": "2026-10-21: 14 additional user requests indexed from earlier conversation sources; provider states must be rechecked before action or closure"
   },
@@ -776,6 +776,19 @@
           "result": "SYMLINK_ESCAPE_CONTAINMENT_PATCH_EXACT_READBACK_STATIC_REVIEW_RECORDED_TESTS_NOT_RUN_PR6_UNCHANGED",
           "next_callable_edge": "Run the regression and Rust suite only on an authorized isolated runner; obtain the real issuer public key from an authorized issuer/control surface and verify runner entitlement before any CI rerun or PR update.",
           "status_effect": "Keep OPEN_CARRIED; branch readback is not test proof and PR #6 remains unchanged."
+        },
+        {
+          "observed_at": "2026-10-24T12:08:50+07:00",
+          "source": "Fresh GitHub source mutation and exact-target readback on the isolated TESSERACT security branch",
+          "actions_and_receipts": [
+            "Read TESSERACT_DESKTOP/src-tauri/src/main.rs at blob 8a3cf9368898ce5782201dd73264f6e363fab424 on security/repo-relative-read-containment-20261024.",
+            "Added a Unix regression case to repo_relative_loaders_reject_symlink_escape: a route pointer resolves to CONFIG/AGENTS_LOAD_ROUTE.json whose symlink points outside the repository; resolve_repo_relative_file must reject it with OUTSIDE_ROOT.",
+            "GitHub commit 14d90afaf20d1d37f6263b02f80fd0fec6180c0c; exact branch file readback returned blob 96e6464f85b9a1fc9e513a4dc468cdeea50962d0 and the added assertion was present.",
+            "No workflow or PR was triggered. This environment has no rustc/cargo; the test has not been executed."
+          ],
+          "result": "ROUTE_TARGET_SYMLINK_ESCAPE_REGRESSION_ADDED_AND_READ_BACK; TEST_NOT_RUN",
+          "next_callable_edge": "Run the targeted Rust regression on an authorized isolated runner without triggering PR #6 CI; obtain issuer public key and runner entitlement through authorized control surfaces. Keep PR #6 and this task open.",
+          "status_effect": "Keep status OPEN_CARRIED and real_execution_status OPEN_NOT_PROVEN_COMPLETED. A test-only source commit and readback do not prove the runtime fix; no task closed."
         }
       ]
     },
