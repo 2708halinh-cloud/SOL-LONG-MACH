@@ -6505,6 +6505,44 @@
       "result": "BUILD_TIME_ISSUER_VARIABLE_REFERENCE_VERIFIED;REAL_KEY_VALUE_AND_RUNNER_ASSIGNMENT_UNVERIFIED",
       "action": "TRACE_TESSERACT_ISSUER_KEY_WIRING_WITHOUT_SECRET_READ_OR_CI_RERUN",
       "observation_type": "INDEPENDENT_BRANCH_READBACK"
+    },
+    {
+      "id": "ARCHIVE_PR28_TOPOLOGY_VERIFICATION_20261025T0518ICT",
+      "observed_at": "2026-10-25T05:18:01+07:00",
+      "observed_at_utc": "2026-10-24T22:18:01Z",
+      "source": "Post-fix PR #28 head, workflow jobs and branch comparison readback.",
+      "checkpoint_file": "CURRENT_RUNTIME/ARCHIVE_PR28_TOPOLOGY_VERIFICATION_20261025T0518ICT.json",
+      "checkpoint_blob_sha": "b7df83ab9562f179706a9cd2ce1dc66edb46cc3d",
+      "checkpoint_commit": "eb0d62c6da7747da45bac252209fd3d5f77f9115",
+      "ledger_commit": "78fe534fb4ae8dd9c42ad04109724d337f856aea",
+      "pr": 28,
+      "head": "945eeca3419be2b7151d5761eb5aadfa65c31434",
+      "topology_run": {
+        "id": 40138464127,
+        "conclusion": "success"
+      },
+      "archive_adapter_run": {
+        "id": 40138464130,
+        "conclusion": "success"
+      },
+      "secret_guard_run": {
+        "id": 40138464176,
+        "conclusion": "success"
+      },
+      "branch_compare": {
+        "status": "diverged",
+        "ahead_by": 8,
+        "behind_by": 65,
+        "mergeable": false
+      },
+      "pr_state": "open",
+      "draft": true,
+      "merged": false,
+      "force_push": false,
+      "tasks_closed": 0,
+      "result": "TOPOLOGY_TEST_PASS;ARCHIVE_ADAPTERS_PASS;SECRET_GUARD_PASS;PR_REMAINS_DIVERGED_AND_OPEN",
+      "action": "VERIFY_POST_FIX_ARCHIVE_CI_AND_PRESERVE_BRANCH_DIVERGENCE_GUARD",
+      "observation_type": "INDEPENDENT_BRANCH_VERIFICATION"
     }
   ],
   "latest_sync_observation": {
@@ -9697,20 +9735,22 @@
     "source_reads_before_write": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "823524c1ad256e33f5df40f537159556e56d43b1",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "9f70c88f09e101ea1cb9eb3996f959d8fbaa0e29",
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "a1bae4c5d349c4240c093f45e5b85319576cc0fa",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "f68260835b4e0a0ce843398ba12e2e0f4aad801b",
       "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "da4edd17c31dbe9e6898a5617d6f493dfa335dcb"
     },
-    "action": "Read TESSERACT PR #6 exact current-head Rust verifier, CI variable reference and WORK_CHECKPOINT; confirmed fail-closed build-time key path; appended readback evidence to source ledger and resume pointer without reading secrets or rerunning CI.",
-    "outcome": "ISSUER_VARIABLE_REFERENCE_VERIFIED;ACTUAL_KEY_AND_RUNNER_UNVERIFIED;CI_NOT_RERUN;ALL_TASKS_OPEN",
-    "checkpoint_file": "CURRENT_RUNTIME/TESSERACT_ISSUER_WIRING_READBACK_20261025T0518ICT.json",
-    "checkpoint_blob_sha": "cc2ff92d6809010e542648a2e3e4b0907c0bd663",
-    "checkpoint_commit": "6b7fc978e73824b0d62513e343fd4813baee6a26",
+    "action": "Fresh-read mandatory source and provider states; fixed the over-strict Archive PR #28 topology test after reading the exact CI failure; exact-read the corrected test; verified the new head's topology, archive-adapter and secret-guard jobs all succeeded; compared branch divergence.",
+    "outcome": "ARCHIVE_PR28_TOPOLOGY_AND_ADAPTERS_PASS;SECRET_GUARD_PASS;BRANCH_8_AHEAD_65_BEHIND;PR_OPEN_NO_MERGE;ALL_TASKS_OPEN",
+    "checkpoint_file": "CURRENT_RUNTIME/ARCHIVE_PR28_TOPOLOGY_VERIFICATION_20261025T0518ICT.json",
+    "checkpoint_blob_sha": "b7df83ab9562f179706a9cd2ce1dc66edb46cc3d",
+    "checkpoint_commit": "eb0d62c6da7747da45bac252209fd3d5f77f9115",
     "source_reads_after_other_writes": {
-      "OPEN_TASKS_CURRENT.json": "9f70c88f09e101ea1cb9eb3996f959d8fbaa0e29",
+      "OPEN_TASKS_CURRENT.json": "f68260835b4e0a0ce843398ba12e2e0f4aad801b",
       "MODUAL_PARAMETER_CURRENT.json": "da4edd17c31dbe9e6898a5617d6f493dfa335dcb",
       "PROVIDER_READBACK_20261025T0518ICT.json": "ebea79cc9e6da2c7713b4b9b295011ff67342066",
-      "ARCHIVE_PR28_TOPOLOGY_FIX_20261025T0518ICT.json": "03101b05e9443d19ff182b1f3e6f72eec3dabf76"
+      "ARCHIVE_PR28_TOPOLOGY_FIX_20261025T0518ICT.json": "03101b05e9443d19ff182b1f3e6f72eec3dabf76",
+      "TESSERACT_ISSUER_WIRING_READBACK_20261025T0518ICT.json": "cc2ff92d6809010e542648a2e3e4b0907c0bd663",
+      "ARCHIVE_PR28_TOPOLOGY_VERIFICATION_20261025T0518ICT.json": "b7df83ab9562f179706a9cd2ce1dc66edb46cc3d"
     }
   },
   "latest_security_patch_observation": {
@@ -12522,5 +12562,29 @@
     "checkpoint_file": "CURRENT_RUNTIME/TESSERACT_ISSUER_WIRING_READBACK_20261025T0518ICT.json",
     "checkpoint_blob_sha": "cc2ff92d6809010e542648a2e3e4b0907c0bd663",
     "tasks_closed": 0
+  },
+  "latest_archive_topology_verification_20261025T0518ICT": {
+    "observed_at": "2026-10-25T05:18:01+07:00",
+    "pr": 28,
+    "head": "945eeca3419be2b7151d5761eb5aadfa65c31434",
+    "topology_run": 40138464127,
+    "topology_conclusion": "success",
+    "archive_adapter_run": 40138464130,
+    "archive_adapter_conclusion": "success",
+    "secret_guard_run": 40138464176,
+    "secret_guard_conclusion": "success",
+    "branch_compare": {
+      "status": "diverged",
+      "ahead_by": 8,
+      "behind_by": 65,
+      "mergeable": false
+    },
+    "pr_state": "open",
+    "draft": true,
+    "merged": false,
+    "force_push": false,
+    "tasks_closed": 0,
+    "checkpoint_file": "CURRENT_RUNTIME/ARCHIVE_PR28_TOPOLOGY_VERIFICATION_20261025T0518ICT.json",
+    "checkpoint_blob_sha": "b7df83ab9562f179706a9cd2ce1dc66edb46cc3d"
   }
 }
