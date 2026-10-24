@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Use an authorized alternate host route to read the exact Scheduled Task and newest Windows Tick receipt after 16:56:32+07; retain 09:52:03Z as the latest verified receipt until a newer one is read back. Continue HWiNFO/Android carrier discovery. Obtain the real TESSERACT issuer public key through an authorized control surface and verify runner assignment before any CI rerun. Preserve all 28 GitHub tasks and all 45 n8n recovery rows.",
+  "next": "Obtain the real TESSERACT issuer public key through an authorized control surface and verify runner assignment before any CI rerun. Continue Windows Tick exact-target readback after the 16:56:32+07 boundary through an authorized host route; latest verified receipt remains 2026-10-24T09:52:03.879982Z until a newer one is read back. Continue HWiNFO/Android carrier discovery and preserve all 28 GitHub tasks and 45 n8n recovery rows.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T17:04:39.360+07:00",
+  "updated_at": "2026-10-24T17:09:13.025+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -149,7 +149,7 @@
       "MODUAL_SENSOR_LOGS_ROUTING": "WINDOWS_TICK_095203_RECEIPT_AND_SOURCE_HASH_VERIFIED; NEXT_TICK_READBACK_NOT_VERIFIED; LIVE_STREAM_UNVERIFIED",
       "ANDROID_OLLAMA_LOCALHOST_CHAT_UI": "OLLAMA_HTTP_200_11_MODELS; ANDROID_TCP_5556_FALSE; HEARTBEAT_UNVERIFIED",
       "XTIME_LOCAL_RUNTIME": "HTTP_200_MODUAL_SOURCE_PRESENT; LIVE_DEVICE_PROVEN_FALSE",
-      "INHERITED_TESSERACT_DESKTOP": "PR6_OPEN; CURRENT_HEAD_RUNS_FAILED_NO_ARTIFACTS; ISSUER_AND_RUNNER_UNVERIFIED; NO_RERUN",
+      "INHERITED_TESSERACT_DESKTOP": "PR6_OPEN_HEAD_5312816; REPO_CODE_SEARCH_ZERO_MATCHES_FOR_ISSUER_MARKERS; AUTHORIZED_ISSUER_KEY_AND_RUNNER_ASSIGNMENT_UNVERIFIED; NO_CI_RERUN",
       "HWINF0_SHARED_MEMORY": "CSV_PRESENT_39922785_BYTES_STALE_SINCE_2026_10_21; LIVE_STREAM_UNCONFIRMED",
       "WINDOWS_TIME": "W32TIME_STOPPED_MANUAL_NO_CHANGE"
     }
@@ -3738,6 +3738,62 @@
       "source_mutated": false,
       "tasks_closed": false,
       "ci_rerun": false
+    },
+    {
+      "observed_at": "2026-10-24T17:09:13.025+07:00",
+      "record_type": "TESSERACT_ISSUER_SEARCH_ALT_CONNECTOR_READBACK",
+      "github_search": {
+        "exact_variable_query": "XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64 repo:2708halinh-cloud/x-time-web",
+        "exact_variable_total_count": 0,
+        "exact_variable_incomplete_results": false,
+        "ed25519_issuer_query": "ed25519 issuer repo:2708halinh-cloud/x-time-web",
+        "ed25519_issuer_total_count": 0,
+        "ed25519_issuer_incomplete_results": false,
+        "interpretation": "No matching indexed code results; this does not prove the key is absent from authorized secret/control surfaces."
+      },
+      "alternate_connector": {
+        "connector": "desktopcommande",
+        "inventory_readback": true,
+        "devices": [
+          {
+            "name": "localhost",
+            "status": "OFFLINE",
+            "last_seen": "21h ago"
+          },
+          {
+            "name": "DESKTOP-86ITNQ4",
+            "status": "OFFLINE",
+            "last_seen": "96h ago"
+          },
+          {
+            "name": "DESKTOP-86ITNQ4",
+            "status": "OFFLINE",
+            "last_seen": "322h ago"
+          }
+        ],
+        "cross_connector_discrepancy": "Remote Desktop Commander had direct host access and reported DESKTOP-86ITNQ4 online earlier this turn; do not infer physical device state from this account's stale inventory."
+      },
+      "tesseract": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "state": "OPEN_NOT_MERGED",
+        "current_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "current_head_runs": [
+          39994207477,
+          39994207667
+        ],
+        "runs_failed_without_artifacts": true,
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "exact_target_readback": true,
+      "ci_rerun": false,
+      "tasks_closed": false,
+      "source_reads_after_modual_and_open_write": {
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "d8f049e94e4b70400a75757b2d337600d8a46a65",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "3b45c27c99b2e65b64fa1523f7d58cba573a58a4"
+      }
     }
   ],
   "latest_sync_observation": {
@@ -6546,20 +6602,20 @@
     "next_edge": "After 15:46:32+07, read the newest exact Windows tick and recompute the source SHA; if the telemetry task again returns 0x41306 or no tick appears, inspect telemetry_buffer_sync.py and task execution history read-only (Task Scheduler Operational log is disabled) without changing task settings or terminating processes. Preserve the 45 n8n recovery rows and 28 GitHub task ledger independently. X-TIME confirms the source file is present but live_device_proven=false; do not claim live sensor activity. Android heartbeat remains unverified. Continue only cloud-safe OPEN tasks; do not publish agents without valid model/credential binding and explicit approval."
   },
   "latest_reentry_observation": {
-    "observed_at": "2026-10-24T17:04:39.360+07:00",
-    "observed_at_utc": "2026-10-24T10:04:39Z",
+    "observed_at": "2026-10-24T17:09:13.025+07:00",
+    "observed_at_utc": "2026-10-24T10:09:13Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "454a5c6618806ec0b5f799671acf8833868fa982",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "4af9ef52c0b12964282a633ac097d9d75a6a413d",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "56af1ab986af1146d0e5bb757f0fecf352e0c4c4"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "d1f9de6b8d52acb0b596edb02ca414c71e2d7ab4",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "cfefd77820664cbbd6432264b222e565de48ea75",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "ce669477b33e4afb5180180ef1b893ca59e6d4de"
     },
-    "action": "Fresh-read all required sources, executed Braid, verified Windows tick receipt/source hash, ran and read back n8n continuity scan, and refreshed provider status.",
-    "outcome": "PARTIAL_PROGRESS; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+    "action": "Repository issuer-key code search and alternate connector inventory readback after the Windows host's post-boundary probe failed internally.",
+    "outcome": "ISSUER_PUBLIC_KEY_NOT_VERIFIED_BY_REPOSITORY_CODE_SEARCH; ALTERNATE_CONNECTOR_INVENTORY_STALE; PR6_OPEN; NO_CI_RERUN",
     "source_reads_after_write": {
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "ce669477b33e4afb5180180ef1b893ca59e6d4de",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "cfefd77820664cbbd6432264b222e565de48ea75"
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "d8f049e94e4b70400a75757b2d337600d8a46a65",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "3b45c27c99b2e65b64fa1523f7d58cba573a58a4"
     }
   },
   "latest_security_patch_observation": {
