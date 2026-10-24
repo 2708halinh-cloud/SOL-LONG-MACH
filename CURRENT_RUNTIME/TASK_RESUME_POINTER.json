@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "MODUAL: next Tick boundary is 23:21:32+07 (the latest readback at 23:17 still showed next run 23:21:32; obtain the newest receipt and direct CSV hash). X-TIME's actual start_xtime_local.cmd sets HOST=127.0.0.1 and PORT=8769, with MODUAL_CSV_PATH=D:\\SENSOR_LOGS\\windows_SENSON.CSV. At 23:21:20–23:21:58, /api/health and /api/modual/schema returned HTTP 200, source_present=true, 35,389,440 bytes, 354 headers/353 non-empty, but live_device_proven=false. /api/sensorimotor and filesystem endpoint returned HTTP 200; filesystem watcher reported 19 baseline files, 39 native events, 27 emitted events, 18 self-causal events, 28 recent events. /api/all-desktop/sensorimotor returned HTTP 200 but source_present=false and SOURCE_PATH_OPEN_EVENT_BUS_READY. Keep X-TIME loopback-only; do not treat filesystem/state-delta events as live sensor data. Continue HWiNFO/Android genuine sample verification, TESSERACT issuer/runner verification (no CI rerun absent runner change), and cloud continuity (execution 141 row 290, 45 pending).",
+  "next": "MODUAL: the previously scheduled Tick boundary 2026-10-24T23:26:32+07 has passed; obtain the newest exact Windows Tick receipt and recompute the direct CSV SHA-256 through an authorized host/provider connector before promoting any live-stream state. X-TIME stays loopback-only at 127.0.0.1:8769; filesystem events are not sensor readings. TESSERACT Desktop PR #6 is open and draft at head 5312816d5fe2b22e92302211b67f916b88a6fe14; security branch is 5 commits ahead but isolated. Keep PR open/draft until authorized issuer public key and current-head TRUE CI readback exist; do not rerun CI absent verified runner-state change. Continue raw export retrieval only via authorized Drive/Dropbox/Takeout or an existing verified raw carrier. Preserve all OPEN tasks and all 45 recovery rows.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T16:21:58.7377801Z",
+  "updated_at": "2026-10-24T16:44:01Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -4972,6 +4972,43 @@
       "raw_sensor_data_committed": false,
       "credentials_committed": false,
       "service_or_task_configuration_changed": false
+    },
+    {
+      "observed_at": "2026-10-24T23:44:01+07:00",
+      "record_type": "TESSERACT_PR6_DRAFT_SAFETY_HOLD_AND_SECURITY_BRANCH_COMPARE",
+      "repository": "2708halinh-cloud/x-time-web",
+      "pr_number": 6,
+      "pr_state": "open",
+      "merged": false,
+      "draft": true,
+      "pr_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "base_metadata_sha": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
+      "current_head_runs": [
+        {
+          "run_id": 39994207477,
+          "workflow": "tesseract-desktop-ci",
+          "conclusion": "failure",
+          "artifacts": []
+        },
+        {
+          "run_id": 39994207667,
+          "workflow": "validate-x-time",
+          "conclusion": "failure",
+          "artifacts": []
+        }
+      ],
+      "security_branch": "security/repo-relative-read-containment-20261024",
+      "security_branch_head": "2e0d8c633f3bf2e7f48ea91ef34a2c1682393ced",
+      "security_main_rs_blob": "7b7f90ffe7b9996254d9f690a3575656185d49dd",
+      "compare_to_pr_head": {
+        "ahead_by": 5,
+        "behind_by": 0
+      },
+      "workflow_run_for_security_head": "none_returned",
+      "rust_tests": "NOT_RUN",
+      "issuer_public_key": "UNVERIFIED",
+      "runner_assignment_or_entitlement": "UNVERIFIED",
+      "action": "Converted PR #6 to draft; readback confirms open/unmerged/draft=true. No CI rerun and no task closure."
     }
   ],
   "latest_sync_observation": {
@@ -8074,23 +8111,41 @@
     }
   },
   "latest_security_patch_observation": {
-    "stamp_class": "STAMP_LIVE",
-    "observed_at": "2026-10-24T23:10:20+07:00",
+    "observed_at": "2026-10-24T23:44:01+07:00",
+    "record_type": "TESSERACT_PR6_DRAFT_SAFETY_HOLD_AND_SECURITY_BRANCH_COMPARE",
     "repository": "2708halinh-cloud/x-time-web",
-    "branch": "security/repo-relative-read-containment-20261024",
-    "commit": "2e0d8c633f3bf2e7f48ea91ef34a2c1682393ced",
-    "file": "TESSERACT_DESKTOP/src-tauri/src/main.rs",
-    "file_blob_sha": "7b7f90ffe7b9996254d9f690a3575656185d49dd",
-    "change": "Canonicalize the resume checkpoint candidate before file-type inspection; reject external canonical targets, require a regular file before reading, preserve NOT_PRESENT only for canonicalization NotFound; add Unix regression for checkpoint symlink to an external directory.",
-    "readback": "GitHub branch endpoint reports this exact commit as branch head; fetched file blob matches write result and content comparison.",
-    "validation": {
-      "rust_tests_executed": false,
-      "reason": "No authorized Rust runner/toolchain available in this turn.",
-      "workflow_runs_for_commit": [],
-      "ci_triggered": false
+    "pr_number": 6,
+    "pr_state": "open",
+    "merged": false,
+    "draft": true,
+    "pr_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "base_metadata_sha": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
+    "current_head_runs": [
+      {
+        "run_id": 39994207477,
+        "workflow": "tesseract-desktop-ci",
+        "conclusion": "failure",
+        "artifacts": []
+      },
+      {
+        "run_id": 39994207667,
+        "workflow": "validate-x-time",
+        "conclusion": "failure",
+        "artifacts": []
+      }
+    ],
+    "security_branch": "security/repo-relative-read-containment-20261024",
+    "security_branch_head": "2e0d8c633f3bf2e7f48ea91ef34a2c1682393ced",
+    "security_main_rs_blob": "7b7f90ffe7b9996254d9f690a3575656185d49dd",
+    "compare_to_pr_head": {
+      "ahead_by": 5,
+      "behind_by": 0
     },
-    "status_effect": "No task closure; patch remains untested and isolated from PR #6.",
-    "next": "Run targeted Rust regression and cargo test on an authorized isolated runner; obtain actual issuer public key and verify runner entitlement through authorized control surfaces."
+    "workflow_run_for_security_head": "none_returned",
+    "rust_tests": "NOT_RUN",
+    "issuer_public_key": "UNVERIFIED",
+    "runner_assignment_or_entitlement": "UNVERIFIED",
+    "action": "Converted PR #6 to draft; readback confirms open/unmerged/draft=true. No CI rerun and no task closure."
   },
   "latest_source_export_probe": {
     "observed_at": "2026-10-24T23:10:20+07:00",
