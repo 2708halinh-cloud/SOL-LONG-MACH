@@ -2,8 +2,8 @@
   "schema": "SOL_OPEN_TASKS_PARALLEL_LEDGER/1.0",
   "provenance": {
     "user_directive": "2026-10-21: TẤT CẢ YÊU CẦU CHƯA HOÀN THÀNH PHẢI NEO GIỮ, KHÔNG CHUYỂN QUA LÀM MỘT VIỆC XONG DỪNG LẠI",
-    "observed_at": "2026-10-24T22:12:54.171+07:00",
-    "source": "Fresh Library byte probe + GitHub source search; append-only evidence for R-014 source recovery and TESSERACT Art source identity; no task closure.",
+    "observed_at": "2026-10-24T23:09:40+07:00",
+    "source": "Fresh GitHub security-branch patch/readback and Library source-trace readback; append-only evidence for checkpoint symlink containment and raw-export retrieval; no task closure.",
     "not_exhaustive_history": true,
     "historical_backfill": "2026-10-21: 14 additional user requests indexed from earlier conversation sources; provider states must be rechecked before action or closure"
   },
@@ -860,6 +860,21 @@
           "result": "RESUME_CHECKPOINT_DRIVE_PATH_REJECTED_BEFORE_PROBE; REGRESSION_ADDED; RUST_TESTS_NOT_RUN",
           "next_callable_edge": "Obtain the actual issuer public key and verify hosted runner assignment/entitlement through authorized control surfaces; then run cargo test on an authorized isolated runner and read back the exact tested head.",
           "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED. Source edit/readback is not runtime test or task completion."
+        },
+        {
+          "observed_at": "2026-10-24T23:09:40+07:00",
+          "source": "Fresh GitHub source edit/readback on isolated TESSERACT security branch + fresh ChatGPT Library search/readback; no runtime execution",
+          "actions_and_receipts": [
+            "Read TESSERACT_DESKTOP/src-tauri/src/main.rs on security/repo-relative-read-containment-20261024 at prior blob 1f010f1577a6683b45b64c881117caafceda604c. Found local_resume_checkpoint called Path::is_file() on the joined checkpoint path before canonical-root containment; an external symlink to a directory could therefore be treated as NOT_PRESENT instead of being rejected as outside root.",
+            "Changed local_resume_checkpoint to validate the relative path first, canonicalize the root and candidate before file-type inspection, return NOT_PRESENT only when canonicalization reports NotFound, reject a resolved target outside the canonical root, and require a regular file before reading.",
+            "Added a Unix regression case for a checkpoint symlink pointing to an external directory. Commit 2e0d8c633f3bf2e7f48ea91ef34a2c1682393ced; branch API readback confirms this exact commit is the current branch head. File blob after readback 7b7f90ffe7b9996254d9f690a3575656185d49dd; content equality and regression marker verified.",
+            "GitHub PR #6 fresh readback: state=open, merged=false, head=5312816d5fe2b22e92302211b67f916b88a6fe14, mergeable=true. The security-branch commit is isolated and is not part of PR #6. No workflow run is associated with the new commit; no CI rerun or merge was performed.",
+            "Rust tests remain unexecuted because no authorized Rust runner/toolchain is available in this turn. No issuer public key or runner-entitlement change was verified.",
+            "Fresh Library search/readback surfaced JINEY_OPENAI_EXPORT_SOURCE_TRACE_20261013.md, which still classifies the 636-chat and 160-chat Markdown ZIPs as derived and the original JINEY OpenAI export as unverified. No new raw export bytes or provider revision were returned. The callable tool set has no Google Drive, Dropbox, or Takeout action."
+          ],
+          "result": "RESUME_CHECKPOINT_SYMLINK_DIRECTORY_CONTAINMENT_GAP_PATCHED_AND_READ_BACK; RUST_TESTS_NOT_RUN; ISSUER_AND_RUNNER_UNVERIFIED; ORIGINAL_EXPORT_NOT_RECOVERED",
+          "next_callable_edge": "Run the targeted Rust regression and full cargo test on an authorized isolated runner; separately obtain original JINEY/FUNIX/DAT NGUYEN export bytes through a provider action that returns the actual binary and stable provider metadata. Do not substitute derived archives or alter the existing ADMIN folder.",
+          "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED. Source commit/readback and absence of a workflow run do not prove runtime behavior or task completion."
         }
       ]
     },
