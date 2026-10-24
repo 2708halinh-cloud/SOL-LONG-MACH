@@ -9273,6 +9273,19 @@
       "raw_sensor_data_committed": false,
       "credentials_committed": false,
       "ci_rerun": false
+    },
+    {
+      "id": "PROVIDER_READBACK_20261025T0111ICT",
+      "observed_at": "2026-10-25T01:11:44.393+07:00",
+      "source": "Fresh exact-target GitHub, Dropbox, n8n, Desktop Commander inventory, and GitHub PR #6/#27 readbacks",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0111ICT.json",
+      "checkpoint_blob_sha": "84cb4e9f0f1bf479eb4d54e757fbc9d88207d4f3",
+      "checkpoint_commit": "36468c6d25faedef8aedc83844ba554796cf72da",
+      "result": "N8N_EXECUTION_145_ROW_304_EXACT_READBACK;DROPBOX_METADATA_RECONFIRMED;DEVICE_CONNECTOR_SNAPSHOT_OFFLINE_NOT_PHYSICAL_OFFLINE_PROOF;LIVE_SENSOR_UNVERIFIED;PR6_ISSUER_RUNNER_UNVERIFIED;PR27_CURRENT_HEAD_NO_CI_RESULT",
+      "tasks_closed": 0,
+      "raw_sensor_data_committed": false,
+      "credentials_committed": false,
+      "ci_rerun": false
     }
   ],
   "energy_protection_current": {
@@ -16055,6 +16068,98 @@
       "credentials_committed": false,
       "tasks_closed": 0,
       "result": "TICK_VERIFIED_SOURCE_HASH_MATCH;LIVE_SENSOR_STREAM_NOT_VERIFIED"
+    },
+    {
+      "id": "PROVIDER_READBACK_20261025T0111ICT",
+      "observed_at": "2026-10-25T01:11:44.393+07:00",
+      "observed_at_utc": "2026-10-24T18:11:44.393Z",
+      "source": "Fresh exact-target GitHub, Dropbox, n8n, Desktop Commander inventory, and GitHub PR #6/#27 readbacks",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0111ICT.json",
+      "checkpoint_blob_sha": "84cb4e9f0f1bf479eb4d54e757fbc9d88207d4f3",
+      "checkpoint_commit": "36468c6d25faedef8aedc83844ba554796cf72da",
+      "source_reads_at_reentry": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "9080ec571f1e857cf660e5c755306be19f37d58f",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "96c1776c8ec1f1ec14c7edce221b80850abf50ac",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "bd0e3a451b086655b8317c196a40e2a1f5d58611"
+      },
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "revision": "0165dc1e4794ab00000000395cdfd73",
+        "bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true
+      },
+      "desktop_commander_connector_snapshot": {
+        "accounts_checked": [
+          "Primary",
+          "mmmm"
+        ],
+        "devices": [
+          {
+            "name": "localhost",
+            "status": "Offline",
+            "last_seen": "29h ago"
+          },
+          {
+            "name": "DESKTOP-86ITNQ4",
+            "status": "Offline",
+            "last_seen": "104h ago"
+          },
+          {
+            "name": "DESKTOP-86ITNQ4",
+            "status": "Offline",
+            "last_seen": "330h ago"
+          }
+        ],
+        "interpretation": "Connector inventory only; not proof of physical device state. No current host command or tick readback."
+      },
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "execution_id": "145",
+        "status": "success",
+        "row_id": 304,
+        "event_id": "X20261024180023983_CLOUD",
+        "exact_row_readback": true,
+        "state": "OPEN_WORK_REMAINS",
+        "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+        "recovery_rows": 45,
+        "pending_rows": 45,
+        "host_operations": 0,
+        "tasks_closed": 0
+      },
+      "xtime_ollama": {
+        "refreshed_this_turn": false,
+        "last_verified_snapshot": "CURRENT_RUNTIME/PROVIDER_READBACK_20261024T2345ICT.json",
+        "xtime_live_device_proven": false
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "open",
+        "draft": true,
+        "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "run_39994207477": "failure; no artifacts",
+        "run_39994207667": "failure; no artifacts",
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "archive_pr27": {
+        "state": "open",
+        "draft": true,
+        "head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
+        "topology_test_blob_sha": "6208f9edbe1886814870ba96c8da0b8a27141e30",
+        "current_test_preserves_BRAIN_WAVE_LOGS_sibling": true,
+        "current_head_pr_triggered_runs_returned": 0,
+        "real_archive_fixtures_verified_on_target_host": false
+      },
+      "tasks_closed": 0,
+      "raw_sensor_data_committed": false,
+      "credentials_committed": false,
+      "source_deleted_or_moved": false,
+      "host_config_changed": false,
+      "result": "N8N_ROW_304_VERIFIED;HOST_TICK_NOT_FRESH;LIVE_SENSOR_UNVERIFIED"
     }
   ]
 }
