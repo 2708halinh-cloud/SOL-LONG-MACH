@@ -64,7 +64,7 @@
     ],
     "current_validation_run": 39994207667,
     "current_head_run_readback": {
-      "observed_at": "2026-10-24T00:21:52+07:00",
+      "observed_at": "2026-10-24T10:01:30.217+07:00",
       "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
       "runs": [
         {
@@ -74,45 +74,28 @@
           "conclusion": "failure",
           "jobs": [
             {
-              "id": 120553389474,
               "name": "build (macos-14, aarch64-apple-darwin, macos-apple-silicon)",
-              "conclusion": "failure",
-              "steps": [],
-              "logs_fetch": "BlobNotFound"
+              "conclusion": "failure"
             },
             {
-              "id": 120553389661,
               "name": "build (windows-latest, x86_64-pc-windows-msvc, windows-x64)",
-              "conclusion": "failure",
-              "steps": [],
-              "logs_fetch": "BlobNotFound"
+              "conclusion": "failure"
             },
             {
-              "id": 120553389829,
               "name": "build (ubuntu-24.04, x86_64-unknown-linux-gnu, linux-x64)",
-              "conclusion": "failure",
-              "steps": [],
-              "logs_fetch": "BlobNotFound"
+              "conclusion": "failure"
             },
             {
-              "id": 120553390017,
               "name": "tesseract_os",
-              "conclusion": "failure",
-              "steps": [],
-              "logs_fetch": "BlobNotFound"
+              "conclusion": "failure"
             },
             {
-              "id": 120553391899,
               "name": "selfhosted_windows_verify",
-              "conclusion": "skipped",
-              "steps": []
+              "conclusion": "skipped"
             },
             {
-              "id": 120553405219,
               "name": "readback",
-              "conclusion": "failure",
-              "steps": [],
-              "logs_fetch": "BlobNotFound"
+              "conclusion": "failure"
             }
           ],
           "artifacts": []
@@ -124,11 +107,8 @@
           "conclusion": "failure",
           "jobs": [
             {
-              "id": 120553389148,
               "name": "verify",
-              "conclusion": "failure",
-              "steps": [],
-              "logs_fetch": "BlobNotFound"
+              "conclusion": "failure"
             }
           ],
           "artifacts": []
@@ -136,13 +116,13 @@
       ],
       "rerun_performed": false,
       "runner_assignment_change_verified": false,
-      "interpretation": "Both workflows were naturally triggered on the exact synchronized head, but every failed job returned no steps and log retrieval returned BlobNotFound; no readback artifact exists. This is not source-code test output and does not establish a code defect. Do not rerun until runner assignment/entitlement change is verified."
+      "interpretation": "Both current-head PR-triggered runs were re-read; conclusions remain failure and artifacts are empty. No verified runner assignment/entitlement change or issuer key value is available. This does not establish a source-code test failure. Do not rerun CI."
     },
     "previous_head_pr_run": 39975540379,
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "The direct read-only host readback confirmed a newer tick at device clock 09:31:35+07 and task state Ready; its reported next run is 09:36:32+07 while the host clock trails the run-start reference. At the next reachable checkpoint, verify the next tick and a real sensor sample; Android TCP 192.168.1.14:5556 still does not respond and adb is absent. Keep all tasks OPEN/IN_PROGRESS; do not alter clock/task settings, source CSV, processes, cache, Meta.db, or Drive. Continue TESSERACT only after issuer key and runner entitlement are verified.",
+  "next": "At the next reachable checkpoint, read the exact Windows receipt after device clock 09:56:32+07 and compare its source hash with a fresh direct hash. Continue HWiNFO/Android live-sample proof; W32Time remains Stopped/Manual and requires an authorized elevated route. TESSERACT PR #6 remains OPEN; no issuer key or runner-assignment change was verified, so do not rerun CI.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -157,7 +137,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T09:36:13+07:00",
+  "updated_at": "2026-10-24T10:01:30.217+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -2007,6 +1987,48 @@
       },
       "result": "XTIME_HEALTH_VERIFIED_MODUAL_SOURCE_ABSENT; OLLAMA_HEALTH_VERIFIED; WINDOWS_NEXT_TICK_PENDING; TESSERACT_PR6_OPEN_NO_CI_RERUN",
       "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-24T10:01:30.217+07:00",
+      "observed_at_utc": "2026-10-24T03:01:30.217Z",
+      "record_type": "WINDOWS_TICK_AND_TESSERACT_PROVIDER_READBACK",
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true
+      },
+      "windows": {
+        "task_state": "Ready",
+        "last_result": "0x0",
+        "receipt_sha256": "5ebdd3be8c3dc57822cf43398aff160f8bfa412b2b99abca08d791c97efe9979",
+        "source_hash_matches": true,
+        "live_sensor_reading_confirmed": false,
+        "w32time": "Stopped/Manual"
+      },
+      "xtime": {
+        "http_status": 200,
+        "pid": 20712,
+        "modual_source_present": false
+      },
+      "ollama": {
+        "http_status": 200,
+        "model_count": 11,
+        "loopback_only": true
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "OPEN",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs_failed": true,
+        "artifacts_present": false,
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "TICK_AND_PROVIDER_METADATA_VERIFIED; LIVE_SENSOR_STREAM_AND_ISSUER/RUNNER_NOT_VERIFIED",
+      "task_closure": false
     }
   ],
   "latest_sync_observation": {
@@ -2038,58 +2060,93 @@
     ]
   },
   "latest_runtime_observation": {
-    "observed_at": "2026-10-24T07:53:42+07:00",
-    "observed_at_utc": "2026-10-24T00:53:42Z",
+    "observed_at": "2026-10-24T10:01:30.217+07:00",
+    "observed_at_utc": "2026-10-24T03:01:30.217Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "e2a4e4c42a4600ec0566d8b685af4a0363b6c7b1",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "c4e460f575d78cfe1b18833c9fd2885d6ed78a29",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "8866f46c428adfb7981e05df9f1e9c48ff95d4bb"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "3a668ef51eeebef15502635e4b20e6add020dd53",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "b237e3ffa616e4692e71f3c65bf141fe52e18a50",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "b7e196c8ab2b30695747ee7dedeb19e469e841e9",
+      "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+      "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+      "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16"
     },
     "windows": {
       "device": "DESKTOP-86ITNQ4",
-      "remote_inventory": "ONLINE",
-      "direct_readback_status": "TIMEOUT_OR_PENDING",
-      "last_verified_task_state": "Ready",
-      "last_verified_device_clock": "2026-10-24T07:28:10.1807687+07:00",
-      "last_verified_run_local": "2026-10-24T07:26:33+07:00",
-      "last_verified_result": "0x0",
-      "last_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T002642437612Z.json",
-      "last_verified_receipt_sha256": "C40E4F5A2FA22BCFAC8C848EF2F651E55EE346321F231439E7D3222833516961",
-      "latest_run_after_07_31_32_verified": false,
-      "live_sensor_reading_confirmed": false
+      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "task_state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-24T09:51:33+07:00",
+      "last_result": 0,
+      "next_run_local": "2026-10-24T09:56:32+07:00",
+      "missed_runs": 0,
+      "execution_time_limit": "PT2M",
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T025157723328Z.json",
+      "receipt_observed_at_utc": "2026-10-24T02:51:57.723328Z",
+      "receipt_bytes": 450,
+      "receipt_sha256": "5ebdd3be8c3dc57822cf43398aff160f8bfa412b2b99abca08d791c97efe9979",
+      "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_enabled": false,
+      "github_enabled": false,
+      "live_sensor_reading_confirmed": false,
+      "w32time": "Stopped/Manual"
+    },
+    "local_braid": {
+      "six_forces_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T025033285338Z.json",
+      "six_forces_sha256": "d53d6b16849ab8a8986031a2d4054c488e9c4a9ae33f4c461aac9af26bda994a",
+      "six_forces_actions": 9,
+      "all_six_examined": true,
+      "missing_context_rejected": true,
+      "rejected_request_did_not_create_receipt": true,
+      "plural_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261024T025033349117Z.json",
+      "plural_sha256": "ccc1e4dc7051b10693780880f2e258f169e52e67611507bc15d1d98a8446f3ad",
+      "plural_actions": 5,
+      "exact_target_readback": true,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "cloud_host_wiring": "NOT_VERIFIED"
     },
     "provider_reads": {
-      "dropbox_source": {
+      "dropbox": {
         "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
         "rev": "0165dc1e4794ab00000000395cdfd73",
         "size_bytes": 35389440,
         "server_modified_utc": "2026-10-14T00:20:03Z",
         "metadata_readback": true
       },
-      "dropbox_folder": {
-        "path": "/Linh Hà/SENSOR_LOGS",
-        "direct_entries": 56,
-        "has_more": false
+      "xtime": {
+        "http_status": 200,
+        "pid": 20712,
+        "modual_source_present": false,
+        "live_stream_verified": false
       },
-      "bounded_key_scan": {
-        "toolkit_txt_chars": 61032,
-        "cdn_body_chars": 63,
-        "marker_hits": 0,
-        "scope": "two extracted text files plus direct folder names only"
+      "ollama": {
+        "http_status": 200,
+        "model_count": 11,
+        "loopback_only": true
+      },
+      "android": {
+        "adb_command_available_in_host_path": false,
+        "heartbeat": "UNVERIFIED"
       },
       "tesseract": {
         "pr": 6,
+        "state": "OPEN",
         "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-        "run_39994207477": "failure_empty_steps_no_artifacts",
-        "run_39994207667": "failure_empty_steps_no_artifacts",
+        "runs_failed": true,
+        "artifacts_present": false,
         "issuer_public_key_verified": false,
         "runner_assignment_change_verified": false,
         "ci_rerun": false
       }
     },
-    "result": "WINDOWS_READBACK_ROUTE_TIMEOUT_AFTER_LAST_VERIFIED_RECEIPT; DROPBOX_BOUNDED_SCAN_NO_ISSUER_KEY; TESSERACT_CI_UNCHANGED",
+    "result": "WINDOWS_TICK_RECEIPT_VERIFIED_SOURCE_HASH_MATCH; BRAID_LOCAL_READBACK_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED",
     "open_tasks_closed": false
   },
   "continuity_readback_history": [
@@ -2288,146 +2345,372 @@
         "no_task_status_changed": true
       },
       "next_edge": "VERIFY_NEXT_HOST_TICK_AFTER_DEVICE_REPORTED_2026-10-24T09:36:32+07:00; VERIFY_LIVE_SENSOR_SAMPLE; RESOLVE_ANDROID_HEARTBEAT; KEEP_ALL_TASKS_OPEN"
+    },
+    {
+      "observed_at": "2026-10-24T10:01:30.217+07:00",
+      "observed_at_utc": "2026-10-24T03:01:30.217Z",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "3a668ef51eeebef15502635e4b20e6add020dd53",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "b237e3ffa616e4692e71f3c65bf141fe52e18a50",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "b7e196c8ab2b30695747ee7dedeb19e469e841e9",
+        "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16"
+      },
+      "prior_checkpoint": {
+        "task_resume_pointer_blob_sha_before_write": "3a668ef51eeebef15502635e4b20e6add020dd53",
+        "open_tasks_blob_sha_after_write": "b237e3ffa616e4692e71f3c65bf141fe52e18a50",
+        "modual_blob_sha_after_write": "b7e196c8ab2b30695747ee7dedeb19e469e841e9",
+        "task_count": 28,
+        "task_statuses_changed": false,
+        "tasks_closed": false
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "task_state": "Ready",
+        "enabled": true,
+        "last_run_local": "2026-10-24T09:51:33+07:00",
+        "last_result": 0,
+        "next_run_local": "2026-10-24T09:56:32+07:00",
+        "missed_runs": 0,
+        "execution_time_limit": "PT2M",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T025157723328Z.json",
+        "receipt_observed_at_utc": "2026-10-24T02:51:57.723328Z",
+        "receipt_bytes": 450,
+        "receipt_sha256": "5ebdd3be8c3dc57822cf43398aff160f8bfa412b2b99abca08d791c97efe9979",
+        "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_matches": true,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false,
+        "live_sensor_reading_confirmed": false,
+        "w32time": "Stopped/Manual"
+      },
+      "local_braid": {
+        "six_forces_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T025033285338Z.json",
+        "six_forces_sha256": "d53d6b16849ab8a8986031a2d4054c488e9c4a9ae33f4c461aac9af26bda994a",
+        "six_forces_actions": 9,
+        "all_six_examined": true,
+        "missing_context_rejected": true,
+        "rejected_request_did_not_create_receipt": true,
+        "plural_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261024T025033349117Z.json",
+        "plural_sha256": "ccc1e4dc7051b10693780880f2e258f169e52e67611507bc15d1d98a8446f3ad",
+        "plural_actions": 5,
+        "exact_target_readback": true,
+        "source_sha256_unchanged": true,
+        "mutation_executed": false,
+        "cloud_host_wiring": "NOT_VERIFIED"
+      },
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "revision": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true
+      },
+      "xtime": {
+        "health_http_status": 200,
+        "pid": 20712,
+        "modual_source_present": false,
+        "live_stream_verified": false
+      },
+      "ollama": {
+        "tags_http_status": 200,
+        "model_count": 11,
+        "endpoint": "127.0.0.1:11434",
+        "loopback_only": true
+      },
+      "android": {
+        "adb_command_available_in_host_path": false,
+        "live_heartbeat_verified": false
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "OPEN",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "current_head_runs": [
+          {
+            "run_id": 39994207477,
+            "workflow": "tesseract-desktop-ci",
+            "event": "pull_request",
+            "conclusion": "failure",
+            "jobs": [
+              {
+                "name": "build (macos-14, aarch64-apple-darwin, macos-apple-silicon)",
+                "conclusion": "failure"
+              },
+              {
+                "name": "build (windows-latest, x86_64-pc-windows-msvc, windows-x64)",
+                "conclusion": "failure"
+              },
+              {
+                "name": "build (ubuntu-24.04, x86_64-unknown-linux-gnu, linux-x64)",
+                "conclusion": "failure"
+              },
+              {
+                "name": "tesseract_os",
+                "conclusion": "failure"
+              },
+              {
+                "name": "selfhosted_windows_verify",
+                "conclusion": "skipped"
+              },
+              {
+                "name": "readback",
+                "conclusion": "failure"
+              }
+            ],
+            "artifacts": []
+          },
+          {
+            "run_id": 39994207667,
+            "workflow": "validate-x-time",
+            "event": "pull_request",
+            "conclusion": "failure",
+            "jobs": [
+              {
+                "name": "verify",
+                "conclusion": "failure"
+              }
+            ],
+            "artifacts": []
+          }
+        ],
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false,
+        "interpretation": "Current-head runs remain failed with no artifacts; this is not verified source-code test output. Do not rerun until runner assignment/entitlement change is verified."
+      },
+      "safety": {
+        "no_source_mutation": true,
+        "no_raw_sensor_values_persisted": true,
+        "no_credentials_persisted": true,
+        "no_ci_rerun": true,
+        "all_open_tasks_retained": true
+      },
+      "result": "WINDOWS_TICK_RECEIPT_VERIFIED; SOURCE_HASH_MATCH; BRAID_LOCAL_RECEIPTS_READ_BACK; TESSERACT_PR6_OPEN; LIVE_SENSOR_STREAM_UNVERIFIED",
+      "next_edge": "Verify the next Windows tick after device clock 09:56:32+07; investigate HWiNFO/Android live sample through authorized routes; continue issuer/runner evidence search without repeating CI."
     }
   ],
   "latest_continuity_readback": {
-    "observed_at_utc": "2026-10-24T02:36:13.000Z",
-    "source": "direct read-only secondary Remote Desktop Commander host readback + n8n execution 116 and table readback + GitHub main checkpoint",
-    "prior_checkpoint": {
-      "task_resume_pointer_blob_sha_before_write": "6e4a747f8a36389b7b4f8234171a5140d0540694",
-      "open_tasks_current_blob_sha": "81408996889f3772fcd1120e2bc904c9425dca91",
-      "github_head_before_write": "996143f37522a66747e68f015494109df9f3fe36",
-      "n8n_workflow_id": "BogzhFUDbRp7kuwh",
-      "n8n_execution_id": "116",
-      "recovery_table_id": "rSPFIOWbS7cfNJ8z",
-      "continuity_evidence_table_id": "Sk0EFJK5NzWVpBvm",
-      "prior_evidence_rows": [
-        252
-      ]
-    },
-    "windows": {
-      "device": "DESKTOP-86ITNQ4",
-      "connection": "ONLINE via secondary Remote Desktop Commander account; primary account devices offline",
-      "host_observed_at_utc": "2026-10-24T02:33:53.3540851Z",
-      "tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T023135187705Z.json",
-      "tick_observed_at_utc": "2026-10-24T02:31:35.187705Z",
-      "tick_sha256": "63E0B304C6E4F26E8BBE5E98196B70E914D7FC4C36E7331F54210568921EC0D3",
-      "scheduled_task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
-      "task_state": "Ready",
-      "task_enabled": true,
-      "last_run_device_local": "2026-10-24T09:31:33+07:00",
-      "last_task_result": 0,
-      "next_run_device_local": "2026-10-24T09:36:32+07:00",
-      "source_bytes": 35389440,
-      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-      "source_last_write_utc": "2026-10-23T08:45:56.2458701Z",
-      "live_sensor_reading_confirmed": false,
-      "cloud_enabled": false,
-      "github_enabled": false,
-      "source_file_written": false,
-      "synthetic_rows_added": 0
-    },
-    "android": {
-      "adb_path": null,
-      "tcp_192_168_1_14_5556": false,
-      "device_off_state_inferred": false,
-      "heartbeat": "UNVERIFIED"
-    },
-    "n8n": {
-      "workflow_active": true,
-      "execution_id": "116",
-      "execution_status": "success",
-      "execution_started_at": "2026-10-24T02:00:22.081Z",
-      "execution_stopped_at": "2026-10-24T02:00:24.181Z",
-      "recovery_rows": 45,
-      "all_recovery_rows_still_nonterminal": true,
-      "tasks_closed": false,
-      "evidence_row_before_write": 252
-    },
-    "github": {
-      "head_before_write": "996143f37522a66747e68f015494109df9f3fe36",
-      "open_tasks_blob_sha": "81408996889f3772fcd1120e2bc904c9425dca91",
-      "open_task_objects": 28,
-      "ci_before_checkpoint_update": "UNVERIFIED; combined status empty and available PR-triggered run query empty"
-    },
-    "safety": {
-      "no_source_mutation": true,
-      "no_clock_or_task_change": true,
-      "no_process_termination": true,
-      "no_secret_readback_or_persistence": true,
-      "no_google_drive_write": true,
-      "no_task_status_changed": true
-    },
-    "next_edge": "VERIFY_NEXT_HOST_TICK_AFTER_DEVICE_REPORTED_2026-10-24T09:36:32+07:00; VERIFY_LIVE_SENSOR_SAMPLE; RESOLVE_ANDROID_HEARTBEAT; KEEP_ALL_TASKS_OPEN"
-  },
-  "latest_reentry_observation": {
-    "observed_at": "2026-10-24T09:30:29.298+07:00",
-    "observed_at_utc": "2026-10-24T02:30:29.298Z",
+    "observed_at": "2026-10-24T10:01:30.217+07:00",
+    "observed_at_utc": "2026-10-24T03:01:30.217Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "5753a1feea27770c99d7ec73b114677ecda32ffc",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "779a67c57009bea146e133b0a151d20c85ca29eb",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "0ab7701fa6c06874c77a48539024157366e150ee",
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "3a668ef51eeebef15502635e4b20e6add020dd53",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "b237e3ffa616e4692e71f3c65bf141fe52e18a50",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "b7e196c8ab2b30695747ee7dedeb19e469e841e9",
       "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
       "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
-      "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "81408996889f3772fcd1120e2bc904c9425dca91",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "6104f3577b4b935133cddc3904958aa5517ef7f1"
+      "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16"
+    },
+    "prior_checkpoint": {
+      "task_resume_pointer_blob_sha_before_write": "3a668ef51eeebef15502635e4b20e6add020dd53",
+      "open_tasks_blob_sha_after_write": "b237e3ffa616e4692e71f3c65bf141fe52e18a50",
+      "modual_blob_sha_after_write": "b7e196c8ab2b30695747ee7dedeb19e469e841e9",
+      "task_count": 28,
+      "task_statuses_changed": false,
+      "tasks_closed": false
+    },
+    "windows": {
+      "device": "DESKTOP-86ITNQ4",
+      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "task_state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-24T09:51:33+07:00",
+      "last_result": 0,
+      "next_run_local": "2026-10-24T09:56:32+07:00",
+      "missed_runs": 0,
+      "execution_time_limit": "PT2M",
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T025157723328Z.json",
+      "receipt_observed_at_utc": "2026-10-24T02:51:57.723328Z",
+      "receipt_bytes": 450,
+      "receipt_sha256": "5ebdd3be8c3dc57822cf43398aff160f8bfa412b2b99abca08d791c97efe9979",
+      "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_enabled": false,
+      "github_enabled": false,
+      "live_sensor_reading_confirmed": false,
+      "w32time": "Stopped/Manual"
+    },
+    "local_braid": {
+      "six_forces_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T025033285338Z.json",
+      "six_forces_sha256": "d53d6b16849ab8a8986031a2d4054c488e9c4a9ae33f4c461aac9af26bda994a",
+      "six_forces_actions": 9,
+      "all_six_examined": true,
+      "missing_context_rejected": true,
+      "rejected_request_did_not_create_receipt": true,
+      "plural_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261024T025033349117Z.json",
+      "plural_sha256": "ccc1e4dc7051b10693780880f2e258f169e52e67611507bc15d1d98a8446f3ad",
+      "plural_actions": 5,
+      "exact_target_readback": true,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "cloud_host_wiring": "NOT_VERIFIED"
+    },
+    "dropbox": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_readback": true
+    },
+    "xtime": {
+      "health_http_status": 200,
+      "pid": 20712,
+      "modual_source_present": false,
+      "live_stream_verified": false
+    },
+    "ollama": {
+      "tags_http_status": 200,
+      "model_count": 11,
+      "endpoint": "127.0.0.1:11434",
+      "loopback_only": true
+    },
+    "android": {
+      "adb_command_available_in_host_path": false,
+      "live_heartbeat_verified": false
+    },
+    "tesseract": {
+      "pr": 6,
+      "state": "OPEN",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "current_head_runs": [
+        {
+          "run_id": 39994207477,
+          "workflow": "tesseract-desktop-ci",
+          "event": "pull_request",
+          "conclusion": "failure",
+          "jobs": [
+            {
+              "name": "build (macos-14, aarch64-apple-darwin, macos-apple-silicon)",
+              "conclusion": "failure"
+            },
+            {
+              "name": "build (windows-latest, x86_64-pc-windows-msvc, windows-x64)",
+              "conclusion": "failure"
+            },
+            {
+              "name": "build (ubuntu-24.04, x86_64-unknown-linux-gnu, linux-x64)",
+              "conclusion": "failure"
+            },
+            {
+              "name": "tesseract_os",
+              "conclusion": "failure"
+            },
+            {
+              "name": "selfhosted_windows_verify",
+              "conclusion": "skipped"
+            },
+            {
+              "name": "readback",
+              "conclusion": "failure"
+            }
+          ],
+          "artifacts": []
+        },
+        {
+          "run_id": 39994207667,
+          "workflow": "validate-x-time",
+          "event": "pull_request",
+          "conclusion": "failure",
+          "jobs": [
+            {
+              "name": "verify",
+              "conclusion": "failure"
+            }
+          ],
+          "artifacts": []
+        }
+      ],
+      "issuer_public_key_verified": false,
+      "runner_assignment_change_verified": false,
+      "ci_rerun": false,
+      "interpretation": "Current-head runs remain failed with no artifacts; this is not verified source-code test output. Do not rerun until runner assignment/entitlement change is verified."
+    },
+    "safety": {
+      "no_source_mutation": true,
+      "no_raw_sensor_values_persisted": true,
+      "no_credentials_persisted": true,
+      "no_ci_rerun": true,
+      "all_open_tasks_retained": true
+    },
+    "result": "WINDOWS_TICK_RECEIPT_VERIFIED; SOURCE_HASH_MATCH; BRAID_LOCAL_RECEIPTS_READ_BACK; TESSERACT_PR6_OPEN; LIVE_SENSOR_STREAM_UNVERIFIED",
+    "next_edge": "Verify the next Windows tick after device clock 09:56:32+07; investigate HWiNFO/Android live sample through authorized routes; continue issuer/runner evidence search without repeating CI."
+  },
+  "latest_reentry_observation": {
+    "observed_at": "2026-10-24T10:01:30.217+07:00",
+    "observed_at_utc": "2026-10-24T03:01:30.217Z",
+    "source_reads": {
+      "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "3a668ef51eeebef15502635e4b20e6add020dd53",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "b237e3ffa616e4692e71f3c65bf141fe52e18a50",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "b7e196c8ab2b30695747ee7dedeb19e469e841e9",
+      "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+      "x-time-web/.github/workflows/tesseract-desktop-ci.yml": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+      "x-time-web/TESSERACT_DESKTOP/src-tauri/src/kilo.rs": "f1a7abe2d30cf720d2d1207335325d42a2af4e16"
     },
     "windows_tick": {
       "device": "DESKTOP-86ITNQ4",
       "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
-      "last_verified_device_clock": "2026-10-24T09:21:58.0003936+07:00",
-      "state": "Ready",
+      "task_state": "Ready",
       "enabled": true,
-      "last_run": "2026-10-24T09:21:34+07:00",
-      "last_result": "0x0",
-      "next_run": "2026-10-24T09:26:32+07:00",
+      "last_run_local": "2026-10-24T09:51:33+07:00",
+      "last_result": 0,
+      "next_run_local": "2026-10-24T09:56:32+07:00",
       "missed_runs": 0,
-      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T022138064743Z.json",
-      "receipt_sha256": "17063be3228a90475c7e9307419616f263cf3a96521c8c26fa476a859e071ef9",
+      "execution_time_limit": "PT2M",
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T025157723328Z.json",
+      "receipt_observed_at_utc": "2026-10-24T02:51:57.723328Z",
+      "receipt_bytes": 450,
+      "receipt_sha256": "5ebdd3be8c3dc57822cf43398aff160f8bfa412b2b99abca08d791c97efe9979",
+      "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
       "source_bytes": 35389440,
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
       "source_hash_matches": true,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_enabled": false,
+      "github_enabled": false,
       "live_sensor_reading_confirmed": false,
-      "w32time": "Stopped/Manual",
-      "measured_host_device_offset_seconds": 310.9
+      "w32time": "Stopped/Manual"
+    },
+    "local_braid": {
+      "six_forces_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T025033285338Z.json",
+      "six_forces_sha256": "d53d6b16849ab8a8986031a2d4054c488e9c4a9ae33f4c461aac9af26bda994a",
+      "six_forces_actions": 9,
+      "all_six_examined": true,
+      "missing_context_rejected": true,
+      "rejected_request_did_not_create_receipt": true,
+      "plural_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261024T025033349117Z.json",
+      "plural_sha256": "ccc1e4dc7051b10693780880f2e258f169e52e67611507bc15d1d98a8446f3ad",
+      "plural_actions": 5,
+      "exact_target_readback": true,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "cloud_host_wiring": "NOT_VERIFIED"
     },
     "xtime": {
-      "observed_at_device_local": "2026-10-24T09:24:39.2031810+07:00",
       "health_http_status": 200,
-      "ok": true,
-      "service": "x-time-web",
-      "runtime_version": "0.9.0",
       "pid": 20712,
-      "runtime_tools": 63,
-      "modual": {
-        "source_present": false,
-        "live_device_proven": false,
-        "state": "SEARCHED_NO_MATCH",
-        "note": "MODUAL carrier not found in configured/local candidate paths."
-      },
-      "filesystem_sensor": {
-        "ok": true,
-        "native_watch_mode": "fs.watch:recursive",
-        "native_events_seen": 213,
-        "emitted_events": 102,
-        "self_causal_events": 56,
-        "recent_event_count": 103,
-        "last_error": null
-      },
-      "all_desktop_sensorimotor": {
-        "source_present": false,
-        "configured_path": null,
-        "resolved_path": null,
-        "state": "SOURCE_PATH_OPEN_EVENT_BUS_READY",
-        "adapter": "G:\\FPGA_AI_LOCAL\\inetpub\\XTIME_LOCAL_LIVE_20261020\\tools\\all_desktop_sensorimotor.py",
-        "event_bus": "G:\\FPGA_AI_LOCAL\\inetpub\\XTIME_LOCAL_LIVE_20261020\\runtime\\sensorimotor-fs-events.jsonl"
-      }
+      "modual_source_present": false,
+      "live_stream_verified": false
     },
     "ollama": {
-      "observed_at_device_local": "2026-10-24T09:24:24.4139574+07:00",
       "tags_http_status": 200,
       "model_count": 11,
       "endpoint": "127.0.0.1:11434",
@@ -2444,14 +2727,60 @@
       "pr": 6,
       "state": "OPEN",
       "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-      "run_39994207477": "failure; no job step logs or artifacts",
-      "run_39994207667": "failure; no job step logs or artifacts",
-      "selfhosted_windows_verify": "skipped by pull_request condition",
+      "current_head_runs": [
+        {
+          "run_id": 39994207477,
+          "workflow": "tesseract-desktop-ci",
+          "event": "pull_request",
+          "conclusion": "failure",
+          "jobs": [
+            {
+              "name": "build (macos-14, aarch64-apple-darwin, macos-apple-silicon)",
+              "conclusion": "failure"
+            },
+            {
+              "name": "build (windows-latest, x86_64-pc-windows-msvc, windows-x64)",
+              "conclusion": "failure"
+            },
+            {
+              "name": "build (ubuntu-24.04, x86_64-unknown-linux-gnu, linux-x64)",
+              "conclusion": "failure"
+            },
+            {
+              "name": "tesseract_os",
+              "conclusion": "failure"
+            },
+            {
+              "name": "selfhosted_windows_verify",
+              "conclusion": "skipped"
+            },
+            {
+              "name": "readback",
+              "conclusion": "failure"
+            }
+          ],
+          "artifacts": []
+        },
+        {
+          "run_id": 39994207667,
+          "workflow": "validate-x-time",
+          "event": "pull_request",
+          "conclusion": "failure",
+          "jobs": [
+            {
+              "name": "verify",
+              "conclusion": "failure"
+            }
+          ],
+          "artifacts": []
+        }
+      ],
       "issuer_public_key_verified": false,
       "runner_assignment_change_verified": false,
-      "ci_rerun": false
+      "ci_rerun": false,
+      "interpretation": "Current-head runs remain failed with no artifacts; this is not verified source-code test output. Do not rerun until runner assignment/entitlement change is verified."
     },
-    "result": "XTIME_HEALTH_VERIFIED_MODUAL_SOURCE_ABSENT; OLLAMA_HEALTH_VERIFIED; WINDOWS_NEXT_TICK_PENDING; TESSERACT_PR6_OPEN_NO_CI_RERUN",
+    "result": "WINDOWS_TICK_VERIFIED; INDEPENDENT_BRAID_TEST_VERIFIED; LIVE_STREAM_AND_ISSUER/RUNNER_NOT_VERIFIED",
     "open_tasks_closed": false
   }
 }
