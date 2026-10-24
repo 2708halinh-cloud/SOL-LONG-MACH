@@ -700,6 +700,19 @@
           "result": "TESSERACT_PR_OPEN_BRANCH_SYNCED_59_AHEAD_0_BEHIND; ISSUER_KEY_AND_RUNNER_ENTITLEMENT_UNVERIFIED; CURRENT_HEAD_CI_AND_REVIEW_NOT_VERIFIED",
           "next_callable_edge": "Use an authorized issuer-side carrier or GitHub Actions variable control surface to obtain/provision the real public key; use the authorized repository/account control surface to verify runner assignment/entitlement. Then identify the exact current PR head, run/read back CI on that SHA, obtain a fresh review, and only then consider merge.",
           "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED. CI failure/absence of logs, branch synchronization, or review-limit notices do not close the task."
+        },
+        {
+          "observed_at": "2026-10-24T08:57:51.198+07:00",
+          "source": "Fresh GitHub PR, workflow-run, and code-search readback",
+          "actions_and_receipts": [
+            "PR #6 remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14.",
+            "Workflow run 39994207477 has six completed jobs: five failures and selfhosted_windows_verify skipped. Run 39994207667 has one failed verify job. No runner assignment/entitlement change was verified.",
+            "Exact build-variable code search returned four references; Ed25519/public-key search returned six related indexed results. These are references, not the actual issuer public-key material. GitHub Actions variable/runner control surfaces remain unavailable in the callable tools.",
+            "No CI rerun, no key generation, no secret write, no PR closure."
+          ],
+          "result": "TESSERACT_CURRENT_HEAD_CONFIRMED_ISSUER_KEY_AND_RUNNER_ENTITLEMENT_STILL_UNVERIFIED",
+          "next_callable_edge": "Continue through an authorized issuer-side carrier or Actions variable control surface and repository/account runner settings; rerun only after a runner assignment/entitlement change is verified.",
+          "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
         }
       ]
     },
@@ -1239,6 +1252,28 @@
           "result": "FOURTH_RECENT_TICK_SUCCESS_VARIABLE_DURATION_RETAINED_LIVE_STREAM_UNVERIFIED",
           "next_callable_edge": "Read the next exact receipt after device clock 07:31:32+07. If duration varies again, inspect TaskScheduler Operational log enablement and exact task action timing; do not alter task settings based on an unproven hypothesis. Continue authorized HWiNFO and Android live-source investigation.",
           "status_effect": "Keep task OPEN; tick is succeeding but timing varies and no live sensor sample is confirmed."
+        },
+        {
+          "observed_at": "2026-10-24T08:57:51.198+07:00",
+          "source": "Fresh Remote Desktop Commander PowerShell readback; GitHub/Dropbox/provider reentry; independent live braid execution",
+          "source_reads": {
+            "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+            "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+            "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "dee009e984ab6f349bdec4d16472eb50aa0cf2d7",
+            "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "de74c3295c092723e7292c090ad283fc0fb73418",
+            "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "96da08af6376a1150c70d377cad4c5ad7f410ba5"
+          },
+          "actions_and_receipts": [
+            "Remote Desktop Commander device DESKTOP-86ITNQ4 responded online. At device clock 08:49:46.8837114+07, Scheduled Task was Ready/enabled, last run 08:46:33 result 0, next run 08:51:32, missed runs 0, execution limit PT2M. Task action is WindowsApps python.exe with D:\\SENSOR_LOGS\\telemetry_buffer_sync.py --once and working directory D:\\SENSOR_LOGS.",
+            "Exact newest receipt at that read was WINDOWS_TICK_20261024T014636924544Z.json, 450 bytes, SHA-256 59FF8AB0D8933A6BF6C6FBFA8F225775FD75B816E40E4D2E4516A95FB6CBBCC2. Its source SHA matches a direct recomputation: 35,389,440 bytes, SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; mtime 2026-10-23T08:45:56.2458701Z. No source write, synthetic rows, cloud/GitHub export or live sensor sample.",
+            "TaskScheduler Operational log is disabled; current process is not elevated. W32Time is Stopped/Manual. No task settings, code, service or source changed.",
+            "Executed G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py on the authorized Windows host. Exit code 0; SIX receipt readback true (9 actions, SHA-256 07f91248f92d7b70f624f8ea7a023d02fbbcd06a7b7ceaf14d990bdf9b540e71); PLURAL receipt readback true (5 actions); source unchanged, no mutation. cloud_host_wiring remains NOT_VERIFIED.",
+            "Direct local provider probes: X-TIME health HTTP 200, version 0.9.0/PID 20712/63 tools, but MODUAL source_present=false and live_device_proven=false. Ollama /api/tags HTTP 200 with 11 models, loopback only.",
+            "Fresh PR #6 readback remains OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14. Runs 39994207477 and 39994207667 remain failures; job results show no source-step evidence. Code searches return variable references, not the issuer public-key value. No runner change verified; no CI rerun."
+          ],
+          "result": "WINDOWS_ROUTE_RECOVERED_LATEST_RECEIPT_VERIFIED_LIVE_BRAID_VERIFIED_NEXT_TICK_READBACK_PENDING",
+          "next_callable_edge": "Reconcile the delayed read-only tick process and verify the exact newest receipt/task state after the device clock reaches the scheduled time. Operational log is disabled and current shell is non-admin; do not change task/code/service settings or claim log diagnosis. Continue authorized HWiNFO/Android live-source and TESSERACT issuer/runner investigation independently.",
+          "status_effect": "Keep MODUAL and TESSERACT Desktop OPEN; tick receipt is verified, live sensor sample is not."
         }
       ],
       "observed": [
@@ -2011,6 +2046,96 @@
       "root_cause_proven": false,
       "source_mutation": false,
       "live_sensor_reading_confirmed": false
+    },
+    "windows_tick_readback_20261024015751": {
+      "observed_at": "2026-10-24T08:57:51.198+07:00",
+      "device": "DESKTOP-86ITNQ4",
+      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "last_run": "2026-10-24T08:46:33+07:00",
+      "last_result": 0,
+      "next_run": "2026-10-24T08:51:32+07:00",
+      "missed_runs": 0,
+      "task_state": "Ready",
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T014636924544Z.json",
+      "receipt_bytes": 450,
+      "receipt_sha256": "59FF8AB0D8933A6BF6C6FBFA8F225775FD75B816E40E4D2E4516A95FB6CBBCC2",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "receipt_source_hash_match": true,
+      "live_sensor_reading_confirmed": false,
+      "source_mutation": false,
+      "task_log_enabled": false,
+      "current_shell_elevated": false,
+      "w32time": "Stopped/Manual",
+      "next_scheduled_cycle_readback_pending": true
+    },
+    "tesseract_braid_six_20261024T014835Z": {
+      "observed_at": "2026-10-24T08:57:51.198+07:00",
+      "receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T014835887227Z.json",
+      "receipt_sha256": "07f91248f92d7b70f624f8ea7a023d02fbbcd06a7b7ceaf14d990bdf9b540e71",
+      "exit_code": 0,
+      "actions": 9,
+      "receipt_readback_ok": true,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "cloud_host_wiring": "NOT_VERIFIED"
+    },
+    "tesseract_braid_plural_20261024T014836Z": {
+      "observed_at": "2026-10-24T08:57:51.198+07:00",
+      "receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261024T014836067939Z.json",
+      "exit_code": 0,
+      "actions": 5,
+      "receipt_readback_ok": true,
+      "source_mutation": false
+    },
+    "local_provider_health_20261024015751": {
+      "observed_at": "2026-10-24T08:57:51.198+07:00",
+      "xtime": {
+        "endpoint": "http://127.0.0.1:8769/api/health",
+        "http_status": 200,
+        "pid": 20712,
+        "version": "0.9.0",
+        "runtime_tools": 63,
+        "modual_source_present": false,
+        "live_device_proven": false
+      },
+      "ollama": {
+        "endpoint": "http://127.0.0.1:11434/api/tags",
+        "http_status": 200,
+        "model_count": 11,
+        "loopback_only": true
+      },
+      "w32time": {
+        "status": "Stopped",
+        "start_type": "Manual"
+      },
+      "source_data_committed": false
+    },
+    "tesseract_current_head_and_key_search_20261024015751": {
+      "observed_at": "2026-10-24T08:57:51.198+07:00",
+      "repository": "2708halinh-cloud/x-time-web",
+      "pr": 6,
+      "state": "open",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "runs": {
+        "39994207477": {
+          "conclusion": "failure",
+          "jobs": 6,
+          "failed_jobs": 5,
+          "skipped_selfhosted_windows_verify": true
+        },
+        "39994207667": {
+          "conclusion": "failure",
+          "jobs": 1
+        }
+      },
+      "code_search": {
+        "exact_build_variable_reference_results": 4,
+        "ed25519_public_key_related_results": 6,
+        "public_key_value_verified": false
+      },
+      "runner_assignment_change_verified": false,
+      "ci_rerun": false
     }
   },
   "sinks": {
@@ -4011,6 +4136,28 @@
       "result": "WINDOWS_ROUTE_TIMEOUT_LAST_RECEIPT_RETAINED_DROPBOX_BOUNDED_SCAN_NO_ISSUER_KEY_TESSERACT_CI_NOT_RERUN",
       "next_callable_edge": "When the authorized Windows route responds, reconcile the pending exact receipt/task reads before any new command; inspect TaskScheduler Operational log state and task action timing before changing settings/code. Continue authorized issuer-key search and obtain an authorized runner-state change before CI rerun.",
       "status_effect": "MODUAL_SENSOR_LOGS_ROUTING and INHERITED_TESSERACT_DESKTOP remain OPEN; no tasks closed."
+    },
+    {
+      "id": "WINDOWS_ROUTE_RECOVERED_BRAID_AND_PROVIDER_READBACK_20261024015751",
+      "kind": "DIRECT_WINDOWS_RECEIPT_READBACK_AND_INDEPENDENT_BRAID_EXECUTION",
+      "observed_at": "2026-10-24T08:57:51.198+07:00",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "dee009e984ab6f349bdec4d16472eb50aa0cf2d7",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "de74c3295c092723e7292c090ad283fc0fb73418",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "96da08af6376a1150c70d377cad4c5ad7f410ba5"
+      },
+      "actions_and_receipts": [
+        "Exact Windows receipt readback and source SHA-256 comparison succeeded.",
+        "TESSERACT_OS braid script executed on Windows and both SIX/PLURAL receipts were read back successfully.",
+        "X-TIME and Ollama local HTTP endpoints returned 200; MODUAL live source remains absent/unproven.",
+        "PR #6 and current-head workflow statuses read back; no CI rerun performed."
+      ],
+      "result": "WINDOWS_RECEIPT_AND_BRAID_VERIFIED_LIVE_SENSOR_AND_ISSUER_TRUST_STILL_OPEN",
+      "open_tasks_closed": false,
+      "source_mutated": false,
+      "credentials_committed": false
     }
   ],
   "energy_protection_current": {
@@ -7443,6 +7590,58 @@
         "ci_rerun": false
       },
       "result": "WINDOWS_ROUTE_TIMEOUT_LAST_RECEIPT_RETAINED_DROPBOX_BOUNDED_SCAN_NO_ISSUER_KEY_TESSERACT_CI_NOT_RERUN"
+    },
+    {
+      "observed_at": "2026-10-24T08:57:51.198+07:00",
+      "record_type": "WINDOWS_CURRENT_RECEIPT_TASK_CONFIGURATION_AND_LOCAL_PROVIDERS",
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "task_state": "Ready",
+        "last_run": "2026-10-24T08:46:33+07:00",
+        "result": "0x0",
+        "next_run": "2026-10-24T08:51:32+07:00",
+        "missed_runs": 0,
+        "latest_receipt": "WINDOWS_TICK_20261024T014636924544Z.json",
+        "receipt_sha256": "59FF8AB0D8933A6BF6C6FBFA8F225775FD75B816E40E4D2E4516A95FB6CBBCC2",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_matches_receipt": true,
+        "live_sensor_reading_confirmed": false,
+        "task_scheduler_operational_log_enabled": false,
+        "current_shell_elevated": false,
+        "w32time": "Stopped/Manual"
+      },
+      "xtime": {
+        "http_status": 200,
+        "version": "0.9.0",
+        "pid": 20712,
+        "runtime_tools": 63,
+        "modual_source_present": false,
+        "live_device_proven": false
+      },
+      "ollama": {
+        "http_status": 200,
+        "model_count": 11,
+        "loopback_only": true
+      },
+      "result": "WINDOWS_ROUTE_RESPONSIVE_LAST_RECEIPT_VERIFIED_NEXT_TICK_PENDING"
+    },
+    {
+      "observed_at": "2026-10-24T08:57:51.198+07:00",
+      "record_type": "TESSERACT_PR6_CURRENT_HEAD_AND_ISSUER_SEARCH",
+      "repository": "2708halinh-cloud/x-time-web",
+      "pr": 6,
+      "state": "OPEN",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "workflow_runs": {
+        "39994207477": "failure",
+        "39994207667": "failure"
+      },
+      "exact_variable_references": 4,
+      "ed25519_related_search_results": 6,
+      "issuer_public_key_value_verified": false,
+      "runner_assignment_change_verified": false,
+      "ci_rerun": false,
+      "result": "TRUST_ANCHOR_AND_RUNNER_STATE_UNVERIFIED"
     }
   ]
 }
