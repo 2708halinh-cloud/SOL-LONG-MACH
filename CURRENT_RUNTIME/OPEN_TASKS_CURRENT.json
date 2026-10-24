@@ -2,8 +2,8 @@
   "schema": "SOL_OPEN_TASKS_PARALLEL_LEDGER/1.0",
   "provenance": {
     "user_directive": "2026-10-21: TẤT CẢ YÊU CẦU CHƯA HOÀN THÀNH PHẢI NEO GIỮ, KHÔNG CHUYỂN QUA LÀM MỘT VIỆC XONG DỪNG LẠI",
-    "observed_at": "2026-10-24T13:21:40.669+07:00",
-    "source": "Current conversation + fresh GitHub/n8n reads; read-only Windows host execution and receipt/hash readback; newest tick directory entry found but its exact content readback remains pending; Android TCP/ADB probe inconclusive; no task closure, no sensor-live claim, no CI success claim. Base HEAD observed before checkpoint update: 1fe15adfaeb1e736a09ea3227d217e861537c5ba.",
+    "observed_at": "2026-10-24T13:24:33.683+07:00",
+    "source": "Fresh Library byte readback + independent ZIP checksum verification; no external provider byte readback; append-only source-export probe; all OPEN statuses preserved.",
     "not_exhaustive_history": true,
     "historical_backfill": "2026-10-21: 14 additional user requests indexed from earlier conversation sources; provider states must be rechecked before action or closure"
   },
@@ -166,6 +166,21 @@
           "result": "NO_NEW_VERIFIED_RAW_ACCOUNT_EXPORT; LIBRARY_INVENTORY_PARTIAL; SEVERAL_EXISTING_CARRIERS_HAVE_NO_AUTHORIZED_RAW_BYTE_PATH",
           "next_callable_edge": "Continue exact source retrieval only through an authorized Drive/Dropbox/Takeout provider or a verified raw carrier. Preserve stable provider IDs and hashes; do not substitute same-name tooling archives or infer byte identity from equal sizes.",
           "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED. No source restored and no task closed."
+        },
+        {
+          "observed_at": "2026-10-24T13:24:33.683+07:00",
+          "source": "Fresh read-only ChatGPT Library byte materialization and independent ZIP verifier; exact source-carrier inventory",
+          "actions_and_receipts": [
+            "Materialized existing SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433(1).zip by Library file ID file_0000000010188209997877d7e82b777f (Library ID libfile_5e0676c0de988191b777aee5dab049d6). Current bytes: 20,882; SHA-256 da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106. Existing sol_reentry_carrier_verify.py independently returned zip_valid=true, checksums_verified=true, 15 internal SHA-256 entries, 16 members. The archive is a 2026-09-12 snapshot and explicitly says newer Drive CURRENT outranks it; this is not a raw account export.",
+            "Materialized existing SOL_JINEY_MINH_IDENTITY_SOURCE_ANCHOR_20261010.zip from Library file ID file_00000000dc2c8209af05bdd3130057bd. Current bytes: 10,250; SHA-256 17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93; ZIP CRC clean, 7 members. EVENT_PROOF_GATES.json says all_requirements_currently_met=false. SOURCE_MAP_CURRENT.json leaves JINEY 2026-07-10 raw naming event unverified, DATNGUYEN/MINH raw count and path unverified, and FUNiX-to-DATNGUYEN relationship unknown. This is a derived identity anchor, not a raw account export.",
+            "Materialized existing OPENAI_GGDV_MATERIALIZED_20261005.zip from Library file ID file_00000000c2cc8209a3103fb044846567. Current bytes: 58,442; SHA-256 eb0d9b33cde33c773e26b4096e1d317c9d2d713f23e160a02216ffd09aa80521; ZIP CRC clean, 155 members. Contents are a capability/tool registry materialization, not account conversation-export data.",
+            "Listed the Library root ZIP/7z filter: 248 metadata entries across three pages, with explicit recursive traversal-limit warnings. Listed /THU HOI NGUON SOL recursively: 252 metadata entries across three pages; no filename match for READBACK_JINEY.json, JINEY_CHAT_NGOAI_DU_AN.zip, JINEY_CHAT_CHUA_XAC_DINH_PROJECT.zip, or .7z.001-.007 in that scoped listing. These are Library-name observations only, not provider-side absence proof.",
+            "A separate existing candidate SOL_TRINH_DUYET_DAM_MAY_CHATGPT_MCP_20261010.zip did not have an authorized raw-byte materialization path. No hash or content claim was made for it.",
+            "No Google Drive, Dropbox, or Takeout action is exposed in the currently callable tool set. No provider object ID/revision or new original-export bytes were retrieved. ADMIN_PORTABLE_20261023.zip and the extracted Drive ADMIN folder were not moved, copied, overwritten, or modified."
+          ],
+          "result": "EXISTING_REENTRY_CARRIER_REVERIFIED;_IDENTITY_ANCHOR_AND_TOOLING_ARCHIVE_CLASSIFIED_AS_DERIVED;_NO_NEW_VERIFIED_RAW_ACCOUNT_EXPORT",
+          "next_callable_edge": "Continue from exact JINEY/FUNIX/DATNGUYEN source IDs through an actually authorized Drive/Dropbox/Takeout provider or an already verified raw carrier. Do not repeat the verified reentry ZIP or treat the identity/tooling ZIPs as raw exports. Preserve stable provider IDs, revisions and byte hashes.",
+          "status_effect": "Keep SUPER_R014 OPEN and OPEN_NOT_PROVEN_COMPLETED. No source restoration and no task closure."
         }
       ]
     },
