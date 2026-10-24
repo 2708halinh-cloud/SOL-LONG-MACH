@@ -1,0 +1,120 @@
+{
+  "schema": "SOL_ARCHIVE_TASK_FOLLOWUP/1.0",
+  "observed_at": "2026-10-25T04:59:00+07:00",
+  "observation_kind": "STAMP_LIVE",
+  "source_task": {
+    "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+    "status": "OPEN",
+    "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
+    "status_mutation": "NONE",
+    "close_action": "NONE"
+  },
+  "current_main_baseline": {
+    "main_head": "54360e09107578e6a7593266313660235959b9f7",
+    "ledger_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "ledger_blob_sha": "dd3d44b71e64474632bc5f965b4574377efa32eb",
+    "ledger_task_count": 29,
+    "archive_task_next": [
+      "Reconcile PR #28 with current main through a safe non-force branch update or a clean re-cut; re-read the exact head and current-head workflow results before any readiness claim.",
+      "Verify the read-only adapters on an authorized Windows or isolated target runner; do not run untrusted archive contents and do not extract source archives.",
+      "Read the authoritative task-table row and exact target receipt through an actually authorized provider/host connector; retain OPEN until the target consequence and readback are proven."
+    ],
+    "ledger_read_method": "GitHub fetch_blob; Contents fetch_file returned empty for this >1 MiB blob, not proof of an empty file"
+  },
+  "clean_current_main_port": {
+    "pull_request": 32,
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/32",
+    "state": "OPEN",
+    "draft": true,
+    "merged": false,
+    "branch": "fix/archive-adapters-main-recut-20261025",
+    "base": "main",
+    "base_sha": "54360e09107578e6a7593266313660235959b9f7",
+    "head_commit_before_checkpoint": "3ddad9cfc73703ec7c9d7efae1e1fa065ac9c72b",
+    "ahead_of_main_before_checkpoint": 5,
+    "behind_main_before_checkpoint": 0,
+    "branch_relation_before_checkpoint": "AHEAD_NOT_DIVERGED"
+  },
+  "live_ci": {
+    "archive_run": {
+      "id": 40136763205,
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40136763205",
+      "conclusion": "success",
+      "head_commit": "3ddad9cfc73703ec7c9d7efae1e1fa065ac9c72b"
+    },
+    "topology_run": {
+      "id": 40136763004,
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40136763004",
+      "conclusion": "success",
+      "head_commit": "3ddad9cfc73703ec7c9d7efae1e1fa065ac9c72b"
+    },
+    "secret_guard_run": {
+      "id": 40136763064,
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40136763064",
+      "conclusion": "success",
+      "head_commit": "3ddad9cfc73703ec7c9d7efae1e1fa065ac9c72b"
+    },
+    "artifact_id": 12577805508,
+    "artifact_zip_bytes": 959,
+    "artifact_zip_sha256": "3ece548cb48670afb8bb5f6e66f81c0e65ffc0f4f8f4171b268781395cb96b67",
+    "artifact_crc": "PASS",
+    "receipt_member": "real-fixture-readback.json",
+    "receipt_bytes": 1552,
+    "receipt_sha256": "aa3669435849c18e13b9073f258df0d75eb0f5acc3ba0922bcb4fad5c2449ddd",
+    "fixture_count": 3,
+    "all_passed": true,
+    "extraction_performed": false,
+    "source_archives_modified": false,
+    "fixtures": [
+      {
+        "format": "7Z",
+        "adapter": "7z",
+        "bytes": 169,
+        "sha256": "d08196c7970cd937131a62463118886ed2fc8260e1c2586df112c5728eb5ace5",
+        "status": "PASS"
+      },
+      {
+        "format": "RAR",
+        "adapter": "unrar",
+        "bytes": 606,
+        "sha256": "d3d4bd8c90b22fa01c11f460589499de06f9d28e076ec3762eea738c0903e874",
+        "status": "PASS"
+      },
+      {
+        "format": "LR",
+        "adapter": "lrzip",
+        "bytes": 104,
+        "sha256": "b13399673dd6e264cae5e7b336574e0c58b7c8479071d3fc68be2ca1dbb814f0",
+        "status": "PASS"
+      }
+    ]
+  },
+  "source_recovery": {
+    "original_exports_recovered": {
+      "JINEY": false,
+      "FUNIX": false,
+      "DAT_NGUYEN": false
+    },
+    "provider_raw_byte_readback": "NOT_AVAILABLE_IN_CURRENT_TOOL_SURFACE",
+    "library_archive": "ADMIN_PORTABLE_20261023.zip",
+    "library_archive_sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+    "map_nguon_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+    "map_nguon_xiv_readback": "VERIFIED_FROM_ARCHIVE_BYTES",
+    "status": "NOT_COMPLETE"
+  },
+  "guards": {
+    "preserve_open_and_in_progress": true,
+    "no_task_status_changed": true,
+    "no_merge_or_force_push": true,
+    "no_windows_host_claim": true,
+    "no_google_drive_write": true,
+    "no_source_archive_mutation": true,
+    "no_private_chat_or_secret_payload_to_public_github": true
+  },
+  "next": [
+    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN until authorized source/runtime proof and exact target readback; CI success is not completion.",
+    "Use PR #32 as the clean current-main archive-adapter re-cut; refresh exact head and current-head CI after any further commit.",
+    "Obtain an authorized raw-byte provider route for JINEY/FUNIX/DAT NGUYEN and preserve provider object ID, revision and SHA-256; do not substitute derived ZIPs.",
+    "Verify adapter binaries on an authorized Windows host or target runner; current fixture evidence is GitHub-hosted Ubuntu only."
+  ]
+}
