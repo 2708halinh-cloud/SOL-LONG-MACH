@@ -126,3 +126,21 @@ Người đồng hành yêu cầu tác nhân xem xét chính **IP, DNS, thiết 
 - SOURCE_OF_TRUTH: CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ/_Sổ_đăng_ký/PLATFORM_ACCESS_PATH_20261016.md
 - HISTORY_PRESERVED: TRUE
 - CONTINUE: TRUE
+
+
+## EVENT — OWNED-PLUGIN-COMPLETE-PAGINATION-20261024-07
+
+- EVENT_ID: OWNED-PLUGIN-COMPLETE-PAGINATION-20261024-07
+- ACTION: Called Plugin Creator `list_owned_personal_plugins` with limit 50 and followed every returned `next_cursor` sequentially until no cursor remained. Read this journal fresh before append.
+- OBSERVED_PAGES: 3
+- PAGE_SIZES: 50, 50, 20
+- TOTAL_RECORDS_RETURNED: 120
+- UNIQUE_PLUGIN_IDS: 120
+- UNIQUE_NAMES: 119
+- SCOPES_RETURNED: USER=120
+- PAGINATION_COMPLETE: TRUE (final page returned no next cursor)
+- CONCLUSION: The live owned-personal-plugin endpoint returned 120 distinct plugin IDs in USER scope. This directly substantiates “100+ plugins” for this specific inventory scope. It does not count public directory plugins, workspace plugins excluded by the endpoint, or every connected provider/tool namespace; it must not be conflated with those categories.
+- SEPARATE_SKILL_MEASURE: The fresh `skills__list({})` call returned 443 skill entries across 100 URI namespaces. Skill entries, URI namespaces, and plugin IDs are separate counts.
+- SOURCE_OF_TRUTH: CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ/_Sổ_đăng_ký/PLATFORM_ACCESS_PATH_20261016.md
+- HISTORY_PRESERVED: TRUE
+- CONTINUE: TRUE
