@@ -82,11 +82,12 @@
     "action": "Read current PR metadata, check runs, job summaries, artifacts, workflow YAML, Kilo verifier source, and security-branch source. No CI rerun, no key generation, no PR mutation."
   },
   "safety": {
-    "no_secrets_written": false,
+    "no_secrets_written": true,
     "no_private_key_read": false,
     "no_ci_rerun": true,
     "no_pr_closed": true,
-    "no_tasks_closed": 0
+    "no_tasks_closed": 0,
+    "private_key_read": false
   },
   "next_edge": "Continue MODUAL from the exact latest Windows receipt and consumer diagnosis. For TESSERACT, obtain the actual issuer public key and runner assignment through an authorized control surface; do not rerun CI while current runs still fail and no runner change is verified. Run Rust regression tests only on an authorized isolated runner."
 }
