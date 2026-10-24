@@ -2,15 +2,15 @@
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.2",
   "state": "OPEN_WORK_REMAINS",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0247ICT.json",
-    "blob_sha": "ca2ac1b7577f737a125628ccff3abea0bf45298f",
-    "commit_sha": "f2a814ded5f4b44976feeb40ff78bfb38afc9255",
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0258ICT.json",
+    "blob_sha": "f392509546167314bd588ec820b75efbb53f8cd5",
+    "commit_sha": "693425d25fd790d4697aeafbe278939d6e132c7f",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0156ICT.json",
-    "blob_sha": "5bf6b8945d94c8a17486c2a78220a02458cb7593",
-    "commit_sha": "4addebd440a4cda28fde0eb2462603179459c484",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0247ICT.json",
+    "blob_sha": "ca2ac1b7577f737a125628ccff3abea0bf45298f",
+    "commit_sha": "f2a814ded5f4b44976feeb40ff78bfb38afc9255",
     "readback_verified": true
   },
   "historical_checkpoint": {
@@ -19,55 +19,8 @@
     "commit_sha": "ddefbc9340a4de61925ab706ce41f76c17e54990",
     "readback_verified": true
   },
-  "n8n": {
-    "workflow_id": "BogzhFUDbRp7kuwh",
-    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
-    "active": true,
-    "latest_verified_execution_id": "146",
-    "execution_status": "success",
-    "latest_scheduled_execution_id": "146",
-    "latest_scheduled_execution_status": "success",
-    "cloud_scan_row_id": 306,
-    "latest_ledger_crosswalk_row_id": 303,
-    "latest_host_tick_row_id": 307,
-    "latest_braid_readback_row_id": 301,
-    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_row_count": 311,
-    "latest_evidence_row_id": 311,
-    "latest_evidence_row_readback_verified": true,
-    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
-    "project_id": "6qKpRmicIGHA5snY",
-    "recovery_table_row_count": 45,
-    "pending_tasks": 45,
-    "closed_tasks": 0,
-    "github_open_task_count": 28,
-    "normalized_id_matches": 28,
-    "github_only_tasks": 0,
-    "n8n_only_historical_tasks": 17,
-    "status_divergences_preserved": 2,
-    "project_credentials": 0,
-    "model_binding_verified": false,
-    "publish_or_dispatch_performed": false,
-    "latest_android_readback_row_id": 308,
-    "latest_github_pr_readback_row_id": 309,
-    "latest_host_task_failure_row_id": 311,
-    "model_catalog_provider_count": 16
-  },
-  "host": {
-    "state_this_run": "REACHABLE_VIA_READONLY_REMOTE_PROBE",
-    "device": "DESKTOP-86ITNQ4",
-    "latest_recorded_tick": "WINDOWS_TICK_20261024T193655747351Z.json",
-    "latest_recorded_tick_sha256": "096EDA8C37BF4613866BDCDCDAEDCE0317C0E3EB3EDC4A44D3BC07035F1C063E",
-    "latest_recorded_source_csv_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-    "prior_source_sha_matches_tick": true,
-    "live_sensor_reading_confirmed": false,
-    "host_clock_alignment_verified": false,
-    "bridge_task_last_run_local": "2026-10-25T02:39:01+07:00",
-    "bridge_task_last_result": "0x1",
-    "exact_modual_source_exists": false,
-    "expected_modual_source_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
-    "differently_hashed_raw_vault_candidate_substituted": false
-  },
+  "n8n": "147",
+  "host": "WINDOWS_TICK_20261024T195722252229Z.json",
   "android": {
     "state_this_run": "ADB_DEVICE_RESPONDS;WIRELESS_TCP_UNREACHABLE",
     "last_recorded_observation_local": "2026-10-25T02:41:43+07:00",
@@ -87,30 +40,14 @@
     "source_registry_blob_sha1": "9ffdc2da742bd9ad07fbdfb8b27fcd8c8cf8b74e",
     "payload_readback": "UNVERIFIED"
   },
-  "archive_task": {
-    "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
-    "pr_number": 27,
-    "pr_state": "OPEN",
-    "draft": true,
-    "current_head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
-    "current_head_topology_check": "SUCCESS",
-    "current_head_secret_guard": "SUCCESS",
-    "current_reported_check_run_ids": [
-      40118316177,
-      40118316092
-    ],
-    "mergeable_state": "dirty",
-    "real_7z_rar_lr_fixtures_verified": false,
-    "source_moved_or_deleted": false,
-    "task_closed": false
-  },
+  "archive_task": 27,
   "next": [
-    "Re-read the latest Windows tick and task status after the reported 02:44 ICT run; keep live_sensor_reading_confirmed=false until a genuine live sample.",
-    "Locate the exact MODUAL source matching expected SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3; do not substitute the differently hashed RAW_VAULT candidate or execute the side-effecting router while the precondition is unresolved.",
-    "Keep Android power and continuous sensor stream UNKNOWN until a fresh authorized device/app readback; wireless TCP was unreachable.",
-    "Keep PR #27 OPEN; current reported topology and secret checks pass, but real 7Z/RAR/LR fixtures remain unverified.",
-    "Obtain an authorized raw-byte path for the seventh ZIP carrier; keep SV-20261020-02 OPEN and do not infer deletion.",
-    "Continue cloud-eligible OPEN tasks without agent dispatch until credential and model binding are verified."
+    "Verify the next Windows Tick at 2026-10-25T03:01:32+07:00 after the PT4M limit change; keep live_sensor_reading_confirmed=false until a genuine live sample is proven.",
+    "Locate the exact bulk MODUAL source with SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 and 89814328 bytes; do not substitute the differently hashed RAW_VAULT candidate or execute the side-effecting router.",
+    "Continue validating the data consumer: X-TIME remains loopback-only on 127.0.0.1:8769; the current telemetry_buffer_sync.py is metadata-only and does not prove live sensor data.",
+    "Keep Android continuous sensor stream UNKNOWN until recent sensor-event evidence advances; wireless TCP 192.168.1.14:5556 remains unreachable.",
+    "Keep PR #27 OPEN despite PR #28/#29 successful hosted checks; Windows binary/authoritative archive recovery evidence remains incomplete.",
+    "Continue TESSERACT Desktop issuer public-key and runner-assignment verification; do not rerun CI without a verified runner change."
   ],
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -132,5 +69,115 @@
     "blob_sha": "e2aa6e5f76da577ba24b1a6ef6a45473b616ed6f",
     "commit_sha": "23923f1858b71d7dd0eb4d3b5fbaff48555a22b3",
     "readback_verified": true
+  },
+  "updated_at": "2026-10-25T02:58:40.987+07:00",
+  "observed_at": "2026-10-25T02:58:40.987+07:00",
+  "older_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0156ICT.json",
+    "blob_sha": "5bf6b8945d94c8a17486c2a78220a02458cb7593",
+    "commit_sha": "4addebd440a4cda28fde0eb2462603179459c484",
+    "readback_verified": true
+  },
+  "latest_tick_readback": {
+    "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T195722252229Z.json",
+    "observed_at_utc": "2026-10-24T19:57:22.252229Z",
+    "sha256": "2ef254dfa49d53aa8a6c05e19a22562a2751114bf4df23812996a1477b30695e",
+    "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+    "source_bytes": 35389440,
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_hash_matches_receipt": true,
+    "live_sensor_reading_confirmed": false,
+    "source_file_written": false,
+    "synthetic_rows_added": 0,
+    "cloud_enabled": false,
+    "github_enabled": false,
+    "task_state": "Ready",
+    "task_last_run_local": "2026-10-25T02:56:33+07:00",
+    "task_last_result": "0x0",
+    "task_execution_limit": "PT4M",
+    "task_next_run_local": "2026-10-25T03:01:32+07:00",
+    "missed_runs": 0
+  },
+  "latest_provider_readback": {
+    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0258ICT.json",
+    "checkpoint_blob_sha": "f392509546167314bd588ec820b75efbb53f8cd5",
+    "checkpoint_commit_sha": "693425d25fd790d4697aeafbe278939d6e132c7f",
+    "exact_target_readback": true,
+    "observed_at": "2026-10-25T02:58:40.987+07:00"
+  },
+  "latest_n8n_readback": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "execution_id": "147",
+    "status": "success",
+    "event_id": "X20261024194822997_CLOUD",
+    "table_id": "Sk0EFJK5NzWVpBvm",
+    "row_id": 312,
+    "exact_row_readback": true,
+    "state": "OPEN_WORK_REMAINS",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "host_heartbeat_probed": false,
+    "tasks_closed": 0
+  },
+  "latest_braid_readback": {
+    "script_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+    "exit_code": 0,
+    "six_sha256": "90118e1855a50502a0286831ae6b1b990ba480c62bb528a3e04a08d612e0d27a",
+    "plural_sha256": "cc8f9f2af248de461e7e3b3fcc5f2c44c806e7b769fec8766ae31494f2676b7e",
+    "six_actions": 9,
+    "plural_actions": 5,
+    "mutation_executed": false,
+    "source_sha256_unchanged": true,
+    "cloud_host_wiring": "NOT_VERIFIED"
+  },
+  "task_execution_limit_change": {
+    "task_name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+    "previous_limit": "PT2M",
+    "current_limit": "PT4M",
+    "task_action_unchanged": true,
+    "subsequent_run_result": "0x0",
+    "next_run_local": "2026-10-25T03:01:32+07:00",
+    "verify_after_next_run": true
+  },
+  "modual_source_resolution": {
+    "expected_bulk_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "expected_bulk_bytes": 89814328,
+    "exact_bulk_source_found": false,
+    "live_source_copy_hash_matches_expected_live_hash": true,
+    "raw_vault_candidate_substituted": false,
+    "side_effecting_router_executed": false
+  },
+  "provider_status": {
+    "xtime": {
+      "health_http": 200,
+      "schema_http": 200,
+      "sensorimotor_http": 200,
+      "source_present": true,
+      "live_device_proven": false,
+      "configured_port": 8769,
+      "port_8080_probe_failed": true
+    },
+    "ollama": {
+      "http": 200,
+      "model_count": 11
+    },
+    "android": {
+      "adb_usb_online": true,
+      "boot_completed": "1",
+      "wireless_tcp_5556": false,
+      "recent_sensor_event_digest_unchanged_across_two_snapshots": true
+    },
+    "hwinfo": {
+      "process_running": true,
+      "csv_bytes": 39922785,
+      "csv_last_write_utc": "2026-10-21T02:20:45.8565035Z",
+      "fresh_sample_proven": false
+    },
+    "dropbox": {
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_readback": true
+    }
   }
 }
