@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "MODUAL: after 23:21:32+07, read the newest exact Tick receipt and Scheduled Task state and recompute direct CSV SHA-256. Latest verified receipt WINDOWS_TICK_20261024T161634788294Z.json SHA-256 6ea9ddffd86e566ee9de164fb16e6fcbde27b9ec924df8d1eacf93d3bea1427d; source CSV SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches. Task Ready/Enabled, last run 23:16:33+07, result 0x0, next run 23:21:32+07. At 23:17 both X-TIME health routes timed out; no listener on 8080 and no listener on X-TIME PID 73000. Earlier same-turn probe found MTAgentService on 8080, so retain the changing observations and do not infer service down or stop/reconfigure anything. HWiNFO64 remains without a verified CSV carrier in D:\\SENSOR_LOGS; intended Android target TCP probe false and device identity unverified. TESSERACT PR #6 remains OPEN; security branch 5 ahead/0 behind, issuer key and runner assignment unverified; no CI rerun. Cloud execution 141 row 290 exact readback; 45 pending, host heartbeat unprobed.",
+  "next": "MODUAL: next Tick boundary is 23:21:32+07 (the latest readback at 23:17 still showed next run 23:21:32; obtain the newest receipt and direct CSV hash). X-TIME's actual start_xtime_local.cmd sets HOST=127.0.0.1 and PORT=8769, with MODUAL_CSV_PATH=D:\\SENSOR_LOGS\\windows_SENSON.CSV. At 23:21:20–23:21:58, /api/health and /api/modual/schema returned HTTP 200, source_present=true, 35,389,440 bytes, 354 headers/353 non-empty, but live_device_proven=false. /api/sensorimotor and filesystem endpoint returned HTTP 200; filesystem watcher reported 19 baseline files, 39 native events, 27 emitted events, 18 self-causal events, 28 recent events. /api/all-desktop/sensorimotor returned HTTP 200 but source_present=false and SOURCE_PATH_OPEN_EVENT_BUS_READY. Keep X-TIME loopback-only; do not treat filesystem/state-delta events as live sensor data. Continue HWiNFO/Android genuine sample verification, TESSERACT issuer/runner verification (no CI rerun absent runner change), and cloud continuity (execution 141 row 290, 45 pending).",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T16:17:16.4263142Z",
+  "updated_at": "2026-10-24T16:21:58.7377801Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -4920,6 +4920,58 @@
           "metadata_readback": true
         }
       }
+    },
+    {
+      "id": "XTIME_CONSUMER_READBACK_20261024T2321ICT",
+      "observed_at": "2026-10-24T23:21:58.7377801+07:00",
+      "observed_at_utc": "2026-10-24T16:21:58.7377801Z",
+      "source": "Exact local startup-script/server.js readback and loopback HTTP probes on configured X-TIME port 8769",
+      "checkpoint_file": "CURRENT_RUNTIME/XTIME_CONSUMER_READBACK_20261024T2321ICT.json",
+      "checkpoint_blob_sha": "f2615eb48355f7d38c2eb417d9ca4c8bd5fc1d03",
+      "checkpoint_commit": "3613a06b3cd8535566210747c9773871c690e13c",
+      "result": "XTIME_HEALTH_200_ON_127.0.0.1_8769; MODUAL_SOURCE_PRESENT; LIVE_DEVICE_NOT_PROVEN; FILESYSTEM_EVENT_BUS_OK; ALL_DESKTOP_SOURCE_ABSENT_EVENT_BUS_READY",
+      "configured_host": "127.0.0.1",
+      "configured_port": 8769,
+      "loopback_only": true,
+      "startup_script_sha256": "c1e09c012931501a81f92b00b5aed0491f0b7e2ab59d22181c92de099d097a02",
+      "server_js_sha256": "a662e584cc632f6b3ad2281302daec033095170feaccd291bbe2fdc55d9dee10",
+      "health_status": 200,
+      "modual_schema_status": 200,
+      "sensorimotor_status": 200,
+      "filesystem_sensor_status": 200,
+      "all_desktop_status": 200,
+      "source_present": true,
+      "live_device_proven": false,
+      "source_bytes": 35389440,
+      "source_sha256_last_directly_verified": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "header_count_observed": 354,
+      "non_empty_headers": 353,
+      "modified_at_utc": "2026-10-23T08:45:56.246Z",
+      "sensorimotor_event_id": "51211ca9edf8b135887b85c5a9acf5d835fb28a7ffaec40e9660efe9362b1842",
+      "sensorimotor_signals_count": 2,
+      "software_state_delta_only": true,
+      "raw_sensor_values_persisted": false,
+      "filesystem": {
+        "ok": true,
+        "native_watch_mode": "fs.watch:recursive",
+        "files_in_baseline": 19,
+        "native_events_seen": 39,
+        "emitted_events": 27,
+        "self_causal_events": 18,
+        "recent_event_count": 28,
+        "last_error": ""
+      },
+      "all_desktop": {
+        "source_present": false,
+        "state": "SOURCE_PATH_OPEN_EVENT_BUS_READY",
+        "adapter": "G:\\FPGA_AI_LOCAL\\inetpub\\XTIME_LOCAL_LIVE_20261020\\tools\\all_desktop_sensorimotor.py"
+      },
+      "wrong_port_8080_probes_timed_out": true,
+      "port_8080_is_configured_for_xtime": false,
+      "tasks_closed": 0,
+      "raw_sensor_data_committed": false,
+      "credentials_committed": false,
+      "service_or_task_configuration_changed": false
     }
   ],
   "latest_sync_observation": {
@@ -4951,14 +5003,14 @@
     ]
   },
   "latest_runtime_observation": {
-    "id": "WINDOWS_TICK_READBACK_20261024T2317ICT",
-    "observed_at": "2026-10-24T16:17:16.4263142Z",
-    "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
-    "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2317ICT.json",
-    "checkpoint_blob_sha": "e03be3ffb5ef8f2f9a7973d4967d36ed62b4063d",
-    "checkpoint_commit": "a00330f0b2a698828e35755dd57cdf2a66558c89",
-    "result": "TICK_161634_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER; NO_XTIME_PID_LISTENER; OLLAMA_HTTP200_11_MODELS_LAST_PROBED_2314; LIVE_SENSOR_STREAM_NOT_VERIFIED",
-    "next_callable_edge": "Continue Tick readback after 23:21:32+07; trace X-TIME listener and preserve live sensor state as unverified."
+    "id": "XTIME_CONSUMER_READBACK_20261024T2321ICT",
+    "observed_at": "2026-10-24T16:21:58.7377801Z",
+    "observed_at_local": "2026-10-24T23:21:58.7377801+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/XTIME_CONSUMER_READBACK_20261024T2321ICT.json",
+    "checkpoint_blob_sha": "f2615eb48355f7d38c2eb417d9ca4c8bd5fc1d03",
+    "checkpoint_commit": "3613a06b3cd8535566210747c9773871c690e13c",
+    "result": "XTIME_HEALTH_200_ON_127.0.0.1_8769; MODUAL_SOURCE_PRESENT; LIVE_DEVICE_NOT_PROVEN; FILESYSTEM_EVENT_BUS_OK; ALL_DESKTOP_SOURCE_ABSENT_EVENT_BUS_READY",
+    "next_callable_edge": "Continue genuine live-sensor verification via supported HWiNFO/authorized Android path; preserve X-TIME loopback-only bind and All_desktop source-open state."
   },
   "continuity_readback_history": [
     {
@@ -8180,19 +8232,19 @@
       "live_sensor_reading_confirmed": false
     },
     "consumer": {
-      "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
-      "loopback_endpoint": "http://127.0.0.1:8080/api/health",
-      "loopback_result": "TIMEOUT",
-      "lan_endpoint": "http://192.168.1.42:8080/api/health",
-      "lan_result": "TIMEOUT",
-      "listener_8080": false,
-      "xtime_pid": 73000,
-      "xtime_listeners": "NONE",
-      "prior_listener_owner": "MTAgentService",
-      "prior_listener_pid": 4932,
-      "health": "UNVERIFIED_TIMEOUT_NO_LISTENER_AT_PROBE",
-      "service_down_inferred": false,
-      "configuration_changed": false
+      "observed_at_local": "2026-10-24T23:21:58.7377801+07:00",
+      "configured_endpoint": "http://127.0.0.1:8769/api/health",
+      "health_status": 200,
+      "modual_schema_status": 200,
+      "sensorimotor_status": 200,
+      "filesystem_sensor_status": 200,
+      "all_desktop_status": 200,
+      "source_present": true,
+      "live_device_proven": false,
+      "filesystem_event_bus_ready": true,
+      "all_desktop_source_present": false,
+      "wrong_port_8080_probes_timed_out": true,
+      "configured_port_is_8769": true
     },
     "hwinfo": {
       "last_observed_in_this_turn": true,
@@ -9123,6 +9175,16 @@
       "checkpoint_commit": "a00330f0b2a698828e35755dd57cdf2a66558c89",
       "result": "TICK_161634_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER; NO_XTIME_PID_LISTENER; OLLAMA_HTTP200_11_MODELS_LAST_PROBED_2314; LIVE_SENSOR_STREAM_NOT_VERIFIED",
       "next_callable_edge": "Continue Tick readback after 23:21:32+07; trace X-TIME listener and preserve live sensor state as unverified."
+    },
+    {
+      "id": "XTIME_CONSUMER_READBACK_20261024T2321ICT",
+      "observed_at": "2026-10-24T16:21:58.7377801Z",
+      "observed_at_local": "2026-10-24T23:21:58.7377801+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/XTIME_CONSUMER_READBACK_20261024T2321ICT.json",
+      "checkpoint_blob_sha": "f2615eb48355f7d38c2eb417d9ca4c8bd5fc1d03",
+      "checkpoint_commit": "3613a06b3cd8535566210747c9773871c690e13c",
+      "result": "XTIME_HEALTH_200_ON_127.0.0.1_8769; MODUAL_SOURCE_PRESENT; LIVE_DEVICE_NOT_PROVEN; FILESYSTEM_EVENT_BUS_OK; ALL_DESKTOP_SOURCE_ABSENT_EVENT_BUS_READY",
+      "next_callable_edge": "Continue genuine live-sensor verification via supported HWiNFO/authorized Android path; preserve X-TIME loopback-only bind and All_desktop source-open state."
     }
   ],
   "latest_tesseract_runner_issuer_probe": {
@@ -9193,29 +9255,37 @@
     "tasks_closed": 0
   },
   "latest_consumer_script_probe": {
-    "observed_at": "2026-10-24T15:10:48.058Z",
-    "observed_at_local": "2026-10-24T22:10:48.058+07:00",
-    "local_script_path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
-    "local_script_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
-    "local_script_sha256_recomputed_this_turn": false,
-    "consumer": {
-      "observed_at_local": "2026-10-24T21:56:39+07:00",
-      "endpoint": "http://127.0.0.1:8080/api/health",
-      "http_result": "REQUEST_ABORTED_TIMEOUT",
-      "netstat_8080_listener_lines": 0,
-      "port_owner_identified": false,
-      "health": "UNVERIFIED_NO_LOCAL_LISTENER_OBSERVED",
-      "service_down_inferred": false,
-      "configuration_changed": false
+    "observed_at": "2026-10-24T16:21:58.7377801Z",
+    "observed_at_local": "2026-10-24T23:21:58.7377801+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/XTIME_CONSUMER_READBACK_20261024T2321ICT.json",
+    "checkpoint_blob_sha": "f2615eb48355f7d38c2eb417d9ca4c8bd5fc1d03",
+    "checkpoint_commit": "3613a06b3cd8535566210747c9773871c690e13c",
+    "startup_script": {
+      "path": "G:\\OS_Workspace\\TESSERACT_OS\\continuity\\AUTONOMOUS_LOCAL\\start_xtime_local.cmd",
+      "sha256": "c1e09c012931501a81f92b00b5aed0491f0b7e2ab59d22181c92de099d097a02",
+      "host": "127.0.0.1",
+      "port": 8769,
+      "modual_csv_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV"
     },
-    "hwinfo": {
-      "process_running": true,
-      "pid": 17520,
-      "csv_path_verified": false,
-      "search_scope": "D:\\SENSOR_LOGS",
-      "matching_csv_found_in_scope": false
+    "server_js": {
+      "path": "G:\\FPGA_AI_LOCAL\\inetpub\\XTIME_LOCAL_LIVE_20261020\\tools\\server.js",
+      "sha256": "a662e584cc632f6b3ad2281302daec033095170feaccd291bbe2fdc55d9dee10"
     },
-    "historical_dropbox_script_executed": false
+    "health_status": 200,
+    "modual_schema_status": 200,
+    "sensorimotor_status": 200,
+    "filesystem_sensor_status": 200,
+    "all_desktop_status": 200,
+    "source_present": true,
+    "live_device_proven": false,
+    "header_count_observed": 354,
+    "non_empty_headers": 353,
+    "filesystem_recent_event_count": 28,
+    "all_desktop_source_present": false,
+    "all_desktop_state": "SOURCE_PATH_OPEN_EVENT_BUS_READY",
+    "raw_sensor_data_committed": false,
+    "credentials_committed": false,
+    "tasks_closed": 0
   },
   "latest_open_routing_pr26_sync": {
     "observed_at_utc": "2026-10-24T13:36:32Z",
