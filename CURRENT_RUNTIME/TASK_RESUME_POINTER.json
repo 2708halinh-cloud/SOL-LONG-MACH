@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T15:12:54.172Z",
+  "updated_at": "2026-10-24T16:10:20.219Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -4458,6 +4458,25 @@
         "tasks_closed": 0
       },
       "result": "N8N_EXECUTION_139_AND_ROW_288_EXACT_READBACK_VERIFIED; OPEN_WORK_REMAINS; HOST_HEARTBEAT_NOT_PROBED; LIVE_SENSOR_STREAM_NOT_VERIFIED; TESSERACT_PR6_OPEN"
+    },
+    {
+      "id": "TESSERACT_CHECKPOINT_SYMLINK_CANONICALIZATION_AND_RAW_EXPORT_TRACE_READBACK",
+      "kind": "SOURCE_PATCH_AND_RAW_EXPORT_PROBE",
+      "observed_at": "2026-10-24T23:10:20+07:00",
+      "repository": "2708halinh-cloud/x-time-web",
+      "security_branch_commit": "2e0d8c633f3bf2e7f48ea91ef34a2c1682393ced",
+      "file_blob_sha": "7b7f90ffe7b9996254d9f690a3575656185d49dd",
+      "rust_tests_executed": false,
+      "pr6": {
+        "state": "open",
+        "merged": false,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14"
+      },
+      "raw_export": {
+        "new_verified_bytes": 0,
+        "provider_readback": false
+      },
+      "task_closures": 0
     }
   ],
   "latest_sync_observation": {
@@ -7525,78 +7544,48 @@
   },
   "latest_security_patch_observation": {
     "stamp_class": "STAMP_LIVE",
-    "observed_date_local": "2026-10-24",
-    "repo": "2708halinh-cloud/x-time-web",
+    "observed_at": "2026-10-24T23:10:20+07:00",
+    "repository": "2708halinh-cloud/x-time-web",
     "branch": "security/repo-relative-read-containment-20261024",
-    "commit": "b5770b5358e8d41082c95ef87fa270fc947cd4da",
+    "commit": "2e0d8c633f3bf2e7f48ea91ef34a2c1682393ced",
     "file": "TESSERACT_DESKTOP/src-tauri/src/main.rs",
-    "file_blob_sha": "af1a16270cb9ff90c5a7f34d5d56ae4343fc5eca",
-    "change": "Reject Windows drive-qualified paths (e.g. C:\\Windows\\win.ini) before repo-relative resolution; add regression assertions for drive-letter paths.",
-    "readback": "Commit diff and branch file were fetched from GitHub and matched the new blob SHA.",
+    "file_blob_sha": "7b7f90ffe7b9996254d9f690a3575656185d49dd",
+    "change": "Canonicalize the resume checkpoint candidate before file-type inspection; reject external canonical targets, require a regular file before reading, preserve NOT_PRESENT only for canonicalization NotFound; add Unix regression for checkpoint symlink to an external directory.",
+    "readback": "GitHub branch endpoint reports this exact commit as branch head; fetched file blob matches write result and content comparison.",
     "validation": {
       "rust_tests_executed": false,
-      "reason": "This runtime has no rustc or cargo.",
+      "reason": "No authorized Rust runner/toolchain available in this turn.",
       "workflow_runs_for_commit": [],
       "ci_triggered": false
     },
-    "status_effect": "No task closure. Security patch remains untested and separate from PR #6.",
-    "next": "Run cargo test --manifest-path TESSERACT_DESKTOP/src-tauri/Cargo.toml on an authorized runner; verify current-head CI and issuer public key before considering PR or merge."
+    "status_effect": "No task closure; patch remains untested and isolated from PR #6.",
+    "next": "Run targeted Rust regression and cargo test on an authorized isolated runner; obtain actual issuer public key and verify runner entitlement through authorized control surfaces."
   },
   "latest_source_export_probe": {
-    "observed_at": "2026-10-24T13:24:33.683+07:00",
-    "observed_at_utc": "2026-10-24T06:24:33.683Z",
-    "source": "ChatGPT Library exact-byte materialization + sol_reentry_carrier_verify.py; GitHub current ledger readback",
-    "verified_carriers": [
-      {
-        "name": "SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433(1).zip",
-        "library_file_id": "libfile_5e0676c0de988191b777aee5dab049d6",
-        "size_bytes": 20882,
-        "sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
-        "zip_crc": "PASS",
-        "internal_sha256_files": 15,
-        "member_count": 16,
-        "classification": "HISTORICAL_REENTRY_SNAPSHOT_NOT_RAW_ACCOUNT_EXPORT"
-      },
-      {
-        "name": "SOL_JINEY_MINH_IDENTITY_SOURCE_ANCHOR_20261010.zip",
-        "library_file_id": "libfile_305e43b7cb68819185e3df84ad1855b6",
-        "size_bytes": 10250,
-        "sha256": "17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93",
-        "zip_crc": "PASS",
-        "member_count": 7,
-        "classification": "DERIVED_IDENTITY_ANCHOR_RAW_ORIGIN_EVENTS_UNVERIFIED"
-      },
-      {
-        "name": "OPENAI_GGDV_MATERIALIZED_20261005.zip",
-        "library_file_id": "libfile_0ec1d24690dc8191991584b924765f7b",
-        "size_bytes": 58442,
-        "sha256": "eb0d9b33cde33c773e26b4096e1d317c9d2d713f23e160a02216ffd09aa80521",
-        "zip_crc": "PASS",
-        "member_count": 155,
-        "classification": "CAPABILITY_TOOLING_MATERIALIZATION_NOT_ACCOUNT_EXPORT"
-      }
-    ],
-    "library_inventory": {
-      "root_zip_7z_metadata_entries": 248,
-      "root_inventory_warning": "Recursive traversal limit; partial inventory",
-      "thu_hoi_nguon_sol_metadata_entries": 252,
-      "scoped_exact_name_matches_for_known_jiney_export_candidates": 0,
-      "interpretation": "Library filename inventory only; not proof that provider-side or differently named raw exports are absent"
+    "observed_at": "2026-10-24T23:10:20+07:00",
+    "source": "Fresh ChatGPT Library semantic search and full readback of JINEY_OPENAI_EXPORT_SOURCE_TRACE_20261013.md; GitHub ledger readback",
+    "query_scope": "JINEY/FUNIX/DAT NGUYEN original account export ZIPs, .7z.001-.007 carriers, Dropbox reentry carrier, MAP_NGUON XIV",
+    "newly_verified_raw_export_bytes": 0,
+    "new_provider_object_id_or_revision": false,
+    "source_trace_readback": {
+      "name": "JINEY_OPENAI_EXPORT_SOURCE_TRACE_20261013.md",
+      "library_file_id": "libfile_2a8aab4df2908191bf962aa563657b7e",
+      "lines": 41,
+      "conclusion": "JINEY original OpenAI export remains unverified; the 636-chat and 160-chat Markdown ZIPs are derived; historical .7z parts and f8670817/4cb7a3b9 identities are not byte-verified."
     },
+    "library_search_results": "Existing trace and related source notes only; no new raw account export surfaced in the returned results.",
     "provider_access": {
       "google_drive_action_exposed": false,
       "dropbox_action_exposed": false,
-      "takeout_action_exposed": false,
-      "provider_object_id_or_revision_readback": false,
-      "new_original_export_bytes_retrieved": false
+      "takeout_action_exposed": false
     },
     "safety": {
-      "admin_zip_modified": false,
       "admin_folder_moved_or_duplicated": false,
-      "private_chat_published": false,
-      "task_closed": false
+      "admin_archive_modified": false,
+      "private_chat_published": false
     },
-    "result": "NO_NEW_VERIFIED_RAW_ACCOUNT_EXPORT; DERIVED_CARRIERS_CLASSIFIED; CONTINUE_OTHER_OPEN_EDGES"
+    "result": "NO_NEW_VERIFIED_RAW_EXPORT; SOURCE_TRACE_RECONFIRMED_NOT_RAW",
+    "status_effect": "Keep SUPER_R014 OPEN; do not substitute derived ZIPs or change ADMIN location."
   },
   "latest_cloud_continuity_readback": {
     "observed_at": "2026-10-24T15:12:54.172Z",
@@ -9156,14 +9145,16 @@
     "task_status": "OPEN_7Z_RAR_LR"
   },
   "last_security_branch_readback": {
-    "observed_at": "2026-10-24T22:19:50+07:00",
+    "observed_at": "2026-10-24T23:10:20+07:00",
     "repository": "2708halinh-cloud/x-time-web",
     "branch": "security/repo-relative-read-containment-20261024",
-    "commit": "835a54565d764b6573b28848ce16bbd3b97afa09",
-    "file_blob_sha": "1f010f1577a6683b45b64c881117caafceda604c",
-    "change": "validate resume checkpoint path before filesystem probe; reject Windows drive-qualified paths",
-    "regression_test": "resume_checkpoint_rejects_windows_drive_paths_before_probe",
+    "commit": "2e0d8c633f3bf2e7f48ea91ef34a2c1682393ced",
+    "file_blob_sha": "7b7f90ffe7b9996254d9f690a3575656185d49dd",
+    "change": "Avoid path.is_file() on an untrusted checkpoint path before canonical containment; reject external directory symlink and test the case.",
+    "regression_test": "external directory checkpoint symlink must be rejected before file-type handling",
     "runtime_tests": "NOT_RUN",
+    "workflow_runs": [],
+    "pr6_unchanged": true,
     "task_status_effect": "NO_CLOSURE"
   },
   "last_tesseract_art_source_probe": {
