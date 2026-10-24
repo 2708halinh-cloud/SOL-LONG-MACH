@@ -67,9 +67,9 @@ jobs:
           lrzip -o "$tmp/fixture.lrz" "$tmp/payload.txt"
           curl -fsSL --retry 2 --connect-timeout 10 --max-time 30 \
             -o "$tmp/fixture.rar" \
-            'https://raw.githubusercontent.com/markokr/rarfile/d2f7df6fc843dae356fd6b0a85971dc36fd6e757/test/files/rar202-comment-nopsw.rar'
+            'https://raw.githubusercontent.com/markokr/rarfile/d2f7df6fc843dae356fd6b0a85971dc36fd6e757/test/files/rar3-subdirs.rar'
           actual="$(git hash-object "$tmp/fixture.rar")"
-          test "$actual" = "329dc72af0e52e6d105984fa5b49e5d0d41ee6da"
+          test "$actual" = "f4d032ef5da82cb2b926d7716713013fdf7fbc3f"
           python tests/verify_real_archive_fixtures.py \
             "$tmp/fixture.7z" "$tmp/fixture.rar" "$tmp/fixture.lrz" \
             | tee real-fixture-readback.json
