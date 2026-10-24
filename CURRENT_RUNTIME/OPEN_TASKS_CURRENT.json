@@ -8506,6 +8506,80 @@
       "result": "N8N_136_ROW279_VERIFIED_OPEN_WORK_REMAINS; TESSERACT_PR6_OPEN_CI_FAILS_NO_ARTIFACTS_ISSUER_AND_RUNNER_UNVERIFIED",
       "next_callable_edge": "Keep all 45 n8n recovery rows pending until independently verified. Obtain issuer public key and runner assignment from authorized control surfaces; run Rust tests only on an authorized isolated runner. Do not rerun CI without a verified runner change.",
       "status_effect": "No task closure or status promotion."
+    },
+    {
+      "id": "WINDOWS_TICK_READBACK_20261024204414",
+      "kind": "POST_BOUNDARY_WINDOWS_TICK_AND_LOCAL_SCRIPT_READBACK",
+      "observed_at": "2026-10-24T20:44:58.299+07:00",
+      "observed_at_utc": "2026-10-24T13:44:58.299Z",
+      "source": "Remote Desktop Commander exact receipt/script content readback; Dropbox metadata readback; n8n execution 136 node/row readback; GitHub workflow jobs/artifacts readback",
+      "exact_targets_before_write": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "805f11c96fd0db390f3dec19c0d2e9e840da7091",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "e959c5cb24f6c97270db4c651cef9b9c2df002f2",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "56d316ad504bf2b2565afe8b3e199c00bb3db5e5"
+      },
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2040ICT.json",
+      "checkpoint_blob_sha": "98b9120052c4418c4fb47bca6d97ff069768eacd",
+      "checkpoint_commit": "42030dd17a2ec75614ed211d1ae2bcf67780d318",
+      "verified_actions": [
+        "Fresh-read AGENTS.md, SOL_REENTRY_CURRENT.md, TASK_RESUME_POINTER.json, OPEN_TASKS_CURRENT.json, and MODUAL_PARAMETER_CURRENT.json before ledger mutation.",
+        "Read exact D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T132648889472Z.json; file metadata reports 450 bytes; content says source bytes 35389440, source SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87, live_sensor_reading_confirmed=false, source_file_written=false, synthetic_rows_added=0, cloud_enabled=false, github_enabled=false.",
+        "Read Get-ScheduledTaskInfo at 20:26:56.3886603+07: LastRunTime 20:26:33, result 0x0, NextRunTime 20:31:32, missed runs 0. Task State was not re-read in that response; last known Ready state remains from the 20:13 observation.",
+        "Receipt timestamp is approximately 15.889472 seconds after the second-resolution LastRunTime. This is a latency observation, not a root-cause finding.",
+        "Source SHA in the receipt matches the prior verified direct source hash; the source hash was not recomputed in this turn, and the new receipt SHA-256 was not recomputed. No stronger hash claim is made.",
+        "Read back local D:\\SENSOR_LOGS\\telemetry_buffer_sync.py content (308 lines; 13238 returned characters). The one-shot path hashes the configured source and writes a metadata-only receipt; the defined Xiaomi/Redmi/PC telemetry functions are not called by record_telemetry_tick. Cloud and GitHub snapshot sync functions have explicit SOL_ENABLE_SENSOR_CLOUD_EXPORT=1 and SOL_ENABLE_SENSOR_GITHUB_PUSH=1 guards. The script was not executed manually and its hash was not recomputed this turn.",
+        "Historical Dropbox telemetry_buffer_sync.py metadata was re-read: revision 0165daa22c5d85b0000000395cdfd73, 10707 bytes, server_modified 2026-10-12T19:59:29Z. Its extracted historical text lacks the local export guards; local/historical equivalence remains unverified. The Dropbox copy was not executed.",
+        "Dropbox source metadata re-read: /Linh Hà/SENSOR_LOGS/windows_SENSON.CSV, revision 0165dc1e4794ab00000000395cdfd73, 35389440 bytes, server_modified 2026-10-14T00:20:03Z.",
+        "n8n execution 136 SUCCESS exact node readback: receipt row 279, event X20261024130024041_CLOUD, 45 recovery rows and 45 pending, HOST_HEARTBEAT_NOT_PROBED, host operations 0, tasks closed 0.",
+        "TESSERACT runs 39994207477 and 39994207667 were re-read: both failed, no artifacts, selfhosted_windows_verify skipped on run 39994207477. No CI rerun performed.",
+        "A new read-only 8080 health/listener probe was started, but its output was not read back through the current remote output route; consumer health remains unverified. No service/task/clock configuration was changed."
+      ],
+      "windows_tick_observation": {
+        "task_name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "latest_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T132648889472Z.json",
+        "receipt_observed_at_utc": "2026-10-24T13:26:48.889472Z",
+        "receipt_bytes": 450,
+        "receipt_sha256_verified": false,
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_recomputed_this_turn": false,
+        "live_sensor_reading_confirmed": false,
+        "task_last_run_local": "2026-10-24T20:26:33+07:00",
+        "task_last_result": "0x0",
+        "task_next_run_local": "2026-10-24T20:31:32+07:00",
+        "missed_runs": 0,
+        "task_state_current": "NOT_RE_READ_AT_20:26",
+        "last_known_task_state": "Ready"
+      },
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "execution_id": "136",
+        "status": "success",
+        "row_id": 279,
+        "event_id": "X20261024130024041_CLOUD",
+        "pending_rows": 45,
+        "host_heartbeat_probed": false,
+        "host_operations": 0,
+        "tasks_closed": 0
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "OPEN_NOT_MERGED",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": {
+          "39994207477": "failure",
+          "39994207667": "failure"
+        },
+        "artifacts": 0,
+        "selfhosted_windows_verify": "skipped",
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "WINDOWS_TICK_132648_RECEIPT_READBACK; TASK_LAST_RESULT_0X0; LIVE_SENSOR_STREAM_NOT_VERIFIED; CONSUMER_HEALTH_UNVERIFIED; N8N_ROW279_VERIFIED; TESSERACT_RUNS_NOT_RETRIED; ALL_OPEN_RETAINED",
+      "next_callable_edge": "Read the next exact receipt and current task state after the 20:31:32 boundary; recompute direct source/script hashes through a one-shot read-only path; recover the 8080 probe result without changing configuration; continue HWiNFO/authorized Android live-sample investigation and TESSERACT issuer/runner verification."
     }
   ],
   "energy_protection_current": {
@@ -14173,6 +14247,60 @@
         "ci_rerun": false
       },
       "result": "N8N_136_ROW279_VERIFIED_OPEN_WORK_REMAINS; TESSERACT_PR6_OPEN_CI_FAILS_NO_ARTIFACTS_ISSUER_AND_RUNNER_UNVERIFIED"
+    },
+    {
+      "id": "WINDOWS_TICK_READBACK_20261024204414",
+      "kind": "WINDOWS_TICK_AND_INDEPENDENT_PROVIDER_READBACK",
+      "observed_at": "2026-10-24T20:44:58.299+07:00",
+      "windows_tick": {
+        "task_name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "latest_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T132648889472Z.json",
+        "receipt_observed_at_utc": "2026-10-24T13:26:48.889472Z",
+        "receipt_bytes": 450,
+        "receipt_sha256_verified": false,
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_recomputed_this_turn": false,
+        "live_sensor_reading_confirmed": false,
+        "task_last_run_local": "2026-10-24T20:26:33+07:00",
+        "task_last_result": "0x0",
+        "task_next_run_local": "2026-10-24T20:31:32+07:00",
+        "missed_runs": 0,
+        "task_state_current": "NOT_RE_READ_AT_20:26",
+        "last_known_task_state": "Ready"
+      },
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "execution_id": "136",
+        "status": "success",
+        "row_id": 279,
+        "event_id": "X20261024130024041_CLOUD",
+        "pending_rows": 45,
+        "host_heartbeat_probed": false,
+        "host_operations": 0,
+        "tasks_closed": 0
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "OPEN_NOT_MERGED",
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": {
+          "39994207477": "failure",
+          "39994207667": "failure"
+        },
+        "artifacts": 0,
+        "selfhosted_windows_verify": "skipped",
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "revision": "0165dc1e4794ab00000000395cdfd73",
+        "bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z"
+      },
+      "result": "WINDOWS_TICK_132648_RECEIPT_READBACK; TASK_LAST_RESULT_0X0; LIVE_SENSOR_STREAM_NOT_VERIFIED; CONSUMER_HEALTH_UNVERIFIED; N8N_ROW279_VERIFIED; TESSERACT_RUNS_NOT_RETRIED; ALL_OPEN_RETAINED"
     }
   ]
 }
