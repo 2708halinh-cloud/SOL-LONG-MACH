@@ -742,6 +742,20 @@
           "result": "CURRENT_HEAD_REVIEW_REQUEST_POSTED_AND_READ_BACK; CURRENT_HEAD_CI_FAILED_BEFORE_STEPS; ISSUER_KEY_AND_RUNNER_ENTITLEMENT_UNVERIFIED; RAW_EXPORT_NOT_RECOVERED",
           "next_callable_edge": "Continue other authorized routes while waiting for a current-head review receipt. Do not rerun CI until a fresh provider readback proves runner assignment/entitlement changed; obtain the actual issuer public key from an authorized issuer-side carrier or GitHub Actions variable control surface. Continue raw export retrieval only through an authorized Drive/Dropbox/Takeout action or a verified raw carrier.",
           "status_effect": "Keep status OPEN_CARRIED and real_execution_status OPEN_NOT_PROVEN_COMPLETED. This ledger receipt, review request, PR readiness, and CI failure do not close the task."
+        },
+        {
+          "observed_at": "2026-10-24T04:31:03Z",
+          "observed_at_local": "2026-10-24T11:31:03+07:00",
+          "source": "GitHub provider commit metadata and exact branch/file readback; x-time-web",
+          "actions_and_receipts": [
+            "Fresh-read x-time-web PR #6 head 5312816d5fe2b22e92302211b67f916b88a6fe14 and current source. Found repo-relative reads for route targets, required carriers, canonical route/AGENTS, and resume checkpoints that used root.join followed by fs::read without canonical-root containment; a symlink in the repository could resolve outside the intended root and inject external file bytes into provider context.",
+            "Created isolated branch security/repo-relative-read-containment-20261024 from exact PR head 5312816d5fe2b22e92302211b67f916b88a6fe14; commit 3550541c75b3b791a3953a8ae5eb7a32a585f0e8 adds resolve_repo_relative_file, applies canonical-root containment to local carrier/route/resume reads, and adds a Unix symlink-escape regression test.",
+            "Read back TESSERACT_DESKTOP/src-tauri/src/main.rs from the new branch; blob SHA 8a3cf9368898ce5782201dd73264f6e363fab424 matches the update response. Compare reports branch ahead_by=1, behind_by=0. No workflow run was triggered for this isolated branch.",
+            "Rust tests were not executed: this runtime has no rustc/cargo, and no authorized CI/runner entitlement change was observed. Prior PR #6 job-log downloads returned provider 404 BlobNotFound; that is not a code-test result."
+          ],
+          "result": "SYMLINK_ESCAPE_CONTAINMENT_PATCH_COMMITTED_ON_ISOLATED_BRANCH; EXACT_SOURCE_READBACK_MATCHES; TESTS_NOT_RUN; PR6_UNCHANGED",
+          "next_callable_edge": "Run the added regression test and the existing Rust suite in an authorized runner without exposing the persistent self-hosted Windows host to pull-request code. Fresh-read the actual issuer public key through the authorized issuer/control surface and verify hosted runner entitlement before any CI rerun or PR update.",
+          "status_effect": "Keep status OPEN_CARRIED and real_execution_status OPEN_NOT_PROVEN_COMPLETED. Do not close on branch creation or source readback; PR #6 remains unchanged and open."
         }
       ]
     },
