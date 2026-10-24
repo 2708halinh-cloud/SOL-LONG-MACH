@@ -832,6 +832,20 @@
           "result": "TESSERACT_KEY_VARIABLE_WIRING_VERIFIED_VALUE_AND_RUNNER_ENTITLEMENT_UNVERIFIED",
           "next_callable_edge": "Use an authorized GitHub Actions variable control surface or issuer-side carrier to verify the public key; verify hosted runner entitlement/assignment before any CI rerun. Do not create key material or rerun CI.",
           "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED / OPEN_NOT_PROVEN_COMPLETED."
+        },
+        {
+          "observed_at": "2026-10-24T20:13:08.119+07:00",
+          "source": "Fresh GitHub PR #6 metadata/check-runs, workflow-run jobs/artifacts, current workflow and kilo.rs readback, security-branch compare, and Windows toolchain probe",
+          "actions_and_receipts": [
+            "PR #6 remains OPEN, unmerged, head 5312816d5fe2b22e92302211b67f916b88a6fe14, base master at 60d92b8085cc34702805fc0cb42a1c5c346fca5d; mergeable_state unstable.",
+            "Runs 39994207477 and 39994207667 remain failed; six-job run includes selfhosted_windows_verify skipped; no artifacts returned. No CI rerun.",
+            "Current workflow blob SHA 6552d13a1f8004b0e3d36fd585dd75cdd22acf12 references vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64; kilo.rs blob SHA f1a7abe2d30cf720d2d1207335325d42a2af4e16 references the build-time key variable. Variable presence/value and actual issuer key remain unverified.",
+            "Security branch security/repo-relative-read-containment-20261024 is 3 commits ahead and 0 behind the PR branch; main.rs blob SHA af1a16270cb9ff90c5a7f34d5d56ae4343fc5eca contains canonical-root containment and symlink-escape regression code.",
+            "Windows host Get-Command confirmed rustc and cargo unavailable; tests not executed."
+          ],
+          "result": "PR6_OPEN_CI_FAILS_NO_ARTIFACTS_SECURITY_PATCH_READ_BACK_TESTS_NOT_RUN_ISSUER_AND_RUNNER_UNVERIFIED",
+          "next_callable_edge": "Obtain the actual issuer public key and runner assignment through authorized control surfaces. Run Rust regression tests only on an authorized isolated runner; do not rerun CI until runner assignment/entitlement change is verified.",
+          "status_effect": "Keep OPEN_CARRIED and OPEN_NOT_PROVEN_COMPLETED."
         }
       ]
     },
@@ -950,12 +964,12 @@
       "status": "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
       "goal": "Repair MODUAL telemetry source to Outlook Dropbox\\Linh Hà\\SENSOR_LOGS\\windows_SENSON.CSV and verify Windows Tick error gone",
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
-      "readback": "Post-boundary read at 2026-10-24T11:12:40+07:00: task Ready/enabled, last run 11:11:33 result 0x0, next 11:16:32, missed 0. Exact receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json, 450 bytes, SHA-256 521d307f9374f0514a6d122601b9d890ae92a2670e2d9cf0224b3e3e571b955d; nested source SHA-256 matches direct hash 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Live sensor sample remains unverified; HWiNFO CSV stale; Android TCP and X-TIME routes timed out.",
+      "readback": "Post-boundary read at 2026-10-24T20:09:11+07:00: task Ready/enabled, last run 20:06:34 result 0x0, next 20:11:32, missed 0. Exact receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T130636999565Z.json, 450 bytes, SHA-256 1127d053f459d011c013a55899810c1a8a16ac3ff21631f2f348e0be753772fd; fresh direct source SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches. Tick remains metadata-only; live sensor stream not verified. HWiNFO CSV stale since 2026-10-21; USB ADB device 2201123G responds but Redmi wireless target unverified. Consumer 8080 health remains unverified after HTTP timeouts and conflicting transport observations.",
       "next": [
-        "After 19:51:32+07, read the newest exact Windows Tick receipt and Scheduled Task state; recompute direct CSV SHA-256 and compare nested source.sha256.",
-        "Continue data-consumer health diagnosis via an authorized alternate route; timeout is not proof of service-down and no service/config changes are authorized by current evidence.",
-        "Compare local telemetry_buffer_sync.py only against an authorized exact provider byte carrier; do not execute the historical Dropbox copy or manually run the local script.",
-        "Continue HWiNFO logging and authorized Android/ADB live-source investigation; do not infer device-off from TCP timeout."
+        "After 20:11:32+07, read the newest exact Windows Tick receipt and Scheduled Task state; recompute direct source SHA-256 and compare the nested receipt hash.",
+        "Investigate variable receipt latency: the 20:01:34 run produced its receipt after 43.604618 seconds, while the 20:06:34 run produced it after 2.999565 seconds. Do not infer root cause from timing alone.",
+        "Continue consumer health diagnosis through authorized routes; localhost/LAN HTTP requests timed out and netstat showed no listener lines at one observation, while an earlier TCP probe conflicted. Do not change service/task/clock configuration without authorization.",
+        "The current scheduled script is metadata-only and does not call its defined device telemetry functions. Pursue a genuine HWiNFO or authorized Android live-sensor sample; keep live_sensor_reading_confirmed=false until proven."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -1632,6 +1646,22 @@
           "result": "TICK_124634_RECEIPT_AND_SOURCE_HASH_MATCH_TASK_0X0; RECEIPT_DELAY_1_868S; LIVE_SENSOR_NOT_VERIFIED; CONSUMER_UNVERIFIED",
           "next_callable_edge": "After 19:51:32+07, read the newest exact receipt and task state and recompute direct source hash. Continue consumer and HWiNFO/Android live-source diagnosis without changing source or service configuration.",
           "status_effect": "Keep MODUAL_SENSOR_LOGS_ROUTING OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED; no task closure."
+        },
+        {
+          "observed_at": "2026-10-24T20:13:08.119+07:00",
+          "source": "Remote Desktop Commander exact Windows receipt/source/task readback; source code inspection; X-TiME/Ollama/ADB probes; Dropbox metadata and historical script readback",
+          "actions_and_receipts": [
+            "Exact latest receipt WINDOWS_TICK_20261024T130636999565Z.json: 450 bytes, SHA-256 1127d053f459d011c013a55899810c1a8a16ac3ff21631f2f348e0be753772fd; source hash matches direct SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 at 35389440 bytes.",
+            "Scheduled task Ready/enabled; last run 20:06:34+07 result 0x0; next run 20:11:32+07; missed runs 0. Receipt followed task start by 2.999565 seconds. Prior run showed 43.604618-second receipt delay; no root cause proven.",
+            "X-TiME HTTP 200 with source_present=true but live_device_proven=false; Ollama HTTP 200 with 11 models. HWiNFO64 PID 17520 is running but HWiNFO_WINDOWS.CSV remains stale from 2026-10-21.",
+            "ADB executable exists; attached USB device 1056285 identifies as 2201123G and read-only battery query succeeds. Wireless target 192.168.1.14:5556 did not respond; Redmi heartbeat remains unverified.",
+            "Current local telemetry_buffer_sync.py is 13245 bytes, SHA-256 adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7. Its tick path only validates/hashes the CSV and writes a metadata receipt; it does not invoke the defined device telemetry functions.",
+            "Historical Dropbox copy is 10707 bytes, revision 0165daa22c5d85b0000000395cdfd73; extracted code lacks the current export guards and its --once path calls cloud/GitHub sync. It was not executed.",
+            "Consumer HTTP probes to localhost:8080 and LAN alias timed out; a later netstat snapshot had no :8080 listener lines, conflicting with an earlier TCP probe. Service-down state remains unconfirmed."
+          ],
+          "result": "POST_BOUNDARY_TICK_AND_SOURCE_HASH_VERIFIED; METADATA_ONLY_CONSUMER_CONFIRMED; LIVE_SENSOR_STREAM_NOT_VERIFIED; CONSUMER_HEALTH_UNVERIFIED",
+          "next_callable_edge": "After 20:11:32+07, read the exact newest receipt and task state. Diagnose the variable tick delay and consumer route without changing configuration. Obtain a genuine HWiNFO/Android live sample through a supported authorized route.",
+          "status_effect": "Keep OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
         }
       ],
       "observed": [
@@ -1675,6 +1705,17 @@
             "Read/compare the exact local telemetry_buffer_sync.py against an authorized provider byte carrier; do not run the Dropbox historical copy or manually execute the local script during diagnosis.",
             "Continue supported HWiNFO logging and authorized Android/ADB live-source investigation; do not infer device-off from TCP timeout."
           ]
+        },
+        {
+          "observed_at": "2026-10-24T20:13:08.119+07:00",
+          "source": "replaced stale next-action ordering after exact post-boundary tick and consumer readback",
+          "prior_next": [
+            "After 19:51:32+07, read the newest exact Windows Tick receipt and Scheduled Task state; recompute direct CSV SHA-256 and compare nested source.sha256.",
+            "Continue data-consumer health diagnosis via an authorized alternate route; timeout is not proof of service-down and no service/config changes are authorized by current evidence.",
+            "Compare local telemetry_buffer_sync.py only against an authorized exact provider byte carrier; do not execute the historical Dropbox copy or manually run the local script.",
+            "Continue HWiNFO logging and authorized Android/ADB live-source investigation; do not infer device-off from TCP timeout."
+          ],
+          "reason": "New receipt at 20:06:36.999565Z and direct source hash match; task result 0x0; consumer endpoints and source code were inspected; live stream remains unverified."
         }
       ]
     },
@@ -3077,6 +3118,70 @@
       },
       "result": "TICK_124634_RECEIPT_AND_SOURCE_HASH_MATCH_TASK_0X0; RECEIPT_DELAY_1_868S; LIVE_SENSOR_NOT_VERIFIED; CONSUMER_UNVERIFIED",
       "exact_target_readback": true
+    },
+    "windows_tick_20261024T2009ICT": {
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2009ICT.json",
+      "checkpoint_blob_sha": "11db4ad91cf0cbecd1122ea99b4396cf04d93d08",
+      "checkpoint_commit": "8f039b074c954bacdb04f100c598f07a9b512054",
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T130636999565Z.json",
+      "receipt_sha256": "1127d053f459d011c013a55899810c1a8a16ac3ff21631f2f348e0be753772fd",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "task_last_result": "0x0",
+      "live_sensor_reading_confirmed": false
+    },
+    "local_braid_20261024T125908Z": {
+      "six_forces_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T125908918811Z.json",
+      "six_forces_sha256": "cba158fdb7a3987ee19413cb190024d3ccfc29f207651ef371ead2e3c6b2b045",
+      "plural_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261024T125908998999Z.json",
+      "plural_sha256": "24b28a7f92dc09bb07e738f3a2d830579c0058bd164770a5df6f786c1a902e14",
+      "exit_code": 0,
+      "receipt_readback_ok": true,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "cloud_host_wiring": "NOT_VERIFIED"
+    },
+    "n8n_cloud_20261024T130022Z": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "136",
+      "status": "success",
+      "row_id": 279,
+      "event_id": "X20261024130024041_CLOUD",
+      "pending_rows": 45,
+      "host_heartbeat_probed": false,
+      "host_operations": 0,
+      "tasks_closed": 0,
+      "exact_event_readback": true
+    },
+    "tesseract_pr6_readback_20261024T2013ICT": {
+      "pr": 6,
+      "state": "open",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "runs": {
+        "39994207477": "failure",
+        "39994207667": "failure"
+      },
+      "artifacts": 0,
+      "security_branch": "security/repo-relative-read-containment-20261024",
+      "ahead_by": 3,
+      "behind_by": 0,
+      "security_main_rs_blob_sha": "af1a16270cb9ff90c5a7f34d5d56ae4343fc5eca",
+      "rustc_available": false,
+      "cargo_available": false,
+      "issuer_public_key_verified": false,
+      "runner_assignment_change_verified": false,
+      "ci_rerun": false
+    },
+    "dropbox_historical_consumer_20261024T2009ICT": {
+      "path": "/Linh Hà/SENSOR_LOGS/telemetry_buffer_sync.py",
+      "revision": "0165daa22c5d85b0000000395cdfd73",
+      "bytes": 10707,
+      "extracted_text_chars": 10582,
+      "local_copy_bytes": 13245,
+      "local_copy_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+      "byte_hash_verified": false,
+      "equivalent_to_local_copy": false,
+      "export_guards_absent": true,
+      "historical_copy_executed": false
     }
   },
   "sinks": {
@@ -8324,6 +8429,83 @@
         "ci_rerun": false
       },
       "next_edge": "After 19:51:32+07, read the newest exact receipt and task state and recompute direct source hash. Continue consumer and HWiNFO/Android live-source diagnosis without changing source or service configuration."
+    },
+    {
+      "id": "WINDOWS_TICK_READBACK_20261024200911",
+      "kind": "POST_BOUNDARY_WINDOWS_TICK_AND_CONSUMER_DIAGNOSIS",
+      "observed_at": "2026-10-24T20:13:08.119+07:00",
+      "observed_at_utc": "2026-10-24T13:13:08.119Z",
+      "source": "Remote Desktop Commander exact task/receipt/source readback; X-TiME/Ollama/ADB probes; Dropbox exact metadata/content readback; Braid execution",
+      "exact_targets_before_write": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "2883db45bab155fd341ff946c10be7090a498605",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "4d6f6b9f680e7b029290973f1b7246b0e9e858a2",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "ec813ed5e138ad6ee9ed741176261f6fd45b7b6f"
+      },
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2009ICT.json",
+      "checkpoint_blob_sha": "11db4ad91cf0cbecd1122ea99b4396cf04d93d08",
+      "checkpoint_commit": "8f039b074c954bacdb04f100c598f07a9b512054",
+      "verified_actions": [
+        "Exact receipt WINDOWS_TICK_20261024T130636999565Z.json read back: 450 bytes; SHA-256 1127d053f459d011c013a55899810c1a8a16ac3ff21631f2f348e0be753772fd.",
+        "Fresh direct SHA-256 of D:\\SENSOR_LOGS\\windows_SENSON.CSV: 35389440 bytes, 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; nested receipt source hash matches.",
+        "Scheduled Task enabled/Ready at 20:09:11+07; last run 20:06:34+07 result 0x0; next run 20:11:32+07; missed runs 0. Receipt followed task start by 2.999565 seconds.",
+        "Prior run started 20:01:34+07; receipt WINDOWS_TICK_20261024T130217604618Z.json arrived 43.604618 seconds after start; task later completed with 0x0. Variable latency observed, root cause unproven.",
+        "Local consumer script SHA-256 adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7, 13245 bytes. Code reads/hashes the source but the scheduled tick does not invoke the defined device telemetry functions.",
+        "Dropbox historical telemetry_buffer_sync.py revision 0165daa22c5d85b0000000395cdfd73, 10707 bytes, extracted text 10582 chars; no export guards found and --once calls cloud/GitHub sync. Historical copy was not executed.",
+        "X-TiME HTTP 200, source_present=true, live_device_proven=false; Ollama HTTP 200 with 11 models; HWiNFO64 PID 17520 running but HWiNFO CSV remains stale from 2026-10-21.",
+        "ADB executable exists and attached USB device 1056285 identifies as 2201123G; read-only battery query succeeded. Wireless target 192.168.1.14:5556 remains unverified.",
+        "8080 HTTP health routes timed out; netstat later showed no listener lines, while an earlier TCP probe disagreed. No service-down conclusion and no service/config change.",
+        "Braid local proof script exited 0; exact receipt hashes verified; source unchanged and no mutation executed."
+      ],
+      "result": "WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_MATCH; TASK_LAST_RESULT_0X0; METADATA_ONLY_CONSUMER_CONFIRMED; LIVE_SENSOR_STREAM_NOT_VERIFIED; ADB_USB_DEVICE_RESPONDS; CONSUMER_8080_HEALTH_UNVERIFIED",
+      "next_callable_edge": "After 20:11:32+07, read the newest exact receipt and task state. Investigate variable receipt latency and the 8080 route without changing service/task/clock configuration. Pursue a genuine HWiNFO or authorized Android live-sensor sample; keep live_sensor_reading_confirmed=false until proven.",
+      "status_effect": "Keep MODUAL_SENSOR_LOGS_ROUTING OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED."
+    },
+    {
+      "id": "CLOUD_TESSERACT_READBACK_20261024201308",
+      "kind": "N8N_CLOUD_CONTINUITY_AND_TESSERACT_PROVIDER_READBACK",
+      "observed_at": "2026-10-24T20:13:08.119+07:00",
+      "observed_at_utc": "2026-10-24T13:13:08.119Z",
+      "source": "n8n execution 136 exact event readback; GitHub PR/check-run/job/artifact/source readback",
+      "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2013ICT.json",
+      "checkpoint_blob_sha": "419a733b65ced473761489ebdf6385c8faf7ccc7",
+      "checkpoint_commit": "ec54fcd57fec84ebdd11d9281ff1ec9349998a80",
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "execution_id": "136",
+        "status": "success",
+        "row_id": 279,
+        "event_id": "X20261024130024041_CLOUD",
+        "pending_rows": 45,
+        "host_heartbeat_probed": false,
+        "host_operations": 0,
+        "tasks_closed": 0
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "open",
+        "merged": false,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": {
+          "39994207477": "failure",
+          "39994207667": "failure"
+        },
+        "artifacts": 0,
+        "selfhosted_windows_verify": "skipped",
+        "security_branch": "security/repo-relative-read-containment-20261024",
+        "ahead_by": 3,
+        "behind_by": 0,
+        "security_main_rs_blob_sha": "af1a16270cb9ff90c5a7f34d5d56ae4343fc5eca",
+        "rustc_available": false,
+        "cargo_available": false,
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "N8N_136_ROW279_VERIFIED_OPEN_WORK_REMAINS; TESSERACT_PR6_OPEN_CI_FAILS_NO_ARTIFACTS_ISSUER_AND_RUNNER_UNVERIFIED",
+      "next_callable_edge": "Keep all 45 n8n recovery rows pending until independently verified. Obtain issuer public key and runner assignment from authorized control surfaces; run Rust tests only on an authorized isolated runner. Do not rerun CI without a verified runner change.",
+      "status_effect": "No task closure or status promotion."
     }
   ],
   "energy_protection_current": {
@@ -13922,6 +14104,75 @@
         "sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
         "equivalence_to_dropbox": "NOT_VERIFIED"
       }
+    },
+    {
+      "id": "WINDOWS_TICK_READBACK_20261024200911",
+      "kind": "WINDOWS_TICK_PROVIDER_READBACK",
+      "observed_at": "2026-10-24T20:13:08.119+07:00",
+      "windows": {
+        "task_state": "Ready",
+        "task_last_run_local": "2026-10-24T20:06:34+07:00",
+        "last_result": "0x0",
+        "next_run_local": "2026-10-24T20:11:32+07:00",
+        "missed_runs": 0,
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T130636999565Z.json",
+        "receipt_sha256": "1127d053f459d011c013a55899810c1a8a16ac3ff21631f2f348e0be753772fd",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_matches": true,
+        "live_sensor_reading_confirmed": false
+      },
+      "providers": {
+        "xtime_http_200": true,
+        "xtime_source_present": true,
+        "xtime_live_device_proven": false,
+        "ollama_http_200": true,
+        "ollama_model_count": 11,
+        "hwinfo_running": true,
+        "hwinfo_csv_stale": true,
+        "adb_usb_device_model": "2201123G",
+        "redmi_wireless_heartbeat_verified": false,
+        "consumer_8080_health": "UNVERIFIED_TIMEOUT"
+      },
+      "result": "WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_MATCH; TASK_LAST_RESULT_0X0; METADATA_ONLY_CONSUMER_CONFIRMED; LIVE_SENSOR_STREAM_NOT_VERIFIED; ADB_USB_DEVICE_RESPONDS; CONSUMER_8080_HEALTH_UNVERIFIED"
+    },
+    {
+      "id": "CLOUD_TESSERACT_READBACK_20261024201308",
+      "kind": "CLOUD_AND_TESSERACT_PROVIDER_READBACK",
+      "observed_at": "2026-10-24T20:13:08.119+07:00",
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "execution_id": "136",
+        "status": "success",
+        "row_id": 279,
+        "event_id": "X20261024130024041_CLOUD",
+        "pending_rows": 45,
+        "host_heartbeat_probed": false,
+        "host_operations": 0,
+        "tasks_closed": 0
+      },
+      "tesseract": {
+        "pr": 6,
+        "state": "open",
+        "merged": false,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": {
+          "39994207477": "failure",
+          "39994207667": "failure"
+        },
+        "artifacts": 0,
+        "selfhosted_windows_verify": "skipped",
+        "security_branch": "security/repo-relative-read-containment-20261024",
+        "ahead_by": 3,
+        "behind_by": 0,
+        "security_main_rs_blob_sha": "af1a16270cb9ff90c5a7f34d5d56ae4343fc5eca",
+        "rustc_available": false,
+        "cargo_available": false,
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "N8N_136_ROW279_VERIFIED_OPEN_WORK_REMAINS; TESSERACT_PR6_OPEN_CI_FAILS_NO_ARTIFACTS_ISSUER_AND_RUNNER_UNVERIFIED"
     }
   ]
 }
