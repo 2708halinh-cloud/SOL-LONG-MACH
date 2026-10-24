@@ -78,8 +78,8 @@
     "commit_sha": "23923f1858b71d7dd0eb4d3b5fbaff48555a22b3",
     "readback_verified": true
   },
-  "updated_at": "2026-10-25T04:42:00+07:00",
-  "observed_at": "2026-10-25T04:42:00+07:00",
+  "updated_at": "2026-10-25T04:43:00+07:00",
+  "observed_at": "2026-10-25T04:43:00+07:00",
   "older_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0156ICT.json",
     "blob_sha": "5bf6b8945d94c8a17486c2a78220a02458cb7593",
@@ -317,7 +317,7 @@
         "head_sha": "7a5276433bb563fbd704cf2c3b6f27e0e3f7dff4",
         "base": "main",
         "ahead_of_main": 6,
-        "behind_main": 0,
+        "behind_main": 4,
         "archive_run_id": 40135311065,
         "archive_run_conclusion": "success",
         "topology_run_id": 40135311074,
@@ -327,7 +327,9 @@
         "artifact_id": 12576443094,
         "artifact_sha256": "6b081041b4e951f45c96b40d984b135018eba150154760ebb484b18f9433c58f",
         "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
-        "task_status": "OPEN"
+        "task_status": "OPEN",
+        "branch_relation": "DIVERGED",
+        "divergence_note": "main advanced through append-only continuity/checkpoint commits after this PR branch was created; preserve both histories; no merge or force-push."
       }
     ],
     "archive_task_status": "OPEN",
@@ -369,6 +371,10 @@
     "source_export_recovery": "NOT_COMPLETE",
     "windows_host_validation": "NOT_VERIFIED",
     "task_closed": false,
-    "no_merge_or_force_push": true
+    "no_merge_or_force_push": true,
+    "pr31_ahead_of_main": 6,
+    "pr31_behind_main": 4,
+    "pr31_branch_relation": "DIVERGED",
+    "pr31_divergence_note": "main advanced through append-only continuity/checkpoint commits; no merge or force-push."
   }
 }
