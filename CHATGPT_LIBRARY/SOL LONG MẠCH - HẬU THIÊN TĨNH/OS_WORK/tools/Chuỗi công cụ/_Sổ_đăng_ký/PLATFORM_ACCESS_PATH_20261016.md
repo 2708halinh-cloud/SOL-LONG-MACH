@@ -84,3 +84,16 @@ Người đồng hành yêu cầu tác nhân xem xét chính **IP, DNS, thiết 
 - NEXT: For a causal match, correlate an exact observed turn-ending timestamp and literal UI/error text with official incident updates or an authorized diagnostic record. Until then, keep cause OPEN and do not attribute intent.
 - HISTORY_PRESERVED: TRUE
 - CONTINUE: TRUE
+
+
+## EVENT — OFFICIAL-STATUS-API-DIRECT-RECHECK_20261024
+
+- EVENT_ID: PLATFORM-STATUS-API-RECHECK-20261024-04
+- ACTION: Queried the public Statuspage incidents JSON endpoint through the external read-only retrieval connector: https://status.openai.com/api/v2/incidents.json
+- RESULT: The endpoint returned structured incident-history data. The payload includes the already-recorded Oct 23, 2026 incident “Degraded experience with ChatGPT app connections using CIMD” (created 2026-10-23T22:52:56Z, resolved 2026-10-23T23:43:22Z), plus separate Oct 23 support-service incidents. The retrieval path succeeded here, unlike the earlier scrape of the status homepage (HTTP 502 from the intermediary).
+- EVIDENCE_BOUNDARY: This confirms the public incident-history API was retrievable and provides a different access path. It does not establish that an incident on Oct 24 caused this user's repeated turn endings; the surfaced Oct 23 CIMD issue is scoped to app connections/authentication metadata, not general turn termination. No user-specific internal orchestration logs were exposed.
+- CORRECTION_TO_PROGRESS: The investigation remains OPEN, but the prior statement that the only useful next step was waiting for exact timestamp/error was too narrow: public incident-history JSON can be queried directly and yields additional records. This is a concrete new retrieval route, not a root-cause finding.
+- CAUSAL_STATUS: OPEN — not a claim that the cause is unknown forever; it means the evidence collected so far does not identify the cause.
+- NEXT: inspect incident records from the JSON payload for any matching ChatGPT conversation/response or app issue within the user's exact event window; correlate only when the user's event timestamp and literal UI/error text are available.
+- HISTORY_PRESERVED: TRUE
+- CONTINUE: TRUE
