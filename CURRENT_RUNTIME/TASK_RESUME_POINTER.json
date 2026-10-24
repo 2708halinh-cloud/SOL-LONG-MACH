@@ -3089,7 +3089,8 @@
           "service": "x-time-web",
           "observed_at_utc": "2026-10-24T08:34:39.856Z",
           "modual_payload_semantics_not_fully_read": true,
-          "live_device_proven": false
+          "live_device_proven_readback": "NOT_READ",
+          "correction_note": "HTTP health is verified; nested MODUAL live-device value was not read."
         },
         "ollama": {
           "endpoint": "http://127.0.0.1:11434/api/tags",
@@ -3116,7 +3117,14 @@
         "host_heartbeat_probed": false,
         "tasks_closed": false
       },
-      "result": "NEW_WINDOWS_TICK_VERIFIED; TASK_LAST_RESULT_0X0; CSV_HASH_MATCHES_TICK; XTIME_JSON_OK; OLLAMA_11_MODELS; LIVE_SENSOR_AND_ANDROID_HEARTBEAT_UNVERIFIED"
+      "result": "NEW_WINDOWS_TICK_VERIFIED; TASK_LAST_RESULT_0X0; CSV_HASH_MATCHES_TICK; XTIME_JSON_OK; OLLAMA_11_MODELS; LIVE_SENSOR_AND_ANDROID_HEARTBEAT_UNVERIFIED",
+      "correction": {
+        "corrects_observation_at": "2026-10-24T15:34:39.856+07:00",
+        "field": "providers.xtime.live_device_proven",
+        "prior_recorded_value": false,
+        "corrected_readback": "NOT_READ",
+        "reason": "The direct probe captured HTTP 200, JSON parse, top-level ok=true/service=x-time-web, and nested modual key names only. It did not capture the nested live_device_proven value. Do not infer that field from service health. The Windows tick separately reports live_sensor_reading_confirmed=false."
+      }
     }
   ],
   "latest_sync_observation": {
@@ -3190,7 +3198,8 @@
         "service": "x-time-web",
         "observed_at_utc": "2026-10-24T08:34:39.856Z",
         "modual_payload_semantics_not_fully_read": true,
-        "live_device_proven": false
+        "live_device_proven_readback": "NOT_READ",
+        "correction_note": "HTTP health is verified; nested MODUAL live-device value was not read."
       },
       "ollama": {
         "endpoint": "http://127.0.0.1:11434/api/tags",
@@ -3206,7 +3215,7 @@
         "device_off_state_inferred": false
       }
     },
-    "result": "WINDOWS_TICK_15:32_VERIFIED; TASK_LAST_RESULT_0X0; XTIME_OK_TRUE; OLLAMA_200_11_MODELS; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+    "result": "WINDOWS_TICK_15:32_VERIFIED; TASK_LAST_RESULT_0X0; XTIME_HTTP200_JSON_OK_TRUE; OLLAMA_200_11_MODELS; NESTED_MODUAL_LIVE_DEVICE_FIELD_NOT_READ; LIVE_SENSOR_STREAM_NOT_VERIFIED",
     "task_status_label_changed": false,
     "open_tasks_closed": false
   },
@@ -5001,7 +5010,8 @@
           "service": "x-time-web",
           "observed_at_utc": "2026-10-24T08:34:39.856Z",
           "modual_payload_semantics_not_fully_read": true,
-          "live_device_proven": false
+          "live_device_proven_readback": "NOT_READ",
+          "correction_note": "HTTP health is verified; nested MODUAL live-device value was not read."
         },
         "ollama": {
           "endpoint": "http://127.0.0.1:11434/api/tags",
@@ -5083,7 +5093,14 @@
         "user_accessible_project_credentials": 0
       },
       "result": "HOST_TICK_083210_READBACK_VERIFIED; TASK_SUCCESS_0X0; XTIME_HEALTH_OK; 45_RECOVERY_ROWS_NONTERMINAL; LIVE_SENSOR_AND_ANDROID_UNVERIFIED",
-      "next_edge": "After 15:36:32+07, read the newest exact Windows tick and compare its nested source SHA with a fresh direct source hash; safely inspect X-TIME modual fields source_present/live_device_proven/state without dumping paths or configuration; recheck Android device-level heartbeat; continue cloud-safe OPEN tasks. Preserve the 45 n8n recovery rows and 28 GitHub task ledger independently. Do not publish agents without valid model/credential binding and explicit approval. Keep every incomplete task OPEN."
+      "next_edge": "After 15:36:32+07, read the newest exact Windows tick and compare its nested source SHA with a fresh direct source hash; safely inspect X-TIME modual fields source_present/live_device_proven/state without dumping paths or configuration; recheck Android device-level heartbeat; continue cloud-safe OPEN tasks. Preserve the 45 n8n recovery rows and 28 GitHub task ledger independently. Do not publish agents without valid model/credential binding and explicit approval. Keep every incomplete task OPEN.",
+      "correction": {
+        "corrects_observation_at": "2026-10-24T15:34:39.856+07:00",
+        "field": "providers.xtime.live_device_proven",
+        "prior_recorded_value": false,
+        "corrected_readback": "NOT_READ",
+        "reason": "The direct probe captured HTTP 200, JSON parse, top-level ok=true/service=x-time-web, and nested modual key names only. It did not capture the nested live_device_proven value. Do not infer that field from service health. The Windows tick separately reports live_sensor_reading_confirmed=false."
+      }
     }
   ],
   "latest_continuity_readback": {
@@ -5136,7 +5153,8 @@
         "service": "x-time-web",
         "observed_at_utc": "2026-10-24T08:34:39.856Z",
         "modual_payload_semantics_not_fully_read": true,
-        "live_device_proven": false
+        "live_device_proven_readback": "NOT_READ",
+        "correction_note": "HTTP health is verified; nested MODUAL live-device value was not read."
       },
       "ollama": {
         "endpoint": "http://127.0.0.1:11434/api/tags",
@@ -5267,7 +5285,8 @@
         "service": "x-time-web",
         "observed_at_utc": "2026-10-24T08:34:39.856Z",
         "modual_payload_semantics_not_fully_read": true,
-        "live_device_proven": false
+        "live_device_proven_readback": "NOT_READ",
+        "correction_note": "HTTP health is verified; nested MODUAL live-device value was not read."
       },
       "ollama": {
         "endpoint": "http://127.0.0.1:11434/api/tags",
@@ -5367,7 +5386,7 @@
       "ci_rerun": false,
       "task_closure": false
     },
-    "result": "N8N_RECEIPT_268_READBACK_VERIFIED; WINDOWS_TICK_083210_SOURCE_HASH_MATCHES; TASK_SUCCESS_0X0; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+    "result": "N8N_RECEIPT_268_READBACK_VERIFIED; WINDOWS_TICK_083210_SOURCE_HASH_MATCHES; TASK_SUCCESS_0X0; XTIME_HEALTH_OK_TOP_LEVEL_ONLY; LIVE_SENSOR_STREAM_NOT_VERIFIED",
     "task_closure": false
   },
   "latest_security_patch_observation": {
@@ -5542,7 +5561,8 @@
         "service": "x-time-web",
         "observed_at_utc": "2026-10-24T08:34:39.856Z",
         "modual_payload_semantics_not_fully_read": true,
-        "live_device_proven": false
+        "live_device_proven_readback": "NOT_READ",
+        "correction_note": "HTTP health is verified; nested MODUAL live-device value was not read."
       },
       "ollama": {
         "endpoint": "http://127.0.0.1:11434/api/tags",
@@ -5568,7 +5588,7 @@
       "agent_published_or_dispatched": false,
       "user_accessible_project_credentials": 0
     },
-    "result": "N8N_SCAN_126_SUCCESS; RECEIPT_268_READBACK_MATCH; FRESH_WINDOWS_TICK_AND_TASK_SUCCESS; XTIME_HEALTH_OK; LIVE_SENSOR_AND_ANDROID_UNVERIFIED",
+    "result": "N8N_SCAN_126_SUCCESS; RECEIPT_268_READBACK_MATCH; FRESH_WINDOWS_TICK_AND_TASK_SUCCESS; XTIME_HEALTH_OK_TOP_LEVEL_ONLY; LIVE_SENSOR_AND_ANDROID_UNVERIFIED",
     "next_edge": "After 15:36:32+07, read the newest exact Windows tick and compare its nested source SHA with a fresh direct source hash; safely inspect X-TIME modual fields source_present/live_device_proven/state without dumping paths or configuration; recheck Android device-level heartbeat; continue cloud-safe OPEN tasks. Preserve the 45 n8n recovery rows and 28 GitHub task ledger independently. Do not publish agents without valid model/credential binding and explicit approval. Keep every incomplete task OPEN."
   }
 }
