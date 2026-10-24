@@ -6327,6 +6327,67 @@
       "task_count": 28,
       "tasks_closed": false,
       "history_erased": false
+    },
+    {
+      "id": "REENTRY_PROVIDER_AND_TESSERACT_BRANCH_READBACK_20261024062331",
+      "kind": "APPEND_ONLY_REENTRY_PROVIDER_AND_INDEPENDENT_BRANCH_READBACK",
+      "observed_at": "2026-10-24T13:23:31.686+07:00",
+      "observed_at_utc": "2026-10-24T06:23:31.686Z",
+      "source": "Fresh exact-target GitHub reads, Dropbox Outlook metadata, Remote Desktop Commander inventory, GitHub TESSERACT source/workflow APIs",
+      "exact_targets_before_write": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "a6badd5288f3b59246499f89bea4383018c63863",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "a3952385fae172022838867d44f79ef890a695a1",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_readback": "24e54a069f3435e576cdbda3f5be597c8b80766b"
+      },
+      "verified_actions": [
+        "Fresh-read the four required reentry files and MODUAL current state on main.",
+        "Read Dropbox metadata for the exact windows_SENSON.CSV target; revision, size, and server_modified matched the recorded provider source.",
+        "Read Desktop Commander device inventories through two distinct linked accounts; kept ONLINE and OFFLINE account records separate.",
+        "Attempted read-only host access; Get-Date returned timeout and the exact known receipt read remains pending, so no later Windows Tick is claimed.",
+        "Read exact TESSERACT security branch source and commit; verified source blob SHA 96e6464f85b9a1fc9e513a4dc468cdeea50962d and compare result ahead_by=2, behind_by=0.",
+        "Read existing PR #6 workflow run jobs and artifacts; failed jobs and no artifacts were returned. No CI rerun was triggered."
+      ],
+      "provider_state": {
+        "dropbox": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true,
+          "raw_bytes_downloaded": false
+        },
+        "windows": {
+          "latest_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T045143119113Z.json",
+          "latest_verified_run_local": "2026-10-24T11:51:33+07:00",
+          "post_11_56_receipt_verified": false,
+          "live_sensor_reading_confirmed": false,
+          "host_read_status": "PENDING_OR_TIMEOUT"
+        },
+        "remote_desktop_inventory": {
+          "primary_account": "ONLINE; last seen 8m ago",
+          "alternate_account": "OFFLINE; last seen 92h ago",
+          "records_distinct": true
+        },
+        "tesseract": {
+          "branch": "security/repo-relative-read-containment-20261024",
+          "commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
+          "source_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d0",
+          "ahead_by": 2,
+          "behind_by": 0,
+          "tests_executed": false,
+          "issuer_public_key_verified": false,
+          "runner_assignment_change_verified": false,
+          "ci_rerun": false
+        }
+      },
+      "result": "DROPBOX_AND_TESSERACT_BRANCH_READBACK_VERIFIED; WINDOWS_POST_BOUNDARY_TICK_NOT_VERIFIED; LIVE_STREAM_NOT_VERIFIED",
+      "task_count": 28,
+      "tasks_closed": false,
+      "source_mutated": false,
+      "raw_sensor_values_persisted": false,
+      "credentials_committed": false
     }
   ],
   "energy_protection_current": {
@@ -10464,6 +10525,24 @@
       "result": "MODUAL_BLOB_REFERENCE_CORRECTED; STATUS_LABEL_CHANGE_RECORDED; TASK_REMAINS_OPEN",
       "task_statuses_changed": true,
       "tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-24T13:23:31.686+07:00",
+      "observed_at_utc": "2026-10-24T06:23:31.686Z",
+      "record_type": "REENTRY_PROVIDER_AND_TESSERACT_BRANCH_READBACK",
+      "dropbox_metadata_readback": true,
+      "windows_last_verified_run_local": "2026-10-24T11:51:33+07:00",
+      "windows_post_11_56_receipt_verified": false,
+      "host_read_status": "PENDING_OR_TIMEOUT",
+      "remote_desktop_account_records_distinct": true,
+      "tesseract_security_commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
+      "tesseract_source_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d0",
+      "tesseract_ahead_by": 2,
+      "tesseract_behind_by": 0,
+      "tests_executed": false,
+      "ci_rerun": false,
+      "task_closure": false,
+      "result": "PROVIDER_METADATA_AND_SECURITY_BRANCH_VERIFIED; LIVE_SENSOR_AND_CURRENT_TICK_UNVERIFIED"
     }
   ]
 }
