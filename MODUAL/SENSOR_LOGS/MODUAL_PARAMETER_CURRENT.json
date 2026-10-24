@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-24T14:55:29.919+07:00",
+  "observed_at": "2026-10-24T14:59:01.881+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -67,30 +67,32 @@
     "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
     "state": "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
     "rule": "Do not overwrite existing Oct 09 local source metadata; do not call Dropbox CSV a working Windows Tick consumer; no raw sensor records or secrets committed; verify Windows Tick independently before closing.",
-    "last_observation": "2026-10-24T14:55:29.919+07:00",
+    "last_observation": "2026-10-24T14:59:01.881+07:00",
     "latest_verified_tick_receipt": {
-      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T075139491955Z.json",
-      "observed_at_utc": "2026-10-24T07:51:39.491955Z",
-      "sha256": "4bccf374f0442fded993e31505f51678e74a03e4279c1abcc359a5ea73c40305",
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T075735619895Z.json",
+      "observed_at_utc": "2026-10-24T07:57:35.619895Z",
+      "sha256": "80a88ce24e7cc23a3ff5e2eb59f0436494ccc55611808449d594cae610280fb7",
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
       "source_hash_matches": true,
       "source_bytes": 35389440,
       "live_sensor_reading_confirmed": false,
-      "task_last_run_local": "2026-10-24T14:51:33+07:00",
-      "task_next_run_local": "2026-10-24T14:56:32+07:00",
+      "task_last_run_local": "2026-10-24T14:56:33+07:00",
+      "task_next_run_local": "2026-10-24T15:01:32+07:00",
       "task_state": "Ready",
       "task_result": "0x0",
-      "missed_runs": 0
+      "missed_runs": 0,
+      "receipt_time_delta_from_task_start_seconds": 62.619895
     },
     "live_stream_diagnostic": {
-      "observed_at": "2026-10-24T14:55:29.919+07:00",
+      "observed_at": "2026-10-24T14:59:01.881+07:00",
       "windows_tick": {
-        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T075139491955Z.json",
-        "receipt_sha256": "4bccf374f0442fded993e31505f51678e74a03e4279c1abcc359a5ea73c40305",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T075735619895Z.json",
+        "receipt_sha256": "80a88ce24e7cc23a3ff5e2eb59f0436494ccc55611808449d594cae610280fb7",
         "source_bytes": 35389440,
         "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
         "source_hash_matches": true,
-        "live_sensor_sample_confirmed": false
+        "live_sensor_sample_confirmed": false,
+        "intermediate_state": "Running at 14:57:57; Ready/0x0 at 14:59:01"
       },
       "xtime_probe": "TIMEOUT",
       "xtime_health_body_readback": false,
@@ -6132,6 +6134,137 @@
         "ci_rerun": false
       },
       "next_callable_edge": "After device clock 14:56:32+07, read the exact newest Windows Tick receipt and recompute source hash. Continue X-TIME consumer diagnosis via a responsive authorized route, restore valid Dropbox account context before metadata retry, and continue TESSERACT issuer/runner investigation without rerunning CI."
+    },
+    {
+      "observed_at": "2026-10-24T14:59:01.881+07:00",
+      "observed_at_utc": "2026-10-24T07:59:01.881Z",
+      "record_type": "ADDITIVE_WINDOWS_TICK_20261024T075735Z_DELAYED_RECEIPT_AND_COMPLETED_TASK",
+      "source": "Direct host readback of Scheduled Task, exact receipt, direct SHA-256, and current provider probes.",
+      "source_reads_before_write": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "95d8c0d4151ac9be2e90c060cc2c36eaa2c78c0a",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "a40f367a03c6eb53aeab420270bd1bd227c69a90",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_before_write": "67956cbe55ddd1a2aa158510a458bf3431f27f58"
+      },
+      "device_carrier": {
+        "device": "DESKTOP-86ITNQ4",
+        "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+        "inventory_status": "ONLINE",
+        "scheduled_task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "enabled": true,
+        "execution_time_limit": "PT2M",
+        "last_run_local": "2026-10-24T14:56:33+07:00",
+        "next_run_local": "2026-10-24T15:01:32+07:00",
+        "intermediate_observation": {
+          "at": "2026-10-24T14:57:57.983+07:00",
+          "task_state": "Running",
+          "last_result_decimal": 267009,
+          "last_result_hex": "0x41301",
+          "missed_runs": 0
+        },
+        "later_observation": {
+          "at": "2026-10-24T14:59:01.881+07:00",
+          "task_state": "Ready",
+          "last_result": "0x0",
+          "missed_runs": 0
+        },
+        "task_state_at_latest_readback": "Ready",
+        "task_result_at_latest_readback": "0x0",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T075735619895Z.json",
+        "receipt_observed_at_utc": "2026-10-24T07:57:35.619895Z",
+        "receipt_bytes": 450,
+        "receipt_sha256": "80a88ce24e7cc23a3ff5e2eb59f0436494ccc55611808449d594cae610280fb7",
+        "receipt_time_delta_from_task_start_seconds": 62.619895,
+        "completion_time_exactly_observed": false,
+        "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "source_bytes": 35389440,
+        "source_modified_utc": "2026-10-23T08:45:56.2458701Z",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "receipt_source_hash_matches_direct_hash": true,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "providers": {
+        "xtime": {
+          "endpoint": "http://127.0.0.1:8769/api/health",
+          "probe_at": "2026-10-24T14:55:29.919+07:00",
+          "result": "TIMEOUT",
+          "health_body_readback": false,
+          "modual_source_present": "NOT_REVERIFIED",
+          "live_device_proven": false
+        },
+        "ollama": {
+          "endpoint": "http://127.0.0.1:11434/api/tags",
+          "probe_at": "2026-10-24T14:55:29.919+07:00",
+          "http_status": 200,
+          "model_count": 11,
+          "loopback_only": true
+        },
+        "android": {
+          "target": "192.168.1.14:5556",
+          "tcp_test_succeeded": false,
+          "heartbeat_verified": false,
+          "device_off_state_inferred": false
+        },
+        "hwinfo": {
+          "process_pid": 17520,
+          "exact_csv_path": "D:\\SENSOR_LOGS\\HWiNFO_WINDOWS.CSV",
+          "exact_csv_path_present": false,
+          "prior_recursive_matches": 0
+        },
+        "dropbox": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "last_verified_rev": "0165dc1e4794ab00000000395cdfd73",
+          "last_verified_size_bytes": 35389440,
+          "last_verified_server_modified_utc": "2026-10-14T00:20:03Z",
+          "fresh_metadata_readback": false,
+          "current_probe_error": "link_id must identify an eligible linked account",
+          "raw_bytes_downloaded": false
+        }
+      },
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "active": true,
+        "latest_verified_execution_id": "125",
+        "execution_status": "success",
+        "receipt_row_id": 267,
+        "receipt_event_id": "X20261024070023960_CLOUD",
+        "recovery_rows": 45,
+        "pending_rows": 45,
+        "host_heartbeat_probed": false,
+        "tasks_closed": false
+      },
+      "tesseract_security_branch": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "branch": "security/repo-relative-read-containment-20261024",
+        "commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
+        "main_rs_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d0",
+        "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "ahead_by": 2,
+        "behind_by": 0,
+        "pr6_state": "OPEN",
+        "latest_runs": [
+          39994207477,
+          39994207667
+        ],
+        "build_and_readback_steps_returned": 0,
+        "issuer_public_key_value_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_VERIFIED; TASK_TRANSITIONED_RUNNING_TO_READY_0X0_WITH_DELAYED_RECEIPT; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+      "invariants": {
+        "source_mutated": false,
+        "raw_sensor_values_persisted": false,
+        "credentials_committed": false,
+        "tasks_closed": false,
+        "ci_rerun": false
+      },
+      "next_callable_edge": "Read the next exact receipt after 15:01:32+07. Track whether the tick again enters Running for an extended interval. Continue X-TIME consumer diagnosis via a responsive authorized route and TESSERACT issuer/runner investigation; do not infer live sensor recovery from metadata receipts."
     }
   ],
   "privacy_policy": {
