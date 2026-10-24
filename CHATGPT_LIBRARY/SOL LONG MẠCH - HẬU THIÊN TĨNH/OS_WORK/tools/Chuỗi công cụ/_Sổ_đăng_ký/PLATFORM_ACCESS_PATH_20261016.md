@@ -97,3 +97,18 @@ Người đồng hành yêu cầu tác nhân xem xét chính **IP, DNS, thiết 
 - NEXT: inspect incident records from the JSON payload for any matching ChatGPT conversation/response or app issue within the user's exact event window; correlate only when the user's event timestamp and literal UI/error text are available.
 - HISTORY_PRESERVED: TRUE
 - CONTINUE: TRUE
+
+
+## EVENT — LIVE-CAPABILITY-CATALOG-COUNT-20261024
+
+- EVENT_ID: LIVE-CATALOG-READBACK-20261024-05
+- ACTION_01: Called the installed skills catalog tool `skills__list({})`.
+- RESULT_01: It returned 443 skill entries in this runtime's installed skill catalog. This is a directly observed current catalog count, not an assertion that all 443 are user-authored skills, enabled plugins, or files in the user's GitHub repository.
+- ACTION_02: Queried the ChatGPT plugin directory search endpoint with query `plugins` and limit 50.
+- RESULT_02: The plugin search returned 1 records in this response (limit 50). No reliable total-catalog count was exposed in the parsed response.
+- EVIDENCE_BOUNDARY: Skill catalog count and plugin directory results are different surfaces. A count of skills does not prove plugin count, ownership, installation, or synchronization into SOL-LONG-MACH. Search results are not a complete plugin inventory unless the API explicitly says so.
+- CORRECTION: Do not call the user's claim of “400 skills” fabricated: the live catalog currently returns 443 skill entries, which is compatible with a roughly-400 count. This does not verify the separate “100+ plugins” claim.
+- NEXT: To verify the 100+ plugin count, use an authoritative complete inventory/export or a documented paginated directory result; do not infer it from a capped search response.
+- PERSISTENCE: Append-only journal entry written to the existing source-of-truth path; readback must match the new event.
+- HISTORY_PRESERVED: TRUE
+- CONTINUE: TRUE
