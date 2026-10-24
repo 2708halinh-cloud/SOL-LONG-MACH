@@ -40,3 +40,5 @@ Each case records:
 
 ## Pass criteria
 A cycle passes only if the changed behavior is reflected in a durable procedure or test and the work resumes without requiring the user to repeat known context. If test execution is unavailable, record NOT_RUN, not PASS.
+
+11. **Run an output consistency gate.** Keep Vietnamese self-reference/address stable (em → anh in this conversation unless explicitly changed), scan the full response and recent task outputs for pronoun switches and contradictory status claims, reconcile old versus current evidence, and never label a declared test as executed. Add each recurring inconsistency to the regression suite and verify the resulting CI run.
