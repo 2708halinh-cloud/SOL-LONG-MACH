@@ -56,6 +56,17 @@ class CloudSurvivalTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"OPEN_TASK_ROUTING_DIVERGENCE"):
             survivor.reconcile_agent_tasks(changed)
 
+    def test_archive_format_task_is_preserved_open_and_routed_to_integrity(self):
+        ledger,_,_=survivor.classify_open_ledger(ROOT)
+        task=next(t for t in ledger["tasks"] if t["id"]=="SV-20261020-13-ARCHIVE-FORMATS")
+        self.assertEqual(task["status"],"OPEN")
+        self.assertEqual(task["source_status"],"OPEN_7Z_RAR_LR")
+        self.assertEqual(task["real_execution_status"],"OPEN_NOT_PROVEN_COMPLETED")
+        route=next(x for x in survivor.reconcile_agent_tasks(ledger)
+                   if x["task_id"]=="SV-20261020-13-ARCHIVE-FORMATS")
+        self.assertEqual(route["capability_offer"]["role"],"INTEGRITY")
+        self.assertFalse(route["source_task_closed"])
+
     def test_new_signals_cannot_erase_source_task_ids(self):
         ledger,_,appended=survivor.classify_open_ledger(ROOT)
         ids=[i["id"] for i in ledger["tasks"]]

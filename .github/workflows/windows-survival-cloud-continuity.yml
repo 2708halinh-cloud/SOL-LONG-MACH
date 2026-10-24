@@ -1,5 +1,16 @@
 name: Windows survival - independent OPEN continuation
 on:
+  pull_request:
+    paths:
+      - 'runtime/cloud_survival_scheduler.py'
+      - 'runtime/windows_c_survival_probe.ps1'
+      - 'tests/test_cloud_survival_scheduler.py'
+      - 'runtime/hellohabit_t005_adapter.py'
+      - 'tests/test_hellohabit_t005_adapter.py'
+      - 'integrations/android/hellohabit/**'
+      - 'integrations/hellocheck/**'
+      - 'CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json'
+      - '.github/workflows/windows-survival-cloud-continuity.yml'
   push:
     branches: [main]
     paths:
