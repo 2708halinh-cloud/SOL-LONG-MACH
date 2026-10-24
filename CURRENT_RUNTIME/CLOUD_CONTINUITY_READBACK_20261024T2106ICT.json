@@ -1,8 +1,8 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.1",
   "record_type": "CLOUD_AND_HOST_READBACK_WITH_BRAID_RECEIPTS",
-  "observed_at_host_local": "2026-10-24T21:10:06.6674458+07:00",
-  "observed_at_host_utc": "2026-10-24T14:10:06.6674458Z",
+  "observed_at_host_local": "2026-10-24T21:12:19.9318171+07:00",
+  "observed_at_host_utc": "2026-10-24T14:12:19.9318171Z",
   "cross_provider_clock_alignment": "NOT_VERIFIED; preserve provider timestamps independently",
   "repository": {
     "name": "2708halinh-cloud/SOL-LONG-MACH",
@@ -74,15 +74,24 @@
       "OPEN_HOST_INTEGRATION_AND_INDEPENDENT_TEST": 1
     },
     "terminal_tasks_closed": 0,
-    "user_accessible_project_credentials": 0
+    "user_accessible_project_credentials": 0,
+    "evidence_table_row_count": 282,
+    "latest_host_tick_receipt_row": {
+      "row_id": 282,
+      "event_id": "X20261024141219931_HOST_TICK",
+      "state": "VERIFIED_HOST_TICK_SOURCE_HASH_MATCH",
+      "readback_verified": true,
+      "occurred_at_utc": "2026-10-24T14:12:19.931Z",
+      "provider_created_at_utc": "2026-10-24T14:18:07.097Z"
+    }
   },
   "windows_host": {
     "route": "REMOTE_DESKTOP_COMMANDER_ALTERNATE_LINK",
     "device": "DESKTOP-86ITNQ4",
     "device_status": "ONLINE_READONLY_PROBES_SUCCEEDED",
-    "latest_tick_file": "WINDOWS_TICK_20261024T140636219100Z.json",
-    "tick_observed_at_utc": "2026-10-24T14:06:36.219100Z",
-    "tick_sha256": "EEDACB95BC38330E8FBE41E2CFC457A9ADB73276DFD91EB4EF4C621AFEAF2F1A",
+    "latest_tick_file": "WINDOWS_TICK_20261024T141136852688Z.json",
+    "tick_observed_at_utc": "2026-10-24T14:11:36.852688Z",
+    "tick_sha256": "4147F6C2CA01D1DD73650924DE8734339F99C7EA2C6DF08DBB996A2FBD18B5B6",
     "source_csv_basename": "windows_SENSON.CSV",
     "source_csv_bytes": 35389440,
     "source_csv_sha256_direct": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
@@ -96,12 +105,27 @@
       "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
       "state": "Ready",
       "enabled": true,
-      "last_run_local": "2026-10-24T21:06:33+07:00",
+      "last_run_local": "2026-10-24T21:11:33+07:00",
       "last_result": "0",
-      "next_run_local_at_probe": "2026-10-24T21:11:32+07:00",
+      "next_run_local_at_probe": "2026-10-24T21:16:32+07:00",
       "missed_runs": 0
     },
-    "next_tick_after_21_11_32": "NOT_YET_PROBED_AT_THIS_CHECKPOINT"
+    "next_tick_after_21_11_32": "VERIFIED_AT_21:11:36+07; source SHA matched; live sensor remains unverified",
+    "tick_readback_history": [
+      {
+        "filename": "WINDOWS_TICK_20261024T140636219100Z.json",
+        "observed_at_utc": "2026-10-24T14:06:36.219100Z",
+        "sha256": "EEDACB95BC38330E8FBE41E2CFC457A9ADB73276DFD91EB4EF4C621AFEAF2F1A",
+        "direct_source_hash_match": true
+      },
+      {
+        "filename": "WINDOWS_TICK_20261024T141136852688Z.json",
+        "observed_at_utc": "2026-10-24T14:11:36.852688Z",
+        "sha256": "4147F6C2CA01D1DD73650924DE8734339F99C7EA2C6DF08DBB996A2FBD18B5B6",
+        "direct_source_hash_match": true
+      }
+    ],
+    "next_tick_after_21_16_32": "NOT_YET_PROBED_AT_THIS_CHECKPOINT"
   },
   "android": {
     "adb_in_path": false,
@@ -154,7 +178,21 @@
     "last_verified_ci_head_sha": "7765781eeee2b1788f9a466c8046314c60495847",
     "last_verified_ci_conclusion": "success",
     "real_7z_rar_lr_fixtures_verified": false,
-    "next_verified_edge": "Run real 7z/unrar/lrzip binaries against approved non-sensitive fixtures on an authorized runner; keep OPEN until exact readback."
+    "next_verified_edge": "Run real 7z/unrar/lrzip binaries against approved non-sensitive fixtures on an authorized runner; keep OPEN until exact readback.",
+    "latest_pr_state": "OPEN",
+    "latest_ci_job_readback": {
+      "run_id": 40094138216,
+      "head_sha": "7765781eeee2b1788f9a466c8046314c60495847",
+      "job_name": "readonly-adapters",
+      "status": "completed",
+      "conclusion": "success",
+      "verified_steps": [
+        "Run mocked external-adapter and safety regressions",
+        "Run native fixture self-test",
+        "Verify ten-format capability schema"
+      ],
+      "artifacts": []
+    }
   },
   "safeguards": {
     "google_drive_writes": 0,
@@ -166,9 +204,17 @@
     "cloud_host_wiring_claimed": false
   },
   "next_verified_edges": [
-    "Read the next exact Windows tick after the host-local 21:11:32+07 boundary; recompute direct CSV SHA-256 and keep live_sensor_reading_confirmed=false until a live sample is proven.",
+    "Read the next exact Windows tick after the host-local 21:16:32+07 boundary; recompute direct CSV SHA-256 and keep live_sensor_reading_confirmed=false until a live sample is proven.",
     "Keep Android heartbeat unverified until an authorized device/app-level route returns evidence.",
     "Continue selected cloud-eligible OPEN edges without dispatching agents that lack a verified model/credential binding.",
     "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN until real external-format fixtures pass."
-  ]
+  ],
+  "agent_dispatch": {
+    "provider_catalog": "SUMMARY_ONLY",
+    "provider_count": 16,
+    "user_accessible_project_credentials": 0,
+    "model_selected": false,
+    "credential_binding_verified": false,
+    "publish_or_dispatch_performed": false
+  }
 }
