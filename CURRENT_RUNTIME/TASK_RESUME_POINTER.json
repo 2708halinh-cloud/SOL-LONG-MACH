@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "MODUAL: after 23:16:32+07, read the newest exact Tick receipt and Scheduled Task state and recompute the direct CSV SHA-256. Latest verified receipt WINDOWS_TICK_20261024T161134310423Z.json SHA-256 e755c7ced8483ec16dd9fd2f91d90d3180a5bd39a273d62d24b8ce4c60f04613; direct source SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches; task Ready/Enabled, last result 0x0, next run 23:16:32+07. At 23:14 both X-TIME health endpoints timed out and no 8080 listener was found; an earlier probe identified MTAgentService on 8080, so the listener observation is inconsistent over time. Do not stop/reconfigure services. HWiNFO64 runs with SensorsSM=1 and ServerRole=1, but no HWiNFO CSV is present under D:\\SENSOR_LOGS. ADB TCP to 192.168.1.14:5556 returned false; only a Xiaomi 12-class device was listed, so do not infer the intended Redmi physically offline. TESSERACT PR #6 remains OPEN; security branch 5 ahead/0 behind, issuer public key and runner assignment unverified; no CI rerun. Cloud execution 141 row 290 exact readback; 45 pending and host heartbeat unprobed.",
+  "next": "MODUAL: after 23:21:32+07, read the newest exact Tick receipt and Scheduled Task state and recompute direct CSV SHA-256. Latest verified receipt WINDOWS_TICK_20261024T161634788294Z.json SHA-256 6ea9ddffd86e566ee9de164fb16e6fcbde27b9ec924df8d1eacf93d3bea1427d; source CSV SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches. Task Ready/Enabled, last run 23:16:33+07, result 0x0, next run 23:21:32+07. At 23:17 both X-TIME health routes timed out; no listener on 8080 and no listener on X-TIME PID 73000. Earlier same-turn probe found MTAgentService on 8080, so retain the changing observations and do not infer service down or stop/reconfigure anything. HWiNFO64 remains without a verified CSV carrier in D:\\SENSOR_LOGS; intended Android target TCP probe false and device identity unverified. TESSERACT PR #6 remains OPEN; security branch 5 ahead/0 behind, issuer key and runner assignment unverified; no CI rerun. Cloud execution 141 row 290 exact readback; 45 pending, host heartbeat unprobed.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T16:14:01.6641664Z",
+  "updated_at": "2026-10-24T16:17:16.4263142Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -4786,6 +4786,140 @@
           "metadata_readback": true
         }
       }
+    },
+    {
+      "id": "WINDOWS_TICK_READBACK_20261024T2317ICT",
+      "observed_at": "2026-10-24T23:17:16.4263142+07:00",
+      "source": "Remote Desktop Commander exact post-boundary Tick receipt/task/source hash and X-TIME listener readback",
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2317ICT.json",
+      "checkpoint_blob_sha": "e03be3ffb5ef8f2f9a7973d4967d36ed62b4063d",
+      "checkpoint_commit": "a00330f0b2a698828e35755dd57cdf2a66558c89",
+      "result": "TICK_161634_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER; NO_XTIME_PID_LISTENER; OLLAMA_HTTP200_11_MODELS_LAST_PROBED_2314; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+      "tasks_closed": 0,
+      "raw_sensor_data_committed": false,
+      "credentials_committed": false,
+      "ci_rerun": false,
+      "windows_tick": {
+        "observed_at": "2026-10-24T16:17:16.4263142Z",
+        "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
+        "record_type": "POST_BOUNDARY_TICK_AND_PROVIDER_READBACK; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+        "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2317ICT.json",
+        "checkpoint_blob_sha": "e03be3ffb5ef8f2f9a7973d4967d36ed62b4063d",
+        "checkpoint_commit": "a00330f0b2a698828e35755dd57cdf2a66558c89",
+        "provider_status_last_verified_at": "2026-10-24T16:17:16.4263142Z",
+        "latest_tick": "WINDOWS_TICK_20261024T161634788294Z.json",
+        "tick_sha256": "6ea9ddffd86e566ee9de164fb16e6fcbde27b9ec924df8d1eacf93d3bea1427d",
+        "source_csv_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_recomputed_this_turn": true,
+        "source_hash_matches_receipt": true,
+        "source_bytes": 35389440,
+        "task_last_run_local": "2026-10-24T23:16:33+07:00",
+        "task_last_result": "0x0",
+        "task_next_run_local": "2026-10-24T23:21:32+07:00",
+        "task_state": "Ready",
+        "task_enabled": true,
+        "missed_runs": 0,
+        "live_sensor_reading_confirmed": false,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false,
+        "consumer_probe": {
+          "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
+          "loopback_result": "TIMEOUT",
+          "lan_result": "TIMEOUT",
+          "listener_8080": false,
+          "xtime_pid": 73000,
+          "xtime_listeners": "NONE",
+          "service_down_inferred": false,
+          "configuration_changed": false,
+          "prior_listener_owner": "MTAgentService",
+          "prior_listener_pid": 4932
+        },
+        "result": "TICK_161634_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER; NO_XTIME_PID_LISTENER; OLLAMA_HTTP200_11_MODELS_LAST_PROBED_2314; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+        "tasks_closed": 0
+      },
+      "providers": {
+        "observed_at": "2026-10-24T16:17:16.4263142Z",
+        "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
+        "device": "DESKTOP-86ITNQ4",
+        "connector_status": "ONLINE_CONFIRMED_BY_DIRECT_COMMAND",
+        "device_status": "Online",
+        "task_observation": {
+          "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
+          "task_name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+          "state": "Ready",
+          "enabled": true,
+          "last_run_local": "2026-10-24T23:16:33+07:00",
+          "last_result": "0x0",
+          "next_run_local": "2026-10-24T23:21:32+07:00",
+          "missed_runs": 0
+        },
+        "latest_receipt": {
+          "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T161634788294Z.json",
+          "observed_at_utc": "2026-10-24T16:16:34.788294Z",
+          "bytes": 450,
+          "sha256": "6ea9ddffd86e566ee9de164fb16e6fcbde27b9ec924df8d1eacf93d3bea1427d",
+          "content_readback": true,
+          "source_bytes": 35389440,
+          "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+          "source_hash_recomputed_this_turn": true,
+          "source_hash_matches_receipt": true,
+          "live_sensor_reading_confirmed": false
+        },
+        "consumer": {
+          "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
+          "loopback_endpoint": "http://127.0.0.1:8080/api/health",
+          "loopback_result": "TIMEOUT",
+          "lan_endpoint": "http://192.168.1.42:8080/api/health",
+          "lan_result": "TIMEOUT",
+          "listener_8080": false,
+          "xtime_pid": 73000,
+          "xtime_listeners": "NONE",
+          "prior_listener_owner": "MTAgentService",
+          "prior_listener_pid": 4932,
+          "health": "UNVERIFIED_TIMEOUT_NO_LISTENER_AT_PROBE",
+          "service_down_inferred": false,
+          "configuration_changed": false
+        },
+        "ollama": {
+          "last_observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+          "http_status": 200,
+          "model_count": 11
+        },
+        "android": {
+          "last_observed_in_this_turn": true,
+          "target": "192.168.1.14:5556",
+          "tcp_connect_success": false,
+          "attached_device_count": 1,
+          "attached_device_model": "2201123G",
+          "target_identity_verified": false,
+          "live_sensor_stream_verified": false,
+          "raw_sensor_values_persisted": false
+        },
+        "hwinfo": {
+          "last_observed_in_this_turn": true,
+          "process_running": true,
+          "pid": 17520,
+          "config_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
+          "config_flags": {
+            "SensorsSM": 1,
+            "ServerRole": 1,
+            "SnapshotPolling": 1,
+            "Autorun": 1
+          },
+          "matching_csv_found_in_D_SENSOR_LOGS": false,
+          "live_stream_confirmed": false
+        },
+        "dropbox": {
+          "last_observed_at_local": "2026-10-24T23:05:02+07:00",
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "revision": "0165dc1e4794ab00000000395cdfd73",
+          "bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true
+        }
+      }
     }
   ],
   "latest_sync_observation": {
@@ -4817,14 +4951,14 @@
     ]
   },
   "latest_runtime_observation": {
-    "id": "WINDOWS_TICK_READBACK_20261024T2314ICT",
-    "observed_at": "2026-10-24T16:14:01.6641664Z",
-    "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
-    "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2314ICT.json",
-    "checkpoint_blob_sha": "b376458e71bb65e2701550c675a051118d6ebe1c",
-    "checkpoint_commit": "c1ff401ccfe25ec47d68961c2129b8da4f722c6e",
-    "result": "TICK_161134_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER_AT_2314; OLLAMA_HTTP200_11_MODELS; LIVE_SENSOR_STREAM_NOT_VERIFIED",
-    "next_callable_edge": "Continue Tick post-boundary readback, identify X-TIME consumer listener, and keep live sensor stream unverified until genuine sample."
+    "id": "WINDOWS_TICK_READBACK_20261024T2317ICT",
+    "observed_at": "2026-10-24T16:17:16.4263142Z",
+    "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2317ICT.json",
+    "checkpoint_blob_sha": "e03be3ffb5ef8f2f9a7973d4967d36ed62b4063d",
+    "checkpoint_commit": "a00330f0b2a698828e35755dd57cdf2a66558c89",
+    "result": "TICK_161634_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER; NO_XTIME_PID_LISTENER; OLLAMA_HTTP200_11_MODELS_LAST_PROBED_2314; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+    "next_callable_edge": "Continue Tick readback after 23:21:32+07; trace X-TIME listener and preserve live sensor state as unverified."
   },
   "continuity_readback_history": [
     {
@@ -7995,18 +8129,18 @@
     "dns_changes": "NOT_PERFORMED"
   },
   "latest_host_probe": {
-    "observed_at": "2026-10-24T16:14:01.6641664Z",
-    "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+    "observed_at": "2026-10-24T16:17:16.4263142Z",
+    "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
     "device": "DESKTOP-86ITNQ4",
     "connector_status": "ONLINE_CONFIRMED_BY_DIRECT_COMMAND",
     "task_observation": {
-      "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+      "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
       "task_name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
       "state": "Ready",
       "enabled": true,
-      "last_run_local": "2026-10-24T23:11:33+07:00",
+      "last_run_local": "2026-10-24T23:16:33+07:00",
       "last_result": "0x0",
-      "next_run_local": "2026-10-24T23:16:32+07:00",
+      "next_run_local": "2026-10-24T23:21:32+07:00",
       "missed_runs": 0
     },
     "newer_receipt": {
@@ -8022,6 +8156,7 @@
       "later_host_status_query": "CONNECTOR_REPORTED_NO_DEVICE_CURRENTLY_ONLINE_WHILE_DEVICE_WAS_LAST_SEEN_3S_AGO; PHYSICAL_OFFLINE_NOT_INFERRED"
     },
     "android": {
+      "last_observed_in_this_turn": true,
       "target": "192.168.1.14:5556",
       "tcp_connect_success": false,
       "attached_device_count": 1,
@@ -8033,46 +8168,34 @@
     "raw_sensor_values_persisted": false,
     "device_status": "Online",
     "latest_receipt": {
-      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T161134310423Z.json",
-      "observed_at_utc": "2026-10-24T16:11:34.310423Z",
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T161634788294Z.json",
+      "observed_at_utc": "2026-10-24T16:16:34.788294Z",
       "bytes": 450,
-      "sha256": "e755c7ced8483ec16dd9fd2f91d90d3180a5bd39a273d62d24b8ce4c60f04613",
+      "sha256": "6ea9ddffd86e566ee9de164fb16e6fcbde27b9ec924df8d1eacf93d3bea1427d",
       "content_readback": true,
-      "sha256_verified": true,
       "source_bytes": 35389440,
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-      "source_sha256_recomputed_this_turn": true,
+      "source_hash_recomputed_this_turn": true,
       "source_hash_matches_receipt": true,
-      "source_last_write_local": "2026-10-23T15:45:56.2458701+07:00",
-      "live_sensor_reading_confirmed": false,
-      "source_file_written": false,
-      "synthetic_rows_added": 0,
-      "cloud_enabled": false,
-      "github_enabled": false,
-      "task_last_run_local": "2026-10-24T23:11:33+07:00",
-      "task_last_result": "0x0",
-      "task_next_run_local": "2026-10-24T23:16:32+07:00",
-      "task_state": "Ready",
-      "task_enabled": true,
-      "missed_runs": 0,
-      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2314ICT.json",
-      "checkpoint_blob_sha": "b376458e71bb65e2701550c675a051118d6ebe1c",
-      "checkpoint_commit": "c1ff401ccfe25ec47d68961c2129b8da4f722c6e"
+      "live_sensor_reading_confirmed": false
     },
     "consumer": {
-      "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+      "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
       "loopback_endpoint": "http://127.0.0.1:8080/api/health",
       "loopback_result": "TIMEOUT",
       "lan_endpoint": "http://192.168.1.42:8080/api/health",
       "lan_result": "TIMEOUT",
       "listener_8080": false,
-      "health": "UNVERIFIED_TIMEOUT_NO_LISTENER_AT_PROBE",
+      "xtime_pid": 73000,
+      "xtime_listeners": "NONE",
       "prior_listener_owner": "MTAgentService",
       "prior_listener_pid": 4932,
+      "health": "UNVERIFIED_TIMEOUT_NO_LISTENER_AT_PROBE",
       "service_down_inferred": false,
       "configuration_changed": false
     },
     "hwinfo": {
+      "last_observed_in_this_turn": true,
       "process_running": true,
       "pid": 17520,
       "config_sha256": "7c619799d5b7d89eaff4291eb0316db9f2a18eba046ee3bdf1dc6c8bfc59cc16",
@@ -8086,6 +8209,7 @@
       "live_stream_confirmed": false
     },
     "dropbox": {
+      "last_observed_at_local": "2026-10-24T23:05:02+07:00",
       "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
       "revision": "0165dc1e4794ab00000000395cdfd73",
       "bytes": 35389440,
@@ -8093,7 +8217,7 @@
       "metadata_readback": true
     },
     "ollama": {
-      "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+      "last_observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
       "http_status": 200,
       "model_count": 11
     }
@@ -8989,6 +9113,16 @@
       "checkpoint_commit": "c1ff401ccfe25ec47d68961c2129b8da4f722c6e",
       "result": "TICK_161134_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER_AT_2314; OLLAMA_HTTP200_11_MODELS; LIVE_SENSOR_STREAM_NOT_VERIFIED",
       "next_callable_edge": "Continue Tick post-boundary readback, identify X-TIME consumer listener, and keep live sensor stream unverified until genuine sample."
+    },
+    {
+      "id": "WINDOWS_TICK_READBACK_20261024T2317ICT",
+      "observed_at": "2026-10-24T16:17:16.4263142Z",
+      "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2317ICT.json",
+      "checkpoint_blob_sha": "e03be3ffb5ef8f2f9a7973d4967d36ed62b4063d",
+      "checkpoint_commit": "a00330f0b2a698828e35755dd57cdf2a66558c89",
+      "result": "TICK_161634_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER; NO_XTIME_PID_LISTENER; OLLAMA_HTTP200_11_MODELS_LAST_PROBED_2314; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+      "next_callable_edge": "Continue Tick readback after 23:21:32+07; trace X-TIME listener and preserve live sensor state as unverified."
     }
   ],
   "latest_tesseract_runner_issuer_probe": {
@@ -9019,22 +9153,22 @@
     "tasks_closed": 0
   },
   "latest_tick_readback": {
-    "observed_at": "2026-10-24T16:14:01.6641664Z",
-    "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+    "observed_at": "2026-10-24T16:17:16.4263142Z",
+    "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
     "record_type": "POST_BOUNDARY_TICK_AND_PROVIDER_READBACK; LIVE_SENSOR_STREAM_NOT_VERIFIED",
-    "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2314ICT.json",
-    "checkpoint_blob_sha": "b376458e71bb65e2701550c675a051118d6ebe1c",
-    "checkpoint_commit": "c1ff401ccfe25ec47d68961c2129b8da4f722c6e",
-    "provider_status_last_verified_at": "2026-10-24T16:14:01.6641664Z",
-    "latest_tick": "WINDOWS_TICK_20261024T161134310423Z.json",
-    "tick_sha256": "e755c7ced8483ec16dd9fd2f91d90d3180a5bd39a273d62d24b8ce4c60f04613",
+    "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2317ICT.json",
+    "checkpoint_blob_sha": "e03be3ffb5ef8f2f9a7973d4967d36ed62b4063d",
+    "checkpoint_commit": "a00330f0b2a698828e35755dd57cdf2a66558c89",
+    "provider_status_last_verified_at": "2026-10-24T16:17:16.4263142Z",
+    "latest_tick": "WINDOWS_TICK_20261024T161634788294Z.json",
+    "tick_sha256": "6ea9ddffd86e566ee9de164fb16e6fcbde27b9ec924df8d1eacf93d3bea1427d",
     "source_csv_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
     "source_hash_recomputed_this_turn": true,
     "source_hash_matches_receipt": true,
     "source_bytes": 35389440,
-    "task_last_run_local": "2026-10-24T23:11:33+07:00",
+    "task_last_run_local": "2026-10-24T23:16:33+07:00",
     "task_last_result": "0x0",
-    "task_next_run_local": "2026-10-24T23:16:32+07:00",
+    "task_next_run_local": "2026-10-24T23:21:32+07:00",
     "task_state": "Ready",
     "task_enabled": true,
     "missed_runs": 0,
@@ -9044,19 +9178,18 @@
     "cloud_enabled": false,
     "github_enabled": false,
     "consumer_probe": {
-      "observed_at_local": "2026-10-24T23:14:01.6641664+07:00",
+      "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
       "loopback_result": "TIMEOUT",
       "lan_result": "TIMEOUT",
       "listener_8080": false,
+      "xtime_pid": 73000,
+      "xtime_listeners": "NONE",
       "service_down_inferred": false,
-      "configuration_changed": false
+      "configuration_changed": false,
+      "prior_listener_owner": "MTAgentService",
+      "prior_listener_pid": 4932
     },
-    "previous_listener_observation": {
-      "owner": "MTAgentService",
-      "pid": 4932,
-      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2301ICT.json"
-    },
-    "result": "TICK_161134_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER_AT_2314; OLLAMA_HTTP200_11_MODELS; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+    "result": "TICK_161634_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER; NO_XTIME_PID_LISTENER; OLLAMA_HTTP200_11_MODELS_LAST_PROBED_2314; LIVE_SENSOR_STREAM_NOT_VERIFIED",
     "tasks_closed": 0
   },
   "latest_consumer_script_probe": {
@@ -9665,6 +9798,46 @@
         "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2301ICT.json"
       },
       "result": "TICK_161134_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER_AT_2314; OLLAMA_HTTP200_11_MODELS; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+      "tasks_closed": 0
+    },
+    {
+      "observed_at": "2026-10-24T16:17:16.4263142Z",
+      "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
+      "record_type": "POST_BOUNDARY_TICK_AND_PROVIDER_READBACK; LIVE_SENSOR_STREAM_NOT_VERIFIED",
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2317ICT.json",
+      "checkpoint_blob_sha": "e03be3ffb5ef8f2f9a7973d4967d36ed62b4063d",
+      "checkpoint_commit": "a00330f0b2a698828e35755dd57cdf2a66558c89",
+      "provider_status_last_verified_at": "2026-10-24T16:17:16.4263142Z",
+      "latest_tick": "WINDOWS_TICK_20261024T161634788294Z.json",
+      "tick_sha256": "6ea9ddffd86e566ee9de164fb16e6fcbde27b9ec924df8d1eacf93d3bea1427d",
+      "source_csv_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_recomputed_this_turn": true,
+      "source_hash_matches_receipt": true,
+      "source_bytes": 35389440,
+      "task_last_run_local": "2026-10-24T23:16:33+07:00",
+      "task_last_result": "0x0",
+      "task_next_run_local": "2026-10-24T23:21:32+07:00",
+      "task_state": "Ready",
+      "task_enabled": true,
+      "missed_runs": 0,
+      "live_sensor_reading_confirmed": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_enabled": false,
+      "github_enabled": false,
+      "consumer_probe": {
+        "observed_at_local": "2026-10-24T23:17:16.4263142+07:00",
+        "loopback_result": "TIMEOUT",
+        "lan_result": "TIMEOUT",
+        "listener_8080": false,
+        "xtime_pid": 73000,
+        "xtime_listeners": "NONE",
+        "service_down_inferred": false,
+        "configuration_changed": false,
+        "prior_listener_owner": "MTAgentService",
+        "prior_listener_pid": 4932
+      },
+      "result": "TICK_161634_VERIFIED_SOURCE_HASH_MATCH; TASK_0X0; XTIME_TIMEOUT; NO_8080_LISTENER; NO_XTIME_PID_LISTENER; OLLAMA_HTTP200_11_MODELS_LAST_PROBED_2314; LIVE_SENSOR_STREAM_NOT_VERIFIED",
       "tasks_closed": 0
     }
   ],
