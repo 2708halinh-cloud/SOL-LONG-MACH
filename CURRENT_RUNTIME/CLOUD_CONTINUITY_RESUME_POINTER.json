@@ -2,15 +2,15 @@
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.2",
   "state": "OPEN_WORK_REMAINS",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/ARCHIVE_TASK_FOLLOWUP_20261025T0459ICT.json",
+    "blob_sha": null,
+    "commit_sha": "e49bc56bc0593b28f0695627f01c221690d28278",
+    "readback_verified": false
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/ARCHIVE_TASK_FOLLOWUP_20261025T0441ICT.json",
     "blob_sha": "9852ae12f9ba437cef774d505074f88d77fa212e",
     "commit_sha": "de08895b54480d1d929ef3c79f16eb5c92555b70",
-    "readback_verified": true
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_202610250349ICT.json",
-    "blob_sha": "d375bae758b5ca2e67f832dc76b9b91648d8232f",
-    "commit_sha": "9c9935a94d9b06711d3e73805c5817477ba8d785",
     "readback_verified": true
   },
   "historical_checkpoint": {
@@ -54,7 +54,8 @@
     "Find an authorized raw-byte route for the third Project ZIP; keep SV-20261020-02 OPEN.",
     "Keep PR #27-#30 OPEN/Draft; no merge or force-push while branches are diverged.",
     "Preserve all 45 n8n recovery rows and every OPEN/IN_PROGRESS task state.",
-    "Continue through clean current-main PR #31 for archive adapters; keep SV-20261020-13-ARCHIVE-FORMATS OPEN until source/host proof, not merely CI, is verified."
+    "Use clean current-main PR #32 for archive adapters; refresh exact head and CI after any further branch commit.",
+    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN until authorized source/runtime proof and exact target readback."
   ],
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -78,8 +79,8 @@
     "commit_sha": "23923f1858b71d7dd0eb4d3b5fbaff48555a22b3",
     "readback_verified": true
   },
-  "updated_at": "2026-10-25T04:43:00+07:00",
-  "observed_at": "2026-10-25T04:43:00+07:00",
+  "updated_at": "2026-10-25T04:59:00+07:00",
+  "observed_at": "2026-10-25T04:59:00+07:00",
   "older_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0156ICT.json",
     "blob_sha": "5bf6b8945d94c8a17486c2a78220a02458cb7593",
@@ -223,14 +224,15 @@
   },
   "latest_global_open_task_ledger": {
     "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
-    "blob_sha": "79b638d40cea3a7529b5c5df28f5ac61402bb1b8",
-    "commit_sha": "3a7c37df58d895ebcb6e8006e65c0b568ec4dcee",
+    "blob_sha": "dd3d44b71e64474632bc5f965b4574377efa32eb",
+    "commit_sha": "54360e09107578e6a7593266313660235959b9f7",
     "exact_target_readback": true,
     "task_count": 29,
     "archive_task_id": "SV-20261020-13-ARCHIVE-FORMATS",
     "archive_task_status": "OPEN",
     "archive_task_real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
-    "all_previous_28_tasks_preserved_without_status_change": true
+    "all_previous_28_tasks_preserved_without_status_change": true,
+    "read_method": "GitHub fetch_blob; direct JSON parse"
   },
   "latest_source_recovery_readback": {
     "library_identity_anchor": {
@@ -330,6 +332,30 @@
         "task_status": "OPEN",
         "branch_relation": "DIVERGED",
         "divergence_note": "main advanced through append-only continuity/checkpoint commits after this PR branch was created; preserve both histories; no merge or force-push."
+      },
+      {
+        "number": 32,
+        "state": "OPEN",
+        "draft": true,
+        "merged": false,
+        "head_sha": "3ddad9cfc73703ec7c9d7efae1e1fa065ac9c72b",
+        "base": "main",
+        "base_sha": "54360e09107578e6a7593266313660235959b9f7",
+        "ahead_of_main": 5,
+        "behind_main": 0,
+        "mergeable": false,
+        "archive_run_id": 40136763205,
+        "archive_run_conclusion": "success",
+        "topology_run_id": 40136763004,
+        "topology_conclusion": "success",
+        "secret_guard_run_id": 40136763064,
+        "secret_guard_conclusion": "success",
+        "artifact_id": 12577805508,
+        "artifact_sha256": "3ece548cb48670afb8bb5f6e66f81c0e65ffc0f4f8f4171b268781395cb96b67",
+        "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+        "task_status": "OPEN",
+        "branch_relation": "AHEAD_NOT_DIVERGED",
+        "note": "Current head CI verified before append-only checkpoint/pointer update; refresh CI after branch head changes."
       }
     ],
     "archive_task_status": "OPEN",
@@ -355,26 +381,25 @@
     "wsl_mcp_bridge": "host-specific end-to-end action not verified"
   },
   "latest_archive_task_followup": {
-    "observed_at": "2026-10-25T04:41:00+07:00",
-    "checkpoint_path": "CURRENT_RUNTIME/ARCHIVE_TASK_FOLLOWUP_20261025T0441ICT.json",
-    "checkpoint_blob_sha": "9852ae12f9ba437cef774d505074f88d77fa212e",
-    "checkpoint_commit_sha": "de08895b54480d1d929ef3c79f16eb5c92555b70",
+    "observed_at": "2026-10-25T04:59:00+07:00",
+    "checkpoint_path": "CURRENT_RUNTIME/ARCHIVE_TASK_FOLLOWUP_20261025T0459ICT.json",
+    "checkpoint_commit_sha": "e49bc56bc0593b28f0695627f01c221690d28278",
+    "checkpoint_blob_sha": null,
     "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
     "task_status": "OPEN",
-    "pr31_head": "7a5276433bb563fbd704cf2c3b6f27e0e3f7dff4",
-    "archive_ci_run_id": 40135311065,
+    "pr32_head_before_checkpoint": "3ddad9cfc73703ec7c9d7efae1e1fa065ac9c72b",
+    "archive_ci_run_id": 40136763205,
     "archive_ci_conclusion": "success",
-    "topology_ci_run_id": 40135311074,
+    "topology_ci_run_id": 40136763004,
     "topology_ci_conclusion": "success",
-    "secret_guard_run_id": 40135311067,
+    "secret_guard_run_id": 40136763064,
     "secret_guard_conclusion": "success",
+    "artifact_id": 12577805508,
+    "artifact_sha256": "3ece548cb48670afb8bb5f6e66f81c0e65ffc0f4f8f4171b268781395cb96b67",
     "source_export_recovery": "NOT_COMPLETE",
     "windows_host_validation": "NOT_VERIFIED",
     "task_closed": false,
     "no_merge_or_force_push": true,
-    "pr31_ahead_of_main": 6,
-    "pr31_behind_main": 4,
-    "pr31_branch_relation": "DIVERGED",
-    "pr31_divergence_note": "main advanced through append-only continuity/checkpoint commits; no merge or force-push."
+    "branch_relation_before_checkpoint": "AHEAD_NOT_DIVERGED"
   }
 }
