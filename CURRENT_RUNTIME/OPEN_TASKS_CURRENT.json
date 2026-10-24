@@ -487,7 +487,8 @@
       "observed": [
         "Earlier PR#6 workflow, reviewer and CI runner assignment issues remain explicitly recorded in prior checkpoint",
         "2026-10-23 21:18+07:00: fresh read of PR #6 workflow run 39153474587 still shows hosted jobs fail before step output, selfhosted verification skipped, readback failure, zero artifacts; no rerun. Accessible code search returned zero results for issuer-key variable and issuer/Ed25519 terms. Current resume pointer head 5d0a44bb... differs from older head embedded in WORK_CHECKPOINT.json (57c285c8...).",
-        "2026-10-24 07:53:42+07: current-head PR #6 readback still OPEN at 5312816d5fe2b22e92302211b67f916b88a6fe14. Runs 39994207477/39994207667 still fail with no step summaries/log URLs and zero artifacts. Dropbox /Linh Hà/SENSOR_LOGS listing is complete at 56 direct entries; bounded scans of TOOLKIT.TXT and TESSERACT_CDN_BODY_CURRENT.tmp found no issuer/key markers. GitHub code search finds references, not a provisioned key. No runner assignment change verified; no CI rerun."
+        "2026-10-24 07:53:42+07: current-head PR #6 readback still OPEN at 5312816d5fe2b22e92302211b67f916b88a6fe14. Runs 39994207477/39994207667 still fail with no step summaries/log URLs and zero artifacts. Dropbox /Linh Hà/SENSOR_LOGS listing is complete at 56 direct entries; bounded scans of TOOLKIT.TXT and TESSERACT_CDN_BODY_CURRENT.tmp found no issuer/key markers. GitHub code search finds references, not a provisioned key. No runner assignment change verified; no CI rerun.",
+        "2026-10-24T19:41:32+07: Fresh GitHub readback confirms PR #6 OPEN at head 5312816d5fe2b22e92302211b67f916b88a6fe14. Workflow blob 6552d13a1f8004b0e3d36fd585dd75cdd22acf12 reads vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64; kilo.rs blob f1a7abe2d30cf720d2d1207335325d42a2af4e16 reads it with option_env! at build time. Variable presence, issuer signer and runner entitlement remain unverified; self-hosted Windows job is skipped on PR by workflow condition, hosted jobs failed, artifacts empty, no rerun."
       ],
       "next": [
         "Obtain the actual issuer public key from an authorized issuer-side carrier or authenticated GitHub Actions variable control surface; do not invent key material.",
@@ -819,6 +820,18 @@
           "result": "N8N_129_ROW271_VERIFIED; DROPBOX_METADATA_VERIFIED; HOST_READBACK_NOT_CURRENTLY_AVAILABLE; TESSERACT_ISSUER_AND_RUNNER_UNVERIFIED",
           "next_callable_edge": "Use another authorized host route to read the exact current Scheduled Task and newest tick receipt; keep the 15:51:34+07 receipt as the latest verified only. Continue HWiNFO/Android carrier discovery. Obtain the real issuer public key from an authorized control surface and verify runner assignment before any CI rerun. Preserve all 28 GitHub tasks and 45 n8n recovery rows.",
           "status_effect": "Keep task OPEN; no closure or status promotion."
+        },
+        {
+          "observed_at": "2026-10-24T19:41:32.934+07:00",
+          "source": "Fresh GitHub PR #6, workflow YAML, kilo.rs and workflow-job readback",
+          "actions_and_receipts": [
+            "Executed existing n8n continuity scan 135; exact row 278 X20261024123736319_CLOUD read back. 45 recovery rows remain pending; host heartbeat not probed; zero host operations and zero task closures.",
+            "Fresh-read PR #6, workflow YAML and kilo.rs. Workflow reads GitHub Actions variable vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64; Rust uses option_env! at build time. Variable presence and issuer signer remain unverified.",
+            "Current PR event condition excludes selfhosted_windows_verify on pull_request; hosted matrix and tesseract_os jobs failed; job step details unavailable and artifacts empty. No CI rerun performed."
+          ],
+          "result": "TESSERACT_KEY_VARIABLE_WIRING_VERIFIED_VALUE_AND_RUNNER_ENTITLEMENT_UNVERIFIED",
+          "next_callable_edge": "Use an authorized GitHub Actions variable control surface or issuer-side carrier to verify the public key; verify hosted runner entitlement/assignment before any CI rerun. Do not create key material or rerun CI.",
+          "status_effect": "Keep INHERITED_TESSERACT_DESKTOP OPEN_CARRIED / OPEN_NOT_PROVEN_COMPLETED."
         }
       ]
     },
@@ -939,18 +952,10 @@
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
       "readback": "Post-boundary read at 2026-10-24T11:12:40+07:00: task Ready/enabled, last run 11:11:33 result 0x0, next 11:16:32, missed 0. Exact receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json, 450 bytes, SHA-256 521d307f9374f0514a6d122601b9d890ae92a2670e2d9cf0224b3e3e571b955d; nested source SHA-256 matches direct hash 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Live sensor sample remains unverified; HWiNFO CSV stale; Android TCP and X-TIME routes timed out.",
       "next": [
-        "FIRST NEXT: complete exact readback of D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T060739300534Z.json; compare its nested source.sha256 with a fresh direct CSV hash; verify whether the 13:06:32 scheduled tick completed. Do not infer content from directory listing; continue HWiNFO/live-sensor proof without changing task/service/clock settings.",
-        "After device clock 09:01:32+07, read the exact newest receipt plus Scheduled Task state before retrying any command.",
-        "Inspect TaskScheduler Operational log enablement and exact task action timing before changing task/code settings; root cause of intermittent long duration remains unproven.",
-        "Continue supported HWiNFO and authorized Android live-source investigation; do not treat metadata tick as live sensor values.",
-        "After device clock 09:56:32+07, re-read the exact newest receipt and task state; continue HWiNFO/Android live-source proof. Do not alter W32Time or task settings without authorized elevation.",
-        "After device clock 10:01:32+07, read the next exact receipt and compare its source SHA-256 with a direct hash; continue supported HWiNFO/Android live-source proof.",
-        "After device clock 10:06:32+07, read exact latest tick receipt. Investigate supported HWiNFO logging path and alternate ADB executable/carrier; do not change services or task settings without authorization.",
-        "After device clock 10:11:32+07, read the next exact tick receipt. Continue supported HWiNFO logging setup and alternate ADB carrier discovery without changing services/task settings.",
-        "After device clock 11:11:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare receipt.source.sha256 to a fresh direct hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change.",
-        "After device clock 11:16:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare nested receipt.source.sha256 against a fresh direct source hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change.",
-        "After device clock 11:56:32+07, read the exact newest receipt and Scheduled Task state and compare the nested source hash to a fresh direct hash; continue HWiNFO/Android live-source proof without changing task settings or W32Time.",
-        "After device clock 15:56:32+07, read the newest exact Windows Tick receipt and direct source SHA. Investigate the 15:41:34 0x41306/no-receipt run without changing task settings; Task Scheduler Operational log is disabled. Continue supported HWiNFO logging and authorized Android heartbeat proof. Do not claim live sensor recovery from metadata receipts; keep task OPEN."
+        "After the scheduled boundary, fresh-read the newest exact Windows Tick receipt and Scheduled Task state; compare nested source.sha256 to a fresh direct source hash.",
+        "Probe the data-consumer health endpoint through an authorized route; distinguish timeout from service-down evidence and preserve the current service configuration.",
+        "Read/compare the exact local telemetry_buffer_sync.py against an authorized provider byte carrier; do not run the Dropbox historical copy or manually execute the local script during diagnosis.",
+        "Continue supported HWiNFO logging and authorized Android/ADB live-source investigation; do not infer device-off from TCP timeout."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -1590,6 +1595,27 @@
           "result": "N8N_129_ROW271_VERIFIED; DROPBOX_METADATA_VERIFIED; HOST_READBACK_NOT_CURRENTLY_AVAILABLE; TESSERACT_ISSUER_AND_RUNNER_UNVERIFIED",
           "next_callable_edge": "Use another authorized host route to read the exact current Scheduled Task and newest tick receipt; keep the 15:51:34+07 receipt as the latest verified only. Continue HWiNFO/Android carrier discovery. Obtain the real issuer public key from an authorized control surface and verify runner assignment before any CI rerun. Preserve all 28 GitHub tasks and 45 n8n recovery rows.",
           "status_effect": "Keep task OPEN; no closure or status promotion."
+        },
+        {
+          "observed_at": "2026-10-24T19:41:32.934+07:00",
+          "observed_at_utc": "2026-10-24T12:41:32.934Z",
+          "source": "Remote Desktop Commander Windows readback + n8n execution 135 exact row + GitHub PR/workflow/source readback + Braid script execution",
+          "actions_and_receipts": [
+            "Fresh-read AGENTS.md, SOL_REENTRY_CURRENT.md, TASK_RESUME_POINTER.json, OPEN_TASKS_CURRENT.json, and MODUAL_PARAMETER_CURRENT.json before ledger mutation.",
+            "Windows scheduled task GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M is enabled and Ready at the last snapshot; last run 19:36:34+07 returned 0x0, missed runs 0. Next-run field was 19:41:32+07 at the scheduled boundary.",
+            "Exact latest receipt WINDOWS_TICK_20261024T123744771353Z.json read back: 450 bytes; SHA-256 feb47f13e80576c4876104bcf0285e47f8a3247f32e692a65fb6b16f9b2b4622.",
+            "Fresh direct hash of D:\\SENSOR_LOGS\\windows_SENSON.CSV: 35,389,440 bytes; SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; nested receipt hash matches.",
+            "Receipt confirms live_sensor_reading_confirmed=false, source_file_written=false, synthetic_rows_added=0, cloud_enabled=false, github_enabled=false.",
+            "Read current local telemetry_buffer_sync.py metadata and direct SHA-256: 13,245 bytes, SHA-256 adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7. Dropbox historical script was 10,707 bytes; equivalence not verified; no manual execution.",
+            "Consumer health probes at localhost:8080 and LAN alias timed out; service-down state is not inferred. X-TiMe health returned HTTP 200 with MODUAL source present but live_device_proven=false; Ollama tags returned HTTP 200 with 11 models.",
+            "Executed prove_braid_actual_20261020.py; exit code 0. Both receipt files' hashes and contents were read back by the script; source unchanged and no mutation executed.",
+            "Executed existing n8n continuity scan 135; exact row 278 X20261024123736319_CLOUD read back. 45 recovery rows remain pending; host heartbeat not probed; zero host operations and zero task closures.",
+            "Fresh-read PR #6, workflow YAML and kilo.rs. Workflow reads GitHub Actions variable vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64; Rust uses option_env! at build time. Variable presence and issuer signer remain unverified.",
+            "Current PR event condition excludes selfhosted_windows_verify on pull_request; hosted matrix and tesseract_os jobs failed; job step details unavailable and artifacts empty. No CI rerun performed."
+          ],
+          "result": "WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_MATCH; SCHEDULED_TASK_LAST_COMPLETED_RUN_0X0; LIVE_SENSOR_AND_CONSUMER_UNVERIFIED; N8N_135_ROW278_VERIFIED; BRAID_EXIT_0; TESSERACT_ISSUER_RUNNER_OPEN",
+          "next_callable_edge": "After the scheduled boundary, fresh-read the newest exact Windows Tick receipt and Scheduled Task state. Keep live_sensor_reading_confirmed=false until a genuine live sample is proven. Continue consumer diagnosis through an authorized route and compare the local script only against an authorized exact provider copy. For TESSERACT, verify the actual public issuer key and runner entitlement before any CI rerun.",
+          "status_effect": "Keep MODUAL_SENSOR_LOGS_ROUTING OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED; no task closure."
         }
       ],
       "observed": [
@@ -1601,7 +1627,28 @@
         "2026-10-24T11:10:54+07:00: latest Windows Tick receipt read back and nested source hash matches direct SHA-256; live sensor stream remains unverified.",
         "2026-10-24T11:12:40+07:00: post-boundary receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json exact-read and hash verified; live stream remains unverified.",
         "Fresh host readback in this run: Desktop Commander secondary account reports DESKTOP-86ITNQ4 online (device 59f03001-c732-403e-b80c-b4191266809c). Latest content-verified tick is D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T054636519945Z.json (450 bytes; SHA-256 34CBD91747AACF4097600FDB1F26E8ACF40724B213F83D8B55B8A63CC171040E); its source hash matches a fresh direct hash of D:\\SENSOR_LOGS\\windows_SENSON.CSV (35,389,440 bytes; SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87). Tick reports live_sensor_reading_confirmed=false, cloud_enabled=false, github_enabled=false, source_file_written=false, synthetic_rows_added=0. Read-only task query: GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M=Ready, LastRunTime 12:56:33 local, LastTaskResult=267014, NextRunTime 13:06:32; GGDV_MINH_SENSORIMOTOR_BRIDGE=Running, LastRunTime 12:59:01, LastTaskResult=267009, NextRunTime 13:04:00. A later directory listing returned WINDOWS_TICK_20261024T060739300534Z.json; exact content readback call 0be8f618-65fd-488c-9ea8-09edf3da7aec was still executing as of 2026-10-24T06:16:18.813932Z, so that newer tick's contents/hash remain UNVERIFIED. Host-side ADB command was not found in PATH and TCP 192.168.1.14:5556 returned False; this does not prove Android is offline. No task/service/clock settings were changed.",
-        "2026-10-24T16:03:53+07:00: exact Windows Tick receipt WINDOWS_TICK_20261024T085149255349Z.json read back (450 bytes; SHA-256 4574E449B12809AC6BB70309989314054B642CB528E1602C9F13A5331BF3C744); nested source SHA matches direct CSV SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Scheduled task ran 15:51:34+07, result 0x0, next 15:56:32, zero missed runs; receipt arrived 15.26s after start. A prior 15:41:34 run returned 0x41306 without an attributable receipt; Task Scheduler Operational log is disabled, so cause remains unproven. Manual telemetry_buffer_sync.py --once exited 0 in 4.86s and wrote only a metadata receipt. X-TIME HTTP 200: source_present=true, live_device_proven=false, state=SOURCE_PRESENT; Ollama 200/11 models; Android TCP false, heartbeat unverified; HWiNFO CSV remains stale since 2026-10-21. Dropbox source metadata is verified unchanged; direct-child candidates All_desktop_live.csv (145 bytes, 2026-10-12), Sensors_Output.txt (63 bytes, 2026-10-13), and telemetry_buffer_sync.py (10,707 bytes, 2026-10-12) are historical metadata, not live proof. Braid script exit 0 with exact receipt hashes; n8n execution 127 success and event row 269 exact-readback, while HOST_HEARTBEAT_NOT_PROBED remains explicit. No raw sensor data/secrets copied; task remains OPEN."
+        "2026-10-24T16:03:53+07:00: exact Windows Tick receipt WINDOWS_TICK_20261024T085149255349Z.json read back (450 bytes; SHA-256 4574E449B12809AC6BB70309989314054B642CB528E1602C9F13A5331BF3C744); nested source SHA matches direct CSV SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Scheduled task ran 15:51:34+07, result 0x0, next 15:56:32, zero missed runs; receipt arrived 15.26s after start. A prior 15:41:34 run returned 0x41306 without an attributable receipt; Task Scheduler Operational log is disabled, so cause remains unproven. Manual telemetry_buffer_sync.py --once exited 0 in 4.86s and wrote only a metadata receipt. X-TIME HTTP 200: source_present=true, live_device_proven=false, state=SOURCE_PRESENT; Ollama 200/11 models; Android TCP false, heartbeat unverified; HWiNFO CSV remains stale since 2026-10-21. Dropbox source metadata is verified unchanged; direct-child candidates All_desktop_live.csv (145 bytes, 2026-10-12), Sensors_Output.txt (63 bytes, 2026-10-13), and telemetry_buffer_sync.py (10,707 bytes, 2026-10-12) are historical metadata, not live proof. Braid script exit 0 with exact receipt hashes; n8n execution 127 success and event row 269 exact-readback, while HOST_HEARTBEAT_NOT_PROBED remains explicit. No raw sensor data/secrets copied; task remains OPEN.",
+        "2026-10-24T19:41:32+07: Windows Tick receipt WINDOWS_TICK_20261024T123744771353Z.json exact-readback SHA-256 feb47f13e80576c4876104bcf0285e47f8a3247f32e692a65fb6b16f9b2b4622; direct CSV SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches. Scheduled task last run 19:36:34+07 returned 0x0; live_sensor_reading_confirmed=false."
+      ],
+      "next_history": [
+        {
+          "observed_at": "2026-10-24T19:41:32.934+07:00",
+          "source": "replaced stale next-action ordering without deleting history",
+          "prior_next": [
+            "FIRST NEXT: complete exact readback of D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T060739300534Z.json; compare its nested source.sha256 with a fresh direct CSV hash; verify whether the 13:06:32 scheduled tick completed. Do not infer content from directory listing; continue HWiNFO/live-sensor proof without changing task/service/clock settings.",
+            "After device clock 09:01:32+07, read the exact newest receipt plus Scheduled Task state before retrying any command.",
+            "Inspect TaskScheduler Operational log enablement and exact task action timing before changing task/code settings; root cause of intermittent long duration remains unproven.",
+            "Continue supported HWiNFO and authorized Android live-source investigation; do not treat metadata tick as live sensor values.",
+            "After device clock 09:56:32+07, re-read the exact newest receipt and task state; continue HWiNFO/Android live-source proof. Do not alter W32Time or task settings without authorized elevation.",
+            "After device clock 10:01:32+07, read the next exact receipt and compare its source SHA-256 with a direct hash; continue supported HWiNFO/Android live-source proof.",
+            "After device clock 10:06:32+07, read exact latest tick receipt. Investigate supported HWiNFO logging path and alternate ADB executable/carrier; do not change services or task settings without authorization.",
+            "After device clock 10:11:32+07, read the next exact tick receipt. Continue supported HWiNFO logging setup and alternate ADB carrier discovery without changing services/task settings.",
+            "After device clock 11:11:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare receipt.source.sha256 to a fresh direct hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change.",
+            "After device clock 11:16:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare nested receipt.source.sha256 against a fresh direct source hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change.",
+            "After device clock 11:56:32+07, read the exact newest receipt and Scheduled Task state and compare the nested source hash to a fresh direct hash; continue HWiNFO/Android live-source proof without changing task settings or W32Time.",
+            "After device clock 15:56:32+07, read the newest exact Windows Tick receipt and direct source SHA. Investigate the 15:41:34 0x41306/no-receipt run without changing task settings; Task Scheduler Operational log is disabled. Continue supported HWiNFO logging and authorized Android heartbeat proof. Do not claim live sensor recovery from metadata receipts; keep task OPEN."
+          ]
+        }
       ]
     },
     {
@@ -2883,6 +2930,95 @@
       "original_account_exports_retrieved": false,
       "global_absence_proven": false,
       "task_closed": false
+    },
+    "WINDOWS_TICK_CLOUD_SCAN_20261024194132": {
+      "observed_at": "2026-10-24T19:41:32.934+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T1941ICT.json",
+      "checkpoint_blob_sha": "0afc97ef63ca1eef8b434f4ef37b7adaef540de8",
+      "checkpoint_commit": "614fdd5e2a015355201bf7a59365146cfe02e19f",
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "execution_id": "135",
+        "status": "success",
+        "started_at_utc": "2026-10-24T12:37:34.505Z",
+        "stopped_at_utc": "2026-10-24T12:37:36.450Z",
+        "receipt_table_id": "Sk0EFJK5NzWVpBvm",
+        "receipt_row_id": 278,
+        "event_id": "X20261024123736319_CLOUD",
+        "state": "OPEN_WORK_REMAINS",
+        "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+        "recovery_rows": 45,
+        "pending_rows": 45,
+        "host_heartbeat_probed": false,
+        "host_operations": 0,
+        "tasks_closed": 0,
+        "exact_row_readback": true
+      },
+      "windows_tick": {
+        "device": "DESKTOP-86ITNQ4",
+        "task_name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "task_state": "Ready",
+        "task_enabled": true,
+        "last_run_local": "2026-10-24T19:36:34+07:00",
+        "last_result": "0x0",
+        "next_run_local": "2026-10-24T19:41:32+07:00",
+        "missed_runs": 0,
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T123744771353Z.json",
+        "receipt_time_utc": "2026-10-24T12:37:44.771353Z",
+        "receipt_sha256": "feb47f13e80576c4876104bcf0285e47f8a3247f32e692a65fb6b16f9b2b4622",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_recomputed_this_turn": true,
+        "source_hash_matches_receipt": true,
+        "live_sensor_reading_confirmed": false,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false,
+        "local_script_bytes": 13245,
+        "local_script_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+        "local_script_equivalence_to_dropbox": "NOT_VERIFIED",
+        "consumer_health": "UNVERIFIED; HTTP health requests timed out"
+      },
+      "braid": {
+        "script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+        "exit_code": 0,
+        "six_forces": {
+          "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261024T123306507475Z.json",
+          "bytes": 3996,
+          "sha256": "1fcab3e3a854d3b1a3961acad96cc9342598d2e72c9ce4758d6452b845ac014c",
+          "receipt_readback_ok": true,
+          "executed_action_count": 9,
+          "all_six_examined": true,
+          "source_sha256_unchanged": true,
+          "mutation_executed": false
+        },
+        "plural": {
+          "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261024T123307728634Z.json",
+          "bytes": 2407,
+          "sha256": "ceb9dd03186dc6e214693aa5fbb212bcc443b0e5c05ac97c6e1698abf7e2de9d",
+          "receipt_readback_ok": true,
+          "executed_action_count": 5,
+          "source_sha256_unchanged": true,
+          "mutation_executed": false
+        },
+        "cloud_host_wiring": "NOT_VERIFIED"
+      },
+      "tesseract": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "state": "OPEN_NOT_MERGED",
+        "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+        "kilo_verifier_blob_sha": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+        "variable_presence_verified": false,
+        "issuer_signer_materialized": false,
+        "selfhosted_windows_verify": "SKIPPED_ON_PULL_REQUEST_BY_WORKFLOW_CONDITION",
+        "hosted_matrix_jobs": "FAILURE",
+        "artifacts": [],
+        "rerun_performed": false
+      },
+      "exact_target_readback": true
     }
   },
   "sinks": {
