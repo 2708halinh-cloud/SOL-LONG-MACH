@@ -1,0 +1,38 @@
+name: SOL Archive Read-only Adapters
+on:
+  pull_request:
+    paths:
+      - 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py'
+      - 'tests/test_sol_archive_10_formats.py'
+      - '.github/workflows/archive-readonly-adapters.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py'
+      - 'tests/test_sol_archive_10_formats.py'
+      - '.github/workflows/archive-readonly-adapters.yml'
+permissions:
+  contents: read
+jobs:
+  readonly-adapters:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run mocked external-adapter and safety regressions
+        run: python -m unittest tests.test_sol_archive_10_formats -v
+      - name: Run native fixture self-test
+        run: python 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py' --fixture-test
+      - name: Verify ten-format capability schema
+        run: |
+          python 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py' --capabilities > capabilities.json
+          python - <<'PY'
+          import json
+          d=json.load(open("capabilities.json",encoding="utf-8"))
+          assert len(d["formats"]) == 10
+          assert {"ALL","7Z","BZ2","GZ","JAR","LR","RAR","TAR","XZ","ZIP"} == set(d["formats"])
+          print("SOL_ARCHIVE_10_FORMAT_CAPABILITIES_SCHEMA_PASS")
+          PY
