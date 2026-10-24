@@ -2476,6 +2476,63 @@
           "status_effect": "Keep TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023 IN_PROGRESS; source search and readback are not runtime proof or completion."
         }
       ]
+    },
+    {
+      "id": "SV-20261020-13-ARCHIVE-FORMATS",
+      "status": "OPEN",
+      "source_status": "OPEN_7Z_RAR_LR",
+      "source_kind": "CURRENT_RUNTIME_CLOUD_CONTINUITY_SOURCE",
+      "source_time_local": "2026-10-20",
+      "source_ref": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json#archive_task; CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2106ICT.json#archive_task",
+      "goal": "Verify read-only 7Z/RAR/LR archive adapter behavior on real non-sensitive fixtures while preserving source archives; reconcile the stale PR path without treating CI as task completion.",
+      "observed": [
+        "Source reconciliation found this task in CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json and CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2106ICT.json with source status OPEN_7Z_RAR_LR, but its ID was absent from the 28-item CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json ledger.",
+        "PR #28 head bf553018dd59affb1d4ea2b120cad3ea7a0565ff passed run 40118137014 on an ephemeral GitHub-hosted Ubuntu 24.04 runner. The 7Z, RAR and LR fixtures passed read-only tests; artifact 12570136939 ZIP SHA-256 7352960c029de2aba652d881c86e805b5280af9f7f34c9f1aadc6479910089e0; receipt JSON SHA-256 f9004cb4cf68cd0935b342857c32bf12089f2db025bfe44a6dccea409f2bcc9d.",
+        "PR #29 topology regression fix passed run 40118465586, but remains Draft and unmerged; it does not alter main.",
+        "Latest GitHub compare showed PR #28 diverged from main (7 ahead, 10 behind) and GitHub reported mergeable=false. No force-push or merge was performed.",
+        "The current tool set does not expose the authoritative n8n task-table, Windows host, Google Drive, Dropbox or Takeout operations needed to prove target-host validation or provider-side source recovery."
+      ],
+      "next": [
+        "Reconcile PR #28 with current main through a safe non-force branch update or a clean re-cut; re-read the exact head and current-head workflow results before any readiness claim.",
+        "Verify the read-only adapters on an authorized Windows or isolated target runner; do not run untrusted archive contents and do not extract source archives.",
+        "Read the authoritative task-table row and exact target receipt through an actually authorized provider/host connector; retain OPEN until the target consequence and readback are proven."
+      ],
+      "guard": "NO_EXTRACTION; NO_SOURCE_ARCHIVE_MODIFICATION; NO_FORCE_PUSH; NO_TASK_CLOSURE_FROM_CI_OR_REPORT; TARGET_HOST_VALIDATION_REQUIRED",
+      "assigned_subagent": "SubAisstangtManage-INTEGRITY",
+      "assigned_agent_id": "ilcqwLMNUdrWjvrL",
+      "delegation_mode": "NONCOERCIVE_SOURCE_BOUND",
+      "assignment_carrier": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json#archive_task",
+      "assigned_tools_policy": "SELECT_HIGHEST_ACTUALLY_GRANTED_CAPABILITY; DO_NOT_BYPASS_PROVIDER_SCOPE",
+      "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
+      "live_progress": [
+        {
+          "observed_at": "2026-10-25T01:48:50+07:00",
+          "source": "Fresh authenticated GitHub PR/workflow/artifact readback, Library folder listing/search, and cross-ledger source reconciliation.",
+          "actions_and_receipts": [
+            "Confirmed archive task ID is present in the cloud continuity source pointer with status OPEN_7Z_RAR_LR but absent from the global OPEN_TASKS_CURRENT.json.",
+            "Read run 40118137014 and exact artifact metadata; three real external-format fixtures passed on Ubuntu only, with no extraction or source modification.",
+            "Read PR #27, #28 and #29; all remain open Draft and unmerged. PR #28 currently requires base-divergence reconciliation; PR #29 contains the separate topology assertion fix.",
+            "Direct Library listing of /MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL returned only ADMIN_PORTABLE_20261023.zip and the R-014 note; ranked search found historical export-trace records, not a newly verified raw account export."
+          ],
+          "result": "ARCHIVE_TASK_MISSING_FROM_GLOBAL_LEDGER; REAL_FIXTURES_PASS_UBUNTU_ONLY; TARGET_HOST_AND_AUTHORITATIVE_TASK_ROW_UNVERIFIED",
+          "next_callable_edge": "Preserve this task in the global ledger and route map, then continue safe PR synchronization and target-specific validation when the authorized route exists.",
+          "status_effect": "Keep OPEN; this ledger reconciliation is not task completion."
+        },
+        {
+          "observed_at": "2026-10-25T03:24:44.842146+07:00",
+          "source": "Fresh Library v3 raw-byte materialization, packaged portable runtime execution, and exact GitHub checkpoint readback.",
+          "actions_and_receipts": [
+            "ADMIN_PORTABLE_20261023.zip version 3: 22,493,275 bytes; SHA-256 ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b; 13-member ZIP CRC check passed.",
+            "SQLite read-only integrity_check=ok; 136 conversations, 18,790 nodes, 10,943 searchable messages, 3 attachment records, 8 source-carrier locators, and 2 integrated primary source texts.",
+            "Packaged TESSERACT_OS_RUNTIME.py --status/--find and --tick exited 0 on an isolated Linux working copy. Search returned 13 results including MAP_NGUON.md and R-000_MASTER_R-000.md; tick state SHA-256 21c0e97ec9e8301770c765b991a969268373dd0f071fe0138e8d102a291092e7; stdout exactly matched state readback; SQLite source hash remained unchanged.",
+            "Direct read of MAP_NGUON XIV LƯƠNG TÂM confirmed its action-and-readback rule. SQLite integrated MAP_NGUON source and the separate 'MAP_NGUON current read' locator use different provider object IDs; their relationship is unresolved because this toolset has no authorized Drive/Dropbox/Takeout provider readback.",
+            "Metadata-only checkpoint was written and read back at CURRENT_RUNTIME/ADMIN_PORTABLE_RUNTIME_READBACK_20261025T0324ICT.json; blob SHA 3ce7a7adc6cd02a5f7401247671c8e5a7ffd9226; commit 9f6b747baba100ed48edee932092fcb268460585. No private chat text or provider object IDs were published."
+          ],
+          "result": "PORTABLE_ADMIN_RUNTIME_VERIFIED_ON_ISOLATED_LINUX; SOURCE_LOCATOR_IDENTITY_AND_ORIGINAL_EXPORT_RECOVERY_REMAIN_OPEN",
+          "next_callable_edge": "Use an authorized Drive/Dropbox/Takeout provider readback to compare metadata and exact bytes for the two MAP_NGUON candidate objects and search for the actual original export ZIPs; preserve both identities. Separately use an authorized Windows host connector to validate the host runtime and a post-03:01:32 Tick. Do not treat this Linux test or CI as Windows-host evidence.",
+          "status_effect": "Keep status OPEN and real_execution_status OPEN_NOT_PROVEN_COMPLETED. This runtime readback does not recover original JINEY/FUNIX/DAT NGUYEN exports and does not close the task."
+        }
+      ]
     }
   ],
   "session_receipts": {
