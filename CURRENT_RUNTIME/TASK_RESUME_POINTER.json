@@ -7873,5 +7873,65 @@
       "historical_copy_executed": false
     },
     "live_sample_verified": false
+  },
+  "latest_open_routing_pr26_sync": {
+    "observed_at_utc": "2026-10-24T13:36:32Z",
+    "source": "GitHub authenticated connector readback; PR branch updated with two-parent merge commit; CI artifacts downloaded and byte-verified",
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "pull_request": 26,
+    "pull_request_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/26",
+    "state": "OPEN_DRAFT_NOT_MERGED",
+    "branch": "fix/open-routing-minimal-20261024",
+    "head_sha": "88d4a53e2de5b0f4adc7936dce054ca0761b61dd",
+    "main_sha": "7d9e5689e9cd20badb845af7e6f663f717be1a45",
+    "ahead_by": 5,
+    "behind_by": 0,
+    "merge_base": "7d9e5689e9cd20badb845af7e6f663f717be1a45",
+    "tree_sha": "4d4d2e4255f3eb116b6aab91bdca9cbc721a5034",
+    "workflow_runs": [
+      {
+        "id": 40098811965,
+        "name": "Windows survival - independent OPEN continuation",
+        "status": "completed",
+        "conclusion": "success",
+        "artifact_id": 12562450487,
+        "artifact_sha256": "bd7af74bb7f077d71b3e66fcd842e7d91fe76ce757b7a8ceb64b2110ae53d490",
+        "embedded_json_sha256": "36708786278a9678fc9dd221516bc0a877b4cfeba1e7b195b8fd9e4fd762384c"
+      },
+      {
+        "id": 40098811953,
+        "name": "High-Threshold Secret Exposure Guard",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "hellocheck_artifact": {
+      "id": 12562306183,
+      "size_bytes": 5996902,
+      "sha256": "b3f4994a7e7990527a5cb49d471e4d73cfd494bfffa2d81fe254c7096b7a51fd",
+      "crc_verified": true,
+      "linux_binary_sha256": "2f6ce2df4ae2969876857ca03b4cb73e6628064db0a512256d48aa781ee28d4c",
+      "windows_binary_sha256": "6e3824396ebb9a3aac39b3e78b012bb92198ef53dc3a84862f82163b3dbea644"
+    },
+    "continuation_receipt": {
+      "source_task_count": 28,
+      "all_objectives_completed": false,
+      "host_os_disk_modified": false,
+      "status_counts": {
+        "OPEN": 9,
+        "OPEN_CARRIED": 2,
+        "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+        "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+        "IN_PROGRESS": 3
+      }
+    },
+    "exact_target_readback": {
+      "pr_head_verified": true,
+      "changed_paths_verified": true,
+      "artifact_zip_crc_verified": true,
+      "artifact_hashes_verified": true,
+      "pr_body_readback_verified": true
+    },
+    "status_effect": "Evidence only; no source task state changed or closed. CI success does not prove raw-source recovery, TestNet broadcast, host disk recovery, live sensor stream, or TESSERACT issuer/runner readiness."
   }
 }
