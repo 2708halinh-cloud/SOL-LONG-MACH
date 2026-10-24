@@ -132,3 +132,15 @@ TESSERACT_OS 6D:
 - Không hỏi lại những gì đã có vật chứng trong handoff.
 - Không kết luận "không thể" khi mới chỉ hỏng một route.
 - ACTION trước CONCLUSION; READBACK trước DONE.
+
+
+## CLOUD CONTINUITY READBACK — 2026-10-24T06:47Z
+
+- n8n workflow `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN` (`BogzhFUDbRp7kuwh`) remains ACTIVE. Manual execution `#123` SUCCESS at `2026-10-24T06:47:20Z`; appended receipt row `#266`, event `X20261024064722343_CLOUD`, read back from table. It records `OPEN_WORK_REMAINS`, 45 recovery rows, and explicitly `CLOUD_HEARTBEAT_ONLY; HOST_HEARTBEAT_NOT_PROBED`.
+- Recovery table `SUBAVENGERS_RECOVERY_TASKS_20261020` (`rSPFIOWbS7cfNJ8z`, project `6qKpRmicIGHA5snY`) returned 45 rows; none has a terminal completion status. Preserve all existing statuses.
+- Managed Gateway probe execution `#124` SUCCESS at `2026-10-24T06:47:22Z`; exact model response `GATEWAY_OK`. This verifies the gateway probe only; it does not establish an Agent model/credential binding.
+- Fresh validation of all five project Agents still returns `valid=false`, missing `model` and `credential`; project user-accessible credential count is 0. All five remain unpublished. Do not publish without valid binding and explicit approval.
+- GitHub main observed at `c4cefd535cc7107a48ac54438032409e6e18a0bc` (commit signature unverified/unsigned). Its exact-SHA check runs `verify`, `secret-guard`, and `continuation-guard` completed SUCCESS. This is CI evidence for that SHA only.
+- Remote Desktop Commander read attempt at `2026-10-24T06:47Z` returned “No Desktop Commander device is currently online”; host tick contents and live sensor stream remain unverified. Android heartbeat also remains unverified. Do not infer local state from cloud success.
+- No recovery task was closed; no local data, process, cache, `Meta.db`, clock, or service was changed; no Google Drive write was attempted.
+- Next verified edge: continue authorized cloud-only reads while host access is unavailable; on reconnect, read the newest host tick and compare its nested source digest with a fresh direct source digest before making any sensor claim.
