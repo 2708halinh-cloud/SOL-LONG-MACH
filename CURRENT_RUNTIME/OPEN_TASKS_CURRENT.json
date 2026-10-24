@@ -6145,6 +6145,18 @@
       },
       "result": "LATEST_WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED; XTIME_ALTERNATE_CARRIER_TIMEOUT; TESSERACT_KEY_AND_RUNNER_EVIDENCE_NOT_FOUND",
       "open_tasks_closed": false
+    },
+    {
+      "id": "CHECKPOINT_STATUS_LABEL_CHANGE_CORRECTION_20261024T041208Z",
+      "kind": "APPEND_ONLY_CHECKPOINT_AUDIT_CORRECTION",
+      "observed_at": "2026-10-24T11:12:08+07:00",
+      "observed_at_utc": "2026-10-24T04:12:08Z",
+      "source": "Post-write self-audit of exact GitHub readbacks",
+      "correction": "The MODUAL task status label changed from OPEN_SCHEDULED_TICK_RECENT_SUCCESS_INTERMITTENT_DURATION_LIVE_STREAM_NOT_VERIFIED to OPEN_SCHEDULED_TICK_SUCCESS_SOURCE_HASH_MATCH_LIVE_STREAM_NOT_VERIFIED. The task remains OPEN; no task was closed.",
+      "prior_claim_corrected": "task_statuses_changed=false",
+      "corrected_value": "task_statuses_changed=true",
+      "tasks_closed": false,
+      "history_erased": false
     }
   ],
   "energy_protection_current": {
@@ -10192,6 +10204,14 @@
       },
       "result": "LATEST_WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_VERIFIED; LIVE_SENSOR_STREAM_NOT_VERIFIED; XTIME_ALTERNATE_CARRIER_TIMEOUT; TESSERACT_KEY_AND_RUNNER_EVIDENCE_NOT_FOUND",
       "task_closure": false
+    },
+    {
+      "observed_at": "2026-10-24T11:12:08+07:00",
+      "observed_at_utc": "2026-10-24T04:12:08Z",
+      "record_type": "CHECKPOINT_STATUS_LABEL_CHANGE_CORRECTION",
+      "result": "MODUAL_TASK_LABEL_ADVANCED_BUT_TASK_REMAINS_OPEN; NO_TASK_CLOSED",
+      "task_statuses_changed": true,
+      "tasks_closed": false
     }
   ]
 }
