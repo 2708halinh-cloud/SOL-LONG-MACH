@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T16:48:41.3743778Z",
+  "updated_at": "2026-10-24T17:53:11Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -10206,5 +10206,127 @@
     },
     "result": "ADMIN_ARCHIVE_AND_SQLITE_INTEGRITY_REVERIFIED; MAP_NGUON_ID_RELATION_DISCREPANCY_PRESERVED_OPEN; NO_RAW_EXPORT_RECOVERED",
     "task_effect": "No task closed."
-  }
+  },
+  "archive_real_fixture_validation_history": [
+    {
+      "observed_at_utc": "2026-10-24T17:53:11Z",
+      "observed_at_local": "2026-10-25T00:53:11+07:00",
+      "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+      "record_type": "REAL_7Z_RAR_LR_FIXTURE_VALIDATION_WITH_EXACT_ARTIFACT_READBACK",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "pull_request": {
+        "number": 28,
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/28",
+        "state": "OPEN_DRAFT",
+        "merged": false,
+        "branch": "fix/archive-real-fixtures-20261025",
+        "head_sha": "bf553018dd59affb1d4ea2b120cad3ea7a0565ff",
+        "base_sha": "75d8fe6b7e97785058879b3621db4e36a8ec54e4"
+      },
+      "stale_prior_pr": {
+        "number": 27,
+        "branch": "fix/archive-readonly-adapters-20261024",
+        "compare_to_main": {
+          "ahead_by": 8,
+          "behind_by": 110
+        },
+        "action": "kept open and untouched; clean PR #28 started from current main"
+      },
+      "validation_attempts": [
+        {
+          "run_id": 40117868870,
+          "conclusion": "failure",
+          "fixture": "rar202-comment-nopsw.rar",
+          "result": "TEST_FAILED_OR_ENCRYPTED",
+          "disposition": "preserved as historical discovery; replaced the fixture with a verified RAR3 test sample, did not suppress the failed run"
+        },
+        {
+          "run_id": 40117932415,
+          "conclusion": "success",
+          "artifact_id": 12569601882,
+          "artifact_sha256": "ea6757d5083c4e43c1a6993812646000d00d18c40f38bb15292c04e75d99e48b",
+          "disposition": "three real fixtures passed; superseded because tool-version receipt formatting was ambiguous"
+        },
+        {
+          "run_id": 40118137014,
+          "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40118137014",
+          "conclusion": "success",
+          "head_sha": "bf553018dd59affb1d4ea2b120cad3ea7a0565ff",
+          "artifact_id": 12570136939,
+          "artifact_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40118137014/artifacts/12570136939",
+          "artifact_size_bytes": 958,
+          "artifact_zip_sha256": "7352960c029de2aba652d881c86e805b5280af9f7f34c9f1aadc6479910089e0",
+          "artifact_crc": "PASS",
+          "receipt_json_sha256": "f9004cb4cf68cd0935b342857c32bf12089f2db025bfe44a6dccea409f2bcc9d",
+          "tool_versions_sha256": "9433a77a29814b817286b6321a47cdffb881456b8e34a2b46d375aa853031f25",
+          "receipt": {
+            "schema": "SOL_ARCHIVE_REAL_FIXTURE_READBACK/1.0",
+            "fixture_count": 3,
+            "all_passed": true,
+            "source_archives_modified": false,
+            "extraction_performed": false,
+            "sensitive_data_copied": false
+          }
+        }
+      ],
+      "verified_binaries": [
+        {
+          "name": "7z",
+          "version": "7-Zip 23.01 (x64)",
+          "package": "p7zip-full=16.02+transitional.1"
+        },
+        {
+          "name": "unrar",
+          "version": "UNRAR 7.00 freeware",
+          "package": "unrar=1:7.0.7-1build1"
+        },
+        {
+          "name": "lrzip",
+          "version": "lrzip 0.651",
+          "package": "lrzip=0.651-2ubuntu1"
+        },
+        {
+          "name": "python",
+          "version": "Python 3.12.15"
+        }
+      ],
+      "fixtures": [
+        {
+          "format": "7Z",
+          "adapter": "7z",
+          "bytes": 169,
+          "sha256": "44c8086c130266b96c2b3639ca979116b0d01e146f292ad75e71e292fca53190",
+          "source_unchanged": true,
+          "status": "PASS"
+        },
+        {
+          "format": "RAR",
+          "adapter": "unrar",
+          "bytes": 606,
+          "sha256": "d3d4bd8c90b22fa01c11f460589499de06f9d28e076ec3762eea738c0903e874",
+          "upstream": "markokr/rarfile@d2f7df6fc843dae356fd6b0a85971dc36fd6e757:test/files/rar3-subdirs.rar",
+          "upstream_git_blob_sha1": "f4d032ef5da82cb2b926d7716713013fdf7fbc3f",
+          "source_unchanged": true,
+          "status": "PASS"
+        },
+        {
+          "format": "LR",
+          "adapter": "lrzip",
+          "bytes": 104,
+          "sha256": "b13399673dd6e264cae5e7b336574e0c58b7c8479071d3fc68be2ca1dbb814f0",
+          "source_unchanged": true,
+          "status": "PASS"
+        }
+      ],
+      "evidence_boundary": {
+        "real_external_format_fixtures_passed_on": "ephemeral GitHub-hosted Ubuntu 24.04 runner",
+        "target_windows_host_binaries_verified": false,
+        "original_jiney_funix_dat_nguyen_exports_recovered": false,
+        "google_drive_dropbox_takeout_provider_readback_available": false,
+        "n8n_authoritative_task_row_readback": false,
+        "task_closed": false
+      },
+      "status_effect": "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN until its authoritative task record/target is read back; do not close solely because CI passed."
+    }
+  ]
 }
