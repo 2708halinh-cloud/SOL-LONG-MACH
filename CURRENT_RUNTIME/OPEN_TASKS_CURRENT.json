@@ -775,17 +775,15 @@
     },
     {
       "id": "MODUAL_SENSOR_LOGS_ROUTING",
-      "status": "OPEN_SCHEDULED_TICK_LONG_RUNNING_NO_NEW_RECEIPT_LIVE_STREAM_NOT_VERIFIED",
+      "status": "OPEN_SCHEDULED_TICK_RECEIPTS_RESUMED_LIVE_STREAM_NOT_VERIFIED",
       "goal": "Repair MODUAL telemetry source to Outlook Dropbox\\Linh Hà\\SENSOR_LOGS\\windows_SENSON.CSV and verify Windows Tick error gone",
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
-      "readback": "Fresh Windows readback at 2026-10-23T23:42:29+07:00: scheduled task Ready/enabled; last run 23:41:33, result 0, next 23:46:32. Exact receipt WINDOWS_TICK_20261023T164134411872Z.json is valid, 450 bytes, SHA-256 b5c194f210f86042cb9f36dac8325ef113ed94fcca74a5aae4f94f36b53e0739. Source hash 9b25bd... unchanged. HWiNFO candidate at C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\03_KẾT_NỐI_THIẾT_BỊ\\HWiNFO_WINDOWS.CSV remains 39,922,785 bytes, SHA-256 b890b591..., modified 2026-10-21T02:20:45.857Z, permissions 444; EnableLogging=0. W32Time remains Stopped/Manual. Tick verified; live stream unverified.",
+      "readback": "Fresh direct readback at device clock 2026-10-24T07:09:41.3836621+07: task Ready/enabled, last run 07:06:33 result 0, missed runs 0, next run 07:11:32, PT2M limit. Exact latest receipt WINDOWS_TICK_20261024T000645771199Z.json is 450 bytes, SHA-256 86C0C43E3F33074C126E91F14308591983A48679AE955CCD0ECE399CDD3654A; source SHA 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87, size 35,389,440, mtime 2026-10-23T08:45:56.2458701Z. Receipt reports exports disabled, no source writes/synthetic rows, live_sensor_reading_confirmed=false. X-TIME health HTTP 200 but MODUAL source_present=false/live_device_proven=false. Live stream remains unverified.",
       "next": [
-        "Verify the next scheduled receipt after device-clock time 2026-10-24T04:36:32+07:00; compare receipt SHA/source SHA/mtime and preserve metadata-only interpretation.",
-        "Investigate HWiNFO logging through an authorized supported route; the separate CSV remains stale/read-only and live sample is unverified.",
-        "Use only an authorized elevated route for W32Time; no service change or resync has been attempted.",
-        "Latest route probe: read-only PID 48188 started but its output could not be read back after the connector reported no online device; do not infer task failure or relaunch duplicate process. Resume exact receipt readback when route responds.",
-        "Latest direct task/process readback: run at 05:26:33+07 terminated with LastTaskResult 0x41306; no receipt newer than 2026-10-23T22:01:44Z. ExecutionTimeLimit=PT2M. Root cause not proven; do not change task settings until one-shot duration/Python launcher are measured.",
-        "Latest direct state at device 05:33:44 showed run 05:31:33 still Running with PID 71220 and no receipt after 05:01:44Z; later route probes failed. Current state is unverified; resume exact readback when the route responds."
+        "Re-probe Windows after device clock passes 2026-10-24T07:11:32+07; read newest receipt and task state. If next receipt is missing and NextRunTime is stale relative to device clock, inspect TaskScheduler events/process state before any manual invocation.",
+        "Investigate supported HWiNFO logging/shared-memory path; separate CSV remains stale/read-only and no live sample is confirmed.",
+        "Use only an authorized elevated route for W32Time; do not change service or resync without permission.",
+        "Keep TESSERACT PR #6 OPEN; do not rerun CI until runner assignment/entitlement change is verified and an authorized issuer public key is available."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -1123,6 +1121,23 @@
           "result": "DOUBLE_HASH_PATH_CONFIRMED_ROOT_CAUSE_UNCONFIRMED",
           "next_callable_edge": "Time a one-shot with exports explicitly disabled when the Windows route returns; then optimize digest reuse or adjust the execution limit only if measured evidence supports it.",
           "status_effect": "Keep OPEN_SCHEDULED_TICK_LONG_RUNNING_NO_NEW_RECEIPT_LIVE_STREAM_NOT_VERIFIED."
+        },
+        {
+          "observed_at": "2026-10-24T07:12:00+07:00",
+          "source": "Fresh GitHub reentry/ledger reads, direct Windows readback, Dropbox Outlook metadata, local X-TIME/Ollama HTTP probes, and actual TESSERACT_OS braid execution",
+          "actions_and_receipts": [
+            "Remote Desktop Commander listed DESKTOP-86ITNQ4 online and a direct PowerShell probe succeeded.",
+            "Task GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M was Ready/enabled at device clock 07:09:41.3836621+07; last run 07:06:33+07, last result 0x0, missed runs 0, next run 07:11:32+07, execution limit PT2M, MultipleInstances=IgnoreNew.",
+            "Read exact latest receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T000645771199Z.json; 450 bytes, SHA-256 86C0C43E3F33074C126E91F14308591983A48679AE955CCD0ECE399CDD3654A6.",
+            "Recomputed source SHA-256 directly: 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; size 35,389,440 bytes and mtime 2026-10-23T08:45:56.2458701Z match receipt evidence.",
+            "Receipt confirms cloud/GitHub exports disabled, source_file_written=false, synthetic_rows_added=0, live_sensor_reading_confirmed=false.",
+            "X-TIME /api/health returned HTTP 200, PID 20712, version 0.9.0, 63 tools; response says MODUAL source_present=false and live_device_proven=false. Ollama /api/tags returned HTTP 200 on loopback.",
+            "Executed G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py; exit 0, six-forces 9 actions and plural 5 actions, mutation_executed=false, source hash unchanged, exact receipt readback true. Six receipt SHA-256 5c39c6cd05e909f41fe62276e0bbd9acc67d0fd180adab5dac9d2bf0bcfe212e.",
+            "Dropbox Outlook metadata fresh-read: /Linh Hà/SENSOR_LOGS/windows_SENSON.CSV rev 0165dc1e4794ab00000000395cdfd73, size 35,389,440, server_modified 2026-10-14T00:20:03Z; no raw bytes downloaded."
+          ],
+          "result": "NEWER_SCHEDULED_RECEIPT_VERIFIED_BRAID_PROOF_VERIFIED_LIVE_SENSOR_STREAM_STILL_UNVERIFIED",
+          "next_callable_edge": "Re-probe task and newest receipt after device clock passes 07:11:32+07. If the next trigger has no receipt and task remains Ready with a stale next-run time relative to device clock, inspect scheduler events and process state before any manual invocation. Continue authorized HWiNFO logging/issuer-key investigation independently.",
+          "status_effect": "Keep OPEN; a newer scheduled metadata receipt and independent local braid proof are verified, but live sensor readings and cloud-host wiring are not."
         }
       ]
     },
@@ -3750,6 +3765,32 @@
       "result": "DOUBLE_HASH_STATIC_PATH_IDENTIFIED_AS_CANDIDATE_NOT_CONFIRMED_ROOT_CAUSE",
       "next_callable_edge": "When device route returns, time a one-shot with both exports explicitly disabled and compare receipt creation time; if the two-pass hash is the bottleneck, optimize to reuse verified digest/evidence or adjust execution limit only after measured duration and safe task behavior.",
       "status_effect": "Keep MODUAL task OPEN; no code or task settings changed."
+    },
+    {
+      "id": "MODUAL_TICK_RECEIPT_RESUMED_AND_BRAID_EXECUTED_20261024",
+      "kind": "DIRECT_WINDOWS_RECEIPT_READBACK_PLUS_INDEPENDENT_TESSERACT_BRAID_RUN",
+      "observed_at": "2026-10-24T07:12:00+07:00",
+      "observed_at_utc": "2026-10-24T00:12:00Z",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "f32b97269b329f0bf7fb2e3122bf9dd9df70adaf",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_before_write": "367588274da8e4d345d4b40ef08a9da5d9c6efd3",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "a1cbd2076321478ae2bf9315e915cb7f27cb0a2c"
+      },
+      "actions_and_receipts": [
+        "Remote Desktop Commander listed DESKTOP-86ITNQ4 online and a direct PowerShell probe succeeded.",
+        "Task GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M was Ready/enabled at device clock 07:09:41.3836621+07; last run 07:06:33+07, last result 0x0, missed runs 0, next run 07:11:32+07, execution limit PT2M, MultipleInstances=IgnoreNew.",
+        "Read exact latest receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T000645771199Z.json; 450 bytes, SHA-256 86C0C43E3F33074C126E91F14308591983A48679AE955CCD0ECE399CDD3654A6.",
+        "Recomputed source SHA-256 directly: 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; size 35,389,440 bytes and mtime 2026-10-23T08:45:56.2458701Z match receipt evidence.",
+        "Receipt confirms cloud/GitHub exports disabled, source_file_written=false, synthetic_rows_added=0, live_sensor_reading_confirmed=false.",
+        "X-TIME /api/health returned HTTP 200, PID 20712, version 0.9.0, 63 tools; response says MODUAL source_present=false and live_device_proven=false. Ollama /api/tags returned HTTP 200 on loopback.",
+        "Executed G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py; exit 0, six-forces 9 actions and plural 5 actions, mutation_executed=false, source hash unchanged, exact receipt readback true. Six receipt SHA-256 5c39c6cd05e909f41fe62276e0bbd9acc67d0fd180adab5dac9d2bf0bcfe212e.",
+        "Dropbox Outlook metadata fresh-read: /Linh Hà/SENSOR_LOGS/windows_SENSON.CSV rev 0165dc1e4794ab00000000395cdfd73, size 35,389,440, server_modified 2026-10-14T00:20:03Z; no raw bytes downloaded."
+      ],
+      "result": "NEWER_SCHEDULED_RECEIPT_VERIFIED_BRAID_PROOF_VERIFIED_LIVE_SENSOR_STREAM_STILL_UNVERIFIED",
+      "next_callable_edge": "Re-probe task and newest receipt after device clock passes 07:11:32+07. If the next trigger has no receipt and task remains Ready with a stale next-run time relative to device clock, inspect scheduler events and process state before any manual invocation. Continue authorized HWiNFO logging/issuer-key investigation independently.",
+      "status_effect": "Keep OPEN; a newer scheduled metadata receipt and independent local braid proof are verified, but live sensor readings and cloud-host wiring are not."
     }
   ],
   "energy_protection_current": {
@@ -6995,6 +7036,52 @@
       "root_cause_confirmed": false,
       "source_mutated": false,
       "task_settings_changed": false
+    },
+    {
+      "observed_at": "2026-10-24T00:12:00Z",
+      "record_type": "WINDOWS_RECEIPT_PROGRESS_BRAID_AND_LOCAL_PROVIDER_HEALTH",
+      "windows": {
+        "task_state": "Ready",
+        "last_run": "2026-10-24T07:06:33+07:00",
+        "next_run": "2026-10-24T07:11:32+07:00",
+        "latest_receipt": "WINDOWS_TICK_20261024T000645771199Z.json",
+        "receipt_sha256": "86C0C43E3F33074C126E91F14308591983A48679AE955CCD0ECE399CDD3654A6",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "live_sensor_reading_confirmed": false
+      },
+      "xtime": {
+        "http_status": 200,
+        "modual_source_present": false,
+        "live_device_proven": false
+      },
+      "ollama": {
+        "http_status": 200,
+        "loopback_only": true
+      },
+      "braid": {
+        "exit_code": 0,
+        "six_actions": 9,
+        "plural_actions": 5,
+        "source_sha256_unchanged": true,
+        "mutation_executed": false,
+        "receipt_sha256": "5c39c6cd05e909f41fe62276e0bbd9acc67d0fd180adab5dac9d2bf0bcfe212e"
+      },
+      "dropbox": {
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "raw_bytes_downloaded": false
+      },
+      "tesseract": {
+        "pr": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs_39994207477": "failure",
+        "runs_39994207667": "failure",
+        "rerun_performed": false,
+        "runner_assignment_change_verified": false,
+        "issuer_key_verified": false
+      },
+      "result": "RECEIPTS_PROGRESS_AND_BRAID_VERIFIED_LIVE_STREAM_OPEN"
     }
   ]
 }
