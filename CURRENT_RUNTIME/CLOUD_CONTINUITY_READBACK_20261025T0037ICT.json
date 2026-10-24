@@ -1,0 +1,145 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.8",
+  "record_type": "CLOUD_ONLY_EXECUTION_AND_CROSS_LEDGER_READBACK",
+  "observed_at_utc": "2026-10-24T17:37:41Z",
+  "observed_at_ict": "2026-10-25T00:37:41+07:00",
+  "repository": {
+    "name": "2708halinh-cloud/SOL-LONG-MACH",
+    "current_open_ledger": {
+      "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "blob_sha": "96c1776c8ec1f1ec14c7edce221b80850abf50ac",
+      "task_count": 28,
+      "status_counts": {
+        "OPEN": 9,
+        "OPEN_CARRIED": 2,
+        "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+        "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+        "IN_PROGRESS": 3
+      }
+    }
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "latest_verified_execution": {
+      "id": "144",
+      "mode": "trigger",
+      "status": "success",
+      "started_at_utc": "2026-10-24T17:00:22.079Z",
+      "stopped_at_utc": "2026-10-24T17:00:24.213Z"
+    },
+    "evidence_table": {
+      "table_id": "Sk0EFJK5NzWVpBvm",
+      "row_count": 302,
+      "latest_row_id": 302,
+      "latest_event_id": "X20261024170024047_CLOUD",
+      "latest_row_occurred_at_utc": "2026-10-24T17:00:24.047Z",
+      "state": "OPEN_WORK_REMAINS",
+      "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+      "exact_row_readback": true
+    },
+    "recovery_table": {
+      "table_id": "rSPFIOWbS7cfNJ8z",
+      "project_id": "6qKpRmicIGHA5snY",
+      "row_count": 45,
+      "pending_tasks": 45,
+      "terminal_tasks_closed": 0,
+      "normalized_id_matches_to_github": 28,
+      "github_only_tasks": 0,
+      "n8n_only_historical_tasks": 17,
+      "status_divergences_preserved": [
+        {
+          "task_id": "ANDROID_OLLAMA_LOCALHOST_CHAT_UI",
+          "github_status": "IN_PROGRESS",
+          "n8n_status": "OPEN_ROUTED_NONCOERCIVE"
+        },
+        {
+          "task_id": "SIX_PROJECTIONS_ENVIRONMENT_REGISTRY",
+          "github_status": "IN_PROGRESS",
+          "n8n_status": "OPEN_ROUTED_NONCOERCIVE"
+        }
+      ],
+      "accessible_project_credentials": 0,
+      "model_binding_verified": false,
+      "publish_or_dispatch_performed": false
+    }
+  },
+  "host": {
+    "state_this_run": "NOT_PROBED",
+    "last_recorded_tick": {
+      "file": "WINDOWS_TICK_20261024T164634219800Z.json",
+      "observed_at_utc": "2026-10-24T16:46:34.219800Z",
+      "sha256": "0436d7b164c227d5b1a1da532f8959b21aa7494992f8363ff45d40dcd64d99ca"
+    },
+    "last_recorded_source_csv_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "prior_tick_source_hash_match": true,
+    "live_sensor_reading_confirmed": false,
+    "host_clock_alignment_verified": false
+  },
+  "android": {
+    "state_this_run": "NOT_PROBED",
+    "last_recorded_observation_ict": "2026-10-24T23:45:06.447+07:00",
+    "last_recorded_adb_device_count": 1,
+    "wireless_tcp_reachable": false,
+    "device_power_state": "UNKNOWN",
+    "continuous_live_sensor_stream_verified": false,
+    "raw_sensor_values_persisted": false
+  },
+  "source_registry": {
+    "task_id": "SIX_PROJECTIONS_ENVIRONMENT_REGISTRY",
+    "github_status": "IN_PROGRESS",
+    "n8n_status": "OPEN_ROUTED_NONCOERCIVE",
+    "source_registry_path": "CONFIG_SOL/ENVIRONMENT_COORDINATE_REGISTRY.json",
+    "source_registry_blob_sha": "9ffdc2da742bd9ad07fbdfb8b27fcd8c8cf8b74e",
+    "raw_payload": "ingestion_gate_payload_03.txt",
+    "raw_payload_readback": "UNVERIFIED",
+    "repository_search_found_registry_references_only": true,
+    "absence_not_inferred": true
+  },
+  "archive_task": {
+    "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+    "pr_number": 27,
+    "pr_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/27",
+    "pr_state": "OPEN",
+    "draft": true,
+    "current_head_sha": "4880ca9d7718f2cab6b0252a6c75d4b1f5a7de6f",
+    "current_head_checks": {
+      "secret_guard": "success",
+      "readonly_adapters": "success",
+      "continuation_guard": "success",
+      "verify_stone_folders": "failure",
+      "failing_job_id": 120873039003,
+      "failing_step": "Verify Library topology",
+      "failing_merge_ref_sha": "be99a1853e088d9f6125d2fa9eb0377e3188c75b",
+      "failure_detail": "Topology test expects only COMPUTER_KHÍ💜BRAIN_OS_POWER and OS_WORK as sibling directories; actual extra sibling is BRAIN_WAVE_LOGS."
+    },
+    "older_ci_run": {
+      "run_id": 40094138216,
+      "conclusion": "success",
+      "head_sha": "7765781eeee2b1788f9a466c8046314c60495847",
+      "current_pr_head_verified_by_that_run": false
+    },
+    "real_7z_rar_lr_fixtures_verified": false,
+    "source_moved_or_deleted_this_run": false
+  },
+  "safeguards": {
+    "tasks_closed": 0,
+    "source_mutations": 0,
+    "google_drive_writes": 0,
+    "process_terminations": 0,
+    "cache_or_meta_db_deletions": 0,
+    "host_configuration_changes": 0,
+    "raw_sensor_values_persisted": false,
+    "agent_dispatch": false,
+    "secret_values_written": false
+  },
+  "next_verified_edges": [
+    "Resolve the source-scope discrepancy for BRAIN_WAVE_LOGS versus the two-root topology test; do not move or delete source files merely to make CI pass.",
+    "Obtain authorized raw-source readback for ingestion_gate_payload_03.txt; repository references are not source bytes and search absence is not deletion proof.",
+    "Probe a newer Windows tick only through an authorized host route; recompute the CSV SHA-256 and keep live_sensor_reading_confirmed=false until a genuine live sample is verified.",
+    "Keep Android power and continuous sensor stream UNKNOWN until a fresh authorized device/app readback.",
+    "Keep PR #27 OPEN until current-head CI is reconciled and real 7Z/RAR/LR fixtures are verified.",
+    "Continue cloud-eligible OPEN tasks without dispatch until model and credential binding are verified."
+  ]
+}
