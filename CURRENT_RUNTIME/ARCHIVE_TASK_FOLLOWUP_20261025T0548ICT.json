@@ -1,0 +1,91 @@
+{
+  "schema": "SOL_ARCHIVE_TASK_FOLLOWUP/1.0",
+  "observed_at": "2026-10-25T05:48:00+07:00",
+  "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+  "task_status": "OPEN",
+  "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
+  "ledger_readback": {
+    "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "blob_sha": "6d1267da52638c3f8ce3d33a3b62012527bb2e8a",
+    "commit_sha": "84199facaacb499ca000d96f99d002f70d68f8ca",
+    "exact_target_readback": true,
+    "task_count": 29,
+    "archive_task_status": "OPEN",
+    "archive_task_real_execution_status": "OPEN_NOT_PROVEN_COMPLETED"
+  },
+  "code_change": {
+    "pr_number": 33,
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/33",
+    "branch": "fix/archive-adapters-main-recut-20261025T0548ICT",
+    "validated_code_head": "3a97f9c52de59c9d51da759c1c90b1ad28648c1c",
+    "base_main": "84199facaacb499ca000d96f99d002f70d68f8ca",
+    "changed_source_files": 5,
+    "exact_content_readback": true,
+    "branch_relation_at_readback": {
+      "ahead_of_main": 5,
+      "behind_main": 0
+    },
+    "state": "OPEN_DRAFT_UNMERGED"
+  },
+  "ci": {
+    "archive_readonly_adapters": {
+      "run_id": 40140244750,
+      "conclusion": "success"
+    },
+    "library_stone_topology": {
+      "run_id": 40140244511,
+      "conclusion": "success"
+    },
+    "secret_exposure_guard": {
+      "run_id": 40140244505,
+      "conclusion": "success"
+    },
+    "artifact_id": 12578476514,
+    "artifact_sha256": "69282300bed34c9279f5dac907a6d0ed2fb768d79406a880d6f448cd367f1a4f",
+    "artifact_bytes": 958,
+    "artifact_crc": "PASS",
+    "receipt_json_sha256": "8879908fe4ca289432e7bba6b0240cd62cb978ff5eeee56e17bfcb1f5c1d8107",
+    "fixtures": {
+      "count": 3,
+      "formats": [
+        "7Z",
+        "RAR",
+        "LR"
+      ],
+      "all_passed": true,
+      "extraction_performed": false,
+      "source_unchanged": true,
+      "sensitive_data_copied": false
+    },
+    "environment": "GITHUB_HOSTED_UBUNTU_ONLY"
+  },
+  "library_readback": {
+    "archive_name": "ADMIN_PORTABLE_20261023.zip",
+    "bytes": 22493275,
+    "sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+    "zip_members": 13,
+    "zip_crc": "PASS",
+    "map_source": "MEMORY_ARCHIVE_THIT_THO_SOUL/PRIMARY_SOURCES/MAP_NGUON.md",
+    "map_bytes": 99075,
+    "map_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+    "xiv_luong_tam_read": true,
+    "source_archive_mutated": false
+  },
+  "original_export_recovery": {
+    "JINEY": false,
+    "FUNIX": false,
+    "DAT_NGUYEN": false,
+    "new_original_export_carrier_found": false,
+    "provider_byte_retrieval": "NOT_AVAILABLE_IN_CURRENT_TOOLSET",
+    "no_substitute_archive_used": true
+  },
+  "host_validation": "NOT_VERIFIED",
+  "task_closed": false,
+  "merge_performed": false,
+  "force_push_performed": false,
+  "next": [
+    "Use an authorized Drive/Dropbox/Takeout byte-read connector to retrieve actual original account exports and preserve provider IDs/hashes.",
+    "Validate read-only adapters on an authorized Windows or target runtime; hosted Ubuntu CI is not Windows evidence.",
+    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN until source/runtime proof and exact target readback exist."
+  ]
+}
