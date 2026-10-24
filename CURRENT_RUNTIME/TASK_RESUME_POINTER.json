@@ -142,7 +142,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "MODUAL: at the last direct readback (device 05:33:44+07), the 05:31:33 run was still Running (0x41301, PID 71220) and no receipt newer than 2026-10-23T22:01:44.171458Z existed; later device routes became unavailable, so current task state is unknown. Static source review confirms two full CSV hash passes per tick (resolver then consumer) against a PT2M task limit; this is a plausible but unproven bottleneck. When the route responds, time a one-shot with exports explicitly disabled before changing code/task settings. TESSERACT PR #6 remains OPEN; runs 39994207477/39994207667 fail with empty step arrays and BlobNotFound logs; selfhosted verification is skipped on pull_request. Organization code search found only variable references, not a key literal. Do not rerun CI without verified runner change and authorized issuer key.",
+  "next": "MODUAL: newest direct receipt WINDOWS_TICK_20261024T000645771199Z.json (SHA-256 86C0C43E3F33074C126E91F14308591983A48679AE955CCD0ECE399CDD3654A) verifies a scheduled metadata-only tick at 2026-10-24T00:06:45.771199Z; source remains 35,389,440 bytes with SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. At device clock 07:09:41, task was Ready/enabled, last run 07:06:33 result 0, next 07:11:32, zero missed runs; follow-up after that device-clock time remains pending. Receipt still says live_sensor_reading_confirmed=false. TESSERACT_OS braid script executed on G: with exit 0; SIX 9 actions and PLURAL 5 actions, exact receipt readback true, source hash unchanged, cloud wiring NOT_VERIFIED. TESSERACT Desktop PR #6 remains OPEN; runs 39994207477/39994207667 still fail with empty step output; do not rerun CI until runner assignment changes and issuer key is authorized.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -1236,6 +1236,85 @@
       },
       "result": "DOUBLE_HASH_CANDIDATE_RECORDED_NO_UNPROVEN_FIX_APPLIED",
       "open_tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-24T00:12:00Z",
+      "type": "WINDOWS_TICK_NEWER_RECEIPT_AND_TESSERACT_BRAID_LIVE_EXECUTION",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "f32b97269b329f0bf7fb2e3122bf9dd9df70adaf",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "0be4631329b723cfc7b0737c9dbf48f481d0e1b5",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "a1cbd2076321478ae2bf9315e915cb7f27cb0a2c"
+      },
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "last_device_clock_read": "2026-10-24T07:09:41.3836621+07:00",
+        "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state_at_last_read": "Ready",
+        "last_run": "2026-10-24T07:06:33+07:00",
+        "next_run_at_last_read": "2026-10-24T07:11:32+07:00",
+        "last_result": "0x0",
+        "missed_runs": 0,
+        "execution_time_limit": "PT2M",
+        "latest_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T000645771199Z.json",
+        "latest_receipt_sha256": "86C0C43E3F33074C126E91F14308591983A48679AE955CCD0ECE399CDD3654A6",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "live_sensor_reading_confirmed": false,
+        "followup_after_07_11_32": "PENDING"
+      },
+      "braid": {
+        "script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+        "exit_code": 0,
+        "six_actions": 9,
+        "plural_actions": 5,
+        "source_sha256_unchanged": true,
+        "mutation_executed": false,
+        "six_receipt_sha256": "5c39c6cd05e909f41fe62276e0bbd9acc67d0fd180adab5dac9d2bf0bcfe212e",
+        "six_receipt_readback_ok": true,
+        "plural_receipt_readback_ok": true,
+        "cloud_host_wiring": "NOT_VERIFIED"
+      },
+      "providers": {
+        "dropbox": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true,
+          "raw_bytes_downloaded": false
+        },
+        "xtime": {
+          "http_status": 200,
+          "pid": 20712,
+          "version": "0.9.0",
+          "runtime_tools": 63,
+          "modual_source_present": false,
+          "live_device_proven": false
+        },
+        "ollama": {
+          "http_status": 200,
+          "loopback_only": true
+        },
+        "tesseract": {
+          "pr": 6,
+          "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+          "run_39994207477": "failure",
+          "run_39994207667": "failure",
+          "jobs_have_steps_output": false,
+          "selfhosted_windows_verify": "skipped",
+          "runner_assignment_change_verified": false,
+          "issuer_public_key_verified": false,
+          "ci_rerun": false
+        },
+        "c_drive": {
+          "free_gib": 31.54,
+          "total_gib": 474.36
+        }
+      },
+      "result": "WINDOWS_RECEIPT_PROGRESS_AND_LIVE_BRAID_VERIFIED_OPEN_WORK_RETAINED",
+      "open_tasks_closed": false
     }
   ],
   "latest_sync_observation": {
@@ -1267,83 +1346,82 @@
     ]
   },
   "latest_runtime_observation": {
-    "observed_at": "2026-10-24T05:42:26.612+07:00",
-    "observed_at_utc": "2026-10-23T22:42:26.612Z",
+    "observed_at": "2026-10-24T07:12:00+07:00",
+    "observed_at_utc": "2026-10-24T00:12:00Z",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "9acf93f5c81e443b8244b32df1ee251ca5489b1c",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "367588274da8e4d345d4b40ef08a9da5d9c6efd3",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "e63cd6e872570addd40f8223768881e2c6d69a08"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "f32b97269b329f0bf7fb2e3122bf9dd9df70adaf",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "0be4631329b723cfc7b0737c9dbf48f481d0e1b5",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_write": "a1cbd2076321478ae2bf9315e915cb7f27cb0a2c"
     },
     "windows": {
+      "device": "DESKTOP-86ITNQ4",
+      "last_device_clock_read": "2026-10-24T07:09:41.3836621+07:00",
       "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
-      "latest_receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261023T220144171458Z.json",
-      "latest_receipt_sha256": "c4cf8f0ca86208e0fb73129a45b5e3fb2a597a62ee5226db106010798b664713",
-      "latest_receipt_utc": "2026-10-23T22:01:44.171458Z",
+      "state_at_last_read": "Ready",
+      "last_run": "2026-10-24T07:06:33+07:00",
+      "next_run_at_last_read": "2026-10-24T07:11:32+07:00",
+      "last_result": "0x0",
+      "missed_runs": 0,
+      "execution_time_limit": "PT2M",
+      "latest_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T000645771199Z.json",
+      "latest_receipt_sha256": "86C0C43E3F33074C126E91F14308591983A48679AE955CCD0ECE399CDD3654A6",
       "source_bytes": 35389440,
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-      "previous_run": {
-        "last_run": "2026-10-24T05:26:33+07:00",
-        "last_result_hex": "0x41306",
-        "process_gone": true
-      },
-      "last_direct_state": {
-        "device_clock": "2026-10-24T05:33:44.0873063+07:00",
-        "state": "Running",
-        "last_run": "2026-10-24T05:31:33+07:00",
-        "next_run": "2026-10-24T05:36:32+07:00",
-        "last_result_hex": "0x41301",
-        "consumer_pid": 71220,
-        "missed_runs": 0
-      },
-      "later_route_probes": "NO_DEVICE_CURRENTLY_ONLINE",
-      "current_state_after_last_readback": "UNVERIFIED",
-      "execution_time_limit": "PT2M",
-      "manual_one_shot_started": false,
       "live_sensor_reading_confirmed": false,
-      "root_cause_proven": false
+      "followup_after_07_11_32": "PENDING"
     },
-    "dropbox": {
-      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
-      "rev": "0165dc1e4794ab00000000395cdfd73",
-      "size_bytes": 35389440,
-      "server_modified_utc": "2026-10-14T00:20:03Z",
-      "metadata_readback": true,
-      "raw_bytes_downloaded": false
+    "braid": {
+      "script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+      "exit_code": 0,
+      "six_actions": 9,
+      "plural_actions": 5,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "six_receipt_sha256": "5c39c6cd05e909f41fe62276e0bbd9acc67d0fd180adab5dac9d2bf0bcfe212e",
+      "six_receipt_readback_ok": true,
+      "plural_receipt_readback_ok": true,
+      "cloud_host_wiring": "NOT_VERIFIED"
     },
-    "tesseract_desktop": {
-      "pr": 6,
-      "state": "OPEN",
-      "merged": false,
-      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-      "current_head_runs": {
-        "39994207477": "failure",
-        "39994207667": "failure"
+    "providers": {
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "raw_bytes_downloaded": false
       },
-      "failed_jobs_steps_empty": true,
-      "windows_job_log": "BlobNotFound 404",
-      "selfhosted_windows_verify": "SKIPPED_BY_PULL_REQUEST_CONDITION",
-      "github_org_search": "2708halinh-cloud exact variable query found 4 references only; no key literal",
-      "issuer_key_verified": false,
-      "issuer_absence_proven": false,
-      "runner_assignment_change_verified": false,
-      "ci_rerun": false
+      "xtime": {
+        "http_status": 200,
+        "pid": 20712,
+        "version": "0.9.0",
+        "runtime_tools": 63,
+        "modual_source_present": false,
+        "live_device_proven": false
+      },
+      "ollama": {
+        "http_status": 200,
+        "loopback_only": true
+      },
+      "tesseract": {
+        "pr": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "run_39994207477": "failure",
+        "run_39994207667": "failure",
+        "jobs_have_steps_output": false,
+        "selfhosted_windows_verify": "skipped",
+        "runner_assignment_change_verified": false,
+        "issuer_public_key_verified": false,
+        "ci_rerun": false
+      },
+      "c_drive": {
+        "free_gib": 31.54,
+        "total_gib": 474.36
+      }
     },
-    "xtime_health_http_status": 200,
-    "ollama_tags_http_status": 200,
-    "tesseract_pr6_open": true,
-    "tesseract_ci_rerun": false,
-    "open_tasks_closed": false,
-    "modual_consumer_static_analysis": {
-      "consumer_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
-      "resolver_blob_sha": "9b082c5c96ea13d02af35c23519653ad2e78d119",
-      "full_csv_hash_passes_per_tick": 2,
-      "execution_time_limit": "PT2M",
-      "plausible_bottleneck": "DOUBLE_HASH_OF_35_389_440_BYTE_SOURCE",
-      "root_cause_confirmed": false,
-      "task_settings_changed": false,
-      "source_mutated": false
-    }
+    "result": "WINDOWS_RECEIPT_PROGRESS_AND_LIVE_BRAID_VERIFIED_OPEN_WORK_RETAINED",
+    "open_tasks_closed": false
   }
 }
