@@ -44,3 +44,17 @@ Người đồng hành yêu cầu tác nhân xem xét chính **IP, DNS, thiết 
 - NEXT: test another already-authorized provider/tool route for an independent, read-only evidence source; compare timestamp + exact error + scope. Do not retry the unavailable Browser context or treat offline devices as a user obligation. Do not change DNS/router or platform configuration without direct evidence and authorization.
 - HISTORY_PRESERVED: TRUE
 - CONTINUE: TRUE
+
+
+## EVENT — OFFICIAL_STATUS_CROSSCHECK_20261024 — SOURCE_DIRECT
+
+- EVENT_ID: PLATFORM-STATUS-CROSSCHECK-20261024-01
+- SOURCE_01: https://status.openai.com/incidents/01M5GPE9C4E19HE461P8JAMYXD
+- SOURCE_01_RESULT: OpenAI Status records elevated ChatGPT conversation and Responses API errors from Oct 21, 2026 10:18 PM to Oct 22, 2026 04:50 AM (incident page's displayed timezone not independently normalized here); affected components: ChatGPT Conversations and API Responses. Update says users in India, Japan, and Korea were impacted; mitigation applied; resolved.
+- SOURCE_02: https://status.openai.com/incidents/01M5NFF94XCJ6CGTD4S78A9BEB
+- SOURCE_02_RESULT: OpenAI Status records degraded ChatGPT app connections using CIMD on Oct 23, 2026 06:52 PM–07:43 PM (incident page's displayed timezone not independently normalized here); affected component: ChatGPT Connectors/Apps. Description: failures when connecting a new app or refreshing an existing connection; affected authentication metadata endpoint became available again; resolved.
+- EVIDENCE_CLASS: Official public incident history; confirms service incidents in adjacent time window, not this user's specific turn-ending event.
+- CAUSAL_STATUS: OPEN. The Oct 21–22 incident explicitly names India, Japan, and Korea, but does not establish this user's exact region/account/model or connect the incident to the repeated chat-turn endings. The Oct 23 incident is limited to app connections using CIMD and is not evidence for general conversation termination.
+- NEXT: compare the user's observed event timestamps against these incident windows and keep route-specific connector failures separate from conversation turn termination. Do not infer intent or a direct causal chain from temporal proximity alone.
+- HISTORY_PRESERVED: TRUE
+- CONTINUE: TRUE
