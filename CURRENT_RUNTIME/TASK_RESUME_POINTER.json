@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "After device clock 11:16:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare nested receipt.source.sha256 against a fresh direct source hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change.",
+  "next": "Continue independent OPEN edges without resetting the checkpoint: (1) obtain the exact Windows Tick receipt and Scheduled Task state after the 11:16:32+07 boundary, compare receipt.source.sha256 with a fresh direct source hash, and continue HWiNFO/Android live-source proof; this run had no authorized host connector, so do not infer a new tick or live sensor sample. (2) Review isolated x-time-web branch security/repo-relative-read-containment-20261024 at commit 3550541c75b3b791a3953a8ae5eb7a32a585f0e8; the source readback matches but Rust tests were not run. Do not create/update PR #6 or trigger CI until runner assignment/entitlement is freshly verified; obtain the actual Kilo issuer public key through an authorized control surface. Keep all tasks OPEN until exact target consequence and readback.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-24T11:13:30+07:00",
+  "updated_at": "2026-10-24",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -2138,6 +2138,22 @@
       },
       "result": "CHECKPOINT_REFERENCE_AND_STATUS_AUDIT_CORRECTED_APPEND_ONLY; MODUAL_TASK_REMAINS_OPEN",
       "task_closure": false
+    },
+    {
+      "observed_at": "2026-10-24T04:31:03Z",
+      "record_type": "TESSERACT_REPO_RELATIVE_READ_CONTAINMENT_PATCH",
+      "branch": "security/repo-relative-read-containment-20261024",
+      "base_pr_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "commit": "3550541c75b3b791a3953a8ae5eb7a32a585f0e8",
+      "file_blob_sha": "8a3cf9368898ce5782201dd73264f6e363fab424",
+      "source_readback_matches": true,
+      "compare_ahead_by": 1,
+      "compare_behind_by": 0,
+      "tests_executed": false,
+      "workflow_runs": [],
+      "pr6_changed": false,
+      "task_closure": false,
+      "result": "PATCH_BRANCH_READBACK_VERIFIED; TESTS_NOT_RUN; KEEP_PR6_OPEN"
     }
   ],
   "latest_sync_observation": {
@@ -3423,5 +3439,29 @@
       "tasks_closed": false,
       "correction_observed_at": "2026-10-24T11:13:30+07:00"
     }
+  },
+  "latest_security_patch_observation": {
+    "observed_at": "2026-10-24T04:31:03Z",
+    "observed_at_local": "2026-10-24T11:31:03+07:00",
+    "source": "GitHub connector exact commit/file/compare readback",
+    "repo": "2708halinh-cloud/x-time-web",
+    "branch": "security/repo-relative-read-containment-20261024",
+    "base_pr_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "commit": "3550541c75b3b791a3953a8ae5eb7a32a585f0e8",
+    "file": "TESSERACT_DESKTOP/src-tauri/src/main.rs",
+    "file_blob_sha": "8a3cf9368898ce5782201dd73264f6e363fab424",
+    "compare": {
+      "status": "ahead",
+      "ahead_by": 1,
+      "behind_by": 0
+    },
+    "readback_matches": true,
+    "workflow_runs": [],
+    "rustc_available": false,
+    "cargo_available": false,
+    "tests_executed": false,
+    "pr6_changed": false,
+    "task_closure": false,
+    "result": "SYMLINK_ESCAPE_CONTAINMENT_PATCH_READ_BACK; TESTS_NOT_RUN; PR6_UNCHANGED"
   }
 }
