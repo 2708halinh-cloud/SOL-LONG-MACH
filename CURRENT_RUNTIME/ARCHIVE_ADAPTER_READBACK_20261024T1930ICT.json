@@ -1,0 +1,68 @@
+{
+  "schema": "SOL_ARCHIVE_ADAPTER_READBACK/1.0",
+  "observed_at_utc": "2026-10-24T12:30:32.578Z",
+  "observed_at_local": "2026-10-24T19:30:32.578+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "fix/archive-readonly-adapters-20261024",
+  "pull_request": {
+    "number": 27,
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/27",
+    "state": "OPEN",
+    "draft": true,
+    "merged": false,
+    "base_sha": "5cf11814970a14f08ec645be2c2648fb6af69e01",
+    "head_sha_at_ci_readback": "7765781eeee2b1788f9a466c8046314c60495847"
+  },
+  "source": {
+    "path": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py",
+    "previous_blob_sha1": "336c01735d84f1830decae5952db0a9973d770b5",
+    "current_blob_sha1": "da7660bccfe6aa2b4bebc03f4eb0744e9b16f190",
+    "change": "Read-only 7Z/RAR/LR adapter selection; explicit ADAPTER_NOT_FOUND; corrected exception tuple; bounded test-mode invocation with stdin closed and no shell."
+  },
+  "tests": {
+    "path": "tests/test_sol_archive_10_formats.py",
+    "blob_sha1": "dced3b29967b5b51e440e937fa9af3a902643326",
+    "cases": [
+      "7Z test-mode dispatch",
+      "RAR unrar test-mode dispatch",
+      "LRzip test-mode dispatch",
+      "missing adapter remains explicit and does not execute",
+      "adapter timeout is classified safely",
+      "unsafe ZIP member is rejected",
+      "source archive remains unchanged"
+    ]
+  },
+  "ci": {
+    "workflow": ".github/workflows/archive-readonly-adapters.yml",
+    "workflow_blob_sha1": "a24c6e2651e137b7cc8a533e2ecd86d20c5ca422",
+    "run_id": 40094138216,
+    "run_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40094138216",
+    "head_sha": "7765781eeee2b1788f9a466c8046314c60495847",
+    "status": "completed",
+    "conclusion": "success",
+    "verified_steps": [
+      "mocked external-adapter and safety regressions",
+      "native archive fixture self-test",
+      "ten-format capability schema"
+    ]
+  },
+  "separate_workflow_observation": {
+    "workflow": "SOL Library Stone Topology",
+    "run_id": 40094138214,
+    "conclusion": "failure",
+    "failing_step": "Verify Library topology",
+    "archive_adapter_step_reached": false,
+    "interpretation": "Separate workflow failed before the archive-specific test step; archive-specific workflow independently passed."
+  },
+  "evidence_boundary": {
+    "actual_7z_binary_on_target_host_verified": false,
+    "actual_unrar_or_rar_binary_on_target_host_verified": false,
+    "actual_lrzip_binary_on_target_host_verified": false,
+    "real_7z_rar_lr_archive_fixtures_passed": false,
+    "source_archive_bytes_modified": false,
+    "archive_extraction_performed": false,
+    "secrets_persisted": false,
+    "recovery_task_closed": false
+  },
+  "next_verified_edge": "Run real 7z/unrar/lrzip binaries against approved non-sensitive fixtures on an authorized runner; capture exact binary/version and fixture readback. Keep SV-20261020-13-ARCHIVE-FORMATS OPEN until real-format verification passes."
+}
