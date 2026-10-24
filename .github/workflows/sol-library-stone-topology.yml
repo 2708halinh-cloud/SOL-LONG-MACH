@@ -25,5 +25,9 @@ jobs:
           python-version: '3.12'
       - name: Verify Library topology
         run: python -m unittest discover -s tests -p 'test_sol_library_stone_topology.py' -v
+      - name: Verify read-only archive adapter safety
+        run: python -m unittest tests.test_sol_archive_10_formats -v
+      - name: Verify native archive fixtures without extraction
+        run: python 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py' --fixture-test
       - name: Verify agent boot routes
         run: python -m unittest discover -s tests -p 'test_tesseract_agent_boot.py' -v
