@@ -47,10 +47,10 @@
   "archive_task": 27,
   "next": [
     "Inspect the next actual n8n execution before assuming cloud state is unchanged.",
-    "Retry a read-only Windows tick/task readback only after Remote Desktop Commander reports a device online; current host state remains UNKNOWN.",
-    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN until authorized source/runtime proof is present; CI success alone is not task completion.",
-    "Continue authorized raw-byte retrieval for historical ZIP and original exports; do not substitute derived archives.",
-    "Keep PR #27-#30 open/draft and PR #31 open/draft; no merge or force-push while branches are diverged."
+    "Retry read-only Windows Tick/task readback only after an authorized host/device is online; current host state remains UNKNOWN.",
+    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN until authorized source/runtime proof and exact target readback are present.",
+    "Continue authorized raw-byte retrieval for JINEY, FUNiX and DAT NGUYEN original exports; do not substitute derived archives.",
+    "Review PR #33 as the clean current-main source-only adapter recut; keep it Draft/unmerged until review. PR #27–#32 remain historical open branches; no force-push."
   ],
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -74,8 +74,8 @@
     "commit_sha": "23923f1858b71d7dd0eb4d3b5fbaff48555a22b3",
     "readback_verified": true
   },
-  "updated_at": "2026-10-25T05:06:16+07:00",
-  "observed_at": "2026-10-25T05:06:16+07:00",
+  "updated_at": "2026-10-25T05:48:00+07:00",
+  "observed_at": "2026-10-25T05:48:00+07:00",
   "older_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0156ICT.json",
     "blob_sha": "5bf6b8945d94c8a17486c2a78220a02458cb7593",
@@ -214,8 +214,8 @@
   },
   "latest_global_open_task_ledger": {
     "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
-    "blob_sha": "79b638d40cea3a7529b5c5df28f5ac61402bb1b8",
-    "commit_sha": "3a7c37df58d895ebcb6e8006e65c0b568ec4dcee",
+    "blob_sha": "6d1267da52638c3f8ce3d33a3b62012527bb2e8a",
+    "commit_sha": "84199facaacb499ca000d96f99d002f70d68f8ca",
     "exact_target_readback": true,
     "task_count": 29,
     "archive_task_id": "SV-20261020-13-ARCHIVE-FORMATS",
@@ -346,27 +346,20 @@
     "wsl_mcp_bridge": "host-specific end-to-end action not verified"
   },
   "latest_archive_task_followup": {
-    "observed_at": "2026-10-25T04:41:00+07:00",
-    "checkpoint_path": "CURRENT_RUNTIME/ARCHIVE_TASK_FOLLOWUP_20261025T0441ICT.json",
-    "checkpoint_blob_sha": "9852ae12f9ba437cef774d505074f88d77fa212e",
-    "checkpoint_commit_sha": "de08895b54480d1d929ef3c79f16eb5c92555b70",
+    "observed_at": "2026-10-25T05:48:00+07:00",
+    "checkpoint_path": "CURRENT_RUNTIME/ARCHIVE_TASK_FOLLOWUP_20261025T0548ICT.json",
+    "checkpoint_blob_sha": "e114239e70ad5c2005f26a64ba785c54fa610b38",
+    "checkpoint_commit_sha": "cbd868902a42bbfe26c5cb66918a544a3e3cfc7b",
     "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
     "task_status": "OPEN",
-    "pr31_head": "7a5276433bb563fbd704cf2c3b6f27e0e3f7dff4",
-    "archive_ci_run_id": 40135311065,
-    "archive_ci_conclusion": "success",
-    "topology_ci_run_id": 40135311074,
-    "topology_ci_conclusion": "success",
-    "secret_guard_run_id": 40135311067,
-    "secret_guard_conclusion": "success",
+    "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
+    "task_closed": false,
+    "pr_number": 33,
+    "pr_head_validated": "3a97f9c52de59c9d51da759c1c90b1ad28648c1c",
+    "ci_conclusion": "success",
     "source_export_recovery": "NOT_COMPLETE",
     "windows_host_validation": "NOT_VERIFIED",
-    "task_closed": false,
-    "no_merge_or_force_push": true,
-    "pr31_ahead_of_main": 6,
-    "pr31_behind_main": 4,
-    "pr31_branch_relation": "DIVERGED",
-    "pr31_divergence_note": "main advanced through append-only continuity/checkpoint commits; no merge or force-push."
+    "no_merge_or_force_push": true
   },
   "latest_connectivity_probe": {
     "observed_at": "2026-10-25T05:06:16+07:00",
@@ -376,5 +369,30 @@
     "host_heartbeat": "UNVERIFIED",
     "android": "NOT_RECHECKED_THIS_RUN",
     "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "latest_github_pr33_readback": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "pr_number": 33,
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/33",
+    "branch": "fix/archive-adapters-main-recut-20261025T0548ICT",
+    "base": "main",
+    "base_sha": "84199facaacb499ca000d96f99d002f70d68f8ca",
+    "validated_code_head": "3a97f9c52de59c9d51da759c1c90b1ad28648c1c",
+    "state": "OPEN",
+    "draft": true,
+    "merged": false,
+    "ahead_of_main": 5,
+    "behind_main": 0,
+    "archive_run_id": 40140244750,
+    "archive_conclusion": "success",
+    "topology_run_id": 40140244511,
+    "topology_conclusion": "success",
+    "secret_guard_run_id": 40140244505,
+    "secret_guard_conclusion": "success",
+    "artifact_id": 12578476514,
+    "artifact_sha256": "69282300bed34c9279f5dac907a6d0ed2fb768d79406a880d6f448cd367f1a4f",
+    "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+    "task_status": "OPEN",
+    "no_merge_or_force_push": true
   }
 }
