@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-24T20:42:42.804+07:00",
+  "observed_at": "2026-10-24T20:49:35.362+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -69,12 +69,12 @@
     "rule": "Do not overwrite existing Oct 09 local source metadata; do not call Dropbox CSV a working Windows Tick consumer; no raw sensor records or secrets committed; verify Windows Tick independently before closing.",
     "last_observation": "2026-10-24T20:09:11.347+07:00",
     "latest_verified_tick_receipt": {
-      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T132648889472Z.json",
-      "observed_at_utc": "2026-10-24T13:26:48.889472Z",
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T134143018005Z.json",
+      "observed_at_utc": "2026-10-24T13:41:43.018005Z",
       "file_bytes": 450,
       "content_readback": true,
-      "sha256": null,
-      "sha256_verified": false,
+      "sha256": "9f86d335d8834b42499018de8fd4fb0f08f7946b7724c911dfc84d3c210ee3e3",
+      "sha256_verified": true,
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
       "source_hash_matches_prior_verified_direct_hash": true,
       "source_hash_recomputed_this_turn": false,
@@ -84,24 +84,24 @@
       "synthetic_rows_added": 0,
       "cloud_enabled": false,
       "github_enabled": false,
-      "task_last_run_local": "2026-10-24T20:26:33+07:00",
+      "task_last_run_local": "2026-10-24T20:41:33+07:00",
       "task_last_result": "0x0",
-      "task_next_run_local": "2026-10-24T20:31:32+07:00",
-      "task_state": "NOT_RE_READ_AT_20:26",
-      "last_known_task_state": "Ready",
-      "last_known_task_state_observed_at_local": "2026-10-24T20:13:08.119+07:00",
+      "task_next_run_local": "2026-10-24T20:46:32+07:00",
+      "task_state": "Ready",
+      "task_state_enum": 3,
+      "task_enabled": true,
       "missed_runs": 0,
-      "receipt_time_delta_from_task_start_seconds_approx": 15.889472,
-      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2040ICT.json",
-      "checkpoint_blob_sha": "98b9120052c4418c4fb47bca6d97ff069768eacd",
-      "checkpoint_commit": "42030dd17a2ec75614ed211d1ae2bcf67780d318"
+      "receipt_time_delta_from_task_start_seconds_approx": 10.018005,
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2043ICT.json",
+      "checkpoint_blob_sha": "29ce97b6a8381b8cf7f04a3c027abe93c71e7811",
+      "checkpoint_commit": "44a3f08fc5f44a079e8bdac6b8885561a6830bdf"
     },
     "live_stream_diagnostic": {
-      "observed_at": "2026-10-24T20:42:42.804+07:00",
+      "observed_at": "2026-10-24T20:49:35.362+07:00",
       "windows_tick": {
-        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T132648889472Z.json",
-        "receipt_sha256": null,
-        "receipt_observed_at_utc": "2026-10-24T13:26:48.889472Z",
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T134143018005Z.json",
+        "receipt_sha256": "9f86d335d8834b42499018de8fd4fb0f08f7946b7724c911dfc84d3c210ee3e3",
+        "receipt_observed_at_utc": "2026-10-24T13:41:43.018005Z",
         "receipt_bytes": 450,
         "source_bytes": 35389440,
         "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
@@ -110,21 +110,22 @@
         "live_sensor_sample_confirmed": false,
         "source_file_written": false,
         "synthetic_rows_added": 0,
-        "task_state": "NOT_RE_READ_AT_20:26",
-        "task_last_run_local": "2026-10-24T20:26:33+07:00",
+        "task_state": "Ready",
+        "task_last_run_local": "2026-10-24T20:41:33+07:00",
         "task_last_result": "0x0",
-        "task_next_run_local": "2026-10-24T20:31:32+07:00",
+        "task_next_run_local": "2026-10-24T20:46:32+07:00",
         "missed_runs": 0,
         "receipt_time_delta_from_task_start_seconds": 2.999565,
         "previous_observed_receipt_delay_seconds": 43.604618,
-        "next_boundary_receipt": "NOT_YET_VERIFIED_AFTER_20:31:32+07",
-        "receipt_sha256_verified": false,
+        "next_boundary_receipt": "NOT_YET_VERIFIED_AFTER_20:46:32+07",
+        "receipt_sha256_verified": true,
         "receipt_content_readback": true,
         "source_hash_matches_prior_verified_direct_hash": true,
         "cloud_enabled": false,
         "github_enabled": false,
         "last_known_task_state": "Ready",
-        "receipt_time_delta_from_task_start_seconds_approx": 15.889472
+        "receipt_time_delta_from_task_start_seconds_approx": 10.018005,
+        "task_enabled": true
       },
       "providers": {
         "xtime": {
@@ -297,8 +298,13 @@
         "action": "Historical copy not executed."
       },
       "consumer": {
-        "health": "UNVERIFIED",
-        "current_probe": "STARTED_BUT_RESULT_NOT_READ_BACK",
+        "health": "UNVERIFIED_NO_LISTENER_OBSERVED",
+        "current_probe": {
+          "endpoint": "http://127.0.0.1:8080/api/health",
+          "http_result": "WebException; no HTTP status",
+          "listener_8080": "NONE",
+          "probe_result_readback": true
+        },
         "probe_result_readback": false,
         "no_service_or_config_change": true
       }
@@ -335,13 +341,41 @@
           "task_next_run_local": "2026-10-24T20:11:32+07:00",
           "missed_runs": 0
         }
+      },
+      {
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T132648889472Z.json",
+        "observed_at_utc": "2026-10-24T13:26:48.889472Z",
+        "file_bytes": 450,
+        "content_readback": true,
+        "sha256": null,
+        "sha256_verified": false,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_matches_prior_verified_direct_hash": true,
+        "source_hash_recomputed_this_turn": false,
+        "source_bytes": 35389440,
+        "live_sensor_reading_confirmed": false,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false,
+        "task_last_run_local": "2026-10-24T20:26:33+07:00",
+        "task_last_result": "0x0",
+        "task_next_run_local": "2026-10-24T20:31:32+07:00",
+        "task_state": "NOT_RE_READ_AT_20:26",
+        "last_known_task_state": "Ready",
+        "last_known_task_state_observed_at_local": "2026-10-24T20:13:08.119+07:00",
+        "missed_runs": 0,
+        "receipt_time_delta_from_task_start_seconds_approx": 15.889472,
+        "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2040ICT.json",
+        "checkpoint_blob_sha": "98b9120052c4418c4fb47bca6d97ff069768eacd",
+        "checkpoint_commit": "42030dd17a2ec75614ed211d1ae2bcf67780d318"
       }
     ],
     "latest_tick_checkpoint": {
-      "path": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2040ICT.json",
-      "blob_sha": "98b9120052c4418c4fb47bca6d97ff069768eacd",
-      "commit": "42030dd17a2ec75614ed211d1ae2bcf67780d318",
-      "observed_at": "2026-10-24T20:42:42.804+07:00"
+      "path": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2043ICT.json",
+      "blob_sha": "29ce97b6a8381b8cf7f04a3c027abe93c71e7811",
+      "commit": "44a3f08fc5f44a079e8bdac6b8885561a6830bdf",
+      "observed_at": "2026-10-24T20:49:35.362+07:00"
     }
   },
   "session_observations": [
@@ -7477,6 +7511,21 @@
       "local_script_content_readback": true,
       "local_script_hash_recomputed_this_turn": false,
       "consumer_health": "UNVERIFIED",
+      "tasks_closed": 0
+    },
+    {
+      "id": "WINDOWS_TICK_READBACK_20261024204935",
+      "observed_at": "2026-10-24T20:49:35.362+07:00",
+      "source": "Remote Desktop Commander exact post-boundary receipt/hash/task readback and consumer probe result; Dropbox metadata; n8n/GitHub independent provider readbacks",
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T2043ICT.json",
+      "checkpoint_blob_sha": "29ce97b6a8381b8cf7f04a3c027abe93c71e7811",
+      "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T134143018005Z.json",
+      "receipt_sha256": "9f86d335d8834b42499018de8fd4fb0f08f7946b7724c911dfc84d3c210ee3e3",
+      "receipt_sha256_verified": true,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_recomputed_this_turn": false,
+      "live_sensor_reading_confirmed": false,
+      "consumer_health": "UNVERIFIED_NO_LISTENER_OBSERVED",
       "tasks_closed": 0
     }
   ],
