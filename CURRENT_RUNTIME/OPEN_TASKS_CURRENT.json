@@ -2819,6 +2819,20 @@
       },
       "search_limit_note": "each remote file search stopped after 3 seconds; results may be incomplete",
       "device_off_state_inferred": false
+    },
+    "n8n_manual_scan_20261024T063612Z": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "122",
+      "status": "success",
+      "started_at_utc": "2026-10-24T06:36:12.471Z",
+      "stopped_at_utc": "2026-10-24T06:36:14.408Z",
+      "receipt_row_id": 265,
+      "event_id": "X20261024063614266_CLOUD",
+      "receipt_exact_readback": true,
+      "recovery_rows": 45,
+      "pending_rows": 45,
+      "live_sensor_stream_verified": false,
+      "task_closed": false
     }
   },
   "sinks": {
@@ -6585,6 +6599,76 @@
       ],
       "result": "HEAD_REFERENCE_CORRECTED_APPEND_ONLY; CI_SUCCESS_REMAINS_BRANCH_SCOPED; CURRENT_MAIN_CI_NOT_VERIFIED",
       "github_ledger_task_count": 28,
+      "tasks_closed": false,
+      "source_mutated": false,
+      "raw_sensor_values_persisted": false,
+      "credentials_committed": false
+    },
+    {
+      "id": "N8N_MANUAL_OPEN_SCAN_20261024063612",
+      "kind": "APPEND_ONLY_N8N_CLOUD_SCAN_EXECUTION_AND_EXACT_ROW_READBACK",
+      "observed_at": "2026-10-24T13:36:14.408+07:00",
+      "observed_at_utc": "2026-10-24T06:36:14.408Z",
+      "source": "Authenticated n8n workflow details/execution #122 plus exact data-table row 265 readback; fresh GitHub reentry/ledger reads and Dropbox Outlook metadata readback.",
+      "exact_targets_before_write": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "ed5818152291c4cd9a24c36023f49be8dac01c77",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "16f5320fb7f206ad213599e41dba2ccbce9d842b",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "b6af983747c143f6e25cc3860f6c87aff1432395",
+        "Dropbox source": "rev=0165dc1e4794ab00000000395cdfd73;size=35389440;server_modified=2026-10-14T00:20:03Z",
+        "n8n execution": "workflow=BogzhFUDbRp7kuwh;execution=122;row_id=265;event_id=X20261024063614266_CLOUD"
+      },
+      "verified_actions": [
+        "Fresh-read all five exact GitHub targets and captured their blob SHAs.",
+        "Read Dropbox Outlook metadata for /Linh Hà/SENSOR_LOGS/windows_SENSON.CSV; revision, size, and server_modified match the recorded source identity; raw CSV bytes were not downloaded.",
+        "Read Desktop Commander device inventory for both configured accounts; DESKTOP-86ITNQ4 and localhost were reported OFFLINE, so no current host command or new Windows Tick receipt is claimed.",
+        "Read n8n workflow graph; AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN is active, canExecute=true, and its Manual probe path runs the deterministic OPEN scan then appends a receipt.",
+        "Executed manual probe #122; execution status SUCCESS at 2026-10-24T06:36:14.408Z.",
+        "Read back exact receipt row 265 with event_id X20261024063614266_CLOUD; state OPEN_WORK_REMAINS; receipt reports 45 recovery rows, 45 pending, 27 user-origin rows, selected_cloud_eligible=6, host operations=0.",
+        "Read all 45 recovery-task rows; no task was marked DONE or CLOSED by the scan. The scan is explicitly table-only and does not probe host heartbeat."
+      ],
+      "provider_state": {
+        "dropbox": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+          "rev": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_readback": true,
+          "raw_bytes_downloaded": false
+        },
+        "desktop_commander": {
+          "primary_inventory": "OFFLINE",
+          "secondary_inventory": "OFFLINE",
+          "latest_verified_windows_tick_local_from_existing_readback": "2026-10-24T11:51:33+07:00",
+          "post_11_56_receipt_verified": false,
+          "live_sensor_reading_confirmed": false
+        },
+        "n8n": {
+          "workflow_id": "BogzhFUDbRp7kuwh",
+          "active": true,
+          "execution_id": "122",
+          "execution_status": "success",
+          "receipt_row_id": 265,
+          "receipt_event_id": "X20261024063614266_CLOUD",
+          "recovery_rows": 45,
+          "pending_rows": 45,
+          "task_statuses_changed": false,
+          "tasks_closed": false
+        },
+        "tesseract": {
+          "security_branch": "security/repo-relative-read-containment-20261024",
+          "branch_ref_exists": true,
+          "latest_ledgered_commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
+          "tests_executed": false,
+          "issuer_public_key_verified": false,
+          "runner_assignment_change_verified": false,
+          "ci_rerun": false
+        }
+      },
+      "result": "N8N_MANUAL_SCAN_122_SUCCESS; ROW_265_EXACT_READBACK_VERIFIED; 45_RECOVERY_TASKS_REMAIN_OPEN; WINDOWS_LIVE_STREAM_NOT_VERIFIED",
+      "task_count": 28,
       "tasks_closed": false,
       "source_mutated": false,
       "raw_sensor_values_persisted": false,
@@ -10892,6 +10976,25 @@
       },
       "interpretation": "The two successful cloud runs and matching artifact apply to the tested diverged branch commit only; they do not establish CI success for the latest main commit. No task status is advanced or closed.",
       "tasks_closed": false
+    },
+    {
+      "observed_at": "2026-10-24T13:36:14.408+07:00",
+      "observed_at_utc": "2026-10-24T06:36:14.408Z",
+      "record_type": "N8N_MANUAL_CONTINUITY_SCAN_AND_RECEIPT_READBACK",
+      "n8n_workflow_id": "BogzhFUDbRp7kuwh",
+      "n8n_execution_id": "122",
+      "execution_status": "success",
+      "receipt_row_id": 265,
+      "receipt_event_id": "X20261024063614266_CLOUD",
+      "recovery_rows": 45,
+      "pending_rows": 45,
+      "tasks_closed": false,
+      "windows_last_verified_run_local": "2026-10-24T11:51:33+07:00",
+      "windows_post_11_56_receipt_verified": false,
+      "dropbox_metadata_readback": true,
+      "dropbox_revision": "0165dc1e4794ab00000000395cdfd73",
+      "tesseract_ci_rerun": false,
+      "result": "N8N_SCAN_SUCCESS; SOURCE_TASKS_REMAIN_OPEN; DEVICE_AND_LIVE_STREAM_NOT_VERIFIED"
     }
   ]
 }
