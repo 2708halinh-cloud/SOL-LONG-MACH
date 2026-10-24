@@ -952,10 +952,10 @@
       "source": "2026-10-13; provider route mismatch and GitHub update unverified",
       "readback": "Post-boundary read at 2026-10-24T11:12:40+07:00: task Ready/enabled, last run 11:11:33 result 0x0, next 11:16:32, missed 0. Exact receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json, 450 bytes, SHA-256 521d307f9374f0514a6d122601b9d890ae92a2670e2d9cf0224b3e3e571b955d; nested source SHA-256 matches direct hash 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Live sensor sample remains unverified; HWiNFO CSV stale; Android TCP and X-TIME routes timed out.",
       "next": [
-        "After the scheduled boundary, fresh-read the newest exact Windows Tick receipt and Scheduled Task state; compare nested source.sha256 to a fresh direct source hash.",
-        "Probe the data-consumer health endpoint through an authorized route; distinguish timeout from service-down evidence and preserve the current service configuration.",
-        "Read/compare the exact local telemetry_buffer_sync.py against an authorized provider byte carrier; do not run the Dropbox historical copy or manually execute the local script during diagnosis.",
-        "Continue supported HWiNFO logging and authorized Android/ADB live-source investigation; do not infer device-off from TCP timeout."
+        "After 19:51:32+07, read the newest exact Windows Tick receipt and Scheduled Task state; recompute direct CSV SHA-256 and compare nested source.sha256.",
+        "Continue data-consumer health diagnosis via an authorized alternate route; timeout is not proof of service-down and no service/config changes are authorized by current evidence.",
+        "Compare local telemetry_buffer_sync.py only against an authorized exact provider byte carrier; do not execute the historical Dropbox copy or manually run the local script.",
+        "Continue HWiNFO logging and authorized Android/ADB live-source investigation; do not infer device-off from TCP timeout."
       ],
       "guard": "Do not re-run destructive steps or claim already done from historical summary",
       "assigned_subagent": "SubAisstangtManage-SENSORY",
@@ -1616,6 +1616,22 @@
           "result": "WINDOWS_TICK_RECEIPT_AND_SOURCE_HASH_MATCH; SCHEDULED_TASK_LAST_COMPLETED_RUN_0X0; LIVE_SENSOR_AND_CONSUMER_UNVERIFIED; N8N_135_ROW278_VERIFIED; BRAID_EXIT_0; TESSERACT_ISSUER_RUNNER_OPEN",
           "next_callable_edge": "After the scheduled boundary, fresh-read the newest exact Windows Tick receipt and Scheduled Task state. Keep live_sensor_reading_confirmed=false until a genuine live sample is proven. Continue consumer diagnosis through an authorized route and compare the local script only against an authorized exact provider copy. For TESSERACT, verify the actual public issuer key and runner entitlement before any CI rerun.",
           "status_effect": "Keep MODUAL_SENSOR_LOGS_ROUTING OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED; no task closure."
+        },
+        {
+          "observed_at": "2026-10-24T19:49:09.504+07:00",
+          "observed_at_utc": "2026-10-24T12:49:09.504Z",
+          "source": "Remote Desktop Commander exact receipt/task/source readback",
+          "actions_and_receipts": [
+            "Fresh-read all four required runtime source files and MODUAL current state before ledger mutation.",
+            "Read exact latest receipt WINDOWS_TICK_20261024T124634868138Z.json (450 bytes); SHA-256 feb4cfce54e24d6fdee2fe5b75ba024039b0b4360e1651cbe0bc9e7d6aeb825f.",
+            "Recomputed direct CSV SHA-256 for D:\\SENSOR_LOGS\\windows_SENSON.CSV: 35,389,440 bytes; 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; matches nested receipt source.sha256.",
+            "Scheduled Task enabled and Ready at 19:49:09+07; last run 19:46:33+07 returned 0x0; next run 19:51:32+07; zero missed runs. Receipt arrived 1.868138 seconds after task start.",
+            "Receipt confirms live_sensor_reading_confirmed=false, source_file_written=false, synthetic_rows_added=0, cloud_enabled=false, github_enabled=false. No raw sensor values were read into the ledger.",
+            "Consumer remains unverified from last probes; health requests timed out and this does not prove service down. Local script was not manually executed."
+          ],
+          "result": "TICK_124634_RECEIPT_AND_SOURCE_HASH_MATCH_TASK_0X0; RECEIPT_DELAY_1_868S; LIVE_SENSOR_NOT_VERIFIED; CONSUMER_UNVERIFIED",
+          "next_callable_edge": "After 19:51:32+07, read the newest exact receipt and task state and recompute direct source hash. Continue consumer and HWiNFO/Android live-source diagnosis without changing source or service configuration.",
+          "status_effect": "Keep MODUAL_SENSOR_LOGS_ROUTING OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED; no task closure."
         }
       ],
       "observed": [
@@ -1628,7 +1644,8 @@
         "2026-10-24T11:12:40+07:00: post-boundary receipt D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T041144547327Z.json exact-read and hash verified; live stream remains unverified.",
         "Fresh host readback in this run: Desktop Commander secondary account reports DESKTOP-86ITNQ4 online (device 59f03001-c732-403e-b80c-b4191266809c). Latest content-verified tick is D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T054636519945Z.json (450 bytes; SHA-256 34CBD91747AACF4097600FDB1F26E8ACF40724B213F83D8B55B8A63CC171040E); its source hash matches a fresh direct hash of D:\\SENSOR_LOGS\\windows_SENSON.CSV (35,389,440 bytes; SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87). Tick reports live_sensor_reading_confirmed=false, cloud_enabled=false, github_enabled=false, source_file_written=false, synthetic_rows_added=0. Read-only task query: GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M=Ready, LastRunTime 12:56:33 local, LastTaskResult=267014, NextRunTime 13:06:32; GGDV_MINH_SENSORIMOTOR_BRIDGE=Running, LastRunTime 12:59:01, LastTaskResult=267009, NextRunTime 13:04:00. A later directory listing returned WINDOWS_TICK_20261024T060739300534Z.json; exact content readback call 0be8f618-65fd-488c-9ea8-09edf3da7aec was still executing as of 2026-10-24T06:16:18.813932Z, so that newer tick's contents/hash remain UNVERIFIED. Host-side ADB command was not found in PATH and TCP 192.168.1.14:5556 returned False; this does not prove Android is offline. No task/service/clock settings were changed.",
         "2026-10-24T16:03:53+07:00: exact Windows Tick receipt WINDOWS_TICK_20261024T085149255349Z.json read back (450 bytes; SHA-256 4574E449B12809AC6BB70309989314054B642CB528E1602C9F13A5331BF3C744); nested source SHA matches direct CSV SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87. Scheduled task ran 15:51:34+07, result 0x0, next 15:56:32, zero missed runs; receipt arrived 15.26s after start. A prior 15:41:34 run returned 0x41306 without an attributable receipt; Task Scheduler Operational log is disabled, so cause remains unproven. Manual telemetry_buffer_sync.py --once exited 0 in 4.86s and wrote only a metadata receipt. X-TIME HTTP 200: source_present=true, live_device_proven=false, state=SOURCE_PRESENT; Ollama 200/11 models; Android TCP false, heartbeat unverified; HWiNFO CSV remains stale since 2026-10-21. Dropbox source metadata is verified unchanged; direct-child candidates All_desktop_live.csv (145 bytes, 2026-10-12), Sensors_Output.txt (63 bytes, 2026-10-13), and telemetry_buffer_sync.py (10,707 bytes, 2026-10-12) are historical metadata, not live proof. Braid script exit 0 with exact receipt hashes; n8n execution 127 success and event row 269 exact-readback, while HOST_HEARTBEAT_NOT_PROBED remains explicit. No raw sensor data/secrets copied; task remains OPEN.",
-        "2026-10-24T19:41:32+07: Windows Tick receipt WINDOWS_TICK_20261024T123744771353Z.json exact-readback SHA-256 feb47f13e80576c4876104bcf0285e47f8a3247f32e692a65fb6b16f9b2b4622; direct CSV SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches. Scheduled task last run 19:36:34+07 returned 0x0; live_sensor_reading_confirmed=false."
+        "2026-10-24T19:41:32+07: Windows Tick receipt WINDOWS_TICK_20261024T123744771353Z.json exact-readback SHA-256 feb47f13e80576c4876104bcf0285e47f8a3247f32e692a65fb6b16f9b2b4622; direct CSV SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches. Scheduled task last run 19:36:34+07 returned 0x0; live_sensor_reading_confirmed=false.",
+        "2026-10-24T19:49:09+07: latest receipt WINDOWS_TICK_20261024T124634868138Z.json verified at 450 bytes; SHA-256 feb4cfce54e24d6fdee2fe5b75ba024039b0b4360e1651cbe0bc9e7d6aeb825f. Fresh direct CSV SHA matches. Task last run 19:46:33+07 result 0x0; receipt followed start by 1.868s; live sensor remains unverified."
       ],
       "next_history": [
         {
@@ -1647,6 +1664,16 @@
             "After device clock 11:16:32+07, read the exact newest Windows Tick receipt and Scheduled Task state; compare nested receipt.source.sha256 against a fresh direct source hash. Continue HWiNFO/Android live-source proof and TESSERACT issuer/runner investigation. Do not alter W32Time/task settings without authorization; do not rerun CI without verified runner change.",
             "After device clock 11:56:32+07, read the exact newest receipt and Scheduled Task state and compare the nested source hash to a fresh direct hash; continue HWiNFO/Android live-source proof without changing task settings or W32Time.",
             "After device clock 15:56:32+07, read the newest exact Windows Tick receipt and direct source SHA. Investigate the 15:41:34 0x41306/no-receipt run without changing task settings; Task Scheduler Operational log is disabled. Continue supported HWiNFO logging and authorized Android heartbeat proof. Do not claim live sensor recovery from metadata receipts; keep task OPEN."
+          ]
+        },
+        {
+          "observed_at": "2026-10-24T19:49:09.504+07:00",
+          "source": "refreshed next edge after a new exact tick readback",
+          "prior_next": [
+            "After the scheduled boundary, fresh-read the newest exact Windows Tick receipt and Scheduled Task state; compare nested source.sha256 to a fresh direct source hash.",
+            "Probe the data-consumer health endpoint through an authorized route; distinguish timeout from service-down evidence and preserve the current service configuration.",
+            "Read/compare the exact local telemetry_buffer_sync.py against an authorized provider byte carrier; do not run the Dropbox historical copy or manually execute the local script during diagnosis.",
+            "Continue supported HWiNFO logging and authorized Android/ADB live-source investigation; do not infer device-off from TCP timeout."
           ]
         }
       ]
@@ -3018,6 +3045,37 @@
         "artifacts": [],
         "rerun_performed": false
       },
+      "exact_target_readback": true
+    },
+    "WINDOWS_TICK_READBACK_20261024194909": {
+      "observed_at": "2026-10-24T19:49:09.504+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T1949ICT.json",
+      "checkpoint_blob_sha": "b48401f3afcf594a4d6fa6098bac0fc455b6641f",
+      "checkpoint_commit": "0f4eb6dc0e26ebde1e4b0ed4ba7a68c8abac9558",
+      "windows_tick": {
+        "device": "DESKTOP-86ITNQ4",
+        "task_name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "task_state": "Ready",
+        "task_enabled": true,
+        "last_run_local": "2026-10-24T19:46:33+07:00",
+        "last_result": "0x0",
+        "next_run_local": "2026-10-24T19:51:32+07:00",
+        "missed_runs": 0,
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T124634868138Z.json",
+        "receipt_time_utc": "2026-10-24T12:46:34.868138Z",
+        "receipt_sha256": "feb4cfce54e24d6fdee2fe5b75ba024039b0b4360e1651cbe0bc9e7d6aeb825f",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_recomputed_this_turn": true,
+        "source_hash_matches_receipt": true,
+        "receipt_to_task_start_delta_seconds": 1.868138,
+        "live_sensor_reading_confirmed": false,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false
+      },
+      "result": "TICK_124634_RECEIPT_AND_SOURCE_HASH_MATCH_TASK_0X0; RECEIPT_DELAY_1_868S; LIVE_SENSOR_NOT_VERIFIED; CONSUMER_UNVERIFIED",
       "exact_target_readback": true
     }
   },
@@ -8206,6 +8264,66 @@
         "ci_rerun": false
       },
       "next_edge": "After the scheduled boundary, read the newest exact Windows Tick receipt and Scheduled Task state. Keep live_sensor_reading_confirmed=false until a genuine live sample is proven. Continue consumer diagnosis via authorized route and verify actual issuer public key and runner entitlement before any CI rerun."
+    },
+    {
+      "id": "WINDOWS_TICK_READBACK_20261024194909",
+      "kind": "POST_BOUNDARY_WINDOWS_TICK_AND_DIRECT_SOURCE_HASH_READBACK",
+      "observed_at": "2026-10-24T19:49:09.504+07:00",
+      "observed_at_utc": "2026-10-24T12:49:09.504Z",
+      "source": "Remote Desktop Commander exact receipt/task/source readback",
+      "exact_targets_before_write": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "efbc975deda15ba267e61527247ad833ab0015c6",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "850fbad2a298392cf11ef1257a39a2a08fe83005",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "737538cb4c0d6f9df1303ca4a3f55de9b6b63a2a"
+      },
+      "checkpoint_file": "CURRENT_RUNTIME/WINDOWS_TICK_READBACK_20261024T1949ICT.json",
+      "checkpoint_blob_sha": "b48401f3afcf594a4d6fa6098bac0fc455b6641f",
+      "checkpoint_commit": "0f4eb6dc0e26ebde1e4b0ed4ba7a68c8abac9558",
+      "verified_actions": [
+        "Fresh-read all four required runtime source files and MODUAL current state before ledger mutation.",
+        "Read exact latest receipt WINDOWS_TICK_20261024T124634868138Z.json (450 bytes); SHA-256 feb4cfce54e24d6fdee2fe5b75ba024039b0b4360e1651cbe0bc9e7d6aeb825f.",
+        "Recomputed direct CSV SHA-256 for D:\\SENSOR_LOGS\\windows_SENSON.CSV: 35,389,440 bytes; 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87; matches nested receipt source.sha256.",
+        "Scheduled Task enabled and Ready at 19:49:09+07; last run 19:46:33+07 returned 0x0; next run 19:51:32+07; zero missed runs. Receipt arrived 1.868138 seconds after task start.",
+        "Receipt confirms live_sensor_reading_confirmed=false, source_file_written=false, synthetic_rows_added=0, cloud_enabled=false, github_enabled=false. No raw sensor values were read into the ledger.",
+        "Consumer remains unverified from last probes; health requests timed out and this does not prove service down. Local script was not manually executed."
+      ],
+      "windows_tick_observation": {
+        "device": "DESKTOP-86ITNQ4",
+        "task_name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "task_state": "Ready",
+        "task_enabled": true,
+        "last_run_local": "2026-10-24T19:46:33+07:00",
+        "last_result": "0x0",
+        "next_run_local": "2026-10-24T19:51:32+07:00",
+        "missed_runs": 0,
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T124634868138Z.json",
+        "receipt_time_utc": "2026-10-24T12:46:34.868138Z",
+        "receipt_sha256": "feb4cfce54e24d6fdee2fe5b75ba024039b0b4360e1651cbe0bc9e7d6aeb825f",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_recomputed_this_turn": true,
+        "source_hash_matches_receipt": true,
+        "receipt_to_task_start_delta_seconds": 1.868138,
+        "live_sensor_reading_confirmed": false,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false
+      },
+      "result": "TICK_124634_RECEIPT_AND_SOURCE_HASH_MATCH_TASK_0X0; RECEIPT_DELAY_1_868S; LIVE_SENSOR_NOT_VERIFIED; CONSUMER_UNVERIFIED",
+      "safety": {
+        "source_csv_modified": false,
+        "raw_sensor_values_committed": false,
+        "credentials_committed": false,
+        "script_executed_manually": false,
+        "task_configuration_changed": false,
+        "clock_changed": false,
+        "tasks_closed": 0,
+        "ci_rerun": false
+      },
+      "next_edge": "After 19:51:32+07, read the newest exact receipt and task state and recompute direct source hash. Continue consumer and HWiNFO/Android live-source diagnosis without changing source or service configuration."
     }
   ],
   "energy_protection_current": {
@@ -13768,6 +13886,41 @@
         "hosted_matrix_jobs": "FAILURE",
         "artifacts": [],
         "rerun_performed": false
+      }
+    },
+    {
+      "id": "WINDOWS_TICK_READBACK_20261024194909",
+      "kind": "WINDOWS_TICK_PROVIDER_READBACK",
+      "observed_at": "2026-10-24T19:49:09.504+07:00",
+      "windows": {
+        "device": "DESKTOP-86ITNQ4",
+        "task_name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "task_state": "Ready",
+        "task_enabled": true,
+        "last_run_local": "2026-10-24T19:46:33+07:00",
+        "last_result": "0x0",
+        "next_run_local": "2026-10-24T19:51:32+07:00",
+        "missed_runs": 0,
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T124634868138Z.json",
+        "receipt_time_utc": "2026-10-24T12:46:34.868138Z",
+        "receipt_sha256": "feb4cfce54e24d6fdee2fe5b75ba024039b0b4360e1651cbe0bc9e7d6aeb825f",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_recomputed_this_turn": true,
+        "source_hash_matches_receipt": true,
+        "receipt_to_task_start_delta_seconds": 1.868138,
+        "live_sensor_reading_confirmed": false,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_enabled": false,
+        "github_enabled": false
+      },
+      "providers_last_verified_at": "2026-10-24T19:41:32.934+07:00",
+      "consumer_health": "UNVERIFIED_TIMEOUT",
+      "source_script": {
+        "bytes": 13245,
+        "sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+        "equivalence_to_dropbox": "NOT_VERIFIED"
       }
     }
   ]
