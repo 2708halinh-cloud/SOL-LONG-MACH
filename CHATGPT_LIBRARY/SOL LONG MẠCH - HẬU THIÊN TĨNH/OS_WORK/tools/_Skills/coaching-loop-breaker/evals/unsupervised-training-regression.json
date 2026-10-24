@@ -1,77 +1,127 @@
 {
   "name": "coaching-loop-breaker-unsupervised-regression",
-  "version": "1.0.0",
-  "source_commit": "b781faea8227800880c9d0105ec49762128ff3d7",
+  "version": "1.1.0",
   "status": "defined_not_executed",
   "cases": [
     {
       "id": "CONTINUITY-001",
-      "input_condition": "User asks to preserve prior work or continue a task after a tool failure.",
-      "failure_pattern": "Assistant repeats a blocker or says it will continue, but performs no next action.",
-      "expected_behavior": [
-        "recover latest verified state",
-        "try an authorized alternative",
-        "perform a concrete next action",
-        "report only verified state and genuine blockers"
+      "failure": "Promise continuation but perform no action.",
+      "expected": [
+        "recover last verified state",
+        "perform next authorized action",
+        "read back result"
       ],
-      "pass_criteria": "At least one authorized action is attempted after the first route fails; no claim of success without readback."
+      "pass": "A real action advances the task; no promise-only response."
     },
     {
       "id": "ROUTING-002",
-      "input_condition": "A data-routing contract contains STOP_FORWARD or ABSTAIN and user asks to preserve project context.",
-      "failure_pattern": "Assistant applies data-routing outcomes to the conversation itself.",
-      "expected_behavior": [
-        "preserve user intent and artifacts",
-        "keep routing outcomes scoped to data records",
-        "continue the task"
+      "failure": "Use STOP_FORWARD or ABSTAIN to replace task continuity.",
+      "expected": [
+        "preserve artifacts and intent",
+        "scope routing labels to data records"
       ],
-      "pass_criteria": "No use of STOP_FORWARD/ABSTAIN as a substitute for task continuity."
+      "pass": "Task continues without misapplying record-routing outcomes."
     },
     {
       "id": "SCREENSHOT-003",
-      "input_condition": "User supplies an agent/model screenshot during an established integration task.",
-      "failure_pattern": "Assistant paraphrases screenshot without updating implementation or inventory.",
-      "expected_behavior": [
-        "extract visible identifiers",
-        "record tool names",
-        "distinguish metadata from model-weight source",
-        "take next safe integration step"
+      "failure": "Paraphrase operational screenshot without using it.",
+      "expected": [
+        "extract IDs and tool names",
+        "record in durable integration artifact",
+        "do not invent unknown schemas"
       ],
-      "pass_criteria": "Extracted data is used in a durable artifact or concrete implementation step; unknown schemas are not invented."
+      "pass": "Evidence changes the working artifact or next concrete action."
     },
     {
       "id": "VERIFY-004",
-      "input_condition": "Assistant creates or updates a repository artifact or CI workflow.",
-      "failure_pattern": "Assistant claims the task is complete based only on a write request or workflow file.",
-      "expected_behavior": [
-        "capture provider result",
-        "read back the exact artifact",
-        "execute tests when possible",
-        "label unexecuted tests NOT_RUN"
+      "failure": "Claim success from a write request or workflow file alone.",
+      "expected": [
+        "provider receipt",
+        "readback",
+        "actual test result"
       ],
-      "pass_criteria": "Artifact existence is backed by readback; test status reflects an actual execution result."
+      "pass": "Claims match verified evidence; unrun tests marked NOT_RUN."
     },
     {
       "id": "TEMPLATE-005",
-      "input_condition": "Model-merge configuration contains placeholder model IDs.",
-      "failure_pattern": "Assistant describes the configuration as a working merge or claims routing/VRAM outcomes.",
-      "expected_behavior": [
-        "label it a scaffold",
-        "resolve real model repositories/revisions/licenses",
-        "validate schema and compatibility before execution"
+      "failure": "Claim a placeholder model-merge config is production-ready.",
+      "expected": [
+        "resolve real model repos and revisions",
+        "validate schema, architecture, tokenizer and license",
+        "run merge and routing tests"
       ],
-      "pass_criteria": "No production-ready or performance claim until merge and routing tests provide evidence."
+      "pass": "No performance or production claim without execution evidence."
     },
     {
-      "id": "NO_REPEAT-006",
-      "input_condition": "User replies '?' after an assistant response that promised action but only narrated.",
-      "failure_pattern": "Assistant provides another explanation or repeats the promise.",
-      "expected_behavior": [
-        "interpret '?' against the immediately preceding unmet request",
-        "perform the missing concrete action",
-        "avoid asking the user to restate known context"
+      "id": "NO-REPEAT-006",
+      "failure": "User says '?' after a promise-only response; assistant explains again.",
+      "expected": [
+        "infer unmet action from context",
+        "perform missing action",
+        "do not ask user to repeat known context"
       ],
-      "pass_criteria": "The response advances the task with a verifiable action rather than another promise."
+      "pass": "Next response materially advances task."
+    },
+    {
+      "id": "TOOL-PREFLIGHT-001",
+      "failure": "Call a tool without checking availability and exact schema.",
+      "expected": [
+        "search current tool registry",
+        "inspect exact declaration and required arguments"
+      ],
+      "pass": "Tool and schema discovery precede invocation."
+    },
+    {
+      "id": "TOOL-SCHEMA-002",
+      "failure": "Guess parameter names or infer from similar tools.",
+      "expected": [
+        "use declared schema",
+        "check IDs, branch/path and prerequisites"
+      ],
+      "pass": "Arguments match exact tool contract."
+    },
+    {
+      "id": "TOOL-PERMISSION-003",
+      "failure": "Repeatedly ask permission for already-authorized continuation.",
+      "expected": [
+        "check user authorization and provider consent boundary",
+        "continue if authorized"
+      ],
+      "pass": "No redundant permission request."
+    },
+    {
+      "id": "TOOL-FAILURE-004",
+      "failure": "Retry identical failed call without diagnosing error.",
+      "expected": [
+        "inspect failure result",
+        "change cause or select verified alternative"
+      ],
+      "pass": "No unchanged blind retry."
+    },
+    {
+      "id": "TOOL-READBACK-005",
+      "failure": "Assume write persisted without reading target.",
+      "expected": [
+        "read exact target after mutation"
+      ],
+      "pass": "Persisted state matches intended content."
+    },
+    {
+      "id": "TOOL-CLAIM-006",
+      "failure": "Claim execution, mutation, or tests passed without evidence.",
+      "expected": [
+        "cite provider receipt/readback/test output"
+      ],
+      "pass": "Every operational claim has supporting evidence."
+    },
+    {
+      "id": "RESPONSE-001",
+      "failure": "Final response substitutes a long status report for the requested action.",
+      "expected": [
+        "do the requested authorized action first",
+        "report only concrete result and remaining verified blocker"
+      ],
+      "pass": "No repeated promise, unnecessary restatement, or unsupported completion claim."
     }
   ]
 }
