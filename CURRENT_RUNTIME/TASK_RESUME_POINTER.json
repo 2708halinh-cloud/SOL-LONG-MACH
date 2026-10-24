@@ -6450,6 +6450,33 @@
       "result": "WINDOWS_TICK_NOT_REPROBED_AFTER_04_23;N8N_ROW_318_VERIFIED;ARCHIVE_TOPOLOGY_FAILURE_PRESERVED;ALL_TASKS_OPEN",
       "action": "FRESH_PROVIDER_READBACK_AND_INDEPENDENT_ARCHIVE_PR28_INSPECTION",
       "observation_type": "PROVIDER_READBACK"
+    },
+    {
+      "id": "ARCHIVE_PR28_TOPOLOGY_FIX_20261025T0518ICT",
+      "observed_at": "2026-10-25T05:18:01+07:00",
+      "observed_at_utc": "2026-10-24T22:18:01Z",
+      "source": "GitHub Actions failure log and exact PR #28 source/target readback; test-only correction on the existing branch.",
+      "checkpoint_file": "CURRENT_RUNTIME/ARCHIVE_PR28_TOPOLOGY_FIX_20261025T0518ICT.json",
+      "checkpoint_blob_sha": "03101b05e9443d19ff182b1f3e6f72eec3dabf76",
+      "checkpoint_commit": "de099e950dd043ae01ba0d55e568a012d7d86620",
+      "ledger_commit": "4bb88ccad2f93e12105a4963ed6af36767e69fa6",
+      "pr": 28,
+      "branch": "fix/archive-real-fixtures-20261025",
+      "new_head": "945eeca3419be2b7151d5761eb5aadfa65c31434",
+      "file": "tests/test_sol_library_stone_topology.py",
+      "old_blob_sha": "5fea826f737d0028c89a7637f1837220fe8f7897",
+      "new_blob_sha": "f42232285dfd9396de4ad1d20274029ba2245a75",
+      "failed_run": 40118137001,
+      "exact_failure": "The test rejected the legitimate BRAIN_WAVE_LOGS sibling.",
+      "correction": "Allow BRAIN_WAVE_LOGS while continuing to forbid SPACE_STONE_WORKSPACE.",
+      "ci_result": "NOT_FOUND_AT_READBACK_TIME",
+      "pr_state": "OPEN_DRAFT_NOT_MERGED",
+      "mergeable": false,
+      "source_mutation": false,
+      "tasks_closed": 0,
+      "result": "TEST_EXPECTATION_CORRECTED;READBACK_VERIFIED;CI_PENDING;PR_OPEN",
+      "action": "FIX_ARCHIVE_TOPOLOGY_TEST_EXPECTATION_WITHOUT_SOURCE_MUTATION",
+      "observation_type": "INDEPENDENT_BRANCH_ACTION"
     }
   ],
   "latest_sync_observation": {
@@ -9642,18 +9669,19 @@
     "source_reads_before_write": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "b611920232819f0e4a1b23111d80fd9fc838fc10",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "f3720bcad799026358f975dc3fc57d01d0f90d36",
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "c43411f80dfcdb3f1d6c47a2e5f971ab5d2536bd",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "9a69a6288de8b9846e6fc70a6d9377a9d2535ec5",
       "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "da4edd17c31dbe9e6898a5617d6f493dfa335dcb"
     },
-    "action": "Fresh-read mandatory sources and providers; read OPEN_TASKS by exact blob after large-file contents endpoint returned empty; appended provider checkpoint and histories; verified n8n row 318; inspected Archive PR #28 failure and success runs plus TESSERACT PR #6 status; no host write or task closure.",
-    "outcome": "PROVIDER_READBACK_AND_APPEND_ONLY_LEDGER_VERIFIED;HOST_TICK_CURRENT_CYCLE_UNVERIFIED;ARCHIVE_TOPOLOGY_FAILURE_RETAINED;ALL_TASKS_OPEN",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0518ICT.json",
-    "checkpoint_blob_sha": "ebea79cc9e6da2c7713b4b9b295011ff67342066",
-    "checkpoint_commit": "aa675ff24ec709588ee55e517664aaefe9216448",
+    "action": "Fresh-read mandatory source and provider states; exact-read n8n row 318; inspected PR #28 topology job log, traced the failure to an over-strict test expectation, changed only that test on the existing PR branch, and read back the exact new blob.",
+    "outcome": "ARCHIVE_TOPOLOGY_TEST_EXPECTATION_CORRECTED;NEW_HEAD_READBACK_VERIFIED;CI_PENDING;ALL_TASKS_OPEN",
+    "checkpoint_file": "CURRENT_RUNTIME/ARCHIVE_PR28_TOPOLOGY_FIX_20261025T0518ICT.json",
+    "checkpoint_blob_sha": "03101b05e9443d19ff182b1f3e6f72eec3dabf76",
+    "checkpoint_commit": "de099e950dd043ae01ba0d55e568a012d7d86620",
     "source_reads_after_other_writes": {
-      "OPEN_TASKS_CURRENT.json": "f3720bcad799026358f975dc3fc57d01d0f90d36",
-      "MODUAL_PARAMETER_CURRENT.json": "da4edd17c31dbe9e6898a5617d6f493dfa335dcb"
+      "OPEN_TASKS_CURRENT.json": "9a69a6288de8b9846e6fc70a6d9377a9d2535ec5",
+      "MODUAL_PARAMETER_CURRENT.json": "da4edd17c31dbe9e6898a5617d6f493dfa335dcb",
+      "PROVIDER_READBACK_20261025T0518ICT.json": "ebea79cc9e6da2c7713b4b9b295011ff67342066"
     }
   },
   "latest_security_patch_observation": {
@@ -12426,5 +12454,23 @@
     "force_push": false,
     "merge": false,
     "target_host_validation_from_ci": false
+  },
+  "latest_archive_topology_fix_20261025T0518ICT": {
+    "observed_at": "2026-10-25T05:18:01+07:00",
+    "pr": 28,
+    "branch": "fix/archive-real-fixtures-20261025",
+    "head": "945eeca3419be2b7151d5761eb5aadfa65c31434",
+    "source_file": "tests/test_sol_library_stone_topology.py",
+    "source_blob_sha": "f42232285dfd9396de4ad1d20274029ba2245a75",
+    "failure_run": 40118137001,
+    "failure_cause": "BRAIN_WAVE_LOGS omitted from allowed root sibling set",
+    "correction": "Allow BRAIN_WAVE_LOGS; preserve absence of SPACE_STONE_WORKSPACE",
+    "new_head_workflow_runs": 0,
+    "ci_pass_not_claimed": true,
+    "merged": false,
+    "force_push": false,
+    "tasks_closed": 0,
+    "checkpoint_file": "CURRENT_RUNTIME/ARCHIVE_PR28_TOPOLOGY_FIX_20261025T0518ICT.json",
+    "checkpoint_blob_sha": "03101b05e9443d19ff182b1f3e6f72eec3dabf76"
   }
 }
