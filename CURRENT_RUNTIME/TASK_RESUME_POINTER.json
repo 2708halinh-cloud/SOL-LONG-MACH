@@ -1900,15 +1900,61 @@
         "no_secret_values_read_or_written": true,
         "no_google_drive_write": true
       }
+    },
+    {
+      "observed_at_utc": "2026-10-24T01:35:24.530Z",
+      "source": "fresh compare/readback after concurrent GitHub ledger append",
+      "prior_checkpoint": {
+        "task_resume_pointer_blob_sha_before_write": "ec4195a5b58602be752600ff571d2a37f4c960f3",
+        "open_tasks_current_blob_sha": "de74c3295c092723e7292c090ad283fc0fb73418",
+        "github_head_before_write": "29beb2cec47ce01c3f3ba46a000a59a6a0bfacdf",
+        "n8n_workflow_id": "BogzhFUDbRp7kuwh",
+        "n8n_execution_id": "115",
+        "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+        "continuity_evidence_table_id": "Sk0EFJK5NzWVpBvm",
+        "evidence_rows": [
+          247,
+          248,
+          249,
+          250
+        ]
+      },
+      "concurrent_commit": {
+        "sha": "29beb2cec47ce01c3f3ba46a000a59a6a0bfacdf",
+        "message": "ledger: append fresh raw-carrier and TESSERACT provider readbacks",
+        "changed_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+        "additions": 28,
+        "deletions": 0,
+        "tesseract_status": "OPEN_CARRIED; OPEN_NOT_PROVEN_COMPLETED",
+        "issuer_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "status": {
+        "n8n_recovery_rows": 45,
+        "git_ledger_task_objects": 28,
+        "task_statuses_changed_by_this_readback": false,
+        "no_task_closed": true,
+        "android_heartbeat": "UNVERIFIED; adb missing; TCP 192.168.1.14:5556 false",
+        "host_tick_sha256": "635EF62C3DCD24872224A9104ECAD3707455302F99221A804212E115A3ECABD2",
+        "sensor_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "live_sensor_reading_confirmed": false
+      },
+      "ci": {
+        "current_head_status_entries": 0,
+        "queried_pr_workflow_runs": 0,
+        "status": "UNVERIFIED_NOT_SUCCESS"
+      },
+      "next_edge": "VERIFY_NEXT_HOST_TICK_AND_LIVE_SENSOR; RESOLVE_ANDROID_HEARTBEAT; CONTINUE_TESSERACT_ONLY_AFTER_ISSUER_KEY_AND_RUNNER_ENTITLEMENT_READBACK"
     }
   ],
   "latest_continuity_readback": {
-    "observed_at_utc": "2026-10-24T01:34:05.807Z",
-    "source": "verified n8n execution/table readback + GitHub main HEAD readback + direct read-only host tick and Android TCP probe",
+    "observed_at_utc": "2026-10-24T01:35:24.530Z",
+    "source": "fresh compare/readback after concurrent GitHub ledger append",
     "prior_checkpoint": {
-      "task_resume_pointer_blob_sha_before_write": "979f45301ec62cc990f01896c3ae2474e1bf9cab",
-      "open_tasks_current_blob_sha": "c4e460f575d78cfe1b18833c9fd2885d6ed78a29",
-      "github_head_before_write": "ed53648a805ca42ce2eddb963f98ef152e4c2e8d",
+      "task_resume_pointer_blob_sha_before_write": "ec4195a5b58602be752600ff571d2a37f4c960f3",
+      "open_tasks_current_blob_sha": "de74c3295c092723e7292c090ad283fc0fb73418",
+      "github_head_before_write": "29beb2cec47ce01c3f3ba46a000a59a6a0bfacdf",
       "n8n_workflow_id": "BogzhFUDbRp7kuwh",
       "n8n_execution_id": "115",
       "recovery_table_id": "rSPFIOWbS7cfNJ8z",
@@ -1916,70 +1962,36 @@
       "evidence_rows": [
         247,
         248,
-        249
+        249,
+        250
       ]
     },
-    "tasks": {
-      "recovery_rows": 45,
-      "terminal_rows": 0,
-      "state_effect": "NO_TASK_CLOSED; ALL_EXISTING_STATUSES_PRESERVED",
-      "next_edge": "VERIFY_LIVE_SENSOR_READING_AND_ANDROID_HEARTBEAT; KEEP_ALL_TASKS_OPEN"
+    "concurrent_commit": {
+      "sha": "29beb2cec47ce01c3f3ba46a000a59a6a0bfacdf",
+      "message": "ledger: append fresh raw-carrier and TESSERACT provider readbacks",
+      "changed_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "additions": 28,
+      "deletions": 0,
+      "tesseract_status": "OPEN_CARRIED; OPEN_NOT_PROVEN_COMPLETED",
+      "issuer_key_verified": false,
+      "runner_assignment_change_verified": false,
+      "ci_rerun": false
     },
-    "windows": {
-      "device": "DESKTOP-86ITNQ4",
-      "remote_device_id": "59f03001-c732-403e-b80c-b4191266809c",
-      "access_route": "Remote Desktop Commander secondary account; Primary account OFFLINE",
-      "tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T012136932549Z.json",
-      "tick_observed_at_utc": "2026-10-24T01:21:36.932549Z",
-      "tick_sha256": "635EF62C3DCD24872224A9104ECAD3707455302F99221A804212E115A3ECABD2",
-      "csv_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
-      "csv_bytes": 35389440,
-      "csv_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-      "csv_modified_utc": "2026-10-23T08:45:56.246Z",
-      "live_sensor_reading_confirmed": false,
-      "cloud_enabled": false,
-      "github_enabled": false,
-      "source_file_written": false,
-      "synthetic_rows_added": 0
+    "status": {
+      "n8n_recovery_rows": 45,
+      "git_ledger_task_objects": 28,
+      "task_statuses_changed_by_this_readback": false,
+      "no_task_closed": true,
+      "android_heartbeat": "UNVERIFIED; adb missing; TCP 192.168.1.14:5556 false",
+      "host_tick_sha256": "635EF62C3DCD24872224A9104ECAD3707455302F99221A804212E115A3ECABD2",
+      "sensor_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_reading_confirmed": false
     },
-    "android": {
-      "adb_path": null,
-      "tcp_target": "192.168.1.14:5556",
-      "tcp_connected": false,
-      "heartbeat": "UNVERIFIED; NO_RESPONSE DOES NOT PROVE DEVICE_OFF",
-      "host_reported_checked_at_utc": "2026-10-24T01:27:40.0028881Z",
-      "clock_note": "Host timestamp is earlier than n8n row #248 creation despite tool-call order; do not trust host clock for cross-system ordering or change the clock."
+    "ci": {
+      "current_head_status_entries": 0,
+      "queried_pr_workflow_runs": 0,
+      "status": "UNVERIFIED_NOT_SUCCESS"
     },
-    "dropbox": {
-      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
-      "path_display": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
-      "revision": "0165dc1e4794ab00000000395cdfd73",
-      "size_bytes": 35389440,
-      "server_modified_utc": "2026-10-14T00:20:03Z"
-    },
-    "n8n": {
-      "workflow_active": true,
-      "latest_verified_execution_id": "115",
-      "latest_verified_execution_status": "success",
-      "latest_execution_started_at": "2026-10-24T01:00:22.085Z",
-      "latest_scan_receipt_row_id": 247,
-      "host_reentry_receipt_row_id": 248,
-      "host_android_readback_row_id": 249,
-      "cloud_heartbeat_is_not_host_heartbeat": true
-    },
-    "github": {
-      "head_before_write": "ed53648a805ca42ce2eddb963f98ef152e4c2e8d",
-      "combined_status_count": 0,
-      "queried_pr_workflow_runs_count": 0,
-      "ci_status": "UNVERIFIED_NOT_SUCCESS",
-      "task_resume_pointer_updated_by_this_entry": false
-    },
-    "safety": {
-      "task_states_preserved": true,
-      "no_process_terminated": true,
-      "no_cache_or_Meta_db_deleted": true,
-      "no_secret_values_read_or_written": true,
-      "no_google_drive_write": true
-    }
+    "next_edge": "VERIFY_NEXT_HOST_TICK_AND_LIVE_SENSOR; RESOLVE_ANDROID_HEARTBEAT; CONTINUE_TESSERACT_ONLY_AFTER_ISSUER_KEY_AND_RUNNER_ENTITLEMENT_READBACK"
   }
 }
