@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Remote Desktop Commander inventory fluctuates (latest read ONLINE, last seen 1m; earlier reads OFFLINE/ONLINE), but direct read_file and read-only start_process calls timed out. Do not retry the same failed call and do not infer a successful host session from inventory alone. Keep 11:51:33+07 as the latest verified Windows Tick; no later receipt or live sensor sample is established. Continue independent Dropbox and TESSERACT work. Security branch is two commits ahead and zero behind with route-target symlink regression present; Rust tests, issuer key, and runner assignment remain unverified. Do not rerun PR #6 CI without verified runner/entitlement change. Continue Android/HWiNFO carrier discovery. Preserve history and keep all tasks OPEN.",
+  "next": "Use a different authorized host carrier for the post-11:56 Windows Tick receipt without retrying the timed-out call; continue TESSERACT issuer/runner evidence and independent cloud tasks; keep all source tasks OPEN.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -2482,6 +2482,53 @@
         "android_heartbeat_freshly_probed": false
       },
       "result": "CHECKPOINT_POINTER_ADVANCED_TO_VERIFIED_LEDGER; 28_GITHUB_TASKS_AND_45_N8N_TASKS_REMAIN_OPEN; NO_HOST_OR_ANDROID_COMPLETION_INFERRED"
+    },
+    {
+      "observed_at": "2026-10-24T13:36:14.408+07:00",
+      "observed_at_utc": "2026-10-24T06:36:14.408Z",
+      "record_type": "N8N_MANUAL_CONTINUITY_SCAN_READBACK",
+      "windows": {
+        "inventory_primary": "OFFLINE",
+        "inventory_secondary": "OFFLINE",
+        "last_verified_run_local": "2026-10-24T11:51:33+07:00",
+        "post_11_56_receipt_verified": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "raw_bytes_downloaded": false
+      },
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+        "active": true,
+        "execution_id": "122",
+        "execution_status": "success",
+        "started_at_utc": "2026-10-24T06:36:12.471Z",
+        "stopped_at_utc": "2026-10-24T06:36:14.408Z",
+        "receipt_row_id": 265,
+        "receipt_event_id": "X20261024063614266_CLOUD",
+        "receipt_readback": true,
+        "recovery_rows": 45,
+        "pending_rows": 45,
+        "host_heartbeat_probed": false,
+        "tasks_closed": false
+      },
+      "tesseract": {
+        "branch": "security/repo-relative-read-containment-20261024",
+        "latest_ledgered_commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
+        "tests_executed": false,
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "N8N_MANUAL_SCAN_122_SUCCESS; ROW_265_EXACT_READBACK_VERIFIED; 45_RECOVERY_TASKS_REMAIN_OPEN; WINDOWS_LIVE_STREAM_NOT_VERIFIED",
+      "task_closure": false
     }
   ],
   "latest_sync_observation": {
@@ -3764,45 +3811,147 @@
       },
       "result": "TESSERACT_ROUTE_SYMLINK_REGRESSION_RECORDED; ADMIN_PRESERVED; ORIGINAL_EXPORTS_NOT_RETRIEVED",
       "next_edge": "Run the targeted test only on an authorized isolated Rust runner; continue source-export retrieval through an actual authorized provider byte path when available. Keep all objectives open."
+    },
+    {
+      "observed_at": "2026-10-24T13:36:14.408+07:00",
+      "observed_at_utc": "2026-10-24T06:36:14.408Z",
+      "source": "Fresh GitHub exact-target reads; authenticated Dropbox Outlook metadata; Desktop Commander inventories; n8n workflow execution #122 and exact row 265 readback.",
+      "prior_checkpoint": {
+        "open_tasks_blob_sha_before": "2dc5a01f2d3c571724a22744ddca7f0c12ee06c1",
+        "open_tasks_blob_sha_after": "32a3c0b00b550a9441118df45957b6adfda2b0b2",
+        "task_resume_pointer_blob_sha_before": "636ed99623a41d874ebbfeeda0be1b0c403108c0",
+        "task_count": 28,
+        "task_statuses_changed": false,
+        "tasks_closed": false,
+        "verified_action_events": 89,
+        "provider_observation_history": 89
+      },
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "636ed99623a41d874ebbfeeda0be1b0c403108c0",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_append": "32a3c0b00b550a9441118df45957b6adfda2b0b2",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "b6af983747c143f6e25cc3860f6c87aff1432395"
+      },
+      "windows": {
+        "inventory_primary": "OFFLINE",
+        "inventory_secondary": "OFFLINE",
+        "last_verified_run_local": "2026-10-24T11:51:33+07:00",
+        "post_11_56_receipt_verified": false,
+        "live_sensor_reading_confirmed": false
+      },
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "raw_bytes_downloaded": false
+      },
+      "n8n": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+        "active": true,
+        "execution_id": "122",
+        "execution_status": "success",
+        "started_at_utc": "2026-10-24T06:36:12.471Z",
+        "stopped_at_utc": "2026-10-24T06:36:14.408Z",
+        "receipt_row_id": 265,
+        "receipt_event_id": "X20261024063614266_CLOUD",
+        "receipt_readback": true,
+        "recovery_rows": 45,
+        "pending_rows": 45,
+        "host_heartbeat_probed": false,
+        "tasks_closed": false
+      },
+      "tesseract": {
+        "branch": "security/repo-relative-read-containment-20261024",
+        "latest_ledgered_commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
+        "tests_executed": false,
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "safety": {
+        "source_history_erased": false,
+        "raw_sensor_values_persisted": false,
+        "credentials_committed": false,
+        "task_closed": false
+      },
+      "result": "N8N_MANUAL_SCAN_122_SUCCESS; ROW_265_EXACT_READBACK_VERIFIED; 45_RECOVERY_TASKS_REMAIN_OPEN; WINDOWS_LIVE_STREAM_NOT_VERIFIED",
+      "next_edge": "Use a different authorized host carrier for the post-11:56 Windows Tick receipt without retrying the timed-out call; continue TESSERACT issuer/runner evidence and independent cloud tasks; keep all source tasks OPEN."
     }
   ],
   "latest_continuity_readback": {
-    "observed_at": "2026-10-24T12:08:50+07:00",
-    "observed_at_utc": "2026-10-24T05:08:50Z",
-    "source": "Fresh GitHub branch write/readback and exact OPEN_TASKS ledger readback",
+    "observed_at": "2026-10-24T13:36:14.408+07:00",
+    "observed_at_utc": "2026-10-24T06:36:14.408Z",
+    "source": "Fresh GitHub exact-target reads; authenticated Dropbox Outlook metadata; Desktop Commander inventories; n8n workflow execution #122 and exact row 265 readback.",
     "prior_checkpoint": {
-      "open_tasks_blob_sha_before": "199b5ebf9ae1990ff32e0b6458085bba3c6dc8aa",
-      "open_tasks_blob_sha_after": "a0deb9394dac0f3f924bbc399420b1f409ce688a",
-      "task_resume_pointer_blob_sha_before": "e54e76211cc661017013314860d7e5fde5c22c69",
+      "open_tasks_blob_sha_before": "2dc5a01f2d3c571724a22744ddca7f0c12ee06c1",
+      "open_tasks_blob_sha_after": "32a3c0b00b550a9441118df45957b6adfda2b0b2",
+      "task_resume_pointer_blob_sha_before": "636ed99623a41d874ebbfeeda0be1b0c403108c0",
       "task_count": 28,
       "task_statuses_changed": false,
+      "tasks_closed": false,
+      "verified_action_events": 89,
+      "provider_observation_history": 89
+    },
+    "source_reads": {
+      "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "636ed99623a41d874ebbfeeda0be1b0c403108c0",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_append": "32a3c0b00b550a9441118df45957b6adfda2b0b2",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "b6af983747c143f6e25cc3860f6c87aff1432395"
+    },
+    "windows": {
+      "inventory_primary": "OFFLINE",
+      "inventory_secondary": "OFFLINE",
+      "last_verified_run_local": "2026-10-24T11:51:33+07:00",
+      "post_11_56_receipt_verified": false,
+      "live_sensor_reading_confirmed": false
+    },
+    "dropbox": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "rev": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_readback": true,
+      "raw_bytes_downloaded": false
+    },
+    "n8n": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+      "active": true,
+      "execution_id": "122",
+      "execution_status": "success",
+      "started_at_utc": "2026-10-24T06:36:12.471Z",
+      "stopped_at_utc": "2026-10-24T06:36:14.408Z",
+      "receipt_row_id": 265,
+      "receipt_event_id": "X20261024063614266_CLOUD",
+      "receipt_readback": true,
+      "recovery_rows": 45,
+      "pending_rows": 45,
+      "host_heartbeat_probed": false,
       "tasks_closed": false
     },
     "tesseract": {
       "branch": "security/repo-relative-read-containment-20261024",
-      "commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
-      "file_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d0",
-      "route_symlink_regression_added": true,
-      "source_readback_matches": true,
+      "latest_ledgered_commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
       "tests_executed": false,
-      "ci_triggered": false,
-      "pr6_unchanged": true
-    },
-    "archive": {
-      "admin_zip_id": "libfile_d18e6db946b88191b31e948ed283598c",
-      "admin_folder_moved_or_duplicated": false,
-      "new_raw_export_bytes_retrieved": false,
-      "direct_drive_dropbox_takeout_connector_available": false
+      "issuer_public_key_verified": false,
+      "runner_assignment_change_verified": false,
+      "ci_rerun": false
     },
     "safety": {
       "source_history_erased": false,
-      "private_chat_published": false,
       "raw_sensor_values_persisted": false,
       "credentials_committed": false,
       "task_closed": false
     },
-    "result": "TESSERACT_ROUTE_SYMLINK_REGRESSION_RECORDED; ADMIN_PRESERVED; ORIGINAL_EXPORTS_NOT_RETRIEVED",
-    "next_edge": "Run the targeted test only on an authorized isolated Rust runner; continue source-export retrieval through an actual authorized provider byte path when available. Keep all objectives open."
+    "result": "N8N_MANUAL_SCAN_122_SUCCESS; ROW_265_EXACT_READBACK_VERIFIED; 45_RECOVERY_TASKS_REMAIN_OPEN; WINDOWS_LIVE_STREAM_NOT_VERIFIED",
+    "next_edge": "Use a different authorized host carrier for the post-11:56 Windows Tick receipt without retrying the timed-out call; continue TESSERACT issuer/runner evidence and independent cloud tasks; keep all source tasks OPEN."
   },
   "latest_reentry_observation": {
     "observed_at": "2026-10-24T13:32:18.751+07:00",
