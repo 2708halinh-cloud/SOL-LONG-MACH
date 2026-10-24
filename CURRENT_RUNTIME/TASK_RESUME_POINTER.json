@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "Remote Desktop Commander currently reports DESKTOP-86ITNQ4 OFFLINE with last-seen 33s ago; direct read_file and read-only start_process timed out. Do not retry the same failed call or infer that the physical host is powered off. Keep 11:51:33+07 as the last verified Windows Tick; no later receipt or live sensor sample is established. Continue independent Dropbox and TESSERACT work. The TESSERACT security branch is two commits ahead and zero behind with the route-target symlink regression present, but Rust tests remain unrun and issuer key/runner assignment remain unverified. Do not rerun PR #6 CI without verified runner/entitlement change. Continue HWiNFO/Android carrier discovery via other authorized routes. Preserve all source history and keep every task OPEN.",
+  "next": "Remote Desktop Commander inventory fluctuates (latest read ONLINE, last seen 1m; earlier reads OFFLINE/ONLINE), but direct read_file and read-only start_process calls timed out. Do not retry the same failed call and do not infer a successful host session from inventory alone. Keep 11:51:33+07 as the latest verified Windows Tick; no later receipt or live sensor sample is established. Continue independent Dropbox and TESSERACT work. Security branch is two commits ahead and zero behind with route-target symlink regression present; Rust tests, issuer key, and runner assignment remain unverified. Do not rerun PR #6 CI without verified runner/entitlement change. Continue Android/HWiNFO carrier discovery. Preserve history and keep all tasks OPEN.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -2388,6 +2388,56 @@
       },
       "result": "LATEST_DEVICE_INVENTORY_OFFLINE_AND_HOST_TIMEOUT_RECORDED; DROPBOX_AND_TESSERACT_BRANCH_VERIFIED; ALL_OPEN_RETAINED",
       "task_closure": false
+    },
+    {
+      "observed_at": "2026-10-24T13:32:18.751+07:00",
+      "observed_at_utc": "2026-10-24T06:32:18.751Z",
+      "record_type": "REMOTE_INVENTORY_FLUCTUATING_LAST_READ_ONLINE_HOST_TIMEOUT",
+      "source_reads": {
+        "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "f39dcb4b69f1a09e6cde7c45e352e128919d3e30",
+        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_at_read": "f5c61d54b31f4537fe21e018810ad4c058954677",
+        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_at_read": "b6af983747c143f6e25cc3860f6c87aff1432395"
+      },
+      "windows": {
+        "latest_inventory_status": "ONLINE",
+        "latest_seen": "1m ago",
+        "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+        "prior_same_turn_inventory_statuses": [
+          "OFFLINE; last seen 33s ago",
+          "ONLINE; last seen 8s ago"
+        ],
+        "direct_start_process": "TIMEOUT_NO_RESPONSE",
+        "direct_read_file": "FAILED_TIMEOUT_NO_RESPONSE",
+        "same_call_retried": false,
+        "latest_verified_run_local": "2026-10-24T11:51:33+07:00",
+        "post_11_56_receipt_verified": false,
+        "live_sensor_reading_confirmed": false,
+        "interpretation": "Inventory status fluctuates; ONLINE inventory does not establish successful host command execution."
+      },
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "rev": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "raw_bytes_downloaded": false
+      },
+      "tesseract": {
+        "branch": "security/repo-relative-read-containment-20261024",
+        "commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
+        "file_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d0",
+        "ahead_by": 2,
+        "behind_by": 0,
+        "route_target_symlink_regression_present": true,
+        "tests_executed": false,
+        "issuer_public_key_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "result": "DEVICE_INVENTORY_FLUCTUATES; HOST_COMMANDS_TIMEOUT; DROPBOX_AND_TESSERACT_BRANCH_VERIFIED; LIVE_STREAM_NOT_VERIFIED",
+      "task_closure": false
     }
   ],
   "latest_sync_observation": {
@@ -3711,29 +3761,31 @@
     "next_edge": "Run the targeted test only on an authorized isolated Rust runner; continue source-export retrieval through an actual authorized provider byte path when available. Keep all objectives open."
   },
   "latest_reentry_observation": {
-    "observed_at": "2026-10-24T13:31:21.628+07:00",
-    "observed_at_utc": "2026-10-24T06:31:21.628Z",
-    "record_type": "LATEST_DEVICE_INVENTORY_OFFLINE_AND_LEDGER_HASH_RECONCILIATION",
+    "observed_at": "2026-10-24T13:32:18.751+07:00",
+    "observed_at_utc": "2026-10-24T06:32:18.751Z",
+    "record_type": "REMOTE_INVENTORY_FLUCTUATING_LAST_READ_ONLINE_HOST_TIMEOUT",
     "source_reads": {
       "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
-      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "0cd639540b3e7208a20f4277661d5022b2d503c5",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_readback": "c707307c9c48ee19135da641f407d2cb8c14a659",
-      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_after_readback": "b6af983747c143f6e25cc3860f6c87aff1432395",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_after_write": "f5c61d54b31f4537fe21e018810ad4c058954677",
-      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_write_commit_sha": "b23daf1a785c4e7760769ffdee9db2ddf4d90eb8"
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_before_write": "f39dcb4b69f1a09e6cde7c45e352e128919d3e30",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json_at_read": "f5c61d54b31f4537fe21e018810ad4c058954677",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json_at_read": "b6af983747c143f6e25cc3860f6c87aff1432395"
     },
     "windows": {
-      "inventory_status": "OFFLINE",
-      "last_seen": "33s ago",
+      "latest_inventory_status": "ONLINE",
+      "latest_seen": "1m ago",
       "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+      "prior_same_turn_inventory_statuses": [
+        "OFFLINE; last seen 33s ago",
+        "ONLINE; last seen 8s ago"
+      ],
       "direct_start_process": "TIMEOUT_NO_RESPONSE",
       "direct_read_file": "FAILED_TIMEOUT_NO_RESPONSE",
       "same_call_retried": false,
-      "last_verified_run_local": "2026-10-24T11:51:33+07:00",
-      "last_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T045143119113Z.json",
+      "latest_verified_run_local": "2026-10-24T11:51:33+07:00",
       "post_11_56_receipt_verified": false,
-      "live_sensor_reading_confirmed": false
+      "live_sensor_reading_confirmed": false,
+      "interpretation": "Inventory status fluctuates; ONLINE inventory does not establish successful host command execution."
     },
     "dropbox": {
       "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
@@ -3744,32 +3796,19 @@
       "raw_bytes_downloaded": false
     },
     "tesseract": {
-      "repository": "2708halinh-cloud/x-time-web",
       "branch": "security/repo-relative-read-containment-20261024",
       "commit": "14d90afaf20d1d37f6263b02f80fd0fec6180c0c",
       "file_blob_sha": "96e6464f85b9a1fc9e513a4dc468cdeea50962d0",
       "ahead_by": 2,
       "behind_by": 0,
+      "route_target_symlink_regression_present": true,
       "tests_executed": false,
       "issuer_public_key_verified": false,
       "runner_assignment_change_verified": false,
       "ci_rerun": false
     },
-    "result": "R014_ARCHIVE_PROBE_RECORDED; TESSERACT_ART_DERIVATIVE_CLASSIFIED; ALL_OPEN_TASKS_RETAINED",
-    "task_closure": false,
-    "source": "Fresh Library archive byte verification + GitHub readback of append-only OPEN task ledger; exact TESSERACT Art source still unresolved",
-    "tesseract_art_probe": {
-      "observed_at": "2026-10-24T13:31:21.628+07:00",
-      "carrier": "SOL_PAST_SPACE_EXPLORER_20261018.html",
-      "library_file_id": "libfile_7072e46491b88191870d7b4e0952507f",
-      "size_bytes": 40810,
-      "lines": 611,
-      "classification": "RELATED_DERIVED_HTML_NOT_EXACT_TESSERACT_ART_SOURCE",
-      "exact_source_identity_found": false,
-      "exact_bundle_member_found": false,
-      "real_browser_runtime_verified": false,
-      "task_closed": false
-    }
+    "result": "DEVICE_INVENTORY_FLUCTUATES; HOST_COMMANDS_TIMEOUT; DROPBOX_AND_TESSERACT_BRANCH_VERIFIED; LIVE_STREAM_NOT_VERIFIED",
+    "task_closure": false
   },
   "latest_security_patch_observation": {
     "observed_at": "2026-10-24T12:08:50+07:00",
