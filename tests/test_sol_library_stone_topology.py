@@ -10,9 +10,16 @@ SPACE = CORE / "EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE"
 
 class LibraryStoneTopologyTests(unittest.TestCase):
     def test_two_github_library_roots(self):
-        self.assertEqual({p.name for p in LIB.iterdir() if p.is_dir()},
-                         {"COMPUTER_KHÍ💜BRAIN_OS_POWER", "OS_WORK"})
+        # BRAIN_WAVE_LOGS is an existing, explicitly named log carrier, not a
+        # third SPACE root. Preserve it while guarding the canonical two roots.
+        roots = {p.name for p in LIB.iterdir() if p.is_dir()}
+        canonical = {"COMPUTER_KHÍ💜BRAIN_OS_POWER", "OS_WORK"}
+        allowed_log_roots = {"BRAIN_WAVE_LOGS"}
+        self.assertTrue(canonical.issubset(roots), roots)
+        self.assertLessEqual(roots, canonical | allowed_log_roots)
         self.assertFalse((LIB / "SPACE_STONE_WORKSPACE").exists())
+        if "BRAIN_WAVE_LOGS" in roots:
+            self.assertTrue((LIB / "BRAIN_WAVE_LOGS" / "README_TOKEN_OBSERVABILITY.md").is_file())
 
     def test_computer_five_stones_and_one_agents(self):
         self.assertEqual({p.name for p in CORE.iterdir()},
