@@ -144,6 +144,7 @@
     "Hash the alternate same-size ADMIN ZIP only when its exact bytes are available; do not move, delete, duplicate or re-extract the existing ADMIN folder.",
     "For TESSERACT Art, obtain exact source identity and authorized browser/host access before runtime testing; keep IN_PROGRESS until same-target browser readback exists.",
     "Re-read host tick/consumer receipt using the host clock when an authorized host connector is callable; do not infer a missed run or live sensor state from cloud evidence.",
+    "Keep PR #34 OPEN/Draft; it was 1 ahead / 89 behind at main head 4635f33. Do not merge or force-push; remeasure after the next main update if synchronization is considered.",
     "Preserve all 29 ledger tasks OPEN/IN_PROGRESS; reports, checkpoints and CI do not close tasks."
   ],
   "checkpoint_history": [
@@ -251,5 +252,45 @@
     "dropbox_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
     "takeout_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
     "authorized_host_browser_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET"
+  },
+  "latest_pr_readback": {
+    "observed_at_local": "2026-10-25T12:09:24+07:00",
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "main_head_at_comparison": "4635f33f4870312cb8d312fc370a0553af90c29e",
+    "archive_pr34": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/34",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "fix/archive-adapters-current-main-20261025T0705ICT",
+      "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "base": "main",
+      "base_sha": "93100cc4619284d382558527fd22d03673f09401",
+      "compare_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 89,
+      "merge_decision": "DO_NOT_MERGE_OR_FORCE_PUSH",
+      "diff_files": 5,
+      "diff_paths": [
+        ".github/workflows/archive-readonly-adapters.yml",
+        "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py",
+        "tests/test_sol_archive_10_formats.py",
+        "tests/test_sol_library_stone_topology.py",
+        "tests/verify_real_archive_fixtures.py"
+      ],
+      "interpretation": "The PR contains one commit not in the observed main head, while main contains 89 commits not in the PR. Most divergence is subsequent continuity/runtime work. Keep OPEN/Draft; no merge or force-push."
+    },
+    "tesseract_desktop_pr6": {
+      "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "tesseract-desktop-mvp-20261006",
+      "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "base": "master",
+      "base_sha": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
+      "updated_at_utc": "2026-10-24T16:46:27Z",
+      "interpretation": "Still OPEN/Draft; no issuer-key/runner change verified in this run; no CI rerun."
+    }
   }
 }
