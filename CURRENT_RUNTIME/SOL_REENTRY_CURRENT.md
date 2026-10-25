@@ -401,3 +401,32 @@ Keep `MODUAL_SENSOR_LOGS_ROUTING` OPEN. After the scheduled Tick due `10:56:32 +
 - `TASK_RESUME_POINTER.json` exact readback SHA: `5cb196097dfb6e4a01b3cd0260ee037085d6889b`, commit `e410e6af3640a06dc78b82a500ae1bd577447598`.
 
 **Resume:** After `11:01:32+07`, exact-read the next scheduled Tick/consumer receipts and direct source hash. Continue finding a supported authorized persistent sensor client/bridge; do not install a new Android package or leave the diagnostic app running without an authorized route. Keep all tasks OPEN; no raw sensor data, credentials, or source bytes were written to GitHub.
+
+
+## REENTRY — VERIFIED WINDOWS TICK + Braid + CURRENT OPEN BRANCHES — 2026-10-25 13:13 ICT
+
+SOURCE_DIRECT: Fresh-read AGENTS.md, this reentry file, TASK_RESUME_POINTER.json, OPEN_TASKS_CURRENT.json, MODUAL_PARAMETER_CURRENT.json and provider status before action. Exact checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1313ICT.json`; blob SHA `2c3ca603571c39ddefc0fde12632da635f1face1`; checkpoint commit `34ed592620f36fb2583b69de5f5a694b7b9f9b2c`. Main head after the checkpoint, MODUAL state and resume-pointer writes: `fc5844b88c244356e4aa24193ee7cfe7c109827e`.
+
+### MODUAL — direct host receipt and source integrity
+- Host `DESKTOP-86ITNQ4`; Scheduled Task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M` is enabled/Ready, last result `0x0`, zero missed runs; last run `13:11:33 +07`, next `13:16:32 +07`.
+- Tick receipt `D:\SENSOR_LOGS\state\WINDOWS_TICK_20261025T061138802783Z.json`, SHA-256 `52285bd82d5e20c388e28e46a2c365b155767dff53a7a5b4413f8a674a2e2985`, exact file readback.
+- Consumer receipt `D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261025T061135872Z.json`, SHA-256 `06c25196bb863f33f45b2acb095850b714852ba33fed28de10569cc212b850d3`, `SOURCE_OBSERVED_READONLY`, exit 0, source content hash verified, zero rows written/emitted, exports false.
+- Source `D:\SENSOR_LOGS\windows_SENSON.CSV`: 35,389,440 bytes; SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`. Dropbox Outlook metadata remains revision `0165dc1e4794ab00000000395cdfd73`, server_modified `2026-10-14T00:20:03Z`, content hash `becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d`.
+- ADB executable verified at `C:\Users\halin\platform-tools-latest-windows\platform-tools\adb.exe`, SHA-256 `b4a6b455702684652cccf7b46258b29e653538904359a58fd4931cf3ef286b3f`; USB target `1056285` responds. Four event timestamps remain `EVENT_TIMESTAMP_STALE`; wireless target `192.168.1.14:5556` is `NOT_LISTED`. ADB/SensorService response is not proof of a continuous sensor stream.
+- HWiNFO64 process PID 16596 exists, but its executable path and a fresh CSV sample are not verified. The prior 39,922,785-byte CSV last modified 2026-10-21 remains historical evidence only.
+
+### Independent local Braid execution
+- `prove_braid_actual_20261020.py` executed successfully, exit 0. SIX receipt `BRAID_LIVE_SIX_FORCES_20261025T060819007564Z.json`, SHA-256 `365c4cfea51712de99177238a06cb99e37deed27e6070bf561e195cd0d1aee94`; 9 read-only actions, exact readback.
+- PLURAL receipt `BRAID_LIVE_PLURAL_20261025T060819051208Z.json`, SHA-256 `61fad3d7545241a1a0acf9c4afb1bca3abd9ff28dd0bd4cffcbd345722f1f3c6`; 5 read-only actions, exact readback. Both receipts show source unchanged and no requested mutation executed. Cloud/host wiring remains unverified.
+
+### Provider and independent branches
+- n8n execution 159 succeeded; event `X20261025060024145_CLOUD`, row 338, `OPEN_WORK_REMAINS`; 337 continuity evidence rows and 45 recovery tasks; host heartbeat remains unprobed.
+- Archive PR #34 remains OPEN/Draft, head `a90f85ae1e0d5a5129caa1b472acac4f4697a71c`, 1 ahead / 114 behind current main at fresh compare. Three workflows succeeded; artifact 12580351639 remains unexpired through 2026-11-08T00:08:44Z. No merge or force-push.
+- MODUAL PR #35 remains OPEN, head `f99d96e39f62245d23ad728daac2c2006061e393`, 9 ahead / 98 behind current main; both recorded workflows succeeded. No merge or force-push.
+- TESSERACT Desktop PR #6 remains OPEN/Draft at `5312816d5fe2b22e92302211b67f916b88a6fe14`; runs 39994207477 and 39994207667 failed with no artifacts. Issuer public key and runner assignment remain unverified; do not rerun CI without a verified runner/config change.
+
+### Resume integrity
+The prior resume pointer mixed the MODUAL task name with a TESSERACT repository/checkpoint. Its complete prior contents are preserved in `previous_pointer_snapshot`; the current top-level pointer now points to this MODUAL checkpoint, with TESSERACT, Archive and MODUAL PRs preserved as parallel OPEN branches. No task was closed. No raw sensor values, credentials or source rows were committed; no source was moved/deleted/overwritten; cloud/GitHub sensor export remains disabled.
+
+### Next edge
+After the scheduled Tick due 2026-10-25 13:16:32 +07, read the newest Tick and consumer receipts and recompute the pinned source SHA. Continue finding a supported persistent sensor client/bridge without installing an unverified package. Continue HWiNFO logging discovery and TESSERACT issuer/runner verification through authorized routes. Keep all unfinished tasks OPEN.
