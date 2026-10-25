@@ -903,3 +903,12 @@ Ledger remains 29 tasks, 164 action events, 164 provider observations, four inte
 - All 29 tasks remain nonterminal; no source moved/deleted, no credentials written, no raw sensor values exported.
 - Next edge: exact-read the next Tick after 04:31:32+07, poll PID 48064, continue TESSERACT issuer/runner provenance, and review carrier-log retention without destructive action.
 
+
+
+## Re-entry observation — 2026-10-26T05:10:51+07:00
+
+- PR #36 branch `fix/archive-adapters-main-recut-20261025T1534ICT` was advanced from `e414dfe673265447cd216a4535536e0a3099c90d` to `cd3267f9ea125740328ee2ff14583c7721498a88` by a normal merge commit with parents current `main` `61ebd01f3bdfae73b6c761f50c12a39da2351d13` and prior PR head `e414dfe673265447cd216a4535536e0a3099c90d`. The authenticated ref update used `force=false` and the expected old head; no force-push and no PR merge.
+- At the exact PR readback, PR #36 remained OPEN/Draft/unmerged and compared as 11 ahead / 0 behind `main` `61ebd01f3bdfae73b6c761f50c12a39da2351d13`.
+- Current-head workflow runs: [topology 40238928895](https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40238928895), [secret guard 40238928892](https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40238928892), and [read-only archive adapters 40238928890](https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40238928890) all concluded SUCCESS.
+- Downloaded artifact `12616220675` (`sol-archive-real-fixture-readback`), 959 bytes; ZIP SHA-256 `61022c1d0a5c82cff958a37ff29dbfd5b1ee9e928dabd1094e1fa096bdaf7b56`; ZIP integrity PASS. Its receipt confirms 7Z/RAR/LR fixtures PASS, each source hash unchanged, no extraction, and no source archive mutation.
+- This verifies the current-head CI fixture route only. It does not restore the original JINEY/FUNiX/DATNGUYEN exports, resolve the two MAP_NGUON Drive IDs, or verify an authorized target host. All tasks remain nonterminal; no task closed.
