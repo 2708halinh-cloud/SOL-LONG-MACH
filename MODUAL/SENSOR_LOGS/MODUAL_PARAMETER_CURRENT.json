@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-25T14:27:11.7722827+07:00",
+  "observed_at": "2026-10-25T14:37:17.0217470+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -12758,5 +12758,126 @@
     "pending_tasks": 45,
     "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED",
     "tasks_closed": 0
+  },
+  "latest_runtime_probe_20261025T1437ICT": {
+    "observed_at": "2026-10-25T14:37:17.0217470+07:00",
+    "main_head_before_update": "65ee67eb0c6b96b80c0b453ff9cb26671374b338",
+    "host": "DESKTOP-86ITNQ4",
+    "task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-25T14:36:33+07:00",
+      "next_run_local": "2026-10-25T14:41:32+07:00",
+      "last_result": "0x0",
+      "missed_runs": 0
+    },
+    "tick_receipt": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T073639224482Z.json",
+      "sha256": "254247ba48a1677c9cea805e340e342e7267821e3413c594d0fdd9888088b905",
+      "observed_at_utc": "2026-10-25T07:36:39.224482Z",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_reading_confirmed": false,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE"
+    },
+    "consumer_receipt": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T073636524Z.json",
+      "sha256": "814fd193833105f2c985fa4a3e50d244337ac80aa1eefc48c53512df1be95119",
+      "observed_at_utc": "2026-10-25T07:36:39.3159841Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_content_hash_verified": true,
+      "consumer_hash_matches_verifier": true,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "raw_rows_emitted": false,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "provider": "Dropbox Outlook",
+      "provider_path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d"
+    },
+    "result": "SCHEDULED_TICK_AND_CONSUMER_SUCCESS; SOURCE_UNCHANGED; SENSOR_TIMESTAMP_STALE; ALL_OPEN_RETAINED"
+  },
+  "latest_sensor_stream_probe_20261025T1437ICT": {
+    "observed_at": "2026-10-25T14:37:17.0217470+07:00",
+    "scheduled_tick_status": "EVENT_TIMESTAMP_STALE",
+    "scheduled_tick_live_sensor_reading_confirmed": false,
+    "controlled_app_test": {
+      "package": "com.exatools.sensors",
+      "version": "2.1.01",
+      "live_sensor_timestamps_advanced_while_active": true,
+      "advanced_sensors": [
+        "AK099_MAGNETOMETER",
+        "LSM6DSO_ACCELEROMETER",
+        "LSM6DSO_GYROSCOPE"
+      ],
+      "force_stopped_after_test": true,
+      "post_stop_status": "EVENT_TIMESTAMP_STALE",
+      "production_continuous_stream_verified": false
+    },
+    "wireless_target": "192.168.1.14:5556",
+    "wireless_state": "NOT_LISTED",
+    "result": "CONTROLLED_SENSOR_EVENT_ADVANCEMENT_REPRODUCED; PRODUCTION_STREAM_NOT_VERIFIED"
+  },
+  "latest_production_code_test_20261025T1437ICT": {
+    "observed_at": "2026-10-25T14:35:07.0282371+07:00",
+    "test": "production_live_device_probe_mock_contract",
+    "result": "PASS",
+    "cases": 2,
+    "timestamp_advance_detected": true,
+    "stale_timestamp_detected": true,
+    "raw_values_omitted": true,
+    "commands_per_case": 4,
+    "production_source_git_blob_sha": "91d242d9f0db0e171b9f1ccf3bdf9af3331ff395",
+    "note": "Local snapshot suite also passed 3 tests but its fixture source blob 939e3c6e2c5e1b7274f11efc00adf80227b77466 differs from production source; not counted as current-source test."
+  },
+  "latest_modual_pr35_ci_readback_20261025T1437ICT": {
+    "observed_at": "2026-10-25T14:37:17.0217470+07:00",
+    "pr": 35,
+    "head": "f99d96e39f62245d23ad728daac2c2006061e393",
+    "test_run": {
+      "id": 40154600501,
+      "conclusion": "success",
+      "steps": [
+        "Checkout",
+        "Set up Python",
+        "Test sanitized ADB probe",
+        "Test read-only snapshot safety"
+      ],
+      "all_steps_success": true
+    },
+    "secret_guard_run": {
+      "id": 40154600506,
+      "conclusion": "success",
+      "steps": [
+        "Obtain source snapshot without malformed git submodules",
+        "Verify .gitmodules paths exactly match tracked gitlinks",
+        "Scan the full source snapshot without printing secret bytes"
+      ],
+      "all_steps_success": true
+    },
+    "state": "OPEN_DRAFT_UNMERGED",
+    "merged": false
+  },
+  "latest_security_scan_20261025T1437ICT": {
+    "observed_at": "2026-10-25T14:37:17.0217470+07:00",
+    "github_advanced_security": "UNAVAILABLE_REPOSITORY_NOT_ENABLED",
+    "local_pattern_scan": {
+      "scope": "checkpoint + appended reentry section + current MODUAL observation",
+      "characters_scanned": 16941,
+      "credential_pattern_matches": 0,
+      "result": "PASS_NO_MATCHES"
+    },
+    "raw_sensor_values_in_public_checkpoint": false,
+    "credentials_added": false
   }
 }
