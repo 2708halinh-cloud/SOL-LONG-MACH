@@ -1,21 +1,21 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T10:11:52Z",
-  "updated_at_local": "2026-10-25T17:11:52+07:00",
+  "updated_at_utc": "2026-10-25T10:12:12Z",
+  "updated_at_local": "2026-10-25T17:12:12+07:00",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1712ICT.json",
+    "blob_sha": "7964cb72c679c89e4ce4cffe8c5f990cea769079",
+    "commit_sha": "62f6935fbc24776abad8cd5a1af9475a796f150c",
+    "readback_verified": true,
+    "note": "Post-schedule host tick and trace receipt verified; n8n execution 163/evidence row 352 and GitHub ledger/PR readbacks preserved; no task closure."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1711ICT.json",
     "blob_sha": "10e552bc91a98b447402a3174e081492e27e0c86",
     "commit_sha": "b59f850bd69207066a054bbdd868098549452acc",
     "readback_verified": true,
-    "note": "Direct n8n execution 163 and evidence row 352 verified; direct host tick/trace/source hashes and scheduler readback verified; exact MODUAL source still unresolved."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1702ICT.json",
-    "blob_sha": "d07a937edd6731d33ff9fab7854cff68fdd6a463",
-    "commit_sha": "37381145f781d03267c1e74f060a4eb17e9f1ac3",
-    "readback_verified": true,
-    "note": "Prior full continuity checkpoint; all task states remain nonterminal."
+    "note": "Prior checkpoint recorded the earlier host tick; new post-schedule tick is captured in the current checkpoint."
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -37,7 +37,7 @@
     "unfinished_rows": 45,
     "tasks_closed": 0,
     "host_heartbeat_probed_by_workflow": false,
-    "interpretation": "Cloud scan succeeded and appended row 352. It did not probe host heartbeat; separate direct host probe is recorded in the checkpoint.",
+    "interpretation": "Cloud scan is separate from host heartbeat. Direct host readback subsequently verified the 17:11:39Z tick.",
     "latest_cloud_evidence_row_id": 352,
     "latest_cloud_event_id": "X20261025100024046_CLOUD",
     "terminal_rows": 0,
@@ -68,11 +68,11 @@
     "device": "DESKTOP-86ITNQ4",
     "route": "Remote Desktop Commander",
     "route_online_for_read_only_probe": true,
-    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T100639363257Z.json",
-    "latest_tick_sha256": "9E49EB73B74A8AC3D5437EC2FCC9DFE6D88EA3B4F90EC3142B500F79F82F7BAB",
-    "latest_tick_observed_at_utc": "2026-10-25T10:06:39.363257Z",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T101139985792Z.json",
+    "latest_tick_sha256": "C510E5303E882F7E0542C0C5BA7F6F09B2B926332DEC7530FB76A83D359691AA",
+    "latest_tick_observed_at_utc": "2026-10-25T10:11:39.985792Z",
     "previous_tick_sha256": "19999AC7876C3F4470C0422A56DFC80BD9B59EC77CCEEFCF3DDEE0570E899EE3",
-    "trace_sha256": "1ED820AC2B5F2556C00192EA7911253FBE63FCC5BF577569FD0E91D1EDC53457",
+    "trace_sha256": "7327D2591FA181AB55BF82B3F7998355E728B245386B3A41D28D2297EE1F6663",
     "trace_receipt_readback_ok": true,
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
     "source_bytes": 35389440,
@@ -91,12 +91,12 @@
     "scheduled_task": {
       "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
       "state": "Ready",
-      "last_run_local": "2026-10-25T17:06:33+07:00",
+      "last_run_local": "2026-10-25T17:11:33+07:00",
       "last_result": 0,
-      "next_run_local_at_scheduler_probe": "2026-10-25T17:11:32+07:00",
-      "scheduler_probe_at_local": "2026-10-25T17:08:33.0477112+07:00",
+      "next_run_local": "2026-10-25T17:16:32+07:00",
       "missed_runs": 0,
-      "interpretation": "Next run was still in the future on the host clock at the scheduler probe. Do not compare host due time directly with cloud time."
+      "latest_tick_after_run": true,
+      "interpretation": "The host-local scheduled run completed with result 0 and produced the tick plus RECEIPT_READBACK_OK. Due-time decisions use host-local scheduler time."
     },
     "exact_modual_source_found": false,
     "expected_modual_source_bytes": 89814328,
@@ -110,13 +110,13 @@
     "latest_checkpoint_host_probe_local": "2026-10-25T11:23:45.9126701+07:00",
     "next_run_at_last_probe": "2026-10-25T11:26:32+07:00",
     "fresh_host_probe_this_run": true,
-    "interpretation": "Direct read-only host probe succeeded; cloud heartbeat remains a separate signal.",
+    "interpretation": "Direct read-only host tick advanced after the scheduled run; cloud heartbeat remains separate.",
     "latest_host_probe_local": "2026-10-25T14:38:49.9951195+07:00",
     "live_sensor_stream_status": "EVENT_TIMESTAMP_STALE",
-    "latest_probe_local": "2026-10-25T17:09:59.9961011+07:00",
+    "latest_probe_local": "2026-10-25T17:12:12.4361304+07:00",
     "fresh_host_probe_this_turn": true,
     "latest_probe_source": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
-    "current_host_state": "ONLINE; SENSOR_STREAM_UNVERIFIED; EXACT_MODUAL_SOURCE_NOT_FOUND",
+    "current_host_state": "ONLINE; HOST_TICK_ADVANCED; SENSOR_STREAM_UNVERIFIED; EXACT_MODUAL_SOURCE_NOT_FOUND",
     "runtime_probe_reason": "Desktop Commander device inventory at this turn reports localhost and both DESKTOP-86ITNQ4 registrations Offline; no Windows tick/consumer readback was possible."
   },
   "github_task_ledger": {
@@ -129,11 +129,11 @@
       "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
       "IN_PROGRESS": 3
     },
-    "observed_at_local": "2026-10-25T17:11:52+07:00",
+    "observed_at_local": "2026-10-25T17:12:12+07:00",
     "ledger_blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
     "blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
     "blob_sha_rechecked_in_this_run": true,
-    "parsed_task_counts_last_verified_at_local": "2026-10-25T17:11:52+07:00",
+    "parsed_task_counts_last_verified_at_local": "2026-10-25T17:12:12+07:00",
     "current_default_branch_fetch": {
       "blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
       "fetch_file_content_length": 0,
@@ -149,7 +149,7 @@
         "IN_PROGRESS": 3
       },
       "tasks_closed": 0,
-      "main_head": "b580f11d41f6eb083f6b22fec067b26a9afc468e",
+      "main_head": "2c5eaa033371a4d5ecf31687a6ad02bbcc3fb397",
       "main_head_before_pointer_update": "256fe1c02a106203ad81c591847af0eac73ae5c7",
       "content_length_readback_corrected": true
     },
@@ -170,13 +170,24 @@
     "tasks_closed": 0
   },
   "next": [
-    "Read the next Windows tick only after the next run is due by host-local scheduler time; keep host and cloud timestamps separate.",
+    "Read the next Windows tick only after the next run is due by host-local scheduler time; current scheduler readback says 17:16:32 ICT.",
     "Continue exact-source retrieval for MODUAL by an authorized provider route; do not substitute MODUAL_CARRIER_CANDIDATE_20261025T0753ICT.csv.",
-    "Retry Dropbox only after resolving the connector schema/link selector; no provider data was obtained in this run.",
+    "Retry Dropbox only after resolving the connector schema/link selector; current connector returned no provider data.",
     "Keep PR #36 OPEN/Draft; remeasure against current main before any synchronization, and do not merge or force-push.",
     "Continue cloud-eligible OPEN tasks without closing tasks from scan receipts, checkpoints, or CI success."
   ],
   "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1712ICT.json",
+      "blob_sha": "7964cb72c679c89e4ce4cffe8c5f990cea769079",
+      "commit_sha": "62f6935fbc24776abad8cd5a1af9475a796f150c",
+      "readback_verified": true,
+      "observed_at_local": "2026-10-25T17:12:12+07:00",
+      "task_count": 29,
+      "recovery_rows": 45,
+      "tasks_closed": 0,
+      "note": "Post-schedule host tick/trace receipt and source hash verified; cloud execution 163 and evidence row 352 verified."
+    },
     {
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1711ICT.json",
       "blob_sha": "10e552bc91a98b447402a3174e081492e27e0c86",
@@ -580,17 +591,17 @@
       ],
       "note": "Clean recut uses current main at branch creation. Original PR #34 remains open. No merge or force-push.",
       "latest_compare_readback": {
-        "observed_at_local": "2026-10-25T17:11:52+07:00",
-        "compared_main_head": "b580f11d41f6eb083f6b22fec067b26a9afc468e",
+        "observed_at_local": "2026-10-25T17:12:12+07:00",
+        "compared_main_head": "2c5eaa033371a4d5ecf31687a6ad02bbcc3fb397",
         "status": "diverged",
         "ahead_by": 5,
-        "behind_by": 23,
+        "behind_by": 28,
         "ci_runs_success": [
           40177456089,
           40177456127,
           40177456080
         ],
-        "note": "Current readback; no merge, force-push, or branch sync."
+        "note": "Comparison is pinned to the main head before the current checkpoint write; no merge, force-push, or branch sync."
       },
       "latest_ci_runs": [
         {
@@ -631,11 +642,11 @@
     }
   },
   "latest_provider_status_readback": {
-    "observed_at_utc": "2026-10-25T10:11:52Z",
-    "observed_at_local": "2026-10-25T17:11:52+07:00",
-    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1711ICT.json",
-    "checkpoint_blob_sha": "10e552bc91a98b447402a3174e081492e27e0c86",
-    "provider_checkpoint_commit": "b59f850bd69207066a054bbdd868098549452acc",
+    "observed_at_utc": "2026-10-25T10:12:12Z",
+    "observed_at_local": "2026-10-25T17:12:12+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1712ICT.json",
+    "checkpoint_blob_sha": "7964cb72c679c89e4ce4cffe8c5f990cea769079",
+    "provider_checkpoint_commit": "62f6935fbc24776abad8cd5a1af9475a796f150c",
     "github_task_ledger_blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
     "dropbox_outlook": {
       "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
