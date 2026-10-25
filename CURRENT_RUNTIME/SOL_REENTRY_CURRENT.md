@@ -376,3 +376,28 @@ Next: after 09:31:32 +07, read the next Tick and consumer receipts and re-hash t
 
 ### Resume rule
 Keep `MODUAL_SENSOR_LOGS_ROUTING` OPEN. After the scheduled Tick due `10:56:32 +07`, exact-read the new Tick/consumer receipts and recompute the source SHA-256. Continue finding an authorized persistent sensor client/bridge or supported HWiNFO logging route; do not install a new app or leave the diagnostic app running without a supported authorized path. Continue independent cloud/archive/TESSERACT edges. All tasks remain open; source and provenance preserved.
+
+ 
+## REENTRY — NEXT SCHEDULED TICK READBACK — 2026-10-25 10:57 ICT
+
+**Checkpoint:** [`CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1057ICT.json`](https://github.com/2708halinh-cloud/SOL-LONG-MACH/blob/main/CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1057ICT.json), commit `cda32eed66af159dc1fd091d21abf228df666b1a`, blob SHA `ef5fe87dbddfa63b7e712386db84adac8785c5bd`.
+
+### Latest direct host receipt
+- Fresh scheduled Tick after the 10:56:32+07 boundary: task last run `10:56:34+07`, result `0x0`, next run `11:01:32+07`, missed runs `0`.
+- Tick `WINDOWS_TICK_20261025T035639258725Z.json`, SHA-256 `7954cc3f4f0204fb30e654b9dadb03185981bf1bdb1ea81beb4aa6db7429ad3b`, `live_sensor_reading_confirmed=false`.
+- Consumer `telemetry_buffer_sync_20261025T035636622Z.json`, SHA-256 `fa45e76b80be260330b213dedefff5f1371fdee9690d0e547449fd87423a3315`, status `SOURCE_OBSERVED_READONLY`, exit `0`, source hash verified, live flag false.
+- CSV remains `35,389,440` bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`, unchanged. Dropbox revision `0165dc1e4794ab00000000395cdfd73`, server_modified `2026-10-14T00:20:03Z`.
+- USB ADB `1056285` and SensorService respond, but no allowlisted timestamp advanced in the two-second sample; status `EVENT_TIMESTAMP_STALE`. Wireless `192.168.1.14:5556` is `NOT_LISTED`. Diagnostic app remains stopped; Termux:API is not installed. HWiNFO process is running but CSV has no fresh sample since `2026-10-21T09:20:45.8565035+07`.
+- n8n execution `157` SUCCESS, event `X20261025040023952_CLOUD`, row `335`, state `OPEN_WORK_REMAINS`, 45 recovery tasks/45 pending, `HOST_HEARTBEAT_NOT_PROBED`.
+
+### Independent branches
+- Archive PR #34 at comparison head `ee5992e5aeefa124be7ecc6de0310d3d8f8042fe`: 1 ahead/77 behind; runs `40145523744`, `40145523727`, `40145523754` succeeded. PR remains OPEN/Draft and unmerged.
+- MODUAL PR #35 at the same comparison snapshot: 9 ahead/61 behind; runs `40154600501` and `40154600506` succeeded. PR remains OPEN/Draft.
+- TESSERACT PR #6 issuer public key and runner assignment remain unverified; do not rerun CI absent a verified change.
+
+### Current resume pointer and ledger
+- `MODUAL_PARAMETER_CURRENT.json` exact readback SHA: `bcc13d1df83297892f92b6df99d9491d93732c81`, commit `5ad5068f49fd66813e081a0c36abd8f12202ebbb`.
+- `OPEN_TASKS_CURRENT.json` exact readback SHA: `3be209b7c111cb0eec7ab96a7fe1d65773e1e63d`, commit `cad8d36ee870eb5a57a61d85e8a677a1c8cef341`.
+- `TASK_RESUME_POINTER.json` exact readback SHA: `5cb196097dfb6e4a01b3cd0260ee037085d6889b`, commit `e410e6af3640a06dc78b82a500ae1bd577447598`.
+
+**Resume:** After `11:01:32+07`, exact-read the next scheduled Tick/consumer receipts and direct source hash. Continue finding a supported authorized persistent sensor client/bridge; do not install a new Android package or leave the diagnostic app running without an authorized route. Keep all tasks OPEN; no raw sensor data, credentials, or source bytes were written to GitHub.
