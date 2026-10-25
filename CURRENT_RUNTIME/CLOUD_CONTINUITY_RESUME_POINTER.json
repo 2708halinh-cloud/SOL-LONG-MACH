@@ -1,24 +1,25 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.7",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.8",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T19:34:03Z",
-  "updated_at_local": "2026-10-26T02:34:03+07:00",
-  "timestamp_basis": "Pointer timestamp follows the GitHub commit timestamp for the preceding checkpoint update. GitHub/n8n provider clocks are several minutes ahead of the direct host clock; latest host sample remains 2026-10-26T02:27:01.3900325+07:00. Never infer host heartbeat from cloud heartbeat or provider createdAt.",
+  "updated_at_utc": "2026-10-25T19:38:42Z",
+  "updated_at_local": "2026-10-26T02:38:42+07:00",
+  "timestamp_basis": "updated_at follows the GitHub commit timestamp. Host sample time remains separately sourced at 2026-10-26T02:31:46.4664178+07:00. Elapsed time between provider and host operations is not assumed to be zero; no provider-host clock offset is established. The unsupported offset inference in the 02:27 checkpoint/pointer is corrected by continuity evidence row 404 and the 02:31 checkpoint.",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0231ICT.json",
+    "blob_sha": "0004e0d1fb191646f2e12e37f0e0dc4d1264c532",
+    "commit_sha": "92cd013ffaf4d380b2166e5d74b3722d1e724fe6",
+    "readback_verified": true,
+    "host_evidence_row_id": 405,
+    "host_event_id": "X20261025193146468_HOST_READBACK",
+    "latest_integrity_correction_row_id": 404,
+    "latest_integrity_correction_event_id": "X20261025193015411_CLOCK_BASIS_CORRECTION_ROW402"
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0227ICT.json",
     "blob_sha": "f7367ca87048b7fc6604afaf541aa0c4f366c1c6",
     "commit_sha": "0e7c6f909aa55a8a2279c3ec1ff6b29927107872",
     "readback_verified": true,
-    "host_evidence_row_id": 403,
-    "host_event_id": "X20261025192701392_HOST_READBACK",
-    "latest_integrity_correction_row_id": 402,
-    "latest_integrity_correction_event_id": "X20261025192519000_CLOCK_BASIS_CORRECTION_ROW401"
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0203ICT.json",
-    "blob_sha": "d6e83c663afa47437c62cc00d5cbfa170780bbf4",
-    "commit_sha": "b1453331e9fad1af714be2c0ade1631ee32a64d3",
-    "readback_verified": true
+    "timestamp_basis_corrected_by_evidence_row_id": 404
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -26,9 +27,9 @@
     "latest_execution_id": "173",
     "latest_execution_status": "success",
     "latest_cloud_evidence_row_id": 399,
-    "latest_host_evidence_row_id": 403,
+    "latest_host_evidence_row_id": 405,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 403,
+    "evidence_table_rows": 405,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
     "recovery_rows": 45,
@@ -42,12 +43,12 @@
     "device": "DESKTOP-86ITNQ4",
     "device_id": "59f03001-c732-403e-b80c-b4191266809c",
     "route_status": "ONLINE_BY_DIRECT_READONLY_READBACK",
-    "host_clock_at_readback": "2026-10-26T02:27:01.3900325+07:00",
-    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T192639772265Z.json",
-    "latest_tick_sha256": "ea0d167d74a833dc813ea47ee9a86ae9631dcd69010a486c29ce969495574261",
-    "consumer_receipt_sha256": "e7cbb9928da57bfdf1db3c2bdb79fa8883e8c00e7566886b9f01b48263e65174",
+    "host_clock_at_readback": "2026-10-26T02:31:46.4664178+07:00",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T193139753731Z.json",
+    "latest_tick_sha256": "08ab62330fee166b0c83b5bf47faf67eb669c5c27a76262f0b90daece6c542b8",
+    "consumer_receipt_sha256": "bd7d78b2e97bcac8a07ee7b35e98c90678fba52312b70837ca6785f3048cd1fa",
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-    "next_run_local_host_clock": "2026-10-26T02:31:32+07:00",
+    "next_run_local_host_clock": "2026-10-26T02:36:32+07:00",
     "missed_runs": 0,
     "sensor_stream": "EVENT_TIMESTAMP_STALE",
     "live_sensor_reading_confirmed": false
@@ -61,6 +62,7 @@
     "recovery_row_2_status_stale": true,
     "recovery_row_15_status": "SOURCE_BYTES_VERIFIED_FUTURE_SYNC_OPEN",
     "exact_modual_source_verified": false,
+    "exact_modual_source_path": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
     "expected_modual_bytes": 89814328,
     "expected_modual_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3"
   },
@@ -75,10 +77,10 @@
     "pr36_draft": true,
     "pr36_merged": false,
     "pr36_head_sha": "e414dfe673265447cd216a4535536e0a3099c90d",
-    "compare_main_head_at_readback": "b1453331e9fad1af714be2c0ade1631ee32a64d3",
+    "compare_main_head_at_readback": "800538c3d411187a4d4196c681fe9389245c0060",
     "pr36_compare_status_at_readback": "diverged",
     "pr36_ahead_by_at_readback": 10,
-    "pr36_behind_by_at_readback": 155,
+    "pr36_behind_by_at_readback": 157,
     "pr36_merge_or_force_push": false
   },
   "continuation_guards": {
@@ -95,11 +97,11 @@
     "tasks_closed": 0
   },
   "next": [
-    "Re-probe after host-clock 2026-10-26T02:31:32+07:00 and compare the next tick, consumer receipt, source SHA, and scheduler result.",
+    "Re-probe after host-clock 2026-10-26T02:36:32+07:00; compare next tick, consumer receipt, source SHA and scheduler result.",
     "Keep sensor stream UNVERIFIED until event timestamps advance; do not export raw sensor rows.",
-    "Keep exact MODUAL source unresolved; neither candidate matches expected size and SHA-256.",
-    "Keep SV-20261020-02 OPEN: raw ZIP SHA is verified, but third Project carrier access and future-sync/provenance remain unresolved; recovery row 2 still has stale pre-verification fields.",
+    "Keep exact MODUAL source unresolved; both candidates mismatch expected size and SHA-256.",
+    "Keep SV-20261020-02 OPEN: raw ZIP SHA is verified, but third Project carrier access and future-sync/provenance remain unresolved; recovery row 2 still has stale fields.",
     "Read OPEN_TASKS_CURRENT.json through a content-returning route before recomputing current GitHub task count.",
-    "Keep all 45 recovery rows nonterminal; no Google Drive writes, process termination, cache/Meta.db deletion, merge, or force-push."
+    "Keep all 45 recovery rows nonterminal; no Google Drive writes, process termination, cache/Meta.db deletion, merge or force-push."
   ]
 }
