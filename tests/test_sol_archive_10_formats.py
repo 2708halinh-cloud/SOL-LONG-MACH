@@ -68,6 +68,17 @@ class ReadOnlyExternalAdapterTests(unittest.TestCase):
         self.assertEqual(result["adapter"], "lrzip")
         self.assert_read_only_command(run, ["/usr/bin/lrzip", "-t"], path)
 
+    def test_capabilities_cover_all_supported_external_adapter_names(self):
+        with patch.object(mod.shutil, "which", side_effect=lambda name: "/usr/bin/unrar" if name == "unrar" else None):
+            self.assertTrue(mod.adapter_available("RAR"))
+            self.assertFalse(mod.adapter_available("7Z"))
+            self.assertFalse(mod.adapter_available("LR"))
+        with patch.object(mod.shutil, "which", side_effect=lambda name: "/usr/bin/7za" if name == "7za" else None):
+            self.assertTrue(mod.adapter_available("7Z"))
+            self.assertTrue(mod.adapter_available("RAR"))
+        with patch.object(mod.shutil, "which", side_effect=lambda name: "/usr/bin/rar" if name == "rar" else None):
+            self.assertTrue(mod.adapter_available("RAR"))
+
     def test_missing_adapter_is_explicit_and_does_not_execute(self):
         path = self.archive("fixture.7z", bytes.fromhex("377abcaf271c"))
         with patch.object(mod.shutil, "which", return_value=None), \
