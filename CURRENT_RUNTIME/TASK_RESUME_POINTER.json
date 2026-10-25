@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "After the scheduled Tick due 2026-10-25T12:31:32+07, exact-read the newest Tick/consumer receipts and direct canonical CSV SHA. Latest device pair at 12:26 reports EVENT_TIMESTAMP_STALE; no existing persistent sensor client was verified and Termux:API is absent. Archive PR #34 compare snapshot against main head b2d9e571272fdef5bf72d36242125aa53c607359 is diverged 1 ahead/98 behind, with three successful workflows and an unexpired hash-bound artifact; no merge/force-push. TESSERACT PR #6 remains OPEN/Draft; issuer key and runner assignment unverified; no CI rerun absent a verified runner/config change. n8n row 337 remains OPEN_WORK_REMAINS with host heartbeat unprobed. Keep all unfinished tasks OPEN.",
+  "next": "After the scheduled Tick due 2026-10-25T12:36:32+07, exact-read the newest Tick and consumer receipts and direct canonical CSV SHA. Latest pair at 12:31 verified source hash but reports EVENT_TIMESTAMP_STALE for four USB sensor timestamps; wireless target 192.168.1.14:5556 remains NOT_LISTED. No existing persistent sensor client was verified and Termux:API is absent; continue supported client/bridge investigation without installing or launching an unverified package. Archive PR #34 remains OPEN/Draft, 1 ahead/98 behind at recorded compare base b2d9e571272fdef5bf72d36242125aa53c607359; three workflows and hash-bound artifact succeeded, no merge/force-push. TESSERACT PR #6 remains OPEN/Draft with issuer key and runner assignment unverified; no CI rerun without verified runner/config change. n8n row 337 remains OPEN_WORK_REMAINS and host heartbeat unprobed. Keep all unfinished tasks OPEN.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-25T12:30:03.0153174+07:00",
+  "updated_at": "2026-10-25T12:32:41.1540650+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -13351,17 +13351,17 @@
     }
   ],
   "latest_provider_readback": {
-    "id": "PROVIDER_READBACK_20261025T1230ICT",
-    "observed_at": "2026-10-25T12:30:03.0153174+07:00",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1230ICT.json",
-    "checkpoint_blob_sha": "050365e1026d9513964980c987295b5b5fdf72f3",
-    "checkpoint_commit": "37b4d56ecb9951dbc94fd80a3ec60365f3a910d4",
-    "modual_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1227ICT.json",
+    "id": "PROVIDER_READBACK_20261025T1232ICT",
+    "observed_at": "2026-10-25T12:32:41.1540650+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1232ICT.json",
+    "checkpoint_blob_sha": "06172438895dea77d100c5dc8a249d1a1351fa9a",
+    "checkpoint_commit": "7b41dc3dc5b2a9d13f02b491a824e9b6c765db2b",
     "modual_status": "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED",
-    "windows_tick_receipt_sha256": "07971b0353416440187997d48d3ddea9fd2386ef28b10798ddc5f00edcb1e6cd",
-    "consumer_receipt_sha256": "5fa2c6979f5980bd2170cc592c25d1072aaf6c6737b02fbfcde2ba75243d9240",
+    "windows_tick_receipt_sha256": "f1b0b7563003eb8dcc8fcd4c63622ee604259942adc78ac7bfd45b05e70f3523",
+    "consumer_receipt_sha256": "055f7713be47c080ecce32568ef07bf459cfbad71ab566b0c6e7858e581617d3",
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
     "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "next_tick_local": "2026-10-25T12:36:32+07:00",
     "persistent_sensor_client_verified": false,
     "termux_api_installed": false,
     "archive_pr34_head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
@@ -15539,5 +15539,41 @@
     "issuer_public_key_verified": false,
     "runner_assignment_verified": false,
     "rerun": false
+  },
+  "latest_runtime_observation_20261025T1232ICT": {
+    "observed_at": "2026-10-25T12:32:41.1540650+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1232ICT.json",
+    "checkpoint_blob_sha": "06172438895dea77d100c5dc8a249d1a1351fa9a",
+    "checkpoint_commit": "7b41dc3dc5b2a9d13f02b491a824e9b6c765db2b",
+    "windows_tick": {
+      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T053138280553Z.json",
+      "sha256": "f1b0b7563003eb8dcc8fcd4c63622ee604259942adc78ac7bfd45b05e70f3523",
+      "task_result": "0x0",
+      "last_run_local": "2026-10-25T12:31:33+07:00",
+      "next_run_local": "2026-10-25T12:36:32+07:00",
+      "missed_runs": 0,
+      "live_sensor_reading_confirmed": false,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+    },
+    "data_consumer": {
+      "receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T053135599Z.json",
+      "sha256": "055f7713be47c080ecce32568ef07bf459cfbad71ab566b0c6e7858e581617d3",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_content_hash_verified": true,
+      "live_sensor_reading_confirmed": false,
+      "raw_rows_emitted": false,
+      "source_file_written": false
+    },
+    "device_probe": {
+      "usb_target": "1056285",
+      "sensorservice_probe_succeeded": true,
+      "sensor_event_timestamp_sensor_count": 4,
+      "sensor_event_sensors_advanced": [],
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "wireless_target": "192.168.1.14:5556",
+      "wireless_state": "NOT_LISTED"
+    },
+    "result": "TICK_AND_CONSUMER_READBACK_OK; SOURCE_UNCHANGED; SENSOR_TIMESTAMP_STALE; ALL_OPEN_RETAINED"
   }
 }
