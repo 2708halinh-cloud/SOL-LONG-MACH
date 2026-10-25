@@ -1,21 +1,21 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T12:28:10.033Z",
-  "updated_at_local": "2026-10-25T19:28:10.033+07:00",
+  "updated_at_utc": "2026-10-25T12:29:49.730Z",
+  "updated_at_local": "2026-10-25T19:29:49.730+07:00",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1929ICT.json",
+    "blob_sha": "505e036406f2f990504448a5e50841beb04d6f7f",
+    "commit_sha": "ded8d43ec2eeab3696249abd1f8770ddc765665f",
+    "readback_verified": true,
+    "note": "n8n execution 165/row 361; host tick row 365; Library ZIP raw-hash row 364; exact-name MODUAL candidate row 366 has size mismatch and no authorized raw-byte path. All tasks remain nonterminal."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1928ICT.json",
     "blob_sha": "84d2b9cebcb7ea415662c548f4369cf9caf828de",
     "commit_sha": "48e4ef0614d234997962056149e80212bb56fd5c",
     "readback_verified": true,
-    "note": "Execution 165/row 361; latest host tick/trace/consumer receipt row 365; two Library raw ZIP copies hash and archive integrity verified row 364. Sensor stream stale; exact MODUAL source absent; Dropbox original bytes unread."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1925ICT.json",
-    "blob_sha": "e3925dab70c6d79afc8ca5cbabafa01ae02a5332",
-    "commit_sha": "8416b04fba74166bda6b7b4908d3e11e0265f83e",
-    "readback_verified": true,
-    "note": "Two Library raw ZIP copies independently matched expected SHA-256; ZIP CRC and all 15 listed checksums passed."
+    "note": "Post-schedule host tick and consumer receipt read back; sensor stream stale."
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -27,7 +27,7 @@
     "latest_execution_started_at_utc": "2026-10-25T12:00:22.077Z",
     "latest_execution_stopped_at_utc": "2026-10-25T12:00:24.238Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 365,
+    "evidence_table_rows": 366,
     "latest_cloud_evidence_row_id": 361,
     "latest_cloud_event_id": "X20261025120024048_CLOUD",
     "latest_cloud_row_exact_readback": true,
@@ -37,6 +37,9 @@
     "latest_library_zip_evidence_row_id": 364,
     "latest_library_zip_event_id": "X2026102512_LIBRARY_CARRIER_ZIP_RAW_HASH_READBACK",
     "latest_library_zip_row_exact_readback": true,
+    "latest_source_evidence_row_id": 366,
+    "latest_source_event_id": "X20261025_LIBRARY_MODUAL_CANDIDATE_METADATA_MISMATCH",
+    "latest_source_row_exact_readback": true,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
     "recovery_rows": 45,
@@ -46,7 +49,7 @@
     "direct_host_probe_this_turn": true,
     "latest_execution_exact_readback": true,
     "latest_rows_exact_readback": true,
-    "interpretation": "Execution 165 is cloud-only. Host tick evidence row 365 and raw Library ZIP evidence row 364 are separate direct observations."
+    "interpretation": "Execution 165 is cloud-only. Host tick, raw Library ZIP hashes, and MODUAL candidate metadata are separate readbacks; exact source remains unverified."
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
@@ -126,7 +129,7 @@
       "json_parse": "NOT_AVAILABLE",
       "task_count_last_verified": 29,
       "tasks_closed": 0,
-      "main_head_before_pointer_update": "48e4ef0614d234997962056149e80212bb56fd5c"
+      "main_head_before_pointer_update": "ded8d43ec2eeab3696249abd1f8770ddc765665f"
     },
     "task_count_recomputed_this_turn": false,
     "tasks_closed_in_this_turn": 0
@@ -147,12 +150,24 @@
   },
   "next": [
     "Read the next Windows tick only after it is due by host-local scheduler time; last direct probe at 19:21:50 host time showed next run 19:26:32 host time still future.",
-    "Keep MODUAL recovery OPEN until exact 89814328-byte source and SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 are found and verified.",
-    "Keep SV-20261020-02 OPEN: two Library copies pass raw SHA-256 and ZIP checks, but Dropbox original bytes remain unread.",
+    "Keep MODUAL recovery OPEN: the exact-name Library candidate is 87430862 bytes, not 89814328; raw-byte materialization was denied, so do not substitute it.",
+    "Keep SV-20261020-02 OPEN: two Library ZIP copies match the expected SHA-256 and pass archive checks, but Dropbox original bytes remain unread.",
     "Keep PR #36 OPEN/Draft; current head is 5 ahead and 65 behind main; do not merge or force-push.",
     "Keep the last verified 29 GitHub tasks and all 45 recovery rows nonterminal; current oversized task-ledger content was not reparsed this turn."
   ],
   "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1929ICT.json",
+      "blob_sha": "505e036406f2f990504448a5e50841beb04d6f7f",
+      "commit_sha": "ded8d43ec2eeab3696249abd1f8770ddc765665f",
+      "readback_verified": true,
+      "observed_at_local": "2026-10-25T19:29:49.730+07:00",
+      "task_count": 29,
+      "recovery_rows": 45,
+      "evidence_rows": 366,
+      "tasks_closed": 0,
+      "note": "Exact-name MODUAL Library candidate found but size mismatches and raw-byte materialization was denied; candidate not substituted. Host tick row 365 and Library ZIP verification row 364 retained."
+    },
     {
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1928ICT.json",
       "blob_sha": "84d2b9cebcb7ea415662c548f4369cf9caf828de",
@@ -1324,5 +1339,35 @@
     "dropbox_original_sha256_recomputed": false,
     "task_closed": false,
     "interpretation": "Two Library raw copies independently match the manifest SHA-256 and pass ZIP integrity/checksum/path checks. This does not prove the Dropbox provider object has the same bytes; keep SV-20261020-02 OPEN."
+  },
+  "source_recovery": {
+    "expected_modual": {
+      "bytes": 89814328,
+      "sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+      "found": false
+    },
+    "historical_dropbox_exact_name_candidate": {
+      "file_id": "id:ybBRszo1ipAAAAAAAAAAZw",
+      "revision": "0165daf13144cbe0000000395e8ff53",
+      "bytes": 110480037,
+      "manifest_sha256": "a1b77dbdeaf71ab0b833055ad7e82ed8e9a4beaff36b1d5b4c52b0c76455cf2d",
+      "matches_expected": false
+    },
+    "carrier_variant_bytes": 2647298,
+    "candidate_substitution": false,
+    "dropbox_connector_blocker": "Dropbox search/download-link calls fail schema validation because account link_id is outside the search oneOf schema; no search result or single-use download URL used.",
+    "library_exact_name_candidate": {
+      "file_id": "file_00000000ebc481f8acacc69851deb4e0",
+      "name": "_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+      "metadata_size_bytes": 87430862,
+      "expected_bytes": 89814328,
+      "size_delta_bytes": -2383466,
+      "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+      "raw_byte_materialization": "DENIED_NO_AUTHORIZED_PATH",
+      "candidate_sha256": "NOT_COMPUTED",
+      "substitution": false,
+      "exact_source_verified": false
+    },
+    "interpretation": "A Library object with the exact filename exists, but metadata size is 87,430,862 bytes, 2,383,466 bytes below the required 89,814,328 bytes. The Files connector denied raw-byte materialization; no hash was computed and the candidate was not substituted."
   }
 }
