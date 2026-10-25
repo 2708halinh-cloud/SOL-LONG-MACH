@@ -346,3 +346,33 @@ Checkpoint: [PROVIDER_READBACK_20261025T0926ICT.json](PROVIDER_READBACK_20261025
 - n8n execution 155 / row 326 was read back as `OPEN_WORK_REMAINS`, 45 pending, `HOST_HEARTBEAT_NOT_PROBED`. Ledger remains 29 tasks and zero closed.
 
 Next: after 09:31:32 +07, read the next Tick and consumer receipts and re-hash the CSV. Confirm a live stream only if an allowlisted event timestamp advances. Continue exact provider resolution of the original archive exports and MAP_NGUON IDs; keep all unfinished tasks open.
+
+ 
+## REENTRY — DIRECT WINDOWS TICK/CONSUMER + INDEPENDENT PROVIDERS — 2026-10-25 10:54 ICT
+
+**Checkpoint:** [`CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1054ICT.json`](https://github.com/2708halinh-cloud/SOL-LONG-MACH/blob/main/CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1054ICT.json), commit `88de639e968fae8746c60adfbd597447a644251d`, blob SHA `bb451df98ea652c6c8653b87da3ec8e2ee330ac8`.
+
+### Fresh source reads
+- `AGENTS.md`: `f18f9743de1e21d13bad47770f928ec85e79bd95`
+- This file before this append: `959af074f6af85347ac77e03fd6617cfeede2431`
+- `TASK_RESUME_POINTER.json` after provenance reconciliation: `6a9df6bd2b2ee637054db4c3cd9e429bb6a7eb36`
+- `OPEN_TASKS_CURRENT.json`: `d2385782f892de1fd828f684245ad98c993c4a16`
+- `MODUAL_PARAMETER_CURRENT.json`: `9b17fa82921609bccdbc3230f2e45b98db4f2392`
+
+### MODUAL — direct host and exact-target readback
+- Remote Desktop Commander reconnected to `DESKTOP-86ITNQ4`; Scheduled Task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M` is Ready/enabled, last run `10:51:34 +07`, result `0x0`, next `10:56:32 +07`, missed runs `0`.
+- Scheduled Tick `WINDOWS_TICK_20261025T035139245432Z.json`, SHA-256 `4070f77a8abe656fa5186cecc76d730383d92d5cf432d79bde06b2ea3ae582e68`, reported `live_sensor_reading_confirmed=false`.
+- Manually invoked the existing metadata-only wrapper `D:\\SENSOR_LOGS\\run_telemetry_buffer_sync.ps1`; exit `0`, receipt readback succeeded. Tick `WINDOWS_TICK_20261025T035308854412Z.json`, SHA-256 `34aa85043b29b441945007106348bee0cb3524d22bbcd477c4fb1d729075d30a`; consumer receipt `telemetry_buffer_sync_20261025T035306092Z.json`, SHA-256 `7ad93839220a7b0894510f15fd12c07aca4ee0b41bc8e4300483a8922aaded23`. Consumer status `SOURCE_OBSERVED_READONLY`, source hash verified, exit `0`, live flag false.
+- Direct local source remains `35,389,440` bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; Dropbox Outlook revision remains `0165dc1e4794ab00000000395cdfd73`, server_modified `2026-10-14T00:20:03Z`.
+- USB ADB target `1056285` is present and SensorService responds. Four allowlisted event timestamp histories were observed, but none advanced over the two-second sample (`EVENT_TIMESTAMP_STALE`). Wireless target `192.168.1.14:5556` is `NOT_LISTED`. `com.exatools.sensors` is installed but stopped; Termux is installed, Termux:API is absent. No diagnostic app was left running.
+- HWiNFO64 process PID `16596` is running, but `HWiNFO_WINDOWS.CSV` remains `39,922,785` bytes, SHA-256 `b890b5919089a7a1da32f3f15d6262641b08b1198fb2af939ad9600ab823be6d`, last write `2026-10-21T09:20:45.8565035+07`; no fresh sample verified.
+- No source write, synthetic rows, raw sensor output, cloud export, or GitHub export occurred. Result: `CONSUMER_AND_TICK_PROBE_PATH_VERIFIED; CONTINUOUS_SENSOR_STREAM_NOT_VERIFIED`.
+
+### Independent branches and provider
+- n8n `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN`, execution `156`: SUCCESS; event `X20261025030023922_CLOUD`, row `332`, `OPEN_WORK_REMAINS`, 45 recovery tasks and 45 pending; `HOST_HEARTBEAT_NOT_PROBED`.
+- Archive PR [#34](https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/34) remains OPEN/Draft, head `a90f85ae1e0d5a5129caa1b472acac4f4697a71c`, current main at compare `c26e42e4ee0f8925f696709ad611f5c3433eab74`, 1 ahead/71 behind; runs `40145523744`, `40145523727`, `40145523754` succeeded. Do not merge or force-push while divergent.
+- MODUAL PR [#35](https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/35) remains OPEN/Draft, head `f99d96e39f62245d23ad728daac2c2006061e393`, 9 ahead/55 behind; runs `40154600501` and `40154600506` succeeded. No merge.
+- TESSERACT Desktop PR [#6](https://github.com/2708halinh-cloud/x-time-web/pull/6) remains OPEN/Draft; issuer public key and runner assignment remain unverified. No CI rerun without a verified runner/issuer change.
+
+### Resume rule
+Keep `MODUAL_SENSOR_LOGS_ROUTING` OPEN. After the scheduled Tick due `10:56:32 +07`, exact-read the new Tick/consumer receipts and recompute the source SHA-256. Continue finding an authorized persistent sensor client/bridge or supported HWiNFO logging route; do not install a new app or leave the diagnostic app running without a supported authorized path. Continue independent cloud/archive/TESSERACT edges. All tasks remain open; source and provenance preserved.
