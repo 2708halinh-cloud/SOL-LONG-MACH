@@ -1,0 +1,97 @@
+{
+  "schema": "SOL_TESSERACT_ART_WSL_CARRIER_READBACK/1.0",
+  "checkpoint_id": "TESSERACT_ART_AND_WSL_CARRIER_READBACK_20261025T1250ICT",
+  "observed_at_local": "2026-10-25T12:50:58+07:00",
+  "prior_tesseract_carrier_discovery": {
+    "path": "CURRENT_RUNTIME/TESSERACT_ART_CARRIER_DISCOVERY_20261025T1250ICT.json",
+    "blob_sha": "d63b163e941e4ede8ece81acaecc3c730823dd2b",
+    "commit_sha": "ea53a73029c06f68a37ec178f47da955481a4d6e",
+    "status": "READBACK_VERIFIED"
+  },
+  "task": {
+    "id": "TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+    "status": "IN_PROGRESS",
+    "task_closed": false,
+    "ledger_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "ledger_blob_sha": "7289fcd8b7659462a14526049cae8e0d3528e8d9",
+    "objective_unchanged": true
+  },
+  "wsl_ram_npu": {
+    "task": "TASK_CONVERT_RAM_CPU_GPU_NPU_20261020",
+    "actions_A_to_E": "PENDING",
+    "action_executed_this_run": false,
+    "new_read_only_probe_carrier": {
+      "name": "SOL_WSL_DAU_DINH_READ_ONLY_20261010.ps1",
+      "library_path": "/LONG_MACH_SOL_HAU_THIEN_TINH__14ZaZgnw0B1C7qDFKghEuhOBj9SvqVQCq/SOL_GGDV/WSL_DAU_DINH_20261010/SOL_WSL_DAU_DINH_READ_ONLY_20261010.ps1",
+      "file_id": "file_000000002518820689b4ff5b27dab950",
+      "library_file_id": "libfile_78119eff028481918aa07fd5ee1619ff",
+      "listed_size_bytes": 2217,
+      "text_readback_lines": 58,
+      "static_scope": [
+        "Checks the authorized Windows wsl.exe path and whether it exists.",
+        "Lists WSL distributions and checks a specific Ubuntu worktree path.",
+        "Reads worktree Git HEAD and dirty state if the worktree exists.",
+        "Does not read, emit, or modify authentication material."
+      ],
+      "execution_state": "NOT_EXECUTED_NO_AUTHORIZED_HOST_CONNECTOR",
+      "classification": "READ_ONLY_PROBE_SCRIPT_CARRIER_NOT_A_RUNTIME_RECEIPT"
+    },
+    "same_name_copy": {
+      "name": "SOL_WSL_DAU_DINH_READ_ONLY_20261010.ps1",
+      "library_path": "/LONG_MACH_SOL_HAU_THIEN_TINH__14ZaZgnw0B1C7qDFKghEuhOBj9SvqVQCq/THU HOI NGUON SOL/SOL_WSL_DAU_DINH_READ_ONLY_20261010.ps1",
+      "file_id": "file_00000000bbac82099f8cb4ca153bb047",
+      "library_file_id": "libfile_ce61ca0fb3488191a824949fb2d99789",
+      "listed_size_bytes": 2217,
+      "text_readback": "NO_READABLE_CONTENT",
+      "raw_byte_hash": "UNKNOWN",
+      "duplicate_status": "UNVERIFIED_EQUAL_SIZE_IS_NOT_IDENTITY"
+    },
+    "related_wsl_archives": [
+      {
+        "name": "GGDV_WSL_LOCAL_PERSISTENT_PACK.zip",
+        "file_id": "file_0000000069008230983ad85953b98a66",
+        "library_file_id": "libfile_0f6c63694f408191a99e3ddfc1d92ea7",
+        "listed_size_bytes": 8137,
+        "raw_byte_materialization": "DENIED_NO_AUTHORIZED_RAW_BYTE_PATH"
+      },
+      {
+        "name": "TESSERACT_OS_Carrier_WSL_iOS_20261009.zip",
+        "file_id": "file_00000000133c82099c348e914c371101",
+        "library_file_id": "libfile_3258128d45a88191976f1425291a5b00",
+        "listed_size_bytes": 15661,
+        "raw_byte_materialization": "DENIED_NO_AUTHORIZED_RAW_BYTE_PATH"
+      },
+      {
+        "name": "TESSERACT_OS_WSL_DEPLOY.zip",
+        "file_id": "file_000000002db0820e95ebfbcd03dc1073",
+        "library_file_id": "libfile_17784f001504819198d71b7be0c4968a",
+        "listed_size_bytes": 46476,
+        "raw_byte_materialization": "DENIED_NO_AUTHORIZED_RAW_BYTE_PATH"
+      }
+    ],
+    "result": "NEW_READ_ONLY_PROBE_LOCATOR_FOUND; WSL_RUNTIME_AND_RAM_GPU_NPU_CONVERSION_UNVERIFIED",
+    "next": [
+      "When an authorized host connector is available, execute the read-only probe on the exact Windows host and read back its receipt.",
+      "Use fresh host/WSL observations to verify actual worktree, available compute devices and route; do not infer NPU access from package names or config files.",
+      "Keep conversion actions A-E individually pending until each has its own action, source-bound receipt and exact-target readback."
+    ]
+  },
+  "tesseract_art": {
+    "status": "IN_PROGRESS",
+    "exact_original_source_identity_verified": false,
+    "real_browser_runtime_verified": false,
+    "npu_or_task_event_dispatch_verified": false,
+    "latest_carrier_discovery": "CURRENT_RUNTIME/TESSERACT_ART_CARRIER_DISCOVERY_20261025T1250ICT.json",
+    "new_candidate_carriers_count": 8,
+    "note": "Eight related TESSERACT candidate bundles are metadata-only; raw materialization attempts were denied. They are not accepted as exact source-bound carriers."
+  },
+  "integrity": {
+    "source_bytes_modified": false,
+    "scripts_executed": false,
+    "archives_extracted": false,
+    "duplicate_assumed_from_size": false,
+    "secrets_or_private_chat_written": false,
+    "task_status_changed": false,
+    "tasks_closed": 0
+  }
+}
