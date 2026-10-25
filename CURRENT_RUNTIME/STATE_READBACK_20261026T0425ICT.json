@@ -1,0 +1,98 @@
+{
+  "schema": "SOL_STATE_EXACT_TARGET_READBACK/1.0",
+  "observed_at": "2026-10-26T04:25:00+07:00",
+  "main_head_before_state_readback": "8aaed025d4ea2a8394845f3933285b5b13f3cc25",
+  "state_update_commit": "8aaed025d4ea2a8394845f3933285b5b13f3cc25",
+  "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0424ICT.json",
+  "checkpoint_blob_sha": "6f0f1d60b511a0e45bce5f50d6f68b369c755430",
+  "exact_targets": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "readback": "MATCH"
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "f75ecc0001687452c9a2b6c65fd0d13000ddc0d7",
+      "readback": "MATCH",
+      "observation_appended": true
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "c67f2db6f0c961f9c88b83447741731fbabcde39",
+      "readback": "MATCH",
+      "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0424ICT.json",
+      "checkpoint_commit": "889e7ad12d04155fe95d24d489584a0699dddf97",
+      "provider_readback_history_length": 120
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "2d21f57c26d52e3818e8811a433ad623569a8bf2",
+      "readback": "MATCH",
+      "task_count": 29,
+      "verified_action_events": 182,
+      "provider_observation_history": 182,
+      "provider_observations": 182,
+      "integrity_corrections": 7,
+      "tasks_closed": 0
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "blob_sha": "7e25467b804c2fc8a27d60a56644fbdc84004e56",
+      "readback": "MATCH",
+      "observed_at": "2026-10-26T04:24:53.6926035+07:00",
+      "tick_sha256": "247715f710ecfa5303f68f630e41c1e89f67556fcc60ab63d59fd833b78983b2",
+      "consumer_sha256": "41c649a04d1b4b24bcc5866755a2416ce090c3e39a8234a7ce8f8d606de1fc51",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "exact_bulk_target_exists": false,
+      "bulk_search_pid": 48064,
+      "bulk_search_status": "RUNNING"
+    },
+    "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0424ICT.json": {
+      "blob_sha": "6f0f1d60b511a0e45bce5f50d6f68b369c755430",
+      "readback": "MATCH",
+      "tasks_closed": 0
+    }
+  },
+  "providers": {
+    "windows_host_route": "ONLINE_DIRECT_READ_VERIFIED",
+    "scheduled_tick": "SUCCESS_0x0_MISSED_RUNS_0",
+    "consumer": "SOURCE_OBSERVED_READONLY_HASH_MATCH",
+    "live_sensor_stream": "EVENT_TIMESTAMP_STALE",
+    "exact_bulk_target": "UNRESOLVED_SEARCH_PID_48064_RUNNING_NONEXHAUSTIVE",
+    "braid": {
+      "exit_code": 0,
+      "six_actions": 9,
+      "plural_actions": 5,
+      "source_unchanged": true,
+      "mutation_executed": false,
+      "cloud_host_wiring": "NOT_VERIFIED"
+    },
+    "n8n": {
+      "execution_id": "175",
+      "status": "success",
+      "latest_cloud_row": 413,
+      "latest_host_evidence_row": 412,
+      "pending_recovery_rows": 45,
+      "host_heartbeat_probed": false
+    },
+    "archive_pr36": {
+      "state": "OPEN/Draft",
+      "checks_all_success": true,
+      "ahead_by": 10,
+      "behind_by": 191,
+      "merged": false
+    },
+    "tesseract_pr6": {
+      "state": "OPEN/Draft",
+      "jobs_failed_before_steps": true,
+      "issuer_public_key_verified": false,
+      "runner_assignment_verified": false,
+      "rerun_performed": false
+    }
+  },
+  "invariants": {
+    "tasks_closed": 0,
+    "raw_sensor_values_exported": false,
+    "credentials_written": false,
+    "source_moved_or_deleted": false,
+    "carrier_log_rotation_or_deletion": false,
+    "history_preserved": true
+  },
+  "result": "CANONICAL_STATE_READBACK_MATCH; ALL_OPEN_RETAINED"
+}
