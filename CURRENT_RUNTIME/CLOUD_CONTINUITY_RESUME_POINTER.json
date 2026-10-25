@@ -1,21 +1,21 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T12:27:01.122Z",
-  "updated_at_local": "2026-10-25T19:27:01.122+07:00",
+  "updated_at_utc": "2026-10-25T12:28:10.033Z",
+  "updated_at_local": "2026-10-25T19:28:10.033+07:00",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1928ICT.json",
+    "blob_sha": "84d2b9cebcb7ea415662c548f4369cf9caf828de",
+    "commit_sha": "48e4ef0614d234997962056149e80212bb56fd5c",
+    "readback_verified": true,
+    "note": "Execution 165/row 361; latest host tick/trace/consumer receipt row 365; two Library raw ZIP copies hash and archive integrity verified row 364. Sensor stream stale; exact MODUAL source absent; Dropbox original bytes unread."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1925ICT.json",
     "blob_sha": "e3925dab70c6d79afc8ca5cbabafa01ae02a5332",
     "commit_sha": "8416b04fba74166bda6b7b4908d3e11e0265f83e",
     "readback_verified": true,
-    "note": "Execution 165/row 361; host tick/trace/consumer readback row 363; two Library raw ZIP copies hash and archive integrity verified row 364. Exact MODUAL source absent, sensor stream stale, Dropbox original ZIP bytes still unresolved."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1916ICT.json",
-    "blob_sha": "433f15edc495ae34c16055b012f7a762ee235fff",
-    "commit_sha": "83f1810bd59ca572de6390b7e6c15de2915baf65",
-    "readback_verified": true,
-    "note": "Host tick at 19:11:39 ICT and execution 165/row 361; sensor stream stale."
+    "note": "Two Library raw ZIP copies independently matched expected SHA-256; ZIP CRC and all 15 listed checksums passed."
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -27,12 +27,12 @@
     "latest_execution_started_at_utc": "2026-10-25T12:00:22.077Z",
     "latest_execution_stopped_at_utc": "2026-10-25T12:00:24.238Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 364,
+    "evidence_table_rows": 365,
     "latest_cloud_evidence_row_id": 361,
     "latest_cloud_event_id": "X20261025120024048_CLOUD",
     "latest_cloud_row_exact_readback": true,
-    "latest_host_evidence_row_id": 363,
-    "latest_host_event_id": "X20261025121639821_HOST_READBACK",
+    "latest_host_evidence_row_id": 365,
+    "latest_host_event_id": "X20261025122139172_HOST_READBACK",
     "latest_host_row_exact_readback": true,
     "latest_library_zip_evidence_row_id": 364,
     "latest_library_zip_event_id": "X2026102512_LIBRARY_CARRIER_ZIP_RAW_HASH_READBACK",
@@ -46,23 +46,23 @@
     "direct_host_probe_this_turn": true,
     "latest_execution_exact_readback": true,
     "latest_rows_exact_readback": true,
-    "interpretation": "Execution 165 is cloud-only. Host tick and Library ZIP raw-byte evidence are separate direct observations; Dropbox source bytes remain unverified."
+    "interpretation": "Execution 165 is cloud-only. Host tick evidence row 365 and raw Library ZIP evidence row 364 are separate direct observations."
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
     "device_id": "59f03001-c732-403e-b80c-b4191266809c",
     "route": "Remote Desktop Commander",
     "route_status_at_probe": "ONLINE",
-    "latest_host_probe_at_local": "2026-10-25T19:19:46.5667757+07:00",
-    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T121639821381Z.json",
-    "latest_tick_observed_at_utc": "2026-10-25T12:16:39.821381Z",
+    "latest_host_probe_at_local": "2026-10-25T19:21:50.6046070+07:00",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T122139172526Z.json",
+    "latest_tick_observed_at_utc": "2026-10-25T12:21:39.172526Z",
     "latest_tick_bytes": 1635,
-    "latest_tick_sha256": "037E60B3C284DA46783D51E0C1197CB2F2785053692D32D3B2C4C5CAEE458728",
+    "latest_tick_sha256": "0C146040938958A22F346B161A4EC81F8CCBE52B5A5F937F51EF40C06B6DD43A",
     "trace_path": "D:\\SENSOR_LOGS\\state\\telemetry_buffer_sync_wrapper_trace.log",
-    "trace_bytes": 57620,
-    "trace_sha256": "41873552B27A0689A5FB4476CE2A31E830893529E418CD00A5BE1E33DD2BFBAE",
-    "consumer_receipt_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T121636825Z.json",
-    "consumer_receipt_sha256": "B94BD6CC7C829945611F17B94CE5039841F554B7F00BF3770AD455E337481520",
+    "trace_bytes": 57955,
+    "trace_sha256": "16612F270D910F727772767A52A0847F872AD62BC6E15D71B08D5D584C813A92",
+    "consumer_receipt_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T122136307Z.json",
+    "consumer_receipt_sha256": "A20A517FB5739C1CBEBEEA2888635253036DCB777787AFEB55553291A6C6B6EF",
     "consumer_receipt_readback_ok": true,
     "consumer_status": "SOURCE_OBSERVED_READONLY",
     "consumer_exit_code": 0,
@@ -93,18 +93,18 @@
       "state": "Ready",
       "state_code": 3,
       "enabled": true,
-      "last_run_local_host_clock": "2026-10-25T19:16:33+07:00",
+      "last_run_local_host_clock": "2026-10-25T19:21:33+07:00",
       "last_result": 0,
-      "next_run_local_host_clock": "2026-10-25T19:21:32+07:00",
+      "next_run_local_host_clock": "2026-10-25T19:26:32+07:00",
       "missed_runs": 0,
-      "scheduler_probe_at_local_host_clock": "2026-10-25T19:19:46.5667757+07:00",
+      "scheduler_probe_at_local_host_clock": "2026-10-25T19:21:50.6046070+07:00",
       "next_run_still_future_at_probe": true
     },
     "exact_modual_source_found": false,
     "expected_modual_source_bytes": 89814328,
     "expected_modual_source_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
     "candidate_substitution": false,
-    "interpretation": "The scheduled task completed after the 19:16:32 host-clock schedule with result 0 and MissedRuns=0. Sensor timestamps remain stale and the exact MODUAL bulk source remains absent."
+    "interpretation": "The scheduled task completed after the 19:21:32 host-clock schedule with result 0 and MissedRuns=0. Source CSV hash unchanged; sensor stream remains stale and exact MODUAL source remains absent."
   },
   "github_task_ledger": {
     "task_count": 29,
@@ -126,7 +126,7 @@
       "json_parse": "NOT_AVAILABLE",
       "task_count_last_verified": 29,
       "tasks_closed": 0,
-      "main_head_before_pointer_update": "8416b04fba74166bda6b7b4908d3e11e0265f83e"
+      "main_head_before_pointer_update": "48e4ef0614d234997962056149e80212bb56fd5c"
     },
     "task_count_recomputed_this_turn": false,
     "tasks_closed_in_this_turn": 0
@@ -146,13 +146,25 @@
     "tasks_closed": 0
   },
   "next": [
-    "Read the next Windows tick only after it is due by host-local scheduler time; the last direct probe at 19:19:46 host time showed next run 19:21:32 host time still future.",
+    "Read the next Windows tick only after it is due by host-local scheduler time; last direct probe at 19:21:50 host time showed next run 19:26:32 host time still future.",
     "Keep MODUAL recovery OPEN until exact 89814328-byte source and SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 are found and verified.",
-    "Keep SV-20261020-02 OPEN: Library copies pass raw SHA-256 and ZIP checks, but the Dropbox provider object still needs an authorized raw-byte readback.",
+    "Keep SV-20261020-02 OPEN: two Library copies pass raw SHA-256 and ZIP checks, but Dropbox original bytes remain unread.",
     "Keep PR #36 OPEN/Draft; current head is 5 ahead and 65 behind main; do not merge or force-push.",
     "Keep the last verified 29 GitHub tasks and all 45 recovery rows nonterminal; current oversized task-ledger content was not reparsed this turn."
   ],
   "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1928ICT.json",
+      "blob_sha": "84d2b9cebcb7ea415662c548f4369cf9caf828de",
+      "commit_sha": "48e4ef0614d234997962056149e80212bb56fd5c",
+      "readback_verified": true,
+      "observed_at_local": "2026-10-25T19:28:10.033+07:00",
+      "task_count": 29,
+      "recovery_rows": 45,
+      "evidence_rows": 365,
+      "tasks_closed": 0,
+      "note": "Latest host tick row 365 verified after the host-clock schedule; Library ZIP copies independently hash-verified in row 364; Dropbox original ZIP bytes and exact MODUAL source remain unresolved."
+    },
     {
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1925ICT.json",
       "blob_sha": "e3925dab70c6d79afc8ca5cbabafa01ae02a5332",
