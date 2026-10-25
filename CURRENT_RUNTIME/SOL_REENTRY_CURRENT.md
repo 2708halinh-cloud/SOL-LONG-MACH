@@ -912,3 +912,11 @@ Ledger remains 29 tasks, 164 action events, 164 provider observations, four inte
 - Current-head workflow runs: [topology 40238928895](https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40238928895), [secret guard 40238928892](https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40238928892), and [read-only archive adapters 40238928890](https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40238928890) all concluded SUCCESS.
 - Downloaded artifact `12616220675` (`sol-archive-real-fixture-readback`), 959 bytes; ZIP SHA-256 `61022c1d0a5c82cff958a37ff29dbfd5b1ee9e928dabd1094e1fa096bdaf7b56`; ZIP integrity PASS. Its receipt confirms 7Z/RAR/LR fixtures PASS, each source hash unchanged, no extraction, and no source archive mutation.
 - This verifies the current-head CI fixture route only. It does not restore the original JINEY/FUNiX/DATNGUYEN exports, resolve the two MAP_NGUON Drive IDs, or verify an authorized target host. All tasks remain nonterminal; no task closed.
+
+
+## Re-entry observation — 2026-10-26T05:15:08.925+07:00
+
+- Materialized the existing Library carrier `SOL_GGDV_102_FILES_25_FOLDERS_20261013.zip` read-only: 1,503,420 bytes, SHA-256 `f46671a8b1eaf0b4d3bc978df6a64225dc1dfc80abe12f92552a7cfd140a3dab`; ZIP integrity PASS; 130 members.
+- Bounded in-memory nested-archive scan covered 15 ZIPs, 290 members, 4,506,004 uncompressed bytes; no recursion/size limits hit and no raw-export-like member names found (`conversations.json`, `chat.html`, `user.json`, `message_feedback.json`, `shared_conversations.json`, or segmented `.7z.001–.7z.007`).
+- Three nested ZIPs are byte-identical to already verified derived carriers: `SOL_CURRENT_RAW_CHAT_VI_EV_20261010.zip` SHA-256 `1c7d2df681f2e93be71664e129f426df4d8867ac1d19b8319a5f74567f9e922a`; `SOL_JINEY_MINH_IDENTITY_SOURCE_ANCHOR_20261010.zip` SHA-256 `17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93`; and `SOL_CHROME_TAC_NHAN_FUNIX_JINEY_WEATHER_20261010.zip` SHA-256 `a14f7301d1e9aead6562b78173280a96097876f3ca9c043d8b3e3dd65786a9ef`. They remain derived bundles, not raw account exports.
+- This is scoped Library evidence only; it does not prove provider-side Drive/Dropbox/Takeout absence. No source was moved or deleted and no private chat was published. Original exports remain OPEN.
