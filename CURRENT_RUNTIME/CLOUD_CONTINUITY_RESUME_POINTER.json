@@ -1,21 +1,22 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.5",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T15:56:44.000Z",
-  "updated_at_local": "2026-10-25T22:56:44.000+07:00",
-  "timestamp_basis": "Direct host observations use host-clock timestamps; n8n/provider timestamps and automation-runtime timestamps remain separately sourced. Current samples differ by several minutes; cloud heartbeat is not host heartbeat.",
+  "updated_at_utc": "2026-10-25T16:53:00.000Z",
+  "updated_at_local": "2026-10-25T23:53:00.000+07:00",
+  "timestamp_basis": "Direct host observations use host-clock timestamps; n8n/provider timestamps and runtime timestamps remain separately sourced. Cloud heartbeat is not host heartbeat.",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2353ICT.json",
+    "blob_sha": "19048616fafff64accc90617e22fc80cda0e05fb",
+    "commit_sha": "9764a6bbe72c2b9410d5ee34c11e19dfbe59614a",
+    "readback_verified": true,
+    "note": "Direct host tick/consumer/source SHA and task scheduler readback verified at host clock 2026-10-25T23:51:57+07. n8n execution 170 is cloud-only. Evidence row 390 appended and exact-readback verified."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2252ICT.json",
     "blob_sha": "f0d910a3f626c79fd1db0dad83c18a836088d661",
     "commit_sha": "598362e399ed077704a74a739b7450dab97a6865",
     "readback_verified": true,
     "note": "Fresh direct host tick/consumer/source SHA readback at host clock 2026-10-25T22:52:42+07. n8n execution 170 is a separate cloud-only success; evidence rows 388 host and 389 cloud. Exact MODUAL filename search remains running."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2250ICT.json",
-    "blob_sha": "8bafd390d5055127273621f5cbebf0efe7f469b8",
-    "commit_sha": "327783377a2e4c1a13f46b7d5bb1376f76752bfd",
-    "readback_verified": true
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -28,11 +29,11 @@
     "latest_cloud_event_id": "X20261025160024063_CLOUD",
     "latest_cloud_evidence_row_id": 389,
     "latest_cloud_row_exact_readback": true,
-    "latest_host_evidence_row_id": 388,
-    "latest_host_event_id": "X20261025155242699_HOST_READBACK",
+    "latest_host_evidence_row_id": 390,
+    "latest_host_event_id": "X20261025165157025_HOST_READBACK",
     "latest_host_row_exact_readback": true,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 389,
+    "evidence_table_rows": 390,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
     "recovery_rows": 45,
@@ -42,28 +43,30 @@
     "direct_host_probe_this_turn": true,
     "historical_zip_raw_hash_row_id": 386,
     "historical_zip_raw_hash_event_id": "X20261025154617338_DROPBOX_RAW_ZIP_HASH_VERIFIED",
-    "historical_zip_raw_hash_exact_readback": true
+    "historical_zip_raw_hash_exact_readback": true,
+    "terminal_rows": 0
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
     "device_id": "59f03001-c732-403e-b80c-b4191266809c",
     "route_status": "ONLINE_BY_DIRECT_READBACK",
-    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T155138608258Z.json",
-    "latest_tick_sha256": "812E96734F6DF00DF4C3CBBD001BD51CFA9BD9D1F2CCEB47ACC0347D3CCEE97F",
-    "latest_tick_observed_at_utc": "2026-10-25T15:51:38.608258Z",
-    "trace_sha256": "49AAA95B4104CBB9514C4F7A24A98DC21B6E4E4B690F7E6EBF5F46B87FECA56F",
-    "consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T155135569Z.json",
-    "consumer_receipt_sha256": "A153004D7DC81514236044F691B89DAC1B5C6F33B5D9358C0C3A19B4AA584612",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T165139146418Z.json",
+    "latest_tick_sha256": "51F4371A2965D4F3AEE3287F567EEDD7E82B87228B06953810CACB9AD3595DB1",
+    "latest_tick_observed_at_utc": "2026-10-25T16:51:39.146418Z",
+    "trace_sha256": "490962530729ACF1EA11252BCAAF7454CA6236694658A1D89CD5905DB74545BD",
+    "consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T165136131Z.json",
+    "consumer_receipt_sha256": "346F761D9E26261B8D7F0D3B2540C48EF538486D4B1D81E844A730A0D259D794",
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
     "source_bytes": 35389440,
     "task_state": "Ready",
     "last_result": 0,
-    "last_run_local_host_clock": "2026-10-25T22:51:33+07:00",
-    "next_run_local_host_clock": "2026-10-25T22:56:32+07:00",
+    "last_run_local_host_clock": "2026-10-25T23:51:33+07:00",
+    "next_run_local_host_clock": "2026-10-25T23:56:32+07:00",
     "next_run_was_future_at_last_host_sample": true,
     "sensor_stream": "EVENT_TIMESTAMP_STALE",
     "live_sensor_reading_confirmed": false,
-    "redmi_note14pro": "NOT_LISTED"
+    "redmi_note14pro": "NOT_LISTED",
+    "missed_runs": 0
   },
   "unresolved": {
     "historical_zip_task": "SV-20261020-02",
@@ -75,31 +78,40 @@
     "bounded_sensor_logs_scan_files": 825,
     "bounded_scan_exact_name_matches": 0,
     "bounded_scan_exact_size_matches": 0,
-    "broader_exact_name_search_pid": 27220,
-    "broader_exact_name_search_status": "RUNNING_NO_RESULTS_YET",
+    "broader_exact_name_search_pid": 43564,
+    "broader_exact_name_search_status": "RUNNING_NO_OUTPUT_YET",
     "broader_exact_name_search_roots": [
       "D:\\",
       "W:\\Drive của tôi"
-    ]
+    ],
+    "direct_path_checks": {
+      "D:\\": "NOT_FOUND",
+      "W:\\Drive của tôi": "NOT_FOUND"
+    },
+    "previous_search_pid_27220": "NOT_FOUND_AT_DIRECT_PROCESS_CHECK"
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "task_ledger_blob_sha": "4c0dd5b7e2d9e612e84c0e888baef234d6f3f760",
+    "task_ledger_blob_sha": "cafed278f2ce97d93a913f7f3d8906dff549712d",
     "task_count_last_verified": 29,
     "task_count_recomputed": false,
-    "task_ledger_content_readback": "EMPTY_FROM_CONNECTOR",
+    "task_ledger_content_readback": "EMPTY_FROM_CONNECTOR_EVEN_WITH_LINE_RANGE",
     "tasks_closed": 0,
     "pr36_state": "OPEN",
     "pr36_draft": true,
     "pr36_merged": false,
-    "pr36_head_sha": "9762b8867b4ef17d608cccc37609164d73974573",
+    "pr36_head_sha": "e414dfe673265447cd216a4535536e0a3099c90d",
     "pr36_head_branch": "fix/archive-adapters-main-recut-20261025T1534ICT",
     "pr36_compared_main_head": "711ba6e52af741a28798fe9c81089ba089b177f4",
     "pr36_merge_base_sha": "4368bd266003a8c0eb455618dc1c4ce7c4efe8f3",
     "pr36_ahead_by": 9,
     "pr36_behind_by": 95,
     "pr36_comparison_status": "diverged",
-    "pr36_merge_or_force_push": false
+    "pr36_merge_or_force_push": false,
+    "compared_main_head_before_checkpoint_writes": "7c0815201e681dba34bb3a7a2c6d905fe2e03a7c",
+    "pr36_ahead_by_at_comparison": 10,
+    "pr36_behind_by_at_comparison": 128,
+    "pr36_comparison_sampled_before_checkpoint_writes": true
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -116,12 +128,12 @@
     "tasks_closed": 0
   },
   "next": [
-    "Poll exact-name read-only search PID 27220 across D:\\ and W:\\Drive của tôi; no output while running is not a no-match result.",
-    "Re-probe the host when its own clock reaches/passes 2026-10-25T22:56:32+07; compare tick, consumer receipt, source SHA, and task scheduler readback.",
-    "Keep sensor stream UNVERIFIED until timestamps advance; do not export raw sensor rows.",
-    "Keep SV-20261020-02 OPEN for future sync/provenance although the historical ZIP raw SHA is verified.",
-    "Keep all 45 recovery rows nonterminal; no duplicate manual scan, merge, force-push, or CI rerun without new evidence.",
-    "Re-read OPEN_TASKS_CURRENT.json through a route that returns content before recomputing its task count."
+    "Poll read-only exact-name search PID 43564; no output while running is not a no-match result.",
+    "Re-probe host after host-clock 2026-10-25T23:56:32+07:00; verify next tick, consumer receipt, source SHA, scheduler result and missed runs.",
+    "Keep sensor stream UNVERIFIED until event timestamps advance; do not export raw sensor rows.",
+    "Keep SV-20261020-02 OPEN for future sync/provenance; raw ZIP SHA is verified, but third Project carrier remains unresolved.",
+    "Keep all 45 recovery rows nonterminal; do not trigger duplicate manual cloud scan, merge, force-push or CI rerun without new evidence.",
+    "Re-read OPEN_TASKS_CURRENT.json through a route that returns content before recomputing the GitHub task count."
   ],
   "prior_previous_checkpoint_20261025T2202ICT": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2050ICT.json",
@@ -190,5 +202,11 @@
     "host_local_at_direct_sample": "2026-10-25T22:52:42.6996470+07:00",
     "n8n_latest_execution_local_provider_time": "2026-10-25T23:00:22.069+07:00",
     "note": "Source clocks differ by several minutes. Preserve source-qualified times and do not infer a host tick from cloud execution."
+  },
+  "previous_previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2250ICT.json",
+    "blob_sha": "8bafd390d5055127273621f5cbebf0efe7f469b8",
+    "commit_sha": "327783377a2e4c1a13f46b7d5bb1376f76752bfd",
+    "readback_verified": true
   }
 }
