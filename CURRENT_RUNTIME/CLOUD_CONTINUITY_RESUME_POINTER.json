@@ -107,6 +107,35 @@
       ],
       "last_poll": "No output returned yet; process still active",
       "no_process_termination": true
+    },
+    {
+      "type": "OPEN_TASKS_LEDGER_APPEND_ONLY_ARCHIVE_READBACK_20261026T0345ICT",
+      "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "prior_blob_sha": "fbfd052c70d22cefe8939d7a225a299e01067777",
+      "blob_sha": "008c9c7b0bc1def77bb91bcb97c64031eee4c962",
+      "commit_sha": "efc8313b86989b244cc3ffee9fab6d79c8460720",
+      "readback_verified": true,
+      "task_count": 29,
+      "task_status_counts": {
+        "OPEN": 10,
+        "OPEN_CARRIED": 2,
+        "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+        "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+        "IN_PROGRESS": 3
+      },
+      "verified_action_events": 179,
+      "provider_observations": 179,
+      "integrity_corrections": 7,
+      "archive_task_status": "OPEN",
+      "r014_task_status": "OPEN",
+      "pr36_compare_after_append": {
+        "status": "diverged",
+        "ahead_by": 10,
+        "behind_by": 185
+      },
+      "archive_artifact_sha256": "01e4b833acaff23a9dad07fa6f5f329cd5000b5e6d72d3078471fbb67994840c",
+      "library_carrier_sha256": "eb0d9b33cde33c773e26b4096e1d317c9d2d713f23e160a02216ffd09aa80521",
+      "tasks_closed": 0
     }
   ],
   "n8n": {
@@ -188,10 +217,10 @@
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "task_ledger_blob_sha": "fbfd052c70d22cefe8939d7a225a299e01067777",
-    "task_ledger_size_bytes": 1213279,
+    "task_ledger_blob_sha": "008c9c7b0bc1def77bb91bcb97c64031eee4c962",
+    "task_ledger_size_bytes": 1222762,
     "task_count_last_verified": 29,
-    "task_count_current": "NOT_RECOUNTED; CONTENTS CONNECTOR RESPONSE EMPTY",
+    "task_count_current": 29,
     "tasks_closed": 0,
     "pr36_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
     "pr36_state": "OPEN",
@@ -214,7 +243,12 @@
     "pr36_combined_status_endpoint": "pending_with_zero_status_contexts",
     "modual_control_state_blob_sha": "ad41fe46d1334dbc57e616fb7ddb5af805beded0",
     "modual_control_state_commit_sha": "d7129a4e425e79107a7b7852f178a0f9f7fe171e",
-    "compare_precedes_this_pointer_commit": true
+    "compare_precedes_this_pointer_commit": true,
+    "verified_action_events": 179,
+    "provider_observations": 179,
+    "integrity_corrections": 7,
+    "task_ledger_commit_sha": "efc8313b86989b244cc3ffee9fab6d79c8460720",
+    "current_main_head_after_ledger_update": "efc8313b86989b244cc3ffee9fab6d79c8460720"
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -260,6 +294,18 @@
       "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0247ICT.json",
       "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0250ICT.json"
     ],
-    "tasks_closed": 0
+    "tasks_closed": 0,
+    "task_ledger_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "task_ledger_blob_sha": "008c9c7b0bc1def77bb91bcb97c64031eee4c962",
+    "task_ledger_commit_sha": "efc8313b86989b244cc3ffee9fab6d79c8460720",
+    "task_count": 29,
+    "verified_action_events": 179,
+    "provider_observations": 179,
+    "integrity_corrections": 7,
+    "pr36_compare_after_ledger_update": {
+      "status": "diverged",
+      "ahead_by": 10,
+      "behind_by": 185
+    }
   }
 }
