@@ -1,18 +1,18 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T20:33:43.928Z",
-  "updated_at_local": "2026-10-26T03:33:43.928+07:00",
-  "timestamp_basis": "updated_at follows the latest provider evidence row creation timestamp, not the host event time or GitHub commit time. Row 412 provider createdAt=2026-10-25T20:33:43.928Z; host event time=2026-10-25T20:27:49.0719164Z. Keep source-qualified clocks separate; no provider-host clock offset is inferred.",
+  "updated_at_utc": "2026-10-25T22:19:43.569Z",
+  "updated_at_local": "2026-10-26T05:19:43.569+07:00",
+  "timestamp_basis": "updated_at follows the latest provider evidence row creation timestamp, not host event time. Rows 415/416 use invocation-start occurred_at markers; provider createdAt is recorded separately. No provider-host clock offset is inferred.",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0327ICT.json",
-    "blob_sha": "ab622b2ade1e85d87e3ceeef94ce25189dcc1089",
-    "commit_sha": "3cfa73e65079c93d310c9e023070db1800c2b144",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0519ICT.json",
+    "blob_sha": "36c2f34a8ffc17120cd9f7ba0ba29c63e8f196c0",
+    "commit_sha": "83d57d5849623b9913042b6dc338c2f9d1c29fde",
     "readback_verified": true,
     "latest_host_evidence_row_id": 412,
     "latest_host_event_id": "X20261025202749071_HOST_READBACK",
-    "latest_route_inventory_row_id": 409,
-    "latest_route_inventory_event_id": "X20261025195301000_REMOTE_ROUTE_STATUS",
+    "latest_route_inventory_row_id": 416,
+    "latest_route_inventory_event_id": "X20261025221617000_REMOTE_ROUTE_INVENTORY",
     "latest_direct_route_readback_row_id": 412
   },
   "post_checkpoint_updates": [
@@ -165,18 +165,42 @@
       },
       "tasks_closed": 0,
       "readback_verified": true
+    },
+    {
+      "type": "ZIP_RAW_HASH_RECONCILIATION_ROW_415",
+      "evidence_row_id": 415,
+      "event_id": "X20261025221617000_RECOVERY_ROW2_RECONCILIATION",
+      "raw_zip_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+      "recovery_task_id": "SV-20261020-02",
+      "recovery_row_id": 2,
+      "recovery_status_preserved": "ASSIGNED_DRAFT_WAITING_CREDENTIAL",
+      "third_project_raw_access": "NOT_AUTHORIZED",
+      "tasks_closed": 0,
+      "readback_verified": true
+    },
+    {
+      "type": "REMOTE_ROUTE_INVENTORY_ROW_416",
+      "evidence_row_id": 416,
+      "event_id": "X20261025221617000_REMOTE_ROUTE_INVENTORY",
+      "expected_device_id_present": false,
+      "route_unavailable_in_current_inventory": true,
+      "physical_host_offline_proven": false,
+      "latest_direct_host_evidence_row_id": 412,
+      "host_heartbeat_probed_by_cloud_workflow": false,
+      "tasks_closed": 0,
+      "readback_verified": true
     }
   ],
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "active": true,
-    "latest_execution_id": "174",
+    "latest_execution_id": "176",
     "latest_execution_status": "success",
-    "latest_cloud_evidence_row_id": 410,
+    "latest_cloud_evidence_row_id": 414,
     "latest_host_evidence_row_id": 412,
-    "latest_route_inventory_evidence_row_id": 409,
+    "latest_route_inventory_evidence_row_id": 416,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 412,
+    "evidence_table_rows": 416,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
     "recovery_rows": 45,
@@ -185,19 +209,21 @@
     "tasks_closed": 0,
     "host_heartbeat_probed_by_workflow": false,
     "recovery_row_2_status_stale": true,
-    "latest_route_status_row_id": 409,
+    "latest_route_status_row_id": 416,
     "host_heartbeat_probed": false,
     "pending_rows": 45,
     "latest_host_event_id": "X20261025202749071_HOST_READBACK",
     "latest_direct_route_readback_evidence_row_id": 412,
-    "direct_host_readback_verified": true
+    "direct_host_readback_verified": true,
+    "latest_zip_reconciliation_evidence_row_id": 415,
+    "current_route_status": "REMOTE_ROUTE_UNAVAILABLE_IN_CURRENT_INVENTORY; HOST_HEARTBEAT_NOT_PROBED"
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
     "expected_direct_read_device_id": "59f03001-c732-403e-b80c-b4191266809c",
-    "route_status": "REMOTE_DESKTOP_COMMANDER_ONLINE_DIRECT_READ_VERIFIED",
+    "route_status": "REMOTE_ROUTE_UNAVAILABLE_IN_CURRENT_INVENTORY; HOST_HEARTBEAT_NOT_PROBED",
     "host_power_state": "NOT_SEPARATELY_VERIFIED",
-    "host_heartbeat": "DIRECT_READBACK_VERIFIED",
+    "host_heartbeat": "NO_FRESH_READBACK_AFTER_2026-10-26T03:27:49.0719164+07:00",
     "latest_direct_readback_local": "2026-10-26T03:27:49.0719164+07:00",
     "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T202658095149Z.json",
     "latest_tick_sha256": "f4b9543b2f3572320befb3d7d6539c65acf72d7cb5631594b199fd33ab1ae459",
@@ -216,17 +242,19 @@
     "missed_runs": 0,
     "physical_host_offline_proven": false,
     "latest_host_evidence_row_id": 412,
-    "latest_route_status_row_id": 409,
-    "post_due_host_readback_available": true,
-    "current_inventory_route_unavailable": false,
-    "route_status_evidence_row_id": 412,
+    "latest_route_status_row_id": 416,
+    "post_due_host_readback_available": false,
+    "current_inventory_route_unavailable": true,
+    "route_status_evidence_row_id": 416,
     "latest_tick_observed_at_utc": "2026-10-25T20:26:58.095149Z",
     "source_bytes": 35389440,
     "source_hash_matches": true,
     "next_run_local_host_clock_at_row_412": "2026-10-26T03:31:32+07:00",
     "latest_direct_route_readback_row_id": 412,
     "primary_account_inventory_offline_for_different_device_ids": true,
-    "next_run_local_host_clock_at_last_sample": "2026-10-26T03:31:32+07:00"
+    "next_run_local_host_clock_at_last_sample": "2026-10-26T03:31:32+07:00",
+    "latest_route_inventory_evidence_row_id": 416,
+    "source_current_hash": "NOT_REPROBED"
   },
   "unresolved": {
     "historical_zip_task": "SV-20261020-02",
@@ -241,25 +269,27 @@
     "expected_modual_bytes": 89814328,
     "expected_modual_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
     "source_substitution_performed": false,
-    "exact_target_search_state": "RUNNING_READ_ONLY",
-    "exact_target_search_pid": 13712
+    "exact_target_search_state": "LAST_KNOWN_RUNNING_READ_ONLY_AT_2026-10-26T03:27; CURRENT_STATUS_NOT_PROBED",
+    "exact_target_search_pid": 13712,
+    "raw_zip_reconciliation_row_id": 415,
+    "route_inventory_evidence_row_id": 416
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
     "task_ledger_blob_sha": "f2fcce4be09869223c65ff1fa8d37af26f0d9dc3",
     "task_ledger_size_bytes": 1228627,
     "task_count_last_verified": 29,
-    "task_count_current": 29,
+    "task_count_current": "NOT_RECOUNTED; FETCH_FILE CONTENT EMPTY",
     "tasks_closed": 0,
     "pr36_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
-    "pr36_state": "OPEN",
+    "pr36_state": "OPEN_LAST_VERIFIED; NOT_REFRESHED_THIS_INVOCATION",
     "pr36_draft": true,
     "pr36_merged": false,
     "pr36_head_sha": "e414dfe673265447cd216a4535536e0a3099c90d",
-    "compare_main_head_at_readback": "1f926bd6b47826e9f6981c2265e25125c1a30379",
+    "compare_main_head_at_readback": "21f36ae1736649b002c8fa9b409752056b2606ae",
     "pr36_compare_status_at_readback": "diverged",
     "pr36_ahead_by_at_readback": 10,
-    "pr36_behind_by_at_readback": 183,
+    "pr36_behind_by_at_readback": 199,
     "compare_precedes_this_checkpoint_commit": true,
     "pr36_merge_or_force_push": false,
     "task_pointer_blob_sha": "3800711079df71dae41adc4576069c3bbe9d2eb7",
@@ -269,7 +299,7 @@
     "reentry_blob_sha": "3fd12dd81368b927723db9ee4f6960470078523b",
     "compare_precedes_pointer_commit": true,
     "pr36_latest_check_runs": "5_SUCCESS_AT_2026-10-25T16:42Z",
-    "pr36_combined_status_endpoint": "pending_with_zero_status_contexts",
+    "pr36_combined_status_endpoint": "no status contexts returned this invocation",
     "modual_control_state_blob_sha": "ad41fe46d1334dbc57e616fb7ddb5af805beded0",
     "modual_control_state_commit_sha": "d7129a4e425e79107a7b7852f178a0f9f7fe171e",
     "compare_precedes_this_pointer_commit": true,
@@ -282,7 +312,11 @@
       "status": "diverged",
       "ahead_by": 10,
       "behind_by": 187
-    }
+    },
+    "compare_precedes_checkpoint_commits": true,
+    "latest_checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0519ICT.json",
+    "latest_checkpoint_blob_sha": "36c2f34a8ffc17120cd9f7ba0ba29c63e8f196c0",
+    "latest_checkpoint_commit_sha": "83d57d5849623b9913042b6dc338c2f9d1c29fde"
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -298,11 +332,11 @@
     "tasks_closed": 0
   },
   "next": [
-    "Re-read after host-clock 2026-10-26T03:31:32+07:00; verify the next tick/consumer and recompute source SHA. Do not infer host state from cloud timestamps.",
-    "Continue the read-only exact-target search on D:\\ and W:\\Drive của tôi; poll PID 13712 and do not terminate it.",
-    "Keep SV-20261020-02 OPEN until authorized third-Project carrier provenance/synchronization is verified; do not close from ZIP hash alone.",
-    "Keep PR #36 OPEN/Draft; branch diverged 10 ahead/182 behind at the pre-pointer comparison; no merge/force-push.",
-    "Keep all 45 n8n recovery tasks and all 29 previously verified GitHub tasks nonterminal; the current GitHub task ledger count remains unverified."
+    "Reacquire an eligible authorized Remote Desktop Commander account/device route; then read the next host tick, consumer receipt, task schedule, and independently recompute the source SHA. Do not infer host state from cloud timestamps.",
+    "Keep the exact MODUAL target unresolved until the 89,814,328-byte file with SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 is directly verified; check the last-known read-only search only if the authorized host route returns; never terminate it.",
+    "Keep SV-20261020-02 nonterminal. The raw ZIP hash is verified, but the third Project carrier remains unauthorized and recovery row 2 has stale fields that cannot be updated through the current table connector.",
+    "Keep PR #36 open/draft as last verified; do not merge or force-push while diverged 10 ahead/199 behind.",
+    "Keep all 45 n8n recovery rows and all 29 last-verified GitHub tasks nonterminal; current GitHub task-ledger count is not reverified."
   ],
   "modual_control_state": {
     "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
@@ -315,14 +349,14 @@
     "state_file_lag_vs_latest_host_evidence": "No lag; MODUAL control state read back with row 412."
   },
   "provider_checkpoint_reconciliation": {
-    "canonical_checkpoint": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0327ICT.json",
-    "canonical_checkpoint_blob_sha": "ab622b2ade1e85d87e3ceeef94ce25189dcc1089",
-    "canonical_checkpoint_commit_sha": "3cfa73e65079c93d310c9e023070db1800c2b144",
+    "canonical_checkpoint": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0519ICT.json",
+    "canonical_checkpoint_blob_sha": "36c2f34a8ffc17120cd9f7ba0ba29c63e8f196c0",
+    "canonical_checkpoint_commit_sha": "83d57d5849623b9913042b6dc338c2f9d1c29fde",
     "modual_control_state_path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
     "modual_control_state_blob_sha": "ad41fe46d1334dbc57e616fb7ddb5af805beded0",
     "modual_control_state_commit_sha": "d7129a4e425e79107a7b7852f178a0f9f7fe171e",
     "latest_host_evidence_row_id": 412,
-    "latest_route_inventory_row_id": 409,
+    "latest_route_inventory_row_id": 416,
     "latest_direct_route_readback_row_id": 412,
     "misnamed_historical_artifacts_preserved": [
       "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0247ICT.json",
@@ -348,6 +382,8 @@
       "underlying_host_observation_local": "2026-10-26T03:27:49.0719164+07:00",
       "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
       "fresh_host_probe_this_invocation": false
-    }
+    },
+    "latest_zip_reconciliation_row_id": 415,
+    "task_count_current_reverified": false
   }
 }
