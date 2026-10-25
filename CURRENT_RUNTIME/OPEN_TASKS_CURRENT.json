@@ -2634,8 +2634,8 @@
       "source_time_local": "2026-10-20",
       "source_ref": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json#archive_task; CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2106ICT.json#archive_task",
       "goal": "Verify read-only 7Z/RAR/LR archive adapter behavior on real non-sensitive fixtures while preserving source archives; reconcile the stale PR path without treating CI as task completion.",
-      "observed": "Source reconciliation found this task in CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json and CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2106ICT.json with source status OPEN_7Z_RAR_LR, but its ID was absent from the 28-item CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json ledger.,PR #28 head bf553018dd59affb1d4ea2b120cad3ea7a0565ff passed run 40118137014 on an ephemeral GitHub-hosted Ubuntu 24.04 runner. The 7Z, RAR and LR fixtures passed read-only tests; artifact 12570136939 ZIP SHA-256 7352960c029de2aba652d881c86e805b5280af9f7f34c9f1aadc6479910089e0; receipt JSON SHA-256 f9004cb4cf68cd0935b342857c32bf12089f2db025bfe44a6dccea409f2bcc9d.,PR #29 topology regression fix passed run 40118465586, but remains Draft and unmerged; it does not alter main.,Latest GitHub compare showed PR #28 diverged from main (7 ahead, 10 behind) and GitHub reported mergeable=false. No force-push or merge was performed.,The current tool set does not expose the authoritative n8n task-table, Windows host, Google Drive, Dropbox or Takeout operations needed to prove target-host validation or provider-side source recovery. | 2026-10-25 05:18 ICT: run 40118137001 failed only the topology assertion because BRAIN_WAVE_LOGS was omitted from allowed sibling set; test-only fix committed as 945eeca3419be2b7151d5761eb5aadfa65c31434 and read back. | Post-fix head 945eeca3419be2b7151d5761eb5aadfa65c31434 passed topology run 40138464127, archive-adapter run 40138464130 and secret-guard run 40138464176; PR still diverged 8 ahead/65 behind. | 2026-10-25T02:26Z: Retrieved the original Dropbox ZIP carrier by exact provider file ID id:gvG29tEleJwAAAAAAAACLA, revision 0165daa5e44669e0000000395cdfd73, 20,882 bytes; raw SHA-256 da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106 matches the expected manifest. Read-only ZIP inspection found 16 entries; all 15 payload entries matched CHECKSUMS_SHA256.txt, with no mismatches or missing entries. No extraction and no source move/write. PR #34 remains OPEN/Draft; head a90f85ae1e0d5a5129caa1b472acac4f4697a71c, checks successful, compare against main b6e81ce174a6e327786735f31b9f497221cfd9ac is diverged 1 ahead/38 behind. Original JINEY/FUNIX/DAT NGUYEN export bytes and the two MAP_NGUON IDs remain unresolved. | 2026-10-25T02:26Z: Retrieved the original Dropbox ZIP carrier by exact provider file ID id:gvG29tEleJwAAAAAAAACLA, revision 0165daa5e44669e0000000395cdfd73, 20,882 bytes; raw SHA-256 da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106 matches the expected manifest. Read-only ZIP inspection found 16 entries; all 15 payload entries matched CHECKSUMS_SHA256.txt, with no mismatches or missing entries. No extraction and no source move/write. PR #34 remains OPEN/Draft; head a90f85ae1e0d5a5129caa1b472acac4f4697a71c, checks successful, compare against main b6e81ce174a6e327786735f31b9f497221cfd9ac is diverged 1 ahead/38 behind. Original JINEY/FUNIX/DAT NGUYEN export bytes and the two MAP_NGUON IDs remain unresolved.",
-      "next": "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN. Do not merge or force-push PR #34; it is diverged 1 ahead/38 behind current main. Continue using authorized provider routes to resolve exact source IDs/revisions and retrieve the original JINEY/FUNIX/DAT NGUYEN export bytes, then resolve the two MAP_NGUON IDs by metadata/revision/hash/content readback. The verified ZIP carrier is a completed substep only; validate adapters on an authorized target runtime and preserve original bytes and IDs.",
+      "observed": "Source reconciliation found this task in CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json and CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2106ICT.json with source status OPEN_7Z_RAR_LR, but its ID was absent from the 28-item CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json ledger.,PR #28 head bf553018dd59affb1d4ea2b120cad3ea7a0565ff passed run 40118137014 on an ephemeral GitHub-hosted Ubuntu 24.04 runner. The 7Z, RAR and LR fixtures passed read-only tests; artifact 12570136939 ZIP SHA-256 7352960c029de2aba652d881c86e805b5280af9f7f34c9f1aadc6479910089e0; receipt JSON SHA-256 f9004cb4cf68cd0935b342857c32bf12089f2db025bfe44a6dccea409f2bcc9d.,PR #29 topology regression fix passed run 40118465586, but remains Draft and unmerged; it does not alter main.,Latest GitHub compare showed PR #28 diverged from main (7 ahead, 10 behind) and GitHub reported mergeable=false. No force-push or merge was performed.,The current tool set does not expose the authoritative n8n task-table, Windows host, Google Drive, Dropbox or Takeout operations needed to prove target-host validation or provider-side source recovery. | 2026-10-25 05:18 ICT: run 40118137001 failed only the topology assertion because BRAIN_WAVE_LOGS was omitted from allowed sibling set; test-only fix committed as 945eeca3419be2b7151d5761eb5aadfa65c31434 and read back. | Post-fix head 945eeca3419be2b7151d5761eb5aadfa65c31434 passed topology run 40138464127, archive-adapter run 40138464130 and secret-guard run 40138464176; PR still diverged 8 ahead/65 behind. | 2026-10-25T02:26Z: Retrieved the original Dropbox ZIP carrier by exact provider file ID id:gvG29tEleJwAAAAAAAACLA, revision 0165daa5e44669e0000000395cdfd73, 20,882 bytes; raw SHA-256 da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106 matches the expected manifest. Read-only ZIP inspection found 16 entries; all 15 payload entries matched CHECKSUMS_SHA256.txt, with no mismatches or missing entries. No extraction and no source move/write. PR #34 remains OPEN/Draft; head a90f85ae1e0d5a5129caa1b472acac4f4697a71c, checks successful, compare against main b6e81ce174a6e327786735f31b9f497221cfd9ac is diverged 1 ahead/38 behind. Original JINEY/FUNIX/DAT NGUYEN export bytes and the two MAP_NGUON IDs remain unresolved. | 2026-10-25T02:26Z: Retrieved the original Dropbox ZIP carrier by exact provider file ID id:gvG29tEleJwAAAAAAAACLA, revision 0165daa5e44669e0000000395cdfd73, 20,882 bytes; raw SHA-256 da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106 matches the expected manifest. Read-only ZIP inspection found 16 entries; all 15 payload entries matched CHECKSUMS_SHA256.txt, with no mismatches or missing entries. No extraction and no source move/write. PR #34 remains OPEN/Draft; head a90f85ae1e0d5a5129caa1b472acac4f4697a71c, checks successful, compare against main b6e81ce174a6e327786735f31b9f497221cfd9ac is diverged 1 ahead/38 behind. Original JINEY/FUNIX/DAT NGUYEN export bytes and the two MAP_NGUON IDs remain unresolved. | 2026-10-25T02:37:51.696Z: Fresh GitHub compare readback for PR #34 against main head d6a6b88d66c452259b6b40e84ec89bbf55082170 returned diverged, 1 ahead/44 behind; PR remains OPEN/Draft and checks are successful. This measurement is tied to that main head; remeasure before any sync. No merge or force-push.",
+      "next": "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN. Last exact comparison against main head d6a6b88d66c452259b6b40e84ec89bbf55082170 showed PR #34 diverged 1 ahead/44 behind; main has advanced with subsequent checkpoint commits, so remeasure before any sync. Do not merge or force-push. Continue authorized provider search for original JINEY/FUNIX/DAT NGUYEN export bytes and both MAP_NGUON IDs; the verified ZIP carrier is a completed substep only.",
       "guard": "NO_EXTRACTION; NO_SOURCE_ARCHIVE_MODIFICATION; NO_FORCE_PUSH; NO_TASK_CLOSURE_FROM_CI_OR_REPORT; TARGET_HOST_VALIDATION_REQUIRED",
       "assigned_subagent": "SubAisstangtManage-INTEGRITY",
       "assigned_agent_id": "ilcqwLMNUdrWjvrL",
@@ -11306,6 +11306,16 @@
       "checkpoint_blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
       "checkpoint_commit": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
       "result": "TICK_AND_CONSUMER_READBACK_OK; LIVE_SENSOR_STREAM_STALE; PR35_TEST_AND_SECRET_GUARD_SUCCESS; ZIP_SHA_AND_15_INTERNAL_HASHES_MATCH; ALL_TASKS_OPEN",
+      "tasks_closed": 0
+    },
+    {
+      "id": "ARCHIVE_PR34_DIVERGENCE_READBACK_20261025T0930ICT",
+      "observed_at": "2026-10-25T09:37:51.696+07:00",
+      "action": "FRESH_READBACK_ARCHIVE_PR34_DIVERGENCE",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
+      "checkpoint_blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
+      "checkpoint_commit": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
+      "result": "PR34_DIVERGED_1_AHEAD_44_BEHIND_AT_MAIN_HEAD_D6A6B88; OPEN_DRAFT_RETAINED; NO_MERGE_OR_FORCE_PUSH",
       "tasks_closed": 0
     }
   ],
@@ -20242,6 +20252,25 @@
       "pr34_ahead_by": 1,
       "pr34_behind_by": 38,
       "tesseract_pr6_ci_rerun": false,
+      "tasks_closed": 0
+    },
+    {
+      "id": "ARCHIVE_PR34_DIVERGENCE_READBACK_20261025T0930ICT",
+      "observed_at": "2026-10-25T09:37:51.696+07:00",
+      "source": "Fresh GitHub compare_commits and PR metadata readback for Archive PR #34 after the provider checkpoint commits.",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
+      "checkpoint_blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
+      "checkpoint_commit": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
+      "main_head_at_compare": "d6a6b88d66c452259b6b40e84ec89bbf55082170",
+      "pr34_head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "compare_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 44,
+      "pr_state": "open",
+      "draft": true,
+      "checks_success": true,
+      "merged": false,
+      "force_push": false,
       "tasks_closed": 0
     }
   ]
