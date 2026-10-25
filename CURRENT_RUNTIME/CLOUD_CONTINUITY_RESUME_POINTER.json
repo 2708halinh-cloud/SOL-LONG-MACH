@@ -1,174 +1,83 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.2",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.3",
   "state": "OPEN_WORK_REMAINS",
+  "updated_at_utc": "2026-10-25T02:59:31.620Z",
+  "updated_at_local": "2026-10-25T09:59:31+07:00",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0959ICT.json",
+    "blob_sha": "3e380bf8e8a3e8ac9246573d6d8464870c13f7cd",
+    "commit_sha": "30cb673b2d51e9ed49b929a5635db0996d14d620",
+    "readback_verified": true,
+    "note": "Fresh checkpoint was fetched from the default branch after commit; it records n8n row 331 exact readback and the direct read-only Windows tick/trace/scheduler probe."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
     "blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
     "commit_sha": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
-    "readback_verified": true,
-    "note": "Historical provider receipt; this invocation independently re-read the Library carrier bytes but did not call Dropbox directly."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0922ICT.json",
-    "blob_sha": "5c4fd99bf1519b083ab28c268d79c97a2b134397",
-    "commit_sha": "cb7d1616c8415fd6ab3953bb2ce579fc1e13ae5d",
-    "readback_verified": true
+    "historical_commit_fetch_verified": true,
+    "default_branch_path_fetch": "NOT_FOUND_AT_TIME_OF_PROBE",
+    "note": "Historical checkpoint remains available at its recorded commit; the active pointer is moved to the fresh default-branch checkpoint."
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
-    "execution_id": "155",
-    "status": "success",
-    "event_id": "X20261025020023944_CLOUD",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "latest_execution_id": "155",
+    "latest_execution_status": "success",
+    "latest_execution_mode": "trigger",
+    "latest_execution_started_at_utc": "2026-10-25T02:00:22.064Z",
+    "latest_execution_stopped_at_utc": "2026-10-25T02:00:24.073Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "row_id": 326,
-    "exact_row_readback": true,
-    "evidence_table_rows": 330,
-    "latest_host_evidence_row_id": 330,
-    "latest_host_event_id": "X20261025021636971_HOST_READBACK",
+    "evidence_table_rows": 331,
+    "latest_host_evidence_row_id": 331,
+    "latest_host_event_id": "X20261025025139067_HOST_READBACK",
     "latest_host_row_exact_readback": true,
-    "append_only_correction_rows": [
-      328,
-      329
-    ],
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_project_id": "6qKpRmicIGHA5snY",
     "recovery_rows": 45,
     "unfinished_rows": 45,
+    "tasks_closed": 0,
     "host_heartbeat_probed_by_workflow": false,
-    "tasks_closed": 0
+    "interpretation": "Execution 155 is cloud-only. Direct host evidence is separately recorded in row 331."
   },
   "host": {
-    "state": "LATEST_TICK_AND_TRACE_RECEIPT_VERIFIED_LIVE_SENSOR_STREAM_UNVERIFIED",
     "device": "DESKTOP-86ITNQ4",
-    "route": "REMOTE_DESKTOP_COMMANDER",
-    "route_online": true,
-    "last_tick": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T021636971987Z.json",
-    "last_tick_sha256": "40EC9A652AE2A21B62F4B285DDAE9B38E7D301C0AD2C155EC251BB1B29AAF577",
-    "last_tick_bytes": 1292,
-    "last_tick_observed_at_utc": "2026-10-25T02:16:36.971987Z",
-    "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
-    "source_bytes": 35389440,
+    "route": "Remote Desktop Commander",
+    "route_online_for_read_only_probe": true,
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T025139067145Z.json",
+    "latest_tick_sha256": "2E3A4B748A5BDE9E0206C2D65220EAC500E2D7B4C34CB1999C07E8101830BEBC",
+    "latest_tick_observed_at_utc": "2026-10-25T02:51:39.067145Z",
+    "previous_tick_sha256": "0A18755ADDF412DA0E074BE646FF8912459F96D65600E15F5FDE60DF0EA753D3",
+    "trace_sha256": "4312EC0DBB7EEA42516008BDC2F2A3A55FA7882066FE839C9BC20FF7E7387E1E",
+    "trace_receipt_readback_ok": true,
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_bytes": 35389440,
     "live_sensor_reading_confirmed": false,
-    "tick_task_state": "Ready",
-    "tick_task_last_result": 0,
-    "tick_task_last_run_at_utc": "2026-10-25T02:16:33Z",
-    "tick_task_next_run_at_utc": "2026-10-25T02:21:32Z",
-    "tick_task_number_of_missed_runs": 0,
-    "trace_sha256": "FFBA8F8CEBA596BA3E2C1DA839E68A7C6E48E47135FB409C2CBE27D4B6713D52",
-    "trace_receipt_readback_ok_at_utc": "2026-10-25T02:16:37.1275417Z",
-    "latest_tick_advanced_after_trace": true,
+    "xiaomi12_usb": {
+      "adb_state": "device",
+      "sensorservice_probe_succeeded": true,
+      "live_sensor_event_stream_confirmed": false
+    },
+    "redmi_note14pro_wireless": {
+      "target": "192.168.1.14:5556",
+      "adb_state": "NOT_LISTED",
+      "live_sensor_event_stream_confirmed": false
+    },
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "last_run_utc": "2026-10-25T02:51:33Z",
+      "last_result": 0,
+      "next_run_utc": "2026-10-25T02:56:32Z",
+      "missed_runs": 0
+    },
     "exact_modual_source_found": false,
-    "expected_modual_source_path": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
     "expected_modual_source_bytes": 89814328,
     "expected_modual_source_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
-    "candidate_modual_path": "D:\\SENSOR_LOGS\\state\\MODUAL_CARRIER_CANDIDATE_20261025T0753ICT.csv",
-    "candidate_modual_bytes": 12154,
-    "candidate_modual_sha256": "933252E45EC7D794F15EA347DFDBE52F4FB19BFD6CCA49BB7F013159AC696F75",
-    "candidate_used_as_substitute": false,
-    "last_verified_readback_at": "2026-10-25T09:16:54.487+07:00",
-    "fresh_host_probe_this_run": true,
-    "interpretation": "The tick advanced after the trace receipt and the scheduled task is Ready with result 0. This verifies the host task/tick path only; the live sensor stream and exact MODUAL bulk source remain unverified."
+    "candidate_substitution": false,
+    "clock_skew_guard": "Use host scheduler timestamps for task due-time decisions; cloud/runtime and host wall clocks differed during this invocation."
   },
-  "android": {
-    "state_this_run": "ADB_BINARY_PATH_VERIFIED_XIAOMI12_USB_ONLINE_REDMINOTE14_WIRELESS_NOT_FOUND",
-    "adb_path": "C:\\Users\\halin\\platform-tools-latest-windows\\platform-tools\\adb.exe",
-    "adb_path_exists": true,
-    "listed_device": "1056285",
-    "listed_device_role": "XIAOMI12_USB",
-    "redmi_note14_wireless_target": "192.168.1.14:5556",
-    "redmi_target_state": "DEVICE_NOT_FOUND",
-    "live_sensor_stream_verified": false,
-    "last_probe_at": "2026-10-25T09:15:31.610+07:00",
-    "fresh_android_probe_this_run": true
-  },
-  "archive_task": {
-    "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
-    "status": "OPEN",
-    "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
-    "pr": 34,
-    "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
-    "current_main_sha": "0f1dba93e1778c9e2fc35d77a5900f77ef0af6f4",
-    "branch_relation": {
-      "ahead": 1,
-      "behind": 48
-    },
-    "workflow_runs": [
-      {
-        "run_id": 40145523727,
-        "job": "readonly-adapters",
-        "conclusion": "success"
-      },
-      {
-        "run_id": 40145523754,
-        "job": "verify-stone-folders",
-        "conclusion": "success"
-      },
-      {
-        "run_id": 40145523744,
-        "job": "secret-guard",
-        "conclusion": "success"
-      }
-    ],
-    "windows_host_validation": "NOT_VERIFIED_FOR_ARCHIVE_TASK",
-    "source_export_recovery": "NOT_COMPLETE",
-    "merge_performed": false,
-    "force_push_performed": false,
-    "task_closed": false,
-    "main_changes_overlap_pr_paths": false,
-    "recut_required": false,
-    "main_head_at_compare": "0f1dba93e1778c9e2fc35d77a5900f77ef0af6f4",
-    "current_main_sha_semantics": "main head observed immediately before this pointer update; this pointer commit advances main, so this is the comparison base, not a self-referential post-write SHA",
-    "comparison_observed_at": "2026-10-25T09:41:06.268+07:00",
-    "original_exports_recovered": {
-      "JINEY": false,
-      "FUNIX": false,
-      "DAT_NGUYEN": false
-    },
-    "map_nguon_id_relation": "UNRESOLVED",
-    "latest_verified_carrier": {
-      "filename": "SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip",
-      "dropbox_file_id": "id:gvG29tEleJwAAAAAAAACLA",
-      "dropbox_revision": "0165daa5e44669e0000000395cdfd73",
-      "size_bytes": 20882,
-      "sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
-      "library_file_id": "libfile_af6f3b4f68c8819196cbb5401dc58103",
-      "files_file_id": "file_00000000ac8082098812a77ad89d0316",
-      "zip_entries": 16,
-      "crc_check": "PASS",
-      "checksum_manifest": "CHECKSUMS_SHA256.txt",
-      "checksum_manifest_sha256": "76d8f2424a96c9ff701303e8b37ec7c2c1f3f374138ec94c9af55eb1b1ca87e3",
-      "manifest_payload_entries": 15,
-      "payload_hashes_matched": 15,
-      "extraction_performed": false,
-      "source_written_or_moved": false,
-      "classification": "DERIVED_MULTI_BRANCH_REENTRY_BUNDLE_NOT_ACCOUNT_EXPORT",
-      "account_export_targets": {
-        "JINEY": false,
-        "FUNIX": false,
-        "DAT_NGUYEN": false
-      },
-      "source_locator_terms_found_in_bundle": [],
-      "independent_library_byte_readback_at": "2026-10-25T09:34:19+07:00",
-      "source_classification": "DERIVED_MULTI_BRANCH_REENTRY_BUNDLE_NOT_ACCOUNT_EXPORT"
-    }
-  },
-  "continuation_guards": {
-    "preserve_open_and_in_progress": true,
-    "no_google_drive_writes": true,
-    "no_source_mutation": true,
-    "no_process_termination": true,
-    "no_cache_or_meta_db_deletion": true,
-    "no_secret_values": true,
-    "cloud_heartbeat_is_not_host_heartbeat": true,
-    "no_merge_or_force_push": true,
-    "do_not_substitute_candidate_for_exact_modual_source": true
-  },
-  "updated_at": "2026-10-25T09:41:06.268+07:00",
   "github_task_ledger": {
-    "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
-    "blob_sha": "37528bc2ee5b4ab5a0a6017c6f68df02e7ec5622",
-    "readback_method": "Fresh main tree at head 0f1dba93e1778c9e2fc35d77a5900f77ef0af6f4 -> exact OPEN_TASKS_CURRENT.json blob; fetch_blob parsed JSON and integrity_corrections read back.",
-    "parsed": true,
     "task_count": 29,
     "tasks_closed": 0,
     "status_counts": {
@@ -178,146 +87,26 @@
       "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
       "IN_PROGRESS": 3
     },
-    "last_readback_at": "2026-10-25T09:41:06.268+07:00",
-    "last_readback_head": "0f1dba93e1778c9e2fc35d77a5900f77ef0af6f4",
-    "ledger_snapshot_observed_at": "2026-10-25T08:23:05.5062340+07:00",
-    "integrity_correction_blob_sha": "37528bc2ee5b4ab5a0a6017c6f68df02e7ec5622",
-    "integrity_correction_id": "LEDGER_DUPLICATE_EVENT_CLASSIFICATION_20261025T0940ICT"
+    "observed_at_local": "2026-10-25T09:41:06.268+07:00",
+    "freshness": "INHERITED_SNAPSHOT_NOT_REPROBED_IN_THIS_RUN"
   },
-  "archive_task_history": [
-    {
-      "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
-      "status": "OPEN",
-      "pr": 31,
-      "head_sha": "7a5276433bb563fbd704cf2c3b6f27e0e3f7dff4",
-      "run_id": 40135311065,
-      "conclusion": "success",
-      "real_fixture_validation": "3/3 PASS (7Z,RAR,LR)",
-      "artifact_id": 12576443094,
-      "artifact_sha256": "6b081041b4e951f45c96b40d984b135018eba150154760ebb484b18f9433c58f",
-      "windows_host_validation": "NOT_VERIFIED",
-      "source_export_recovery": "NOT_COMPLETE",
-      "superseded_by_pr": 34,
-      "preserved_at": "2026-10-25T07:05:49+07:00"
-    }
-  ],
-  "latest_archive_action": {
-    "observed_at": "2026-10-25T09:22:34.334+07:00",
-    "pr": 34,
-    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/34",
-    "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
-    "current_main_sha": "a6c7fe97925429a244af4ff5d0c8ee24e46c7a05",
-    "current_head_ci": "3/3 SUCCESS on current unchanged head; fresh workflow-run readback",
-    "ahead": 1,
-    "behind": 36,
-    "main_changes_overlap_pr_paths": false,
-    "recut_required": false,
-    "task_closed": false,
-    "original_exports_recovered": false,
-    "target_host_verified": false
-  },
-  "older_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0658ICT.json",
-    "blob_sha": "9f07a09858217d50ad14b6b3ed55fce50ab19e01",
-    "commit_sha": "a97fd37e7ac50c960e383a8d884a63293b4dde60",
-    "readback_verified": true
-  },
-  "tesseract_art": {
-    "task_id": "TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
-    "status": "IN_PROGRESS",
-    "source_text_carrier": {
-      "name": "TESSERACT_6D_TU_CUNG.html",
-      "library_file_id": "libfile_ce7555efd8108191a4d988bc576d86ff",
-      "text_representation_sha256": "10efe0db93229f19ac1f568c74506995fca27eb15514e080b513ddcb04880e86",
-      "raw_bytes_verified": false
-    },
-    "bundle_candidates_raw_bytes_available": false,
-    "browser_route": "file:// attempt blocked with ERR_BLOCKED_BY_ADMINISTRATOR; no bypass attempted",
-    "real_browser_runtime_verified": false,
-    "exact_source_identity_verified": false,
-    "next": "Use authorized browser route or authorized raw-byte source carrier; do not treat text derivative as original and do not integrate until source identity/event path is verified.",
-    "current_library_readback": {
-      "observed_at": "2026-10-25T09:34:19+07:00",
-      "files_file_id": "file_000000009f088209805a3c577f695379",
-      "library_file_id": "libfile_ce7555efd8108191a4d988bc576d86ff",
-      "path": "/THU HOI NGUON SOL/TESSERACT_6D_TU_CUNG.html",
-      "listed_size_bytes": 11134,
-      "text_representation_read": true,
-      "raw_bytes_materialization": "NOT_AUTHORIZED",
-      "authorized_browser_runtime_verified": false,
-      "source_identity_verified": false,
-      "static_only_note": "The text representation shows reset sets phase=0 without resetting prev; this remains STAMP_BETA/static-source observation, not a real-browser runtime result."
-    }
-  },
-  "tesseract_desktop": {
-    "repository": "2708halinh-cloud/x-time-web",
-    "pr": 6,
-    "state": "OPEN",
-    "draft": true,
-    "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-    "latest_known_runs": [
-      {
-        "run_id": 39994207477,
-        "conclusion": "failure",
-        "artifacts": 0
-      },
-      {
-        "run_id": 39994207667,
-        "conclusion": "failure",
-        "artifacts": 0
-      }
-    ],
-    "issuer_public_key_value_verified": false,
-    "runner_assignment_change_verified": false,
-    "rerun_performed": false,
-    "next": "Do not rerun CI until an authorized issuer-side public-key value/provenance and actual runner assignment change are verified."
-  },
-  "provider_access": {
-    "github_connector": "AVAILABLE",
-    "n8n_connector": "AVAILABLE",
-    "remote_desktop_commander": "ONLINE_FOR_READ_ONLY_PROBE",
-    "dropbox_connector": "EXPOSED_BUT_SEARCH_CALL_BLOCKED_BY_LINK_ID_SCHEMA_VALIDATION; NO_DATA_READ",
-    "google_drive_writes": "PROHIBITED_BY_USER",
-    "takeout_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET"
+  "continuation_guards": {
+    "preserve_open_and_in_progress": true,
+    "no_google_drive_writes": true,
+    "no_process_termination": true,
+    "no_cache_or_meta_db_deletion": true,
+    "no_source_mutation": true,
+    "no_secret_values": true,
+    "no_raw_sensor_values_stored": true,
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "no_merge_or_force_push": true,
+    "do_not_substitute_candidate_for_exact_modual_source": true
   },
   "next": [
-    "Use an actually authorized direct Drive/Dropbox/Takeout connector to retrieve original JINEY/FUNIX/DAT NGUYEN export bytes; the verified 20,882-byte bundle is derived continuity material, not an account export.",
-    "Resolve the two MAP_NGUON provider object IDs by provider metadata/revision/hash/content readback before any move, overwrite, or identity merge.",
-    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN and PR #34 OPEN/Draft; current comparison at main head d6a6b88 is 1 ahead/44 behind. Do not merge or force-push.",
-    "For TESSERACT Art, obtain authorized raw bytes or an exact source-bound carrier and an authorized browser route; text-only review is not runtime proof.",
-    "Verify the next scheduled Windows tick after 2026-10-25T02:21:32Z; resume from the latest tick SHA instead of restarting.",
-    "Keep the live sensor stream unverified and Redmi Note 14 Pro wireless target not found until a fresh direct authorized probe proves otherwise.",
-    "Locate the exact MODUAL bulk source by expected SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 and size 89814328; do not use the 12154-byte candidate as a substitute.",
-    "Preserve all 45 n8n recovery rows and all 29 GitHub task-ledger tasks; keep OPEN/IN_PROGRESS states unchanged."
-  ],
-  "current_invocation_access": {
-    "observed_at": "2026-10-25T09:41:06.268+07:00",
-    "github_connector": true,
-    "library_listing_and_text_read": true,
-    "library_raw_byte_materialization_for_verified_zip": true,
-    "direct_dropbox_connector": false,
-    "direct_google_drive_connector": false,
-    "takeout_connector": false,
-    "remote_desktop_commander": false,
-    "n8n_connector": false,
-    "note": "Dropbox metadata/hash details come from the existing provider checkpoint; this invocation independently materialized and verified the Library copy, but did not perform a new direct Dropbox/Drive/Takeout call."
-  },
-  "ledger_integrity_findings": {
-    "observed_at": "2026-10-25T09:41:06.268+07:00",
-    "duplicate_event_id": "PROVIDER_READBACK_20261025T0926ICT",
-    "exact_duplicate_occurrences": 2,
-    "duplicated_in": [
-      "provenance carrier history text",
-      "verified_action_events",
-      "provider_observation_history"
-    ],
-    "interpretation": "One provider observation was recorded twice; count as one distinct event, not two.",
-    "correction_policy": "Preserve both historical entries; this pointer annotation prevents double-counting without deleting ledger history.",
-    "tasks_closed": 0,
-    "source_blob_sha_after_correction": "37528bc2ee5b4ab5a0a6017c6f68df02e7ec5622",
-    "correction_record_id": "LEDGER_DUPLICATE_EVENT_CLASSIFICATION_20261025T0940ICT",
-    "correction_committed": true,
-    "historical_duplicate_entries_preserved": true,
-    "distinct_provider_observation_count": 1
-  }
+    "Resume from tick SHA 2E3A4B748A5BDE9E0206C2D65220EAC500E2D7B4C34CB1999C07E8101830BEBC; re-read the next host tick after the host scheduler's reported 2026-10-25T02:56:32Z run time.",
+    "Keep live sensor stream unverified until a fresh direct probe confirms advancing event timestamps; Redmi Note 14 Pro wireless remains NOT_LISTED.",
+    "Locate exact MODUAL bulk source by SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 and size 89814328; never substitute the 12154-byte candidate.",
+    "Preserve all 45 n8n recovery rows and all 29 inherited GitHub task-ledger tasks as OPEN/IN_PROGRESS.",
+    "Do not write to Google Drive, terminate processes, delete cache/Meta.db, merge, force-push, or persist raw sensor readings."
+  ]
 }
