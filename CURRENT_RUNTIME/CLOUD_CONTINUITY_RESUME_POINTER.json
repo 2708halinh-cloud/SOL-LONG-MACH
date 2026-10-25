@@ -47,15 +47,41 @@
   "archive_task": {
     "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
     "status": "OPEN",
-    "pr": 31,
-    "head_sha": "7a5276433bb563fbd704cf2c3b6f27e0e3f7dff4",
-    "run_id": 40135311065,
-    "conclusion": "success",
-    "real_fixture_validation": "3/3 PASS (7Z,RAR,LR)",
-    "artifact_id": 12576443094,
-    "artifact_sha256": "6b081041b4e951f45c96b40d984b135018eba150154760ebb484b18f9433c58f",
+    "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
+    "pr": 34,
+    "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+    "base_main_sha": "93100cc4619284d382558527fd22d03673f09401",
+    "branch_relation_at_validation": {
+      "ahead": 1,
+      "behind": 0
+    },
+    "workflow_runs": [
+      {
+        "run_id": 40145523727,
+        "job": "readonly-adapters",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40145523754,
+        "job": "verify-stone-folders",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40145523744,
+        "job": "secret-guard",
+        "conclusion": "success"
+      }
+    ],
+    "artifact_id": 12580351639,
+    "artifact_bytes": 958,
+    "artifact_sha256": "4785a727a572f428b19673e03d61ad3bdf9cbb2a96ae533944e04d81970fc99f",
+    "artifact_crc": "PASS",
+    "receipt_json_sha256": "2d78773b43c6ec7e6c25891cd59f71703c7f081443db28ace3e72e26cac2d078",
+    "real_fixture_validation": "3/3 PASS (7Z,RAR,LR); stable before/after hashes; no extraction",
     "windows_host_validation": "NOT_VERIFIED",
-    "source_export_recovery": "NOT_COMPLETE"
+    "source_export_recovery": "NOT_COMPLETE",
+    "merge_performed": false,
+    "force_push_performed": false
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -67,13 +93,42 @@
     "cloud_heartbeat_is_not_host_heartbeat": true,
     "no_merge_or_force_push": true
   },
-  "updated_at": "2026-10-25T06:58:00+07:00",
+  "updated_at": "2026-10-25T07:05:49+07:00",
   "github_task_ledger": {
     "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
-    "blob_sha": "6d1267da52638c3f8ce3d33a3b62012527bb2e8a",
-    "readback_method": "fetch_blob",
+    "blob_sha": "f6d7e07114808d5a38446a7a123fdb1b706dce77",
+    "readback_method": "fetch_blob; JSON parsed; append-only archive-task live_progress update",
     "parsed": true,
     "task_count": 29,
     "tasks_closed": 0
+  },
+  "archive_task_history": [
+    {
+      "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+      "status": "OPEN",
+      "pr": 31,
+      "head_sha": "7a5276433bb563fbd704cf2c3b6f27e0e3f7dff4",
+      "run_id": 40135311065,
+      "conclusion": "success",
+      "real_fixture_validation": "3/3 PASS (7Z,RAR,LR)",
+      "artifact_id": 12576443094,
+      "artifact_sha256": "6b081041b4e951f45c96b40d984b135018eba150154760ebb484b18f9433c58f",
+      "windows_host_validation": "NOT_VERIFIED",
+      "source_export_recovery": "NOT_COMPLETE",
+      "superseded_by_pr": 34,
+      "preserved_at": "2026-10-25T07:05:49+07:00"
+    }
+  ],
+  "latest_archive_action": {
+    "observed_at": "2026-10-25T07:05:49+07:00",
+    "pr": 34,
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/34",
+    "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+    "current_head_ci": "3/3 SUCCESS",
+    "artifact_id": 12580351639,
+    "artifact_sha256": "4785a727a572f428b19673e03d61ad3bdf9cbb2a96ae533944e04d81970fc99f",
+    "task_closed": false,
+    "original_exports_recovered": false,
+    "target_host_verified": false
   }
 }
