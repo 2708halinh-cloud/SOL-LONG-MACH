@@ -2,15 +2,16 @@
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.2",
   "state": "OPEN_WORK_REMAINS",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
+    "blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
+    "commit_sha": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
+    "readback_verified": true,
+    "note": "Historical provider receipt; this invocation independently re-read the Library carrier bytes but did not call Dropbox directly."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0922ICT.json",
     "blob_sha": "5c4fd99bf1519b083ab28c268d79c97a2b134397",
     "commit_sha": "cb7d1616c8415fd6ab3953bb2ce579fc1e13ae5d",
-    "readback_verified": true
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0837ICT.json",
-    "blob_sha": "1c0bdbaf3c6a8eecda555d106ffee929c1670235",
-    "commit_sha": "8398ee32245810316f379e20fb30dd407253f13c",
     "readback_verified": true
   },
   "n8n": {
@@ -86,10 +87,10 @@
     "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
     "pr": 34,
     "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
-    "current_main_sha": "a6c7fe97925429a244af4ff5d0c8ee24e46c7a05",
+    "current_main_sha": "d6a6b88d66c452259b6b40e84ec89bbf55082170",
     "branch_relation": {
       "ahead": 1,
-      "behind": 36
+      "behind": 44
     },
     "workflow_runs": [
       {
@@ -114,7 +115,41 @@
     "force_push_performed": false,
     "task_closed": false,
     "main_changes_overlap_pr_paths": false,
-    "recut_required": false
+    "recut_required": false,
+    "main_head_at_compare": "d6a6b88d66c452259b6b40e84ec89bbf55082170",
+    "current_main_sha_semantics": "main head observed immediately before this pointer correction; this pointer commit advances main and a fresh branch readback is required for the post-write head",
+    "comparison_observed_at": "2026-10-25T09:34:19+07:00",
+    "original_exports_recovered": {
+      "JINEY": false,
+      "FUNIX": false,
+      "DAT_NGUYEN": false
+    },
+    "map_nguon_id_relation": "UNRESOLVED",
+    "latest_verified_carrier": {
+      "filename": "SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip",
+      "dropbox_file_id": "id:gvG29tEleJwAAAAAAAACLA",
+      "dropbox_revision": "0165daa5e44669e0000000395cdfd73",
+      "size_bytes": 20882,
+      "sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+      "library_file_id": "libfile_af6f3b4f68c8819196cbb5401dc58103",
+      "files_file_id": "file_00000000ac8082098812a77ad89d0316",
+      "zip_entries": 16,
+      "crc_check": "PASS",
+      "checksum_manifest": "CHECKSUMS_SHA256.txt",
+      "checksum_manifest_sha256": "76d8f2424a96c9ff701303e8b37ec7c2c1f3f374138ec94c9af55eb1b1ca87e3",
+      "manifest_payload_entries": 15,
+      "payload_hashes_matched": 15,
+      "extraction_performed": false,
+      "source_written_or_moved": false,
+      "classification": "DERIVED_MULTI_BRANCH_REENTRY_BUNDLE_NOT_ACCOUNT_EXPORT",
+      "account_export_targets": {
+        "JINEY": false,
+        "FUNIX": false,
+        "DAT_NGUYEN": false
+      },
+      "source_locator_terms_found_in_bundle": [],
+      "independent_library_byte_readback_at": "2026-10-25T09:34:19+07:00"
+    }
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -127,11 +162,11 @@
     "no_merge_or_force_push": true,
     "do_not_substitute_candidate_for_exact_modual_source": true
   },
-  "updated_at": "2026-10-25T09:22:34.334+07:00",
+  "updated_at": "2026-10-25T09:34:19+07:00",
   "github_task_ledger": {
     "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
-    "blob_sha": "1cf53c0e3b85ebe0aeaa530bdb66f13dcb8102e1",
-    "readback_method": "fetch_file returned exact current blob SHA but empty content; fetch_blob on that SHA returned 1,149,468 characters and parsed as JSON; no task status changed.",
+    "blob_sha": "065b56edc5aaec2974f2de2cd2b29e2a660d361f",
+    "readback_method": "Fresh main tree at pre-write head d6a6b88d66c452259b6b40e84ec89bbf55082170 -> exact ledger blob; fetch_blob parsed JSON successfully (1,158,451 chars).",
     "parsed": true,
     "task_count": 29,
     "tasks_closed": 0,
@@ -142,7 +177,9 @@
       "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
       "IN_PROGRESS": 3
     },
-    "last_readback_at": "2026-10-25T08:23:05.5062340+07:00"
+    "last_readback_at": "2026-10-25T09:34:19+07:00",
+    "last_readback_head": "d6a6b88d66c452259b6b40e84ec89bbf55082170",
+    "ledger_snapshot_observed_at": "2026-10-25T08:23:05.5062340+07:00"
   },
   "archive_task_history": [
     {
@@ -195,7 +232,19 @@
     "browser_route": "file:// attempt blocked with ERR_BLOCKED_BY_ADMINISTRATOR; no bypass attempted",
     "real_browser_runtime_verified": false,
     "exact_source_identity_verified": false,
-    "next": "Use authorized browser route or authorized raw-byte source carrier; do not treat text derivative as original and do not integrate until source identity/event path is verified."
+    "next": "Use authorized browser route or authorized raw-byte source carrier; do not treat text derivative as original and do not integrate until source identity/event path is verified.",
+    "current_library_readback": {
+      "observed_at": "2026-10-25T09:34:19+07:00",
+      "files_file_id": "file_000000009f088209805a3c577f695379",
+      "library_file_id": "libfile_ce7555efd8108191a4d988bc576d86ff",
+      "path": "/THU HOI NGUON SOL/TESSERACT_6D_TU_CUNG.html",
+      "listed_size_bytes": 11134,
+      "text_representation_read": true,
+      "raw_bytes_materialization": "NOT_AUTHORIZED",
+      "authorized_browser_runtime_verified": false,
+      "source_identity_verified": false,
+      "static_only_note": "The text representation shows reset sets phase=0 without resetting prev; this remains STAMP_BETA/static-source observation, not a real-browser runtime result."
+    }
   },
   "tesseract_desktop": {
     "repository": "2708halinh-cloud/x-time-web",
@@ -229,11 +278,38 @@
     "takeout_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET"
   },
   "next": [
+    "Use an actually authorized direct Drive/Dropbox/Takeout connector to retrieve original JINEY/FUNIX/DAT NGUYEN export bytes; the verified 20,882-byte bundle is derived continuity material, not an account export.",
+    "Resolve the two MAP_NGUON provider object IDs by provider metadata/revision/hash/content readback before any move, overwrite, or identity merge.",
+    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN and PR #34 OPEN/Draft; current comparison at main head d6a6b88 is 1 ahead/44 behind. Do not merge or force-push.",
+    "For TESSERACT Art, obtain authorized raw bytes or an exact source-bound carrier and an authorized browser route; text-only review is not runtime proof.",
     "Verify the next scheduled Windows tick after 2026-10-25T02:21:32Z; resume from the latest tick SHA instead of restarting.",
     "Keep the live sensor stream unverified and Redmi Note 14 Pro wireless target not found until a fresh direct authorized probe proves otherwise.",
     "Locate the exact MODUAL bulk source by expected SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 and size 89814328; do not use the 12154-byte candidate as a substitute.",
-    "Retry Dropbox raw-byte search only through a connector route that passes authorized link binding; do not write to Google Drive.",
-    "Preserve all 45 n8n recovery rows and all 29 GitHub task-ledger tasks; keep OPEN/IN_PROGRESS states unchanged.",
-    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN and PR #34 OPEN/Draft; do not merge or force-push."
-  ]
+    "Preserve all 45 n8n recovery rows and all 29 GitHub task-ledger tasks; keep OPEN/IN_PROGRESS states unchanged."
+  ],
+  "current_invocation_access": {
+    "observed_at": "2026-10-25T09:34:19+07:00",
+    "github_connector": true,
+    "library_listing_and_text_read": true,
+    "library_raw_byte_materialization_for_verified_zip": true,
+    "direct_dropbox_connector": false,
+    "direct_google_drive_connector": false,
+    "takeout_connector": false,
+    "remote_desktop_commander": false,
+    "n8n_connector": false,
+    "note": "Dropbox metadata/hash details come from the existing provider checkpoint; this invocation independently materialized and verified the Library copy, but did not perform a new direct Dropbox/Drive/Takeout call."
+  },
+  "ledger_integrity_findings": {
+    "observed_at": "2026-10-25T09:34:19+07:00",
+    "duplicate_event_id": "PROVIDER_READBACK_20261025T0926ICT",
+    "exact_duplicate_occurrences": 2,
+    "duplicated_in": [
+      "provenance carrier history text",
+      "verified_action_events",
+      "provider_observation_history"
+    ],
+    "interpretation": "One provider observation was recorded twice; count as one distinct event, not two.",
+    "correction_policy": "Preserve both historical entries; this pointer annotation prevents double-counting without deleting ledger history.",
+    "tasks_closed": 0
+  }
 }
