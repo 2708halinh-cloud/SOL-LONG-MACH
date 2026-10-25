@@ -563,3 +563,33 @@ This additive delta supersedes the earlier 16:06 ICT provider snapshot that repo
 - The cloud continuity pointer was advanced additively to checkpoint `PROVIDER_READBACK_20261025T1702ICT.json` and read back at blob `3bceef555cf0a771c435ea0afb4f764177028472`, commit `619a43770af1cd9bad2e71156ffa44ce33045b37`.
 
 Continue with a fresh Tick/consumer readback after the next host-clock due time; search the exact canonical target through bounded paths; continue independent Archive/TESSERACT/provider work. Preserve all source bytes and provenance, keep exports disabled, do not merge/force-push, do not rerun TESSERACT CI without a verified issuer/runner change, and leave every unfinished task nonterminal.
+
+
+## REENTRY — PROVIDER INVENTORY + ARCHIVE PR36 EXACT READBACK — 2026-10-25 17:30 ICT
+
+SOURCE_DIRECT: Fresh read of AGENTS.md (f18f9743de1e21d13bad47770f928ec85e79bd95), this reentry source before append (36b32e56a2df9aa49c73097de124323878c191f5), TASK_RESUME_POINTER.json (2e952129cd588adc8904d8d64c60aec3ab94981c), OPEN_TASKS_CURRENT.json (9378e06ddd5358f40a6e015b682d8f03f0ea3d17), MODUAL_PARAMETER_CURRENT.json before append (40dfab41ae1747a87b4ad59e66ac600561419006), and CLOUD_CONTINUITY_RESUME_POINTER.json (c64ab91ffa405b3186eb1b748fae58c8d9cc16c2). The full 1.5 MB task pointer and 1.28 MB OPEN ledger were fetched through the alternate raw GitHub route and parsed; the default contents connector returned empty inline content for those large files. Main head observed before this checkpoint was `7526a484e8eafb5e6d053cb0bcd959051997bad7`.
+
+### Checkpoint and canonical state updates
+- Provider checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1730ICT.json`, blob `2bc7fe3f5271f85d559154510ff72d7b1d16ba75`, create commit `3b8b8c4ed3767f2e6caa2969441e2ba1e53293d0`.
+- MODUAL state appended at `MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json`, blob `b32b309006e30ed6fcd2297402f0feb0988f27f9`, commit `4c880cf2742ff96f2cd9cbe9e4f13bb1be32f076`. Prior bytes were preserved and new provider/Archive observations appended.
+- OPEN ledger appended at `CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json`, blob `ba4454ade936c846ffc00f69c3596229e2d35ace`, commit `128e4e3dbab134cf6ba6085472dde0da171ce989`. Task count remains 29; verified action events 160; provider observations 160; integrity corrections 4; tasks closed 0. Existing task statuses were not changed.
+- The canonical resume pointer still requires its final additive update to point at the 17:30 checkpoint and record these new state blobs; this is not being represented as complete in this section.
+
+### Provider and host status
+- Dropbox Outlook metadata read succeeded for `/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV`: revision `0165dc1e4794ab00000000395cdfd73`, 35,389,440 bytes, `server_modified=2026-10-14T00:20:03Z`. No raw bytes were downloaded and no new content SHA-256 was computed.
+- Current Desktop Commander inventory reports all three registered entries Offline. No direct Windows Tick/consumer readback occurred this turn.
+- Latest verified host evidence remains n8n evidence row 357, event `X20261025102139853_HOST_READBACK`, with Tick `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T102139853472Z.json`, SHA-256 `65B266250438F95F09AD38AD69FAC8FED23C406DC8D4336FAD397845B2F07AAF`, observed `2026-10-25T10:21:39.853472Z`. Last direct host probe was `17:23:20.4218279+07:00`; its sensor state remained `EVENT_TIMESTAMP_STALE`, and the exact canonical 89,814,328-byte bulk target was absent. This is last-known evidence, not a new Tick in this turn.
+- Source hash last verified on host remains `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; source size 35,389,440 bytes. No substitution was made for the missing canonical bulk target.
+
+### Independent Archive branch — current-head exact readback
+- PR #36 remains OPEN/Draft at head `e9c299594447d75bebb75c343cdb707731c7ea50`; compare against main head `7526a484e8eafb5e6d053cb0bcd959051997bad7` is diverged, 5 ahead / 41 behind.
+- Current-head checks `40177456089`, `40177456127`, and `40177456080` all report SUCCESS. Artifact `12592822576` (`sol-archive-real-fixture-readback`) remains unexpired through `2026-11-08T08:39:22Z`.
+- Exact-target reads returned PR-head blobs: workflow `cd1e1bcbfed93ce90bb0efe67c6d1a0b9a70b616`; adapter `da7660bccfe6aa2b4bebc03f4eb0744e9b16f190`; adapter tests `dced3b29967b5b51e440e937fa9af3a902643326`; topology tests `a3b9fd7409aeb92cf561eabffe3c4198a7e782b3`; fixture verifier `225b2bcb40e2c04cad9aaab100c7b6349a12874e`. The three added files are absent from main; the two modified files have different main blobs, consistent with the branch divergence. No merge or force-push.
+- PR #34 and MODUAL PR #35 remain OPEN/Draft. TESSERACT PR #6 remains OPEN/Draft; last-known runs `39994207477` and `39994207667` failed before steps and produced no artifacts. Issuer public key and runner assignment remain unverified; no CI rerun.
+
+### Cloud continuity and safety
+- n8n workflow `BogzhFUDbRp7kuwh`, execution `163`, status SUCCESS; cloud event `X20261025100024046_CLOUD`, row 352. Latest separate host evidence row is 357. The workflow has not probed host heartbeat. There are 45 recovery rows and 45 unfinished; no duplicate manual execution was started.
+- No sensor rows/raw source bytes or credentials were uploaded. No source was moved, deleted or overwritten. Cloud/GitHub sensor export remains disabled. All 29 tasks remain nonterminal.
+
+### Resume
+Update the canonical TASK_RESUME_POINTER additively to this checkpoint after confirming the new ledger/reentry blobs; then read back the pointer and the four canonical sources. When an authorized host route is available, read the exact next Tick/consumer receipts and search the exact canonical bulk target without candidate substitution. Continue Archive/TESSERACT/provider edges independently; do not merge, force-push, or rerun TESSERACT CI without verified issuer/runner changes.
