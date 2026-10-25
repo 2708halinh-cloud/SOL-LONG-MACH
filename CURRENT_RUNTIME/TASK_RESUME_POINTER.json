@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "MODUAL: after the next scheduled host tick at 00:26:32Z, read exact WINDOWS_TICK and telemetry_buffer_sync receipts and verify the scheduler result; keep live_sensor_reading_confirmed=false. MINH bridge: recover the exact historical MODUAL carrier or authoritative mapping; do not substitute either nonmatching W: copy. Preserve the restored sensor-ledger mirror; investigate the AGENTS history/marker placement invariant without weakening the verifier. Independent: keep Archive PR #28 OPEN at 8-ahead/93-behind and PR #27 OPEN at 9-ahead/203-behind; no force-push or blind merge. Continue TESSERACT PR #6 issuer public-key and runner-assignment discovery; no CI rerun without a verified configuration change.",
+  "next": "MODUAL: after the next scheduled host tick at 00:31:32Z, read the exact Tick and consumer receipts and scheduler result; keep live_sensor_reading_confirmed=false because the current consumer verifies only the pinned CSV and does not call a live probe. MINH bridge: recover the historical MODUAL carrier or authoritative mapping; do not substitute the nonmatching W: or G: copies. Preserve the restored sensor-ledger mirror and investigate AGENTS history/marker placement without weakening verification. Independent: keep Archive PR #28 (8-ahead/93-behind) and PR #27 (9-ahead/203-behind) OPEN without force-push/merge; continue TESSERACT PR #6 issuer key and runner assignment discovery without CI rerun until a verified change.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-25T00:29:21.557Z",
+  "updated_at": "2026-10-25T00:32:55.187Z",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -10101,14 +10101,15 @@
     "dns_changes": "NOT_PERFORMED"
   },
   "latest_host_probe": {
-    "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T002136418203Z.json",
-    "sha256": "13B813A5DA61709F24E248DA4184F70FF3382117DC7D26CA3C32F16A2C44B7EC",
-    "observed_at_utc": "2026-10-25T00:21:36.418203Z",
+    "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T002636402079Z.json",
+    "sha256": "41B94FBCB5F8B84E7AF8A97783363A676B04BFF66A7FE97371CAA89DF330F777",
+    "observed_at_utc": "2026-10-25T00:26:36.402079Z",
     "source_bytes": 35389440,
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-    "live_sensor_reading_confirmed": false,
+    "task_result": "0x0",
     "consumer_status": "SOURCE_OBSERVED_READONLY",
-    "consumer_hash_matches_verifier": true
+    "consumer_hash_matches_verifier": true,
+    "live_sensor_reading_confirmed": false
   },
   "latest_agent_gate_readback": {
     "observed_at_utc": "2026-10-24T14:19:44.320Z",
@@ -11173,6 +11174,68 @@
       "tesseract": {
         "pr": 6,
         "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs_failed": [
+          39994207477,
+          39994207667
+        ],
+        "issuer_public_key_value_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      }
+    },
+    {
+      "id": "WINDOWS_TICK_READBACK_20261025T0732ICT",
+      "observed_at": "2026-10-25T07:32:55.187+07:00",
+      "observed_at_utc": "2026-10-25T00:32:55.187Z",
+      "followup_to_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0726ICT.json",
+      "checkpoint_blob_sha": "75e0f075846ed9945cbb3a38027667801a2dd8fe",
+      "checkpoint_commit": "1c31b18f0cfb541249ab664109c853c7de41d002",
+      "modual_commit": "55c7d9537a7c3a22f065c6ccbbaf0e7306802214",
+      "modual_blob_sha": "d5ed20e6a4cba82258f2892ad735c6cea40ffaea",
+      "open_tasks_commit": "61750a609fe1c292062a601e3e1871f1a4bb21ca",
+      "open_tasks_blob_sha": "fc3b6fba81712da6f295ab2808227b253a7546c5",
+      "tasks_closed": 0,
+      "windows_tick": {
+        "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T002636402079Z.json",
+        "sha256": "41B94FBCB5F8B84E7AF8A97783363A676B04BFF66A7FE97371CAA89DF330F777",
+        "observed_at_utc": "2026-10-25T00:26:36.402079Z",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "task_result": "0x0",
+        "consumer_status": "SOURCE_OBSERVED_READONLY",
+        "consumer_hash_matches_verifier": true,
+        "live_sensor_reading_confirmed": false
+      },
+      "consumer_code_inspection": {
+        "github_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+        "local_sha256": "ADB646A0B779374BC636CE8F310ECA264B9844D5A0D63078128D17DC357E54A7",
+        "record_tick_calls_live_probe": false,
+        "live_device_probe_receipt_field": false
+      },
+      "carrier_search": {
+        "historical_modual_path_exists": false,
+        "source_substitution": false,
+        "g_outlook_copy_matches_verified_source": false,
+        "w_copies_match_historical_fingerprint": false
+      },
+      "minh_ledger_mirror": {
+        "restored": true,
+        "sha256": "0194888F8AAAB481F524C8F317F627854B4C4D40771ABCEBBF7DBF247C9B59",
+        "exact_byte_equality": true
+      },
+      "archive28": {
+        "ahead_by": 8,
+        "behind_by": 93,
+        "merge": false,
+        "force_push": false
+      },
+      "archive27": {
+        "ahead_by": 9,
+        "behind_by": 203,
+        "merge": false,
+        "force_push": false
+      },
+      "tesseract": {
         "runs_failed": [
           39994207477,
           39994207667
@@ -12364,14 +12427,15 @@
     "tasks_closed": 0
   },
   "latest_windows_tick_consumer_repair": {
-    "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T002136418203Z.json",
-    "sha256": "13B813A5DA61709F24E248DA4184F70FF3382117DC7D26CA3C32F16A2C44B7EC",
-    "observed_at_utc": "2026-10-25T00:21:36.418203Z",
+    "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T002636402079Z.json",
+    "sha256": "41B94FBCB5F8B84E7AF8A97783363A676B04BFF66A7FE97371CAA89DF330F777",
+    "observed_at_utc": "2026-10-25T00:26:36.402079Z",
     "source_bytes": 35389440,
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-    "live_sensor_reading_confirmed": false,
+    "task_result": "0x0",
     "consumer_status": "SOURCE_OBSERVED_READONLY",
-    "consumer_hash_matches_verifier": true
+    "consumer_hash_matches_verifier": true,
+    "live_sensor_reading_confirmed": false
   },
   "latest_archive_followup_20261025T0349ICT": {
     "observed_at": "2026-10-25T03:49:59.248+07:00",
@@ -12974,5 +13038,84 @@
       "merge": false,
       "force_push": false
     }
+  },
+  "latest_runtime_observation_20261025T0732ICT": {
+    "id": "WINDOWS_TICK_READBACK_20261025T0732ICT",
+    "observed_at": "2026-10-25T07:32:55.187+07:00",
+    "observed_at_utc": "2026-10-25T00:32:55.187Z",
+    "followup_to_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0726ICT.json",
+    "checkpoint_blob_sha": "75e0f075846ed9945cbb3a38027667801a2dd8fe",
+    "checkpoint_commit": "1c31b18f0cfb541249ab664109c853c7de41d002",
+    "modual_commit": "55c7d9537a7c3a22f065c6ccbbaf0e7306802214",
+    "modual_blob_sha": "d5ed20e6a4cba82258f2892ad735c6cea40ffaea",
+    "open_tasks_commit": "61750a609fe1c292062a601e3e1871f1a4bb21ca",
+    "open_tasks_blob_sha": "fc3b6fba81712da6f295ab2808227b253a7546c5",
+    "tasks_closed": 0,
+    "windows_tick": {
+      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T002636402079Z.json",
+      "sha256": "41B94FBCB5F8B84E7AF8A97783363A676B04BFF66A7FE97371CAA89DF330F777",
+      "observed_at_utc": "2026-10-25T00:26:36.402079Z",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "task_result": "0x0",
+      "consumer_status": "SOURCE_OBSERVED_READONLY",
+      "consumer_hash_matches_verifier": true,
+      "live_sensor_reading_confirmed": false
+    },
+    "consumer_code_inspection": {
+      "github_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+      "local_sha256": "ADB646A0B779374BC636CE8F310ECA264B9844D5A0D63078128D17DC357E54A7",
+      "record_tick_calls_live_probe": false,
+      "live_device_probe_receipt_field": false
+    },
+    "carrier_search": {
+      "historical_modual_path_exists": false,
+      "source_substitution": false,
+      "g_outlook_copy_matches_verified_source": false,
+      "w_copies_match_historical_fingerprint": false
+    },
+    "minh_ledger_mirror": {
+      "restored": true,
+      "sha256": "0194888F8AAAB481F524C8F317F627854B4C4D40771ABCEBBF7DBF247C9B59",
+      "exact_byte_equality": true
+    },
+    "archive28": {
+      "ahead_by": 8,
+      "behind_by": 93,
+      "merge": false,
+      "force_push": false
+    },
+    "archive27": {
+      "ahead_by": 9,
+      "behind_by": 203,
+      "merge": false,
+      "force_push": false
+    },
+    "tesseract": {
+      "runs_failed": [
+        39994207477,
+        39994207667
+      ],
+      "issuer_public_key_value_verified": false,
+      "runner_assignment_change_verified": false,
+      "ci_rerun": false
+    }
+  },
+  "latest_consumer_code_inspection": {
+    "github_blob_sha": "233df6ce5fa75ee93881efb7151a9c5db6cad276",
+    "local_sha256": "ADB646A0B779374BC636CE8F310ECA264B9844D5A0D63078128D17DC357E54A7",
+    "record_tick_calls_live_probe": false,
+    "live_device_probe_receipt_field": false
+  },
+  "latest_modual_carrier_search": {
+    "historical_modual_path_exists": false,
+    "source_substitution": false,
+    "g_outlook_copy_matches_verified_source": false,
+    "w_copies_match_historical_fingerprint": false
+  },
+  "latest_minH_sensorimotor_mirror": {
+    "restored": true,
+    "sha256": "0194888F8AAAB481F524C8F317F627854B4C4D40771ABCEBBF7DBF247C9B59",
+    "exact_byte_equality": true
   }
 }
