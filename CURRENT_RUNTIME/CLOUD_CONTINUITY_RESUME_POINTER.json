@@ -1,21 +1,21 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T07:42:30Z",
-  "updated_at_local": "2026-10-25T14:42:30+07:00",
+  "updated_at_utc": "2026-10-25T07:44:39Z",
+  "updated_at_local": "2026-10-25T14:44:39+07:00",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1444ICT.json",
+    "blob_sha": "b07da57927b3e735810760a725d19535befa1bc3",
+    "commit_sha": "27649f150e25f3bf4e5992abbd911078540e056d",
+    "readback_verified": true,
+    "note": "Evidence rows 348–349 read back exactly: PR #6 run-jobs endpoint lists five failed jobs and one skipped, artifacts absent, all six step summaries empty. Fresh host probe at 14:38:49 ICT still shows tick 14:36:39, task Ready/result 0, next host run 14:41:32 ICT; no host probe after that scheduled time. All OPEN/IN_PROGRESS states preserved."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1442ICT.json",
     "blob_sha": "a168f5b2d11cd325eff61e5c763d3e7d81cc9f6a",
     "commit_sha": "5a2419cc865bd9dddb73eaa797ff661e2efef9b0",
     "readback_verified": true,
     "note": "Fresh direct host tick readback appended as n8n evidence row 347; task Ready/result 0; exact MODUAL source absent at configured path; sensor event stream remains unverified; all OPEN/IN_PROGRESS states preserved."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1423ICT.json",
-    "blob_sha": "fbd0ed07bad303929ecfa19d58c69806ce56d21c",
-    "commit_sha": "8b84fadea89f6f644a13710fca474088847cb5ce",
-    "readback_verified": true,
-    "note": "Fetched back and parsed; records host tick, PR #34/#35 successes, PR #6 log-access blocker, and n8n evidence row 346. All OPEN/IN_PROGRESS states preserved."
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -27,7 +27,7 @@
     "latest_execution_started_at_utc": "2026-10-25T07:00:22.083Z",
     "latest_execution_stopped_at_utc": "2026-10-25T07:00:24.221Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 347,
+    "evidence_table_rows": 349,
     "latest_host_evidence_row_id": 347,
     "latest_host_event_id": "X20261025073650716_HOST_READBACK",
     "latest_host_row_exact_readback": true,
@@ -41,12 +41,14 @@
     "latest_cloud_evidence_row_id": 341,
     "latest_cloud_event_id": "X20261025070024074_CLOUD",
     "terminal_rows": 0,
-    "latest_github_evidence_row_id": 344,
-    "latest_github_event_id": "X20261025072145_GITHUB_PR_READBACK",
+    "latest_github_evidence_row_id": 349,
+    "latest_github_event_id": "X20261025074407199_PR6_STEPS_READBACK",
     "latest_github_row_exact_readback": true,
     "latest_pr_log_blocker_row_id": 346,
     "latest_pr_log_blocker_event_id": "X20261025072344_PR6_LOG_BLOCKER",
-    "latest_rows_exact_readback": true
+    "latest_rows_exact_readback": true,
+    "latest_pr_job_summary_row_id": 348,
+    "latest_pr_steps_row_id": 349
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
@@ -96,10 +98,10 @@
     "latest_checkpoint_host_probe_local": "2026-10-25T11:23:45.9126701+07:00",
     "next_run_at_last_probe": "2026-10-25T11:26:32+07:00",
     "fresh_host_probe_this_run": true,
-    "interpretation": "Tick advanced and scheduled task returned Ready/result 0. Sensor stream remains unverified; exact MODUAL source not found at configured path. No source/task/config mutation.",
-    "latest_host_probe_local": "2026-10-25T14:36:50.7169514+07:00",
+    "interpretation": "Fresh host probe at 14:38:49 ICT found same tick and Ready/result 0; next run 14:41:32 ICT was still future. No later host probe recorded in this checkpoint; sensor stream remains unverified.",
+    "latest_host_probe_local": "2026-10-25T14:38:49.9951195+07:00",
     "live_sensor_stream_status": "UNVERIFIED",
-    "latest_probe_local": "2026-10-25T14:36:50.7169514+07:00"
+    "latest_probe_local": "2026-10-25T14:38:49.9951195+07:00"
   },
   "github_task_ledger": {
     "task_count": 29,
@@ -149,13 +151,20 @@
     "tasks_closed": 0
   },
   "next": [
-    "Fresh-read host after host-local 2026-10-25 14:41:32 ICT; use host time only and preserve the 4-minute execution-limit guard.",
-    "Keep sensor stream UNVERIFIED until event timestamps advance; Xiaomi 12 event timestamps are stale and Redmi target remains NOT_LISTED.",
-    "Locate exact MODUAL source by expected SHA-256 and byte size; exact configured path was absent, and windows_SENSON.CSV is not a substitute.",
-    "For PR #6, try only a working read-only run-summary/log route; preserve six failures and one skipped check; do not rerun CI or read secrets.",
+    "Fresh-read host after host-local 2026-10-25 14:41:32 ICT; use host time only and do not infer host failure from cloud time.",
+    "Keep sensor stream UNVERIFIED until event timestamps advance; Xiaomi 12 event timestamps remain stale and Redmi target remains NOT_LISTED.",
+    "Locate exact MODUAL source by expected SHA-256 and byte size; configured path was absent; do not substitute windows_SENSON.CSV.",
+    "For PR #6, only a working read-only run-summary/source route remains; six job-step endpoints are empty and artifacts are absent. Do not rerun CI or fetch secret-bearing raw logs.",
     "Preserve all 29 GitHub ledger tasks and 45 n8n recovery rows as nonterminal."
   ],
   "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1444ICT.json",
+      "blob_sha": "b07da57927b3e735810760a725d19535befa1bc3",
+      "commit_sha": "27649f150e25f3bf4e5992abbd911078540e056d",
+      "readback_verified": true,
+      "note": "Fresh PR6 run-jobs/artifacts/step-summary readback recorded in rows 348–349; direct host probe remains before next scheduled tick; no task closure."
+    },
     {
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1442ICT.json",
       "blob_sha": "a168f5b2d11cd325eff61e5c763d3e7d81cc9f6a",
