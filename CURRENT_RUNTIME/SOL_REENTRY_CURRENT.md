@@ -517,3 +517,33 @@ Exact-tree readback at the 14:37 checkpoint confirms MODUAL blob `bd4a9aa3f92257
 
 No task was closed; no source was moved, deleted or overwritten. Continue the MODUAL, Archive, TESSERACT and cloud-continuity branches independently.
 
+
+
+## REENTRY — PROVIDER READBACK + ARCHIVE RECUT CONTINUATION — 2026-10-25 15:53 ICT
+
+SOURCE_DIRECT: Fresh-read AGENTS.md (f18f9743de1e21d13bad47770f928ec85e79bd95), this reentry source before append (b6bf672545d0ebbc631655cad675322a61995499), TASK_RESUME_POINTER.json before update (cd619365706fb4771f1549623825c711e197d70d), OPEN_TASKS_CURRENT.json before update (0782e1def4e9f21b596f1efafa86def614006a6e), MODUAL_PARAMETER_CURRENT.json before update (2415e155f103b12b1bc8de1d8b886c8a853415e0), and CLOUD_CONTINUITY_RESUME_POINTER.json before update (88d9433eaaa043338fbac072a104be722be28afb).
+
+Canonical provider checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1553ICT.json`, blob SHA `1ad5da57e1e2b7d1d8ac5bf2a7f9c2e9b9732467`, create commit `e3c6dccb6e24bf176066a6b02ed76681f022adef`. The first write used malformed path `PROVIDER_READBACK_20261025T553ICT.json`; that historical object remains untouched. A correctly named checkpoint supersedes it and records the filename correction. No source data was changed.
+
+### Provider and host status
+- Dropbox Outlook metadata read succeeded for `/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV`: file ID `id:gvG29tEleJwAAAAAAAACOw`, revision `0165dc1e4794ab00000000395cdfd73`, size 35,389,440 bytes, server_modified `2026-10-14T00:20:03Z`. No raw bytes were downloaded and content hash was not recomputed this turn. The last recorded provider content hash remains `becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d`.
+- Direct Remote Desktop Commander device inventory was read at 2026-10-25T15:56:31.359+07:00; `localhost`, both `DESKTOP-86ITNQ4` registrations are Offline (last seen 12h, 119h and 344h). No fresh Windows runtime/Tick/consumer readback was possible this turn. The last recorded Tick receipt remains `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T080139371211Z.json` SHA-256 `1f7f79c099bf93619e41f0f9d9251087835eb0fbb81d0b2dd0311e95e76fbec3`; consumer receipt `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T080136275Z.json` SHA-256 `339e5c993ecda667384aa92a28904277369ecb2a6ffbdc1fe9815d3ba971d4de`. These are last-known receipts, not fresh proof of a later Tick.
+- The last recorded sensor state was `EVENT_TIMESTAMP_STALE`, with continuous production stream unverified. The current checkpoint also preserves a target discrepancy: host-local expected target 89,814,328 bytes / SHA-256 `b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3` was not found in the last direct probe. Do not substitute the 35,389,440-byte Dropbox object or any candidate for that exact host-local target.
+- n8n execution `161` was freshly read with node data: SUCCESS at 15:00:22+07, event `X20261025080024100_CLOUD`, row `350`, state `OPEN_WORK_REMAINS`; 45 recovery tasks, 45 pending, `HOST_HEARTBEAT_NOT_PROBED`, host operations 0. No duplicate manual execution was triggered.
+
+### Independent Archive branch — real readback and guard
+- PR #36: `https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36`, head `e9c299594447d75bebb75c343cdb707731c7ea50`, remains OPEN/Draft.
+- Three current-head workflows were read directly: `40177456089` secret-guard SUCCESS; `40177456127` stone-topology SUCCESS; `40177456080` read-only-adapters SUCCESS.
+- Artifact `12592822576`, `sol-archive-real-fixture-readback`, 959 bytes, not expired, expires `2026-11-08T08:39:22Z`; artifact metadata head SHA matches PR #36 head.
+- Exact-target readback of all five changed source files at PR #36 head and PR #34 head returned identical blob SHAs: workflow `cd1e1bcbfed93ce90bb0efe67c6d1a0b9a70b616`; adapter `da7660bccfe6aa2b4bebc03f4eb0744e9b16f190`; archive tests `dced3b29967b5b51e440e937fa9af3a902643326`; topology tests `a3b9fd7409aeb92cf561eabffe3c4198a7e782b3`; real-fixture verifier `225b2bcb40e2c04cad9aaab100c7b6349a12874e`.
+- At compare base `85f23c6073dc18ee9f042c1ef7b82ecaec7be268`, PR #36 was 5 ahead / 5 behind and diverged. Main advanced after the clean recut; keep PR #36 OPEN and do not merge or force-push. PR #34 remains OPEN (1 ahead / 172 behind at the same base); PR #35 OPEN (9 ahead / 156 behind). TESSERACT PR #6 remains OPEN; current-head runs `39994207477` and `39994207667` failed with zero steps/artifacts. Issuer key and runner assignment remain unverified; no CI rerun.
+
+### State integrity
+- Provider checkpoint `PROVIDER_READBACK_20261025T1553ICT.json` was read back and parsed.
+- Cloud checkpoint `CLOUD_CONTINUITY_READBACK_20261025T1553ICT.json`, blob SHA `6458b0c34004a1201df4d4eb6e47a5ac465d3d16`, commit `85f23c6073dc18ee9f042c1ef7b82ecaec7be268`, was read back and parsed. Cloud pointer was updated and read back at blob `64d9c79dd29d3432735942ade865121e7a94d662`, commit `325daf4b0d699664d6256628502041c8a6722c76`; it now records all Desktop Commander devices Offline and Dropbox metadata-only access.
+- Ledger update commit `ce6ad62fdfa7241f36cf9b58639989c7bf797e30`, blob SHA `f319214cef6a0e8bd5f0969f957833de3b333c2f`: 29 tasks, 155 verified action events, 155 provider observations, 4 integrity corrections, 0 tasks closed. Task status counts unchanged.
+- MODUAL state update commit `74a020b44cb41deabd9c0ec7f759ea423e345cf4`, blob SHA `1728c15cfc42ccb8296f2859dc5692777894fe1e`: appended current provider/Archive readback; source history and previous observations preserved.
+- No sensor rows, raw source bytes, or credentials were uploaded. No source was moved/deleted/overwritten. Cloud/GitHub sensor export remains disabled.
+
+### Next edge
+Continue independent GitHub/provider work while the host route is offline. When a callable host returns, read the exact current Tick/consumer receipts and recompute the exact host-local source hash. After the next actual n8n hourly pulse, read its execution and row; do not trigger a duplicate scan. Keep every unfinished task OPEN.
