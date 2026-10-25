@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-25T15:08:57.347+07:00",
+  "observed_at": "2026-10-25T15:56:01.299+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -699,7 +699,7 @@
         "checkpoint_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2"
       }
     ],
-    "provider_probe_observed_at": "2026-10-25T15:08:57.347+07:00",
+    "provider_probe_observed_at": "2026-10-25T15:56:01.299+07:00",
     "providers": {
       "xtime": {
         "observed_at_local": "2026-10-25T02:58:40.987+07:00",
@@ -871,7 +871,10 @@
       "revision": "0165dc1e4794ab00000000395cdfd73",
       "bytes": 35389440,
       "server_modified_utc": "2026-10-14T00:20:03Z",
-      "observed_at": "2026-10-25T15:08:57.347+07:00"
+      "observed_at": "2026-10-25T15:56:01.299+07:00",
+      "metadata_readback": true,
+      "raw_csv_downloaded": false,
+      "content_sha256_recomputed": false
     },
     "latest_main_tree_repair": {
       "affected_commit": "e23cea062381a21674ec8f6708e16ae279f79893",
@@ -11727,6 +11730,64 @@
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
       "live_sensor_stream_verified": false,
       "tasks_closed": 0
+    },
+    {
+      "id": "PROVIDER_READBACK_20261025T1553ICT",
+      "observed_at": "2026-10-25T15:56:01.299+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1553ICT.json",
+      "checkpoint_blob_sha": "1ad5da57e1e2b7d1d8ac5bf2a7f9c2e9b9732467",
+      "checkpoint_commit": "e3c6dccb6e24bf176066a6b02ed76681f022adef",
+      "dropbox_metadata": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "revision": "0165dc1e4794ab00000000395cdfd73",
+        "bytes": 35389440,
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_readback": true,
+        "raw_csv_downloaded": false,
+        "content_hash_recomputed": false
+      },
+      "host": {
+        "device_inventory_read": true,
+        "all_registered_devices_offline": true,
+        "fresh_tick_readback": false,
+        "latest_known_tick_sha256": "1f7f79c099bf93619e41f0f9d9251087835eb0fbb81d0b2dd0311e95e76fbec3",
+        "latest_known_consumer_sha256": "339e5c993ecda667384aa92a28904277369ecb2a6ffbdc1fe9815d3ba971d4de",
+        "live_sensor_stream_verified": false,
+        "last_recorded_status": "EVENT_TIMESTAMP_STALE"
+      },
+      "exact_target_discrepancy": {
+        "host_expected_bytes": 89814328,
+        "host_expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+        "last_recorded_exact_target_found": false,
+        "substitution_performed": false
+      },
+      "archive_pr36": {
+        "head": "e9c299594447d75bebb75c343cdb707731c7ea50",
+        "compare_base": "85f23c6073dc18ee9f042c1ef7b82ecaec7be268",
+        "status": "diverged",
+        "ahead_by": 5,
+        "behind_by": 5,
+        "ci_runs": [
+          40177456089,
+          40177456127,
+          40177456080
+        ],
+        "all_success": true,
+        "five_changed_blobs_match_pr34": true,
+        "merged": false,
+        "force_push": false
+      },
+      "n8n": {
+        "execution_id": "161",
+        "status": "success",
+        "event_id": "X20261025080024100_CLOUD",
+        "row_id": 350,
+        "state": "OPEN_WORK_REMAINS",
+        "pending_tasks": 45,
+        "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED"
+      },
+      "tasks_closed": 0
     }
   ],
   "privacy_policy": {
@@ -13907,5 +13968,79 @@
     "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED",
     "host_operations": 0,
     "tasks_closed": 0
+  },
+  "latest_provider_readback_20261025T1553ICT": {
+    "id": "PROVIDER_READBACK_20261025T1553ICT",
+    "observed_at": "2026-10-25T15:56:01.299+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1553ICT.json",
+    "checkpoint_blob_sha": "1ad5da57e1e2b7d1d8ac5bf2a7f9c2e9b9732467",
+    "checkpoint_commit": "e3c6dccb6e24bf176066a6b02ed76681f022adef",
+    "dropbox_metadata": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_readback": true,
+      "raw_csv_downloaded": false,
+      "content_hash_recomputed": false
+    },
+    "host": {
+      "device_inventory_read": true,
+      "all_registered_devices_offline": true,
+      "fresh_tick_readback": false,
+      "latest_known_tick_sha256": "1f7f79c099bf93619e41f0f9d9251087835eb0fbb81d0b2dd0311e95e76fbec3",
+      "latest_known_consumer_sha256": "339e5c993ecda667384aa92a28904277369ecb2a6ffbdc1fe9815d3ba971d4de",
+      "live_sensor_stream_verified": false,
+      "last_recorded_status": "EVENT_TIMESTAMP_STALE"
+    },
+    "exact_target_discrepancy": {
+      "host_expected_bytes": 89814328,
+      "host_expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+      "last_recorded_exact_target_found": false,
+      "substitution_performed": false
+    },
+    "archive_pr36": {
+      "head": "e9c299594447d75bebb75c343cdb707731c7ea50",
+      "compare_base": "85f23c6073dc18ee9f042c1ef7b82ecaec7be268",
+      "status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 5,
+      "ci_runs": [
+        40177456089,
+        40177456127,
+        40177456080
+      ],
+      "all_success": true,
+      "five_changed_blobs_match_pr34": true,
+      "merged": false,
+      "force_push": false
+    },
+    "n8n": {
+      "execution_id": "161",
+      "status": "success",
+      "event_id": "X20261025080024100_CLOUD",
+      "row_id": 350,
+      "state": "OPEN_WORK_REMAINS",
+      "pending_tasks": 45,
+      "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED"
+    },
+    "tasks_closed": 0
+  },
+  "latest_independent_archive_readback_20261025T1553ICT": {
+    "head": "e9c299594447d75bebb75c343cdb707731c7ea50",
+    "compare_base": "85f23c6073dc18ee9f042c1ef7b82ecaec7be268",
+    "status": "diverged",
+    "ahead_by": 5,
+    "behind_by": 5,
+    "ci_runs": [
+      40177456089,
+      40177456127,
+      40177456080
+    ],
+    "all_success": true,
+    "five_changed_blobs_match_pr34": true,
+    "merged": false,
+    "force_push": false
   }
 }
