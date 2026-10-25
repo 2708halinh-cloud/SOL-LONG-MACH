@@ -1,0 +1,197 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.0",
+  "observed_at": "2026-10-25T09:16:54.487+07:00",
+  "cloud_observed_at": "2026-10-25T09:22:34.334+07:00",
+  "observation_precision": "Host and cloud timestamps differ; each timestamp is preserved from its own provider readback, not reconciled by assumption.",
+  "continuity_state": "OPEN_WORK_REMAINS",
+  "provenance": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "main_head_before_checkpoint": "a6c7fe97925429a244af4ff5d0c8ee24e46c7a05",
+    "previous_checkpoint": {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0837ICT.json",
+      "blob_sha": "1c0bdbaf3c6a8eecda555d106ffee929c1670235",
+      "commit_sha": "8398ee32245810316f379e20fb30dd407253f13c",
+      "readback_verified": true
+    },
+    "previous_pointer_blob_sha": "99624b362066b4408abca009d326bbc957dc1308"
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "latest_execution_observed": {
+      "id": "155",
+      "status": "success",
+      "mode": "trigger",
+      "started_at": "2026-10-25T02:00:22.064Z",
+      "stopped_at": "2026-10-25T02:00:24.073Z",
+      "event_id": "X20261025020023944_CLOUD",
+      "evidence_row_id": 326,
+      "exact_row_readback": true,
+      "state": "OPEN_WORK_REMAINS",
+      "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED"
+    },
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_table_rows": 330,
+    "latest_host_event_id": "X20261025021636971_HOST_READBACK",
+    "latest_host_row_id": 330,
+    "latest_host_row_exact_readback": true,
+    "append_only_provenance_corrections": {
+      "rows": [
+        328,
+        329
+      ],
+      "row_327_preserved": true,
+      "authoritative_correction_row": 329,
+      "note": "Row 327 has a mistyped prior_hash; correction rows 328 and 329 preserve the original row and record the correct prior tick SHA."
+    },
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_project_id": "6qKpRmicIGHA5snY",
+    "recovery_rows": 45,
+    "unfinished_rows": 45,
+    "tasks_closed": 0,
+    "host_heartbeat_probed_by_workflow": false
+  },
+  "github_task_ledger": {
+    "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "blob_sha": "1cf53c0e3b85ebe0aeaa530bdb66f13dcb8102e1",
+    "parsed": true,
+    "task_count": 29,
+    "tasks_closed": 0,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "status_synchronization_performed": false
+  },
+  "host": {
+    "device": "DESKTOP-86ITNQ4",
+    "route": "Remote Desktop Commander",
+    "route_status": "ONLINE",
+    "last_verified_readback_at": "2026-10-25T09:16:54.487+07:00",
+    "latest_tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T021636971987Z.json",
+      "bytes": 1292,
+      "sha256": "40EC9A652AE2A21B62F4B285DDAE9B38E7D301C0AD2C155EC251BB1B29AAF577",
+      "observed_at_utc": "2026-10-25T02:16:36.971987Z",
+      "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_reading_confirmed": false
+    },
+    "trace": {
+      "path": "D:\\SENSOR_LOGS\\state\\telemetry_buffer_sync_wrapper_trace.log",
+      "bytes": 15410,
+      "sha256": "FFBA8F8CEBA596BA3E2C1DA839E68A7C6E48E47135FB409C2CBE27D4B6713D52",
+      "last_receipt_readback_ok_at_utc": "2026-10-25T02:16:37.1275417Z",
+      "verifier_exit": 0,
+      "consumer_exit": 0
+    },
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "last_run_at_utc": "2026-10-25T02:16:33Z",
+      "last_task_result": 0,
+      "next_run_at_utc": "2026-10-25T02:21:32Z",
+      "number_of_missed_runs": 0,
+      "settings_changed": false
+    },
+    "latest_tick_advanced_after_trace": true,
+    "exact_modual_source": {
+      "path": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+      "expected_bytes": 89814328,
+      "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+      "exists_at_last_check": false,
+      "last_checked_at": "2026-10-25T09:15:31.610+07:00"
+    },
+    "candidate_not_substitute": {
+      "path": "D:\\SENSOR_LOGS\\state\\MODUAL_CARRIER_CANDIDATE_20261025T0753ICT.csv",
+      "bytes": 12154,
+      "sha256": "933252E45EC7D794F15EA347DFDBE52F4FB19BFD6CCA49BB7F013159AC696F75",
+      "used_as_source": false
+    },
+    "process_termination_performed": false,
+    "source_files_written": false,
+    "raw_sensor_values_read_or_stored": false
+  },
+  "android": {
+    "direct_probe_at": "2026-10-25T09:15:31.610+07:00",
+    "adb_path": "C:\\Users\\halin\\platform-tools-latest-windows\\platform-tools\\adb.exe",
+    "adb_path_exists": true,
+    "devices_listed": [
+      {
+        "target": "1056285",
+        "role": "XIAOMI12_USB",
+        "state": "device"
+      }
+    ],
+    "redmi_note14_pro_wireless_target": "192.168.1.14:5556",
+    "redmi_target_state": "DEVICE_NOT_FOUND",
+    "live_sensor_stream_verified": false
+  },
+  "archive_task": {
+    "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+    "status": "OPEN",
+    "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
+    "pr": 34,
+    "pr_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/34",
+    "pr_state": "open",
+    "draft": true,
+    "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+    "current_main_sha": "a6c7fe97925429a244af4ff5d0c8ee24e46c7a05",
+    "branch_relation": {
+      "ahead": 1,
+      "behind": 36
+    },
+    "workflow_runs": [
+      {
+        "run_id": 40145523727,
+        "job": "readonly-adapters",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40145523754,
+        "job": "verify-stone-folders",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40145523744,
+        "job": "secret-guard",
+        "conclusion": "success"
+      }
+    ],
+    "windows_host_validation_for_archive": "NOT_VERIFIED",
+    "source_export_recovery": "NOT_COMPLETE",
+    "merge_performed": false,
+    "force_push_performed": false
+  },
+  "provider_access": {
+    "github": "AVAILABLE",
+    "n8n": "AVAILABLE",
+    "remote_desktop_commander": "ONLINE_FOR_READ_ONLY_PROBE",
+    "dropbox_raw_byte_search": "BLOCKED_BY_CONNECTOR_LINK_ID_SCHEMA_VALIDATION; NO_DROPBOX_DATA_READ",
+    "google_drive_writes": "PROHIBITED_BY_USER"
+  },
+  "continuation_guards": {
+    "preserve_open_and_in_progress": true,
+    "no_google_drive_writes": true,
+    "no_source_mutation": true,
+    "no_process_termination": true,
+    "no_cache_or_meta_db_deletion": true,
+    "no_secret_values": true,
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "no_merge_or_force_push": true,
+    "do_not_substitute_candidate_for_exact_modual_source": true
+  },
+  "next": [
+    "Verify the next scheduled Windows tick after 2026-10-25T02:21:32Z and continue from the latest tick SHA; do not rerun from the beginning.",
+    "Keep live sensor stream unverified and Redmi Note 14 Pro wireless target not found until a fresh direct authorized probe proves otherwise.",
+    "Locate the exact MODUAL bulk source by expected SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 and size 89814328; candidate CSV is not a substitute.",
+    "Retry Dropbox source lookup only through a connector route that passes authorized link binding; do not write to Google Drive.",
+    "Preserve all 45 n8n recovery rows and all 29 GitHub task-ledger tasks; keep OPEN/IN_PROGRESS states unchanged.",
+    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN and PR #34 OPEN/Draft; do not merge or force-push."
+  ]
+}
