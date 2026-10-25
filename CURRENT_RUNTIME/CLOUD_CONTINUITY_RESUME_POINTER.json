@@ -1,0 +1,376 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
+  "state": "OPEN_WORK_REMAINS",
+  "updated_at_utc": "2026-10-25T07:44:39Z",
+  "updated_at_local": "2026-10-25T14:44:39+07:00",
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1444ICT.json",
+    "blob_sha": "b07da57927b3e735810760a725d19535befa1bc3",
+    "commit_sha": "27649f150e25f3bf4e5992abbd911078540e056d",
+    "readback_verified": true,
+    "note": "Evidence rows 348–349 read back exactly: PR #6 run-jobs endpoint lists five failed jobs and one skipped, artifacts absent, all six step summaries empty. Fresh host probe at 14:38:49 ICT still shows tick 14:36:39, task Ready/result 0, next host run 14:41:32 ICT; no host probe after that scheduled time. All OPEN/IN_PROGRESS states preserved."
+  },
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1442ICT.json",
+    "blob_sha": "a168f5b2d11cd325eff61e5c763d3e7d81cc9f6a",
+    "commit_sha": "5a2419cc865bd9dddb73eaa797ff661e2efef9b0",
+    "readback_verified": true,
+    "note": "Fresh direct host tick readback appended as n8n evidence row 347; task Ready/result 0; exact MODUAL source absent at configured path; sensor event stream remains unverified; all OPEN/IN_PROGRESS states preserved."
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "latest_execution_id": "160",
+    "latest_execution_status": "success",
+    "latest_execution_mode": "trigger",
+    "latest_execution_started_at_utc": "2026-10-25T07:00:22.083Z",
+    "latest_execution_stopped_at_utc": "2026-10-25T07:00:24.221Z",
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_table_rows": 349,
+    "latest_host_evidence_row_id": 347,
+    "latest_host_event_id": "X20261025073650716_HOST_READBACK",
+    "latest_host_row_exact_readback": true,
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_project_id": "6qKpRmicIGHA5snY",
+    "recovery_rows": 45,
+    "unfinished_rows": 45,
+    "tasks_closed": 0,
+    "host_heartbeat_probed_by_workflow": false,
+    "interpretation": "Execution 160 is cloud-only; host and GitHub evidence are separate append-only rows.",
+    "latest_cloud_evidence_row_id": 341,
+    "latest_cloud_event_id": "X20261025070024074_CLOUD",
+    "terminal_rows": 0,
+    "latest_github_evidence_row_id": 349,
+    "latest_github_event_id": "X20261025074407199_PR6_STEPS_READBACK",
+    "latest_github_row_exact_readback": true,
+    "latest_pr_log_blocker_row_id": 346,
+    "latest_pr_log_blocker_event_id": "X20261025072344_PR6_LOG_BLOCKER",
+    "latest_rows_exact_readback": true,
+    "latest_pr_job_summary_row_id": 348,
+    "latest_pr_steps_row_id": 349
+  },
+  "host": {
+    "device": "DESKTOP-86ITNQ4",
+    "route": "Remote Desktop Commander",
+    "route_online_for_read_only_probe": true,
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T073639224482Z.json",
+    "latest_tick_sha256": "254247BA48A1677C9CEA805E340E342E7267821E3413C594D0FDD9888088B905",
+    "latest_tick_observed_at_utc": "2026-10-25T07:36:39.224482Z",
+    "previous_tick_sha256": "19999AC7876C3F4470C0422A56DFC80BD9B59EC77CCEEFCF3DDEE0570E899EE3",
+    "trace_sha256": "0DA7298F9BE1FA1043974C89D310A27AB73D8DB210839D35A632E11F490875AC",
+    "trace_receipt_readback_ok": true,
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_bytes": 35389440,
+    "live_sensor_reading_confirmed": false,
+    "xiaomi12_usb": {
+      "adb_state": "device",
+      "sensorservice_probe_succeeded": true,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "live_sensor_event_stream_confirmed": false
+    },
+    "redmi_note14pro_wireless": {
+      "target": "192.168.1.14:5556",
+      "adb_state": "NOT_LISTED",
+      "live_sensor_event_stream_confirmed": false
+    },
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-25T14:36:33+07:00",
+      "last_result": "0x0",
+      "next_run_local": "2026-10-25T14:41:32+07:00",
+      "repeat_interval": "PT5M",
+      "execution_time_limit": "PT4M",
+      "missed_runs": 0,
+      "next_run_was_future_at_probe": true
+    },
+    "exact_modual_source_found": false,
+    "expected_modual_source_bytes": 89814328,
+    "expected_modual_source_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "candidate_substitution": false,
+    "clock_skew_guard": "Use host scheduler timestamps for due-time decisions; cloud and host execution timestamps are separate.",
+    "host_clock_at_last_probe_local": "2026-10-25T11:23:45.9126701+07:00",
+    "cloud_host_clock_skew_observed_seconds": 314,
+    "latest_tick_bytes": 1635,
+    "trace_receipt_readback_ok_at_utc": "2026-10-25T04:21:38.495328Z",
+    "latest_checkpoint_host_probe_local": "2026-10-25T11:23:45.9126701+07:00",
+    "next_run_at_last_probe": "2026-10-25T11:26:32+07:00",
+    "fresh_host_probe_this_run": true,
+    "interpretation": "Fresh host probe at 14:38:49 ICT found same tick and Ready/result 0; next run 14:41:32 ICT was still future. No later host probe recorded in this checkpoint; sensor stream remains unverified.",
+    "latest_host_probe_local": "2026-10-25T14:38:49.9951195+07:00",
+    "live_sensor_stream_status": "UNVERIFIED",
+    "latest_probe_local": "2026-10-25T14:38:49.9951195+07:00"
+  },
+  "github_task_ledger": {
+    "task_count": 29,
+    "tasks_closed": 0,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "observed_at_local": "2026-10-25T14:23:46+07:00",
+    "ledger_blob_sha": "a946a1a563229e83557a120ebe143470a9371953",
+    "blob_sha": "a946a1a563229e83557a120ebe143470a9371953",
+    "blob_sha_rechecked_in_this_run": true,
+    "parsed_task_counts_last_verified_at_local": "2026-10-25T14:23:46+07:00",
+    "current_default_branch_fetch": {
+      "blob_sha": "a946a1a563229e83557a120ebe143470a9371953",
+      "fetch_file_content_length": 0,
+      "fetch_blob_content_length": 1210131,
+      "fetch_blob_json_parse": "PASS",
+      "schema": "SOL_OPEN_TASKS_PARALLEL_LEDGER/1.0",
+      "task_count": 29,
+      "status_counts": {
+        "OPEN": 10,
+        "OPEN_CARRIED": 2,
+        "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+        "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+        "IN_PROGRESS": 3
+      },
+      "tasks_closed": 0,
+      "main_head": "638f5b7c746c786f7395c9ec37e7d3b32bccadd0"
+    },
+    "tasks_closed_in_this_run": 0
+  },
+  "continuation_guards": {
+    "preserve_open_and_in_progress": true,
+    "no_google_drive_writes": true,
+    "no_process_termination": true,
+    "no_cache_or_meta_db_deletion": true,
+    "no_source_mutation": true,
+    "no_secret_values": true,
+    "no_raw_sensor_values_stored": true,
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "no_merge_or_force_push": true,
+    "do_not_substitute_candidate_for_exact_modual_source": true,
+    "tasks_closed": 0
+  },
+  "next": [
+    "Fresh-read host after host-local 2026-10-25 14:41:32 ICT; use host time only and do not infer host failure from cloud time.",
+    "Keep sensor stream UNVERIFIED until event timestamps advance; Xiaomi 12 event timestamps remain stale and Redmi target remains NOT_LISTED.",
+    "Locate exact MODUAL source by expected SHA-256 and byte size; configured path was absent; do not substitute windows_SENSON.CSV.",
+    "For PR #6, only a working read-only run-summary/source route remains; six job-step endpoints are empty and artifacts are absent. Do not rerun CI or fetch secret-bearing raw logs.",
+    "Preserve all 29 GitHub ledger tasks and 45 n8n recovery rows as nonterminal."
+  ],
+  "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1444ICT.json",
+      "blob_sha": "b07da57927b3e735810760a725d19535befa1bc3",
+      "commit_sha": "27649f150e25f3bf4e5992abbd911078540e056d",
+      "readback_verified": true,
+      "note": "Fresh PR6 run-jobs/artifacts/step-summary readback recorded in rows 348–349; direct host probe remains before next scheduled tick; no task closure."
+    },
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1442ICT.json",
+      "blob_sha": "a168f5b2d11cd325eff61e5c763d3e7d81cc9f6a",
+      "commit_sha": "5a2419cc865bd9dddb73eaa797ff661e2efef9b0",
+      "readback_verified": true,
+      "note": "Host tick 14:36:39Z and task result 0 read back; evidence row 347 exact; exact MODUAL path absent; no task closure."
+    },
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1423ICT.json",
+      "blob_sha": "fbd0ed07bad303929ecfa19d58c69806ce56d21c",
+      "commit_sha": "8b84fadea89f6f644a13710fca474088847cb5ce",
+      "readback_verified": true,
+      "note": "PR6 selected log fetch blocked by 404; six job step summaries empty; no CI rerun or state change."
+    },
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1422ICT.json",
+      "blob_sha": "df7b4d2ac7207eef36d9326dce0058d67511e341",
+      "commit_sha": "9364e4e14133b3460a3acd09322d56fef32a88b7",
+      "readback_verified": true,
+      "note": "Fresh host tick SHA and scheduler readback; PR34/35 checks success, PR6 failures preserved; n8n rows 344–345 read back."
+    },
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1420ICT.json",
+      "blob_sha": "30b26e84b09751db630fab677120a541cfd47fc3",
+      "commit_sha": "8f61e2dc800b447bca8f0c471f8e5527fdba9545",
+      "readback_verified": true,
+      "note": "Post-schedule tick receipt and task status read back; evidence row 343 exact; no task closure."
+    },
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1418ICT.json",
+      "blob_sha": "2435f3c09e1a7ee1e29e0107745af8816db08f08",
+      "commit_sha": "fce3540e57869844cd4c45015cea2a13171ed985",
+      "readback_verified": true,
+      "note": "Fresh n8n row 342 exact readback and direct Remote Desktop Commander host tick/task probe; no task closure."
+    },
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1329ICT.json",
+      "blob_sha": "4b12ed402785de1526a7cd4ab9ef22afb7f690af",
+      "commit_sha": "98a3037e17bfb9d1fa14452d6ceb049526a90cd2",
+      "readback_verified": true,
+      "note": "Fresh checkpoint with host tick advanced after scheduled run; evidence row 340 read back exactly."
+    },
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1326ICT.json",
+      "blob_sha": "cc97ea8a4f4e88fa7a4422a8d6ed2f4e30fd2333",
+      "commit_sha": "c6b9e8fe5c17c5f175dd5e83b44b8b90dd1f400b",
+      "readback_verified": true,
+      "note": "Fresh checkpoint with direct Windows host readback and n8n evidence row 339."
+    },
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1209ICT.json",
+      "blob_sha": "5ba3e914246f08e384819ab48401000398c4cf25",
+      "commit_sha": "5a5502c4eebb1b6e4ef61e447c87fbbb9269d880",
+      "readback_verified": true,
+      "note": "Full ledger blob content parsed; direct ADMIN Library ZIP and MAP_NGUON XIV readback verified; no task closure."
+    },
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1128ICT.json",
+      "blob_sha": "87421072707656530c6ee4206204ab874edc8405",
+      "commit_sha": "45aed3c6d0d9eee556368540d1ad7a9e8fe01c58",
+      "readback_verified": true,
+      "note": "Exact default-branch readback verified; ledger file size and blob SHA confirmed, full ledger content not parsed due connector display limit."
+    },
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1040ICT.json",
+      "blob_sha": "175c5d88dfb7b3639cd7f860887358473beae5a6",
+      "commit_sha": "bf766d332ce8625c192a6d368b91cab7c3f5420e",
+      "readback_verified": true,
+      "note": "Valid earlier host snapshot; superseded by later tick advancement readback."
+    },
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1025ICT.json",
+      "blob_sha": "9bfd008ead7ee20fc6b9e752a19f317d1e7d9c88",
+      "commit_sha": "3171530aa68dfafe512f098f17a426a43295b4ed",
+      "readback_verified": true,
+      "note": "Previous active checkpoint before the 10:40 ICT host-scheduler staleness readback."
+    },
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0959ICT.json",
+      "blob_sha": "3e380bf8e8a3e8ac9246573d6d8464870c13f7cd",
+      "commit_sha": "30cb673b2d51e9ed49b929a5635db0996d14d620",
+      "readback_verified": true,
+      "note": "Fresh checkpoint was fetched from the default branch after commit; it records n8n row 331 exact readback and the direct read-only Windows tick/trace/scheduler probe."
+    },
+    {
+      "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
+      "blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
+      "commit_sha": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
+      "historical_commit_fetch_verified": true,
+      "default_branch_path_fetch": "NOT_FOUND_AT_TIME_OF_PROBE",
+      "note": "Historical checkpoint remains available at its recorded commit; the active pointer is moved to the fresh default-branch checkpoint."
+    },
+    {
+      "path": "CURRENT_RUNTIME/TESSERACT_ART_READBACK_20261025T1020ICT.json",
+      "blob_sha": "ddc5e2ea714b0cf67451f5674d9842e6c4acea29",
+      "commit_sha": "216cdb5bc2ae910a9e63822ce03ebb70a7ca4048",
+      "readback_verified": true,
+      "note": "Exact default-branch readback verified: checkpoint blob, ledger blob SHA, TESSERACT task status, and zero-closure invariant all match."
+    }
+  ],
+  "tesseract_art": {
+    "task_id": "TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+    "status": "IN_PROGRESS",
+    "latest_event_id": "TESSERACT_ART_AND_WSL_CARRIER_READBACK_20261025T1250ICT",
+    "exact_original_source_identity_verified": false,
+    "local_browser_control_route_definition_verified": true,
+    "local_browser_control_runtime_probed": false,
+    "real_browser_runtime_verified": false,
+    "tasks_closed": 0,
+    "latest_readback_file": "CURRENT_RUNTIME/TESSERACT_ART_WSL_CARRIER_READBACK_20261025T1250ICT.json",
+    "latest_readback_blob_sha": "5a697afe4d90619404692f997e2d1a87e3d52a7d",
+    "latest_readback_commit_sha": "87a6e86e3ef39a60cbf29d4f00c6597262340d5c",
+    "latest_readback_verified": true,
+    "new_candidate_carriers_metadata_only": 8,
+    "npu_or_task_event_dispatch_verified": false,
+    "note": "Exact checkpoint blob and default-branch pointer were fetched back and parsed; task 27 remains IN_PROGRESS. Candidate archives remain metadata-only; host/browser runtime and WSL/NPU execution were not performed.",
+    "latest_readback_verified_at_local": "2026-10-25T12:51:35+07:00",
+    "latest_candidate_carriers_metadata_only": 8
+  },
+  "memory_archive": {
+    "target": "MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL",
+    "latest_event_id": "MEMORY_ARCHIVE_SOURCE_SCAN_20261025T1252ICT",
+    "latest_readback_file": "CURRENT_RUNTIME/MEMORY_ARCHIVE_SOURCE_SCAN_20261025T1252ICT.json",
+    "latest_readback_blob_sha": "3a85d6cd517d98dff4a4618309b7e0a5d99a7203",
+    "latest_readback_commit_sha": "87ac472267e9614f0e508ba0d1c358d0d15cbea9",
+    "latest_readback_verified": true,
+    "library_inventory_items": 65,
+    "raw_source_archive_subfolders_empty": [
+      "7Z",
+      "ZIP",
+      "ALL",
+      "Archive",
+      "RAR",
+      "TAR",
+      "BZ2",
+      "GZ",
+      "XZ"
+    ],
+    "raw_openai_export_recovered": false,
+    "direct_drive_dropbox_takeout_readback_available": false,
+    "source_bytes_modified": false,
+    "tasks_closed": 0,
+    "note": "Checkpoint and pointer were fetched back from the default branch. Inventory confirms empty Library archive index subfolders and no raw OpenAI export in the scanned Library subtree; this is not a fresh Drive/Dropbox/Takeout result.",
+    "latest_readback_verified_at_local": "2026-10-25T12:52:20+07:00"
+  },
+  "provider_access": {
+    "github_connector": "AVAILABLE",
+    "chatgpt_library_metadata_and_text_read": "AVAILABLE",
+    "chatgpt_library_raw_byte_materialization": "AVAILABLE_FOR_THIS_DERIVED_CARRIER; DENIED_FOR_TESSERACT_AND_OTHER_TESTED_CANDIDATES",
+    "google_drive_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
+    "dropbox_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
+    "takeout_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
+    "authorized_host_browser_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
+    "n8n_connector": "AVAILABLE",
+    "remote_desktop_commander": "AVAILABLE_FOR_READ_ONLY_HOST_PROBE"
+  },
+  "latest_pr_readback": {
+    "observed_at_local": "2026-10-25T14:21:45+07:00",
+    "archive_pr34": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/34",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "checks": {
+        "verify_stone_folders": "success",
+        "secret_guard": "success",
+        "readonly_adapters": "success"
+      }
+    },
+    "modual_pr35": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/35",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "f99d96e39f62245d23ad728daac2c2006061e393",
+      "checks": {
+        "test": "success",
+        "secret_guard": "success"
+      }
+    },
+    "tesseract_pr6": {
+      "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "checks": {
+        "failed": 6,
+        "skipped": 1
+      },
+      "failed_run_id": 39994207477,
+      "ci_rerun": false,
+      "log_fetch": "404 BlobNotFound for a selected job; step summaries empty"
+    }
+  },
+  "wsl_ram_npu": {
+    "task": "TASK_CONVERT_RAM_CPU_GPU_NPU_20261020",
+    "read_only_probe_carrier": "SOL_WSL_DAU_DINH_READ_ONLY_20261010.ps1",
+    "read_only_probe_carrier_text_readback": true,
+    "read_only_probe_executed": false,
+    "same_name_copy_identity": "UNVERIFIED",
+    "related_archive_raw_byte_access": "DENIED",
+    "actions_A_to_E": "PENDING",
+    "tasks_closed": 0,
+    "readback_verified": true,
+    "readback_verified_at_local": "2026-10-25T12:51:35+07:00"
+  }
+}

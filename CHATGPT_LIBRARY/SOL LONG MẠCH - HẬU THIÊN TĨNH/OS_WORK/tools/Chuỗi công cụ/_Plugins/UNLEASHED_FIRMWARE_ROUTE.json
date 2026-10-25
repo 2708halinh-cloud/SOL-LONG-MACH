@@ -1,0 +1,37 @@
+{
+  "schema": "SOL_PLUGIN_TOOL_ROUTE/1.0",
+  "id": "unleashed-firmware-sensorimotor",
+  "name": "Unleashed Firmware — STM32WB SENSORIMOTOR",
+  "path": "Chuỗi công cụ/_Dụng cụ/SUB_GHZ_UNLEASHED_PROTOCOLS/UNLEASHED_FIRMWARE_DEV/",
+  "entrypoints": [
+    "unleashed_source.py",
+    "unleashed_source_index.py",
+    "unleashed_build_diagnostics.py",
+    "unleashed_rpc_transport.py",
+    "unleashed_sensorimotor.py",
+    "unleashed_submodule_sync.py",
+    "unleashed_sensorimotor_api.py",
+    "unleashed_reentry.py"
+  ],
+  "indexes": [
+    "unleashed-submodules-source-index.md",
+    "unleashed-submodules-source-index.jsol"
+  ],
+  "sensorimotor_logs": "SENSORIMOTOR_LOGS/",
+  "hardware_driver": "fap/sol_gpio_observer/sol_stm32wb_gpio.c",
+  "route": "_Plugins -> source/bus/drivers -> diagnostics/device readback -> 5 logs -> readback -> _Plugins",
+  "truth_boundaries": [
+    "Tool source exists != installed Flipper firmware",
+    "GitHub/Library synchronized notes != connected STM32WB",
+    "FBT preflight blocked: 12 submodule payloads absent in source ZIP",
+    "No auto login, RF output, firmware flash, or device mutation"
+  ],
+  "activation": "PROJECT_MANIFEST_NOT_INSTALLED_CHATGPT_PLUGIN",
+  "readback_api": {
+    "host": "127.0.0.1",
+    "port": 8767,
+    "read_only": true,
+    "resume": "API_CURRENT_READBACK.json"
+  },
+  "termux_device": "TERMUX_RUNTIME_READBACK.json"
+}

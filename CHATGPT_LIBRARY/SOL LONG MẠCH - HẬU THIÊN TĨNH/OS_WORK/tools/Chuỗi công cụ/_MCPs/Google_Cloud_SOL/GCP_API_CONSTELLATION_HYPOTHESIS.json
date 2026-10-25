@@ -1,0 +1,611 @@
+{
+  "schema": "SOL_GCP_API_CONSTELLATION_ASSUMPTION/1.0",
+  "source": "USER_HYPOTHETICAL_GOOGLE_CLOUD_DASHBOARD_2026-10-18",
+  "scope": "DESIGN_EXPLORATION_NO_PROVIDER_CALLS",
+  "api_count": 50,
+  "metrics_semantics": {
+    "—": "NULL_NO_REPORTED_MEASUREMENT",
+    "percentile": "UNSPECIFIED_DO_NOT_CALL_P95",
+    "error_zero_must_not_be_inferred": true
+  },
+  "groups": [
+    {
+      "group": "HOST_COMPUTE",
+      "count": 9
+    },
+    {
+      "group": "STORAGE_BIHM",
+      "count": 7
+    },
+    {
+      "group": "KNOWLEDGE_MEMORY",
+      "count": 12
+    },
+    {
+      "group": "AGENT_BRAIN_MCP",
+      "count": 5
+    },
+    {
+      "group": "SERVICE_BROKER",
+      "count": 5
+    },
+    {
+      "group": "SENSORY_OBSERVABILITY",
+      "count": 3
+    },
+    {
+      "group": "IDENTITY_GOVERNANCE",
+      "count": 6
+    },
+    {
+      "group": "WORLD_PORTALS",
+      "count": 3
+    }
+  ],
+  "SOL_pipeline": "GCP authorized ingress -> BIHM/source pointers -> durable memory/DB -> bounded agent decisions -> PubSub/services -> ledger/checkpoint -> observability/readback",
+  "api_entries": [
+    {
+      "reported_display_name": "API của Compute Engine",
+      "role": "HOST_COMPUTE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "compute.googleapis.com"
+    },
+    {
+      "reported_display_name": "API App Hub",
+      "role": "HOST_COMPUTE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "apphub.googleapis.com"
+    },
+    {
+      "reported_display_name": "API quản trị Cloud Run",
+      "role": "HOST_COMPUTE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "run.googleapis.com"
+    },
+    {
+      "reported_display_name": "API Cloud Spanner",
+      "role": "HOST_COMPUTE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "Cloud SQL",
+      "role": "HOST_COMPUTE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API quản trị Cloud SQL",
+      "role": "HOST_COMPUTE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "sqladmin.googleapis.com"
+    },
+    {
+      "reported_display_name": "API Cloud Dataproc",
+      "role": "HOST_COMPUTE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API điều khiển Cloud Dataproc",
+      "role": "HOST_COMPUTE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API Quản lý Tài nguyên Dataproc",
+      "role": "HOST_COMPUTE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API lưu trữ đám mây",
+      "role": "STORAGE_BIHM",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "storage.googleapis.com"
+    },
+    {
+      "reported_display_name": "API đăng ký hiện vật",
+      "role": "STORAGE_BIHM",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API Kho dữ liệu đám mây",
+      "role": "STORAGE_BIHM",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "Lưu trữ đám mây",
+      "role": "STORAGE_BIHM",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API đăng ký container",
+      "role": "STORAGE_BIHM",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API JSON của Google Cloud Storage",
+      "role": "STORAGE_BIHM",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "storage.googleapis.com"
+    },
+    {
+      "reported_display_name": "API Lakehouse",
+      "role": "STORAGE_BIHM",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API AlloyDB",
+      "role": "KNOWLEDGE_MEMORY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API Trung tâm Phân tích",
+      "role": "KNOWLEDGE_MEMORY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API BigQuery",
+      "role": "KNOWLEDGE_MEMORY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "bigquery.googleapis.com"
+    },
+    {
+      "reported_display_name": "API kết nối BigQuery",
+      "role": "KNOWLEDGE_MEMORY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API Chính sách Dữ liệu BigQuery",
+      "role": "KNOWLEDGE_MEMORY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API chuyển dữ liệu BigQuery",
+      "role": "KNOWLEDGE_MEMORY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API di chuyển BigQuery",
+      "role": "KNOWLEDGE_MEMORY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API đặt chỗ BigQuery",
+      "role": "KNOWLEDGE_MEMORY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API lưu trữ BigQuery",
+      "role": "KNOWLEDGE_MEMORY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API Cloud Dataplex",
+      "role": "KNOWLEDGE_MEMORY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API luồng dữ liệu",
+      "role": "KNOWLEDGE_MEMORY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API biểu mẫu dữ liệu",
+      "role": "KNOWLEDGE_MEMORY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API nền tảng đại lý",
+      "role": "AGENT_BRAIN_MCP",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API đăng ký đại lý",
+      "role": "AGENT_BRAIN_MCP",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "agentregistry.googleapis.com"
+    },
+    {
+      "reported_display_name": "API phân tích dữ liệu với Gemini",
+      "role": "AGENT_BRAIN_MCP",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API Gemini",
+      "role": "AGENT_BRAIN_MCP",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API của Google Cloud",
+      "role": "AGENT_BRAIN_MCP",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API Cloud Pub/Sub",
+      "role": "SERVICE_BROKER",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "pubsub.googleapis.com"
+    },
+    {
+      "reported_display_name": "API Cloud Build",
+      "role": "SERVICE_BROKER",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "cloudbuild.googleapis.com"
+    },
+    {
+      "reported_display_name": "API Cloud Composer",
+      "role": "SERVICE_BROKER",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API triển khai đám mây",
+      "role": "SERVICE_BROKER",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API Trình Quản Lý Triển Khai Đám Mây V2",
+      "role": "SERVICE_BROKER",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API ghi nhật ký đám mây",
+      "role": "SENSORY_OBSERVABILITY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "logging.googleapis.com"
+    },
+    {
+      "reported_display_name": "API giám sát đám mây",
+      "role": "SENSORY_OBSERVABILITY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "monitoring.googleapis.com"
+    },
+    {
+      "reported_display_name": "API Cloud Trace",
+      "role": "SENSORY_OBSERVABILITY",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "cloudtrace.googleapis.com"
+    },
+    {
+      "reported_display_name": "API SDK quản trị",
+      "role": "IDENTITY_GOVERNANCE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API đăng nhập Cloud OS",
+      "role": "IDENTITY_GOVERNANCE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API Quản lý Tài nguyên Đám mây",
+      "role": "IDENTITY_GOVERNANCE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API thông tin xác thực tài khoản dịch vụ IAM",
+      "role": "IDENTITY_GOVERNANCE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "iamcredentials.googleapis.com"
+    },
+    {
+      "reported_display_name": "API Quản lý danh tính và quyền truy cập (IAM)",
+      "role": "IDENTITY_GOVERNANCE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "iam.googleapis.com"
+    },
+    {
+      "reported_display_name": "API doanh nghiệp reCAPTCHA",
+      "role": "IDENTITY_GOVERNANCE",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": "recaptchaenterprise.googleapis.com"
+    },
+    {
+      "reported_display_name": "API lưu trữ ứng dụng Firebase",
+      "role": "WORLD_PORTALS",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "API xác minh số điện thoại Firebase",
+      "role": "WORLD_PORTALS",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    },
+    {
+      "reported_display_name": "Immersive Stream for XR API",
+      "role": "WORLD_PORTALS",
+      "assumed_account_listing": true,
+      "enabled_in_provider": null,
+      "requests": null,
+      "error_percent": null,
+      "average_latency_ms": null,
+      "percentile_latency_ms": null,
+      "api_service_name": null
+    }
+  ],
+  "notes": [
+    "Display names are reproduced as supplied; similar localized names may refer to the same Google API.",
+    "api_service_name is optional lookup hint for some unambiguous APIs, not enabled-state proof.",
+    "Do not run enabled-services queries, create resources, enable billing or expose credential data on a hypothetical exercise.",
+    "Agent Registry catalogs agents, MCP servers, tools and skills; it is not itself proof of agent consciousness.",
+    "Google Cloud Deployment Manager/V2 are legacy: support ended 2026-04-01; sunset 2027-06-30. Prefer Infrastructure Manager or modern IaC for new workloads.",
+    "Google Drive integration is a separate connected provider, not proof of GCP IAM.",
+    "Google Cloud live readback requires project-scoped authenticated gcloud MCP or native provider."
+  ],
+  "source_references": [
+    "https://docs.cloud.google.com/agent-registry/reference/rest",
+    "https://docs.cloud.google.com/deployment-manager/docs/deprecations"
+  ]
+}

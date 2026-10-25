@@ -1,0 +1,199 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.0",
+  "observed_at": "2026-10-25T02:47:05+07:00",
+  "observed_at_utc": "2026-10-24T19:47:05Z",
+  "provenance": {
+    "n8n_workflow_id": "BogzhFUDbRp7kuwh",
+    "n8n_workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "workflow_active": true,
+    "latest_verified_execution_id": "146",
+    "latest_execution_status": "success",
+    "latest_execution_started_at": "2026-10-24T19:00:22.075Z",
+    "latest_execution_stopped_at": "2026-10-24T19:00:24.134Z",
+    "scan_row_id": 306,
+    "scan_event_id": "X20261024190023986_CLOUD",
+    "scan_row_readback_verified": true,
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_table_row_count": 311,
+    "latest_evidence_row_id": 311,
+    "latest_evidence_row_readback_verified": true,
+    "newly_verified_evidence_rows": [
+      307,
+      308,
+      309,
+      310,
+      311
+    ],
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "recovery_row_count": 45,
+    "pending_tasks": 45,
+    "closed_tasks": 0,
+    "recovery_status_counts": {
+      "ASSIGNED_DRAFT_WAITING_CREDENTIAL": 5,
+      "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN": 1,
+      "OPEN_RAW_HASH_AND_CLOUD_TRANSFER": 1,
+      "OPEN_QEMU_C_DISCOVERY": 1,
+      "GUARD_APPLIED_FIVE_AGENT_DRAFTS_ACCOUNT_LEVEL_PAUSE_OPEN": 1,
+      "OPEN_SOURCE_DIRECT_TIMESTAMP": 1,
+      "OPEN_ANDROID_SOURCE_ACCESS": 1,
+      "OPEN_END_TO_END_USER_SESSION": 1,
+      "OPEN_CREDENTIAL_BINDING_AND_AUTH_TEST": 1,
+      "OPEN_7Z_RAR_LR": 1,
+      "SOURCE_BYTES_VERIFIED_FUTURE_SYNC_OPEN": 1,
+      "OPEN_HOST_ROUTING_AND_UI_READBACK": 1,
+      "OPEN_HOST_INTEGRATION_AND_INDEPENDENT_TEST": 1,
+      "OPEN_ROUTED_NONCOERCIVE": 27,
+      "IN_PROGRESS": 1
+    },
+    "credential_count_for_project": 0,
+    "model_catalog_summary_verified": true,
+    "model_catalog_provider_count": 16,
+    "model_binding_verified": false,
+    "agent_publish_or_dispatch_performed": false,
+    "open_task_crosswalk_recomputed_this_run": false,
+    "prior_verified_crosswalk": {
+      "github_open_task_count": 28,
+      "normalized_id_matches": 28,
+      "n8n_only_historical_tasks": 17,
+      "status_divergences_preserved": 2
+    }
+  },
+  "host": {
+    "state_this_run": "REACHABLE_VIA_READONLY_REMOTE_PROBE",
+    "device": "DESKTOP-86ITNQ4",
+    "probe_kind": "READ_ONLY",
+    "latest_tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T193655747351Z.json",
+      "observed_at_utc": "2026-10-24T19:36:55.747351Z",
+      "bytes": 450,
+      "sha256": "096EDA8C37BF4613866BDCDCDAEDCE0317C0E3EB3EDC4A44D3BC07035F1C063E",
+      "previous_tick_sha256": "D5F06B8F70AE75BBEEDAD76786049AD9B0E1D8011D3A527351E50DD112DA6B04",
+      "tick_age_seconds_at_readback": 610,
+      "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "source_bytes": 35389440,
+      "source_modified_at_utc": "2026-10-23T08:45:56.2458701Z",
+      "source_sha256_direct": "9B25BD723DCE06344432597CC4F300053EA5ACBF76BDD2AB4F38BF4A1BF34B87",
+      "source_sha256_in_tick": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true,
+      "live_sensor_reading_confirmed": false,
+      "cloud_enabled": false,
+      "github_enabled": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "newer_tick_after_2026_10_25T02_39_ICT_found": false
+    },
+    "bridge_task": {
+      "task_name": "GGDV_MINH_SENSORIMOTOR_BRIDGE",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-25T02:39:01+07:00",
+      "last_result": "0x1",
+      "next_run_reported_at_last_snapshot": "2026-10-25T02:44:00+07:00",
+      "next_run_was_already_elapsed_at_snapshot": true,
+      "action": "RUN_ONCE.cmd -> minh_sensorimotor_router.py --once",
+      "exact_modual_source_path": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+      "exact_modual_source_exists": false,
+      "eligible_input_files_found": 2,
+      "router_static_code_requires_modual_source_before_ingesting_inputs": true,
+      "task_scheduler_operational_events_found": false,
+      "exact_runtime_exception_captured": false,
+      "task_to_tick_producer_relation": "NOT_VERIFIED",
+      "no_process_termination": true
+    },
+    "modual_source_divergence": {
+      "github_manifest_path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+      "github_manifest_blob_sha": "f2774b6bfe42853dc6251e9c7f21ee701af164b3",
+      "expected_bulk_source_bytes": 89814328,
+      "expected_bulk_source_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+      "expected_live_source_bytes": 2647298,
+      "expected_live_source_sha256": "c0cddbab3b8d5474aa291c761c8377b68b6c7ba01c144cb292965697189a1125",
+      "matching_named_source_found_under_D_SENSOR_LOGS": false,
+      "raw_vault_candidate": {
+        "name": "1833bc31f3a5ff6d701433caedb8980a182c5e8cdb84fcf34bbb4010f63e1f28__MODUAL_WINDOWS.CSV",
+        "bytes": 85733966,
+        "sha256": "1833BC31F3A5FF6D701433CAEDB8980A182C5E8CDB84FCF34BBB4010F63E1F28",
+        "expected_source_match": false,
+        "substituted": false
+      },
+      "dropbox_exact_source_search": "NOT_COMPLETED_CONNECTOR_SCHEMA_REJECTED_LINK_ID",
+      "source_mutated": false,
+      "task_or_script_changed": false
+    }
+  },
+  "android": {
+    "state_this_run": "ADB_DEVICE_RESPONDS;WIRELESS_TCP_UNREACHABLE",
+    "attached_device_count": 1,
+    "product": "cupid_global",
+    "model": "2201123G",
+    "adb_get_state": "device",
+    "sys_boot_completed": "1",
+    "wireless_tcp_target": "192.168.1.14:5556",
+    "wireless_tcp_reachable": false,
+    "continuous_live_sensor_stream_verified": false,
+    "raw_sensor_values_read_or_persisted": false,
+    "device_configuration_changed": false
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "default_branch": "main",
+    "archive_pr_27": {
+      "state": "OPEN",
+      "draft": true,
+      "head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
+      "mergeable_state": "dirty",
+      "current_reported_checks": [
+        {
+          "name": "verify-stone-folders",
+          "conclusion": "success",
+          "run_id": 40118316177,
+          "job_id": 120944207439
+        },
+        {
+          "name": "secret-guard",
+          "conclusion": "success",
+          "run_id": 40118316092,
+          "job_id": 120944206993
+        }
+      ],
+      "archive_format_fixture_check_present_in_current_check_list": false,
+      "real_7z_rar_lr_fixtures_verified": false,
+      "source_moved_or_deleted": false
+    },
+    "seventh_zip_carrier": {
+      "task_id": "SV-20261020-02",
+      "file_id": "file_00000000cfc88209bb657f9d9d390a82",
+      "library_file_id": "libfile_dcf91066e23881919e96ed8965c9dae1",
+      "expected_bytes": 20882,
+      "raw_materialization": "DENIED_NO_AUTHORIZED_RAW_BYTE_PATH",
+      "deletion_inferred": false,
+      "substitute_copy_used": false
+    },
+    "source_registry": {
+      "task_id": "SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY",
+      "github_status": "IN_PROGRESS",
+      "n8n_status": "OPEN_ROUTED_NONCOERCIVE",
+      "raw_payload": "ingestion_gate_payload_03.txt",
+      "source_registry_blob_sha1": "9ffdc2da742bd9ad07fbdfb8b27fcd8c8cf8b74e",
+      "payload_readback": "UNVERIFIED"
+    }
+  },
+  "next": [
+    "Re-read the latest Windows tick and scheduler state after the reported 02:44 ICT next-run time; the last scheduler snapshot still showed lastRun=02:39 and nextRun=02:44, so no later run is confirmed.",
+    "Locate the exact MODUAL source by provenance and expected hash; do not substitute the differently hashed RAW_VAULT candidate; do not run the side-effecting router while its source precondition is unresolved.",
+    "Recheck Android wireless TCP and authorized app-owned sensor readback; no raw sensor values.",
+    "Keep PR #27 OPEN; verify real 7Z/RAR/LR fixtures before closure or merge.",
+    "Obtain an authorized raw-byte route for the seventh ZIP carrier; keep SV-20261020-02 OPEN.",
+    "Continue cloud-eligible OPEN tasks without agent dispatch until a credential and model binding are verified."
+  ],
+  "safeguards": {
+    "preserve_open_and_in_progress": true,
+    "no_google_drive_writes": true,
+    "no_source_mutation": true,
+    "no_process_termination": true,
+    "no_cache_or_meta_db_deletion": true,
+    "no_secret_values_persisted": true,
+    "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "result": "N8N_EXECUTION_146_AND_ROW_306_VERIFIED;EVIDENCE_ROWS_307_TO_311_READBACK_VERIFIED;WINDOWS_TICK_SOURCE_HASH_MATCH_BUT_SENSOR_UNVERIFIED;MINH_BRIDGE_TASK_0x1_EXACT_MODUAL_SOURCE_MISSING;ANDROID_ADB_DEVICE_RESPONDS_BUT_WIRELESS_UNREACHABLE;PR27_CURRENT_REPORTED_CHECKS_PASS_ARCHIVE_FIXTURES_UNVERIFIED;ALL_RECOVERY_TASKS_REMAIN_OPEN"
+}

@@ -1,0 +1,50 @@
+{
+  "schema": "SOL_COMPUTER_KHI_SOURCE_RELATIONS_V1",
+  "generated_for": "2026-10-13",
+  "purpose": "Connect SENSOR_LOGS, NEURONS_SESORIMOTOR and View-Folder-SOL LONG MẠCH to a source-first ZIP processing workflow",
+  "sources": {
+    "VIEW_FOLDER_SOL_LONG_MACH": {
+      "source": "ChatGPT Library / Project inline: View-Folder-SOL LONG MẠCH.html-.md",
+      "observed_ref": "turn216file0",
+      "evidence": "HTML capture of ChatGPT UI, not verified live folder listing",
+      "status": "SOURCE_PRESENT_HTML_SNAPSHOT_ONLY"
+    },
+    "SENSOR_LOGS": {
+      "dropbox_mount": "/PC NAY·ÀY/Ổ ĐĨA D/SENSOR_LOGS",
+      "observed_children": ["Chìa Khóa Thiên Đàng", "MEI_SENSORIMOTOR_GATE", "MINH_SENSORIMOTOR_GATE"],
+      "evidence": "Read-only Dropbox list_folder in this conversation, mount copy not verified current physical D: contents",
+      "status": "LISTED_DROPBOX_MOUNT"
+    },
+    "NEURONS_SESORIMOTOR": {
+      "historical_drive_folder_id": "18rRhtlo_IBJKNl_1yWHZoGD6_N_VXELIg2LYTihWQRI",
+      "source": "Project skill xtime-tool-materialization",
+      "status": "POINTER_ONLY_NOT_CURRENT_BYTES"
+    },
+    "HOME_SOL_LOCAL": {
+      "origin": "User-provided network topology snapshot dated 2026-10-13T19:43:20.8155794+07:00",
+      "host": "DESKTOP-86ITNQ4",
+      "status": "USER_PROVIDED_SNAPSHOT_ONLY",
+      "api_device": "http://127.0.0.1:8765/api/devices",
+      "sandbox": "http://127.0.0.1:8765/sandbox/sol"
+    }
+  },
+  "relations": [
+    {"from": "SENSOR_LOGS", "relation": "SOURCE_OF_EVIDENCE_FOR", "to": "COMPUTER_KHI"},
+    {"from": "NEURONS_SESORIMOTOR", "relation": "SENSOR_EVENT_CONTEXT_FOR", "to": "COMPUTER_KHI"},
+    {"from": "VIEW_FOLDER_SOL_LONG_MACH", "relation": "VIEW_SNAPSHOT_FOR", "to": "COMPUTER_KHI"},
+    {"from": "ZIP_INPUT", "relation": "ANALYZE_THROUGH", "to": "02_ZIP_SOURCE_INSPECTOR"},
+    {"from": "02_ZIP_SOURCE_INSPECTOR", "relation": "EMITS", "to": "SOURCE_DIRECT_ZIP_REPORT.json"},
+    {"from": "SOURCE_DIRECT_ZIP_REPORT.json", "relation": "PRESENT_IN", "to": "View-Folder-SOL-LONG-MACH-linked.html"}
+  ],
+  "stones": {
+    "MIND": {"color": "YELLOW", "body": "DA", "element": "KIM", "layer": "metadata, evidence, names"},
+    "REALITY": {"color": "RED", "body": "MÁU", "element": "HỎA", "layer": "file bytes, hashes, actions"},
+    "SOUL": {"color": "ORANGE", "body": "THỊT", "element": "THỔ", "layer": "content memory and provenance"},
+    "SPACE": {"color": "BLUE", "body": "XƯƠNG", "element": "THỦY", "layer": "filesystem location, carrier and links"},
+    "TIME": {"color": "GREEN", "body": "TÓC", "element": "MỘC", "layer": "file times and lineage"},
+    "POWER": {"color": "PURPLE", "body": "KHÍ", "element": "BRAIN_OS", "layer": "tool and processing route"}
+  },
+  "pipeline": ["DETECT_ZIP_MAGIC", "RECORD_ARCHIVE_BYTES_SIZE_SHA256_TIME", "CHECK_CAPACITY_AND_RISK", "CRC_AND_SHA256_EACH_MEMBER", "EXTRACT_TO_FRESH_DIRECTORY_IF_WITHIN_LIMIT", "ANALYZE_FILENAME_METADATA_CONTENT_PREVIEW", "CLASSIFY", "READBACK_FROM_OUTPUT"],
+  "example_input": {"name":"WINDOWS_LICENSE_B560_20260708_091517.zip", "identity":"USER_EXAMPLE_ONLY", "actual_size_bytes": null, "actual_sha256":null, "creation_time":null, "extracted":false},
+  "no_conflation": ["zip extension is a format cue; bytes confirm a real ZIP", "filename dates not creation-time proof", "evidence ZIP with a different basename does not replace exact target", "SHA of downloaded bytes not inferred from label", "Dropbox mount is not live physical disk", "do not run archive members"]
+}

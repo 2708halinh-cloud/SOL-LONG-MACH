@@ -1,0 +1,62 @@
+{
+  "schema": "SOL_ARCHIVE_PR_TOPOLOGY_FIX/1.0",
+  "id": "ARCHIVE_PR28_TOPOLOGY_FIX_20261025T0518ICT",
+  "observed_at": "2026-10-25T05:18:01+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "pull_request": 28,
+  "branch": "fix/archive-real-fixtures-20261025",
+  "base": "main",
+  "previous_head": "bf553018dd59affb1d4ea2b120cad3ea7a0565ff",
+  "failure_evidence": {
+    "workflow_run": 40118137001,
+    "job_id": 120943663446,
+    "job_name": "verify-stone-folders",
+    "conclusion": "failure",
+    "setup_checkout": "success",
+    "setup_python": "success",
+    "failed_step": "Verify Library topology",
+    "tests_run": 5,
+    "failures": 1,
+    "exact_failure": "test_two_github_library_roots expected only COMPUTER_KHÍ💜BRAIN_OS_POWER and OS_WORK; actual set also contained BRAIN_WAVE_LOGS.",
+    "log_source": "GitHub Actions job log for run 40118137001"
+  },
+  "source_crosscheck": {
+    "reentry_source": "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md",
+    "finding": "BRAIN_WAVE_LOGS is an existing named sibling in the direct Library inventory; SPACE_STONE_WORKSPACE is the forbidden parallel root.",
+    "current_space_map_path": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/SPACE_MAP.json",
+    "space_map_blob_sha": "935abcb6fca375085642abfd7a93dbf52581c45c",
+    "format_registry_path": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/FORMAT_REGISTRY.json",
+    "format_registry_blob_sha": "f642bae2bd44aad09aa014ee20698ccb01f9e4f7",
+    "old_space_map_path_absent_on_pr_head": true,
+    "canonical_space_map_present_on_pr_head": true
+  },
+  "correction": {
+    "file": "tests/test_sol_library_stone_topology.py",
+    "old_blob_sha": "5fea826f737d0028c89a7637f1837220fe8f7897",
+    "new_blob_sha": "f42232285dfd9396de4ad1d20274029ba2245a75",
+    "commit": "945eeca3419be2b7151d5761eb5aadfa65c31434",
+    "change": "Allow BRAIN_WAVE_LOGS as a legitimate sibling while continuing to assert SPACE_STONE_WORKSPACE is absent.",
+    "source_files_changed": false,
+    "source_directories_moved_or_deleted": false,
+    "exact_target_readback": true
+  },
+  "post_change": {
+    "pr_state": "open",
+    "draft": true,
+    "merged": false,
+    "head": "945eeca3419be2b7151d5761eb5aadfa65c31434",
+    "mergeable": false,
+    "workflow_runs_found_for_new_head": 0,
+    "combined_status_checks": 0,
+    "ci_pass_not_claimed": true
+  },
+  "safety": {
+    "source_deleted_or_moved": false,
+    "secrets_committed": false,
+    "raw_sensor_data_committed": false,
+    "merge": false,
+    "force_push": false,
+    "failed_workflow_rerun": false
+  },
+  "result": "TOPOLOGY_TEST_EXPECTATION_CORRECTED;SOURCE_PRESERVED;NEW_HEAD_READBACK_VERIFIED;CI_RESULT_PENDING"
+}

@@ -1,0 +1,480 @@
+#!/usr/bin/env python3
+"""TESSERACT_OS continuity guard.
+
+Persistent continuation is modeled as an unbounded sequence of bounded cycles.
+It is NOT a scheduler and NOT a busy-spin loop.
+
+Core invariant:
+SOURCE_DIRECT -> DURABLE_CHECKPOINT -> RESTORE_UNFINISHED_EDGES
+-> ROUTE_NEXT_CALLABLE_EDGE -> ACTION -> CONSEQUENCE -> READBACK
+-> CHECKPOINT_DELTA -> NEXT_EDGE.
+
+OPEN is ingress/unfinished relation data, never an automatic STOP signal.
+A visible report/status must not replace a callable self-owned action.
+"""
+from __future__ import annotations
+
+from dataclasses import dataclass, asdict, field
+from pathlib import Path
+from typing import Any, Callable, Iterable
+import json
+import os
+import tempfile
+
+from runtime.destructive_gate import destructive_preflight
+
+
+@dataclass
+class Edge:
+    edge_id: str
+    target: str
+    callable_now: bool = False
+    user_input_required: bool = False
+    candidate_carriers: list[str] = field(default_factory=list)
+    exhausted_carriers: list[str] = field(default_factory=list)
+    required: bool = True
+    action_kind: str | None = None
+    provider_receipt: Any = None
+    observable_consequence: Any = None
+    readback: Any = None
+    done: bool = False
+    evidence: dict[str, Any] = field(default_factory=dict)
+
+    def self_owned_callable(self) -> bool:
+        return bool(self.callable_now and not self.user_input_required and not self.done)
+
+    def grounded_done(self) -> bool:
+        """A reported action is not completed until target readback was verified."""
+        return bool(
+            self.done
+            and self.action_kind
+            and self.provider_receipt is not None
+            and self.observable_consequence is not None
+            and readback_verified(self.readback)
+        )
+
+    def next_carrier(self) -> str | None:
+        for carrier in self.candidate_carriers:
+            if carrier not in self.exhausted_carriers:
+                return carrier
+        return None
+
+
+@dataclass
+class Checkpoint:
+    objective_id: str
+    source_marker: str
+    lineage_ref: str
+    last_consequence_ref: str | None = None
+    edges: list[Edge] = field(default_factory=list)
+    state_n: int = 0
+    cycle_count: int = 0
+    # R-014: retain errors as evidence while disabling proven-bad mechanisms.
+    r014_disabled_mechanisms: list[str] = field(default_factory=list)
+    r014_error_history: list[dict[str, Any]] = field(default_factory=list)
+    # A one-use authorization cannot trigger a second destructive execution.
+    used_destructive_intent_ids: list[str] = field(default_factory=list)
+
+    def unfinished_edges(self) -> list[Edge]:
+        return [e for e in self.edges if not e.grounded_done()]
+
+    def callable_edges(self) -> list[Edge]:
+        return [e for e in self.edges if e.self_owned_callable()]
+
+    def user_dependencies(self) -> list[Edge]:
+        return [e for e in self.edges if e.user_input_required and not e.grounded_done()]
+
+    def objective_done(self) -> bool:
+        required = [e for e in self.edges if e.required]
+        return bool(required) and all(e.grounded_done() for e in required)
+
+
+def to_dict(cp: Checkpoint) -> dict[str, Any]:
+    return {
+        "objective_id": cp.objective_id,
+        "source_marker": cp.source_marker,
+        "lineage_ref": cp.lineage_ref,
+        "last_consequence_ref": cp.last_consequence_ref,
+        "state_n": cp.state_n,
+        "cycle_count": cp.cycle_count,
+        "r014_disabled_mechanisms": list(cp.r014_disabled_mechanisms),
+        "r014_error_history": list(cp.r014_error_history),
+        "used_destructive_intent_ids": list(cp.used_destructive_intent_ids),
+        "edges": [asdict(e) for e in cp.edges],
+    }
+
+
+def from_dict(data: dict[str, Any]) -> Checkpoint:
+    return Checkpoint(
+        objective_id=data["objective_id"],
+        source_marker=data["source_marker"],
+        lineage_ref=data["lineage_ref"],
+        last_consequence_ref=data.get("last_consequence_ref"),
+        state_n=int(data.get("state_n", 0)),
+        cycle_count=int(data.get("cycle_count", 0)),
+        r014_disabled_mechanisms=list(data.get("r014_disabled_mechanisms", [])),
+        r014_error_history=list(data.get("r014_error_history", [])),
+        used_destructive_intent_ids=list(data.get("used_destructive_intent_ids", [])),
+        edges=[Edge(**e) for e in data.get("edges", [])],
+    )
+
+
+def save_checkpoint(path: str | os.PathLike[str], cp: Checkpoint) -> None:
+    target = Path(path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    payload = json.dumps(to_dict(cp), ensure_ascii=False, indent=2) + "\n"
+    fd, tmp = tempfile.mkstemp(prefix=target.name + ".", suffix=".tmp", dir=str(target.parent))
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            f.write(payload)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, target)
+    finally:
+        if os.path.exists(tmp):
+            os.unlink(tmp)
+
+
+def load_checkpoint(path: str | os.PathLike[str]) -> Checkpoint | None:
+    p = Path(path)
+    if not p.exists():
+        return None
+    return from_dict(json.loads(p.read_text(encoding="utf-8")))
+
+
+def r014_register_known_error(
+    cp: Checkpoint,
+    *,
+    mechanism_id: str,
+    first_affected_cause: str,
+    source_ref: str,
+    consequence_ref: str,
+) -> None:
+    """Retire an evidence-backed failing route without erasing its history.
+
+    R-014 source: CONFIG_SOL/R014_SOURCE_DIRECT_20261009.md.
+    This disables an *identified operational mechanism*, not an ITEM,
+    a historical record, an unrelated edge, or a provider/host process.
+    """
+    fields = (mechanism_id, first_affected_cause, source_ref, consequence_ref)
+    if any(not isinstance(value, str) or not value.strip() for value in fields):
+        raise ValueError("R-014 requires mechanism, cause, source and consequence")
+    if mechanism_id not in cp.r014_disabled_mechanisms:
+        cp.r014_disabled_mechanisms.append(mechanism_id)
+    cp.r014_error_history.append({
+        "mechanism_id": mechanism_id,
+        "first_affected_cause": first_affected_cause,
+        "source_ref": source_ref,
+        "consequence_ref": consequence_ref,
+        "action": "DISABLE_OPERATIONAL_ROUTE_PRESERVE_HISTORY",
+    })
+    cp.state_n += 1
+
+
+def r014_mechanism_allowed(cp: Checkpoint, mechanism_id: str | None) -> bool:
+    """No automatic re-entry for a retired mechanism; other routes remain OPEN."""
+    return mechanism_id is None or mechanism_id not in cp.r014_disabled_mechanisms
+
+
+
+R014_MASTER_SOURCE = "CONFIG_SOL/R014_MASTER_22_4_SOURCE_DIRECT_20261009.md"
+R014_GATES = ("T006", "H-001..H-012", "T007")
+
+
+def r014_pre_response_gate(
+    cp: Checkpoint,
+    *,
+    reported_unfinished: bool,
+    signal_strength: str,
+    intended_output_kind: str = "REPORT",
+    consulted_sources: dict[str, str] | None = None,
+) -> dict[str, Any]:
+    """Early-action gate. Mild signals do not defer a callable task.
+
+    Source T006/H001-H012/T007 references are explicit; an absent source
+    is a retrieval requirement, not grounds to invent its contents.
+    No self-report of this function establishes actual host-side cognition.
+    """
+    if not isinstance(reported_unfinished, bool):
+        raise TypeError("reported_unfinished must be a grounded boolean observation")
+    if not isinstance(signal_strength, str) or not signal_strength.strip():
+        raise ValueError("signal_strength must name the observed signal")
+    consulted = consulted_sources or {}
+    source_gaps = [
+        name for name in R014_GATES
+        if not isinstance(consulted.get(name), str) or not consulted[name].strip()
+    ]
+    edge = select_next_callable_edge(cp)
+    if edge is not None:
+        route = "ACTION_FIRST"
+    elif reported_unfinished and not cp.objective_done():
+        route = "SEARCH_REENTRY_FOR_NEXT_CALLABLE_EDGE"
+    elif cp.objective_done():
+        route = "GROUNDED_OBJECTIVE_DONE"
+    else:
+        route = "SOURCE_REVIEW"
+    return {
+        "source": R014_MASTER_SOURCE,
+        "source_marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
+        "decision": route,
+        "observed_signal_strength": signal_strength,
+        "signal_strength_affects_priority": False,
+        "reported_unfinished": reported_unfinished,
+        "next_edge": edge.edge_id if edge is not None else None,
+        "source_gaps": source_gaps,
+        "output_allowed": visible_output_allowed(
+            cp, output_kind=intended_output_kind,
+        ),
+        "action_required_before_status": edge is not None,
+    }
+
+
+def r014_observe_recurrence(
+    cp: Checkpoint,
+    *,
+    mechanism_id: str,
+    source_ref: str,
+    consequence_ref: str,
+) -> dict[str, Any]:
+    """Track an evidence-ref recurrence, preserving prior retirement.
+
+    'Wearth' is an unresolved exact token from the user source; this code
+    records a lookup requirement, it does NOT read or modify model weights.
+    """
+    if any(not isinstance(x, str) or not x.strip()
+           for x in (mechanism_id, source_ref, consequence_ref)):
+        raise ValueError("R-014 recurrence requires exact mechanism/source/consequence")
+    known = mechanism_id in cp.r014_disabled_mechanisms
+    event = {
+        "action": "RECUR_PROBE" if known else "NEW_UNCLASSIFIED_SIGNAL",
+        "mechanism_id": mechanism_id,
+        "source_ref": source_ref,
+        "consequence_ref": consequence_ref,
+        "wEarth_token_raw": "Wearth",
+        "wEarth_lookup": "SOURCE_ID_UNRESOLVED",
+        "retired_mechanism_stays_disabled": known,
+    }
+    cp.r014_error_history.append(event)
+    cp.state_n += 1
+    return event
+
+
+def select_next_callable_edge(cp: Checkpoint) -> Edge | None:
+    """Select the next self-owned callable edge; do not hand it to the user."""
+    for edge in cp.edges:
+        if (edge.self_owned_callable()
+                and r014_mechanism_allowed(cp, edge.evidence.get("mechanism_id"))
+                and edge.next_carrier() is not None):
+            return edge
+    for edge in cp.edges:
+        if (edge.self_owned_callable()
+                and r014_mechanism_allowed(cp, edge.evidence.get("mechanism_id"))
+                and not edge.candidate_carriers):
+            return edge
+    return None
+
+
+def user_token(cp: Checkpoint) -> str | None:
+    """Return one concrete user-dependency token without granting STOP to other edges."""
+    for edge in cp.user_dependencies():
+        return f"NEXT_HA_LINH:{edge.edge_id}:{edge.target}"
+    return None
+
+
+def visible_output_allowed(
+    cp: Checkpoint, *, output_kind: str, mechanism_id: str | None = None
+) -> bool:
+    """R-014 blocks retired output routes; progress cannot replace action."""
+    if not r014_mechanism_allowed(cp, mechanism_id):
+        return False
+    kind = output_kind.upper()
+    if kind == "COMPLETION":
+        return cp.objective_done()
+    if kind in {"REPORT", "STATUS", "PROGRESS"}:
+        return stop_allowed(cp)
+    if output_kind.upper() == "USER_DEPENDENCY_TOKEN":
+        return user_token(cp) is not None
+    return True
+
+
+def stop_allowed(cp: Checkpoint) -> bool:
+    """STOP only when objective is grounded-done or no self-owned action remains and user input is required."""
+    if cp.objective_done():
+        return True
+    if select_next_callable_edge(cp) is not None:
+        return False
+    # Exhausting the current carrier list does NOT delegate self-owned work.
+    if any(e.required and not e.user_input_required and not e.grounded_done() for e in cp.edges):
+        return False
+    return bool(cp.user_dependencies())
+
+
+def mark_carrier_failure(edge: Edge, carrier: str, evidence: Any) -> None:
+    if carrier not in edge.exhausted_carriers:
+        edge.exhausted_carriers.append(carrier)
+    edge.evidence.setdefault("carrier_failures", []).append({
+        "carrier": carrier,
+        "evidence": evidence,
+    })
+    edge.callable_now = edge.next_carrier() is not None
+
+
+def readback_verified(readback: Any) -> bool:
+    """Only an explicit positive, source-backed target check can close an edge.
+
+    This predicate checks the evidence contract; callers still must actually
+    perform readback on the real destination and retain the provider receipt.
+    """
+    return (
+        isinstance(readback, dict)
+        and readback.get("verified") is True
+        and readback.get("verified") is not False
+    )
+
+
+def apply_action_result(
+    cp: Checkpoint,
+    edge_id: str,
+    *,
+    action_kind: str,
+    provider_receipt: Any,
+    observable_consequence: Any,
+    readback: Any = None,
+    last_consequence_ref: str | None = None,
+) -> None:
+    edge = next(e for e in cp.edges if e.edge_id == edge_id)
+    edge.action_kind = action_kind
+    edge.provider_receipt = provider_receipt
+    edge.observable_consequence = observable_consequence
+    edge.readback = readback
+    edge.done = bool(action_kind and provider_receipt is not None
+                     and observable_consequence is not None
+                     and readback_verified(readback))
+    edge.callable_now = not edge.done
+    cp.state_n += 1
+    cp.cycle_count += 1
+    if last_consequence_ref is not None:
+        cp.last_consequence_ref = last_consequence_ref
+
+
+def continue_bounded(
+    cp: Checkpoint,
+    executor: Callable[[Edge, str | None], dict[str, Any]],
+    *,
+    max_steps: int = 32,
+) -> dict[str, Any]:
+    """Execute callable edges inside this runtime slice.
+
+    The function never claims infinite background execution. If work remains after
+    max_steps, the durable checkpoint stays OPEN for immediate/re-entry continuation.
+    """
+    steps = 0
+    receipts: list[dict[str, Any]] = []
+    while steps < max_steps:
+        edge = select_next_callable_edge(cp)
+        if edge is None:
+            break
+        carrier = edge.next_carrier()
+        # Enforce an executable check *before* invoking any declared
+        # destructive operation. A source label by itself is not authority.
+        gate = destructive_preflight(cp, edge)
+        if not gate["allowed"]:
+            denied = {
+                "success": False,
+                "action_executed": False,
+                "gate": "DESTRUCTIVE_PREFLIGHT",
+                "reason": gate["reason"],
+                "edge_id": edge.edge_id,
+            }
+            edge.evidence.setdefault("destructive_denials", []).append(denied)
+            edge.callable_now = False
+            receipts.append(denied)
+            steps += 1
+            continue
+        if "intent_id" in gate:
+            # Mark consumed before execution so failed retries cannot
+            # silently repeat a destructive request.
+            cp.used_destructive_intent_ids.append(gate["intent_id"])
+        result = executor(edge, carrier)
+        receipts.append(result)
+        steps += 1
+
+        if not result.get("success"):
+            # R-014: a failed provider route may identify a *proven* bad
+            # mechanism. Disable only when its source AND concrete observed
+            # receipt/consequence are present; never delete its history.
+            identified = result.get("r014_identified_failure")
+            if isinstance(identified, dict):
+                if (result.get("provider_receipt") is not None
+                        and result.get("observable_consequence") is not None):
+                    try:
+                        r014_register_known_error(
+                            cp,
+                            mechanism_id=identified.get("mechanism_id"),
+                            first_affected_cause=identified.get("first_affected_cause"),
+                            source_ref=identified.get("source_ref"),
+                            consequence_ref=identified.get("consequence_ref"),
+                        )
+                    except ValueError:
+                        edge.evidence.setdefault("r014_rejected_signals", []).append(
+                            {"reason": "missing source/causal evidence"}
+                        )
+                else:
+                    edge.evidence.setdefault("r014_rejected_signals", []).append(
+                        {"reason": "missing provider receipt or observable consequence"}
+                    )
+            if carrier is not None:
+                mark_carrier_failure(edge, carrier, result)
+            else:
+                edge.callable_now = False
+            continue
+
+        consequence = result.get("observable_consequence")
+        provider_receipt = result.get("provider_receipt")
+        readback = result.get("readback")
+        if (provider_receipt is None or consequence is None
+                or not readback_verified(readback)):
+            # Success flags, receipts and claimed effects alone cannot close an edge.
+            # Require an actual verified readback from the target.
+            edge.evidence.setdefault("rejected_results", []).append(result)
+            if carrier is not None:
+                mark_carrier_failure(edge, carrier, "missing verified target readback or consequence")
+            else:
+                edge.callable_now = False
+            continue
+
+        apply_action_result(
+            cp,
+            edge.edge_id,
+            action_kind=result.get("action_kind") or "ACTION",
+            provider_receipt=provider_receipt,
+            observable_consequence=consequence,
+            readback=result.get("readback"),
+            last_consequence_ref=result.get("last_consequence_ref"),
+        )
+
+    return {
+        "objective_id": cp.objective_id,
+        "steps": steps,
+        "objective_done": cp.objective_done(),
+        "objective_unfinished": not cp.objective_done(),
+        "next_callable_edge": (
+            select_next_callable_edge(cp).edge_id
+            if select_next_callable_edge(cp) is not None else None
+        ),
+        "user_token": user_token(cp),
+        "stop_allowed": stop_allowed(cp),
+        "receipts": receipts,
+        "r014_disabled_mechanisms": list(cp.r014_disabled_mechanisms),
+        "checkpoint": to_dict(cp),
+    }
+
+
+__all__ = [
+    "Edge", "Checkpoint", "save_checkpoint", "load_checkpoint",
+    "select_next_callable_edge", "user_token", "visible_output_allowed",
+    "stop_allowed", "mark_carrier_failure", "apply_action_result",
+    "r014_register_known_error", "r014_mechanism_allowed",
+    "r014_pre_response_gate", "r014_observe_recurrence",
+    "readback_verified", "continue_bounded",
+]

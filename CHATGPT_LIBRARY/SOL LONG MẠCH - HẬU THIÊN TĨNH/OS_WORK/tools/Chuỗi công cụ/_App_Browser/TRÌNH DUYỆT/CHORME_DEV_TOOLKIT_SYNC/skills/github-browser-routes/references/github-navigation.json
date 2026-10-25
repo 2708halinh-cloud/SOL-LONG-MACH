@@ -1,0 +1,97 @@
+{
+  "$schema_note": "Browser route mapping; not an OAuth token grant, GitHub app permission, or MCP endpoint.",
+  "name": "github-browser-routes",
+  "origin": "User-supplied GitHub browser navigation URLs, 2026-10-13",
+  "host_allowlist": [
+    "github.com"
+  ],
+  "declared_access": {
+    "ACCESS_GITHUB": "TRUE",
+    "ACCESS_CHATGPT": "FLASE"
+  },
+  "access_interpretation": {
+    "github": "USER_DESIRED",
+    "chatgpt": "USER_DESIRED_FALSE_LITERAL_FLASE",
+    "runtime_verification": "REQUIRED",
+    "permission_mutations": "NONE"
+  },
+  "routes": [
+    {
+      "key": "TRANG_CHU_URL",
+      "label": "Trang chủ",
+      "url": "https://github.com/dashboard"
+    },
+    {
+      "key": "URL_FEED",
+      "label": "Feed",
+      "url": "https://github.com/feed"
+    },
+    {
+      "key": "VAN_DE_URL",
+      "label": "Vấn đề được giao",
+      "url": "https://github.com/issues/assigned"
+    },
+    {
+      "key": "YEU_CAU_KEO_URL",
+      "label": "Yêu cầu kéo",
+      "url": "https://github.com/pulls"
+    },
+    {
+      "key": "REPOS_URL",
+      "label": "Kho mã",
+      "url": "https://github.com/repos"
+    },
+    {
+      "key": "ADMIN_ACCESS_URL",
+      "label": "Bộ lọc quyền admin",
+      "url": "https://github.com/repos?q=admin%3A%40me"
+    },
+    {
+      "key": "PROJECK_URL",
+      "label": "Dự án",
+      "url": "https://github.com/projects"
+    },
+    {
+      "key": "THAO_LUAN_URL",
+      "label": "Thảo luận",
+      "url": "https://github.com/discussions"
+    },
+    {
+      "key": "KHONG_GIAN_MA_URL",
+      "label": "Codespaces",
+      "url": "https://github.com/codespaces"
+    },
+    {
+      "key": "COPILOT_URL",
+      "label": "Copilot",
+      "url": "https://github.com/copilot"
+    },
+    {
+      "key": "EXPLORE_URL",
+      "label": "Explore",
+      "url": "https://github.com/explore"
+    },
+    {
+      "key": "CHO_URL",
+      "label": "Marketplace",
+      "url": "https://github.com/marketplace"
+    },
+    {
+      "key": "SO_DANG_KY_URL",
+      "label": "Sổ đăng ký MCP",
+      "url": "https://github.com/mcp"
+    },
+    {
+      "key": "SETTING_GUTHUB_URL",
+      "label": "Cài đặt hồ sơ",
+      "url": "https://github.com/settings/profile"
+    }
+  ],
+  "safety": {
+    "credentials": "browser_provider_managed_only",
+    "no_secrets_in_source": true,
+    "navigation_only": true,
+    "admin_access_is_filter_not_privilege_grant": true,
+    "no_default_chatgpt_github_connector_for_this_route": true
+  }
+}

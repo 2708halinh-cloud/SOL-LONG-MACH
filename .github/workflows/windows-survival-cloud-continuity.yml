@@ -1,0 +1,77 @@
+name: Windows survival - independent OPEN continuation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'runtime/cloud_survival_scheduler.py'
+      - 'runtime/windows_c_survival_probe.ps1'
+      - 'tests/test_cloud_survival_scheduler.py'
+      - 'runtime/hellohabit_t005_adapter.py'
+      - 'tests/test_hellohabit_t005_adapter.py'
+      - 'integrations/android/hellohabit/**'
+      - 'integrations/hellocheck/**'
+      - 'CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json'
+      - '.github/workflows/windows-survival-cloud-continuity.yml'
+  schedule:
+    - cron: '7 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: windows-survival-independent-continuation
+  cancel-in-progress: false
+
+jobs:
+  continue-without-personal-devices:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Guard existing OPEN ledger and critical C threshold
+        run: python -m unittest discover -s tests -p 'test_cloud_survival_scheduler.py' -v
+      - name: Validate HelloHabit T005 split adapter without claiming app installation
+        run: python -m unittest discover -s tests -p 'test_hellohabit_t005_adapter.py' -v
+      - uses: actions/setup-go@v5
+        if: github.event_name != 'schedule'
+        with:
+          go-version: '1.23'
+          cache: false
+      - name: Compile and test live HelloCheck Bitcoin TestNet Go sources
+        if: github.event_name != 'schedule'
+        working-directory: integrations/hellocheck
+        run: |
+          go mod download
+          go mod verify
+          go test ./... -v
+          go vet ./...
+          mkdir -p dist
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o dist/hellocheck-linux-amd64 ./cmd/hellocheck
+          CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o dist/hellocheck-windows-amd64.exe ./cmd/hellocheck
+          test -x dist/hellocheck-linux-amd64
+          ./dist/hellocheck-linux-amd64 address --hash160 0000000000000000000000000000000000000000
+          (cd dist && sha256sum hellocheck-* > SHA256SUMS)
+      - name: Retain compiled offline HelloCheck tools for independent use
+        if: github.event_name != 'schedule'
+        uses: actions/upload-artifact@v4
+        with:
+          name: hellocheck-offline-linux-windows-amd64
+          path: integrations/hellocheck/dist/
+          retention-days: 30
+          if-no-files-found: error
+      - name: Execute source-bound cloud continuation without touching Windows
+        run: |
+          mkdir -p readback
+          python runtime/cloud_survival_scheduler.py --repo-root . --output readback/SURVIVAL_OPEN_CONTINUATION_CURRENT.json
+      - name: Retain runner execution receipt even on failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-survival-open-continuation
+          path: readback/SURVIVAL_OPEN_CONTINUATION_CURRENT.json
+          retention-days: 30
+          if-no-files-found: warn

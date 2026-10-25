@@ -1,0 +1,63 @@
+{
+  "schema": "GGDV_WORKSPACE_32GB_REENTRY/1.0",
+  "source": {
+    "direct_user_request": "LẤY LẠI NGUYÊN CÁI VÙNG 32 GB (\\Workspace) ĐỂ LÀM BỘ NHỚ LƯU TRỮ CÔNG VIỆC BỀN VỮNG",
+    "prior_observation_date": "2026-10-21",
+    "prior_environment": "managed-cloud-linux",
+    "prior_location": "/workspace",
+    "prior_durable_storage_proven": false
+  },
+  "current_observation": {
+    "date": "2026-10-21",
+    "path": "/workspace",
+    "filesystem": "overlay",
+    "filesystem_capacity_bytes": 33770192896,
+    "free_bytes_at_readback": 32008617984,
+    "independent_32gb_volume": false,
+    "previous_session_contents_recovered": false,
+    "original_workspace_absent_on_current_session_entry": true
+  },
+  "restored_structure": [
+    {
+      "path": "/workspace",
+      "mode": "0755"
+    },
+    {
+      "path": "/workspace/library-files",
+      "mode": "0755"
+    },
+    {
+      "path": "/workspace/scratch",
+      "mode": "0755"
+    },
+    {
+      "path": "/workspace/shared",
+      "mode": "0700"
+    },
+    {
+      "path": "/workspace/shared/downloads",
+      "mode": "0700"
+    }
+  ],
+  "verified": {
+    "directories": true,
+    "write_read_probe": true,
+    "probe_cleaned": true,
+    "permissions_checked": true
+  },
+  "durability": {
+    "in_session_state": "ACTIVE",
+    "cross_session_status": "NOT_ESTABLISHED",
+    "external_blob_storage": "NOT_ATTACHED",
+    "origin_persistent_volume_id": "UNKNOWN",
+    "github_role": "DURABLE_REENTRY_INSTRUCTIONS_AND_MANIFEST_ONLY",
+    "not_claimed": "This GitHub manifest is not a 32GB storage volume and does not contain the old workspace files."
+  },
+  "safety": {
+    "never_erase_prior_contents": true,
+    "never_confuse_host_windows_drive_with_cloud_workspace": true,
+    "never_call_ephemeral_overlay_durable": true,
+    "no_secrets_committed": true
+  },
+  "next_step": "Connect an existing persistent storage volume or authorized off-device file store to /workspace and prove it survives a fresh session by write/hash/readback; original old bytes may require provider snapshot."
+}

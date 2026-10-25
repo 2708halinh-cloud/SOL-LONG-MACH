@@ -1,0 +1,220 @@
+{
+  "schema": "SOL_TOOLS_RECOVERY_MANIFEST/1.0",
+  "observed_date": "2026-10-17",
+  "source_basis": "USER_DIRECT_FOLDER_URLS_PLUS_GOOGLE_DRIVE_PRIMARY_METADATA",
+  "scope": "PARTIAL_SOURCE_MATERIALIZATION_NOT_FULL_FOLDER_MIGRATION",
+  "source_parent_name": ".codex",
+  "source_parent_drive_id": "15UhDeewEVrzsV2lAkjZVaPE2E-SgbYLT",
+  "source_folders": [
+    {
+      "label": "Tools",
+      "id": "1HYQGhPEmutm-di-ALG4FfIOSQGrEaeBu",
+      "actual_name": "tools",
+      "direct_children": 1,
+      "observed": "skill-library folder"
+    },
+    {
+      "label": "MCP",
+      "id": "1KKVPq9rYFo75zmSn7yrAUa63QkHy4IgU",
+      "actual_name": "mcp-oauth-locks",
+      "direct_children": 2,
+      "observed": "file-store.lock, secrets-store.lock",
+      "policy": "PROTECTED_NOT_COPIED"
+    },
+    {
+      "label": "Free-route-20260717-sol",
+      "alias_of": "MCP",
+      "id": "1KKVPq9rYFo75zmSn7yrAUa63QkHy4IgU",
+      "note": "Same exact provider folder ID; do not count as a separate source"
+    },
+    {
+      "label": "Plugins",
+      "id": "10zC2nYYZUqRvTNvIfUP8awcqrS5iuvZq",
+      "actual_name": "plugins",
+      "direct_children": 3,
+      "observed": "staging/cache/.plugin-appserver",
+      "policy": "CACHE_AND_EXECUTABLES_NOT_COPIED"
+    },
+    {
+      "label": "Skills",
+      "id": "1Pn1NY7M3wAFFzyMAQVHQy3A2EcnHEkGb",
+      "actual_name": "skills",
+      "direct_children": 43,
+      "observed": "skill folders plus ZIP bundles",
+      "policy": "SELECTED_SKILL_MD_ONLY_SO_FAR"
+    },
+    {
+      "label": "Browser",
+      "id": "1YK5H5h_TFKK5iu0rzYaN1xXMeEBOJLSM",
+      "actual_name": "browser",
+      "direct_children": 2,
+      "observed": "config.toml, sessions",
+      "policy": "SESSION_SECRETS_POSSIBLE_NOT_COPIED"
+    },
+    {
+      "label": "Computer Use (Old)",
+      "id": "1TCZWcJsIua_IzgFIh4qaOM8iELPxjWdH",
+      "actual_name": "computer-use",
+      "direct_children": 2,
+      "observed": "config.json, config.json.*.tmp",
+      "policy": "LEGACY_CONFIG_NOT_COPIED"
+    }
+  ],
+  "governance": {
+    "reference": "/Toolset.md in ChatGPT Library and original Azure DevOps MCP docs/TOOLSET.md",
+    "original_azure_git_path": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ/_MCPs/AZURE_DEVOPS_MCP_CORE/docs/TOOLSET.md",
+    "source_distinction": "core_list_projects/core_list_project_teams/core_get_identity_ids are Azure tool names; Drive folder mcp-oauth-locks is not Azure MCP server",
+    "route": "SOURCE_DIRECT -> PROVIDER_ID -> TIME/STAMP -> POWER_ROUTER -> AUTHORIZED_CALL -> RECEIPT -> EXACT_READBACK -> _Plugins",
+    "no_autonomous_permission_escalation": true
+  },
+  "target": {
+    "library_root": "/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ",
+    "github_repo": "2708halinh-cloud/SOL-LONG-MACH",
+    "github_branch": "main",
+    "github_relative_root": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ"
+  },
+  "imported_skills": [
+    {
+      "name": "master-halynh",
+      "source_drive_file_id": "1tp3gai1UERxMmlg8RisJ0BrtvhubfPVg",
+      "relative_path": "_Kỹ năng/Codex_Imported_20261017/master-halynh/SKILL.md",
+      "status": "LIBRARY_ONLY_PERSONAL_SOURCE",
+      "dependencies": "Other scripts/references/assets NOT YET MATERIALIZED"
+    },
+    {
+      "name": "systematic-debugging",
+      "source_drive_file_id": "1unlhmF0V-sm9I83zjREe-svSgZXo1raF",
+      "relative_path": "_Kỹ năng/Codex_Imported_20261017/systematic-debugging/SKILL.md",
+      "status": "BOTH",
+      "dependencies": "Other scripts/references/assets NOT YET MATERIALIZED"
+    },
+    {
+      "name": "requesting-code-review",
+      "source_drive_file_id": "157n-EW_iRG2JzgKwxafRMqqfdg1wuMEB",
+      "relative_path": "_Kỹ năng/Codex_Imported_20261017/requesting-code-review/SKILL.md",
+      "status": "BOTH",
+      "dependencies": "Other scripts/references/assets NOT YET MATERIALIZED"
+    },
+    {
+      "name": "computer-use",
+      "source_drive_file_id": "1peiepyWnNRPWvMMcIoGilSA0csOz0o17",
+      "relative_path": "_Kỹ năng/Codex_Imported_20261017/computer-use/SKILL.md",
+      "status": "BOTH",
+      "dependencies": "Other scripts/references/assets NOT YET MATERIALIZED"
+    },
+    {
+      "name": "agent-browser",
+      "source_drive_file_id": "17botmEd6aACbwb0mAwE7g2jqfrEBy7Cv",
+      "relative_path": "_Kỹ năng/Codex_Imported_20261017/agent-browser/SKILL.md",
+      "status": "BOTH",
+      "dependencies": "Other scripts/references/assets NOT YET MATERIALIZED"
+    },
+    {
+      "name": "playwright",
+      "source_drive_file_id": "1CpI2AidJaqxFbh6UZxEMyo6MExKZI-Up",
+      "relative_path": "_Kỹ năng/Codex_Imported_20261017/playwright/SKILL.md",
+      "status": "BOTH",
+      "dependencies": "Other scripts/references/assets NOT YET MATERIALIZED"
+    },
+    {
+      "name": "verification-before-completion",
+      "source_drive_file_id": "1ERvzfMIQqGPST78U_wJR3VTudQxSoLgn",
+      "relative_path": "_Kỹ năng/Codex_Imported_20261017/verification-before-completion/SKILL.md",
+      "status": "BOTH",
+      "dependencies": "Other scripts/references/assets NOT YET MATERIALIZED"
+    },
+    {
+      "name": "test-driven-development",
+      "source_drive_file_id": "1xBKlaZMmE-rSWhTHF3_e-N9aPCSVjuqD",
+      "relative_path": "_Kỹ năng/Codex_Imported_20261017/test-driven-development/SKILL.md",
+      "status": "BOTH",
+      "dependencies": "Other scripts/references/assets NOT YET MATERIALIZED"
+    },
+    {
+      "name": "skill-installer",
+      "source_drive_file_id": "1rnNUn6V6vB-cYkLBBvcqlqjgH46PIL6L",
+      "relative_path": "_Kỹ năng/Codex_Imported_20261017/skill-installer/SKILL.md",
+      "status": "BOTH",
+      "dependencies": "Other scripts/references/assets NOT YET MATERIALIZED"
+    },
+    {
+      "name": "skill-creator",
+      "source_drive_file_id": "19pHMFycrGXeOS165elZ625u6LTEEI81t",
+      "relative_path": "_Kỹ năng/Codex_Imported_20261017/skill-creator/SKILL.md",
+      "status": "BOTH",
+      "dependencies": "Other scripts/references/assets NOT YET MATERIALIZED"
+    },
+    {
+      "name": "plugin-creator",
+      "source_drive_file_id": "1VSKRaBMUBh_CbML-UTPl4aScM_MJGgwo",
+      "relative_path": "_Kỹ năng/Codex_Imported_20261017/plugin-creator/SKILL.md",
+      "status": "BOTH",
+      "dependencies": "Other scripts/references/assets NOT YET MATERIALIZED"
+    }
+  ],
+  "imported_tools": [
+    {
+      "name": "verify-skill-library.ps1",
+      "source_drive_file_id": "1TEZMuSauaC5GST2xkADYTEOc3JuyJbNd",
+      "relative_path": "_Dụng cụ/Codex_Imported_20261017/skill-library/verify-skill-library.ps1",
+      "status": "BOTH_TEXT_READBACK",
+      "execution": "NOT_EXECUTED"
+    },
+    {
+      "name": "inventory-skill-sources.ps1",
+      "source_drive_file_id": "1faBIw-yRmPBj6qATIr-d-jQdspBNZK-L",
+      "relative_path": "_Dụng cụ/Codex_Imported_20261017/skill-library/inventory-skill-sources.ps1",
+      "status": "BOTH_TEXT_READBACK",
+      "execution": "NOT_EXECUTED"
+    },
+    {
+      "name": "merge-y-old-parts.ps1",
+      "source_drive_file_id": "1ZkvpUEY9bRfLdISALlW9OkMU6vipCz1o",
+      "relative_path": "_Dụng cụ/Codex_Imported_20261017/skill-library/merge-y-old-parts.ps1",
+      "status": "BOTH_TEXT_READBACK",
+      "execution": "NOT_EXECUTED"
+    },
+    {
+      "name": "materialize-skill-library.ps1",
+      "source_drive_file_id": "1mrqluLnPL9hL-GyM-CCnkrGLp7dycdJb",
+      "relative_path": "_Dụng cụ/Codex_Imported_20261017/skill-library/materialize-skill-library.ps1",
+      "status": "BOTH_TEXT_READBACK",
+      "execution": "NOT_EXECUTED"
+    },
+    {
+      "name": "merge-root-inventories.ps1",
+      "source_drive_file_id": "1B3c_a3lzvOAowvnwjLPy9917ggogRsVl",
+      "relative_path": "_Dụng cụ/Codex_Imported_20261017/skill-library/merge-root-inventories.ps1",
+      "status": "BOTH_TEXT_READBACK",
+      "execution": "NOT_EXECUTED"
+    }
+  ],
+  "evidence": {
+    "selected_generic_skill_readback": "MATCH_AFTER_CRLF_TO_LF_NORMALIZATION",
+    "script_readback": "EXACT_TEXT_MATCH_LIBRARY_VS_GITHUB",
+    "source_raw_byte_hash_vs_github": "NOT_PROVEN_EQUAL",
+    "master_halynh": "LIBRARY_READBACK_DONE_GITHUB_PUBLICATION_WITHHELD",
+    "no_skill_boot_or_plugin_install_claimed": true,
+    "local_device_probe": {
+      "desktop_commander_device": "DESKTOP-86ITNQ4",
+      "status": "OFFLINE",
+      "other_device": "localhost",
+      "other_codex_skills": [
+        ".system",
+        "sol-live-chain"
+      ],
+      "same_source_as_windows": "NOT_ESTABLISHED"
+    },
+    "deleted_originals": 0,
+    "moved_originals": 0,
+    "cleanup_status": "NOT_SAFE_UNTIL_WHOLE_DEPENDENCY_TREE_AND_BYTE_LEVEL_READBACK_PROVEN"
+  },
+  "next_unfinished_edges": [
+    "Recursively inventory the 43 skills top-level entries and all nested references/assets; materialize remaining source files without changing authored bytes",
+    "Inspect Tools/skill-library/state and plugin cache by content, detect live dependencies and privacy before copying",
+    "Preserve protected OAuth locks, browser sessions, native executables, credentials and private materials; do not publish to GitHub public",
+    "When the actual Windows Desktop Commander returns online, inspect original .codex and identify exact files matching mirrored provider IDs and hashes",
+    "Only archive or remove original redundant files after complete destination verification, rollback/recovery proof and verified non-use by runtime",
+    "Readback Library and GitHub independently for every new file; update manifest with per-file evidence and source retention state"
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "observed_at": "2026-10-25T03:49:59.248+07:00",
+  "observed_at_utc": "2026-10-24T20:49:59.248Z",
+  "source": "Fresh exact GitHub re-entry read, direct Remote Desktop Commander host readbacks, Dropbox Outlook metadata, n8n execution/row readback, and current GitHub PR/job/artifact readbacks.",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "reentry": {
+    "AGENTS_md_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+    "SOL_REENTRY_CURRENT_md_sha": "47045696911d12ee53db8ebfd78dd13967f29f29",
+    "TASK_RESUME_POINTER_json_sha_before_this_checkpoint": "698d027e6713eec088c8dd30434774d7d5248405",
+    "OPEN_TASKS_CURRENT_json_sha_before_this_checkpoint": "79b638d40cea3a7529b5c5df28f5ac61402bb1b8",
+    "MODUAL_PARAMETER_CURRENT_json_sha_before_this_checkpoint": "05a4c8afa79f79eadc26ffce6727737a6eb7b0b5"
+  },
+  "windows_tick": {
+    "host": "DESKTOP-86ITNQ4",
+    "latest_content_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T201142438223Z.json",
+    "receipt_sha256": "8642ba4e4fa1fc0ae6681b12e9f198f145be646b860678ecedb1c099676a4c0b",
+    "observed_at_utc": "2026-10-24T20:11:42.438223Z",
+    "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+    "source_bytes": 35389440,
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_hash_matches_receipt": true,
+    "live_sensor_reading_confirmed": false,
+    "source_file_written": false,
+    "synthetic_rows_added": 0,
+    "cloud_enabled": false,
+    "github_enabled": false,
+    "latest_receipt_search": "No newer tick filename was found by the checked host file search; latest direct listing remains the 20:11:42Z receipt.",
+    "task_observations": [
+      {
+        "observed_at_local": "2026-10-25T03:38:59.5966605+07:00",
+        "state": "Running",
+        "enabled": true,
+        "last_run_local": "2026-10-25T03:36:33+07:00",
+        "last_result": "0x41301",
+        "next_run_local": "2026-10-25T03:41:32+07:00",
+        "missed_runs": 0
+      },
+      {
+        "observed_at_local": "2026-10-25T03:43:40.459+07:00",
+        "state": "Ready",
+        "enabled": true,
+        "last_run_local": "2026-10-25T03:31:33+07:00",
+        "last_result": "0x41306",
+        "next_run_local": "2026-10-25T03:36:32+07:00",
+        "missed_runs": 0,
+        "source": "n8n row 315 host task readback; conflicts with the earlier direct scheduler snapshot"
+      }
+    ],
+    "task_state_conflict": true,
+    "post_patch_task_state_verified": false
+  },
+  "consumer_diagnosis_and_repair": {
+    "wrapper_path": "D:\\SENSOR_LOGS\\run_telemetry_buffer_sync.ps1",
+    "wrapper_size_bytes_before": 4254,
+    "wrapper_sha256_before": "c081986028b17d039ed20a590a60db33197184dbfbb945391a42a049d674d9cf",
+    "backup_path": "D:\\SENSOR_LOGS\\run_telemetry_buffer_sync.ps1.before_python_path_fix_20261025T0345ICT.bak",
+    "backup_size_bytes": 4254,
+    "backup_sha256": "c081986028b17d039ed20a590a60db33197184dbfbb945391a42a049d674d9cf",
+    "backup_matches_pre_edit_source": true,
+    "old_python_path": "C:\\Users\\halin\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+    "old_python_alias_length_bytes": 0,
+    "old_python_alias_attributes": 1056,
+    "observed_task_wrapper_pid": 44408,
+    "observed_child_processes": [
+      "conhost.exe"
+    ],
+    "matching_python_verifier_or_consumer_child_observed": false,
+    "diagnosis": "The wrapper was invoking a zero-length WindowsApps python execution alias while its PowerShell task process remained running without a matching verifier/consumer child process. This is a strong suspected cause of the stalled tick, not yet a post-patch runtime proof.",
+    "replacement_python_path": "C:\\ProgramData\\anaconda3\\python.exe",
+    "replacement_python_version": "Python 3.14.6",
+    "verifier_path": "D:\\SENSOR_LOGS\\verify_dropbox_content_hash_20261023.py",
+    "verifier_sha256": "cdfb682fadc7ebadffa6a929ae984cdbcb4426ae03e1368c2e31836ef12ed6d0",
+    "verifier_exit_code": 0,
+    "verifier_readonly": true,
+    "verifier_bytes": 35389440,
+    "verifier_raw_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "verifier_dropbox_content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+    "expected_dropbox_content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+    "source_file_mutated": false,
+    "edit_applied": {
+      "target": "D:\\SENSOR_LOGS\\run_telemetry_buffer_sync.ps1",
+      "replacements": 1,
+      "changed_from": "C:\\Users\\halin\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+      "changed_to": "C:\\ProgramData\\anaconda3\\python.exe",
+      "edit_tool_returned_updated_line": true,
+      "edit_time_local": "2026-10-25T03:45:58+07:00",
+      "post_edit_full_file_hash_readback": "PENDING_REMOTE_READBACK",
+      "scheduled_tick_after_patch": "NOT_YET_VERIFIED"
+    },
+    "consumer_script": {
+      "path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+      "bytes": 13245,
+      "sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+      "behavior": "Metadata-only source validation and SHA-256 receipt; source CSV is not appended, synthetic rows are not created, and cloud/GitHub exports remain disabled."
+    },
+    "resolver_script": {
+      "path": "D:\\SENSOR_LOGS\\sensor_root_resolver.py",
+      "bytes": 7524,
+      "sha256": "117bcb01aefa908aac861f97c83dcccff7e84a5d080d771da09134378db98471",
+      "behavior": "Read-only; explicit source-file pin fails closed if invalid and does not substitute another CSV."
+    },
+    "task_settings_changed": false,
+    "process_terminated": false
+  },
+  "dropbox": {
+    "account_scope": "Outlook-linked account",
+    "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "bytes": 35389440,
+    "server_modified_utc": "2026-10-14T00:20:03Z",
+    "metadata_readback": true,
+    "raw_csv_downloaded": false
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "execution_id": "149",
+    "status": "success",
+    "started_at_utc": "2026-10-24T20:44:46.484Z",
+    "stopped_at_utc": "2026-10-24T20:44:48.479Z",
+    "table_id": "Sk0EFJK5NzWVpBvm",
+    "exact_row_id": 316,
+    "exact_event_id": "X20261024204448325_CLOUD",
+    "exact_row_readback": true,
+    "state": "OPEN_WORK_REMAINS",
+    "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "tasks_closed": 0
+  },
+  "independent_archive_branch": {
+    "pr27": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/27",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "23731f7978bbc2ddb41f61e9d0a06ca968cb1fae",
+      "mergeable": false,
+      "current_head_workflow_runs": 0,
+      "local_or_host_tests_executed": false
+    },
+    "pr28": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/28",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "bf553018dd59affb1d4ea2b120cad3ea7a0565ff",
+      "run_id": 40118137014,
+      "run_conclusion": "success",
+      "job_id": 120943663605,
+      "artifact_id": 12570136939,
+      "artifact_size_bytes": 958,
+      "artifact_sha256": "7352960c029de2aba652d881c86e805b5280af9f7f34c9f1aadc6479910089e0",
+      "scope": "Real 7Z/RAR/LR fixtures passed on ephemeral Ubuntu 24.04 only; no extraction; no Windows-host binary claim."
+    },
+    "pr29": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/29",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "86e208ff05c06cf0e5dfabfc6481218dc10bc96c",
+      "topology_run_id": 40118465586,
+      "topology_run_conclusion": "success",
+      "topology_job_id": 120944660927,
+      "secret_guard_run_id": 40118465608,
+      "secret_guard_conclusion": "success",
+      "scope": "Five topology tests and sixteen boot-route tests passed on GitHub-hosted runner."
+    },
+    "pr30": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/30",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "c904d650c25465c83d347e8308b4ea6086badf73",
+      "run_id": 40122933638,
+      "run_conclusion": "success",
+      "artifact_ids": [
+        12572161021,
+        12572111071
+      ],
+      "mergeable": false,
+      "scope": "OPEN-ledger reconciliation and cloud continuation tests passed on hosted runner; no task closure."
+    }
+  },
+  "tesseract_desktop": {
+    "pr": 6,
+    "state": "open",
+    "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "current_known_runs": [
+      39994207477,
+      39994207667
+    ],
+    "issuer_public_key_verified": false,
+    "runner_assignment_change_verified": false,
+    "ci_rerun": false
+  },
+  "invariants": {
+    "tasks_closed": 0,
+    "raw_sensor_data_committed": false,
+    "credentials_committed": false,
+    "source_deleted_or_moved": false,
+    "raw_source_written": false,
+    "synthetic_rows_added": 0,
+    "cloud_export_enabled": false,
+    "github_export_enabled": false,
+    "task_settings_changed": false,
+    "force_push_or_merge": false
+  },
+  "next_edges": [
+    "Re-read the exact wrapper target and compute its post-edit SHA-256; verify the next scheduled task run produces a new metadata-only receipt and recompute the source CSV SHA-256.",
+    "If the scheduled run still stalls, inspect task process/exit evidence and execution-limit behavior before further changes; do not terminate processes or change task settings without a verified cause.",
+    "Continue TESSERACT issuer public key and runner assignment verification; do not rerun failed CI without a verified runner change.",
+    "Keep Archive PRs 27-30 OPEN; do not merge or force-push while branches are diverged and mergeable=false. Use a safe re-cut or base reconciliation only after exact diff/source readback."
+  ]
+}

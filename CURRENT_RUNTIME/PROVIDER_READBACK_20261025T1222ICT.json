@@ -1,0 +1,249 @@
+{
+  "schema": "GGDV_PROVIDER_READBACK/1.0",
+  "id": "PROVIDER_READBACK_20261025T1222ICT",
+  "observed_at": "2026-10-25T12:22:43.4032814+07:00",
+  "source": "Fresh GitHub readback of AGENTS/reentry/task pointer/open ledger/MODUAL state; direct authorized Windows host receipt readback; live Braid execution; Dropbox metadata; n8n execution 158; Archive PR #34 workflow/artifact readback; TESSERACT PR #6 job readback.",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "fresh_readback": {
+    "branch": "main",
+    "files": {
+      "AGENTS.md": {
+        "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/blob/main/AGENTS.md"
+      },
+      "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+        "blob_sha": "b26b715ae4af144c07da4969e1e999c4b726d531",
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/blob/main/CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md"
+      },
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+        "blob_sha": "5cb196097dfb6e4a01b3cd0260ee037085d6889b",
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/blob/main/CURRENT_RUNTIME/TASK_RESUME_POINTER.json"
+      },
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+        "blob_sha": "3be209b7c111cb0eec7ab96a7fe1d65773e1e63d",
+        "read_method": "fetch_blob after fetch_file returned empty",
+        "parsed": true,
+        "tasks_count": 29,
+        "tasks_closed": 0,
+        "blob_bytes": 1190711
+      },
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+        "blob_sha": "bcc13d1df83297892f92b6df99d9491d93732c81",
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/blob/main/MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json"
+      }
+    }
+  },
+  "modual": {
+    "state": "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED",
+    "host": "DESKTOP-86ITNQ4",
+    "host_access": "Remote Desktop Commander direct read succeeded; device ID 59f03001-c732-403e-b80c-b4191266809c",
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "enabled": true,
+      "last_run_local": "2026-10-25T12:21:33+07:00",
+      "next_run_local": "2026-10-25T12:26:32+07:00",
+      "last_result": "0x0",
+      "missed_runs": 0
+    },
+    "tick_receipt": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T052139529899Z.json",
+      "bytes": 1635,
+      "sha256": "a86763deafb210dd565243afabc0b754409d1ef87dc5529b334339c228c08c38",
+      "observed_at_utc": "2026-10-25T05:21:39.529899Z",
+      "live_sensor_reading_confirmed": false,
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false,
+      "device_probe_status": "ADB_TRANSPORT_RESPONDED",
+      "usb_target": "1056285",
+      "usb_sensorservice_probe_succeeded": true,
+      "usb_sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "usb_sensor_event_timestamp_sensor_count": 4,
+      "usb_sensor_event_sensors_advanced": [],
+      "wireless_target": "192.168.1.14:5556",
+      "wireless_state": "NOT_LISTED"
+    },
+    "consumer_receipt": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T052136272Z.json",
+      "bytes": 6944,
+      "sha256": "52dd8ec3d83206aae594bd594951610575ed964f54ad03a40f7f77582d10e159",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "consumer_hash_matches_verifier": true,
+      "source_content_hash_verified": true,
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "dropbox_revision": "0165dc1e4794ab00000000395cdfd73",
+      "dropbox_content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+      "dropbox_server_modified_utc": "2026-10-14T00:20:03Z",
+      "live_sensor_reading_confirmed": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "raw_rows_emitted": false,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z"
+    },
+    "conclusion": "Scheduled Tick and consumer completed successfully and exact receipts were read back. This is metadata/source verification only; live sensor event timestamps remain stale. No raw sensor payload persisted."
+  },
+  "braid": {
+    "script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+    "execution_exit_code": 0,
+    "observed_at_local": "2026-10-25T12:17:33+07:00",
+    "six_forces": {
+      "receipt": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261025T051733322884Z.json",
+      "sha256": "d87ca8bb0a56bc3119d647e92a6c8c4b56949f84cdcd3daa3c505abb7160eb94",
+      "executed_action_count": 9,
+      "receipt_readback_ok": true,
+      "source_sha256_unchanged": true,
+      "requested_mutation_executed": false,
+      "host_scope": "LOCAL_READ_ONLY_ADAPTER_ONLY"
+    },
+    "plural": {
+      "receipt": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261025T051733376698Z.json",
+      "sha256": "f121d26214bced8baf3daf131c6de20686a7bd496a3aafbff23b6df018d23981",
+      "executed_action_count": 5,
+      "receipt_readback_ok": true,
+      "source_sha256_unchanged": true,
+      "requested_mutation_executed": false,
+      "host_scope": "LOCAL_READ_ONLY_ADAPTER_ONLY"
+    },
+    "cloud_host_wiring": "NOT_VERIFIED"
+  },
+  "providers": {
+    "dropbox": {
+      "path_display": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z"
+    },
+    "n8n": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "158",
+      "status": "success",
+      "started_at_utc": "2026-10-25T05:00:22.066Z",
+      "event_id": "X20261025050024007_CLOUD",
+      "row_id": 337,
+      "state": "OPEN_WORK_REMAINS",
+      "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+      "host_heartbeat_probed": false,
+      "tasks_closed": 0
+    }
+  },
+  "independent_branch": {
+    "archive_pr": {
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "number": 34,
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "main_head_at_compare": "0b28aec6c742da7c98c8882c86f72fe926ba4333",
+      "compare_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 90,
+      "runs": {
+        "secret_guard": {
+          "id": 40145523744,
+          "conclusion": "success",
+          "all_steps_success": true
+        },
+        "readonly_adapters": {
+          "id": 40145523727,
+          "conclusion": "success",
+          "all_steps_success": true
+        },
+        "topology": {
+          "id": 40145523754,
+          "conclusion": "success",
+          "all_steps_success": true
+        }
+      },
+      "artifact": {
+        "id": 12580351639,
+        "name": "sol-archive-real-fixture-readback",
+        "size_bytes": 958,
+        "expired": false,
+        "created_at_utc": "2026-10-25T00:08:45Z",
+        "expires_at_utc": "2026-11-08T00:08:44Z",
+        "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c"
+      },
+      "source_readback": {
+        "tests/test_sol_archive_10_formats.py": "dced3b29967b5b51e440e937fa9af3a902643326",
+        "tests/test_sol_library_stone_topology.py": "a3b9fd7409aeb92cf561eabffe3c4198a7e782b3",
+        ".github/workflows/archive-readonly-adapters.yml": "cd1e1bcbfed93ce90bb0efe67c6d1a0b9a70b616"
+      },
+      "action": "Fresh-read exact PR source, all three successful jobs/steps, artifact metadata and current divergence. No merge/force-push."
+    },
+    "tesseract_pr": {
+      "repository": "2708halinh-cloud/x-time-web",
+      "number": 6,
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "runs": [
+        {
+          "id": 39994207477,
+          "workflow": "tesseract-desktop-ci",
+          "conclusion": "failure"
+        },
+        {
+          "id": 39994207667,
+          "workflow": "validate-x-time",
+          "conclusion": "failure"
+        }
+      ],
+      "job_observations": [
+        {
+          "name": "build (macos-14, aarch64-apple-darwin, macos-apple-silicon)",
+          "conclusion": "failure"
+        },
+        {
+          "name": "build (windows-latest, x86_64-pc-windows-msvc, windows-x64)",
+          "conclusion": "failure"
+        },
+        {
+          "name": "build (ubuntu-24.04, x86_64-unknown-linux-gnu, linux-x64)",
+          "conclusion": "failure"
+        },
+        {
+          "name": "tesseract_os",
+          "conclusion": "failure"
+        },
+        {
+          "name": "selfhosted_windows_verify",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "readback",
+          "conclusion": "failure"
+        }
+      ],
+      "issuer_public_key_verified": false,
+      "runner_assignment_change_verified": false,
+      "rerun": false
+    }
+  },
+  "invariants": {
+    "tasks_closed": 0,
+    "source_moved_or_deleted": false,
+    "source_file_written": false,
+    "raw_sensor_values_persisted": false,
+    "credentials_written_to_public_github": false,
+    "github_cloud_export_enabled": false,
+    "force_push": false,
+    "pr_merge_performed": false
+  },
+  "next": {
+    "modual": "Continue direct Tick/consumer readback after the next scheduled cycle; investigate supported persistent sensor client/bridge. Keep source unchanged and exports disabled.",
+    "archive": "Keep PR #34 open; branch is diverged by 90 commits. No merge/force-push until a reviewed synchronization path is established.",
+    "tesseract": "Continue issuer public-key and runner-assignment verification through an authorized provider path; do not rerun failed-before-step CI without a verified runner/config change.",
+    "cloud": "Inspect next continuity scan and preserve OPEN_WORK_REMAINS until external host heartbeat and original-source evidence are verified."
+  }
+}

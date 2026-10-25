@@ -1,0 +1,78 @@
+{
+  "schema": "SOL_CODEX_CLOUD_MCP_CONTINUITY/1.0",
+  "stamp_live_x": "2026-10-21T14:14:25+07:00",
+  "author_source": "Source: user-supplied Codex Cloud environment description; local machine and connector observations",
+  "agent": "GPT-6 via authenticated Desktop Commander, GitHub and Google Drive MCP",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "environment": {
+    "machine": "universal",
+    "name": "not_provided",
+    "visibility": "private",
+    "internet_enabled": true,
+    "created_date": "2026-10-21",
+    "evidence": "USER_REPORTED_NOT_CLOUD_API_READBACK",
+    "runtime_variable_names": [
+      "CODEX_ENV_PYTHON_VERSION",
+      "CODEX_ENV_BUN_VERSION",
+      "CODEX_ENV_JAVA_VERSION",
+      "CODEX_ENV_NODE_VERSION",
+      "CODEX_ENV_RUBY_VERSION",
+      "CODEX_ENV_RUST_VERSION",
+      "CODEX_ENV_GO_VERSION",
+      "CODEX_ENV_PHP_VERSION"
+    ],
+    "secret_names": "REDACTED_FROM_PUBLIC_POINTER",
+    "secret_values": "NOT_STORED"
+  },
+  "live_sources": {
+    "local_codex_config": {
+      "path": "D:\\PHÒNG CHỈ HUY\\.codex\\config.toml",
+      "sha256": "B68E2324E87421B9FAFF438F779762309BE813534AF3F1F389935ACF891CBB35",
+      "size_bytes": 12950,
+      "role": "LOCAL_CODEX_CONFIG_NOT_CLOUD_ENVIRONMENT_EXPORT",
+      "observed": "2026-10-21T14:14:25+07:00"
+    },
+    "existing_mcp_cloud_mirror": {
+      "provider": "Google Drive",
+      "folder_id": "18P-i-4pCcRf6IdnPmrQJUWJZh8cBX9jm",
+      "file_id": "1t4XhF6-TGW69SFvqYi9ynBBHP8H2F-LL",
+      "filename": "config.toml",
+      "content_sha256": "UNKNOWN",
+      "same_bytes_as_local": "NO_SIZE_MISMATCH",
+      "byte_size": 4334,
+      "last_modified": "2026-08-31T01:35:17.097Z",
+      "latest_verified": false
+    },
+    "github": {
+      "repo": "2708halinh-cloud/SOL-LONG-MACH",
+      "carrier": "CONFIG_SOL/CODEX_CLOUD_DEVICE_FAILOVER_CURRENT.json",
+      "role": "NON_SECRET_OFFLINE_REENTRY_POINTER"
+    }
+  },
+  "target_h": {
+    "disk_number": 1,
+    "partition_number": 2,
+    "partition_kind": "EFI_SYSTEM",
+    "gpt_type": "c12a7328-f81f-11d2-ba4b-00a0c93ec93b",
+    "filesystem": "FAT32",
+    "bytes": 4294967296,
+    "private_encrypted_volume": false,
+    "write_result": "NOT_WRITTEN_BOOT_PARTITION_PROTECTION"
+  },
+  "offline_mcp_reentry": {
+    "candidate_provider": "Google Drive connector",
+    "source_file_id": "1t4XhF6-TGW69SFvqYi9ynBBHP8H2F-LL",
+    "condition": "Provider metadata and historical config.toml exist independently of connected Windows device; offline content read has not been exercised.",
+    "limitation": "Historical local config replica only; not proven latest; cannot execute computer commands or access live Codex Cloud secret values while host offline",
+    "validation_required": [
+      "compare SHA-256 of actual file bytes",
+      "verify Cloud environment id via Cloud UI or authorized Cloud API",
+      "verify access control and encryption of eventual H: vault",
+      "set up one-way encrypted sync and exact-target readback"
+    ]
+  },
+  "no_overwrite": true,
+  "no_secret_values": true,
+  "metadata_only": true,
+  "next_state": "MCP_FALLBACK_POINTER_VERIFIED_OLDER_DRIVE_SNAPSHOT_H_UNWRITTEN"
+}

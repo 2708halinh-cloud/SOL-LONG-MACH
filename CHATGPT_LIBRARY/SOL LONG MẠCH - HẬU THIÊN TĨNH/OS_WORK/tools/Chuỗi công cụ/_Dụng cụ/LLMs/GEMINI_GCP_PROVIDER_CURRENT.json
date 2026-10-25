@@ -1,0 +1,35 @@
+{
+  "schema": "SOL_LLM_AS_TOOL_PROVIDER/1.0",
+  "provider": "GOOGLE_CLOUD_VERTEX_AI_OR_GEMINI_DEVELOPER_API",
+  "entrypoint": "@Sol Long Mạch -> Tools -> LLMs -> Gemini",
+  "model_name_from_user": "Gemini 4.0",
+  "model_exact_api_id": "NOT_VERIFIED",
+  "provider_route": "SELECT_AVAILABLE_AUTHORIZED_ENDPOINT_AT_RUNTIME",
+  "parameters_required": [
+    "api_endpoint",
+    "account_alias",
+    "project_id",
+    "model_id",
+    "region_if_vertex"
+  ],
+  "tokens": "EXTERNAL_SECRET_STORE_ONLY_DO_NOT_COPY",
+  "purpose": "LLM calls are replaceable tool executions; CHAT remains the human-SOL ingress",
+  "no_model_execution_claim": true,
+  "antigravity": {
+    "IDE": "DISCOVER_INSTALLED_RUNTIME",
+    "PHYSICAL_EXPERIMENT": "REQUIRES_ACTUATOR_SENSOR_MODEL_AND_MEASUREMENT_NO_AUTOMATIC_PHYSICAL_CLAIM"
+  },
+  "gcp_project_routes": [
+    {
+      "account_alias": "utility_operand",
+      "project_id": "utility-operand-504304-u4",
+      "authenticated_runtime": "NOT_VERIFIED"
+    },
+    {
+      "account_alias": "alert_tiger",
+      "project_id": "alert-tiger-508618-h7",
+      "authenticated_runtime": "NOT_VERIFIED"
+    }
+  ],
+  "oauth_installed_clients_are_not_access_tokens": true
+}
