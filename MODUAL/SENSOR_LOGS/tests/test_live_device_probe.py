@@ -51,7 +51,7 @@ class LiveDeviceProbeTests(unittest.TestCase):
         self.assertEqual(xiaomi["adb_state"], "device")
         self.assertTrue(xiaomi["battery_probe_succeeded"])
         self.assertTrue(xiaomi["sensorservice_probe_succeeded"])
-        self.assertEqual(xiaomi["sensor_names_observed"], ["LSM6DSO", "AK099", "TMD3719"])
+        self.assertEqual(xiaomi["sensor_names_observed"], ["LSM6DSO", "AK099", "TMD3719", "Accelerometer", "Magnetometer", "Light Sensor"])
         self.assertEqual(redmi["adb_state"], "offline")
         self.assertFalse(redmi["battery_probe_succeeded"])
         self.assertFalse(redmi["sensorservice_probe_succeeded"])
