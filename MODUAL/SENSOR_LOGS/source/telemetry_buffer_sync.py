@@ -29,8 +29,10 @@ from pathlib import Path
 
 try:
     from .sensor_root_resolver import inspect_sources
+    from .live_device_probe import probe_live_devices
 except ImportError:  # direct script invocation
     from sensor_root_resolver import inspect_sources
+    from live_device_probe import probe_live_devices
 
 # Pin this consumer to the provider-verified materialization. Fail closed; never auto-select another CSV.
 os.environ["SOL_SENSOR_SOURCE_FILE"] = r"D:\SENSOR_LOGS\windows_SENSON.CSV"
@@ -220,7 +222,11 @@ def record_telemetry_tick():
         "synthetic_rows_added": 0,
         "live_sensor_reading_confirmed": False,
     }
+    # Probe configured Android transports without persisting battery values or sensor event payloads.
+    # A responding SensorService is not proof of a continuous live sensor stream.
+    result["device_probe"] = probe_live_devices(ADB_PATH)
     print(f"SOURCE_OBSERVED bytes={result['bytes']} sha256={result['sha256']}")
+    print("DEVICE_PROBE_JSON=" + json.dumps(result["device_probe"], sort_keys=True, separators=(",", ":")))
     return result
 
 
@@ -241,6 +247,12 @@ def write_tick_receipt(result: dict, mode: str) -> dict:
             "source_file_written": False,
             "synthetic_rows_added": 0,
         },
+        "device_probe": result.get("device_probe", {
+            "schema": "GGDV_LIVE_DEVICE_PROBE/1.0",
+            "status": "NOT_RUN",
+            "live_sensor_reading_confirmed": False,
+            "targets": [],
+        }),
         "live_sensor_reading_confirmed": False,
         "exports": {
             "cloud_enabled": os.getenv("SOL_ENABLE_SENSOR_CLOUD_EXPORT", "").strip() == "1",
