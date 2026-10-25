@@ -607,3 +607,24 @@ Fresh exact readback of `2708halinh-cloud/x-time-web/.github/workflows/tesseract
 - MODUAL state append: blob `820146146fd9534dad7fc8ebb7ac04b5fc130749`, commit `d21462884846a677810828ccfe52f441aaa564b5`. OPEN ledger append: blob `4419bba51361aeadb8b5bc070c459056595f469f`, commit `a3014c11f753836aa3ecb0f17a4aedd2abd5254d`. The ledger remains 29 tasks, 161 verified action events, 161 provider observations, and 0 closed tasks.
 - Next diagnostic edge is to verify the configured public-key value and runner assignment through an authorized repository-settings/runner inventory route; until that is possible, keep PR #6 OPEN and do not repeat a failed pre-step CI run without a verified configuration change.
 
+
+
+<!-- BEGIN LIVE_REENTRY_OBSERVATION_20261025T1830ICT -->
+## LIVE REENTRY OBSERVATION — 2026-10-25 18:30 ICT
+
+SOURCE_DIRECT: Fresh read of AGENTS.md, this re-entry file, TASK_RESUME_POINTER.json, OPEN_TASKS_CURRENT.json, Dropbox Outlook metadata, Windows host receipts, GitHub PR/CI and n8n execution/row.
+
+CHECKPOINT: `CURRENT_RUNTIME/PROVIDER_READBACK_202610251830ICT.json` — blob SHA `05ff0527c0adb61a01344d98f235fcd6c1470b37`, commit `059324a7ac97720bc19ac15b9cda7069d721e200`. All 29 tasks remain nonterminal; no task closed.
+
+WINDOWS: `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M` is enabled/Ready. Exact scheduled Tick `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T112138817813Z.json`, SHA-256 `08a026df7b84b107e611b7fd024d535c7b6093384b99ffd78c704dc8a591b777`; exact consumer receipt `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T112136101Z.json`, SHA-256 `b416e8e52f0e456d049391cc2212b0dd2bc7735b0919fbda35512a9b541a56db`. Source remains 35,389,440 bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; no source write, synthetic rows, raw rows, cloud export or GitHub push. Four sensor timestamp histories remain stale; no production continuous stream verified. Exact 89,814,328-byte bulk target not found.
+
+BRAID: SIX receipt SHA-256 `efde81676a4806db4828c0438fe41754e3f0fc32b8b77efec49694a55e739493`; PLURAL receipt SHA-256 `4452d31d3248a9ffffccb2520e7fb4e2ed88090aacefc83c936d1c863d6a630e`; both re-read, source unchanged, mutation=false, cloud-host wiring not verified.
+
+CLOUD: n8n execution 164 succeeded; exact event row 358 is `OPEN_WORK_REMAINS`, 45 recovery rows pending, `HOST_HEARTBEAT_NOT_PROBED`.
+
+INDEPENDENT BRANCHES: Archive PR #36 remains OPEN/Draft, 5 ahead/54 behind current main, three current-head checks successful and artifact unexpired. PR #34 is 1 ahead/221 behind; PR #35 is 9 ahead/205 behind. TESSERACT PR #6 remains OPEN/Draft; runs 39994207477 and 39994207667 failed with zero steps/artifacts; issuer key and runner assignment remain unverified; no rerun.
+
+CLOCK: W32Time is Stopped/Manual. Start attempt was denied by service-open permissions; no system clock/config change. Continue using host-local due times and do not claim external clock synchronization.
+
+NEXT: Read the next scheduled host Tick after 18:26:32+07; continue sensor-client/bridge and exact bulk-target search. Keep every unfinished task OPEN. Preserve source/provenance and secrets.
+<!-- END LIVE_REENTRY_OBSERVATION_20261025T1830ICT -->
