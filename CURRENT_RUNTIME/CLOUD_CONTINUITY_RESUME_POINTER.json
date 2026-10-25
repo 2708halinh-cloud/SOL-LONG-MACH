@@ -1,35 +1,35 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T13:07:30.592Z",
-  "updated_at_local": "2026-10-25T20:07:30.592+07:00",
+  "updated_at_utc": "2026-10-25T13:40:40.551Z",
+  "updated_at_local": "2026-10-25T20:40:40.551+07:00",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2040ICT.json",
+    "blob_sha": "f11567960d459de53055a6d7af63d864b944f3e7",
+    "commit_sha": "015144a5faff2bed45d76fb36fbe41106b203b8d",
+    "readback_verified": true,
+    "note": "n8n execution 167 and evidence row 379 verified; 45/45 Recovery rows remain nonterminal. Desktop Commander registry reports listed devices offline; latest prior host evidence is row 378 at 20:31:39 ICT, with no fresh direct host probe this turn."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2005ICT.json",
     "blob_sha": "611effb864be14cf5d2eec3291d8ef4cd97eaceb",
     "commit_sha": "6bf0ec73964e0f88659f7284de71c0a3b6823ec8",
     "readback_verified": true,
     "note": "n8n execution 166/row 371 verified; host tick row 373 and trace SHA correction row 374 read back; Dropbox metadata row 369 retained; all 45 Recovery tasks remain nonterminal."
   },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2001ICT.json",
-    "blob_sha": "f4d3432054d07b63ae03918da4390afab6b4a482",
-    "commit_sha": "efb79d681ee7fa5f770be00889f8850f3bdf3ff2",
-    "readback_verified": true,
-    "note": "n8n execution 166/row 371 verified; host tick row 370 and append-only trace SHA correction row 372 read back; Dropbox metadata row 369 retained; 45 Recovery tasks remain nonterminal."
-  },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
-    "latest_execution_id": "166",
+    "latest_execution_id": "167",
     "latest_execution_status": "success",
     "latest_execution_mode": "trigger",
-    "latest_execution_started_at_utc": "2026-10-25T13:00:22.070Z",
-    "latest_execution_stopped_at_utc": "2026-10-25T13:00:24.108Z",
+    "latest_execution_started_at_utc": "2026-10-25T13:40:38.514Z",
+    "latest_execution_stopped_at_utc": "2026-10-25T13:40:40.551Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 374,
-    "latest_cloud_evidence_row_id": 371,
-    "latest_cloud_event_id": "X20261025130023963_CLOUD",
+    "evidence_table_rows": 379,
+    "latest_cloud_evidence_row_id": 379,
+    "latest_cloud_event_id": "X20261025134040415_CLOUD",
     "latest_cloud_row_exact_readback": true,
     "latest_host_evidence_row_id": 373,
     "latest_host_event_id": "X20261025125639665_HOST_READBACK",
@@ -46,10 +46,10 @@
     "unfinished_rows": 45,
     "tasks_closed": 0,
     "host_heartbeat_probed_by_workflow": false,
-    "direct_host_probe_this_turn": true,
+    "direct_host_probe_this_turn": false,
     "latest_execution_exact_readback": true,
     "latest_rows_exact_readback": true,
-    "interpretation": "Execution 166 is cloud-only. Host tick row 373, trace correction row 374, and Dropbox metadata row 369 are separate verified readbacks; no recovery task closed.",
+    "interpretation": "Execution 167 is cloud-only; row 379 appended. It does not establish current Windows/Android status.",
     "latest_provider_metadata_evidence_row_id": 369,
     "latest_provider_metadata_event_id": "X20261025125619658_DROPBOX_MODUAL_METADATA_READBACK",
     "latest_provider_metadata_row_exact_readback": true,
@@ -61,13 +61,13 @@
   "host": {
     "device": "DESKTOP-86ITNQ4",
     "device_id": "59f03001-c732-403e-b80c-b4191266809c",
-    "route": "Remote Desktop Commander",
-    "route_status_at_probe": "ONLINE",
+    "route": "Remote Desktop Commander / Desktop Commander device registry",
+    "route_status_at_probe": "OFFLINE",
     "latest_host_probe_at_local": "2026-10-25T19:59:13.7408183+07:00",
     "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T125639665213Z.json",
-    "latest_tick_observed_at_utc": "2026-10-25T12:56:39.665213Z",
+    "latest_tick_observed_at_utc": "2026-10-25T13:31:39.368570Z",
     "latest_tick_bytes": 1635,
-    "latest_tick_sha256": "E5998EB88224DF77B1E896A63DBCD2A9E7C56D314981E2DFEAE9A5B7B87824E5",
+    "latest_tick_sha256": "09FC7FB239C61B1DBFF2A0169E5CF47447CCBFFE86AB8FDC3376B747A0817124",
     "trace_path": "D:\\SENSOR_LOGS\\state\\telemetry_buffer_sync_wrapper_trace.log",
     "trace_bytes": 60300,
     "trace_sha256": "813F5287A9DD227982E5427ECAD3B5328277F5B53E26AE582EC9A4E63AB7F12A",
@@ -117,7 +117,11 @@
     "interpretation": "Host tick and consumer receipt are directly verified and read-only; live sensor stream remains stale. Next scheduled run was still future at the host-clock probe.",
     "host_clock_lag_approx_seconds_at_checkpoint": 362,
     "consumer_receipt_bytes": 6944,
-    "route_status_at_last_direct_probe": "ONLINE"
+    "route_status_at_last_direct_probe": "ONLINE",
+    "latest_host_evidence_row_id": 378,
+    "latest_host_event_id": "X20261025133139368_HOST_READBACK",
+    "direct_host_probe_this_turn": false,
+    "current_task_state": "UNVERIFIED_NO_FRESH_HOST_READBACK"
   },
   "github_task_ledger": {
     "task_count": 29,
@@ -142,7 +146,8 @@
       "main_head_before_pointer_update": "6bf0ec73964e0f88659f7284de71c0a3b6823ec8"
     },
     "task_count_recomputed_this_turn": false,
-    "tasks_closed_in_this_turn": 0
+    "tasks_closed_in_this_turn": 0,
+    "blob_sha_last_verified": "344e3e3ea66b75cde13d1b7b48d09f408fddb836"
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -159,11 +164,10 @@
     "tasks_closed": 0
   },
   "next": [
-    "Read the next Windows tick only after host-local scheduler time reaches 20:01:32 ICT; the latest direct probe at 19:59:13 ICT showed it still in the future.",
-    "Keep MODUAL recovery OPEN: Dropbox candidate is 110480037 bytes and Library candidate is 87430862 bytes, neither matches 89814328; raw-byte SHA remains unverified.",
-    "Keep SV-20261020-02 OPEN: two Library ZIP copies match expected SHA-256 and pass archive checks, but Dropbox original bytes remain unread.",
-    "Keep PR #36 OPEN/Draft; comparison against main head 6bf0ec73964e0f88659f7284de71c0a3b6823ec8 is 5 ahead / 79 behind; do not merge or force-push.",
-    "Keep all 45 Recovery rows nonterminal and retain the last verified 29 GitHub tasks; do not infer task count from the oversized ledger's empty response."
+    "When the matching Desktop Commander device is reachable, verify device identity and read the next host tick/scheduler state directly.",
+    "Keep all 45 Recovery rows nonterminal; do not infer the GitHub task count from the oversized file's empty response.",
+    "Continue authorized retrieval of original Dropbox ZIP bytes and the exact MODUAL source; do not substitute size-mismatched candidates.",
+    "Keep PR #36 OPEN/Draft; no merge, force-push, or branch sync."
   ],
   "checkpoint_history": [
     {
