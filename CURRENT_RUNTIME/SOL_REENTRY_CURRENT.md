@@ -430,3 +430,25 @@ The prior resume pointer mixed the MODUAL task name with a TESSERACT repository/
 
 ### Next edge
 After the scheduled Tick due 2026-10-25 13:16:32 +07, read the newest Tick and consumer receipts and recompute the pinned source SHA. Continue finding a supported persistent sensor client/bridge without installing an unverified package. Continue HWiNFO logging discovery and TESSERACT issuer/runner verification through authorized routes. Keep all unfinished tasks OPEN.
+
+
+## REENTRY — NEXT VERIFIED WINDOWS TICK + PROVIDER CONTINUITY — 2026-10-25 13:19 ICT
+
+SOURCE_DIRECT: Fresh-read AGENTS.md, SOL_REENTRY_CURRENT.md, TASK_RESUME_POINTER.json, OPEN_TASKS_CURRENT.json, MODUAL_PARAMETER_CURRENT.json and provider status. Exact checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1319ICT.json`; blob SHA `942ed0dd23073b26ae041326ede26c06b0e37ab1`; checkpoint commit `7ef7bb6e2d77315bc71fe9037afa56c0b2df0fa5`. The resume pointer now advances to this checkpoint while retaining the previous pointer route and all parallel OPEN branches.
+
+### Latest direct Windows Tick and consumer readback
+- Host `DESKTOP-86ITNQ4`; task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M` enabled/Ready; last result `0x0`; zero missed runs; last run `13:16:33 +07`; next run `13:21:32 +07`.
+- Tick receipt `D:\SENSOR_LOGS\state\WINDOWS_TICK_20261025T061639223392Z.json`, SHA-256 `73b08089b36bee7966ce8f20d8918d4a689e7720a05028beec43f92a99979bcf`, exact readback.
+- Consumer receipt `D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261025T061636042Z.json`, SHA-256 `233e5fbd6f8aaa32b57e4d945caac30e49214e8505ecb1e4536f20e5c1a7f8bb`, status `SOURCE_OBSERVED_READONLY`, exit 0, provider content hash verified, no source write/rows/export.
+- Pinned source remains 35,389,440 bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; Dropbox revision `0165dc1e4794ab00000000395cdfd73`, modified `2026-10-14T00:20:03Z`.
+- ADB executable is present and USB target `1056285` responds; four sensor timestamps remain `EVENT_TIMESTAMP_STALE`; wireless target `192.168.1.14:5556` remains `NOT_LISTED`. This is not a verified continuous production sensor stream.
+
+### Independent Braid and providers
+- Braid receipts were rehashed at `13:18:40 +07`: SIX `365c4cfea51712de99177238a06cb99e37deed27e6070bf561e195cd0d1aee94`, 9 actions; PLURAL `61fad3d7545241a1a0acf9c4afb1bca3abd9ff28dd0bd4cffcbd345722f1f3c6`, 5 actions. Both report source unchanged and no requested mutation executed. Cloud/host wiring remains unverified.
+- n8n execution 159 succeeded; event `X20261025060024145_CLOUD`, row 338, state `OPEN_WORK_REMAINS`; 337 evidence rows and 45 recovery tasks; host heartbeat unprobed.
+- Archive PR #34 is OPEN/Draft, 1 ahead / `119` behind current main at the compare base recorded in the checkpoint; three workflows succeeded and artifact 12580351639 remains unexpired to 2026-11-08T00:08:44Z. No merge/force-push.
+- MODUAL PR #35 is OPEN, 9 ahead / `103` behind current main; both recorded workflows succeeded. No merge/force-push.
+- TESSERACT Desktop PR #6 remains OPEN/Draft; runs 39994207477 and 39994207667 failed without artifacts. Issuer public key and runner assignment remain unverified; no CI rerun.
+
+### Resume and next edge
+All 29 ledger tasks remain open/in progress; no task was closed. The prior TESSERACT pointer is preserved, and current primary resume points to the MODUAL checkpoint. After `13:21:32 +07`, read the next exact Tick/consumer receipts and recompute the source SHA. Continue finding an authorized persistent sensor client/bridge and a supported HWiNFO logging route. Do not install unverified apps, export raw sensor data, move/delete sources, merge diverged PRs or rerun CI without a verified runner/issuer change.
