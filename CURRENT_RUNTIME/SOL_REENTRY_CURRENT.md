@@ -628,3 +628,46 @@ CLOCK: W32Time is Stopped/Manual. Start attempt was denied by service-open permi
 
 NEXT: Read the next scheduled host Tick after 18:26:32+07; continue sensor-client/bridge and exact bulk-target search. Keep every unfinished task OPEN. Preserve source/provenance and secrets.
 <!-- END LIVE_REENTRY_OBSERVATION_20261025T1830ICT -->
+
+
+## Verified re-entry observation — 2026-10-25 18:54 ICT
+
+- Checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_202610251854ICT.json`
+- Checkpoint blob SHA: `f8085d36f9a44af2316bcf50e99ba8af7b54565d`
+- Checkpoint commit: `9d341500b2555051b343aedffa00a3af80bc9300`
+- Parent main head: `d2e1b5e2e728ecfbde86709726ada33d94411472`
+- Canonical reads before state update: AGENTS `f18f9743de1e21d13bad47770f928ec85e79bd95`; re-entry `45f5c79e6e28ba31978795e0ea010429571308e5`; task pointer `2f6d45c94d62b106613bb91666752a9bb7c7ef7c`; OPEN ledger `d6c5aae2d0ccf579835e31a58e7b26ee68bb7987`; MODUAL state `1ff3c210911af73b3196f36c3ab1e8b6ae4537c5`.
+
+### Windows Tick and consumer
+
+The direct host-local scheduled task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M` is enabled and Ready. Last run `2026-10-25 18:51:33 +07`, result `0x0`; next run `18:56:32 +07`.
+
+- Tick receipt: `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T115139482479Z.json`; SHA-256 `6d6d4fc6dec14443c62f95f772a0750146d9fe0bbc6fd06473c6b0a2236cf312`.
+- Consumer receipt: `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T115136498Z.json`; SHA-256 `9af0a08e63f7ceb0061f42ed6ccc514dbf748c234f7b62545ffaadcb1d40bf5c`.
+- Source: 35389440 bytes; SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; no source write or synthetic rows.
+- Consumer is `SOURCE_OBSERVED_READONLY`, exit 0, source hash verified, consumer hash matches verifier.
+- Live sensor stream remains `EVENT_TIMESTAMP_STALE`; four sensor timestamps were observed, none advanced. ADB transport/SensorService response is not proof of a live continuous stream.
+- Exact 89,814,328-byte bulk target was not found on the bounded D-drive scan. W-drive search remains incomplete; no substitute source was accepted.
+- Dropbox Outlook metadata still identifies revision `0165dc1e4794ab00000000395cdfd73`, size 35,389,440 bytes, last server-modified `2026-10-14T00:20:03Z`. Content hash was not recomputed from Dropbox bytes in this turn.
+
+### Independent provider branches
+
+- Archive PR #36 remains OPEN/Draft, head `e9c299594447d75bebb75c343cdb707731c7ea50`, 5 ahead / 62 behind current main; three checked workflows succeeded and artifact `12592822576` remains unexpired. No merge or force-push.
+- Archive PR #34 remains OPEN/Draft, 1 ahead / 229 behind.
+- MODUAL PR #35 remains OPEN/Draft, 9 ahead / 213 behind.
+- TESSERACT PR #6 remains OPEN/Draft; both observed CI runs failed before executing steps and produced no artifacts. Issuer public key and runner assignment remain unverified; no rerun.
+- n8n execution `164`, event `X20261025110023982_CLOUD`, row `358`, reports `OPEN_WORK_REMAINS`; 45 recovery rows remain pending and host heartbeat is not probed.
+
+### Carrier watcher and safety
+
+`carrier-events.jsonl` is now 6,381,902,622 bytes, last written at `2026-10-25T11:54:23.3642746Z`; growth since the 18:44 checkpoint is 3,243,793 bytes. The three-second polling log needs a retention/resource review. No log rotation or deletion was performed.
+
+Ledger remains 29 tasks, 163 action events, 163 provider observations, four integrity corrections and zero tasks closed. No raw sensor bytes or credentials were exported; no source was moved, deleted or overwritten; cloud/GitHub sensor export remains disabled.
+
+### Next actions
+
+1. Read the next Tick/consumer receipts after the host-local 18:56:32 +07 schedule and recompute the exact source hash.
+2. Continue the exact-target bulk search and investigate a supported continuous sensor client/bridge.
+3. Review carrier-log growth without deleting or rotating evidence until retention policy is verified.
+4. Keep all open PRs and tasks nonterminal; verify issuer/runner before any CI rerun.
+5. Read the next scheduled n8n execution and its exact evidence row; do not trigger a duplicate scan.
