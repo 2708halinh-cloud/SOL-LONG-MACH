@@ -671,3 +671,47 @@ Ledger remains 29 tasks, 163 action events, 163 provider observations, four inte
 3. Review carrier-log growth without deleting or rotating evidence until retention policy is verified.
 4. Keep all open PRs and tasks nonterminal; verify issuer/runner before any CI rerun.
 5. Read the next scheduled n8n execution and its exact evidence row; do not trigger a duplicate scan.
+
+
+## Verified re-entry observation — 2026-10-25 19:02 ICT
+
+- Combined provider checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_202610251902ICT.json`
+- Checkpoint blob SHA: `905d13f83ad3d1a23efc329efe8eeced5363519d`
+- Checkpoint commit: `9ee3a0f4ecb4b079cdac59d75f71dd8cda5fe4c1`
+- Parent main head: `2979ea1d19a07babaeb600cc5ee610805fc4bc21`
+- Canonical pre-update reads: AGENTS `f18f9743de1e21d13bad47770f928ec85e79bd95`; re-entry `b2ba11e8f5f363b6dbd2792ddb01d0f5c782e80a`; pointer `7b5039e0e1819c132150f9df60f31c001451e00d`; OPEN ledger `a16700b02bbd71c5b99448eb115efb68aca9e3df`; MODUAL state `2d26db6695de3e727f2b34944258f962782861a3`.
+
+### Windows Tick and consumer
+
+- Host `DESKTOP-86ITNQ4` remains reachable through the Remote Desktop Commander route.
+- Tick task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M`: enabled, Ready; last run `19:01:33 +07`, result `0x0`; next run `19:06:32 +07`.
+- Exact Tick receipt `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T120139975354Z.json`, SHA-256 `141518e627d19c5f7de956078ffbf5980528a53febd4447947016bfe662af175`.
+- Exact consumer receipt `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T120137239Z.json`, SHA-256 `decb20e3654f8b02c000fcece09c5088413bd05313333b78baa851ba3f3d48ec`.
+- Source remains 35,389,440 bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; consumer status `SOURCE_OBSERVED_READONLY`, exit 0, hash verified, consumer hash matches verifier.
+- Live sensor stream remains `EVENT_TIMESTAMP_STALE`; four timestamps observed, none advanced. No source write, synthetic rows, raw rows, cloud export or GitHub push.
+- The canonical 89,814,328-byte bulk target is still absent from the bounded D-drive scan; W-drive search remains incomplete. No substitution accepted.
+- Dropbox metadata: revision `0165dc1e4794ab00000000395cdfd73`, 35,389,440 bytes, last server-modified `2026-10-14T00:20:03Z`; raw bytes were not downloaded.
+
+### Cloud continuity — execution 165
+
+- n8n workflow `BogzhFUDbRp7kuwh`: execution `165`, success, started `2026-10-25T12:00:22.077Z`, stopped `12:00:24.238Z`.
+- Event `X20261025120024048_CLOUD`; exact data-table row `361` read back from `AISSTANGT_MANAGE_CONTINUITY_20261020` (`Sk0EFJK5NzWVpBvm`).
+- State remains `OPEN_WORK_REMAINS`; 45 recovery rows remain pending. `HOST_HEARTBEAT_NOT_PROBED`, host operations 0. No duplicate manual scan.
+
+### Independent branches and carrier log
+
+- Archive PR #36 remains OPEN/Draft, 5 ahead / 64 behind; three checked workflows succeeded; artifact `12592822576` remains unexpired. No merge or force-push.
+- Archive PR #34 remains OPEN/Draft, 1 ahead / 231 behind.
+- MODUAL PR #35 remains OPEN/Draft, 9 ahead / 215 behind.
+- TESSERACT PR #6 remains OPEN/Draft. Observed runs `39994207477` and `39994207667` failed before executing steps, with no artifacts. Issuer public key and runner assignment remain unverified; no CI rerun.
+- `carrier-events.jsonl` is 6,383,462,781 bytes, last written `2026-10-25T12:02:35.5341634Z`, +1,560,159 bytes since the 18:54 checkpoint. Resource/retention review remains open; no rotation or deletion.
+
+Ledger remains 29 tasks, 164 action events, 164 provider observations, four integrity corrections, zero tasks closed. No raw sensor bytes or credentials exported; no source moved, deleted or overwritten; cloud/GitHub sensor export remains disabled.
+
+### Next actions
+
+1. Read the exact Tick/consumer receipts after the host-local `19:06:32 +07` schedule and recompute the source SHA-256.
+2. Continue exact-target search for the canonical bulk file and a supported continuous sensor client/bridge.
+3. Review carrier log growth without deleting or rotating evidence until retention policy is verified.
+4. Keep all open PRs and tasks nonterminal; verify issuer/runner before any CI rerun.
+5. Read the next scheduled n8n execution and exact evidence row; do not trigger a duplicate scan.
