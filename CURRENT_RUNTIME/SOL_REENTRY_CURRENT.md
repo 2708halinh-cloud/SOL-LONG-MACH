@@ -887,3 +887,19 @@ Ledger remains 29 tasks, 164 action events, 164 provider observations, four inte
 - All 29 tasks remain nonterminal; no source moved/deleted, no credentials written, no raw sensor values exported.
 - Next edge: read the next Tick after 04:26:32+07, poll PID 48064 for exact-target search completion, continue issuer/runner provenance, and review carrier-log retention without destructive action.
 
+
+
+## Re-entry observation — 2026-10-26T04:28:03.9877741+07:00
+
+- Fresh canonical source reads before this update: `AGENTS.md` `f18f9743de1e21d13bad47770f928ec85e79bd95`; `SOL_REENTRY_CURRENT.md` pre-append blob `f75ecc0001687452c9a2b6c65fd0d13000ddc0d7`; `TASK_RESUME_POINTER.json` `c67f2db6f0c961f9c88b83447741731fbabcde39`; `OPEN_TASKS_CURRENT.json` `2d21f57c26d52e3818e8811a433ad623569a8bf2`; `MODUAL_PARAMETER_CURRENT.json` `7e25467b804c2fc8a27d60a56644fbdc84004e56`.
+- Checkpoint exact-readback: `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0428ICT.json`, blob `16f14298bf014f5d10a0e6dd8585ceb73f0698f0`, commit `4606e1c6e61b38909c3700e8b5e0a5bbb105ee07`. Pointer and ledger advance to this checkpoint while preserving previous pointer/provider history.
+- Direct Windows read at `2026-10-26T04:28:03.9877741+07:00`: Tick `D:\SENSOR_LOGS\state\WINDOWS_TICK_20261025T212640251806Z.json` SHA-256 `dcc9af5807d806f66674e80bb2c752cded9d8a52ed506ab7cbb29b9b14c1bd25`; consumer `D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261025T212637272Z.json` SHA-256 `b9f6b859c39cc8d206642919c35ba64130f49afd6e678b035c46c2306f379e3e`; source `D:\SENSOR_LOGS\windows_SENSON.CSV` 35389440 bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`, matching both receipts. Scheduled task enabled/Ready, last run 04:26:33+07, next 04:31:32+07, result 0x0, missed runs 0.
+- Consumer remains `SOURCE_OBSERVED_READONLY`; no source write, synthetic rows, raw sensor export, cloud export, or GitHub export. Sensor event timestamps remain `EVENT_TIMESTAMP_STALE`; no sensor advanced; `live_sensor_reading_confirmed=false`.
+- Exact bulk target `D:\SENSOR_LOGS\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV` is absent at its canonical D: path. Full W-drive filename search PID 48064 is still running (about 83 MB working set, 5.16 CPU seconds at last read) with no output; focused subtrees returned no matches. Search remains incomplete; no substitution.
+- Dropbox metadata remains revision `0165dc1e4794ab00000000395cdfd73`, 35389440 bytes, server-modified `2026-10-14T00:20:03Z`; raw CSV bytes were not downloaded.
+- n8n execution 175 succeeded; row 413 is `OPEN_WORK_REMAINS`, latest host evidence row is 412, workflow host heartbeat is not probed, and 45/45 recovery rows remain pending.
+- Archive PR #36 remains OPEN/Draft; current-head checks SUCCESS and artifact 12606500925 unexpired; current compare is diverged 10 ahead/194 behind main. TESSERACT PR #6 remains OPEN/Draft; runs 40220813600/40220813636 failed before steps, logs unavailable, no local process key, repo-variable route unsupported, issuer/runner unverified; no CI rerun.
+- Carrier log last read at 04:17:12+07 is 6480846988 bytes; retention policy remains unverified; no rotation/deletion.
+- All 29 tasks remain nonterminal; no source moved/deleted, no credentials written, no raw sensor values exported.
+- Next edge: exact-read the next Tick after 04:31:32+07, poll PID 48064, continue TESSERACT issuer/runner provenance, and review carrier-log retention without destructive action.
+
