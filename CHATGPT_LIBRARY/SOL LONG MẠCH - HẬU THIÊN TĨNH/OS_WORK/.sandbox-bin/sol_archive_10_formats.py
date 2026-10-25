@@ -47,6 +47,11 @@ def stamp(name):
     matches=re.findall(r"(?<!\d)(?:20\d{2}[-_]?[01]\d[-_]?[0-3]\d)(?!\d)",name)
     return matches[:3]
 
+def adapter_available(kind):
+    """Report whether any binary used by the read-only adapter is available."""
+    return any(shutil.which(candidate) for candidate in EXTERNAL_CANDIDATES[kind])
+
+
 def inspect(path):
     path=Path(path)
     out={"schema":"SOL_ARCHIVE_10_FORMATS_V1","basename":path.name,
@@ -159,9 +164,9 @@ def main():
         print(json.dumps({
             "formats": list(FORMATS),
             "ALL": "virtual_index",
-            "7Z": any(shutil.which(name) for name in EXTERNAL_CANDIDATES["7Z"]),
-            "RAR": any(shutil.which(name) for name in EXTERNAL_CANDIDATES["RAR"]),
-            "LR": any(shutil.which(name) for name in EXTERNAL_CANDIDATES["LR"]),
+            "7Z": adapter_available("7Z"),
+            "RAR": adapter_available("RAR"),
+            "LR": adapter_available("LR"),
         }))
         return
     if a.fixture_test:
