@@ -1,22 +1,22 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.5",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T17:04:02.082Z",
-  "updated_at_local": "2026-10-26T00:04:02.082+07:00",
-  "timestamp_basis": "Host observations use the Windows host clock; n8n/provider timestamps are separate. Latest n8n cloud row timestamp is later than the host observation by several minutes. Never infer host heartbeat from cloud heartbeat.",
+  "updated_at_utc": "2026-10-25T17:09:36.661Z",
+  "updated_at_local": "2026-10-25T17:09:36.661+00:00",
+  "timestamp_basis": "Host-clock timestamps and n8n/provider timestamps are kept separate. Cloud heartbeat is not host heartbeat; provider row creation time may lag or lead the host observation time.",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0003ICT.json",
+    "blob_sha": "5e0bf4d3930bd8f3a1b91586a86407c9fae7e2f5",
+    "commit_sha": "be1ff7d6a148594b4ed456f1dbd45b873c2f699a",
+    "readback_verified": true,
+    "note": "Direct host tick/consumer/source SHA/task scheduler readback and completed exact-name search verified; cloud execution 171 remains separately sourced."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0001ICT.json",
     "blob_sha": "1d40d3e8ba5dc1e66febafe9045cde2a7b9cf07c",
     "commit_sha": "a1ff8d539e46bdaa4716706c6685fa9ceb107cfc",
     "readback_verified": true,
     "note": "Execution 171 and cloud row 391 verified; direct host tick/consumer/source SHA/task scheduler readback is separate host evidence row 392. Current host sample time remains 2026-10-25 23:57:16+07."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2353ICT.json",
-    "blob_sha": "19048616fafff64accc90617e22fc80cda0e05fb",
-    "commit_sha": "9764a6bbe72c2b9410d5ee34c11e19dfbe59614a",
-    "readback_verified": true,
-    "note": "Direct host tick/consumer/source SHA and task scheduler readback verified at host clock 2026-10-25T23:51:57+07. n8n execution 170 is cloud-only. Evidence row 390 appended and exact-readback verified."
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -29,11 +29,11 @@
     "latest_cloud_event_id": "X20261025170024042_CLOUD",
     "latest_cloud_evidence_row_id": 391,
     "latest_cloud_row_exact_readback": true,
-    "latest_host_evidence_row_id": 392,
-    "latest_host_event_id": "X20261025165716792_HOST_READBACK",
+    "latest_host_evidence_row_id": 393,
+    "latest_host_event_id": "X20261025170143414_HOST_READBACK",
     "latest_host_row_exact_readback": true,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 392,
+    "evidence_table_rows": 393,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
     "recovery_rows": 45,
@@ -50,18 +50,18 @@
     "device": "DESKTOP-86ITNQ4",
     "device_id": "59f03001-c732-403e-b80c-b4191266809c",
     "route_status": "ONLINE_BY_DIRECT_READBACK",
-    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T165651566573Z.json",
-    "latest_tick_sha256": "96F3841FEE8563953E6BDCA47BB1835569049A7C5E9729C6ECA87ACE4B747D23",
-    "latest_tick_observed_at_utc": "2026-10-25T16:56:51.566573Z",
-    "trace_sha256": "BDC3CDF96FD17A47C4A937B5C9F4EE22D5EDC13B84DEB44B661445D0B12C3B29",
-    "consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T165637956Z.json",
-    "consumer_receipt_sha256": "F20890131D79099E962B9BD66138A46F6E3BE94C9A8A18C34463D79A73583366",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T170139670929Z.json",
+    "latest_tick_sha256": "BB416D30CD718D701B89A7DC0C09A84B4CDC409DCA2A17D4F53008709F54FDE3",
+    "latest_tick_observed_at_utc": "2026-10-25T17:01:39.670929Z",
+    "trace_sha256": "061B3BB82A71DB55AC65DE5DB30E976DF27A71844CFDE1CBDB9F03F48EA21A97",
+    "consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T170136407Z.json",
+    "consumer_receipt_sha256": "3B9E1B52BCA3CB97E7C36DBB62B35EE235863D7CC1C8D6B73827E8DF1A6AF48A",
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
     "source_bytes": 35389440,
     "task_state": "Ready",
     "last_result": 0,
-    "last_run_local_host_clock": "2026-10-25T23:56:33+07:00",
-    "next_run_local_host_clock": "2026-10-26T00:01:32+07:00",
+    "last_run_local_host_clock": "2026-10-26T00:01:33+07:00",
+    "next_run_local_host_clock": "2026-10-26T00:06:32+07:00",
     "next_run_was_future_at_last_host_sample": true,
     "sensor_stream": "EVENT_TIMESTAMP_STALE",
     "live_sensor_reading_confirmed": false,
@@ -88,7 +88,25 @@
       "D:\\": "NOT_FOUND",
       "W:\\Drive của tôi": "NOT_FOUND"
     },
-    "previous_search_pid_27220": "NOT_FOUND_AT_DIRECT_PROCESS_CHECK"
+    "previous_search_pid_27220": "NOT_FOUND_AT_DIRECT_PROCESS_CHECK",
+    "exact_name_search_pid": 43564,
+    "exact_name_search_status": "COMPLETED_TWO_NONMATCHING_CANDIDATES",
+    "search_completed_host_clock": "2026-10-26T00:01:04.7469318+07:00",
+    "candidates": [
+      {
+        "path": "W:\\Drive của tôi\\.vscode\\thiẾT bỊ\\Thành Lập 6 viên ĐÁ VÔ CỰC - The Creation of the 6 Infinity Stones\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+        "size_bytes": 68163712,
+        "sha256": "AB7CD110C2065B2FEC5DDB8DB216F2EB353759B3D0A410001F53ED3BB72CCF95",
+        "matches_expected": false
+      },
+      {
+        "path": "W:\\Drive của tôi\\.vscode (1)\\thiẾT bỊ\\Thành Lập 6 viên ĐÁ VÔ CỰC - The Creation of the 6 Infinity Stones\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+        "size_bytes": 110480037,
+        "sha256": "A1B77DBDEAF71AB0B833055AD7E82ED8E9A4BEAFF36B1D5B4C52B0C76455CF2D",
+        "matches_expected": false
+      }
+    ],
+    "source_substitution_performed": false
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
@@ -108,9 +126,9 @@
     "pr36_behind_by": 95,
     "pr36_comparison_status": "diverged",
     "pr36_merge_or_force_push": false,
-    "compared_main_head_before_checkpoint_writes": "7a90d31605238ea310dc271e5d0ef8d9b8c12eeb",
+    "compared_main_head_before_checkpoint_writes": "67c893f21657b35abacf202bb17f7c8924182567",
     "pr36_ahead_by_at_comparison": 10,
-    "pr36_behind_by_at_comparison": 130,
+    "pr36_behind_by_at_comparison": 136,
     "pr36_comparison_sampled_before_checkpoint_writes": true,
     "head_check_runs": {
       "head_sha": "e414dfe673265447cd216a4535536e0a3099c90d",
@@ -136,11 +154,11 @@
     "tasks_closed": 0
   },
   "next": [
-    "Poll read-only exact-name search PID 43564; no output while running is not a no-match result.",
-    "Re-probe host after host-clock 2026-10-26T00:01:32+07:00; verify next tick, consumer receipt, source SHA, scheduler result and missed runs.",
+    "Keep exact MODUAL source unresolved: both completed exact-name candidates fail expected byte count and SHA-256; do not substitute either.",
+    "Re-probe host after host-clock 2026-10-26T00:06:32+07:00; verify tick, consumer receipt, source SHA, scheduler result and missed runs.",
     "Keep sensor stream UNVERIFIED until event timestamps advance; do not export raw sensor rows.",
-    "Keep SV-20261020-02 OPEN for future sync/provenance; raw ZIP SHA is verified, but third Project carrier remains unresolved.",
-    "Keep all 45 recovery rows nonterminal; do not trigger duplicate manual cloud scan, merge, force-push or CI rerun without new evidence.",
+    "Keep SV-20261020-02 OPEN for future sync/provenance; raw ZIP SHA is verified but the third Project carrier remains unresolved.",
+    "Keep all 45 recovery rows nonterminal; no task close, Google Drive write, process termination, cache/Meta.db deletion, merge or force-push.",
     "Re-read OPEN_TASKS_CURRENT.json through a route that returns content before recomputing the GitHub task count."
   ],
   "prior_previous_checkpoint_20261025T2202ICT": {
@@ -212,10 +230,10 @@
     "note": "Source clocks differ by several minutes. Preserve source-qualified times and do not infer a host tick from cloud execution."
   },
   "previous_previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2252ICT.json",
-    "blob_sha": "f0d910a3f626c79fd1db0dad83c18a836088d661",
-    "commit_sha": "598362e399ed077704a74a739b7450dab97a6865",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2353ICT.json",
+    "blob_sha": "19048616fafff64accc90617e22fc80cda0e05fb",
+    "commit_sha": "9764a6bbe72c2b9410d5ee34c11e19dfbe59614a",
     "readback_verified": true,
-    "note": "Fresh direct host tick/consumer/source SHA readback at host clock 2026-10-25T22:52:42+07. n8n execution 170 is a separate cloud-only success; evidence rows 388 host and 389 cloud. Exact MODUAL filename search remains running."
+    "note": "Direct host tick/consumer/source SHA and task scheduler readback verified at host clock 2026-10-25T23:51:57+07. n8n execution 170 is cloud-only. Evidence row 390 appended and exact-readback verified."
   }
 }
