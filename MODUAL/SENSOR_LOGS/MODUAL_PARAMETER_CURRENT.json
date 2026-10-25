@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-25T08:23:05.5062340+07:00",
+  "observed_at": "2026-10-25T09:26:38.8249306+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -11283,6 +11283,29 @@
       "source_file_written": false,
       "source_file_moved_or_deleted": false,
       "source_substitution_performed": false
+    },
+    {
+      "id": "PROVIDER_READBACK_20261025T0926ICT",
+      "observed_at": "2026-10-25T09:26:38.8249306+07:00",
+      "source": "Direct Windows scheduled Tick/consumer exact readback after PR35 probe v1.1 CI success and deployment; direct SensorService timestamp comparison; Dropbox archive ZIP byte and internal-manifest verification.",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
+      "checkpoint_blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
+      "checkpoint_commit": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
+      "windows_tick_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T022638751790Z.json",
+      "windows_tick_sha256": "1a3b8e24541cc6be07a11be6968057e9863a0343c50f3c12380407f2b97c05b6",
+      "consumer_receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T022636099Z.json",
+      "consumer_receipt_sha256": "fbf6cf1514fff0ec165b2eb60132aef9efb700c7f996bc7fd621136feba0c0c4",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_stream_status": "EVENT_TIMESTAMP_STALE",
+      "live_sensor_reading_confirmed": false,
+      "consumer_git_blob_sha": "9b75c645ac059162d91f612d2a4ea19e80f0be34",
+      "helper_git_blob_sha": "91d242d9f0db0e171b9f1ccf3bdf9af3331ff395",
+      "source_file_written": false,
+      "source_file_moved_or_deleted": false,
+      "raw_sensor_values_persisted": false,
+      "exports_enabled": false,
+      "tasks_closed": 0,
+      "result": "TICK_AND_CONSUMER_READBACK_VERIFIED; STREAM_NOT_LIVE; ZIP_CARRIER_HASH_AND_INTERNAL_MANIFEST_VERIFIED"
     }
   ],
   "privacy_policy": {
@@ -11429,5 +11452,109 @@
     "source_substitution_performed": false,
     "source_file_moved_or_deleted": false,
     "w_drive_search_completed": false
+  },
+  "latest_runtime_probe_20261025T0926ICT": {
+    "id": "PROVIDER_READBACK_20261025T0926ICT",
+    "observed_at": "2026-10-25T09:26:38.8249306+07:00",
+    "observed_at_utc": "2026-10-25T02:26:38.8249306Z",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
+    "checkpoint_blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
+    "checkpoint_commit": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
+    "windows_tick": {
+      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T022638751790Z.json",
+      "sha256": "1a3b8e24541cc6be07a11be6968057e9863a0343c50f3c12380407f2b97c05b6",
+      "observed_at_utc": "2026-10-25T02:26:38.751790Z",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "task_result": "0x0",
+      "last_run_utc": "2026-10-25T02:26:33Z",
+      "next_run_utc": "2026-10-25T02:31:32Z",
+      "missed_runs": 0,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false,
+      "live_sensor_reading_confirmed": false
+    },
+    "data_consumer": {
+      "receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T022636099Z.json",
+      "sha256": "fbf6cf1514fff0ec165b2eb60132aef9efb700c7f996bc7fd621136feba0c0c4",
+      "observed_at_utc": "2026-10-25T02:26:38.8249306Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "receipt_readback_ok": true,
+      "consumer_hash_matches_verifier": true,
+      "source_content_hash_verified": true,
+      "consumer_git_blob_sha": "9b75c645ac059162d91f612d2a4ea19e80f0be34",
+      "live_device_probe_git_blob_sha": "91d242d9f0db0e171b9f1ccf3bdf9af3331ff395",
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "raw_rows_emitted": false,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false,
+      "live_sensor_reading_confirmed": false
+    },
+    "device_probe": {
+      "schema": "GGDV_LIVE_DEVICE_PROBE/1.1",
+      "status": "ADB_TRANSPORT_RESPONDED",
+      "observed_at_utc": "2026-10-25T02:26:36.480874Z",
+      "adb_binary_present": true,
+      "adb_devices_command_succeeded": true,
+      "targets": [
+        {
+          "role": "XIAOMI12_USB",
+          "target": "1056285",
+          "adb_state": "device",
+          "battery_probe_succeeded": true,
+          "sensorservice_probe_succeeded": true,
+          "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+          "sensor_event_timestamp_sensor_count": 3,
+          "sensor_event_sensors_advanced": [],
+          "sensor_event_stream_probe_interval_seconds": 2,
+          "live_sensor_event_stream_confirmed": false
+        },
+        {
+          "role": "REDMI_NOTE14PRO_WIRELESS",
+          "target": "192.168.1.14:5556",
+          "adb_state": "NOT_LISTED",
+          "battery_probe_succeeded": false,
+          "sensorservice_probe_succeeded": false,
+          "sensor_event_stream_status": "NOT_PROBED",
+          "sensor_event_timestamp_sensor_count": 0,
+          "sensor_event_sensors_advanced": [],
+          "live_sensor_event_stream_confirmed": false
+        }
+      ],
+      "live_sensor_reading_confirmed": false,
+      "raw_sensor_values_persisted": false
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "provider": "Dropbox Outlook",
+      "provider_path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "provider_revision": "0165dc1e4794ab00000000395cdfd73",
+      "provider_server_modified_utc": "2026-10-14T00:20:03Z",
+      "source_file_written": false
+    },
+    "runtime_code": {
+      "helper_git_blob_sha": "91d242d9f0db0e171b9f1ccf3bdf9af3331ff395",
+      "helper_sha256": "8198c0d71d27da1bda00ca8360eff09eadb230fc88ad3dfcc00c6eafed4fd18d",
+      "consumer_git_blob_sha": "9b75c645ac059162d91f612d2a4ea19e80f0be34",
+      "consumer_sha256": "80c17a544c69d6a8f105b88e9102ad04c6399acd188fd4f8fc21a00521969f64",
+      "wrapper_sha256": "e18c26dc4a147d50d26dae41f183d5eef0ce736d05ac2dee6525230588989c1f",
+      "wrapper_pins_current_git_blobs": true,
+      "wrapper_readback_checks_probe_schema_and_live_flag": true
+    },
+    "independent_sensorservice_probe": {
+      "interval_seconds": 3,
+      "event_section_hash_changed": false,
+      "active_connections_observed": 7,
+      "latest_event_wall_time_observed": "09:12:01.451",
+      "live_stream_confirmed": false,
+      "raw_sensor_values_persisted": false
+    },
+    "result": "SCHEDULED_TICK_AND_CONSUMER_READBACK_OK; LIVE_SENSOR_STREAM_STALE; PROBE_V1_1_AND_FLAG_PROPAGATION_DEPLOYED"
   }
 }
