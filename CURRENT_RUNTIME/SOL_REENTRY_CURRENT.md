@@ -593,3 +593,17 @@ SOURCE_DIRECT: Fresh read of AGENTS.md (f18f9743de1e21d13bad47770f928ec85e79bd95
 
 ### Resume
 Update the canonical TASK_RESUME_POINTER additively to this checkpoint after confirming the new ledger/reentry blobs; then read back the pointer and the four canonical sources. When an authorized host route is available, read the exact next Tick/consumer receipts and search the exact canonical bulk target without candidate substitution. Continue Archive/TESSERACT/provider edges independently; do not merge, force-push, or rerun TESSERACT CI without verified issuer/runner changes.
+
+
+## REENTRY — TESSERACT CI PRE-STEP DIAGNOSTIC — 2026-10-25 17:41 ICT
+
+Fresh exact readback of `2708halinh-cloud/x-time-web/.github/workflows/tesseract-desktop-ci.yml` at PR #6 head `5312816d5fe2b22e92302211b67f916b88a6fe14`: blob SHA `6552d13a1f8004b0e3d36fd585dd75cdd22acf12`.
+
+- Workflow line 7 reads the repository Actions variable `vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64`; the variable name is verified, but its actual configured public-key value is not exposed by the available connector.
+- `selfhosted_windows_verify` uses `runs-on: [self-hosted, Windows, X64]` at line 120, but its condition at line 119 is `github.event_name != 'pull_request'`. For the observed pull-request runs, this job is skipped by design. This does not prove that a runner is absent or incorrectly assigned.
+- Fresh job/step readback for run `39994207477`: macOS job `120553389474`, Windows hosted job `120553389661`, Linux job `120553389829`, `tesseract_os` job `120553390017`, and readback job `120553405219` all failed with zero reported steps; self-hosted job `120553391899` was skipped. Run `39994207667` job `verify` also failed with zero reported steps.
+- The workflow-job log endpoint returned HTTP 404 `BlobNotFound` for job `120553389474`; detailed job logs are unavailable through that route. No CI rerun was performed, no secret value was read, and PR #6 was not mutated.
+- Supplemental receipt: `CURRENT_RUNTIME/TESSERACT_WORKFLOW_READBACK_20261025T1741ICT.json`, blob `ebbd112dd8831575bb32c7e1f36d1391fcfbb7e7`, create commit `090c4b1f38e455ded92062905ebefe41729ed883`.
+- MODUAL state append: blob `820146146fd9534dad7fc8ebb7ac04b5fc130749`, commit `d21462884846a677810828ccfe52f441aaa564b5`. OPEN ledger append: blob `4419bba51361aeadb8b5bc070c459056595f469f`, commit `a3014c11f753836aa3ecb0f17a4aedd2abd5254d`. The ledger remains 29 tasks, 161 verified action events, 161 provider observations, and 0 closed tasks.
+- Next diagnostic edge is to verify the configured public-key value and runner assignment through an authorized repository-settings/runner inventory route; until that is possible, keep PR #6 OPEN and do not repeat a failed pre-step CI run without a verified configuration change.
+
