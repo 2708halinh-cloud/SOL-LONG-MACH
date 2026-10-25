@@ -2,15 +2,15 @@
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.2",
   "state": "OPEN_WORK_REMAINS",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0813ICT.json",
-    "blob_sha": "d221b93e109cf02de4a144f1e815a637a64b932c",
-    "commit_sha": "d8217ee67121bd37c9f16d44190de92019813144",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0837ICT.json",
+    "blob_sha": "1c0bdbaf3c6a8eecda555d106ffee929c1670235",
+    "commit_sha": "8398ee32245810316f379e20fb30dd407253f13c",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0658ICT.json",
-    "blob_sha": "9f07a09858217d50ad14b6b3ed55fce50ab19e01",
-    "commit_sha": "a97fd37e7ac50c960e383a8d884a63293b4dde60",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0813ICT.json",
+    "blob_sha": "d221b93e109cf02de4a144f1e815a637a64b932c",
+    "commit_sha": "d8217ee67121bd37c9f16d44190de92019813144",
     "readback_verified": true
   },
   "n8n": {
@@ -31,20 +31,28 @@
     "tasks_closed": 0
   },
   "host": {
-    "state": "REMOTE_ACCESS_ONLINE_TRACE_SUCCESS_BUT_LATEST_TICK_STALE_SENSOR_UNCONFIRMED",
-    "last_tick": "WINDOWS_TICK_20261025T010136398145Z.json",
-    "last_tick_sha256": "EC0CD67543BDA10F0DE27C66B12C65D1E279871264286283AB6FD7EDAE7DCE05",
+    "state": "LATEST_KNOWN_TICK_AND_READONLY_CONSUMER_VERIFIED_LIVE_SENSOR_STREAM_UNVERIFIED",
+    "last_tick": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T012136417838Z.json",
+    "last_tick_sha256": "471a2a31988ffb9063ff936beabbe2c7d08a753dabbf8edd2f005ec171d61ae7",
     "live_sensor_reading_confirmed": false,
     "tick_task_last_result": "0x0",
     "tick_task_state": "Ready",
     "trace_sha256": "3C72283C7B72317BB9A44EC7B51A07D0D5F836AA4B15C4111EF7F4C9CE11B616",
     "trace_receipt_readback_ok_at_utc": "2026-10-25T01:06:36.7606470Z",
     "latest_tick_advanced_after_trace": false,
-    "exact_modual_source_found": false
+    "exact_modual_source_found": false,
+    "last_verified_readback_at": "2026-10-25T08:23:05.5062340+07:00",
+    "latest_consumer_receipt_sha256": "338136e0236b9982628c61052a46fe70b4a1777348a3863377792218c01d594d",
+    "fresh_host_probe_this_run": false,
+    "interpretation": "Last known exact Tick and read-only consumer receipt from the 08:23 ledger event; no current host connector probe was available in this run."
   },
   "android": {
     "state_this_run": "UNKNOWN_ADB_NOT_FOUND_TCP_UNREACHABLE",
-    "live_sensor_stream_verified": false
+    "live_sensor_stream_verified": false,
+    "last_probe_at": "2026-10-25T08:23:05.5062340+07:00",
+    "sensorservice_active_connection_lines": 0,
+    "sensorservice_timestamp_lines": 0,
+    "fresh_android_probe_this_run": false
   },
   "archive_task": {
     "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
@@ -52,10 +60,10 @@
     "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
     "pr": 34,
     "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
-    "current_main_sha": "c72b58ea21a2683b37398163521ffa43bc0d8479",
+    "current_main_sha": "8398ee32245810316f379e20fb30dd407253f13c",
     "branch_relation": {
       "ahead": 1,
-      "behind": 24
+      "behind": 35
     },
     "workflow_runs": [
       {
@@ -77,7 +85,11 @@
     "windows_host_validation": "NOT_VERIFIED",
     "source_export_recovery": "NOT_COMPLETE",
     "merge_performed": false,
-    "force_push_performed": false
+    "force_push_performed": false,
+    "branch_relation_observed_at": "2026-10-25T08:37:30+07:00",
+    "main_changes_overlap_pr_paths": false,
+    "recut_required": false,
+    "task_closed": false
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -89,14 +101,22 @@
     "cloud_heartbeat_is_not_host_heartbeat": true,
     "no_merge_or_force_push": true
   },
-  "updated_at": "2026-10-25T08:13:00+07:00",
+  "updated_at": "2026-10-25T08:37:30+07:00",
   "github_task_ledger": {
     "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
-    "blob_sha": "f6d7e07114808d5a38446a7a123fdb1b706dce77",
-    "readback_method": "fetch_blob; JSON parsed; task statuses unchanged",
+    "blob_sha": "1cf53c0e3b85ebe0aeaa530bdb66f13dcb8102e1",
+    "readback_method": "fetch_file returned exact current blob SHA but empty content; fetch_blob on that SHA returned 1,149,468 characters and parsed as JSON; no task status changed.",
     "parsed": true,
     "task_count": 29,
-    "tasks_closed": 0
+    "tasks_closed": 0,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "last_readback_at": "2026-10-25T08:23:05.5062340+07:00"
   },
   "archive_task_history": [
     {
@@ -116,16 +136,69 @@
     }
   ],
   "latest_archive_action": {
-    "observed_at": "2026-10-25T08:13:00+07:00",
+    "observed_at": "2026-10-25T08:37:30+07:00",
     "pr": 34,
     "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/34",
     "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
-    "current_main_sha": "c72b58ea21a2683b37398163521ffa43bc0d8479",
-    "current_head_ci": "3/3 SUCCESS",
+    "current_main_sha": "8398ee32245810316f379e20fb30dd407253f13c",
+    "current_head_ci": "3/3 SUCCESS on unchanged PR head; last verified at prior head readback",
     "ahead": 1,
-    "behind": 24,
+    "behind": 35,
+    "main_changes_overlap_pr_paths": false,
+    "recut_required": false,
     "task_closed": false,
     "original_exports_recovered": false,
     "target_host_verified": false
+  },
+  "older_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0658ICT.json",
+    "blob_sha": "9f07a09858217d50ad14b6b3ed55fce50ab19e01",
+    "commit_sha": "a97fd37e7ac50c960e383a8d884a63293b4dde60",
+    "readback_verified": true
+  },
+  "tesseract_art": {
+    "task_id": "TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+    "status": "IN_PROGRESS",
+    "source_text_carrier": {
+      "name": "TESSERACT_6D_TU_CUNG.html",
+      "library_file_id": "libfile_ce7555efd8108191a4d988bc576d86ff",
+      "text_representation_sha256": "10efe0db93229f19ac1f568c74506995fca27eb15514e080b513ddcb04880e86",
+      "raw_bytes_verified": false
+    },
+    "bundle_candidates_raw_bytes_available": false,
+    "browser_route": "file:// attempt blocked with ERR_BLOCKED_BY_ADMINISTRATOR; no bypass attempted",
+    "real_browser_runtime_verified": false,
+    "exact_source_identity_verified": false,
+    "next": "Use authorized browser route or authorized raw-byte source carrier; do not treat text derivative as original and do not integrate until source identity/event path is verified."
+  },
+  "tesseract_desktop": {
+    "repository": "2708halinh-cloud/x-time-web",
+    "pr": 6,
+    "state": "OPEN",
+    "draft": true,
+    "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "latest_known_runs": [
+      {
+        "run_id": 39994207477,
+        "conclusion": "failure",
+        "artifacts": 0
+      },
+      {
+        "run_id": 39994207667,
+        "conclusion": "failure",
+        "artifacts": 0
+      }
+    ],
+    "issuer_public_key_value_verified": false,
+    "runner_assignment_change_verified": false,
+    "rerun_performed": false,
+    "next": "Do not rerun CI until an authorized issuer-side public-key value/provenance and actual runner assignment change are verified."
+  },
+  "provider_access": {
+    "github_connector": "AVAILABLE",
+    "chatgpt_library_read_and_text_materialization": "AVAILABLE",
+    "google_drive_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
+    "dropbox_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
+    "takeout_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET"
   }
 }
