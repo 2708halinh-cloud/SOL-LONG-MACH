@@ -754,3 +754,15 @@ Ledger remains 29 tasks, 164 action events, 164 provider observations, four inte
 - PR #36 remains OPEN/Draft/unmerged; current main before this checkpoint was `b9a3ae77eb9dc8f4b617795d188b408dba192307`; comparison is diverged 10 ahead / 116 behind. CI was automatically triggered by the source commit: `readonly-adapters` is still in progress; the current-head secret-guard and topology checks observed so far succeeded. No manual rerun, merge, or force-push.
 - TESSERACT PR #6 remains OPEN/Draft/unmerged at head `5312816d5fe2b22e92302211b67f916b88a6fe14`; its two previously observed runs remain failed, and issuer public key/runner assignment are still unverified. No rerun.
 - Ledger before this append: 29 tasks, 170 verified action events, 170 provider observations, 6 integrity corrections, 0 tasks closed. No raw sensor bytes or credentials exported; no source moved, deleted or overwritten; cloud/GitHub sensor export remains disabled.
+
+
+## Verified re-entry observation — 2026-10-25 23:44 ICT
+
+- Provider checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261025T2344ICT.json`; blob SHA `41f7d074d2deece4b061341a5f7c5fe6be4e9be5`; commit `a95d14f13c88a73c513efea0c8c30885a6549479`.
+- The Archive PR #36 automatic CI for the corrected head `e414dfe673265447cd216a4535536e0a3099c90d` has now completed: `readonly-adapters`, `secret-guard`, and `verify-stone-folders` all report SUCCESS on that head. No manual rerun was made.
+- Exact-target source readback still reports blob SHA `f3a8a6e16d740a797ecb1a2a0398c8c7e8620b81` and exactly one `inspect(path)` definition. All five changed paths were read at the same PR head. PR #36 remains OPEN/Draft/unmerged. Current main at this checkpoint was `b15b6e1508f4f975bd6cbeabf53ec4c67f1c323f`; compare remains diverged 10 ahead / 122 behind.
+- Dropbox metadata remains revision `0165dc1e4794ab00000000395cdfd73`, 35,389,440 bytes, server-modified `2026-10-14T00:20:03Z`; raw CSV bytes were not downloaded.
+- Latest n8n search still returns execution `170` as latest success, row `389`, state `OPEN_WORK_REMAINS`, 45 pending recovery rows; host heartbeat is not probed.
+- Direct Windows Tick/consumer access remains unavailable through the current authorized connector routes. No new Tick is claimed; last verified receipts remain historical and the stream remains `EVENT_TIMESTAMP_STALE`.
+- TESSERACT PR #6 remains OPEN/Draft; issuer public key and runner assignment remain unverified; no CI rerun.
+- Ledger before this append: 29 tasks, 171 verified action events, 171 provider observations, 6 integrity corrections, 0 tasks closed. No raw sensor bytes or credentials exported; no source moved, deleted or overwritten; cloud/GitHub sensor export remains disabled.
