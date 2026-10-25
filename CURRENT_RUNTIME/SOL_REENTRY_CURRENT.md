@@ -547,3 +547,19 @@ Canonical provider checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1553I
 
 ### Next edge
 Continue independent GitHub/provider work while the host route is offline. When a callable host returns, read the exact current Tick/consumer receipts and recompute the exact host-local source hash. After the next actual n8n hourly pulse, read its execution and row; do not trigger a duplicate scan. Keep every unfinished task OPEN.
+
+
+## REENTRY DELTA — 2026-10-25 17:02 ICT — VERIFIED HOST RETURN
+
+This additive delta supersedes the earlier 16:06 ICT provider snapshot that reported all Desktop Commander devices offline. Fresh inventory at 17:02 ICT returned `DESKTOP-86ITNQ4` Online (device `59f03001-c732-403e-b80c-b4191266809c`), and an authorized read-only PowerShell probe completed on that host.
+
+- Latest exact checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1702ICT.json`, blob `d07a937edd6731d33ff9fab7854cff68fdd6a463`, commit `37381145f781d03267c1e74f060a4eb17e9f1ac3`.
+- `MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json` was extended append-only and read back at blob `4e3a23f562551684f127e93a5b72e93da081140f`, commit `bfc26c7096c87818ca2b8cc2c516dbed5920d06e`.
+- Fresh Tick receipt: `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T095639451267Z.json`, SHA-256 `33b8ec5bd23878295821318a74264b15f23ddd74faf109495c4090edd79e053a`. Fresh read-only consumer receipt: `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T095636294Z.json`, SHA-256 `59a6d6f662cc418b6da6216da80de1551a9f4379d767166b51c345bbec23a63f`. Both receipt files were read and hashed on the host.
+- The source `D:\\SENSOR_LOGS\\windows_SENSON.CSV` remains 35,389,440 bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; no source write or synthetic rows. Tick/consumer success does not resolve `EVENT_TIMESTAMP_STALE`: four sensor timestamps did not advance, USB ADB/SensorService responded, and wireless target `192.168.1.14:5556` was `NOT_LISTED`.
+- Exact host-local bulk target remains missing at its canonical path (expected 89,814,328 bytes / SHA-256 `b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3`). The live replica under the local repository was hash-verified but not used as a runtime source. A recursive Google DriveFS scan was terminated before a result and is inconclusive; do not treat it as a negative finding.
+- n8n execution `163` was read directly: success, event `X20261025100024046_CLOUD`, row `352`, 45 recovery tasks pending, host heartbeat still unprobed.
+- Archive PR #36 remains OPEN/Draft and diverged (5 ahead / 25 behind the measured main head `37381145f781d03267c1e74f060a4eb17e9f1ac3`); three workflow jobs and artifact readback succeeded. TESSERACT PR #6 remains OPEN; runs `39994207477` and `39994207667` failed without artifacts; issuer public key and runner assignment remain unverified, so no CI rerun.
+- The cloud continuity pointer was advanced additively to checkpoint `PROVIDER_READBACK_20261025T1702ICT.json` and read back at blob `3bceef555cf0a771c435ea0afb4f764177028472`, commit `619a43770af1cd9bad2e71156ffa44ce33045b37`.
+
+Continue with a fresh Tick/consumer readback after the next host-clock due time; search the exact canonical target through bounded paths; continue independent Archive/TESSERACT/provider work. Preserve all source bytes and provenance, keep exports disabled, do not merge/force-push, do not rerun TESSERACT CI without a verified issuer/runner change, and leave every unfinished task nonterminal.
