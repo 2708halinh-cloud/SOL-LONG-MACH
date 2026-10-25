@@ -505,3 +505,15 @@ Checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1437ICT.json`; commit `0
 ### Resume
 All tasks remain OPEN/in progress; no task was closed. Next scheduled Tick is `14:41:32 +07`; read the exact new Tick/consumer receipts and recompute the source SHA. Continue finding a supported persistent sensor client/bridge or verified HWiNFO logging route. Keep cloud/GitHub export disabled and preserve all source history.
 
+## REENTRY — MAIN PARENT RECONCILIATION — 2026-10-25
+
+Reconciliation record: `CURRENT_RUNTIME/PROVIDER_READBACK_RECONCILIATION_20261025T1437ICT.json`; commit `1ef02a81005ac9b207b9274983bde732ea785f59`; blob SHA `8a0890a9baa12c6de043466e7bb590cd87a314c7`.
+
+The 14:37 checkpoint `PROVIDER_READBACK_20261025T1437ICT.json` remains unchanged. Its recorded `main_head_before_checkpoint` (`a047cc56bdfa5650f0cf8de830b9853a3abb1a74`) was the pre-interleaving observation; the actual parent of checkpoint commit `0cd678e90aca210f632f3c35f52f9ab9d3054e5f` is `88fa5e987a96c1bd2c06123612159a18b2ed816f`. Two concurrent cloud-continuity commits were inserted in between:
+- `5a2419cc865bd9dddb73eaa797ff661e2efef9b0` added only `CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1442ICT.json`.
+- `88fa5e987a96c1bd2c06123612159a18b2ed816f` changed only `CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json`.
+
+Exact-tree readback at the 14:37 checkpoint confirms MODUAL blob `bd4a9aa3f92257611af4279007825896b31afe05`, task resume pointer blob `316fd12efc962c92047f0d0d74b183f45c17adcc`, and OPEN ledger blob `b68e73d93277162c1f142be30ba62c9373a75b94` were all present. Subsequent commits advanced the current pointer/ledger without deleting the prior records. Current main at reconciliation was `6198a8aa6da63bce09809862379f4bbc8455c84e`; the new reconciliation record is append-only. Git commit ancestry is authoritative because host-local and GitHub commit wall-clock labels differ.
+
+No task was closed; no source was moved, deleted or overwritten. Continue the MODUAL, Archive, TESSERACT and cloud-continuity branches independently.
+
