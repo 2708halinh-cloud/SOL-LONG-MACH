@@ -804,3 +804,22 @@ Ledger remains 29 tasks, 164 action events, 164 provider observations, four inte
 - Before this append the ledger contained 29 tasks, 174 action events, 174 provider observations, 6 integrity corrections and 0 closed tasks. All task statuses remain nonterminal.
 - Safety: no raw sensor data or credentials committed; no source moved/deleted/substituted; no cloud/GitHub sensor export enabled.
 <!-- END PROVIDER_READBACK_20261026T0044ICT -->
+
+
+<!-- BEGIN PROVIDER_READBACK_20261026T0147ICT -->
+## Re-entry observation — 2026-10-26 01:47 ICT
+
+- Fresh-read immediately before this update: AGENTS.md `f18f9743de1e21d13bad47770f928ec85e79bd95`; SOL_REENTRY_CURRENT.md `514b1682c8ee8826bc225d4618f5f255d1f2da2c`; TASK_RESUME_POINTER.json `29dc7184993d7211e445ab5f4d70316076d7593c`; OPEN_TASKS_CURRENT.json `ccaa9f36707b0bb7643f528ec8654b6d9ffa1694`; MODUAL_PARAMETER_CURRENT.json `2db9a34adf49b4e37439c6811eea29c66c23bce5`.
+- Provider checkpoint `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0147ICT.json` was created and read back at blob `378ecba0e666180850c1ab744caecabe49d640b7`; commit `dc92daa97d7a2368c9f69c30c12d2626a0a9a2c6`. All previous observations remain in history.
+- Direct Windows host I/O succeeded through the secondary Remote Desktop Commander route. Scheduled task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M` ran at 01:46:33+07, result 0x0, next 01:51:32+07, no missed runs. Tick `D:\SENSOR_LOGS\state\WINDOWS_TICK_20261025T184639491268Z.json` SHA-256 `b3452c9c8e4757ea1765601a405824a497c9c355e7cc8b8ff7fa94744f978b46`; consumer `D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261025T184636581Z.json` SHA-256 `f9329b1e04215bd6dc3c56424316eff5dc5222dfbbc218c5da5d5f0949a236c6`. Direct CSV hash `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87` matches both receipts; source remains 35,389,440 bytes, last-write 2026-10-23T08:45:56.2458701Z.
+- Consumer remains SOURCE_OBSERVED_READONLY, exit 0, source hash verified and consumer hash matches verifier. Tick/consumer still report `EVENT_TIMESTAMP_STALE` and `live_sensor_reading_confirmed=false`. No source write, synthetic rows, raw rows, cloud export or GitHub export.
+- USB ADB device 1056285 responds. Wireless ADB 192.168.1.14:5556 timed out with error 10060. `com.exatools.sensors` and `com.galaxy.sensortoolbox` are installed, but request INTERNET; they were not launched. Termux:API was not present in the package list. No physical-device state is inferred from the wireless timeout.
+- Braid was run in this session. SIX receipt `1090876504bb38f730da791d681aae62df0493e004400b30ae61d4e83bda7c24` and PLURAL receipt `d863f942dc0378da8ba97f5bebc92cf377d3766b82391c39bcc1848d2bac690e` were read back and hashed; 9 and 5 actions respectively; source unchanged, no mutation, cloud-host wiring NOT_VERIFIED.
+- Dropbox metadata connector returned `link_id must identify an eligible linked account`; therefore no fresh Dropbox metadata was obtained this turn. The last verified revision in the current consumer receipt remains `0165dc1e4794ab00000000395cdfd73`, 35,389,440 bytes, server_modified 2026-10-14T00:20:03Z. No CSV bytes downloaded.
+- n8n execution 172 succeeded; evidence row was not freshly read this turn, so row 391 remains the last exact row, state OPEN_WORK_REMAINS, host heartbeat not probed, host operations 0.
+- Archive PR #36 remains OPEN/Draft at `e414dfe673265447cd216a4535536e0a3099c90d`; three current-head checks succeeded; compare to main was diverged 10 ahead/149 behind. No merge or force-push.
+- TESSERACT PR #6 has a newer head `5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8`. Runs 40220813636 and 40220813600 failed with no steps/log URLs/artifacts; self-hosted Windows verification was skipped on pull_request. Issuer public-key value and runner assignment remain unverified; no CI rerun.
+- Before this update the ledger held 29 tasks, 175 verified action events, 175 provider observations, 6 integrity corrections, 0 closed tasks. This update appends one action and one provider observation; task status remains unchanged and all 29 tasks remain nonterminal.
+- Next edge: after 01:51:32+07, read the next exact Tick/consumer receipt and direct CSV SHA; continue local-only sensor-client/bridge discovery and exact bulk-target search; keep independent Archive/TESSERACT/cloud branches active.
+- Safety: no raw sensor records or credentials committed; no source moved/deleted/substituted; no task closed.
+<!-- END PROVIDER_READBACK_20261026T0147ICT -->
