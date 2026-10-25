@@ -1,21 +1,21 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T08:54:31.925Z",
-  "updated_at_local": "2026-10-25T15:54:31.925+07:00",
+  "updated_at_utc": "2026-10-25T09:06:54Z",
+  "updated_at_local": "2026-10-25T16:06:54+07:00",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1606ICT.json",
+    "blob_sha": "5bb8c97131db86edcf8e788dc886c13211a5b8d8",
+    "commit_sha": "9a760907971287d9f17dc03eefd065b234410947",
+    "readback_verified": true,
+    "note": "Fresh exact GitHub PR36 CI/artifact and Library byte readback; ledger re-parsed with 29 nonterminal tasks; original account exports not recovered; no task closure."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1553ICT.json",
     "blob_sha": "6458b0c34004a1201df4d4eb6e47a5ac465d3d16",
     "commit_sha": "85f23c6073dc18ee9f042c1ef7b82ecaec7be268",
     "readback_verified": true,
     "note": "Fresh cloud/provider readback; n8n execution 161 remains nonterminal; all Desktop Commander devices are currently Offline; PR #36 CI success but branch has advanced to 5 ahead/5 behind current main."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1534ICT.json",
-    "blob_sha": "6fc5c62c9029db2b14d2f09826930980d456d9bd",
-    "commit_sha": "06340d72674492938dc60ab025d6afbbe131ce06",
-    "readback_verified": true,
-    "note": "Fresh exact n8n execution 161 payload and row 350 read back; 45 recovery rows remain nonterminal; GitHub ledger blob parsed with 29 tasks and zero closures; PR issue states remain open. No fresh host/Android probe; no source/provider bytes restored."
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -37,7 +37,7 @@
     "unfinished_rows": 45,
     "tasks_closed": 0,
     "host_heartbeat_probed_by_workflow": false,
-    "interpretation": "Execution 161 and row 350 directly read back; cloud-only evidence, not host heartbeat.",
+    "interpretation": "No n8n connector exposed in this turn; retain execution 161/row 350 as last known provider observation, not a fresh heartbeat.",
     "latest_cloud_evidence_row_id": 350,
     "latest_cloud_event_id": "X20261025080024100_CLOUD",
     "terminal_rows": 0,
@@ -57,8 +57,11 @@
       "evidence_table_rows": 349
     },
     "latest_recorded_source": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
-    "live_n8n_connector_called_this_turn": true,
-    "latest_execution_exact_readback": true
+    "live_n8n_connector_called_this_turn": false,
+    "latest_execution_exact_readback": true,
+    "fresh_execution_readback_this_turn": false,
+    "last_exact_readback_at_local": "2026-10-25T15:53:01.835+07:00",
+    "host_heartbeat_probed_this_turn": false
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
@@ -126,11 +129,11 @@
       "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
       "IN_PROGRESS": 3
     },
-    "observed_at_local": "2026-10-25T15:40:15.111+07:00",
-    "ledger_blob_sha": "0782e1def4e9f21b596f1efafa86def614006a6e",
-    "blob_sha": "0782e1def4e9f21b596f1efafa86def614006a6e",
+    "observed_at_local": "2026-10-25T16:06:54+07:00",
+    "ledger_blob_sha": "f03c0b1f40eb1f2d7bbc3fa8731e837a7c3c5ca4",
+    "blob_sha": "f03c0b1f40eb1f2d7bbc3fa8731e837a7c3c5ca4",
     "blob_sha_rechecked_in_this_run": true,
-    "parsed_task_counts_last_verified_at_local": "2026-10-25T15:40:15.111+07:00",
+    "parsed_task_counts_last_verified_at_local": "2026-10-25T16:06:54+07:00",
     "current_default_branch_fetch": {
       "blob_sha": "0782e1def4e9f21b596f1efafa86def614006a6e",
       "fetch_file_content_length": 0,
@@ -150,7 +153,8 @@
       "main_head_before_pointer_update": "256fe1c02a106203ad81c591847af0eac73ae5c7",
       "content_length_readback_corrected": true
     },
-    "tasks_closed_in_this_run": 0
+    "tasks_closed_in_this_run": 0,
+    "last_commit_sha": "7bda12c393d5ed1fd6d2f7e4f2447204f80b4d44"
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -166,16 +170,25 @@
     "tasks_closed": 0
   },
   "next": [
-    "Use an authorized provider connector to resolve the two MAP_NGUON provider-object references by metadata/revision/hash/content readback; do not replace either ID by inference.",
-    "Retrieve original JINEY, FUNiX and DATNGUYEN/MINH export bytes independently from authorized Drive/Dropbox/Takeout/host sources; preserve stable IDs and hashes, and do not equate derived ZIPs with raw exports.",
-    "Fresh-read the Windows host after its host-local scheduled time using a callable authorized host connector; this turn did not expose one, and cloud time must not substitute for host time.",
-    "Review the five PR #34 paths with a three-way diff against current main before any clean re-cut; no merge or force-push.",
-    "For TESSERACT, obtain issuer public-key provenance and runner-assignment readback before any CI rerun; keep exact Art source and real browser runtime unverified.",
-    "Preserve all 29 task states; a report, checkpoint, or CI result does not close a task.",
-    "Fresh-read host status when an authorized Desktop Commander device returns online; until then continue provider/GitHub work and do not infer host state from cloud pulse.",
-    "Re-evaluate PR #36 after main advanced by three checkpoint commits; current compare is 5 ahead/5 behind, so keep open and do not merge or force-push."
+    "Use an authorized Drive/Dropbox/Takeout/host connector when exposed to retrieve original account-export bytes independently; preserve stable IDs, revisions and hashes.",
+    "Resolve the MAP_NGUON object discrepancy only through provider metadata, revision, hash and content readback; do not substitute either ID by inference.",
+    "Keep PR #36 OPEN/Draft. Last measured compare was 5 ahead/13 behind against main head 0cbf72e465e9a42f2aa07a1780275abc81a815b3; main advanced afterward with continuity commits, so remeasure next pass and do not sync/merge by default.",
+    "Continue independent OPEN/NEXT branches while host/provider connectors are unavailable; do not claim host/browser runtime without a fresh exact-target probe.",
+    "A checkpoint, report, or CI success does not close any task."
   ],
   "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1606ICT.json",
+      "blob_sha": "5bb8c97131db86edcf8e788dc886c13211a5b8d8",
+      "commit_sha": "9a760907971287d9f17dc03eefd065b234410947",
+      "readback_verified": true,
+      "observed_at_local": "2026-10-25T16:06:54+07:00",
+      "provider_checkpoint_blob_sha": "dd5bf56b1a0d2ce2f62a177b7c2a66c1488790f8",
+      "task_ledger_blob_sha": "f03c0b1f40eb1f2d7bbc3fa8731e837a7c3c5ca4",
+      "task_count": 29,
+      "tasks_closed": 0,
+      "note": "PR36 current-head CI/artifact readback verified; Library candidate classification updated; no original account exports recovered; all tasks remain nonterminal."
+    },
     {
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1534_PR36.json",
       "blob_sha": "83dad11b186557757fa857ec7f8e84368608a6e7",
@@ -353,10 +366,10 @@
   },
   "memory_archive": {
     "target": "MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL",
-    "latest_event_id": "MEMORY_ARCHIVE_BYTE_AND_IDENTITY_RECHECK_20261025T1514ICT",
-    "latest_readback_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1519ICT.json",
-    "latest_readback_blob_sha": "f0c14d6d1bec6c558cb3b5fce51e8ee3b47280eb",
-    "latest_readback_commit_sha": "256fe1c02a106203ad81c591847af0eac73ae5c7",
+    "latest_event_id": "MEMORY_ARCHIVE_LIBRARY_CARRIER_RECHECK_20261025T1606ICT",
+    "latest_readback_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1606ICT.json",
+    "latest_readback_blob_sha": "5bb8c97131db86edcf8e788dc886c13211a5b8d8",
+    "latest_readback_commit_sha": "9a760907971287d9f17dc03eefd065b234410947",
     "latest_readback_verified": true,
     "library_inventory_items": 65,
     "raw_source_archive_subfolders_empty": [
@@ -374,25 +387,31 @@
     "direct_drive_dropbox_takeout_readback_available": false,
     "source_bytes_modified": false,
     "tasks_closed": 0,
-    "note": "Canonical archive and embedded SQLite were freshly byte-verified; source_texts and source_carrier_locator still name different provider objects for MAP_NGUON. No literal IDs copied to this public pointer and no source ID changed.",
-    "latest_readback_verified_at_local": "2026-10-25T15:24:08+07:00",
+    "note": "Canonical ADMIN bytes match the previously verified hash. The two readable SOURCE_ORIGINAL copies are byte-identical React Best Practices bundles, not account exports. The same-sized alternate ADMIN candidate still denies raw-byte materialization; hash remains unknown. Recursive Library listing is partial. No Drive/Dropbox/Takeout source read occurred in this turn.",
+    "latest_readback_verified_at_local": "2026-10-25T16:06:54+07:00",
     "identity_discrepancy_observed": true,
     "identity_discrepancy_resolved": false,
-    "alternate_admin_candidate_byte_identity": "UNVERIFIED_MATERIALIZATION_DENIED"
+    "alternate_admin_candidate_byte_identity": "UNVERIFIED_MATERIALIZATION_DENIED",
+    "library_zip_records_visible": 248,
+    "library_recursive_listing_complete": false,
+    "canonical_admin_sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+    "canonical_map_nguon_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+    "source_original_candidate_sha256": "625cd4d178c36cc31822de421bbf1c288d5ba2cbb96dad78b58a4b1cc1cb4ff4",
+    "source_original_candidate_classification": "UNRELATED_REACT_BEST_PRACTICES_BUNDLE_NOT_ACCOUNT_EXPORT"
   },
   "provider_access": {
     "github_connector": "AVAILABLE_AND_USED",
     "chatgpt_library_metadata_and_text_read": "AVAILABLE_AND_USED",
-    "chatgpt_library_raw_byte_materialization": "AVAILABLE_FOR_CANONICAL_ADMIN_ARCHIVE; DENIED_FOR_ALTERNATE_ADMIN_AND_PRIVATE_CROSS_ACCOUNT_CARRIER",
+    "chatgpt_library_raw_byte_materialization": "CANONICAL_ADMIN_AND_SOURCE_ORIGINAL_CANDIDATES_READ; ALTERNATE_ADMIN_DENIED",
     "google_drive_connector": "NOT_EXPOSED_IN_THIS_TURN",
-    "dropbox_connector": "AVAILABLE_AND_USED_FOR_METADATA_ONLY; SOURCE_BYTES_NOT_DOWNLOADED",
-    "takeout_connector": "NOT_EXPOSED_IN_THIS_EXECUTION",
-    "authorized_host_browser_connector": "NO_FRESH_PROBE_IN_THIS_TURN",
-    "n8n_connector": "AVAILABLE_AND_USED; EXECUTION_161_READ_BACK",
+    "dropbox_connector": "NOT_EXPOSED_IN_THIS_TURN",
+    "takeout_connector": "NOT_EXPOSED_IN_THIS_TURN",
+    "authorized_host_browser_connector": "NOT_EXPOSED_IN_THIS_TURN",
+    "n8n_connector": "NOT_EXPOSED_IN_THIS_TURN",
     "remote_desktop_commander": "AVAILABLE_AND_USED_FOR_DEVICE_INVENTORY; ALL_REGISTERED_DEVICES_OFFLINE"
   },
   "latest_pr_readback": {
-    "observed_at_local": "2026-10-25T15:24:08+07:00",
+    "observed_at_local": "2026-10-25T16:06:54+07:00",
     "archive_pr34": {
       "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/34",
       "state": "open",
@@ -434,6 +453,27 @@
       "ci_rerun": false,
       "issuer_public_key_verified": false,
       "runner_assignment_verified": false
+    },
+    "archive_pr36": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "e9c299594447d75bebb75c343cdb707731c7ea50",
+      "comparison_main_head": "0cbf72e465e9a42f2aa07a1780275abc81a815b3",
+      "ahead_by_at_observation": 5,
+      "behind_by_at_observation": 13,
+      "ci_runs_success": [
+        40177456089,
+        40177456127,
+        40177456080
+      ],
+      "artifact_id": 12592822576,
+      "artifact_sha256": "05c8c52b781a653d7882c854ba56463f0265b192db090dc761dbd4f124b62c65",
+      "artifact_readback_verified": true,
+      "comment_id": 6395781807,
+      "comment_readback_verified": true,
+      "note": "Hosted adapter fixture proof only; no original account export or host/browser runtime proof."
     }
   },
   "wsl_ram_npu": {
@@ -507,7 +547,37 @@
           "conclusion": "success"
         }
       ],
-      "note": "Clean recut uses current main at branch creation. Original PR #34 remains open. No merge or force-push."
+      "note": "Clean recut uses current main at branch creation. Original PR #34 remains open. No merge or force-push.",
+      "latest_compare_readback": {
+        "observed_at_local": "2026-10-25T16:06:54+07:00",
+        "compared_main_head": "0cbf72e465e9a42f2aa07a1780275abc81a815b3",
+        "status": "diverged",
+        "ahead_by": 5,
+        "behind_by": 13,
+        "changed_files": 5,
+        "note": "Main advanced afterward with continuity/checkpoint commits. Do not treat 5/13 as a post-checkpoint compare."
+      },
+      "latest_ci_runs": [
+        {
+          "id": 40177456089,
+          "conclusion": "success"
+        },
+        {
+          "id": 40177456127,
+          "conclusion": "success"
+        },
+        {
+          "id": 40177456080,
+          "conclusion": "success"
+        }
+      ],
+      "artifact_id": 12592822576,
+      "artifact_sha256": "05c8c52b781a653d7882c854ba56463f0265b192db090dc761dbd4f124b62c65",
+      "artifact_readback_verified": true,
+      "fixture_receipt": "3/3 PASS; source hashes unchanged; no extraction",
+      "task_closed": false,
+      "merge": false,
+      "force_push": false
     },
     "pr35": {
       "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/35",
@@ -526,46 +596,36 @@
     }
   },
   "latest_provider_status_readback": {
-    "observed_at_utc": "2026-10-25T08:54:31.925Z",
-    "observed_at_local": "2026-10-25T15:54:31.925+07:00",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1553ICT.json",
-    "checkpoint_blob_sha": "1ad5da57e1e2b7d1d8ac5bf2a7f9c2e9b9732467",
-    "provider_checkpoint_commit": "e3c6dccb6e24bf176066a6b02ed76681f022adef",
-    "dropbox": {
-      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
-      "rev": "0165dc1e4794ab00000000395cdfd73",
-      "size_bytes": 35389440,
-      "server_modified_utc": "2026-10-14T00:20:03Z",
-      "metadata_verified": true,
-      "bytes_downloaded": false
-    },
-    "remote_desktop": {
-      "all_devices_offline": true,
-      "host_runtime_probe": false
-    },
-    "n8n": {
-      "execution_id": "161",
-      "status": "success",
-      "event_id": "X20261025080024100_CLOUD",
-      "row_id": 350,
-      "state": "OPEN_WORK_REMAINS",
-      "pending_tasks": 45,
-      "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED"
-    },
+    "observed_at_utc": "2026-10-25T09:06:54Z",
+    "observed_at_local": "2026-10-25T16:06:54+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1606ICT.json",
+    "checkpoint_blob_sha": "dd5bf56b1a0d2ce2f62a177b7c2a66c1488790f8",
+    "provider_checkpoint_commit": "44f4bbfacb5d5731465a30948fdbf1c3d54af658",
+    "github_task_ledger_blob_sha": "f03c0b1f40eb1f2d7bbc3fa8731e837a7c3c5ca4",
     "archive_pr36": {
       "head": "e9c299594447d75bebb75c343cdb707731c7ea50",
-      "compare_to_main": "85f23c6073dc18ee9f042c1ef7b82ecaec7be268",
+      "compare_to_main": "0cbf72e465e9a42f2aa07a1780275abc81a815b3",
       "status": "diverged",
       "ahead_by": 5,
-      "behind_by": 5,
+      "behind_by": 13,
       "ci_runs_success": [
         40177456089,
         40177456127,
         40177456080
       ],
+      "artifact_id": 12592822576,
+      "artifact_readback_verified": true,
       "merged": false,
       "force_push": false
     },
+    "memory_archive": {
+      "canonical_admin_sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+      "alternate_admin_identity": "UNVERIFIED_MATERIALIZATION_DENIED",
+      "raw_account_export_recovered": false,
+      "map_nguon_identity_discrepancy_resolved": false
+    },
+    "fresh_host_probe": false,
+    "fresh_n8n_probe": false,
     "tasks_closed": 0
   }
 }
