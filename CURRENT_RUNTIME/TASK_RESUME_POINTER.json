@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "After the scheduled Tick due 2026-10-25T11:01:32+07, exact-read the new scheduled Tick/consumer receipts and direct CSV SHA. USB SensorService responds but four allowlisted event timestamps remain stale; wireless target 192.168.1.14:5556 is NOT_LISTED, Termux:API is absent, and HWiNFO CSV remains stale since 2026-10-21. Continue identifying a supported authorized persistent sensor client/bridge. Cloud execution 157 succeeded with OPEN_WORK_REMAINS and 45 pending. Archive PR #34 and MODUAL PR #35 remain OPEN/Draft and diverged; no merge/force-push. TESSERACT PR #6 issuer public key and runner assignment remain unverified; no CI rerun absent a verified change. Keep all unfinished tasks OPEN.",
+  "next": "After the next scheduled Tick, exact-read the newest Tick and consumer receipts and re-hash the canonical CSV. The current Tick/consumer pair verified source metadata but reported EVENT_TIMESTAMP_STALE on USB target 1056285; wireless target 192.168.1.14:5556 is NOT_LISTED. Continue a supported authorized persistent sensor client/bridge. Archive PR #34 remains OPEN/Draft and diverged (compare snapshot base 0b28aec6c742da7c98c8882c86f72fe926ba4333: 1 ahead/90 behind); no merge or force-push. TESSERACT PR #6 remains OPEN/Draft; issuer public key and runner assignment remain unverified; no CI rerun without a verified runner/config change. n8n execution 158 succeeded but row 337 remains OPEN_WORK_REMAINS and host heartbeat is not probed. Keep every unfinished task OPEN.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-25T10:57:50.327+07:00",
+  "updated_at": "2026-10-25T12:22:43.4032814+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -13351,23 +13351,26 @@
     }
   ],
   "latest_provider_readback": {
-    "id": "PROVIDER_READBACK_20261025T1057ICT",
-    "observed_at": "2026-10-25T10:57:50.327+07:00",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1057ICT.json",
-    "checkpoint_blob_sha": "ef5fe87dbddfa63b7e712386db84adac8785c5bd",
-    "checkpoint_commit": "cda32eed66af159dc1fd091d21abf228df666b1a",
+    "id": "PROVIDER_READBACK_20261025T1222ICT",
+    "observed_at": "2026-10-25T12:22:43.4032814+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1222ICT.json",
+    "checkpoint_blob_sha": "594e1840d12bcfc5ae1a477b3613419c3a3fcb36",
+    "checkpoint_commit": "eff2a8a59b9530da70792588a4e2c3030bf27c69",
     "modual_status": "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED",
-    "windows_tick_receipt_sha256": "7954cc3f4f0204fb30e654b9dadb03185981bf1bdb1ea81beb4aa6db7429ad3b",
-    "consumer_receipt_sha256": "fa45e76b80be260330b213dedefff5f1371fdee9690d0e547449fd87423a3315",
+    "windows_tick_receipt_sha256": "a86763deafb210dd565243afabc0b754409d1ef87dc5529b334339c228c08c38",
+    "consumer_receipt_sha256": "52dd8ec3d83206aae594bd594951610575ed964f54ad03a40f7f77582d10e159",
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
     "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
-    "n8n_execution_id": "157",
-    "n8n_event_id": "X20261025040023952_CLOUD",
-    "n8n_row_id": 335,
+    "n8n_execution_id": "158",
+    "n8n_event_id": "X20261025050024007_CLOUD",
+    "n8n_row_id": 337,
+    "archive_pr34_head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+    "archive_pr34_compare_base": "0b28aec6c742da7c98c8882c86f72fe926ba4333",
     "archive_pr34_ahead_by": 1,
-    "archive_pr34_behind_by": 77,
-    "modual_pr35_ahead_by": 9,
-    "modual_pr35_behind_by": 61,
+    "archive_pr34_behind_by": 90,
+    "tesseract_pr6_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "tesseract_issuer_public_key_verified": false,
+    "tesseract_runner_assignment_verified": false,
     "tasks_closed": 0
   },
   "latest_archive_pr_current_head_probe": {
@@ -15269,5 +15272,112 @@
     "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1057ICT.json",
     "checkpoint_blob_sha": "ef5fe87dbddfa63b7e712386db84adac8785c5bd",
     "checkpoint_commit": "cda32eed66af159dc1fd091d21abf228df666b1a"
+  },
+  "latest_runtime_observation_20261025T1222ICT": {
+    "observed_at": "2026-10-25T12:22:43.4032814+07:00",
+    "source": "Direct Windows Task Scheduler + exact Tick/consumer JSON readback; Dropbox metadata; n8n execution 158; GitHub Archive/TESSERACT workflow readbacks; live Braid execution.",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1222ICT.json",
+    "checkpoint_blob_sha": "594e1840d12bcfc5ae1a477b3613419c3a3fcb36",
+    "checkpoint_commit": "eff2a8a59b9530da70792588a4e2c3030bf27c69",
+    "windows_tick": {
+      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T052139529899Z.json",
+      "sha256": "a86763deafb210dd565243afabc0b754409d1ef87dc5529b334339c228c08c38",
+      "task_result": "0x0",
+      "last_run_local": "2026-10-25T12:21:33+07:00",
+      "next_run_local": "2026-10-25T12:26:32+07:00",
+      "missed_runs": 0,
+      "live_sensor_reading_confirmed": false,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+    },
+    "data_consumer": {
+      "receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T052136272Z.json",
+      "sha256": "52dd8ec3d83206aae594bd594951610575ed964f54ad03a40f7f77582d10e159",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_content_hash_verified": true,
+      "live_sensor_reading_confirmed": false,
+      "raw_rows_emitted": false,
+      "source_file_written": false
+    },
+    "device_probe": {
+      "usb_target": "1056285",
+      "sensorservice_probe_succeeded": true,
+      "sensor_event_timestamp_sensor_count": 4,
+      "sensor_event_sensors_advanced": [],
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "wireless_target": "192.168.1.14:5556",
+      "wireless_state": "NOT_LISTED"
+    },
+    "braid": {
+      "script_exit_code": 0,
+      "six_receipt_sha256": "d87ca8bb0a56bc3119d647e92a6c8c4b56949f84cdcd3daa3c505abb7160eb94",
+      "six_executed_action_count": 9,
+      "plural_receipt_sha256": "f121d26214bced8baf3daf131c6de20686a7bd496a3aafbff23b6df018d23981",
+      "plural_executed_action_count": 5,
+      "source_sha256_unchanged": true,
+      "requested_mutation_executed": false,
+      "cloud_host_wiring": "NOT_VERIFIED"
+    },
+    "result": "TICK_AND_CONSUMER_READBACK_OK; LIVE_SENSOR_STREAM_STALE; ALL_OPEN_RETAINED"
+  },
+  "latest_sensor_stream_probe_20261025T1222ICT": {
+    "observed_at": "2026-10-25T12:22:43.4032814+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1222ICT.json",
+    "checkpoint_blob_sha": "594e1840d12bcfc5ae1a477b3613419c3a3fcb36",
+    "checkpoint_commit": "eff2a8a59b9530da70792588a4e2c3030bf27c69",
+    "usb_target": "1056285",
+    "sensor_event_timestamp_sensor_count": 4,
+    "sensor_event_sensors_advanced": [],
+    "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "wireless_target_state": "NOT_LISTED",
+    "production_continuous_stream_verified": false,
+    "raw_sensor_values_emitted": false
+  },
+  "latest_archive_followup_20261025T1222ICT": {
+    "observed_at": "2026-10-25T12:22:43.4032814+07:00",
+    "pr34_head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+    "compare_base": "0b28aec6c742da7c98c8882c86f72fe926ba4333",
+    "compare_status": "diverged",
+    "ahead_by": 1,
+    "behind_by": 90,
+    "ci_runs": [
+      40145523744,
+      40145523727,
+      40145523754
+    ],
+    "ci_all_steps_success": true,
+    "artifact_id": 12580351639,
+    "artifact_sha_bound_to_head": true,
+    "merged": false,
+    "force_push": false
+  },
+  "latest_tesseract_status_readback_20261025T1222ICT": {
+    "observed_at": "2026-10-25T12:22:43.4032814+07:00",
+    "repository": "2708halinh-cloud/x-time-web",
+    "pr": 6,
+    "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "runs": [
+      39994207477,
+      39994207667
+    ],
+    "conclusions": [
+      "failure",
+      "failure"
+    ],
+    "issuer_public_key_verified": false,
+    "runner_assignment_verified": false,
+    "rerun": false
+  },
+  "latest_cloud_continuity_readback_20261025T1222ICT": {
+    "observed_at": "2026-10-25T12:22:43.4032814+07:00",
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "execution_id": "158",
+    "status": "success",
+    "event_id": "X20261025050024007_CLOUD",
+    "row_id": 337,
+    "state": "OPEN_WORK_REMAINS",
+    "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED",
+    "tasks_closed": 0
   }
 }
