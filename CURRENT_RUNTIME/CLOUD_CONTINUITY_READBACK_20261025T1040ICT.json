@@ -1,0 +1,118 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.5",
+  "checkpoint_id": "CLOUD_CONTINUITY_READBACK_20261025T1040ICT",
+  "recorded_at_local": "2026-10-25T10:40:17+07:00",
+  "recorded_at_utc": "2026-10-25T03:40:17Z",
+  "state": "OPEN_WORK_REMAINS",
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "latest_execution_id": "156",
+    "latest_execution_status": "success",
+    "latest_execution_mode": "trigger",
+    "latest_execution_started_at_utc": "2026-10-25T03:00:22.065Z",
+    "latest_execution_stopped_at_utc": "2026-10-25T03:00:24.056Z",
+    "execution_data_readback": true,
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_table_rows": 333,
+    "latest_cloud_receipt_row_id": 332,
+    "latest_cloud_event_id": "X20261025030023922_CLOUD",
+    "latest_host_evidence_row_id": 333,
+    "latest_host_event_id": "X20261025033850_HOST_READBACK",
+    "latest_host_row_exact_readback": true,
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_project_id": "6qKpRmicIGHA5snY",
+    "recovery_rows": 45,
+    "unfinished_rows": 45,
+    "terminal_rows": 0,
+    "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "host": {
+    "device": "DESKTOP-86ITNQ4",
+    "route": "Remote Desktop Commander",
+    "route_online_at_probe": true,
+    "primary_account_device_route": "OFFLINE",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T033139253180Z.json",
+    "latest_tick_observed_at_utc": "2026-10-25T03:31:39.253180Z",
+    "latest_tick_bytes": 1635,
+    "latest_tick_sha256": "fd5b9ce87688b7718c9b6881ae50ec64d2d6bc7fba7fbd759f5d064e10dd5f25",
+    "trace_path": "D:\\SENSOR_LOGS\\state\\telemetry_buffer_sync_wrapper_trace.log",
+    "trace_sha256": "c3a8df7f1c5bf72fb2791a4ffe3552334318c42d7d7cd2b1774030b2903c5ce7",
+    "latest_trace_receipt_readback_ok_at_utc": "2026-10-25T03:31:39.4095753Z",
+    "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+    "source_bytes": 35389440,
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-25 10:31:33 ICT",
+      "last_result": 0,
+      "next_run_local": "2026-10-25 10:36:32 ICT",
+      "repeat_minutes": 5,
+      "expected_tick_missing_at_readback": true,
+      "cause": "UNKNOWN"
+    },
+    "live_sensor_reading_confirmed": false,
+    "xiaomi12_usb": {
+      "adb_state_from_tick": "device",
+      "sensorservice_probe_succeeded": true,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "live_sensor_event_stream_confirmed": false
+    },
+    "redmi_note14pro_wireless": {
+      "target": "192.168.1.14:5556",
+      "adb_state": "NOT_LISTED",
+      "live_sensor_event_stream_confirmed": false
+    },
+    "adb_path_note": "Tick's configured device probe reports adb_binary_present=true and adb_devices_command_succeeded=true; separate CMD PATH lookup did not resolve adb.exe. Do not infer the configured binary is absent.",
+    "exact_modual_source_found": false,
+    "expected_modual_source_bytes": 89814328,
+    "expected_modual_source_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "candidate_substitution": false
+  },
+  "github_task_ledger": {
+    "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "blob_sha": "fae74f7670e02d1cea3ca715e68489ee619f2dc6",
+    "blob_sha_rechecked_in_this_run": true,
+    "parsed_task_counts_last_verified_at_local": "2026-10-25T10:25:00+07:00",
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "tasks_closed": 0
+  },
+  "continuity_guards": {
+    "preserve_open_and_in_progress": true,
+    "no_google_drive_writes": true,
+    "no_process_termination": true,
+    "no_cache_or_meta_db_deletion": true,
+    "no_source_mutation": true,
+    "no_secret_values": true,
+    "no_raw_sensor_values_stored": true,
+    "no_merge_or_force_push": true,
+    "do_not_substitute_candidate_for_exact_modual_source": true
+  },
+  "next": [
+    "Re-read D:\\SENSOR_LOGS\\state after the missed 2026-10-25 10:36:32 ICT scheduled run; if still stale, inspect task trigger/conditions read-only and do not change settings automatically.",
+    "Keep the host tick and sensor stream status separate from n8n cloud execution #156.",
+    "Keep Xiaomi12 live event stream UNVERIFIED because event timestamps are stale; Redmi Note 14 Pro wireless remains NOT_LISTED.",
+    "Locate exact MODUAL bulk source by SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 and size 89814328; never substitute the 12154-byte candidate.",
+    "Preserve all 45 n8n recovery rows and all 29 GitHub task-ledger tasks OPEN/IN_PROGRESS; do not close from routing, cloud heartbeat, or CI alone.",
+    "Do not write Google Drive, terminate processes, delete cache/Meta.db, mutate source, or persist raw sensor readings."
+  ],
+  "provenance": {
+    "previous_checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1025ICT.json",
+    "previous_checkpoint_blob_sha": "9bfd008ead7ee20fc6b9e752a19f317d1e7d9c88",
+    "previous_pointer_blob_sha": "2d814c6286d7037ef95325a34bb0e54c94c63e72",
+    "n8n_cloud_receipt_row_id": 332,
+    "n8n_host_readback_row_id": 333,
+    "host_tick_sha256": "fd5b9ce87688b7718c9b6881ae50ec64d2d6bc7fba7fbd759f5d064e10dd5f25",
+    "host_trace_sha256": "c3a8df7f1c5bf72fb2791a4ffe3552334318c42d7d7cd2b1774030b2903c5ce7"
+  }
+}
