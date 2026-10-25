@@ -452,3 +452,31 @@ SOURCE_DIRECT: Fresh-read AGENTS.md, SOL_REENTRY_CURRENT.md, TASK_RESUME_POINTER
 
 ### Resume and next edge
 All 29 ledger tasks remain open/in progress; no task was closed. The prior TESSERACT pointer is preserved, and current primary resume points to the MODUAL checkpoint. After `13:21:32 +07`, read the next exact Tick/consumer receipts and recompute the source SHA. Continue finding an authorized persistent sensor client/bridge and a supported HWiNFO logging route. Do not install unverified apps, export raw sensor data, move/delete sources, merge diverged PRs or rerun CI without a verified runner/issuer change.
+
+## REENTRY — VERIFIED TICK + CONTROLLED SENSOR EVENT TEST — 2026-10-25 14:27 ICT
+
+SOURCE_DIRECT: Fresh-read AGENTS.md, this reentry source, TASK_RESUME_POINTER.json, OPEN_TASKS_CURRENT.json, MODUAL_PARAMETER_CURRENT.json and provider status. New checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1427ICT.json`; checkpoint commit `7521cc91cd69e487a5d39f2e2f1bbcac07f3bba3`; blob SHA `7630a9b98198793ec5ef9c442d71c65555a23401`. MODUAL state append commit `6289213b341d7cd1734a66e9b49db818b435c044`, blob SHA `131579e76fa847119af762db2843c222bf80ae8f`.
+
+### MODUAL — current scheduled Tick and consumer
+- Host `DESKTOP-86ITNQ4`; task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M` is enabled/Ready; last run `14:26:33 +07`, next run `14:31:32 +07`, result `0x0`, missed runs `0`.
+- Tick receipt `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T072639347534Z.json`, SHA-256 `2446f900891e51ea63407a6e1e6e9f752178de14a1d8e2bb0333c290f7c1a00f`; live sensor flag false; status `EVENT_TIMESTAMP_STALE`.
+- Consumer receipt `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T072636134Z.json`, SHA-256 `063fdb03366860b69eae5b762e51896a4689ca8265a96414427bbd94103d1ab1`; `SOURCE_OBSERVED_READONLY`, exit 0, source content hash verified, no source write, no synthetic rows, no raw rows, cloud/GitHub exports false.
+- Source remains `35,389,440` bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; Dropbox Outlook revision `0165dc1e4794ab00000000395cdfd73`, `server_modified=2026-10-14T00:20:03Z`, provider content hash `becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d`.
+
+### Controlled sensor route test — causal evidence, not production completion
+- At `14:23:27 +07`, existing package `com.exatools.sensors` v`2.1.01` was launched for a bounded test. The sanitized timestamp probe confirmed advancement for `AK099_MAGNETOMETER`, `LSM6DSO_ACCELEROMETER`, and `LSM6DSO_GYROSCOPE`.
+- The app was force-stopped (exit 0). At `14:24:32 +07`, the subsequent probe returned `EVENT_TIMESTAMP_STALE` with no advanced sensors.
+- This verifies sensor events can advance while that app is active, but does **not** verify a persistent sensor client or continuous production stream. `com.galaxy.sensortoolbox` is installed, but no persistent sensor service was verified.
+- HWiNFO64 PID `16596` exists. `C:\\Program Files\\HWiNFO64\\HWiNFO64.INI` has `Autorun=1`, `OpenSensors=1`, `MinimalizeSensors=1`, `ServerRole=1`, `SnapshotPolling=1`; no separate HWiNFO CSV was found in the inspected directories. Continuous CSV logging remains unverified.
+- Local `telemetry_buffer_sync.py`, `live_device_probe.py`, and `sensor_root_resolver.py` Git blob hashes match the three code blob IDs recorded in the consumer receipt. No raw sensor values were emitted or uploaded.
+
+### Independent execution and providers
+- Braid script ran on Windows with exit 0. SIX receipt `BRAID_LIVE_SIX_FORCES_20261025T071838003898Z.json`, SHA-256 `4c86f46d54fd3bb32b7e1d8f5e4b8229586f99b0866c67f4775c70aa198c47ed`, 9 actions, exact readback, source unchanged, no mutation. PLURAL receipt `BRAID_LIVE_PLURAL_20261025T071838050677Z.json`, SHA-256 `e0cbe7a1230e19d47de8cc3eb833f503a12a1ac79666a07a29e6974f1986fd5b`, 5 actions, exact readback, source unchanged. Cloud/host wiring remains unverified.
+- n8n execution 160 succeeded; event `X20261025070024074_CLOUD`, row 341, `OPEN_WORK_REMAINS`; 45 recovery tasks / 45 pending; `HOST_HEARTBEAT_NOT_PROBED`.
+- Archive PR #34 remains OPEN/Draft, head `a90f85ae1e0d5a5129caa1b472acac4f4697a71c`; at compare base `edfde19a9acb484225017bc53e794095b56502c3`, 1 ahead / 136 behind. Artifact `12580351639` (`sol-archive-real-fixture-readback`) is unexpired through `2026-11-08T00:08:44Z`. No merge or force-push.
+- MODUAL PR #35 remains OPEN/Draft, head `f99d96e39f62245d23ad728daac2c2006061e393`; at the same compare base, 9 ahead / 120 behind. Runs `40154600501` and `40154600506` succeeded. No merge or force-push.
+- TESSERACT Desktop PR #6 remains OPEN/Draft at `5312816d5fe2b22e92302211b67f916b88a6fe14`. Runs `39994207477` and `39994207667` failed with zero steps and no artifacts. Workflow reads variable name `XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64`; actual issuer public key and runner assignment remain unverified. GitHub CLI is not installed on host; no CI rerun performed.
+
+### Resume
+All unfinished tasks remain OPEN. The source and historical receipts are preserved; no source was moved, deleted, or overwritten. After the scheduled Tick due `14:31:32 +07`, read the newest Tick/consumer receipts and recompute the source SHA. Continue a supported persistent sensor client/bridge or verified HWiNFO logging route; keep cloud/GitHub sensor export disabled. Continue Archive/MODUAL/TESSERACT independently without merging diverged PRs or repeating CI without a verified runner/issuer change.
+
