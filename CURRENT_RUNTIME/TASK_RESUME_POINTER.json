@@ -3,18 +3,18 @@
   "task": "MODUAL_SENSOR_LOGS_ROUTING",
   "repo": "2708halinh-cloud/SOL-LONG-MACH",
   "branch": "main",
-  "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1313ICT.json",
-  "commit": "34ed592620f36fb2583b69de5f5a694b7b9f9b2c",
+  "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1319ICT.json",
+  "commit": "7ef7bb6e2d77315bc71fe9037afa56c0b2df0fa5",
   "rule": "Resume the latest MODUAL provider checkpoint first; the previous TESSERACT pointer is preserved in previous_pointer_snapshot and parallel_open_branches. Keep every unfinished task OPEN.",
   "pr": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
     "number": 35,
     "state": "OPEN",
     "current_head": "f99d96e39f62245d23ad728daac2c2006061e393",
-    "base_head": "55dba04236d2877b65f97f2b742013ba5dc78e28",
+    "base_head": "f6dde6606c25a88415f4fa60ee3b369e3cc3aac7",
     "compare_status": "diverged",
     "ahead_by": 9,
-    "behind_by": 98,
+    "behind_by": 103,
     "ci_runs": [
       40154600501,
       40154600506
@@ -100,7 +100,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "After the next scheduled Tick due 2026-10-25T13:16:32+07, read the exact Tick and consumer receipts and recompute the pinned source SHA. Continue locating a supported persistent sensor client/bridge; current USB ADB works but event timestamps are stale. Keep Archive PR #34, MODUAL PR #35, and TESSERACT PR #6 open; no merge, force-push, or CI rerun without verified runner/issuer change.",
+  "next": "After the next scheduled Tick due 2026-10-25T13:21:32+07, exact-read the newest Tick and consumer receipts and recompute the pinned source SHA. Continue finding a supported persistent sensor client/bridge; USB ADB responds but four event timestamps remain stale. Keep Archive PR #34, MODUAL PR #35 and TESSERACT PR #6 open; no merge, force-push, or CI rerun without verified runner/issuer change.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -115,7 +115,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-25T13:13:06.9704912+07:00",
+  "updated_at": "2026-10-25T13:19:02.9184397+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -31270,7 +31270,7 @@
       "head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
       "state": "OPEN_DRAFT_UNMERGED",
       "ahead_by": 1,
-      "behind_by": 114,
+      "behind_by": 119,
       "ci_runs": [
         40145523744,
         40145523727,
@@ -31288,7 +31288,7 @@
       "head": "f99d96e39f62245d23ad728daac2c2006061e393",
       "state": "OPEN",
       "ahead_by": 9,
-      "behind_by": 98,
+      "behind_by": 103,
       "ci_runs": [
         40154600501,
         40154600506
@@ -31306,8 +31306,29 @@
     }
   ],
   "pointer_integrity": {
-    "observed_at": "2026-10-25T13:13:06.9704912+07:00",
+    "observed_at": "2026-10-25T13:19:02.9184397+07:00",
     "correction": "The previous pointer combined MODUAL task identity with a TESSERACT repository/checkpoint. The full prior pointer is preserved in previous_pointer_snapshot; the top-level current route now points to the MODUAL checkpoint, with TESSERACT retained as an independent open branch.",
-    "all_tasks_closed": false
+    "all_tasks_closed": false,
+    "prior_tesseract_pointer_preserved": true,
+    "all_unfinished_tasks_open": true
+  },
+  "resume_history": [
+    {
+      "observed_at": "2026-10-25T13:13:06.9704912+07:00",
+      "task": "MODUAL_SENSOR_LOGS_ROUTING",
+      "repo": "2708halinh-cloud/SOL-LONG-MACH",
+      "branch": "main",
+      "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1313ICT.json",
+      "commit": "34ed592620f36fb2583b69de5f5a694b7b9f9b2c",
+      "superseded_as_primary_by": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1319ICT.json",
+      "history_preserved": true
+    }
+  ],
+  "latest_parallel_checkpoint": {
+    "id": "PROVIDER_READBACK_20261025T1319ICT",
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1319ICT.json",
+    "blob_sha": "942ed0dd23073b26ae041326ede26c06b0e37ab1",
+    "commit": "7ef7bb6e2d77315bc71fe9037afa56c0b2df0fa5",
+    "observed_at": "2026-10-25T13:19:02.9184397+07:00"
   }
 }
