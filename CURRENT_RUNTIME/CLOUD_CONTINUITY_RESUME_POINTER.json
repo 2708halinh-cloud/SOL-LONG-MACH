@@ -1,21 +1,21 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T13:40:40.551Z",
-  "updated_at_local": "2026-10-25T20:40:40.551+07:00",
+  "updated_at_utc": "2026-10-25T13:50:33.961Z",
+  "updated_at_local": "2026-10-25T20:50:33.961+07:00",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2050ICT.json",
+    "blob_sha": "6339483004d852b84b5ea9042baa5c89d542e935",
+    "commit_sha": "6e38cd60220286a25aa9d623aa74eccabe7f291d",
+    "readback_verified": true,
+    "note": "n8n execution 167/row 379 verified; Dropbox historical ZIP object and MODUAL sync carrier metadata found; raw ZIP SHA and exact MODUAL source remain unverified; host registry offline; 45 Recovery rows remain nonterminal."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2040ICT.json",
     "blob_sha": "f11567960d459de53055a6d7af63d864b944f3e7",
     "commit_sha": "015144a5faff2bed45d76fb36fbe41106b203b8d",
     "readback_verified": true,
     "note": "n8n execution 167 and evidence row 379 verified; 45/45 Recovery rows remain nonterminal. Desktop Commander registry reports listed devices offline; latest prior host evidence is row 378 at 20:31:39 ICT, with no fresh direct host probe this turn."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2005ICT.json",
-    "blob_sha": "611effb864be14cf5d2eec3291d8ef4cd97eaceb",
-    "commit_sha": "6bf0ec73964e0f88659f7284de71c0a3b6823ec8",
-    "readback_verified": true,
-    "note": "n8n execution 166/row 371 verified; host tick row 373 and trace SHA correction row 374 read back; Dropbox metadata row 369 retained; all 45 Recovery tasks remain nonterminal."
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -164,10 +164,12 @@
     "tasks_closed": 0
   },
   "next": [
-    "When the matching Desktop Commander device is reachable, verify device identity and read the next host tick/scheduler state directly.",
-    "Keep all 45 Recovery rows nonterminal; do not infer the GitHub task count from the oversized file's empty response.",
-    "Continue authorized retrieval of original Dropbox ZIP bytes and the exact MODUAL source; do not substitute size-mismatched candidates.",
-    "Keep PR #36 OPEN/Draft; no merge, force-push, or branch sync."
+    "Keep SV-20261020-02 OPEN until original Dropbox ZIP bytes are read through a supported authorized route and raw SHA-256 is recomputed.",
+    "Use the exact Dropbox ZIP path/file ID/revision above; do not retain or reuse temporary download URLs.",
+    "Inspect only safe, non-secret metadata from MODUAL sync carriers; do not read or expose token/cookie/password values.",
+    "Continue locating the exact MODUAL source of 89,814,328 bytes and expected SHA-256; do not substitute mismatched files.",
+    "Wait for a matching Desktop Commander device to return online before direct host probing; cloud execution 167 is not a host heartbeat.",
+    "Keep all 45 Recovery rows nonterminal and PR #36 OPEN/Draft."
   ],
   "checkpoint_history": [
     {
@@ -1609,5 +1611,14 @@
     "trace_sha256": "813F5287A9DD227982E5427ECAD3B5328277F5B53E26AE582EC9A4E63AB7F12A",
     "correction_for_row_id": 373,
     "exact_readback": true
+  },
+  "provider_discovery": {
+    "historical_zip_file_id": "id:gvG29tEleJwAAAAAAAACLA",
+    "historical_zip_revision": "0165daa5e44669e0000000395cdfd73",
+    "historical_zip_size_bytes": 20882,
+    "historical_zip_raw_sha256_verified": false,
+    "modual_manifest_file_id": "id:gvG29tEleJwAAAAAAAACAA",
+    "modual_script_file_id": "id:gvG29tEleJwAAAAAAAAB_g",
+    "exact_modual_source_verified": false
   }
 }
