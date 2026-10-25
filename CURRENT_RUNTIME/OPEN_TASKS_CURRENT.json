@@ -20274,4 +20274,24 @@
       "tasks_closed": 0
     }
   ]
+,
+  "integrity_corrections": [
+    {
+        "id": "LEDGER_DUPLICATE_EVENT_CLASSIFICATION_20261025T0940ICT",
+        "observed_at": "2026-10-25T09:40:46.777+07:00",
+        "source_blob_sha_before_correction": "9281d3ae3540425e8640c3a9ed4793bf8d86e331",
+        "finding": {
+            "duplicate_event_id": "PROVIDER_READBACK_20261025T0926ICT",
+            "verified_action_events_occurrences": 2,
+            "provider_observation_history_occurrences": 2,
+            "duplicated_archive_observation_entries": 2,
+            "archive_carrier_id": "id:gvG29tEleJwAAAAAAAACLA",
+            "archive_carrier_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106"
+        },
+        "interpretation": "These are duplicate ledger records for one provider observation and one archive carrier. Count as one distinct event/carrier, not two.",
+        "action": "Append-only integrity annotation. Historical entries were preserved and not deleted or rewritten.",
+        "task_state_mutation": "NONE",
+        "tasks_closed": 0
+    }
+  ]
 }
