@@ -1,0 +1,247 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.7",
+  "id": "CLOUD_CONTINUITY_READBACK_20261025T2202ICT",
+  "observed_at_utc": "2026-10-25T15:02:24.882Z",
+  "observed_at_local": "2026-10-25T22:02:24.882+07:00",
+  "timestamp_basis": "Host observations use the Windows host clock and direct host readback. n8n execution timestamps are recorded separately; cloud heartbeat is not host heartbeat.",
+  "state": "OPEN_WORK_REMAINS",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2050ICT.json",
+    "blob_sha": "6339483004d852b84b5ea9042baa5c89d542e935",
+    "commit_sha": "6e38cd60220286a25aa9d623aa74eccabe7f291d",
+    "readback_verified": true
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "latest_execution_id": "169",
+    "latest_execution_status": "success",
+    "latest_execution_mode": "trigger",
+    "latest_execution_started_at_utc": "2026-10-25T15:00:22.090Z",
+    "latest_execution_stopped_at_utc": "2026-10-25T15:00:24.199Z",
+    "latest_execution_exact_readback": true,
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_table_rows": 385,
+    "latest_cloud_evidence_row_id": 381,
+    "latest_cloud_event_id": "X20261025150024063_CLOUD",
+    "latest_cloud_row_exact_readback": true,
+    "latest_host_evidence_row_id": 384,
+    "latest_host_event_id": "X20261025150224882_HOST_READBACK",
+    "latest_host_row_exact_readback": true,
+    "latest_provider_blocker_row_id": 385,
+    "latest_provider_blocker_event_id": "X20261025150224882_DROPBOX_ZIP_DOWNLOAD_BLOCKER",
+    "latest_provider_blocker_row_exact_readback": true,
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_project_id": "6qKpRmicIGHA5snY",
+    "recovery_rows": 45,
+    "nonterminal_rows": 45,
+    "tasks_closed": 0,
+    "recovery_status_counts": {
+      "ASSIGNED_DRAFT_WAITING_CREDENTIAL": 5,
+      "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN": 1,
+      "OPEN_RAW_HASH_AND_CLOUD_TRANSFER": 1,
+      "OPEN_QEMU_C_DISCOVERY": 1,
+      "GUARD_APPLIED_FIVE_AGENT_DRAFTS_ACCOUNT_LEVEL_PAUSE_OPEN": 1,
+      "OPEN_SOURCE_DIRECT_TIMESTAMP": 1,
+      "OPEN_ANDROID_SOURCE_ACCESS": 1,
+      "OPEN_END_TO_END_USER_SESSION": 1,
+      "OPEN_CREDENTIAL_BINDING_AND_AUTH_TEST": 1,
+      "OPEN_7Z_RAR_LR": 1,
+      "SOURCE_BYTES_VERIFIED_FUTURE_SYNC_OPEN": 1,
+      "OPEN_HOST_ROUTING_AND_UI_READBACK": 1,
+      "OPEN_HOST_INTEGRATION_AND_INDEPENDENT_TEST": 1,
+      "OPEN_ROUTED_NONCOERCIVE": 27,
+      "IN_PROGRESS": 1
+    },
+    "host_heartbeat_probed_by_workflow": false,
+    "direct_host_probe_this_turn": true,
+    "interpretation": "Execution 169 is cloud-only and appended row 381. Direct Windows readback was performed separately and recorded in rows 382-384; row 385 records the Dropbox raw-byte retrieval blocker."
+  },
+  "host": {
+    "device": "DESKTOP-86ITNQ4",
+    "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+    "route": "Remote Desktop Commander / Desktop Commander device registry",
+    "route_status_at_probe": "ONLINE_BY_SUCCESSFUL_DIRECT_READBACK",
+    "direct_host_probe_at_local": "2026-10-25T22:02:24.8821061+07:00",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T150139078521Z.json",
+    "latest_tick_observed_at_utc": "2026-10-25T15:01:39.078521Z",
+    "latest_tick_bytes": 1635,
+    "latest_tick_sha256": "1C0E7AC29BFEE3ABDEA39E342FDC3FD22395EBD0383A17E5F17146D6ED224746",
+    "trace_path": "D:\\SENSOR_LOGS\\state\\telemetry_buffer_sync_wrapper_trace.log",
+    "trace_bytes": 68675,
+    "trace_sha256": "7CCA0766211FE95F6F4346E0F5DFCDAB8326C4158AB7A8735D39178113AE9CF8",
+    "consumer_receipt_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T150135984Z.json",
+    "consumer_receipt_bytes": 6945,
+    "consumer_receipt_sha256": "AAC2ABE4B4BD726B5E8DD0F1AC1F980090326809373A12CDB419CDD62FA32549",
+    "consumer_status": "SOURCE_OBSERVED_READONLY",
+    "consumer_exit_code": 0,
+    "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+    "source_bytes": 35389440,
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_hash_matches_tick": true,
+    "source_file_written": false,
+    "synthetic_rows_added": 0,
+    "raw_rows_emitted": false,
+    "cloud_export_enabled": false,
+    "github_push_enabled": false,
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local_host_clock": "2026-10-25T22:01:33+07:00",
+      "last_result": 0,
+      "next_run_local_host_clock": "2026-10-25T22:06:32+07:00",
+      "missed_runs": 0,
+      "next_run_still_future_at_probe": true
+    },
+    "device_probe": {
+      "adb_binary_present": true,
+      "adb_devices_command_succeeded": true,
+      "xiaomi12_usb_state": "device",
+      "xiaomi12_sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "xiaomi12_live_sensor_event_stream_confirmed": false,
+      "redmi_note14pro_wireless_state": "NOT_LISTED",
+      "redmi_note14pro_live_sensor_event_stream_confirmed": false,
+      "live_sensor_reading_confirmed": false
+    }
+  },
+  "source_search": {
+    "scope": "D:\\SENSOR_LOGS",
+    "enumerated_files": 825,
+    "exact_expected_size_matches": 0,
+    "exact_filename_matches": 0,
+    "metadata_only": true,
+    "file_contents_read": false,
+    "files_changed": false,
+    "modual_named_candidates": [
+      {
+        "name": "MODUAL_CARRIER_CANDIDATE_20261025T0753ICT.csv",
+        "bytes": 12154
+      },
+      {
+        "name": "MODUAL_PARAMETER_CURRENT.json",
+        "bytes": 507879
+      },
+      {
+        "name": "modual_github_sync.py",
+        "bytes": 8099
+      }
+    ],
+    "exact_modual_source_found": false,
+    "expected_modual_source_bytes": 89814328,
+    "expected_modual_source_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "candidate_substitution": false
+  },
+  "unresolved": {
+    "historical_zip_task_id": "SV-20261020-02",
+    "historical_zip_state": "OPEN",
+    "historical_zip_name": "SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip",
+    "historical_zip_file_id": "id:gvG29tEleJwAAAAAAAACLA",
+    "historical_zip_revision": "0165daa5e44669e0000000395cdfd73",
+    "historical_zip_size_bytes": 20882,
+    "historical_zip_expected_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+    "dropbox_provider_content_hash": "581e186fcff303d25dfeedebc5fac4b98f466a9652fde281827f79fbb91a6c89",
+    "dropbox_provider_hash_is_raw_sha256": false,
+    "single_use_download_link_issued": true,
+    "raw_bytes_retrieved": false,
+    "raw_sha256_recomputed": false,
+    "retrieval_blocker": "The available container downloader refused before HTTP transfer because the URL had not been web-viewed. No temporary URL is stored here or reused; a supported authorized binary route is still required.",
+    "library_copies_previous_readback_verified": true,
+    "library_zip_task_closed": false,
+    "modual_exact_source_verified": false
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "task_ledger_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "task_ledger_blob_sha_last_verified": "344e3e3ea66b75cde13d1b7b48d09f408fddb836",
+    "task_count_last_verified": 29,
+    "task_count_recomputed_this_turn": false,
+    "oversized_file_fetch": "EMPTY_RESPONSE_FOR_OVERSIZED_FILE",
+    "tasks_closed": 0,
+    "pr36": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+      "state": "OPEN",
+      "draft": true,
+      "merged": false,
+      "head_sha": "e9c299594447d75bebb75c343cdb707731c7ea50",
+      "compared_main_head": "bece38d255eccb0fed88c693e4d9ba493ef03969",
+      "comparison_status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 88,
+      "current_combined_status_api_returned_no_statuses": true,
+      "last_verified_successful_checks": [
+        {
+          "run_id": 40177456089,
+          "name": "High-Threshold Secret Exposure Guard",
+          "conclusion": "success"
+        },
+        {
+          "run_id": 40177456127,
+          "name": "SOL Library Stone Topology",
+          "conclusion": "success"
+        },
+        {
+          "run_id": 40177456080,
+          "name": "SOL Archive Read-only Adapters",
+          "conclusion": "success"
+        }
+      ],
+      "merge_or_force_push": false
+    }
+  },
+  "new_evidence_rows": [
+    {
+      "id": 381,
+      "event_id": "X20261025150024063_CLOUD",
+      "type": "cloud_scan",
+      "readback_verified": true
+    },
+    {
+      "id": 382,
+      "event_id": "X20261025145538212_HOST_READBACK",
+      "type": "host_readback",
+      "readback_verified": true
+    },
+    {
+      "id": 383,
+      "event_id": "X20261025145733022_HOST_READBACK",
+      "type": "host_readback",
+      "readback_verified": true
+    },
+    {
+      "id": 384,
+      "event_id": "X20261025150224882_HOST_READBACK",
+      "type": "host_readback",
+      "readback_verified": true
+    },
+    {
+      "id": 385,
+      "event_id": "X20261025150224882_DROPBOX_ZIP_DOWNLOAD_BLOCKER",
+      "type": "provider_blocker",
+      "readback_verified": true
+    }
+  ],
+  "continuation_guards": {
+    "preserve_open_and_in_progress": true,
+    "no_google_drive_writes": true,
+    "no_process_termination": true,
+    "no_cache_or_meta_db_deletion": true,
+    "no_source_mutation": true,
+    "no_secret_values": true,
+    "no_raw_sensor_values_stored": true,
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "no_merge_or_force_push": true,
+    "no_candidate_substitution_for_exact_modual_source": true,
+    "no_raw_zip_sha256_claim_without_raw_bytes": true,
+    "tasks_closed": 0
+  },
+  "next": [
+    "Read the next host tick after host-clock 2026-10-25T22:06:32+07:00; use the host clock, not n8n provider timestamps, to decide whether the run is due.",
+    "Keep Xiaomi12 sensor stream UNVERIFIED and Redmi Note 14 Pro NOT_LISTED until a fresh event stream is observed.",
+    "Continue locating the exact MODUAL source of 89,814,328 bytes and expected SHA-256; do not substitute mismatched files.",
+    "Keep SV-20261020-02 OPEN until authorized raw ZIP bytes are read and SHA-256 is recomputed.",
+    "Keep all 45 Recovery rows nonterminal and PR #36 OPEN/Draft; do not merge or force-push.",
+    "No Google Drive writes, no process termination, no cache or Meta.db deletion, no secret values, and no raw sensor rows."
+  ]
+}
