@@ -11,6 +11,11 @@ MAX_MEMBERS=25000
 MAX_EXPANDED=512*1024*1024
 MAX_RATIO=300
 FORMATS=("ALL","7Z","BZ2","GZ","JAR","LR","RAR","TAR","XZ","ZIP")
+EXTERNAL_CANDIDATES = {
+    "7Z": ("7zz", "7z", "7za"),
+    "RAR": ("unrar", "7zz", "7z", "7za", "rar"),
+    "LR": ("lrzip",),
+}
 HEADERS=((b"7z\xbc\xaf\x27\x1c","7Z"),(b"Rar!\x1a\x07","RAR"),
  (b"LRZI","LR"),(b"\x1f\x8b","GZ"),(b"BZh","BZ2"),
  (b"\xfd7zXZ\x00","XZ"),(b"PK\x03\x04","ZIP"),(b"PK\x05\x06","ZIP"))
@@ -105,11 +110,7 @@ def inspect(path):
                     if total>MAX_EXPANDED:raise ValueError("EXPANDED_STREAM_LIMIT")
             out.update(member_count=1,expanded_bytes=total,status="PASS")
         elif kind in ("7Z","RAR","LR"):
-            candidates = {
-                "7Z": ("7zz", "7z", "7za"),
-                "RAR": ("unrar", "7zz", "7z", "7za", "rar"),
-                "LR": ("lrzip",),
-            }[kind]
+            candidates = EXTERNAL_CANDIDATES[kind]
             binary = None
             for candidate in candidates:
                 binary = shutil.which(candidate)
@@ -155,10 +156,14 @@ def main():
     p.add_argument("--output")
     a=p.parse_args()
     if a.capabilities:
-        print(json.dumps({"formats":list(FORMATS),
-          "ALL":"virtual_index","7Z":bool(shutil.which("7z") or shutil.which("7zz")),
-          "RAR":bool(shutil.which("7z") or shutil.which("7zz")),
-          "LR":bool(shutil.which("lrzip"))}));return
+        print(json.dumps({
+            "formats": list(FORMATS),
+            "ALL": "virtual_index",
+            "7Z": any(shutil.which(name) for name in EXTERNAL_CANDIDATES["7Z"]),
+            "RAR": any(shutil.which(name) for name in EXTERNAL_CANDIDATES["RAR"]),
+            "LR": any(shutil.which(name) for name in EXTERNAL_CANDIDATES["LR"]),
+        }))
+        return
     if a.fixture_test:
         with tempfile.TemporaryDirectory() as dir:
             d=Path(dir);contents=b"safe example"
