@@ -1,9 +1,9 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T19:48:53.412Z",
-  "updated_at_local": "2026-10-26T02:48:53.412+07:00",
-  "timestamp_basis": "updated_at follows the latest provider evidence-row creation timestamp, not the host event time or GitHub commit time. Row 408 provider createdAt is 2026-10-25T19:48:53.412Z; its direct host sample is separately sourced at 2026-10-26T02:42:57.0600055+07:00. No provider-host clock offset is inferred.",
+  "updated_at_utc": "2026-10-25T19:54:37.095Z",
+  "updated_at_local": "2026-10-26T02:54:37.095+07:00",
+  "timestamp_basis": "updated_at follows the latest provider route-status row creation timestamp, not the host event time or GitHub commit time. Row 409 provider createdAt is 2026-10-25T19:54:37.095Z; latest direct host sample is separately sourced at 2026-10-26T02:42:57.0600055+07:00. No provider-host clock offset is inferred.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0253ICT.json",
     "blob_sha": "2c159a61c02b64458f2b0396c3aeaeb886f263ab",
@@ -45,6 +45,27 @@
       "evidence_row_id": 408,
       "history_preserved": true,
       "tasks_closed": 0
+    },
+    {
+      "type": "REMOTE_ROUTE_STATUS_ROW_409",
+      "evidence_row_id": 409,
+      "event_id": "X20261025195301000_REMOTE_ROUTE_STATUS",
+      "provider_created_at_utc": "2026-10-25T19:54:37.095Z",
+      "state": "REMOTE_ROUTE_OFFLINE_IN_CURRENT_DEVICE_INVENTORIES_HOST_HEARTBEAT_NOT_PROBED",
+      "physical_host_offline_proven": false,
+      "latest_host_evidence_row_id": 408,
+      "no_post_due_host_readback_available": true
+    },
+    {
+      "type": "TASK_POINTER_AND_LEDGER_RECONCILIATION_0259",
+      "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0259ICT.json",
+      "checkpoint_blob_sha": "aaf77692de41c22961b6b784156286ea31600fd5",
+      "checkpoint_commit": "1718f7373458cde5261523a7415b7c8800d36a3f",
+      "task_pointer_blob_sha": "3800711079df71dae41adc4576069c3bbe9d2eb7",
+      "task_ledger_blob_sha": "fbfd052c70d22cefe8939d7a225a299e01067777",
+      "modual_blob_sha": "8349921f11a0baf415c0256a35701822e55c6d2e",
+      "reentry_blob_sha": "3fd12dd81368b927723db9ee4f6960470078523b",
+      "tasks_closed": 0
     }
   ],
   "n8n": {
@@ -56,7 +77,7 @@
     "latest_host_evidence_row_id": 408,
     "latest_route_inventory_evidence_row_id": 409,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 408,
+    "evidence_table_rows": 409,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
     "recovery_rows": 45,
@@ -64,12 +85,15 @@
     "terminal_rows": 0,
     "tasks_closed": 0,
     "host_heartbeat_probed_by_workflow": false,
-    "recovery_row_2_status_stale": true
+    "recovery_row_2_status_stale": true,
+    "latest_route_status_row_id": 409,
+    "host_heartbeat_probed": false,
+    "pending_rows": 45
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
     "expected_direct_read_device_id": "59f03001-c732-403e-b80c-b4191266809c",
-    "route_status": "ONLINE_BY_LATEST_DIRECT_READONLY_EVIDENCE_ROW_408",
+    "route_status": "REMOTE_ROUTE_OFFLINE_IN_CURRENT_DEVICE_INVENTORIES_HOST_HEARTBEAT_NOT_PROBED",
     "host_power_state": "NOT_VERIFIED",
     "host_heartbeat": "NOT_PROBED",
     "latest_direct_readback_local": "2026-10-26T02:42:57.0600055+07:00",
@@ -87,7 +111,13 @@
     "last_run_local_host_clock": "2026-10-26T02:41:33+07:00",
     "next_run_local_host_clock_at_row_408": "2026-10-26T02:46:32+07:00",
     "last_result": 0,
-    "missed_runs": 0
+    "missed_runs": 0,
+    "physical_host_offline_proven": false,
+    "latest_host_evidence_row_id": 408,
+    "latest_route_status_row_id": 409,
+    "post_due_host_readback_available": false,
+    "current_inventory_route_unavailable": true,
+    "route_status_evidence_row_id": 409
   },
   "unresolved": {
     "historical_zip_task": "SV-20261020-02",
@@ -105,8 +135,8 @@
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "task_ledger_blob_sha": "edf24d99954e8ac12e3ea62354e7c42a72c17d7a",
-    "task_ledger_size_bytes": 1198774,
+    "task_ledger_blob_sha": "fbfd052c70d22cefe8939d7a225a299e01067777",
+    "task_ledger_size_bytes": 1213279,
     "task_count_last_verified": 29,
     "task_count_current": 29,
     "tasks_closed": 0,
@@ -121,10 +151,11 @@
     "pr36_behind_by_at_readback": 165,
     "compare_precedes_this_checkpoint_commit": true,
     "pr36_merge_or_force_push": false,
-    "task_pointer_blob_sha": "ba8667fd9429403239a14b1dda0769a41b8ac6ca",
-    "provider_checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0253ICT.json",
-    "provider_checkpoint_blob_sha": "4852d7e8724a074746be7d62abb6c6a56fd0fc99",
-    "provider_checkpoint_commit_sha": "3c5f779f94f39876f778b44d7e4a37e7ab32cb4f"
+    "task_pointer_blob_sha": "3800711079df71dae41adc4576069c3bbe9d2eb7",
+    "provider_checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0259ICT.json",
+    "provider_checkpoint_blob_sha": "aaf77692de41c22961b6b784156286ea31600fd5",
+    "provider_checkpoint_commit_sha": "1718f7373458cde5261523a7415b7c8800d36a3f",
+    "reentry_blob_sha": "3fd12dd81368b927723db9ee4f6960470078523b"
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -140,27 +171,30 @@
     "tasks_closed": 0
   },
   "next": [
-    "Re-probe after the host-clock 2026-10-26T02:46:32+07:00 boundary. Row 408 is the latest verified host evidence at 02:42:57+07; no newer host evidence row was returned in this provider-table read. Do not infer host-offline or tick success from the connector error.",
-    "When an authorized host route is available, exact-read the newest Tick and consumer receipts and recompute the direct CSV SHA-256; keep live sensor stream UNVERIFIED until timestamps advance.",
-    "Keep the exact 89,814,328-byte MODUAL bulk source unresolved; continue targeted W-drive search without substituting the 35,389,440-byte Dropbox object or mismatched candidate.",
-    "Keep Archive PR #36 and TESSERACT PR #6 OPEN/Draft; no merge/force-push and no CI rerun without a verified runner/issuer change.",
-    "Keep all 29 tasks nonterminal; all 45 recovery rows remain pending."
+    "Route-status row 409 at 02:53:01+07 says the configured device inventories are offline and the expected device ID is absent; this is route unavailability, not physical-host-offline proof. Latest direct host evidence remains row 408 at 02:42:57+07; no post-02:46:32+07 host readback is available. Reacquire an authorized route and exact-read the next Tick/consumer/source SHA.",
+    "Continue exact-target search for the 89,814,328-byte canonical bulk file without substituting the 35,389,440-byte Dropbox source or mismatched W-drive candidate.",
+    "Keep Archive PR #36 OPEN/Draft; checks and fixture artifact verified, but diverged 10 ahead/172 behind; no merge/force-push.",
+    "Continue TESSERACT issuer public-key provenance and runner assignment investigation; no CI rerun until a verified change.",
+    "Keep all 29 tasks nonterminal; n8n has 45 pending recovery rows, none terminal. Recovery row 2 retains stale pre-verification fields; third Project carrier raw access is not authorized."
   ],
   "modual_control_state": {
     "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
-    "blob_sha": "212e8da764a96d251ca579765a269778abcc0eab",
-    "commit_sha": "577ee154e57d104153e69d2d0eaedf3971e37f05",
-    "last_recorded_tick_id": "WINDOWS_TICK_20261025T194139692375Z",
+    "blob_sha": "8349921f11a0baf415c0256a35701822e55c6d2e",
+    "commit_sha": "f9cfeb717e6528dee5d3265db3ea364d0a8110d3",
     "latest_host_evidence_row_id": 408,
-    "state_file_lag_vs_latest_host_evidence": "Row 408 is recorded in MODUAL_PARAMETER_CURRENT; no later host evidence row was returned by the provider-table read at checkpoint time."
+    "latest_route_status_row_id": 409,
+    "last_recorded_tick_id": "WINDOWS_TICK_20261025T194139692375Z",
+    "state_file_lag_vs_latest_host_evidence": "Row 408 is recorded in MODUAL_PARAMETER_CURRENT; row 409 is route-status-only and does not represent a newer host tick."
   },
   "provider_checkpoint_reconciliation": {
-    "canonical_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0253ICT.json",
-    "canonical_checkpoint_blob_sha": "4852d7e8724a074746be7d62abb6c6a56fd0fc99",
+    "canonical_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0259ICT.json",
+    "canonical_checkpoint_blob_sha": "aaf77692de41c22961b6b784156286ea31600fd5",
     "misnamed_historical_artifacts_preserved": [
       "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0247ICT.json",
       "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0250ICT.json"
     ],
+    "latest_host_evidence_row_id": 408,
+    "latest_route_status_row_id": 409,
     "tasks_closed": 0
   }
 }
