@@ -1,17 +1,35 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-25T19:02:35.227442+07:00",
+  "observed_at": "2026-10-25T22:54:11.839+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
   "bulk": {
     "name": "_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
     "role": "MODUAL_BULK_LOCAL_SOURCE",
-    "exists": true,
+    "exists": false,
     "source_path": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
     "bytes": 89814328,
     "modified_at": "2026-10-09T19:30:05.852492+07:00",
-    "sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3"
+    "sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "last_known_fingerprint": {
+      "bytes": 89814328,
+      "sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+      "modified_at": "2026-10-09T19:30:05.852492+07:00",
+      "semantics": "LAST_KNOWN_EXPECTED_FINGERPRINT_NOT_CURRENT_READBACK"
+    },
+    "fingerprint_semantics": "LAST_KNOWN_EXPECTED_FINGERPRINT_NOT_CURRENT_READBACK",
+    "last_direct_readback": {
+      "observed_at": "2026-10-25T22:54:11.839+07:00",
+      "canonical_path": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+      "exists": false,
+      "expected_bytes": 89814328,
+      "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+      "direct_test_path_on_D": false,
+      "w_drive_targeted_search_results": 0,
+      "w_drive_search_exhaustive": false,
+      "source_substitution_performed": false
+    }
   },
   "live": {
     "name": "_SESORIMOTOR__{WINDOWS)__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
@@ -11851,6 +11869,21 @@
         "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED"
       },
       "tasks_closed": 0
+    },
+    {
+      "id": "PROVIDER_READBACK_20261025T2250ICT",
+      "observed_at": "2026-10-25T22:54:11.839+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T2250ICT.json",
+      "checkpoint_blob_sha": "f611586c3693dc20cf565be05357253db312ca04",
+      "checkpoint_commit": "a51de0788cc55050a051290f83e117e3b61d2e3b",
+      "windows_tick_sha256": "a0eb3f09689252e13cbe647bfbf119112536118765a63c3552b0a3b1eeec2301",
+      "consumer_sha256": "456364f1203e7f5ced9da275c3a2aff58cf5cb6f89d9722d11abc1897d881a51",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_stream_verified": false,
+      "zip_raw_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+      "zip_raw_hash_match": true,
+      "zip_evidence_row_id": 386,
+      "tasks_closed": 0
     }
   ],
   "privacy_policy": {
@@ -15466,5 +15499,254 @@
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
     "source_bytes_modified": false,
     "tasks_closed": 0
+  },
+  "latest_integrity_correction_20261025T2250ICT": {
+    "id": "MODUAL_BULK_EXISTS_FLAG_CORRECTION_20261025T2250ICT",
+    "observed_at": "2026-10-25T22:54:11.839+07:00",
+    "target": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json#/bulk/exists",
+    "prior_value": true,
+    "corrected_value": false,
+    "evidence": {
+      "direct_test_path_on_D": false,
+      "w_drive_targeted_search_results": 0,
+      "w_drive_search_exhaustive": false
+    },
+    "reason": "Canonical D-drive path was directly absent; the previous true flag conflicted with the last direct probe. Preserve last-known expected bytes/hash; do not claim exhaustive absence on W and do not substitute candidates.",
+    "history_preserved": true,
+    "source_substitution_performed": false,
+    "tasks_closed": 0
+  },
+  "latest_runtime_probe_20261025T2250ICT": {
+    "observed_at": "2026-10-25T22:54:11.839+07:00",
+    "host": "DESKTOP-86ITNQ4",
+    "host_online": true,
+    "task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "enabled": true,
+      "state": "Ready",
+      "last_run_local": "2026-10-25T22:41:33+07:00",
+      "next_run_local": "2026-10-25T22:46:32+07:00",
+      "last_result": "0x0",
+      "missed_runs": 0
+    },
+    "latest_tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T154138354350Z.json",
+      "observed_at_utc": "2026-10-25T15:41:38.354350Z",
+      "bytes": 1635,
+      "sha256": "a0eb3f09689252e13cbe647bfbf119112536118765a63c3552b0a3b1eeec2301",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "sensor_count": 4,
+      "sensors_advanced": [],
+      "live_sensor_reading_confirmed": false,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false
+    },
+    "latest_consumer_receipt": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T154135477Z.json",
+      "observed_at_utc": "2026-10-25T15:41:38.4562830Z",
+      "bytes": 6945,
+      "sha256": "456364f1203e7f5ced9da275c3a2aff58cf5cb6f89d9722d11abc1897d881a51",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_content_hash_verified": true,
+      "consumer_hash_matches_verifier": true,
+      "live_sensor_reading_confirmed": false,
+      "raw_rows_emitted": false,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "recomputed_this_turn": true,
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z"
+    },
+    "source_bytes_modified": false,
+    "cloud_export_enabled": false,
+    "github_export_enabled": false
+  },
+  "latest_sensor_stream_probe_20261025T2250ICT": {
+    "observed_at": "2026-10-25T22:54:11.839+07:00",
+    "usb_target": "1056285",
+    "usb_state": "device",
+    "sensorservice_probe_succeeded": true,
+    "sensor_timestamp_count": 4,
+    "sensors_advanced": [],
+    "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "wireless_target": "192.168.1.14:5556",
+    "wireless_state": "NOT_LISTED",
+    "live_sensor_reading_confirmed": false,
+    "production_continuous_stream_verified": false,
+    "raw_sensor_values_persisted": false
+  },
+  "latest_braid_probe_20261025T2250ICT": {
+    "observed_at": "2026-10-25T22:54:11.839+07:00",
+    "six_receipt_sha256": "248b5406edaead0c45f5e38d4e3547b66af8f32e1ad0e64e1c906d55c5493e91",
+    "plural_receipt_sha256": "81b438446fdf7cc9b070c80ddcec2993a27b89d200da35687808c6149652f7c0",
+    "six_actions": 9,
+    "plural_actions": 5,
+    "source_sha256_unchanged": true,
+    "mutation_executed": false,
+    "exact_readback": true,
+    "cloud_host_wiring": "NOT_VERIFIED"
+  },
+  "latest_provider_readback_20261025T2250ICT": {
+    "id": "PROVIDER_READBACK_20261025T2250ICT",
+    "observed_at": "2026-10-25T22:54:11.839+07:00",
+    "source": "Fresh canonical GitHub state + direct Windows Tick/consumer/source hash + Dropbox CSV metadata + Dropbox raw ZIP GET/hash + Braid + n8n exact rows + Archive/TESSERACT workflow readback",
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T2250ICT.json",
+    "checkpoint_blob_sha": "f611586c3693dc20cf565be05357253db312ca04",
+    "checkpoint_commit": "a51de0788cc55050a051290f83e117e3b61d2e3b",
+    "source_reads": {
+      "agents": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "reentry": "2909008b3c5b8ffbd1582e68b13760cd737650b6",
+      "pointer": "7f2a60bcd90f092de5223bc432725ae803e4d85f",
+      "ledger": "344e3e3ea66b75cde13d1b7b48d09f408fddb836",
+      "modual": "b3bcec691a8b41cc5d86568cd549d84ebc1db0f9",
+      "cloudPointer": "964b3783f5837750b659c4da93e65efac87a32dc",
+      "providerCheckpoint": {
+        "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T2250ICT.json",
+        "blob": "f611586c3693dc20cf565be05357253db312ca04",
+        "commit": "a51de0788cc55050a051290f83e117e3b61d2e3b"
+      },
+      "cloudCheckpoint": {
+        "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2250ICT.json",
+        "blob": "8bafd390d5055127273621f5cbebf0efe7f469b8",
+        "commit": "327783377a2e4c1a13f46b7d5bb1376f76752bfd"
+      }
+    },
+    "tick_receipt_sha256": "a0eb3f09689252e13cbe647bfbf119112536118765a63c3552b0a3b1eeec2301",
+    "consumer_receipt_sha256": "456364f1203e7f5ced9da275c3a2aff58cf5cb6f89d9722d11abc1897d881a51",
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_bytes": 35389440,
+    "live_sensor_stream_verified": false,
+    "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "exact_bulk_target_found": false,
+    "bulk_target_search": {
+      "pathD": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+      "direct_test_path_on_D": false,
+      "expected_size_bytes": 89814328,
+      "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+      "w_drive_path": "W:\\Drive của tôi",
+      "w_search_completed": true,
+      "w_search_results": 0,
+      "w_search_completeness": "TOOL_WARNED_RESULTS_MAY_BE_INCOMPLETE",
+      "substitution_performed": false
+    },
+    "zip_raw_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+    "zip_raw_hash_match": true,
+    "zip_evidence_row_id": 386,
+    "n8n_execution_id": "169",
+    "n8n_cloud_row_id": 381,
+    "n8n_state": "OPEN_WORK_REMAINS",
+    "recovery_rows": 45,
+    "tasks_closed": 0,
+    "archive_pr36": {
+      "status": "OPEN_DRAFT_UNMERGED",
+      "ahead_by": 8,
+      "behind_by": 90,
+      "ci_success_for_commit_e9c299": true
+    },
+    "tesseract_pr6": {
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "runs_failed": [
+        39994207477,
+        39994207667
+      ],
+      "issuer_public_key_verified": false,
+      "runner_assignment_verified": false,
+      "ci_rerun": false
+    },
+    "carrier_log_size_bytes": 6424081035,
+    "carrier_log_last_write_utc": "2026-10-25T15:41:37Z",
+    "previous_latest_id": "PROVIDER_READBACK_202610251902ICT"
+  },
+  "latest_cloud_continuity_readback_20261025T2250ICT": {
+    "observed_at": "2026-10-25T22:54:11.839+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2250ICT.json",
+    "checkpoint_blob_sha": "8bafd390d5055127273621f5cbebf0efe7f469b8",
+    "checkpoint_commit": "327783377a2e4c1a13f46b7d5bb1376f76752bfd",
+    "execution_id": "169",
+    "cloud_row_id": 381,
+    "host_row_id": 384,
+    "zip_hash_row_id": 386,
+    "host_heartbeat_probed_by_workflow": false,
+    "tasks_closed": 0
+  },
+  "latest_zip_raw_readback_20261025T2250ICT": {
+    "id": "DROPBOX_RAW_ZIP_READBACK_20261025T2250ICT",
+    "observed_at": "2026-10-25T22:54:11.839+07:00",
+    "source": "Authenticated Dropbox single-use direct GET on authorized Windows host; SHA-256 and ZIP member streams verified in memory",
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T2250ICT.json",
+    "checkpoint_blob_sha": "f611586c3693dc20cf565be05357253db312ca04",
+    "checkpoint_commit": "a51de0788cc55050a051290f83e117e3b61d2e3b",
+    "provider_id": "id:gvG29tEleJwAAAAAAAACLA",
+    "revision": "0165daa5e44669e0000000395cdfd73",
+    "path": "/Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT/SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip",
+    "size_bytes": 20882,
+    "raw_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+    "expected_raw_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+    "raw_hash_match": true,
+    "zip_members": 16,
+    "expanded_bytes": 28345,
+    "unsafe_member_paths": 0,
+    "local_file_written": false,
+    "github_upload": false,
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_row_id": 386,
+    "task_remains_open": true
+  },
+  "latest_archive_pr36_readback_20261025T2250ICT": {
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+    "branch": "fix/archive-adapters-main-recut-20261025T1534ICT",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "main_head": "b975f84703e0b92756aa6e0db70da804d8a4c6f1",
+    "compare_status": "diverged",
+    "ahead_by": 8,
+    "behind_by": 90,
+    "workflow_runs_for_commit_e9c299": [
+      40177456089,
+      40177456127,
+      40177456080
+    ],
+    "all_success": true,
+    "current_pr_head_sha_confirmed_this_turn": false,
+    "merge_or_force_push": false
+  },
+  "latest_tesseract_status_readback_20261025T2250ICT": {
+    "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "runs": [
+      {
+        "id": 39994207477,
+        "conclusion": "failure"
+      },
+      {
+        "id": 39994207667,
+        "conclusion": "failure"
+      }
+    ],
+    "issuer_public_key_verified": false,
+    "runner_assignment_verified": false,
+    "rerun_performed": false
+  },
+  "latest_exact_target_search_20261025T2250ICT": {
+    "pathD": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+    "direct_test_path_on_D": false,
+    "expected_size_bytes": 89814328,
+    "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "w_drive_path": "W:\\Drive của tôi",
+    "w_search_completed": true,
+    "w_search_results": 0,
+    "w_search_completeness": "TOOL_WARNED_RESULTS_MAY_BE_INCOMPLETE",
+    "substitution_performed": false
   }
 }
