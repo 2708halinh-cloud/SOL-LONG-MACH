@@ -54,15 +54,6 @@ def adapter_available(kind):
 
 def inspect(path):
     path=Path(path)
-    out={"schema":"SOL_ARCHIVE_10_FORMATS_V1","basename":path.name,
-      "bytes":path.stat().st_size,"sha256":sha(path),"detected":fmt(path),
-      "stamp_old_candidates":stamp(path.name),"account":"ACCOUNT_UNVERIFIED",
-      "sensitive_data_copied":False,"extraction_performed":False,
-      "adapter":None,"status":"UNSUPPORTED","member_count":None,
-      "expanded_bytes":None,"error_code":None}
-    kind=out["detected"]
-def inspect(path):
-    path=Path(path)
     out={
         "schema":"SOL_ARCHIVE_10_FORMATS_V1",
         "basename":path.name,
