@@ -1,14 +1,14 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T06:29:10.237Z",
-  "updated_at_local": "2026-10-25T13:29:10+07:00",
+  "updated_at_utc": "2026-10-25T07:18:23.122Z",
+  "updated_at_local": "2026-10-25T14:18:23+07:00",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1329ICT.json",
-    "blob_sha": "4b12ed402785de1526a7cd4ab9ef22afb7f690af",
-    "commit_sha": "98a3037e17bfb9d1fa14452d6ceb049526a90cd2",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1418ICT.json",
+    "blob_sha": "2435f3c09e1a7ee1e29e0107745af8816db08f08",
+    "commit_sha": "fce3540e57869844cd4c45015cea2a13171ed985",
     "readback_verified": true,
-    "note": "Fetched back and JSON-compared exactly. Includes n8n evidence row 340 and the post-schedule Windows tick receipt; all OPEN/IN_PROGRESS task states preserved."
+    "note": "Fetched back and JSON-parsed exactly; includes n8n evidence row 342 and direct read-only host scheduler/tick readback. All OPEN/IN_PROGRESS task states preserved."
   },
   "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1326ICT.json",
@@ -21,15 +21,15 @@
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
-    "latest_execution_id": "159",
+    "latest_execution_id": "160",
     "latest_execution_status": "success",
     "latest_execution_mode": "trigger",
-    "latest_execution_started_at_utc": "2026-10-25T06:00:22.076Z",
-    "latest_execution_stopped_at_utc": "2026-10-25T06:00:24.337Z",
+    "latest_execution_started_at_utc": "2026-10-25T07:00:22.083Z",
+    "latest_execution_stopped_at_utc": "2026-10-25T07:00:24.221Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 340,
-    "latest_host_evidence_row_id": 340,
-    "latest_host_event_id": "X20261025062248867_HOST_READBACK",
+    "evidence_table_rows": 342,
+    "latest_host_evidence_row_id": 342,
+    "latest_host_event_id": "X20261025141135922_HOST_READBACK",
     "latest_host_row_exact_readback": true,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
@@ -37,19 +37,19 @@
     "unfinished_rows": 45,
     "tasks_closed": 0,
     "host_heartbeat_probed_by_workflow": false,
-    "interpretation": "Execution 159 is cloud-only; direct host readback is separate evidence row 340.",
-    "latest_cloud_evidence_row_id": 338,
-    "latest_cloud_event_id": "X20261025060024145_CLOUD",
+    "interpretation": "Execution 160 is cloud-only; direct host readback is separate evidence row 342.",
+    "latest_cloud_evidence_row_id": 341,
+    "latest_cloud_event_id": "X20261025070024074_CLOUD",
     "terminal_rows": 0
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
     "route": "Remote Desktop Commander",
     "route_online_for_read_only_probe": true,
-    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T062139682265Z.json",
-    "latest_tick_sha256": "EF9C7E2C850C71D8DC3270457FA15885F6F2C54A4A85C8C3C5C373D2F22C0AE2",
-    "latest_tick_observed_at_utc": "2026-10-25T06:21:39.682265Z",
-    "previous_tick_sha256": "73B08089B36BEE7966CE8F20D8918D4A689E7720A05028BEEC43F92A99979BCF",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T070638954745Z.json",
+    "latest_tick_sha256": "CBC8EAD9CDA49F0FEE52E328A7951F5C9E59711DA4AF8058BACDCAECDB550B05",
+    "latest_tick_observed_at_utc": "2026-10-25T07:06:38.954745Z",
+    "previous_tick_sha256": "EF9C7E2C850C71D8DC3270457FA15885F6F2C54A4A85C8C3C5C373D2F22C0AE2",
     "trace_sha256": "0DA7298F9BE1FA1043974C89D310A27AB73D8DB210839D35A632E11F490875AC",
     "trace_receipt_readback_ok": true,
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
@@ -68,22 +68,15 @@
     },
     "scheduled_task": {
       "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
-      "state": "Ready",
+      "state": "Running",
       "enabled": true,
-      "last_run_local": "2026-10-25T13:21:33+07:00",
-      "last_result": 0,
-      "next_run_local": "2026-10-25T13:26:32+07:00",
+      "last_run_local": "2026-10-25T14:11:33+07:00",
+      "last_result": "0x41301",
+      "next_run_local": "2026-10-25T14:16:32+07:00",
       "repeat_interval": "PT5M",
       "execution_time_limit": "PT4M",
-      "multiple_instances_policy": "IgnoreNew",
-      "start_when_available": true,
-      "disallow_start_if_on_batteries": true,
-      "stop_if_going_on_batteries": true,
-      "logon_type": "InteractiveToken",
-      "host_now_at_probe": "2026-10-25T13:22:48.8676668+07:00",
-      "next_run_was_future_at_probe": true,
-      "missed_runs": 0,
-      "clock_skew_guard": "Use host clock; probe preceded the next scheduled run."
+      "host_now_at_probe": "2026-10-25T14:11:35.9229637+07:00",
+      "interpretation": "Task had just started at probe; no failure inferred and no process terminated."
     },
     "exact_modual_source_found": false,
     "expected_modual_source_bytes": 89814328,
@@ -97,8 +90,8 @@
     "latest_checkpoint_host_probe_local": "2026-10-25T11:23:45.9126701+07:00",
     "next_run_at_last_probe": "2026-10-25T11:26:32+07:00",
     "fresh_host_probe_this_run": true,
-    "interpretation": "The host due time has passed relative to this checkpoint, but no host connector was callable; do not classify the tick as missed or infer live sensor state.",
-    "latest_host_probe_local": "2026-10-25T13:22:48.8676668+07:00"
+    "interpretation": "Host clock governs scheduler decisions. The current task was Running within its execution limit at the last probe; tick had not advanced yet. Sensor stream remains unverified.",
+    "latest_host_probe_local": "2026-10-25T14:11:35.9229637+07:00"
   },
   "github_task_ledger": {
     "task_count": 29,
@@ -110,11 +103,11 @@
       "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
       "IN_PROGRESS": 3
     },
-    "observed_at_local": "2026-10-25T13:29:10+07:00",
+    "observed_at_local": "2026-10-25T14:18:23+07:00",
     "ledger_blob_sha": "a946a1a563229e83557a120ebe143470a9371953",
     "blob_sha": "a946a1a563229e83557a120ebe143470a9371953",
     "blob_sha_rechecked_in_this_run": true,
-    "parsed_task_counts_last_verified_at_local": "2026-10-25T13:29:10+07:00",
+    "parsed_task_counts_last_verified_at_local": "2026-10-25T14:18:23+07:00",
     "current_default_branch_fetch": {
       "blob_sha": "a946a1a563229e83557a120ebe143470a9371953",
       "fetch_file_content_length": 0,
@@ -150,13 +143,20 @@
     "tasks_closed": 0
   },
   "next": [
-    "Re-read the host after host-local 2026-10-25 13:26:32 ICT using host time; do not infer a missed run from cloud time.",
+    "Re-read the host after host-local 2026-10-25 14:16:32 ICT scheduled boundary; do not infer a missed run from cloud time. If still Running, assess against PT4M from host LastRunTime without terminating it.",
     "Keep sensor stream UNVERIFIED until event timestamps advance; Redmi target remains NOT_LISTED.",
     "Locate exact MODUAL source by expected SHA-256 and size; do not substitute windows_SENSON.CSV.",
     "Continue cloud-safe source identity, provider metadata, and GitHub-only verification; do not claim runtime work that was not executed.",
     "Preserve all 29 GitHub tasks and 45 n8n recovery rows as nonterminal."
   ],
   "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1418ICT.json",
+      "blob_sha": "2435f3c09e1a7ee1e29e0107745af8816db08f08",
+      "commit_sha": "fce3540e57869844cd4c45015cea2a13171ed985",
+      "readback_verified": true,
+      "note": "Fresh n8n row 342 exact readback and direct Remote Desktop Commander host tick/task probe; no task closure."
+    },
     {
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1329ICT.json",
       "blob_sha": "4b12ed402785de1526a7cd4ab9ef22afb7f690af",
