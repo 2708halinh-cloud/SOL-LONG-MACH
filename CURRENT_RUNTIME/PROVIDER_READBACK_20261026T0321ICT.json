@@ -1,0 +1,245 @@
+{
+  "id": "PROVIDER_READBACK_20261026T0321ICT",
+  "observed_at": "2026-10-26T03:21:08.5205915+07:00",
+  "observed_at_local": "2026-10-26T03:21:08.5205915+07:00",
+  "observed_at_utc": "2026-10-25T20:21:08.5205915Z",
+  "source": "Fresh GitHub canonical state and provider reads; direct Windows Tick/consumer/source-hash readback; read-only SensorService active-registration diagnostic; Dropbox metadata; n8n execution/row; Archive PR #36 checks/divergence; TESSERACT PR #6 job readback; exact bulk-target candidate fingerprint.",
+  "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0321ICT.json",
+  "main_head_before_checkpoint": "34607d160436f30a40f19e68b6138aa14fd98d4c",
+  "canonical_reads_before_update": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "readback_verified": true
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "3fd12dd81368b927723db9ee4f6960470078523b",
+      "readback_verified": true
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "3800711079df71dae41adc4576069c3bbe9d2eb7",
+      "raw_github_blob_parsed": true,
+      "checkpoint_before": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0259ICT.json",
+      "commit_before": "1718f7373458cde5261523a7415b7c8800d36a3f",
+      "updated_at_before": "2026-10-26T02:59:53.771+07:00"
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "fbfd052c70d22cefe8939d7a225a299e01067777",
+      "raw_github_blob_parsed": true,
+      "task_count": 29,
+      "verified_action_events": 178,
+      "provider_observation_history": 178,
+      "provider_observations": 178,
+      "integrity_corrections": 7,
+      "current_status": "PARTIALLY_EXECUTED_ALL_OPEN_RETAINED"
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "blob_sha": "8349921f11a0baf415c0256a35701822e55c6d2e",
+      "readback_verified": true
+    }
+  },
+  "dropbox_outlook": {
+    "metadata_readback_this_turn": true,
+    "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "size_bytes": 35389440,
+    "client_modified_utc": "2026-10-14T00:15:21Z",
+    "server_modified_utc": "2026-10-14T00:20:03Z",
+    "raw_bytes_downloaded": false,
+    "content_sha256_recomputed_from_dropbox_bytes": false
+  },
+  "windows_host": {
+    "device_name": "DESKTOP-86ITNQ4",
+    "host_clock_local_at_latest_readback": "2026-10-26T03:21:08.5205915+07:00",
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T03:16:33+07:00",
+      "next_run_local_at_readback": "2026-10-26T03:21:32+07:00",
+      "last_result": 0,
+      "missed_runs": 0
+    },
+    "tick": {
+      "path": "D:\\\\SENSOR_LOGS\\\\state\\\\WINDOWS_TICK_20261025T201640133922Z.json",
+      "sha256": "29C08371DC884B17F71F1EF658830EA03F4D0BC2A87B225D167AACEE4055856D",
+      "observed_at_utc": "2026-10-25T20:16:40.133922Z",
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "sensor_event_timestamp_sensor_count": 4,
+      "sensor_event_sensors_advanced": [],
+      "live_sensor_reading_confirmed": false,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "usb_adb_state": "device",
+      "wireless_adb_state": "NOT_LISTED"
+    },
+    "consumer": {
+      "path": "D:\\\\SENSOR_LOGS\\\\receipts\\\\telemetry_buffer_sync_20261025T201637031Z.json",
+      "sha256": "6D41C27E415A0C88B74C247866974B024AF2D2CF0A2794776FD19F2839BD70AD",
+      "observed_at_utc": "2026-10-25T20:16:40.2544702Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_content_hash_verified": true,
+      "consumer_hash_matches_verifier": true,
+      "raw_rows_emitted": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "source": {
+      "path": "D:\\\\SENSOR_LOGS\\\\windows_SENSON.CSV",
+      "size_bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "sha256_recomputed_at_local": "2026-10-26T03:21:08.5205915+07:00",
+      "matches_tick_and_consumer": true
+    },
+    "sensorservice_active_probe": {
+      "read_only": true,
+      "output_lines": 853,
+      "hardware_sensor_count": 56,
+      "active_connection_count": 7,
+      "direct_connection_count": 0,
+      "allowlisted_motion_light_targets_active": false,
+      "raw_sensor_payloads_emitted_or_persisted": false,
+      "finding": "Current probe compares dumpsys SensorService event timestamps but does not register a sensor listener; allowlisted motion/light targets were absent from Active sensors in the observed snapshot."
+    },
+    "wireless_adb_route": {
+      "target": "192.168.1.14:5556",
+      "tcp_reachable": false,
+      "adb_connect_attempted": true,
+      "attempted_at_local": "2026-10-26T03:10:36+07:00",
+      "result": "CONNECTION_TIMEOUT_10060",
+      "device_state": "NOT_LISTED"
+    }
+  },
+  "latest_route_status": {
+    "row_id": 409,
+    "event_id": "X20261025195301000_REMOTE_ROUTE_STATUS",
+    "occurred_at_utc": "2026-10-25T19:53:01Z",
+    "state": "REMOTE_ROUTE_OFFLINE_IN_CURRENT_DEVICE_INVENTORIES_HOST_HEARTBEAT_NOT_PROBED",
+    "interpretation": "Cloud route-status metadata only; direct Windows host access succeeded in this run."
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "execution_id": "174",
+    "status": "success",
+    "started_at_utc": "2026-10-25T20:00:22.080Z",
+    "finished_at_utc": "2026-10-25T20:00:24.125Z",
+    "event_id": "X20261025200023979_CLOUD",
+    "evidence_row_id": 410,
+    "row_created_at_utc": "2026-10-25T20:00:24.048Z",
+    "state": "OPEN_WORK_REMAINS",
+    "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "host_operations": 0,
+    "host_heartbeat_probed": false,
+    "tasks_closed": 0
+  },
+  "archive_pr36": {
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+    "state": "open",
+    "draft": true,
+    "head": "e414dfe673265447cd216a4535536e0a3099c90d",
+    "compare_base_head": "34607d160436f30a40f19e68b6138aa14fd98d4c",
+    "compare_status": "diverged",
+    "ahead_by": 10,
+    "behind_by": 178,
+    "workflow_runs": [
+      {
+        "id": 40212944628,
+        "name": "SOL Library Stone Topology",
+        "conclusion": "success"
+      },
+      {
+        "id": 40212944573,
+        "name": "High-Threshold Secret Exposure Guard",
+        "conclusion": "success"
+      },
+      {
+        "id": 40212944563,
+        "name": "SOL Archive Read-only Adapters",
+        "conclusion": "success"
+      }
+    ],
+    "all_current_head_checks_success": true,
+    "merged": false,
+    "force_push": false
+  },
+  "tesseract_pr6": {
+    "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+    "state": "open",
+    "draft": true,
+    "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+    "latest_observed_run_id": 40220813600,
+    "job_conclusions": {
+      "build_ubuntu": "failure",
+      "build_macos": "failure",
+      "build_windows": "failure",
+      "tesseract_os": "failure",
+      "selfhosted_windows_verify": "skipped",
+      "readback": "failure"
+    },
+    "issuer_public_key_verified": false,
+    "runner_assignment_verified": false,
+    "ci_rerun_performed": false
+  },
+  "exact_bulk_target": {
+    "expected_path": "D:\\\\SENSOR_LOGS\\\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+    "expected_size_bytes": 89814328,
+    "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "D_path_exists": false,
+    "W_search_completed": true,
+    "W_matches": [],
+    "C_candidate": {
+      "path": "C:\\Users\\halin\\CrossDevice\\Redmi Note 14 Pro 5G\\storage\\Outlook Dropbox\\PC NAY·ÀY\\Ổ ĐĨA D\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+      "size_bytes": 110480037,
+      "sha256": "A1B77DBDEAF71AB0B833055AD7E82ED8E9A4BEAFF36B1D5B4C52B0C76455CF2D",
+      "last_write_utc": "2026-10-13T01:47:30.1335696Z",
+      "expected_size_match": false,
+      "expected_sha256_match": false
+    },
+    "remaining_drive_search": {
+      "roots": [
+        "C:\\Users\\halin",
+        "E:\\",
+        "F:\\",
+        "G:\\"
+      ],
+      "status": "IN_PROGRESS",
+      "matches_so_far": 1,
+      "candidate_substituted": false,
+      "source_copied_or_moved": false
+    }
+  },
+  "carrier_log": {
+    "path": "G:\\\\OS_Workspace\\\\TESSERACT_OS\\\\runtime\\\\state\\\\carrier-events.jsonl",
+    "size_bytes": 6471687203,
+    "last_write_utc": "2026-10-25T20:20:41.8537434Z",
+    "G_free_bytes": 158260740096,
+    "D_free_bytes": 192480927744,
+    "retention_policy_verified": false,
+    "rotated": false,
+    "deleted": false
+  },
+  "source_mutated": false,
+  "source_moved_or_deleted": false,
+  "raw_sensor_data_exported": false,
+  "raw_sensor_values_emitted_or_persisted": false,
+  "credentials_written": false,
+  "cloud_export_enabled": false,
+  "github_sensor_export_enabled": false,
+  "tasks_closed": 0,
+  "history_preserved": true,
+  "exact_target_readback_required": true,
+  "result": "PARTIALLY_EXECUTED_ALL_OPEN_RETAINED",
+  "next_edges": [
+    "After the next scheduled Tick, read back the new receipt and verify whether the active sensor listener state changed; do not launch third-party sensor apps without an authorized local mutation route.",
+    "Continue the exact-target search across C/E/F/G; the 110480037-byte candidate is a confirmed mismatch and must not be substituted.",
+    "Keep the carrier-events log intact while its retention policy remains unverified.",
+    "Keep Archive PR #36 and TESSERACT PR #6 open; do not rerun CI without a verified runner/issuer change.",
+    "Continue issuer public-key and runner-assignment verification through an authorized GitHub settings route."
+  ],
+  "schema": "SOL_PROVIDER_READBACK/1.5"
+}
