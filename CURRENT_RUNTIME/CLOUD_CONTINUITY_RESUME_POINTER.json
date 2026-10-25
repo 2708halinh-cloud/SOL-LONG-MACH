@@ -1,9 +1,9 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T19:54:37.095Z",
-  "updated_at_local": "2026-10-26T02:54:37.095+07:00",
-  "timestamp_basis": "updated_at reflects provider-createdAt for the append-only route-status evidence row, not a host timestamp. The route inventory was observed at 2026-10-26T02:53:01+07:00. No host/provider clock offset is inferred.",
+  "updated_at_utc": "2026-10-25T19:48:53.412Z",
+  "updated_at_local": "2026-10-26T02:48:53.412+07:00",
+  "timestamp_basis": "updated_at follows the latest provider evidence-row creation timestamp, not the host event time or GitHub commit time. Row 408 provider createdAt is 2026-10-25T19:48:53.412Z; its direct host sample is separately sourced at 2026-10-26T02:42:57.0600055+07:00. No provider-host clock offset is inferred.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0253ICT.json",
     "blob_sha": "2c159a61c02b64458f2b0396c3aeaeb886f263ab",
@@ -24,6 +24,27 @@
       "observed_at_local": "2026-10-26T02:53:01+07:00",
       "state": "REMOTE_ROUTE_OFFLINE_IN_CURRENT_DEVICE_INVENTORIES_HOST_HEARTBEAT_NOT_PROBED",
       "readback_verified": true
+    },
+    {
+      "type": "MODUAL_CONTROL_STATE_UPDATE_ROW_408",
+      "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+      "blob_sha": "212e8da764a96d251ca579765a269778abcc0eab",
+      "commit_sha": "577ee154e57d104153e69d2d0eaedf3971e37f05",
+      "readback_verified": true,
+      "recorded_tick_id": "WINDOWS_TICK_20261025T194139692375Z",
+      "recorded_tick_sha256": "68d44436a21dbc5b01c6ada64bfeb37b9a8e70dafb485215a60181dfb8b96b38",
+      "evidence_row_id": 408
+    },
+    {
+      "type": "TASK_POINTER_AND_LEDGER_RECONCILIATION",
+      "provider_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0253ICT.json",
+      "checkpoint_blob_sha": "4852d7e8724a074746be7d62abb6c6a56fd0fc99",
+      "checkpoint_commit": "3c5f779f94f39876f778b44d7e4a37e7ab32cb4f",
+      "task_pointer_blob_sha": "ba8667fd9429403239a14b1dda0769a41b8ac6ca",
+      "task_ledger_blob_sha": "edf24d99954e8ac12e3ea62354e7c42a72c17d7a",
+      "evidence_row_id": 408,
+      "history_preserved": true,
+      "tasks_closed": 0
     }
   ],
   "n8n": {
@@ -35,7 +56,7 @@
     "latest_host_evidence_row_id": 408,
     "latest_route_inventory_evidence_row_id": 409,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 409,
+    "evidence_table_rows": 408,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
     "recovery_rows": 45,
@@ -48,7 +69,7 @@
   "host": {
     "device": "DESKTOP-86ITNQ4",
     "expected_direct_read_device_id": "59f03001-c732-403e-b80c-b4191266809c",
-    "route_status": "REMOTE_ROUTE_UNAVAILABLE_IN_CURRENT_DEVICE_INVENTORIES",
+    "route_status": "ONLINE_BY_LATEST_DIRECT_READONLY_EVIDENCE_ROW_408",
     "host_power_state": "NOT_VERIFIED",
     "host_heartbeat": "NOT_PROBED",
     "latest_direct_readback_local": "2026-10-26T02:42:57.0600055+07:00",
@@ -59,7 +80,14 @@
     "scheduler_next_run_local_at_last_sample": "2026-10-26T02:46:32+07:00",
     "post_due_tick_verified": false,
     "sensor_stream": "EVENT_TIMESTAMP_STALE",
-    "live_sensor_reading_confirmed": false
+    "live_sensor_reading_confirmed": false,
+    "host_clock_at_readback": "2026-10-26T02:42:57.0600055+07:00",
+    "consumer_receipt_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T194136705Z.json",
+    "consumer_receipt_sha256": "7083ff33997f5aff1c9e8d6d0ca90f980e53265c5d30395d6263d41d662b4fd7",
+    "last_run_local_host_clock": "2026-10-26T02:41:33+07:00",
+    "next_run_local_host_clock_at_row_408": "2026-10-26T02:46:32+07:00",
+    "last_result": 0,
+    "missed_runs": 0
   },
   "unresolved": {
     "historical_zip_task": "SV-20261020-02",
@@ -77,10 +105,10 @@
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "task_ledger_blob_sha": "4a89c826d25e99a5e464f6919550ebc7215eb83c",
-    "task_ledger_size_bytes": 1183396,
+    "task_ledger_blob_sha": "edf24d99954e8ac12e3ea62354e7c42a72c17d7a",
+    "task_ledger_size_bytes": 1198774,
     "task_count_last_verified": 29,
-    "task_count_current": null,
+    "task_count_current": 29,
     "tasks_closed": 0,
     "pr36_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
     "pr36_state": "OPEN",
@@ -92,7 +120,11 @@
     "pr36_ahead_by_at_readback": 10,
     "pr36_behind_by_at_readback": 165,
     "compare_precedes_this_checkpoint_commit": true,
-    "pr36_merge_or_force_push": false
+    "pr36_merge_or_force_push": false,
+    "task_pointer_blob_sha": "ba8667fd9429403239a14b1dda0769a41b8ac6ca",
+    "provider_checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0253ICT.json",
+    "provider_checkpoint_blob_sha": "4852d7e8724a074746be7d62abb6c6a56fd0fc99",
+    "provider_checkpoint_commit_sha": "3c5f779f94f39876f778b44d7e4a37e7ab32cb4f"
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -108,13 +140,27 @@
     "tasks_closed": 0
   },
   "next": [
-    "Re-probe the authorized Desktop Commander inventory; route unavailability is not proof that the host is powered off.",
-    "When the exact device is reachable, verify the post-02:46:32+07 host tick, consumer receipt, source SHA, scheduler result and missed runs.",
-    "Inspect the next scheduled n8n execution as cloud-only unless it explicitly probes the host.",
-    "Keep all 45 recovery rows nonterminal.",
-    "Keep SV-20261020-02 OPEN; raw ZIP SHA is verified, but third Project carrier authorization and future-sync/provenance remain unresolved. Recovery row 2 remains stale because no direct row-update action is exposed.",
-    "Keep exact MODUAL source unresolved; do not substitute mismatching candidates.",
-    "Re-read OPEN_TASKS_CURRENT.json through a content-returning route before recomputing current task count.",
-    "No Google Drive writes, process termination, cache/Meta.db deletion, source mutation, raw sensor export, merge or force-push."
-  ]
+    "Re-probe after the host-clock 2026-10-26T02:46:32+07:00 boundary. Row 408 is the latest verified host evidence at 02:42:57+07; no newer host evidence row was returned in this provider-table read. Do not infer host-offline or tick success from the connector error.",
+    "When an authorized host route is available, exact-read the newest Tick and consumer receipts and recompute the direct CSV SHA-256; keep live sensor stream UNVERIFIED until timestamps advance.",
+    "Keep the exact 89,814,328-byte MODUAL bulk source unresolved; continue targeted W-drive search without substituting the 35,389,440-byte Dropbox object or mismatched candidate.",
+    "Keep Archive PR #36 and TESSERACT PR #6 OPEN/Draft; no merge/force-push and no CI rerun without a verified runner/issuer change.",
+    "Keep all 29 tasks nonterminal; all 45 recovery rows remain pending."
+  ],
+  "modual_control_state": {
+    "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+    "blob_sha": "212e8da764a96d251ca579765a269778abcc0eab",
+    "commit_sha": "577ee154e57d104153e69d2d0eaedf3971e37f05",
+    "last_recorded_tick_id": "WINDOWS_TICK_20261025T194139692375Z",
+    "latest_host_evidence_row_id": 408,
+    "state_file_lag_vs_latest_host_evidence": "Row 408 is recorded in MODUAL_PARAMETER_CURRENT; no later host evidence row was returned by the provider-table read at checkpoint time."
+  },
+  "provider_checkpoint_reconciliation": {
+    "canonical_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0253ICT.json",
+    "canonical_checkpoint_blob_sha": "4852d7e8724a074746be7d62abb6c6a56fd0fc99",
+    "misnamed_historical_artifacts_preserved": [
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0247ICT.json",
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0250ICT.json"
+    ],
+    "tasks_closed": 0
+  }
 }
