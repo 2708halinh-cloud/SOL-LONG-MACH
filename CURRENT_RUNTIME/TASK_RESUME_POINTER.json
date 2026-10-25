@@ -90,7 +90,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "MODUAL: after 2026-10-25T02:31:32Z, exact-read the next scheduled Tick/consumer receipts and direct CSV SHA-256; require an allowlisted SensorService event timestamp to advance before confirming live. Archive: verified ZIP carrier and 15/15 internal payload hashes, but original JINEY/FUNIX/DAT NGUYEN export bytes and two MAP_NGUON IDs remain unresolved; PR #34 is 1 ahead/38 behind, no merge or force-push. TESSERACT PR #6 remains OPEN; do not rerun CI until issuer public-key provenance or runner assignment changes are verified.",
+  "next": "MODUAL: after 2026-10-25T02:31:32Z, exact-read the next scheduled Tick/consumer receipts and direct CSV SHA-256; require an allowlisted SensorService event timestamp to advance before confirming live. Archive: the last fresh compare against main head d6a6b88d66c452259b6b40e84ec89bbf55082170 showed PR #34 diverged 1 ahead/44 behind; main has advanced with subsequent state commits, so remeasure before any sync. Do not merge or force-push. Continue locating original JINEY/FUNIX/DAT NGUYEN export bytes and both MAP_NGUON IDs. TESSERACT PR #6 remains OPEN; do not rerun CI until issuer/runner change is verified.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -105,7 +105,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-25T09:26:38.8249306+07:00",
+  "updated_at": "2026-10-25T09:38:13.248+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -6808,6 +6808,28 @@
       "open_tasks_blob_sha": "065b56edc5aaec2974f2de2cd2b29e2a660d361f",
       "tasks_closed": 0,
       "result": "TICK_AND_CONSUMER_READBACK_OK; LIVE_SENSOR_STREAM_STALE; ZIP_CARRIER_HASH_AND_15_INTERNAL_HASHES_MATCH"
+    },
+    {
+      "id": "ARCHIVE_PR34_DIVERGENCE_READBACK_20261025T0930ICT",
+      "observed_at": "2026-10-25T09:38:13.248+07:00",
+      "observed_at_utc": "2026-10-25T02:38:13.248Z",
+      "main_head_at_compare": "d6a6b88d66c452259b6b40e84ec89bbf55082170",
+      "pr34_head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "compare_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 44,
+      "pr_state": "open",
+      "draft": true,
+      "checks_success": true,
+      "merged": false,
+      "force_push": false,
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
+      "checkpoint_blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
+      "checkpoint_commit": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
+      "open_tasks_commit": "0ba7d16ce54f5716e95189478060e42278fdd82e",
+      "open_tasks_blob_sha": "9281d3ae3540425e8640c3a9ed4793bf8d86e331",
+      "tasks_closed": 0,
+      "source": "Fresh GitHub compare_commits and PR metadata readback for Archive PR #34 after checkpoint state updates."
     }
   ],
   "latest_sync_observation": {
@@ -11927,6 +11949,24 @@
       "source_file_written": false,
       "source_file_moved_or_deleted": false,
       "result": "TICK_AND_CONSUMER_READBACK_VERIFIED; LIVE_SENSOR_STREAM_STALE; ZIP_CARRIER_HASH_AND_INTERNAL_MANIFEST_VERIFIED; ORIGINAL_EXPORTS_AND_MAP_IDS_STILL_OPEN"
+    },
+    {
+      "id": "ARCHIVE_PR34_DIVERGENCE_READBACK_20261025T0930ICT",
+      "observed_at": "2026-10-25T09:38:13.248+07:00",
+      "source": "Fresh PR #34 divergence readback against main head d6a6b88d66c452259b6b40e84ec89bbf55082170.",
+      "pr34_head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "main_head_at_compare": "d6a6b88d66c452259b6b40e84ec89bbf55082170",
+      "compare_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 44,
+      "pr_state": "open",
+      "draft": true,
+      "checks_success": true,
+      "merged": false,
+      "force_push": false,
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
+      "checkpoint_blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
+      "tasks_closed": 0
     }
   ],
   "latest_tesseract_runner_issuer_probe": {
@@ -12765,7 +12805,7 @@
     }
   ],
   "latest_archive_task_readback": {
-    "observed_at_utc": "2026-10-25T02:26:38.8249306Z",
+    "observed_at_utc": "2026-10-25T02:38:13.248Z",
     "pr_number": 34,
     "pr_state": "OPEN_DRAFT_UNMERGED",
     "ci_run_ids": [
@@ -12775,14 +12815,18 @@
     ],
     "checks_success": true,
     "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
-    "main_head_sha": "b6e81ce174a6e327786735f31b9f497221cfd9ac",
+    "main_head_sha": "d6a6b88d66c452259b6b40e84ec89bbf55082170",
     "ahead_by": 1,
-    "behind_by": 38,
+    "behind_by": 44,
     "source_zip_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
     "internal_manifest_payload_hashes_matched": 15,
     "internal_manifest_payload_hashes_total": 15,
     "real_7z_rar_lr_fixtures_verified": false,
-    "task_status": "OPEN"
+    "task_status": "OPEN",
+    "compare_status": "diverged",
+    "merged": false,
+    "force_push": false,
+    "original_export_targets_resolved": false
   },
   "last_security_branch_readback": {
     "observed_at": "2026-10-24T23:10:20+07:00",
@@ -12992,17 +13036,17 @@
     }
   ],
   "latest_provider_readback": {
-    "id": "PROVIDER_READBACK_20261025T0926ICT",
-    "observed_at": "2026-10-25T09:26:38.8249306+07:00",
+    "id": "ARCHIVE_PR34_DIVERGENCE_READBACK_20261025T0930ICT",
+    "observed_at": "2026-10-25T09:38:13.248+07:00",
     "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
     "checkpoint_blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
     "checkpoint_commit": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
     "modual_commit": "81f3807ab27c486de04dfedaeda21893b8e98c65",
     "modual_blob_sha": "90619357f9f0eb0b2bfdfb2ea3c5e705d524d8fd",
-    "open_tasks_commit": "483c0dd822663327fa68b113f2cf39f75f6b992b",
-    "open_tasks_blob_sha": "065b56edc5aaec2974f2de2cd2b29e2a660d361f",
+    "open_tasks_commit": "0ba7d16ce54f5716e95189478060e42278fdd82e",
+    "open_tasks_blob_sha": "9281d3ae3540425e8640c3a9ed4793bf8d86e331",
     "tasks_closed": 0,
-    "result": "TICK_AND_CONSUMER_READBACK_OK; LIVE_SENSOR_STREAM_STALE; ZIP_CARRIER_HASH_AND_15_INTERNAL_HASHES_MATCH; ALL_TASKS_OPEN"
+    "result": "PR34_DIVERGENCE_READBACK_VERIFIED; OPEN_DRAFT_RETAINED; NO_MERGE_OR_FORCE_PUSH; ALL_OTHER_OPEN_TASKS_RETAINED"
   },
   "latest_archive_pr_current_head_probe": {
     "observed_at_local": "2026-10-25T01:40:00+07:00",
@@ -14626,5 +14670,26 @@
       "source_written_or_moved": false,
       "task_closed": false
     }
-  ]
+  ],
+  "latest_archive_pr34_divergence_20261025T0930ICT": {
+    "id": "ARCHIVE_PR34_DIVERGENCE_READBACK_20261025T0930ICT",
+    "observed_at": "2026-10-25T09:38:13.248+07:00",
+    "observed_at_utc": "2026-10-25T02:38:13.248Z",
+    "main_head_at_compare": "d6a6b88d66c452259b6b40e84ec89bbf55082170",
+    "pr34_head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+    "compare_status": "diverged",
+    "ahead_by": 1,
+    "behind_by": 44,
+    "pr_state": "open",
+    "draft": true,
+    "checks_success": true,
+    "merged": false,
+    "force_push": false,
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
+    "checkpoint_blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
+    "checkpoint_commit": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
+    "open_tasks_commit": "0ba7d16ce54f5716e95189478060e42278fdd82e",
+    "open_tasks_blob_sha": "9281d3ae3540425e8640c3a9ed4793bf8d86e331",
+    "tasks_closed": 0
+  }
 }
