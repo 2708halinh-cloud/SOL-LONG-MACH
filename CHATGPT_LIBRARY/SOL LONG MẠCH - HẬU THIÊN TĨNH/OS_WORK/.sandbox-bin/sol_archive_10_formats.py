@@ -4,7 +4,7 @@ No third-party credential consumption. All source archives stay read-only.
 """
 from __future__ import annotations
 import argparse, bz2, concurrent.futures, gzip, hashlib, json, lzma, os
-import re, shutil, subprocess, sys, tarfile, tempfile, time, zipfile
+import re, shutil, stat, subprocess, sys, tarfile, tempfile, time, zipfile
 from pathlib import Path, PurePosixPath
 
 MAX_MEMBERS=25000
@@ -61,7 +61,35 @@ def inspect(path):
       "adapter":None,"status":"UNSUPPORTED","member_count":None,
       "expanded_bytes":None,"error_code":None}
     kind=out["detected"]
+def inspect(path):
+    path=Path(path)
+    out={
+        "schema":"SOL_ARCHIVE_10_FORMATS_V1",
+        "basename":path.name,
+        "bytes":None,
+        "sha256":None,
+        "detected":"UNREADABLE",
+        "stamp_old_candidates":stamp(path.name),
+        "account":"ACCOUNT_UNVERIFIED",
+        "sensitive_data_copied":False,
+        "extraction_performed":False,
+        "adapter":None,
+        "status":"UNSUPPORTED",
+        "member_count":None,
+        "expanded_bytes":None,
+        "error_code":None,
+        "error_detail":None,
+    }
     try:
+        if path.is_symlink():
+            raise ValueError("UNSAFE_SOURCE_SYMLINK")
+        source_stat=path.lstat()
+        if not stat.S_ISREG(source_stat.st_mode):
+            raise ValueError("UNSAFE_SOURCE_NON_REGULAR_FILE")
+        out["bytes"]=source_stat.st_size
+        out["sha256"]=sha(path)
+        out["detected"]=fmt(path)
+        kind=out["detected"]
         if kind in ("ZIP","JAR"):
             out["adapter"]="python.zipfile"
             with zipfile.ZipFile(path) as arc:
@@ -151,6 +179,7 @@ def inspect(path):
             lzma.LZMAError, subprocess.TimeoutExpired) as e:
         out["status"]="FAILED_SAFE"
         out["error_code"]=type(e).__name__
+        out["error_detail"]=str(e) if isinstance(e, ValueError) else type(e).__name__
     return out
 
 def main():

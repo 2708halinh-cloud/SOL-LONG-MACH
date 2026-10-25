@@ -96,6 +96,37 @@ class ReadOnlyExternalAdapterTests(unittest.TestCase):
         self.assertEqual(result["status"], "FAILED_SAFE")
         self.assertEqual(result["error_code"], "TimeoutExpired")
 
+    def test_symlink_source_is_rejected_before_hashing_or_adapter_dispatch(self):
+        target = self.archive("real.7z", bytes.fromhex("377abcaf271c"))
+        link = self.root / "linked.7z"
+        try:
+            link.symlink_to(target)
+        except (OSError, NotImplementedError) as exc:
+            self.skipTest(f"symlink unavailable: {type(exc).__name__}")
+        with patch.object(mod.shutil, "which") as which, \
+             patch.object(mod.subprocess, "run") as run:
+            result = mod.inspect(link)
+        self.assertEqual(result["status"], "FAILED_SAFE")
+        self.assertEqual(result["error_code"], "ValueError")
+        self.assertEqual(result["error_detail"], "UNSAFE_SOURCE_SYMLINK")
+        which.assert_not_called()
+        run.assert_not_called()
+
+    def test_non_regular_source_is_rejected_before_hashing(self):
+        result = mod.inspect(self.root)
+        self.assertEqual(result["status"], "FAILED_SAFE")
+        self.assertEqual(result["error_code"], "ValueError")
+        self.assertEqual(result["error_detail"], "UNSAFE_SOURCE_NON_REGULAR_FILE")
+        self.assertIsNone(result["sha256"])
+        self.assertEqual(result["detected"], "UNREADABLE")
+
+    def test_missing_source_returns_structured_safe_failure(self):
+        result = mod.inspect(self.root / "missing.7z")
+        self.assertEqual(result["status"], "FAILED_SAFE")
+        self.assertEqual(result["error_code"], "FileNotFoundError")
+        self.assertIsNone(result["sha256"])
+        self.assertEqual(result["detected"], "UNREADABLE")
+
     def test_unsafe_zip_member_is_rejected_during_inspection(self):
         path = self.root / "unsafe.zip"
         with zipfile.ZipFile(path, "w") as archive:
