@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-26T06:36:50.3027846+07:00",
+  "observed_at": "2026-10-26T06:49:35+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -177,20 +177,19 @@
     "state": "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
     "rule": "Do not overwrite existing Oct 09 local source metadata; do not call Dropbox CSV a working Windows Tick consumer; no raw sensor records or secrets committed; verify Windows Tick independently before closing.",
     "last_observation": {
-      "observed_at": "2026-10-26T06:36:50.3027846+07:00",
-      "source": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0636ICT.json",
+      "observed_at": "2026-10-26T06:49:35+07:00",
+      "source": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0649ICT.json",
       "actions_and_receipts": [
-        "Scheduled Tick D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T233641386121Z.json SHA-256 31026e271a67003d60c629195ad208a6158f6c77aea5b5995b5e96e6c680710f; consumer D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T233637912Z.json SHA-256 a0512c251489056b59ae700a637b6cd11d5bf7cc314ad382d309f9137e53f09c; source SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches both.",
-        "Sensor stream remains EVENT_TIMESTAMP_STALE across four timestamp sources; no sensor advances and no live reading is confirmed.",
-        "Braid receipts verified: SIX 4f64db8d2d545b4eab9133f6ffae3fa3d2a746e24d5ce118348617915a2ea6e9; PLURAL dce0287e3e5e62f71501b66abbb3ce80e9d6865076961e83a2de7babbd84074e7; no mutation.",
-        "n8n execution 178 and row 420 remain verified; 45 recovery rows pending; host heartbeat not probed.",
-        "Carrier retention scan searched 2,273 source files; no carrier-events-specific retention policy identified; no rotation/deletion.",
-        "Local runner service search found no matching service in checked roots; public-key environment variable absent; actual GitHub variable and runner assignment remain unverified.",
-        "Bulk-target search process 50200 remains running; no results yet; search not exhaustive."
+        "Route fix 5916a15fa41b36631b3d9357cee96fa3be838d2d maps SV-20261020-13-ARCHIVE-FORMATS to its canonical INTEGRITY agent; exact readback verified.",
+        "Code-fix CI run 40246420139 succeeded: OPEN ledger/critical C tests, T005 tests, Go tests/vet/build, source-bound cloud continuation, artifact upload.",
+        "Latest host Tick D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T233641386121Z.json SHA 31026e271a67003d60c629195ad208a6158f6c77aea5b5995b5e96e6c680710f; consumer D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T233637912Z.json SHA a0512c251489056b59ae700a637b6cd11d5bf7cc314ad382d309f9137e53f09c; source hash matches; sensor stream stale.",
+        "n8n row 420 verified; 45 recovery rows pending; host heartbeat not probed.",
+        "Carrier log 6504638030 bytes; retention policy unverified; no rotation/deletion.",
+        "Bulk target search PID 50200 still running without output; not exhaustive."
       ],
-      "result": "TICK_AND_READONLY_CONSUMER_VERIFIED; LIVE_SENSOR_STREAM_STALE; BRAID_READBACK_VERIFIED; CLOUD_SCAN_ROW_420_VERIFIED; RETENTION_POLICY_UNVERIFIED; BULK_SEARCH_RUNNING; ALL_OPEN_RETAINED",
+      "result": "ROUTING_DIVERGENCE_FIXED_AND_CI_VERIFIED; TICK_CONSUMER_VERIFIED; LIVE_SENSOR_STREAM_STALE; BULK_SEARCH_RUNNING; ALL_OPEN_RETAINED",
       "next_callable_edge": "Poll process 50200 and exact-read every matching bulk candidate; count access errors and do not call the search exhaustive if any inaccessible subtree remains.",
-      "status_effect": "No task closure; no source writes, moves, deletions, raw exports, or credential writes."
+      "status_effect": "No task closure; no sensor source writes, archive changes, raw exports, or credential writes."
     },
     "latest_verified_tick_receipt": {
       "id": "WINDOWS_TICK_20261025T233641386121Z",
@@ -1452,6 +1451,22 @@
       "live_sensor_reading_confirmed": false,
       "source_file_written": false,
       "synthetic_rows_added": 0
+    },
+    "previous_last_observation_before_20261026T0649ICT": {
+      "observed_at": "2026-10-26T06:36:50.3027846+07:00",
+      "source": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0636ICT.json",
+      "actions_and_receipts": [
+        "Scheduled Tick D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T233641386121Z.json SHA-256 31026e271a67003d60c629195ad208a6158f6c77aea5b5995b5e96e6c680710f; consumer D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T233637912Z.json SHA-256 a0512c251489056b59ae700a637b6cd11d5bf7cc314ad382d309f9137e53f09c; source SHA-256 9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87 matches both.",
+        "Sensor stream remains EVENT_TIMESTAMP_STALE across four timestamp sources; no sensor advances and no live reading is confirmed.",
+        "Braid receipts verified: SIX 4f64db8d2d545b4eab9133f6ffae3fa3d2a746e24d5ce118348617915a2ea6e9; PLURAL dce0287e3e5e62f71501b66abbb3ce80e9d6865076961e83a2de7babbd84074e7; no mutation.",
+        "n8n execution 178 and row 420 remain verified; 45 recovery rows pending; host heartbeat not probed.",
+        "Carrier retention scan searched 2,273 source files; no carrier-events-specific retention policy identified; no rotation/deletion.",
+        "Local runner service search found no matching service in checked roots; public-key environment variable absent; actual GitHub variable and runner assignment remain unverified.",
+        "Bulk-target search process 50200 remains running; no results yet; search not exhaustive."
+      ],
+      "result": "TICK_AND_READONLY_CONSUMER_VERIFIED; LIVE_SENSOR_STREAM_STALE; BRAID_READBACK_VERIFIED; CLOUD_SCAN_ROW_420_VERIFIED; RETENTION_POLICY_UNVERIFIED; BULK_SEARCH_RUNNING; ALL_OPEN_RETAINED",
+      "next_callable_edge": "Poll process 50200 and exact-read every matching bulk candidate; count access errors and do not call the search exhaustive if any inaccessible subtree remains.",
+      "status_effect": "No task closure; no source writes, moves, deletions, raw exports, or credential writes."
     }
   },
   "session_observations": [
@@ -17972,53 +17987,81 @@
       "n8n_table_append_executed_this_checkpoint": false,
       "secrets_written": false,
       "raw_sensor_values_exported": false
+    },
+    {
+      "id": "PROVIDER_READBACK_20261026T0649ICT",
+      "observed_at": "2026-10-26T06:49:35+07:00",
+      "record_type": "PROVIDER_READBACK",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0649ICT.json",
+      "checkpoint_blob_sha": "d3a719e4ea08981cf1047219a5bbfe9ee0dbfbd8",
+      "checkpoint_commit": "2a83188d72a0970fb97024949ad1a77d3057672a",
+      "evidence": {
+        "host_tick_sha256": "31026e271a67003d60c629195ad208a6158f6c77aea5b5995b5e96e6c680710f",
+        "consumer_sha256": "a0512c251489056b59ae700a637b6cd11d5bf7cc314ad382d309f9137e53f09c",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_bytes": 35389440,
+        "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+        "live_sensor_reading_confirmed": false,
+        "braid_receipts_verified": true,
+        "n8n_execution_id": "178",
+        "n8n_row_id": 420,
+        "n8n_pending_rows": 45,
+        "route_fix_commit": "5916a15fa41b36631b3d9357cee96fa3be838d2d",
+        "route_fix_blob_sha": "691fccaddc4c3c3f9f33f91753879f8c454d22a7",
+        "code_fix_ci_run_id": 40246420139,
+        "code_fix_ci_conclusion": "success",
+        "archive_pr36_compare": "14 ahead / 9 behind, diverged",
+        "tesseract_issuer_public_key_verified": false,
+        "runner_assignment_verified": false,
+        "carrier_retention_policy": "NOT_VERIFIED",
+        "bulk_search_process_id": 50200,
+        "bulk_search_status": "RUNNING_NO_OUTPUT_YET"
+      },
+      "tasks_closed": 0,
+      "history_preserved": true,
+      "source_code_changed": true,
+      "sensor_source_mutated": false,
+      "source_archives_mutated": false,
+      "source_moved_or_deleted": false,
+      "secrets_written": false,
+      "raw_sensor_values_exported": false
     }
   ],
   "latest_provider_observation": {
-    "id": "PROVIDER_READBACK_20261026T0636ICT",
-    "observed_at": "2026-10-26T06:36:50.3027846+07:00",
+    "id": "PROVIDER_READBACK_20261026T0649ICT",
+    "observed_at": "2026-10-26T06:49:35+07:00",
     "record_type": "PROVIDER_READBACK",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0636ICT.json",
-    "checkpoint_blob_sha": "1725d81ea4ca07cd8584ecdf0d540f33dece7a21",
-    "checkpoint_commit": "23773f46c85d084d95b30322110ae19679702e86",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0649ICT.json",
+    "checkpoint_blob_sha": "d3a719e4ea08981cf1047219a5bbfe9ee0dbfbd8",
+    "checkpoint_commit": "2a83188d72a0970fb97024949ad1a77d3057672a",
     "evidence": {
-      "tick_sha256": "31026e271a67003d60c629195ad208a6158f6c77aea5b5995b5e96e6c680710f",
+      "host_tick_sha256": "31026e271a67003d60c629195ad208a6158f6c77aea5b5995b5e96e6c680710f",
       "consumer_sha256": "a0512c251489056b59ae700a637b6cd11d5bf7cc314ad382d309f9137e53f09c",
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
       "source_bytes": 35389440,
-      "task_result": "0x0",
-      "missed_runs": 0,
       "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
       "live_sensor_reading_confirmed": false,
-      "host_route_status": "ONLINE_DIRECT_READ_VERIFIED",
-      "braid_six_sha256": "4f64db8d2d545b4eab9133f6ffae3fa3d2a746e24d5ce118348617915a2ea6e9",
-      "braid_plural_sha256": "dce0287e3e5e62f71501b66abbb3ce80e9d6865076961e83a2de7babbd84074e7",
-      "braid_mutation_executed": false,
+      "braid_receipts_verified": true,
       "n8n_execution_id": "178",
-      "n8n_status": "success",
-      "n8n_evidence_row_id": 420,
-      "pending_rows": 45,
-      "host_heartbeat_probed": false,
-      "wireless_adb_state": "NOT_LISTED",
-      "carrier_log_bytes": 6504638030,
-      "carrier_retention_policy": "NOT_VERIFIED",
-      "local_runner_service_matches_found": 0,
-      "public_key_env_present": false,
+      "n8n_row_id": 420,
+      "n8n_pending_rows": 45,
+      "route_fix_commit": "5916a15fa41b36631b3d9357cee96fa3be838d2d",
+      "route_fix_blob_sha": "691fccaddc4c3c3f9f33f91753879f8c454d22a7",
+      "code_fix_ci_run_id": 40246420139,
+      "code_fix_ci_conclusion": "success",
+      "archive_pr36_compare": "14 ahead / 9 behind, diverged",
+      "tesseract_issuer_public_key_verified": false,
       "runner_assignment_verified": false,
-      "bulk_target_search_process_id": 50200,
-      "bulk_target_search_status": "RUNNING_NO_OUTPUT_YET",
-      "search_exhaustive": false,
-      "archive_pr36_head": "00400b4f81a31293b1960ed1709280130cc25db3",
-      "archive_compare_status": "diverged",
-      "archive_ahead_by": 14,
-      "archive_behind_by": 6,
-      "tesseract_ci_rerun": false
+      "carrier_retention_policy": "NOT_VERIFIED",
+      "bulk_search_process_id": 50200,
+      "bulk_search_status": "RUNNING_NO_OUTPUT_YET"
     },
     "tasks_closed": 0,
     "history_preserved": true,
-    "source_files_mutated": false,
+    "source_code_changed": true,
+    "sensor_source_mutated": false,
+    "source_archives_mutated": false,
     "source_moved_or_deleted": false,
-    "n8n_table_append_executed_this_checkpoint": false,
     "secrets_written": false,
     "raw_sensor_values_exported": false
   },
@@ -21128,5 +21171,152 @@
     ],
     "latest_pr_runs_conclusion": "failure",
     "rerun": false
+  },
+  "latest_provider_readback_20261026T0649ICT": {
+    "id": "PROVIDER_READBACK_20261026T0649ICT",
+    "observed_at": "2026-10-26T06:49:35+07:00",
+    "record_type": "PROVIDER_READBACK",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0649ICT.json",
+    "checkpoint_blob_sha": "d3a719e4ea08981cf1047219a5bbfe9ee0dbfbd8",
+    "checkpoint_commit": "2a83188d72a0970fb97024949ad1a77d3057672a",
+    "evidence": {
+      "host_tick_sha256": "31026e271a67003d60c629195ad208a6158f6c77aea5b5995b5e96e6c680710f",
+      "consumer_sha256": "a0512c251489056b59ae700a637b6cd11d5bf7cc314ad382d309f9137e53f09c",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "live_sensor_reading_confirmed": false,
+      "braid_receipts_verified": true,
+      "n8n_execution_id": "178",
+      "n8n_row_id": 420,
+      "n8n_pending_rows": 45,
+      "route_fix_commit": "5916a15fa41b36631b3d9357cee96fa3be838d2d",
+      "route_fix_blob_sha": "691fccaddc4c3c3f9f33f91753879f8c454d22a7",
+      "code_fix_ci_run_id": 40246420139,
+      "code_fix_ci_conclusion": "success",
+      "archive_pr36_compare": "14 ahead / 9 behind, diverged",
+      "tesseract_issuer_public_key_verified": false,
+      "runner_assignment_verified": false,
+      "carrier_retention_policy": "NOT_VERIFIED",
+      "bulk_search_process_id": 50200,
+      "bulk_search_status": "RUNNING_NO_OUTPUT_YET"
+    },
+    "tasks_closed": 0,
+    "history_preserved": true,
+    "source_code_changed": true,
+    "sensor_source_mutated": false,
+    "source_archives_mutated": false,
+    "source_moved_or_deleted": false,
+    "secrets_written": false,
+    "raw_sensor_values_exported": false
+  },
+  "latest_route_fix_readback_20261026T0649ICT": {
+    "file": "runtime/cloud_survival_scheduler.py",
+    "old_blob_sha": "6727e7b33f77e1b34c5d03ac49187466e55f868c",
+    "new_blob_sha": "691fccaddc4c3c3f9f33f91753879f8c454d22a7",
+    "commit_sha": "5916a15fa41b36631b3d9357cee96fa3be838d2d",
+    "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+    "route_role": "INTEGRITY",
+    "assigned_agent_id": "ilcqwLMNUdrWjvrL",
+    "exact_readback_verified": true,
+    "route_id_occurrences_in_file": 1
+  },
+  "latest_cloud_survival_ci_readback_20261026T0649ICT": {
+    "code_fix_run": {
+      "id": 40246420139,
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "5916a15fa41b36631b3d9357cee96fa3be838d2d",
+      "job_id": 121328836104
+    },
+    "step_readback": {
+      "open_ledger_and_critical_c_tests": "success",
+      "hellohabit_t005_adapter_tests": "success",
+      "hellocheck_go_tests_vet_build": "success",
+      "source_bound_cloud_continuation": "success",
+      "artifact_upload": "success"
+    },
+    "other_runs": [
+      {
+        "id": 40246420149,
+        "name": "High-Threshold Secret Exposure Guard",
+        "conclusion": "success"
+      },
+      {
+        "id": 40246420136,
+        "name": "runtime-n-plus",
+        "conclusion": "success"
+      }
+    ],
+    "artifacts": [
+      {
+        "id": 12619066881,
+        "name": "windows-survival-open-continuation",
+        "size_bytes": 3881,
+        "expired": false
+      },
+      {
+        "id": 12618773026,
+        "name": "hellocheck-offline-linux-windows-amd64",
+        "size_bytes": 5996904,
+        "expired": false
+      }
+    ],
+    "prior_failure": {
+      "run_id": 40246189305,
+      "head_sha": "1c9b2db76ee69f02390aac4349df369252f93a7f",
+      "cause": "OPEN_TASK_ROUTING_DIVERGENCE missing SV-20261020-13-ARCHIVE-FORMATS; one test also failed because the missing route ID was the last ledger item."
+    },
+    "manual_rerun_performed": false,
+    "tasks_closed": 0
+  },
+  "latest_carrier_retention_audit_20261026T0649ICT": {
+    "observed_at": "2026-10-26T06:36:50.3027846+07:00",
+    "carrier_log_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\carrier-events.jsonl",
+    "bytes": 6504638030,
+    "last_write_utc": "2026-10-25T23:36:50.1357188Z",
+    "source_files_searched": 2273,
+    "result": "NO_CARRIER_EVENTS_SPECIFIC_RETENTION_OR_ROTATION_POLICY_FOUND_IN_SCANNED_SOURCE_FILES",
+    "supervisor_findings": {
+      "max_events_bytes": 8388608,
+      "append_guard": "Raises HISTORY_CAPACITY_KEEP_EVIDENCE_NO_AUTODELETE when its target exceeds MAX_EVENTS_BYTES.",
+      "truncate_guard": "The truncate branch is restricted to regenerable STATE/PENDING snapshots after PermissionError.",
+      "applicability_to_carrier_log": "NOT_VERIFIED"
+    },
+    "rotation_or_deletion_performed": false
+  },
+  "latest_exact_target_search_20261026T0649ICT": {
+    "process_id": 50200,
+    "status_at_last_poll": "RUNNING_NO_OUTPUT_YET",
+    "root": "W:\\Drive của tôi",
+    "expected_name_pattern": "*R000_075203003486*",
+    "expected_bytes": 89814328,
+    "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "candidate_count": null,
+    "access_error_count": null,
+    "search_exhaustive": false,
+    "source_substitution_performed": false,
+    "source_moved_or_deleted": false
+  },
+  "latest_archive_pr36_readback_20261026T0649ICT": {
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+    "state": "OPEN",
+    "draft": true,
+    "head_sha": "00400b4f81a31293b1960ed1709280130cc25db3",
+    "main_sha": "5916a15fa41b36631b3d9357cee96fa3be838d2d",
+    "compare_status": "diverged",
+    "ahead_by": 14,
+    "behind_by": 9,
+    "merge_base_sha": "cbb8e2074695670398d2ee9ca4462bbbd55cee7c",
+    "merge_or_force_push": false
+  },
+  "latest_tesseract_status_readback_20261026T0649ICT": {
+    "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+    "state": "OPEN",
+    "draft": true,
+    "head_sha": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+    "issuer_public_key_verified": false,
+    "runner_assignment_verified": false,
+    "ci_rerun": false
   }
 }
