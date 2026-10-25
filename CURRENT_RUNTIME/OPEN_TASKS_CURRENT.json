@@ -5012,6 +5012,24 @@
       },
       "update_method": "EXPECTED_HEAD_NON_FORCE_BRANCH_UPDATE",
       "force_push": false
+    },
+    "windows_tick_20261026T0609ICT": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T230332970308Z.json",
+      "sha256": "af98ece1f27852557be400875e46ce9c3d27976efd62f4dd077c71fa5564c304",
+      "consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T230330178Z.json",
+      "consumer_sha256": "f20eee1f1ca98ecf65a00dcf6bce7b0aea51bffff4ca9fc4ced3b70cc4250563",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_reading_confirmed": false
+    },
+    "clock_reconciliation_20261026T0609ICT": {
+      "id": "IC_20261026T0609_HOST_CLOCK_OFFSET_NON_SYNCHRONOUS_PRIOR_ESTIMATE",
+      "observed_at": "2026-10-26T06:09:56.211+07:00",
+      "finding": "Checkpoint 20261026T0604ICT recorded a 198-second host clock offset using timestamps from non-synchronous observations; that numeric estimate is not reliable.",
+      "correction": "Preserve the 0604 checkpoint as history. A near-synchronous tool read at host 2026-10-26T06:03:51.1851084+07:00 and runtime 2026-10-25T23:09:17.905Z (06:09:17.905+07:00) measured an approximate host-minus-runtime offset of -327 seconds. W32Time is Stopped/Manual. No clock change attempted.",
+      "source_files_deleted_or_overwritten": false,
+      "history_preserved": true,
+      "task_state_mutation": "STATUS_UNCHANGED_OPEN",
+      "tasks_closed": 0
     }
   },
   "sinks": {
@@ -14145,6 +14163,72 @@
       "history_preserved": true,
       "source_mutated": false,
       "secrets_written": false
+    },
+    {
+      "id": "WINDOWS_TICK_CONSUMER_MANUAL_ONESHOT_20261026T0609ICT",
+      "observed_at": "2026-10-26T06:09:56.211+07:00",
+      "action": "RUN_AND_READ_BACK_INSPECTED_READONLY_CONSUMER_ONCE",
+      "evidence": {
+        "tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T230332970308Z.json",
+        "tick_sha256": "af98ece1f27852557be400875e46ce9c3d27976efd62f4dd077c71fa5564c304",
+        "consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T230330178Z.json",
+        "consumer_sha256": "f20eee1f1ca98ecf65a00dcf6bce7b0aea51bffff4ca9fc4ced3b70cc4250563",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_matches": true,
+        "consumer_status": "SOURCE_OBSERVED_READONLY",
+        "consumer_exit_code": 0,
+        "live_sensor_reading_confirmed": false,
+        "cloud_export_enabled": false,
+        "github_push_enabled": false
+      },
+      "task_state_mutation": "STATUS_UNCHANGED_OPEN",
+      "tasks_closed": 0,
+      "history_preserved": true,
+      "source_mutated": false,
+      "source_moved_or_deleted": false,
+      "secrets_written": false
+    },
+    {
+      "id": "HOST_CLOCK_OFFSET_RECONCILIATION_20261026T0609ICT",
+      "observed_at": "2026-10-26T06:09:56.211+07:00",
+      "action": "RECONCILE_NEAR_SIMULTANEOUS_HOST_RUNTIME_CLOCK_OBSERVATION",
+      "evidence": {
+        "id": "IC_20261026T0609_HOST_CLOCK_OFFSET_NON_SYNCHRONOUS_PRIOR_ESTIMATE",
+        "observed_at": "2026-10-26T06:09:56.211+07:00",
+        "finding": "Checkpoint 20261026T0604ICT recorded a 198-second host clock offset using timestamps from non-synchronous observations; that numeric estimate is not reliable.",
+        "correction": "Preserve the 0604 checkpoint as history. A near-synchronous tool read at host 2026-10-26T06:03:51.1851084+07:00 and runtime 2026-10-25T23:09:17.905Z (06:09:17.905+07:00) measured an approximate host-minus-runtime offset of -327 seconds. W32Time is Stopped/Manual. No clock change attempted.",
+        "source_files_deleted_or_overwritten": false,
+        "history_preserved": true,
+        "task_state_mutation": "STATUS_UNCHANGED_OPEN",
+        "tasks_closed": 0
+      },
+      "task_state_mutation": "STATUS_UNCHANGED_OPEN",
+      "tasks_closed": 0,
+      "history_preserved": true,
+      "source_mutated": false
+    },
+    {
+      "id": "BULK_TARGET_C_PATH_CHECK_20261026T0609ICT",
+      "observed_at": "2026-10-26T06:09:56.211+07:00",
+      "action": "CHECK_ALTERNATE_LOCAL_CARRIER_PATH_WITHOUT_COPY_OR_SUBSTITUTION",
+      "evidence": {
+        "observed_at": "2026-10-26T06:09:56.211+07:00",
+        "canonical_d_path_last_verified_absent": true,
+        "c_dropbox_seson_logs_exact_path_checked_this_turn": true,
+        "c_dropbox_seson_logs_exact_path_exists": false,
+        "w_drive_search_repeated_this_turn": false,
+        "last_verified_w_candidates": 3,
+        "exact_size_or_hash_matches": 0,
+        "search_exhaustive": false,
+        "source_substitution_performed": false,
+        "source_moved_or_deleted": false
+      },
+      "task_state_mutation": "STATUS_UNCHANGED_OPEN",
+      "tasks_closed": 0,
+      "history_preserved": true,
+      "source_mutated": false,
+      "source_moved_or_deleted": false
     }
   ],
   "energy_protection_current": {
@@ -26239,6 +26323,43 @@
       "source_mutated": false,
       "secrets_written": false,
       "raw_sensor_values_exported": false
+    },
+    {
+      "id": "PROVIDER_READBACK_20261026T0609ICT",
+      "observed_at": "2026-10-26T06:09:56.211+07:00",
+      "record_type": "PROVIDER_READBACK",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0609ICT.json",
+      "checkpoint_blob_sha": "190e86eed6e055da7ab196fab0e4b2f07652eef6",
+      "checkpoint_commit": "58518a9eb7eaf8d45c733d41de9384685193d234",
+      "evidence": {
+        "tick_sha256": "af98ece1f27852557be400875e46ce9c3d27976efd62f4dd077c71fa5564c304",
+        "consumer_sha256": "f20eee1f1ca98ecf65a00dcf6bce7b0aea51bffff4ca9fc4ced3b70cc4250563",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_bytes": 35389440,
+        "task_result": "0x0",
+        "missed_runs": 0,
+        "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+        "live_sensor_reading_confirmed": false,
+        "exact_bulk_target_exists": false,
+        "c_dropbox_exact_path_exists": false,
+        "w_candidate_count": 3,
+        "w_exact_candidate_count": 0,
+        "archive_checks": "SUCCESS",
+        "archive_pr36_head": "00400b4f81a31293b1960ed1709280130cc25db3",
+        "archive_pr36_behind_by": 2,
+        "tesseract_ci_rerun": false,
+        "n8n_execution_id": "177",
+        "n8n_status": "success",
+        "n8n_evidence_row_id": 417,
+        "pending_rows": 45,
+        "wireless_adb_state": "NOT_LISTED",
+        "host_clock_offset_seconds": -327
+      },
+      "tasks_closed": 0,
+      "history_preserved": true,
+      "source_mutated": false,
+      "secrets_written": false,
+      "raw_sensor_values_exported": false
     }
   ],
   "integrity_corrections": [
@@ -26348,18 +26469,28 @@
       "history_preserved": true,
       "task_state_mutation": "STATUS_UNCHANGED_OPEN",
       "tasks_closed": 0
+    },
+    {
+      "id": "IC_20261026T0609_HOST_CLOCK_OFFSET_NON_SYNCHRONOUS_PRIOR_ESTIMATE",
+      "observed_at": "2026-10-26T06:09:56.211+07:00",
+      "finding": "Checkpoint 20261026T0604ICT recorded a 198-second host clock offset using timestamps from non-synchronous observations; that numeric estimate is not reliable.",
+      "correction": "Preserve the 0604 checkpoint as history. A near-synchronous tool read at host 2026-10-26T06:03:51.1851084+07:00 and runtime 2026-10-25T23:09:17.905Z (06:09:17.905+07:00) measured an approximate host-minus-runtime offset of -327 seconds. W32Time is Stopped/Manual. No clock change attempted.",
+      "source_files_deleted_or_overwritten": false,
+      "history_preserved": true,
+      "task_state_mutation": "STATUS_UNCHANGED_OPEN",
+      "tasks_closed": 0
     }
   ],
   "latest_provider_readback": {
-    "id": "PROVIDER_READBACK_20261026T0604ICT",
-    "observed_at": "2026-10-26T06:04:15.528+07:00",
+    "id": "PROVIDER_READBACK_20261026T0609ICT",
+    "observed_at": "2026-10-26T06:09:56.211+07:00",
     "record_type": "PROVIDER_READBACK",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0604ICT.json",
-    "checkpoint_blob_sha": "d6c374fcd5d1dcf9f2cafc8e2560eb5c15034555",
-    "checkpoint_commit": "2e1315c1a66787a89ba7b6a315615f4a27912eed",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0609ICT.json",
+    "checkpoint_blob_sha": "190e86eed6e055da7ab196fab0e4b2f07652eef6",
+    "checkpoint_commit": "58518a9eb7eaf8d45c733d41de9384685193d234",
     "evidence": {
-      "tick_sha256": "538dc6f2ffcb8415bb91b5edbe762c9107c58050f233b79e92c1563304a3f4cd",
-      "consumer_sha256": "ddbcb4d9fe868d55763ba0b824a7b32782ffc5730599521eef38bc1ad519908b",
+      "tick_sha256": "af98ece1f27852557be400875e46ce9c3d27976efd62f4dd077c71fa5564c304",
+      "consumer_sha256": "f20eee1f1ca98ecf65a00dcf6bce7b0aea51bffff4ca9fc4ced3b70cc4250563",
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
       "source_bytes": 35389440,
       "task_result": "0x0",
@@ -26367,16 +26498,19 @@
       "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
       "live_sensor_reading_confirmed": false,
       "exact_bulk_target_exists": false,
+      "c_dropbox_exact_path_exists": false,
       "w_candidate_count": 3,
       "w_exact_candidate_count": 0,
       "archive_checks": "SUCCESS",
       "archive_pr36_head": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "archive_pr36_behind_by": 2,
       "tesseract_ci_rerun": false,
       "n8n_execution_id": "177",
       "n8n_status": "success",
       "n8n_evidence_row_id": 417,
       "pending_rows": 45,
-      "wireless_adb_state": "NOT_LISTED"
+      "wireless_adb_state": "NOT_LISTED",
+      "host_clock_offset_seconds": -327
     },
     "tasks_closed": 0,
     "history_preserved": true,
@@ -26918,7 +27052,7 @@
       "tasks_closed": 0
     }
   },
-  "provider_observations": 187,
+  "provider_observations": 188,
   "previous_latest_provider_readback_20261026T0025ICT": {
     "id": "PROVIDER_READBACK_20261026T0025ICT",
     "observed_at": "2026-10-26T00:25:25+07:00",
@@ -30788,58 +30922,48 @@
     "rerun_performed": false
   },
   "latest_action_event": {
-    "id": "ANDROID_SENSOR_CLIENT_ROUTE_INSPECTION_20261026T0604ICT",
-    "observed_at": "2026-10-26T06:04:15.528+07:00",
-    "action": "INSPECT_SENSOR_PROBE_AND_EXISTING_ANDROID_CLIENT_STATE",
+    "id": "BULK_TARGET_C_PATH_CHECK_20261026T0609ICT",
+    "observed_at": "2026-10-26T06:09:56.211+07:00",
+    "action": "CHECK_ALTERNATE_LOCAL_CARRIER_PATH_WITHOUT_COPY_OR_SUBSTITUTION",
     "evidence": {
-      "observed_at_local": "2026-10-26T05:57:59.7054205+07:00",
-      "usb": {
-        "target": "1056285",
-        "state": "device",
-        "sensor_event_timestamp_sensor_count": 4,
-        "sensor_event_sensors_advanced": [],
-        "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
-        "live_sensor_event_stream_confirmed": false
-      },
-      "wireless": {
-        "target": "192.168.1.14:5556",
-        "state": "NOT_LISTED",
-        "probe_status": "NOT_PROBED"
-      },
-      "installed_clients": [
-        {
-          "package": "com.exatools.sensors",
-          "process_running": false,
-          "stopped": true,
-          "internet_permission_granted": true,
-          "activity_recognition_permission_granted": false
-        },
-        {
-          "package": "com.galaxy.sensortoolbox",
-          "process_running": false,
-          "stopped": true,
-          "internet_permission_granted": true,
-          "activity_recognition_permission_granted": false
-        },
-        {
-          "package": "com.termux",
-          "process_running": true,
-          "process_id": "5259"
-        },
-        {
-          "package": "com.termux.api",
-          "installed": false
-        }
-      ],
-      "no_app_launched": true,
-      "no_permissions_changed": true,
-      "live_sensor_reading_confirmed": false
+      "observed_at": "2026-10-26T06:09:56.211+07:00",
+      "canonical_d_path_last_verified_absent": true,
+      "c_dropbox_seson_logs_exact_path_checked_this_turn": true,
+      "c_dropbox_seson_logs_exact_path_exists": false,
+      "w_drive_search_repeated_this_turn": false,
+      "last_verified_w_candidates": 3,
+      "exact_size_or_hash_matches": 0,
+      "search_exhaustive": false,
+      "source_substitution_performed": false,
+      "source_moved_or_deleted": false
     },
     "task_state_mutation": "STATUS_UNCHANGED_OPEN",
     "tasks_closed": 0,
     "history_preserved": true,
     "source_mutated": false,
-    "secrets_written": false
+    "source_moved_or_deleted": false
   },
-  "updated_at": "2026-10-26T06:04:15.528+07:00"
+  "updated_at": "2026-10-26T06:09:56.211+07:00",
+  "latest_clock_integrity_correction": {
+    "id": "IC_20261026T0609_HOST_CLOCK_OFFSET_NON_SYNCHRONOUS_PRIOR_ESTIMATE",
+    "observed_at": "2026-10-26T06:09:56.211+07:00",
+    "finding": "Checkpoint 20261026T0604ICT recorded a 198-second host clock offset using timestamps from non-synchronous observations; that numeric estimate is not reliable.",
+    "correction": "Preserve the 0604 checkpoint as history. A near-synchronous tool read at host 2026-10-26T06:03:51.1851084+07:00 and runtime 2026-10-25T23:09:17.905Z (06:09:17.905+07:00) measured an approximate host-minus-runtime offset of -327 seconds. W32Time is Stopped/Manual. No clock change attempted.",
+    "source_files_deleted_or_overwritten": false,
+    "history_preserved": true,
+    "task_state_mutation": "STATUS_UNCHANGED_OPEN",
+    "tasks_closed": 0
+  },
+  "latest_bulk_target_path_check": {
+    "observed_at": "2026-10-26T06:09:56.211+07:00",
+    "canonical_d_path_last_verified_absent": true,
+    "c_dropbox_seson_logs_exact_path_checked_this_turn": true,
+    "c_dropbox_seson_logs_exact_path_exists": false,
+    "w_drive_search_repeated_this_turn": false,
+    "last_verified_w_candidates": 3,
+    "exact_size_or_hash_matches": 0,
+    "search_exhaustive": false,
+    "source_substitution_performed": false,
+    "source_moved_or_deleted": false
+  }
 }
