@@ -1,22 +1,21 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.3",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T02:59:31.620Z",
-  "updated_at_local": "2026-10-25T09:59:31+07:00",
+  "updated_at_utc": "2026-10-25T03:21:00Z",
+  "updated_at_local": "2026-10-25T10:21:00+07:00",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/TESSERACT_ART_READBACK_20261025T1020ICT.json",
+    "blob_sha": "ddc5e2ea714b0cf67451f5674d9842e6c4acea29",
+    "commit_sha": "216cdb5bc2ae910a9e63822ce03ebb70a7ca4048",
+    "readback_verified": false,
+    "note": "Task-specific checkpoint created from fresh Library and GitHub source readbacks. Mark readback verified only after this pointer update is fetched again."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0959ICT.json",
     "blob_sha": "3e380bf8e8a3e8ac9246573d6d8464870c13f7cd",
     "commit_sha": "30cb673b2d51e9ed49b929a5635db0996d14d620",
     "readback_verified": true,
     "note": "Fresh checkpoint was fetched from the default branch after commit; it records n8n row 331 exact readback and the direct read-only Windows tick/trace/scheduler probe."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
-    "blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
-    "commit_sha": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
-    "historical_commit_fetch_verified": true,
-    "default_branch_path_fetch": "NOT_FOUND_AT_TIME_OF_PROBE",
-    "note": "Historical checkpoint remains available at its recorded commit; the active pointer is moved to the fresh default-branch checkpoint."
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -84,11 +83,12 @@
       "OPEN": 10,
       "OPEN_CARRIED": 2,
       "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
-      "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
       "IN_PROGRESS": 3
     },
-    "observed_at_local": "2026-10-25T09:41:06.268+07:00",
-    "freshness": "INHERITED_SNAPSHOT_NOT_REPROBED_IN_THIS_RUN"
+    "observed_at_local": "2026-10-25T10:20:54+07:00",
+    "ledger_blob_sha": "01eea85a782fa9eb2e3c34b10c8c1e35944b71f5",
+    "freshness": "FRESH_GITHUB_DEFAULT_BRANCH_READBACK_IN_THIS_RUN"
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -100,13 +100,45 @@
     "no_raw_sensor_values_stored": true,
     "cloud_heartbeat_is_not_host_heartbeat": true,
     "no_merge_or_force_push": true,
-    "do_not_substitute_candidate_for_exact_modual_source": true
+    "do_not_substitute_candidate_for_exact_modual_source": true,
+    "no_secrets": true,
+    "no_public_reconstruction_of_original_source": true
   },
   "next": [
+    "For TESSERACT Art, obtain authorized raw bytes/source-bound carrier; then probe the existing 127.0.0.1:8777 browser-control route through an authorized host connector and capture actual browser output/readback before integration.",
     "Resume from tick SHA 2E3A4B748A5BDE9E0206C2D65220EAC500E2D7B4C34CB1999C07E8101830BEBC; re-read the next host tick after the host scheduler's reported 2026-10-25T02:56:32Z run time.",
     "Keep live sensor stream unverified until a fresh direct probe confirms advancing event timestamps; Redmi Note 14 Pro wireless remains NOT_LISTED.",
     "Locate exact MODUAL bulk source by SHA-256 b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3 and size 89814328; never substitute the 12154-byte candidate.",
     "Preserve all 45 n8n recovery rows and all 29 inherited GitHub task-ledger tasks as OPEN/IN_PROGRESS.",
     "Do not write to Google Drive, terminate processes, delete cache/Meta.db, merge, force-push, or persist raw sensor readings."
-  ]
+  ],
+  "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0959ICT.json",
+      "blob_sha": "3e380bf8e8a3e8ac9246573d6d8464870c13f7cd",
+      "commit_sha": "30cb673b2d51e9ed49b929a5635db0996d14d620",
+      "readback_verified": true,
+      "note": "Fresh checkpoint was fetched from the default branch after commit; it records n8n row 331 exact readback and the direct read-only Windows tick/trace/scheduler probe."
+    },
+    {
+      "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0926ICT.json",
+      "blob_sha": "9054ffd1b5a953a6e404b9ed8c041863fadb9146",
+      "commit_sha": "6e2ca554d719e8d4acbf5eb5136bceef33159b0b",
+      "historical_commit_fetch_verified": true,
+      "default_branch_path_fetch": "NOT_FOUND_AT_TIME_OF_PROBE",
+      "note": "Historical checkpoint remains available at its recorded commit; the active pointer is moved to the fresh default-branch checkpoint."
+    }
+  ],
+  "tesseract_art": {
+    "task_id": "TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+    "status": "IN_PROGRESS",
+    "latest_event_id": "TESSERACT_LOCAL_BROWSER_ROUTE_READBACK_20261025T102054ICT",
+    "exact_original_source_identity_verified": false,
+    "raw_byte_materialization": "DENIED_NO_AUTHORIZED_RAW_BYTE_PATH",
+    "local_browser_control_route_definition_verified": true,
+    "local_browser_control_runtime_probed": false,
+    "real_browser_runtime_verified": false,
+    "npu_or_task_event_dispatch_verified": false,
+    "tasks_closed": 0
+  }
 }
