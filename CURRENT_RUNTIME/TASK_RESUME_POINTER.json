@@ -3,8 +3,8 @@
   "task": "MODUAL_SENSOR_LOGS_ROUTING",
   "repo": "2708halinh-cloud/SOL-LONG-MACH",
   "branch": "main",
-  "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
-  "commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+  "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
+  "commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
   "rule": "Resume the latest MODUAL provider checkpoint first; the previous TESSERACT pointer is preserved in previous_pointer_snapshot and parallel_open_branches. Keep every unfinished task OPEN.",
   "pr": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
@@ -100,7 +100,7 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "After the next scheduled Tick according to the Windows device clock (last observed run 2026-10-25T14:56:33+07; next due 2026-10-25T15:01:32+07), exact-read the newest Tick/consumer receipts and recompute source SHA. Host clock lag was approximately 311 seconds; W32Time is Stopped/Manual and current user is not administrator, so no system clock change was made. Existing sensor apps expose no services and event timestamps remain stale after stop. A temporary sparse-tree regression was repaired by full-tree commit 24e9cc3855e7d36e69972bbf8094c870dd8dd6f4; retain that history and keep all tasks OPEN.",
+  "next": "After the next scheduled Windows Tick due 2026-10-25T15:06:32+07 by the host clock, exact-read the newest Tick and consumer receipts and recompute the source SHA. Host clock lag at last comparison was approximately 421 seconds; W32Time remains Stopped/Manual and current user is not administrator. Continue supported persistent sensor service/bridge investigation; existing sensor apps expose no services and timestamps are stale after stop. Keep all OPEN tasks and the full-tree repair history; no merge, force-push or unjustified CI rerun.",
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -115,7 +115,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-25T15:06:35.186+07:00",
+  "updated_at": "2026-10-25T15:08:57.347+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -155,19 +155,20 @@
     "verification_required": "Fresh-source readback for each task; status OPEN until exact action+receipt",
     "linked_at": "2026-10-21T14:39:07+07:00",
     "latest_observation": {
-      "observed_at": "2026-10-25T15:05:23.527+07:00",
-      "MODUAL_SENSOR_LOGS_ROUTING": "Tick D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T075639106737Z.json SHA-256 bc2895ee35032a28745923096ca539317f4e244eb6376779fc416719c9b9aa17; consumer exit 0/hash verified; source SHA unchanged; EVENT_TIMESTAMP_STALE; production continuous stream not verified.",
+      "observed_at": "2026-10-25T15:08:57.347+07:00",
+      "MODUAL_SENSOR_LOGS_ROUTING": "Tick D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T080139371211Z.json SHA-256 1f7f79c099bf93619e41f0f9d9251087835eb0fbb81d0b2dd0311e95e76fbec3; consumer exit 0/hash verified; source SHA unchanged; EVENT_TIMESTAMP_STALE; production continuous stream not verified.",
       "ANDROID_OLLAMA_LOCALHOST_CHAT_UI": "USB ADB 1056285 responsive; wireless 192.168.1.14:5556 NOT_LISTED; com.exatools.sensors and com.galaxy.sensortoolbox declare no services; Termux:API absent.",
       "XTIME_LOCAL_RUNTIME": "HTTP_200_MODUAL_SOURCE_PRESENT; LIVE_DEVICE_PROVEN_FALSE",
-      "INHERITED_TESSERACT_DESKTOP": "PR #6 OPEN/Draft; current runs failed before steps/no artifacts; issuer key and runner assignment unverified; no rerun.",
+      "INHERITED_TESSERACT_DESKTOP": "PR #6 OPEN/Draft; runs failed before steps/no artifacts; issuer key and runner assignment unverified; no rerun.",
       "HWINF0_SHARED_MEMORY": "CSV_PRESENT_39922785_BYTES_STALE_SINCE_2026_10_21; LIVE_STREAM_UNCONFIRMED",
-      "WINDOWS_TIME": "W32TIME_STOPPED_MANUAL; host clock approx 311 seconds behind runtime; current user not admin; no clock change.",
-      "LOCAL_BRAID_READONLY_EXECUTION": "SIX 9 actions b08eb3ab73e4fe3901c9767d3fb4f25b264e337ff1cc1ce911f7bbfc875f9beb; PLURAL 5 actions 84abc8f94207df4dd53e4c8735f2d288fcec6258288fa38940ba52ed3620b21f; exact receipt readback; source unchanged; no mutation.",
+      "WINDOWS_TIME": "W32TIME_STOPPED_MANUAL; host clock lag approximately 421s; current user not admin; no clock change.",
+      "LOCAL_BRAID_READONLY_EXECUTION": "SIX/PLURAL receipts rehashed and read back; source unchanged; no mutation.",
       "CONTINUITY_GUARD_REGRESSION": "25/25 tests passed; exit 0.",
-      "ARCHIVE_PR34": "OPEN/Draft; 1 ahead/156 behind main 24e9cc3855e7d36e69972bbf8094c870dd8dd6f4; mergeable=false; artifact 12580351639 on run 40145523727, unexpired.",
-      "MODUAL_PR35": "OPEN/Draft; 9 ahead/140 behind main 24e9cc3855e7d36e69972bbf8094c870dd8dd6f4; test and secret-guard runs success; mergeable=false.",
-      "CLOUD_CONTINUITY": "n8n execution 161 success, row 350 OPEN_WORK_REMAINS; 45 pending; HOST_HEARTBEAT_NOT_PROBED; host operations 0; no task closed.",
-      "MAIN_TREE_INTEGRITY": "Sparse tree commit e23cea... repaired by full-tree commit 24e9cc...; AGENTS, reentry and checkpoint exact reads succeed; no force-push."
+      "ARCHIVE_PR34": "OPEN/Draft; 1 ahead/159 behind main fd44973e8fbbec88ea6b945d0fa40e4502332dd2; mergeable=false; artifact 12580351639 on run 40145523727, unexpired.",
+      "MODUAL_PR35": "OPEN/Draft; 9 ahead/143 behind main fd44973e8fbbec88ea6b945d0fa40e4502332dd2; test and secret-guard runs success; mergeable=false.",
+      "CLOUD_CONTINUITY": "n8n execution 161 success, row 350 OPEN_WORK_REMAINS; 45 pending; HOST_HEARTBEAT_NOT_PROBED; host operations 0.",
+      "MAIN_TREE_INTEGRITY": "Sparse-tree commit e23cea... repaired by full-tree commit 24e9cc...; AGENTS, reentry and checkpoints exact-read successfully; no force-push.",
+      "STATE_SCHEMA_ALIASES": "Existing receipt and path aliases are both present; history preserved."
     }
   },
   "checkpoint_head_reconciliation": {
@@ -7113,6 +7114,60 @@
       "open_tasks_blob_sha_before": "d2359451bc6e5831fd3838570cac7d4e8bbaa4d9",
       "tasks_closed": 0,
       "result": "RECEIPT_ALIASES_NORMALIZED_HISTORY_PRESERVED"
+    },
+    {
+      "id": "PROVIDER_READBACK_20261025T1507ICT",
+      "observed_at": "2026-10-25T15:08:57.347+07:00",
+      "source": "Fresh scheduled Windows Tick/consumer exact-target readback; Dropbox metadata; Braid/continuity guard; n8n execution 161; PR34/35/6 and Archive artifact; tree repair and schema alias correction retained.",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
+      "checkpoint_blob_sha": "1ff8bc870ec7e74e0f9916cf50fc66070f63eb29",
+      "checkpoint_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
+      "modual_blob_sha": "2415e155f103b12b1bc8de1d8b886c8a853415e0",
+      "resume_pointer_blob_sha_before_write": "9efd8ad37ac78b6a408ab19e31af9aa1915cb1d4",
+      "open_tasks_blob_sha_before_write": "d32f791cd8b52f35005d5bd4c75dd7679088082c",
+      "reentry_blob_sha": "b6bf672545d0ebbc631655cad675322a61995499",
+      "agents_blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "windows_tick_receipt_sha256": "1f7f79c099bf93619e41f0f9d9251087835eb0fbb81d0b2dd0311e95e76fbec3",
+      "consumer_receipt_sha256": "339e5c993ecda667384aa92a28904277369ecb2a6ffbdc1fe9815d3ba971d4de",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "live_sensor_stream_verified": false,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "braid_six_receipt_sha256": "b08eb3ab73e4fe3901c9767d3fb4f25b264e337ff1cc1ce911f7bbfc875f9beb",
+      "braid_plural_receipt_sha256": "84abc8f94207df4dd53e4c8735f2d288fcec6258288fa38940ba52ed3620b21f",
+      "continuity_guard_tests_passed": 25,
+      "n8n_execution_id": "161",
+      "n8n_event_id": "X20261025080024100_CLOUD",
+      "n8n_row_id": 350,
+      "n8n_state": "OPEN_WORK_REMAINS",
+      "archive_pr34_head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "archive_pr34_ahead_by": 1,
+      "archive_pr34_behind_by": 159,
+      "modual_pr35_head": "f99d96e39f62245d23ad728daac2c2006061e393",
+      "modual_pr35_ahead_by": 9,
+      "modual_pr35_behind_by": 143,
+      "tesseract_pr6_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "tesseract_pr6_runs": [
+        39994207477,
+        39994207667
+      ],
+      "main_tree_repair": {
+        "affected_commit": "e23cea062381a21674ec8f6708e16ae279f79893",
+        "affected_tree": "ec00c0320c0b63dce176c338778bc32fce593877",
+        "repair_commit": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4",
+        "repair_tree": "961f40b3d9e21eb50b9f7e23fdd53ab486d7b20a",
+        "full_tree_base": "41c408d2ec39eac20d03b229ada58ce800464956",
+        "force_push": false,
+        "result": "FULL_TREE_RESTORED_AND_EXACT_READBACK_VERIFIED"
+      },
+      "state_schema_alias_correction": {
+        "id": "STATE_SCHEMA_ALIAS_CORRECTION_20261025T1505ICT",
+        "receipt_and_path_aliases_present": true,
+        "history_preserved": true
+      },
+      "tasks_closed": 0,
+      "result": "TICK_AND_CONSUMER_SUCCESS; LIVE_SENSOR_STREAM_NOT_VERIFIED; ALL_OPEN_RETAINED",
+      "main_head_before_state_update": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2"
     }
   ],
   "latest_sync_observation": {
@@ -13711,28 +13766,29 @@
     }
   ],
   "latest_provider_readback": {
-    "observed_at": "2026-10-25T15:05:23.527+07:00",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
-    "checkpoint_blob_sha": "fb516a9168079b0d93b48720908e97ae8070843a",
-    "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
-    "main_head_before_state_update": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+    "observed_at": "2026-10-25T15:08:57.347+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
+    "checkpoint_blob_sha": "1ff8bc870ec7e74e0f9916cf50fc66070f63eb29",
+    "checkpoint_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
+    "main_head_before_state_update": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
     "source_reads": {
       "agents_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
       "reentry_sha": "b6bf672545d0ebbc631655cad675322a61995499",
-      "resume_pointer_blob_sha_before_write": "3ec3e93fdf5f85d9fe56876faf551a6aab499fbc",
-      "open_tasks_blob_sha_before_write": "93f9c33ac96c9b15868a34f2eaa0e4aeef8c6ae0",
-      "modual_blob_sha_before_write": "91d1f7dd2a29e46ea719f7b43efefb99d14414ab"
+      "resume_pointer_blob_sha_before_write": "9efd8ad37ac78b6a408ab19e31af9aa1915cb1d4",
+      "open_tasks_blob_sha_before_write": "d32f791cd8b52f35005d5bd4c75dd7679088082c",
+      "modual_blob_sha_before_write": "dcc89d590fa149c53db604eba51292dced9e803c"
     },
-    "modual_blob_sha_after": "b60c8b401ff27d13023ae956ca51c3f60c2370f0",
-    "open_tasks_blob_sha_after": "d2359451bc6e5831fd3838570cac7d4e8bbaa4d9",
+    "modual_blob_sha_after": "2415e155f103b12b1bc8de1d8b886c8a853415e0",
+    "open_tasks_blob_sha_after": "02c819b1d4b1d604d9cec638f4c02361949848c7",
     "windows_tick": {
-      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T075639106737Z.json",
-      "sha256": "bc2895ee35032a28745923096ca539317f4e244eb6376779fc416719c9b9aa17",
-      "observed_at_utc": "2026-10-25T07:56:39.106737Z",
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T080139371211Z.json",
+      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T080139371211Z.json",
+      "sha256": "1f7f79c099bf93619e41f0f9d9251087835eb0fbb81d0b2dd0311e95e76fbec3",
+      "observed_at_utc": "2026-10-25T08:01:39.371211Z",
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
       "source_bytes": 35389440,
-      "task_last_run_local": "2026-10-25T14:56:33+07:00",
-      "task_next_run_local": "2026-10-25T15:01:32+07:00",
+      "task_last_run_local": "2026-10-25T15:01:33+07:00",
+      "task_next_run_local": "2026-10-25T15:06:32+07:00",
       "task_result": "0x0",
       "missed_runs": 0,
       "live_sensor_reading_confirmed": false,
@@ -13743,14 +13799,15 @@
       "synthetic_rows_added": 0,
       "cloud_export_enabled": false,
       "github_export_enabled": false,
-      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
-      "checkpoint_blob_sha": "fb516a9168079b0d93b48720908e97ae8070843a",
-      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5"
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
+      "checkpoint_blob_sha": "1ff8bc870ec7e74e0f9916cf50fc66070f63eb29",
+      "checkpoint_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2"
     },
     "consumer": {
-      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T075635961Z.json",
-      "sha256": "914c6e1fe4fae62bbab336821d8a625c82d38cf620ad8fe3c25f6f0f3a70d1db",
-      "observed_at_utc": "2026-10-25T07:56:39.2120144Z",
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T080136275Z.json",
+      "receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T080136275Z.json",
+      "sha256": "339e5c993ecda667384aa92a28904277369ecb2a6ffbdc1fe9815d3ba971d4de",
+      "observed_at_utc": "2026-10-25T08:01:39.4829017Z",
       "status": "SOURCE_OBSERVED_READONLY",
       "exit_code": 0,
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
@@ -13762,18 +13819,18 @@
       "source_file_written": false,
       "cloud_export_enabled": false,
       "github_push_enabled": false,
-      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
-      "checkpoint_blob_sha": "fb516a9168079b0d93b48720908e97ae8070843a",
-      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5"
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
+      "checkpoint_blob_sha": "1ff8bc870ec7e74e0f9916cf50fc66070f63eb29",
+      "checkpoint_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2"
     },
     "source": {
       "bytes": 35389440,
       "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
     },
     "clock": {
-      "host_time_observed": "2026-10-25T14:57:07.6927452+07:00",
-      "runtime_observed_at": "2026-10-25T15:05:23.527+07:00",
-      "approximate_host_clock_lag_seconds": 311,
+      "host_time_observed": "2026-10-25T15:01:58.0165168+07:00",
+      "runtime_observed_at": "2026-10-25T15:08:57.347+07:00",
+      "approximate_host_clock_lag_seconds": 421,
       "w32time_status": "Stopped",
       "w32time_start_mode": "Manual",
       "w32time_source_probe": "Service has not been started (0x80070426)",
@@ -13781,7 +13838,7 @@
       "system_clock_changed": false
     },
     "sensor_stream": {
-      "observed_at": "2026-10-25T15:05:23.527+07:00",
+      "observed_at": "2026-10-25T15:08:57.347+07:00",
       "usb_target": "1056285",
       "usb_state": "device",
       "sensorservice_probe_succeeded": true,
@@ -13812,7 +13869,6 @@
       "raw_sensor_values_persisted": false
     },
     "braid": {
-      "observed_at": "2026-10-25T15:05:23.527+07:00",
       "exit_code": 0,
       "six_receipt_sha256": "b08eb3ab73e4fe3901c9767d3fb4f25b264e337ff1cc1ce911f7bbfc875f9beb",
       "six_action_count": 9,
@@ -13825,42 +13881,33 @@
       "cloud_host_wiring": "NOT_VERIFIED"
     },
     "continuity_guard": {
-      "observed_at": "2026-10-25T15:05:23.527+07:00",
-      "source": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\continuity_guard.py",
-      "tests": "G:\\OS_Workspace\\TESSERACT_OS\\tests\\test_continuity_guard.py",
       "python_version": "3.12.10",
       "test_count": 25,
       "passed": 25,
       "failed": 0,
       "exit_code": 0
     },
-    "main_tree_repair": {
-      "incident": "A state update commit briefly made canonical files unreadable at main; repaired without force-push.",
+    "tree_repair": {
       "affected_commit": "e23cea062381a21674ec8f6708e16ae279f79893",
       "affected_tree": "ec00c0320c0b63dce176c338778bc32fce593877",
       "repair_commit": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4",
       "repair_tree": "961f40b3d9e21eb50b9f7e23fdd53ab486d7b20a",
       "full_tree_base": "41c408d2ec39eac20d03b229ada58ce800464956",
-      "verified_restored_paths": [
-        "AGENTS.md",
-        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md",
-        "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1454ICT.json",
-        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
-        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
-        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json"
-      ],
       "force_push": false,
       "result": "FULL_TREE_RESTORED_AND_EXACT_READBACK_VERIFIED"
     },
+    "alias_correction": {
+      "id": "STATE_SCHEMA_ALIAS_CORRECTION_20261025T1505ICT",
+      "receipt_and_path_aliases_present": true,
+      "history_preserved": true
+    },
     "archive_pr34": {
-      "repository": "2708halinh-cloud/SOL-LONG-MACH",
-      "pr": 34,
-      "state": "OPEN_DRAFT_UNMERGED",
       "head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
-      "compare_base_head": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "compare_base_head": "44c2af0820e0d9933481a84c9fc69653017ca27c",
       "compare_status": "diverged",
       "ahead_by": 1,
-      "behind_by": 156,
+      "behind_by": 159,
       "mergeable": false,
       "ci_runs": [
         40145523744,
@@ -13874,9 +13921,7 @@
       ],
       "artifact": {
         "id": 12580351639,
-        "name": "sol-archive-real-fixture-readback",
         "run_id": 40145523727,
-        "size_bytes": 958,
         "expired": false,
         "expires_at": "2026-11-08T00:08:44Z"
       },
@@ -13884,14 +13929,12 @@
       "force_push": false
     },
     "modual_pr35": {
-      "repository": "2708halinh-cloud/SOL-LONG-MACH",
-      "pr": 35,
-      "state": "OPEN_DRAFT_UNMERGED",
       "head": "f99d96e39f62245d23ad728daac2c2006061e393",
-      "compare_base_head": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "compare_base_head": "44c2af0820e0d9933481a84c9fc69653017ca27c",
       "compare_status": "diverged",
       "ahead_by": 9,
-      "behind_by": 140,
+      "behind_by": 143,
       "mergeable": false,
       "test_run": {
         "id": 40154600501,
@@ -13905,10 +13948,8 @@
       "force_push": false
     },
     "tesseract_pr6": {
-      "repository": "2708halinh-cloud/x-time-web",
-      "pr": 6,
-      "state": "OPEN_DRAFT_UNMERGED",
       "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "state": "OPEN_DRAFT_UNMERGED",
       "runs": [
         {
           "id": 39994207477,
@@ -13928,7 +13969,6 @@
       "ci_rerun_performed": false
     },
     "cloud": {
-      "workflow_id": "BogzhFUDbRp7kuwh",
       "execution_id": "161",
       "status": "success",
       "event_id": "X20261025080024100_CLOUD",
@@ -13941,7 +13981,7 @@
       "tasks_closed": 0
     },
     "tasks_closed": 0,
-    "result": "TICK_AND_CONSUMER_SUCCESS; FULL_TREE_RESTORED; LIVE_SENSOR_STREAM_NOT_VERIFIED; ALL_OPEN_RETAINED"
+    "result": "TICK_AND_CONSUMER_SUCCESS; LIVE_SENSOR_STREAM_NOT_VERIFIED; ALL_OPEN_RETAINED"
   },
   "latest_archive_pr_current_head_probe": {
     "observed_at_local": "2026-10-25T01:40:00+07:00",
@@ -31830,7 +31870,7 @@
       "head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
       "state": "OPEN_DRAFT_UNMERGED",
       "ahead_by": 1,
-      "behind_by": 156,
+      "behind_by": 159,
       "ci_runs": [
         40145523744,
         40145523727,
@@ -31840,7 +31880,7 @@
       "artifact_expired": false,
       "merged": false,
       "force_push": false,
-      "compare_base_head": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4"
+      "compare_base_head": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2"
     },
     {
       "task": "MODUAL_ANDROID_TRANSPORT",
@@ -31849,14 +31889,14 @@
       "head": "f99d96e39f62245d23ad728daac2c2006061e393",
       "state": "OPEN_DRAFT_UNMERGED",
       "ahead_by": 9,
-      "behind_by": 140,
+      "behind_by": 143,
       "ci_runs": [
         40154600501,
         40154600506
       ],
       "merged": false,
       "force_push": false,
-      "compare_base_head": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4"
+      "compare_base_head": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2"
     },
     {
       "task": "LOCAL_BRAID_READONLY_EXECUTION",
@@ -32346,38 +32386,33 @@
     "result": "CONCURRENT_CLOUD_CONTINUITY_COMMITS_RECONCILED; HISTORY_PRESERVED"
   },
   "latest_provenance_reconciliation": {
-    "id": "PROVIDER_READBACK_RECONCILIATION_20261025T1502ICT",
-    "observed_at": "2026-10-25T15:05:23.527+07:00",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
-    "checkpoint_blob_sha": "fb516a9168079b0d93b48720908e97ae8070843a",
-    "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
-    "checkpoint_parent_commit": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4",
-    "state_update_parent_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+    "id": "PROVIDER_READBACK_RECONCILIATION_20261025T1507ICT",
+    "observed_at": "2026-10-25T15:08:57.347+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
+    "checkpoint_blob_sha": "1ff8bc870ec7e74e0f9916cf50fc66070f63eb29",
+    "checkpoint_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
+    "checkpoint_parent_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
+    "state_update_parent_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
     "state_update_parent_matches_checkpoint": true,
-    "state_blobs_preserved": true,
-    "modual_blob_sha": "b60c8b401ff27d13023ae956ca51c3f60c2370f0",
-    "open_tasks_blob_sha": "d2359451bc6e5831fd3838570cac7d4e8bbaa4d9",
-    "resume_pointer_blob_sha_before_write": "3ec3e93fdf5f85d9fe56876faf551a6aab499fbc",
-    "main_tree_repair": {
-      "incident": "A state update commit briefly made canonical files unreadable at main; repaired without force-push.",
+    "modual_blob_sha": "2415e155f103b12b1bc8de1d8b886c8a853415e0",
+    "open_tasks_blob_sha": "02c819b1d4b1d604d9cec638f4c02361949848c7",
+    "resume_pointer_blob_sha_before_write": "9efd8ad37ac78b6a408ab19e31af9aa1915cb1d4",
+    "tree_repair": {
       "affected_commit": "e23cea062381a21674ec8f6708e16ae279f79893",
       "affected_tree": "ec00c0320c0b63dce176c338778bc32fce593877",
       "repair_commit": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4",
       "repair_tree": "961f40b3d9e21eb50b9f7e23fdd53ab486d7b20a",
       "full_tree_base": "41c408d2ec39eac20d03b229ada58ce800464956",
-      "verified_restored_paths": [
-        "AGENTS.md",
-        "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md",
-        "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1454ICT.json",
-        "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
-        "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
-        "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json"
-      ],
       "force_push": false,
       "result": "FULL_TREE_RESTORED_AND_EXACT_READBACK_VERIFIED"
     },
+    "alias_correction": {
+      "id": "STATE_SCHEMA_ALIAS_CORRECTION_20261025T1505ICT",
+      "receipt_and_path_aliases_present": true,
+      "history_preserved": true
+    },
     "tasks_closed": 0,
-    "result": "POST_REPAIR_CHECKPOINT_AND_STATE_LINEAGE_RECONCILED; ALL_OPEN_RETAINED"
+    "result": "CHECKPOINT_AND_FULL_TREE_STATE_LINEAGE_RECONCILED; ALL_OPEN_RETAINED"
   },
   "latest_runtime_observation_20261025T1454ICT": {
     "observed_at": "2026-10-25T14:58:19.946+07:00",
@@ -33210,5 +33245,381 @@
     "tasks_closed": 0,
     "modual_blob_sha": "dcc89d590fa149c53db604eba51292dced9e803c",
     "open_tasks_blob_sha": "d32f791cd8b52f35005d5bd4c75dd7679088082c"
+  },
+  "latest_runtime_observation_20261025T1507ICT": {
+    "observed_at": "2026-10-25T15:08:57.347+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
+    "checkpoint_blob_sha": "1ff8bc870ec7e74e0f9916cf50fc66070f63eb29",
+    "checkpoint_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
+    "main_head_before_state_update": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
+    "source_reads": {
+      "agents_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "reentry_sha": "b6bf672545d0ebbc631655cad675322a61995499",
+      "resume_pointer_blob_sha_before_write": "9efd8ad37ac78b6a408ab19e31af9aa1915cb1d4",
+      "open_tasks_blob_sha_before_write": "d32f791cd8b52f35005d5bd4c75dd7679088082c",
+      "modual_blob_sha_before_write": "dcc89d590fa149c53db604eba51292dced9e803c"
+    },
+    "modual_blob_sha_after": "2415e155f103b12b1bc8de1d8b886c8a853415e0",
+    "open_tasks_blob_sha_after": "02c819b1d4b1d604d9cec638f4c02361949848c7",
+    "windows_tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T080139371211Z.json",
+      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T080139371211Z.json",
+      "sha256": "1f7f79c099bf93619e41f0f9d9251087835eb0fbb81d0b2dd0311e95e76fbec3",
+      "observed_at_utc": "2026-10-25T08:01:39.371211Z",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "task_last_run_local": "2026-10-25T15:01:33+07:00",
+      "task_next_run_local": "2026-10-25T15:06:32+07:00",
+      "task_result": "0x0",
+      "missed_runs": 0,
+      "live_sensor_reading_confirmed": false,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "sensor_event_timestamp_sensor_count": 4,
+      "sensor_event_sensors_advanced": [],
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false,
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
+      "checkpoint_blob_sha": "1ff8bc870ec7e74e0f9916cf50fc66070f63eb29",
+      "checkpoint_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2"
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T080136275Z.json",
+      "receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T080136275Z.json",
+      "sha256": "339e5c993ecda667384aa92a28904277369ecb2a6ffbdc1fe9815d3ba971d4de",
+      "observed_at_utc": "2026-10-25T08:01:39.4829017Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "source_content_hash_verified": true,
+      "consumer_hash_matches_verifier": true,
+      "live_sensor_reading_confirmed": false,
+      "raw_rows_emitted": false,
+      "source_file_written": false,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false,
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
+      "checkpoint_blob_sha": "1ff8bc870ec7e74e0f9916cf50fc66070f63eb29",
+      "checkpoint_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2"
+    },
+    "source": {
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+    },
+    "clock": {
+      "host_time_observed": "2026-10-25T15:01:58.0165168+07:00",
+      "runtime_observed_at": "2026-10-25T15:08:57.347+07:00",
+      "approximate_host_clock_lag_seconds": 421,
+      "w32time_status": "Stopped",
+      "w32time_start_mode": "Manual",
+      "w32time_source_probe": "Service has not been started (0x80070426)",
+      "current_user_is_administrator": false,
+      "system_clock_changed": false
+    },
+    "sensor_stream": {
+      "observed_at": "2026-10-25T15:08:57.347+07:00",
+      "usb_target": "1056285",
+      "usb_state": "device",
+      "sensorservice_probe_succeeded": true,
+      "sensor_event_timestamp_sensor_count": 4,
+      "sensor_event_sensors_advanced": [],
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "wireless_target": "192.168.1.14:5556",
+      "wireless_state": "NOT_LISTED",
+      "package": "com.exatools.sensors",
+      "package_version": "2.1.01",
+      "package_service_query": "No services found",
+      "other_sensor_app": "com.galaxy.sensortoolbox",
+      "other_sensor_app_services": "No services found",
+      "termux_installed": true,
+      "termux_run_command_service_present": true,
+      "termux_api_installed": false,
+      "controlled_test": {
+        "live_timestamps_advanced_while_app_active": true,
+        "advanced_sensors": [
+          "AK099_MAGNETOMETER",
+          "LSM6DSO_ACCELEROMETER",
+          "LSM6DSO_GYROSCOPE"
+        ],
+        "force_stopped_after_test": true,
+        "post_stop_status": "EVENT_TIMESTAMP_STALE"
+      },
+      "production_continuous_stream_verified": false,
+      "raw_sensor_values_persisted": false
+    },
+    "braid": {
+      "exit_code": 0,
+      "six_receipt_sha256": "b08eb3ab73e4fe3901c9767d3fb4f25b264e337ff1cc1ce911f7bbfc875f9beb",
+      "six_action_count": 9,
+      "six_receipt_readback_ok": true,
+      "plural_receipt_sha256": "84abc8f94207df4dd53e4c8735f2d288fcec6258288fa38940ba52ed3620b21f",
+      "plural_action_count": 5,
+      "plural_receipt_readback_ok": true,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "cloud_host_wiring": "NOT_VERIFIED"
+    },
+    "continuity_guard": {
+      "python_version": "3.12.10",
+      "test_count": 25,
+      "passed": 25,
+      "failed": 0,
+      "exit_code": 0
+    },
+    "tree_repair": {
+      "affected_commit": "e23cea062381a21674ec8f6708e16ae279f79893",
+      "affected_tree": "ec00c0320c0b63dce176c338778bc32fce593877",
+      "repair_commit": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4",
+      "repair_tree": "961f40b3d9e21eb50b9f7e23fdd53ab486d7b20a",
+      "full_tree_base": "41c408d2ec39eac20d03b229ada58ce800464956",
+      "force_push": false,
+      "result": "FULL_TREE_RESTORED_AND_EXACT_READBACK_VERIFIED"
+    },
+    "alias_correction": {
+      "id": "STATE_SCHEMA_ALIAS_CORRECTION_20261025T1505ICT",
+      "receipt_and_path_aliases_present": true,
+      "history_preserved": true
+    },
+    "archive_pr34": {
+      "head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "compare_base_head": "44c2af0820e0d9933481a84c9fc69653017ca27c",
+      "compare_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 159,
+      "mergeable": false,
+      "ci_runs": [
+        40145523744,
+        40145523727,
+        40145523754
+      ],
+      "ci_conclusions": [
+        "success",
+        "success",
+        "success"
+      ],
+      "artifact": {
+        "id": 12580351639,
+        "run_id": 40145523727,
+        "expired": false,
+        "expires_at": "2026-11-08T00:08:44Z"
+      },
+      "merged": false,
+      "force_push": false
+    },
+    "modual_pr35": {
+      "head": "f99d96e39f62245d23ad728daac2c2006061e393",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "compare_base_head": "44c2af0820e0d9933481a84c9fc69653017ca27c",
+      "compare_status": "diverged",
+      "ahead_by": 9,
+      "behind_by": 143,
+      "mergeable": false,
+      "test_run": {
+        "id": 40154600501,
+        "conclusion": "success"
+      },
+      "secret_guard_run": {
+        "id": 40154600506,
+        "conclusion": "success"
+      },
+      "merged": false,
+      "force_push": false
+    },
+    "tesseract_pr6": {
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "runs": [
+        {
+          "id": 39994207477,
+          "conclusion": "failure",
+          "steps": 0,
+          "artifacts": 0
+        },
+        {
+          "id": 39994207667,
+          "conclusion": "failure",
+          "steps": 0,
+          "artifacts": 0
+        }
+      ],
+      "issuer_public_key_verified": false,
+      "runner_assignment_verified": false,
+      "ci_rerun_performed": false
+    },
+    "cloud": {
+      "execution_id": "161",
+      "status": "success",
+      "event_id": "X20261025080024100_CLOUD",
+      "row_id": 350,
+      "state": "OPEN_WORK_REMAINS",
+      "recovery_tasks": 45,
+      "pending_tasks": 45,
+      "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED",
+      "host_operations": 0,
+      "tasks_closed": 0
+    },
+    "tasks_closed": 0,
+    "result": "TICK_AND_CONSUMER_SUCCESS; LIVE_SENSOR_STREAM_NOT_VERIFIED; ALL_OPEN_RETAINED"
+  },
+  "latest_sensor_stream_probe_20261025T1507ICT": {
+    "observed_at": "2026-10-25T15:08:57.347+07:00",
+    "usb_target": "1056285",
+    "usb_state": "device",
+    "sensorservice_probe_succeeded": true,
+    "sensor_event_timestamp_sensor_count": 4,
+    "sensor_event_sensors_advanced": [],
+    "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "wireless_target": "192.168.1.14:5556",
+    "wireless_state": "NOT_LISTED",
+    "package": "com.exatools.sensors",
+    "package_version": "2.1.01",
+    "package_service_query": "No services found",
+    "other_sensor_app": "com.galaxy.sensortoolbox",
+    "other_sensor_app_services": "No services found",
+    "termux_installed": true,
+    "termux_run_command_service_present": true,
+    "termux_api_installed": false,
+    "controlled_test": {
+      "live_timestamps_advanced_while_app_active": true,
+      "advanced_sensors": [
+        "AK099_MAGNETOMETER",
+        "LSM6DSO_ACCELEROMETER",
+        "LSM6DSO_GYROSCOPE"
+      ],
+      "force_stopped_after_test": true,
+      "post_stop_status": "EVENT_TIMESTAMP_STALE"
+    },
+    "production_continuous_stream_verified": false,
+    "raw_sensor_values_persisted": false
+  },
+  "latest_braid_probe_20261025T1507ICT": {
+    "exit_code": 0,
+    "six_receipt_sha256": "b08eb3ab73e4fe3901c9767d3fb4f25b264e337ff1cc1ce911f7bbfc875f9beb",
+    "six_action_count": 9,
+    "six_receipt_readback_ok": true,
+    "plural_receipt_sha256": "84abc8f94207df4dd53e4c8735f2d288fcec6258288fa38940ba52ed3620b21f",
+    "plural_action_count": 5,
+    "plural_receipt_readback_ok": true,
+    "source_sha256_unchanged": true,
+    "mutation_executed": false,
+    "cloud_host_wiring": "NOT_VERIFIED"
+  },
+  "latest_continuity_guard_regression_20261025T1507ICT": {
+    "python_version": "3.12.10",
+    "test_count": 25,
+    "passed": 25,
+    "failed": 0,
+    "exit_code": 0
+  },
+  "latest_archive_followup_20261025T1507ICT": {
+    "head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "compare_base_head": "44c2af0820e0d9933481a84c9fc69653017ca27c",
+    "compare_status": "diverged",
+    "ahead_by": 1,
+    "behind_by": 159,
+    "mergeable": false,
+    "ci_runs": [
+      40145523744,
+      40145523727,
+      40145523754
+    ],
+    "ci_conclusions": [
+      "success",
+      "success",
+      "success"
+    ],
+    "artifact": {
+      "id": 12580351639,
+      "run_id": 40145523727,
+      "expired": false,
+      "expires_at": "2026-11-08T00:08:44Z"
+    },
+    "merged": false,
+    "force_push": false
+  },
+  "latest_modual_pr35_divergence_20261025T1507ICT": {
+    "head": "f99d96e39f62245d23ad728daac2c2006061e393",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "compare_base_head": "44c2af0820e0d9933481a84c9fc69653017ca27c",
+    "compare_status": "diverged",
+    "ahead_by": 9,
+    "behind_by": 143,
+    "mergeable": false,
+    "test_run": {
+      "id": 40154600501,
+      "conclusion": "success"
+    },
+    "secret_guard_run": {
+      "id": 40154600506,
+      "conclusion": "success"
+    },
+    "merged": false,
+    "force_push": false
+  },
+  "latest_tesseract_status_readback_20261025T1507ICT": {
+    "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "runs": [
+      {
+        "id": 39994207477,
+        "conclusion": "failure",
+        "steps": 0,
+        "artifacts": 0
+      },
+      {
+        "id": 39994207667,
+        "conclusion": "failure",
+        "steps": 0,
+        "artifacts": 0
+      }
+    ],
+    "issuer_public_key_verified": false,
+    "runner_assignment_verified": false,
+    "ci_rerun_performed": false
+  },
+  "latest_cloud_continuity_readback_20261025T1507ICT": {
+    "execution_id": "161",
+    "status": "success",
+    "event_id": "X20261025080024100_CLOUD",
+    "row_id": 350,
+    "state": "OPEN_WORK_REMAINS",
+    "recovery_tasks": 45,
+    "pending_tasks": 45,
+    "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED",
+    "host_operations": 0,
+    "tasks_closed": 0
+  },
+  "latest_checkpoint_parent_reconciliation_20261025T1507ICT": {
+    "id": "PROVIDER_READBACK_RECONCILIATION_20261025T1507ICT",
+    "observed_at": "2026-10-25T15:08:57.347+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
+    "checkpoint_blob_sha": "1ff8bc870ec7e74e0f9916cf50fc66070f63eb29",
+    "checkpoint_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
+    "checkpoint_parent_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
+    "state_update_parent_commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
+    "state_update_parent_matches_checkpoint": true,
+    "modual_blob_sha": "2415e155f103b12b1bc8de1d8b886c8a853415e0",
+    "open_tasks_blob_sha": "02c819b1d4b1d604d9cec638f4c02361949848c7",
+    "resume_pointer_blob_sha_before_write": "9efd8ad37ac78b6a408ab19e31af9aa1915cb1d4",
+    "tree_repair": {
+      "affected_commit": "e23cea062381a21674ec8f6708e16ae279f79893",
+      "affected_tree": "ec00c0320c0b63dce176c338778bc32fce593877",
+      "repair_commit": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4",
+      "repair_tree": "961f40b3d9e21eb50b9f7e23fdd53ab486d7b20a",
+      "full_tree_base": "41c408d2ec39eac20d03b229ada58ce800464956",
+      "force_push": false,
+      "result": "FULL_TREE_RESTORED_AND_EXACT_READBACK_VERIFIED"
+    },
+    "alias_correction": {
+      "id": "STATE_SCHEMA_ALIAS_CORRECTION_20261025T1505ICT",
+      "receipt_and_path_aliases_present": true,
+      "history_preserved": true
+    },
+    "tasks_closed": 0,
+    "result": "CHECKPOINT_AND_FULL_TREE_STATE_LINEAGE_RECONCILED; ALL_OPEN_RETAINED"
   }
 }
