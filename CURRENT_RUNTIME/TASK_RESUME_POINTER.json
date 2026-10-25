@@ -115,7 +115,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-25T15:05:23.527+07:00",
+  "updated_at": "2026-10-25T15:06:35.186+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -7102,6 +7102,17 @@
       "tasks_closed": 0,
       "result": "TICK_AND_CONSUMER_SUCCESS; FULL_TREE_RESTORED; LIVE_SENSOR_STREAM_NOT_VERIFIED; ALL_OPEN_RETAINED",
       "main_head_before_state_update": "559d9690cb72e38f2255e6badc90b39f64dd21a5"
+    },
+    {
+      "id": "STATE_SCHEMA_ALIAS_CORRECTION_20261025T1505ICT",
+      "observed_at": "2026-10-25T15:06:35.186+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
+      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+      "modual_blob_sha_before": "b60c8b401ff27d13023ae956ca51c3f60c2370f0",
+      "resume_pointer_blob_sha_before": "9d00075e481edcc8d999be9e84ce29a9e37155ab",
+      "open_tasks_blob_sha_before": "d2359451bc6e5831fd3838570cac7d4e8bbaa4d9",
+      "tasks_closed": 0,
+      "result": "RECEIPT_ALIASES_NORMALIZED_HISTORY_PRESERVED"
     }
   ],
   "latest_sync_observation": {
@@ -32756,7 +32767,8 @@
       "github_export_enabled": false,
       "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
       "checkpoint_blob_sha": "fb516a9168079b0d93b48720908e97ae8070843a",
-      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5"
+      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T075639106737Z.json"
     },
     "consumer": {
       "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T075635961Z.json",
@@ -32775,7 +32787,8 @@
       "github_push_enabled": false,
       "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
       "checkpoint_blob_sha": "fb516a9168079b0d93b48720908e97ae8070843a",
-      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5"
+      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+      "receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T075635961Z.json"
     },
     "source": {
       "bytes": 35389440,
@@ -32952,7 +32965,25 @@
       "tasks_closed": 0
     },
     "tasks_closed": 0,
-    "result": "TICK_AND_CONSUMER_SUCCESS; FULL_TREE_RESTORED; LIVE_SENSOR_STREAM_NOT_VERIFIED; ALL_OPEN_RETAINED"
+    "result": "TICK_AND_CONSUMER_SUCCESS; FULL_TREE_RESTORED; LIVE_SENSOR_STREAM_NOT_VERIFIED; ALL_OPEN_RETAINED",
+    "schema_alias_correction": {
+      "id": "STATE_SCHEMA_ALIAS_CORRECTION_20261025T1505ICT",
+      "observed_at": "2026-10-25T15:06:35.186+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
+      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+      "reason": "Preserve existing receipt schema aliases while retaining the new path fields.",
+      "aliases_added": [
+        "independent_provider_continuation.latest_verified_tick_receipt.receipt",
+        "independent_provider_continuation.latest_consumer_readback.receipt",
+        "tick_readback_history[WINDOWS_TICK_READBACK_20261025T1502ICT].receipt",
+        "consumer_readback_history[CONSUMER_READBACK_20261025T1502ICT].receipt"
+      ],
+      "source_bytes_unchanged": true,
+      "raw_rows_emitted": false,
+      "tasks_closed": 0,
+      "modual_blob_sha": "dcc89d590fa149c53db604eba51292dced9e803c",
+      "open_tasks_blob_sha": "d32f791cd8b52f35005d5bd4c75dd7679088082c"
+    }
   },
   "latest_sensor_stream_probe_20261025T1502ICT": {
     "observed_at": "2026-10-25T15:05:23.527+07:00",
@@ -33161,5 +33192,23 @@
     },
     "tasks_closed": 0,
     "result": "POST_REPAIR_CHECKPOINT_AND_STATE_LINEAGE_RECONCILED; ALL_OPEN_RETAINED"
+  },
+  "latest_state_schema_alias_correction_20261025T1505ICT": {
+    "id": "STATE_SCHEMA_ALIAS_CORRECTION_20261025T1505ICT",
+    "observed_at": "2026-10-25T15:06:35.186+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
+    "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+    "reason": "Preserve existing receipt schema aliases while retaining the new path fields.",
+    "aliases_added": [
+      "independent_provider_continuation.latest_verified_tick_receipt.receipt",
+      "independent_provider_continuation.latest_consumer_readback.receipt",
+      "tick_readback_history[WINDOWS_TICK_READBACK_20261025T1502ICT].receipt",
+      "consumer_readback_history[CONSUMER_READBACK_20261025T1502ICT].receipt"
+    ],
+    "source_bytes_unchanged": true,
+    "raw_rows_emitted": false,
+    "tasks_closed": 0,
+    "modual_blob_sha": "dcc89d590fa149c53db604eba51292dced9e803c",
+    "open_tasks_blob_sha": "d32f791cd8b52f35005d5bd4c75dd7679088082c"
   }
 }

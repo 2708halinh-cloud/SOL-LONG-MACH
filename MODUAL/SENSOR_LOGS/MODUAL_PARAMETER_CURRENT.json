@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-25T15:05:23.527+07:00",
+  "observed_at": "2026-10-25T15:06:35.186+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -90,7 +90,7 @@
     "current_task": "MODUAL_SENSOR_LOGS_ROUTING",
     "state": "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED",
     "rule": "Do not overwrite existing Oct 09 local source metadata; do not call Dropbox CSV a working Windows Tick consumer; no raw sensor records or secrets committed; verify Windows Tick independently before closing.",
-    "last_observation": "2026-10-25T15:05:23.527+07:00",
+    "last_observation": "2026-10-25T15:06:35.186+07:00",
     "latest_verified_tick_receipt": {
       "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T075639106737Z.json",
       "sha256": "bc2895ee35032a28745923096ca539317f4e244eb6376779fc416719c9b9aa17",
@@ -113,7 +113,8 @@
       "checkpoint_blob_sha": "fb516a9168079b0d93b48720908e97ae8070843a",
       "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
       "consumer_receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T075635961Z.json",
-      "consumer_sha256": "914c6e1fe4fae62bbab336821d8a625c82d38cf620ad8fe3c25f6f0f3a70d1db"
+      "consumer_sha256": "914c6e1fe4fae62bbab336821d8a625c82d38cf620ad8fe3c25f6f0f3a70d1db",
+      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T075639106737Z.json"
     },
     "live_stream_diagnostic": {
       "observed_at": "2026-10-25T02:58:40.987+07:00",
@@ -445,7 +446,8 @@
         "consumer_status": "SOURCE_OBSERVED_READONLY",
         "consumer_exit_code": 0,
         "source_content_hash_verified": true,
-        "raw_rows_emitted": false
+        "raw_rows_emitted": false,
+        "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T075639106737Z.json"
       }
     ],
     "latest_tick_checkpoint": {
@@ -477,7 +479,8 @@
       "github_push_enabled": false,
       "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
       "checkpoint_blob_sha": "fb516a9168079b0d93b48720908e97ae8070843a",
-      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5"
+      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+      "receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T075635961Z.json"
     },
     "consumer_readback_history": [
       {
@@ -639,7 +642,8 @@
         "github_push_enabled": false,
         "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
         "checkpoint_blob_sha": "fb516a9168079b0d93b48720908e97ae8070843a",
-        "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5"
+        "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+        "receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T075635961Z.json"
       }
     ],
     "provider_probe_observed_at": "2026-10-25T15:05:23.527+07:00",
@@ -834,6 +838,22 @@
       ],
       "force_push": false,
       "result": "FULL_TREE_RESTORED_AND_EXACT_READBACK_VERIFIED"
+    },
+    "latest_state_schema_alias_correction": {
+      "id": "STATE_SCHEMA_ALIAS_CORRECTION_20261025T1505ICT",
+      "observed_at": "2026-10-25T15:06:35.186+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
+      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+      "reason": "Preserve existing receipt schema aliases while retaining the new path fields.",
+      "aliases_added": [
+        "independent_provider_continuation.latest_verified_tick_receipt.receipt",
+        "independent_provider_continuation.latest_consumer_readback.receipt",
+        "tick_readback_history[WINDOWS_TICK_READBACK_20261025T1502ICT].receipt",
+        "consumer_readback_history[CONSUMER_READBACK_20261025T1502ICT].receipt"
+      ],
+      "source_bytes_unchanged": true,
+      "raw_rows_emitted": false,
+      "tasks_closed": 0
     }
   },
   "session_observations": [
@@ -11647,6 +11667,22 @@
         "result": "FULL_TREE_RESTORED_AND_EXACT_READBACK_VERIFIED"
       },
       "tasks_closed": 0
+    },
+    {
+      "id": "STATE_SCHEMA_ALIAS_CORRECTION_20261025T1505ICT",
+      "observed_at": "2026-10-25T15:06:35.186+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
+      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+      "reason": "Preserve existing receipt schema aliases while retaining the new path fields.",
+      "aliases_added": [
+        "independent_provider_continuation.latest_verified_tick_receipt.receipt",
+        "independent_provider_continuation.latest_consumer_readback.receipt",
+        "tick_readback_history[WINDOWS_TICK_READBACK_20261025T1502ICT].receipt",
+        "consumer_readback_history[CONSUMER_READBACK_20261025T1502ICT].receipt"
+      ],
+      "source_bytes_unchanged": true,
+      "raw_rows_emitted": false,
+      "tasks_closed": 0
     }
   ],
   "privacy_policy": {
@@ -13306,7 +13342,8 @@
       "github_export_enabled": false,
       "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
       "checkpoint_blob_sha": "fb516a9168079b0d93b48720908e97ae8070843a",
-      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5"
+      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+      "receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T075639106737Z.json"
     },
     "consumer": {
       "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T075635961Z.json",
@@ -13325,7 +13362,8 @@
       "github_push_enabled": false,
       "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
       "checkpoint_blob_sha": "fb516a9168079b0d93b48720908e97ae8070843a",
-      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5"
+      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+      "receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T075635961Z.json"
     },
     "source": {
       "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
@@ -13392,7 +13430,23 @@
       "force_push": false,
       "result": "FULL_TREE_RESTORED_AND_EXACT_READBACK_VERIFIED"
     },
-    "result": "TICK_AND_CONSUMER_SUCCESS; LIVE_SENSOR_STREAM_STALE; FULL_TREE_RESTORED; ALL_OPEN_RETAINED"
+    "result": "TICK_AND_CONSUMER_SUCCESS; LIVE_SENSOR_STREAM_STALE; FULL_TREE_RESTORED; ALL_OPEN_RETAINED",
+    "schema_alias_correction": {
+      "id": "STATE_SCHEMA_ALIAS_CORRECTION_20261025T1505ICT",
+      "observed_at": "2026-10-25T15:06:35.186+07:00",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
+      "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+      "reason": "Preserve existing receipt schema aliases while retaining the new path fields.",
+      "aliases_added": [
+        "independent_provider_continuation.latest_verified_tick_receipt.receipt",
+        "independent_provider_continuation.latest_consumer_readback.receipt",
+        "tick_readback_history[WINDOWS_TICK_READBACK_20261025T1502ICT].receipt",
+        "consumer_readback_history[CONSUMER_READBACK_20261025T1502ICT].receipt"
+      ],
+      "source_bytes_unchanged": true,
+      "raw_rows_emitted": false,
+      "tasks_closed": 0
+    }
   },
   "latest_sensor_stream_probe_20261025T1502ICT": {
     "observed_at": "2026-10-25T15:05:23.527+07:00",
@@ -13553,5 +13607,21 @@
     ],
     "force_push": false,
     "result": "FULL_TREE_RESTORED_AND_EXACT_READBACK_VERIFIED"
+  },
+  "latest_state_schema_alias_correction_20261025T1505ICT": {
+    "id": "STATE_SCHEMA_ALIAS_CORRECTION_20261025T1505ICT",
+    "observed_at": "2026-10-25T15:06:35.186+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1502ICT.json",
+    "checkpoint_commit": "559d9690cb72e38f2255e6badc90b39f64dd21a5",
+    "reason": "Preserve existing receipt schema aliases while retaining the new path fields.",
+    "aliases_added": [
+      "independent_provider_continuation.latest_verified_tick_receipt.receipt",
+      "independent_provider_continuation.latest_consumer_readback.receipt",
+      "tick_readback_history[WINDOWS_TICK_READBACK_20261025T1502ICT].receipt",
+      "consumer_readback_history[CONSUMER_READBACK_20261025T1502ICT].receipt"
+    ],
+    "source_bytes_unchanged": true,
+    "raw_rows_emitted": false,
+    "tasks_closed": 0
   }
 }
