@@ -3,8 +3,8 @@
   "task": "MODUAL_SENSOR_LOGS_ROUTING",
   "repo": "2708halinh-cloud/SOL-LONG-MACH",
   "branch": "main",
-  "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
-  "commit": "fd44973e8fbbec88ea6b945d0fa40e4502332dd2",
+  "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1553ICT.json",
+  "commit": "e3c6dccb6e24bf176066a6b02ed76681f022adef",
   "rule": "Resume the latest MODUAL provider checkpoint first; the previous TESSERACT pointer is preserved in previous_pointer_snapshot and parallel_open_branches. Keep every unfinished task OPEN.",
   "pr": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
@@ -100,7 +100,13 @@
     "previous_head_validation_run": 39975540284,
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
-  "next": "After the next scheduled Windows Tick due 2026-10-25T15:06:32+07 by the host clock, exact-read the newest Tick and consumer receipts and recompute the source SHA. Host clock lag at last comparison was approximately 421 seconds; W32Time remains Stopped/Manual and current user is not administrator. Continue supported persistent sensor service/bridge investigation; existing sensor apps expose no services and timestamps are stale after stop. Keep all OPEN tasks and the full-tree repair history; no merge, force-push or unjustified CI rerun.",
+  "next": [
+    "When an authorized host route returns online, read the exact newest Windows Tick and consumer receipts; do not infer later host ticks from cloud pulse.",
+    "Keep the 35,389,440-byte Dropbox object separate from the unresolved host-local target expected to be 89,814,328 bytes; do not substitute candidates.",
+    "Continue Archive PR #36 as the independent verified branch, but keep it OPEN because main advanced; review divergence before any sync, never force-push.",
+    "Keep PR #34 and #35 OPEN/diverged; keep TESSERACT PR #6 OPEN and do not rerun CI until issuer key provenance and runner assignment are verified.",
+    "After the next scheduled n8n pulse, read the actual execution and row; do not trigger a duplicate manual scan."
+  ],
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
     "implementation": "runtime/continuity_guard.py",
@@ -115,7 +121,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-25T15:08:57.347+07:00",
+  "updated_at": "2026-10-25T15:54:56.242+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -31905,6 +31911,27 @@
       "plural_receipt_sha256": "61fad3d7545241a1a0acf9c4afb1bca3abd9ff28dd0bd4cffcbd345722f1f3c6",
       "mutation_executed": false,
       "exact_readback": true
+    },
+    {
+      "task": "SV-20261020-13-ARCHIVE-FORMATS_CLEAN_RECUT",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "branch": "fix/archive-adapters-main-recut-20261025T1534ICT",
+      "checkpoint": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1553ICT.json",
+      "commit": "e9c299594447d75bebb75c343cdb707731c7ea50",
+      "pr": 36,
+      "state": "OPEN_DRAFT_UNMERGED",
+      "compare_base": "85f23c6073dc18ee9f042c1ef7b82ecaec7be268",
+      "ahead_by": 5,
+      "behind_by": 5,
+      "ci_runs": [
+        40177456089,
+        40177456127,
+        40177456080
+      ],
+      "ci_success": true,
+      "issuer_or_runner_not_applicable": true,
+      "merged": false,
+      "force_push": false
     }
   ],
   "pointer_integrity": {
@@ -33621,5 +33648,57 @@
     },
     "tasks_closed": 0,
     "result": "CHECKPOINT_AND_FULL_TREE_STATE_LINEAGE_RECONCILED; ALL_OPEN_RETAINED"
+  },
+  "latest_provider_readback_20261025T1553ICT": {
+    "observed_at": "2026-10-25T15:54:56.242+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1553ICT.json",
+    "checkpoint_blob_sha": "1ad5da57e1e2b7d1d8ac5bf2a7f9c2e9b9732467",
+    "checkpoint_commit": "e3c6dccb6e24bf176066a6b02ed76681f022adef",
+    "host_device_inventory": {
+      "all_registered_devices_offline": true,
+      "host_runtime_probe_this_turn": false,
+      "last_known_sensor_stream_status": "EVENT_TIMESTAMP_STALE",
+      "production_continuous_stream_verified": false
+    },
+    "dropbox_metadata": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "rev": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_readback_verified": true,
+      "source_bytes_downloaded": false
+    },
+    "unresolved_exact_target": {
+      "host_checkpoint_expected_bytes": 89814328,
+      "host_checkpoint_expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+      "last_recorded_exact_target_found": false,
+      "source_substitution": false
+    },
+    "n8n": {
+      "execution_id": "161",
+      "status": "success",
+      "row_id": 350,
+      "state": "OPEN_WORK_REMAINS",
+      "pending_tasks": 45,
+      "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED",
+      "manual_duplicate_execution": false
+    },
+    "archive_pr36": {
+      "head": "e9c299594447d75bebb75c343cdb707731c7ea50",
+      "compare_base": "85f23c6073dc18ee9f042c1ef7b82ecaec7be268",
+      "status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 5,
+      "ci_runs": [
+        40177456089,
+        40177456127,
+        40177456080
+      ],
+      "all_success": true,
+      "all_five_changed_blobs_match_pr34": true,
+      "merged": false,
+      "force_push": false
+    },
+    "tasks_closed": 0
   }
 }
