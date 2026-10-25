@@ -766,3 +766,26 @@ Ledger remains 29 tasks, 164 action events, 164 provider observations, four inte
 - Direct Windows Tick/consumer access remains unavailable through the current authorized connector routes. No new Tick is claimed; last verified receipts remain historical and the stream remains `EVENT_TIMESTAMP_STALE`.
 - TESSERACT PR #6 remains OPEN/Draft; issuer public key and runner assignment remain unverified; no CI rerun.
 - Ledger before this append: 29 tasks, 171 verified action events, 171 provider observations, 6 integrity corrections, 0 tasks closed. No raw sensor bytes or credentials exported; no source moved, deleted or overwritten; cloud/GitHub sensor export remains disabled.
+
+
+## Verified re-entry observation — 2026-10-25 23:54 ICT
+
+- Provider checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261025T2354ICT.json`; blob SHA `9463ed61e81e397fc28555b10f4e6e4ed2932f86`; checkpoint commit `ead5b7c553ef00f4118d87b3199d364aed3e0a12`. The canonical files were fresh-read before state updates: AGENTS `f18f9743de1e21d13bad47770f928ec85e79bd95`, this re-entry file `020275f75f8ef0f0b90f56c2aa85ccff53f957ee`, pointer `a799ec0610b80b5111e7ab3fe5873fa031ee0d77`, OPEN ledger `cafed278f2ce97d93a913f7f3d8906dff549712d`, MODUAL state `182f080dabdc15555a2a42bd291caf61d5362ca2`.
+
+- Direct Windows readback is available through Desktop Commander device `DESKTOP-86ITNQ4`. Scheduled task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M` is enabled/Ready, last result `0x0`, zero missed runs; latest observed run `2026-10-25T23:51:33+07:00`, next `23:56:32+07:00`. Tick receipt `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T165139146418Z.json`, SHA-256 `51f4371a2965d4f3aee3287f567eedd7e82b87228b06953810cacb9ad3595db1`. Consumer receipt `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T165136131Z.json`, SHA-256 `346f761d9e26261b8d7f0d3b2540c48ef538486d4b1d81e844a730a0d259d794`; status `SOURCE_OBSERVED_READONLY`, exit 0, source-content hash verified, consumer hash matches verifier.
+
+- The local source remains 35,389,440 bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`. Tick reports USB ADB target `1056285` as `device`, four timestamp-bearing sensors, none advancing, `EVENT_TIMESTAMP_STALE`, and no live reading. Wireless target `192.168.1.14:5556` is `NOT_LISTED`; TCP port 5556 did not accept a connection, so no ADB connect attempt was issued. X-TIME health returned HTTP 200 on `127.0.0.1:8769`; Ollama `/api/tags` returned a WebException in this probe.
+
+- Exact bulk-target search found the expected D: path absent. The W: candidate exists at 110,480,037 bytes with SHA-256 `a1b77dbdeaf71ab0b833055ad7e82ed8e9a4beaff36b1d5b4c52b0c76455cf2d`, last write `2026-10-13T01:48:01.324Z`; expected fingerprint remains 89,814,328 bytes and `b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3`. One candidate was found in the targeted W: subtree and it does not match. No substitution, copy, move, or deletion was performed.
+
+- Dropbox Outlook metadata remains `/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV`, revision `0165dc1e4794ab00000000395cdfd73`, size 35,389,440 bytes, server-modified `2026-10-14T00:20:03Z`. No Dropbox raw CSV bytes were downloaded and its content hash was not recomputed.
+
+- Braid ran this session from `G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py`. SIX receipt SHA-256 `f8b697dd310a0c6b7e16efe2616511a5726e9aa41f0c4455d60da558e981eebb` recorded 9 actions; PLURAL receipt SHA-256 `f9066a1cc8316bb5e2d309891b955f1da17208db7c326f1467cb017dbe14dcd7` recorded 5. Source hash stayed unchanged, no mutation was executed, and receipt readback succeeded. Scope remains local read-only adapter; cloud-host wiring is NOT_VERIFIED.
+
+- Archive PR #36 remains OPEN/Draft/unmerged at head `e414dfe673265447cd216a4535536e0a3099c90d`; current main before this checkpoint was `7c0815201e681dba34bb3a7a2c6d905fe2e03a7c`, compare diverged 10 ahead / 128 behind. Exact source blob `f3a8a6e16d740a797ecb1a2a0398c8c7e8620b81` contains one `inspect(path)` definition. Current-head runs `40212944628`, `40212944573`, and `40212944563` all report SUCCESS. No manual rerun, merge, or force-push.
+
+- TESSERACT PR #6 remains OPEN/Draft at head `5312816d5fe2b22e92302211b67f916b88a6fe14`; runs `39994207477` and `39994207667` remain failures without available steps. Issuer public key and runner assignment remain unverified; no rerun.
+
+- n8n workflow `BogzhFUDbRp7kuwh` latest observed execution remains `170`, success, with prior evidence row `389` / event `X20261025160024063_CLOUD`; state `OPEN_WORK_REMAINS`, 45 recovery rows pending, host heartbeat not probed, host operations 0. No duplicate manual execution.
+
+- Before this append the ledger recorded 29 tasks, 172 verified action events, 172 provider observations, 6 integrity corrections, and 0 tasks closed. No raw sensor values or credentials were persisted/exported; no source was written, moved, deleted, or overwritten; cloud/GitHub sensor export remains disabled.
