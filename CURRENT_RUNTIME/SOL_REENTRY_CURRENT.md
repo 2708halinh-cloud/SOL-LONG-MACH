@@ -715,3 +715,18 @@ Ledger remains 29 tasks, 164 action events, 164 provider observations, four inte
 3. Review carrier log growth without deleting or rotating evidence until retention policy is verified.
 4. Keep all open PRs and tasks nonterminal; verify issuer/runner before any CI rerun.
 5. Read the next scheduled n8n execution and exact evidence row; do not trigger a duplicate scan.
+
+
+## Verified re-entry observation — 2026-10-25 23:21 ICT
+
+- Checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261025T2321ICT.json`; blob SHA `1bbcded9b0fb433eebead11416620b21b10cf928`; commit `ca733622c350079cb013aea8eeb7657fd8762f95`.
+- Canonical reads before this update: AGENTS `f18f9743de1e21d13bad47770f928ec85e79bd95`; re-entry `2909008b3c5b8ffbd1582e68b13760cd737650b6`; task pointer `818450eba3d172bf51d1f9ed23697f48b2846c39`; OPEN ledger `6fca560b14a4fa048f00daed2bb3babbdc2fd859`; MODUAL state before append `48864ae540306b1292b975de1ab8c6d5b61735c9`.
+- Dropbox Outlook metadata was freshly read: `/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV`, revision `0165dc1e4794ab00000000395cdfd73`, 35,389,440 bytes, server-modified `2026-10-14T00:20:03Z`. No CSV bytes were downloaded and the provider content hash was not recomputed this turn.
+- Desktop Commander currently reports all three registered devices Offline. Therefore this turn has no new direct Windows Tick/consumer readback. Last verified host Tick was `D:\SENSOR_LOGS\state\WINDOWS_TICK_20261025T155138608258Z.json` (SHA-256 `dd4d72cc1e938cffd0396287d3e0ec23ee4e1a3a411d747c41ecdc7fe27df187`); last verified consumer receipt was `D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261025T155135569Z.json` (SHA-256 `874239f854fef9429360b8e9ffb04dc09c53475382ae200d735d96694271628d`). These are historical receipts, not a claim of a new Tick. Last verified source SHA-256 remains `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; sensor stream remains `EVENT_TIMESTAMP_STALE`, four timestamps, none advanced, live stream unverified.
+- Exact bulk target remains absent at the last bounded search: 89,814,328 bytes, expected SHA-256 `b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3`; W-drive results were warned incomplete. No substitute was accepted.
+- n8n workflow `BogzhFUDbRp7kuwh`, execution `170` succeeded at `2026-10-25T16:00:24.194Z`; exact row `389`, event `X20261025160024063_CLOUD`, state `OPEN_WORK_REMAINS`. Recovery tasks 45/45 pending; host heartbeat not probed; host operations 0.
+- Independent Archive PR #36 remains OPEN/Draft at head `9762b8867b4ef17d608cccc37609164d73974573`, diverged 9 ahead / 104 behind current main. Current-head source/test blobs were read exactly; the current check-run readback reports all 5 listed runs successful. Artifact `12604643711` is unexpired through `2026-11-08T15:53:45Z`. No merge or force-push.
+- TESSERACT PR #6 remains OPEN/Draft at head `5312816d5fe2b22e92302211b67f916b88a6fe14`; the two observed runs still fail before steps, issuer public key and runner assignment remain unverified, and no rerun was made.
+- Historical ZIP raw hash remains verified in memory against the expected SHA-256; no local file was written, no extraction was performed, and its task remains OPEN. Carrier log retention review remains OPEN; no rotation or deletion.
+- Before this append the ledger recorded 29 tasks, 168 verified action events, 168 provider observations, 6 integrity corrections, and zero closed tasks. Pointer/ledger reconciliation to this new checkpoint is the next state-write edge; all tasks remain nonterminal.
+- Safety: no raw sensor bytes or credentials exported; no source moved, deleted or overwritten; cloud/GitHub sensor export remains disabled.
