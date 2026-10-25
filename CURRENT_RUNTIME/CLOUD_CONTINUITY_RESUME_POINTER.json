@@ -1,21 +1,21 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T10:26:23.072Z",
-  "updated_at_local": "2026-10-25T17:26:23+07:00",
+  "updated_at_utc": "2026-10-25T10:27:42.144Z",
+  "updated_at_local": "2026-10-25T17:27:42+07:00",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1726ICT.json",
+    "blob_sha": "4ffeb98826cf19a056f90e6c2699eca3228cdfb3",
+    "commit_sha": "6dab75fd92e516c67a71f45f8c01fcda8eb2e0e9",
+    "readback_verified": true,
+    "note": "Checkpoint read back exactly; includes evidence rows 352-356, host tick/trace/scheduler, Dropbox MODUAL size mismatch and carrier ZIP metadata-only blocker."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1722ICT.json",
     "blob_sha": "1afc7f414d1e02ac904f86526036adfb17de6472",
     "commit_sha": "59bf541c8bbaeb43fd751623c08daf8d552cd176",
     "readback_verified": true,
-    "note": "Verified n8n rows 352-355, direct Windows tick/trace/source hashes, Dropbox historical manifest and size mismatch, GitHub ledger and PR #36 readbacks."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1719ICT.json",
-    "blob_sha": "3864497d8317055def232b3f33adb56016470206",
-    "commit_sha": "c3a0d606543f48e353bba759dee17844615d3893",
-    "readback_verified": true,
-    "note": "Previous checkpoint includes host evidence row 353; new checkpoint adds Dropbox source-mismatch row 354 and post-schedule host row 355."
+    "note": "Prior checkpoint records Dropbox MODUAL mismatch and host row 355; current checkpoint adds the carrier ZIP metadata/provider-byte blocker as evidence row 356."
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -27,7 +27,7 @@
     "latest_execution_started_at_utc": "2026-10-25T10:00:22.065Z",
     "latest_execution_stopped_at_utc": "2026-10-25T10:00:24.182Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 355,
+    "evidence_table_rows": 356,
     "latest_host_evidence_row_id": 355,
     "latest_host_event_id": "X20261025101640224_HOST_READBACK",
     "latest_host_row_exact_readback": true,
@@ -65,7 +65,12 @@
     "latest_cloud_row_exact_readback": true,
     "latest_source_provenance_row_id": 354,
     "latest_source_provenance_event_id": "X20261025102205568_DROPBOX_SOURCE_READBACK",
-    "latest_source_provenance_row_exact_readback": true
+    "latest_source_provenance_row_exact_readback": true,
+    "modual_mismatch_row_id": 354,
+    "modual_mismatch_event_id": "X20261025102205568_DROPBOX_SOURCE_READBACK",
+    "latest_carrier_zip_metadata_row_id": 356,
+    "latest_carrier_zip_metadata_event_id": "X20261025102549648_CARRIER_ZIP_METADATA",
+    "latest_source_rows_exact_readback": true
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
@@ -98,7 +103,7 @@
       "last_result": 0,
       "next_run_local": "2026-10-25T17:21:32+07:00",
       "missed_runs": 0,
-      "scheduler_probe_at_local": "2026-10-25T17:16:56.7073655+07:00",
+      "scheduler_probe_at_local": "2026-10-25T17:21:25.3840390+07:00",
       "next_run_still_future_at_probe": true
     },
     "exact_modual_source_found": false,
@@ -114,11 +119,13 @@
     "interpretation": "Tick advanced after the host-local scheduled run with result 0; sensor stream remains stale and the exact MODUAL source remains missing.",
     "latest_host_probe_local": "2026-10-25T14:38:49.9951195+07:00",
     "live_sensor_stream_status": "EVENT_TIMESTAMP_STALE",
-    "latest_probe_local": "2026-10-25T17:17:11.9250962+07:00",
+    "latest_probe_local": "2026-10-25T17:21:25.3840390+07:00",
     "fresh_host_probe_this_turn": true,
     "latest_probe_source": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
-    "current_host_state": "ONLINE; TICK_ADVANCED; SENSOR_STREAM_UNVERIFIED; EXACT_CURRENT_MODUAL_SOURCE_NOT_FOUND",
-    "runtime_probe_reason": "Desktop Commander device inventory at this turn reports localhost and both DESKTOP-86ITNQ4 registrations Offline; no Windows tick/consumer readback was possible."
+    "current_host_state": "ONLINE; LAST_TICK_10:16:40Z; SENSOR_STREAM_UNVERIFIED; EXACT_MODUAL_SOURCE_NOT_FOUND",
+    "runtime_probe_reason": "Desktop Commander device inventory at this turn reports localhost and both DESKTOP-86ITNQ4 registrations Offline; no Windows tick/consumer readback was possible.",
+    "expected_modual_source_bytes": 89814328,
+    "expected_modual_source_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3"
   },
   "github_task_ledger": {
     "task_count": 29,
@@ -130,11 +137,11 @@
       "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
       "IN_PROGRESS": 3
     },
-    "observed_at_local": "2026-10-25T17:23:40+07:00",
+    "observed_at_local": "2026-10-25T17:27:42+07:00",
     "ledger_blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
     "blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
     "blob_sha_rechecked_in_this_run": true,
-    "parsed_task_counts_last_verified_at_local": "2026-10-25T17:23:40+07:00",
+    "parsed_task_counts_last_verified_at_local": "2026-10-25T17:27:42+07:00",
     "current_default_branch_fetch": {
       "blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
       "fetch_file_content_length": 0,
@@ -150,7 +157,7 @@
         "IN_PROGRESS": 3
       },
       "tasks_closed": 0,
-      "main_head": "3fc0dd99c110655e87aa724b882b306a6b709e36",
+      "main_head": "090f52c2ab6f21a644c73b5664b76b5271914890",
       "main_head_before_pointer_update": "256fe1c02a106203ad81c591847af0eac73ae5c7",
       "content_length_readback_corrected": true
     },
@@ -168,17 +175,30 @@
     "cloud_heartbeat_is_not_host_heartbeat": true,
     "no_merge_or_force_push": true,
     "no_candidate_substitution_for_exact_modual_source": true,
+    "no_raw_zip_sha256_claim_without_bytes": true,
     "tasks_closed": 0
   },
   "next": [
-    "Read the next Windows tick only after it is due by host-local scheduler time; at the latest host probe, next run was 17:21:32 ICT.",
-    "Continue exact-source retrieval for MODUAL by authorized provider routes; historical Dropbox exact-name file is 110480037 bytes with manifest-declared SHA a1b77..., not the expected 89814328 bytes/SHA b3c4....",
-    "Search only targeted, authorized archive locations for the expected byte size/hash; do not substitute the older bulk file or the 2647298-byte live carrier.",
-    "Keep PR #36 OPEN/Draft; remeasure against current main before any synchronization; do not merge or force-push.",
-    "Keep all 29 GitHub tasks and 45 recovery rows nonterminal unless their own acceptance evidence is satisfied.",
-    "Latest host receipt advanced to 2026-10-25T10:16:40Z; task was Ready with 0x0 and next host-clock run 17:21:32+07 at probe time. Fresh-read again only after host clock passes that due time; the host clock is about 294 seconds behind runtime."
+    "Read the next Windows tick only after it is due by host-local scheduler time; latest probe at 17:21:25 ICT showed next run at 17:21:32 ICT still in the future.",
+    "Keep MODUAL recovery open: the Dropbox exact-name historical bulk file is 110480037 bytes, not the expected 89814328; its manifest-declared SHA is historical, not a fresh byte hash.",
+    "Keep SV-20261020-02 OPEN until the original ZIP raw SHA-256 is recomputed through a safe authenticated byte stream or the provider blocker is superseded.",
+    "Do not substitute the historical MODUAL bulk file or the 2647298-byte live carrier.",
+    "Keep PR #36 OPEN/Draft; do not merge or force-push.",
+    "Keep all 29 GitHub tasks and 45 recovery rows nonterminal until each task's acceptance evidence is satisfied."
   ],
   "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1726ICT.json",
+      "blob_sha": "4ffeb98826cf19a056f90e6c2699eca3228cdfb3",
+      "commit_sha": "6dab75fd92e516c67a71f45f8c01fcda8eb2e0e9",
+      "readback_verified": true,
+      "observed_at_local": "2026-10-25T17:27:42+07:00",
+      "task_count": 29,
+      "recovery_rows": 45,
+      "evidence_rows": 356,
+      "tasks_closed": 0,
+      "note": "Carrier ZIP metadata and provider-byte blocker row 356 recorded; exact MODUAL current source remains unresolved."
+    },
     {
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1722ICT.json",
       "blob_sha": "1afc7f414d1e02ac904f86526036adfb17de6472",
@@ -617,17 +637,17 @@
       ],
       "note": "Clean recut uses current main at branch creation. Original PR #34 remains open. No merge or force-push.",
       "latest_compare_readback": {
-        "observed_at_local": "2026-10-25T17:23:40+07:00",
-        "compared_main_head": "3fc0dd99c110655e87aa724b882b306a6b709e36",
+        "observed_at_local": "2026-10-25T17:27:42+07:00",
+        "compared_main_head": "090f52c2ab6f21a644c73b5664b76b5271914890",
         "status": "diverged",
         "ahead_by": 5,
-        "behind_by": 33,
+        "behind_by": 37,
         "ci_runs_success": [
           40177456089,
           40177456127,
           40177456080
         ],
-        "note": "Comparison is pinned to main before this checkpoint write; no merge, force-push, or branch sync."
+        "note": "Comparison is pinned to main before the checkpoint commit; no merge, force-push, or branch sync."
       },
       "latest_ci_runs": [
         {
@@ -668,11 +688,11 @@
     }
   },
   "latest_provider_status_readback": {
-    "observed_at_utc": "2026-10-25T10:26:23.072Z",
-    "observed_at_local": "2026-10-25T17:26:23+07:00",
-    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1722ICT.json",
-    "checkpoint_blob_sha": "1afc7f414d1e02ac904f86526036adfb17de6472",
-    "provider_checkpoint_commit": "59bf541c8bbaeb43fd751623c08daf8d552cd176",
+    "observed_at_utc": "2026-10-25T10:27:42.144Z",
+    "observed_at_local": "2026-10-25T17:27:42+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1726ICT.json",
+    "checkpoint_blob_sha": "4ffeb98826cf19a056f90e6c2699eca3228cdfb3",
+    "provider_checkpoint_commit": "6dab75fd92e516c67a71f45f8c01fcda8eb2e0e9",
     "modual_state_path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
     "modual_state_blob_sha": "40dfab41ae1747a87b4ad59e66ac600561419006",
     "modual_state_commit": "d0ab6cf35d6979353a241397c9e43afe9ab2eb7b",
@@ -753,7 +773,11 @@
       "integrity_corrections": 4,
       "tasks_closed": 0
     },
-    "tasks_closed": 0
+    "tasks_closed": 0,
+    "fresh_host_probe": true,
+    "fresh_n8n_probe": true,
+    "fresh_dropbox_metadata_readback": true,
+    "carrier_zip_raw_hash": "NOT_RECOMPUTED_PROVIDER_BYTE_READ_BLOCKER"
   },
   "latest_source_chain_readback": {
     "path": "CURRENT_RUNTIME/TESSERACT_ART_SOURCE_CHAIN_READBACK_20261025T1607ICT.json",
@@ -1218,5 +1242,51 @@
     "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED",
     "host_operations": 0,
     "manual_duplicate_execution": false
+  },
+  "dropbox_modual_source_readback": {
+    "folder": "/PC NAY·ÀY/Ổ ĐĨA D/SENSOR_LOGS",
+    "manifest_path": "/PC NAY·ÀY/Ổ ĐĨA D/SENSOR_LOGS/MODUAL_GITHUB_SYNC_CURRENT.json",
+    "manifest_observed_at": "2026-10-13T08:48:08.764942+07:00",
+    "historical_bulk": {
+      "file_id": "id:ybBRszo1ipAAAAAAAAAAZw",
+      "path_display": "/PC NAY·ÀY/Ổ ĐĨA D/SENSOR_LOGS/_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+      "revision": "0165daf13144cbe0000000395e8ff53",
+      "metadata_size_bytes": 110480037,
+      "manifest_declared_sha256": "a1b77dbdeaf71ab0b833055ad7e82ed8e9a4beaff36b1d5b4c52b0c76455cf2d",
+      "matches_expected_size": false
+    },
+    "live_carrier_variant": {
+      "file_id": "id:ybBRszo1ipAAAAAAAAAAaA",
+      "metadata_size_bytes": 2647298,
+      "manifest_declared_sha256": "c0cddbab3b8d5474aa291c761c8377b68b6c7ba01c144cb292965697189a1125",
+      "matches_expected_size": false
+    },
+    "expected_current_source_bytes": 89814328,
+    "expected_current_source_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "source_bytes_downloaded": false,
+    "sha256_recomputed": false,
+    "conclusion": "Historical exact-name file exists in Dropbox mirror but size/hash declaration is from 2026-10-13 and does not match the expected current artifact. No substitution."
+  },
+  "carrier_zip_task": {
+    "task_id": "SV-20261020-02",
+    "task_status": "ASSIGNED_DRAFT_WAITING_CREDENTIAL",
+    "library_file": "CARRIER_MAP_20261010.json",
+    "library_file_id": "file_00000000da98820983366295be2de635",
+    "library_file_bytes": 10751,
+    "expected_original_zip_name": "SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip",
+    "expected_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+    "expected_member_count": 16,
+    "listed_checksum_verification": "15_OF_15_LISTED_MATCH_SELF_CHECKSUM_FILE_NOT_LISTED",
+    "dropbox_file_id": "id:gvG29tEleJwAAAAAAAACLA",
+    "dropbox_path_display": "/Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT/SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip",
+    "dropbox_revision": "0165daa5e44669e0000000395cdfd73",
+    "dropbox_size_bytes": 20882,
+    "dropbox_server_modified_at_utc": "2026-10-12T20:16:07Z",
+    "dropbox_provider_content_hash": "581e186fcff303d25dfeedebc5fac4b98f466a9652fde281827f79fbb91a6c89",
+    "provider_content_hash_is_sha256": false,
+    "raw_bytes_retrieved": false,
+    "raw_sha256_recomputed": false,
+    "retrieval_blocker": "No connector path in this run safely streamed raw bytes for hashing; the available single-use link path requires a preflight that its provider contract forbids. No bytes were downloaded.",
+    "task_closed": false
   }
 }
