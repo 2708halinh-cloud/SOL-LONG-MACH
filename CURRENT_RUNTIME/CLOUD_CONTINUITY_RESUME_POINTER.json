@@ -1,14 +1,14 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T08:40:15.111Z",
-  "updated_at_local": "2026-10-25T15:40:15.111+07:00",
+  "updated_at_utc": "2026-10-25T08:54:31.925Z",
+  "updated_at_local": "2026-10-25T15:54:31.925+07:00",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1534_PR36.json",
-    "blob_sha": "83dad11b186557757fa857ec7f8e84368608a6e7",
-    "commit_sha": "0452a2ee17f357d6d9f0f21396d43918d987c033",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1553ICT.json",
+    "blob_sha": "6458b0c34004a1201df4d4eb6e47a5ac465d3d16",
+    "commit_sha": "85f23c6073dc18ee9f042c1ef7b82ecaec7be268",
     "readback_verified": true,
-    "note": "Clean PR #36 re-cut on current main; all five reviewed source blobs match PR #34 head exactly; three fresh CI runs SUCCESS. PR #34 remains open, no merge/force-push, all 29 GitHub tasks and 45 n8n recovery rows remain nonterminal. Host not freshly probed."
+    "note": "Fresh cloud/provider readback; n8n execution 161 remains nonterminal; all Desktop Commander devices are currently Offline; PR #36 CI success but branch has advanced to 5 ahead/5 behind current main."
   },
   "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1534ICT.json",
@@ -63,7 +63,7 @@
   "host": {
     "device": "DESKTOP-86ITNQ4",
     "route": "Remote Desktop Commander",
-    "route_online_for_read_only_probe": true,
+    "route_online_for_read_only_probe": false,
     "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T080139371211Z.json",
     "latest_tick_sha256": "1f7f79c099bf93619e41f0f9d9251087835eb0fbb81d0b2dd0311e95e76fbec3",
     "latest_tick_observed_at_utc": "2026-10-25T08:01:39.371211Z",
@@ -112,7 +112,9 @@
     "live_sensor_stream_status": "EVENT_TIMESTAMP_STALE",
     "latest_probe_local": "2026-10-25T15:08:09.165+07:00",
     "fresh_host_probe_this_turn": false,
-    "latest_probe_source": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json"
+    "latest_probe_source": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
+    "current_host_state": "UNKNOWN_AFTER_LAST_RECORDED_PROBE",
+    "runtime_probe_reason": "Desktop Commander device inventory at this turn reports localhost and both DESKTOP-86ITNQ4 registrations Offline; no Windows tick/consumer readback was possible."
   },
   "github_task_ledger": {
     "task_count": 29,
@@ -169,7 +171,9 @@
     "Fresh-read the Windows host after its host-local scheduled time using a callable authorized host connector; this turn did not expose one, and cloud time must not substitute for host time.",
     "Review the five PR #34 paths with a three-way diff against current main before any clean re-cut; no merge or force-push.",
     "For TESSERACT, obtain issuer public-key provenance and runner-assignment readback before any CI rerun; keep exact Art source and real browser runtime unverified.",
-    "Preserve all 29 task states; a report, checkpoint, or CI result does not close a task."
+    "Preserve all 29 task states; a report, checkpoint, or CI result does not close a task.",
+    "Fresh-read host status when an authorized Desktop Commander device returns online; until then continue provider/GitHub work and do not infer host state from cloud pulse.",
+    "Re-evaluate PR #36 after main advanced by three checkpoint commits; current compare is 5 ahead/5 behind, so keep open and do not merge or force-push."
   ],
   "checkpoint_history": [
     {
@@ -381,11 +385,11 @@
     "chatgpt_library_metadata_and_text_read": "AVAILABLE_AND_USED",
     "chatgpt_library_raw_byte_materialization": "AVAILABLE_FOR_CANONICAL_ADMIN_ARCHIVE; DENIED_FOR_ALTERNATE_ADMIN_AND_PRIVATE_CROSS_ACCOUNT_CARRIER",
     "google_drive_connector": "NOT_EXPOSED_IN_THIS_TURN",
-    "dropbox_connector": "SURFACED_BUT_READ_ATTEMPT_REJECTED_BY_LINK_ID_SELECTOR; NO_PROVIDER_DATA_READ",
+    "dropbox_connector": "AVAILABLE_AND_USED_FOR_METADATA_ONLY; SOURCE_BYTES_NOT_DOWNLOADED",
     "takeout_connector": "NOT_EXPOSED_IN_THIS_EXECUTION",
     "authorized_host_browser_connector": "NO_FRESH_PROBE_IN_THIS_TURN",
-    "n8n_connector": "AVAILABLE_AND_USED",
-    "remote_desktop_commander": "NO_FRESH_PROBE_IN_THIS_TURN"
+    "n8n_connector": "AVAILABLE_AND_USED; EXECUTION_161_READ_BACK",
+    "remote_desktop_commander": "AVAILABLE_AND_USED_FOR_DEVICE_INVENTORY; ALL_REGISTERED_DEVICES_OFFLINE"
   },
   "latest_pr_readback": {
     "observed_at_local": "2026-10-25T15:24:08+07:00",
@@ -520,5 +524,48 @@
       "runner_assignment_verified": false,
       "ci_rerun_performed": false
     }
+  },
+  "latest_provider_status_readback": {
+    "observed_at_utc": "2026-10-25T08:54:31.925Z",
+    "observed_at_local": "2026-10-25T15:54:31.925+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1553ICT.json",
+    "checkpoint_blob_sha": "1ad5da57e1e2b7d1d8ac5bf2a7f9c2e9b9732467",
+    "provider_checkpoint_commit": "e3c6dccb6e24bf176066a6b02ed76681f022adef",
+    "dropbox": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "rev": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_verified": true,
+      "bytes_downloaded": false
+    },
+    "remote_desktop": {
+      "all_devices_offline": true,
+      "host_runtime_probe": false
+    },
+    "n8n": {
+      "execution_id": "161",
+      "status": "success",
+      "event_id": "X20261025080024100_CLOUD",
+      "row_id": 350,
+      "state": "OPEN_WORK_REMAINS",
+      "pending_tasks": 45,
+      "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED"
+    },
+    "archive_pr36": {
+      "head": "e9c299594447d75bebb75c343cdb707731c7ea50",
+      "compare_to_main": "85f23c6073dc18ee9f042c1ef7b82ecaec7be268",
+      "status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 5,
+      "ci_runs_success": [
+        40177456089,
+        40177456127,
+        40177456080
+      ],
+      "merged": false,
+      "force_push": false
+    },
+    "tasks_closed": 0
   }
 }
