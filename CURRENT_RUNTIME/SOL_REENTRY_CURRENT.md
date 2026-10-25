@@ -480,3 +480,28 @@ SOURCE_DIRECT: Fresh-read AGENTS.md, this reentry source, TASK_RESUME_POINTER.js
 ### Resume
 All unfinished tasks remain OPEN. The source and historical receipts are preserved; no source was moved, deleted, or overwritten. After the scheduled Tick due `14:31:32 +07`, read the newest Tick/consumer receipts and recompute the source SHA. Continue a supported persistent sensor client/bridge or verified HWiNFO logging route; keep cloud/GitHub sensor export disabled. Continue Archive/MODUAL/TESSERACT independently without merging diverged PRs or repeating CI without a verified runner/issuer change.
 
+## REENTRY — 14:36 TICK + PRODUCTION PROBE CONTRACT — 2026-10-25 14:37 ICT
+
+Checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1437ICT.json`; commit `0cd678e90aca210f632f3c35f52f9ab9d3054e5f`; blob SHA `45f1305d53d9ef6099f1f4cd970b34fc4975ec48`. MODUAL state update commit `a047cc56bdfa5650f0cf8de830b9853a3abb1a74`, blob SHA `bd4a9aa3f92257611af4279007825896b31afe05`.
+
+### Latest Windows Tick/consumer readback
+- Host `DESKTOP-86ITNQ4`; `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M` enabled/Ready; last run `14:36:33 +07`, next run `14:41:32 +07`, result `0x0`, missed `0`.
+- Tick `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T073639224482Z.json`, SHA-256 `254247ba48a1677c9cea805e340e342e7267821e3413c594d0fdd9888088b905`; `EVENT_TIMESTAMP_STALE`, live flag false.
+- Consumer `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T073636524Z.json`, SHA-256 `814fd193833105f2c985fa4a3e50d244337ac80aa1eefc48c53512df1be95119`; `SOURCE_OBSERVED_READONLY`, exit 0, content hash verified, no source write/synthetic rows/raw rows, cloud/GitHub export disabled.
+- Source remains 35,389,440 bytes with SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; Dropbox revision `0165dc1e4794ab00000000395cdfd73`, server-modified `2026-10-14T00:20:03Z`.
+
+### Current production probe test
+- Ran a mock contract test against the exact current production source `D:\\SENSOR_LOGS\\live_device_probe.py` (Git blob `91d242d9f0db0e171b9f1ccf3bdf9af3331ff395`): **PASS**, 2 cases, detects advancing timestamps and stale timestamps, omits raw values.
+- The local snapshot test suite also passed 3 tests, but its fixture source blob `939e3c6e2c5e1b7274f11efc00adf80227b77466` differs from the current production source; it is not counted as current-source validation.
+- The controlled app test still establishes only that timestamps advanced while `com.exatools.sensors` was active; after force-stop, the probe returned stale. No persistent sensor client/bridge has been verified.
+- HWiNFO64 remains running (PID 16596), but no separate HWiNFO CSV was found in the inspected directories; continuous logging is unverified.
+
+### Independent branch and safety checks
+- MODUAL PR #35 tests run `40154600501` succeeded through both `Test sanitized ADB probe` and `Test read-only snapshot safety`; secret-guard run `40154600506` succeeded through source snapshot and gitlink checks and a full source scan without printing secret bytes.
+- Archive PR #34 and MODUAL PR #35 remain OPEN/Draft/diverged; compare snapshot against main head `65ee67eb0c6b96b80c0b453ff9cb26671374b338` was 1 ahead/141 behind and 9 ahead/125 behind respectively. No merge/force-push.
+- TESSERACT PR #6 remains OPEN/Draft; its two latest checked runs still failed before any step. Issuer public key and runner assignment remain unverified; no CI rerun.
+- GitHub Advanced Security secret scanning is not enabled for this repository. A local pattern scan of the new checkpoint, appended reentry section and current MODUAL observation found zero credential-pattern matches. No raw sensor values or credentials were added.
+
+### Resume
+All tasks remain OPEN/in progress; no task was closed. Next scheduled Tick is `14:41:32 +07`; read the exact new Tick/consumer receipts and recompute the source SHA. Continue finding a supported persistent sensor client/bridge or verified HWiNFO logging route. Keep cloud/GitHub export disabled and preserve all source history.
+
