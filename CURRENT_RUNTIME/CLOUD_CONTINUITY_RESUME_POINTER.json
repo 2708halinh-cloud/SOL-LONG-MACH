@@ -1,21 +1,21 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T07:23:46.749Z",
-  "updated_at_local": "2026-10-25T14:23:46+07:00",
+  "updated_at_utc": "2026-10-25T07:42:30Z",
+  "updated_at_local": "2026-10-25T14:42:30+07:00",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1442ICT.json",
+    "blob_sha": "a168f5b2d11cd325eff61e5c763d3e7d81cc9f6a",
+    "commit_sha": "5a2419cc865bd9dddb73eaa797ff661e2efef9b0",
+    "readback_verified": true,
+    "note": "Fresh direct host tick readback appended as n8n evidence row 347; task Ready/result 0; exact MODUAL source absent at configured path; sensor event stream remains unverified; all OPEN/IN_PROGRESS states preserved."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1423ICT.json",
     "blob_sha": "fbd0ed07bad303929ecfa19d58c69806ce56d21c",
     "commit_sha": "8b84fadea89f6f644a13710fca474088847cb5ce",
     "readback_verified": true,
     "note": "Fetched back and parsed; records host tick, PR #34/#35 successes, PR #6 log-access blocker, and n8n evidence row 346. All OPEN/IN_PROGRESS states preserved."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1326ICT.json",
-    "blob_sha": "cc97ea8a4f4e88fa7a4422a8d6ed2f4e30fd2333",
-    "commit_sha": "c6b9e8fe5c17c5f175dd5e83b44b8b90dd1f400b",
-    "readback_verified": true,
-    "note": "Prior active checkpoint before tick advancement at host-local 13:21:39 ICT."
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -27,9 +27,9 @@
     "latest_execution_started_at_utc": "2026-10-25T07:00:22.083Z",
     "latest_execution_stopped_at_utc": "2026-10-25T07:00:24.221Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 346,
-    "latest_host_evidence_row_id": 345,
-    "latest_host_event_id": "X20261025141644790_HOST_READBACK",
+    "evidence_table_rows": 347,
+    "latest_host_evidence_row_id": 347,
+    "latest_host_event_id": "X20261025073650716_HOST_READBACK",
     "latest_host_row_exact_readback": true,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
@@ -52,10 +52,10 @@
     "device": "DESKTOP-86ITNQ4",
     "route": "Remote Desktop Commander",
     "route_online_for_read_only_probe": true,
-    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T071640003409Z.json",
-    "latest_tick_sha256": "02A4C6A473DF38D46F65C126259247EC3955D3175EE5F38288EF2E104CB208FC",
-    "latest_tick_observed_at_utc": "2026-10-25T07:16:40.003409Z",
-    "previous_tick_sha256": "DC3CFBA9754C463402444CE0B6AF15B97DB26BD920325CD25A5FA790B92F3BD0",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T073639224482Z.json",
+    "latest_tick_sha256": "254247BA48A1677C9CEA805E340E342E7267821E3413C594D0FDD9888088B905",
+    "latest_tick_observed_at_utc": "2026-10-25T07:36:39.224482Z",
+    "previous_tick_sha256": "19999AC7876C3F4470C0422A56DFC80BD9B59EC77CCEEFCF3DDEE0570E899EE3",
     "trace_sha256": "0DA7298F9BE1FA1043974C89D310A27AB73D8DB210839D35A632E11F490875AC",
     "trace_receipt_readback_ok": true,
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
@@ -76,14 +76,13 @@
       "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
       "state": "Ready",
       "enabled": true,
-      "last_run_local": "2026-10-25T14:16:33+07:00",
+      "last_run_local": "2026-10-25T14:36:33+07:00",
       "last_result": "0x0",
-      "next_run_local": "2026-10-25T14:21:32+07:00",
+      "next_run_local": "2026-10-25T14:41:32+07:00",
       "repeat_interval": "PT5M",
       "execution_time_limit": "PT4M",
-      "host_now_at_probe": "2026-10-25T14:16:44.7902686+07:00",
-      "next_run_was_future_at_probe": true,
-      "interpretation": "Latest direct probe confirms tick advanced and task returned Ready/result 0; no newer host probe after this timestamp."
+      "missed_runs": 0,
+      "next_run_was_future_at_probe": true
     },
     "exact_modual_source_found": false,
     "expected_modual_source_bytes": 89814328,
@@ -97,9 +96,10 @@
     "latest_checkpoint_host_probe_local": "2026-10-25T11:23:45.9126701+07:00",
     "next_run_at_last_probe": "2026-10-25T11:26:32+07:00",
     "fresh_host_probe_this_run": true,
-    "interpretation": "Source hash unchanged; live sensor event stream remains unverified.",
-    "latest_host_probe_local": "2026-10-25T14:16:44.7902686+07:00",
-    "live_sensor_stream_status": "UNVERIFIED"
+    "interpretation": "Tick advanced and scheduled task returned Ready/result 0. Sensor stream remains unverified; exact MODUAL source not found at configured path. No source/task/config mutation.",
+    "latest_host_probe_local": "2026-10-25T14:36:50.7169514+07:00",
+    "live_sensor_stream_status": "UNVERIFIED",
+    "latest_probe_local": "2026-10-25T14:36:50.7169514+07:00"
   },
   "github_task_ledger": {
     "task_count": 29,
@@ -146,18 +146,23 @@
     "cloud_heartbeat_is_not_host_heartbeat": true,
     "no_merge_or_force_push": true,
     "do_not_substitute_candidate_for_exact_modual_source": true,
-    "no_secrets": true,
-    "no_public_reconstruction_of_original_source": true,
     "tasks_closed": 0
   },
   "next": [
-    "Fresh-read host using host time before classifying the next scheduled tick; do not infer host failure from cloud time.",
-    "Keep sensor stream UNVERIFIED until event timestamps advance; Redmi target remains NOT_LISTED.",
-    "Locate exact MODUAL source by expected SHA-256 and byte size; do not substitute windows_SENSON.CSV.",
-    "For PR #6, use only a working read-only source or run-summary route; preserve existing failures and do not rerun CI or change issuer/runner configuration without verified authorization.",
+    "Fresh-read host after host-local 2026-10-25 14:41:32 ICT; use host time only and preserve the 4-minute execution-limit guard.",
+    "Keep sensor stream UNVERIFIED until event timestamps advance; Xiaomi 12 event timestamps are stale and Redmi target remains NOT_LISTED.",
+    "Locate exact MODUAL source by expected SHA-256 and byte size; exact configured path was absent, and windows_SENSON.CSV is not a substitute.",
+    "For PR #6, try only a working read-only run-summary/log route; preserve six failures and one skipped check; do not rerun CI or read secrets.",
     "Preserve all 29 GitHub ledger tasks and 45 n8n recovery rows as nonterminal."
   ],
   "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1442ICT.json",
+      "blob_sha": "a168f5b2d11cd325eff61e5c763d3e7d81cc9f6a",
+      "commit_sha": "5a2419cc865bd9dddb73eaa797ff661e2efef9b0",
+      "readback_verified": true,
+      "note": "Host tick 14:36:39Z and task result 0 read back; evidence row 347 exact; exact MODUAL path absent; no task closure."
+    },
     {
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1423ICT.json",
       "blob_sha": "fbd0ed07bad303929ecfa19d58c69806ce56d21c",
