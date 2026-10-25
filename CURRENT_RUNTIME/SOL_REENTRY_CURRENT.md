@@ -789,3 +789,18 @@ Ledger remains 29 tasks, 164 action events, 164 provider observations, four inte
 - n8n workflow `BogzhFUDbRp7kuwh` latest observed execution remains `170`, success, with prior evidence row `389` / event `X20261025160024063_CLOUD`; state `OPEN_WORK_REMAINS`, 45 recovery rows pending, host heartbeat not probed, host operations 0. No duplicate manual execution.
 
 - Before this append the ledger recorded 29 tasks, 172 verified action events, 172 provider observations, 6 integrity corrections, and 0 tasks closed. No raw sensor values or credentials were persisted/exported; no source was written, moved, deleted, or overwritten; cloud/GitHub sensor export remains disabled.
+
+
+<!-- BEGIN PROVIDER_READBACK_20261026T0044ICT -->
+## Re-entry observation — 2026-10-26 00:44 ICT
+
+- Fresh-read on main before this checkpoint: AGENTS.md blob f18f9743de1e21d13bad47770f928ec85e79bd95; this re-entry file blob 8407430099c5574601ff349e73eae43009fc7f65; TASK_RESUME_POINTER.json blob a799ec0610b80b5111e7ab3fe5873fa031ee0d77; OPEN_TASKS_CURRENT.json blob 27c5b31e874d012f2e3767d5ad6a58eae012dbb2; MODUAL_PARAMETER_CURRENT.json blob 787a78255a4cf00afd4676df1484048bb3b76df2.
+- The full pointer and open-task ledger were fetched from the exact current main commit and parsed as JSON. The pointer still selected the 23:44 ICT checkpoint, while the ledger's latest provider record was the 00:25 ICT Archive readback. This new checkpoint reconciles that divergence without deleting earlier records.
+- Dropbox Outlook metadata for /Linh Hà/SENSOR_LOGS/windows_SENSON.CSV is still revision 0165dc1e4794ab00000000395cdfd73, 35,389,440 bytes, server_modified 2026-10-14T00:20:03Z. No CSV bytes downloaded and no provider content hash recomputed this turn.
+- The secondary Desktop Commander inventory listed DESKTOP-86ITNQ4 online, but filesystem and process calls returned “link_id must identify an eligible linked account.” No new Windows Tick/consumer receipt or Braid run was obtained. The last direct Tick/consumer receipts remain historical; live sensor stream remains EVENT_TIMESTAMP_STALE. Connector eligibility is not proof that the host is physically offline.
+- n8n execution 171 succeeded and exact node readback identified event X20261025170024042_CLOUD, evidence row 391, OPEN_WORK_REMAINS, 45 pending recovery rows, HOST_HEARTBEAT_NOT_PROBED, host operations 0.
+- Archive PR #36 head e414dfe673265447cd216a4535536e0a3099c90d has current-head topology, secret-guard and read-only adapter checks SUCCESS. PR remains OPEN/Draft; main comparison is diverged (10 ahead, 144 behind). No merge or force-push.
+- TESSERACT PR #6 remains OPEN/Draft at 5312816d5fe2b22e92302211b67f916b88a6fe14. Workflow references vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64; actual public-key value and runner assignment remain unverified. No CI rerun.
+- Before this append the ledger contained 29 tasks, 174 action events, 174 provider observations, 6 integrity corrections and 0 closed tasks. All task statuses remain nonterminal.
+- Safety: no raw sensor data or credentials committed; no source moved/deleted/substituted; no cloud/GitHub sensor export enabled.
+<!-- END PROVIDER_READBACK_20261026T0044ICT -->
