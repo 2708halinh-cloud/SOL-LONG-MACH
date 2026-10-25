@@ -1,14 +1,14 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T07:20:23.748Z",
-  "updated_at_local": "2026-10-25T14:20:23+07:00",
+  "updated_at_utc": "2026-10-25T07:22:23.143Z",
+  "updated_at_local": "2026-10-25T14:22:23+07:00",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1420ICT.json",
-    "blob_sha": "30b26e84b09751db630fab677120a541cfd47fc3",
-    "commit_sha": "8f61e2dc800b447bca8f0c471f8e5527fdba9545",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1422ICT.json",
+    "blob_sha": "df7b4d2ac7207eef36d9326dce0058d67511e341",
+    "commit_sha": "9364e4e14133b3460a3acd09322d56fef32a88b7",
     "readback_verified": true,
-    "note": "Fetched back and parsed; n8n host evidence row 343 exactly read back. Latest Windows tick advanced after the prior running state; scheduled task Ready/result 0. All OPEN/IN_PROGRESS states preserved."
+    "note": "Fetched back and parsed. Includes host evidence row 345, GitHub PR readback row 344, current tick SHA, and PR check status; all OPEN/IN_PROGRESS states preserved."
   },
   "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1326ICT.json",
@@ -27,9 +27,9 @@
     "latest_execution_started_at_utc": "2026-10-25T07:00:22.083Z",
     "latest_execution_stopped_at_utc": "2026-10-25T07:00:24.221Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 343,
-    "latest_host_evidence_row_id": 343,
-    "latest_host_event_id": "X20261025141256811_HOST_READBACK",
+    "evidence_table_rows": 345,
+    "latest_host_evidence_row_id": 345,
+    "latest_host_event_id": "X20261025141644790_HOST_READBACK",
     "latest_host_row_exact_readback": true,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
@@ -37,19 +37,22 @@
     "unfinished_rows": 45,
     "tasks_closed": 0,
     "host_heartbeat_probed_by_workflow": false,
-    "interpretation": "Execution 160 is cloud-only; host readback is separate evidence row 343.",
+    "interpretation": "Execution 160 is cloud-only; direct host and GitHub PR readbacks are separate evidence rows 345 and 344.",
     "latest_cloud_evidence_row_id": 341,
     "latest_cloud_event_id": "X20261025070024074_CLOUD",
-    "terminal_rows": 0
+    "terminal_rows": 0,
+    "latest_github_evidence_row_id": 344,
+    "latest_github_event_id": "X20261025072145_GITHUB_PR_READBACK",
+    "latest_github_row_exact_readback": true
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
     "route": "Remote Desktop Commander",
     "route_online_for_read_only_probe": true,
-    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T071138914873Z.json",
-    "latest_tick_sha256": "DC3CFBA9754C463402444CE0B6AF15B97DB26BD920325CD25A5FA790B92F3BD0",
-    "latest_tick_observed_at_utc": "2026-10-25T07:11:38.914873Z",
-    "previous_tick_sha256": "CBC8EAD9CDA49F0FEE52E328A7951F5C9E59711DA4AF8058BACDCAECDB550B05",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T071640003409Z.json",
+    "latest_tick_sha256": "02A4C6A473DF38D46F65C126259247EC3955D3175EE5F38288EF2E104CB208FC",
+    "latest_tick_observed_at_utc": "2026-10-25T07:16:40.003409Z",
+    "previous_tick_sha256": "DC3CFBA9754C463402444CE0B6AF15B97DB26BD920325CD25A5FA790B92F3BD0",
     "trace_sha256": "0DA7298F9BE1FA1043974C89D310A27AB73D8DB210839D35A632E11F490875AC",
     "trace_receipt_readback_ok": true,
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
@@ -70,13 +73,14 @@
       "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
       "state": "Ready",
       "enabled": true,
-      "last_run_local": "2026-10-25T14:11:33+07:00",
+      "last_run_local": "2026-10-25T14:16:33+07:00",
       "last_result": "0x0",
-      "next_run_local": "2026-10-25T14:16:32+07:00",
+      "next_run_local": "2026-10-25T14:21:32+07:00",
       "repeat_interval": "PT5M",
       "execution_time_limit": "PT4M",
-      "host_now_at_probe": "2026-10-25T14:12:56.8113927+07:00",
-      "interpretation": "Tick advanced and task returned Ready/result 0. The prior Running observation was transient; no process was terminated."
+      "host_now_at_probe": "2026-10-25T14:16:44.7902686+07:00",
+      "next_run_was_future_at_probe": true,
+      "interpretation": "Latest tick advanced after the scheduled run; task Ready/result 0. The next run was future at the host probe."
     },
     "exact_modual_source_found": false,
     "expected_modual_source_bytes": 89814328,
@@ -90,8 +94,8 @@
     "latest_checkpoint_host_probe_local": "2026-10-25T11:23:45.9126701+07:00",
     "next_run_at_last_probe": "2026-10-25T11:26:32+07:00",
     "fresh_host_probe_this_run": true,
-    "interpretation": "Host tick advanced after the scheduled run and source SHA remained unchanged; live sensor event stream remains unverified.",
-    "latest_host_probe_local": "2026-10-25T14:12:56.8113927+07:00"
+    "interpretation": "Source hash unchanged; live sensor event stream remains unverified.",
+    "latest_host_probe_local": "2026-10-25T14:16:44.7902686+07:00"
   },
   "github_task_ledger": {
     "task_count": 29,
@@ -103,11 +107,11 @@
       "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
       "IN_PROGRESS": 3
     },
-    "observed_at_local": "2026-10-25T14:20:23+07:00",
+    "observed_at_local": "2026-10-25T14:22:23+07:00",
     "ledger_blob_sha": "a946a1a563229e83557a120ebe143470a9371953",
     "blob_sha": "a946a1a563229e83557a120ebe143470a9371953",
     "blob_sha_rechecked_in_this_run": true,
-    "parsed_task_counts_last_verified_at_local": "2026-10-25T14:20:23+07:00",
+    "parsed_task_counts_last_verified_at_local": "2026-10-25T14:22:23+07:00",
     "current_default_branch_fetch": {
       "blob_sha": "a946a1a563229e83557a120ebe143470a9371953",
       "fetch_file_content_length": 0,
@@ -143,13 +147,20 @@
     "tasks_closed": 0
   },
   "next": [
-    "Re-read the host after host-local 2026-10-25 14:16:32 ICT scheduled boundary; use host time and verify the next tick SHA.",
+    "Re-read the host after host-local 2026-10-25 14:21:32 ICT boundary; do not infer host failure from cloud time.",
     "Keep sensor stream UNVERIFIED until event timestamps advance; Redmi target remains NOT_LISTED.",
     "Locate exact MODUAL source by expected SHA-256 and size; do not substitute windows_SENSON.CSV.",
-    "Continue cloud-safe source identity, provider metadata, and GitHub-only verification without claiming unexecuted runtime work.",
-    "Preserve all 29 GitHub ledger tasks and 45 n8n recovery rows as nonterminal."
+    "Inspect existing PR #6 failure logs only through a read-only route; do not rerun CI or change issuer-key binding without verified authorization.",
+    "Preserve all 29 GitHub tasks and 45 n8n recovery rows as nonterminal."
   ],
   "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1422ICT.json",
+      "blob_sha": "df7b4d2ac7207eef36d9326dce0058d67511e341",
+      "commit_sha": "9364e4e14133b3460a3acd09322d56fef32a88b7",
+      "readback_verified": true,
+      "note": "Fresh host tick SHA and scheduler readback; PR34/35 checks success, PR6 failures preserved; n8n rows 344–345 read back."
+    },
     {
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1420ICT.json",
       "blob_sha": "30b26e84b09751db630fab677120a541cfd47fc3",
@@ -286,43 +297,42 @@
     "remote_desktop_commander": "AVAILABLE_FOR_READ_ONLY_HOST_PROBE"
   },
   "latest_pr_readback": {
-    "observed_at_local": "2026-10-25T12:09:24+07:00",
-    "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_at_comparison": "4635f33f4870312cb8d312fc370a0553af90c29e",
+    "observed_at_local": "2026-10-25T14:21:45+07:00",
     "archive_pr34": {
       "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/34",
       "state": "open",
       "draft": true,
       "merged": false,
-      "head": "fix/archive-adapters-current-main-20261025T0705ICT",
       "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
-      "base": "main",
-      "base_sha": "93100cc4619284d382558527fd22d03673f09401",
-      "compare_status": "diverged",
-      "ahead_by": 1,
-      "behind_by": 89,
-      "merge_decision": "DO_NOT_MERGE_OR_FORCE_PUSH",
-      "diff_files": 5,
-      "diff_paths": [
-        ".github/workflows/archive-readonly-adapters.yml",
-        "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py",
-        "tests/test_sol_archive_10_formats.py",
-        "tests/test_sol_library_stone_topology.py",
-        "tests/verify_real_archive_fixtures.py"
-      ],
-      "interpretation": "The PR contains one commit not in the observed main head, while main contains 89 commits not in the PR. Most divergence is subsequent continuity/runtime work. Keep OPEN/Draft; no merge or force-push."
+      "checks": {
+        "verify_stone_folders": "success",
+        "secret_guard": "success",
+        "readonly_adapters": "success"
+      }
     },
-    "tesseract_desktop_pr6": {
+    "modual_pr35": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/35",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "f99d96e39f62245d23ad728daac2c2006061e393",
+      "checks": {
+        "test": "success",
+        "secret_guard": "success"
+      }
+    },
+    "tesseract_pr6": {
       "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
       "state": "open",
       "draft": true,
       "merged": false,
-      "head": "tesseract-desktop-mvp-20261006",
       "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
-      "base": "master",
-      "base_sha": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
-      "updated_at_utc": "2026-10-24T16:46:27Z",
-      "interpretation": "Still OPEN/Draft; no issuer-key/runner change verified in this run; no CI rerun."
+      "checks": {
+        "failed": 6,
+        "skipped": 1
+      },
+      "failed_run_id": 39994207477,
+      "ci_rerun": false
     }
   },
   "wsl_ram_npu": {
