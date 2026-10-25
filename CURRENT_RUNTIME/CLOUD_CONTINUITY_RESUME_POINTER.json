@@ -1,35 +1,33 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T10:02:45Z",
-  "updated_at_local": "2026-10-25T17:02:45+07:00",
+  "updated_at_utc": "2026-10-25T10:11:52Z",
+  "updated_at_local": "2026-10-25T17:11:52+07:00",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1711ICT.json",
+    "blob_sha": "10e552bc91a98b447402a3174e081492e27e0c86",
+    "commit_sha": "b59f850bd69207066a054bbdd868098549452acc",
+    "readback_verified": true,
+    "note": "Direct n8n execution 163 and evidence row 352 verified; direct host tick/trace/source hashes and scheduler readback verified; exact MODUAL source still unresolved."
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1702ICT.json",
     "blob_sha": "d07a937edd6731d33ff9fab7854cff68fdd6a463",
     "commit_sha": "37381145f781d03267c1e74f060a4eb17e9f1ac3",
     "readback_verified": true,
-    "observed_at_utc": "2026-10-25T10:02:45Z",
-    "observed_at_local": "2026-10-25T17:02:45+07:00",
-    "note": "Fresh host Tick/consumer exact readback; Dropbox metadata; n8n execution 163; Archive PR #36 CI/artifact; TESSERACT PR #6 status. Sensor stream remains stale; all tasks remain open."
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1606ICT.json",
-    "blob_sha": "5bb8c97131db86edcf8e788dc886c13211a5b8d8",
-    "commit_sha": "9a760907971287d9f17dc03eefd065b234410947",
-    "readback_verified": true,
-    "note": "Latest full cloud continuity checkpoint. A subsequent TESSERACT source-chain receipt is recorded at latest_source_chain_readback; no task closure."
+    "note": "Prior full continuity checkpoint; all task states remain nonterminal."
   },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
-    "latest_execution_id": "161",
+    "latest_execution_id": "163",
     "latest_execution_status": "success",
     "latest_execution_mode": "trigger",
-    "latest_execution_started_at_utc": "2026-10-25T08:00:22.077Z",
-    "latest_execution_stopped_at_utc": "2026-10-25T08:00:24.257Z",
+    "latest_execution_started_at_utc": "2026-10-25T10:00:22.065Z",
+    "latest_execution_stopped_at_utc": "2026-10-25T10:00:24.182Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 350,
+    "evidence_table_rows": 352,
     "latest_host_evidence_row_id": 347,
     "latest_host_event_id": "X20261025073650716_HOST_READBACK",
     "latest_host_row_exact_readback": true,
@@ -39,9 +37,9 @@
     "unfinished_rows": 45,
     "tasks_closed": 0,
     "host_heartbeat_probed_by_workflow": false,
-    "interpretation": "No n8n connector exposed in this turn; retain execution 161/row 350 as last known provider observation, not a fresh heartbeat.",
-    "latest_cloud_evidence_row_id": 350,
-    "latest_cloud_event_id": "X20261025080024100_CLOUD",
+    "interpretation": "Cloud scan succeeded and appended row 352. It did not probe host heartbeat; separate direct host probe is recorded in the checkpoint.",
+    "latest_cloud_evidence_row_id": 352,
+    "latest_cloud_event_id": "X20261025100024046_CLOUD",
     "terminal_rows": 0,
     "latest_github_evidence_row_id": 349,
     "latest_github_event_id": "X20261025074407199_PR6_STEPS_READBACK",
@@ -59,21 +57,22 @@
       "evidence_table_rows": 349
     },
     "latest_recorded_source": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
-    "live_n8n_connector_called_this_turn": false,
+    "live_n8n_connector_called_this_turn": true,
     "latest_execution_exact_readback": true,
-    "fresh_execution_readback_this_turn": false,
+    "fresh_execution_readback_this_turn": true,
     "last_exact_readback_at_local": "2026-10-25T15:53:01.835+07:00",
-    "host_heartbeat_probed_this_turn": false
+    "host_heartbeat_probed_this_turn": false,
+    "latest_cloud_row_exact_readback": true
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
     "route": "Remote Desktop Commander",
-    "route_online_for_read_only_probe": false,
-    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T080139371211Z.json",
-    "latest_tick_sha256": "1f7f79c099bf93619e41f0f9d9251087835eb0fbb81d0b2dd0311e95e76fbec3",
-    "latest_tick_observed_at_utc": "2026-10-25T08:01:39.371211Z",
+    "route_online_for_read_only_probe": true,
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T100639363257Z.json",
+    "latest_tick_sha256": "9E49EB73B74A8AC3D5437EC2FCC9DFE6D88EA3B4F90EC3142B500F79F82F7BAB",
+    "latest_tick_observed_at_utc": "2026-10-25T10:06:39.363257Z",
     "previous_tick_sha256": "19999AC7876C3F4470C0422A56DFC80BD9B59EC77CCEEFCF3DDEE0570E899EE3",
-    "trace_sha256": "0DA7298F9BE1FA1043974C89D310A27AB73D8DB210839D35A632E11F490875AC",
+    "trace_sha256": "1ED820AC2B5F2556C00192EA7911253FBE63FCC5BF577569FD0E91D1EDC53457",
     "trace_receipt_readback_ok": true,
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
     "source_bytes": 35389440,
@@ -92,13 +91,12 @@
     "scheduled_task": {
       "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
       "state": "Ready",
-      "enabled": true,
-      "last_run_local": "2026-10-25T15:01:33+07:00",
-      "last_result": "0x0",
-      "next_run_local": "2026-10-25T15:06:32+07:00",
-      "repeat_interval": "PT5M",
-      "execution_time_limit": "PT4M",
-      "missed_runs": 0
+      "last_run_local": "2026-10-25T17:06:33+07:00",
+      "last_result": 0,
+      "next_run_local_at_scheduler_probe": "2026-10-25T17:11:32+07:00",
+      "scheduler_probe_at_local": "2026-10-25T17:08:33.0477112+07:00",
+      "missed_runs": 0,
+      "interpretation": "Next run was still in the future on the host clock at the scheduler probe. Do not compare host due time directly with cloud time."
     },
     "exact_modual_source_found": false,
     "expected_modual_source_bytes": 89814328,
@@ -112,13 +110,13 @@
     "latest_checkpoint_host_probe_local": "2026-10-25T11:23:45.9126701+07:00",
     "next_run_at_last_probe": "2026-10-25T11:26:32+07:00",
     "fresh_host_probe_this_run": true,
-    "interpretation": "No fresh host probe in this turn. Host state after the last recorded host-local scheduled time remains unknown.",
+    "interpretation": "Direct read-only host probe succeeded; cloud heartbeat remains a separate signal.",
     "latest_host_probe_local": "2026-10-25T14:38:49.9951195+07:00",
     "live_sensor_stream_status": "EVENT_TIMESTAMP_STALE",
-    "latest_probe_local": "2026-10-25T15:08:09.165+07:00",
-    "fresh_host_probe_this_turn": false,
+    "latest_probe_local": "2026-10-25T17:09:59.9961011+07:00",
+    "fresh_host_probe_this_turn": true,
     "latest_probe_source": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1507ICT.json",
-    "current_host_state": "UNKNOWN_AFTER_LAST_RECORDED_PROBE",
+    "current_host_state": "ONLINE; SENSOR_STREAM_UNVERIFIED; EXACT_MODUAL_SOURCE_NOT_FOUND",
     "runtime_probe_reason": "Desktop Commander device inventory at this turn reports localhost and both DESKTOP-86ITNQ4 registrations Offline; no Windows tick/consumer readback was possible."
   },
   "github_task_ledger": {
@@ -131,15 +129,15 @@
       "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
       "IN_PROGRESS": 3
     },
-    "observed_at_local": "2026-10-25T16:06:54+07:00",
+    "observed_at_local": "2026-10-25T17:11:52+07:00",
     "ledger_blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
     "blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
     "blob_sha_rechecked_in_this_run": true,
-    "parsed_task_counts_last_verified_at_local": "2026-10-25T16:06:54+07:00",
+    "parsed_task_counts_last_verified_at_local": "2026-10-25T17:11:52+07:00",
     "current_default_branch_fetch": {
-      "blob_sha": "0782e1def4e9f21b596f1efafa86def614006a6e",
+      "blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
       "fetch_file_content_length": 0,
-      "fetch_blob_content_length": 1251533,
+      "fetch_blob_content_length": 1280456,
       "fetch_blob_json_parse": "PASS",
       "schema": "SOL_OPEN_TASKS_PARALLEL_LEDGER/1.0",
       "task_count": 29,
@@ -151,7 +149,7 @@
         "IN_PROGRESS": 3
       },
       "tasks_closed": 0,
-      "main_head": "638f5b7c746c786f7395c9ec37e7d3b32bccadd0",
+      "main_head": "b580f11d41f6eb083f6b22fec067b26a9afc468e",
       "main_head_before_pointer_update": "256fe1c02a106203ad81c591847af0eac73ae5c7",
       "content_length_readback_corrected": true
     },
@@ -168,18 +166,28 @@
     "no_raw_sensor_values_stored": true,
     "cloud_heartbeat_is_not_host_heartbeat": true,
     "no_merge_or_force_push": true,
-    "do_not_substitute_candidate_for_exact_modual_source": true,
+    "no_candidate_substitution_for_exact_modual_source": true,
     "tasks_closed": 0
   },
   "next": [
-    "Resolve the MAP_NGUON provider-object mismatch through live Google Drive metadata/revision/hash/content readback; the embedded database confirms different object references but this turn had no Drive connector.",
-    "Use an authorized provider/host connector when exposed to retrieve original account-export bytes independently; preserve stable IDs, revisions and hashes.",
-    "A hash-verified template/frame source chain has been found; exact TESSERACT Art target and real browser runtime remain unresolved. Use CURRENT_RUNTIME/TESSERACT_ART_SOURCE_CHAIN_READBACK_20261025T1607ICT.json.",
-    "Keep PR #36 OPEN/Draft. Latest measured compare was 5 ahead/21 behind at main head 1a96267084c1c8a97e0ba60f371cb6ca71f8aecd; main advanced afterward with further continuity commits, so remeasure next pass and do not sync/merge by default.",
-    "Continue independent OPEN/NEXT branches; no task is closed by source discovery, checkpoint, report, or CI success.",
-    "Fresh host route is online: exact-read the next scheduled Tick/consumer after the host-clock due time, recompute the canonical source hash, and continue sensor-client/bridge discovery; do not infer a live stream from receipt success."
+    "Read the next Windows tick only after the next run is due by host-local scheduler time; keep host and cloud timestamps separate.",
+    "Continue exact-source retrieval for MODUAL by an authorized provider route; do not substitute MODUAL_CARRIER_CANDIDATE_20261025T0753ICT.csv.",
+    "Retry Dropbox only after resolving the connector schema/link selector; no provider data was obtained in this run.",
+    "Keep PR #36 OPEN/Draft; remeasure against current main before any synchronization, and do not merge or force-push.",
+    "Continue cloud-eligible OPEN tasks without closing tasks from scan receipts, checkpoints, or CI success."
   ],
   "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1711ICT.json",
+      "blob_sha": "10e552bc91a98b447402a3174e081492e27e0c86",
+      "commit_sha": "b59f850bd69207066a054bbdd868098549452acc",
+      "readback_verified": true,
+      "observed_at_local": "2026-10-25T17:11:52+07:00",
+      "task_count": 29,
+      "recovery_rows": 45,
+      "tasks_closed": 0,
+      "note": "Fresh n8n execution/row readback and direct Windows read-only probe; exact MODUAL source unresolved."
+    },
     {
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1606ICT.json",
       "blob_sha": "5bb8c97131db86edcf8e788dc886c13211a5b8d8",
@@ -572,13 +580,17 @@
       ],
       "note": "Clean recut uses current main at branch creation. Original PR #34 remains open. No merge or force-push.",
       "latest_compare_readback": {
-        "observed_at_local": "2026-10-25T16:06:54+07:00",
-        "compared_main_head": "072a4a8bbfd7b2bc5d60e2b1085f883898217f1b",
+        "observed_at_local": "2026-10-25T17:11:52+07:00",
+        "compared_main_head": "b580f11d41f6eb083f6b22fec067b26a9afc468e",
         "status": "diverged",
         "ahead_by": 5,
-        "behind_by": 18,
-        "changed_files": 5,
-        "note": "Main advanced afterward with source-chain and ledger commits. This comparison is pinned to compared_main_head; no branch sync."
+        "behind_by": 23,
+        "ci_runs_success": [
+          40177456089,
+          40177456127,
+          40177456080
+        ],
+        "note": "Current readback; no merge, force-push, or branch sync."
       },
       "latest_ci_runs": [
         {
@@ -619,11 +631,11 @@
     }
   },
   "latest_provider_status_readback": {
-    "observed_at_utc": "2026-10-25T10:02:45Z",
-    "observed_at_local": "2026-10-25T17:02:45+07:00",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1702ICT.json",
-    "checkpoint_blob_sha": "d07a937edd6731d33ff9fab7854cff68fdd6a463",
-    "provider_checkpoint_commit": "37381145f781d03267c1e74f060a4eb17e9f1ac3",
+    "observed_at_utc": "2026-10-25T10:11:52Z",
+    "observed_at_local": "2026-10-25T17:11:52+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1711ICT.json",
+    "checkpoint_blob_sha": "10e552bc91a98b447402a3174e081492e27e0c86",
+    "provider_checkpoint_commit": "b59f850bd69207066a054bbdd868098549452acc",
     "github_task_ledger_blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
     "dropbox_outlook": {
       "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
@@ -691,7 +703,9 @@
       "integrity_corrections": 4,
       "tasks_closed": 0
     },
-    "tasks_closed": 0
+    "tasks_closed": 0,
+    "fresh_host_probe": true,
+    "fresh_n8n_probe": true
   },
   "latest_source_chain_readback": {
     "path": "CURRENT_RUNTIME/TESSERACT_ART_SOURCE_CHAIN_READBACK_20261025T1607ICT.json",
