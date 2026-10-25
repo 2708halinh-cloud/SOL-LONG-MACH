@@ -1,0 +1,184 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.0",
+  "observed_at": "2026-10-25T08:37:30+07:00",
+  "observation_precision": "minute-rounded",
+  "continuity_state": "OPEN_WORK_REMAINS",
+  "provenance": {
+    "source": "Fresh GitHub connector readback of main, current OPEN_TASKS ledger blob, continuity pointer, PR #34 compare; fresh ChatGPT Library byte/text materialization; isolated Chromium attempt.",
+    "main_head_before_checkpoint": "aadc4813f3d7029b2b948a4607aa914edc7c8b41",
+    "prior_pointer_blob_sha": "d4c095f66cad34110568b0d4a36b3d7ee08bde4a",
+    "no_private_chat_payloads_included": true
+  },
+  "github_task_ledger": {
+    "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "blob_sha": "1cf53c0e3b85ebe0aeaa530bdb66f13dcb8102e1",
+    "fetch_file_content_bytes": 0,
+    "readback_method": "fetch_file returned current blob SHA but empty content; fetch_blob by that exact SHA returned 1,149,468 characters and JSON.parse succeeded.",
+    "task_count": 29,
+    "task_status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "tasks_closed": 0
+  },
+  "archive_task": {
+    "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+    "status": "OPEN",
+    "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
+    "pr": 34,
+    "pr_state": "OPEN",
+    "pr_draft": true,
+    "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+    "main_sha_at_compare": "aadc4813f3d7029b2b948a4607aa914edc7c8b41",
+    "branch_relation_at_compare": {
+      "ahead": 1,
+      "behind": 34
+    },
+    "pr_changed_paths": [
+      ".github/workflows/archive-readonly-adapters.yml",
+      "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py",
+      "tests/test_sol_archive_10_formats.py",
+      "tests/test_sol_library_stone_topology.py",
+      "tests/verify_real_archive_fixtures.py"
+    ],
+    "main_changes_since_merge_base": [
+      "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0813ICT.json",
+      "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0713ICT.json",
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0719ICT.json",
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0722ICT.json",
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0726ICT.json",
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0742ICT.json",
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0746ICT.json",
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0818ICT.json",
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0823ICT.json",
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json"
+    ],
+    "main_changes_overlap_pr_paths": false,
+    "decision": "Do not re-cut: branch is 34 commits behind but current main changes since merge base do not overlap the five PR paths. Keep PR open; no merge or force-push.",
+    "source_export_recovery": "NOT_COMPLETE",
+    "windows_host_validation": "NOT_VERIFIED",
+    "task_closed": false
+  },
+  "tesseract_art": {
+    "task_id": "TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+    "status": "IN_PROGRESS",
+    "candidate": {
+      "name": "TESSERACT_6D_TU_CUNG.html",
+      "library_file_id": "libfile_ce7555efd8108191a4d988bc576d86ff",
+      "file_id": "file_000000009f088209805a3c577f695379",
+      "listed_size_bytes": 11134,
+      "text_representation_bytes": 11133,
+      "text_representation_sha256": "10efe0db93229f19ac1f568c74506995fca27eb15514e080b513ddcb04880e86",
+      "raw_source_bytes": "NOT_AUTHORIZED_FOR_MATERIALIZATION"
+    },
+    "bundle_candidates": [
+      {
+        "name": "tesseract-6d-website_SKILL_CAP_NHAT_FRAME_V06.zip",
+        "file_id": "file_000000001d1082099d10e9b04a7bebd7",
+        "listed_size_bytes": 37385,
+        "raw_bytes": "NOT_AUTHORIZED_FOR_MATERIALIZATION"
+      },
+      {
+        "name": "TESSERACT_6D_KHUNG_TU_MAU_GOC.zip",
+        "file_id": "file_00000000bf6c8209817629e7aca2be67",
+        "listed_size_bytes": 27295,
+        "raw_bytes": "NOT_AUTHORIZED_FOR_MATERIALIZATION"
+      }
+    ],
+    "browser_probe": {
+      "environment": "isolated Chromium headless",
+      "attempted_route": "file:// local copy of Library text representation only",
+      "result": "ERR_BLOCKED_BY_ADMINISTRATOR",
+      "runtime_render_verified": false,
+      "bypass_attempted": false,
+      "source_modified": false
+    },
+    "result": "NO_NEW_RAW_CARRIER; EXACT_ART_IDENTITY_AND_REAL_BROWSER_RUNTIME_REMAIN_OPEN",
+    "next": "Do not treat text derivative as original bytes. Use an authorized browser route or authorized raw-byte carrier; do not bypass administrator policy and do not integrate before source identity and observed event path are established."
+  },
+  "tesseract_desktop": {
+    "repository": "2708halinh-cloud/x-time-web",
+    "pr": 6,
+    "state": "OPEN",
+    "draft": true,
+    "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "current_head_runs": [
+      {
+        "run_id": 39994207477,
+        "conclusion": "failure",
+        "artifacts": 0
+      },
+      {
+        "run_id": 39994207667,
+        "conclusion": "failure",
+        "artifacts": 0
+      }
+    ],
+    "issuer_public_key_value_verified": false,
+    "runner_assignment_change_verified": false,
+    "rerun_performed": false,
+    "next": "Only inspect authorized issuer-side public-key and runner-control surfaces; do not rerun CI until an actual configuration or runner-state change is verified."
+  },
+  "memory_archive": {
+    "archive_path": "/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL/ADMIN_PORTABLE_20261023.zip",
+    "library_file_id": "libfile_d18e6db946b88191b31e948ed283598c",
+    "bytes": 22493275,
+    "sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+    "zip_members": 13,
+    "crc": "PASS",
+    "map_nguon_bytes": 99075,
+    "map_nguon_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+    "section_xiv_luong_tam_read": true,
+    "unresolved_ids": {
+      "ingested_map_nguon": "1rcRPnoBtErA634J1jfHkjZp8oTmc3HuN",
+      "current_read_locator": "1WRp3AK2fpT66LckjclEWfvgqF9fDCOKz"
+    },
+    "provider_metadata_and_byte_relation_verified": false,
+    "original_exports": {
+      "JINEY": "NOT_RECOVERED",
+      "FUNIX": "NOT_RECOVERED",
+      "DAT_NGUYEN": "NOT_RECOVERED"
+    },
+    "admin_extracted_folder_moved_or_duplicated": false
+  },
+  "provider_access": {
+    "github_connector": "AVAILABLE",
+    "chatgpt_library_read_and_text_materialization": "AVAILABLE",
+    "google_drive_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
+    "dropbox_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
+    "takeout_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET"
+  },
+  "host": {
+    "last_verified_readback_at": "2026-10-25T08:23:05.5062340+07:00",
+    "last_tick": "WINDOWS_TICK_20261025T012136417838Z.json",
+    "last_tick_sha256": "471a2a31988ffb9063ff936beabbe2c7d08a753dabbf8edd2f005ec171d61ae7",
+    "consumer_receipt_sha256": "338136e0236b9982628c61052a46fe70b4a1777348a3863377792218c01d594d",
+    "live_sensor_stream_verified": false,
+    "fresh_host_probe_this_run": false,
+    "interpretation": "Last known host evidence only; no current host readback was available in this tool invocation."
+  },
+  "safety": {
+    "tasks_closed": 0,
+    "source_mutation": false,
+    "google_drive_writes": false,
+    "process_termination": false,
+    "cache_or_meta_db_deletion": false,
+    "secrets_read": false,
+    "pr_merge": false,
+    "force_push": false,
+    "admin_folder_moved_or_duplicated": false
+  },
+  "next": [
+    "When an authorized Drive/Dropbox/Takeout provider becomes callable, read exact metadata/revisions/bytes for both MAP_NGUON IDs and retrieve original JINEY/FUNIX/DAT NGUYEN export bytes.",
+    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN; PR #34 remains open/draft. No re-cut is needed solely because unrelated CURRENT_RUNTIME/MODUAL files advanced.",
+    "Keep TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023 IN_PROGRESS; use an authorized browser route or exact raw source carrier, never a text reconstruction as original.",
+    "Keep TESSERACT Desktop PR #6 open/draft; do not rerun CI until issuer public-key provenance and runner assignment change are verified.",
+    "Preserve all 29 ledger tasks; do not synchronize status automatically."
+  ]
+}
