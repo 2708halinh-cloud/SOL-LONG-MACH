@@ -87,10 +87,10 @@
     "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
     "pr": 34,
     "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
-    "current_main_sha": "d6a6b88d66c452259b6b40e84ec89bbf55082170",
+    "current_main_sha": "0f1dba93e1778c9e2fc35d77a5900f77ef0af6f4",
     "branch_relation": {
       "ahead": 1,
-      "behind": 44
+      "behind": 48
     },
     "workflow_runs": [
       {
@@ -116,9 +116,9 @@
     "task_closed": false,
     "main_changes_overlap_pr_paths": false,
     "recut_required": false,
-    "main_head_at_compare": "d6a6b88d66c452259b6b40e84ec89bbf55082170",
-    "current_main_sha_semantics": "main head observed immediately before this pointer correction; this pointer commit advances main and a fresh branch readback is required for the post-write head",
-    "comparison_observed_at": "2026-10-25T09:34:19+07:00",
+    "main_head_at_compare": "0f1dba93e1778c9e2fc35d77a5900f77ef0af6f4",
+    "current_main_sha_semantics": "main head observed immediately before this pointer update; this pointer commit advances main, so this is the comparison base, not a self-referential post-write SHA",
+    "comparison_observed_at": "2026-10-25T09:41:06.268+07:00",
     "original_exports_recovered": {
       "JINEY": false,
       "FUNIX": false,
@@ -148,7 +148,8 @@
         "DAT_NGUYEN": false
       },
       "source_locator_terms_found_in_bundle": [],
-      "independent_library_byte_readback_at": "2026-10-25T09:34:19+07:00"
+      "independent_library_byte_readback_at": "2026-10-25T09:34:19+07:00",
+      "source_classification": "DERIVED_MULTI_BRANCH_REENTRY_BUNDLE_NOT_ACCOUNT_EXPORT"
     }
   },
   "continuation_guards": {
@@ -162,11 +163,11 @@
     "no_merge_or_force_push": true,
     "do_not_substitute_candidate_for_exact_modual_source": true
   },
-  "updated_at": "2026-10-25T09:34:19+07:00",
+  "updated_at": "2026-10-25T09:41:06.268+07:00",
   "github_task_ledger": {
     "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
-    "blob_sha": "065b56edc5aaec2974f2de2cd2b29e2a660d361f",
-    "readback_method": "Fresh main tree at pre-write head d6a6b88d66c452259b6b40e84ec89bbf55082170 -> exact ledger blob; fetch_blob parsed JSON successfully (1,158,451 chars).",
+    "blob_sha": "37528bc2ee5b4ab5a0a6017c6f68df02e7ec5622",
+    "readback_method": "Fresh main tree at head 0f1dba93e1778c9e2fc35d77a5900f77ef0af6f4 -> exact OPEN_TASKS_CURRENT.json blob; fetch_blob parsed JSON and integrity_corrections read back.",
     "parsed": true,
     "task_count": 29,
     "tasks_closed": 0,
@@ -177,9 +178,11 @@
       "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
       "IN_PROGRESS": 3
     },
-    "last_readback_at": "2026-10-25T09:34:19+07:00",
-    "last_readback_head": "d6a6b88d66c452259b6b40e84ec89bbf55082170",
-    "ledger_snapshot_observed_at": "2026-10-25T08:23:05.5062340+07:00"
+    "last_readback_at": "2026-10-25T09:41:06.268+07:00",
+    "last_readback_head": "0f1dba93e1778c9e2fc35d77a5900f77ef0af6f4",
+    "ledger_snapshot_observed_at": "2026-10-25T08:23:05.5062340+07:00",
+    "integrity_correction_blob_sha": "37528bc2ee5b4ab5a0a6017c6f68df02e7ec5622",
+    "integrity_correction_id": "LEDGER_DUPLICATE_EVENT_CLASSIFICATION_20261025T0940ICT"
   },
   "archive_task_history": [
     {
@@ -288,7 +291,7 @@
     "Preserve all 45 n8n recovery rows and all 29 GitHub task-ledger tasks; keep OPEN/IN_PROGRESS states unchanged."
   ],
   "current_invocation_access": {
-    "observed_at": "2026-10-25T09:34:19+07:00",
+    "observed_at": "2026-10-25T09:41:06.268+07:00",
     "github_connector": true,
     "library_listing_and_text_read": true,
     "library_raw_byte_materialization_for_verified_zip": true,
@@ -300,7 +303,7 @@
     "note": "Dropbox metadata/hash details come from the existing provider checkpoint; this invocation independently materialized and verified the Library copy, but did not perform a new direct Dropbox/Drive/Takeout call."
   },
   "ledger_integrity_findings": {
-    "observed_at": "2026-10-25T09:34:19+07:00",
+    "observed_at": "2026-10-25T09:41:06.268+07:00",
     "duplicate_event_id": "PROVIDER_READBACK_20261025T0926ICT",
     "exact_duplicate_occurrences": 2,
     "duplicated_in": [
@@ -310,6 +313,11 @@
     ],
     "interpretation": "One provider observation was recorded twice; count as one distinct event, not two.",
     "correction_policy": "Preserve both historical entries; this pointer annotation prevents double-counting without deleting ledger history.",
-    "tasks_closed": 0
+    "tasks_closed": 0,
+    "source_blob_sha_after_correction": "37528bc2ee5b4ab5a0a6017c6f68df02e7ec5622",
+    "correction_record_id": "LEDGER_DUPLICATE_EVENT_CLASSIFICATION_20261025T0940ICT",
+    "correction_committed": true,
+    "historical_duplicate_entries_preserved": true,
+    "distinct_provider_observation_count": 1
   }
 }
