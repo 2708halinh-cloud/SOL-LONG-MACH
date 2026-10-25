@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-25T07:19:53.811+07:00",
+  "observed_at": "2026-10-25T07:23:39.771+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -10555,6 +10555,88 @@
       "source_file_written": false,
       "source_file_moved_or_deleted": false,
       "result": "WINDOWS_TICK_AND_READONLY_CONSUMER_CONFIRMED; LIVE_SENSOR_STREAM_NOT_VERIFIED; MINH_SOURCE_PATH_OPEN; LEDGER_MIRROR_RESTORED; ALL_TASKS_OPEN"
+    },
+    {
+      "id": "PROVIDER_READBACK_20261025T0722ICT",
+      "observed_at": "2026-10-25T07:23:39.771+07:00",
+      "observed_at_utc": "2026-10-25T00:23:39.771Z",
+      "source": "Fresh mandatory GitHub reads; Dropbox Outlook metadata; n8n execution 153 exact node output; direct Windows host Tick/consumer receipt readback at 00:16:36Z; ADB live battery probe; MINH ledger mirror restoration; Archive PR #28 and TESSERACT PR #6 status readback.",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0722ICT.json",
+      "checkpoint_blob_sha": "098ab400394275f4187bbf97b19b8fe2aac9a35a",
+      "checkpoint_commit": "e96f18f9855ab33835ccb8431bf7a7ee0fcd2f15",
+      "windows_tick": {
+        "latest_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T001636330979Z.json",
+        "receipt_sha256": "0E1F121DAAA5170A46DAFD88A2BEF5FD8FC9D7386E2B89DD51945D7B208B5B52",
+        "observed_at_utc": "2026-10-25T00:16:36.330979Z",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "task_result": "0x0",
+        "consumer_receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T001635966Z.json",
+        "consumer_sha256": "77C96E432F682C940C981B2929CFD56DC746E31B822277E6C8C1446A380BE438",
+        "consumer_status": "SOURCE_OBSERVED_READONLY",
+        "consumer_hash_matches_verifier": true,
+        "live_sensor_reading_confirmed": false,
+        "source_file_written": false,
+        "raw_rows_emitted": false,
+        "cloud_export_enabled": false,
+        "github_export_enabled": false
+      },
+      "android": {
+        "receipt_path": "D:\\SENSOR_LOGS\\state\\ANDROID_BATTERY_SAMPLE_20261025T000809379Z.json",
+        "receipt_sha256": "3D04D23C46D5ACA5CA300B8B1EB9812FA7035B45BE3943F1B3AD962848FE1454",
+        "battery_read_succeeded": true,
+        "raw_sensor_values_persisted": false,
+        "continuous_stream_confirmed": false
+      },
+      "minh_bridge": {
+        "ledger_mirror_restored": true,
+        "ledger_mirror_sha256": "0194888F8AAAB481F524C8F317F627854B4C4D40771ABCEBBF7DBF247C9B59",
+        "bridge_task_result": "0x1",
+        "historical_source_exists": false,
+        "source_substitution": false,
+        "verifier_pass": false,
+        "reason": "Historical MODUAL source path is missing; two W: copies do not match the recorded source fingerprint; verifier's AGENTS ordering assertion remains unresolved."
+      },
+      "n8n": {
+        "execution_id": "153",
+        "event_id": "X20261025000023964_CLOUD",
+        "state": "OPEN_WORK_REMAINS",
+        "exact_execution_output_readback": true,
+        "host_heartbeat_probed": false
+      },
+      "archive": {
+        "pr": 28,
+        "head": "945eeca3419be2b7151d5761eb5aadfa65c31434",
+        "compare_status": "diverged",
+        "ahead_by": 8,
+        "behind_by": 88,
+        "runs": [
+          40138464176,
+          40138464127,
+          40138464130
+        ],
+        "all_success": true,
+        "merge": false,
+        "force_push": false
+      },
+      "tesseract": {
+        "pr": 6,
+        "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "runs": [
+          39994207477,
+          39994207667
+        ],
+        "all_failed_before_step_summaries": true,
+        "artifacts": 0,
+        "issuer_public_key_value_verified": false,
+        "runner_assignment_change_verified": false,
+        "ci_rerun": false
+      },
+      "tasks_closed": 0,
+      "raw_sensor_values_emitted": false,
+      "source_file_written": false,
+      "source_file_moved_or_deleted": false,
+      "result": "WINDOWS_TICK_AND_READONLY_CONSUMER_CONFIRMED; LIVE_SENSOR_STREAM_NOT_VERIFIED; MINH_SOURCE_PATH_OPEN; LEDGER_MIRROR_RESTORED; ALL_TASKS_OPEN"
     }
   ],
   "privacy_policy": {
@@ -10563,24 +10645,22 @@
     "historical_git_versions_rewritten": false
   },
   "latest_runtime_probe_20261025": {
-    "id": "PROVIDER_READBACK_20261025T0719ICT",
-    "observed_at": "2026-10-25T07:19:53.811+07:00",
-    "observed_at_utc": "2026-10-25T00:19:53.811Z",
-    "source": "Fresh exact GitHub reads, Dropbox Outlook metadata, n8n execution node output, direct online Windows host Tick/consumer readback, ADB live battery probe receipt, and local MINH ledger mirror restoration.",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0719ICT.json",
-    "checkpoint_blob_sha": "3497c055601db2849b0056c461cc4f24142dbab5",
-    "checkpoint_commit": "5d18a3774e6a3754674994169d374b3d62decd18",
-    "action": "VERIFY_WINDOWS_TICK_CONSUMER_AND_REPAIR_MINH_LEDGER_MIRROR; RECHECK_ARCHIVE_AND_TESSERACT",
-    "tasks_closed": 0,
+    "id": "PROVIDER_READBACK_20261025T0722ICT",
+    "observed_at": "2026-10-25T07:23:39.771+07:00",
+    "observed_at_utc": "2026-10-25T00:23:39.771Z",
+    "source": "Fresh mandatory GitHub reads; Dropbox Outlook metadata; n8n execution 153 exact node output; direct Windows host Tick/consumer receipt readback at 00:16:36Z; ADB live battery probe; MINH ledger mirror restoration; Archive PR #28 and TESSERACT PR #6 status readback.",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T0722ICT.json",
+    "checkpoint_blob_sha": "098ab400394275f4187bbf97b19b8fe2aac9a35a",
+    "checkpoint_commit": "e96f18f9855ab33835ccb8431bf7a7ee0fcd2f15",
     "windows_tick": {
-      "latest_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T001136379604Z.json",
-      "receipt_sha256": "471416259F0709C6F07CC82EE87EC679D6B94905BD847044B95F6BF4D0B8BA1B",
-      "observed_at_utc": "2026-10-25T00:11:36.379604Z",
+      "latest_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T001636330979Z.json",
+      "receipt_sha256": "0E1F121DAAA5170A46DAFD88A2BEF5FD8FC9D7386E2B89DD51945D7B208B5B52",
+      "observed_at_utc": "2026-10-25T00:16:36.330979Z",
       "source_bytes": 35389440,
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
       "task_result": "0x0",
-      "consumer_receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T001135946Z.json",
-      "consumer_sha256": "47F64038D8C11273A1F8D863221468D7F9AD94B4A4EFE367CF024A4857CF0FB5",
+      "consumer_receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T001635966Z.json",
+      "consumer_sha256": "77C96E432F682C940C981B2929CFD56DC746E31B822277E6C8C1446A380BE438",
       "consumer_status": "SOURCE_OBSERVED_READONLY",
       "consumer_hash_matches_verifier": true,
       "live_sensor_reading_confirmed": false,
@@ -10603,7 +10683,7 @@
       "historical_source_exists": false,
       "source_substitution": false,
       "verifier_pass": false,
-      "reason": "historical MODUAL source missing; two W: copies differ from recorded source fingerprint; verifier still fails AGENTS history placement assertion"
+      "reason": "Historical MODUAL source path is missing; two W: copies do not match the recorded source fingerprint; verifier's AGENTS ordering assertion remains unresolved."
     },
     "n8n": {
       "execution_id": "153",
@@ -10617,21 +10697,13 @@
       "head": "945eeca3419be2b7151d5761eb5aadfa65c31434",
       "compare_status": "diverged",
       "ahead_by": 8,
-      "behind_by": 85,
+      "behind_by": 88,
       "runs": [
-        {
-          "id": 40138464176,
-          "conclusion": "success"
-        },
-        {
-          "id": 40138464127,
-          "conclusion": "success"
-        },
-        {
-          "id": 40138464130,
-          "conclusion": "success"
-        }
+        40138464176,
+        40138464127,
+        40138464130
       ],
+      "all_success": true,
       "merge": false,
       "force_push": false
     },
@@ -10639,19 +10711,19 @@
       "pr": 6,
       "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
       "runs": [
-        {
-          "id": 39994207477,
-          "conclusion": "failure"
-        },
-        {
-          "id": 39994207667,
-          "conclusion": "failure"
-        }
+        39994207477,
+        39994207667
       ],
+      "all_failed_before_step_summaries": true,
+      "artifacts": 0,
       "issuer_public_key_value_verified": false,
       "runner_assignment_change_verified": false,
       "ci_rerun": false
     },
+    "tasks_closed": 0,
+    "raw_sensor_values_emitted": false,
+    "source_file_written": false,
+    "source_file_moved_or_deleted": false,
     "result": "WINDOWS_TICK_AND_READONLY_CONSUMER_CONFIRMED; LIVE_SENSOR_STREAM_NOT_VERIFIED; MINH_SOURCE_PATH_OPEN; LEDGER_MIRROR_RESTORED; ALL_TASKS_OPEN"
   }
 }
