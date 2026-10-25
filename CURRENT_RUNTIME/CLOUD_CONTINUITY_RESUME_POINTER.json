@@ -1,14 +1,14 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-25T07:22:23.143Z",
-  "updated_at_local": "2026-10-25T14:22:23+07:00",
+  "updated_at_utc": "2026-10-25T07:23:46.749Z",
+  "updated_at_local": "2026-10-25T14:23:46+07:00",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1422ICT.json",
-    "blob_sha": "df7b4d2ac7207eef36d9326dce0058d67511e341",
-    "commit_sha": "9364e4e14133b3460a3acd09322d56fef32a88b7",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1423ICT.json",
+    "blob_sha": "fbd0ed07bad303929ecfa19d58c69806ce56d21c",
+    "commit_sha": "8b84fadea89f6f644a13710fca474088847cb5ce",
     "readback_verified": true,
-    "note": "Fetched back and parsed. Includes host evidence row 345, GitHub PR readback row 344, current tick SHA, and PR check status; all OPEN/IN_PROGRESS states preserved."
+    "note": "Fetched back and parsed; records host tick, PR #34/#35 successes, PR #6 log-access blocker, and n8n evidence row 346. All OPEN/IN_PROGRESS states preserved."
   },
   "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1326ICT.json",
@@ -27,7 +27,7 @@
     "latest_execution_started_at_utc": "2026-10-25T07:00:22.083Z",
     "latest_execution_stopped_at_utc": "2026-10-25T07:00:24.221Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 345,
+    "evidence_table_rows": 346,
     "latest_host_evidence_row_id": 345,
     "latest_host_event_id": "X20261025141644790_HOST_READBACK",
     "latest_host_row_exact_readback": true,
@@ -37,13 +37,16 @@
     "unfinished_rows": 45,
     "tasks_closed": 0,
     "host_heartbeat_probed_by_workflow": false,
-    "interpretation": "Execution 160 is cloud-only; direct host and GitHub PR readbacks are separate evidence rows 345 and 344.",
+    "interpretation": "Execution 160 is cloud-only; host and GitHub evidence are separate append-only rows.",
     "latest_cloud_evidence_row_id": 341,
     "latest_cloud_event_id": "X20261025070024074_CLOUD",
     "terminal_rows": 0,
     "latest_github_evidence_row_id": 344,
     "latest_github_event_id": "X20261025072145_GITHUB_PR_READBACK",
-    "latest_github_row_exact_readback": true
+    "latest_github_row_exact_readback": true,
+    "latest_pr_log_blocker_row_id": 346,
+    "latest_pr_log_blocker_event_id": "X20261025072344_PR6_LOG_BLOCKER",
+    "latest_rows_exact_readback": true
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
@@ -80,7 +83,7 @@
       "execution_time_limit": "PT4M",
       "host_now_at_probe": "2026-10-25T14:16:44.7902686+07:00",
       "next_run_was_future_at_probe": true,
-      "interpretation": "Latest tick advanced after the scheduled run; task Ready/result 0. The next run was future at the host probe."
+      "interpretation": "Latest direct probe confirms tick advanced and task returned Ready/result 0; no newer host probe after this timestamp."
     },
     "exact_modual_source_found": false,
     "expected_modual_source_bytes": 89814328,
@@ -95,7 +98,8 @@
     "next_run_at_last_probe": "2026-10-25T11:26:32+07:00",
     "fresh_host_probe_this_run": true,
     "interpretation": "Source hash unchanged; live sensor event stream remains unverified.",
-    "latest_host_probe_local": "2026-10-25T14:16:44.7902686+07:00"
+    "latest_host_probe_local": "2026-10-25T14:16:44.7902686+07:00",
+    "live_sensor_stream_status": "UNVERIFIED"
   },
   "github_task_ledger": {
     "task_count": 29,
@@ -107,11 +111,11 @@
       "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
       "IN_PROGRESS": 3
     },
-    "observed_at_local": "2026-10-25T14:22:23+07:00",
+    "observed_at_local": "2026-10-25T14:23:46+07:00",
     "ledger_blob_sha": "a946a1a563229e83557a120ebe143470a9371953",
     "blob_sha": "a946a1a563229e83557a120ebe143470a9371953",
     "blob_sha_rechecked_in_this_run": true,
-    "parsed_task_counts_last_verified_at_local": "2026-10-25T14:22:23+07:00",
+    "parsed_task_counts_last_verified_at_local": "2026-10-25T14:23:46+07:00",
     "current_default_branch_fetch": {
       "blob_sha": "a946a1a563229e83557a120ebe143470a9371953",
       "fetch_file_content_length": 0,
@@ -147,13 +151,20 @@
     "tasks_closed": 0
   },
   "next": [
-    "Re-read the host after host-local 2026-10-25 14:21:32 ICT boundary; do not infer host failure from cloud time.",
+    "Fresh-read host using host time before classifying the next scheduled tick; do not infer host failure from cloud time.",
     "Keep sensor stream UNVERIFIED until event timestamps advance; Redmi target remains NOT_LISTED.",
-    "Locate exact MODUAL source by expected SHA-256 and size; do not substitute windows_SENSON.CSV.",
-    "Inspect existing PR #6 failure logs only through a read-only route; do not rerun CI or change issuer-key binding without verified authorization.",
-    "Preserve all 29 GitHub tasks and 45 n8n recovery rows as nonterminal."
+    "Locate exact MODUAL source by expected SHA-256 and byte size; do not substitute windows_SENSON.CSV.",
+    "For PR #6, use only a working read-only source or run-summary route; preserve existing failures and do not rerun CI or change issuer/runner configuration without verified authorization.",
+    "Preserve all 29 GitHub ledger tasks and 45 n8n recovery rows as nonterminal."
   ],
   "checkpoint_history": [
+    {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1423ICT.json",
+      "blob_sha": "fbd0ed07bad303929ecfa19d58c69806ce56d21c",
+      "commit_sha": "8b84fadea89f6f644a13710fca474088847cb5ce",
+      "readback_verified": true,
+      "note": "PR6 selected log fetch blocked by 404; six job step summaries empty; no CI rerun or state change."
+    },
     {
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1422ICT.json",
       "blob_sha": "df7b4d2ac7207eef36d9326dce0058d67511e341",
@@ -332,7 +343,8 @@
         "skipped": 1
       },
       "failed_run_id": 39994207477,
-      "ci_rerun": false
+      "ci_rerun": false,
+      "log_fetch": "404 BlobNotFound for a selected job; step summaries empty"
     }
   },
   "wsl_ram_npu": {
