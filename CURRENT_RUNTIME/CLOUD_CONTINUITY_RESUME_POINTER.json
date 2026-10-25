@@ -2,26 +2,28 @@
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/1.2",
   "state": "OPEN_WORK_REMAINS",
   "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0813ICT.json",
+    "blob_sha": "d221b93e109cf02de4a144f1e815a637a64b932c",
+    "commit_sha": "d8217ee67121bd37c9f16d44190de92019813144",
+    "readback_verified": true
+  },
+  "previous_checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0658ICT.json",
     "blob_sha": "9f07a09858217d50ad14b6b3ed55fce50ab19e01",
     "commit_sha": "a97fd37e7ac50c960e383a8d884a63293b4dde60",
     "readback_verified": true
   },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0652ICT.json",
-    "blob_sha": "d9b1e48fc272111408ed6e156d7b0f03483df733",
-    "commit_sha": "44ce2e56bb839a1e2cffeed6088987bb74d0f0b5",
-    "readback_verified": true
-  },
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
-    "execution_id": "152",
+    "execution_id": "154",
     "status": "success",
-    "event_id": "X20261024230024218_CLOUD",
+    "event_id": "X20261025010023977_CLOUD",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "row_id": 319,
-    "latest_host_evidence_row_id": 322,
+    "row_id": 324,
     "exact_row_readback": true,
+    "latest_host_evidence_row_id": 325,
+    "latest_host_event_id": "X20261025010644871_HOST_READBACK",
+    "latest_host_row_exact_readback": true,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_rows": 45,
     "unfinished_rows": 45,
@@ -29,19 +31,19 @@
     "tasks_closed": 0
   },
   "host": {
-    "state": "REMOTE_ACCESS_ONLINE_TICK_TASK_RUNNING_BEYOND_LIMIT_SENSOR_UNCONFIRMED",
-    "last_tick": "WINDOWS_TICK_20261024T234637315167Z.json",
-    "last_tick_sha256": "A15170DF86C69DDACF2EDF540CE5754B0BACEAABF8B14E4D24D2A6242109CB80",
+    "state": "REMOTE_ACCESS_ONLINE_TRACE_SUCCESS_BUT_LATEST_TICK_STALE_SENSOR_UNCONFIRMED",
+    "last_tick": "WINDOWS_TICK_20261025T010136398145Z.json",
+    "last_tick_sha256": "EC0CD67543BDA10F0DE27C66B12C65D1E279871264286283AB6FD7EDAE7DCE05",
     "live_sensor_reading_confirmed": false,
-    "tick_task_last_result": "0x41301",
-    "tick_task_process_id": 42600,
-    "tick_task_trace_sha256": "186287B85DCE1F8809F93B0AABA5F5BE9BE2EF4737C6414BD1C99603887A29C6",
-    "bridge_task_last_result": "0x1",
+    "tick_task_last_result": "0x0",
+    "tick_task_state": "Ready",
+    "trace_sha256": "3C72283C7B72317BB9A44EC7B51A07D0D5F836AA4B15C4111EF7F4C9CE11B616",
+    "trace_receipt_readback_ok_at_utc": "2026-10-25T01:06:36.7606470Z",
+    "latest_tick_advanced_after_trace": false,
     "exact_modual_source_found": false
   },
   "android": {
-    "state_this_run": "NOT_RECHECKED",
-    "last_recorded_observation_local": "2026-10-25T03:38:51+07:00",
+    "state_this_run": "UNKNOWN_ADB_NOT_FOUND_TCP_UNREACHABLE",
     "live_sensor_stream_verified": false
   },
   "archive_task": {
@@ -50,10 +52,10 @@
     "real_execution_status": "OPEN_NOT_PROVEN_COMPLETED",
     "pr": 34,
     "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
-    "base_main_sha": "93100cc4619284d382558527fd22d03673f09401",
-    "branch_relation_at_validation": {
+    "current_main_sha": "c72b58ea21a2683b37398163521ffa43bc0d8479",
+    "branch_relation": {
       "ahead": 1,
-      "behind": 0
+      "behind": 24
     },
     "workflow_runs": [
       {
@@ -72,12 +74,6 @@
         "conclusion": "success"
       }
     ],
-    "artifact_id": 12580351639,
-    "artifact_bytes": 958,
-    "artifact_sha256": "4785a727a572f428b19673e03d61ad3bdf9cbb2a96ae533944e04d81970fc99f",
-    "artifact_crc": "PASS",
-    "receipt_json_sha256": "2d78773b43c6ec7e6c25891cd59f71703c7f081443db28ace3e72e26cac2d078",
-    "real_fixture_validation": "3/3 PASS (7Z,RAR,LR); stable before/after hashes; no extraction",
     "windows_host_validation": "NOT_VERIFIED",
     "source_export_recovery": "NOT_COMPLETE",
     "merge_performed": false,
@@ -93,11 +89,11 @@
     "cloud_heartbeat_is_not_host_heartbeat": true,
     "no_merge_or_force_push": true
   },
-  "updated_at": "2026-10-25T07:05:49+07:00",
+  "updated_at": "2026-10-25T08:13:00+07:00",
   "github_task_ledger": {
     "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
     "blob_sha": "f6d7e07114808d5a38446a7a123fdb1b706dce77",
-    "readback_method": "fetch_blob; JSON parsed; append-only archive-task live_progress update",
+    "readback_method": "fetch_blob; JSON parsed; task statuses unchanged",
     "parsed": true,
     "task_count": 29,
     "tasks_closed": 0
@@ -120,13 +116,14 @@
     }
   ],
   "latest_archive_action": {
-    "observed_at": "2026-10-25T07:05:49+07:00",
+    "observed_at": "2026-10-25T08:13:00+07:00",
     "pr": 34,
     "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/34",
     "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+    "current_main_sha": "c72b58ea21a2683b37398163521ffa43bc0d8479",
     "current_head_ci": "3/3 SUCCESS",
-    "artifact_id": 12580351639,
-    "artifact_sha256": "4785a727a572f428b19673e03d61ad3bdf9cbb2a96ae533944e04d81970fc99f",
+    "ahead": 1,
+    "behind": 24,
     "task_closed": false,
     "original_exports_recovered": false,
     "target_host_verified": false
