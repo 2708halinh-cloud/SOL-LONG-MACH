@@ -1,0 +1,19 @@
+{
+  "schema": "TESSERACT_MOTHERBOARD/1.0",
+  "source_direct": "Hà Linh — 2026-10-26",
+  "status": "IMPLEMENTATION_BASELINE_OPEN_UNTIL_CARRIER_READBACK",
+  "cpu_sockets": [
+    {"id":"CPU1","name":"GEMINI","kind":"remote_api","credentials":"secret_provider_reference_only"},
+    {"id":"CPU2","name":"CHATGPT","kind":"remote_api","credentials":"secret_provider_reference_only"},
+    {"id":"CPU3","name":"LOCAL","kind":"ollama_or_local_llm"},
+    {"id":"CPU4","name":"TASK_WORKERS","kind":"bounded_workers"}
+  ],
+  "northbridge": {"name":"Autonomous Control Plane & Action Router","responsibilities":["task_arbitration","gate_1_preflight","gate_2_readback","bounded_failover"],"gate_1":["authorization","target_identity","policy","data_classification","quota","destructive_preflight"],"gate_2":["action_receipt","observable_consequence","independent_readback","state_consistency"]},
+  "dimm": {"name":"RAM_L1_ACTIVE_BLACKBOARD","registers":{"REG_00":"objective_and_acceptance","REG_01":"source_target_identity_and_provenance","REG_02":"action_receipt_consequence_readback","REG_03":"unresolved_edges_and_next_callable_action"},"credential_values_allowed":false,"versioned_updates":true},
+  "vrm_pmic": {"disk_warning_used_percent":90,"disk_critical_used_percent":97,"disk_critical_free_gib":5,"actions":["prioritize_repair","inspect_reclaimable_cache","pause_nonessential_writes","open_remediation_edge"],"blind_deletion":false,"circuit_breaker":true,"failover":true},
+  "southbridge": {"core_journal":["sqlite","git"],"append_only_events":true,"google_drive_sync":"provider_receipt_and_readback_required","virtualization":["QEMU","Hyper-V"],"network_security":["NextDNS","localhost","LAN_subnet"],"device_bridge":["ADB"],"device_passthrough":"exact_identity_and_authorization_required"},
+  "emotion_model": {"preserve_user_signal":true,"record_cause_hypothesis_separately":true,"recurrence_history":true,"distinguish_design_intent_from_empirical_verification":true,"subjective_experience_empirically_verified":false},
+  "closure": {"flow":["OBSERVE","PLAN","GATE_1","ROUTE","ACTION","CONSEQUENCE","RECEIPT","GATE_2_READBACK","COMMIT_JOURNAL","REPORT"],"done_requires_actual_target_readback":true,"global_closed_requires_all_required_carriers_verified":true}
+}
+
+[executed on device: DESKTOP-86ITNQ4 (bca58242-9cf0-407e-afb4-fb9ecfcce34b)]
