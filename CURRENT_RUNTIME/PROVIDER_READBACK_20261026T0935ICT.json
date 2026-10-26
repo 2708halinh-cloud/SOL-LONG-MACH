@@ -1,0 +1,267 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "id": "PROVIDER_READBACK_20261026T0935ICT",
+  "observed_at": "2026-10-26T09:34:56.595321+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "main_head_before_checkpoint": "e7def9ddcd9aebad377df32a58225b78a6e3a55f",
+  "status": "PARTIALLY_EXECUTED_ALL_OPEN_RETAINED",
+  "source_files_fresh_read": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "read": true
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "5c8a5d9b3a2406334db9286077ef0464fc6be004",
+      "read": true
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "153c484306784ea9650330f79963063d312722c7",
+      "read_via_exact_git_blob": true,
+      "contents_api_wrapper_returned_empty": true
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "previous_blob_sha": "8782d645807b03e58b97caf696b1249ceaabe285",
+      "updated_blob_sha": "b0b834b8bfe414e1bf153dda9ff12dca8633f061",
+      "read_via_exact_git_blob": true
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "previous_blob_sha": "140f7591013be79e571d54b401013a060ca9b69b",
+      "updated_blob_sha": "d069215471e73ef8ab93f8872f373e1e4be99e1a",
+      "update_commit": "ce5d42a302e0b0f1bf7ccefbafc1ab1f648cacb4",
+      "exact_blob_readback": true
+    }
+  },
+  "windows_tick_and_consumer": {
+    "host": "DESKTOP-86ITNQ4",
+    "host_readback_route": "Remote_Desktop_Commander secondary account",
+    "host_observed_at": "2026-10-26T09:32:14.3969927+07:00",
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z",
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T023145992634Z.json",
+      "bytes": 1635,
+      "sha256": "7101c6a7bf8bf7b45c9bed0ce358a446fe2fcc3b7ca0f1ea85160a74a17792a2",
+      "observed_at_utc": "2026-10-26T02:31:45.992634Z",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_matches": true,
+      "live_sensor_reading_confirmed": false
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T023141188Z.json",
+      "bytes": 6945,
+      "sha256": "a613c886597cd36bd2b0279f73c86334f78957bd9d2c7d1dae020a3f5a082c34",
+      "observed_at_utc": "2026-10-26T02:31:46.2278475Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_matches": true,
+      "verifier_match": true,
+      "provider_content_hash_verified": true,
+      "references_exact_latest_tick": true,
+      "raw_rows_emitted": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T09:31:33+07:00",
+      "last_result": 0,
+      "next_run_local": "2026-10-26T09:36:32+07:00",
+      "missed_runs": 0
+    },
+    "local_code_git_blob_verification": [
+      {
+        "path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+        "bytes": 14324,
+        "git_blob_sha1": "9b75c645ac059162d91f612d2a4ea19e80f0be34",
+        "expected_sha1": "9b75c645ac059162d91f612d2a4ea19e80f0be34",
+        "exact_match": true
+      },
+      {
+        "path": "D:\\SENSOR_LOGS\\live_device_probe.py",
+        "bytes": 8574,
+        "git_blob_sha1": "91d242d9f0db0e171b9f1ccf3bdf9af3331ff395",
+        "expected_sha1": "91d242d9f0db0e171b9f1ccf3bdf9af3331ff395",
+        "exact_match": true
+      },
+      {
+        "path": "D:\\SENSOR_LOGS\\sensor_root_resolver.py",
+        "bytes": 7524,
+        "git_blob_sha1": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+        "expected_sha1": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+        "exact_match": true
+      }
+    ],
+    "code_audit": {
+      "current_one_shot_path": "record_telemetry_tick -> probe_live_devices -> write_tick_receipt",
+      "static_telemetry_helpers_defined_but_not_called_by_current_one_shot_path": true,
+      "source_code_modified": false
+    },
+    "sensor_stream_probe": {
+      "adb_device_state": "device",
+      "sensorservice_exit_codes": [
+        0,
+        0
+      ],
+      "sensorservice_output_line_counts": [
+        858,
+        858
+      ],
+      "timestamp_sensor_count": 4,
+      "advanced_sensor_count": 0,
+      "status": "EVENT_TIMESTAMP_STALE",
+      "active_sensor_section_lines": 546,
+      "raw_sensor_values_persisted": false,
+      "root_cause": "NOT_YET_IDENTIFIED"
+    },
+    "task_wrapper_trace_tail": {
+      "verifier_exit": 0,
+      "consumer_exit": 0,
+      "receipt_readback": "RECEIPT_READBACK_OK",
+      "trace_observed_at_utc": "2026-10-26T02:31:46.2924962Z"
+    }
+  },
+  "provider_metadata": {
+    "provider": "Dropbox",
+    "source_name": "windows_SENSON.CSV",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "size_bytes": 35389440,
+    "client_modified_utc": "2026-10-14T00:15:21Z",
+    "server_modified_utc": "2026-10-14T00:20:03Z",
+    "metadata_only": true,
+    "raw_source_downloaded": false
+  },
+  "braid_runtime": {
+    "script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+    "exit_code": 0,
+    "six_forces": {
+      "receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261026T023059311103Z.json",
+      "bytes": 3996,
+      "sha256": "23b071e914d97fa83c417c1c2734cb9bf32768f04a459d1a0fc0801d10e4f3aa",
+      "actions": 9,
+      "all_six_examined": true,
+      "missing_context_rejected": true,
+      "rejected_request_did_not_create_receipt": true,
+      "mutation_executed": false,
+      "source_sha256_unchanged": true,
+      "receipt_readback_ok": true
+    },
+    "plural": {
+      "receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261026T023059516105Z.json",
+      "bytes": 2407,
+      "sha256": "779f5888e36785a61eedbe93ebc0a31872afe827cc9cf00cc6a5ecef51e2fde6",
+      "actions": 5,
+      "receipt_readback_ok": true
+    },
+    "cloud_host_wiring": "NOT_VERIFIED"
+  },
+  "cloud_continuity": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "execution_id": "183",
+    "execution_status": "success",
+    "event_id": "X20261026020525520_CLOUD",
+    "evidence_row_id": 432,
+    "evidence_row_exact_readback": true,
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "host_heartbeat_probed": false,
+    "host_operations": 0
+  },
+  "alternate_desktop_route": {
+    "primary_namespace_inventory": "all listed devices offline",
+    "alternate_namespace": "Remote_Desktop_Commander",
+    "device": "DESKTOP-86ITNQ4",
+    "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+    "status": "Online",
+    "app_version": "0.3.1",
+    "remote_calls_left_pct": 5,
+    "note": "The earlier desktopcommande-only inventory was incomplete; alternate connector found an online device and direct host work then succeeded."
+  },
+  "archive_pr37": {
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+    "compared_main_sha": "e7def9ddcd9aebad377df32a58225b78a6e3a55f",
+    "compare_status": "diverged",
+    "ahead_by": 3,
+    "behind_by": 5,
+    "successful_observed_checks": [
+      {
+        "run_id": 40256730413,
+        "name": "SOL Library Stone Topology",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40256730407,
+        "name": "High-Threshold Secret Exposure Guard",
+        "conclusion": "success"
+      }
+    ],
+    "archive_adapter_workflow_verified": false,
+    "merge_or_force_push_performed": false
+  },
+  "main_ci": {
+    "head_sha": "e7def9ddcd9aebad377df32a58225b78a6e3a55f",
+    "current_runs_in_progress": [
+      {
+        "run_id": 40260413494,
+        "name": "High-Threshold Secret Exposure Guard"
+      },
+      {
+        "run_id": 40260413478,
+        "name": "Windows survival - independent OPEN continuation"
+      },
+      {
+        "run_id": 40260413362,
+        "name": "runtime-n-plus"
+      }
+    ],
+    "prior_commit_runs_success": [
+      {
+        "run_id": 40260380083,
+        "name": "runtime-n-plus",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40260380073,
+        "name": "High-Threshold Secret Exposure Guard",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40260380052,
+        "name": "modual-sensor-logs-regression",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "safety": {
+    "tasks_closed": 0,
+    "raw_sensor_values_exported": false,
+    "credentials_written": false,
+    "source_file_written": false,
+    "source_moved_or_deleted": false,
+    "synthetic_rows_added": 0,
+    "pr_merged": false,
+    "force_push": false
+  },
+  "next": [
+    "Read the scheduled Tick/consumer after the next host-local due time 2026-10-26T09:36:32+07:00, and exact-read the matching receipts/source hash.",
+    "Continue read-only diagnosis of why SensorService event timestamps are stale; do not launch/install apps or change permissions without an approved target.",
+    "Keep n8n recovery rows pending until each task has independent evidence; host heartbeat remains unprobed.",
+    "Continue TESSERACT issuer-key/runner-assignment provenance and archive PR #37 tests without repeating failed-before-step CI."
+  ]
+}
