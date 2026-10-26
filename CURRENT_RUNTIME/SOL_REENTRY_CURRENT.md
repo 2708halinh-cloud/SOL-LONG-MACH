@@ -1752,3 +1752,13 @@ Checkpoint carrier: `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1332ICT.json`, b
 - All 29 repository tasks remain nonterminal; all 45 cloud recovery rows remain pending. No raw sensor values or credentials written to public GitHub; no source moved/deleted; no synthetic rows; no task closure; no merge/force-push.
 - Next: exact-read the next host-local Tick/receipt when directly visible; continue read-only sensor-client diagnosis; keep W32Time/Android permissions unchanged; continue authorized issuer/runner provenance; keep the canonical 89,814,328-byte bulk carrier unresolved.
 <!-- END VERIFIED_AUTOMATION_CONTINUATION_20261026T1445ICT -->
+
+<!-- BEGIN VERIFIED_AUTOMATION_CONTINUATION_20261026T1448ICT -->
+## PR #39 comparison correction — 2026-10-26T14:48:43.494+07:00
+
+Fresh compare against main head `3761fbb408ea0b5c62daaede25f1073e6e8c9994`: PR #39 head `6ba7ce9b3bbfd57770dd8d45dee54a82a1ae3471`, status `diverged`, 6 ahead / 47 behind. This is a snapshot for the stated base head. The subsequent metadata checkpoint commit advances main, so refresh again before any PR branch mutation.
+The prior 6 ahead / 45 behind observation remains preserved in `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1439ICT.json` for its earlier base head `9cf5f97bf5d3466c8a14240f92ef626805565afa`; the counts differ because two checkpoint commits advanced main.
+Correction carrier: `CURRENT_RUNTIME/PR39_COMPARE_READBACK_20261026T1448ICT.json`, blob `5a1f4d42b9b8fd5e3c7c3bf9da20fe59cfbe67b4`. New pointer blob `d82ab787366575f1187968b39cde72010e6ce0f3`; new OPEN ledger blob `cf72fb7b6e0b95749cb881cedcf1b9f87a1d666f`.
+Regression and secret-guard checks for PR #39 remain successful; no CI rerun, merge or force-push. PR #6 remains open with its issuer-variable value and runner assignment unverified.
+All 29 repository tasks remain nonterminal; all 45 cloud recovery rows remain pending. MODUAL_PARAMETER_CURRENT.json remains unchanged at blob `01c1dfe8682e25c7e2f5210bbae87a30231b1f58`; append delta is preserved separately.
+<!-- END VERIFIED_AUTOMATION_CONTINUATION_20261026T1448ICT -->
