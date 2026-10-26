@@ -1,21 +1,21 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-26T03:13:47.417Z",
-  "updated_at_local": "2026-10-26T10:13:47.417+07:00",
+  "updated_at_utc": "2026-10-26T03:38:23.389Z",
+  "updated_at_local": "2026-10-26T10:38:23.389+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended evidence row, not host event time. Latest host tick event time is recorded separately from provider timestamps; cloud/provider and host clocks are not offset-corrected or conflated.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0655ICT.json",
     "blob_sha": "fe7dfd0e8887412a02e5eb9c66c9bea88241f690",
     "commit_sha": "6614c4ea96298e6c93ef7bbaf4d49d45b5d8b320",
     "readback_verified": true,
-    "latest_host_evidence_row_id": 421,
-    "latest_host_event_id": "X20261026064940426_HOST_READBACK",
+    "latest_host_evidence_row_id": 440,
+    "latest_host_event_id": "X20261026033244586_HOST_DIRECT_READBACK",
     "latest_route_inventory_row_id": 416,
     "latest_route_inventory_event_id": "X20261025221617000_REMOTE_ROUTE_INVENTORY",
-    "latest_direct_route_readback_row_id": 426,
-    "latest_host_observation_row_id": 426,
-    "latest_host_observation_event_id": "X20261026004523128_HOST_ROUTE_SCHEDULE_READBACK"
+    "latest_direct_route_readback_row_id": 440,
+    "latest_host_observation_row_id": 440,
+    "latest_host_observation_event_id": "X20261026033244586_HOST_DIRECT_READBACK"
   },
   "post_checkpoint_updates": [
     {
@@ -463,18 +463,44 @@
       "live_sensor_reading_confirmed": false,
       "modual_search_pid": 8928,
       "modual_search_state": "RUNNING_READ_ONLY_NO_OUTPUT_YET"
+    },
+    {
+      "type": "HOST_DIRECT_READBACK_ROW_439",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 439,
+      "event_id": "X20261026033020346_HOST_DIRECT_READBACK",
+      "provider_created_at_utc": "2026-10-26T03:37:14.954Z",
+      "observed_at_local": "2026-10-26T10:30:20.3461244+07:00",
+      "state": "HOST_ONLINE_TICK_AND_CONSUMER_VERIFIED_SCHEDULER_READY_MODUAL_SEARCH_RUNNING_SENSOR_STREAM_STALE_NEXT_RUN_NOT_YET_REACHED",
+      "tick_sha256": "AC8C834477D62FC3806D6CD1BF816EB4E6A42869E22BD0446F7583BC078AE3EC",
+      "readback_verified": true
+    },
+    {
+      "type": "HOST_DIRECT_READBACK_ROW_440",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 440,
+      "event_id": "X20261026033244586_HOST_DIRECT_READBACK",
+      "provider_created_at_utc": "2026-10-26T03:38:23.389Z",
+      "observed_at_local": "2026-10-26T10:32:44.5864625+07:00",
+      "state": "HOST_ONLINE_POST_DUE_TICK_AND_CONSUMER_VERIFIED_SOURCE_HASH_MATCH_SCHEDULER_READY_SENSOR_STREAM_STALE_MODUAL_SEARCH_RUNNING",
+      "tick_sha256": "4FDB23E82DF03D3B552455761F3A1B439F62A21992EF010A51C9D7E06FC50A07",
+      "consumer_sha256": "6AAE70A3340BE3A3A376664F9643F765F5A498A7B0E6154447ED96D8D1D45136",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "scheduler_next_run_local": "2026-10-26T10:36:32+07:00",
+      "readback_verified": true,
+      "tasks_closed": 0
     }
   ],
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "active": true,
-    "latest_execution_id": "181",
+    "latest_execution_id": "185",
     "latest_execution_status": "success",
-    "latest_cloud_evidence_row_id": 427,
-    "latest_host_evidence_row_id": 430,
+    "latest_cloud_evidence_row_id": 435,
+    "latest_host_evidence_row_id": 440,
     "latest_route_inventory_evidence_row_id": 416,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 430,
+    "evidence_table_rows": 440,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
     "recovery_rows": 45,
@@ -486,13 +512,13 @@
     "latest_route_status_row_id": 416,
     "host_heartbeat_probed": false,
     "pending_rows": 45,
-    "latest_host_event_id": "X20261026014141874_HOST_DIRECT_READBACK",
+    "latest_host_event_id": "X20261026033244586_HOST_DIRECT_READBACK",
     "latest_direct_route_readback_evidence_row_id": 430,
     "direct_host_readback_verified": true,
     "latest_zip_reconciliation_evidence_row_id": 415,
-    "current_route_status": "DIRECT_HOST_READBACK_VERIFIED_AT_HOST_CLOCK_2026-10-26T08:43:18+07:00; tick observed 08:41:41; next host-clock run 08:46:32; cloud and host clocks remain separate.",
-    "latest_host_observation_row_id": 430,
-    "latest_host_observation_event_id": "X20261026014141874_HOST_DIRECT_READBACK",
+    "current_route_status": "DIRECT_HOST_READBACK_VERIFIED_AT_HOST_CLOCK_2026-10-26T10:32:44.586+07:00; tick observed 10:31:41; next host-clock run 10:36:32; cloud/provider and host clocks remain separate.",
+    "latest_host_observation_row_id": 440,
+    "latest_host_observation_event_id": "X20261026033244586_HOST_DIRECT_READBACK",
     "external_host_readback_probed_separately": true
   },
   "host": {
@@ -500,43 +526,43 @@
     "expected_direct_read_device_id": "59f03001-c732-403e-b80c-b4191266809c",
     "route_status": "ONLINE_DIRECT_READ_VERIFIED",
     "host_power_state": "NOT_SEPARATELY_VERIFIED",
-    "host_heartbeat": "Direct host readback at host clock 2026-10-26T08:43:18+07:00; latest tick 08:41:41 verified; next scheduled run 08:46:32 according to host clock; no host/cloud clock offset inferred.",
-    "latest_direct_readback_local": "2026-10-26T08:43:18.8416483+07:00",
-    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T014141874745Z.json",
-    "latest_tick_sha256": "697A91811497F510296F55D78B08B0C71BD31C9BD823CEB8820170EFDD78415F",
-    "consumer_sha256": "5175ED22203A0450262105C7B43A117D36917192558F6E216325116973C56F70",
+    "host_heartbeat": "Direct host readback at host clock 2026-10-26T10:32:44.586+07:00; latest tick 10:31:41 verified; next scheduled run 10:36:32 according to host clock; no host/cloud clock offset inferred.",
+    "latest_direct_readback_local": "2026-10-26T10:32:44.5864625+07:00",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T033141183522Z.json",
+    "latest_tick_sha256": "4FDB23E82DF03D3B552455761F3A1B439F62A21992EF010A51C9D7E06FC50A07",
+    "consumer_sha256": "6AAE70A3340BE3A3A376664F9643F765F5A498A7B0E6154447ED96D8D1D45136",
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-    "scheduler_next_run_local_at_last_sample": "2026-10-26T08:46:32+07:00",
+    "scheduler_next_run_local_at_last_sample": "2026-10-26T10:36:32+07:00",
     "post_due_tick_verified": true,
     "sensor_stream": "EVENT_TIMESTAMP_STALE",
     "live_sensor_reading_confirmed": false,
-    "host_clock_at_readback": "2026-10-26T08:43:18.8416483+07:00",
-    "consumer_receipt_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T014138227Z.json",
-    "consumer_receipt_sha256": "5175ED22203A0450262105C7B43A117D36917192558F6E216325116973C56F70",
-    "last_run_local_host_clock": "2026-10-26T08:41:33+07:00",
+    "host_clock_at_readback": "2026-10-26T10:32:44.5864625+07:00",
+    "consumer_receipt_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T033138045Z.json",
+    "consumer_receipt_sha256": "6AAE70A3340BE3A3A376664F9643F765F5A498A7B0E6154447ED96D8D1D45136",
+    "last_run_local_host_clock": "2026-10-26T10:31:33+07:00",
     "next_run_local_host_clock_at_row_408": "2026-10-26T02:46:32+07:00",
     "last_result": 0,
-    "missed_runs": 0,
+    "missed_runs": "NOT_RECHECKED_IN_THIS_SAMPLE",
     "physical_host_offline_proven": false,
-    "latest_host_evidence_row_id": 430,
+    "latest_host_evidence_row_id": 440,
     "latest_route_status_row_id": 416,
     "post_due_host_readback_available": true,
     "current_inventory_route_unavailable": true,
     "route_status_evidence_row_id": 416,
-    "latest_tick_observed_at_utc": "2026-10-26T01:41:41.874745Z",
+    "latest_tick_observed_at_utc": "2026-10-26T03:31:41.183522Z",
     "source_bytes": 35389440,
     "source_hash_matches": true,
     "next_run_local_host_clock_at_row_412": "2026-10-26T03:31:32+07:00",
     "latest_direct_route_readback_row_id": 426,
     "primary_account_inventory_offline_for_different_device_ids": true,
-    "next_run_local_host_clock_at_last_sample": "2026-10-26T08:46:32+07:00",
+    "next_run_local_host_clock_at_last_sample": "2026-10-26T10:36:32+07:00",
     "latest_route_inventory_evidence_row_id": 416,
     "source_current_hash": "RECOMPUTED_AND_MATCHES",
-    "latest_host_event_id": "X20261026014141874_HOST_DIRECT_READBACK",
+    "latest_host_event_id": "X20261026033244586_HOST_DIRECT_READBACK",
     "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
     "task_state": "Ready",
-    "last_run_local": "2026-10-26T08:41:33+07:00",
-    "latest_host_observation_row_id": 430
+    "last_run_local": "2026-10-26T10:31:33+07:00",
+    "latest_host_observation_row_id": 440
   },
   "unresolved": {
     "historical_zip_task": "SV-20261020-02",
@@ -551,8 +577,8 @@
     "expected_modual_bytes": 89814328,
     "expected_modual_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
     "source_substitution_performed": false,
-    "exact_target_search_state": "RUNNING_READ_ONLY_NO_OUTPUT_YET; latest process poll returned no new output at provider readback near 2026-10-26T01:47:37Z",
-    "exact_target_search_pid": 50200,
+    "exact_target_search_state": "RUNNING_READ_ONLY_PROCESS_PRESENT; output/completeness not rechecked at host clock 2026-10-26T10:32:44+07:00",
+    "exact_target_search_pid": 8928,
     "raw_zip_reconciliation_row_id": 415,
     "route_inventory_evidence_row_id": 416,
     "exact_target_search_root": "W:\\Drive của tôi",
@@ -638,7 +664,15 @@
     "compare_precedes_current_pointer_commit": true,
     "compare_snapshot_precedes_pointer_commit": true,
     "current_main_head_before_pointer_update": "d6d4d098a7249e2a41c08ad77bfe96af404f4f12",
-    "current_main_head_after_pointer_update": "NOT_SELF_REFERENCED_IN_POINTER_CONTENT"
+    "current_main_head_after_pointer_update": "NOT_SELF_REFERENCED_IN_POINTER_CONTENT",
+    "compare_main_sha_before_pointer_update": "ea4ae3e87d8faad51fc37ecf13598cc6ceb89167",
+    "pr36_compare_status_before_pointer_update": "diverged",
+    "pr36_ahead_by_before_pointer_update": 14,
+    "pr36_behind_by_before_pointer_update": 86,
+    "pr36_mergeable_api_current": true,
+    "pr36_mergeable_api_base_sha": "cbb8e2074695670398d2ee9ca4462bbbd55cee7c",
+    "pr36_mergeable_compare_state": "DIVERGED; keep OPEN/Draft; do not merge or force-push",
+    "merge_or_force_push": false
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -654,23 +688,23 @@
     "tasks_closed": 0
   },
   "next": [
-    "Continue from this pointer and n8n evidence row #437; do not restart from scratch.",
-    "Verify the next Windows tick and consumer after host-clock scheduled run 2026-10-26T10:11:32+07:00; recompute both file SHA-256 values and independently recompute the source hash. Keep cloud/provider and host clocks separate.",
-    "Poll the existing read-only MODUAL search process PID 8928 for exact candidate path, byte count, SHA-256 and access-error count. It has produced no output yet; do not terminate it. Exact MODUAL source remains unverified.",
+    "Continue from this pointer and n8n evidence row #440; do not restart from scratch.",
+    "After host-clock scheduled run 2026-10-26T10:36:32+07:00, verify the next tick and consumer, recompute both file SHA-256 values, and independently recompute the source SHA-256. Keep cloud/provider and host clocks separate.",
+    "Poll existing read-only MODUAL search process PID 8928 for exact candidate path, byte count, SHA-256 and access-error count; do not terminate it. Exact MODUAL source remains unverified.",
     "Keep the sensor stream OPEN until event timestamps advance and a live reading is confirmed; Xiaomi 12 remains stale and Redmi Note 14 Pro is not listed.",
     "Keep SV-20261020-02 OPEN; the historical ZIP hash is verified but third Project raw-byte access is NOT_AUTHORIZED and recovery row #2 remains stale.",
     "Keep SV-20261020-01-READBACK OPEN for future sync; do not close from current content match alone.",
-    "Keep PR #36 OPEN/Draft. Current pre-pointer comparison is 14 ahead and 65 behind; do not merge or force-push. Avoid heartbeat-only main commits."
+    "Keep PR #36 OPEN/Draft. Current comparison is 14 ahead and 86 behind, status diverged; PR metadata reports mergeable=true with base SHA cbb8e2074695670398d2ee9ca4462bbbd55cee7c, so do not merge or force-push without fresh exact readback and CI review. Avoid heartbeat-only main commits."
   ],
   "modual_control_state": {
     "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
     "blob_sha": "ad41fe46d1334dbc57e616fb7ddb5af805beded0",
     "commit_sha": "d7129a4e425e79107a7b7852f178a0f9f7fe171e",
     "readback_verified": true,
-    "latest_host_evidence_row_id": 412,
-    "latest_tick_id": "WINDOWS_TICK_20261025T202658095149Z",
-    "latest_tick_sha256": "f4b9543b2f3572320befb3d7d6539c65acf72d7cb5631594b199fd33ab1ae459",
-    "state_file_lag_vs_latest_host_evidence": "No lag; MODUAL control state read back with row 412."
+    "latest_host_evidence_row_id": 440,
+    "latest_tick_id": "WINDOWS_TICK_20261026T033141183522Z",
+    "latest_tick_sha256": "4FDB23E82DF03D3B552455761F3A1B439F62A21992EF010A51C9D7E06FC50A07",
+    "state_file_lag_vs_latest_host_evidence": "Pointer updated through host evidence row 440; MODUAL control artifact itself remains at prior blob SHA and was not rewritten in this pass."
   },
   "provider_checkpoint_reconciliation": {
     "canonical_checkpoint": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0655ICT.json",
@@ -679,9 +713,9 @@
     "modual_control_state_path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
     "modual_control_state_blob_sha": "9f9bf0224665cb323cadf5a3ddcdfdc857965801",
     "modual_control_state_commit_sha": "03d04eaafcdeb0e8c44b2f0f5731aeb29f6eb293",
-    "latest_host_evidence_row_id": 423,
+    "latest_host_evidence_row_id": 440,
     "latest_route_inventory_row_id": 416,
-    "latest_direct_route_readback_row_id": 423,
+    "latest_direct_route_readback_row_id": 440,
     "misnamed_historical_artifacts_preserved": [
       "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0247ICT.json",
       "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0250ICT.json"
@@ -696,8 +730,9 @@
     "integrity_corrections": 7,
     "pr36_compare_after_ledger_update": {
       "status": "diverged",
-      "ahead_by": 10,
-      "behind_by": 187
+      "ahead_by": 14,
+      "behind_by": 86,
+      "compare_main_sha": "ea4ae3e87d8faad51fc37ecf13598cc6ceb89167"
     },
     "latest_host_checkpoint_readback": {
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0327ICT.json",
@@ -727,7 +762,7 @@
     }
   },
   "current_readback": {
-    "provider_created_at_utc": "2026-10-26T03:13:47.417Z",
+    "provider_created_at_utc": "2026-10-26T03:38:23.389Z",
     "latest_cloud_execution": {
       "workflow_id": "BogzhFUDbRp7kuwh",
       "execution_id": "185",
@@ -735,24 +770,24 @@
       "mode": "manual",
       "started_at_utc": "2026-10-26T03:09:25.829Z",
       "stopped_at_utc": "2026-10-26T03:09:27.853Z",
-      "scope": "CLOUD_HEARTBEAT_ONLY_HOST_HEARTBEAT_NOT_PROBED"
+      "scope": "CLOUD_SCAN_ONLY;HOST_HEARTBEAT_NOT_PROBED"
     },
     "latest_cloud_evidence_row_id": 435,
-    "latest_host_evidence_row_id": 437,
-    "evidence_table_rows": 437,
+    "latest_host_evidence_row_id": 440,
+    "evidence_table_rows": 440,
     "recovery_rows": 45,
     "unfinished_rows": 45,
     "terminal_rows": 0,
     "tasks_closed": 0,
     "latest_host_tick": {
-      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T030640627161Z.json",
-      "observed_at_utc": "2026-10-26T03:06:40.627161Z",
-      "sha256": "926B8041BA356DAB11B935ADC95763F4F00060D1E22F646A438068E7B43FAE09"
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T033141183522Z.json",
+      "observed_at_utc": "2026-10-26T03:31:41.183522Z",
+      "sha256": "4FDB23E82DF03D3B552455761F3A1B439F62A21992EF010A51C9D7E06FC50A07"
     },
     "latest_consumer": {
-      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T030637068Z.json",
-      "observed_at_utc": "2026-10-26T03:06:40.8533888Z",
-      "sha256": "C9EE7B7EBAA14AF100322E8D3DCB7EBEF53D58F775AA71C2CDACC10B48835B17",
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T033138045Z.json",
+      "observed_at_utc": "2026-10-26T03:31:41.2918446Z",
+      "sha256": "6AAE70A3340BE3A3A376664F9643F765F5A498A7B0E6154447ED96D8D1D45136",
       "hash_matches_verifier": true
     },
     "source": {
@@ -764,11 +799,12 @@
     "scheduler": {
       "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
       "state": "Ready",
-      "last_run_local": "2026-10-26T10:06:33+07:00",
+      "enabled": true,
+      "last_run_local": "2026-10-26T10:31:33+07:00",
       "last_result": 0,
-      "next_run_local": "2026-10-26T10:11:32+07:00",
-      "missed_runs": "NOT_RECHECKED_IN_LATEST_SNAPSHOT",
-      "host_clock_at_readback": "2026-10-26T10:09:56.7151054+07:00"
+      "next_run_local": "2026-10-26T10:36:32+07:00",
+      "missed_runs": "NOT_RECHECKED_IN_THIS_SAMPLE",
+      "host_clock_at_readback": "2026-10-26T10:32:44.5864625+07:00"
     },
     "devices": {
       "xiaomi12": "ADB_RESPONDED_SENSOR_EVENT_TIMESTAMP_STALE",
@@ -781,7 +817,7 @@
       "previous_pid": 50200,
       "previous_pid_present": false,
       "active_search_process_pid": 8928,
-      "state": "RUNNING_READ_ONLY_NO_OUTPUT_YET",
+      "state": "RUNNING_READ_ONLY_PROCESS_PRESENT_OUTPUT_NOT_RECHECKED",
       "roots": [
         "D:\\",
         "W:\\Drive của tôi"
@@ -789,7 +825,8 @@
       "exact_name_searches": "NO_MATCHES_IN_TIMEBOXED_SEARCHES_SEARCH_COMPLETENESS_UNVERIFIED",
       "source_verified": false,
       "source_substitution_performed": false,
-      "process_termination": false
+      "process_termination": false,
+      "last_host_poll_local": "2026-10-26T10:32:44.5864625+07:00"
     },
     "five_wave_logs": {
       "library_raw_sha256_recomputed": true,
@@ -812,23 +849,24 @@
     "process_termination": false,
     "github": {
       "repository": "2708halinh-cloud/SOL-LONG-MACH",
-      "task_ledger_blob_sha": "fbce9e3e8992ae6f7c5d7e405462dd2a1570e1e2",
+      "task_ledger_blob_sha": "7de7f1cecc6d4f5818f86de20ae9cb065fea12ff",
       "task_ledger_size_bytes": 1888154,
       "task_count_last_verified": 29,
       "task_count_current": "NOT_RECOUNTED",
       "tasks_closed": 0,
       "pr36_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
-      "pr36_state": "OPEN",
+      "pr36_state": "open",
       "pr36_draft": true,
       "pr36_merged": false,
       "pr36_head_sha": "00400b4f81a31293b1960ed1709280130cc25db3",
-      "compare_main_sha_before_pointer_update": "e98da81c1229ae01255bbb29e63aab178bc604cd",
-      "pr36_compare_status_before_pointer_update": "diverged",
-      "pr36_ahead_by_before_pointer_update": 14,
-      "pr36_behind_by_before_pointer_update": 65,
-      "pr36_mergeable_before_pointer_update": false,
-      "compare_precedes_pointer_commit": true,
-      "merge_or_force_push": false
-    }
+      "compare_main_sha": "ea4ae3e87d8faad51fc37ecf13598cc6ceb89167",
+      "compare_status": "diverged",
+      "ahead_by": 14,
+      "behind_by": 86,
+      "pr36_mergeable_api_current": true,
+      "pr36_mergeable_api_base_sha": "cbb8e2074695670398d2ee9ca4462bbbd55cee7c",
+      "merge_decision": "KEEP_OPEN_DRAFT_NO_MERGE_OR_FORCE_PUSH"
+    },
+    "latest_host_event_id": "X20261026033244586_HOST_DIRECT_READBACK"
   }
 }
