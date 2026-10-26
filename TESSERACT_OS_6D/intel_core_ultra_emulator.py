@@ -14,6 +14,7 @@ class CpuProfile:
     reported_max_turbo_ghz: float
     smart_cache_mb: int
     integrated_gpu: str | None
+    gpu_status: str
     source_verified: bool
 
     @property
@@ -45,6 +46,16 @@ def load_registry(path: Path = REGISTRY_PATH) -> dict[str, Any]:
             raise ValueError(f"Invalid core count for {row['model']}")
         if row["smart_cache_mb"] <= 0 or row["reported_max_turbo_ghz"] <= 0:
             raise ValueError(f"Invalid cache/frequency for {row['model']}")
+        if row["integrated_gpu"] is not None and not isinstance(row["integrated_gpu"], str):
+            raise ValueError(f"Invalid integrated GPU label for {row['model']}")
+        gpu_status = row.get(
+            "gpu_status",
+            "USER_PROVIDED" if row["integrated_gpu"] else "NOT_PROVIDED_IN_USER_LIST",
+        )
+        if gpu_status not in {"USER_PROVIDED", "NOT_PROVIDED_IN_USER_LIST"}:
+            raise ValueError(f"Invalid GPU status for {row['model']}")
+        if (gpu_status == "USER_PROVIDED") != (row["integrated_gpu"] is not None):
+            raise ValueError(f"GPU label/status mismatch for {row['model']}")
     return data
 
 def get_profile(model: str, path: Path = REGISTRY_PATH) -> CpuProfile:
@@ -56,6 +67,10 @@ def get_profile(model: str, path: Path = REGISTRY_PATH) -> CpuProfile:
                 reported_max_turbo_ghz=row["reported_max_turbo_ghz"],
                 smart_cache_mb=row["smart_cache_mb"],
                 integrated_gpu=row["integrated_gpu"],
+                gpu_status=row.get(
+                    "gpu_status",
+                    "USER_PROVIDED" if row["integrated_gpu"] else "NOT_PROVIDED_IN_USER_LIST",
+                ),
                 source_verified=row["source_verified"],
             )
     raise KeyError(f"CPU profile not found: {model}")
@@ -73,6 +88,7 @@ def plan_task_slots(model: str, task_count: int, path: Path = REGISTRY_PATH) -> 
         "queued_tasks": max(0, task_count - profile.virtual_worker_slots),
         "cache_budget_bytes": profile.cache_budget_bytes,
         "integrated_gpu_profile": profile.integrated_gpu,
+        "integrated_gpu_status": profile.gpu_status,
         "gpu_execution_enabled": False,
         "hardware_equivalence_claim": False,
         "profile_source_verified": profile.source_verified,
