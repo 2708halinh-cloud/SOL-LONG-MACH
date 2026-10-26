@@ -1,8 +1,8 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-26T05:42:59.476Z",
-  "updated_at_local": "2026-10-26T12:42:59.476+07:00",
+  "updated_at_utc": "2026-10-26T05:49:33.511Z",
+  "updated_at_local": "2026-10-26T12:49:33.511+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended evidence row, not host event time. Latest host tick event time is recorded separately from provider timestamps; cloud/provider and host clocks are not offset-corrected or conflated.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1242ICT.json",
@@ -1151,6 +1151,34 @@
       "modual_state_blob_sha": "1b6477a6a896551eaa2953bd65c52ec25430c473",
       "tasks_closed": 0,
       "readback_verified": false
+    },
+    {
+      "type": "ARCHIVE_PR36_PR37_COMPARE_SNAPSHOT_20261026T1249ICT",
+      "observed_at_utc": "2026-10-26T05:49:33.511Z",
+      "observed_at_local": "2026-10-26T12:49:33.511+07:00",
+      "main_head": "ac5d380e5c2a747d17219927ba511e16b10e775d",
+      "pr36": {
+        "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+        "ahead_by": 14,
+        "behind_by": 179,
+        "state": "OPEN_DRAFT",
+        "compare_status": "diverged",
+        "mergeable": false
+      },
+      "pr37": {
+        "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+        "ahead_by": 3,
+        "behind_by": 135,
+        "state": "OPEN_DRAFT",
+        "compare_status": "diverged",
+        "mergeable": false
+      },
+      "merge_performed": false,
+      "force_push_performed": false,
+      "branch_mutation_performed": false,
+      "comparison_read_before_any_branch_mutation": true,
+      "no_merge": true,
+      "no_force_push": true
     }
   ],
   "n8n": {
@@ -5365,5 +5393,51 @@
     "source_files_changed": false,
     "task_status_changed": false,
     "tasks_closed": 0
+  },
+  "previous_latest_archive_pr_compare_readback_before_20261026T1249ICT": {
+    "observed_at_local": "2026-10-26T12:42:59.476+07:00",
+    "main_head": "ce86a9948ccf05799ffd86481d7786117b6c72ea",
+    "pr36": {
+      "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "state": "OPEN_DRAFT",
+      "ahead_by": 14,
+      "behind_by": 174,
+      "compare_status": "diverged",
+      "mergeable": false
+    },
+    "pr37": {
+      "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+      "state": "OPEN_DRAFT",
+      "ahead_by": 3,
+      "behind_by": 130,
+      "compare_status": "diverged",
+      "mergeable": false
+    },
+    "merge_performed": false,
+    "force_push_performed": false
+  },
+  "latest_archive_pr_compare_readback_20261026T1249ICT": {
+    "observed_at_utc": "2026-10-26T05:49:33.511Z",
+    "observed_at_local": "2026-10-26T12:49:33.511+07:00",
+    "main_head": "ac5d380e5c2a747d17219927ba511e16b10e775d",
+    "pr36": {
+      "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "ahead_by": 14,
+      "behind_by": 179,
+      "state": "OPEN_DRAFT",
+      "compare_status": "diverged",
+      "mergeable": false
+    },
+    "pr37": {
+      "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+      "ahead_by": 3,
+      "behind_by": 135,
+      "state": "OPEN_DRAFT",
+      "compare_status": "diverged",
+      "mergeable": false
+    },
+    "merge_performed": false,
+    "force_push_performed": false,
+    "branch_mutation_performed": false
   }
 }
