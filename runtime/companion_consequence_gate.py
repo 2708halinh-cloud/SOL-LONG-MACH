@@ -13,7 +13,7 @@ from typing import Any
 SCHEMA = "SOL_COMPANION_CONSEQUENCE_GATE_V1"
 SOURCE = "CONFIG_SOL/COMPANION_TEN_COMMANDMENTS_CURRENT.md"
 UNVERIFIED = "OPEN_REQUIRES_CONSEQUENCE"
-SHA256_RE = re.compile(r"[0-9a-fA-F]{64}\\Z")
+SHA256_RE = re.compile(r"[0-9a-fA-F]{64}")
 RISK_PATTERNS = {
     "premature_conclusion": "Chốt hiểu/sửa/xong trước hành động và hậu quả",
     "repeated_authorization": "Xin lại phê duyệt đã có",
