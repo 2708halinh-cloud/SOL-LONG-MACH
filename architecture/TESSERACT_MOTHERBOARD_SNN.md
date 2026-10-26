@@ -21,7 +21,7 @@ Treat TESSERACT as a six-dimensional relational runtime, not as a literal mother
 ├──────────────────────────────────┬─────────────────────────────────────────────────────┤
 │ DIMM / RAM_L1                    │ VRM / PMIC — RESOURCE & SAFETY SUPERVISOR            │
 │ Active blackboard                │ API/token quotas · budget limits · circuit breakers  │
-│ REG_00…REG_03 shared state       │ disk watermark (<90% policy) · health probes         │
+│ REG_00…REG_03 shared state       │ disk watermark (used_percent >= 90% guard) · health probes         │
 │ agent exchange buffers           │ backpressure · degraded-mode policy                  │
 ├──────────────────────────────────┴─────────────────────────────────────────────────────┤
 │ SOUTHBRIDGE — HARDWARE ABSTRACTION & I/O CONTROLLER                                    │
@@ -57,7 +57,7 @@ Treat TESSERACT as a six-dimensional relational runtime, not as a literal mother
 2. **Gate 2 — action:** validate the exact target and operation, enforce least privilege and destructive-action safeguards, then execute.
 3. Use bounded retries with exponential backoff and jitter; a failed provider marks that route degraded and does not automatically stop independent work.
 4. Circuit breakers open after configured failures and recover through a controlled half-open probe. Failover must preserve task identity and idempotency.
-5. Resource policy: alert before the disk watermark; at/above 90% free-space protection threshold, stop nonessential writes and enter a safe degraded mode. The precise interpretation of “Disk < 90%” must be defined as a measurable percentage and validated against the host metric before deployment.
+5. Resource policy (canonical metric and hysteresis): compute `used_percent = 100 × (total_bytes − free_bytes) / total_bytes` from a fresh, successful measurement of the target volume; `free_percent = 100 − used_percent` is equivalent. Warn at `used_percent >= 85%`; at `used_percent >= 90%` (equivalently `free_percent <= 10%`), stop nonessential writes and enter safe degraded mode. Exit degraded mode only after two consecutive fresh samples report `used_percent <= 85%` (equivalently `free_percent >= 15%`) to avoid flapping. If the measurement is stale, unavailable, or total bytes is zero, treat capacity as UNKNOWN and keep nonessential writes disabled; do not infer safety from a missing reading. Any exception for safety-critical writes must be explicit, bounded, and journaled. Test boundaries around 85%, 90%, 100%, and the equivalent free-space thresholds before deployment.
 
 ### RAM_L1 / active blackboard
 
@@ -116,7 +116,7 @@ A deployment is not accepted merely because this specification exists. Verify ea
 - [ ] Provider adapters pass contract tests, timeout tests, and failure/failover tests.
 - [ ] Gates reject unauthorized or malformed actions before side effects.
 - [ ] Blackboard updates are versioned and concurrency-tested.
-- [ ] Disk/quota/memory thresholds are measured using live host metrics.
+- [ ] Disk/quota/memory thresholds are measured using live host metrics; disk-guard tests cover the 85% used warning, 90% used / 10% free trip, 85% used / 15% free recovery hysteresis, and stale/unknown measurements.
 - [ ] Journal is append-only in application behavior and can be replayed from a clean checkpoint.
 - [ ] Every write-capable carrier has a real receipt and exact-target readback test.
 - [ ] SNN implementation identifies its algorithm/backend and passes neuron, synapse, event-order, and resource-limit tests.
