@@ -1,0 +1,206 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "id": "PROVIDER_READBACK_20261026T0950ICT",
+  "observed_at": "2026-10-26T09:50:50+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "main_head_before_checkpoint": "7ccbc8678ae9dba8ebaa5bfe790abd23b052fb58",
+  "status": "PARTIALLY_EXECUTED_ALL_OPEN_RETAINED",
+  "source_files_fresh_read": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "read": true
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "fa25637f96d815061da7a739f5326e5356547f2e",
+      "read": true
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "ceec2ef5b4d3928a7db895b4540d080481df7f03",
+      "read_via_exact_git_blob": true
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "previous_blob_sha": "b0b834b8bfe414e1bf153dda9ff12dca8633f061",
+      "updated_blob_sha": "fc9d74163b4ffed8a300f5645cda3ac083382389",
+      "read_via_exact_git_blob": true
+    },
+    "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0935ICT.json": {
+      "blob_sha": "fdf8c6b553f5e9adc1f59a31be1c8100bd99162b",
+      "read": true
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "previous_blob_sha": "d069215471e73ef8ab93f8872f373e1e4be99e1a",
+      "updated_blob_sha": "54470d93a70ed749d157a31ae4c6ce7d972791dc",
+      "update_commit": "9febd4d2452f9524e906d93e8ff4e6abd4e672a3",
+      "exact_blob_readback": true
+    }
+  },
+  "windows_tick_and_consumer": {
+    "host": "DESKTOP-86ITNQ4",
+    "host_readback_route": "Remote_Desktop_Commander",
+    "host_readback_at": "2026-10-26T09:40:15.1306311+07:00",
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z",
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T023639966701Z.json",
+      "bytes": 1654,
+      "sha256": "b01ff8080cbb89a36091e8a228f0cbb3023679a1c2677eac4bb33156f3c0b489",
+      "observed_at_utc": "2026-10-26T02:36:39.966701Z",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_matches": true,
+      "live_sensor_reading_confirmed": true,
+      "advanced_sensor_count": 1
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T023636655Z.json",
+      "bytes": 7069,
+      "sha256": "e0bd6c8abb98873b0d0fa9e74f52f4506b7e025a4e08f2ef6ef72d09a7f9f16e",
+      "observed_at_utc": "2026-10-26T02:36:40.1151241Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_matches": true,
+      "provider_content_hash_verified": true,
+      "verifier_hash_matches": true,
+      "references_exact_latest_tick": true,
+      "raw_rows_emitted": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T09:36:33+07:00",
+      "last_result": 0,
+      "next_run_local": "2026-10-26T09:41:32+07:00",
+      "missed_runs": 0
+    },
+    "continuity": "One scheduled Tick confirmed one allowlisted sensor timestamp advance. Persistence after the following scheduled time is not verified.",
+    "latest_route_inventory": {
+      "primary_namespace": "all listed devices offline",
+      "alternate_namespace": "Remote_Desktop_Commander",
+      "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+      "status": "Offline",
+      "last_seen_seconds_ago_at_inventory": 50,
+      "host_power_state": "NOT_INFERRED"
+    },
+    "local_code_git_blob_verification": [
+      {
+        "path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+        "git_blob_sha1": "9b75c645ac059162d91f612d2a4ea19e80f0be34",
+        "exact_match": true
+      },
+      {
+        "path": "D:\\SENSOR_LOGS\\live_device_probe.py",
+        "git_blob_sha1": "91d242d9f0db0e171b9f1ccf3bdf9af3331ff395",
+        "exact_match": true
+      },
+      {
+        "path": "D:\\SENSOR_LOGS\\sensor_root_resolver.py",
+        "git_blob_sha1": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+        "exact_match": true
+      }
+    ]
+  },
+  "provider_metadata": {
+    "provider": "Dropbox",
+    "source_name": "windows_SENSON.CSV",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "size_bytes": 35389440,
+    "client_modified_utc": "2026-10-14T00:15:21Z",
+    "server_modified_utc": "2026-10-14T00:20:03Z",
+    "metadata_only": true,
+    "raw_source_downloaded": false
+  },
+  "braid_runtime": {
+    "script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+    "exit_code": 0,
+    "six_forces": {
+      "receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261026T023059311103Z.json",
+      "bytes": 3996,
+      "sha256": "23b071e914d97fa83c417c1c2734cb9bf32768f04a459d1a0fc0801d10e4f3aa",
+      "actions": 9,
+      "mutation_executed": false,
+      "source_sha256_unchanged": true,
+      "receipt_readback_ok": true
+    },
+    "plural": {
+      "receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261026T023059516105Z.json",
+      "bytes": 2407,
+      "sha256": "779f5888e36785a61eedbe93ebc0a31872afe827cc9cf00cc6a5ecef51e2fde6",
+      "actions": 5,
+      "receipt_readback_ok": true
+    },
+    "cloud_host_wiring": "NOT_VERIFIED"
+  },
+  "cloud_continuity": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "execution_id": "183",
+    "execution_status": "success",
+    "event_id": "X20261026020525520_CLOUD",
+    "evidence_row_id": 432,
+    "evidence_row_exact_readback": true,
+    "state": "OPEN_WORK_REMAINS",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "host_heartbeat_probed": false,
+    "host_operations": 0
+  },
+  "archive_pr37": {
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+    "compared_main_sha": "7ccbc8678ae9dba8ebaa5bfe790abd23b052fb58",
+    "compare_status": "diverged",
+    "ahead_by": 3,
+    "behind_by": 11,
+    "successful_observed_checks_on_prior_head": [
+      40256730413,
+      40256730407
+    ],
+    "archive_adapter_workflow_verified": false,
+    "merge_or_force_push_performed": false
+  },
+  "main_ci": {
+    "head_sha": "7ccbc8678ae9dba8ebaa5bfe790abd23b052fb58",
+    "in_progress": [
+      40261066437,
+      40261066429,
+      40261066425
+    ],
+    "previous_head_success": [
+      40261017732,
+      40261017715,
+      40261017557
+    ]
+  },
+  "safety": {
+    "tasks_closed": 0,
+    "raw_sensor_values_exported": false,
+    "credentials_written": false,
+    "source_file_written": false,
+    "source_moved_or_deleted": false,
+    "synthetic_rows_added": 0,
+    "pr_merged": false,
+    "force_push": false
+  },
+  "next": [
+    "When the Remote_Desktop_Commander route is reachable again, read the scheduled Tick after host-local 2026-10-26T09:41:32+07:00 and exact-read the matching consumer receipt; do not infer failure from the connector drop.",
+    "Treat the 09:36 tick as one observed timestamp advance, not sustained sensor-stream recovery; verify subsequent ticks before promoting the state.",
+    "Continue independent cloud-eligible recovery tasks without terminalizing the 45 pending rows from scan-only evidence; host heartbeat remains unprobed.",
+    "Continue TESSERACT issuer-key/runner-assignment provenance and TESSERACT Art source/runtime checks through available authorized routes.",
+    "Recompare PR #37 against current main before any branch action; keep it OPEN/Draft and do not merge or force-push.",
+    "Continue exact-target search and carrier-events writer/retention investigation without moving or deleting sources."
+  ]
+}
