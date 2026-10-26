@@ -1,0 +1,38 @@
+name: TESSERACT Motherboard Regression
+
+on:
+  push:
+    paths:
+      - "runtime/motherboard_control_plane.py"
+      - "runtime/tesseract_transducer.py"
+      - "tests/test_motherboard_control_plane.py"
+      - "tests/test_tesseract_transducer.py"
+      - ".github/workflows/tesseract-motherboard-tests.yml"
+  pull_request:
+    paths:
+      - "runtime/motherboard_control_plane.py"
+      - "runtime/tesseract_transducer.py"
+      - "tests/test_motherboard_control_plane.py"
+      - "tests/test_tesseract_transducer.py"
+      - ".github/workflows/tesseract-motherboard-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile motherboard runtime and tests
+        run: >-
+          python -m py_compile
+          runtime/motherboard_control_plane.py
+          runtime/tesseract_transducer.py
+          tests/test_motherboard_control_plane.py
+          tests/test_tesseract_transducer.py
+      - name: Run motherboard and transducer regression tests
+        run: python -m unittest tests.test_motherboard_control_plane tests.test_tesseract_transducer -v
