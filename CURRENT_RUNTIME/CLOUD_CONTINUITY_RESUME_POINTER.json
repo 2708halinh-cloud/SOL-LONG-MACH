@@ -1,13 +1,13 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.2",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-26T17:00:24.262Z",
-  "updated_at_local": "2026-10-27T00:00:24.262+07:00",
+  "updated_at_utc": "2026-10-26T17:39:26.137Z",
+  "updated_at_local": "2026-10-27T00:39:26.137+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended evidence row, not host event time. Host-local timestamps and cloud/provider timestamps remain separate.",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0000ICT.json",
-    "blob_sha": "5d82472c14a4b20c92cd8aaeefae0ea8fd34841e",
-    "commit_sha": "4fa92039bc9a07bd023b044efb2b781fa37702db",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0039ICT.json",
+    "blob_sha": "6c121c2c564b9bb81ca3a7b4d8f8bc68a4910019",
+    "commit_sha": "26f8dd70de342e727f061b9c35a5d83194eef79c",
     "readback_verified": true,
     "latest_host_evidence_row_id": 522,
     "latest_host_event_id": "X20261026152140359_HOST_TICK_CONSUMER_READBACK",
@@ -72,7 +72,16 @@
     "remote_route_is_host_heartbeat": false,
     "latest_github_task_count_from_verified_pointer": 29,
     "latest_task_evidence_readback_verified": true,
-    "remote_route_status_current": "NOT_RECHECKED"
+    "remote_route_status_current": "NOT_RECHECKED",
+    "latest_github_schedule_row_id": 527,
+    "latest_github_schedule_event_id": "X20261026171647000_GITHUB_SCHEDULE",
+    "latest_github_schedule_run_id": 40367117513,
+    "latest_github_schedule_job_id": 121727703563,
+    "latest_github_schedule_run_status": "success",
+    "latest_github_schedule_provider_created_at_utc": "2026-10-26T17:39:26.137Z",
+    "github_task_count": 29,
+    "github_tasks_closed": 0,
+    "main_head_before_pointer_update": "26f8dd70de342e727f061b9c35a5d83194eef79c"
   },
   "post_checkpoint_updates": [
     {
@@ -1610,6 +1619,22 @@
       "readback_verified": true,
       "state": "OPEN_WORK_REMAINS",
       "tasks_closed": 0
+    },
+    {
+      "type": "GITHUB_SCHEDULE_RUN_READBACK_ROW_527",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 527,
+      "event_id": "X20261026171647000_GITHUB_SCHEDULE",
+      "provider_created_at_utc": "2026-10-26T17:39:26.137Z",
+      "run_id": 40367117513,
+      "job_id": 121727703563,
+      "head_sha": "9f00388bddb1609606f6ff7dc0a3238c4f7e1337",
+      "artifact_id": 12671800008,
+      "readback_verified": true,
+      "github_task_statuses_changed": false,
+      "n8n_task_statuses_changed": false,
+      "tasks_closed": 0,
+      "host_heartbeat_probed": false
     }
   ],
   "n8n": {
@@ -7499,5 +7524,56 @@
     "latest_host_evidence_row_id": 522,
     "android_online_state": "UNVERIFIED",
     "tasks_closed": 0
+  },
+  "latest_github_schedule_run_readback_20261027T0039ICT": {
+    "run_id": 40367117513,
+    "run_number": 376,
+    "event": "schedule",
+    "status": "completed",
+    "conclusion": "success",
+    "run_started_at_utc": "2026-10-26T17:16:47Z",
+    "head_sha": "9f00388bddb1609606f6ff7dc0a3238c4f7e1337",
+    "job_id": 121727703563,
+    "scheduler_tests_passed": 7,
+    "hellohabit_adapter_tests_passed": 4,
+    "continuation_readback": true,
+    "open_tasks_carried_forward": 29,
+    "new_user_signals_carried": 3,
+    "go_build_and_hellocheck_tests": "SKIPPED_BY_SCHEDULE_GUARD",
+    "artifact_id": 12671800008,
+    "evidence_row_id": 527,
+    "event_id": "X20261026171647000_GITHUB_SCHEDULE",
+    "readback_verified": true,
+    "task_statuses_changed": false,
+    "host_heartbeat_probed": false
+  },
+  "n8n_scan_recheck_20261027T0039ICT": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "active": true,
+    "latest_execution_id": "219",
+    "latest_execution_status": "success",
+    "latest_evidence_row_id": 526,
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "no_newer_execution_found_after_219": true,
+    "next_configured_scan_local": "2026-10-27T01:00:00+07:00",
+    "host_heartbeat_probed": false
+  },
+  "latest_cloud_continuity_readback_20261027T0039ICT": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0039ICT.json",
+    "blob_sha": "6c121c2c564b9bb81ca3a7b4d8f8bc68a4910019",
+    "commit_sha": "26f8dd70de342e727f061b9c35a5d83194eef79c",
+    "readback_verified": true,
+    "previous_checkpoint_blob_sha": "5d82472c14a4b20c92cd8aaeefae0ea8fd34841e",
+    "latest_cloud_evidence_row_id": 526,
+    "latest_github_evidence_row_id": 527,
+    "latest_host_evidence_row_id": 522,
+    "n8n_recovery_pending": 45,
+    "github_tasks_preserved": 29,
+    "tasks_closed": 0,
+    "android_online_state": "UNVERIFIED"
   }
 }
