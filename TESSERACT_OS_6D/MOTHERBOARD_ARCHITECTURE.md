@@ -125,7 +125,7 @@ No claim of full-system synchronization is valid until each target has its own f
 
 ### Network and security
 - DNS resolver, tethering, and localhost-service details are time-sensitive operator-local configuration; exact addresses and ports are intentionally not published here.
-- Windows Firewall reportedly disabled on Domain/Private/Public. Treat as SECURITY_RISK; do not expose service ports to LAN/WAN. Prefer firewall enabled with narrow allow rules. This architecture update does not change firewall settings.
+- Firewall configuration is environment-specific and intentionally not recorded here. Verify it directly before exposing any service to a network.
 
 ### Verification contract
 Each inventory entry is reported_by_operator=true, source_verified=false, observed_at=null until freshly probed. A path or declaration alone does not prove a running service, installed model, GPU/NPU execution, API authorization or provider synchronization.
