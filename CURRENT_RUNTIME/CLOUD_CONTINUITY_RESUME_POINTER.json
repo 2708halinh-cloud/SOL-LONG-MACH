@@ -1,8 +1,8 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-26T11:05:17.206Z",
-  "updated_at_local": "2026-10-26T18:05:17.206+07:00",
+  "updated_at_utc": "2026-10-26T11:35:24.496Z",
+  "updated_at_local": "2026-10-26T18:35:24.496+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended n8n evidence row, not host event time. Direct host observations are tracked separately in the provider checkpoint.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1825ICT.json",
@@ -1697,6 +1697,42 @@
       "n8n_append_status": "BLOCKED_BY_SAFETY_CHECK",
       "readback_verified": true,
       "tasks_closed": 0
+    },
+    {
+      "type": "HISTORICAL_BACKLOG_RECONCILIATION_ROW_512_READBACK",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 512,
+      "event_id": "X20261026113522109_HISTORICAL_BACKLOG_RECONCILIATION",
+      "provider_created_at_utc": "2026-10-26T11:35:24.496Z",
+      "observed_at_local": "2026-10-26T18:35:24.496+07:00",
+      "source_ledger_blob_sha": "c80e2949219e7fcb28045a9dd1faaf7a36f83c43",
+      "source_ledger_observed_at": "2026-10-26T17:41:21.079+07:00",
+      "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+      "recovery_rows": 45,
+      "normalized_matches": 29,
+      "unmatched_recovery_rows": 16,
+      "unmatched_task_ids": [
+        "SV-20261020-01",
+        "SV-20261020-02",
+        "SV-20261020-03",
+        "SV-20261020-04",
+        "SV-20261020-05",
+        "SV-20261020-01-READBACK",
+        "SV-20261020-ROOTS-ARCHIVES",
+        "SV-20261020-QEMU-C",
+        "SV-20261020-FULL-DRIVE",
+        "SV-20261020-09-PROPHECY-SOURCE",
+        "SV-20261020-10-CODEX-TRIHOST",
+        "SV-20261020-11-REAL_CHAT_USER",
+        "SV-20261020-12-API-VAULT",
+        "SV-20261020-02-READBACK",
+        "SV-20261021-ANDROID-OLLAMA-LOCALHOST",
+        "SV-20261021-R014-ACTION-FIRST-GATE"
+      ],
+      "readback_verified": true,
+      "task_statuses_changed": false,
+      "tasks_closed": 0,
+      "scope": "Current n8n recovery table versus current GitHub task ledger only; not a full history audit."
     }
   ],
   "n8n": {
@@ -1928,7 +1964,8 @@
     "Do not reinterpret evidence_rows_seen as a host row ID; keep prior rows and corrections append-only.",
     "Read the next host Tick after 2026-10-26 18:21:32+07; preserve source hashes and readback.",
     "Continue TESSERACT issuer-variable and runner-assignment verification through authorized settings access; do not rerun the failing PR #6 CI without a runner/workflow change.",
-    "Refresh this review pointer only after the next verified provider checkpoint; keep PR #42 draft/unmerged."
+    "Refresh this review pointer only after the next verified provider checkpoint; keep PR #42 draft/unmerged.",
+    "Import the 16 source-backed recovery rows into a separately reviewed GitHub ledger change; preserve source status and row IDs, keep PR #42 draft/unmerged, and do not write the canonical cloud pointer on main."
   ],
   "modual_control_state": {
     "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
