@@ -2093,3 +2093,14 @@ All 29 repository tasks remain nonterminal; all 45 cloud recovery rows remain pe
 - Preservation: no source CSV modification, no raw sensor values or credentials published, no synthetic rows, no source move/delete, no MODUAL current-file write, no task closure, no PR merge/force-push, and no prohibited CI rerun.
 - Next: continue through authorized independent routes; obtain the next exact host Tick/consumer readback when a permitted host route is usable; keep all 45 cloud recovery rows and 29 repository tasks nonterminal; continue issuer/runner provenance without rerunning CI `39153474587`.
 <!-- END VERIFIED_AUTOMATION_CONTINUATION_20261026T1956ICT -->
+
+
+<!-- BEGIN VERIFIED_LEDGER_POINTER_SYNC_20261026T1958ICT -->
+## VERIFIED LEDGER + TASK POINTER SYNC — 26/10/2026 19:58 ICT
+
+- [`OPEN_TASKS_CURRENT.json`](OPEN_TASKS_CURRENT.json) was updated append-only and exact-read back through its Git blob: commit `177f43be3fe17e6e75de8bbfb5184b8c230f0237`, blob `2868e6a9ed896718479e7ed1b0096efe84e06cef`. Parse passed: 29 task IDs/statuses unchanged; 235 provider observations/history entries; 295 verified action events; 21 integrity corrections; 0 task closures.
+- [`TASK_RESUME_POINTER.json`](TASK_RESUME_POINTER.json) was refreshed to checkpoint `PROVIDER_READBACK_20261026T1956ICT.json`, commit `3a2d605f9bb18d26e96865c20b42c167fb1fbdb2`, blob `55f1483f886df9b621f658c9d3a776f4a9513a63`. Exact blob readback and JSON parse passed at pointer blob `936969365147a3fee564ce470cc9a56bfd86fc37`; provider-readback history length 144, continuity history length 51, resume history length 15. The pointer references the appended ledger blob above and the checkpoint/reentry observations.
+- The checkpoint was exact-read back as valid JSON at blob `55f1483f886df9b621f658c9d3a776f4a9513a63`. Cloud execution `212` / event `X20261026125640046_CLOUD` / row `515` remains verified; 45 recovery rows pending, 0 terminal, host heartbeat not probed.
+- The pointer blob recorded above was the exact readback immediately before this reentry append. The next sequential pointer refresh will bind the final reentry blob without force-push or history replacement.
+- No task status changed; no raw sensor values or credentials published; no source CSV/MODUAL current file modified; no synthetic rows, source move/delete, PR merge, force-push, or prohibited CI rerun.
+<!-- END VERIFIED_LEDGER_POINTER_SYNC_20261026T1958ICT -->
