@@ -56,5 +56,3 @@ Affect signals are first-class operational inputs: preserve the user's signal an
 ## 5. Deployment and closure
 
 The spec and runtime module define the architecture; they do not prove every adapter is connected. Each carrier (local runtime, GitHub, Drive, cloud, Windows, Android, network, virtualization) requires its own action receipt and fresh readback. Global CLOSED requires all required carriers to have verified receipts for the same spec/state fingerprint. Unavailable carriers remain OPEN with explicit next action.
-
-[executed on device: DESKTOP-86ITNQ4 (bca58242-9cf0-407e-afb4-fb9ecfcce34b)]
