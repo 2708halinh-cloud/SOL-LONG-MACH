@@ -1356,3 +1356,36 @@ The first version of `PROVIDER_READBACK_20261026T1009ICT.json` recorded an incor
 
 This correction is append-only in the re-entry record; do not treat the initial checkpoint SHA claim as current.
 <!-- END CHECKPOINT_BLOB_REFERENCE_CORRECTION_20261026T1010ICT -->
+
+ 
+<!-- BEGIN VERIFIED_PROVIDER_READBACK_20261026T1051ICT -->
+## DELTA — VERIFIED WINDOWS TICK/CONSUMER + CLOUD ROW 441 — 2026-10-26 10:51 ICT
+
+Fresh-read and exact-target provenance:
+- `AGENTS.md`: blob `f18f9743de1e21d13bad47770f928ec85e79bd95`.
+- Prior `SOL_REENTRY_CURRENT.md` blob: `2eb163f480b90aaa37b2d63ff72edf1f936af722`; this entry is append-only.
+- Prior `TASK_RESUME_POINTER.json` blob: `4ef7a096ff1b81f4bdf0ba06e13c3bd5edeaba79`.
+- Prior `OPEN_TASKS_CURRENT.json` blob: `7de7f1cecc6d4f5818f86de20ae9cb065fea12ff`.
+- `MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json` appended host/cloud observation and exact-readback as blob `689b10b9561134e50b7f704d29b4ddc973f0be40`, commit `fd5b84ec11c3d8b118d81db3d66e31d8b8195a17`; session observation count 129.
+
+### Host evidence
+- Host route: Remote Desktop Commander; device `DESKTOP-86ITNQ4`, directly online.
+- Scheduled task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M`: last run `10:51:33+07`, result `0`, next run `10:56:32+07`, missed runs `0`.
+- Tick: `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T035138828297Z.json`; SHA-256 `8299392D73FF92194A03099FF2152F1B9C43BA8087F1FE60D6B51714B27057B0`.
+- Consumer: `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T035136031Z.json`; SHA-256 `9E9CC31B3C0560E64A4AE0D869ED90B82699212298AE517FD08EB805FEFDA0E1`; status `SOURCE_OBSERVED_READONLY`, exit `0`.
+- Source: `D:\\SENSOR_LOGS\\windows_SENSON.CSV`, 35,389,440 bytes; direct SHA-256 `9B25BD723DCE06344432597CC4F300053EA5ACBF76BDD2AB4F38BF4A1BF34B87`. Direct source hash, Tick hash and consumer hash agree; the host verifier confirmed Dropbox content hash. No source write, synthetic rows, cloud export, or GitHub push.
+- Live sensor stream remains **NOT VERIFIED**: USB ADB `1056285` responds, but four event timestamps are `EVENT_TIMESTAMP_STALE`, zero advanced; Redmi Note 14 Pro `192.168.1.14:5556` remains `NOT_LISTED`. Installed package metadata shows `com.exatools.sensors` and `com.galaxy.sensortoolbox` from Google Play, Termux installed, Termux:API package absent; no app was launched or installed.
+- W32Time last observed at `10:45:29+07`: STOPPED/MANUAL under a medium-integrity token with Administrators group deny-only. No service-start attempt and no clock change.
+
+### Provider and cloud evidence
+- Dropbox Outlook metadata: `/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV`, file ID `id:gvG29tEleJwAAAAAAAACOw`, revision `0165dc1e4794ab00000000395cdfd73`, 35,389,440 bytes, server modified `2026-10-14T00:20:03Z`. Raw CSV bytes were not downloaded.
+- n8n workflow `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN`, execution `186`, status success. Exact table readback: row `441`, event `X20261026035138750_CLOUD`, state `OPEN_WORK_REMAINS`; 45 recovery rows pending, zero terminal, host heartbeat not probed.
+- Provider checkpoint `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1051ICT.json`: blob `c9efce686e56cf815346ef16e4a328bcf966dccf`, commit `e20e2b256abbbf1c4bc2ff2059a4a42ddd007e14`; exact content readback succeeded.
+- `OPEN_TASKS_CURRENT.json`: blob `a7261f805e39abfd2c595b6af4960af9d704e723`, commit `8c1a2d28808540628fdfd796f95fda34478756f9`; exact readback succeeded. All 29 tasks and their prior statuses are unchanged; provider observations 199, verified action events 231, zero tasks closed.
+- `TASK_RESUME_POINTER.json`: blob `1bf3d13d9560cd5e862f6dc49d98a1fe4f625d8c`, commit `81c09c0650284cde685b307209fbcb2a812dc759`; exact readback succeeded. Previous checkpoint/next list retained; pointer now references the 10:51 provider checkpoint.
+- `CLOUD_CONTINUITY_RESUME_POINTER.json`: blob `c425336e0e7159fe3badcd70dd6c273414482f3d`, commit `48fddcbab600092aa34487617e90c9a72119e46e`; exact readback succeeded. Cloud row 441 was appended; prior latest host evidence row 440 remains explicitly preserved.
+
+### Invariants and next edges
+- No task was closed; no raw sensor values or credentials were written to public GitHub; no source was moved or deleted; no PR was merged or force-pushed; no prohibited CI rerun.
+- Next: read the Tick and matching consumer after `10:56:32+07`; continue read-only sensor-client and W32Time permission diagnosis without launching an unverified package or changing the clock; keep all 45 cloud tasks pending; continue TESSERACT issuer/runner provenance; recompare Archive PR #36/#37 with current main before any branch mutation.
+<!-- END VERIFIED_PROVIDER_READBACK_20261026T1051ICT -->
