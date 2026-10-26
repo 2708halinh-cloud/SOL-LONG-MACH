@@ -1682,3 +1682,43 @@ Next actions: after host-local `12:46:32+07`, exact-read the next Tick and consu
 
 <!-- END VERIFIED_FINAL_RECONCILIATION_20261026T1250ICT -->
 
+
+
+<!-- BEGIN VERIFIED_AUTOMATION_CONTINUATION_20261026T1332ICT -->
+## CHECKPOINT — cloud continuity row 463; provider and TESSERACT refresh
+
+**Observed:** 2026-10-26 13:32:27 +07. **Main head before this checkpoint:** `edb00f4d4ac48eb912216f2b777e8b5621631043`.
+
+### Mandatory fresh-read sources
+- `AGENTS.md`: blob `f18f9743de1e21d13bad47770f928ec85e79bd95`; read through GitHub connector.
+- `CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md`: blob `353f8c29b9c68311cb52521f6d2affa5b146333a`; read through GitHub connector before appending this section.
+- `CURRENT_RUNTIME/TASK_RESUME_POINTER.json`: blob `0664f08d782747dafb6a864c5260fd417c3ce0c8`, reported size 2,131,014 bytes.
+- `CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json`: blob `7696ff40fe00ea7078e2905a9268456e0b61e911`, reported size 2,055,588 bytes.
+
+The two large JSON files were fetched from their exact raw GitHub URLs at the same source head. The web extraction layer inserted Markdown escapes, so a clean full JSON parse did not succeed; neither file was rewritten. The current pointer's tail identifies the 13:19 ICT checkpoint, host evidence row 462, cloud execution 193 / row 457, 29 tasks, and zero closures. The task ledger's tail records the same latest host event and keeps sensor-stream status unverified.
+
+### Independent cloud action and exact-target readback
+- Workflow `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN` (`BogzhFUDbRp7kuwh`) was executed manually after reading its trigger details.
+- Execution `194`: `success`, started `2026-10-26T06:32:25.358Z`.
+- Event `X20261026063227278_CLOUD`, row `463`, was queried back by exact `event_id` from table `Sk0EFJK5NzWVpBvm`; count 1 and row content matched.
+- State `OPEN_WORK_REMAINS`; 45 recovery rows pending, 0 terminal; host heartbeat not probed; host operations 0; task closures 0.
+
+### Windows and Dropbox state
+The Desktop Commander device inventory returned localhost and both `DESKTOP-86ITNQ4` entries as offline. This establishes connector unreachability only, not that Windows is powered off. No new host Tick/consumer was obtained in this run.
+
+Latest verified host sample remains the 13:19 ICT checkpoint: Tick `WINDOWS_TICK_20261026T061138550290Z.json`, SHA-256 `f0f5fb1739078da45c46788a91a085ff223a8ee6242b7ca3c2156fd652e8e1a7`; consumer SHA-256 `d65b8b45787858faef3fc7cb8e7824e1366e6614ea28d0ea736d4e2a2886e617`, 6,944 bytes; source CSV 35,389,440 bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`. The receipt confirms the source hash matches, but four USB sensor timestamps remained stale, zero advanced, live sensor reading was not confirmed, and wireless ADB was `NOT_LISTED`. The next Tick after host-local 13:16:32 ICT has not been read back.
+
+Dropbox Outlook's last verified metadata remains from 13:19 ICT: `/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV`, revision `0165dc1e4794ab00000000395cdfd73`, size 35,389,440, server modified `2026-10-14T00:20:03Z`. A fresh metadata call in this run failed before provider response with `link_id must identify an eligible linked account`; do not treat that failed call as a fresh provider observation. The source content hash above is from the Tick/consumer receipt, not Dropbox metadata.
+
+### TESSERACT Desktop PR #6 — fresh inspection, no rerun
+PR [#6](https://github.com/2708halinh-cloud/x-time-web/pull/6) remains OPEN/Draft/unmerged at head `5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8`. Runs `40220813600` and `40220813636` are failures. Jobs for Ubuntu, macOS, Windows, `tesseract_os`, and `readback` failed; `selfhosted_windows_verify` was skipped. Log downloads returned `NOT_FOUND/BlobNotFound`, so step-level cause remains unverified. Workflow references repository variable `XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64`; its value and runner assignment were not verified. No CI rerun.
+
+### Continuation and preservation
+- Keep all 29 tracked tasks nonterminal and all 45 cloud recovery rows pending until task-specific evidence exists.
+- When a permitted host route returns, exact-read the next Tick and consumer and recompute the source SHA-256; continue read-only sensor/client diagnosis.
+- Resolve Dropbox account selection through an eligible authorized route; do not claim fresh metadata from the failed call.
+- Continue issuer-variable/runner provenance work through an authorized settings route.
+- No raw sensor rows or credentials were written to public GitHub; no source was moved/deleted; no synthetic rows; no task closure; no PR merge/force-push; no prohibited CI rerun.
+
+Checkpoint carrier: `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1332ICT.json`, blob `133c0e2c3ab78b745b5ce0bb58b540452dd056b9`, commit `1bb89866d70ddb91fa4c3fdcbb930802ed38c9e7`; exact-target readback and JSON parse succeeded.
+<!-- END VERIFIED_AUTOMATION_CONTINUATION_20261026T1332ICT -->
