@@ -1,13 +1,13 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-26T03:51:38.824Z",
-  "updated_at_local": "2026-10-26T10:51:38.824+07:00",
+  "updated_at_utc": "2026-10-26T04:00:24.112Z",
+  "updated_at_local": "2026-10-26T11:00:24.112+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended evidence row, not host event time. Latest host tick event time is recorded separately from provider timestamps; cloud/provider and host clocks are not offset-corrected or conflated.",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1051ICT.json",
-    "blob_sha": "c9efce686e56cf815346ef16e4a328bcf966dccf",
-    "commit_sha": "e20e2b256abbbf1c4bc2ff2059a4a42ddd007e14",
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1101ICT.json",
+    "blob_sha": "ee244f5454f65f6e9a37e2de57c3cf860a4f7fbe",
+    "commit_sha": "dd6922db634649da50ffca8e1af07ceebc1d8e60",
     "readback_verified": true,
     "latest_host_evidence_row_id": 440,
     "latest_host_event_id": "X20261026033244586_HOST_DIRECT_READBACK",
@@ -16,8 +16,10 @@
     "latest_direct_route_readback_row_id": 440,
     "latest_host_observation_row_id": 440,
     "latest_host_observation_event_id": "X20261026033244586_HOST_DIRECT_READBACK",
-    "latest_cloud_scan_row_id": 441,
-    "latest_cloud_scan_event_id": "X20261026035138750_CLOUD"
+    "latest_cloud_scan_row_id": 442,
+    "latest_cloud_scan_event_id": "X20261026040024040_CLOUD",
+    "latest_direct_host_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T040139068348Z.json",
+    "latest_direct_host_tick_sha256": "24BA09DF87D95C074C7A5B535C89316DA307D8AFFF22B3E314389624ACF7FFC2"
   },
   "post_checkpoint_updates": [
     {
@@ -572,6 +574,53 @@
       "tasks_closed": 0,
       "history_preserved": true,
       "exact_readback": true
+    },
+    {
+      "type": "MODUAL_PARAMETER_CURRENT_TICK_CONSUMER_READBACK_20261026T1101ICT",
+      "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+      "blob_sha": "810c0167914fd7c751889f9c209ac0b094c56eab",
+      "commit_sha": "34b5abffb8d5cb85b64a6555d0be9ab302d32b0a",
+      "readback_verified": true,
+      "tick_id": "WINDOWS_TICK_20261026T040139068348Z",
+      "tick_sha256": "24BA09DF87D95C074C7A5B535C89316DA307D8AFFF22B3E314389624ACF7FFC2",
+      "consumer_sha256": "124B53E9DC9897FD0B54CEB0915AC59302848EBD9A390FB745384AC6E06843EF",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_reading_confirmed": false,
+      "tasks_closed": 0
+    },
+    {
+      "type": "PROVIDER_CHECKPOINT_1101_CREATED_AND_EXACT_READBACK",
+      "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1101ICT.json",
+      "blob_sha": "ee244f5454f65f6e9a37e2de57c3cf860a4f7fbe",
+      "commit_sha": "dd6922db634649da50ffca8e1af07ceebc1d8e60",
+      "readback_verified": true,
+      "tasks_closed": 0
+    },
+    {
+      "type": "OPEN_TASK_LEDGER_AND_RESUME_POINTER_RECONCILIATION_1101",
+      "evidence_row_id": 442,
+      "ledger_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "ledger_blob_sha": "1bdf4fc10136e9d6b057dec0dc2702ef3795cfcd",
+      "ledger_commit_sha": "4863fccc8ebe917e50389c60d18fc807c23892fe",
+      "task_pointer_path": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+      "task_pointer_blob_sha": "12b49c30f6913020b6d2c55cec4e2a0a2cb480b7",
+      "task_pointer_commit_sha": "8a102b1e699bf8e12bb1822edb4c20072e0ae583",
+      "history_preserved": true,
+      "tasks_closed": 0
+    },
+    {
+      "type": "CLOUD_SCAN_ROW_442_EXECUTION_187",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 442,
+      "event_id": "X20261026040024040_CLOUD",
+      "provider_created_at_utc": "2026-10-26T04:00:24.112Z",
+      "observed_at_local": "2026-10-26T11:00:24.112+07:00",
+      "state": "OPEN_WORK_REMAINS",
+      "pending_rows": 45,
+      "terminal_rows": 0,
+      "host_heartbeat_probed": false,
+      "host_operations": 0,
+      "readback_verified": true
     }
   ],
   "n8n": {
@@ -771,10 +820,10 @@
     "tasks_closed": 0
   },
   "next": [
-    "After the scheduled Tick at 2026-10-26T10:56:32+07, exact-read the newest host Tick and matching consumer. Source SHA-256 must match both; do not mark live stream recovered while sensor event timestamps remain stale.",
-    "Continue authorized read-only device and sensor-client investigation. Host heartbeat is distinct from the cloud table scan; do not infer it from execution 186.",
-    "Keep 45 cloud recovery tasks pending until task-specific source evidence is available.",
-    "Continue TESSERACT issuer-key/runner-assignment provenance without rerunning fail-before-step CI.",
+    "After the scheduled Tick at 2026-10-26T11:06:32+07, exact-read the newest host Tick and matching consumer; source SHA-256 must match both. The current 11:01:39 pair is hash-consistent but EVENT_TIMESTAMP_STALE (four timestamps, zero advanced); wireless ADB remains NOT_LISTED.",
+    "Keep the provider checkpoint timestamp tied to n8n row createdAt; do not conflate cloud/provider time with host Tick time. Latest cloud scan is row 442; latest host evidence row in the continuity table remains row 440.",
+    "Keep all 45 cloud recovery rows pending until task-specific evidence is available; host heartbeat remains unprobed.",
+    "Verify TESSERACT repository Actions variable configuration and runner assignment through an authorized settings route; no CI rerun until a configuration change is verified.",
     "Recompare Archive PR #36/#37 against current main before branch mutation; no merge or force-push."
   ],
   "modual_control_state": {
@@ -994,6 +1043,37 @@
     "ledger_blob_sha": "61170fbb6260fe1111d20dcedf86f6b81ed03f58",
     "ledger_commit_sha": "c93b87591a4a1ee382e658bc254e3e52f3c406f1",
     "task_count": 29,
+    "tasks_closed": 0,
+    "history_preserved": true
+  },
+  "previous_checkpoint_before_20261026T1101ICT": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1051ICT.json",
+    "blob_sha": "c9efce686e56cf815346ef16e4a328bcf966dccf",
+    "commit_sha": "e20e2b256abbbf1c4bc2ff2059a4a42ddd007e14",
+    "readback_verified": true,
+    "latest_host_evidence_row_id": 440,
+    "latest_host_event_id": "X20261026033244586_HOST_DIRECT_READBACK",
+    "latest_route_inventory_row_id": 416,
+    "latest_route_inventory_event_id": "X20261025221617000_REMOTE_ROUTE_INVENTORY",
+    "latest_direct_route_readback_row_id": 440,
+    "latest_host_observation_row_id": 440,
+    "latest_host_observation_event_id": "X20261026033244586_HOST_DIRECT_READBACK",
+    "latest_cloud_scan_row_id": 441,
+    "latest_cloud_scan_event_id": "X20261026035138750_CLOUD"
+  },
+  "previous_updated_at_before_20261026T1101ICT": {
+    "utc": "2026-10-26T03:51:38.824Z",
+    "local": "2026-10-26T10:51:38.824+07:00"
+  },
+  "latest_provider_checkpoint_reconciliation_20261026T1101ICT": {
+    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1101ICT.json",
+    "checkpoint_blob_sha": "ee244f5454f65f6e9a37e2de57c3cf860a4f7fbe",
+    "checkpoint_commit": "dd6922db634649da50ffca8e1af07ceebc1d8e60",
+    "modual_blob_sha": "810c0167914fd7c751889f9c209ac0b094c56eab",
+    "ledger_blob_sha": "1bdf4fc10136e9d6b057dec0dc2702ef3795cfcd",
+    "task_pointer_blob_sha": "12b49c30f6913020b6d2c55cec4e2a0a2cb480b7",
+    "host_row_latest_in_table": 440,
+    "cloud_scan_row_latest": 442,
     "tasks_closed": 0,
     "history_preserved": true
   }
