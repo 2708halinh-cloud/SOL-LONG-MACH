@@ -8,7 +8,7 @@
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0655ICT.json",
     "blob_sha": "fe7dfd0e8887412a02e5eb9c66c9bea88241f690",
     "commit_sha": "6614c4ea96298e6c93ef7bbaf4d49d45b5d8b320",
-    "readback_verified": false,
+    "readback_verified": true,
     "latest_host_evidence_row_id": 421,
     "latest_host_event_id": "X20261026064940426_HOST_READBACK",
     "latest_route_inventory_row_id": 416,
@@ -211,6 +211,20 @@
       "source_hash_matches": true,
       "tasks_closed": 0,
       "readback_verified": false
+    },
+    {
+      "type": "CHECKPOINT_READBACK_STATUS_CORRECTION",
+      "observed_at_provider_utc": "2026-10-25T23:55:42.514Z",
+      "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0655ICT.json",
+      "checkpoint_blob_sha": "fe7dfd0e8887412a02e5eb9c66c9bea88241f690",
+      "provider_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0655ICT.json",
+      "provider_blob_sha": "483fac15d1583e6a4a411f42dcf39444211567dc",
+      "modual_state_path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+      "modual_state_blob_sha": "669e796f71387efd6c8073c41ce599dd5f8bf035",
+      "basis": "Independent GitHub readback returned matching blob SHAs for checkpoint, provider readback and MODUAL state. The earlier false flag was caused by checking the wrong JSON nesting path for latest_verified_tick_receipt; no content mismatch was found.",
+      "prior_flag_preserved": false,
+      "corrected_current_flag": true,
+      "tasks_closed": 0
     }
   ],
   "n8n": {
@@ -371,7 +385,11 @@
     "pr36_mergeable": true,
     "pr36_compare_status": "diverged",
     "pr36_ahead_by": 14,
-    "pr36_behind_by": 11
+    "pr36_behind_by": 11,
+    "compare_snapshot_main_sha": "3a5dbefc5cecf0440be4ead844f4376628657993",
+    "compare_snapshot_ahead_by": 14,
+    "compare_snapshot_behind_by": 11,
+    "compare_snapshot_status": "diverged"
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -391,7 +409,7 @@
     "Read the next Windows tick after host-clock schedule 2026-10-26T06:51:32+07:00; verify tick and consumer SHA-256 and independently hash the source again.",
     "Keep sensor stream OPEN until timestamp sources advance and a live reading is confirmed; Xiaomi 12 is connected but stale, Redmi Note 14 Pro is not listed.",
     "Keep SV-20261020-02 OPEN until authorized access to the third Project carrier and recovery-row reconciliation are available.",
-    "Keep PR #36 OPEN/Draft; compare is diverged 14 ahead/11 behind and mergeable=false. Do not merge or force-push."
+    "Refresh PR #36 comparison after checkpoint commits. The last comparison was captured before these commits (14 ahead/11 behind); keep PR OPEN/Draft and do not merge or force-push."
   ],
   "modual_control_state": {
     "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
@@ -439,6 +457,9 @@
       "fresh_host_probe_this_invocation": false
     },
     "latest_zip_reconciliation_row_id": 415,
-    "task_count_current_reverified": false
+    "task_count_current_reverified": false,
+    "checkpoint_readback_verified": true,
+    "provider_readback_verified": true,
+    "modual_state_readback_verified": true
   }
 }
