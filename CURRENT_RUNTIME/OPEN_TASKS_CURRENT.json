@@ -3080,9 +3080,9 @@
       "goal": "Verify read-only 7Z/RAR/LR archive adapter behavior on real non-sensitive fixtures while preserving source archives; reconcile the stale PR path without treating CI as task completion.",
       "observed": "Source reconciliation found this task in CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json and CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2106ICT.json with source status OPEN_7Z_RAR_LR, but its ID was absent from the 28-item CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json ledger.,PR #28 head bf553018dd59affb1d4ea2b120cad3ea7a0565ff passed run 40118137014 on an ephemeral GitHub-hosted Ubuntu 24.04 runner. The 7Z, RAR and LR fixtures passed read-only tests; artifact 12570136939 ZIP SHA-256 7352960c029de2aba652d881c86e805b5280af9f7f34c9f1aadc6479910089e0; receipt JSON SHA-256 f9004cb4cf68cd0935b342857c32bf12089f2db025bfe44a6dccea409f2bcc9d.,PR #29 topology regression fix passed run 40118465586, but remains Draft and unmerged; it does not alter main.,Latest GitHub compare showed PR #28 diverged from main (7 ahead, 10 behind) and GitHub reported mergeable=false. No force-push or merge was performed.,The current tool set does not expose the authoritative n8n task-table, Windows host, Google Drive, Dropbox or Takeout operations needed to prove target-host validation or provider-side source recovery. | 2026-10-25 05:18 ICT: run 40118137001 failed only the topology assertion because BRAIN_WAVE_LOGS was omitted from allowed sibling set; test-only fix committed as 945eeca3419be2b7151d5761eb5aadfa65c31434 and read back. | Post-fix head 945eeca3419be2b7151d5761eb5aadfa65c31434 passed topology run 40138464127, archive-adapter run 40138464130 and secret-guard run 40138464176; PR still diverged 8 ahead/65 behind. | 2026-10-25T02:26Z: Retrieved the original Dropbox ZIP carrier by exact provider file ID id:gvG29tEleJwAAAAAAAACLA, revision 0165daa5e44669e0000000395cdfd73, 20,882 bytes; raw SHA-256 da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106 matches the expected manifest. Read-only ZIP inspection found 16 entries; all 15 payload entries matched CHECKSUMS_SHA256.txt, with no mismatches or missing entries. No extraction and no source move/write. PR #34 remains OPEN/Draft; head a90f85ae1e0d5a5129caa1b472acac4f4697a71c, checks successful, compare against main b6e81ce174a6e327786735f31b9f497221cfd9ac is diverged 1 ahead/38 behind. Original JINEY/FUNIX/DAT NGUYEN export bytes and the two MAP_NGUON IDs remain unresolved. | 2026-10-25T02:26Z: Retrieved the original Dropbox ZIP carrier by exact provider file ID id:gvG29tEleJwAAAAAAAACLA, revision 0165daa5e44669e0000000395cdfd73, 20,882 bytes; raw SHA-256 da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106 matches the expected manifest. Read-only ZIP inspection found 16 entries; all 15 payload entries matched CHECKSUMS_SHA256.txt, with no mismatches or missing entries. No extraction and no source move/write. PR #34 remains OPEN/Draft; head a90f85ae1e0d5a5129caa1b472acac4f4697a71c, checks successful, compare against main b6e81ce174a6e327786735f31b9f497221cfd9ac is diverged 1 ahead/38 behind. Original JINEY/FUNIX/DAT NGUYEN export bytes and the two MAP_NGUON IDs remain unresolved. | 2026-10-25T02:37:51.696Z: Fresh GitHub compare readback for PR #34 against main head d6a6b88d66c452259b6b40e84ec89bbf55082170 returned diverged, 1 ahead/44 behind; PR remains OPEN/Draft and checks are successful. This measurement is tied to that main head; remeasure before any sync. No merge or force-push.\n2026-10-25T14:58:19.946+07:00: fresh PR #34 compare against main 5ef88853157ea2329d065936ebd522998c9d30a2: diverged 1 ahead/153 behind; checks/artifact retained; PR open draft, no merge or force-push.\n2026-10-25T15:05:23.527+07:00: PR #34 compare against 24e9cc3855e7d36e69972bbf8094c870dd8dd6f4: diverged 1 ahead/156 behind; all three recorded jobs succeeded; artifact 12580351639 exists on run 40145523727 and expires 2026-11-08; PR remains OPEN/Draft and mergeable=false. | 2026-10-25T23:02:39.688+07:00: PR #36 input-safety hardening and artifact were read back; Library SOL_CURRENT_RAW_CHAT_VI_EV_20261010.zip hash matched its manifest but was classified as a derived code bundle, not an OpenAI account export.",
       "next": [
-        "PR #37 remains OPEN/Draft/unmerged at head b12541a85a817041335fbd5c5ac858f631df0318; at creation, compare was 2 ahead/0 behind main b0ba78c74127b784a1aaada47460baec73f3bcee with exactly the five reviewed archive-adapter paths. Re-read against current main after subsequent commits; do not merge or force-push.",
-        "Obtain authorized target-host validation of the read-only archive adapter; hosted fixture CI is not target-host validation.",
-        "Continue original OpenAI account-export recovery through an authorized provider or verified raw carrier; keep JINEY, FUNiX and DATNGUYEN/MINH separate and resolve the two MAP_NGUON Drive IDs by direct provider readback."
+        "PR #37 remains OPEN/Draft/unmerged at head b12541a85a817041335fbd5c5ac858f631df0318. Last compare before this artifact-ledger commit: 2 ahead / 2 behind main 87ac0c50978dbab62a8d916fcf96cd0e05cbc254, exactly five reviewed paths. This commit adds another main-only ledger record; re-read before branch maintenance. No merge/force-push.",
+        "The new GitHub-hosted archive fixture artifact passed readback, but target-host validation remains OPEN and unproven.",
+        "Continue original account-export recovery through an authorized provider/Takeout/physical carrier; resolve MAP_NGUON's two Drive IDs by direct metadata/revision/bytes. Keep JINEY, FUNiX and DATNGUYEN/MINH separate."
       ],
       "guard": "NO_EXTRACTION; NO_SOURCE_ARCHIVE_MODIFICATION; NO_FORCE_PUSH; NO_TASK_CLOSURE_FROM_CI_OR_REPORT; TARGET_HOST_VALIDATION_REQUIRED",
       "assigned_subagent": "SubAisstangtManage-INTEGRITY",
@@ -3239,6 +3239,19 @@
           "result": "ARCHIVE_PATCH_CLEAN_RECUT_AND_PR37_READBACK_VERIFIED; ORIGINAL_EXPORT_RECOVERY_AND_TARGET_HOST_VALIDATION_REMAIN_OPEN",
           "next_callable_edge": "Continue provider-backed original account-export recovery and authorized target-host validation. Recompare PR #37 against current main after new checkpoint commits; keep both PRs open and do not treat CI as task completion.",
           "status_effect": "Keep status OPEN and real_execution_status OPEN_NOT_PROVEN_COMPLETED. No task closure."
+        },
+        {
+          "observed_at": "2026-10-26T08:57:11.587+07:00",
+          "source": "GitHub Actions artifact 12623130483 from run 40256347644, downloaded through authenticated GitHub connector and inspected locally.",
+          "actions_and_receipts": [
+            "PR #37 archive workflow run 40256347644 concluded SUCCESS; topology and secret-guard workflows also SUCCESS.",
+            "Downloaded artifact sol-archive-real-fixture-readback-PR37.zip: 959 bytes; SHA-256 112878ecb814513fb4670daf0ae4c9231831dee4d4270b9f81eafa4336850d83; ZIP integrity PASS.",
+            "real-fixture-readback.json SHA-256 cf1cf8404644c0e097eac7637c5f35f796f1d626651142cec725a39eec4cd113; all_passed=true, fixture_count=3, extraction_performed=false, source_archives_modified=false. 7Z/RAR/LR fixture before/after SHA-256 values match and source_unchanged=true for all three.",
+            "tool-versions.txt SHA-256 9433a77a29814b817286b6321a47cdffb881456b8e34a2b46d375aa853031f25; runner reports Python 3.12.15, p7zip-full 16.02+transitional.1, unrar 7.0.7, lrzip 0.651."
+          ],
+          "result": "HOSTED_FIXTURE_ARTIFACT_READBACK_PASS; TARGET_HOST_VALIDATION_NOT_VERIFIED",
+          "next_callable_edge": "Do not close task based on CI. Continue authorized target-host validation and original export recovery; recompare PR #37 before branch maintenance.",
+          "status_effect": "OPEN_NOT_PROVEN_COMPLETED remains unchanged."
         }
       ],
       "next_history": [
@@ -3264,6 +3277,15 @@
             "PR #36 remains OPEN/Draft/unmerged at head cd3267f9ea125740328ee2ff14583c7721498a88; at main ef64b226da72145925908daba2531400a50e1fc8 it was 11 ahead/9 behind with three checks SUCCESS. Re-read compare after current checkpoint commits; do not merge or force-push."
           ],
           "reason": "Clean re-cut of the five reviewed paths onto current main, exact blob readback and Draft PR #37 created; source recovery and target-host validation remain open."
+        },
+        {
+          "recorded_at": "2026-10-26T08:57:11.587+07:00",
+          "previous_next": [
+            "PR #37 remains OPEN/Draft/unmerged at head b12541a85a817041335fbd5c5ac858f631df0318; at creation, compare was 2 ahead/0 behind main b0ba78c74127b784a1aaada47460baec73f3bcee with exactly the five reviewed archive-adapter paths. Re-read against current main after subsequent commits; do not merge or force-push.",
+            "Obtain authorized target-host validation of the read-only archive adapter; hosted fixture CI is not target-host validation.",
+            "Continue original OpenAI account-export recovery through an authorized provider or verified raw carrier; keep JINEY, FUNiX and DATNGUYEN/MINH separate and resolve the two MAP_NGUON Drive IDs by direct provider readback."
+          ],
+          "reason": "Downloaded and verified the fresh PR #37 GitHub Actions artifact; CI success is evidence only and does not satisfy target-host validation or close the task."
         }
       ],
       "previous_next_20261026T0515ICT": [
@@ -15202,6 +15224,68 @@
       "tasks_closed": 0,
       "secrets_written": false,
       "source_mutated": false,
+      "history_preserved": true
+    },
+    {
+      "id": "ARCHIVE_PR37_CI_ARTIFACT_READBACK_20261026T0857ICT",
+      "observed_at": "2026-10-26T08:57:11.587+07:00",
+      "action": "READBACK_PR37_HOSTED_FIXTURE_ARTIFACT",
+      "evidence": {
+        "id": "ARCHIVE_PR37_CI_ARTIFACT_READBACK_20261026T0857ICT",
+        "observed_at": "2026-10-26T08:57:11.587+07:00",
+        "pr": 37,
+        "head": "b12541a85a817041335fbd5c5ac858f631df0318",
+        "workflow_run": 40256347644,
+        "workflow_conclusion": "SUCCESS",
+        "artifact": {
+          "id": 12623130483,
+          "name": "sol-archive-real-fixture-readback",
+          "bytes": 959,
+          "sha256": "112878ecb814513fb4670daf0ae4c9231831dee4d4270b9f81eafa4336850d83",
+          "zip_integrity": "PASS"
+        },
+        "receipt_json": {
+          "sha256": "cf1cf8404644c0e097eac7637c5f35f796f1d626651142cec725a39eec4cd113",
+          "all_passed": true,
+          "fixture_count": 3,
+          "extraction_performed": false,
+          "source_archives_modified": false
+        },
+        "fixtures": [
+          {
+            "format": "7Z",
+            "status": "PASS",
+            "sha256": "17f1cb90de7cfc7a444f7c5d6886a1ff257cb31be43027d4cf4034857d54f8ea",
+            "source_unchanged": true
+          },
+          {
+            "format": "RAR",
+            "status": "PASS",
+            "sha256": "d3d4bd8c90b22fa01c11f460589499de06f9d28e076ec3762eea738c0903e874",
+            "source_unchanged": true
+          },
+          {
+            "format": "LR",
+            "status": "PASS",
+            "sha256": "b13399673dd6e264cae5e7b336574e0c58b7c8479071d3fc68be2ca1dbb814f0",
+            "source_unchanged": true
+          }
+        ],
+        "other_workflows": {
+          "library_topology": "SUCCESS",
+          "secret_guard": "SUCCESS"
+        },
+        "target_host_validation": "NOT_VERIFIED",
+        "task_state": "OPEN",
+        "tasks_closed": 0,
+        "pr_merged": false,
+        "force_push": false
+      },
+      "result": "HOSTED_FIXTURE_ARTIFACT_READBACK_PASS; TARGET_HOST_VALIDATION_NOT_VERIFIED",
+      "task_state_mutation": "STATUS_UNCHANGED_OPEN",
+      "tasks_closed": 0,
+      "secrets_written": false,
+      "source_archives_modified": false,
       "history_preserved": true
     }
   ],
@@ -32476,22 +32560,24 @@
     "ci_rerun_performed": false
   },
   "latest_action_event": {
-    "id": "ADMIN_PORTABLE_DUPLICATE_CANDIDATE_AUDIT_20261026T0854ICT",
-    "observed_at": "2026-10-26T08:56:18.551+07:00",
-    "action": "READBACK_ADMIN_ARCHIVE_AND_TRIAGE_UNHASHED_MIRROR_CANDIDATE",
+    "id": "ARCHIVE_PR37_CI_ARTIFACT_READBACK_20261026T0857ICT",
+    "observed_at": "2026-10-26T08:57:11.587+07:00",
+    "action": "READBACK_PR37_HOSTED_FIXTURE_ARTIFACT",
     "evidence": {
-      "canonical_zip_sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
-      "map_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
-      "sqlite_integrity_check": "ok",
-      "second_candidate_sha256": "UNVERIFIED"
+      "run_id": 40256347644,
+      "artifact_id": 12623130483,
+      "artifact_sha256": "112878ecb814513fb4670daf0ae4c9231831dee4d4270b9f81eafa4336850d83",
+      "receipt_sha256": "cf1cf8404644c0e097eac7637c5f35f796f1d626651142cec725a39eec4cd113",
+      "all_passed": true,
+      "fixture_count": 3
     },
     "task_state_mutation": "STATUS_UNCHANGED_OPEN",
     "tasks_closed": 0,
-    "history_preserved": true,
     "secrets_written": false,
-    "source_mutated": false
+    "source_archives_modified": false,
+    "history_preserved": true
   },
-  "updated_at": "2026-10-26T08:56:18.551+07:00",
+  "updated_at": "2026-10-26T08:57:11.587+07:00",
   "latest_clock_integrity_correction": {
     "id": "IC_20261026T0609_HOST_CLOCK_OFFSET_NON_SYNCHRONOUS_PRIOR_ESTIMATE",
     "observed_at": "2026-10-26T06:09:56.211+07:00",
@@ -34248,5 +34334,56 @@
     "delete": false,
     "overwrite": false,
     "tasks_closed": 0
+  },
+  "ARCHIVE_PR37_CI_ARTIFACT_READBACK_20261026T0857ICT": {
+    "id": "ARCHIVE_PR37_CI_ARTIFACT_READBACK_20261026T0857ICT",
+    "observed_at": "2026-10-26T08:57:11.587+07:00",
+    "pr": 37,
+    "head": "b12541a85a817041335fbd5c5ac858f631df0318",
+    "workflow_run": 40256347644,
+    "workflow_conclusion": "SUCCESS",
+    "artifact": {
+      "id": 12623130483,
+      "name": "sol-archive-real-fixture-readback",
+      "bytes": 959,
+      "sha256": "112878ecb814513fb4670daf0ae4c9231831dee4d4270b9f81eafa4336850d83",
+      "zip_integrity": "PASS"
+    },
+    "receipt_json": {
+      "sha256": "cf1cf8404644c0e097eac7637c5f35f796f1d626651142cec725a39eec4cd113",
+      "all_passed": true,
+      "fixture_count": 3,
+      "extraction_performed": false,
+      "source_archives_modified": false
+    },
+    "fixtures": [
+      {
+        "format": "7Z",
+        "status": "PASS",
+        "sha256": "17f1cb90de7cfc7a444f7c5d6886a1ff257cb31be43027d4cf4034857d54f8ea",
+        "source_unchanged": true
+      },
+      {
+        "format": "RAR",
+        "status": "PASS",
+        "sha256": "d3d4bd8c90b22fa01c11f460589499de06f9d28e076ec3762eea738c0903e874",
+        "source_unchanged": true
+      },
+      {
+        "format": "LR",
+        "status": "PASS",
+        "sha256": "b13399673dd6e264cae5e7b336574e0c58b7c8479071d3fc68be2ca1dbb814f0",
+        "source_unchanged": true
+      }
+    ],
+    "other_workflows": {
+      "library_topology": "SUCCESS",
+      "secret_guard": "SUCCESS"
+    },
+    "target_host_validation": "NOT_VERIFIED",
+    "task_state": "OPEN",
+    "tasks_closed": 0,
+    "pr_merged": false,
+    "force_push": false
   }
 }
