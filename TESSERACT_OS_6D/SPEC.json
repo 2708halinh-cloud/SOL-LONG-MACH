@@ -265,5 +265,91 @@
     "gpu_execution_enabled_by_default": false,
     "source_verified": false,
     "physical_hardware_equivalence_claim": false
+  },
+  "host_runtime_inventory": {
+    "source": "operator_supplied_inventory_2026-10-26",
+    "source_verified": false,
+    "secret_values_allowed": false,
+    "host": {
+      "ollama_executable": "C:\\Users\\halin\\AppData\\Local\\Programs\\Ollama\\ollama.exe",
+      "ollama_default_port": 11434,
+      "ollama_daemon_state": "NOT_VERIFIED",
+      "llama_cpp_executable": "C:\\Users\\halin\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe\\llama-cli.exe",
+      "cpu_model": "Intel Core i5-10400F",
+      "ram_gb": 48
+    },
+    "candidate_model_families": [
+      "Llama 3",
+      "Qwen 2.5",
+      "Phi-3"
+    ],
+    "edge": {
+      "device": "Xiaomi 12",
+      "soc": "Snapdragon 8 Gen 1",
+      "ram_gb": 8,
+      "zram_gb": 8,
+      "candidate_models": [
+        "SmolLM2",
+        "Qwen2.5-0.5B-to-3B"
+      ],
+      "execution_state": "NOT_VERIFIED"
+    },
+    "cloud_agents": {
+      "declared_integrations": [
+        "OpenAI API",
+        "Gemini",
+        "Google Cloud SDK",
+        "Antigravity"
+      ],
+      "authentication_state": "NOT_VERIFIED"
+    },
+    "mcp_services_declared": [
+      "remote-computer-use",
+      "chrome-devtools",
+      "bigquery",
+      "alloydb-postgresql",
+      "cloud-sql",
+      "google-cloud-spanner",
+      "google-kubernetes-engine",
+      "cloudrun",
+      "firebase-mcp-server",
+      "genkit-mcp-server",
+      "StitchMCP",
+      "gopls-mcp-server",
+      "posthog"
+    ],
+    "subagents_declared": [
+      "research",
+      "self",
+      "remote-computer-use",
+      "image-generator",
+      "firestore-rules-author",
+      "flutter_a11y_agent"
+    ],
+    "network": {
+      "dns_resolvers": [
+        "45.90.28.0",
+        "45.90.30.0"
+      ],
+      "interface": "Remote NDIS Compatible Device",
+      "connection": "USB tethering",
+      "local_ipv4": "10.20.156.29",
+      "default_gateway": "10.20.156.151",
+      "public_ip": "14.173.169.173",
+      "reported_link_mbps": 426,
+      "firewall_profiles_state": "DISABLED_REPORTED",
+      "security_state": "SECURITY_RISK",
+      "service_8765": {
+        "name": "MINH BODY v0.9",
+        "bind": "127.0.0.1",
+        "state": "NOT_VERIFIED"
+      }
+    },
+    "verification_policy": {
+      "reported_inventory_is_not_runtime_proof": true,
+      "secrets_must_not_be_committed": true,
+      "firewall_changes_performed": false,
+      "probe_required_before_verified": true
+    }
   }
 }
