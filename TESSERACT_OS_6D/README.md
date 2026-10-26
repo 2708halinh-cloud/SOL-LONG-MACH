@@ -81,3 +81,6 @@ This is an architecture and local unit-test baseline, not proof that every exter
 
 
 The existing `runtime/tesseract_transducer.py` path is wired to the motherboard Gate 1 preflight and post-commit independent read-only Gate 2 readback. Current host probe receipt: [MOTHERBOARD_RUNTIME_READBACK_20261026.json](receipts/MOTHERBOARD_RUNTIME_READBACK_20261026.json). The receipt intentionally keeps Google Drive provider sync, ADB, QEMU and Hyper-V unverified where direct readback is missing.
+
+
+Regression CI definition: [.github/workflows/tesseract-motherboard-tests.yml](../.github/workflows/tesseract-motherboard-tests.yml). The local Windows and WSL test runs passed; GitHub Actions run status remains unverified because the connected run/status query returned no records.
