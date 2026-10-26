@@ -7,7 +7,7 @@ from runtime.intel_core_ultra_emulator import load_registry, get_profile, plan_t
 class IntelCoreUltraProfileTests(unittest.TestCase):
     def test_registry_contains_user_catalog_profiles(self):
         data = load_registry()
-        self.assertGreaterEqual(len(data["profiles"]), 30)
+        self.assertGreaterEqual(len(data["profiles"]), 31)
 
     def test_251hx_profile_matches_supplied_catalog(self):
         p = get_profile("Intel Core Ultra 7 processor 251HX")
@@ -20,6 +20,14 @@ class IntelCoreUltraProfileTests(unittest.TestCase):
     def test_f_model_does_not_infer_gpu(self):
         p = get_profile("Intel Core Ultra 5 processor 250KF Plus")
         self.assertIsNone(p.integrated_gpu)
+
+    def test_265u_preserves_unprovided_gpu_as_unknown(self):
+        p = get_profile("Intel Core Ultra 7 265U")
+        self.assertEqual(p.cores, 12)
+        self.assertEqual(p.reported_max_turbo_ghz, 5.3)
+        self.assertEqual(p.smart_cache_mb, 12)
+        self.assertIsNone(p.integrated_gpu)
+        self.assertEqual(p.gpu_status, "NOT_PROVIDED_IN_USER_LIST")
 
     def test_slot_planning_is_bounded_and_disclaims_hardware_equivalence(self):
         plan = plan_task_slots("Intel Core Ultra 7 processor 251HX", 25)
