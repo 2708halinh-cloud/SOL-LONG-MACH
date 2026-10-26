@@ -43,6 +43,16 @@ class ContinuityTests(unittest.TestCase):
                     validate_manifest(data),
                 )
 
+    def test_verified_status_variants_cannot_bypass_gate(self):
+        for status in ("VERIFIED ", " verified", "verified", " Verified "):
+            with self.subTest(status=status):
+                data = manifest()
+                data["identity"]["agent_id"] = "sol-agent-id-from-authorized-source"
+                data["identity_status"] = status
+                data["independent_readback"] = True
+                errors = validate_manifest(data)
+                self.assertIn("IDENTITY_STATUS_NONCANONICAL", errors)
+
     def test_verified_accepts_only_nonempty_string_id_and_true_readback(self):
         data = manifest()
         data["identity"]["agent_id"] = "sol-agent-id-from-authorized-source"
