@@ -17,7 +17,14 @@
       "motherboard_tests": "PASS 20/20",
       "transducer_tests": "PASS 8/8",
       "py_compile": "PASS",
-      "combined_regression": "PASS 28/28 in one invocation"
+      "combined_regression": "PASS 28/28 in one invocation",
+      "local_llm_inference": {
+        "model": "ggdv-human-sol-coder-lite:1.0",
+        "endpoint": "http://127.0.0.1:11434/api/generate",
+        "result": "PASS",
+        "response": "TESSERACT_CPU3_OK",
+        "duration_ms": 13555
+      }
     },
     "disk_c": {
       "observed_at": "2026-10-26T11:28:14+07:00",
@@ -66,7 +73,10 @@
     "github": {
       "repository": "2708halinh-cloud/SOL-LONG-MACH",
       "branch": "main",
-      "source_readback_exact": true
+      "source_readback_exact": true,
+      "ci_workflow_file": ".github/workflows/tesseract-motherboard-tests.yml",
+      "ci_commit": "de9583b5a65cc70640c14ab27bd5c4ca2d1fdbea",
+      "ci_run_status": "NOT_RETURNED_BY_AVAILABLE_GITHUB_RUNS_QUERY"
     }
   },
   "caveats": [
