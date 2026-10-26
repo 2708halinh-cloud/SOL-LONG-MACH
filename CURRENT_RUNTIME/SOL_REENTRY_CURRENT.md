@@ -1030,3 +1030,8 @@ Ledger remains 29 tasks, 164 action events, 164 provider observations, four inte
 
 - In the preceding comparison-base correction, an invalid SHA string was accidentally included before the authoritative value. Treat only `962f6993cad3df69a95923f50d533a17c100ddd4` as the current main head returned by the compare tool. The authoritative structured readback is `CURRENT_RUNTIME/ARCHIVE_PR36_COMPARE_READBACK_20261026T0701ICT.json` (blob `7e8a2f3166bf6a2e01929b951a10db62e98a6fb4`).
 - Current comparison remains 14 ahead / 18 behind, merge base `cbb8e2074695670398d2ee9ca4462bbbd55cee7c`. No branch update, merge, or force-push.
+
+
+## Append-only temporal qualifier — Archive PR #36 — 2026-10-26T00:10:26.440Z
+
+- The 14-ahead/18-behind comparison is verified specifically at main head `962f6993cad3df69a95923f50d533a17c100ddd4`, as recorded in `CURRENT_RUNTIME/ARCHIVE_PR36_COMPARE_READBACK_20261026T0701ICT.json`. Main then advanced through metadata-only checkpoint/readback commits `340741be13fd580f258d1f91e19e393fd48268ad`, `d6d25be2e5b053f8a6ddba4fe87fd6c27b23d709`, and `1d4cb931ecb210fff8223e7cb47619c560154cd6`. Therefore, do not treat 14/18 as the current divergence count at the newer main head. Re-run compare against latest main and inspect conflicts before any branch maintenance. No PR branch update, merge, or force-push was performed.
