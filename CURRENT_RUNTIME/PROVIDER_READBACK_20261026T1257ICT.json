@@ -1,0 +1,153 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "id": "PROVIDER_READBACK_20261026T1257ICT",
+  "observed_at_utc": "2026-10-26T05:57:02.987Z",
+  "observed_at_local": "2026-10-26T12:57:02.987+07:00",
+  "timestamp_basis": "Provider-side MODUAL state update time; host Tick time and direct host readback time are preserved separately.",
+  "source_event_type": "RECONCILE_EXISTING_POST_SCHEDULED_HOST_READBACK",
+  "main_head_before_checkpoint": "9704d30da54f4e19c2755deed47438f86a61b418",
+  "source_reads_before_write": {
+    "modual_state_path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+    "modual_state_blob_sha": "84b8523ab3939db90cc7352ff5cd7f719f793dd3",
+    "task_ledger_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "task_ledger_blob_sha": "d2a7ee1539dd8aab64efedca7b08f0ee472f792c",
+    "task_resume_pointer_path": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+    "task_resume_pointer_blob_sha": "94a4d71b5ba24331f8ea6b4ccfaa5f4641d9479b",
+    "prior_cloud_pointer_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
+    "prior_cloud_pointer_blob_sha": "6bff9ea734c0a855dfec5242bb0c09c8d16e32f"
+  },
+  "host": {
+    "host": "DESKTOP-86ITNQ4",
+    "route": "Remote Desktop Commander",
+    "direct_readback_observed_at_local": "2026-10-26T12:51:13.1867619+07:00",
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T12:46:33+07:00",
+      "last_result": 0,
+      "next_run_local_at_last_readback": "2026-10-26T12:51:32+07:00",
+      "missed_runs_at_last_readback": 0
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "hash_matches_tick_and_consumer": true,
+      "source_mutated": false
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T054638564330Z.json",
+      "observed_at_utc": "2026-10-26T05:46:38.564330Z",
+      "sha256": "be60e77082aab70896f8adedb6dc511995a71854ddd5f5b4247c1227bb6b9bdb",
+      "source_sha256_matches": true,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "usb_sensor_timestamp_count": 4,
+      "usb_timestamps_advanced": 0,
+      "live_sensor_reading_confirmed": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T054635892Z.json",
+      "observed_at_utc": "2026-10-26T05:46:38.6446514Z",
+      "sha256": "ebfbf4b5fcf16c67b89f2b87e3464a60b94b77e2b98d5ed848f63826122fc088",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_content_hash_verified": true,
+      "raw_rows_emitted": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "device_probe": {
+      "adb_binary_present": true,
+      "adb_devices_command_succeeded": true,
+      "status": "ADB_TRANSPORT_RESPONDED",
+      "usb_target": "1056285",
+      "usb_adb_state": "device",
+      "sensorservice_probe_succeeded": true,
+      "usb_sensor_timestamp_count": 4,
+      "usb_sensor_timestamps_advanced": 0,
+      "usb_sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "wireless_target": "192.168.1.14:5556",
+      "wireless_adb_state": "NOT_LISTED",
+      "wireless_sensorservice_probe_succeeded": false,
+      "live_sensor_reading_confirmed": false
+    },
+    "w32time": {
+      "status": "Stopped",
+      "start_type": "Manual",
+      "changed": false
+    },
+    "evidence_table_row_id": 455,
+    "previous_host_evidence_row_id": 454,
+    "correction_row_id": 453,
+    "task_closed": false
+  },
+  "provider": {
+    "latest_host_event_id": "X20261026124453029_HOST_DIRECT_READBACK",
+    "latest_host_evidence_row_id": 455,
+    "latest_cloud_scan_row_id": 451,
+    "latest_cloud_scan_event_id": "X20261026053538224_CLOUD",
+    "latest_cloud_scan_state": "OPEN_WORK_REMAINS",
+    "pending_recovery_rows": 45,
+    "terminal_recovery_rows": 0,
+    "cloud_workflow_probed_host_heartbeat": false
+  },
+  "dropbox": {
+    "provider": "Dropbox Outlook",
+    "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+    "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "bytes": 35389440,
+    "server_modified_utc": "2026-10-14T00:20:03Z",
+    "content_hash_from_tick_consumer_receipt": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+    "is_substitute_for_expected_modual_bulk_target": false,
+    "expected_modual_bulk_bytes": 89814328,
+    "expected_modual_bulk_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "exact_target_found_in_scanned_sensor_logs_subtree": false,
+    "scan_scope": "Outlook-linked Dropbox /Linh Hà/SENSOR_LOGS recursive listing, 56 files; complete for that subtree only"
+  },
+  "task_ledger": {
+    "blob_sha": "d2a7ee1539dd8aab64efedca7b08f0ee472f792c",
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "provider_observations": 210,
+    "verified_action_events": 245,
+    "integrity_corrections": 12,
+    "task_statuses_changed": false,
+    "tasks_closed": 0
+  },
+  "reconciliation": {
+    "fresh_host_probe_this_invocation": false,
+    "latest_verified_host_readback_in_repository": "2026-10-26T12:51:13.1867619+07:00",
+    "post_due_tick_readback_verified": false,
+    "note": "This checkpoint reconciles existing GitHub evidence only. It does not assert whether later scheduled host ticks ran; no post-12:51 direct host readback was available in this invocation."
+  },
+  "safety": {
+    "source_mutated": false,
+    "source_moved_or_deleted": false,
+    "raw_sensor_values_exported": false,
+    "credentials_or_private_chat_payloads_written": false,
+    "task_status_changed": false,
+    "tasks_closed": 0,
+    "history_preserved": true
+  },
+  "next": [
+    "On an authorized host route, read the Tick and consumer after the 12:56:32+07 scheduled boundary; recompute the source SHA-256 and compare the exact source, Tick and consumer.",
+    "Keep MODUAL_SENSOR_LOGS_ROUTING OPEN until a production sensor event stream with advancing timestamps is independently verified.",
+    "Continue recovery of the exact 89,814,328-byte MODUAL target by authorized provider routes; do not substitute the 35,389,440-byte windows_SENSON.CSV carrier.",
+    "Continue original JINEY/FUNiX/DAT NGUYEN account-export recovery only from actual source bytes and provider metadata; derived archives and pointers do not satisfy recovery.",
+    "Keep all 45 cloud recovery rows nonterminal until task-specific evidence exists."
+  ]
+}
