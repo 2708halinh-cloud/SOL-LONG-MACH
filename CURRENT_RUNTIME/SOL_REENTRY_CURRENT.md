@@ -1338,3 +1338,21 @@ No task closed; no ledger status changed; no raw sensor values or credentials wr
 3. Continue TESSERACT issuer-key/runner-assignment provenance without rerunning fail-before-step CI.
 4. Reconcile the resume pointer to the newer checkpoint through a verified append-preserving route; do not replace either large JSON source with partial connector output.
 <!-- END VERIFIED_PROVIDER_CLOUD_CONTINUATION_DELTA_20261026T1009ICT -->
+
+
+<!-- BEGIN CHECKPOINT_BLOB_REFERENCE_CORRECTION_20261026T1010ICT -->
+## CORRECTION — PROVIDER CHECKPOINT BLOB REFERENCE — 2026-10-26 10:10 ICT
+
+The first version of `PROVIDER_READBACK_20261026T1009ICT.json` recorded an incorrect blob SHA for `MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json`. This was a checkpoint metadata error, not a source-file mutation.
+
+- Incorrect checkpoint claim: `54470d93a70ed749e571d54b401013a060ca9b69b`.
+- Exact current source blob read back from GitHub: `54470d93a70ed749d157a31ae4c6ce7d972791dc`.
+- Corrected provider checkpoint blob: `5f472c259ee91c1ad072578247d10a0059e20a70`.
+- Correction commit: `9867cc1b534cf7a4bd6c884056dd582f5dbed821`.
+- Prior checkpoint blob `99280f8eb6db17cb5b78e19f89683f6f96d8952f` remains in Git history.
+- `TASK_RESUME_POINTER.json` exact readback blob: `4ef7a096ff1b81f4bdf0ba06e13c3bd5edeaba79`; it now references the corrected checkpoint commit and preserves the prior checkpoint reference.
+- `OPEN_TASKS_CURRENT.json` exact readback blob: `9790c966e27efc4755b104ccad7475316681f671`; 29 tasks and all statuses are unchanged, 198 provider observations and 229 verified action events.
+- `MODUAL_PARAMETER_CURRENT.json` itself was not modified. No task was closed, no sensor data or credentials were exported, and no source was moved or deleted.
+
+This correction is append-only in the re-entry record; do not treat the initial checkpoint SHA claim as current.
+<!-- END CHECKPOINT_BLOB_REFERENCE_CORRECTION_20261026T1010ICT -->
