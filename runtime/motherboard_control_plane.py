@@ -136,5 +136,3 @@ def route_candidates(sockets: list[CpuSocket], capability: str,
                      prefer_local: bool = True) -> list[CpuSocket]:
     eligible = [s for s in sockets if s.can_run(capability)]
     return sorted(eligible, key=lambda s: (0 if prefer_local and s.name == "LOCAL" else 1, s.socket_id))
-
-[executed on device: DESKTOP-86ITNQ4 (bca58242-9cf0-407e-afb4-fb9ecfcce34b)]
