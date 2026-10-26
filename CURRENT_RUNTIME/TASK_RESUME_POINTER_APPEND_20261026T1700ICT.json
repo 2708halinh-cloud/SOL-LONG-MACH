@@ -1,0 +1,51 @@
+{
+  "schema": "GGDV_TASK_RESUME_APPEND/1.0",
+  "observed_at": "2026-10-26T17:00:25+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "canonical_pointer": {
+    "path": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+    "blob_sha": "4692b4044acdbaa51caf7fa7e06a97b73f3e53b0",
+    "parsed": true,
+    "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_202610261555ICT.json",
+    "updated_at": "2026-10-26T15:57:04.016+07:00",
+    "overwritten": false
+  },
+  "new_checkpoint": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1700ICT.json",
+    "blob_sha": "9d6432fed6b6e9d68415177395246ae0c02cca7b",
+    "commit": "1408ae55bea9afd0bc3dcec5c6e039a0db9c56cb",
+    "exact_target_readback": true
+  },
+  "source_readback": {
+    "tick": "WINDOWS_TICK_20261026T094640135551Z.json",
+    "tick_sha256": "aac3767238fd0cb1218bf387bb8180944c46ca93d3f75ddd837071e9beb0f682",
+    "consumer": "telemetry_buffer_sync_20261026T094636868Z.json",
+    "consumer_sha256": "cc629454182bc904aa5f330fe7342958fedf8ceba3526f56748d991ab26e1c71",
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "n8n_host_evidence_row_id": 489
+  },
+  "rule": "Append-only supplement. Canonical TASK_RESUME_POINTER.json remains unchanged. Do not write or bypass the guarded CLOUD_CONTINUITY_RESUME_POINTER.json.",
+  "next": [
+    "After host-local 16:51:32+07, exact-read the newest Tick/consumer and recompute the pinned source SHA-256.",
+    "Continue read-only sensor subscription diagnostics; do not launch apps or change Android permissions/services.",
+    "Keep 45 cloud recovery rows and all 29 repository tasks nonterminal.",
+    "Continue TESSERACT issuer/runner provenance without rerunning CI #39153474587."
+  ],
+  "ledger_before_update": {
+    "blob_sha": "5185b9e791bc04fcc1e56302b3f77ac401ac1e41",
+    "bytes": 2180175,
+    "parsed": true,
+    "observed_at": "2026-10-26T16:59:01.693+07:00",
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "provider_observations": 221,
+    "verified_action_events": 276,
+    "integrity_corrections": 15
+  }
+}
