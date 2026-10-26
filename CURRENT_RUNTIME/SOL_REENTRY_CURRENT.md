@@ -1024,3 +1024,9 @@ Ledger remains 29 tasks, 164 action events, 164 provider observations, four inte
 - The original compare call actually reported base main `240dfaa1e738855857ce26005dfebbfaf27bf6ee`, with PR #36 14 ahead / 14 behind. A fresh compare after the re-entry append now reports main `962f6993cad3df69e48f50d533a17c100ddd4`? No: the exact returned current main head is `962f6993cad3df69a95923f50d533a17c100ddd4`; current result is 14 ahead / 18 behind, merge base `cbb8e2074695670398d2ee9ca4462bbbd55cee7c`.
 - Created `CURRENT_RUNTIME/ARCHIVE_PR36_COMPARE_READBACK_20261026T0701ICT.json`; exact-target readback matched blob `7e8a2f3166bf6a2e01929b951a10db62e98a6fb4`, commit `340741be13fd580f258d1f91e19e393fd48268ad`.
 - PR #36 remains OPEN/Draft/unmerged. No branch update, merge, or force-push. Reconcile the 18-behind divergence and inspect conflicts before any branch maintenance.
+
+
+## Append-only transcription clarification — Archive PR #36 — 2026-10-26T00:10:04.043Z
+
+- In the preceding comparison-base correction, an invalid SHA string was accidentally included before the authoritative value. Treat only `962f6993cad3df69a95923f50d533a17c100ddd4` as the current main head returned by the compare tool. The authoritative structured readback is `CURRENT_RUNTIME/ARCHIVE_PR36_COMPARE_READBACK_20261026T0701ICT.json` (blob `7e8a2f3166bf6a2e01929b951a10db62e98a6fb4`).
+- Current comparison remains 14 ahead / 18 behind, merge base `cbb8e2074695670398d2ee9ca4462bbbd55cee7c`. No branch update, merge, or force-push.
