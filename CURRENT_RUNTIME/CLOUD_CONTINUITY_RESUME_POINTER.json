@@ -35,7 +35,7 @@
     "wireless_adb_state": "NOT_LISTED",
     "latest_host_evidence_row_updated_by_1106_tick": false,
     "next_scheduled_tick_local_at_last_readback": "2026-10-26T11:21:32+07:00",
-    "post_1111_tick_readback_verified": false,
+    "post_1111_tick_readback_verified": true,
     "usb_sensor_advanced_count": 0,
     "usb_adb_state": "device",
     "wireless_tcp_5556_reachable": false,
@@ -845,6 +845,15 @@
       "tasks_closed": 0,
       "source_hash_matches": true,
       "post_1121_tick_readback_verified": false
+    },
+    {
+      "type": "CORRECT_POST_DUE_FLAG_SCOPED_TO_1121_CYCLE",
+      "last_verified_tick_observed_at_local": "2026-10-26T11:16:40.463993+07:00",
+      "prior_cycle_1111_verified_by_1116_tick": true,
+      "current_due_local": "2026-10-26T11:21:32+07:00",
+      "current_post_due_tick_readback_verified": false,
+      "current_host_status_after_due": "NOT_RECHECKED",
+      "tasks_closed": 0
     }
   ],
   "n8n": {
@@ -891,7 +900,7 @@
     "consumer_sha256": "723ac81e74346fb4b86e3065aebfc212b646986f6dd5b0b84c518fa7b7be9a15",
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
     "scheduler_next_run_local_at_last_sample": "2026-10-26T11:21:32+07:00",
-    "post_due_tick_verified": true,
+    "post_due_tick_verified": false,
     "sensor_stream": "EVENT_TIMESTAMP_STALE",
     "live_sensor_reading_confirmed": false,
     "host_clock_at_readback": "2026-10-26T10:32:44.5864625+07:00",
@@ -939,7 +948,10 @@
     "w32time_clock_changed": false,
     "latest_cloud_scan_row_id": 443,
     "latest_cloud_event_id": "X20261026041905980_CLOUD",
-    "system_clock_changed": false
+    "system_clock_changed": false,
+    "previous_post_due_tick_verified_before_1121_reconciliation": true,
+    "post_1111_tick_readback_verified": true,
+    "post_due_tick_due_local": "2026-10-26T11:21:32+07:00"
   },
   "unresolved": {
     "historical_zip_task": "SV-20261020-02",
@@ -1226,7 +1238,8 @@
       "scheduled_task_last_result": 0,
       "next_scheduled_tick_local": "2026-10-26T11:21:32+07:00",
       "next_tick_readback_after_due_verified": false,
-      "host_evidence_row_appended": false
+      "host_evidence_row_appended": false,
+      "scheduled_next_tick_due_local": "2026-10-26T11:21:32+07:00"
     },
     "latest_archive_pr_compare_readback": {
       "main_head": "baf612d84c6ad47d2875fa195aaa34adfb21b4a5",
@@ -1460,7 +1473,8 @@
       "task_count_current": "NOT_RECOUNTED",
       "tasks_closed": 0
     },
-    "current_post_1121_tick_status": "NOT_RECHECKED"
+    "current_post_1121_tick_status": "NOT_RECHECKED",
+    "post_1111_tick_readback_verified": true
   },
   "previous_checkpoint_before_20261026T1051ICT": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0655ICT.json",
