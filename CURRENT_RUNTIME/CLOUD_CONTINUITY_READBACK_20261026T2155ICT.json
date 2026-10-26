@@ -1,0 +1,165 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/2.4",
+  "checkpoint_id": "CLOUD_CONTINUITY_READBACK_20261026T2155ICT",
+  "state": "OPEN_WORK_REMAINS",
+  "recorded_at_utc": "2026-10-26T15:03:03.248Z",
+  "recorded_at_local_ict": "2026-10-26T22:03:03.248+07:00",
+  "observed_at_local_host": "2026-10-26T21:53:40.4976043+07:00",
+  "repository": {
+    "name": "2708halinh-cloud/SOL-LONG-MACH",
+    "branch": "main",
+    "main_head_before_checkpoint": "8535904739ef6799b423219ed32de5e2f1c1e69d",
+    "previous_host_commit_message": "Append verified host readback and refresh pointer 20261026T2150ICT"
+  },
+  "provenance": {
+    "previous_provider_checkpoint": {
+      "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T2150ICT.json",
+      "blob_sha": "1785805e9bd3f5f96c0c7c143aa963c8499b179f",
+      "commit_sha": "362b9fdfb5018dde9442fdc2c7f42a1ef3ce38f3",
+      "observed_at_local": "2026-10-26T21:50:06+07:00"
+    },
+    "prior_cloud_receipt": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "215",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 518,
+      "event_id": "X20261026143317733_CLOUD",
+      "row_created_at_utc": "2026-10-26T14:33:17.809Z",
+      "state": "OPEN_WORK_REMAINS",
+      "host_heartbeat_probed_by_cloud_workflow": false
+    }
+  },
+  "n8n": {
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "active": true,
+    "active_version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
+    "schedule": "hourly at minute 0",
+    "latest_scheduled_execution": {
+      "id": "214",
+      "status": "success",
+      "started_at_utc": "2026-10-26T14:00:22.081Z",
+      "stopped_at_utc": "2026-10-26T14:00:24.204Z"
+    },
+    "latest_manual_execution": {
+      "id": "215",
+      "status": "success",
+      "started_at_utc": "2026-10-26T14:33:15.829Z",
+      "stopped_at_utc": "2026-10-26T14:33:17.866Z"
+    },
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "latest_verified_scan_row_id": 518,
+    "latest_verified_scan_event_id": "X20261026143317733_CLOUD",
+    "evidence_table_row_count_before_host_append": 518,
+    "recovery_rows_pending": 45,
+    "recovery_rows_terminal": 0,
+    "user_20261023_27_open_inbox_rows": 27,
+    "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "host": {
+    "direct_host_readback_this_run": true,
+    "host_name": "DESKTOP-86ITNQ4",
+    "remote_route": {
+      "account_link_name": "new",
+      "device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
+      "status_at_probe": "Online"
+    },
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T21:51:33+07:00",
+      "last_task_result": 0,
+      "next_run_local": "2026-10-26T21:56:32+07:00",
+      "missed_runs": 0
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T145139951838Z.json",
+      "observed_at_utc": "2026-10-26T14:51:39.951838Z",
+      "mtime_local": "2026-10-26T21:51:39.9526620+07:00",
+      "sha256": "cfc752874ecf1fe0eaba6e476a6e70eddede258ac5518fac1163bba2c89b7820",
+      "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches_tick": true,
+      "live_sensor_reading_confirmed": false,
+      "mode": "once"
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T145136659Z.json",
+      "observed_at_utc": "2026-10-26T14:51:40.1570558Z",
+      "mtime_local": "2026-10-26T21:51:40.2302054+07:00",
+      "sha256": "b0d8bd4a459ef560678f6d3553c52db9eb107e24f79f3c4a40fa9910f0e13cd8",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "verifier_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "consumer_hash_matches_verifier": true,
+      "source_content_hash_verified": true,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "raw_rows_emitted": false,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "matches_tick": true,
+      "matches_consumer": true
+    },
+    "android_probe": {
+      "adb_binary_present": true,
+      "adb_devices_command_succeeded": true,
+      "device_probe_status": "ADB_TRANSPORT_RESPONDED",
+      "target_records_seen": 2,
+      "target_state_values_in_safe_projection": "EMPTY_OR_UNMAPPED",
+      "android_online_claim": false,
+      "live_sensor_reading_confirmed": false
+    },
+    "safety": {
+      "host_source_written": false,
+      "synthetic_rows_added": 0,
+      "raw_sensor_values_exported": false,
+      "task_definition_changed": false,
+      "process_killed": false,
+      "cache_or_Meta_db_deleted": false,
+      "google_drive_written": false,
+      "credentials_or_cookies_exposed": false
+    }
+  },
+  "task_ledgers": {
+    "recovery_rows_pending": 45,
+    "recovery_rows_terminal": 0,
+    "task_statuses_changed": false,
+    "current_open_task_ledger_blob_sha_from_github_metadata": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
+    "current_task_resume_pointer_blob_sha_from_github_metadata": "07cc60d91ea6a9ea3ad29080bc398c8153a2ffac",
+    "current_ledger_and_task_pointer_content_readback_verified": false,
+    "readback_note": "GitHub fetch_file returned blob SHA metadata but empty content for OPEN_TASKS_CURRENT.json and TASK_RESUME_POINTER.json in this turn; do not infer current contents from SHA alone.",
+    "last_verified_repository_task_count_at_2026_10_26_21_50_ict": 29,
+    "last_verified_repository_task_statuses": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "tasks_closed": 0
+  },
+  "next_edges": [
+    "After the scheduled host boundary 2026-10-26T21:56:32+07:00, read the newest Tick and consumer again from the exact source paths; verify SHA-256 and read back the receipt.",
+    "Keep live sensor and Android online status unverified: the latest tick says live_sensor_reading_confirmed=false; ADB returned two target records but the safe projection did not resolve their state fields.",
+    "Keep all 45 n8n recovery rows nonterminal. Do not infer the current GitHub task ledger content from its SHA metadata; restore content readback through an authorized provider route before changing ledger state.",
+    "Continue cloud-only continuity independently; do not write to the full Google Drive account, expose credentials/cookies, or delete processes, caches, or Meta.db."
+  ],
+  "mutations": {
+    "github_checkpoint_created": true,
+    "n8n_host_readback_row_appended": false,
+    "cloud_continuity_pointer_synced": false,
+    "task_statuses_changed": false
+  }
+}
