@@ -1,0 +1,75 @@
+{
+  "schema": "TESSERACT_MOTHERBOARD_RUNTIME_READBACK/1.0",
+  "observed_at": "2026-10-26T11:30:52+07:00",
+  "host": "DESKTOP-86ITNQ4",
+  "evidence_scope": "LOCAL_WINDOWS_RUNTIME_PROBES_AND_TESTS",
+  "results": {
+    "local_tesseract_os": {
+      "root": "G:\\OS_Workspace\\TESSERACT_OS",
+      "files": [
+        "config/MOTHERBOARD_ARCHITECTURE.md",
+        "config/MOTHERBOARD_SPEC.json",
+        "runtime/motherboard_control_plane.py",
+        "runtime/tesseract_transducer.py",
+        "tests/test_motherboard_control_plane.py"
+      ],
+      "motherboard_tests": "PASS 20/20",
+      "transducer_tests": "PASS 8/8",
+      "py_compile": "PASS"
+    },
+    "disk_c": {
+      "observed_at": "2026-10-26T11:28:14+07:00",
+      "total_gib": 474.36,
+      "free_gib": 32.86,
+      "used_percent": 93.07,
+      "state": "SURVIVAL"
+    },
+    "ollama": {
+      "observed_at": "2026-10-26T11:30:52+07:00",
+      "http_reachable": true,
+      "model_count": 11,
+      "server_port": 11434
+    },
+    "google_drive": {
+      "mount_folder_exists": true,
+      "google_drive_fs_process_running": false,
+      "provider_sync": "NOT_VERIFIED"
+    },
+    "nextdns": {
+      "process_present": true,
+      "service": "NextDNSService",
+      "service_state": "Running"
+    },
+    "wsl": {
+      "command_present": true,
+      "distributions": [
+        "Ubuntu",
+        "docker-desktop"
+      ]
+    },
+    "gcloud": {
+      "command_present": true
+    },
+    "adb": {
+      "command_in_path": false,
+      "known_candidate_paths_found": []
+    },
+    "qemu": {
+      "qemu_system_x86_64_command_present": false
+    },
+    "hyperv": {
+      "status": "UNKNOWN",
+      "reason": "readback requires elevation"
+    },
+    "github": {
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "branch": "main",
+      "source_readback_exact": true
+    }
+  },
+  "caveats": [
+    "This receipt records observed status only; it does not assert that unavailable carriers are connected.",
+    "The increase in C: free space versus earlier observations is not attributed to these TESSERACT changes.",
+    "Google Drive provider synchronization, ADB device presence, QEMU, and Hyper-V state remain open until direct provider/device readback."
+  ]
+}
