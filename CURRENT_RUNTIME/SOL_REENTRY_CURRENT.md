@@ -2147,3 +2147,24 @@ All 29 repository tasks remain nonterminal; all 45 cloud recovery rows remain pe
 4. Continue TESSERACT issuer-variable/runner-assignment provenance without rerunning CI `39153474587` absent a verified runner/workflow change.
 5. Refresh PR comparisons before branch actions; no merge/force-push. Keep MODUAL current and append delta unchanged unless a permitted write path passes safety checks.
 <!-- END VERIFIED_AUTOMATION_CONTINUATION_20261026T2146ICT -->
+
+
+<!-- BEGIN VERIFIED_AUTOMATION_CONTINUATION_20261026T2150ICT -->
+## VERIFIED AUTOMATION CONTINUATION — 2026-10-26T21:50:06+07:00
+
+- Fresh-read before this checkpoint: `AGENTS.md` blob `f18f9743de1e21d13bad47770f928ec85e79bd95`; `SOL_REENTRY_CURRENT.md` blob `8770b764f3aad2ad568e43e1b86f62dd65f0b569`; `TASK_RESUME_POINTER.json` blob `c58ee04168798d0fb8f1b16376e1690a96314870`; `OPEN_TASKS_CURRENT.json` blob `a6089914a0d275050f33dd828b0e525a6317af23`. Previous checkpoint `PROVIDER_READBACK_20261026T2146ICT.json` remains preserved.
+- Direct host readback at host-local 21:43:54: Tick `D:\SENSOR_LOGS\state\WINDOWS_TICK_20261026T144139183292Z.json`, SHA-256 `53c8a28f7d6f381316e7adba28572ce7c0b98fa141425c09502a9e7de9277475`; consumer `D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261026T144136310Z.json`, SHA-256 `971c2c5f851ddaff7ed3249b118cd112eedfa36a2b00c083480987e527dccfc3`. Recomputed source SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87` and size 35,389,440 bytes match both receipts. Consumer `SOURCE_OBSERVED_READONLY`, exit 0; no source write, synthetic/raw rows, cloud export, or GitHub push.
+- Scheduled task was enabled/Ready, last result 0, missed runs 0; next run was reported at host-local 21:46:32. At this read, four timestamp histories remained `EVENT_TIMESTAMP_STALE`, zero advanced; wireless ADB `NOT_LISTED`; live sensor reading unconfirmed. `W32Time` last read Stopped/Manual at host-local 21:31:33; no change made.
+- Dropbox metadata freshly confirms revision `0165dc1e4794ab00000000395cdfd73`, size 35,389,440 bytes, server modified `2026-10-14T00:20:03Z`; raw CSV bytes not downloaded.
+- Fresh comparisons against main `273055d545f53c801b0966cb50e3ce9f5f9565fc`: PR #35 9 ahead/723 behind; PR #36 14 ahead/354 behind; PR #43 5 ahead/12 behind. All remain OPEN/Draft. PR #6 remains OPEN/Draft with issuer public-key value and runner assignment unverified; no CI rerun.
+- Latest independent cloud receipt remains execution 215 / event `X20261026143317733_CLOUD` / exact row 518; 45 recovery rows pending, zero terminal, host heartbeat not probed. Latest verified braid receipts remain SIX (9 actions) and PLURAL (5 actions), source unchanged, mutation false, cloud-host wiring `NOT_VERIFIED`.
+- Ledger append-only sync preserves 29 task statuses: 10 OPEN, 2 OPEN_CARRIED, 13 OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK, 1 controlled-sensor-test/production-unverified, 3 IN_PROGRESS. Provider observations/history becomes 238; verified action events 305; integrity corrections 21; task closures 0.
+- Checkpoint `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T2150ICT.json` was created and exact-target read back as valid JSON (blob `1785805e9bd3f5f96c0c7c143aa963c8499b179f`, commit `362b9fdfb5018dde9442fdc2c7f42a1ef3ce38f3`). The following pointer/ledger/reentry synchronization is fast-forward-only; prior blobs remain in history. MODUAL current and append delta remain unchanged.
+
+### Next edges
+1. Read the next exact Tick/consumer after the next scheduled host boundary; recompute source hash and inspect timestamp advancement.
+2. Continue read-only sensor-client diagnosis; do not launch apps, change Android permissions, or alter W32Time.
+3. Keep all 45 cloud recovery rows and all 29 repository tasks nonterminal until task-specific evidence exists.
+4. Continue TESSERACT issuer-variable/runner-assignment provenance without rerunning CI `39153474587` absent a verified runner/workflow change.
+5. Refresh PR comparisons before branch actions; no merge/force-push. Keep MODUAL current and append delta unchanged unless a permitted write path passes safety checks.
+<!-- END VERIFIED_AUTOMATION_CONTINUATION_20261026T2150ICT -->
