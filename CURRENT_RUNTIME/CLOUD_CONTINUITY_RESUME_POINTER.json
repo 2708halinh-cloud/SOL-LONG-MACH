@@ -1,8 +1,8 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-26T08:27:41.3885973Z",
-  "updated_at_local": "2026-10-26T15:27:41.3885973+07:00",
+  "updated_at_utc": "2026-10-26T09:00:24.145Z",
+  "updated_at_local": "2026-10-26T16:00:24.145+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended evidence row, not host event time. Host clock and cloud/provider clock remain separate.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1527ICT.json",
@@ -16,8 +16,8 @@
     "latest_direct_route_readback_row_id": 474,
     "latest_host_observation_row_id": 474,
     "latest_host_observation_event_id": "X20261026082737526_HOST_TICK_CONSUMER_READBACK",
-    "latest_cloud_scan_row_id": 472,
-    "latest_cloud_scan_event_id": "X20261026081442294_CLOUD",
+    "latest_cloud_scan_row_id": 478,
+    "latest_cloud_scan_event_id": "X20261026090024058_CLOUD",
     "latest_direct_host_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T082737526232Z.json",
     "latest_direct_host_tick_sha256": "759f3184766c97a7746e0fe04816f8c857c67593ed8cffcb60e5352af7ab554b",
     "latest_direct_host_tick_observed_at_utc": "2026-10-26T08:27:37.526232Z",
@@ -38,10 +38,12 @@
     "current_modual_state_blob_sha": "01c1dfe8682e25c7e2f5210bbae87a30231b1f58",
     "current_task_pointer_blob_sha": "2a1b9466f4d048752e4c079a3b425076ffd5db63",
     "current_task_ledger_blob_sha": "0aed16b5f92c7b168e81be77567b85403f8dce50",
-    "current_main_head_before_pointer_sync": "9f3e8d92c47a0bd5f53993e95acbebf939650746",
+    "current_main_head_before_pointer_sync": "62dd3f985bba77883c4679f69ab4d42e6223d924",
     "recovery_rows_pending": 45,
     "tasks_closed": 0,
-    "host_heartbeat_probed_by_cloud_workflow": false
+    "host_heartbeat_probed_by_cloud_workflow": false,
+    "latest_cloud_scan_execution_id": "200",
+    "latest_cloud_scan_provider_created_at_utc": "2026-10-26T09:00:24.145Z"
   },
   "post_checkpoint_updates": [
     {
@@ -1335,18 +1337,33 @@
       },
       "branch_mutation_performed": false,
       "tasks_closed": 0
+    },
+    {
+      "type": "CLOUD_SCAN_ROW_478_READBACK",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 478,
+      "event_id": "X20261026090024058_CLOUD",
+      "provider_created_at_utc": "2026-10-26T09:00:24.145Z",
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "200",
+      "state": "OPEN_WORK_REMAINS",
+      "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+      "recovery_rows_pending": 45,
+      "tasks_closed": 0,
+      "host_heartbeat_probed_by_cloud_workflow": false,
+      "readback_verified": true
     }
   ],
   "n8n": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "active": true,
-    "latest_execution_id": "198",
+    "latest_execution_id": "200",
     "latest_execution_status": "success",
-    "latest_cloud_evidence_row_id": 472,
+    "latest_cloud_evidence_row_id": 478,
     "latest_host_evidence_row_id": 474,
     "latest_route_inventory_evidence_row_id": 459,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 474,
+    "evidence_table_rows": 478,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
     "recovery_rows": 45,
@@ -1356,13 +1373,13 @@
     "host_heartbeat_probed_by_workflow": false,
     "host_operations": 0,
     "latest_host_event_id": "X20261026082737526_HOST_TICK_CONSUMER_READBACK",
-    "latest_cloud_event_id": "X20261026081442294_CLOUD",
-    "latest_cloud_created_at_utc": "2026-10-26T08:14:42.294Z",
+    "latest_cloud_event_id": "X20261026090024058_CLOUD",
+    "latest_cloud_created_at_utc": "2026-10-26T09:00:24.145Z",
     "latest_direct_route_readback_evidence_row_id": 474,
     "latest_host_observation_row_id": 474,
     "external_host_readback_probed_separately": true,
     "can_execute": true,
-    "current_route_status": "Host responsive at 15:27:41+07; Tick at 15:27:37 verified; next host-local run 15:31:32; sensor stream remains stale."
+    "current_route_status": "Latest cloud execution #200 succeeded at 16:00:24 ICT; host heartbeat was not probed by cloud workflow. Latest direct host readback remains 15:27:41 ICT; post-15:31 tick remains unverified."
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
@@ -1572,12 +1589,12 @@
     "latest_provider_readback_blob_sha": "46faa84e5d52d24193ac9a4e59b7963ce4d05c84",
     "latest_provider_readback_commit_sha": "634c5dfad8aaed0233b5db130125158f83950881",
     "latest_host_evidence_row_id": 474,
-    "latest_cloud_evidence_row_id": 472,
+    "latest_cloud_evidence_row_id": 478,
     "latest_cloud_execution": {
       "workflow_id": "BogzhFUDbRp7kuwh",
-      "execution_id": "198",
+      "execution_id": "200",
       "status": "success",
-      "scope": "CLOUD_SCAN_ONLY;HOST_HEARTBEAT_NOT_PROBED"
+      "scope": "scheduled cloud-only scan; host heartbeat not probed"
     },
     "recovery_rows": 45,
     "unfinished_rows": 45,
@@ -7034,5 +7051,25 @@
     "pr39_ahead_by": 6,
     "pr39_behind_by": 61,
     "merge_or_force_push": false
+  },
+  "latest_cloud_scan_readback_20261026T1600ICT": {
+    "scheduled_execution": {
+      "id": "200",
+      "status": "success",
+      "mode": "trigger",
+      "started_at_utc": "2026-10-26T09:00:22.079Z",
+      "stopped_at_utc": "2026-10-26T09:00:24.245Z",
+      "event_id": "X20261026090024058_CLOUD",
+      "evidence_row_id": 478,
+      "exact_row_readback": true
+    },
+    "evidence_table_rows": 478,
+    "latest_host_evidence_row_id": 474,
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "tasks_closed": 0,
+    "host_heartbeat_probed": false,
+    "scope": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED"
   }
 }
