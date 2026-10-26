@@ -9,7 +9,8 @@ It does **not** reproduce Intel silicon, microcode, instruction-set behavior, ph
 - `cores`: source-reported core count; used as a scheduler slot ceiling only.
 - `reported_max_turbo_ghz`: catalog metadata, not a clock control.
 - `smart_cache_mb`: metadata plus software budget calculation; not actual cache.
-- `integrated_gpu`: exact label from supplied catalog; null means the source row lists no integrated GPU.
+- `integrated_gpu`: exact label from supplied catalog; null means no GPU label was provided, not that the CPU lacks an integrated GPU.
+- `gpu_status`: distinguishes a listed GPU from a GPU field omitted in the supplied catalog.
 - `source_verified`: false until independently checked against Intel's official product documentation.
 
 ## Runtime integration
@@ -17,9 +18,8 @@ It does **not** reproduce Intel silicon, microcode, instruction-set behavior, ph
 - RAM_L1 stores only the active plan, version, source identity, and receipt—not credentials.
 - VRM/PMIC still governs real RAM/disk/quota limits. A virtual cache budget cannot allocate physical memory by itself.
 - GPU execution remains disabled until a real driver/backend probe confirms availability.
+- Missing GPU data stays unknown; the runtime does not infer hardware presence or absence.
 - Gate 1 validates model name and input bounds; Gate 2 reads back the plan and checks expected task counts.
 
 ## Source provenance
 All rows in `config/INTEL_CORE_ULTRA_PROFILES.json` were transcribed from the user-provided catalog on 2026-10-26. They are marked `source_verified=false`; validate product names and specifications against Intel ARK before treating them as official specifications.
-
-[executed on device: DESKTOP-86ITNQ4 (59f03001-c732-403e-b80c-b4191266809c)]
