@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-26T11:26:19.060+07:00",
+  "observed_at": "2026-10-26T11:33:06.598+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -13388,6 +13388,33 @@
       "source_moved_or_deleted": false,
       "raw_sensor_values_exported": false,
       "secrets_written": false
+    },
+    {
+      "id": "SESSION_OBSERVATION_20261026T1132ICT",
+      "observed_at": "2026-10-26T11:33:06.598+07:00",
+      "source": "Direct host Tick/consumer readback after 11:26 scheduled cycle; Dropbox metadata; n8n row 443; Archive PR comparison",
+      "action": "APPEND_LATEST_TICK_CONSUMER_PROVIDER_AND_PR_COMPARE",
+      "tick_sha256": "de1d4aa691f36a2d6b9c9191c187a8a4b2389ddebca2c69169cac63965d26942",
+      "consumer_sha256": "9d18f13b9a4bd093ae874c77decc81c54d28119cf522e011c2fbed508015b3a9",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_matches_tick": true,
+      "source_matches_consumer": true,
+      "consumer_status": "SOURCE_OBSERVED_READONLY",
+      "consumer_exit_code": 0,
+      "live_sensor_reading_confirmed": false,
+      "usb_timestamp_advanced_count": 0,
+      "wireless_adb_state": "NOT_LISTED",
+      "cloud_execution_id": "188",
+      "cloud_row_id": 443,
+      "pr36_ahead_by": 14,
+      "pr36_behind_by": 133,
+      "pr37_ahead_by": 3,
+      "pr37_behind_by": 89,
+      "task_closures": 0,
+      "source_mutated": false,
+      "source_moved_or_deleted": false,
+      "raw_sensor_values_exported": false,
+      "secrets_written": false
     }
   ],
   "privacy_policy": {
@@ -24235,5 +24262,133 @@
     "source_sha_matches_consumer": true,
     "modual_current_prior_blob_sha": "5376961930b0aa2eb9a2359e2f8aafedeed84af4",
     "task_closure": false
+  },
+  "latest_runtime_probe_20261026T1126ICT": {
+    "observed_at": "2026-10-26T11:26:53.6741361+07:00",
+    "device": "DESKTOP-86ITNQ4",
+    "route": "Remote Desktop Commander",
+    "route_online": true,
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "last_run_local": "2026-10-26T11:26:33+07:00",
+      "last_result": 0,
+      "next_run_local": "2026-10-26T11:31:32+07:00",
+      "missed_runs": 0
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T042638558197Z.json",
+      "sha256": "de1d4aa691f36a2d6b9c9191c187a8a4b2389ddebca2c69169cac63965d26942",
+      "observed_at_utc": "2026-10-26T04:26:38.558197Z",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "live_sensor_reading_confirmed": false,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "usb_timestamp_sensor_count": 4,
+      "usb_advanced_sensor_count": 0,
+      "wireless_adb_state": "NOT_LISTED"
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T042635788Z.json",
+      "sha256": "9d18f13b9a4bd093ae874c77decc81c54d28119cf522e011c2fbed508015b3a9",
+      "observed_at_utc": "2026-10-26T04:26:38.6533661Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "source_content_hash_verified": true,
+      "consumer_hash_matches_verifier": true,
+      "live_sensor_reading_confirmed": false,
+      "raw_rows_emitted": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "source_hash_matches_tick": true,
+    "source_hash_matches_consumer": true,
+    "source_file_written": false,
+    "source_moved_or_deleted": false,
+    "task_closed": false
+  },
+  "latest_sensor_stream_probe_20261026T1126ICT": {
+    "observed_at": "2026-10-26T11:26:53.6741361+07:00",
+    "usb": {
+      "serial": "1056285",
+      "adb_state": "device",
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "sensor_event_timestamp_sensor_count": 4,
+      "advanced_sensor_count": 0
+    },
+    "wireless": {
+      "target": "192.168.1.14:5556",
+      "adb_state": "NOT_LISTED",
+      "tcp_5556_reachable": false
+    },
+    "live_sensor_reading_confirmed": false,
+    "device_probe_only": true,
+    "no_sensor_payload_persisted": true,
+    "app_launched": false,
+    "permissions_changed": false
+  },
+  "latest_provider_readback_20261026T1132ICT": {
+    "observed_at": "2026-10-26T11:33:06.598+07:00",
+    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1132ICT.json",
+    "checkpoint_commit": "60b58ea2bff639a2436d1b1ef5febde68b8423f5",
+    "checkpoint_blob_sha": "66dfa9ad8e96ab6bbbc45f8e8b7ca6e0b7b978f5",
+    "dropbox": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z"
+    },
+    "source_local_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_sha_matches_tick": true,
+    "source_sha_matches_consumer": true,
+    "modual_current_prior_blob_sha": "d13743e805f8e4d02b648f857f3cf1beedeefcca",
+    "task_closure": false
+  },
+  "latest_archive_pr_compare_readback_20261026T1133ICT": {
+    "observed_at": "2026-10-26T11:34:00.169+07:00",
+    "path": "CURRENT_RUNTIME/ARCHIVE_PR36_PR37_COMPARE_READBACK_20261026T1133ICT.json",
+    "blob_sha": "ab469233d4be0b582d94393a70b7640445826bd0",
+    "commit": "3d102477171cce5844f8c6c7a0894913dbd1f33a",
+    "main_head": "60b58ea2bff639a2436d1b1ef5febde68b8423f5",
+    "pr36": {
+      "state": "OPEN",
+      "draft": true,
+      "merged": false,
+      "status": "diverged",
+      "ahead_by": 14,
+      "behind_by": 133,
+      "head": "00400b4f81a31293b1960ed1709280130cc25db3"
+    },
+    "pr37": {
+      "state": "OPEN",
+      "draft": true,
+      "merged": false,
+      "status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 89,
+      "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040"
+    },
+    "branch_mutations": false
+  },
+  "latest_archive_pr36_readback_20261026T1133ICT": {
+    "state": "OPEN",
+    "draft": true,
+    "merged": false,
+    "status": "diverged",
+    "ahead_by": 14,
+    "behind_by": 133,
+    "head": "00400b4f81a31293b1960ed1709280130cc25db3"
+  },
+  "latest_archive_pr37_readback_20261026T1133ICT": {
+    "state": "OPEN",
+    "draft": true,
+    "merged": false,
+    "status": "diverged",
+    "ahead_by": 3,
+    "behind_by": 89,
+    "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040"
   }
 }
