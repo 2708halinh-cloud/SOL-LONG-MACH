@@ -199,12 +199,15 @@ def _activate_authorized(
     consistent = independent is not None and tuple(independent) == (row_hash, 1, 1)
     gate2 = gate2_readback(
         action_receipt=reread is not None,
-        consequence_observed=True,
+        consequence_observed=consistent,
         independent_readback=independent is not None,
         state_consistent=consistent,
     )
     if not gate2.allowed:
-        raise GateRejected("GATE2: " + ",".join(gate2.reasons))
+        raise GateRejected(
+            "GATE2: post-commit readback failed; mutation may already be committed; "
+            "reconcile exact target before retry: " + ",".join(gate2.reasons)
+        )
     return "ACTIVATED"
 
 
