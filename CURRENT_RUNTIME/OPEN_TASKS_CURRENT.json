@@ -3054,9 +3054,9 @@
       "goal": "Verify read-only 7Z/RAR/LR archive adapter behavior on real non-sensitive fixtures while preserving source archives; reconcile the stale PR path without treating CI as task completion.",
       "observed": "Source reconciliation found this task in CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json and CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2106ICT.json with source status OPEN_7Z_RAR_LR, but its ID was absent from the 28-item CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json ledger.,PR #28 head bf553018dd59affb1d4ea2b120cad3ea7a0565ff passed run 40118137014 on an ephemeral GitHub-hosted Ubuntu 24.04 runner. The 7Z, RAR and LR fixtures passed read-only tests; artifact 12570136939 ZIP SHA-256 7352960c029de2aba652d881c86e805b5280af9f7f34c9f1aadc6479910089e0; receipt JSON SHA-256 f9004cb4cf68cd0935b342857c32bf12089f2db025bfe44a6dccea409f2bcc9d.,PR #29 topology regression fix passed run 40118465586, but remains Draft and unmerged; it does not alter main.,Latest GitHub compare showed PR #28 diverged from main (7 ahead, 10 behind) and GitHub reported mergeable=false. No force-push or merge was performed.,The current tool set does not expose the authoritative n8n task-table, Windows host, Google Drive, Dropbox or Takeout operations needed to prove target-host validation or provider-side source recovery. | 2026-10-25 05:18 ICT: run 40118137001 failed only the topology assertion because BRAIN_WAVE_LOGS was omitted from allowed sibling set; test-only fix committed as 945eeca3419be2b7151d5761eb5aadfa65c31434 and read back. | Post-fix head 945eeca3419be2b7151d5761eb5aadfa65c31434 passed topology run 40138464127, archive-adapter run 40138464130 and secret-guard run 40138464176; PR still diverged 8 ahead/65 behind. | 2026-10-25T02:26Z: Retrieved the original Dropbox ZIP carrier by exact provider file ID id:gvG29tEleJwAAAAAAAACLA, revision 0165daa5e44669e0000000395cdfd73, 20,882 bytes; raw SHA-256 da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106 matches the expected manifest. Read-only ZIP inspection found 16 entries; all 15 payload entries matched CHECKSUMS_SHA256.txt, with no mismatches or missing entries. No extraction and no source move/write. PR #34 remains OPEN/Draft; head a90f85ae1e0d5a5129caa1b472acac4f4697a71c, checks successful, compare against main b6e81ce174a6e327786735f31b9f497221cfd9ac is diverged 1 ahead/38 behind. Original JINEY/FUNIX/DAT NGUYEN export bytes and the two MAP_NGUON IDs remain unresolved. | 2026-10-25T02:26Z: Retrieved the original Dropbox ZIP carrier by exact provider file ID id:gvG29tEleJwAAAAAAAACLA, revision 0165daa5e44669e0000000395cdfd73, 20,882 bytes; raw SHA-256 da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106 matches the expected manifest. Read-only ZIP inspection found 16 entries; all 15 payload entries matched CHECKSUMS_SHA256.txt, with no mismatches or missing entries. No extraction and no source move/write. PR #34 remains OPEN/Draft; head a90f85ae1e0d5a5129caa1b472acac4f4697a71c, checks successful, compare against main b6e81ce174a6e327786735f31b9f497221cfd9ac is diverged 1 ahead/38 behind. Original JINEY/FUNIX/DAT NGUYEN export bytes and the two MAP_NGUON IDs remain unresolved. | 2026-10-25T02:37:51.696Z: Fresh GitHub compare readback for PR #34 against main head d6a6b88d66c452259b6b40e84ec89bbf55082170 returned diverged, 1 ahead/44 behind; PR remains OPEN/Draft and checks are successful. This measurement is tied to that main head; remeasure before any sync. No merge or force-push.\n2026-10-25T14:58:19.946+07:00: fresh PR #34 compare against main 5ef88853157ea2329d065936ebd522998c9d30a2: diverged 1 ahead/153 behind; checks/artifact retained; PR open draft, no merge or force-push.\n2026-10-25T15:05:23.527+07:00: PR #34 compare against 24e9cc3855e7d36e69972bbf8094c870dd8dd6f4: diverged 1 ahead/156 behind; all three recorded jobs succeeded; artifact 12580351639 exists on run 40145523727 and expires 2026-11-08; PR remains OPEN/Draft and mergeable=false. | 2026-10-25T23:02:39.688+07:00: PR #36 input-safety hardening and artifact were read back; Library SOL_CURRENT_RAW_CHAT_VI_EV_20261010.zip hash matched its manifest but was classified as a derived code bundle, not an OpenAI account export.",
       "next": [
-        "Continue original OpenAI account-export recovery through an authorized provider or verified raw carrier; keep JINEY, FUNiX and DATNGUYEN/MINH separate and resolve the two MAP_NGUON Drive IDs by direct provider readback.",
+        "PR #37 remains OPEN/Draft/unmerged at head b12541a85a817041335fbd5c5ac858f631df0318; at creation, compare was 2 ahead/0 behind main b0ba78c74127b784a1aaada47460baec73f3bcee with exactly the five reviewed archive-adapter paths. Re-read against current main after subsequent commits; do not merge or force-push.",
         "Obtain authorized target-host validation of the read-only archive adapter; hosted fixture CI is not target-host validation.",
-        "PR #36 remains OPEN/Draft/unmerged at head cd3267f9ea125740328ee2ff14583c7721498a88; at main ef64b226da72145925908daba2531400a50e1fc8 it was 11 ahead/9 behind with three checks SUCCESS. Re-read compare after current checkpoint commits; do not merge or force-push."
+        "Continue original OpenAI account-export recovery through an authorized provider or verified raw carrier; keep JINEY, FUNiX and DATNGUYEN/MINH separate and resolve the two MAP_NGUON Drive IDs by direct provider readback."
       ],
       "guard": "NO_EXTRACTION; NO_SOURCE_ARCHIVE_MODIFICATION; NO_FORCE_PUSH; NO_TASK_CLOSURE_FROM_CI_OR_REPORT; TARGET_HOST_VALIDATION_REQUIRED",
       "assigned_subagent": "SubAisstangtManage-INTEGRITY",
@@ -3199,6 +3199,20 @@
           "result": "CURRENT_MAIN_SYNCED_TO_ARCHIVE_PR_WITHOUT_FORCE_PUSH; CURRENT_HEAD_FIXTURE_CI_AND_ARTIFACT_VERIFIED; SOURCE_RECOVERY_AND_TARGET_HOST_VALIDATION_STILL_OPEN",
           "next_callable_edge": "Continue exact original-export retrieval only through an authorized Drive/Dropbox/Takeout route or a verified raw carrier; separately obtain authorized target-host validation. Do not treat CI as task completion.",
           "status_effect": "Keep OPEN and OPEN_NOT_PROVEN_COMPLETED; CI and artifact are substep evidence only."
+        },
+        {
+          "observed_at": "2026-10-26T08:52:51+07:00",
+          "source": "Authenticated GitHub connector: exact PR #36 file blob readback, safe three-way comparison, non-force branch synchronization, PR #37 creation and fresh PR metadata readback.",
+          "actions_and_receipts": [
+            "Read main at b0ba78c74127b784a1aaada47460baec73f3bcee and compared it against merge base cbb8e2074695670398d2ee9ca4462bbbd55cee7c. Main-side changes did not overlap the five archive-adapter paths.",
+            "Read all five source files from PR #36 and verified the new branch's blob SHAs matched exactly: workflow cd1e1bcbfed93ce90bb0efe67c6d1a0b9a70b616; adapter f3a8a6e16d740a797ecb1a2a0398c8c7e8620b81; archive tests 9bcd4f77183d3a91714dbd89be88ab3481a5d410; topology tests a3b9fd7409aeb92cf561eabffe3c4198a7e782b3; fixture verifier 225b2bcb40e2c04cad9aaab100c7b6349a12874e.",
+            "Created clean branch fix/archive-adapters-main-recut-20261026T0851ICT and a non-force merge commit b12541a85a817041335fbd5c5ac858f631df0318 with current main as the second parent. Fresh compare showed 2 ahead / 0 behind and exactly five reviewed paths.",
+            "Created PR #37 https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37. Fresh metadata readback: OPEN/Draft/unmerged, head b12541a85a817041335fbd5c5ac858f631df0318, 5 changed files. At readback, topology and secret-guard checks succeeded; archive adapter workflow remained in progress.",
+            "PR #36 remains OPEN/Draft/unmerged and diverged 14 ahead / 41 behind at the later compare. No PR was merged and no force-push was used."
+          ],
+          "result": "ARCHIVE_PATCH_CLEAN_RECUT_AND_PR37_READBACK_VERIFIED; ORIGINAL_EXPORT_RECOVERY_AND_TARGET_HOST_VALIDATION_REMAIN_OPEN",
+          "next_callable_edge": "Continue provider-backed original account-export recovery and authorized target-host validation. Recompare PR #37 against current main after new checkpoint commits; keep both PRs open and do not treat CI as task completion.",
+          "status_effect": "Keep status OPEN and real_execution_status OPEN_NOT_PROVEN_COMPLETED. No task closure."
         }
       ],
       "next_history": [
@@ -3215,6 +3229,15 @@
             "STAMP_LIVE 2026-10-26T03:45+07:00: artifact 12606500925 independently read back: 7Z/RAR/LR fixtures PASS with unchanged source hashes and no extraction; Library OPENAI_GGDV_MATERIALIZED_20261005.zip is a verified derived tooling bundle, not a raw account export. Keep this task OPEN; original exports and target-host validation remain unverified."
           ],
           "reason": "Superseded the 03:45 PR #36 snapshot after a non-force merge of current main into the PR branch and fresh current-head artifact readback; original export and target-host validation remain open."
+        },
+        {
+          "recorded_at": "2026-10-26T08:52:51+07:00",
+          "previous_next": [
+            "Continue original OpenAI account-export recovery through an authorized provider or verified raw carrier; keep JINEY, FUNiX and DATNGUYEN/MINH separate and resolve the two MAP_NGUON Drive IDs by direct provider readback.",
+            "Obtain authorized target-host validation of the read-only archive adapter; hosted fixture CI is not target-host validation.",
+            "PR #36 remains OPEN/Draft/unmerged at head cd3267f9ea125740328ee2ff14583c7721498a88; at main ef64b226da72145925908daba2531400a50e1fc8 it was 11 ahead/9 behind with three checks SUCCESS. Re-read compare after current checkpoint commits; do not merge or force-push."
+          ],
+          "reason": "Clean re-cut of the five reviewed paths onto current main, exact blob readback and Draft PR #37 created; source recovery and target-host validation remain open."
         }
       ],
       "previous_next_20261026T0515ICT": [
@@ -32343,22 +32366,42 @@
     "ci_rerun_performed": false
   },
   "latest_action_event": {
-    "id": "PROVIDER_CHECKPOINT_WRITE_READBACK_20261026T0850ICT",
-    "observed_at": "2026-10-26T08:50:35.531+07:00",
-    "action": "CREATE_AND_EXACT_READBACK_PROVIDER_CHECKPOINT",
+    "id": "ARCHIVE_PR37_CLEAN_RECUT_20261026T0852ICT",
+    "observed_at": "2026-10-26T08:52:51+07:00",
+    "action": "CLEAN_RECUT_ARCHIVE_ADAPTER_PATCH_AND_READBACK",
     "evidence": {
-      "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0850ICT.json",
-      "blob_sha": "e4b1f1a4319b0430b8e7fb16d6d1945508dd4499",
-      "commit_sha": "38799b3065304e4413a354b8ec19b7182f1dcc65",
-      "exact_readback_verified": true,
-      "main_head_before_checkpoint": "c32f8b7705b38a07b4770de259b7bb21b979ecf1"
+      "pr": 37,
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37",
+      "head": "b12541a85a817041335fbd5c5ac858f631df0318",
+      "compare_at_creation": {
+        "status": "ahead",
+        "ahead_by": 2,
+        "behind_by": 0,
+        "changed_files": [
+          ".github/workflows/archive-readonly-adapters.yml",
+          "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py",
+          "tests/test_sol_archive_10_formats.py",
+          "tests/test_sol_library_stone_topology.py",
+          "tests/verify_real_archive_fixtures.py"
+        ]
+      },
+      "changed_paths": [
+        ".github/workflows/archive-readonly-adapters.yml",
+        "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py",
+        "tests/test_sol_archive_10_formats.py",
+        "tests/test_sol_library_stone_topology.py",
+        "tests/verify_real_archive_fixtures.py"
+      ],
+      "blob_readback_verified": true
     },
     "task_state_mutation": "STATUS_UNCHANGED_OPEN",
     "tasks_closed": 0,
     "history_preserved": true,
-    "secrets_written": false
+    "secrets_written": false,
+    "force_push": false,
+    "pr_merged": false
   },
-  "updated_at": "2026-10-26T08:50:35.531+07:00",
+  "updated_at": "2026-10-26T08:52:51+07:00",
   "latest_clock_integrity_correction": {
     "id": "IC_20261026T0609_HOST_CLOCK_OFFSET_NON_SYNCHRONOUS_PRIOR_ESTIMATE",
     "observed_at": "2026-10-26T06:09:56.211+07:00",
@@ -34008,5 +34051,55 @@
     "search_exhaustive": false,
     "source_substitution": false,
     "source_moved_or_deleted": false
+  },
+  "ARCHIVE_PR37_CLEAN_RECUT_20261026T0852ICT": {
+    "id": "ARCHIVE_PR37_CLEAN_RECUT_20261026T0852ICT",
+    "observed_at": "2026-10-26T08:52:51+07:00",
+    "pr": 37,
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "head": "b12541a85a817041335fbd5c5ac858f631df0318",
+    "base_at_creation": "b0ba78c74127b784a1aaada47460baec73f3bcee",
+    "compare_at_creation": {
+      "status": "ahead",
+      "ahead_by": 2,
+      "behind_by": 0,
+      "changed_files": [
+        ".github/workflows/archive-readonly-adapters.yml",
+        "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py",
+        "tests/test_sol_archive_10_formats.py",
+        "tests/test_sol_library_stone_topology.py",
+        "tests/verify_real_archive_fixtures.py"
+      ]
+    },
+    "changed_paths": [
+      ".github/workflows/archive-readonly-adapters.yml",
+      "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py",
+      "tests/test_sol_archive_10_formats.py",
+      "tests/test_sol_library_stone_topology.py",
+      "tests/verify_real_archive_fixtures.py"
+    ],
+    "blob_readback_verified": true,
+    "main_side_overlap_since_merge_base": false,
+    "target_host_validation": "NOT_VERIFIED",
+    "original_account_exports": "NOT_RECOVERED",
+    "pr36": {
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "latest_compare": {
+        "status": "diverged",
+        "ahead_by": 14,
+        "behind_by": 41
+      }
+    },
+    "ci_at_readback": {
+      "archive_adapters": "IN_PROGRESS",
+      "library_topology": "SUCCESS",
+      "secret_guard": "SUCCESS"
+    },
+    "tasks_closed": 0,
+    "task_state_mutation": "STATUS_UNCHANGED_OPEN",
+    "force_push": false,
+    "pr_merged": false
   }
 }
