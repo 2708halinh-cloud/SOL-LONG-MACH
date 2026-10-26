@@ -5,7 +5,14 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-REGISTRY_PATH = Path(__file__).resolve().parents[1] / "config" / "INTEL_CORE_ULTRA_PROFILES.json"
+_MODULE_DIR = Path(__file__).resolve().parent
+_LOCAL_REGISTRY_PATH = _MODULE_DIR.parent / "config" / "INTEL_CORE_ULTRA_PROFILES.json"
+_CARRIER_REGISTRY_PATH = _MODULE_DIR / "INTEL_CORE_ULTRA_PROFILES.json"
+REGISTRY_PATH = (
+    _CARRIER_REGISTRY_PATH
+    if _CARRIER_REGISTRY_PATH.is_file()
+    else _LOCAL_REGISTRY_PATH
+)
 
 @dataclass(frozen=True)
 class CpuProfile:
