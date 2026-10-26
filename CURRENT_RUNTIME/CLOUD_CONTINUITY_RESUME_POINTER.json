@@ -1,13 +1,13 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.2",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-26T22:13:32.308Z",
-  "updated_at_local": "2026-10-27T05:13:32.308+07:00",
+  "updated_at_utc": "2026-10-26T22:15:06.053Z",
+  "updated_at_local": "2026-10-27T05:15:06.053+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended evidence row, not host event time. Host-local timestamps and cloud/provider timestamps remain separate.",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0513ICT.json",
-    "blob_sha": "cf5fe465e7fea876c60ef1899aeea400ce12e93c",
-    "commit_sha": "8a56847b62e87ee7a668940452d8c3aea46a2704",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0515ICT.json",
+    "blob_sha": "eaeb03d545c37e5fafbf21798bd915bd61eced86",
+    "commit_sha": "1d7d5c8efb9973477aa8ac526daaf747e901a580",
     "readback_verified": true,
     "latest_host_evidence_row_id": 522,
     "latest_host_event_id": "X20261026152140359_HOST_TICK_CONSUMER_READBACK",
@@ -96,7 +96,10 @@
     "latest_github_schedule_run_number": 376,
     "current_task_ledger_size_bytes": 2422868,
     "latest_library_logs_git_blob_sha1_match": true,
-    "latest_library_logs_turn_ids_verified": true
+    "latest_library_logs_turn_ids_verified": true,
+    "latest_source_revision_delta_row_id": 538,
+    "latest_source_revision_delta_event_id": "X20261026221503628_LIBRARY_LOG_CURRENT_MAIN_REVISION_READBACK",
+    "latest_library_logs_current_main_delta": "NONE"
   },
   "post_checkpoint_updates": [
     {
@@ -1825,6 +1828,23 @@
       "unique_turn_ids": 3,
       "raw_sha256_verified": true,
       "git_blob_sha1_matches_raw_bytes": true,
+      "task_status_preserved": "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN",
+      "readback_verified": true
+    },
+    {
+      "type": "LIBRARY_LOG_CURRENT_MAIN_REVISION_READBACK_ROW_538",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 538,
+      "event_id": "X20261026221503628_LIBRARY_LOG_CURRENT_MAIN_REVISION_READBACK",
+      "provider_created_at_utc": "2026-10-26T22:15:06.053Z",
+      "repository_current_main_head_sha": "e07a9d5cf30c3cd5825e400577e13e54374f730a",
+      "compared_source_commit_sha": "908ab1f8113dc22fe6c52825d70620d1cf13e383",
+      "file_count": 5,
+      "blob_sha1_matches": 5,
+      "blob_sha1_mismatches": 0,
+      "delta_across_five_paths": "NONE",
+      "record_count": 17,
+      "unique_turn_ids": 3,
       "task_status_preserved": "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN",
       "readback_verified": true
     }
@@ -8123,5 +8143,45 @@
     "current_task_ledger_blob_sha": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
     "current_task_ledger_size_bytes": 2422868,
     "main_head_before_checkpoint": "ca36cb8957abbf9b3b439c216900bc0f45a66f3a"
+  },
+  "latest_library_log_revision_delta_readback_20261027T0515ICT": {
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_row_id": 538,
+    "event_id": "X20261026221503628_LIBRARY_LOG_CURRENT_MAIN_REVISION_READBACK",
+    "provider_created_at_utc": "2026-10-26T22:15:06.053Z",
+    "repository_current_main_head_sha": "e07a9d5cf30c3cd5825e400577e13e54374f730a",
+    "compared_source_commit_sha": "908ab1f8113dc22fe6c52825d70620d1cf13e383",
+    "file_count": 5,
+    "blob_sha1_matches": 5,
+    "blob_sha1_mismatches": 0,
+    "delta_across_five_paths": "NONE",
+    "record_count": 17,
+    "unique_turn_ids": 3,
+    "task_status_preserved": "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN",
+    "readback_verified": true
+  },
+  "latest_cloud_continuity_readback_20261027T0515ICT": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0515ICT.json",
+    "blob_sha": "eaeb03d545c37e5fafbf21798bd915bd61eced86",
+    "commit_sha": "1d7d5c8efb9973477aa8ac526daaf747e901a580",
+    "readback_verified": true,
+    "previous_checkpoint_blob_sha": "cf5fe465e7fea876c60ef1899aeea400ce12e93c",
+    "latest_cloud_scan_row_id": 535,
+    "latest_continuity_readback_row_id": 536,
+    "latest_source_provenance_row_id": 537,
+    "latest_source_revision_delta_row_id": 538,
+    "n8n_recovery_pending": 45,
+    "n8n_recovery_terminal": 0,
+    "github_tasks_last_verified_count": 29,
+    "tasks_closed": 0,
+    "task_statuses_changed": false,
+    "latest_host_evidence_row_id": 522,
+    "android_online_state": "UNVERIFIED",
+    "remote_route_status_current": "NOT_RECHECKED",
+    "github_schedule_gap": "OPEN_UNRESOLVED",
+    "current_task_ledger_content_readback_verified": false,
+    "current_task_ledger_blob_sha": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
+    "current_task_ledger_size_bytes": 2422868,
+    "main_head_before_checkpoint": "e07a9d5cf30c3cd5825e400577e13e54374f730a"
   }
 }
