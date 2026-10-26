@@ -31,49 +31,76 @@ def sha256(value: bytes) -> str:
     return hashlib.sha256(value).hexdigest()
 
 
+def _nonempty_string(value: Any) -> bool:
+    return isinstance(value, str) and bool(value.strip())
+
+
+def _valid_source_refs(value: Any) -> bool:
+    return isinstance(value, list) and bool(value) and all(_nonempty_string(ref) for ref in value)
+
+
 def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     """Return validation errors. Unknown identity remains OPEN; it is never guessed."""
-    errors: list[str] = []
     if not isinstance(manifest, dict) or manifest.get("schema") != SCHEMA:
         return ["MANIFEST_SCHEMA_MISMATCH"]
+
+    errors: list[str] = []
     identity = manifest.get("identity")
     if not isinstance(identity, dict):
         return ["IDENTITY_OBJECT_REQUIRED"]
+
     for field in IDENTITY_FIELDS:
         if field not in identity:
             errors.append(f"IDENTITY_FIELD_MISSING:{field}")
         elif not isinstance(identity[field], (str, dict, list, type(None))):
             errors.append(f"IDENTITY_FIELD_TYPE_INVALID:{field}")
-    if not identity.get("name"):
+
+    if not _nonempty_string(identity.get("name")):
         errors.append("AGENT_NAME_REQUIRED")
-    if not identity.get("agent_id"):
+
+    agent_id = identity.get("agent_id")
+    if agent_id is None or (isinstance(agent_id, str) and not agent_id.strip()):
         errors.append("STABLE_AGENT_ID_UNRESOLVED")
-    if not manifest.get("source_refs"):
+    elif not isinstance(agent_id, str):
+        errors.append("STABLE_AGENT_ID_TYPE_INVALID")
+
+    if not _valid_source_refs(manifest.get("source_refs")):
         errors.append("SOURCE_PROVENANCE_REQUIRED")
-    if not isinstance(manifest.get("identity_status"), str):
+
+    identity_status = manifest.get("identity_status")
+    if not isinstance(identity_status, str) or not identity_status.strip():
         errors.append("IDENTITY_STATUS_REQUIRED")
-    if manifest.get("identity_status") == "VERIFIED" and (
-        not identity.get("agent_id") or not manifest.get("independent_readback")
+
+    if identity_status == "VERIFIED" and (
+        not _nonempty_string(agent_id) or manifest.get("independent_readback") is not True
     ):
-        errors.append("VERIFIED_STATUS_REQUIRES_ID_AND_READBACK")
+        errors.append("VERIFIED_STATUS_REQUIRES_ID_AND_BOOLEAN_READBACK")
+
     return errors
 
 
 def make_event(event: dict[str, Any], *, previous_hash: str | None = None) -> dict[str, Any]:
     """Create a hash-chained event. The hash detects changes; it does not prove truth."""
+    if not isinstance(event, dict):
+        raise ValueError("EVENT_OBJECT_REQUIRED")
+
+    event_id = event.get("event_id")
+    kind = event.get("kind")
+    source_refs = event.get("source_refs", [])
+    if not _nonempty_string(event_id) or not _nonempty_string(kind) or not _valid_source_refs(source_refs):
+        raise ValueError("EVENT_ID_KIND_AND_SOURCE_REFS_REQUIRED")
+
     body = {
         "schema": EVENT_SCHEMA,
-        "event_id": event.get("event_id"),
+        "event_id": event_id,
         "occurred_at": event.get("occurred_at") or datetime.now(timezone.utc).isoformat(),
-        "kind": event.get("kind"),
-        "source_refs": event.get("source_refs", []),
+        "kind": kind,
+        "source_refs": source_refs,
         "observation": event.get("observation"),
         "action": event.get("action"),
         "outcome": event.get("outcome"),
         "previous_hash": previous_hash,
     }
-    if not body["event_id"] or not body["kind"] or not body["source_refs"]:
-        raise ValueError("EVENT_ID_KIND_AND_SOURCE_REFS_REQUIRED")
     body["event_hash"] = sha256(canonical_json(body))
     return body
 
@@ -83,20 +110,35 @@ def verify_events(events: list[dict[str, Any]]) -> dict[str, Any]:
     previous_hash = None
     errors: list[str] = []
     seen: set[str] = set()
+
     for index, event in enumerate(events):
+        if not isinstance(event, dict):
+            errors.append(f"EVENT_OBJECT_REQUIRED:{index}")
+            continue
         if event.get("schema") != EVENT_SCHEMA:
             errors.append(f"EVENT_SCHEMA_MISMATCH:{index}")
             continue
-        if event.get("event_id") in seen:
+
+        event_id = event.get("event_id")
+        if not _nonempty_string(event_id):
+            errors.append(f"EVENT_ID_INVALID:{index}")
+        elif event_id in seen:
             errors.append(f"DUPLICATE_EVENT_ID:{index}")
-        seen.add(event.get("event_id"))
+        else:
+            seen.add(event_id)
+
+        if not _nonempty_string(event.get("kind")) or not _valid_source_refs(event.get("source_refs")):
+            errors.append(f"EVENT_FIELDS_INVALID:{index}")
+
         if event.get("previous_hash") != previous_hash:
             errors.append(f"PREVIOUS_HASH_MISMATCH:{index}")
+
         claimed = event.get("event_hash")
-        body = {k: v for k, v in event.items() if k != "event_hash"}
-        if claimed != sha256(canonical_json(body)):
+        body = {key: value for key, value in event.items() if key != "event_hash"}
+        if not isinstance(claimed, str) or claimed != sha256(canonical_json(body)):
             errors.append(f"EVENT_HASH_MISMATCH:{index}")
         previous_hash = claimed
+
     return {
         "schema": "SOL_AGENT_EVENT_CHAIN_CHECK_V1",
         "event_count": len(events),
@@ -117,6 +159,7 @@ def append_event(path: Path, event: dict[str, Any]) -> dict[str, Any]:
         check = verify_events(events)
         if check["chain_integrity"] != "PASS":
             raise ValueError("EXISTING_EVENT_CHAIN_INVALID; refusing append")
+
     previous_hash = events[-1]["event_hash"] if events else None
     record = make_event(event, previous_hash=previous_hash)
     with path.open("a", encoding="utf-8", newline="\n") as stream:
