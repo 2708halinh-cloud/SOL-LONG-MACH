@@ -6,6 +6,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from companion_consequence_gate import SOURCE as CONSEQUENCE_SOURCE
 from ggdv_local_emitter import emit_from_packet, verify_local_evidence
 
 
@@ -23,7 +24,9 @@ class LocalEmissionTests(unittest.TestCase):
             "input_open": True,
             "history_checked": True,
             "history_refs": ["local-test:historical-source"],
-            "source_refs": ["local-test:authorized-source"],
+            "source_refs": ["local-test:authorized-source", CONSEQUENCE_SOURCE],
+            "action_id": "LOCAL-EMIT-TEST-001",
+            "consequence_ref": "target bytes match the exact readback text",
             "executed": True,
             "provider_receipt_ref": str(self.provider),
             "target_readback_ref": str(self.target),
@@ -75,6 +78,51 @@ class LocalEmissionTests(unittest.TestCase):
             self.assertFalse(verify_local_evidence(packet, self.root))
         finally:
             external.unlink()
+
+    def test_provider_symlink_inside_root_is_rejected(self):
+        link = self.root / "provider-link.txt"
+        try:
+            link.symlink_to(self.provider)
+        except (OSError, NotImplementedError) as exc:
+            self.skipTest(f"symlink creation unavailable: {exc}")
+        packet = dict(self.packet)
+        packet["evidence_files"] = dict(self.packet["evidence_files"])
+        packet["evidence_files"]["provider"] = {
+            "path": str(link), "sha256": hashlib.sha256(self.provider.read_bytes()).hexdigest()
+        }
+        self.assertFalse(verify_local_evidence(packet, self.root))
+
+    def test_target_symlink_inside_root_is_rejected(self):
+        link = self.root / "target-link.txt"
+        try:
+            link.symlink_to(self.target)
+        except (OSError, NotImplementedError) as exc:
+            self.skipTest(f"symlink creation unavailable: {exc}")
+        packet = dict(self.packet)
+        packet["evidence_files"] = dict(self.packet["evidence_files"])
+        packet["evidence_files"]["target"] = {
+            "path": str(link), "sha256": hashlib.sha256(self.target.read_bytes()).hexdigest()
+        }
+        self.assertFalse(verify_local_evidence(packet, self.root))
+
+    def test_missing_shared_gate_source_reference_fails_closed(self):
+        packet = dict(self.packet)
+        packet["source_refs"] = ["local-test:authorized-source"]
+        self.assertFalse(verify_local_evidence(packet, self.root))
+
+    def test_missing_action_or_consequence_reference_fails_closed(self):
+        for field in ("action_id", "consequence_ref"):
+            with self.subTest(field=field):
+                packet = dict(self.packet)
+                packet[field] = ""
+                self.assertFalse(verify_local_evidence(packet, self.root))
+
+    def test_malformed_sha256_fails_closed(self):
+        packet = dict(self.packet)
+        packet["evidence_files"] = dict(self.packet["evidence_files"])
+        packet["evidence_files"]["provider"] = dict(self.packet["evidence_files"]["provider"])
+        packet["evidence_files"]["provider"]["sha256"] = 12345
+        self.assertFalse(verify_local_evidence(packet, self.root))
 
     def test_local_host_cli_invokes_gate(self):
         packet_path = self.root / "response_packet.json"
