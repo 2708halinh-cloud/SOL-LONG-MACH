@@ -108,4 +108,28 @@ No claim of full-system synchronization is valid until each target has its own f
 - Profile values transcribed from the supplied catalog are `source_verified=false` until checked against Intel ARK.
 - This layer does not reproduce physical Intel hardware, microcode, instruction semantics, actual cache, clock/thermal behavior, or benchmark equivalence.
 
-[executed on device: DESKTOP-86ITNQ4 (59f03001-c732-403e-b80c-b4191266809c)]
+## 9. Host, Local AI, Edge AI, Cloud APIs and Network inventory
+
+### Host Node and local inference
+- Ollama executable supplied by operator: C:\\Users\\halin\\AppData\\Local\\Programs\\Ollama\\ollama.exe; expected default API port 11434. Daemon/model availability requires runtime probing.
+- llama.cpp executable supplied by operator: C:\\Users\\halin\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe\\llama-cli.exe.
+- Host CPU/RAM reported by operator: Intel Core i5-10400F, 48 GB RAM. SIMD support, model fit, token throughput and FLOPS claims require direct verification.
+- Llama 3, Qwen 2.5 and Phi-3 are candidate model families; installed model tags are not verified by this inventory.
+
+### Edge AI
+- Operator-reported device: Xiaomi 12, Snapdragon 8 Gen 1, 8 GB RAM plus 8 GB ZRAM.
+- SmolLM2 and Qwen2.5 0.5B?3B are candidate edge profiles. Termux/MLC-LLM install, GPU/NPU delegate support, thermals, memory pressure and throughput require on-device testing.
+
+### Cloud agents and MCP
+- OpenAI/Gemini/Google Cloud SDK/Antigravity and listed MCP services/subagents are declared inventory, not proof of active authentication or running endpoints.
+- Never persist API keys, CSRF tokens, bearer tokens or cookies in architecture files, Git, SQLite journals or receipts. Store only variable names and secret-manager references.
+- Provider status remains NOT_VERIFIED until a safe probe and target readback succeed.
+
+### Network and security
+- Operator-reported NextDNS resolvers: 45.90.28.0 and 45.90.30.0; encrypted DNS and filtering policy require independent verification.
+- Operator-reported USB tethering via Remote NDIS: local IPv4 10.20.156.29, gateway 10.20.156.151, public IP 14.173.169.173, link speed 426 Mbps. These values are time-sensitive.
+- Local service reported at 127.0.0.1:8765 (MINH BODY v0.9); verify process ownership and bind address before routing traffic.
+- Windows Firewall reportedly disabled on Domain/Private/Public. Treat as SECURITY_RISK; do not expose service ports to LAN/WAN. Prefer firewall enabled with narrow allow rules. This architecture update does not change firewall settings.
+
+### Verification contract
+Each inventory entry is reported_by_operator=true, source_verified=false, observed_at=null until freshly probed. A path or declaration alone does not prove a running service, installed model, GPU/NPU execution, API authorization or provider synchronization.
