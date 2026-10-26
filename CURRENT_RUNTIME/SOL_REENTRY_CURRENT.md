@@ -1444,3 +1444,48 @@ Fresh-read and exact-target provenance:
 - No task closed. No secrets or raw sensor values written to public GitHub. No source moved/deleted. No PR merge or force-push.
 - Next: exact-read Tick/consumer after `11:06:32+07`; continue sensor-client and W32Time permission diagnosis without changing the clock; keep all 45 cloud rows pending; verify TESSERACT Actions variable/runner settings through an authorized route; recompare Archive PR #36/#37 against the final main head before any branch mutation.
 <!-- END VERIFIED_PROVIDER_READBACK_20261026T1101ICT -->
+
+ 
+<!-- BEGIN VERIFIED_PROVIDER_READBACK_20261026T1125ICT -->
+## DELTA — DIRECT WINDOWS TICK/CONSUMER + CLOUD ROW 443 — 2026-10-26 11:25 ICT
+
+### Fresh-read/provenance
+- `AGENTS.md` blob `f18f9743de1e21d13bad47770f928ec85e79bd95`.
+- Prior `SOL_REENTRY_CURRENT.md` blob `237b3fb301645e83b0a63b30452ec639d19f95e2`; this entry is append-only.
+- Pre-checkpoint `TASK_RESUME_POINTER.json` blob `2ec23a777cbe2e176990bfddec606cb56ee7e306`.
+- Pre-checkpoint `OPEN_TASKS_CURRENT.json` blob `05c8bf07c6bf54217be7a8f0a04ae5f0da1a03f9`.
+- Pre-checkpoint `CLOUD_CONTINUITY_RESUME_POINTER.json` blob `f0f4c0c204a612a54c67cf0aa76e2b46e2dd42a3`.
+- Pre-checkpoint `MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json` blob `5376961930b0aa2eb9a2359e2f8aafedeed84af4`.
+- Main head before checkpoint: `baf612d84c6ad47d2875fa195aaa34adfb21b4a5`.
+
+### Direct host evidence
+- Route `Remote Desktop Commander` is ONLINE; host `DESKTOP-86ITNQ4`.
+- Scheduled task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M`: last run `11:16:33+07`, result `0`, next run `11:21:32+07` at host observation time, missed runs `0`.
+- Tick `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T041640463993Z.json`; SHA-256 `c2f5a31a1fdfc5487923b564918f42c9ed8d72098d6d8ce71a64c80582911011`; observed `2026-10-26T04:16:40.463993Z`.
+- Consumer `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T041637037Z.json`; SHA-256 `723ac81e74346fb4b86e3065aebfc212b646986f6dd5b0b84c518fa7b7be9a15`; observed `2026-10-26T04:16:40.5679534Z`; status `SOURCE_OBSERVED_READONLY`, exit `0`.
+- Direct source `D:\\SENSOR_LOGS\\windows_SENSON.CSV`: 35,389,440 bytes; SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`. Tick, consumer, and direct source hashes match; consumer content hash verified true. No raw rows emitted, no synthetic rows, cloud export disabled, GitHub push disabled, source unchanged.
+- Live sensor stream remains **NOT VERIFIED**: USB ADB `1056285` is listed as device, but four event timestamps are `EVENT_TIMESTAMP_STALE`, zero advanced. Redmi Note 14 Pro `192.168.1.14:5556` is `NOT_LISTED`; TCP port 5556 was unreachable at the direct host probe.
+- Read-only Android inspection: device wakefulness `Dozing`; no process found for `com.exatools.sensors` or `com.galaxy.sensortoolbox`; launcher activity resolves to `com.exatools.sensors/com.examobile.sensors.activity.MainActivity`; the package metadata scan found no declared-service lines for those two sensor packages. SensorService dump showed 7 active connections and last listed event time `10:43:25`. This is evidence for continued diagnosis, not proof of a specific root cause. No app was launched/installed, no permissions changed, no sensor payload persisted.
+- `W32Time` remains `STOPPED/MANUAL`; no system-clock change attempted. Service-start permission is not elevated in the current host session.
+- Local code provenance was verified by Git blob hash:
+  - `telemetry_buffer_sync.py`: SHA-256 `80c17a544c69d6a8f105b88e9102ad04c6399acd188fd4f8fc21a00521969f64`, Git blob `9b75c645ac059162d91f612d2a4ea19e80f0be34`.
+  - `live_device_probe.py`: SHA-256 `8198c0d71d27da1bda00ca8360eff09eadb230fc88ad3dfcc00c6eafed4fd18d`, Git blob `91d242d9f0db0e171b9f1ccf3bdf9af3331ff395`.
+  - `sensor_root_resolver.py`: SHA-256 `117bcb01aefa908aac861f97c83dcccff7e84a5d080d771da09134378db98471`, Git blob `9b082c5c96ea13d02af35c23519653ad2e78d119`.
+  - The consumer source has explicit environment guards: cloud export and GitHub push each return unless their respective `SOL_ENABLE_SENSOR_...=1` flag is set. Wrapper sets both flags to `0`.
+
+### Provider and independent cloud branch
+- Dropbox Outlook metadata fresh-read: `/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV`, file ID `id:gvG29tEleJwAAAAAAAACOw`, revision `0165dc1e4794ab00000000395cdfd73`, size 35,389,440 bytes, server modified `2026-10-14T00:20:03Z`. Raw CSV bytes were not downloaded.
+- n8n workflow `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN`, execution `188`, status `success`; exact row readback `443`, event `X20261026041905980_CLOUD`, state `OPEN_WORK_REMAINS`. 45 recovery rows remain pending, zero terminal; host heartbeat unprobed and host operations 0.
+- Provider checkpoint `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1125ICT.json`: commit `73647b712830deb64ebe8b7847570ac556c31301`, blob `8a957243c7e3bdb59500ef93db419aeeffd0aa9c`; exact readback succeeded.
+- `MODUAL_PARAMETER_CURRENT.json` append commit `837a37068e6880e18e5b62770f8e807daf1e03fa`, new blob `d13743e805f8e4d02b648f857f3cf1beedeefcca`; exact readback confirms session observation count 132. Prior blob `5376961930b0aa2eb9a2359e2f8aafedeed84af4` remains in Git history.
+
+### Parallel TESSERACT / archive branch
+- PR [#6](https://github.com/2708halinh-cloud/x-time-web/pull/6) remains OPEN/Draft/unmerged at head `5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8`; runs `40220813600` and `40220813636` failed with no step output and no artifacts. The Actions variable value and runner assignment remain unverified. GitHub connector rejects the settings endpoint; browser context was unavailable; host has no `gh` CLI and no GitHub token environment variable was present. No CI rerun was performed.
+- PR #36 compared with main head `baf612d84c6ad47d2875fa195aaa34adfb21b4a5`: 14 ahead / 109 behind, diverged.
+- PR #37 compared with the same main head: 3 ahead / 65 behind, diverged.
+- Both PRs remain OPEN/Draft/unmerged; no merge or force-push.
+
+### Invariants / next edges
+- All 29 nonterminal tasks retained; zero task closures. No raw sensor values or credentials written to public GitHub. No source moved/deleted. No synthetic rows. No PR merge/force-push or prohibited CI rerun.
+- Next: exact-read the Tick/consumer after the next host-local scheduled cycle; if no newer Tick appears, inspect wrapper trace and task result before changing anything. Continue read-only sensor-client diagnosis. Do not launch the sensor app or change device permissions without authorization. W32Time service/configuration changes require an authorized elevated route; do not alter the system clock. Keep all 45 cloud recovery rows pending. Verify TESSERACT variable/runner settings only through an authorized settings route, and refresh PR comparisons before any branch mutation.
+<!-- END VERIFIED_PROVIDER_READBACK_20261026T1125ICT -->
