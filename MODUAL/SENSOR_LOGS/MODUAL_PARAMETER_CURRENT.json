@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-26T12:50:57.198+07:00",
+  "observed_at": "2026-10-26T12:56:17.339+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -13569,6 +13569,18 @@
       "source_moved_or_deleted": false,
       "raw_sensor_values_exported": false,
       "secrets_written": false
+    },
+    {
+      "id": "SESSION_OBSERVATION_20261026T1255ICT",
+      "observed_at": "2026-10-26T12:56:17.339+07:00",
+      "source": "Exact checkpoint file readback for PROVIDER_READBACK_20261026T1242ICT.json and PROVIDER_READBACK_20261026T1250ICT.json.",
+      "action": "CORRECT_PROVIDER_CHECKPOINT_MAIN_HEAD_REFERENCES_IN_MODUAL_CONTROL_METADATA",
+      "result": "Updated two metadata references to the exact main heads recorded in the checkpoint files; preserved prior values in a named snapshot.",
+      "source_mutated": false,
+      "source_moved_or_deleted": false,
+      "raw_sensor_values_exported": false,
+      "secrets_written": false,
+      "tasks_closed": 0
     }
   ],
   "privacy_policy": {
@@ -25198,7 +25210,7 @@
     },
     "github": {
       "repository": "2708halinh-cloud/SOL-LONG-MACH",
-      "main_head_before_checkpoint": "7682d184945252d6ecadac646fe54a070a128233",
+      "main_head_before_checkpoint": "ce86a9948ccf05799ffd86481d7786117b6c72ea",
       "pr36": {
         "state": "OPEN_DRAFT",
         "ahead_by": 14,
@@ -25437,7 +25449,7 @@
     },
     "github": {
       "repository": "2708halinh-cloud/SOL-LONG-MACH",
-      "main_head_before_checkpoint": "459de5059aa8c50aa4fbbc067dd1fb3a5230e7b0",
+      "main_head_before_checkpoint": "1fc4b7102bacc10e52dc5d2dda18b2e2f6067c8a",
       "pr36": {
         "state": "OPEN_DRAFT",
         "ahead_by": 14,
@@ -25478,6 +25490,33 @@
     "provider_observations_before_update": 208,
     "verified_action_events_before_update": 242,
     "integrity_corrections": 11,
+    "tasks_closed": 0
+  },
+  "previous_provider_readback_head_values_before_20261026T1255ICT": {
+    "observed_at_local": "2026-10-26T12:56:17.339+07:00",
+    "readback_1242_old_main_head_before_checkpoint": "7682d184945252d6ecadac646fe54a070a128233",
+    "readback_1250_old_main_head_before_checkpoint": "459de5059aa8c50aa4fbbc067dd1fb3a5230e7b0",
+    "correction_reason": "The prior values were the main heads before the MODUAL state update, not the actual main heads at checkpoint creation. The exact checkpoint JSON files provide the authoritative checkpoint-time heads."
+  },
+  "latest_provider_readback_head_correction_20261026T1255ICT": {
+    "observed_at_utc": "2026-10-26T05:56:17.339Z",
+    "observed_at_local": "2026-10-26T12:56:17.339+07:00",
+    "corrections": [
+      {
+        "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1242ICT.json",
+        "authoritative_main_head_before_checkpoint": "ce86a9948ccf05799ffd86481d7786117b6c72ea",
+        "prior_value": "7682d184945252d6ecadac646fe54a070a128233"
+      },
+      {
+        "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1250ICT.json",
+        "authoritative_main_head_before_checkpoint": "1fc4b7102bacc10e52dc5d2dda18b2e2f6067c8a",
+        "prior_value": "459de5059aa8c50aa4fbbc067dd1fb3a5230e7b0"
+      }
+    ],
+    "source_of_truth": "Exact checkpoint file content readback",
+    "history_preserved": true,
+    "source_bytes_changed": false,
+    "task_status_changed": false,
     "tasks_closed": 0
   }
 }
