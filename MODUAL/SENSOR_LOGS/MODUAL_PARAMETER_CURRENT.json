@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-26T11:57:58.657+07:00",
+  "observed_at": "2026-10-26T12:42:59.476+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -13502,6 +13502,52 @@
       "source_moved_or_deleted": false,
       "raw_sensor_values_exported": false,
       "secrets_written": false
+    },
+    {
+      "id": "SESSION_OBSERVATION_20261026T1232ICT",
+      "observed_at": "2026-10-26T12:32:11.5873814+07:00",
+      "source": "Direct Windows scheduled Tick/consumer exact readback after host-local 12:31:32+07; direct source hash recomputed; row 452.",
+      "action": "READ_POST_SCHEDULED_TICK_CONSUMER_SOURCE_AND_DEVICE_PROBE",
+      "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1240ICT.json",
+      "tick_sha256": "353b365cbe234a42e885a7d9a8f14ec6cd671b489d5fdf7b5fc289481056a7bf",
+      "consumer_sha256": "70bb1d1b94a3271af5aa9be56296fe87761f8459147146cb568670295643d5ac",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_matches_tick": true,
+      "source_matches_consumer": true,
+      "live_sensor_reading_confirmed": false,
+      "usb_timestamp_advanced_count": 0,
+      "wireless_adb_state": "NOT_LISTED",
+      "n8n_host_evidence_row_id": 452,
+      "tasks_closed": 0,
+      "source_mutated": false,
+      "source_moved_or_deleted": false,
+      "raw_sensor_values_exported": false,
+      "secrets_written": false
+    },
+    {
+      "id": "SESSION_OBSERVATION_20261026T1235ICT",
+      "observed_at": "2026-10-26T12:35:38.295+07:00",
+      "source": "n8n execution 191 success; exact cloud row 451 readback.",
+      "action": "EXECUTE_AND_READBACK_CLOUD_CONTINUITY_SCAN",
+      "cloud_execution_id": "191",
+      "cloud_row_id": 451,
+      "pending_rows": 45,
+      "terminal_rows": 0,
+      "host_heartbeat_probed": false,
+      "tasks_closed": 0
+    },
+    {
+      "id": "SESSION_OBSERVATION_20261026T1242ICT",
+      "observed_at": "2026-10-26T12:42:59.476+07:00",
+      "source": "Exact read_multiple_files readback of Tick and consumer; correction row 453.",
+      "action": "CORRECT_PRIOR_RECEIPT_NOTE_WITH_SOURCE_READBACK",
+      "correction_row_id": 453,
+      "adb_binary_present": true,
+      "adb_devices_command_succeeded": true,
+      "usb_timestamp_advanced_count": 0,
+      "wireless_adb_state": "NOT_LISTED",
+      "source_mutated": false,
+      "tasks_closed": 0
     }
   ],
   "privacy_policy": {
@@ -19029,6 +19075,18 @@
       "source_moved_or_deleted": false,
       "secrets_written": false,
       "raw_sensor_values_exported": false
+    },
+    {
+      "observed_at": "2026-10-26T12:42:59.476+07:00",
+      "provider": "Dropbox Outlook",
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "direct_metadata_readback": true,
+      "content_hash_from_tick_consumer_receipt": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+      "source_hash_matches_local_tick_and_consumer": true
     }
   ],
   "latest_provider_observation": {
@@ -24884,5 +24942,272 @@
       "behind_by": 118,
       "merge_base": "a484e404382d744f465a571f891e456d9bbadd59"
     }
+  },
+  "latest_runtime": {
+    "observed_at": "2026-10-26T12:32:11.5873814+07:00",
+    "device": "DESKTOP-86ITNQ4",
+    "route": "Remote Desktop Commander",
+    "task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T12:31:33+07:00",
+      "last_result": 0,
+      "next_run_local_at_sample": "2026-10-26T12:36:32+07:00",
+      "missed_runs": 0
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "independently_rehashed": true,
+      "unchanged": true
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T053138460800Z.json",
+      "sha256": "353b365cbe234a42e885a7d9a8f14ec6cd671b489d5fdf7b5fc289481056a7bf",
+      "observed_at_utc": "2026-10-26T05:31:38.460800Z",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_sha256_matches": true,
+      "live_sensor_reading_confirmed": false,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "sensor_event_timestamp_sensor_count": 4,
+      "sensor_event_sensors_advanced": [],
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T053135794Z.json",
+      "sha256": "70bb1d1b94a3271af5aa9be56296fe87761f8459147146cb568670295643d5ac",
+      "observed_at_utc": "2026-10-26T05:31:38.5499563Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true,
+      "consumer_hash_matches_verifier": true,
+      "source_content_hash_verified": true,
+      "raw_rows_emitted": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "device_probe": {
+      "adb_binary_present": true,
+      "adb_devices_command_succeeded": true,
+      "live_sensor_reading_confirmed": false,
+      "status": "ADB_TRANSPORT_RESPONDED",
+      "usb_target": "1056285",
+      "usb_adb_state": "device",
+      "sensorservice_probe_succeeded": true,
+      "usb_sensor_timestamp_count": 4,
+      "usb_sensor_timestamps_advanced": 0,
+      "usb_sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "wireless_target": "192.168.1.14:5556",
+      "wireless_adb_state": "NOT_LISTED",
+      "wireless_sensorservice_probe_succeeded": false
+    },
+    "w32time": {
+      "status": "Stopped",
+      "start_type": "Manual",
+      "changed": false
+    },
+    "evidence_table_row_id": 452,
+    "correction_row_id": 453,
+    "task_status_unchanged": "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED",
+    "no_app_launch_or_permission_change": true,
+    "source_mutated": false,
+    "raw_sensor_values_emitted": false,
+    "task_closed": false
+  },
+  "latest_runtime_probe_20261026T1232ICT": {
+    "observed_at": "2026-10-26T12:32:11.5873814+07:00",
+    "device": "DESKTOP-86ITNQ4",
+    "route": "Remote Desktop Commander",
+    "task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T12:31:33+07:00",
+      "last_result": 0,
+      "next_run_local_at_sample": "2026-10-26T12:36:32+07:00",
+      "missed_runs": 0
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "independently_rehashed": true,
+      "unchanged": true
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T053138460800Z.json",
+      "sha256": "353b365cbe234a42e885a7d9a8f14ec6cd671b489d5fdf7b5fc289481056a7bf",
+      "observed_at_utc": "2026-10-26T05:31:38.460800Z",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_sha256_matches": true,
+      "live_sensor_reading_confirmed": false,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "sensor_event_timestamp_sensor_count": 4,
+      "sensor_event_sensors_advanced": [],
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T053135794Z.json",
+      "sha256": "70bb1d1b94a3271af5aa9be56296fe87761f8459147146cb568670295643d5ac",
+      "observed_at_utc": "2026-10-26T05:31:38.5499563Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true,
+      "consumer_hash_matches_verifier": true,
+      "source_content_hash_verified": true,
+      "raw_rows_emitted": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "device_probe": {
+      "adb_binary_present": true,
+      "adb_devices_command_succeeded": true,
+      "live_sensor_reading_confirmed": false,
+      "status": "ADB_TRANSPORT_RESPONDED",
+      "usb_target": "1056285",
+      "usb_adb_state": "device",
+      "sensorservice_probe_succeeded": true,
+      "usb_sensor_timestamp_count": 4,
+      "usb_sensor_timestamps_advanced": 0,
+      "usb_sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "wireless_target": "192.168.1.14:5556",
+      "wireless_adb_state": "NOT_LISTED",
+      "wireless_sensorservice_probe_succeeded": false
+    },
+    "w32time": {
+      "status": "Stopped",
+      "start_type": "Manual",
+      "changed": false
+    },
+    "evidence_table_row_id": 452,
+    "correction_row_id": 453,
+    "task_status_unchanged": "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED",
+    "no_app_launch_or_permission_change": true,
+    "source_mutated": false,
+    "raw_sensor_values_emitted": false,
+    "task_closed": false
+  },
+  "latest_sensor_stream_probe_20261026T1232ICT": {
+    "observed_at": "2026-10-26T12:32:11.5873814+07:00",
+    "device_probe": {
+      "adb_binary_present": true,
+      "adb_devices_command_succeeded": true,
+      "live_sensor_reading_confirmed": false,
+      "status": "ADB_TRANSPORT_RESPONDED",
+      "usb_target": "1056285",
+      "usb_adb_state": "device",
+      "sensorservice_probe_succeeded": true,
+      "usb_sensor_timestamp_count": 4,
+      "usb_sensor_timestamps_advanced": 0,
+      "usb_sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "wireless_target": "192.168.1.14:5556",
+      "wireless_adb_state": "NOT_LISTED",
+      "wireless_sensorservice_probe_succeeded": false
+    },
+    "live_sensor_reading_confirmed": false,
+    "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "usb_timestamp_sensor_count": 4,
+    "usb_timestamps_advanced": 0,
+    "wireless_adb_state": "NOT_LISTED",
+    "no_app_launch_or_permission_change": true
+  },
+  "latest_cloud_continuity_readback_20261026T1235ICT": {
+    "observed_at": "2026-10-26T12:35:38.295+07:00",
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "execution_id": "191",
+    "status": "success",
+    "mode": "manual",
+    "event_id": "X20261026053538224_CLOUD",
+    "row_id": 451,
+    "table_id": "Sk0EFJK5NzWVpBvm",
+    "exact_row_readback": true,
+    "state": "OPEN_WORK_REMAINS",
+    "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "host_heartbeat_probed": false,
+    "host_operations": 0,
+    "tasks_closed": 0
+  },
+  "latest_tick_probe_readback_correction_20261026T1242ICT": {
+    "observed_at": "2026-10-26T12:42:59.476+07:00",
+    "event_id": "X20261026124257316_HOST_TICK_PROBE_READBACK_CORRECTION",
+    "evidence_table_row_id": 453,
+    "exact_row_readback": true,
+    "corrects_event_id": "X20261026123211587_HOST_DIRECT_READBACK",
+    "correction": "Earlier row 452 receipt inaccurately said ADB probe was not performed. Exact Tick content confirms adb_binary_present=true, adb_devices_command_succeeded=true, USB 1056285 device, 4 timestamp histories stale/0 advanced; wireless 192.168.1.14:5556 NOT_LISTED.",
+    "source_files_unchanged": true,
+    "task_status_unchanged": true
+  },
+  "latest_provider_readback_20261026T1242ICT": {
+    "observed_at": "2026-10-26T12:42:59.476+07:00",
+    "dropbox": {
+      "account": "Outlook",
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "client_modified_utc": "2026-10-14T00:15:21Z",
+      "content_hash_from_receipt": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d"
+    },
+    "github": {
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "main_head_before_checkpoint": "7682d184945252d6ecadac646fe54a070a128233",
+      "pr36": {
+        "state": "OPEN_DRAFT",
+        "ahead_by": 14,
+        "behind_by": 173,
+        "mergeable": false
+      },
+      "pr37": {
+        "state": "OPEN_DRAFT",
+        "ahead_by": 3,
+        "behind_by": 129,
+        "mergeable": false
+      },
+      "tesseract_pr6": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "state": "OPEN_DRAFT",
+        "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+        "latest_runs": [
+          40220813600,
+          40220813636
+        ],
+        "conclusions": [
+          "failure",
+          "failure"
+        ],
+        "issuer_variable_value_verified": false,
+        "runner_assignment_verified": false,
+        "ci_rerun": false
+      }
+    },
+    "task_pointer_blob_sha": "da58eff304e0898fcd5d076da2e8a172039e1f8a",
+    "open_tasks_blob_sha": "f9bf0ae20a8944829f8b5cdc28fda79ea1a0cb0d",
+    "task_count": 29,
+    "task_status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "provider_observations_before_update": 207,
+    "verified_action_events_before_update": 239,
+    "tasks_closed": 0
   }
 }
