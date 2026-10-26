@@ -1922,3 +1922,27 @@ All 29 repository tasks remain nonterminal; all 45 cloud recovery rows remain pe
 4. Continue authorized TESSERACT issuer-variable/runner-assignment provenance without rerunning CI `#39153474587`.
 5. Reconcile `CLOUD_CONTINUITY_RESUME_POINTER.json` only through an authorized review branch/PR; do not bypass its guard.
 <!-- VERIFIED_AUTOMATION_CONTINUATION_20261026T1700ICT_HOST_READBACK -->
+
+ 
+## VERIFIED AUTOMATION CONTINUATION — 2026-10-26 17:05 ICT
+
+- Fresh-read before this append: `AGENTS.md` blob `f18f9743de1e21d13bad47770f928ec85e79bd95`; prior reentry blob `7100ea0ef7df5f8e0f7a0018e43596d34483da06`; `TASK_RESUME_POINTER.json` blob `4692b4044acdbaa51caf7fa7e06a97b73f3e53b0` (exact Git blob parsed); `OPEN_TASKS_CURRENT.json` blob `da1ec7d9b0d108864ff17cea117bdfd788d2ffd7` (exact Git blob parsed); `CLOUD_CONTINUITY_RESUME_POINTER.json` blob `4443d46e828e76ee9deb1a8980e61c4d29e7c5a7`; `MODUAL_PARAMETER_CURRENT.json` blob `01c1dfe8682e25c7e2f5210bbae87a30231b1f58`; append delta blob `02192ee39c087c4471293a9a583bb6facdb6d1a4`.
+- Latest provider checkpoint: [`PROVIDER_READBACK_20261026T1700ICT.json`](https://github.com/2708halinh-cloud/SOL-LONG-MACH/blob/main/CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1700ICT.json), commit `1408ae55bea9afd0bc3dcec5c6e039a0db9c56cb`, blob `9d6432fed6b6e9d68415177395246ae0c02cca7b`, exact-target readback parsed.
+- Direct host Tick `WINDOWS_TICK_20261026T094640135551Z.json`, SHA-256 `aac3767238fd0cb1218bf387bb8180944c46ca93d3f75ddd837071e9beb0f682`; consumer `telemetry_buffer_sync_20261026T094636868Z.json`, SHA-256 `cc629454182bc904aa5f330fe7342958fedf8ceba3526f56748d991ab26e1c71`, `SOURCE_OBSERVED_READONLY`, exit 0. Source SHA-256 recomputed directly and matches both: `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`, 35,389,440 bytes.
+- Sensor stream remains unverified: `live_sensor_reading_confirmed=false`, four timestamp histories stale, zero advanced; USB transport responded, wireless ADB was `NOT_LISTED`. No raw rows, synthetic rows, source writes, cloud export or GitHub push.
+- n8n execution `203` succeeded. Cloud scan row `487` and direct host evidence row `489` were exact-readback. 45 recovery rows remain pending, 0 terminal; host heartbeat was not probed by the cloud workflow.
+- Row `483` remains `OPEN_RESUME_POINTER_STALE_LEDGER_NEWER`. Exact row reads show row `481` is a cloud scan, not the host event named in row 483. Row `486` was the earlier direct host readback; row `489` is the newer direct host readback. Append-only correction row `488` preserves the mismatch; rows 481 and 483 were not overwritten.
+- Current ledger [`OPEN_TASKS_CURRENT.json`](https://github.com/2708halinh-cloud/SOL-LONG-MACH/blob/main/CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json) blob `da1ec7d9b0d108864ff17cea117bdfd788d2ffd7`: 29 tasks, statuses unchanged (10 OPEN, 2 OPEN_CARRIED, 13 OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK, 1 OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED, 3 IN_PROGRESS); `222` provider observations, `279` verified action events, `15` integrity corrections, 0 closures.
+- **Authorized review route opened:** [PR #42](https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/42) is OPEN/Draft/Unmerged. Branch `reconcile-cloud-continuity-pointer-20261026T1653ICT-review` now proposes the cloud pointer refresh to checkpoint 1700 and current ledger blob `da1ec7d9b0d108864ff17cea117bdfd788d2ffd7`; branch pointer blob `d368a407e2fa956400043a0a57a51db3f332bc0a` was exact-readback. PR body was refreshed to checkpoint 1700. The canonical pointer on `main` remains unchanged at blob `4443d46e828e76ee9deb1a8980e61c4d29e7c5a7`; no direct main write, no merge, no force-push. The PR base/head must be refreshed before any merge decision.
+- Canonical `TASK_RESUME_POINTER.json` remains unchanged at blob `4692b4044acdbaa51caf7fa7e06a97b73f3e53b0`. `MODUAL_PARAMETER_CURRENT.json` remains unchanged at blob `01c1dfe8682e25c7e2f5210bbae87a30231b1f58`; append delta remains blob `02192ee39c087c4471293a9a583bb6facdb6d1a4`. No source moved/deleted and no safety guard bypass.
+- TESSERACT PR #41 remains OPEN/Draft/Unmerged; unit test run `40301839738` and secret-guard run `40301839366` succeeded. PR #6 remains OPEN/Draft; issuer public-key value and runner assignment remain unverified, no CI rerun. PR #39 remains OPEN/Draft; last comparison is stale after main advanced.
+- Public repository visibility remains `public`. The default-branch credential search was bounded and found no actual credential values; it is not a full history audit. Operational metadata remains exposed. No visibility change was attempted; no raw sensor data or credentials were added.
+- Task closures: 0. Cloud terminal rows: 0. No source data or credentials added to public GitHub.
+
+### Next callable edges
+1. After host-local `16:51:32+07`, exact-read the next Tick/consumer and recompute source SHA-256.
+2. Keep PR #42 draft; review/recompare its base and head before any merge.
+3. Continue read-only sensor subscription diagnostics; do not launch the app or change permissions/services without authorization.
+4. Keep 45 recovery rows and 29 repository tasks nonterminal until per-task evidence supports a transition.
+5. Continue TESSERACT issuer/runner provenance without rerunning CI `#39153474587`.
+<!-- VERIFIED_AUTOMATION_CONTINUATION_20261026T1705ICT_POINTER_PR42 -->
