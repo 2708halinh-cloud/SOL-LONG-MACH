@@ -1,0 +1,247 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "observed_at_utc": "2026-10-26T06:11:55.993Z",
+  "observed_at_local": "2026-10-26T13:11:55.993+07:00",
+  "source_event_type": "VERIFIED_DIRECT_HOST_TICK_CONSUMER_SOURCE_AND_ROUTE_READBACK;CLOUD_SCAN_READBACK;NO_TASK_CLOSURE",
+  "main_head_before_checkpoint": "2e285aaa6439e8374564f58442a7414f5e7377e8",
+  "source_reads_before_write": {
+    "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json": {
+      "blob_sha": "6bff9ea7340c0a855dfec5242bb0c09c8d16e32f",
+      "fresh_read": true,
+      "json_parse_verified": true
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "94a4d71b5ba24331f8ea6b4ccfaa5f4641d9479b",
+      "fresh_read": true
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "d2a7ee1539dd8aab64efedca7b08f0ee472f792c",
+      "fresh_read": true,
+      "content_read_via_fetch_blob": true,
+      "json_parse_verified": true,
+      "task_count": 29,
+      "status_counts": {
+        "OPEN": 10,
+        "OPEN_CARRIED": 2,
+        "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+        "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+        "IN_PROGRESS": 3
+      }
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "blob_sha": "84b8523ab3939db90cc7352ff5cd7f719f793dd3",
+      "fresh_read": true,
+      "content_read_via_prior_blob_readback": true,
+      "last_runtime_observation": "2026-10-26T12:51:13.1867619+07:00",
+      "state_file_not_overwritten_in_this_checkpoint": true
+    }
+  },
+  "host": {
+    "device": "DESKTOP-86ITNQ4",
+    "expected_direct_read_device_id": "59f03001-c732-403e-b80c-b4191266809c",
+    "route": "Remote Desktop Commander",
+    "route_status": "ONLINE_DIRECT_READ_VERIFIED",
+    "latest_host_poll_local": "2026-10-26T13:03:21.3676811+07:00",
+    "latest_tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T060138467136Z.json",
+      "observed_at_utc": "2026-10-26T06:01:38.467136Z",
+      "sha256": "0925D8F3BE3F1A7AB65A9AB5F02FAFF31486E80A2911573CE1AA1F7A54FA1A8B",
+      "bytes": 1635,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_sha256_matches": true
+    },
+    "latest_consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T060135790Z.json",
+      "observed_at_utc": "2026-10-26T06:01:38.8726467Z",
+      "sha256": "71F40A248B9B7D98766425963A9B39E476074091FB8FD70A79F262222C1870FA",
+      "bytes": 6945,
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_content_hash_verified": true
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "independently_recomputed": true,
+      "matches_tick_and_consumer": true,
+      "source_mutated": false
+    },
+    "scheduler": {
+      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T13:01:33+07:00",
+      "last_result": 0,
+      "next_run_local_at_last_host_sample": "2026-10-26T13:06:32+07:00",
+      "missed_runs": 0,
+      "post_1306_tick_readback_verified": false,
+      "note": "The last direct host poll was at host clock 13:03:21, before the scheduled 13:06:32 host-clock run. Provider clock is not substituted for host clock."
+    },
+    "device_probe": {
+      "adb_binary_present": true,
+      "adb_devices_command_succeeded": true,
+      "status": "ADB_TRANSPORT_RESPONDED",
+      "xiaomi12_usb": {
+        "adb_state": "device",
+        "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+        "sensor_event_timestamp_sensor_count": 4,
+        "sensor_event_sensors_advanced": [],
+        "live_sensor_event_stream_confirmed": false
+      },
+      "redmi_note14pro_wireless": {
+        "target": "192.168.1.14:5556",
+        "adb_state": "NOT_LISTED",
+        "sensorservice_probe_succeeded": false
+      },
+      "live_sensor_reading_confirmed": false
+    },
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "host_tick_readback_row_id": 458,
+    "latest_host_poll_row_id": 460,
+    "route_inventory_row_id": 459
+  },
+  "cloud": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "can_execute": true,
+    "scheduled_execution": {
+      "id": "192",
+      "status": "success",
+      "mode": "trigger",
+      "started_at_utc": "2026-10-26T06:00:22.072Z",
+      "stopped_at_utc": "2026-10-26T06:00:24.236Z"
+    },
+    "latest_manual_execution": {
+      "id": "193",
+      "status": "success",
+      "mode": "manual",
+      "started_at_utc": "2026-10-26T06:02:53.066Z",
+      "stopped_at_utc": "2026-10-26T06:02:55.001Z"
+    },
+    "latest_cloud_scan_row": {
+      "id": 457,
+      "event_id": "X20261026060254873_CLOUD",
+      "created_at_utc": "2026-10-26T06:02:54.944Z",
+      "state": "OPEN_WORK_REMAINS",
+      "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED"
+    },
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_table_rows": 460,
+    "latest_host_evidence_row_id": 460,
+    "latest_route_inventory_row_id": 459,
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_project_id": "6qKpRmicIGHA5snY",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "tasks_closed": 0,
+    "host_heartbeat_probed_by_workflow": false,
+    "latest_evidence_row_provider_created_at_utc": "2026-10-26T06:09:36.206Z"
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "main_head_before_checkpoint": "2e285aaa6439e8374564f58442a7414f5e7377e8",
+    "open_task_ledger_blob_sha": "d2a7ee1539dd8aab64efedca7b08f0ee472f792c",
+    "task_pointer_blob_sha": "94a4d71b5ba24331f8ea6b4ccfaa5f4641d9479b",
+    "task_count": 29,
+    "task_status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "tasks_closed": 0,
+    "pr36": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+      "head_sha": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "compare_status": "diverged",
+      "ahead_by": 14,
+      "behind_by": 190,
+      "mergeable": false
+    },
+    "pr37": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37",
+      "head_sha": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "compare_status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 146,
+      "mergeable": false
+    },
+    "branch_mutations": false,
+    "merge_performed": false,
+    "force_push_performed": false
+  },
+  "modual": {
+    "target_name": "_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+    "expected_bytes": 89814328,
+    "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "current_state_blob_sha": "84b8523ab3939db90cc7352ff5cd7f719f793dd3",
+    "exact_source_verified": false,
+    "last_known_canonical_path_exists": false,
+    "w_drive_candidates_match_expected_fingerprint": false,
+    "search_exhaustiveness_proven": false,
+    "source_substitution_performed": false,
+    "current_state_lag": "MODUAL_PARAMETER_CURRENT.json's last runtime snapshot is 12:51:13 ICT; newer host evidence is preserved in n8n rows 458 and 460 and this checkpoint."
+  },
+  "historical_zip": {
+    "task_id": "SV-20261020-02",
+    "status": "OPEN",
+    "raw_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+    "evidence_row_id": 415,
+    "third_project_raw_access": "NOT_AUTHORIZED",
+    "recovery_row_status": "ASSIGNED_DRAFT_WAITING_CREDENTIAL",
+    "task_closed": false
+  },
+  "evidence_rows": [
+    {
+      "id": 457,
+      "event_id": "X20261026060254873_CLOUD",
+      "readback_verified": true
+    },
+    {
+      "id": 458,
+      "event_id": "X20261026060142415_HOST_DIRECT_READBACK",
+      "readback_verified": true
+    },
+    {
+      "id": 459,
+      "event_id": "X20261026060833594_REMOTE_ROUTE_INVENTORY",
+      "readback_verified": true
+    },
+    {
+      "id": 460,
+      "event_id": "X20261026060321367_HOST_LATEST_TICK_POLL",
+      "readback_verified": true
+    }
+  ],
+  "safety": {
+    "source_mutated": false,
+    "source_moved_or_deleted": false,
+    "raw_sensor_values_exported": false,
+    "credentials_written": false,
+    "google_drive_written": false,
+    "process_termination": false,
+    "task_status_changed": false,
+    "task_closure": false,
+    "merge_performed": false,
+    "force_push_performed": false
+  },
+  "next": [
+    "After host-local 2026-10-26T13:06:32+07:00, re-read the newest tick and consumer; recompute source SHA-256 and inspect the scheduler. The latest poll at host clock 13:03:21 preceded that due time.",
+    "Keep the production sensor stream OPEN until timestamp advancement and live readings are independently verified; Xiaomi12 timestamps remain stale and Redmi Note 14 Pro wireless target remains NOT_LISTED.",
+    "Continue exact-source discovery for the 89,814,328-byte MODUAL carrier; do not substitute mismatched candidates and do not claim search exhaustiveness.",
+    "Keep all 45 n8n recovery rows pending until task-specific evidence exists; cloud workflow does not probe host heartbeat.",
+    "Keep SV-20261020-02 OPEN until authorized raw-byte access to the third Project carrier is available.",
+    "Refresh PR #36/#37 comparisons after checkpoint commits before any branch decision; no merge or force-push."
+  ]
+}
