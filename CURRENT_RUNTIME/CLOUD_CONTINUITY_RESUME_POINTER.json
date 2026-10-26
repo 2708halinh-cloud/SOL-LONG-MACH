@@ -1,8 +1,8 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-26T05:34:23.019Z",
-  "updated_at_local": "2026-10-26T12:34:23.019+07:00",
+  "updated_at_utc": "2026-10-26T05:35:37.867Z",
+  "updated_at_local": "2026-10-26T12:35:37.867+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended evidence row, not host event time. Latest host tick event time is recorded separately from provider timestamps; cloud/provider and host clocks are not offset-corrected or conflated.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1137ICT.json",
@@ -986,14 +986,15 @@
       "pr37_ci": "3/3 SUCCESS",
       "branch_mutation": false,
       "merge": false,
-      "readback_verified": true
+      "readback_verified": true,
+      "provider_created_at_utc": "2026-10-26T05:26:45.700Z"
     },
     {
       "type": "DROPBOX_MODUAL_EXACT_TARGET_SCOPE_SCAN_ROW_449",
       "evidence_table_id": "Sk0EFJK5NzWVpBvm",
       "evidence_row_id": 449,
       "event_id": "X20261026_DROPBOX_MODUAL_TARGET_SCOPE_SCAN_0529Z",
-      "provider_created_at_utc": "2026-10-26T05:31:22.184Z",
+      "provider_created_at_utc": "2026-10-26T05:31:24.640Z",
       "path": "ns:15398206835//SENSOR_LOGS",
       "files_seen": 56,
       "has_more": false,
@@ -1035,7 +1036,7 @@
       "evidence_table_id": "Sk0EFJK5NzWVpBvm",
       "evidence_row_id": 450,
       "event_id": "X20261026122801176_HOST_DIRECT_READBACK",
-      "provider_created_at_utc": "2026-10-26T05:33:30Z",
+      "provider_created_at_utc": "2026-10-26T05:33:54.212Z",
       "host_observed_at_local": "2026-10-26T12:28:01.1767213+07:00",
       "tick_sha256": "214c7eb7c53f47774d234c39b50dca40f1a91a62c722eae86a352cd6ebbbede0",
       "consumer_sha256": "1b35d8eaab4685aaaaff9ebc404ae985d556567f7651819db0533a9fe2f2e0f99",
@@ -1047,6 +1048,30 @@
       "android_adb_probe": "NOT_PERFORMED",
       "tasks_closed": 0,
       "readback_verified": true
+    },
+    {
+      "type": "GITHUB_COMPARE_SNAPSHOT_AFTER_POINTER_COMMIT_8A22A061",
+      "observed_at_utc": "2026-10-26T05:35:37.867Z",
+      "main_head": "8a22a06171e63ba52ec2e2caaa4bba8342274aac",
+      "pr36": {
+        "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+        "ahead_by": 14,
+        "behind_by": 172,
+        "state": "OPEN_DRAFT",
+        "mergeable": false,
+        "ci_success_count": 3
+      },
+      "pr37": {
+        "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+        "ahead_by": 3,
+        "behind_by": 128,
+        "state": "OPEN_DRAFT",
+        "mergeable": false,
+        "ci_success_count": 3
+      },
+      "comparison_observed_before_pointer_commit": true,
+      "no_merge": true,
+      "no_force_push": true
     }
   ],
   "n8n": {
@@ -4187,7 +4212,7 @@
     "task_closure": false
   },
   "latest_runtime_readback": {
-    "provider_observed_at_utc": "2026-10-26T05:34:23.019Z",
+    "provider_observed_at_utc": "2026-10-26T05:35:37.867Z",
     "host": "DESKTOP-86ITNQ4",
     "host_observed_at_local": "2026-10-26T12:28:01.1767213+07:00",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
@@ -4225,7 +4250,7 @@
       "merged": false,
       "head": "00400b4f81a31293b1960ed1709280130cc25db3",
       "ahead_by": 14,
-      "behind_by": 171,
+      "behind_by": 172,
       "compare_status": "diverged",
       "mergeable": false,
       "ci": "3/3 SUCCESS"
@@ -4236,7 +4261,7 @@
       "merged": false,
       "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
       "ahead_by": 3,
-      "behind_by": 127,
+      "behind_by": 128,
       "compare_status": "diverged",
       "mergeable": false,
       "ci": "3/3 SUCCESS"
@@ -4245,7 +4270,6 @@
       "evidence_table_id": "Sk0EFJK5NzWVpBvm",
       "evidence_row_id": 449,
       "event_id": "X20261026_DROPBOX_MODUAL_TARGET_SCOPE_SCAN_0529Z",
-      "provider_observed_at_utc": "2026-10-26T05:31:22.184Z",
       "account": "Outlook-linked Dropbox",
       "path": "ns:15398206835//SENSOR_LOGS",
       "recursive": true,
@@ -4263,12 +4287,14 @@
       "result_scope": "SUBTREE_ONLY_NOT_GLOBAL_ABSENCE",
       "download_performed": false,
       "source_substitution": false,
-      "tasks_closed": 0
+      "tasks_closed": 0,
+      "evidence_recorded_at_utc": "2026-10-26T05:31:22.184Z",
+      "provider_created_at_utc": "2026-10-26T05:31:24.640Z"
     },
     "github_compare_snapshot": {
-      "observed_at_utc": "2026-10-26T05:34:23.019Z",
+      "observed_at_utc": "2026-10-26T05:35:37.867Z",
       "base": "main",
-      "base_head_before_pointer_commit": "93b5c370323d6394f44c74da1c4c54b035613955",
+      "base_head_before_pointer_commit": "8a22a06171e63ba52ec2e2caaa4bba8342274aac",
       "comparison_observed_before_pointer_commit": true,
       "pr36": {
         "state": "OPEN",
@@ -4276,7 +4302,7 @@
         "merged": false,
         "head": "00400b4f81a31293b1960ed1709280130cc25db3",
         "ahead_by": 14,
-        "behind_by": 171,
+        "behind_by": 172,
         "compare_status": "diverged",
         "mergeable": false,
         "ci": "3/3 SUCCESS"
@@ -4287,7 +4313,7 @@
         "merged": false,
         "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
         "ahead_by": 3,
-        "behind_by": 127,
+        "behind_by": 128,
         "compare_status": "diverged",
         "mergeable": false,
         "ci": "3/3 SUCCESS"
