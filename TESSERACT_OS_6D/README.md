@@ -102,3 +102,8 @@ No claim of full-system synchronization is valid until each target has its own f
 - Core count is used as a virtual worker-slot ceiling. Smart Cache is a software budget only; reported turbo frequency is metadata.
 - GPU execution remains disabled until a real driver/backend is independently detected.
 - This is scheduler/resource-profile emulation, not physical silicon, microcode, ISA, actual cache, clock/thermal behavior, or benchmark emulation.
+
+
+## Canonical motherboard architecture
+
+The current local-first architecture replacement is maintained in [`MOTHERBOARD_ARCHITECTURE.md`](./MOTHERBOARD_ARCHITECTURE.md). The machine-readable motherboard spec is [`SPEC.json`](./SPEC.json). The same source files and Intel Core Ultra emulation package are mirrored under `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/TESSERACT_OS_6D/`; use readback checks before claiming cross-carrier closure.
