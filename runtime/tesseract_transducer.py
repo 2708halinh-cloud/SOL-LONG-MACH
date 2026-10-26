@@ -116,7 +116,14 @@ def tokenize(row: dict) -> list[str]:
     return selected
 
 
-def activate(
+def activate(*args, **kwargs) -> str:
+    """Public direct activation is disabled; only the guarded run() path may mutate the graph."""
+    raise GateRejected(
+        "GATE1: direct activation disabled; use run(..., action='ingest') with trusted authorization verifier"
+    )
+
+
+def _activate_authorized(
     c: sqlite3.Connection, row: dict, source: Path, origin: str, will: str, branch: str,
     *, gate1_context: Mapping[str, bool] | None = None,
     expected_target: Path | None = None,
@@ -291,7 +298,7 @@ def run(
         try:
             new = old = 0
             for row in rows_from_source(source_c, max_rows):
-                result = activate(
+                result = _activate_authorized(
                     graph, row, source, "UBUBU_SQLITE_READONLY", will, branch,
                     gate1_context=gate1_context, expected_target=expected_target,
                 )
