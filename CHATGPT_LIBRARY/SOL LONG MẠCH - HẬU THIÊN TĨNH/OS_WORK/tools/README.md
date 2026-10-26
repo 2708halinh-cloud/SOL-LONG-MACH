@@ -7,5 +7,6 @@
 - [Chuỗi công cụ](./Chuỗi%20công%20cụ/): phân loại toàn bộ registry và hiện vật.
 - [AGENTS.md](./AGENTS.md): quy tắc và phân quyền.
 - [POWER_ROUTER.md](./POWER_ROUTER.md): nút tốc biến 🟣 POWER STONE.
+- [Kỹ năng Phân chia công việc](./_Skills/phan-chia-cong-viec/SKILL.md): quy trình bổ sung để phân rã mục tiêu, giao trách nhiệm, xác định phụ thuộc, điều phối nhánh song song và nghiệm thu bằng chứng.
 - Danh mục của phiên 2026-10-16: 451 Skill trong 105 gốc plugin skill; 523 hàm MCP trong 20 provider nhóm. Đây là số khai báo khả dụng của phiên; không chứng minh kết nối/hoạt động của mọi mục.
 - Tái truy xuất thông tin khi phiên công cụ thay đổi. Lưu provenance và readback riêng cho GitHub và Library.
