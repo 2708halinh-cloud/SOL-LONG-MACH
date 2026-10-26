@@ -2,7 +2,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from runtime.intel_core_ultra_emulator import load_registry, get_profile, plan_task_slots
+from intel_core_ultra_emulator import load_registry, get_profile, plan_task_slots
 
 class IntelCoreUltraProfileTests(unittest.TestCase):
     def test_registry_contains_user_catalog_profiles(self):
