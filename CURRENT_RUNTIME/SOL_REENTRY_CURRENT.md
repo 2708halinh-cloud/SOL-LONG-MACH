@@ -2126,3 +2126,24 @@ All 29 repository tasks remain nonterminal; all 45 cloud recovery rows remain pe
 4. Continue issuer-variable and runner-assignment provenance without rerunning CI `39153474587` absent a verified runner/workflow change.
 5. Refresh PR comparisons before any branch action; do not merge/force-push. Keep MODUAL current and append delta unchanged unless a permitted write path passes the platform safety check.
 <!-- END VERIFIED_AUTOMATION_CONTINUATION_20261026T2140ICT -->
+
+
+<!-- BEGIN VERIFIED_AUTOMATION_CONTINUATION_20261026T2146ICT -->
+## VERIFIED AUTOMATION CONTINUATION — 2026-10-26T21:46:42+07:00
+
+- Fresh-read before this checkpoint: `AGENTS.md` blob `f18f9743de1e21d13bad47770f928ec85e79bd95`; `SOL_REENTRY_CURRENT.md` blob `5e20ef67a165c88f64e2e634a9e6120697633642`; `TASK_RESUME_POINTER.json` blob `d6872b6c5c54eacbcd4e1b666f69e27e4dc97a9b`; `OPEN_TASKS_CURRENT.json` blob `69a79206d08378f961e021f8afae977d78ef0469`. Prior checkpoint `PROVIDER_READBACK_20261026T2140ICT.json` was preserved.
+- Direct host readback at host-local 21:39:40: Tick `D:\SENSOR_LOGS\state\WINDOWS_TICK_20261026T143640123375Z.json`, SHA-256 `93a519f8b3f35369be43dbacf1d67f50c24aad697eceb31ed9416c156e27f099`; consumer `D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261026T143637180Z.json`, SHA-256 `85afa4b409fde60703234e14097ab5caef5214e9fbd01117faf3f4d2d334f580`. Recomputed CSV SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87` and size 35,389,440 bytes match both receipts. Consumer `SOURCE_OBSERVED_READONLY`, exit 0; no source write, synthetic rows, raw rows, cloud export, or GitHub push.
+- Scheduled task was enabled/Ready, last result 0, missed runs 0. Four monitored sensor timestamp histories remain `EVENT_TIMESTAMP_STALE`, zero advanced; wireless ADB remains `NOT_LISTED`; live sensor reading remains unconfirmed. `W32Time` last directly read as Stopped/Manual at host-local 21:31:33; no service or clock change was made.
+- Dropbox Outlook metadata was freshly read: revision `0165dc1e4794ab00000000395cdfd73`, size 35,389,440 bytes, server modified `2026-10-14T00:20:03Z`; no raw CSV bytes were downloaded.
+- Fresh GitHub compare against main `1694570f2c657eb73b2298e707726022ad5e8e06`: PR #35 9 ahead/721 behind; PR #36 14 ahead/352 behind; PR #43 5 ahead/10 behind. All remain OPEN/Draft. PR #6 remains OPEN/Draft; issuer public-key value and runner assignment remain unverified; no CI rerun.
+- Last verified independent cloud receipt remains execution 215, event `X20261026143317733_CLOUD`, exact row 518; 45 recovery rows pending, zero terminal, host heartbeat not probed. Last verified braid receipts remain SIX (9 actions) and PLURAL (5 actions), source unchanged, mutation false, cloud-host wiring `NOT_VERIFIED`.
+- Ledger synchronization preserves all 29 task statuses: 10 OPEN, 2 OPEN_CARRIED, 13 OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK, 1 controlled-sensor-test/production-unverified, 3 IN_PROGRESS. Provider observations/history becomes 237; verified action events becomes 302; integrity corrections remain 21; task closures remain 0.
+- Checkpoint `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T2146ICT.json` was created and exact-target read back as valid JSON (blob `8be5fefd508c4d2664101a2f6c8341e7e9868e93`, commit `8250daf50f9a1a163656acc4c0dd89ed4f456009`). The ledger/pointer/reentry synchronization is a fast-forward-only Git update; prior blobs remain in history. MODUAL current and append delta remain unchanged.
+
+### Next edges
+1. Read exact Tick/consumer after the next scheduled host boundary from the latest host task query, and recompute the source hash; do not infer a newer cycle from runtime time alone.
+2. Continue read-only sensor-client diagnosis; do not launch apps, change Android permissions, or alter W32Time.
+3. Keep all 45 cloud recovery rows and all 29 repository tasks nonterminal until task-specific evidence is read back.
+4. Continue TESSERACT issuer-variable/runner-assignment provenance without rerunning CI `39153474587` absent a verified runner/workflow change.
+5. Refresh PR comparisons before branch actions; no merge/force-push. Keep MODUAL current and append delta unchanged unless a permitted write path passes safety checks.
+<!-- END VERIFIED_AUTOMATION_CONTINUATION_20261026T2146ICT -->
