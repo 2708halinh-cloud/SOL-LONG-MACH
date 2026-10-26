@@ -1,8 +1,8 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-26T11:50:47Z",
-  "updated_at_local": "2026-10-26T18:50:47+07:00",
+  "updated_at_utc": "2026-10-26T11:55:43Z",
+  "updated_at_local": "2026-10-26T18:55:43+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended n8n evidence row, not host event time. Direct host observations are tracked separately in the provider checkpoint.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1840ICT.json",
@@ -36,9 +36,9 @@
     "next_scheduled_tick_local_at_last_readback": "2026-10-26T18:21:32+07:00",
     "post_1531_tick_readback_verified": false,
     "current_modual_state_blob_sha": "01c1dfe8682e25c7e2f5210bbae87a30231b1f58",
-    "current_task_pointer_blob_sha": "4692b4044acdbaa51caf7fa7e06a97b73f3e53b0",
+    "current_task_pointer_blob_sha": "032f91894ec7c3c35c8f7ac548bac529c30f259e",
     "current_task_ledger_blob_sha": "78a869dece7e5cbe65850ef44a65eacdebeff455",
-    "current_main_head_before_pointer_sync": "3a661a047fd8fc377b36765a48d29bd4a425f020",
+    "current_main_head_before_pointer_sync": "61d0e6f2b966a33642581b8464f68a6f923e64ad",
     "recovery_rows_pending": 45,
     "tasks_closed": 0,
     "host_heartbeat_probed_by_cloud_workflow": false,
@@ -47,7 +47,7 @@
     "latest_checkpoint_reconciliation_row_id": 483,
     "latest_provenance_correction_row_id": 500,
     "post_1636_tick_readback_verified": false,
-    "current_task_pointer_commit_sha": "27b5357c34d3bdf251f340984cd98d701eeb331a",
+    "current_task_pointer_commit_sha": "61d0e6f2b966a33642581b8464f68a6f923e64ad",
     "current_task_ledger_commit_sha": "3a661a047fd8fc377b36765a48d29bd4a425f020",
     "post_1651_tick_readback_verified": false,
     "current_main_head_at_refresh": "78a84558c1c623fb5f0004eaccc84ee38d419d8f",
@@ -1798,6 +1798,25 @@
       "main_pointer_write_performed": false,
       "merge_performed": false,
       "force_push": false
+    },
+    {
+      "type": "TASK_RESUME_POINTER_APPEND_AND_EXACT_READBACK_20261026T1855ICT",
+      "observed_at_local": "2026-10-26T18:55:43+07:00",
+      "task_pointer_path": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+      "prior_blob_sha": "4692b4044acdbaa51caf7fa7e06a97b73f3e53b0",
+      "current_blob_sha": "032f91894ec7c3c35c8f7ac548bac529c30f259e",
+      "current_commit_sha": "61d0e6f2b966a33642581b8464f68a6f923e64ad",
+      "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1840ICT.json",
+      "checkpoint_blob_sha": "e710f18b9ff0400663b0478717ad80d51db0d5eb",
+      "provider_readback_history_length": 142,
+      "continuity_readback_history_length": 50,
+      "tick_readback_history_length": 27,
+      "histories_preserved": true,
+      "main_cloud_pointer_changed": false,
+      "main_task_pointer_updated": true,
+      "tasks_closed": 0,
+      "merge_performed": false,
+      "force_push": false
     }
   ],
   "n8n": {
@@ -2100,7 +2119,7 @@
     "tesseract_pr41_current_head_tested": false
   },
   "current_readback": {
-    "current_as_of_local": "2026-10-26T18:50:47+07:00",
+    "current_as_of_local": "2026-10-26T18:55:43+07:00",
     "provider_created_at_utc": "2026-10-26T11:39:50.720Z",
     "latest_provider_readback_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1840ICT.json",
     "latest_provider_readback_blob_sha": "e710f18b9ff0400663b0478717ad80d51db0d5eb",
@@ -2151,7 +2170,7 @@
     "modual_current_file_updated": false,
     "modual_append_delta_path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT_APPEND_20261026T1445ICT.json",
     "modual_append_delta_blob_sha": "02192ee39c087c4471293a9a583bb6facdb6d1a4",
-    "latest_task_pointer_blob_sha": "4692b4044acdbaa51caf7fa7e06a97b73f3e53b0",
+    "latest_task_pointer_blob_sha": "032f91894ec7c3c35c8f7ac548bac529c30f259e",
     "latest_task_ledger_blob_sha": "78a869dece7e5cbe65850ef44a65eacdebeff455",
     "task_count": 29,
     "task_status_counts": {
@@ -2183,7 +2202,7 @@
     "latest_sensor_probe_row_id": 495,
     "latest_provenance_ordering_reconciliation_row_id": 497,
     "latest_host_direct_readback_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1825ICT.json",
-    "task_pointer_blob_sha": "4692b4044acdbaa51caf7fa7e06a97b73f3e53b0",
+    "task_pointer_blob_sha": "032f91894ec7c3c35c8f7ac548bac529c30f259e",
     "task_ledger_blob_sha": "78a869dece7e5cbe65850ef44a65eacdebeff455",
     "latest_workflow_version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
     "latest_manual_execution_id": "210",
@@ -2197,7 +2216,8 @@
     "tesseract_pr41_current_head_tested": false,
     "latest_cloud_event_id": "X20261026113950641_CLOUD",
     "latest_cloud_row_id": 513,
-    "latest_task_ledger_commit_sha": "3a661a047fd8fc377b36765a48d29bd4a425f020"
+    "latest_task_ledger_commit_sha": "3a661a047fd8fc377b36765a48d29bd4a425f020",
+    "latest_task_pointer_commit_sha": "61d0e6f2b966a33642581b8464f68a6f923e64ad"
   },
   "previous_checkpoint_before_20261026T1051ICT": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0655ICT.json",
@@ -10959,27 +10979,29 @@
     "merge_performed": false
   },
   "latest_pointer_reconciliation_20261026T1840ICT": {
-    "state": "REVIEW_BRANCH_POINTER_REFRESHED_EXACT_READBACK_VERIFIED",
-    "observed_at_local": "2026-10-26T18:50:47+07:00",
+    "state": "REVIEW_BRANCH_POINTER_REFRESHED_AFTER_TASK_POINTER_APPEND; EXACT_TARGET_READBACK_VERIFIED",
+    "observed_at_local": "2026-10-26T18:55:43+07:00",
     "branch_name": "reconcile-cloud-continuity-pointer-20261026T1653ICT-review",
-    "prior_branch_pointer_blob_sha": "088df55b55436016f91f1e07f85f25574bb5edbc",
+    "prior_branch_pointer_blob_sha": "e4756cb987046c02770702524c73ca5b813e8196",
     "provider_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1840ICT.json",
     "provider_checkpoint_blob_sha": "e710f18b9ff0400663b0478717ad80d51db0d5eb",
     "provider_checkpoint_commit_sha": "4a9382477293d73e459c43516d8e284edcf87242",
     "latest_cloud_row_id": 513,
     "latest_cloud_event_id": "X20261026113950641_CLOUD",
     "current_main_head_before_pointer_sync": "6a78c0c8c5928598ad98834de8187fef344fe666",
-    "main_task_pointer_blob_sha": "4692b4044acdbaa51caf7fa7e06a97b73f3e53b0",
+    "main_task_pointer_blob_sha": "032f91894ec7c3c35c8f7ac548bac529c30f259e",
     "main_task_ledger_blob_sha": "78a869dece7e5cbe65850ef44a65eacdebeff455",
     "main_pointer_write_performed": false,
-    "main_task_pointer_write_performed": false,
+    "main_task_pointer_write_performed": true,
     "pull_request_number": 42,
     "pull_request_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/42",
     "pull_request_status": "OPEN_DRAFT_PR",
     "merge_performed": false,
     "force_push_performed": false,
     "tasks_closed": 0,
-    "main_head_before_pointer_sync": "3a661a047fd8fc377b36765a48d29bd4a425f020",
-    "main_task_ledger_commit_sha": "3a661a047fd8fc377b36765a48d29bd4a425f020"
+    "main_head_before_pointer_sync": "61d0e6f2b966a33642581b8464f68a6f923e64ad",
+    "main_task_ledger_commit_sha": "3a661a047fd8fc377b36765a48d29bd4a425f020",
+    "main_task_pointer_commit_sha": "61d0e6f2b966a33642581b8464f68a6f923e64ad",
+    "main_task_pointer_update": "append-only provider/continuity/tick histories; exact-target readback passed"
   }
 }
