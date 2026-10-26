@@ -1065,3 +1065,29 @@ Ledger remains 29 tasks, 164 action events, 164 provider observations, four inte
 - Search PID 50200 returned no new output on the alternate route; a direct process-state query timed out. Its current running/stopped state is therefore not asserted. No process was terminated, no candidate substituted, and the exact-target search is still non-exhaustive.
 - Latest successful carrier-log metadata remains 6,519,842,892 bytes with last_write `2026-10-26T00:00:54.4117467Z`; retention policy is still unverified. A fresh Remote Desktop Commander file-info request remains pending after a connector timeout. GitHub code search found policy/readback references, not a verified writer/rotation implementation. No rotation or deletion.
 - No task closed, no raw sensor values exported, no credentials written, no source moved/deleted. Continue with the next host-local Tick after `07:46:32+07`, verify the matching consumer and source hash, poll PID/session state through an available route, continue carrier writer/retention inspection, and keep TESSERACT/Archive PR branches open until their specific verification gates pass.
+
+
+## REENTRY DELTA — VERIFIED PROVIDER CHECKPOINT 20261026T0845ICT
+
+SOURCE_DIRECT: Continue the current MODUAL_SENSOR_LOGS_ROUTING task and all independent OPEN edges. This is a provider observation, not task completion.
+
+### Exact current readback
+- Checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0845ICT.json`, blob `8470b5955fabd1852af27e8bf854fc842ccbb02e`, commit `904a4159febce7c7029414da116bb0dfe53b42b6`; exact content readback verified.
+- Current source file: `D:\SENSOR_LOGS\windows_SENSON.CSV`, 35,389,440 bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; last write remains `2026-10-23T08:45:56.2458701Z`.
+- Scheduled Tick: `D:\SENSOR_LOGS\state\WINDOWS_TICK_20261026T013644561716Z.json`, SHA-256 `cca1482587e8c2f4bad57f031c29438d55cc3e236e04a8e1b063e0a4bf9a2ba3`, observed `2026-10-26T01:36:44.561716Z`.
+- Consumer: `D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261026T013640790Z.json`, SHA-256 `1aa3d0b7a941a5878806f3ef932ac406706407b82e7f4829fb5081a92871f00d`, status `SOURCE_OBSERVED_READONLY`, exit 0. Tick, consumer, and independently recomputed source hashes match. No raw rows, synthetic rows, source writes, cloud export, or GitHub push.
+- The next scheduled host-local Tick is `2026-10-26T08:41:32+07:00`; at the last direct host read `2026-10-26T08:40:25.568+07:00`, it was not yet due.
+- Fresh device probe: USB ADB `1056285` responds but four sensor timestamps remain stale and none advanced; Redmi wireless `192.168.1.14:5556` is `NOT_LISTED`. An explicit `adb connect` attempt timed out with WinError 10060. No app launch/install, permission change, service start, or device configuration change.
+- n8n execution `181` succeeded and continuity row `427` was read back exactly. 45 recovery tasks remain pending; host heartbeat remains unprobed.
+- Braid execution produced current SIX/PLURAL receipts with 9/5 actions; receipt hashes were recomputed and read back, source unchanged, mutation false; cloud-host wiring remains `NOT_VERIFIED`.
+- Current comparisons: Archive PR #36 is 14 ahead / 30 behind main `d6d4d098a7249e2a41c08ad77bfe96af404f4f12`; MODUAL PR #35 is 9 ahead / 399 behind. TESSERACT head `5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8` runs `40220813600` and `40220813636` failed; issuer key value and runner assignment remain unverified; no CI rerun.
+- Exact bulk search PID 50200 was present at host time 08:38:49+07 but yielded no new output; search remains non-exhaustive.
+
+### State-file writes and exact readback
+```
+pointer: UPDATED_AND_EXACT_READBACK_VERIFIED; commit=a603f4693a5e09a4f18dbf3c870801a0daf6eedf; blob=be062fca651c589bec506fced16904a1c2c8a30d; readback=true
+open_tasks: UPDATED_AND_EXACT_READBACK_VERIFIED; commit=94d7e9eb096d619cef8bcd4fcf61c5adf0d320a1; blob=71e3fff1f1694cf776a9e9f6967aff50e6c63a59; readback=true
+modual_current: UPDATED_AND_EXACT_READBACK_VERIFIED; commit=d584aca5822f1d0a60b1b5530927ef59410a4a2e; blob=1125bd06631a5a39e7277359ed7f82f342dace8a; readback=true
+```
+
+No task was closed. No secrets or raw sensor values were written to public GitHub. No source was moved or deleted; no PR was merged or force-pushed. Continue the next Tick, sensor-client diagnosis, exact-target search, TESSERACT issuer/runner provenance, carrier-log retention audit, and current-head PR comparisons.
