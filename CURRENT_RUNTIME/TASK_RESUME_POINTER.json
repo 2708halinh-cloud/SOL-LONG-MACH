@@ -123,7 +123,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-26T09:51:54+07:00",
+  "updated_at": "2026-10-26T09:52:36+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -41083,13 +41083,18 @@
       "pr37_compare_at_main": "7ccbc8678ae9dba8ebaa5bfe790abd23b052fb58",
       "pr37_ahead_by": 3,
       "pr37_behind_by": 11,
-      "host_route": "OFFLINE_AT_LATEST_INVENTORY; HOST_POWER_STATE_NOT_INFERRED"
+      "host_route": "OFFLINE_AT_LATEST_INVENTORY; HOST_POWER_STATE_NOT_INFERRED",
+      "latest_tick_live_sensor_reading_confirmed": true,
+      "latest_tick_persistence": "NOT_VERIFIED"
     },
     "tasks_closed": 0,
     "history_preserved": true,
     "source_mutated": false,
     "secrets_written": false,
-    "raw_sensor_values_exported": false
+    "raw_sensor_values_exported": false,
+    "open_tasks_current_blob_sha": "4a1a4d0fd1bac715a791edd9a40f8155329c381c",
+    "reentry_current_blob_sha": "e9bf3ac6028358a7f493d68fd86ee5ab7c6367ad",
+    "pointer_reconciliation_pending": false
   },
   "latest_provider_readback_20261026T0604ICT": {
     "id": "PROVIDER_READBACK_20261026T0604ICT",
@@ -44163,7 +44168,8 @@
       "ahead_by": 3,
       "behind_by": 11
     },
-    "tasks_closed": 0
+    "tasks_closed": 0,
+    "reentry_current_blob_sha": "e9bf3ac6028358a7f493d68fd86ee5ab7c6367ad"
   },
   "latest_direct_host_readback_20261026T0950ICT": {
     "observed_at_host_local": "2026-10-26T09:40:15.1306311+07:00",
@@ -44250,21 +44256,29 @@
     "main_head_before_checkpoint": "7ccbc8678ae9dba8ebaa5bfe790abd23b052fb58",
     "checkpoint_commit": "6696ac0e3444a0776d0ed219e901c8b0ad86c7c7",
     "checkpoint_blob_sha": "25706c55bb22fd08cb505bbb3ddbe43b6288ea2d",
-    "pointer_updated_after_checkpoint_pending": true,
-    "open_tasks_terminal_count": 0
+    "pointer_updated_after_checkpoint_pending": false,
+    "reentry_current_append_commit": "595574dadfa8464032eb18ac6bef546d85fc4c74",
+    "reentry_current_blob_sha": "e9bf3ac6028358a7f493d68fd86ee5ab7c6367ad",
+    "open_tasks_current_blob_sha": "4a1a4d0fd1bac715a791edd9a40f8155329c381c",
+    "modual_parameter_current_blob_sha": "54470d93a70ed749d157a31ae4c6ce7d972791dc",
+    "state_files_exact_readback": true,
+    "open_tasks_terminal_count": 0,
+    "latest_tick_live_sensor_flag": true,
+    "latest_tick_persistence": "NOT_VERIFIED"
   },
   "latest_post_checkpoint_action_20261026T0950ICT": {
     "state_file_commits": {
       "modual_parameter_current": "9febd4d2452f9524e906d93e8ff4e6abd4e672a3",
       "open_tasks_current": "60994a98258c2857b2fa1ddc85a4b1d6680b9772",
       "provider_checkpoint": "6696ac0e3444a0776d0ed219e901c8b0ad86c7c7",
-      "pointer_reconciliation": "PENDING",
-      "reentry_current": "PENDING"
+      "reentry_current": "595574dadfa8464032eb18ac6bef546d85fc4c74",
+      "pointer_reconciliation": "THIS_COMMIT"
     },
     "exact_readback": true,
     "tasks_closed": 0,
     "source_mutated": false,
     "secrets_written": false,
     "raw_sensor_values_exported": false
-  }
+  },
+  "previous_updated_at_before_final_0950_reconciliation": "2026-10-26T09:51:54+07:00"
 }
