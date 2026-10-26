@@ -107,7 +107,7 @@ class TransducerTests(unittest.TestCase):
     def test_unguarded_cannot_commit(self):
         graph=connect_graph(self.target)
         with self.assertRaises(GateRejected):
-            activate(graph,{'event_id':'E9','content':'root','created_at':'now'},self.source,'UBUBU','','SOL')
+            activate(graph,{'event_id':'E9','content':'root','created_at':'now'},self.source,'UBUBU','HA_LINH','SOL')
         self.assertEqual(graph.execute('SELECT COUNT(*) FROM source_anchors').fetchone()[0],0)
         graph.close()
 
