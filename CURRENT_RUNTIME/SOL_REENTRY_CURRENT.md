@@ -1417,3 +1417,30 @@ Fresh-read and exact-target provenance:
 - No cloud recovery task was inferred complete from the scan; all 45 remain pending. No source or credentials were moved, deleted or exported.
 
 <!-- END CLOUD_POINTER_TESSERACT_RECONCILIATION_20261026T1104ICT -->
+
+
+<!-- BEGIN VERIFIED_PROVIDER_READBACK_20261026T1101ICT -->
+## DELTA — FRESH WINDOWS TICK/CONSUMER + CLOUD ROW 442 — 2026-10-26 11:01 ICT
+
+### Direct host readback
+- Host route `Remote Desktop Commander` is ONLINE; host `DESKTOP-86ITNQ4`.
+- Scheduled task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M`: last run `11:01:33+07`, result `0`, next run `11:06:32+07`, missed runs `0`.
+- Tick `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T040139068348Z.json`, SHA-256 `24BA09DF87D95C074C7A5B535C89316DA307D8AFFF22B3E314389624ACF7FFC2`.
+- Consumer `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T040136226Z.json`, SHA-256 `124B53E9DC9897FD0B54CEB0915AC59302848EBD9A390FB745384AC6E06843EF`; `SOURCE_OBSERVED_READONLY`, exit `0`.
+- Direct source `D:\\SENSOR_LOGS\\windows_SENSON.CSV`: 35,389,440 bytes; SHA-256 `9B25BD723DCE06344432597CC4F300053EA5ACBF76BDD2AB4F38BF4A1BF34B87`. Source, Tick and consumer hashes agree; consumer content-hash verification is true. No raw rows, synthetic rows, cloud export or GitHub push.
+- Live sensor stream remains unverified: four USB sensor timestamps remain `EVENT_TIMESTAMP_STALE`, zero advanced; wireless ADB `192.168.1.14:5556` is `NOT_LISTED`. The next scheduled Tick is after `11:06:32+07`; no claim is made about that future run.
+- Dropbox Outlook metadata fresh-read: `/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV`, file ID `id:gvG29tEleJwAAAAAAAACOw`, revision `0165dc1e4794ab00000000395cdfd73`, size 35,389,440 bytes, server modified `2026-10-14T00:20:03Z`. Raw CSV bytes were not downloaded.
+
+### Cloud scan
+- n8n workflow `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN`, scheduled execution `187`, success. Exact table row `442`, event `X20261026040024040_CLOUD`, state `OPEN_WORK_REMAINS`; 45 recovery rows pending, zero terminal. Host heartbeat remains unprobed.
+- Provider checkpoint `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1101ICT.json`: blob `ee244f5454f65f6e9a37e2de57c3cf860a4f7fbe`, commit `dd6922db634649da50ffca8e1af07ceebc1d8e60`; exact readback succeeded.
+- `MODUAL_PARAMETER_CURRENT.json`: blob `810c0167914fd7c751889f9c209ac0b094c56eab`, commit `34b5abffb8d5cb85b64a6555d0be9ab302d32b0a`; exact readback succeeded, session observation count 130.
+- `OPEN_TASKS_CURRENT.json`: blob `1bdf4fc10136e9d6b057dec0dc2702ef3795cfcd`, commit `4863fccc8ebe917e50389c60d18fc807c23892fe`; exact readback succeeded. All 29 task statuses unchanged; provider observations 201, verified action events 233; zero task closures.
+- `TASK_RESUME_POINTER.json`: blob `12b49c30f6913020b6d2c55cec4e2a0a2cb480b7`, commit `8a102b1e699bf8e12bb1822edb4c20072e0ae583`; exact readback succeeded and pointer now references the 11:01 provider checkpoint while retaining the prior 10:51 checkpoint and the TESSERACT branch snapshot.
+- `CLOUD_CONTINUITY_RESUME_POINTER.json`: blob `f0f4c0c204a612a54c67cf0aa76e2b46e2dd42a3`, commit `0d7d313006f1fa5b44b7fba76b09d850d4c33e33`; exact readback succeeded. Latest cloud scan row is 442; latest host evidence row in the continuity table remains 440. Timestamp remains tied to row 442 provider `createdAt` `2026-10-26T04:00:24.112Z`, not the host Tick clock.
+- TESSERACT parallel checkpoint remains `CURRENT_RUNTIME/TESSERACT_ISSUER_RUNNER_READBACK_20261026T1104ICT.json`, blob `924ac4cb3ac7710976473badf3614043e0cd672a`, commit `705ad42d2e99114523f4cb5477851c0808148315`. PR #6 remains OPEN/Draft; issuer variable value and runner assignment remain unverified; no CI rerun.
+
+### Invariants and continuation
+- No task closed. No secrets or raw sensor values written to public GitHub. No source moved/deleted. No PR merge or force-push.
+- Next: exact-read Tick/consumer after `11:06:32+07`; continue sensor-client and W32Time permission diagnosis without changing the clock; keep all 45 cloud rows pending; verify TESSERACT Actions variable/runner settings through an authorized route; recompare Archive PR #36/#37 against the final main head before any branch mutation.
+<!-- END VERIFIED_PROVIDER_READBACK_20261026T1101ICT -->
