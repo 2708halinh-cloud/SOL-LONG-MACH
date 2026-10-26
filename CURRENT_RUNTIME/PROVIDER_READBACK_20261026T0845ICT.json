@@ -1,0 +1,304 @@
+{
+  "schema": "GGDV_PROVIDER_READBACK/1.0",
+  "id": "PROVIDER_READBACK_20261026T0845ICT",
+  "observed_at_utc": "2026-10-26T01:45:31.262Z",
+  "observed_at_ict": "2026-10-26T08:45:31.262+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "main_head_before_checkpoint": "d6d4d098a7249e2a41c08ad77bfe96af404f4f12",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0747ICT.json",
+    "blob_sha": "3367929db050107ee41169fa130476ae90974bfb",
+    "commit_sha": "54569e598768e7c6d29c93c97f2a073faf13fdca"
+  },
+  "fresh_source_reads": [
+    {
+      "path": "AGENTS.md",
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "readback": "FULL_CONTENT_READ"
+    },
+    {
+      "path": "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md",
+      "blob_sha": "fe3f1d37defc3c71badb6552436f60fc5870a958",
+      "readback": "FULL_CONTENT_READ"
+    },
+    {
+      "path": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+      "blob_sha": "de7a37bd51a074c950f18348dc86e3f5cac85170",
+      "readback": "FULL_BLOB_READ_AND_JSON_PARSED"
+    },
+    {
+      "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "blob_sha": "bb9cb7d5e401fb56adf9d216b186a8304d790c8d",
+      "readback": "FULL_BLOB_READ_AND_JSON_PARSED"
+    },
+    {
+      "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+      "blob_sha": "6cb06d176b453e08dd5c1fa72f36f975e23cb1c9",
+      "readback": "FULL_CONTENT_READ_AND_JSON_PARSED"
+    }
+  ],
+  "provider_inventory": {
+    "github_main": "CONNECTED; source reads and writes available",
+    "remote_desktop_commander": {
+      "device": "DESKTOP-86ITNQ4",
+      "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+      "account_route": "Remote Desktop Commander dedicated account",
+      "status": "ONLINE",
+      "observed_last_seen": "3m ago at device inventory read",
+      "usage_observed": "93% of monthly tool-call allowance"
+    },
+    "dropbox_outlook_metadata_route": {
+      "prior_exact_source_metadata_readback": "VERIFIED_IN_PRIOR_CHECKPOINT_AND_PINNED_CONSUMER_RECEIPT",
+      "current_connector_probe": "FAILED_LINK_ID_MUST_IDENTIFY_AN_ELIGIBLE_LINKED_ACCOUNT",
+      "raw_csv_downloaded": false,
+      "alternate_direct_host_consumer_hash_verification": "SUCCESS"
+    },
+    "google_drive_callable_tool_names": [],
+    "n8n": "CONNECTED; workflow and data-table readback succeeded"
+  },
+  "windows_tick_consumer": {
+    "observed_at_ict": "2026-10-26T08:38:49.796+07:00",
+    "host": "DESKTOP-86ITNQ4",
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_ict": "2026-10-26T08:36:33+07:00",
+      "last_result": 0,
+      "next_run_ict": "2026-10-26T08:41:32+07:00",
+      "missed_runs": 0
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z",
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T013644561716Z.json",
+      "bytes": 1635,
+      "sha256": "cca1482587e8c2f4bad57f031c29438d55cc3e236e04a8e1b063e0a4bf9a2ba3",
+      "observed_at_utc": "2026-10-26T01:36:44.561716Z",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_reading_confirmed": false,
+      "probe_status": "ADB_TRANSPORT_RESPONDED",
+      "targets": [
+        {
+          "role": "XIAOMI12_USB",
+          "target": "1056285",
+          "adb_state": "device",
+          "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+          "sensor_event_timestamp_sensor_count": 4,
+          "sensor_event_sensors_advanced": []
+        },
+        {
+          "role": "REDMI_NOTE14PRO_WIRELESS",
+          "target": "192.168.1.14:5556",
+          "adb_state": "NOT_LISTED",
+          "sensor_event_stream_status": "NOT_PROBED",
+          "sensor_event_timestamp_sensor_count": 0,
+          "sensor_event_sensors_advanced": []
+        }
+      ]
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T013640790Z.json",
+      "bytes": 6945,
+      "sha256": "1aa3d0b7a941a5878806f3ef932ac406706407b82e7f4829fb5081a92871f00d",
+      "observed_at_utc": "2026-10-26T01:36:44.7804173Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "consumer_hash_matches_verifier": true,
+      "source_content_hash_verified": true,
+      "live_sensor_reading_confirmed": false,
+      "tick_consistency": true,
+      "raw_rows_emitted": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "exact_source_hash_readback": {
+      "independently_recomputed_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "matches_tick": true,
+      "matches_consumer": true
+    },
+    "consumer_script": {
+      "path": "D:\\SENSOR_LOGS\\run_telemetry_buffer_sync.ps1",
+      "exact_readback_lines": 104,
+      "behavior": "Verifies pinned source hash, invokes telemetry_buffer_sync.py --once, writes a receipt and append-only wrapper trace; source_file_written=false, raw_rows_emitted=false, cloud_export_enabled=false, github_push_enabled=false"
+    },
+    "direct_sensor_probe": {
+      "observed_at_ict": "2026-10-26T08:34:43.014+07:00",
+      "script": "D:\\SENSOR_LOGS\\live_device_probe.py",
+      "exit_code": 0,
+      "status": "ADB_TRANSPORT_RESPONDED",
+      "usb_target": "1056285",
+      "usb_state": "device",
+      "usb_sensor_event_status": "EVENT_TIMESTAMP_STALE",
+      "usb_timestamp_sensor_count": 4,
+      "usb_sensors_advanced": [],
+      "wireless_target": "192.168.1.14:5556",
+      "wireless_state": "NOT_LISTED",
+      "adb_connect_result": "TIMEOUT_WINERROR_10060",
+      "adb_devices_listed": [
+        "1056285"
+      ],
+      "windows_sensor_services": [
+        {
+          "name": "SensorService",
+          "state": "Stopped",
+          "start_mode": "Manual",
+          "exit_code": 1077
+        },
+        {
+          "name": "SensorDataService",
+          "state": "Stopped",
+          "start_mode": "Manual",
+          "exit_code": 1077
+        },
+        {
+          "name": "SensrSvc",
+          "state": "Stopped",
+          "start_mode": "Manual",
+          "exit_code": 1077
+        }
+      ],
+      "changes_made": "No service starts, permission changes, app launches, app installs, source writes, or device configuration changes"
+    },
+    "status": "SCHEDULED_TICK_AND_READONLY_CONSUMER_VERIFIED;SOURCE_HASH_MATCHES;LIVE_SENSOR_STREAM_STALE;WIRELESS_ADB_CONNECT_TIMEOUT"
+  },
+  "cloud_continuity": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "latest_execution_id": "181",
+    "execution_status": "success",
+    "execution_started_at_utc": "2026-10-26T01:00:22.076Z",
+    "execution_stopped_at_utc": "2026-10-26T01:00:24.243Z",
+    "latest_row_id": 427,
+    "latest_event_id": "X20261026010024098_CLOUD",
+    "table_id": "Sk0EFJK5NzWVpBvm",
+    "latest_row_created_at_utc": "2026-10-26T01:00:24.169Z",
+    "latest_row_state": "OPEN_WORK_REMAINS",
+    "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "host_heartbeat_probed": false,
+    "host_operations": 0,
+    "tasks_closed": 0
+  },
+  "braid_runtime": {
+    "source_script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+    "source_script_sha256": "65e74121839c5bbcc35dc518c1999237d8267747b9fde26bd0c53a2d3c86e2e3",
+    "six_receipt": {
+      "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261026T013811029401Z.json",
+      "bytes": 3996,
+      "sha256": "a2278b481f34b8f2896316afc0c15e837eb0da11ac2c3b9776521aa27dd60d68",
+      "schema": "GGDV_BRAID_POWER_EXECUTION_RECEIPT/1.0",
+      "observed_at_utc": "2026-10-26T01:38:11.154667Z",
+      "executed_action_count": 9,
+      "receipt_readback_ok": true,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "gate_next_edge": "BRAID_PARALLEL_ACTIONS"
+    },
+    "plural_receipt": {
+      "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261026T013811194246Z.json",
+      "bytes": 2407,
+      "sha256": "b9d75814db8e3276290178098337641def324019b7b8fff66fdd5931b016ab9a",
+      "schema": "GGDV_BRAID_POWER_EXECUTION_RECEIPT/1.0",
+      "observed_at_utc": "2026-10-26T01:38:11.200690Z",
+      "executed_action_count": 5,
+      "receipt_readback_ok": true,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "gate_next_edge": "BRAID_PARALLEL_ACTIONS"
+    },
+    "cloud_host_wiring": "NOT_VERIFIED"
+  },
+  "exact_bulk_target": {
+    "expected_name": "_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+    "expected_bytes": 89814328,
+    "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "canonical_path": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+    "canonical_path_exists": false,
+    "current_search_process_id": 50200,
+    "current_search_process_present_at_ict": "2026-10-26T08:38:49.796+07:00",
+    "search_root": "W:\\Drive của tôi",
+    "last_process_output": "NO_NEW_OUTPUT",
+    "search_exhaustive": false,
+    "source_substitution": false,
+    "source_moved_or_deleted": false
+  },
+  "archive_pr36": {
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+    "state": "OPEN_DRAFT_LAST_VERIFIED_AT_0747ICT",
+    "merged": false,
+    "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+    "compared_main_head": "d6d4d098a7249e2a41c08ad77bfe96af404f4f12",
+    "compare_status": "diverged",
+    "ahead_by": 14,
+    "behind_by": 30,
+    "merge_base": "cbb8e2074695670398d2ee9ca4462bbbd55cee7c",
+    "merge_or_force_push_performed": false
+  },
+  "modual_pr35": {
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/35",
+    "state": "OPEN_LAST_VERIFIED_IN_RESUME_POINTER",
+    "head": "f99d96e39f62245d23ad728daac2c2006061e393",
+    "compared_main_head": "d6d4d098a7249e2a41c08ad77bfe96af404f4f12",
+    "compare_status": "diverged",
+    "ahead_by": 9,
+    "behind_by": 399,
+    "merge_base": "aa1c3ab3c4e1a377198566508fb3dd43214fc399",
+    "merge_or_force_push_performed": false
+  },
+  "tesseract_pr6": {
+    "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+    "state": "OPEN_DRAFT_LAST_VERIFIED_AT_0747ICT",
+    "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+    "latest_inspected_runs": [
+      {
+        "run_id": 40220813600,
+        "workflow": "tesseract-desktop-ci",
+        "conclusion": "failure"
+      },
+      {
+        "run_id": 40220813636,
+        "workflow": "validate-x-time",
+        "conclusion": "failure"
+      }
+    ],
+    "issuer_public_key_value_verified": false,
+    "runner_assignment_verified": false,
+    "ci_rerun_performed": false
+  },
+  "invariants": {
+    "source_file_written": false,
+    "source_moved_or_deleted": false,
+    "raw_sensor_values_exported": false,
+    "credentials_written": false,
+    "tasks_closed": 0,
+    "archive_pr36_merged": false,
+    "archive_pr36_force_pushed": false,
+    "tesseract_ci_rerun": false,
+    "permissions_changed": false,
+    "apps_launched_or_installed": false
+  },
+  "next_actions": [
+    "Continue direct Android sensor client/registration diagnosis with sanitized metadata; USB target 1056285 responds but event timestamps remain stale, and do not launch/install apps or change permissions without authorization.",
+    "Retry wireless ADB route only through read-only network/provider diagnostics; last adb connect to 192.168.1.14:5556 timed out with WinError 10060 and adb devices lists only 1056285.",
+    "Read the next scheduled Tick after host-local 2026-10-26T08:41:32+07:00 and exact-read the matching consumer receipt; recompute source SHA and preserve source bytes.",
+    "Poll process/session status for exact bulk-target search PID 50200; continue alternate exact-target search if available and preserve access errors; do not claim exhaustive absence.",
+    "Continue TESSERACT issuer public-key and runner-assignment provenance via authorized routes; do not rerun CI without verified runner/issuer change.",
+    "Recompare Archive PR #36 against the then-current main head before any branch maintenance; keep OPEN/Draft and do not merge or force-push.",
+    "Continue carrier-events.jsonl writer/retention investigation without rotation or deletion.",
+    "Keep all 29 tasks open/nonterminal; no metadata-only closure."
+  ]
+}
