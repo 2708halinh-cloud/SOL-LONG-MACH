@@ -28,7 +28,7 @@ A socket is a capability endpoint, not a claim that the provider is connected. E
 
 ### VRM/PMIC — power and safety
 - Observe disk capacity, token/API quota, timeouts, rate limits and worker saturation.
-- Survival threshold: alert when disk usage is >= 90% (free space <= 10%); critical threshold at >= 97% used or < 5 GiB free. Thresholds trigger prioritization, safe cache inspection, pause of nonessential downloads/builds and user-visible remediation—not blind deletion.
+- Disk guard uses `used_percent = 100 * (total_bytes - free_bytes) / total_bytes`: warn at >= 85% used; enter degraded mode and stop nonessential writes at >= 90% used (equivalent free space <= 10%) or < 5 GiB free. Recover only after two consecutive fresh samples at <= 85% used (free space >= 15%) and >= 5 GiB free. Stale, unavailable, or invalid measurements are UNKNOWN and keep nonessential writes disabled. Tests cover 85%, 90%, 100%, the 5 GiB floor, recovery hysteresis, and unknown/stale samples. Threshold actions prioritize repair and safe cache inspection—not blind deletion.
 - Circuit breaker and failover routing on repeated provider failures or quota exhaustion.
 - Never log access tokens, cookies, authorization headers, OAuth refresh tokens or secret contents.
 
