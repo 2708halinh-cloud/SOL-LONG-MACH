@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """GGDV TESSERACT 6D: X2 Âm/Dương -> provenance -> Hebbian activation.
 
-Reads an authorized SQLite event carrier in read-only mode; never reads hidden RAM,
+Reads an SQLite event carrier in read-only mode; never reads hidden RAM,
 modifies the source, mounts VHDX, or manufactures events. Derived weights are
-transactional and idempotent. Existing UBUBU API/journals remain authoritative.
+transactional and idempotent. Ingest requires a trusted authorization verifier
+injected by an authorized caller; the CLI intentionally exposes no ingest action
+until that verifier is wired. A non-empty origin string is not authorization.
+Existing UBUBU API/journals remain authoritative.
 """
 from __future__ import annotations
 import argparse
@@ -245,6 +248,8 @@ def run(
         d = discover_source(source_c)
         if action == "probe":
             return {"action":"probe","source":str(source),"source_schema":d,"axes":AXES,"x2":"YIN_SOURCE_AND_CONSEQUENCE + YANG_GATED_ACTION"}
+        if action not in {"dry-run", "ingest"}:
+            raise GateRejected("GATE1: unsupported run action; recall uses recall_network")
         if not d["compatible"]:
             raise GateRejected("GATE1: unsupported source schema; use provider-specific adapter")
         if action == "dry-run":
