@@ -1389,3 +1389,20 @@ Fresh-read and exact-target provenance:
 - No task was closed; no raw sensor values or credentials were written to public GitHub; no source was moved or deleted; no PR was merged or force-pushed; no prohibited CI rerun.
 - Next: read the Tick and matching consumer after `10:56:32+07`; continue read-only sensor-client and W32Time permission diagnosis without launching an unverified package or changing the clock; keep all 45 cloud tasks pending; continue TESSERACT issuer/runner provenance; recompare Archive PR #36/#37 with current main before any branch mutation.
 <!-- END VERIFIED_PROVIDER_READBACK_20261026T1051ICT -->
+
+
+<!-- BEGIN VERIFIED_TESSERACT_ISSUER_RUNNER_READBACK_20261026T1104ICT -->
+## PARALLEL BRANCH — TESSERACT ISSUER / RUNNER PROVENANCE — 2026-10-26 11:04 ICT
+
+- PR [#6](https://github.com/2708halinh-cloud/x-time-web/pull/6) is still OPEN/Draft/unmerged at head `5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8`.
+- Exact workflow source `.github/workflows/tesseract-desktop-ci.yml` blob: `9f1133617e683a7b15a588a205c4dee36cafad40`. It references the repository variable `vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64`; the connected GitHub tools do not expose a repository Actions Variables or runner-assignment read, so the value/presence and runner assignment remain UNVERIFIED.
+- Exact `TESSERACT_DESKTOP/src-tauri/src/kilo.rs` blob: `f1a7abe2d30cf720d2d1207335325d42a2af4e16`. Source readback verifies the code uses Ed25519 signature verification, checks issuer `KILO_XTIME`, expected account reference, authenticated state, non-empty session ID and unexpired timestamp; build-time key absence fails closed with `KILO_TRUSTED_ISSUER_KEY_NOT_CONFIGURED_AT_BUILD`.
+- Latest current-head run `40220813600` (`tesseract-desktop-ci`) and validation run `40220813636` both failed with `steps=[]`; artifacts count is 0. `selfhosted_windows_verify` was skipped on `pull_request`; readback job failed. These results do not establish a source-code execution failure.
+- No CI rerun was performed. In particular, prohibited run `39153474587` was not repeated. Do not rerun until a runner/configuration change is independently verified.
+- Checkpoint `CURRENT_RUNTIME/TESSERACT_ISSUER_RUNNER_READBACK_20261026T1104ICT.json`: blob `924ac4cb3ac7710976473badf3614043e0cd672a`, commit `705ad42d2e99114523f4cb5477851c0808148315`; exact content readback succeeded.
+- `OPEN_TASKS_CURRENT.json` TESSERACT observation append: blob `61170fbb6260fe1111d20dcedf86f6b81ed03f58`, commit `c93b87591a4a1ee382e658bc254e3e52f3c406f1`; exact readback succeeded. All 29 task statuses remain unchanged; provider observations 200, verified action events 232.
+- `TASK_RESUME_POINTER.json` TESSERACT branch refresh: blob `e6c7b2afa9844326a9dfc6119644b066afa74c84`, commit `f35fcdcff2d66d221395a973715b025ccd2d989a`; exact readback succeeded. The prior parallel-branch snapshot is retained, including the historical head `5312816d5fe2b22e92302211b67f916b88a6fe14`.
+- Archive PR #36 and #37 were compared at main head `ae5d5f7241d3093188e634e675f63a64048b6f69`: #36 14 ahead / 93 behind; #37 3 ahead / 49 behind, both diverged. Main advanced afterward; refresh both comparisons before any branch mutation.
+
+**Current edge:** verify the Actions variable configuration and runner assignment through an authorized settings route; keep the key value out of public evidence; only rerun after a verified configuration change. No task closure, secret write, PR merge, force-push or source mutation.
+<!-- END VERIFIED_TESSERACT_ISSUER_RUNNER_READBACK_20261026T1104ICT -->
