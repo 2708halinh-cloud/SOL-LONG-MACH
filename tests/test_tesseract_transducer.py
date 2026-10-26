@@ -1,6 +1,8 @@
 import sqlite3
 import tempfile
 import unittest
+from types import SimpleNamespace
+from unittest.mock import patch
 from pathlib import Path
 from runtime.tesseract_transducer import GateRejected, run, connect_graph, activate, recall_network
 
@@ -94,6 +96,23 @@ class TransducerTests(unittest.TestCase):
         sqlite3.connect(other).execute('CREATE TABLE random(x TEXT)').connection.close()
         with self.assertRaises(GateRejected):
             run(other,self.target,'ingest',10,'HA_LINH','SOL')
+    def test_post_commit_gate2_failure_warns_mutation_may_be_committed(self):
+        failed_gate = SimpleNamespace(
+            allowed=False,
+            reasons=("CONSEQUENCE_UNOBSERVED",),
+        )
+        with patch("runtime.tesseract_transducer.gate2_readback", return_value=failed_gate):
+            with self.assertRaisesRegex(GateRejected, "mutation may already be committed"):
+                run(
+                    self.source, self.target, "ingest", 10, "HA_LINH", "SOL",
+                    authorization_verifier=self.approved_test_verifier,
+                )
+        # Gate 2 runs after the per-event transaction commits; the error must not
+        # be mistaken for proof that no mutation occurred.
+        graph=connect_graph(self.target)
+        self.assertEqual(graph.execute("SELECT COUNT(*) FROM source_anchors").fetchone()[0],1)
+        graph.close()
+
     def test_event_id_collision_does_not_rewrite_past(self):
         run(self.source,self.target,'ingest',10,'HA_LINH','SOL', authorization_verifier=self.approved_test_verifier)
         db=sqlite3.connect(self.source)
