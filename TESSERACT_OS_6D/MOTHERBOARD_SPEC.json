@@ -7,14 +7,8 @@
     "dimensions": 6,
     "faces_equal": true,
     "center": "☯️ TÂM",
-    "stone_axes": [
-      ["SPACE", "SOUL"],
-      ["MIND", "POWER"],
-      ["REALITY", "TIME"]
-    ],
-    "action_before_conclusion": [
-      "ACTION", "CONSEQUENCE", "RECEIPT", "INDEPENDENT_READBACK", "SAME_STATE", "CONCLUSION"
-    ],
+    "stone_axes": [["SPACE", "SOUL"], ["MIND", "POWER"], ["REALITY", "TIME"]],
+    "action_before_conclusion": ["ACTION", "CONSEQUENCE", "RECEIPT", "INDEPENDENT_READBACK", "SAME_STATE", "CONCLUSION"],
     "no_mount_equals_sync": true,
     "no_write_response_equals_completion": true,
     "preserve_originals": true
@@ -33,12 +27,7 @@
   },
   "dimm": {
     "name": "RAM_L1_ACTIVE_BLACKBOARD",
-    "registers": {
-      "REG_00": "objective_scope_acceptance_dependencies",
-      "REG_01": "source_target_identity_account_revision_hash_provenance",
-      "REG_02": "action_expected_consequence_receipt_readback",
-      "REG_03": "unresolved_edges_blockers_recovery_next_callable_action"
-    },
+    "registers": {"REG_00": "objective_scope_acceptance_dependencies", "REG_01": "source_target_identity_account_revision_hash_provenance", "REG_02": "action_expected_consequence_receipt_readback", "REG_03": "unresolved_edges_blockers_recovery_next_callable_action"},
     "versioned_updates": true,
     "lock_or_version_check": true,
     "credential_values_allowed": false,
@@ -74,25 +63,17 @@
     {"id": 6, "name": "XTIME_CDN_UBUBU_LEDGER", "equal_weight": 1}
   ],
   "face_states": ["VERIFIED_ACTIVE", "PARTIAL", "UNBOUND", "UNREACHABLE", "CONFLICT", "NOT_VERIFIED"],
-  "closure": {
-    "per_face": ["ACTION", "CONSEQUENCE", "RECEIPT", "READBACK", "SAME_STATE"],
-    "global_requires_all_six_faces": true,
-    "same_state_fingerprint_required": true,
-    "done_requires_actual_target_readback": true
-  },
+  "closure": {"per_face": ["ACTION", "CONSEQUENCE", "RECEIPT", "READBACK", "SAME_STATE"], "global_requires_all_six_faces": true, "same_state_fingerprint_required": true, "done_requires_actual_target_readback": true},
   "runtime_flow": ["OBSERVE", "LOAD_CURRENT_POINTER_CHECKPOINT", "PLAN", "GATE_1", "ROUTE", "ACTION", "CONSEQUENCE", "RECEIPT", "GATE_2_READBACK", "JOURNAL_APPEND", "REPORT", "CONTINUE_OPEN_EDGES"],
-  "known_observation_2026_10_26": {
-    "runtime_state": "NOT_REVALIDATED_FOR_THIS_RELEASE",
-    "environment_specific_details_published": false
-  },
+  "known_observation_2026_10_26": {"runtime_state": "NOT_REVALIDATED_FOR_THIS_RELEASE", "environment_specific_details_published": false},
   "acceptance_gates": ["backup_and_hash", "local_replace", "github_update_and_readback", "chatgpt_library_publish_and_readback", "json_parse", "compile", "targeted_tests", "broader_regression", "provider_readback", "matching_architecture_fingerprint"],
   "secret_values_allowed": false,
   "blind_deletion": false,
   "intel_core_ultra_emulation": {
     "component": "TESSERACT_6D_INTEL_CORE_ULTRA_SOFTWARE_EMULATION",
-    "registry": "config/INTEL_CORE_ULTRA_PROFILES.json",
-    "runtime": "runtime/intel_core_ultra_emulator.py",
-    "tests": "tests/test_intel_core_ultra_emulator.py",
+    "registry": "INTEL_CORE_ULTRA_PROFILES.json",
+    "runtime": "intel_core_ultra_emulator.py",
+    "tests": "test_intel_core_ultra_emulator.py",
     "profile_count": 31,
     "emulation_scope": "scheduler slots and software cache budget only",
     "gpu_execution_enabled_by_default": false,
@@ -105,10 +86,6 @@
     "secret_values_allowed": false,
     "sensitive_host_paths_and_network_addresses_published": false,
     "runtime_status": "NOT_VERIFIED",
-    "verification_policy": {
-      "reported_inventory_is_not_runtime_proof": true,
-      "secrets_must_not_be_committed": true,
-      "probe_required_before_verified": true
-    }
+    "verification_policy": {"reported_inventory_is_not_runtime_proof": true, "secrets_must_not_be_committed": true, "probe_required_before_verified": true}
   }
 }
