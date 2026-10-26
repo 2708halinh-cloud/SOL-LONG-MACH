@@ -91,5 +91,3 @@ class MotherboardTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-[executed on device: DESKTOP-86ITNQ4 (bca58242-9cf0-407e-afb4-fb9ecfcce34b)]
