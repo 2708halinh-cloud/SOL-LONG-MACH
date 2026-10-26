@@ -1,0 +1,269 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "observed_at": "2026-10-26T15:14:42.294+07:00",
+  "observed_at_utc": "2026-10-26T08:14:42.294Z",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "main_head_before_checkpoint": "13ca3cdb0f73fca5efe7a4f83351cfa8e2f95932",
+  "task": "MODUAL_SENSOR_LOGS_ROUTING",
+  "current_status": "PARTIALLY_EXECUTED_ALL_OPEN_RETAINED",
+  "mandatory_fresh_reads": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "bytes": 72420,
+      "read": true
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "c8e280b22967d12141c86be278850cdf89cdbeb7",
+      "bytes": 262307,
+      "read": true
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "d82ab787366575f1187968b39cde72010e6ce0f3",
+      "bytes": 2139216,
+      "read_via_exact_git_blob": true,
+      "parsed": true
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "cf72fb7b6e0b95749cb881cedcf1b9f87a1d666f",
+      "bytes": 2077555,
+      "read_via_exact_git_blob": true,
+      "parsed": true
+    }
+  },
+  "dropbox": {
+    "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+    "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "size": 35389440,
+    "server_modified": "2026-10-14T00:20:03Z",
+    "client_modified": "2026-10-14T00:15:21Z",
+    "metadata_readback": true,
+    "content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+    "content_hash_evidence": "Windows consumer verifier receipt, not Dropbox metadata response."
+  },
+  "windows_host": {
+    "device": "DESKTOP-86ITNQ4",
+    "route": "Remote Desktop Commander secondary account; device inventory Online",
+    "host_observed_at_local": "2026-10-26T15:13:11.4976174+07:00",
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T15:11:33+07:00",
+      "last_result": 0,
+      "next_run_local": "2026-10-26T15:16:32+07:00",
+      "missed_runs": 0,
+      "execution_time_limit": "PT4M",
+      "action": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File D:\\SENSOR_LOGS\\run_telemetry_buffer_sync.ps1"
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "independently_recomputed": true,
+      "matches_tick": true,
+      "matches_consumer": true,
+      "source_written": false,
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z"
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T081243494939Z.json",
+      "sha256": "2d2f0717abbd611de0b9d36e62c1182c63fffb8da8dc81c765ab7299f33efa22",
+      "bytes": 1635,
+      "observed_at_utc": "2026-10-26T08:12:43.494939Z",
+      "live_sensor_reading_confirmed": false,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T081232791Z.json",
+      "sha256": "fb052c4fdc44346fd39f6eeb2f7b0f534b4d062150fbfa21be5e6457a76ab697",
+      "bytes": 6945,
+      "observed_at_utc": "2026-10-26T08:12:43.9004056Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_content_hash_verified": true,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "dropbox_revision": "0165dc1e4794ab00000000395cdfd73",
+      "raw_rows_emitted": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "wrapper_trace": {
+      "path": "D:\\SENSOR_LOGS\\state\\telemetry_buffer_sync_wrapper_trace.log",
+      "bytes": 139695,
+      "sha256": "54fed18ca88455bc202e375aa1cdeffa701b93f4c574d37d8068d74f2c3c57de",
+      "last_write_local": "2026-10-26T15:12:44.3372902+07:00",
+      "last_cycle": {
+        "start_utc": "2026-10-26T08:11:54.4293495Z",
+        "verifier_exit": 0,
+        "consumer_start_utc": "2026-10-26T08:12:32.8167108Z",
+        "consumer_exit": 0,
+        "receipt_readback_utc": "2026-10-26T08:12:44.3352822Z"
+      }
+    },
+    "sensor_diagnostic": {
+      "observed_at_local": "2026-10-26T15:14:04.9159553+07:00",
+      "adb_devices_exit": 0,
+      "usb_target": "1056285",
+      "usb_state": "device",
+      "dumpsys_sensorservice_exit": 0,
+      "sensorservice_output_lines": 880,
+      "active_sensor_connections": 7,
+      "monitored_sensor_families_present_in_active_list": false,
+      "sensor_privacy": "disabled",
+      "installed_sensor_apps": [
+        "com.exatools.sensors",
+        "com.galaxy.sensortoolbox"
+      ],
+      "com_exatools_sensors_process_present": false,
+      "android_wakefulness": "Dozing",
+      "wireless_target": "192.168.1.14:5556",
+      "wireless_state": "NOT_LISTED",
+      "timestamp_histories": 4,
+      "timestamps_advanced": 0,
+      "stream_status": "EVENT_TIMESTAMP_STALE",
+      "interpretation": "No active SensorService subscription for the monitored sensor families is visible in the active-sensor list; this is a candidate explanation for stale event timestamps, not a proven root cause."
+    },
+    "w32time": {
+      "state": "Stopped",
+      "start_mode": "Manual",
+      "changed": false
+    },
+    "code_provenance": {
+      "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py": "9b75c645ac059162d91f612d2a4ea19e80f0be34",
+      "D:\\SENSOR_LOGS\\live_device_probe.py": "91d242d9f0db0e171b9f1ccf3bdf9af3331ff395",
+      "D:\\SENSOR_LOGS\\sensor_root_resolver.py": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+      "local_git_hash_object_matches_expected_blobs": true
+    }
+  },
+  "cloud_continuity": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "execution_id": "198",
+    "execution_status": "success",
+    "event_id": "X20261026081442294_CLOUD",
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_row_id": 472,
+    "exact_row_readback": true,
+    "state": "OPEN_WORK_REMAINS",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "host_heartbeat_probed": false,
+    "host_operations": 0,
+    "tasks_closed": 0
+  },
+  "host_evidence": {
+    "event_id": "X20261026081243494_HOST_TICK_CONSUMER_READBACK",
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_row_id": 473,
+    "exact_row_readback": true,
+    "tick_sha256": "2d2f0717abbd611de0b9d36e62c1182c63fffb8da8dc81c765ab7299f33efa22",
+    "consumer_sha256": "fb052c4fdc44346fd39f6eeb2f7b0f534b4d062150fbfa21be5e6457a76ab697",
+    "source_hash_matches": true,
+    "live_sensor_reading_confirmed": false
+  },
+  "tesseract": {
+    "desktop_pr6": {
+      "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+      "runs": [
+        {
+          "id": 40220813600,
+          "workflow": "tesseract-desktop-ci",
+          "conclusion": "failure"
+        },
+        {
+          "id": 40220813636,
+          "workflow": "validate-x-time",
+          "conclusion": "failure"
+        }
+      ],
+      "failed_jobs": [
+        "build (ubuntu-24.04)",
+        "build (macos-14)",
+        "build (windows-latest)",
+        "tesseract_os",
+        "readback",
+        "verify"
+      ],
+      "selfhosted_windows_verify": "skipped",
+      "issuer_variable_reference": "vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+      "issuer_public_key_value_verified": false,
+      "runner_assignment_verified": false,
+      "ci_rerun_performed": false
+    },
+    "transducer_pr39": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/39",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "6ba7ce9b3bbfd57770dd8d45dee54a82a1ae3471",
+      "base_main_head": "13ca3cdb0f73fca5efe7a4f83351cfa8e2f95932",
+      "status": "diverged",
+      "ahead_by": 6,
+      "behind_by": 50,
+      "merge_performed": false,
+      "force_push": false
+    },
+    "main_architecture_commit": {
+      "sha": "13ca3cdb0f73fca5efe7a4f83351cfa8e2f95932",
+      "message": "Replace TESSERACT 6D architecture baseline",
+      "effect": "Removed operator-local machine/device/network details from shared architecture; runtime availability remains NOT_VERIFIED until fresh probes."
+    }
+  },
+  "modual_current": {
+    "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+    "current_blob_sha": "01c1dfe8682e25c7e2f5210bbae87a30231b1f58",
+    "updated_this_run": false,
+    "prior_safety_block_preserved": true,
+    "append_delta_path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT_APPEND_20261026T1445ICT.json",
+    "append_delta_blob_sha": "02192ee39c087c4471293a9a583bb6facdb6d1a4"
+  },
+  "task_ledger_summary": {
+    "tasks": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "prior_provider_observations": 213,
+    "expected_after_checkpoint_provider_observations": 214,
+    "prior_verified_action_events": 253,
+    "expected_after_checkpoint_verified_action_events": 255,
+    "integrity_corrections": 13,
+    "task_closures": 0
+  },
+  "preservation": {
+    "all_29_tasks_nonterminal": true,
+    "task_closures": 0,
+    "raw_sensor_values_written_to_public_github": false,
+    "credentials_written_to_public_github": false,
+    "source_written_or_mutated": false,
+    "source_moved_or_deleted": false,
+    "synthetic_rows_added": 0,
+    "pr_merge": false,
+    "force_push": false,
+    "prohibited_ci_rerun": false
+  },
+  "next_edges": [
+    "After host-local 2026-10-26T15:16:32+07:00, exact-read the next Tick and consumer and recompute source SHA-256.",
+    "Keep production sensor stream unverified. The target sensor families are absent from the current active-sensor list; investigate an authorized existing sensor-client path without launching an app or changing Android permissions.",
+    "Keep all 45 cloud recovery rows pending and all 29 repository tasks nonterminal.",
+    "Continue authorized TESSERACT issuer-variable and runner-assignment provenance work; do not rerun CI #39153474587 without a verified runner/workflow change.",
+    "Refresh PR #39 compare before any branch mutation; no merge or force-push.",
+    "Keep MODUAL_PARAMETER_CURRENT.json unchanged until a write route passes platform safety checks; preserve the separate append delta."
+  ]
+}
