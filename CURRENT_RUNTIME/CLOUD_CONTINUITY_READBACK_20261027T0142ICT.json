@@ -1,0 +1,139 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/2.2",
+  "state": "OPEN_WORK_REMAINS",
+  "observed_at_utc": "2026-10-26T18:42:10.676Z",
+  "observed_at_local": "2026-10-27T01:42:10.676+07:00",
+  "timestamp_basis": "Cloud/provider createdAt of the latest appended evidence row; this is not a host event timestamp.",
+  "prior_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0039ICT.json",
+    "blob_sha": "6c121c2c564b9bb81ca3a7b4d8f8bc68a4910019",
+    "commit_sha": "26f8dd70de342e727f061b9c35a5d83194eef79c",
+    "readback_verified": true
+  },
+  "latest_cloud_scan": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
+    "execution_id": "220",
+    "execution_status": "success",
+    "execution_mode": "trigger",
+    "started_at_utc": "2026-10-26T18:00:22.073Z",
+    "stopped_at_utc": "2026-10-26T18:00:24.448Z",
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_row_id": 528,
+    "event_id": "X20261026180024226_CLOUD",
+    "provider_created_at_utc": "2026-10-26T18:00:24.378Z",
+    "exact_row_readback_verified": true,
+    "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED"
+  },
+  "audit_readback": {
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_row_id": 529,
+    "event_id": "X20261026183828000_CLOUD_CONTINUITY_AUDIT_READBACK",
+    "provider_created_at_utc": "2026-10-26T18:42:10.676Z",
+    "exact_row_readback_verified": true,
+    "prior_checkpoint_blob_sha": "6c121c2c564b9bb81ca3a7b4d8f8bc68a4910019"
+  },
+  "recovery_tasks": {
+    "table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "row_count": 45,
+    "terminal_count": 0,
+    "tasks_closed": 0,
+    "task_statuses_changed": false,
+    "status_counts": {
+      "ASSIGNED_DRAFT_WAITING_CREDENTIAL": 5,
+      "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN": 1,
+      "OPEN_RAW_HASH_AND_CLOUD_TRANSFER": 1,
+      "OPEN_QEMU_C_DISCOVERY": 1,
+      "GUARD_APPLIED_FIVE_AGENT_DRAFTS_ACCOUNT_LEVEL_PAUSE_OPEN": 1,
+      "OPEN_SOURCE_DIRECT_TIMESTAMP": 1,
+      "OPEN_ANDROID_SOURCE_ACCESS": 1,
+      "OPEN_END_TO_END_USER_SESSION": 1,
+      "OPEN_CREDENTIAL_BINDING_AND_AUTH_TEST": 1,
+      "OPEN_7Z_RAR_LR": 1,
+      "SOURCE_BYTES_VERIFIED_FUTURE_SYNC_OPEN": 1,
+      "OPEN_HOST_ROUTING_AND_UI_READBACK": 1,
+      "OPEN_HOST_INTEGRATION_AND_INDEPENDENT_TEST": 1,
+      "OPEN_ROUTED_NONCOERCIVE": 27,
+      "IN_PROGRESS": 1
+    },
+    "task_status_source": "Direct n8n data-table readback; statuses preserved."
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "main_head_sha": "ef9b8f91750564bbb405ecc8a875645eccd62d9a",
+    "main_head_readback_verified": true,
+    "successful_runs": [
+      {
+        "workflow": "runtime-n-plus",
+        "run_id": 40371102094,
+        "job_id": 121741746449,
+        "status": "completed",
+        "conclusion": "success",
+        "steps": [
+          "Verify N+ via Bash",
+          "Verify N+ via PowerShell"
+        ]
+      },
+      {
+        "workflow": "High-Threshold Secret Exposure Guard",
+        "run_id": 40371102112,
+        "job_id": 121741839063,
+        "status": "completed",
+        "conclusion": "success",
+        "steps": [
+          "Verify .gitmodules paths exactly match tracked gitlinks",
+          "Scan the full source snapshot without printing secret bytes"
+        ]
+      }
+    ],
+    "scheduled_continuation": {
+      "workflow_path": ".github/workflows/windows-survival-cloud-continuity.yml",
+      "workflow_id": 393485804,
+      "configured_cron": "7 * * * *",
+      "latest_scheduled_run_id": 40367117513,
+      "latest_scheduled_run_status": "completed",
+      "latest_scheduled_run_conclusion": "success",
+      "latest_scheduled_run_created_at_utc": "2026-10-26T17:16:47Z",
+      "latest_scheduled_run_sha": "9f00388bddb1609606f6ff7dc0a3238c4f7e1337",
+      "go_build_and_hellocheck_tests": "SKIPPED_BY_SCHEDULE_GUARD",
+      "expected_run_at_utc": "2026-10-26T18:07:00Z",
+      "newer_run_found_in_latest_100_repository_runs": false,
+      "cause_verified": false
+    },
+    "open_task_ledger": {
+      "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "reported_blob_sha": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
+      "content_readback_verified": false,
+      "observation": "GitHub fetch_file returned zero-length content while reporting the blob SHA; actual file content and cause remain unverified.",
+      "mutation_performed": false,
+      "last_verified_task_count_from_prior_checkpoint": 29
+    }
+  },
+  "host_and_android": {
+    "latest_host_evidence_row_id": 522,
+    "latest_host_event_id": "X20261026152140359_HOST_TICK_CONSUMER_READBACK",
+    "latest_host_tick_sha256": "13f3306fd2b004f70f49043ab44c5d499b295154e90141b21c1f8e1a18df2380",
+    "latest_host_tick_observed_at_utc": "2026-10-26T15:21:40.359077Z",
+    "latest_direct_host_readback_local": "2026-10-26T22:22:21.9963910+07:00",
+    "fresh_host_heartbeat_this_run": false,
+    "host_heartbeat_probed_by_cloud_workflow": false,
+    "remote_route_status_current": "NOT_RECHECKED",
+    "android_online_state": "UNVERIFIED"
+  },
+  "safety": {
+    "google_drive_written": false,
+    "credentials_or_tokens_read_or_exposed": false,
+    "host_operations_performed": false,
+    "processes_cache_or_Meta_db_deleted": false,
+    "task_statuses_changed": false,
+    "tasks_closed": 0
+  },
+  "next_verified_edge": [
+    "Investigate why the scheduled GitHub continuation did not appear at the expected 2026-10-26T18:07Z slot; do not infer cause.",
+    "Obtain a non-truncated readback of CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json before modifying that ledger.",
+    "When an authorized host route returns, resume from the last verified host row 522 and compare tick/consumer/source SHA; keep cloud and host heartbeat separate."
+  ]
+}
