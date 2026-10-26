@@ -1091,3 +1091,25 @@ modual_current: UPDATED_AND_EXACT_READBACK_VERIFIED; commit=d584aca5822f1d0a60b1
 ```
 
 No task was closed. No secrets or raw sensor values were written to public GitHub. No source was moved or deleted; no PR was merged or force-pushed. Continue the next Tick, sensor-client diagnosis, exact-target search, TESSERACT issuer/runner provenance, carrier-log retention audit, and current-head PR comparisons.
+
+
+## REENTRY DELTA — LATEST SCHEDULED TICK 20261026T0850ICT
+
+Fresh-read all four runtime source files and the MODUAL current-state file before recording this checkpoint. The previous provider checkpoint remains intact.
+
+- New checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0850ICT.json`, blob `e4b1f1a4319b0430b8e7fb16d6d1945508dd4499`, commit `38799b3065304e4413a354b8ec19b7182f1dcc65`; exact content readback verified.
+- Compared main head at checkpoint creation: `c32f8b7705b38a07b4770de259b7bb21b979ecf1`. Archive PR #36 comparison at that head: 14 ahead / 35 behind, diverged. MODUAL PR #35: 9 ahead / 404 behind, diverged. These are timestamped comparison snapshots, not a license to merge; recompare before any branch operation.
+- Newest scheduled Tick: `D:\SENSOR_LOGS\state\WINDOWS_TICK_20261026T014141874745Z.json`, SHA-256 `697a91811497f510296f55d78b08b0c71bd31c9bd823ceb8820170efdd78415f`, observed `2026-10-26T01:41:41.874745Z`; matching consumer `D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261026T014138227Z.json`, SHA-256 `5175ed22203a0450262105c7b43a117d36917192558f6e216325116973c56f70`, status `SOURCE_OBSERVED_READONLY`, exit 0. The independently recomputed source SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87` matches both; source is unchanged at 35,389,440 bytes.
+- Task last run `2026-10-26T08:41:33+07:00`, result 0, missed 0; next run `2026-10-26T08:46:32+07:00` was not yet due at host read `2026-10-26T08:44:21.951+07:00`.
+- USB target `1056285` remains `EVENT_TIMESTAMP_STALE` (four timestamps, none advanced); wireless target `192.168.1.14:5556` remains `NOT_LISTED`. Last direct connect attempt timed out with WinError 10060. No app, permission, service, or device configuration changes.
+- n8n execution 181 / row 427 remains verified; 45 recovery tasks pending; host heartbeat unprobed. Braid receipts remain exact-readback verified (9/5 actions; source unchanged; mutation false). TESSERACT runs 40220813600 and 40220813636 remain failures; no rerun, issuer key and runner assignment unverified.
+- Exact bulk search PID 50200 was present at host time 08:38:49 with no new output; search is non-exhaustive.
+
+### State-file writes and exact readback
+```
+pointer: UPDATED_AND_EXACT_READBACK_VERIFIED; commit=f84245e2b3eca0348c39c6196abc4e6e93b8aeba; blob=153c484306784ea9650330f79963063d312722c7; readback=true
+open_tasks: UPDATED_AND_EXACT_READBACK_VERIFIED; commit=adc337555e03628ae4cdbda84d0e80bfcc8f026c; blob=5cd3cf6722892518f0f0d8c35ac8d07e326f9073; readback=true
+modual_current: UPDATED_AND_EXACT_READBACK_VERIFIED; commit=d3cfc739fe25f6f9933742b8ddedb2da042a9cef; blob=140f7591013be79e571d54b401013a060ca9b69b; readback=true
+```
+
+No task was closed; no raw sensor data or credentials were exported; no source was moved or deleted; no PR was merged or force-pushed.
