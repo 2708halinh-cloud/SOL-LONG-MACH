@@ -16,6 +16,16 @@ def verifier(signal, results):
 
 
 class RamL1Tests(unittest.TestCase):
+    def test_empty_branch_set_cannot_claim_verified_or_commit(self):
+        receipt = process_signal(
+            {"source_id": "test-empty-branches"}, {},
+            verifier=verifier, commit_requested=True,
+        )
+        self.assertEqual(receipt.status, "BLOCKED")
+        self.assertFalse(receipt.commit_allowed)
+        self.assertEqual(receipt.conflicts, ["No branches executed"])
+        self.assertEqual(receipt.branches, [])
+
     def test_parallel_branches_and_verified_commit(self):
         def a(s):
             time.sleep(0.08)
