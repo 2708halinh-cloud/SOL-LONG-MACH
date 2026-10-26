@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-26T09:31:12+07:00",
+  "observed_at": "2026-10-26T09:34:56.595321+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -13260,6 +13260,23 @@
       "source_mutated": false,
       "secrets_written": false,
       "raw_sensor_values_exported": false
+    },
+    {
+      "id": "SESSION_OBSERVATION_20261026T0935ICT",
+      "observed_at": "2026-10-26T09:34:56.595321+07:00",
+      "source": "Remote_Desktop_Commander alternate online route; exact host Tick/consumer readback; local code Git-blob verification; Braid live receipts; fresh Dropbox metadata and n8n/GitHub readback",
+      "action": "CONTINUE_AFTER_ALTERNATE_ROUTE_DISCOVERY",
+      "tick_sha256": "7101c6a7bf8bf7b45c9bed0ce358a446fe2fcc3b7ca0f1ea85160a74a17792a2",
+      "consumer_sha256": "a613c886597cd36bd2b0279f73c86334f78957bd9d2c7d1dae020a3f5a082c34",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_matches_tick": true,
+      "source_matches_consumer": true,
+      "live_sensor_reading_confirmed": false,
+      "braid_receipts_readback": true,
+      "tasks_closed": 0,
+      "source_mutated": false,
+      "secrets_written": false,
+      "raw_sensor_values_exported": false
     }
   ],
   "privacy_policy": {
@@ -23436,5 +23453,174 @@
       }
     ],
     "interpretation": "GitHub-hosted workflow evidence only; not a substitute for direct Windows Tick or live-sensor verification."
+  },
+  "previous_observed_at_before_20261026T0935ICT": "2026-10-26T09:31:12+07:00",
+  "latest_runtime_probe_20261026T0935ICT": {
+    "observed_at_host_local": "2026-10-26T09:32:14.3969927+07:00",
+    "host": "DESKTOP-86ITNQ4",
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z",
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T023145992634Z.json",
+      "bytes": 1635,
+      "sha256": "7101c6a7bf8bf7b45c9bed0ce358a446fe2fcc3b7ca0f1ea85160a74a17792a2",
+      "observed_at_utc": "2026-10-26T02:31:45.992634Z",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_matches": true,
+      "live_sensor_reading_confirmed": false,
+      "sensor_stream_status": {
+        "xiaomi12_usb": "EVENT_TIMESTAMP_STALE",
+        "sensor_timestamp_count": 4,
+        "advanced_count": 0,
+        "redmi_note14pro_wireless": {
+          "adb_state": "NOT_LISTED",
+          "sensor_event_stream_status": "NOT_PROBED"
+        }
+      }
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T023141188Z.json",
+      "bytes": 6945,
+      "sha256": "a613c886597cd36bd2b0279f73c86334f78957bd9d2c7d1dae020a3f5a082c34",
+      "observed_at_utc": "2026-10-26T02:31:46.2278475Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_matches": true,
+      "provider_content_hash_verified": true,
+      "verifier_hash_matches": true,
+      "exact_latest_tick_referenced": true,
+      "raw_rows_emitted": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T09:31:33+07:00",
+      "last_result": 0,
+      "next_run_local": "2026-10-26T09:36:32+07:00",
+      "missed_runs": 0
+    }
+  },
+  "latest_sensor_stream_probe_20261026T0934ICT": {
+    "observed_during_current_turn": true,
+    "target": "1056285",
+    "adb_state": "device",
+    "sensorservice_exit_codes": [
+      0,
+      0
+    ],
+    "sensorservice_output_line_counts": [
+      858,
+      858
+    ],
+    "timestamp_sensor_names": [
+      "AK099_MAGNETOMETER",
+      "LSM6DSO_ACCELEROMETER",
+      "LSM6DSO_GYROSCOPE",
+      "TMD3719_LIGHT"
+    ],
+    "common_timestamp_sensor_count": 4,
+    "advanced_sensor_names": [],
+    "stream_status": "EVENT_TIMESTAMP_STALE",
+    "active_sensor_section_observed_at": "2026-10-26T09:34:56.595321+07:00",
+    "active_sensor_section_lines": 546,
+    "active_sensor_section_keyword_line_counts": {
+      "connection": 16,
+      "client": 4,
+      "listener": 39
+    },
+    "raw_sensor_values_persisted": false,
+    "result": "The probe reads two snapshots but does not establish why event timestamps are not advancing; no app or permission changes made."
+  },
+  "latest_code_provenance_readback_20261026T0933ICT": {
+    "observed_at_host_local": "2026-10-26T09:33:15.927643+07:00",
+    "local_files": [
+      {
+        "path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+        "bytes": 14324,
+        "git_blob_sha1": "9b75c645ac059162d91f612d2a4ea19e80f0be34",
+        "expected_git_blob_sha1": "9b75c645ac059162d91f612d2a4ea19e80f0be34",
+        "exact_match": true,
+        "sha256": "80c17a544c69d6a8f105b88e9102ad04c6399acd188fd4f8fc21a00521969f64"
+      },
+      {
+        "path": "D:\\SENSOR_LOGS\\live_device_probe.py",
+        "bytes": 8574,
+        "git_blob_sha1": "91d242d9f0db0e171b9f1ccf3bdf9af3331ff395",
+        "expected_git_blob_sha1": "91d242d9f0db0e171b9f1ccf3bdf9af3331ff395",
+        "exact_match": true,
+        "sha256": "8198c0d71d27da1bda00ca8360eff09eadb230fc88ad3dfcc00c6eafed4fd18d"
+      },
+      {
+        "path": "D:\\SENSOR_LOGS\\sensor_root_resolver.py",
+        "bytes": 7524,
+        "git_blob_sha1": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+        "expected_git_blob_sha1": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+        "exact_match": true,
+        "sha256": "117bcb01aefa908aac861f97c83dcccff7e84a5d080d771da09134378db98471"
+      }
+    ],
+    "static_telemetry_helpers_defined": [
+      "get_pc_telemetry",
+      "get_redmi_telemetry",
+      "get_xiaomi_telemetry"
+    ],
+    "static_telemetry_helpers_called_by_current_one_shot_path": [],
+    "current_one_shot_path": "record_telemetry_tick -> probe_live_devices -> write_tick_receipt",
+    "source_code_modified": false
+  },
+  "latest_braid_probe_20261026T0930ICT": {
+    "observed_at_utc": "2026-10-26T02:30:59Z",
+    "source_script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+    "process_exit_code": 0,
+    "six_forces": {
+      "receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261026T023059311103Z.json",
+      "bytes": 3996,
+      "sha256": "23b071e914d97fa83c417c1c2734cb9bf32768f04a459d1a0fc0801d10e4f3aa",
+      "actions": 9,
+      "all_six_examined": true,
+      "missing_context_rejected": true,
+      "rejected_request_did_not_create_receipt": true,
+      "mutation_executed": false,
+      "source_sha256_unchanged": true,
+      "receipt_readback_ok": true
+    },
+    "plural": {
+      "receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261026T023059516105Z.json",
+      "bytes": 2407,
+      "sha256": "779f5888e36785a61eedbe93ebc0a31872afe827cc9cf00cc6a5ecef51e2fde6",
+      "actions": 5,
+      "receipt_readback_ok": true
+    },
+    "cloud_host_wiring": "NOT_VERIFIED"
+  },
+  "latest_desktop_commander_route_probe_20261026T0935ICT": {
+    "observed_at_host_local": "2026-10-26T09:34:56.595321+07:00",
+    "primary_namespace_device_inventory": "all listed devices offline",
+    "alternate_namespace": "Remote_Desktop_Commander",
+    "online_device": {
+      "name": "DESKTOP-86ITNQ4",
+      "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+      "last_seen_minutes_before_probe": 3,
+      "app_version": "0.3.1"
+    },
+    "secondary_account_remote_calls_left_pct": 5,
+    "host_access_verified": true,
+    "route_used_for_host_readback": true
+  },
+  "latest_route_correction_20261026T0935ICT": {
+    "observed_at": "2026-10-26T09:34:56.595321+07:00",
+    "corrects": "latest_desktop_commander_route_probe_20261026T0931ICT",
+    "reason": "The 09:31 probe only queried the mcp__desktopcommande namespace and its two link entries; it did not query the distinct mcp__Remote_Desktop_Commander connector's second account.",
+    "corrected_state": "An alternate Remote_Desktop_Commander account had DESKTOP-86ITNQ4 online; direct host readback and Braid execution were then performed.",
+    "history_preserved": true
   }
 }
