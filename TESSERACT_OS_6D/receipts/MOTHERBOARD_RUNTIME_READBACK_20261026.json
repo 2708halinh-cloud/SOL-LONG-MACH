@@ -12,7 +12,8 @@
         "runtime/motherboard_control_plane.py",
         "runtime/tesseract_transducer.py",
         "tests/test_motherboard_control_plane.py",
-        "tests/test_tesseract_transducer.py"
+        "tests/test_tesseract_transducer.py",
+        "config/LOCAL_CONFIG_CURRENT.json"
       ],
       "motherboard_tests": "PASS 20/20",
       "transducer_tests": "PASS 8/8",
@@ -76,7 +77,14 @@
       "source_readback_exact": true,
       "ci_workflow_file": ".github/workflows/tesseract-motherboard-tests.yml",
       "ci_commit": "de9583b5a65cc70640c14ab27bd5c4ca2d1fdbea",
-      "ci_run_status": "NOT_RETURNED_BY_AVAILABLE_GITHUB_RUNS_QUERY"
+      "ci_run_status": "UNVERIFIED: available GitHub run query returned no workflow runs or status checks"
+    },
+    "wsl_ubuntu": {
+      "python_version": "3.14.4",
+      "shared_carrier": "/mnt/g/OS_Workspace/TESSERACT_OS",
+      "source_visible": true,
+      "py_compile": "PASS",
+      "combined_regression": "PASS 28/28"
     }
   },
   "caveats": [
