@@ -16262,6 +16262,62 @@
       "tasks_closed": 0,
       "merge_performed": false,
       "force_push": false
+    },
+    {
+      "id": "TESSERACT_GATE1_DIRECT_ACTIVATION_BYPASS_PATCH_20261026T1340ICT",
+      "source_event_type": "SOURCE_PATCH_AND_HOSTED_READBACK_NOT_TASK_CLOSURE",
+      "observed_at": "2026-10-26T13:40:00+07:00",
+      "ledger_recorded_at": "2026-10-26T13:40:00+07:00",
+      "action": "DISABLE_PUBLIC_DIRECT_ACTIVATE; ADD_FORGED_CONTEXT_REGRESSION; READ_BACK_SOURCE_AND_CI",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "pull_request": 39,
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/39",
+      "branch": "fix/tesseract-transducer-trusted-gate1-20261026T1315ICT",
+      "head_sha": "6ba7ce9b3bbfd57770dd8d45dee54a82a1ae3471",
+      "prior_head_sha": "189bec53e8a69fbe626c509eecc76ef8a3390f41",
+      "changed_files": [
+        "runtime/tesseract_transducer.py",
+        "tests/test_tesseract_transducer.py"
+      ],
+      "source_blob_sha": "03330d1eddb5661fdc79fd210341c07217a392a9",
+      "test_blob_sha": "287a0ece4f9583f1aad1db80e7bb8b0dd4b2af8a",
+      "finding": "Public activate() previously accepted a caller-forged all-True Gate 1 mapping plus an exact target path, allowing a direct SQLite write without passing run()'s verifier.",
+      "change": [
+        "Public activate() now fails closed; run(action='ingest') calls the guarded internal activation path only after verifier validation.",
+        "Added test_direct_activate_rejects_forged_gate1_context; the forged context must be rejected before source_anchors changes.",
+        "Production Gate 1 verifier remains unwired; CLI ingest remains disabled."
+      ],
+      "review_id": "PRR_kwDOSnq0Hs8AAAABUKj68w",
+      "followup_comment_id": 6409899001,
+      "compare_against_main_head": "edb00f4d4ac48eb912216f2b777e8b5621631043",
+      "compare": {
+        "status": "diverged",
+        "ahead_by": 6,
+        "behind_by": 5,
+        "merge_base": "2da03849c092625ade89f5c0d60689df2cf7cfb3"
+      },
+      "ci": {
+        "tesseract_motherboard_regression": {
+          "run_id": 40281069106,
+          "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40281069106",
+          "conclusion": "success"
+        },
+        "high_threshold_secret_exposure_guard": {
+          "run_id": 40281069271,
+          "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40281069271",
+          "conclusion": "success"
+        }
+      },
+      "public_api_guard_readback": true,
+      "forged_context_regression_present": true,
+      "production_verifier_configured": false,
+      "cli_ingest_enabled": false,
+      "host_accessed_or_modified": false,
+      "pr_state": "OPEN_DRAFT_UNMERGED",
+      "task_state_mutation": "STATUS_UNCHANGED_OPEN",
+      "tasks_closed": 0,
+      "merge_performed": false,
+      "force_push": false
     }
   ],
   "energy_protection_current": {
@@ -33958,58 +34014,62 @@
     "ci_rerun_performed": false
   },
   "latest_action_event": {
-    "id": "TESSERACT_GATE1_FAIL_CLOSED_PR39_20261026T1320ICT",
-    "source_event_type": "VERIFIED_GITHUB_CODE_CHANGE_AND_CURRENT_HEAD_CI_NOT_TASK_CLOSURE",
-    "observed_at": "2026-10-26T13:20:10+07:00",
-    "ledger_recorded_at": "2026-10-26T13:31:20.779+07:00",
-    "action": "REQUIRE_TRUSTED_GATE1_VERIFIER_FOR_TRANSDUCER_INGEST; ADD_FAIL_CLOSED_REGRESSION_TESTS; READ_BACK_PR_AND_CI",
+    "id": "TESSERACT_GATE1_DIRECT_ACTIVATION_BYPASS_PATCH_20261026T1340ICT",
+    "source_event_type": "SOURCE_PATCH_AND_HOSTED_READBACK_NOT_TASK_CLOSURE",
+    "observed_at": "2026-10-26T13:40:00+07:00",
+    "ledger_recorded_at": "2026-10-26T13:40:00+07:00",
+    "action": "DISABLE_PUBLIC_DIRECT_ACTIVATE; ADD_FORGED_CONTEXT_REGRESSION; READ_BACK_SOURCE_AND_CI",
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
     "pull_request": 39,
     "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/39",
     "branch": "fix/tesseract-transducer-trusted-gate1-20261026T1315ICT",
-    "head_sha": "189bec53e8a69fbe626c509eecc76ef8a3390f41",
+    "head_sha": "6ba7ce9b3bbfd57770dd8d45dee54a82a1ae3471",
+    "prior_head_sha": "189bec53e8a69fbe626c509eecc76ef8a3390f41",
     "changed_files": [
       "runtime/tesseract_transducer.py",
       "tests/test_tesseract_transducer.py"
     ],
-    "finding": "The prior transducer treated non-empty origin/will/branch strings as authorization; the CLI could reach SQLite graph writes without a trusted approval route.",
+    "source_blob_sha": "03330d1eddb5661fdc79fd210341c07217a392a9",
+    "test_blob_sha": "287a0ece4f9583f1aad1db80e7bb8b0dd4b2af8a",
+    "finding": "Public activate() previously accepted a caller-forged all-True Gate 1 mapping plus an exact target path, allowing a direct SQLite write without passing run()'s verifier.",
     "change": [
-      "run(action='ingest') now requires a caller-injected structured Gate 1 verifier",
-      "Resolved target must equal the expected SQLite DB path and remain inside the authorized root",
-      "CLI omits ingest until a trusted verifier is wired",
-      "Tests cover missing, denied and malformed verifier decisions and direct activation without Gate 1 context"
+      "Public activate() now fails closed; run(action='ingest') calls the guarded internal activation path only after verifier validation.",
+      "Added test_direct_activate_rejects_forged_gate1_context; the forged context must be rejected before source_anchors changes.",
+      "Production Gate 1 verifier remains unwired; CLI ingest remains disabled."
     ],
+    "review_id": "PRR_kwDOSnq0Hs8AAAABUKj68w",
+    "followup_comment_id": 6409899001,
+    "compare_against_main_head": "edb00f4d4ac48eb912216f2b777e8b5621631043",
+    "compare": {
+      "status": "diverged",
+      "ahead_by": 6,
+      "behind_by": 5,
+      "merge_base": "2da03849c092625ade89f5c0d60689df2cf7cfb3"
+    },
     "ci": {
       "tesseract_motherboard_regression": {
-        "run_id": 40279144494,
-        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40279144494",
-        "conclusion": "success",
-        "compile_step": "success",
-        "tests_passed": 39
+        "run_id": 40281069106,
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40281069106",
+        "conclusion": "success"
       },
       "high_threshold_secret_exposure_guard": {
-        "run_id": 40279145297,
-        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40279145297",
+        "run_id": 40281069271,
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40281069271",
         "conclusion": "success"
       }
     },
-    "compare_against_main_head": "83ec000ee6f8b05829d2992481c8bea20ce0fc12",
-    "compare": {
-      "status": "diverged",
-      "ahead_by": 4,
-      "behind_by": 4,
-      "merge_base": "2da03849c092625ade89f5c0d60689df2cf7cfb3"
-    },
-    "pr_state": "OPEN_DRAFT_UNMERGED",
+    "public_api_guard_readback": true,
+    "forged_context_regression_present": true,
     "production_verifier_configured": false,
+    "cli_ingest_enabled": false,
     "host_accessed_or_modified": false,
-    "private_payloads_or_secrets_written": false,
+    "pr_state": "OPEN_DRAFT_UNMERGED",
     "task_state_mutation": "STATUS_UNCHANGED_OPEN",
     "tasks_closed": 0,
     "merge_performed": false,
     "force_push": false
   },
-  "updated_at": "2026-10-26T13:31:20.779+07:00",
+  "updated_at": "2026-10-26T13:40:00+07:00",
   "latest_clock_integrity_correction": {
     "id": "IC_20261026T0609_HOST_CLOCK_OFFSET_NON_SYNCHRONOUS_PRIOR_ESTIMATE",
     "observed_at": "2026-10-26T06:09:56.211+07:00",
@@ -38727,6 +38787,95 @@
     "next_scheduled_tick_local_at_last_readback": "2026-10-26T13:16:32+07:00",
     "post_1316_tick_readback_verified": false,
     "no_inference_about_whether_later_tick_ran": true,
+    "tasks_closed": 0
+  },
+  "previous_updated_at_before_20261026T1340ICT": "2026-10-26T13:31:20.779+07:00",
+  "previous_latest_action_event_before_20261026T1340ICT": {
+    "id": "TESSERACT_GATE1_FAIL_CLOSED_PR39_20261026T1320ICT",
+    "source_event_type": "VERIFIED_GITHUB_CODE_CHANGE_AND_CURRENT_HEAD_CI_NOT_TASK_CLOSURE",
+    "observed_at": "2026-10-26T13:20:10+07:00",
+    "ledger_recorded_at": "2026-10-26T13:31:20.779+07:00",
+    "action": "REQUIRE_TRUSTED_GATE1_VERIFIER_FOR_TRANSDUCER_INGEST; ADD_FAIL_CLOSED_REGRESSION_TESTS; READ_BACK_PR_AND_CI",
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "pull_request": 39,
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/39",
+    "branch": "fix/tesseract-transducer-trusted-gate1-20261026T1315ICT",
+    "head_sha": "189bec53e8a69fbe626c509eecc76ef8a3390f41",
+    "changed_files": [
+      "runtime/tesseract_transducer.py",
+      "tests/test_tesseract_transducer.py"
+    ],
+    "finding": "The prior transducer treated non-empty origin/will/branch strings as authorization; the CLI could reach SQLite graph writes without a trusted approval route.",
+    "change": [
+      "run(action='ingest') now requires a caller-injected structured Gate 1 verifier",
+      "Resolved target must equal the expected SQLite DB path and remain inside the authorized root",
+      "CLI omits ingest until a trusted verifier is wired",
+      "Tests cover missing, denied and malformed verifier decisions and direct activation without Gate 1 context"
+    ],
+    "ci": {
+      "tesseract_motherboard_regression": {
+        "run_id": 40279144494,
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40279144494",
+        "conclusion": "success",
+        "compile_step": "success",
+        "tests_passed": 39
+      },
+      "high_threshold_secret_exposure_guard": {
+        "run_id": 40279145297,
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40279145297",
+        "conclusion": "success"
+      }
+    },
+    "compare_against_main_head": "83ec000ee6f8b05829d2992481c8bea20ce0fc12",
+    "compare": {
+      "status": "diverged",
+      "ahead_by": 4,
+      "behind_by": 4,
+      "merge_base": "2da03849c092625ade89f5c0d60689df2cf7cfb3"
+    },
+    "pr_state": "OPEN_DRAFT_UNMERGED",
+    "production_verifier_configured": false,
+    "host_accessed_or_modified": false,
+    "private_payloads_or_secrets_written": false,
+    "task_state_mutation": "STATUS_UNCHANGED_OPEN",
+    "tasks_closed": 0,
+    "merge_performed": false,
+    "force_push": false
+  },
+  "latest_tesseract_gate1_direct_activation_readback_20261026T1340ICT": {
+    "observed_at": "2026-10-26T13:40:00+07:00",
+    "record_type": "TESSERACT_GATE1_DIRECT_ACTIVATION_BYPASS_PATCH_READBACK",
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "pull_request": 39,
+    "branch": "fix/tesseract-transducer-trusted-gate1-20261026T1315ICT",
+    "head_sha": "6ba7ce9b3bbfd57770dd8d45dee54a82a1ae3471",
+    "source_blob_sha": "03330d1eddb5661fdc79fd210341c07217a392a9",
+    "test_blob_sha": "287a0ece4f9583f1aad1db80e7bb8b0dd4b2af8a",
+    "review_id": "PRR_kwDOSnq0Hs8AAAABUKj68w",
+    "followup_comment_id": 6409899001,
+    "compare": {
+      "status": "diverged",
+      "ahead_by": 6,
+      "behind_by": 5,
+      "merge_base": "2da03849c092625ade89f5c0d60689df2cf7cfb3"
+    },
+    "ci": {
+      "tesseract_motherboard_regression": {
+        "run_id": 40281069106,
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40281069106",
+        "conclusion": "success"
+      },
+      "high_threshold_secret_exposure_guard": {
+        "run_id": 40281069271,
+        "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40281069271",
+        "conclusion": "success"
+      }
+    },
+    "production_verifier_configured": false,
+    "cli_ingest_enabled": false,
+    "host_accessed_or_modified": false,
+    "pr_state": "OPEN_DRAFT_UNMERGED",
+    "task_state_mutation": "STATUS_UNCHANGED_OPEN",
     "tasks_closed": 0
   }
 }
