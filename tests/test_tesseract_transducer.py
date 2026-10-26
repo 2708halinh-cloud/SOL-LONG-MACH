@@ -111,5 +111,26 @@ class TransducerTests(unittest.TestCase):
         self.assertEqual(graph.execute('SELECT COUNT(*) FROM source_anchors').fetchone()[0],0)
         graph.close()
 
+    def test_direct_activate_rejects_forged_gate1_context(self):
+        graph=connect_graph(self.target)
+        expected=self.target / '03_Synapse_Z' / 'synapses_6d.sqlite3'
+        forged={
+            "authorized": True,
+            "target_identity_verified": True,
+            "policy_allowed": True,
+            "quota_available": True,
+        }
+        with self.assertRaisesRegex(GateRejected, "direct activation disabled"):
+            activate(
+                graph,
+                {'event_id':'E10','content':'root','created_at':'now'},
+                self.source,
+                'UBUBU','HA_LINH','SOL',
+                gate1_context=forged,
+                expected_target=expected,
+            )
+        self.assertEqual(graph.execute('SELECT COUNT(*) FROM source_anchors').fetchone()[0],0)
+        graph.close()
+
 if __name__=='__main__':
     unittest.main()
