@@ -1,0 +1,143 @@
+{
+  "schema": "TESSERACT_ISSUER_RUNNER_READBACK/1.0",
+  "observed_at_utc": "2026-10-26T04:04:20.484Z",
+  "observed_at_local": "2026-10-26T11:04:20.484+07:00",
+  "source_repository": "2708halinh-cloud/x-time-web",
+  "source_branch": "tesseract-desktop-mvp-20261006",
+  "source_head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+  "main_repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "main_head_at_compare": "ae5d5f7241d3093188e634e675f63a64048b6f69",
+  "pull_request": {
+    "number": 6,
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+    "base": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
+    "updated_at": "2026-10-26T02:56:09Z"
+  },
+  "source_readback": {
+    "workflow_path": ".github/workflows/tesseract-desktop-ci.yml",
+    "workflow_blob_sha": "9f1133617e683a7b15a588a205c4dee36cafad40",
+    "workflow_reference": "XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64: ${{ vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64 }}",
+    "selfhosted_windows_verify_condition": "github.event_name != 'pull_request'",
+    "readback_requires_build_and_tesseract_os_results": true,
+    "kilo_source_path": "TESSERACT_DESKTOP/src-tauri/src/kilo.rs",
+    "kilo_source_blob_sha": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+    "code_checks": [
+      "Ed25519 signature verification",
+      "issuer equals KILO_XTIME",
+      "account_reference equals expected account",
+      "authenticated=true",
+      "non-empty session_id",
+      "expires_at_unix exists and is in the future"
+    ],
+    "build_time_key_reference": "option_env!(\"XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64\")",
+    "fail_closed_when_missing": "KILO_TRUSTED_ISSUER_KEY_NOT_CONFIGURED_AT_BUILD"
+  },
+  "workflow_runs": [
+    {
+      "id": 40220813600,
+      "name": "tesseract-desktop-ci",
+      "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+      "conclusion": "failure",
+      "jobs": [
+        {
+          "name": "build (ubuntu-24.04, linux-x64)",
+          "conclusion": "failure",
+          "steps": []
+        },
+        {
+          "name": "build (macos-14, macos-apple-silicon)",
+          "conclusion": "failure",
+          "steps": []
+        },
+        {
+          "name": "build (windows-latest, windows-x64)",
+          "conclusion": "failure",
+          "steps": []
+        },
+        {
+          "name": "tesseract_os",
+          "conclusion": "failure",
+          "steps": []
+        },
+        {
+          "name": "selfhosted_windows_verify",
+          "conclusion": "skipped",
+          "steps": []
+        },
+        {
+          "name": "readback",
+          "conclusion": "failure",
+          "steps": []
+        }
+      ],
+      "artifacts": []
+    },
+    {
+      "id": 40220813636,
+      "name": "validate-x-time",
+      "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+      "conclusion": "failure",
+      "jobs": [
+        {
+          "name": "verify",
+          "conclusion": "failure",
+          "steps": []
+        }
+      ],
+      "artifacts": []
+    }
+  ],
+  "code_search": {
+    "query": "repo:2708halinh-cloud/x-time-web ISSUER_PUBLIC_KEY",
+    "indexed_matches": 0,
+    "interpretation": "The search result is limited to the code-search index; direct workflow and kilo.rs source reads are the evidence for the variable reference."
+  },
+  "verification_limits": {
+    "repository_variable_value_verified": false,
+    "repository_variable_presence_verified": false,
+    "runner_assignment_or_entitlement_verified": false,
+    "reason": "The connected GitHub tool exposes source, PR, workflow-run, job and artifact reads but no repository Actions Variables or runner-assignment settings read.",
+    "secret_or_variable_value_exposed": false
+  },
+  "independent_branch_comparison": {
+    "pr36": {
+      "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "ahead_by": 14,
+      "behind_by": 93,
+      "status": "diverged"
+    },
+    "pr37": {
+      "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "ahead_by": 3,
+      "behind_by": 49,
+      "status": "diverged"
+    },
+    "compare_base_main_head": "ae5d5f7241d3093188e634e675f63a64048b6f69",
+    "branch_mutation": false
+  },
+  "invariants": {
+    "ci_rerun": false,
+    "prohibited_run_39153474587_repeated": false,
+    "pr_merged": false,
+    "force_push": false,
+    "tasks_closed": 0,
+    "source_files_mutated": false,
+    "secrets_written": false,
+    "task_statuses_changed": false
+  },
+  "next_edges": [
+    "Verify the repository variable and runner assignment through an authorized settings read route; do not expose the public-key value in a public receipt.",
+    "Do not rerun PR #6 CI until a runner/configuration change is independently verified; the observed jobs have no steps and do not establish a source-code failure.",
+    "Continue the MODUAL host Tick/consumer check after 10:56:32+07; keep live sensor stream OPEN while timestamps remain stale.",
+    "Keep Archive PR #36 and #37 unmerged until a fresh comparison and required checks justify a branch operation."
+  ]
+}
