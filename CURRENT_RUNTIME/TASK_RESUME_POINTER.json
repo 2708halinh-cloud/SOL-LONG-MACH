@@ -3,8 +3,8 @@
   "task": "MODUAL_SENSOR_LOGS_ROUTING",
   "repo": "2708halinh-cloud/SOL-LONG-MACH",
   "branch": "main",
-  "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0935ICT.json",
-  "commit": "b99bc2bf29d982297642648c37acad1cbea99ba0",
+  "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0950ICT.json",
+  "commit": "6696ac0e3444a0776d0ed219e901c8b0ad86c7c7",
   "rule": "Resume the latest MODUAL provider checkpoint first; the previous TESSERACT pointer is preserved in previous_pointer_snapshot and parallel_open_branches. Keep every unfinished task OPEN.",
   "pr": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
@@ -101,14 +101,13 @@
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
   "next": [
-    "Read the next scheduled Windows Tick and matching consumer after host-local 2026-10-26T09:36:32+07:00; exact-read both receipts and recompute source SHA.",
-    "Continue read-only diagnosis of EVENT_TIMESTAMP_STALE; USB ADB responds but no allowlisted sensor timestamp advanced in two snapshots; wireless ADB target is NOT_LISTED. Do not install/launch an app or change permissions without an approved target.",
-    "Keep the 45 cloud recovery rows pending until independent task-specific evidence exists; host heartbeat is not yet probed.",
-    "Continue TESSERACT issuer public-key and runner-assignment provenance; do not rerun failed-before-step CI without a verified runner/workflow change.",
-    "PR #37 remains OPEN/Draft; recompare with current main before any branch action. Do not merge or force-push.",
-    "Continue exact-target search and carrier-events writer/retention investigation without source substitution, movement, or deletion.",
-    "Continue the independent TESSERACT Art source-identity and behavior-test task; preserve existing destinations and pending sub-actions.",
-    "The available Remote_Desktop_Commander route has 5% monthly calls remaining; prioritize the highest-value direct checks."
+    "When the Remote_Desktop_Commander route becomes reachable, exact-read the scheduled Tick after host-local 2026-10-26T09:41:32+07:00 and its matching consumer receipt; do not infer failure from the connector drop.",
+    "Treat the 09:36 tick as one confirmed allowlisted timestamp advancement, not sustained sensor-stream recovery; verify subsequent ticks before promoting state.",
+    "Keep the 45 cloud recovery rows pending until independent task-specific evidence exists; host heartbeat remains unprobed.",
+    "Continue TESSERACT issuer-key/runner-assignment provenance and TESSERACT Art source/runtime checks through authorized routes.",
+    "Recompare PR #37 against current main before any branch action; keep it OPEN/Draft and do not merge or force-push.",
+    "Continue exact-target search and carrier-events writer/retention investigation without moving or deleting sources.",
+    "The currently available Remote_Desktop_Commander route was offline at the latest inventory; use GitHub/n8n/other authorized routes meanwhile."
   ],
   "continuation_guard": {
     "mode": "TESSERACT_OS_PERSISTENT_CONTINUATION",
@@ -124,7 +123,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-26T09:45:17+07:00",
+  "updated_at": "2026-10-26T09:51:54+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -41065,43 +41064,32 @@
   },
   "current_status": "PARTIALLY_EXECUTED_ALL_OPEN_RETAINED",
   "latest_provider_observation": {
-    "id": "PROVIDER_READBACK_20261026T0935ICT",
-    "observed_at": "2026-10-26T09:34:56.595321+07:00",
-    "record_type": "PROVIDER_READBACK",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0935ICT.json",
-    "checkpoint_blob_sha": "fdf8c6b553f5e9adc1f59a31be1c8100bd99162b",
-    "checkpoint_commit": "b99bc2bf29d982297642648c37acad1cbea99ba0",
+    "id": "PROVIDER_READBACK_20261026T0950ICT",
+    "observed_at": "2026-10-26T09:51:54+07:00",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0950ICT.json",
+    "checkpoint_blob_sha": "25706c55bb22fd08cb505bbb3ddbe43b6288ea2d",
+    "checkpoint_commit": "6696ac0e3444a0776d0ed219e901c8b0ad86c7c7",
     "evidence": {
-      "tick_sha256": "7101c6a7bf8bf7b45c9bed0ce358a446fe2fcc3b7ca0f1ea85160a74a17792a2",
-      "consumer_sha256": "a613c886597cd36bd2b0279f73c86334f78957bd9d2c7d1dae020a3f5a082c34",
+      "latest_tick_sha256": "b01ff8080cbb89a36091e8a228f0cbb3023679a1c2677eac4bb33156f3c0b489",
+      "latest_consumer_sha256": "e0bd6c8abb98873b0d0fa9e74f52f4506b7e025a4e08f2ef6ef72d09a7f9f16e",
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-      "source_bytes": 35389440,
-      "task_result": "0x0",
-      "missed_runs": 0,
-      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
-      "live_sensor_reading_confirmed": false,
+      "live_sensor_reading_confirmed": true,
+      "advanced_sensor_count": 1,
+      "persistence_after_next_scheduled_tick": "NOT_VERIFIED",
       "provider_revision": "0165dc1e4794ab00000000395cdfd73",
-      "n8n_execution_id": "183",
-      "n8n_status": "success",
-      "n8n_evidence_row_id": 432,
+      "n8n_row_id": 432,
       "pending_rows": 45,
       "terminal_rows": 0,
-      "braid_six_actions": 9,
-      "braid_plural_actions": 5,
-      "braid_receipts_readback_ok": true,
-      "pr37_state": "OPEN_DRAFT_UNMERGED",
-      "pr37_compare_at_main": "e7def9ddcd9aebad377df32a58225b78a6e3a55f",
+      "pr37_compare_at_main": "7ccbc8678ae9dba8ebaa5bfe790abd23b052fb58",
       "pr37_ahead_by": 3,
-      "pr37_behind_by": 5,
-      "remote_desktop_route": "ONLINE_ALTERNATE_CONNECTOR"
+      "pr37_behind_by": 11,
+      "host_route": "OFFLINE_AT_LATEST_INVENTORY; HOST_POWER_STATE_NOT_INFERRED"
     },
     "tasks_closed": 0,
     "history_preserved": true,
     "source_mutated": false,
     "secrets_written": false,
-    "raw_sensor_values_exported": false,
-    "pointer_reconciliation_pending": false,
-    "reentry_current_blob_sha": "fa25637f96d815061da7a739f5326e5356547f2e"
+    "raw_sensor_values_exported": false
   },
   "latest_provider_readback_20261026T0604ICT": {
     "id": "PROVIDER_READBACK_20261026T0604ICT",
@@ -44078,5 +44066,205 @@
     "state_files_exact_readback": true,
     "open_tasks_terminal_count": 0
   },
-  "previous_updated_at_before_final_checkpoint_reconciliation": "2026-10-26T09:34:56.595321+07:00"
+  "previous_updated_at_before_final_checkpoint_reconciliation": "2026-10-26T09:34:56.595321+07:00",
+  "previous_checkpoint_before_20261026T0950ICT": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0935ICT.json",
+  "previous_commit_before_20261026T0950ICT": "b99bc2bf29d982297642648c37acad1cbea99ba0",
+  "previous_next_before_20261026T0950ICT": [
+    "Read the next scheduled Windows Tick and matching consumer after host-local 2026-10-26T09:36:32+07:00; exact-read both receipts and recompute source SHA.",
+    "Continue read-only diagnosis of EVENT_TIMESTAMP_STALE; USB ADB responds but no allowlisted sensor timestamp advanced in two snapshots; wireless ADB target is NOT_LISTED. Do not install/launch an app or change permissions without an approved target.",
+    "Keep the 45 cloud recovery rows pending until independent task-specific evidence exists; host heartbeat is not yet probed.",
+    "Continue TESSERACT issuer public-key and runner-assignment provenance; do not rerun failed-before-step CI without a verified runner/workflow change.",
+    "PR #37 remains OPEN/Draft; recompare with current main before any branch action. Do not merge or force-push.",
+    "Continue exact-target search and carrier-events writer/retention investigation without source substitution, movement, or deletion.",
+    "Continue the independent TESSERACT Art source-identity and behavior-test task; preserve existing destinations and pending sub-actions.",
+    "The available Remote_Desktop_Commander route has 5% monthly calls remaining; prioritize the highest-value direct checks."
+  ],
+  "previous_latest_provider_observation_before_20261026T0950ICT": {
+    "id": "PROVIDER_READBACK_20261026T0935ICT",
+    "observed_at": "2026-10-26T09:34:56.595321+07:00",
+    "record_type": "PROVIDER_READBACK",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0935ICT.json",
+    "checkpoint_blob_sha": "fdf8c6b553f5e9adc1f59a31be1c8100bd99162b",
+    "checkpoint_commit": "b99bc2bf29d982297642648c37acad1cbea99ba0",
+    "evidence": {
+      "tick_sha256": "7101c6a7bf8bf7b45c9bed0ce358a446fe2fcc3b7ca0f1ea85160a74a17792a2",
+      "consumer_sha256": "a613c886597cd36bd2b0279f73c86334f78957bd9d2c7d1dae020a3f5a082c34",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "task_result": "0x0",
+      "missed_runs": 0,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "live_sensor_reading_confirmed": false,
+      "provider_revision": "0165dc1e4794ab00000000395cdfd73",
+      "n8n_execution_id": "183",
+      "n8n_status": "success",
+      "n8n_evidence_row_id": 432,
+      "pending_rows": 45,
+      "terminal_rows": 0,
+      "braid_six_actions": 9,
+      "braid_plural_actions": 5,
+      "braid_receipts_readback_ok": true,
+      "pr37_state": "OPEN_DRAFT_UNMERGED",
+      "pr37_compare_at_main": "e7def9ddcd9aebad377df32a58225b78a6e3a55f",
+      "pr37_ahead_by": 3,
+      "pr37_behind_by": 5,
+      "remote_desktop_route": "ONLINE_ALTERNATE_CONNECTOR"
+    },
+    "tasks_closed": 0,
+    "history_preserved": true,
+    "source_mutated": false,
+    "secrets_written": false,
+    "raw_sensor_values_exported": false,
+    "pointer_reconciliation_pending": false,
+    "reentry_current_blob_sha": "fa25637f96d815061da7a739f5326e5356547f2e"
+  },
+  "latest_provider_readback_20261026T0950ICT": {
+    "observed_at": "2026-10-26T09:51:54+07:00",
+    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0950ICT.json",
+    "checkpoint_blob_sha": "25706c55bb22fd08cb505bbb3ddbe43b6288ea2d",
+    "checkpoint_commit": "6696ac0e3444a0776d0ed219e901c8b0ad86c7c7",
+    "main_head_before_checkpoint": "7ccbc8678ae9dba8ebaa5bfe790abd23b052fb58",
+    "modual_parameter_current_blob_sha": "54470d93a70ed749d157a31ae4c6ce7d972791dc",
+    "open_tasks_current_blob_sha": "4a1a4d0fd1bac715a791edd9a40f8155329c381c",
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T023639966701Z.json",
+      "sha256": "b01ff8080cbb89a36091e8a228f0cbb3023679a1c2677eac4bb33156f3c0b489",
+      "live_sensor_reading_confirmed": true,
+      "advanced_sensor_count": 1
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T023636655Z.json",
+      "sha256": "e0bd6c8abb98873b0d0fa9e74f52f4506b7e025a4e08f2ef6ef72d09a7f9f16e",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_matches": true,
+      "provider_content_hash_verified": true,
+      "raw_rows_emitted": false,
+      "synthetic_rows_added": 0
+    },
+    "sensor_stream": {
+      "status": "EVENT_TIMESTAMP_ADVANCED",
+      "advanced_sensor_count": 1,
+      "persistence_after_next_scheduled_tick": "NOT_VERIFIED"
+    },
+    "n8n": {
+      "execution_id": "183",
+      "status": "success",
+      "event_id": "X20261026020525520_CLOUD",
+      "row_id": 432,
+      "pending_rows": 45,
+      "terminal_rows": 0,
+      "host_heartbeat_probed": false
+    },
+    "pr37": {
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+      "compared_main": "7ccbc8678ae9dba8ebaa5bfe790abd23b052fb58",
+      "ahead_by": 3,
+      "behind_by": 11
+    },
+    "tasks_closed": 0
+  },
+  "latest_direct_host_readback_20261026T0950ICT": {
+    "observed_at_host_local": "2026-10-26T09:40:15.1306311+07:00",
+    "host": "DESKTOP-86ITNQ4",
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T023639966701Z.json",
+    "tick_sha256": "b01ff8080cbb89a36091e8a228f0cbb3023679a1c2677eac4bb33156f3c0b489",
+    "tick_source_hash_matches": true,
+    "live_sensor_reading_confirmed": true,
+    "advanced_sensor_count": 1,
+    "consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T023636655Z.json",
+    "consumer_sha256": "e0bd6c8abb98873b0d0fa9e74f52f4506b7e025a4e08f2ef6ef72d09a7f9f16e",
+    "consumer_status": "SOURCE_OBSERVED_READONLY",
+    "consumer_exit_code": 0,
+    "task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T09:36:33+07:00",
+      "last_result": 0,
+      "next_run_local": "2026-10-26T09:41:32+07:00",
+      "missed_runs": 0
+    },
+    "next_scheduled_tick_readback": "NOT_VERIFIED_AFTER_REMOTE_ROUTE_DROP"
+  },
+  "latest_provider_metadata_readback_20261026T0950ICT": {
+    "provider": "Dropbox",
+    "source_name": "windows_SENSON.CSV",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "size_bytes": 35389440,
+    "client_modified_utc": "2026-10-14T00:15:21Z",
+    "server_modified_utc": "2026-10-14T00:20:03Z",
+    "metadata_only": true
+  },
+  "latest_cloud_continuity_readback_20261026T0950ICT": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "execution_id": "183",
+    "status": "success",
+    "event_id": "X20261026020525520_CLOUD",
+    "row_id": 432,
+    "state": "OPEN_WORK_REMAINS",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "host_heartbeat_probed": false,
+    "tasks_closed": 0
+  },
+  "latest_archive_pr37_current_head_probe_20261026T0950ICT": {
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+    "compared_main_sha": "7ccbc8678ae9dba8ebaa5bfe790abd23b052fb58",
+    "status": "diverged",
+    "ahead_by": 3,
+    "behind_by": 11,
+    "archive_adapter_workflow_verified": false,
+    "merge_or_force_push": false
+  },
+  "latest_desktop_commander_route_probe_20261026T0950ICT": {
+    "observed_at": "2026-10-26T09:51:54+07:00",
+    "primary_namespace_devices": "offline",
+    "alternate_namespace": "Remote_Desktop_Commander",
+    "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+    "status": "Offline",
+    "last_seen_seconds_ago_at_inventory": 50,
+    "host_power_state": "NOT_INFERRED"
+  },
+  "latest_main_ci_readback_20261026T0950ICT": {
+    "main_head": "7ccbc8678ae9dba8ebaa5bfe790abd23b052fb58",
+    "in_progress": [
+      40261066437,
+      40261066429,
+      40261066425
+    ],
+    "previous_head_success": [
+      40261017732,
+      40261017715,
+      40261017557
+    ]
+  },
+  "latest_checkpoint_head_reconciliation_20261026T0950ICT": {
+    "main_head_before_checkpoint": "7ccbc8678ae9dba8ebaa5bfe790abd23b052fb58",
+    "checkpoint_commit": "6696ac0e3444a0776d0ed219e901c8b0ad86c7c7",
+    "checkpoint_blob_sha": "25706c55bb22fd08cb505bbb3ddbe43b6288ea2d",
+    "pointer_updated_after_checkpoint_pending": true,
+    "open_tasks_terminal_count": 0
+  },
+  "latest_post_checkpoint_action_20261026T0950ICT": {
+    "state_file_commits": {
+      "modual_parameter_current": "9febd4d2452f9524e906d93e8ff4e6abd4e672a3",
+      "open_tasks_current": "60994a98258c2857b2fa1ddc85a4b1d6680b9772",
+      "provider_checkpoint": "6696ac0e3444a0776d0ed219e901c8b0ad86c7c7",
+      "pointer_reconciliation": "PENDING",
+      "reentry_current": "PENDING"
+    },
+    "exact_readback": true,
+    "tasks_closed": 0,
+    "source_mutated": false,
+    "secrets_written": false,
+    "raw_sensor_values_exported": false
+  }
 }
