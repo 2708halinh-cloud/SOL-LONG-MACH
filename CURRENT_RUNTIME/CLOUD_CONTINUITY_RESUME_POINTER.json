@@ -42,7 +42,11 @@
     "latest_host_evidence_row_updated_by_1125_tick": false,
     "latest_cloud_scan_provider_created_at_utc": "2026-10-26T04:19:06.053Z",
     "post_1121_tick_readback_verified": false,
-    "post_1116_tick_readback_verified": true
+    "post_1116_tick_readback_verified": true,
+    "current_modual_state_blob_sha": "d13743e805f8e4d02b648f857f3cf1beedeefcca",
+    "current_task_pointer_blob_sha": "881d95d8c64a22c436be098300e577a0448350cf",
+    "current_task_ledger_blob_sha": "39123feac7a3301a55f9f0a2f868a7edd5ae460f",
+    "current_main_head_before_pointer_sync": "2e242823987de8a87b4f908558c3a59f20d5e398"
   },
   "post_checkpoint_updates": [
     {
@@ -799,6 +803,32 @@
       },
       "merge_or_force_push": false,
       "tasks_closed": 0
+    },
+    {
+      "type": "CURRENT_POINTER_RECONCILIATION_AFTER_1125_READBACK",
+      "main_head_before_pointer_sync": "2e242823987de8a87b4f908558c3a59f20d5e398",
+      "provider_checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1125ICT.json",
+      "provider_checkpoint_blob_sha": "8a957243c7e3bdb59500ef93db419aeeffd0aa9c",
+      "modual_blob_sha": "d13743e805f8e4d02b648f857f3cf1beedeefcca",
+      "modual_commit": "837a37068e6880e18e5b62770f8e807daf1e03fa",
+      "task_pointer_blob_sha": "881d95d8c64a22c436be098300e577a0448350cf",
+      "task_pointer_commit": "4c351a102e3671ca7017852be37c352eaf232e27",
+      "ledger_blob_sha": "39123feac7a3301a55f9f0a2f868a7edd5ae460f",
+      "ledger_commit": "fa8f5a05c05f7fa964c1954041a78abe432d353e",
+      "task_count_last_verified": 29,
+      "task_count_current_reverified": false,
+      "pr36_compare": {
+        "ahead_by": 14,
+        "behind_by": 118,
+        "status": "diverged"
+      },
+      "pr37_compare": {
+        "ahead_by": 3,
+        "behind_by": 74,
+        "status": "diverged"
+      },
+      "tasks_closed": 0,
+      "history_preserved": true
     }
   ],
   "n8n": {
@@ -922,17 +952,17 @@
     "task_ledger_blob_sha": "39123feac7a3301a55f9f0a2f868a7edd5ae460f",
     "task_ledger_size_bytes": 1228627,
     "task_count_last_verified": 29,
-    "task_count_current": 29,
+    "task_count_current": "NOT_RECOUNTED",
     "tasks_closed": 0,
     "pr36_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
     "pr36_state": "OPEN",
     "pr36_draft": true,
     "pr36_merged": false,
     "pr36_head_sha": "00400b4f81a31293b1960ed1709280130cc25db3",
-    "compare_main_head_at_readback": "7fc9c3d8ebe986f5483b8d7d9049188353485bc2",
+    "compare_main_head_at_readback": "2e242823987de8a87b4f908558c3a59f20d5e398",
     "pr36_compare_status_at_readback": "diverged",
     "pr36_ahead_by_at_readback": 14,
-    "pr36_behind_by_at_readback": 111,
+    "pr36_behind_by_at_readback": 118,
     "compare_precedes_this_checkpoint_commit": true,
     "pr36_merge_or_force_push": false,
     "task_pointer_blob_sha": "881d95d8c64a22c436be098300e577a0448350cf",
@@ -966,7 +996,7 @@
     ],
     "pr36_combined_status_endpoint": "no status contexts returned this invocation",
     "modual_control_state_blob_sha": "d13743e805f8e4d02b648f857f3cf1beedeefcca",
-    "modual_control_state_commit_sha": "d7129a4e425e79107a7b7852f178a0f9f7fe171e",
+    "modual_control_state_commit_sha": "837a37068e6880e18e5b62770f8e807daf1e03fa",
     "compare_precedes_this_pointer_commit": true,
     "verified_action_events": 235,
     "provider_observations": 203,
@@ -1007,7 +1037,7 @@
     "pr36_mergeable_compare_state": "DIVERGED; keep OPEN/Draft; do not merge or force-push",
     "merge_or_force_push": false,
     "task_pointer_commit_sha": "4c351a102e3671ca7017852be37c352eaf232e27",
-    "current_main_head_before_reconciliation": "7fc9c3d8ebe986f5483b8d7d9049188353485bc2",
+    "current_main_head_before_reconciliation": "2e242823987de8a87b4f908558c3a59f20d5e398",
     "pr37_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37",
     "pr37_state": "OPEN",
     "pr37_draft": true,
@@ -1015,7 +1045,7 @@
     "pr37_head_sha": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
     "pr37_compare_status": "diverged",
     "pr37_ahead_by": 3,
-    "pr37_behind_by": 67,
+    "pr37_behind_by": 74,
     "pr37_mergeable_api_current": true,
     "pr37_merge_or_force_push": false,
     "pr37_latest_check_runs": [
@@ -1072,32 +1102,25 @@
   ],
   "modual_control_state": {
     "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
-    "blob_sha": "5376961930b0aa2eb9a2359e2f8aafedeed84af4",
-    "commit_sha": "30c2918a89c27108c5cb780502b03324efe37f89",
+    "blob_sha": "d13743e805f8e4d02b648f857f3cf1beedeefcca",
+    "commit_sha": "837a37068e6880e18e5b62770f8e807daf1e03fa",
     "readback_verified": true,
     "latest_host_evidence_row_id": 440,
-    "latest_tick_id": "WINDOWS_TICK_20261026T040639271401Z",
-    "latest_tick_sha256": "E6A17425046BD63274BDC218027E6E1AADB24D696CA4297D457F0C35CAFC57FF",
-    "state_file_lag_vs_latest_host_evidence": "MODUAL_PARAMETER_CURRENT.json remains blob SHA 5376961930b0aa2eb9a2359e2f8aafedeed84af4, last recording the 11:06 Tick. Provider readback 11:25 contains a newer 11:16:40 host Tick/consumer pair, but the MODUAL state file was not updated to that Tick. Preserve this discrepancy; do not overwrite the large state file without exact full-content readback.",
-    "latest_tick_observed_at_local": "2026-10-26T11:06:39.271401+07:00",
-    "latest_consumer_sha256": "AB9B9D46FDDB549AAF9E47D48F6ADCBE9F1453C74998AE31402C4E38ECBF6C2A",
+    "latest_tick_id": "WINDOWS_TICK_20261026T041640463993Z.json",
+    "latest_tick_sha256": "c2f5a31a1fdfc5487923b564918f42c9ed8d72098d6d8ce71a64c80582911011",
+    "latest_tick_observed_at_local": "2026-10-26T11:16:40.463993+07:00",
+    "latest_consumer_sha256": "723ac81e74346fb4b86e3065aebfc212b646986f6dd5b0b84c518fa7b7be9a15",
     "latest_source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-    "latest_host_tick_after_state_file": {
-      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T041640463993Z.json",
-      "sha256": "c2f5a31a1fdfc5487923b564918f42c9ed8d72098d6d8ce71a64c80582911011",
-      "observed_at_local": "2026-10-26T11:16:40.463993+07:00",
-      "consumer_sha256": "723ac81e74346fb4b86e3065aebfc212b646986f6dd5b0b84c518fa7b7be9a15",
-      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-      "source_hash_matches": true
-    }
+    "latest_cloud_scan_row_id": 443,
+    "state_file_lag_vs_latest_host_evidence": "MODUAL_PARAMETER_CURRENT.json was updated at 11:26 by commit 837a37068e6880e18e5b62770f8e807daf1e03fa and records the latest verified 11:16:40 Tick/consumer plus cloud row 443. The scheduled 11:21:32+07 cycle is not yet verified by a later Tick."
   },
   "provider_checkpoint_reconciliation": {
     "canonical_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1125ICT.json",
     "canonical_checkpoint_blob_sha": "8a957243c7e3bdb59500ef93db419aeeffd0aa9c",
     "canonical_checkpoint_commit_sha": "73647b712830deb64ebe8b7847570ac556c31301",
     "modual_control_state_path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
-    "modual_control_state_blob_sha": "5376961930b0aa2eb9a2359e2f8aafedeed84af4",
-    "modual_control_state_commit_sha": "30c2918a89c27108c5cb780502b03324efe37f89",
+    "modual_control_state_blob_sha": "d13743e805f8e4d02b648f857f3cf1beedeefcca",
+    "modual_control_state_commit_sha": "837a37068e6880e18e5b62770f8e807daf1e03fa",
     "latest_host_evidence_row_id": 440,
     "latest_route_inventory_row_id": 416,
     "latest_direct_route_readback_row_id": 440,
@@ -1107,8 +1130,8 @@
     ],
     "tasks_closed": 0,
     "task_ledger_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
-    "task_ledger_blob_sha": "05c8bf07c6bf54217be7a8f0a04ae5f0da1a03f9",
-    "task_ledger_commit_sha": "f952cda1681e4be07a0b87459edc6e74956d79f0",
+    "task_ledger_blob_sha": "39123feac7a3301a55f9f0a2f868a7edd5ae460f",
+    "task_ledger_commit_sha": "fa8f5a05c05f7fa964c1954041a78abe432d353e",
     "task_count": 29,
     "verified_action_events": 180,
     "provider_observations": 180,
@@ -1146,8 +1169,8 @@
       "readback_verified": true
     },
     "task_pointer_path": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
-    "task_pointer_blob_sha": "2ec23a777cbe2e176990bfddec606cb56ee7e306",
-    "task_pointer_commit_sha": "baf612d84c6ad47d2875fa195aaa34adfb21b4a5",
+    "task_pointer_blob_sha": "881d95d8c64a22c436be098300e577a0448350cf",
+    "task_pointer_commit_sha": "4c351a102e3671ca7017852be37c352eaf232e27",
     "history_preserved": true,
     "latest_direct_tick_readback": {
       "observed_at_local": "2026-10-26T11:18:29.1175657+07:00",
@@ -1235,7 +1258,7 @@
       "issue": "disk threshold semantics mix free-space and used-space conditions",
       "requested_resolution": "choose one canonical metric, test boundaries, and define recovery hysteresis"
     },
-    "modual_state_lags_latest_host_tick": true,
+    "modual_state_lags_latest_host_tick": false,
     "latest_cloud_scan_row_id": 443,
     "latest_cloud_scan_event_id": "X20261026041905980_CLOUD",
     "latest_cloud_scan": {
@@ -1247,6 +1270,18 @@
       "pending_recovery_rows": 45,
       "terminal_rows": 0,
       "host_heartbeat_probed": false,
+      "tasks_closed": 0
+    },
+    "latest_pointer_reconciliation": {
+      "main_head_before_pointer_sync": "2e242823987de8a87b4f908558c3a59f20d5e398",
+      "modual_blob_sha": "d13743e805f8e4d02b648f857f3cf1beedeefcca",
+      "modual_commit": "837a37068e6880e18e5b62770f8e807daf1e03fa",
+      "task_pointer_blob_sha": "881d95d8c64a22c436be098300e577a0448350cf",
+      "task_pointer_commit": "4c351a102e3671ca7017852be37c352eaf232e27",
+      "ledger_blob_sha": "39123feac7a3301a55f9f0a2f868a7edd5ae460f",
+      "ledger_commit": "fa8f5a05c05f7fa964c1954041a78abe432d353e",
+      "task_count_last_verified": 29,
+      "task_count_current_reverified": false,
       "tasks_closed": 0
     }
   },
@@ -1380,7 +1415,19 @@
       "task_count_last_verified": 29,
       "task_count_current": 29,
       "tasks_closed": 0
-    }
+    },
+    "current_modual_state_blob_sha": "d13743e805f8e4d02b648f857f3cf1beedeefcca",
+    "current_modual_state_commit_sha": "837a37068e6880e18e5b62770f8e807daf1e03fa",
+    "current_task_pointer_blob_sha": "881d95d8c64a22c436be098300e577a0448350cf",
+    "current_task_pointer_commit_sha": "4c351a102e3671ca7017852be37c352eaf232e27",
+    "task_ledger": {
+      "blob_sha": "39123feac7a3301a55f9f0a2f868a7edd5ae460f",
+      "commit_sha": "fa8f5a05c05f7fa964c1954041a78abe432d353e",
+      "task_count_last_verified": 29,
+      "task_count_current": "NOT_RECOUNTED",
+      "tasks_closed": 0
+    },
+    "current_post_1121_tick_status": "NOT_RECHECKED"
   },
   "previous_checkpoint_before_20261026T1051ICT": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0655ICT.json",
@@ -1674,27 +1721,30 @@
     "history_preserved": true
   },
   "latest_archive_pr_compare_readback": {
-    "observed_at": "2026-10-26T11:26:19.060+07:00",
-    "main_head": "fa8f5a05c05f7fa964c1954041a78abe432d353e",
+    "observed_before_pointer_update": true,
+    "main_head": "2e242823987de8a87b4f908558c3a59f20d5e398",
     "pr36": {
-      "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
       "state": "OPEN",
       "draft": true,
       "merged": false,
+      "head": "00400b4f81a31293b1960ed1709280130cc25db3",
       "status": "diverged",
       "ahead_by": 14,
-      "behind_by": 109
+      "behind_by": 118
     },
     "pr37": {
-      "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37",
       "state": "OPEN",
       "draft": true,
       "merged": false,
+      "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
       "status": "diverged",
       "ahead_by": 3,
-      "behind_by": 65
+      "behind_by": 74
     },
-    "merge_or_force_push": false
+    "branch_mutation": false,
+    "task_closure": false
   },
   "latest_pr38_resource_threshold_review": {
     "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/38",
@@ -2207,7 +2257,22 @@
     "latest_consumer_sha256": "723ac81e74346fb4b86e3065aebfc212b646986f6dd5b0b84c518fa7b7be9a15",
     "source_hash_matches": true,
     "tasks_closed": 0,
-    "history_preserved": true
+    "history_preserved": true,
+    "modual_commit": "837a37068e6880e18e5b62770f8e807daf1e03fa",
+    "modual_state_lags_latest_host_tick": false,
+    "ledger_blob_sha": "39123feac7a3301a55f9f0a2f868a7edd5ae460f",
+    "ledger_commit": "fa8f5a05c05f7fa964c1954041a78abe432d353e",
+    "main_head_before_pointer_sync": "2e242823987de8a87b4f908558c3a59f20d5e398",
+    "host_evidence_row_id": 440,
+    "cloud_scan_row_id": 443,
+    "direct_tick_sha256": "c2f5a31a1fdfc5487923b564918f42c9ed8d72098d6d8ce71a64c80582911011",
+    "consumer_sha256": "723ac81e74346fb4b86e3065aebfc212b646986f6dd5b0b84c518fa7b7be9a15",
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "sensor_stream": "EVENT_TIMESTAMP_STALE",
+    "live_sensor_reading_confirmed": false,
+    "next_tick_due_local": "2026-10-26T11:21:32+07:00",
+    "post_due_tick_readback_verified": false,
+    "recovery_rows_pending": 45
   },
   "previous_updated_at_before_20261026T1125ICT": {
     "utc": "2026-10-26T04:19:06.053Z",
@@ -2411,5 +2476,467 @@
     "runner_assignment_verified": false,
     "ci_rerun": false,
     "settings_route": "NOT_AVAILABLE_IN_CURRENT_CONNECTED_SURFACES"
+  },
+  "previous_modual_control_state_before_current_pointer_sync": {
+    "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+    "blob_sha": "5376961930b0aa2eb9a2359e2f8aafedeed84af4",
+    "commit_sha": "30c2918a89c27108c5cb780502b03324efe37f89",
+    "readback_verified": true,
+    "latest_host_evidence_row_id": 440,
+    "latest_tick_id": "WINDOWS_TICK_20261026T040639271401Z",
+    "latest_tick_sha256": "E6A17425046BD63274BDC218027E6E1AADB24D696CA4297D457F0C35CAFC57FF",
+    "state_file_lag_vs_latest_host_evidence": "MODUAL_PARAMETER_CURRENT.json remains blob SHA 5376961930b0aa2eb9a2359e2f8aafedeed84af4, last recording the 11:06 Tick. Provider readback 11:25 contains a newer 11:16:40 host Tick/consumer pair, but the MODUAL state file was not updated to that Tick. Preserve this discrepancy; do not overwrite the large state file without exact full-content readback.",
+    "latest_tick_observed_at_local": "2026-10-26T11:06:39.271401+07:00",
+    "latest_consumer_sha256": "AB9B9D46FDDB549AAF9E47D48F6ADCBE9F1453C74998AE31402C4E38ECBF6C2A",
+    "latest_source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "latest_host_tick_after_state_file": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T041640463993Z.json",
+      "sha256": "c2f5a31a1fdfc5487923b564918f42c9ed8d72098d6d8ce71a64c80582911011",
+      "observed_at_local": "2026-10-26T11:16:40.463993+07:00",
+      "consumer_sha256": "723ac81e74346fb4b86e3065aebfc212b646986f6dd5b0b84c518fa7b7be9a15",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true
+    }
+  },
+  "previous_provider_checkpoint_reconciliation_before_current_pointer_sync": {
+    "canonical_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1125ICT.json",
+    "canonical_checkpoint_blob_sha": "8a957243c7e3bdb59500ef93db419aeeffd0aa9c",
+    "canonical_checkpoint_commit_sha": "73647b712830deb64ebe8b7847570ac556c31301",
+    "modual_control_state_path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+    "modual_control_state_blob_sha": "5376961930b0aa2eb9a2359e2f8aafedeed84af4",
+    "modual_control_state_commit_sha": "30c2918a89c27108c5cb780502b03324efe37f89",
+    "latest_host_evidence_row_id": 440,
+    "latest_route_inventory_row_id": 416,
+    "latest_direct_route_readback_row_id": 440,
+    "misnamed_historical_artifacts_preserved": [
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0247ICT.json",
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0250ICT.json"
+    ],
+    "tasks_closed": 0,
+    "task_ledger_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "task_ledger_blob_sha": "05c8bf07c6bf54217be7a8f0a04ae5f0da1a03f9",
+    "task_ledger_commit_sha": "f952cda1681e4be07a0b87459edc6e74956d79f0",
+    "task_count": 29,
+    "verified_action_events": 180,
+    "provider_observations": 180,
+    "integrity_corrections": 7,
+    "pr36_compare_after_ledger_update": {
+      "status": "diverged",
+      "ahead_by": 14,
+      "behind_by": 86,
+      "compare_main_sha": "ea4ae3e87d8faad51fc37ecf13598cc6ceb89167"
+    },
+    "latest_host_checkpoint_readback": {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0327ICT.json",
+      "blob_sha": "ab622b2ade1e85d87e3ceeef94ce25189dcc1089",
+      "host_evidence_row_id": 412,
+      "underlying_host_observation_local": "2026-10-26T03:27:49.0719164+07:00",
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "fresh_host_probe_this_invocation": false
+    },
+    "latest_zip_reconciliation_row_id": 415,
+    "task_count_current_reverified": false,
+    "checkpoint_readback_verified": true,
+    "provider_readback_verified": true,
+    "modual_state_readback_verified": true,
+    "latest_provider_readback_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0747ICT.json",
+    "latest_provider_readback_blob_sha": "3367929db050107ee41169fa130476ae90974bfb",
+    "latest_provider_readback_commit_sha": "54569e598768e7c6d29c93c97f2a073faf13fdca",
+    "current_modual_state_blob_sha": "6cb06d176b453e08dd5c1fa72f36f975e23cb1c9",
+    "current_modual_state_observed_at": "2026-10-26T07:49:38.545+07:00",
+    "current_modual_state_commit_sha": "NOT_RESOLVED_FROM_CONTENTS_READBACK",
+    "latest_host_route_schedule_readback": {
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 426,
+      "event_id": "X20261026004523128_HOST_ROUTE_SCHEDULE_READBACK",
+      "host_observed_at_local": "2026-10-26T07:45:23.0697943+07:00",
+      "readback_verified": true
+    },
+    "task_pointer_path": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+    "task_pointer_blob_sha": "2ec23a777cbe2e176990bfddec606cb56ee7e306",
+    "task_pointer_commit_sha": "baf612d84c6ad47d2875fa195aaa34adfb21b4a5",
+    "history_preserved": true,
+    "latest_direct_tick_readback": {
+      "observed_at_local": "2026-10-26T11:18:29.1175657+07:00",
+      "tick_observed_at_local": "2026-10-26T11:16:40.463993+07:00",
+      "tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T041640463993Z.json",
+      "tick_sha256": "c2f5a31a1fdfc5487923b564918f42c9ed8d72098d6d8ce71a64c80582911011",
+      "consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T041637037Z.json",
+      "consumer_sha256": "723ac81e74346fb4b86e3065aebfc212b646986f6dd5b0b84c518fa7b7be9a15",
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "usb_timestamp_count": 4,
+      "usb_advanced_count": 0,
+      "live_sensor_reading_confirmed": false,
+      "usb_adb_state": "device",
+      "wireless_adb_state": "NOT_LISTED",
+      "wireless_tcp_5556_reachable": false,
+      "sensor_app_processes_present": false,
+      "android_wakefulness": "Dozing",
+      "sensorservice_active_connections": 7,
+      "last_event_time_observed_in_dump": "10:43:25",
+      "w32time_state": "STOPPED",
+      "w32time_start_type": "MANUAL",
+      "system_clock_changed": false,
+      "elevation_required_for_w32time_start_not_granted": true,
+      "scheduled_task_last_run_local": "2026-10-26T11:16:33+07:00",
+      "scheduled_task_last_result": 0,
+      "next_scheduled_tick_local": "2026-10-26T11:21:32+07:00",
+      "next_tick_readback_after_due_verified": false,
+      "host_evidence_row_appended": false
+    },
+    "latest_archive_pr_compare_readback": {
+      "main_head": "baf612d84c6ad47d2875fa195aaa34adfb21b4a5",
+      "pr36": {
+        "state": "OPEN",
+        "draft": true,
+        "merged": false,
+        "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+        "status": "diverged",
+        "ahead_by": 14,
+        "behind_by": 109,
+        "mergeable_api": true,
+        "merge_or_force_push": false
+      },
+      "pr37": {
+        "state": "OPEN",
+        "draft": true,
+        "merged": false,
+        "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+        "status": "diverged",
+        "ahead_by": 3,
+        "behind_by": 65,
+        "mergeable_api": true,
+        "merge_or_force_push": false
+      },
+      "pr37_current_head_workflows": [
+        {
+          "id": 40256730403,
+          "name": "SOL Archive Read-only Adapters",
+          "conclusion": "success"
+        },
+        {
+          "id": 40256730407,
+          "name": "High-Threshold Secret Exposure Guard",
+          "conclusion": "success"
+        },
+        {
+          "id": 40256730413,
+          "name": "SOL Library Stone Topology",
+          "conclusion": "success"
+        }
+      ],
+      "ci_is_not_task_closure": true
+    },
+    "latest_pr38_review_readback": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/38",
+      "state": "OPEN",
+      "draft": true,
+      "merged": false,
+      "head": "69f8197f3247f49c708dd4900e34c21e0dcadc73",
+      "comment_id": 6408189959,
+      "comment_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/38#issuecomment-6408189959",
+      "comment_readback_verified": true,
+      "issue": "disk threshold semantics mix free-space and used-space conditions",
+      "requested_resolution": "choose one canonical metric, test boundaries, and define recovery hysteresis"
+    },
+    "modual_state_lags_latest_host_tick": true,
+    "latest_cloud_scan_row_id": 443,
+    "latest_cloud_scan_event_id": "X20261026041905980_CLOUD",
+    "latest_cloud_scan": {
+      "execution_id": "188",
+      "status": "success",
+      "evidence_row_id": 443,
+      "event_id": "X20261026041905980_CLOUD",
+      "provider_created_at_utc": "2026-10-26T04:19:06.053Z",
+      "pending_recovery_rows": 45,
+      "terminal_rows": 0,
+      "host_heartbeat_probed": false,
+      "tasks_closed": 0
+    }
+  },
+  "previous_github_readback_before_current_pointer_sync": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "task_ledger_blob_sha": "39123feac7a3301a55f9f0a2f868a7edd5ae460f",
+    "task_ledger_size_bytes": 1228627,
+    "task_count_last_verified": 29,
+    "task_count_current": 29,
+    "tasks_closed": 0,
+    "pr36_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+    "pr36_state": "OPEN",
+    "pr36_draft": true,
+    "pr36_merged": false,
+    "pr36_head_sha": "00400b4f81a31293b1960ed1709280130cc25db3",
+    "compare_main_head_at_readback": "7fc9c3d8ebe986f5483b8d7d9049188353485bc2",
+    "pr36_compare_status_at_readback": "diverged",
+    "pr36_ahead_by_at_readback": 14,
+    "pr36_behind_by_at_readback": 111,
+    "compare_precedes_this_checkpoint_commit": true,
+    "pr36_merge_or_force_push": false,
+    "task_pointer_blob_sha": "881d95d8c64a22c436be098300e577a0448350cf",
+    "provider_checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1125ICT.json",
+    "provider_checkpoint_blob_sha": "8a957243c7e3bdb59500ef93db419aeeffd0aa9c",
+    "provider_checkpoint_commit_sha": "73647b712830deb64ebe8b7847570ac556c31301",
+    "reentry_blob_sha": "3fd12dd81368b927723db9ee4f6960470078523b",
+    "compare_precedes_pointer_commit": true,
+    "pr36_latest_check_runs": [
+      {
+        "id": 40242575899,
+        "name": "SOL Archive Read-only Adapters",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 31
+      },
+      {
+        "id": 40242575817,
+        "name": "High-Threshold Secret Exposure Guard",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 1277
+      },
+      {
+        "id": 40242575841,
+        "name": "SOL Library Stone Topology",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 482
+      }
+    ],
+    "pr36_combined_status_endpoint": "no status contexts returned this invocation",
+    "modual_control_state_blob_sha": "d13743e805f8e4d02b648f857f3cf1beedeefcca",
+    "modual_control_state_commit_sha": "d7129a4e425e79107a7b7852f178a0f9f7fe171e",
+    "compare_precedes_this_pointer_commit": true,
+    "verified_action_events": 235,
+    "provider_observations": 203,
+    "integrity_corrections": 7,
+    "task_ledger_commit_sha": "fa8f5a05c05f7fa964c1954041a78abe432d353e",
+    "current_main_head_after_ledger_update": "4aec887bf4b434ed3255c35dbd6829a15cef5fbf",
+    "pr36_compare_after_ledger_update": {
+      "status": "diverged",
+      "ahead_by": 14,
+      "behind_by": 29,
+      "main_sha": "26499cd167a24dab441b26e48fa38014d46d5442",
+      "comparison_precedes_pointer_commit": true
+    },
+    "compare_precedes_checkpoint_commits": true,
+    "latest_checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0519ICT.json",
+    "latest_checkpoint_blob_sha": "36c2f34a8ffc17120cd9f7ba0ba29c63e8f196c0",
+    "latest_checkpoint_commit_sha": "83d57d5849623b9913042b6dc338c2f9d1c29fde",
+    "current_main_head": "26499cd167a24dab441b26e48fa38014d46d5442",
+    "pr36_mergeable": true,
+    "pr36_compare_status": "diverged",
+    "pr36_ahead_by": 14,
+    "pr36_behind_by": 29,
+    "compare_snapshot_main_sha": "240dfaa1e738855857ce26005dfebbfaf27bf6ee",
+    "compare_snapshot_ahead_by": 14,
+    "compare_snapshot_behind_by": 14,
+    "compare_snapshot_status": "diverged",
+    "compare_precedes_current_continuity_commit": true,
+    "compare_precedes_current_pointer_commit": true,
+    "compare_snapshot_precedes_pointer_commit": true,
+    "current_main_head_before_pointer_update": "fa8f5a05c05f7fa964c1954041a78abe432d353e",
+    "current_main_head_after_pointer_update": "NOT_SELF_REFERENCED_IN_POINTER_CONTENT",
+    "compare_main_sha_before_pointer_update": "ea4ae3e87d8faad51fc37ecf13598cc6ceb89167",
+    "pr36_compare_status_before_pointer_update": "diverged",
+    "pr36_ahead_by_before_pointer_update": 14,
+    "pr36_behind_by_before_pointer_update": 86,
+    "pr36_mergeable_api_current": true,
+    "pr36_mergeable_api_base_sha": "cbb8e2074695670398d2ee9ca4462bbbd55cee7c",
+    "pr36_mergeable_compare_state": "DIVERGED; keep OPEN/Draft; do not merge or force-push",
+    "merge_or_force_push": false,
+    "task_pointer_commit_sha": "4c351a102e3671ca7017852be37c352eaf232e27",
+    "current_main_head_before_reconciliation": "7fc9c3d8ebe986f5483b8d7d9049188353485bc2",
+    "pr37_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37",
+    "pr37_state": "OPEN",
+    "pr37_draft": true,
+    "pr37_merged": false,
+    "pr37_head_sha": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+    "pr37_compare_status": "diverged",
+    "pr37_ahead_by": 3,
+    "pr37_behind_by": 67,
+    "pr37_mergeable_api_current": true,
+    "pr37_merge_or_force_push": false,
+    "pr37_latest_check_runs": [
+      {
+        "id": 40256730403,
+        "name": "SOL Archive Read-only Adapters",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40256730407,
+        "name": "High-Threshold Secret Exposure Guard",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40256730413,
+        "name": "SOL Library Stone Topology",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "pr38_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/38",
+    "pr38_state": "OPEN",
+    "pr38_draft": true,
+    "pr38_merged": false,
+    "pr38_head_sha": "69f8197f3247f49c708dd4900e34c21e0dcadc73",
+    "pr38_review_comment_id": 6408189959,
+    "pr38_review_comment_readback_verified": true,
+    "pr38_latest_secret_guard_run_id": 40259962378,
+    "pr38_latest_secret_guard_conclusion": "success"
+  },
+  "previous_current_readback_before_current_pointer_sync": {
+    "current_as_of_local": "2026-10-26T11:26:19.060+07:00",
+    "provider_created_at_utc": "2026-10-26T04:26:19.060Z",
+    "latest_provider_readback_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1125ICT.json",
+    "latest_provider_readback_blob_sha": "8a957243c7e3bdb59500ef93db419aeeffd0aa9c",
+    "latest_provider_readback_commit_sha": "73647b712830deb64ebe8b7847570ac556c31301",
+    "latest_host_evidence_row_id": 440,
+    "latest_cloud_evidence_row_id": 443,
+    "latest_cloud_execution": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "188",
+      "status": "success",
+      "scope": "CLOUD_SCAN_ONLY;HOST_HEARTBEAT_NOT_PROBED"
+    },
+    "recovery_rows": 45,
+    "unfinished_rows": 45,
+    "terminal_rows": 0,
+    "tasks_closed": 0,
+    "latest_host_tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T041640463993Z.json",
+      "observed_at_utc": "2026-10-26T04:16:40.463993Z",
+      "sha256": "c2f5a31a1fdfc5487923b564918f42c9ed8d72098d6d8ce71a64c80582911011",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440
+    },
+    "latest_consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T041637037Z.json",
+      "observed_at_utc": "2026-10-26T04:16:40.5679534Z",
+      "sha256": "723ac81e74346fb4b86e3065aebfc212b646986f6dd5b0b84c518fa7b7be9a15",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "source_content_hash_verified": true,
+      "consumer_hash_matches_verifier": true,
+      "live_sensor_reading_confirmed": false
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "recomputed_sha256_matches": true
+    },
+    "scheduler": {
+      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T11:16:33+07:00",
+      "last_result": 0,
+      "next_run_local": "2026-10-26T11:21:32+07:00",
+      "missed_runs": 0
+    },
+    "devices": {
+      "xiaomi12": "ADB_RESPONDED_EVENT_TIMESTAMP_STALE",
+      "redmiNote14Pro": "NOT_LISTED",
+      "androidWakefulness": "Dozing",
+      "sensorAppProcessPresent": false
+    },
+    "sensor_client_diagnostics": {
+      "android_wakefulness": "Dozing",
+      "sensor_app_processes_present": false,
+      "installed_packages": [
+        "com.exatools.sensors",
+        "com.galaxy.sensortoolbox",
+        "com.termux",
+        "com.termux.boot",
+        "com.termux.nix"
+      ],
+      "launcher_resolves": "com.exatools.sensors/com.examobile.sensors.activity.MainActivity",
+      "declared_service_related_lines_for_sensor_packages": 0,
+      "sensorservice_active_connections": 7,
+      "last_event_time_observed_in_dump": "10:43:25",
+      "mutation_performed": false
+    },
+    "time_service": {
+      "service": "W32Time",
+      "state": "STOPPED",
+      "start_type": "MANUAL",
+      "system_clock_changed": false,
+      "elevation_required_for_service_start_not_granted": true
+    },
+    "exact_target_search": {
+      "pid": 8928,
+      "last_host_poll_local": "2026-10-26T10:32:44.5864625+07:00",
+      "status_at_last_poll": "RUNNING_READ_ONLY_PROCESS_PRESENT_OUTPUT_NOT_RECHECKED",
+      "current_status_rechecked": false,
+      "search_exhaustive": false,
+      "source_substitution_performed": false,
+      "process_termination": false
+    },
+    "tesseract": {
+      "pr6_head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+      "issuer_key_value_verified": false,
+      "runner_assignment_verified": false,
+      "ci_rerun": false
+    },
+    "archive_pull_requests": {
+      "comparison_main_head": "baf612d84c6ad47d2875fa195aaa34adfb21b4a5",
+      "pr36": {
+        "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+        "state": "OPEN",
+        "draft": true,
+        "merged": false,
+        "status": "diverged",
+        "ahead_by": 14,
+        "behind_by": 109
+      },
+      "pr37": {
+        "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+        "state": "OPEN",
+        "draft": true,
+        "merged": false,
+        "status": "diverged",
+        "ahead_by": 3,
+        "behind_by": 65
+      },
+      "branch_mutations": false
+    },
+    "source_mutated": false,
+    "raw_sensor_values_exported": false,
+    "google_drive_written": false,
+    "process_termination": false,
+    "evidence_table_rows_last_verified": 443,
+    "github": {
+      "main_head_before_checkpoint": "baf612d84c6ad47d2875fa195aaa34adfb21b4a5",
+      "ledger_blob_sha": "39123feac7a3301a55f9f0a2f868a7edd5ae460f",
+      "task_pointer_blob_sha": "881d95d8c64a22c436be098300e577a0448350cf",
+      "task_count_last_verified": 29,
+      "task_count_current": 29,
+      "tasks_closed": 0
+    }
+  },
+  "latest_pointer_reconciliation": {
+    "main_head_before_pointer_sync": "2e242823987de8a87b4f908558c3a59f20d5e398",
+    "modual_blob_sha": "d13743e805f8e4d02b648f857f3cf1beedeefcca",
+    "modual_commit": "837a37068e6880e18e5b62770f8e807daf1e03fa",
+    "task_pointer_blob_sha": "881d95d8c64a22c436be098300e577a0448350cf",
+    "task_pointer_commit": "4c351a102e3671ca7017852be37c352eaf232e27",
+    "ledger_blob_sha": "39123feac7a3301a55f9f0a2f868a7edd5ae460f",
+    "ledger_commit": "fa8f5a05c05f7fa964c1954041a78abe432d353e",
+    "task_count_last_verified": 29,
+    "task_count_current_reverified": false,
+    "tasks_closed": 0,
+    "current_compare_snapshot": {
+      "pr36_ahead_by": 14,
+      "pr36_behind_by": 118,
+      "pr37_ahead_by": 3,
+      "pr37_behind_by": 74
+    },
+    "pointer_sync_does_not_close_tasks": true
   }
 }
