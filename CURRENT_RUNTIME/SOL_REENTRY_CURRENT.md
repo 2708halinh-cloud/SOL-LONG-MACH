@@ -1722,3 +1722,33 @@ PR [#6](https://github.com/2708halinh-cloud/x-time-web/pull/6) remains OPEN/Draf
 
 Checkpoint carrier: `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1332ICT.json`, blob `133c0e2c3ab78b745b5ce0bb58b540452dd056b9`, commit `1bb89866d70ddb91fa4c3fdcbb930802ed38c9e7`; exact-target readback and JSON parse succeeded.
 <!-- END VERIFIED_AUTOMATION_CONTINUATION_20261026T1332ICT -->
+
+<!-- BEGIN VERIFIED_AUTOMATION_CONTINUATION_20261026T1445ICT -->
+## CHECKPOINT — Windows Tick/consumer exact readback; cloud row 467; MODUAL append delta
+
+**Observed:** 2026-10-26T14:45:17.899+07:00. Provider checkpoint: `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1439ICT.json`, blob `45cf1f32e66cc60fde3a31cb40f9cb5503e35f8b`, commit `7b46e209f29281acf87a13c9380736712e45c5a4`. The state update is based on main head `7b46e209f29281acf87a13c9380736712e45c5a4`; no force update.
+
+### Fresh-read and provenance
+- AGENTS.md blob `f18f9743de1e21d13bad47770f928ec85e79bd95`; pre-write reentry blob `7b3dde0cad80006be151e693c0e2e356eabee1e9`; pointer blob `0664f08d782747dafb6a864c5260fd417c3ce0c8`; OPEN ledger blob `0285e01d486801b3566b17735e6db077684d2d0b`; MODUAL current blob `01c1dfe8682e25c7e2f5210bbae87a30231b1f58`. Large JSON files parsed from exact Git blobs; canonical serialization matched.
+- New pointer blob: `d4f22183a1663c2e31ea179857cb3b7f326b5def`; new OPEN ledger blob: `83a50d44deefb6ab82e02ece466092b5156c35fd`; append-delta blob: `02192ee39c087c4471293a9a583bb6facdb6d1a4`.
+
+### Windows Tick and consumer
+- Host observation `2026-10-26T07:28:10.8790582Z`; task Ready/enabled, last run `14:26:33+07`, result 0, missed 0, next host-local run `14:31:32+07`.
+- Tick `D:\SENSOR_LOGS\state\WINDOWS_TICK_20261026T072639090945Z.json`, SHA-256 `D8A4BADC85ADCF13A7B53594FFB1BA396E9B61DAC7E5CEA9F1E47991287A8A70`; consumer `D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261026T072636367Z.json`, SHA-256 `4F18E94DDBCD70F7F378540C7C38E1566FC410B279D1AA063CB10A4CC981A3A9`, 6,945 bytes, SOURCE_OBSERVED_READONLY, exit 0.
+- Source `D:\SENSOR_LOGS\windows_SENSON.CSV`, 35,389,440 bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; source hash matches Tick and consumer. Dropbox revision `0165dc1e4794ab00000000395cdfd73`; content hash verified by consumer receipt; no raw CSV download.
+- Wrapper trace ends CONSUMER_END exit=0 and RECEIPT_READBACK_OK. Local git hash-object values for consumer, live_device_probe and resolver match the Git blob SHAs on `fix/modual-live-device-probe-20261025`.
+- Sensor stream remains unverified: USB 1056285 responds, four timestamp histories remain EVENT_TIMESTAMP_STALE and zero advanced; wireless 192.168.1.14:5556 is NOT_LISTED. W32Time remains Stopped/Manual and was not changed.
+
+### MODUAL write-route safety result
+- The platform safety check blocked creation of a replacement blob for the 1,183,748-byte `MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json`. No replacement was committed and the original blob `01c1dfe8682e25c7e2f5210bbae87a30231b1f58` remains intact.
+- Instead, a separate metadata-only append delta was created at `MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT_APPEND_20261026T1445ICT.json`, blob `02192ee39c087c4471293a9a583bb6facdb6d1a4`. It preserves the current source blob reference and records the new evidence without raw sensor values or credentials. The current file itself is **not** claimed updated; reconcile the delta only through a write route that passes safety checks.
+
+### Independent branches
+- n8n execution 196 succeeded; event `X20261026073013851_CLOUD`, row 467 exact-readback count 1; 45 recovery rows pending, zero terminal; host heartbeat not probed.
+- PR #39 remains OPEN/Draft at head `6ba7ce9b3bbfd57770dd8d45dee54a82a1ae3471`, 6 ahead / 45 behind; regression and secret-guard checks pass. No merge/force-push.
+- PR #6 remains OPEN/Draft; runs 40220813600 and 40220813636 fail with no step payload; self-hosted verification skipped on pull_request. Workflow references `vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64`; public-key variable value and runner assignment remain unverified. No CI rerun.
+
+### Preservation and next edge
+- All 29 repository tasks remain nonterminal; all 45 cloud recovery rows remain pending. No raw sensor values or credentials written to public GitHub; no source moved/deleted; no synthetic rows; no task closure; no merge/force-push.
+- Next: exact-read the next host-local Tick/receipt when directly visible; continue read-only sensor-client diagnosis; keep W32Time/Android permissions unchanged; continue authorized issuer/runner provenance; keep the canonical 89,814,328-byte bulk carrier unresolved.
+<!-- END VERIFIED_AUTOMATION_CONTINUATION_20261026T1445ICT -->
