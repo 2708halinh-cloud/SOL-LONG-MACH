@@ -2015,3 +2015,24 @@ All 29 repository tasks remain nonterminal; all 45 cloud recovery rows remain pe
 - Ledger exact-readback after commit `0f8352bda21c351732b380e87235509869d72c16`, blob `c80e2949219e7fcb28045a9dd1faaf7a36f83c43`: 29 tasks remain nonterminal; provider observations/history `232/232`, verified action events `290`, integrity corrections `21`, closures `0`.
 - PR [#42](https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/42) pointer refresh exact-readback: branch blob `23a86d6d8a3fe7a0ada4ee5742e8202d4fe78a19`, commit `8db1429bc00b361bdd03dfd3672cc4ccf11b95fc`; PR body references checkpoint `1825ICT`, TESSERACT readbacks, and `evidence_rows_seen=509`. PR remains OPEN/Draft/unmerged. Main cloud pointer remains unchanged at blob `4443d46e828e76ee9deb1a8980e61c4d29e7c5a7`; task pointer remains `4692b4044acdbaa51caf7fa7e06a97b73f3e53b0`; MODUAL current remains `01c1dfe8682e25c7e2f5210bbae87a30231b1f58`; append delta remains `02192ee39c087c4471293a9a583bb6facdb6d1a4`.
 - No task was closed, no raw sensor values or authentication material were published, no source was moved/deleted, no merge/force-push occurred, and no prohibited CI run was repeated.
+
+
+<!-- BEGIN VERIFIED_AUTOMATION_CONTINUATION_20261026T1840ICT -->
+## VERIFIED AUTOMATION CONTINUATION — 26/10/2026 18:40 ICT
+
+- Exact-target checkpoint: [PROVIDER_READBACK_20261026T1840ICT.json](PROVIDER_READBACK_20261026T1840ICT.json), commit `4a9382477293d73e459c43516d8e284edcf87242`, blob `e710f18b9ff0400663b0478717ad80d51db0d5eb`. The new file was fetched back from `main`; byte-for-byte content equality and JSON parse succeeded.
+- Fresh provider metadata: Dropbox Outlook `/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV`, revision `0165dc1e4794ab00000000395cdfd73`, size 35,389,440 bytes, `server_modified=2026-10-14T00:20:03Z`. This was metadata-only; no raw CSV download.
+- Independent cloud branch action: n8n workflow `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN`, execution `210`, success, event `X20261026113950641_CLOUD`, row `513`. The exact event row was queried back and matched. Receipt states 45 recovery tasks pending, 0 terminal, `HOST_HEARTBEAT_NOT_PROBED`, and no task completion from scan.
+- Historical backlog reconciliation row `512` was exact-read: 29 normalized matches and 16 unmatched source-backed recovery rows. This was a comparison of the recovery table to ledger blob `c80e2949219e7fcb28045a9dd1faaf7a36f83c43`, not a full-history audit; no task status changed.
+- Windows host was not directly re-read in this cycle. Desktop Commander inventory reported `DESKTOP-86ITNQ4` online, but the direct read attempt returned monthly usage exhausted / tool calls paused (0% remaining). This is a connector quota limit, not evidence that Windows is offline. The last verified host observation remains 18:18:27 +07: Tick `WINDOWS_TICK_20261026T111640684777Z.json`, consumer `telemetry_buffer_sync_20261026T111637672Z.json`, source SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87` matched both receipts; four sensor timestamp histories were stale, zero advanced, wireless ADB `NOT_LISTED`, and live sensor reading was not confirmed. Post-18:21:32 host readback remains unverified.
+- Current main task ledger blob `c80e2949219e7fcb28045a9dd1faaf7a36f83c43` records 29 nonterminal tasks, 232 provider observations/history entries, 290 verified action events, 21 integrity corrections, and 0 closures. It references checkpoint `1825ICT`. The main task pointer blob `4692b4044acdbaa51caf7fa7e06a97b73f3e53b0` still points to `1555ICT`; this pointer mismatch is preserved and remains open for reconciliation through the existing PR #42 review path, not bypassed by merge.
+- TESSERACT PR #6 remains OPEN/Draft. Issuer variable value and runner assignment remain unverified; no CI rerun was performed. PR #42 remains OPEN/Draft/unmerged.
+- Preservation: no source CSV modification, no raw sensor rows or credentials published, no synthetic rows, no source move/delete, no task closure, no merge or force-push.
+
+### Next verified edges
+1. On a permitted host route, exact-read the next Tick/consumer and recompute the CSV hash; do not infer device state from quota.
+2. Continue read-only sensor-client diagnostics while preserving stale timestamp evidence.
+3. Review the 16 unmatched recovery rows in a separately reviewed ledger change.
+4. Refresh the PR #42 review pointer through its existing review branch; keep the PR draft and unmerged.
+5. Verify TESSERACT issuer variable/runner assignment via an authorized settings route; do not rerun CI `#39153474587` absent verified runner/workflow change.
+<!-- END VERIFIED_AUTOMATION_CONTINUATION_20261026T1840ICT -->
