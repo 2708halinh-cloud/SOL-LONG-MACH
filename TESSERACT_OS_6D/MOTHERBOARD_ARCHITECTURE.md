@@ -1,8 +1,8 @@
 # TESSERACT — MOTHERBOARD ARCHITECTURE 6D
 
-SOURCE_DIRECT: Hà Linh — 2026-10-26.
+SOURCE_DIRECT: operator-requested architecture — 2026-10-26.
 STATUS: ARCHITECTURE_REPLACEMENT_BASELINE; runtime/provider closure remains evidence-gated.
-TARGET: G:\\OS_Workspace\\TESSERACT_OS; synchronized specification carrier: 2708halinh-cloud/SOL-LONG-MACH/TESSERACT_OS_6D.
+TARGET: local TESSERACT_OS project; synchronized specification carrier: 2708halinh-cloud/SOL-LONG-MACH/TESSERACT_OS_6D.
 
 ## 0. Architectural invariants
 
@@ -84,9 +84,9 @@ If an action fails, preserve failure evidence, keep the objective open, and try 
 
 Preserve user signals and context as operational inputs. Separate observed facts from cause hypotheses; connect repeated failures to incident history and increase repair priority. A modelled affect field is not empirical proof of subjective experience. This distinction must never be used to discard the signal or avoid a requested repair.
 
-## 6. Current observed baseline and known gaps
+## 6. Runtime baseline and known gaps
 
-The prior local receipt (2026-10-26 11:30 +07) recorded motherboard tests 20/20 and transducer tests 8/8 passing, combined 28/28; Ollama reachable; disk C at 93.07% used (SURVIVAL); NextDNS service running. It also recorded Google Drive provider sync NOT_VERIFIED, ADB unavailable on PATH, QEMU unavailable, Hyper-V unknown without elevation, and GitHub Actions status unverified. These are historical observations, not a fresh test of this architecture replacement.
+Host, disk, provider, and device observations are intentionally omitted from the shared architecture. Runtime state remains NOT_VERIFIED until freshly probed; prior receipts do not establish current availability or closure.
 
 ## 7. Deployment and acceptance gates
 
@@ -111,14 +111,12 @@ No claim of full-system synchronization is valid until each target has its own f
 ## 9. Host, Local AI, Edge AI, Cloud APIs and Network inventory
 
 ### Host Node and local inference
-- Ollama executable supplied by operator: C:\\Users\\halin\\AppData\\Local\\Programs\\Ollama\\ollama.exe; expected default API port 11434. Daemon/model availability requires runtime probing.
-- llama.cpp executable supplied by operator: C:\\Users\\halin\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe\\llama-cli.exe.
-- Host CPU/RAM reported by operator: Intel Core i5-10400F, 48 GB RAM. SIMD support, model fit, token throughput and FLOPS claims require direct verification.
-- Llama 3, Qwen 2.5 and Phi-3 are candidate model families; installed model tags are not verified by this inventory.
+- Ollama and llama.cpp locations, host hardware inventory, and installed model tags are operator-local configuration and are intentionally not published here.
+- Daemon/model availability, SIMD support, model fit, token throughput, and FLOPS claims require direct verification.
 
 ### Edge AI
-- Operator-reported device: Xiaomi 12, Snapdragon 8 Gen 1, 8 GB RAM plus 8 GB ZRAM.
-- SmolLM2 and Qwen2.5 0.5B?3B are candidate edge profiles. Termux/MLC-LLM install, GPU/NPU delegate support, thermals, memory pressure and throughput require on-device testing.
+- Device identity, memory, and candidate model details are operator-local inventory and are intentionally not published here.
+- Termux/MLC-LLM install, GPU/NPU delegate support, thermals, memory pressure, and throughput require on-device testing.
 
 ### Cloud agents and MCP
 - OpenAI/Gemini/Google Cloud SDK/Antigravity and listed MCP services/subagents are declared inventory, not proof of active authentication or running endpoints.
@@ -126,9 +124,7 @@ No claim of full-system synchronization is valid until each target has its own f
 - Provider status remains NOT_VERIFIED until a safe probe and target readback succeed.
 
 ### Network and security
-- Operator-reported NextDNS resolvers: 45.90.28.0 and 45.90.30.0; encrypted DNS and filtering policy require independent verification.
-- Operator-reported USB tethering via Remote NDIS: local IPv4 10.20.156.29, gateway 10.20.156.151, public IP 14.173.169.173, link speed 426 Mbps. These values are time-sensitive.
-- Local service reported at 127.0.0.1:8765 (MINH BODY v0.9); verify process ownership and bind address before routing traffic.
+- DNS resolver, tethering, and localhost-service details are time-sensitive operator-local configuration; exact addresses and ports are intentionally not published here.
 - Windows Firewall reportedly disabled on Domain/Private/Public. Treat as SECURITY_RISK; do not expose service ports to LAN/WAN. Prefer firewall enabled with narrow allow rules. This architecture update does not change firewall settings.
 
 ### Verification contract
