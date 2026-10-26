@@ -1,13 +1,13 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.2",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-26T17:39:26.137Z",
-  "updated_at_local": "2026-10-27T00:39:26.137+07:00",
+  "updated_at_utc": "2026-10-26T18:42:10.676Z",
+  "updated_at_local": "2026-10-27T01:42:10.676+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended evidence row, not host event time. Host-local timestamps and cloud/provider timestamps remain separate.",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0039ICT.json",
-    "blob_sha": "6c121c2c564b9bb81ca3a7b4d8f8bc68a4910019",
-    "commit_sha": "26f8dd70de342e727f061b9c35a5d83194eef79c",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0142ICT.json",
+    "blob_sha": "01d6f48bf768dd716a4978b12e29efbf5bc5d026",
+    "commit_sha": "7d6931ab81b1b68f4680220b604053822e45fce1",
     "readback_verified": true,
     "latest_host_evidence_row_id": 522,
     "latest_host_event_id": "X20261026152140359_HOST_TICK_CONSUMER_READBACK",
@@ -16,8 +16,8 @@
     "latest_direct_route_readback_row_id": 474,
     "latest_host_observation_row_id": 522,
     "latest_host_observation_event_id": "X20261026152140359_HOST_TICK_CONSUMER_READBACK",
-    "latest_cloud_scan_row_id": 526,
-    "latest_cloud_scan_event_id": "X20261026170024139_CLOUD",
+    "latest_cloud_scan_row_id": 528,
+    "latest_cloud_scan_event_id": "X20261026180024226_CLOUD",
     "latest_direct_host_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T152140359077Z.json",
     "latest_direct_host_tick_sha256": "13f3306fd2b004f70f49043ab44c5d499b295154e90141b21c1f8e1a18df2380",
     "latest_direct_host_tick_observed_at_utc": "2026-10-26T15:21:40.359077Z",
@@ -42,8 +42,8 @@
     "recovery_rows_pending": 45,
     "tasks_closed": 0,
     "host_heartbeat_probed_by_cloud_workflow": false,
-    "latest_cloud_scan_execution_id": "219",
-    "latest_cloud_scan_provider_created_at_utc": "2026-10-26T17:00:24.262Z",
+    "latest_cloud_scan_execution_id": "220",
+    "latest_cloud_scan_provider_created_at_utc": "2026-10-26T18:00:24.378Z",
     "last_known_sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
     "latest_tick_sensor_fields_reported": false,
     "android_online_state": "UNVERIFIED",
@@ -56,7 +56,7 @@
     "host_task_missed_run_cause_verified": false,
     "post_1521_tick_readback_verified": true,
     "post_2221_tick_readback_verified": true,
-    "current_main_head_before_pointer_update": "4fa92039bc9a07bd023b044efb2b781fa37702db",
+    "current_main_head_before_pointer_update": "7d6931ab81b1b68f4680220b604053822e45fce1",
     "recovery_rows_terminal": 0,
     "task_statuses_changed": false,
     "task_ledger_content_fetched_via_contents_api": true,
@@ -81,7 +81,11 @@
     "latest_github_schedule_provider_created_at_utc": "2026-10-26T17:39:26.137Z",
     "github_task_count": 29,
     "github_tasks_closed": 0,
-    "main_head_before_pointer_update": "26f8dd70de342e727f061b9c35a5d83194eef79c"
+    "main_head_before_pointer_update": "7d6931ab81b1b68f4680220b604053822e45fce1",
+    "latest_cloud_audit_row_id": 529,
+    "latest_cloud_audit_event_id": "X20261026183828000_CLOUD_CONTINUITY_AUDIT_READBACK",
+    "latest_cloud_audit_provider_created_at_utc": "2026-10-26T18:42:10.676Z",
+    "current_task_ledger_content_readback_status": "UNVERIFIED_CONNECTOR_RETURNED_ZERO_LENGTH_CONTENT"
   },
   "post_checkpoint_updates": [
     {
@@ -1635,6 +1639,65 @@
       "n8n_task_statuses_changed": false,
       "tasks_closed": 0,
       "host_heartbeat_probed": false
+    },
+    {
+      "type": "CLOUD_SCAN_READBACK_ROW_528",
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "220",
+      "execution_status": "success",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 528,
+      "event_id": "X20261026180024226_CLOUD",
+      "provider_created_at_utc": "2026-10-26T18:00:24.378Z",
+      "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+      "recovery_rows": 45,
+      "pending_rows": 45,
+      "terminal_rows": 0,
+      "tasks_closed": 0,
+      "task_statuses_changed": false,
+      "host_heartbeat_probed": false,
+      "readback_verified": true
+    },
+    {
+      "type": "CLOUD_CONTINUITY_AUDIT_READBACK_ROW_529",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 529,
+      "event_id": "X20261026183828000_CLOUD_CONTINUITY_AUDIT_READBACK",
+      "provider_created_at_utc": "2026-10-26T18:42:10.676Z",
+      "prior_checkpoint_blob_sha": "6c121c2c564b9bb81ca3a7b4d8f8bc68a4910019",
+      "readback_verified": true,
+      "tasks_closed": 0
+    },
+    {
+      "type": "GITHUB_SCHEDULE_GAP_OBSERVATION_20261027T0142ICT",
+      "workflow_path": ".github/workflows/windows-survival-cloud-continuity.yml",
+      "workflow_id": 393485804,
+      "configured_schedule": "7 * * * *",
+      "latest_schedule_run_id": 40367117513,
+      "latest_schedule_run_created_at_utc": "2026-10-26T17:16:47Z",
+      "latest_schedule_run_conclusion": "success",
+      "go_build_steps_skipped_on_schedule": true,
+      "expected_run_at_utc": "2026-10-26T18:07:00Z",
+      "newer_schedule_run_found_in_latest_100_repository_runs": false,
+      "cause_verified": false
+    },
+    {
+      "type": "GITHUB_OPEN_TASK_LEDGER_CONTENT_READBACK_UNVERIFIED",
+      "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "reported_blob_sha": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
+      "content_readback_verified": false,
+      "observation": "GitHub fetch_file returned zero-length content; actual content and cause not verified; no mutation performed."
+    },
+    {
+      "type": "GITHUB_CI_READBACK_40371102094_40371102112",
+      "main_head_sha": "ef9b8f91750564bbb405ecc8a875645eccd62d9a",
+      "runtime_n_plus_run_id": 40371102094,
+      "runtime_n_plus_job_id": 121741746449,
+      "runtime_n_plus_conclusion": "success",
+      "secret_guard_run_id": 40371102112,
+      "secret_guard_job_id": 121741839063,
+      "secret_guard_conclusion": "success",
+      "readback_verified": true
     }
   ],
   "n8n": {
@@ -7575,5 +7638,71 @@
     "github_tasks_preserved": 29,
     "tasks_closed": 0,
     "android_online_state": "UNVERIFIED"
+  },
+  "latest_cloud_scan_readback_20261027T0100ICT": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "execution_id": "220",
+    "execution_status": "success",
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "evidence_row_id": 528,
+    "event_id": "X20261026180024226_CLOUD",
+    "provider_created_at_utc": "2026-10-26T18:00:24.378Z",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "tasks_closed": 0,
+    "task_statuses_changed": false,
+    "readback_verified": true,
+    "host_heartbeat_probed": false
+  },
+  "latest_cloud_continuity_readback_20261027T0142ICT": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0142ICT.json",
+    "blob_sha": "01d6f48bf768dd716a4978b12e29efbf5bc5d026",
+    "commit_sha": "7d6931ab81b1b68f4680220b604053822e45fce1",
+    "readback_verified": true,
+    "previous_checkpoint_blob_sha": "6c121c2c564b9bb81ca3a7b4d8f8bc68a4910019",
+    "latest_cloud_scan_row_id": 528,
+    "latest_cloud_audit_row_id": 529,
+    "n8n_recovery_pending": 45,
+    "github_tasks_last_verified_count": 29,
+    "tasks_closed": 0,
+    "latest_host_evidence_row_id": 522,
+    "android_online_state": "UNVERIFIED",
+    "current_task_ledger_content_readback_verified": false,
+    "main_head_before_checkpoint": "ef9b8f91750564bbb405ecc8a875645eccd62d9a"
+  },
+  "latest_github_schedule_gap_observation_20261027T0142ICT": {
+    "workflow_path": ".github/workflows/windows-survival-cloud-continuity.yml",
+    "workflow_id": 393485804,
+    "configured_schedule": "7 * * * *",
+    "latest_schedule_run_id": 40367117513,
+    "latest_schedule_run_created_at_utc": "2026-10-26T17:16:47Z",
+    "latest_schedule_run_conclusion": "success",
+    "go_build_steps_skipped_on_schedule": true,
+    "expected_run_at_utc": "2026-10-26T18:07:00Z",
+    "newer_schedule_run_found_in_latest_100_repository_runs": false,
+    "cause_verified": false,
+    "readback_verified": true
+  },
+  "latest_github_ci_readback_20261027T0142ICT": {
+    "main_head_sha": "ef9b8f91750564bbb405ecc8a875645eccd62d9a",
+    "main_head_readback_verified": true,
+    "runs": [
+      {
+        "workflow": "runtime-n-plus",
+        "run_id": 40371102094,
+        "job_id": 121741746449,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "High-Threshold Secret Exposure Guard",
+        "run_id": 40371102112,
+        "job_id": 121741839063,
+        "conclusion": "success"
+      }
+    ],
+    "readback_verified": true
   }
 }
