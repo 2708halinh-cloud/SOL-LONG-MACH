@@ -1786,3 +1786,24 @@ All 29 repository tasks remain nonterminal; all 45 cloud recovery rows remain pe
 4. Continue TESSERACT issuer-variable and runner-assignment provenance work through authorized settings/runner routes.
 5. Keep `MODUAL_PARAMETER_CURRENT.json` unchanged until an approved write path passes platform safety checks.
 <!-- VERIFIED_AUTOMATION_CONTINUATION_20261026T1514ICT -->
+
+## VERIFIED AUTOMATION CONTINUATION — 2026-10-26 15:27 ICT
+
+- Fresh readback of the scheduled host cycle after the previous checkpoint: host-local `15:27:41.3885973+07:00`; task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M` is `Ready`, enabled, last run `15:26:33+07:00`, result `0`, next run `15:31:32+07:00`, missed runs `0`, execution limit `PT4M`.
+- Latest Tick: `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T082737526232Z.json`, SHA-256 `759f3184766c97a7746e0fe04816f8c857c67593ed8cffcb60e5352af7ab554b`, observed `2026-10-26T08:27:37.526232Z`. Consumer: `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T082733235Z.json`, SHA-256 `5494f01d4d67748d3793f6673ef7eb88f0ee0668b2cd732d00df62c67afd015c`, 6,945 bytes, `SOURCE_OBSERVED_READONLY`, exit `0`. Pinned source remains 35,389,440 bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; recomputed source hash matches both receipts.
+- The latest scheduled run **completed successfully**; the earlier `Running/267009` observation was the scheduler's in-progress state (`0x41301)), not a failure. It returned to `Ready` with result `0`. The new Tick still reports `EVENT_TIMESTAMP_STALE`, four timestamp histories and zero advanced; wireless ADB remains `NOT_LISTED`. The previous direct SensorService read showed seven active connections, none from the monitored sensor families, and the installed sensor app had no running PID. This remains a candidate cause, not a proven root cause; no app was launched and no permissions changed.
+- Direct host evidence appended and exact-readback verified: event `X20261026082737526_HOST_TICK_CONSUMER_READBACK`, row `474` in table `Sk0EFJK5NzWVpBvm`. Earlier host row `473` and cloud scan row `472` are retained.
+- Cloud workflow `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN`, execution `198`, remains `success`; row `472` exact-readback is verified. All 45 recovery rows remain pending, zero terminal. Cloud scan did not probe host heartbeat.
+- TESSERACT PR #39 was refreshed against main head `495ff65375e94dadc8249b33331e09a341f722fb`: 6 ahead / 61 behind, diverged. PR #6 remains OPEN/Draft; runs `40220813600` and `40220813636` failed; self-hosted Windows verification was skipped. Issuer variable value and runner assignment remain unverified. No CI rerun.
+- Provider checkpoint [`PROVIDER_READBACK_20261026T1527ICT.json`](https://github.com/2708halinh-cloud/SOL-LONG-MACH/blob/main/CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1527ICT.json) blob `46faa84e5d52d24193ac9a4e59b7963ce4d05c84`, commit `634c5dfad8aaed0233b5db130125158f83950881`; task pointer blob `2a1b9466f4d048752e4c079a3b425076ffd5db63`, commit `60b898938d8d53890c7e76781d4dbffd9003c305`; ledger blob `0aed16b5f92c7b168e81be77567b85403f8dce50`, commit `9f3e8d92c47a0bd5f53993e95acbebf939650746`; cloud pointer blob `f9a1dabcdff40d503555a9337570f3c84d2757c2`, commit `c810a9a20b103419546850d703b0ef4d69fe1435`.
+- Ledger readback: 29 tasks, unchanged status counts (10 OPEN, 2 OPEN_CARRIED, 13 OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK, 1 OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED, 3 IN_PROGRESS); 215 provider observations, 256 verified action events, 13 integrity corrections, zero task closures.
+- `MODUAL_PARAMETER_CURRENT.json` remains unchanged at blob `01c1dfe8682e25c7e2f5210bbae87a30231b1f58`; append delta remains at blob `02192ee39c087c4471293a9a583bb6facdb6d1a4`. No safety-check bypass attempted.
+- Preservation: no source write/move/delete, no raw sensor values or credentials in public GitHub, no synthetic rows, no task closure, no PR merge/force-push, no prohibited CI rerun, no W32Time change.
+
+### Next edges
+1. After host-local `2026-10-26T15:31:32+07:00`, exact-read the next Tick and consumer and recompute the source hash.
+2. Continue read-only investigation of an authorized sensor-client subscription; do not launch an app or change Android permissions without authorization.
+3. Keep all 45 cloud recovery rows and 29 repository tasks nonterminal.
+4. Continue TESSERACT issuer-variable and runner-assignment provenance through authorized routes.
+5. Keep `MODUAL_PARAMETER_CURRENT.json` unchanged until a permitted write route passes platform safety checks.
+<!-- VERIFIED_AUTOMATION_CONTINUATION_20261026T1527ICT -->
