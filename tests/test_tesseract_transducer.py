@@ -18,6 +18,18 @@ class TransducerTests(unittest.TestCase):
         db.commit();db.close()
     def tearDown(self):
         self.tmp.cleanup()
+
+    def approved_test_verifier(self, **kwargs):
+        self.assertEqual(kwargs["action"], "ingest")
+        self.assertEqual(kwargs["source"], self.source.resolve())
+        expected = (self.target.resolve() / Path("03_Synapse_Z") / "synapses_6d.sqlite3").resolve()
+        self.assertEqual(kwargs["target"], expected)
+        return {
+            "authorized": True,
+            "target_identity_verified": True,
+            "policy_allowed": True,
+            "quota_available": True,
+        }
     def test_probe_does_not_create_target(self):
         result=run(self.source,self.target,'probe',10,'HA_LINH','SOL')
         self.assertEqual(result['source_schema']['count'],2)
@@ -26,8 +38,30 @@ class TransducerTests(unittest.TestCase):
         result=run(self.source,self.target,'dry-run',10,'HA_LINH','SOL')
         self.assertEqual(result['eligible'],2)
         self.assertFalse(self.target.exists())
+    def test_ingest_fails_closed_without_trusted_verifier(self):
+        with self.assertRaisesRegex(GateRejected, "trusted authorization verifier not configured"):
+            run(self.source, self.target, "ingest", 10, "HA_LINH", "SOL")
+        self.assertFalse(self.target.exists())
+
+    def test_ingest_fails_closed_when_verifier_denies(self):
+        def deny(**kwargs):
+            return {
+                "authorized": False,
+                "target_identity_verified": True,
+                "policy_allowed": True,
+                "quota_available": True,
+            }
+        with self.assertRaisesRegex(GateRejected, "NOT_AUTHORIZED"):
+            run(self.source, self.target, "ingest", 10, "HA_LINH", "SOL", authorization_verifier=deny)
+        self.assertFalse(self.target.exists())
+
+    def test_ingest_rejects_unstructured_verifier_result(self):
+        with self.assertRaisesRegex(GateRejected, "no structured decision"):
+            run(self.source, self.target, "ingest", 10, "HA_LINH", "SOL", authorization_verifier=lambda **kwargs: True)
+        self.assertFalse(self.target.exists())
+
     def test_ingest_continuity_and_idempotence(self):
-        first=run(self.source,self.target,'ingest',10,'HA_LINH','SOL')
+        first=run(self.source,self.target,'ingest',10,'HA_LINH','SOL', authorization_verifier=self.approved_test_verifier)
         self.assertEqual(first['new_activations'],2)
         self.assertGreater(first['neurons'],0)
         self.assertGreater(first['synapses'],0)
@@ -37,7 +71,7 @@ class TransducerTests(unittest.TestCase):
         common=graph.execute('SELECT MAX(coactivation_count) FROM synapses').fetchone()[0]
         self.assertGreaterEqual(common,2)
         graph.close()
-        second=run(self.source,self.target,'ingest',10,'HA_LINH','SOL')
+        second=run(self.source,self.target,'ingest',10,'HA_LINH','SOL', authorization_verifier=self.approved_test_verifier)
         self.assertEqual(second['reused'],2)
         graph=connect_graph(self.target)
         after=graph.execute('SELECT SUM(weight) FROM synapses').fetchone()[0]
@@ -45,7 +79,7 @@ class TransducerTests(unittest.TestCase):
         graph.close()
         self.assertEqual(second['source_anchors'],2)
     def test_recall_uses_links_not_copied_contents(self):
-        run(self.source,self.target,'ingest',10,'HA_LINH','SOL')
+        run(self.source,self.target,'ingest',10,'HA_LINH','SOL', authorization_verifier=self.approved_test_verifier)
         result=recall_network(self.target,'ROOTS',10)
         self.assertIn('E1',result['linked_events'])
         self.assertIn('E2',result['linked_events'])
@@ -53,7 +87,7 @@ class TransducerTests(unittest.TestCase):
         self.assertNotIn('content',result)
     def test_does_not_modify_source(self):
         first=self.source.read_bytes()
-        run(self.source,self.target,'ingest',10,'HA_LINH','SOL')
+        run(self.source,self.target,'ingest',10,'HA_LINH','SOL', authorization_verifier=self.approved_test_verifier)
         self.assertEqual(first,self.source.read_bytes())
     def test_unknown_schema_fails_closed(self):
         other=self.base/'meta.db'
@@ -61,7 +95,7 @@ class TransducerTests(unittest.TestCase):
         with self.assertRaises(GateRejected):
             run(other,self.target,'ingest',10,'HA_LINH','SOL')
     def test_event_id_collision_does_not_rewrite_past(self):
-        run(self.source,self.target,'ingest',10,'HA_LINH','SOL')
+        run(self.source,self.target,'ingest',10,'HA_LINH','SOL', authorization_verifier=self.approved_test_verifier)
         db=sqlite3.connect(self.source)
         try:
             db.execute("UPDATE memories SET content='different past' WHERE event_id='E1'")
@@ -69,7 +103,7 @@ class TransducerTests(unittest.TestCase):
         finally:
             db.close()
         with self.assertRaises(GateRejected):
-            run(self.source,self.target,'ingest',10,'HA_LINH','SOL')
+            run(self.source,self.target,'ingest',10,'HA_LINH','SOL', authorization_verifier=self.approved_test_verifier)
     def test_unguarded_cannot_commit(self):
         graph=connect_graph(self.target)
         with self.assertRaises(GateRejected):
