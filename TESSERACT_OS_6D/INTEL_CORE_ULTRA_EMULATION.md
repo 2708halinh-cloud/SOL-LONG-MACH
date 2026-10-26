@@ -21,5 +21,8 @@ It does **not** reproduce Intel silicon, microcode, instruction-set behavior, ph
 - Missing GPU data stays unknown; the runtime does not infer hardware presence or absence.
 - Gate 1 validates model name and input bounds; Gate 2 reads back the plan and checks expected task counts.
 
+## File mapping
+In the local `TESSERACT_OS` project, the registry, runtime, and tests are under `config/`, `runtime/`, and `tests/`. The GitHub carrier stores these files at the root of `TESSERACT_OS_6D/`; the runtime supports both layouts.
+
 ## Source provenance
-All rows in `config/INTEL_CORE_ULTRA_PROFILES.json` were transcribed from the user-provided catalog on 2026-10-26. They are marked `source_verified=false`; validate product names and specifications against Intel ARK before treating them as official specifications.
+All rows in the profile registry were transcribed from the user-provided catalog on 2026-10-26. They are marked `source_verified=false`; validate product names and specifications against Intel ARK before treating them as official specifications.
