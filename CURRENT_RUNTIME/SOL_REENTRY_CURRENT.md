@@ -1489,3 +1489,25 @@ Fresh-read and exact-target provenance:
 - All 29 nonterminal tasks retained; zero task closures. No raw sensor values or credentials written to public GitHub. No source moved/deleted. No synthetic rows. No PR merge/force-push or prohibited CI rerun.
 - Next: exact-read the Tick/consumer after the next host-local scheduled cycle; if no newer Tick appears, inspect wrapper trace and task result before changing anything. Continue read-only sensor-client diagnosis. Do not launch the sensor app or change device permissions without authorization. W32Time service/configuration changes require an authorized elevated route; do not alter the system clock. Keep all 45 cloud recovery rows pending. Verify TESSERACT variable/runner settings only through an authorized settings route, and refresh PR comparisons before any branch mutation.
 <!-- END VERIFIED_PROVIDER_READBACK_20261026T1125ICT -->
+
+ 
+<!-- BEGIN VERIFIED_FINAL_RECONCILIATION_20261026T1125ICT -->
+## FINAL EXACT-TARGET RECONCILIATION — 2026-10-26 11:25 ICT
+
+This append reconciles the current provider checkpoint with the current runtime carriers after each target was read back. No previous snapshot was replaced or deleted.
+
+| Target | Commit | Exact current blob SHA |
+|---|---|---|
+| `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1125ICT.json` | `73647b712830deb64ebe8b7847570ac556c31301` | `8a957243c7e3bdb59500ef93db419aeeffd0aa9c` |
+| `MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json` | `837a37068e6880e18e5b62770f8e807daf1e03fa` | `d13743e805f8e4d02b648f857f3cf1beedeefcca` |
+| `CURRENT_RUNTIME/TASK_RESUME_POINTER.json` | `4c351a102e3671ca7017852be37c352eaf232e27` | `881d95d8c64a22c436be098300e577a0448350cf` |
+| `CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json` | `fa8f5a05c05f7fa964c1954041a78abe432d353e` | `39123feac7a3301a55f9f0a2f868a7edd5ae460f` |
+| `CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json` | `ead7f116397f8e54cb535f2896097288a3726dd7` | `47f46910591ffa3c713acbecb741b54ba7645de2` |
+
+- The task pointer now references the 11:25 checkpoint and carries the exact Tick/consumer SHA-256 values and cloud row 443.
+- The cloud pointer now records latest cloud scan row 443 and preserves latest host evidence-table row 440 as a separate, older row; no host row was fabricated.
+- The open-task ledger still contains the same 29 task IDs and the same status counts: 10 OPEN, 2 OPEN_CARRIED, 13 OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK, 1 OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED, 3 IN_PROGRESS. Provider observations: 203; verified action events: 235; task closures: 0.
+- `MODUAL_PARAMETER_CURRENT.json` now contains session observation `SESSION_OBSERVATION_20261026T1125ICT`; the previous blob SHA remains in Git history.
+- Main head before this final re-entry append: `ead7f116397f8e54cb535f2896097288a3726dd7`.
+- Final status remains `PARTIALLY_EXECUTED_ALL_OPEN_RETAINED`. The Windows Tick/consumer pair is hash-consistent but does not verify live sensor streaming. The cloud scan is successful but does not verify host heartbeat. TESSERACT issuer variable value and runner assignment remain unverified. No CI rerun, PR merge, force-push, source mutation, source deletion/move, raw sensor export, or credential write occurred.
+<!-- END VERIFIED_FINAL_RECONCILIATION_20261026T1125ICT -->
