@@ -101,12 +101,10 @@
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
   "next": [
-    "Exact-read the next scheduled Tick and matching consumer after 2026-10-26T10:56:32+07:00; source SHA must match both receipts. Current verified pair at 10:51:38+07 has source hash match but EVENT_TIMESTAMP_STALE (four timestamps, zero advanced); wireless ADB remains NOT_LISTED.",
-    "Continue read-only diagnosis of installed sensor-client routes; com.exatools.sensors and com.galaxy.sensortoolbox are installed from Google Play, but no package was launched or changed. Do not install/launch an unverified package or change device permissions.",
-    "W32Time last observed STOPPED/MANUAL under medium-integrity token with Administrators group deny-only; continue permission diagnosis without changing the system clock.",
-    "Keep all 45 cloud recovery rows pending; execution 186 and row 441 are a deterministic scan only; host heartbeat remains unprobed.",
-    "Continue TESSERACT PR #6 issuer-key and runner-assignment provenance without rerunning fail-before-step CI.",
-    "Recompare Archive PR #36/#37 against current main before any branch mutation.",
+    "Exact-read the next scheduled Tick and consumer after 2026-10-26T10:56:32+07; source SHA must match both. Current pair is verified read-only but sensor event timestamps are stale (four timestamps, zero advanced), and wireless ADB is NOT_LISTED.",
+    "Verify repository Actions variable presence and runner assignment through an authorized settings route; the workflow references XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64, while the value and runner assignment remain unverified. Do not rerun CI until a runner/configuration change is verified; do not repeat run 39153474587.",
+    "Keep all 45 cloud recovery rows pending; execution 186 / row 441 is a deterministic scan only and host heartbeat remains unprobed.",
+    "Recompare Archive PR #36/#37 against current main before any branch mutation; both remain OPEN/Draft and diverged at the last exact compare.",
     "Preserve all 29 nonterminal tasks; no task closure."
   ],
   "continuation_guard": {
@@ -123,7 +121,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-26T10:51:38.900+07:00",
+  "updated_at": "2026-10-26T11:04:20.484+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -33116,11 +33114,11 @@
       "state": "OPEN_DRAFT_UNMERGED",
       "ci_runs": [
         {
-          "id": 39994207477,
+          "id": 40220813600,
           "conclusion": "failure"
         },
         {
-          "id": 39994207667,
+          "id": 40220813636,
           "conclusion": "failure"
         }
       ],
@@ -33201,7 +33199,35 @@
         "previous_head_validation_run": 39975540284,
         "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
       },
-      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14"
+      "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+      "current_head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+      "latest_status_checkpoint": "CURRENT_RUNTIME/TESSERACT_ISSUER_RUNNER_READBACK_20261026T1104ICT.json",
+      "latest_status_checkpoint_blob_sha": "924ac4cb3ac7710976473badf3614043e0cd672a",
+      "latest_status_checkpoint_commit": "705ad42d2e99114523f4cb5477851c0808148315",
+      "latest_head_run_readback": {
+        "observed_at": "2026-10-26T11:04:20.484+07:00",
+        "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+        "runs": [
+          {
+            "run_id": 40220813600,
+            "workflow": "tesseract-desktop-ci",
+            "conclusion": "failure",
+            "steps": [],
+            "artifacts": 0
+          },
+          {
+            "run_id": 40220813636,
+            "workflow": "validate-x-time",
+            "conclusion": "failure",
+            "steps": [],
+            "artifacts": 0
+          }
+        ],
+        "selfhosted_windows_verify": "skipped_on_pull_request",
+        "runner_assignment_change_verified": false,
+        "issuer_key_value_verified": false,
+        "rerun_performed": false
+      }
     },
     {
       "task": "SV-20261020-13-ARCHIVE-FORMATS",
@@ -43013,21 +43039,23 @@
     "force_push": false
   },
   "latest_tesseract_status_readback": {
+    "path": "CURRENT_RUNTIME/TESSERACT_ISSUER_RUNNER_READBACK_20261026T1104ICT.json",
+    "blob_sha": "924ac4cb3ac7710976473badf3614043e0cd672a",
+    "commit_sha": "705ad42d2e99114523f4cb5477851c0808148315",
+    "repository": "2708halinh-cloud/x-time-web",
+    "pr": 6,
     "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
-    "state_last_verified": "OPEN_DRAFT",
-    "runs": [
-      {
-        "id": 40220813600,
-        "conclusion": "failure"
-      },
-      {
-        "id": 40220813636,
-        "conclusion": "failure"
-      }
+    "workflow_blob_sha": "9f1133617e683a7b15a588a205c4dee36cafad40",
+    "kilo_source_blob_sha": "f1a7abe2d30cf720d2d1207335325d42a2af4e16",
+    "current_runs": [
+      40220813600,
+      40220813636
     ],
-    "issuer_public_key_value_verified": false,
+    "artifacts": 0,
+    "issuer_key_reference_verified": true,
+    "issuer_key_value_verified": false,
     "runner_assignment_verified": false,
-    "ci_rerun_performed": false
+    "ci_rerun": false
   },
   "latest_tesseract_status_readback_20261026T0845ICT": {
     "pr": 6,
@@ -44555,7 +44583,7 @@
     "Reconcile OPEN_TASKS_CURRENT.json to the 10:09 provider readback through an append-preserving write and exact-target readback; preserve all 29 nonterminal tasks."
   ],
   "previous_updated_at_before_20261026T1051ICT": "2026-10-26T10:10:00+07:00",
-  "main_head_before_pointer_update": "8c1a2d28808540628fdfd796f95fda34478756f9",
+  "main_head_before_pointer_update": "c93b87591a4a1ee382e658bc254e3e52f3c406f1",
   "latest_provider_checkpoint": {
     "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1051ICT.json",
     "blob_sha": "c9efce686e56cf815346ef16e4a328bcf966dccf",
@@ -44602,5 +44630,192 @@
     "terminal_rows": 0,
     "host_heartbeat_probed": false,
     "tasks_closed": 0
-  }
+  },
+  "previous_updated_at_before_20261026T1104ICT": "2026-10-26T10:51:38.900+07:00",
+  "previous_parallel_open_branches_before_20261026T1104ICT": [
+    {
+      "task": "INHERITED_TESSERACT_DESKTOP",
+      "repository": "2708halinh-cloud/x-time-web",
+      "branch": "tesseract-desktop-mvp-20261006",
+      "checkpoint": "TESSERACT_DESKTOP/WORK_CHECKPOINT.json",
+      "commit": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "pr": 6,
+      "state": "OPEN_DRAFT_UNMERGED",
+      "ci_runs": [
+        {
+          "id": 39994207477,
+          "conclusion": "failure"
+        },
+        {
+          "id": 39994207667,
+          "conclusion": "failure"
+        }
+      ],
+      "issuer_public_key_verified": false,
+      "runner_assignment_verified": false,
+      "ci_rerun": false,
+      "build": {
+        "workflow": "tesseract-desktop-ci",
+        "previous_verified_run": 37516567468,
+        "current_head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+        "previous_required_artifacts": [
+          "tesseract-desktop-windows-x64",
+          "tesseract-desktop-linux-x64",
+          "tesseract-desktop-macos-apple-silicon",
+          "tesseract-desktop-tesseract-os-x64"
+        ],
+        "regression_added": "cargo test --manifest-path src-tauri/Cargo.toml",
+        "readback_transport": "workflow artifact / read-only token",
+        "readback_artifact_pattern": "tesseract-desktop-ci-readback-",
+        "readback_rule": "CI readback is mandatory for both success and failure. Accept only when verified_sha equals the current substantive PR head. TRUE -> verify review then merge; FLASE -> fetch workflow_run_id jobs/logs, patch failure, repeat.",
+        "pr_event_verify": true,
+        "current_pr_run": 39994207477,
+        "workflow_correction_commit": "88f5be2086f401a4a1218a1e4dd3b05337377963",
+        "workflow_corrections": [
+          "feature-branch push no longer duplicates pull_request CI; push CI is master-only",
+          "selfhosted_windows_verify is skipped on pull_request",
+          "readback no longer requests contents:write or pushes a commit; it emits a read-only artifact",
+          "concurrency cancels superseded runs for the same PR/ref"
+        ],
+        "hosted_runner_observation": "Current-head tesseract-desktop-ci run 39153474587 at head 5d0a44bb... was rerun after source review fixes. Windows/Linux/macOS/TESSERACT_OS all failed again before any step output; selfhosted_windows_verify was skipped on pull_request; readback then failed. This repeats the repo/account runner-assignment symptom and does not establish source-code execution failure.",
+        "hosted_runner_external_state": "Connected GitHub tools do not expose repository Actions runner/permission/billing endpoints in this session. Runner assignment/entitlement remains unverified external state; do not relabel it as a source-code failure.",
+        "source_fixes_materialized": [
+          "future state schemas rejected without destructive downgrade",
+          "loopback provider gate parses Url host enum including IPv6",
+          "Kilo reconnect controls remain available and UI status is derived from backend receipt validation",
+          "Kilo receipt v2 requires Ed25519 signature, account binding, expiry, and build-time issuer public key",
+          "canonical AGENTS/load-route handling from the TESSERACT branch remains preserved while current master AGENTS.md wins the only overlapping merge path",
+          "missing installer/bundle fails CI packaging instead of yielding successful readback",
+          "persistent self-hosted runner remains excluded from pull_request code",
+          "readback includes selfhosted_windows_verify result where required"
+        ],
+        "canonical_route_commit": "95e28cacade93caf2fe8f0bb665ba04bdb8f381c",
+        "pr_divergence": "RESOLVED: master 60d92b80... was merged into the PR branch without force-push via merge commit d991f91e...; readback shows PR mergeable=true, behind master=0 at synchronization, changed_files=12, AGENTS.md retained from master.",
+        "prior_run_history": [
+          {
+            "run_id": 39153474587,
+            "head": "5d0a44bbd0431e87cfa396c5983cea549d93fe8f",
+            "observed_in_prior_current_delta": true,
+            "outcome": "hosted_jobs_failed_before_step_output; selfhosted_windows_verify_skipped; readback_failed",
+            "preserved_as_history": true
+          }
+        ],
+        "current_validation_run": 39994207667,
+        "current_head_run_readback": {
+          "observed_at": "2026-10-24T10:04:10.651+07:00",
+          "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+          "runs": [
+            {
+              "run_id": 39994207477,
+              "workflow": "tesseract-desktop-ci",
+              "event": "pull_request",
+              "conclusion": "failure",
+              "artifacts": []
+            },
+            {
+              "run_id": 39994207667,
+              "workflow": "validate-x-time",
+              "event": "pull_request",
+              "conclusion": "failure",
+              "artifacts": []
+            }
+          ],
+          "rerun_performed": false,
+          "runner_assignment_change_verified": false,
+          "interpretation": "Fresh readback unchanged: both current-head runs failed with no artifacts. Issuer key value and runner assignment change remain unverified; no CI rerun."
+        },
+        "previous_head_pr_run": 39975540379,
+        "previous_head_validation_run": 39975540284,
+        "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
+      },
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14"
+    },
+    {
+      "task": "SV-20261020-13-ARCHIVE-FORMATS",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "pr": 34,
+      "head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "ahead_by": 1,
+      "behind_by": 221,
+      "ci_runs": [
+        40145523744,
+        40145523727,
+        40145523754
+      ],
+      "artifact_id": 12580351639,
+      "artifact_expired": false,
+      "merged": false,
+      "force_push": false,
+      "compare_base_head": "3bd980a0d9f37ee4d6dc270fd71ab7dc912e41fe"
+    },
+    {
+      "task": "MODUAL_ANDROID_TRANSPORT",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "pr": 35,
+      "head": "f99d96e39f62245d23ad728daac2c2006061e393",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "ahead_by": 9,
+      "behind_by": 205,
+      "ci_runs": [
+        40154600501,
+        40154600506
+      ],
+      "merged": false,
+      "force_push": false,
+      "compare_base_head": "3bd980a0d9f37ee4d6dc270fd71ab7dc912e41fe"
+    },
+    {
+      "task": "LOCAL_BRAID_READONLY_EXECUTION",
+      "script_sha256": "65e74121839c5bbcc35dc518c1999237d8267747b9fde26bd0c53a2d3c86e2e3",
+      "six_receipt_sha256": "365c4cfea51712de99177238a06cb99e37deed27e6070bf561e195cd0d1aee94",
+      "plural_receipt_sha256": "61fad3d7545241a1a0acf9c4afb1bca3abd9ff28dd0bd4cffcbd345722f1f3c6",
+      "mutation_executed": false,
+      "exact_readback": true
+    },
+    {
+      "task": "SV-20261020-13-ARCHIVE-FORMATS_CLEAN_RECUT",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "branch": "fix/archive-adapters-main-recut-20261025T1534ICT",
+      "checkpoint": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1553ICT.json",
+      "commit": "e9c299594447d75bebb75c343cdb707731c7ea50",
+      "pr": 36,
+      "state": "OPEN_DRAFT_UNMERGED",
+      "compare_base": "3bd980a0d9f37ee4d6dc270fd71ab7dc912e41fe",
+      "ahead_by": 14,
+      "behind_by": 2,
+      "ci_runs": [
+        40177456089,
+        40177456127,
+        40177456080
+      ],
+      "ci_success": true,
+      "issuer_or_runner_not_applicable": true,
+      "merged": false,
+      "force_push": false,
+      "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "base": "cbb8e2074695670398d2ee9ca4462bbbd55cee7c",
+      "last_verified_at": "2026-10-26T06:04:15.528+07:00",
+      "checks": [
+        {
+          "id": 40242575899,
+          "name": "SOL Archive Read-only Adapters",
+          "conclusion": "success"
+        },
+        {
+          "id": 40242575817,
+          "name": "High-Threshold Secret Exposure Guard",
+          "conclusion": "success"
+        },
+        {
+          "id": 40242575841,
+          "name": "SOL Library Stone Topology",
+          "conclusion": "success"
+        }
+      ],
+      "artifact_id": 12617496304,
+      "last_compared_base_sha": "68cd309f836da98723561f6125a211062a3380c9"
+    }
+  ],
+  "previous_tesseract_status_readback_before_20261026T1104ICT": null
 }
