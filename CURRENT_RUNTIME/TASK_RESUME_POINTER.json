@@ -3,8 +3,8 @@
   "task": "MODUAL_SENSOR_LOGS_ROUTING",
   "repo": "2708halinh-cloud/SOL-LONG-MACH",
   "branch": "main",
-  "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1101ICT.json",
-  "commit": "dd6922db634649da50ffca8e1af07ceebc1d8e60",
+  "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1106ICT.json",
+  "commit": "a02eee42824a8c407a23174bd07a309e3c103e37",
   "rule": "Resume the latest MODUAL provider checkpoint first; the previous TESSERACT pointer is preserved in previous_pointer_snapshot and parallel_open_branches. Keep every unfinished task OPEN.",
   "pr": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
@@ -101,10 +101,10 @@
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
   "next": [
-    "Exact-read the next scheduled Tick and matching consumer after 2026-10-26T11:06:32+07; source SHA must match both. The 11:01:39 pair is read-only and hash-consistent, but four USB sensor timestamps are stale, zero advanced, and wireless ADB is NOT_LISTED.",
+    "Exact-read the next scheduled Tick and matching consumer after 2026-10-26T11:11:32+07; source SHA must match both. The 11:06:39 pair is read-only and hash-consistent, but four USB sensor timestamps remain stale, zero advanced, and wireless ADB is NOT_LISTED.",
     "Continue read-only sensor-client investigation; do not launch/install an unverified package, change device permissions, or change the system clock. W32Time was last observed STOPPED/MANUAL under a medium-integrity token with Administrators group deny-only.",
     "Keep all 45 cloud recovery rows pending; execution 187 and row 442 are a deterministic source-table scan only; host heartbeat remains unprobed.",
-    "Verify the TESSERACT Actions variable configuration and runner assignment through an authorized settings route; the code-level key reference is verified, but variable presence/value and runner assignment are not. Do not rerun CI until configuration change is verified.",
+    "Verify the TESSERACT Actions variable configuration and runner assignment through an authorized settings route; do not rerun CI until a configuration change is verified.",
     "Recompare Archive PR #36/#37 against the final current main head before any branch mutation.",
     "Preserve all 29 nonterminal tasks; no task closure."
   ],
@@ -122,7 +122,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-26T11:01:39.1463343+07:00",
+  "updated_at": "2026-10-26T11:06:39.3863246+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -44584,19 +44584,19 @@
     "Reconcile OPEN_TASKS_CURRENT.json to the 10:09 provider readback through an append-preserving write and exact-target readback; preserve all 29 nonterminal tasks."
   ],
   "previous_updated_at_before_20261026T1051ICT": "2026-10-26T10:10:00+07:00",
-  "main_head_before_pointer_update": "4863fccc8ebe917e50389c60d18fc807c23892fe",
+  "main_head_before_pointer_update": "f952cda1681e4be07a0b87459edc6e74956d79f0",
   "latest_provider_checkpoint": {
-    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1101ICT.json",
-    "blob_sha": "ee244f5454f65f6e9a37e2de57c3cf860a4f7fbe",
-    "commit": "dd6922db634649da50ffca8e1af07ceebc1d8e60",
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1106ICT.json",
+    "blob_sha": "662f4d20d6efc1e39f91a93ef0d0b1dffa28b327",
+    "commit": "a02eee42824a8c407a23174bd07a309e3c103e37",
     "readback_verified": true,
-    "ledger_blob_sha": "1bdf4fc10136e9d6b057dec0dc2702ef3795cfcd",
-    "ledger_commit": "4863fccc8ebe917e50389c60d18fc807c23892fe",
-    "modual_blob_sha": "810c0167914fd7c751889f9c209ac0b094c56eab",
+    "ledger_blob_sha": "05c8bf07c6bf54217be7a8f0a04ae5f0da1a03f9",
+    "ledger_commit": "f952cda1681e4be07a0b87459edc6e74956d79f0",
+    "modual_blob_sha": "5376961930b0aa2eb9a2359e2f8aafedeed84af4",
     "cloud_scan_row_id": 442,
     "cloud_scan_event_id": "X20261026040024040_CLOUD",
-    "tick_sha256": "24BA09DF87D95C074C7A5B535C89316DA307D8AFFF22B3E314389624ACF7FFC2",
-    "consumer_sha256": "124B53E9DC9897FD0B54CEB0915AC59302848EBD9A390FB745384AC6E06843EF",
+    "tick_sha256": "E6A17425046BD63274BDC218027E6E1AADB24D696CA4297D457F0C35CAFC57FF",
+    "consumer_sha256": "AB9B9D46FDDB549AAF9E47D48F6ADCBE9F1453C74998AE31402C4E38ECBF6C2A",
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
     "tesseract_checkpoint": "CURRENT_RUNTIME/TESSERACT_ISSUER_RUNNER_READBACK_20261026T1104ICT.json",
     "tesseract_checkpoint_blob_sha": "924ac4cb3ac7710976473badf3614043e0cd672a",
@@ -44865,6 +44865,40 @@
     "pending_rows": 45,
     "terminal_rows": 0,
     "host_heartbeat_probed": false,
+    "tasks_closed": 0
+  },
+  "previous_checkpoint_before_20261026T1106ICT": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1101ICT.json",
+    "commit": "dd6922db634649da50ffca8e1af07ceebc1d8e60",
+    "blob_sha": "ee244f5454f65f6e9a37e2de57c3cf860a4f7fbe",
+    "updated_at": "2026-10-26T11:01:39.1463343+07:00"
+  },
+  "previous_next_before_20261026T1106ICT": [
+    "Exact-read the next scheduled Tick and matching consumer after 2026-10-26T11:06:32+07; source SHA must match both. The 11:01:39 pair is read-only and hash-consistent, but four USB sensor timestamps are stale, zero advanced, and wireless ADB is NOT_LISTED.",
+    "Continue read-only sensor-client investigation; do not launch/install an unverified package, change device permissions, or change the system clock. W32Time was last observed STOPPED/MANUAL under a medium-integrity token with Administrators group deny-only.",
+    "Keep all 45 cloud recovery rows pending; execution 187 and row 442 are a deterministic source-table scan only; host heartbeat remains unprobed.",
+    "Verify the TESSERACT Actions variable configuration and runner assignment through an authorized settings route; the code-level key reference is verified, but variable presence/value and runner assignment are not. Do not rerun CI until configuration change is verified.",
+    "Recompare Archive PR #36/#37 against the final current main head before any branch mutation.",
+    "Preserve all 29 nonterminal tasks; no task closure."
+  ],
+  "previous_updated_at_before_20261026T1106ICT": "2026-10-26T11:01:39.1463343+07:00",
+  "latest_direct_host_readback_20261026T1106ICT": {
+    "observed_at": "2026-10-26T11:06:39.3863246+07:00",
+    "device": "DESKTOP-86ITNQ4",
+    "route": "Remote Desktop Commander",
+    "tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T040639271401Z.json",
+    "tick_sha256": "E6A17425046BD63274BDC218027E6E1AADB24D696CA4297D457F0C35CAFC57FF",
+    "consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T040636431Z.json",
+    "consumer_sha256": "AB9B9D46FDDB549AAF9E47D48F6ADCBE9F1453C74998AE31402C4E38ECBF6C2A",
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_matches_tick": true,
+    "source_matches_consumer": true,
+    "live_sensor_reading_confirmed": false,
+    "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "usb_advanced_count": 0,
+    "wireless_adb_state": "NOT_LISTED",
+    "task_last_result": 0,
+    "missed_runs": 0,
     "tasks_closed": 0
   }
 }
