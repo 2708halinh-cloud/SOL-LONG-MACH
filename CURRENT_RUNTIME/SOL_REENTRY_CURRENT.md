@@ -1272,3 +1272,17 @@ CONTINUITY:
 
 NEXT_EDGE: continue the authorized host-side Tick/consumer path; resolve the W32Time service-control permission through an authorized route; require repeated timestamp advancement before calling the sensor stream restored; then reconcile the large task pointer/ledger to this checkpoint and read them back exactly.
 <!-- END WINDOWS_TICK_CONSUMER_TIME_SERVICE_DELTA_20261026T1001ICT -->
+
+
+<!-- BEGIN WINDOWS_PATH_ESCAPING_CORRECTION_20261026T1002ICT -->
+## CORRECTION — CANONICAL WINDOWS PATH SEPARATORS — 2026-10-26
+
+The preceding delta rendered Windows path separators doubled in Markdown. The canonical exact paths read from the host are:
+
+- Tick: \`D:\SENSOR_LOGS\state\WINDOWS_TICK_20261026T025421528082Z.json\`
+- Consumer: \`D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261026T025417514Z.json\`
+- Source: \`D:\SENSOR_LOGS\windows_SENSON.CSV\`
+- Wrapper: \`D:\SENSOR_LOGS\run_telemetry_buffer_sync.ps1\`
+
+This corrects path rendering only. It does not alter the receipts, source bytes, source hash, task state, or provider revision. Exact-target verification must use these single-separator paths.
+<!-- END WINDOWS_PATH_ESCAPING_CORRECTION_20261026T1002ICT -->
