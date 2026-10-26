@@ -93,3 +93,12 @@ The prior local receipt (2026-10-26 11:30 +07) recorded motherboard tests 20/20 
 7. Close deployment only after local + GitHub + Library readbacks match the intended architecture fingerprint.
 
 No claim of full-system synchronization is valid until each target has its own fresh readback.
+
+
+## Intel Core Ultra software profile emulation
+
+- Registry: `INTEL_CORE_ULTRA_PROFILES.json`; runtime: `intel_core_ultra_emulator.py`; tests: `test_intel_core_ultra_emulator.py`.
+- Thirty CPU profiles were transcribed from the user-supplied catalog. All remain `source_verified=false` pending independent Intel ARK verification.
+- Core count is used as a virtual worker-slot ceiling. Smart Cache is a software budget only; reported turbo frequency is metadata.
+- GPU execution remains disabled until a real driver/backend is independently detected.
+- This is scheduler/resource-profile emulation, not physical silicon, microcode, ISA, actual cache, clock/thermal behavior, or benchmark emulation.
