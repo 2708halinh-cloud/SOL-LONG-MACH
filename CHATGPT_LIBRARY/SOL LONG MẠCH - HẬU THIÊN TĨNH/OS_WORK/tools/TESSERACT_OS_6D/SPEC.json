@@ -1,119 +1,25 @@
 {
-  "schema": "TESSERACT_OS_6D/2.0",
-  "generated_at": "2026-10-08T23:14:59.883527+07:00",
-  "source_commit": "9074c7d2041871987cd68c17c34a40ee06fbe477",
-  "source_tree": "cc5963d4874b7ec2a537f916b6d83897c4778d3d",
-  "dimension": 6,
-  "faces_equal": true,
-  "center": "☯️ TÂM",
-  "stone_axes": [
-    [
-      "SPACE",
-      "SOUL"
-    ],
-    [
-      "MIND",
-      "POWER"
-    ],
-    [
-      "REALITY",
-      "TIME"
-    ]
-  ],
-  "action_before_conclusion": {
-    "rule_id": "ACTION_BEFORE_CONCLUSION",
-    "flow": [
-      "ACTION",
-      "CONSEQUENCE",
-      "RECEIPT",
-      "READBACK",
-      "SAME_STATE",
-      "CONCLUSION"
-    ],
-    "source_direct": "LÀM TRƯỚC -> KẾT LUẬN; CẤM TUYỆT ĐỐI CHỐT KẾT QUẢ RỒI MỚI LÀM"
-  },
-  "closure_rule": "CLOSED iff all 6 faces have ACTION + CONSEQUENCE + RECEIPT + READBACK + SAME_STATE for one state object.",
-  "faces": [
-    {
-      "id": 1,
-      "name": "GOOGLE_DRIVE",
-      "role": "Pointer <10MB + locator JSON",
-      "equal_weight": 1
-    },
-    {
-      "id": 2,
-      "name": "LOCAL_STORAGE",
-      "role": "W/D/NVMe bulk/raw/snapshot",
-      "equal_weight": 1
-    },
-    {
-      "id": 3,
-      "name": "GITHUB_X_TIME_WEB",
-      "role": "Law & State + immutable commit",
-      "equal_weight": 1
-    },
-    {
-      "id": 4,
-      "name": "RCLONE_RAIDRIVE",
-      "role": "Virtual-drive / cloud relay",
-      "equal_weight": 1
-    },
-    {
-      "id": 5,
-      "name": "GCP_STORAGE_BUCKET",
-      "role": "Processing buffer + lifecycle 3–7 days",
-      "equal_weight": 1
-    },
-    {
-      "id": 6,
-      "name": "X_TIME_CDN_UBUBU_LEDGER",
-      "role": "Display + hash-only ledger",
-      "equal_weight": 1
-    }
-  ],
-  "motherboard_architecture": {
-    "schema": "TESSERACT_MOTHERBOARD/2.0",
-    "source": "TESSERACT_OS_6D/MOTHERBOARD_ARCHITECTURE.md",
-    "cpu_sockets": [
-      "GEMINI",
-      "CHATGPT",
-      "LOCAL",
-      "TASK_WORKERS"
-    ],
-    "northbridge": [
-      "task_arbitration",
-      "gate_1_preflight",
-      "gate_2_independent_readback",
-      "bounded_failover"
-    ],
-    "dimm": {
-      "name": "RAM_L1_ACTIVE_BLACKBOARD",
-      "registers": {
-        "REG_00": "objective_scope_acceptance_dependencies",
-        "REG_01": "source_target_identity_account_revision_hash_provenance",
-        "REG_02": "action_consequence_receipt_readback",
-        "REG_03": "open_edges_recovery_next_callable_action"
-      },
-      "versioned": true,
-      "secret_values_allowed": false
-    },
-    "vrm_pmic": {
-      "disk_warning_used_percent": 85,
-      "disk_survival_used_percent": 90,
-      "disk_critical_used_percent": 97,
-      "disk_critical_free_gib": 5,
-      "blind_deletion": false,
-      "circuit_breaker": true
-    },
-    "southbridge": [
-      "SQLite_Core_Journal",
-      "Git_append_only_history",
-      "Google_Drive_provider_adapter",
-      "QEMU",
-      "Hyper-V",
-      "NextDNS",
-      "ADB",
-      "localhost_LAN"
+  "schema": "TESSERACT_MOTHERBOARD/2.0",
+  "source_direct": "Hà Linh — 2026-10-26",
+  "architecture": "TESSERACT_6D_MOTHERBOARD",
+  "status": "ARCHITECTURE_REPLACEMENT_BASELINE_OPEN_UNTIL_ALL_CARRIER_READBACK",
+  "invariants": {
+    "dimensions": 6,
+    "faces_equal": true,
+    "center": "☯️ TÂM",
+    "stone_axes": [
+      [
+        "SPACE",
+        "SOUL"
+      ],
+      [
+        "MIND",
+        "POWER"
+      ],
+      [
+        "REALITY",
+        "TIME"
+      ]
     ],
     "action_before_conclusion": [
       "ACTION",
@@ -123,14 +29,237 @@
       "SAME_STATE",
       "CONCLUSION"
     ],
-    "face_closure_requires_all_six": true,
-    "full_sync_requires_local_github_library_readback": true
+    "no_mount_equals_sync": true,
+    "no_write_response_equals_completion": true,
+    "preserve_originals": true
   },
+  "cpu_sockets": [
+    {
+      "id": "CPU1",
+      "name": "GEMINI",
+      "kind": "remote_model_provider",
+      "evidence_required": [
+        "configured",
+        "reachable",
+        "authorized",
+        "capabilities",
+        "quota_state",
+        "last_receipt"
+      ]
+    },
+    {
+      "id": "CPU2",
+      "name": "CHATGPT",
+      "kind": "remote_model_provider",
+      "evidence_required": [
+        "configured",
+        "reachable",
+        "authorized",
+        "capabilities",
+        "quota_state",
+        "last_receipt"
+      ]
+    },
+    {
+      "id": "CPU3",
+      "name": "LOCAL",
+      "kind": "ollama_or_local_llm",
+      "evidence_required": [
+        "configured",
+        "reachable",
+        "model_available",
+        "inference_readback"
+      ]
+    },
+    {
+      "id": "CPU4",
+      "name": "TASK_WORKERS",
+      "kind": "bounded_workers",
+      "evidence_required": [
+        "capability",
+        "deadline",
+        "resource_budget",
+        "result_receipt"
+      ]
+    }
+  ],
+  "northbridge": {
+    "name": "Autonomous Control Plane & Action Router",
+    "responsibilities": [
+      "task_arbitration",
+      "dependency_routing",
+      "gate_1_preflight",
+      "gate_2_readback",
+      "bounded_failover"
+    ],
+    "gate_1": [
+      "source_target_identity",
+      "authorization",
+      "policy",
+      "data_classification",
+      "acceptance_criteria",
+      "protected_target",
+      "recovery_point",
+      "quota_and_disk"
+    ],
+    "gate_2": [
+      "action_receipt",
+      "observable_consequence",
+      "independent_readback",
+      "same_state_comparison",
+      "acceptance_check"
+    ]
+  },
+  "dimm": {
+    "name": "RAM_L1_ACTIVE_BLACKBOARD",
+    "registers": {
+      "REG_00": "objective_scope_acceptance_dependencies",
+      "REG_01": "source_target_identity_account_revision_hash_provenance",
+      "REG_02": "action_expected_consequence_receipt_readback",
+      "REG_03": "unresolved_edges_blockers_recovery_next_callable_action"
+    },
+    "versioned_updates": true,
+    "lock_or_version_check": true,
+    "credential_values_allowed": false,
+    "conflicts_block_commit": true,
+    "transient_not_only_durable_memory": true
+  },
+  "vrm_pmic": {
+    "disk_warning_used_percent": 85,
+    "disk_survival_used_percent": 90,
+    "disk_critical_used_percent": 97,
+    "disk_critical_free_gib": 5,
+    "actions": [
+      "prioritize_recovery",
+      "read_only_inspection",
+      "pause_nonessential_writes",
+      "open_remediation_edge"
+    ],
+    "blind_deletion": false,
+    "circuit_breaker": true,
+    "bounded_failover": true,
+    "secrets_in_logs": false
+  },
+  "southbridge": {
+    "core_journal": [
+      "SQLite",
+      "Git",
+      "append_only_receipts"
+    ],
+    "google_drive_sync": "explicit_account_root_file_revision_hash_receipt_and_provider_readback_required",
+    "virtualization": [
+      "QEMU",
+      "Hyper-V"
+    ],
+    "network_security": [
+      "NextDNS",
+      "localhost",
+      "LAN_subnet"
+    ],
+    "device_bridge": [
+      "ADB"
+    ],
+    "device_passthrough": "exact_identity_authorization_and_preflight_required",
+    "disconnected_adapter_state": "UNAVAILABLE_OR_NOT_VERIFIED"
+  },
+  "six_faces": [
+    {
+      "id": 1,
+      "name": "GOOGLE_DRIVE_POINTER",
+      "equal_weight": 1
+    },
+    {
+      "id": 2,
+      "name": "LOCAL_BULK_STORAGE",
+      "equal_weight": 1
+    },
+    {
+      "id": 3,
+      "name": "GITHUB_STATE",
+      "equal_weight": 1
+    },
+    {
+      "id": 4,
+      "name": "RCLONE_RAIDRIVE_RELAY",
+      "equal_weight": 1
+    },
+    {
+      "id": 5,
+      "name": "GCP_STORAGE_BUFFER",
+      "equal_weight": 1
+    },
+    {
+      "id": 6,
+      "name": "XTIME_CDN_UBUBU_LEDGER",
+      "equal_weight": 1
+    }
+  ],
+  "face_states": [
+    "VERIFIED_ACTIVE",
+    "PARTIAL",
+    "UNBOUND",
+    "UNREACHABLE",
+    "CONFLICT",
+    "NOT_VERIFIED"
+  ],
+  "closure": {
+    "per_face": [
+      "ACTION",
+      "CONSEQUENCE",
+      "RECEIPT",
+      "READBACK",
+      "SAME_STATE"
+    ],
+    "global_requires_all_six_faces": true,
+    "same_state_fingerprint_required": true,
+    "done_requires_actual_target_readback": true
+  },
+  "runtime_flow": [
+    "OBSERVE",
+    "LOAD_CURRENT_POINTER_CHECKPOINT",
+    "PLAN",
+    "GATE_1",
+    "ROUTE",
+    "ACTION",
+    "CONSEQUENCE",
+    "RECEIPT",
+    "GATE_2_READBACK",
+    "JOURNAL_APPEND",
+    "REPORT",
+    "CONTINUE_OPEN_EDGES"
+  ],
+  "known_observation_2026_10_26": {
+    "motherboard_tests": "PASS 20/20 (historical receipt)",
+    "transducer_tests": "PASS 8/8 (historical receipt)",
+    "combined_regression": "PASS 28/28 (historical receipt)",
+    "disk_c_used_percent": 93.07,
+    "disk_state": "SURVIVAL",
+    "ollama": "REACHABLE_AT_LAST_OBSERVATION",
+    "google_drive_provider_sync": "NOT_VERIFIED",
+    "adb": "UNAVAILABLE_ON_PATH_AT_LAST_OBSERVATION",
+    "qemu": "UNAVAILABLE_AT_LAST_OBSERVATION",
+    "hyperv": "UNKNOWN_WITHOUT_ELEVATION",
+    "github_actions": "UNVERIFIED"
+  },
+  "acceptance_gates": [
+    "backup_and_hash",
+    "local_replace",
+    "github_update_and_readback",
+    "chatgpt_library_publish_and_readback",
+    "json_parse",
+    "compile",
+    "targeted_tests",
+    "broader_regression",
+    "provider_readback",
+    "matching_architecture_fingerprint"
+  ],
+  "secret_values_allowed": false,
+  "blind_deletion": false,
   "intel_core_ultra_emulation": {
     "component": "TESSERACT_6D_INTEL_CORE_ULTRA_SOFTWARE_EMULATION",
-    "registry": "TESSERACT_OS_6D/INTEL_CORE_ULTRA_PROFILES.json",
-    "runtime": "TESSERACT_OS_6D/intel_core_ultra_emulator.py",
-    "tests": "TESSERACT_OS_6D/test_intel_core_ultra_emulator.py",
+    "registry": "config/INTEL_CORE_ULTRA_PROFILES.json",
+    "runtime": "runtime/intel_core_ultra_emulator.py",
+    "tests": "tests/test_intel_core_ultra_emulator.py",
     "profile_count": 30,
     "emulation_scope": "scheduler slots and software cache budget only",
     "gpu_execution_enabled_by_default": false,
