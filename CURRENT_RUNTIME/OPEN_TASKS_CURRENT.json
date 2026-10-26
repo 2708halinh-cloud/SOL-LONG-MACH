@@ -17036,6 +17036,25 @@
       "tasks_closed": 0,
       "merge_performed": false,
       "force_push": false
+    },
+    {
+      "id": "LEDGER_PROVIDER_OBSERVATION_COUNTER_FIX_20261026T1752ICT",
+      "observed_at": "2026-10-26T17:52:30+07:00",
+      "scope": "Repository ledger integrity",
+      "action": "Recompute provider_observations against provider_observation_history length and reconcile the scalar counter without removing or rewriting history.",
+      "result": "provider_observations was 226; provider_observation_history length was 227. Counter reconciled to 227.",
+      "evidence": {
+        "ledger_blob_before": "0ba2d47324c1d1e05acda8a5ad39a9fb3c1b0a08",
+        "provider_observations_before": 226,
+        "provider_history_length": 227,
+        "n8n_counter_correction_row_id": 506,
+        "n8n_counter_correction_event_id": "X20261026105230_LEDGER_PROVIDER_OBSERVATION_COUNTER_RECONCILIATION",
+        "latest_host_evidence_row_id": 505,
+        "latest_provider_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1748ICT.json"
+      },
+      "source_data_changed": false,
+      "history_removed": false,
+      "tasks_closed": 0
     }
   ],
   "energy_protection_current": {
@@ -31004,6 +31023,18 @@
       "history_preserved": true,
       "task_status_changed": false,
       "tasks_closed": 0
+    },
+    {
+      "id": "IC_20261026T1752ICT_PROVIDER_OBSERVATION_COUNTER",
+      "observed_at": "2026-10-26T17:52:30+07:00",
+      "correction_type": "PROVIDER_OBSERVATION_COUNTER_RECONCILIATION",
+      "finding": "Scalar provider_observations (226) did not equal provider_observation_history length (227) after the 1748 observation append.",
+      "correction": "Set provider_observations to 227; preserved all provider_observation_history entries.",
+      "prior_artifact_overwritten": false,
+      "source_data_changed": false,
+      "history_preserved": true,
+      "task_status_changed": false,
+      "tasks_closed": 0
     }
   ],
   "latest_provider_readback": {
@@ -31582,7 +31613,7 @@
       "tasks_closed": 0
     }
   },
-  "provider_observations": 226,
+  "provider_observations": 227,
   "previous_latest_provider_readback_20261026T0025ICT": {
     "id": "PROVIDER_READBACK_20261026T0025ICT",
     "observed_at": "2026-10-26T00:25:25+07:00",
