@@ -1,6 +1,6 @@
 {
   "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
-  "observed_at": "2026-10-26T08:50:35.531+07:00",
+  "observed_at": "2026-10-26T09:31:12+07:00",
   "source_root": "D:\\SENSOR_LOGS",
   "source_semantics": "LOCAL_MODUAL_BYTES_AND_INTERMEDIATE_DEVICE_TELEMETRY",
   "github_role": "LAW_AND_CURRENT_STATE_NOT_BULK_ARCHIVE",
@@ -13245,6 +13245,21 @@
       "tasks_closed": 0,
       "source_mutated": false,
       "secrets_written": false
+    },
+    {
+      "id": "SESSION_OBSERVATION_20261026T0931ICT",
+      "observed_at": "2026-10-26T09:31:12+07:00",
+      "source": "Fresh GitHub runtime-source reads + Dropbox metadata + n8n execution/table readback + GitHub PR/CI readback",
+      "action": "FRESH_READ_AND_CROSS_PROVIDER_CONTINUATION",
+      "n8n_event_id": "X20261026020525520_CLOUD",
+      "n8n_row_id": 432,
+      "n8n_pending_recovery_rows": 45,
+      "desktop_commander_devices_online": 0,
+      "pr37_state": "OPEN_DRAFT_UNMERGED",
+      "tasks_closed": 0,
+      "source_mutated": false,
+      "secrets_written": false,
+      "raw_sensor_values_exported": false
     }
   ],
   "privacy_policy": {
@@ -23314,5 +23329,112 @@
     "issuer_public_key_value_verified": false,
     "runner_assignment_verified": false,
     "ci_rerun_performed": false
+  },
+  "previous_observed_at_before_20261026T0931ICT": "2026-10-26T08:50:35.531+07:00",
+  "latest_provider_metadata_readback_20261026T0931ICT": {
+    "observed_at": "2026-10-26T09:31:12+07:00",
+    "provider": "Dropbox",
+    "source_name": "windows_SENSON.CSV",
+    "provider_revision": "0165dc1e4794ab00000000395cdfd73",
+    "size_bytes": 35389440,
+    "client_modified_utc": "2026-10-14T00:15:21Z",
+    "server_modified_utc": "2026-10-14T00:20:03Z",
+    "metadata_readback": true,
+    "payload_downloaded": false,
+    "raw_sensor_values_read": false,
+    "provenance": "Fresh Dropbox Outlook metadata readback in this turn; existing exact provider locator retained in prior history."
+  },
+  "latest_cloud_continuity_readback_20261026T0931ICT": {
+    "observed_at": "2026-10-26T09:31:12+07:00",
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "execution_id": "183",
+    "execution_status": "success",
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_event_id": "X20261026020525520_CLOUD",
+    "evidence_row_id": 432,
+    "evidence_row_exact_readback": true,
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "host_heartbeat_probed": false,
+    "host_operations": 0,
+    "tasks_closed": 0
+  },
+  "latest_desktop_commander_route_probe_20261026T0931ICT": {
+    "observed_at": "2026-10-26T09:31:12+07:00",
+    "primary_and_alternate_link_inventory_equal": true,
+    "devices": [
+      {
+        "name": "localhost",
+        "remote_agent_status": "Offline",
+        "last_seen_minutes_ago": 19
+      },
+      {
+        "name": "DESKTOP-86ITNQ4",
+        "remote_agent_status": "Offline",
+        "last_seen_hours_ago": 136
+      },
+      {
+        "name": "DESKTOP-86ITNQ4",
+        "remote_agent_status": "Offline",
+        "last_seen_hours_ago": 362
+      }
+    ],
+    "remote_calls_left_pct": 63,
+    "host_runtime_readback_this_turn": false,
+    "interpretation": "Remote Desktop Commander route unavailable in both listed account links; this does not establish the Windows machine itself is powered off."
+  },
+  "latest_archive_pr37_readback_20261026T0931ICT": {
+    "observed_at": "2026-10-26T09:31:12+07:00",
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "pull_request": 37,
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+    "compared_main_sha": "d7a4a52434841bea748ffd0f4249061499619cb3",
+    "compare_status": "diverged",
+    "ahead_by": 3,
+    "behind_by": 2,
+    "observed_successful_checks": [
+      {
+        "run_id": 40256730413,
+        "name": "SOL Library Stone Topology",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40256730407,
+        "name": "High-Threshold Secret Exposure Guard",
+        "conclusion": "success"
+      }
+    ],
+    "archive_adapter_workflow_verified": false,
+    "merge_or_force_push_performed": false
+  },
+  "latest_main_ci_readback_20261026T0931ICT": {
+    "observed_at": "2026-10-26T09:31:12+07:00",
+    "main_sha": "d7a4a52434841bea748ffd0f4249061499619cb3",
+    "runs": [
+      {
+        "run_id": 40256825927,
+        "name": "High-Threshold Secret Exposure Guard",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40256825895,
+        "name": "runtime-n-plus",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40256825894,
+        "name": "Windows survival - independent OPEN continuation",
+        "conclusion": "success"
+      }
+    ],
+    "interpretation": "GitHub-hosted workflow evidence only; not a substitute for direct Windows Tick or live-sensor verification."
   }
 }
