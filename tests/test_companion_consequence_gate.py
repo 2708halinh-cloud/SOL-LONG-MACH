@@ -23,7 +23,7 @@ class CompanionConsequenceGateTests(unittest.TestCase):
                 "readback_sha256": "0" * 64,
             }, Path(path))
             self.assertEqual(result.state, UNVERIFIED)
-            self.assertIn("exact_target_readback_mismatch", result.missing)
+            self.assertIn("target_unavailable", result.missing)
 
     def test_local_evidence_is_not_remote_success(self):
         with tempfile.TemporaryDirectory() as path:
