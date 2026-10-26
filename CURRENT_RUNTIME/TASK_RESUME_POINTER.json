@@ -3,8 +3,8 @@
   "task": "MODUAL_SENSOR_LOGS_ROUTING",
   "repo": "2708halinh-cloud/SOL-LONG-MACH",
   "branch": "main",
-  "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1125ICT.json",
-  "commit": "73647b712830deb64ebe8b7847570ac556c31301",
+  "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1132ICT.json",
+  "commit": "60b58ea2bff639a2436d1b1ef5febde68b8423f5",
   "rule": "Resume the latest MODUAL provider checkpoint first; the previous TESSERACT pointer is preserved in previous_pointer_snapshot and parallel_open_branches. Keep every unfinished task OPEN.",
   "pr": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
@@ -101,12 +101,12 @@
     "previous_head_run_sha": "c41797b61ced8f152ff0833448d3a101fd13c158"
   },
   "next": [
-    "At the last direct host sample (11:18:29+07), the scheduled task's next run was 11:21:32+07. Fresh-read the host again before concluding whether that cycle ran; exact-read the newest Tick and matching consumer and recompute the source hash.",
-    "Continue read-only Android sensor-client diagnosis. USB ADB 1056285 responds but four event timestamps are stale and zero advanced; device is Dozing and the candidate sensor app process is absent. Wireless ADB 192.168.1.14:5556 is not listed/unreachable. Do not launch/install an app or change permissions without authorization.",
-    "W32Time remains STOPPED/MANUAL; do not change the system clock. Service-start/configuration changes require an authorized elevated route.",
+    "At the last host sample (11:26:53+07), the next scheduled Tick was 11:31:32+07. Fresh-read the host after that host-local time; if no newer Tick appears, inspect wrapper trace and task result before changing anything.",
+    "Continue read-only Android sensor-client diagnosis. USB ADB 1056285 responds but four event timestamps are stale and zero advanced; wireless ADB 192.168.1.14:5556 is NOT_LISTED/unreachable. Do not launch/install packages or change permissions without authorization.",
+    "W32Time remains STOPPED/MANUAL. A paired sample estimated the host clock roughly 5m30 behind the runtime reference; do not change the system clock. Service-start/configuration changes require an authorized elevated route.",
     "Keep all 45 cloud recovery rows pending; execution 188 / row 443 is a source-table scan only and host heartbeat remains unprobed.",
-    "Verify TESSERACT Actions variable presence and runner assignment through an authorized settings route; do not rerun CI until a configuration change is independently verified.",
-    "PR #36 and #37 remain OPEN/Draft; last compare at main head baf612d84c6ad47d2875fa195aaa34adfb21b4a5 was #36 14 ahead/109 behind and #37 3 ahead/65 behind. Recompare before branch mutation; no merge/force-push.",
+    "TESSERACT PR #6 remains OPEN/Draft. Issuer variable value and runner assignment are unverified; do not rerun CI until a configuration change is independently verified.",
+    "Fresh compare readback at main head 60b58ea2bff639a2436d1b1ef5febde68b8423f5: PR #36 14 ahead/133 behind; PR #37 3 ahead/89 behind; both diverged. Recompare before branch mutation; no merge/force-push.",
     "Preserve all 29 nonterminal tasks and all historical receipts; no task closure."
   ],
   "continuation_guard": {
@@ -123,7 +123,7 @@
       "PROVIDER_FAILURE != OBJECTIVE_FAILURE_WHILE_ALTERNATE_CARRIER_EXISTS"
     ]
   },
-  "updated_at": "2026-10-26T11:26:19.060+07:00",
+  "updated_at": "2026-10-26T11:33:06.598+07:00",
   "r014_master_22_4_extension": {
     "marker": "GGDV_R014_MASTER_22_4_SOURCE_DIRECT_20261009",
     "kind": "ADDITIVE_GUARD_EXTENSION_NOT_TASK_REPLACEMENT",
@@ -44587,13 +44587,13 @@
   "previous_updated_at_before_20261026T1051ICT": "2026-10-26T10:10:00+07:00",
   "main_head_before_pointer_update": "f952cda1681e4be07a0b87459edc6e74956d79f0",
   "latest_provider_checkpoint": {
-    "observed_at": "2026-10-26T11:26:19.060+07:00",
-    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1125ICT.json",
-    "checkpoint_blob_sha": "8a957243c7e3bdb59500ef93db419aeeffd0aa9c",
-    "checkpoint_commit": "73647b712830deb64ebe8b7847570ac556c31301",
+    "observed_at": "2026-10-26T11:33:06.598+07:00",
+    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1132ICT.json",
+    "checkpoint_blob_sha": "66dfa9ad8e96ab6bbbc45f8e8b7ca6e0b7b978f5",
+    "checkpoint_commit": "60b58ea2bff639a2436d1b1ef5febde68b8423f5",
+    "tick_sha256": "de1d4aa691f36a2d6b9c9191c187a8a4b2389ddebca2c69169cac63965d26942",
+    "consumer_sha256": "9d18f13b9a4bd093ae874c77decc81c54d28119cf522e011c2fbed508015b3a9",
     "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-    "tick_sha256": "c2f5a31a1fdfc5487923b564918f42c9ed8d72098d6d8ce71a64c80582911011",
-    "consumer_sha256": "723ac81e74346fb4b86e3065aebfc212b646986f6dd5b0b84c518fa7b7be9a15",
     "source_matches_tick": true,
     "source_matches_consumer": true,
     "live_sensor_reading_confirmed": false,
@@ -45019,6 +45019,159 @@
     "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1125ICT.json",
     "checkpoint_commit": "73647b712830deb64ebe8b7847570ac556c31301",
     "checkpoint_blob_sha": "8a957243c7e3bdb59500ef93db419aeeffd0aa9c",
+    "history_preserved": true,
+    "task_closures": 0
+  },
+  "previous_checkpoint_before_20261026T1132ICT": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1125ICT.json",
+  "previous_commit_before_20261026T1132ICT": "73647b712830deb64ebe8b7847570ac556c31301",
+  "previous_next_before_20261026T1132ICT": [
+    "At the last direct host sample (11:18:29+07), the scheduled task's next run was 11:21:32+07. Fresh-read the host again before concluding whether that cycle ran; exact-read the newest Tick and matching consumer and recompute the source hash.",
+    "Continue read-only Android sensor-client diagnosis. USB ADB 1056285 responds but four event timestamps are stale and zero advanced; device is Dozing and the candidate sensor app process is absent. Wireless ADB 192.168.1.14:5556 is not listed/unreachable. Do not launch/install an app or change permissions without authorization.",
+    "W32Time remains STOPPED/MANUAL; do not change the system clock. Service-start/configuration changes require an authorized elevated route.",
+    "Keep all 45 cloud recovery rows pending; execution 188 / row 443 is a source-table scan only and host heartbeat remains unprobed.",
+    "Verify TESSERACT Actions variable presence and runner assignment through an authorized settings route; do not rerun CI until a configuration change is independently verified.",
+    "PR #36 and #37 remain OPEN/Draft; last compare at main head baf612d84c6ad47d2875fa195aaa34adfb21b4a5 was #36 14 ahead/109 behind and #37 3 ahead/65 behind. Recompare before branch mutation; no merge/force-push.",
+    "Preserve all 29 nonterminal tasks and all historical receipts; no task closure."
+  ],
+  "previous_updated_at_before_20261026T1132ICT": "2026-10-26T11:26:19.060+07:00",
+  "previous_latest_direct_host_readback_before_20261026T1132ICT": {
+    "observed_at": "2026-10-26T11:18:29.1175657+07:00",
+    "device": "DESKTOP-86ITNQ4",
+    "route": "Remote Desktop Commander",
+    "route_online": true,
+    "task_last_run_local": "2026-10-26T11:16:33+07:00",
+    "task_last_result": 0,
+    "task_next_run_local": "2026-10-26T11:21:32+07:00",
+    "missed_runs": 0,
+    "tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T041640463993Z.json",
+    "tick_sha256": "c2f5a31a1fdfc5487923b564918f42c9ed8d72098d6d8ce71a64c80582911011",
+    "consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T041637037Z.json",
+    "consumer_sha256": "723ac81e74346fb4b86e3065aebfc212b646986f6dd5b0b84c518fa7b7be9a15",
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_matches_tick": true,
+    "source_matches_consumer": true,
+    "live_sensor_reading_confirmed": false,
+    "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "usb_advanced_count": 0,
+    "wireless_adb_state": "NOT_LISTED",
+    "wireless_tcp_5556_reachable": false,
+    "android_wakefulness": "Dozing",
+    "sensor_app_processes_present": false,
+    "w32time_state": "STOPPED",
+    "w32time_start_type": "Manual",
+    "system_clock_changed": false,
+    "task_closed": false
+  },
+  "latest_direct_host_readback_20261026T1126ICT": {
+    "observed_at": "2026-10-26T11:26:53.6741361+07:00",
+    "device": "DESKTOP-86ITNQ4",
+    "route": "Remote Desktop Commander",
+    "route_online": true,
+    "task_last_run_local": "2026-10-26T11:26:33+07:00",
+    "task_last_result": 0,
+    "task_next_run_local": "2026-10-26T11:31:32+07:00",
+    "missed_runs": 0,
+    "tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T042638558197Z.json",
+    "tick_sha256": "de1d4aa691f36a2d6b9c9191c187a8a4b2389ddebca2c69169cac63965d26942",
+    "consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T042635788Z.json",
+    "consumer_sha256": "9d18f13b9a4bd093ae874c77decc81c54d28119cf522e011c2fbed508015b3a9",
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_matches_tick": true,
+    "source_matches_consumer": true,
+    "live_sensor_reading_confirmed": false,
+    "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "usb_timestamp_count": 4,
+    "usb_advanced_count": 0,
+    "wireless_adb_state": "NOT_LISTED",
+    "wireless_tcp_5556_reachable": false,
+    "w32time_state": "STOPPED",
+    "w32time_start_type": "Manual",
+    "system_clock_changed": false,
+    "task_closed": false
+  },
+  "latest_sensor_stream_probe_20261026T1126ICT": {
+    "observed_at": "2026-10-26T11:26:53.6741361+07:00",
+    "usb": {
+      "serial": "1056285",
+      "adb_state": "device",
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "sensor_event_timestamp_sensor_count": 4,
+      "advanced_sensor_count": 0
+    },
+    "wireless": {
+      "target": "192.168.1.14:5556",
+      "adb_state": "NOT_LISTED",
+      "tcp_5556_reachable": false
+    },
+    "live_sensor_reading_confirmed": false,
+    "device_probe_only": true,
+    "no_sensor_payload_persisted": true
+  },
+  "latest_provider_readback_20261026T1132ICT": {
+    "observed_at": "2026-10-26T11:33:06.598+07:00",
+    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1132ICT.json",
+    "checkpoint_blob_sha": "66dfa9ad8e96ab6bbbc45f8e8b7ca6e0b7b978f5",
+    "checkpoint_commit": "60b58ea2bff639a2436d1b1ef5febde68b8423f5",
+    "tick_sha256": "de1d4aa691f36a2d6b9c9191c187a8a4b2389ddebca2c69169cac63965d26942",
+    "consumer_sha256": "9d18f13b9a4bd093ae874c77decc81c54d28119cf522e011c2fbed508015b3a9",
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_matches_tick": true,
+    "source_matches_consumer": true,
+    "live_sensor_reading_confirmed": false,
+    "cloud_execution_id": "188",
+    "cloud_row_id": 443,
+    "pending_recovery_rows": 45,
+    "terminal_rows": 0,
+    "task_closures": 0
+  },
+  "latest_archive_pr_compare_readback_20261026T1133ICT": {
+    "observed_at": "2026-10-26T11:34:00.169+07:00",
+    "path": "CURRENT_RUNTIME/ARCHIVE_PR36_PR37_COMPARE_READBACK_20261026T1133ICT.json",
+    "blob_sha": "ab469233d4be0b582d94393a70b7640445826bd0",
+    "commit": "3d102477171cce5844f8c6c7a0894913dbd1f33a",
+    "main_head": "60b58ea2bff639a2436d1b1ef5febde68b8423f5",
+    "pr36": {
+      "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "status": "diverged",
+      "ahead_by": 14,
+      "behind_by": 133
+    },
+    "pr37": {
+      "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+      "status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 89
+    },
+    "branch_mutations": false
+  },
+  "latest_archive_pr_compare_readback": {
+    "observed_at": "2026-10-26T11:34:00.169+07:00",
+    "path": "CURRENT_RUNTIME/ARCHIVE_PR36_PR37_COMPARE_READBACK_20261026T1133ICT.json",
+    "blob_sha": "ab469233d4be0b582d94393a70b7640445826bd0",
+    "commit": "3d102477171cce5844f8c6c7a0894913dbd1f33a",
+    "main_head": "60b58ea2bff639a2436d1b1ef5febde68b8423f5",
+    "pr36": {
+      "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "status": "diverged",
+      "ahead_by": 14,
+      "behind_by": 133
+    },
+    "pr37": {
+      "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+      "status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 89
+    },
+    "branch_mutations": false
+  },
+  "latest_checkpoint_head_reconciliation_20261026T1132ICT": {
+    "main_head_before_pointer_update": "aa70407938f03df2abdd1e54c890f04fc2afa6d4",
+    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1132ICT.json",
+    "checkpoint_commit": "60b58ea2bff639a2436d1b1ef5febde68b8423f5",
+    "checkpoint_blob_sha": "66dfa9ad8e96ab6bbbc45f8e8b7ca6e0b7b978f5",
+    "compare_path": "CURRENT_RUNTIME/ARCHIVE_PR36_PR37_COMPARE_READBACK_20261026T1133ICT.json",
+    "compare_blob_sha": "ab469233d4be0b582d94393a70b7640445826bd0",
+    "compare_main_head": "60b58ea2bff639a2436d1b1ef5febde68b8423f5",
     "history_preserved": true,
     "task_closures": 0
   }
