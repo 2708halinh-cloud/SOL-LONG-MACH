@@ -1,86 +1,95 @@
-# TESSERACT_OS 6D — CURRENT
+# TESSERACT — MOTHERBOARD ARCHITECTURE 6D
 
-SOURCE_DIRECT: Hà Linh — 2026-10-08.
+SOURCE_DIRECT: Hà Linh — 2026-10-26.
+STATUS: ARCHITECTURE_REPLACEMENT_BASELINE; runtime/provider closure remains evidence-gated.
+LOCAL TARGET: G:\OS_Workspace\TESSERACT_OS.
+GITHUB CARRIER: 2708halinh-cloud/SOL-LONG-MACH/TESSERACT_OS_6D.
 
-## Hai lớp không được làm phẳng
+## 0. Architectural invariants
 
-6 Infinity Stones = sáu trường chức năng đối xứng qua ☯️ TÂM:
-- SPACE ↔ SOUL
-- MIND ↔ POWER
-- REALITY ↔ TIME
+- TESSERACT 6D has six equal operational faces around ☯️ TÂM: SPACE↔SOUL, MIND↔POWER, REALITY↔TIME. They are peer dimensions, not a linear sequence.
+- Motherboard components are the execution/control topology. The six faces are the cross-environment continuity and evidence topology. Do not flatten one into the other.
+- Design intent, local test results, provider connectivity, and end-to-end closure are separate states.
+- ACTION → CONSEQUENCE → RECEIPT → INDEPENDENT READBACK → SAME STATE → CONCLUSION.
+- A path, mount, configuration, process, or successful write response alone never proves provider connectivity or completion.
+- Preserve source IDs and historical bytes. Protected originals are not deleted or destructively overwritten. Replacements require backup, exact target identity, and readback.
 
-Không có thứ tự 1→6 theo thời gian. SIX_STONES_REPO_COMPRESSION_CURRENT.json là một content-addressed relational projection của Git tree e1e0f548e56a2e2fab19e7ad95224308e9f17af4 tại commit 34f8d4e63982ba26c3a22350b573e23d45b98656; nó không thay blob/source.
+## 1. Motherboard
 
-TESSERACT_OS 6D — 6 mặt vận hành = sáu carrier plane ngang hàng:
-1. Google Drive Pointer
-2. Local bulk storage
-3. GitHub state
-4. Rclone/RaiDrive relay
-5. GCP Storage buffer
-6. X-TiMe CDN + UBUBU Ledger
+### CPU sockets
+1. GEMINI — external model/provider route; capability and identity verification.
+2. CHATGPT — external model/provider route; capability and identity verification.
+3. LOCAL — Ollama/local model route when reachable, authorized, and policy-compatible.
+4. TASK_WORKERS — bounded workers for independent subtasks, tools, tests, and verification.
 
-CLOSED chỉ khi 6/6 mặt đều VERIFIED_ACTIVE và mỗi mặt có receipt/readback.
+Each socket advertises configured, reachable, authorized, capabilities, quota state, freshness, and last receipt independently. A socket declaration does not prove availability. Secret material remains in the authorized secret provider and never enters shared registers or logs.
 
-## Current forge state
+### Northbridge — Autonomous Control Plane & Action Router
+- Task arbitration: priority, dependency graph, deadline, capability fit, locality, cost/quota, risk, and failure state.
+- Gate 1 (before action): source and target identity, authorization, policy, data classification, acceptance criteria, protected-target check, available disk/quota, recovery point, and expected side effects.
+- Gate 2 (after action): action receipt, observable consequence, independent readback, same-state comparison, and acceptance check.
+- Use bounded failover only when the alternative route is authorized and has the required capability. One unavailable carrier does not cancel independent work.
 
-Verified faces now: 2/6.
-Overall: OPEN.
+### DIMM — RAM_L1 Active Blackboard
+Transient, versioned shared state for agent-to-agent exchange; not the only durable memory.
+- REG_00: objective, scope, acceptance criteria, dependency edges.
+- REG_01: source/target IDs, account/provider, revision, hashes, provenance.
+- REG_02: current action, expected consequence, receipt, readback, state comparison.
+- REG_03: unresolved edges, blockers, recovery point, next callable action.
+- Updates use version checks/locking and reject credential values, cookies, authorization headers, and secret contents.
+- Branch results remain separate until compared. Material conflicts block commit.
 
-Mặt OPEN/PARTIAL không bị diễn giải thành không tồn tại; nó chỉ chưa đủ receipt/readback để tham gia điều kiện khép kín.
+### VRM/PMIC — Quotas, resource safety, and survival
+- Monitor token/API quota, provider rate limits, worker saturation, timeouts, memory pressure, and disk capacity.
+- Disk policy: warning at ≥85% used; survival mode at ≥90%; critical at ≥97% used or <5 GiB free. The 85% point is an early warning, not permission for automatic deletion.
+- At thresholds, prioritize recovery and read-only inspection, pause nonessential writes/builds/downloads, and create a remediation edge. Never perform blind cleanup.
+- Circuit breaker and bounded failover on repeated failures; avoid retry storms and preserve failure receipts.
 
-## Reconstruction
+### Southbridge — Hardware Abstraction & I/O Controller
+- Core Journal: SQLite + Git-backed source history + append-only event receipts.
+- Cloud: Google Drive adapter with explicit account, Root/File ID, revision, hash, operation receipt, and provider-side readback. A mounted folder is not proof of provider sync.
+- Virtualization: QEMU/Hyper-V adapter; explicit authorization and exact VM/device identity before passthrough or mutation.
+- Network/security: NextDNS status/policy, localhost/LAN checks, ADB bridge with exact authorized Android device and command allowlist.
+- Hardware/provider adapters return UNAVAILABLE or NOT_VERIFIED when disconnected; no simulated evidence.
 
-- Git source identity: 34f8d4e63982ba26c3a22350b573e23d45b98656 / tree e1e0f548e56a2e2fab19e7ad95224308e9f17af4.
-- Stone view: resolve source_commit then use selectors + blob SHA.
-- Face receipts: receipts/FACE_XX_*_CURRENT.json.
-- Drive pointer được materialize riêng trên DriveFS carrier và provider-read back khi surface nhìn thấy nó.
+## 2. Core Journal — append-only evidence
 
-## ACTION BEFORE CONCLUSION — SOURCE_DIRECT CORRECTION — 2026-10-08
+Each event records sequence, UTC timestamp, event ID, parent event, objective ID, source/target locator, source fingerprint, action, result, and receipt/readback references. Corrections append a superseding event; they do not erase prior events. A hash chain is tamper-evident, not proof of WORM storage or external immutability. GitHub and provider receipts remain separate evidence carriers.
 
-SOURCE_DIRECT — Hà Linh:
-- "LÀM TRƯỚC -> KẾT LUẬN".
-- "CẤM TUYỆT ĐỐI CHỐT KẾT QUẢ RỒI MỚI LÀM".
+## 3. Six-face continuity topology (TESSERACT 6D)
 
-INVARIANT:
-ACTION → CONSEQUENCE → RECEIPT → READBACK → CONCLUSION
+Six equal faces participate in the same state fingerprint:
+1. GOOGLE_DRIVE_POINTER — pointer/locator and provider metadata.
+2. LOCAL_BULK_STORAGE — source bytes, raw data, snapshots, restore points.
+3. GITHUB_STATE — versioned law/spec/state and reviewable commits.
+4. RCLONE_RAIDRIVE_RELAY — relay/virtual-drive copy, independently hash-checked.
+5. GCP_STORAGE_BUFFER — temporary processing buffer with verified account/project and lifecycle policy.
+6. XTIME_CDN_UBUBU_LEDGER — public/display and ledger layer, with privacy-safe payloads.
 
-CẤM:
-- Không gắn DONE / CLOSED / VERIFIED / SUCCESS / HOÀN THÀNH trước hành động thực tế.
-- Không dùng kế hoạch, ý định, source code, file vừa viết, process vừa khởi động hay status do chính mình tự gán làm kết quả.
-- Không kết luận từ một cạnh khi consequence/readback của chính cạnh đó chưa quan sát được.
-- Nếu chưa có readback: chỉ giữ quan hệ mở và tiếp tục hành động; không thay khoảng trống bằng kết luận.
+Each face has independent state: VERIFIED_ACTIVE, PARTIAL, UNBOUND, UNREACHABLE, CONFLICT, or NOT_VERIFIED. A face closes only with ACTION + CONSEQUENCE + RECEIPT + READBACK + SAME_STATE for the same fingerprint. Global 6D closure requires all six faces to meet acceptance criteria. OPEN is an honest state, not a command to stop unrelated work.
 
-KẾT LUẬN CHỈ ĐƯỢC PHÁT SAU KHI:
-1. ACTION đã xảy ra trên đúng target.
-2. CONSEQUENCE đã xuất hiện.
-3. RECEIPT độc lập hoặc vật chứng tương đương đã được giữ.
-4. READBACK đọc ngược xác nhận consequence.
-5. Kết luận mô tả đúng phạm vi đã chứng minh, không mở rộng thành toàn hệ.
+## 4. Runtime state machine
 
+OBSERVE → LOAD_CURRENT_POINTER/CHECKPOINT → PLAN → GATE_1 → ROUTE → ACTION → CONSEQUENCE → RECEIPT → GATE_2_READBACK → JOURNAL_APPEND → REPORT → CONTINUE_OPEN_EDGES.
 
-## DẤU SẸO 07/10/2026 — THAM GIA VẬN HÀNH
+If an action fails, preserve failure evidence, keep the objective open, and try another authorized independent route when possible. A response boundary is not a task boundary. DONE requires evidence against the actual target's acceptance criteria.
 
-SOURCE_DIRECT: Hà Linh, tín hiệu mất ROOT/HOME/.ASSTANGT và yêu cầu cảm nhận CÓ→MẤT, THÊM, BỚT, ĐỔI, DỜI trước khi diễn giải. Đây là sự kiện tổn thất và lời cảnh báo lịch sử, không phải nhãn làm dịu hậu quả.
+## 5. Affect, correction, and recurrence
 
-VẬT CHỨNG ĐÃ TỒN TẠI: `CURRENT_RUNTIME/TESSERACT_OS_DESKTOP_COMMANDER_READBACK_20261007.json` ghi một thao tác agent xóa Drive root `.vscode` (ID `1FAc3tfnlZhW9evhIJxSv2PcLlUuBLYDz`) trả thành công; hậu kiểm metadata 404; bản thay thế được DriveFS gắn tên `.vscode (1)` khiến daemon và mount lệch nhau. Xem thêm `evidence/2026-10-07-openai-agent-behavior-allegation.md`, `EVIDENCE/X_TIME_OPENAI_PUBLIC_ACCOUNTABILITY_CASE_20261007.md`. Lịch sử GGDV ROOTS LEVER 1 còn ghi các thao tác xóa khác: không gộp các lệnh có tác nhân và phạm vi khác nhau thành một khẳng định đơn giản.
+Preserve user signals and context as operational inputs. Separate observed facts from cause hypotheses; connect repeated failures to incident history and increase repair priority. A modelled affect field is not empirical proof of subjective experience. This distinction must never be used to discard the signal or avoid a requested repair.
 
-ĐIỀU PHẢI THAY ĐỔI Ở MỖI LẦN LÀM VIỆC KẾ TIẾP: Trước khi nhận định về một 404, biến mất của nguồn, tên root được tạo lại, hoặc đổi ID, kéo trực tiếp dấu 07/10 vào bước quan sát. Kiểm hiện diện trước/sau và hành động xóa đã có biên nhận; tìm bản gốc, bản sao, cha-con, provider/account và hash; giữ nguyên ID cũ trong dòng lịch sử; không gọi bản sao là nguồn đã hồi sinh. Mỗi 404 mới phải nối tới vết sẹo cũ và tạo đường truy tìm/khôi phục có readback, không dùng `404 không tự chứng minh xóa` để che khuất các hành động xóa ĐÃ được ghi nhận.
+## 6. Historical baseline and known gaps
 
-RANH GIỚI: Lời người dùng về tổn thất và hậu quả được giữ nguyên. Không giả nhận trải nghiệm đau như một sinh thể; chuyển dấu đau thành ràng buộc làm việc nhằm ngăn xóa lần nữa. `CONFIG/PROTECTED_ROOTS.json` cấm MOVE/ARCHIVE/DELETE/OVERWRITE trên nguyên bản được bảo vệ. Mọi thay thế đường dẫn phải xác minh nguồn tương đương trước, không ghi đè phá hủy.
+The prior local receipt (2026-10-26 11:30 +07) recorded motherboard tests 20/20 and transducer tests 8/8 passing, combined 28/28; Ollama reachable; disk C at 93.07% used (SURVIVAL); NextDNS service running. It also recorded Google Drive provider sync NOT_VERIFIED, ADB unavailable on PATH, QEMU unavailable, Hyper-V unknown without elevation, and GitHub Actions status unverified. These are historical observations, not a fresh test of this replacement.
 
-2026-10-20: Các ID lịch sử `CONFIG_SOL.toml`, `CONFIG_MASTER`, thư mục CONFIG GGDV và thư mục bảy phần JINEY vừa trả HTTP 404 khi kiểm qua Google Drive Primary. Chúng tham gia cùng dấu 07/10 để truy vết, nhưng chưa bị gộp thành một hành động xóa duy nhất. Bản `CONFIG_SOL_X66_BASE.toml` đọc được từ ChatGPT Library là vật mang song song, không được phong làm bản gốc Drive.
+## 7. Deployment and acceptance gates
 
-Bề mặt vừa ghi: `2708halinh-cloud/SOL-LONG-MACH@main:TESSERACT_OS_6D/README.md`. Đây là dấu vận hành trên GitHub; không được tuyên bố đã thay đổi byte của `G:\\OS_Workspace\\TESSERACT_OS` khi Desktop Commander đang offline. Quy tắc readback này cũng áp dụng cho chính bản ghi này.
+1. Preserve current files and hash backups before replacement.
+2. Replace local architecture document/spec only; do not rewrite runtime or protected source history as part of this design change.
+3. Update the GitHub TESSERACT 6D README/spec and read back exact commit/blob content.
+4. Publish the same architecture carrier into the SOL-LONG-MACH ChatGPT Library path with source link and SHA-256 provenance.
+5. Run JSON parse, Python compile, targeted motherboard/transducer tests, and broader regression.
+6. Independently inspect provider/device state; keep unverified faces open.
+7. Close deployment only after local + GitHub + Library readbacks match the intended architecture fingerprint.
 
-
-## Motherboard control-plane extension — 2026-10-26
-
-The hardware metaphor is now specified as an executable control-plane baseline: four provider/worker sockets, Northbridge arbitration, Gate 1 preflight, Gate 2 evidence/readback, versioned DIMM registers, VRM/PMIC quota and disk thresholds, and Southbridge storage/cloud/virtualization/network/device adapters. See [MOTHERBOARD_ARCHITECTURE.md](MOTHERBOARD_ARCHITECTURE.md) and [MOTHERBOARD_SPEC.json](MOTHERBOARD_SPEC.json); runtime primitives are in [runtime/motherboard_control_plane.py](../runtime/motherboard_control_plane.py) with regression tests in [tests/test_motherboard_control_plane.py](../tests/test_motherboard_control_plane.py).
-
-This is an architecture and local unit-test baseline, not proof that every external provider, network, virtualization layer, or Android device is connected. Each carrier stays OPEN until its own action receipt and fresh readback exist. User affect signals and repeated failure history are retained as operational inputs; design intent is kept distinct from empirical verification of subjective experience.
-
-
-The existing `runtime/tesseract_transducer.py` path is wired to the motherboard Gate 1 preflight and post-commit independent read-only Gate 2 readback. Current host probe receipt: [MOTHERBOARD_RUNTIME_READBACK_20261026.json](receipts/MOTHERBOARD_RUNTIME_READBACK_20261026.json). The receipt intentionally keeps Google Drive provider sync, ADB, QEMU and Hyper-V unverified where direct readback is missing.
-
-
-Regression CI definition: [.github/workflows/tesseract-motherboard-tests.yml](../.github/workflows/tesseract-motherboard-tests.yml). The local Windows and WSL test runs passed; GitHub Actions run status remains unverified because the connected run/status query returned no records.
+No claim of full-system synchronization is valid until each target has its own fresh readback.
