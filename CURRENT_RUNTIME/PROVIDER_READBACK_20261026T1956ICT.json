@@ -1,0 +1,143 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "id": "PROVIDER_READBACK_20261026T1956ICT",
+  "observed_at": "2026-10-26T19:56:40+07:00",
+  "main_head_before_checkpoint": "c4498f7bf7c8a077115219f5eb34dda97b96de94",
+  "mandatory_reads": {
+    "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "605f3349bee8d9942d007cb69f7c5d4466b60d8a",
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "309f77ac262f4bf69bb0ec964b4eda9d020d6e93",
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "1c6955ccea2650dc9c793eec031904bdb8d4c2ca"
+  },
+  "provider_state": {
+    "dropbox": {
+      "account": "Outlook",
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "client_modified_utc": "2026-10-14T00:15:21Z",
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_readback": true,
+      "raw_csv_downloaded": false,
+      "content_hash_supplied_by_metadata": false
+    },
+    "windows": {
+      "device": "DESKTOP-86ITNQ4",
+      "remote_desktop_commander_inventory": "ONLINE",
+      "inventory_last_seen_approx": "3 minutes before inventory read",
+      "monthly_remote_calls_remaining_pct": 0,
+      "direct_host_readback_this_run": false,
+      "alternate_desktopcommande_route_probed": true,
+      "alternate_route_result": "No online device in the three eligible inventories; link_id eligibility error was corrected by using the connector's own account ids",
+      "physical_host_power_state": "NOT_INFERRED",
+      "last_direct_host_readback_local": "2026-10-26T18:18:27.2543636+07:00",
+      "last_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T111640684777Z.json",
+      "last_tick_sha256": "3E97CA42A2AD6C71DC43978B4616F0B740D6E33895AC3A2BA1F71D7D8E2EAECE",
+      "last_consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T111637672Z.json",
+      "last_consumer_sha256": "F814BF9C6E3DB4D63BE5D263CEF635CF91E04481D89E1B3CEAFFA30E6A08A0DA",
+      "source_sha256_last_verified": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "last_tick_consumer_source_hashes_matched": true,
+      "sensor_timestamp_groups": 4,
+      "timestamps_advanced": 0,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "wireless_adb_state": "NOT_LISTED",
+      "live_sensor_reading_confirmed": false,
+      "w32time": "Stopped/Manual",
+      "no_retry_or_reconnect": true
+    }
+  },
+  "independent_cloud_action": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
+    "execution_id": "212",
+    "execution_status": "success",
+    "execution_started_at_utc": "2026-10-26T12:56:38.120Z",
+    "execution_stopped_at_utc": "2026-10-26T12:56:40.181Z",
+    "event_id": "X20261026125640046_CLOUD",
+    "data_table_id": "Sk0EFJK5NzWVpBvm",
+    "row_id": 515,
+    "exact_event_id_readback": true,
+    "receipt_state": "OPEN_WORK_REMAINS",
+    "evidence_rows_seen": 514,
+    "recovery_rows_pending": 45,
+    "recovery_rows_terminal": 0,
+    "host_heartbeat_probed": false,
+    "host_operations": 0,
+    "task_closures_from_scan": 0
+  },
+  "tesseract_desktop": {
+    "pr_url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+    "state": "OPEN",
+    "draft": true,
+    "merged": false,
+    "head_sha": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+    "current_head_runs": [
+      {
+        "run_id": 40220813600,
+        "workflow": "tesseract-desktop-ci",
+        "conclusion": "failure"
+      },
+      {
+        "run_id": 40220813636,
+        "workflow": "validate-x-time",
+        "conclusion": "failure"
+      }
+    ],
+    "issuer_public_key_value_verified": false,
+    "runner_assignment_verified": false,
+    "prohibited_ci_rerun_performed": false
+  },
+  "companion_consequence_gate_pr43": {
+    "pr_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/43",
+    "state": "OPEN",
+    "draft": true,
+    "merged": false,
+    "mergeable": true,
+    "head_sha": "7d534e961ab9dad74677cee06fb21f1496c44b61",
+    "latest_test_run_id": 40323431187,
+    "latest_test_conclusion": "success",
+    "tests_passed": 10,
+    "secret_guard_run_id": 40323431205,
+    "secret_guard_conclusion": "success",
+    "runtime_integration_proven": false
+  },
+  "ledger_state_before_update": {
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "provider_observations": 234,
+    "provider_observation_history_length": 234,
+    "verified_action_events": 294,
+    "integrity_corrections": 21,
+    "task_closures": 0,
+    "cloud_recovery_rows_pending": 45,
+    "cloud_recovery_rows_terminal": 0
+  },
+  "preservation": {
+    "source_csv_modified": false,
+    "raw_sensor_values_published": false,
+    "credentials_written": false,
+    "synthetic_rows_added": 0,
+    "source_moved_or_deleted": false,
+    "modual_parameter_current_modified": false,
+    "prohibited_ci_rerun": false,
+    "pr_merge": false,
+    "force_push": false,
+    "task_closures": 0
+  },
+  "next_edges": [
+    "Read the next Windows Tick and consumer through a permitted host route; recompute source SHA-256 and inspect sensor timestamps before claiming recovery.",
+    "Keep the sensor stream OPEN; do not infer host power state from connector inventory or quota.",
+    "Keep all 45 cloud recovery rows and all 29 repository tasks nonterminal until task-specific evidence exists.",
+    "Continue authorized TESSERACT issuer-variable and runner-assignment provenance; do not repeat CI 39153474587 without a verified runner/workflow change.",
+    "Keep PR #43 draft and unmerged until its gate is verified in the actual runtime integration."
+  ]
+}
