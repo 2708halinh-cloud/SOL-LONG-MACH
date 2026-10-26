@@ -15511,6 +15511,69 @@
       "force_push": false,
       "source_archives_modified": false,
       "history_preserved": true
+    },
+    {
+      "id": "PROVIDER_AND_CLOUD_CONTINUATION_20261026T1009ICT",
+      "observed_at": "2026-10-26T10:09:27+07:00",
+      "kind": "VERIFIED_PROVIDER_READBACK_AND_INDEPENDENT_CLOUD_SCAN",
+      "action": "FRESH_READ_REQUIRED_SOURCES; READ_DROPBOX_METADATA; EXECUTE_N8N_MANUAL_PROBE; EXACT_READBACK_ROW_435; RECORD_CHECKPOINT_AND_ADVANCE_RESUME_POINTER",
+      "evidence": {
+        "checkpoint": {
+          "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1009ICT.json",
+          "blob_sha": "99280f8eb6db17cb5b78e19f89683f6f96d8952f",
+          "commit_sha": "15153d73714c04c234bcd733e977e50292748096",
+          "exact_target_readback": true
+        },
+        "resume_pointer_blob_sha_after_update": "6e5cf28bfa5ac11901693a4601916ebcccc68a80",
+        "resume_pointer_commit": "fefad491809aac684a08c7a79734b11371854ae9",
+        "reentry_blob_sha_after_append": "32c1f5628ce1e09dd1f1fb393e0a7a2a1adcddc0",
+        "reentry_commit": "4f3987886561b2bde2f5d61a3c1b09a94718eec9",
+        "cloud": {
+          "workflow_id": "BogzhFUDbRp7kuwh",
+          "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+          "execution_id": "185",
+          "status": "success",
+          "mode": "manual",
+          "event_id": "X20261026030927720_CLOUD",
+          "row_id": 435,
+          "table_id": "Sk0EFJK5NzWVpBvm",
+          "state": "OPEN_WORK_REMAINS",
+          "recovery_rows": 45,
+          "pending_rows": 45,
+          "terminal_rows": 0,
+          "host_heartbeat_probed": false,
+          "host_operations": 0,
+          "exact_row_readback": true,
+          "tasks_closed": 0
+        },
+        "dropbox": {
+          "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+          "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+          "revision": "0165dc1e4794ab00000000395cdfd73",
+          "size_bytes": 35389440,
+          "client_modified_utc": "2026-10-14T00:15:21Z",
+          "server_modified_utc": "2026-10-14T00:20:03Z",
+          "metadata_fresh_read": true,
+          "raw_source_downloaded": false
+        },
+        "route": {
+          "desktop_commander": "ALL_LISTED_DEVICES_OFFLINE",
+          "remote_desktop_commander": "ALL_LISTED_DEVICES_OFFLINE",
+          "host_power_state": "NOT_INFERRED",
+          "direct_host_readback_this_run": false
+        },
+        "task_count_before": 29,
+        "task_statuses_changed": false,
+        "tasks_closed": 0
+      },
+      "history_preserved": true,
+      "source_mutated": false,
+      "source_moved_or_deleted": false,
+      "secrets_written": false,
+      "raw_sensor_values_exported": false,
+      "pr_merged": false,
+      "force_push": false,
+      "ci_rerun_performed": false
     }
   ],
   "energy_protection_current": {
@@ -28120,6 +28183,15 @@
         "tasks_closed": 0,
         "all_29_tasks_retained_open": true
       }
+    },
+    {
+      "id": "PROVIDER_OBSERVATION_20261026T1009ICT",
+      "observed_at": "2026-10-26T10:09:27+07:00",
+      "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1009ICT.json",
+      "checkpoint_blob_sha": "99280f8eb6db17cb5b78e19f89683f6f96d8952f",
+      "checkpoint_commit": "15153d73714c04c234bcd733e977e50292748096",
+      "main_head_before_checkpoint": "fefad491809aac684a08c7a79734b11371854ae9",
+      "summary": "Fresh Dropbox Outlook metadata confirmed revision/size; both desktop device inventories offline without inferring host power; n8n execution 185 succeeded and exact row 435 was read back; 45 cloud recovery rows remain pending; TESSERACT PR #6 remains OPEN/Draft with current-head CI failures and no rerun."
     }
   ],
   "integrity_corrections": [
@@ -28251,92 +28323,42 @@
     }
   ],
   "latest_provider_readback": {
-    "observed_at": "2026-10-26T08:50:35.531+07:00",
-    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0850ICT.json",
-    "checkpoint_blob_sha": "e4b1f1a4319b0430b8e7fb16d6d1945508dd4499",
-    "checkpoint_commit": "38799b3065304e4413a354b8ec19b7182f1dcc65",
-    "main_head_before_checkpoint": "c32f8b7705b38a07b4770de259b7bb21b979ecf1",
+    "observed_at": "2026-10-26T10:09:27+07:00",
+    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1009ICT.json",
+    "checkpoint_blob_sha": "99280f8eb6db17cb5b78e19f89683f6f96d8952f",
+    "checkpoint_commit": "15153d73714c04c234bcd733e977e50292748096",
+    "main_head_before_checkpoint": "fefad491809aac684a08c7a79734b11371854ae9",
+    "dropbox": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "client_modified_utc": "2026-10-14T00:15:21Z",
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_fresh_read": true,
+      "raw_source_downloaded": false
+    },
+    "route": {
+      "desktop_commander": "ALL_LISTED_DEVICES_OFFLINE",
+      "remote_desktop_commander": "ALL_LISTED_DEVICES_OFFLINE",
+      "host_power_state": "NOT_INFERRED",
+      "direct_host_readback_this_run": false
+    },
     "windows_tick": {
-      "observed_at_host_local": "2026-10-26T08:44:21.951+07:00",
-      "host": "DESKTOP-86ITNQ4",
-      "task": {
-        "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
-        "state": "Ready",
-        "enabled": true,
-        "last_run_local": "2026-10-26T08:41:33+07:00",
-        "last_result": 0,
-        "next_run_local": "2026-10-26T08:46:32+07:00",
-        "missed_runs": 0
-      },
-      "source": {
-        "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
-        "bytes": 35389440,
-        "last_write_utc": "2026-10-23T08:45:56.2458701Z",
-        "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
-      },
-      "tick": {
-        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T014141874745Z.json",
-        "bytes": 1635,
-        "sha256": "697a91811497f510296f55d78b08b0c71bd31c9bd823ceb8820170efdd78415f",
-        "observed_at_utc": "2026-10-26T01:41:41.874745Z",
-        "probe_observed_at_utc": "2026-10-26T01:41:39.379250Z",
-        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-        "source_bytes": 35389440,
-        "live_sensor_reading_confirmed": false,
-        "targets": [
-          {
-            "role": "XIAOMI12_USB",
-            "target": "1056285",
-            "adb_state": "device",
-            "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
-            "sensor_event_timestamp_sensor_count": 4,
-            "sensor_event_sensors_advanced": []
-          },
-          {
-            "role": "REDMI_NOTE14PRO_WIRELESS",
-            "target": "192.168.1.14:5556",
-            "adb_state": "NOT_LISTED",
-            "sensor_event_stream_status": "NOT_PROBED",
-            "sensor_event_timestamp_sensor_count": 0,
-            "sensor_event_sensors_advanced": []
-          }
-        ]
-      },
-      "consumer": {
-        "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T014138227Z.json",
-        "bytes": 6945,
-        "sha256": "5175ed22203a0450262105c7b43a117d36917192558f6e216325116973c56f70",
-        "observed_at_utc": "2026-10-26T01:41:42.0354940Z",
-        "status": "SOURCE_OBSERVED_READONLY",
-        "exit_code": 0,
-        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-        "source_bytes": 35389440,
-        "consumer_hash_matches_verifier": true,
-        "source_content_hash_verified": true,
-        "live_sensor_reading_confirmed": false,
-        "tick_consistency": true,
-        "raw_rows_emitted": false,
-        "synthetic_rows_added": 0,
-        "cloud_export_enabled": false,
-        "github_push_enabled": false
-      },
-      "source_hash_matches_tick": true,
-      "source_hash_matches_consumer": true,
-      "previous_direct_probe": {
-        "observed_at_host_local": "2026-10-26T08:34:43.014+07:00",
-        "usb_event_timestamp_status": "EVENT_TIMESTAMP_STALE",
-        "usb_timestamps_advanced": 0,
-        "wireless_state": "NOT_LISTED",
-        "adb_connect_result": "TIMEOUT_WINERROR_10060"
-      },
-      "next_scheduled_tick_not_due_at_last_host_read": true
+      "latest_host_observation_at": "2026-10-26T10:01:12+07:00",
+      "direct_host_readback_this_run": false,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_reading_confirmed": false,
+      "status": "OPEN_PROVIDER_CARRIER_RESOLVED_WINDOWS_TICK_NOT_VERIFIED"
     },
     "cloud_continuity": {
       "workflow_id": "BogzhFUDbRp7kuwh",
-      "execution_id": "181",
+      "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+      "execution_id": "185",
       "status": "success",
-      "event_id": "X20261026010024098_CLOUD",
-      "row_id": 427,
+      "mode": "manual",
+      "event_id": "X20261026030927720_CLOUD",
+      "row_id": 435,
       "table_id": "Sk0EFJK5NzWVpBvm",
       "state": "OPEN_WORK_REMAINS",
       "recovery_rows": 45,
@@ -28344,81 +28366,34 @@
       "terminal_rows": 0,
       "host_heartbeat_probed": false,
       "host_operations": 0,
+      "exact_row_readback": true,
       "tasks_closed": 0
     },
-    "archive_pr36": {
-      "head": "00400b4f81a31293b1960ed1709280130cc25db3",
-      "compared_main_head": "c32f8b7705b38a07b4770de259b7bb21b979ecf1",
-      "status": "diverged",
-      "ahead_by": 14,
-      "behind_by": 35,
-      "merge_base": "cbb8e2074695670398d2ee9ca4462bbbd55cee7c",
-      "state_last_verified": "OPEN_DRAFT",
-      "merged": false,
-      "force_push": false
-    },
-    "modual_pr35": {
-      "head": "f99d96e39f62245d23ad728daac2c2006061e393",
-      "compared_main_head": "c32f8b7705b38a07b4770de259b7bb21b979ecf1",
-      "status": "diverged",
-      "ahead_by": 9,
-      "behind_by": 404,
-      "merge_base": "aa1c3ab3c4e1a377198566508fb3dd43214fc399",
-      "state_last_verified": "OPEN",
-      "merged": false,
-      "force_push": false
-    },
     "tesseract_pr6": {
+      "repository": "2708halinh-cloud/x-time-web",
+      "pr": 6,
+      "state": "OPEN",
+      "draft": true,
+      "merged": false,
       "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
-      "state_last_verified": "OPEN_DRAFT",
       "runs": [
         {
           "id": 40220813600,
+          "name": "tesseract-desktop-ci",
           "conclusion": "failure"
         },
         {
           "id": 40220813636,
+          "name": "validate-x-time",
           "conclusion": "failure"
         }
       ],
-      "issuer_public_key_value_verified": false,
+      "issuer_public_key_verified": false,
       "runner_assignment_verified": false,
-      "ci_rerun_performed": false
-    },
-    "braid_runtime": {
-      "source_script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
-      "source_script_sha256": "65e74121839c5bbcc35dc518c1999237d8267747b9fde26bd0c53a2d3c86e2e3",
-      "six_receipt": {
-        "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261026T013811029401Z.json",
-        "sha256": "a2278b481f34b8f2896316afc0c15e837eb0da11ac2c3b9776521aa27dd60d68",
-        "bytes": 3996,
-        "actions": 9,
-        "receipt_readback_ok": true,
-        "source_sha256_unchanged": true,
-        "mutation_executed": false
-      },
-      "plural_receipt": {
-        "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261026T013811194246Z.json",
-        "sha256": "b9d75814db8e3276290178098337641def324019b7b8fff66fdd5931b016ab9a",
-        "bytes": 2407,
-        "actions": 5,
-        "receipt_readback_ok": true,
-        "source_sha256_unchanged": true,
-        "mutation_executed": false
-      },
-      "cloud_host_wiring": "NOT_VERIFIED"
-    },
-    "exact_bulk_target_search": {
-      "pid": 50200,
-      "present_at_host_local": "2026-10-26T08:38:49.796+07:00",
-      "root": "W:\\Drive của tôi",
-      "last_output": "NO_NEW_OUTPUT",
-      "search_exhaustive": false,
-      "source_substitution": false,
-      "source_moved_or_deleted": false
+      "rerun_performed": false
     },
     "tasks_closed": 0,
-    "all_29_tasks_retained_open": true
+    "all_29_tasks_retained_nonterminal": true
   },
   "previous_latest_provider_readback_20261025T2321ICT": {
     "id": "PROVIDER_READBACK_20261025T2321ICT",
@@ -28954,7 +28929,7 @@
       "tasks_closed": 0
     }
   },
-  "provider_observations": 196,
+  "provider_observations": 197,
   "previous_latest_provider_readback_20261026T0025ICT": {
     "id": "PROVIDER_READBACK_20261026T0025ICT",
     "observed_at": "2026-10-26T00:25:25+07:00",
@@ -32389,32 +32364,71 @@
     "history_preserved": true
   },
   "latest_provider_observation": {
-    "id": "PROVIDER_READBACK_20261026T0542ICT",
-    "observed_at": "2026-10-26T05:42:43.0319943+07:00",
-    "record_type": "PROVIDER_READBACK",
-    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0542ICT.json",
-    "checkpoint_blob_sha": "a52dcc3c90307bbb1a37ccf7c63ba1c2cc53c390",
-    "checkpoint_commit": "423dc207d384be76f9829e01cb015cfef5b1c32e",
+    "id": "PROVIDER_OBSERVATION_20261026T1009ICT",
+    "observed_at": "2026-10-26T10:09:27+07:00",
+    "record_type": "FRESH_PROVIDER_AND_CLOUD_CONTINUATION",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1009ICT.json",
+    "checkpoint_blob_sha": "99280f8eb6db17cb5b78e19f89683f6f96d8952f",
+    "checkpoint_commit": "15153d73714c04c234bcd733e977e50292748096",
     "evidence": {
-      "tick_sha256": "4067d68297114155d867da523d50dff937355527eac54deb1b3a2fde288d247d",
-      "consumer_sha256": "47ab0e74be4473c4bbcab09d2ba2ab01d6ac2c839be4e6add62e22925440a28e",
-      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-      "source_bytes": 35389440,
-      "task_result": "0x0",
-      "missed_runs": 0,
-      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
-      "live_sensor_reading_confirmed": false,
-      "exact_bulk_target_exists": false,
-      "w_candidate_count": 3,
-      "w_exact_candidate_count": 0,
-      "w_search_exhaustive": false,
-      "archive_checks": "SUCCESS",
-      "archive_pr36_head": "692da0ccae224b66122af52875f8c9b038e05a48",
-      "tesseract_ci_rerun": false,
-      "n8n_execution_id": "176",
-      "n8n_status": "success",
-      "pending_rows": 45,
-      "wireless_adb_reconnect": "TIMEOUT_WINERROR_10060"
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "revision": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "client_modified_utc": "2026-10-14T00:15:21Z",
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_fresh_read": true,
+        "raw_source_downloaded": false
+      },
+      "route": {
+        "desktop_commander": "ALL_LISTED_DEVICES_OFFLINE",
+        "remote_desktop_commander": "ALL_LISTED_DEVICES_OFFLINE",
+        "host_power_state": "NOT_INFERRED",
+        "direct_host_readback_this_run": false
+      },
+      "cloud_continuity": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+        "execution_id": "185",
+        "status": "success",
+        "mode": "manual",
+        "event_id": "X20261026030927720_CLOUD",
+        "row_id": 435,
+        "table_id": "Sk0EFJK5NzWVpBvm",
+        "state": "OPEN_WORK_REMAINS",
+        "recovery_rows": 45,
+        "pending_rows": 45,
+        "terminal_rows": 0,
+        "host_heartbeat_probed": false,
+        "host_operations": 0,
+        "exact_row_readback": true,
+        "tasks_closed": 0
+      },
+      "tesseract_pr6": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "state": "OPEN",
+        "draft": true,
+        "merged": false,
+        "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+        "runs": [
+          {
+            "id": 40220813600,
+            "name": "tesseract-desktop-ci",
+            "conclusion": "failure"
+          },
+          {
+            "id": 40220813636,
+            "name": "validate-x-time",
+            "conclusion": "failure"
+          }
+        ],
+        "issuer_public_key_verified": false,
+        "runner_assignment_verified": false,
+        "rerun_performed": false
+      },
+      "task_count": 29
     },
     "tasks_closed": 0,
     "history_preserved": true,
@@ -32742,10 +32756,12 @@
   },
   "latest_cloud_continuity_readback": {
     "workflow_id": "BogzhFUDbRp7kuwh",
-    "execution_id": "181",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "execution_id": "185",
     "status": "success",
-    "event_id": "X20261026010024098_CLOUD",
-    "row_id": 427,
+    "mode": "manual",
+    "event_id": "X20261026030927720_CLOUD",
+    "row_id": 435,
     "table_id": "Sk0EFJK5NzWVpBvm",
     "state": "OPEN_WORK_REMAINS",
     "recovery_rows": 45,
@@ -32753,6 +32769,7 @@
     "terminal_rows": 0,
     "host_heartbeat_probed": false,
     "host_operations": 0,
+    "exact_row_readback": true,
     "tasks_closed": 0
   },
   "latest_archive_pr36_readback": {
@@ -32840,7 +32857,7 @@
     "source_archives_modified": false,
     "history_preserved": true
   },
-  "updated_at": "2026-10-26T09:58:06+07:00",
+  "updated_at": "2026-10-26T10:09:27+07:00",
   "latest_clock_integrity_correction": {
     "id": "IC_20261026T0609_HOST_CLOCK_OFFSET_NON_SYNCHRONOUS_PRIOR_ESTIMATE",
     "observed_at": "2026-10-26T06:09:56.211+07:00",
@@ -35109,5 +35126,412 @@
     "source_moved_or_deleted": false,
     "pr_merged": false,
     "force_push": false
+  },
+  "previous_latest_provider_readback_before_20261026T1009ICT": {
+    "observed_at": "2026-10-26T08:50:35.531+07:00",
+    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0850ICT.json",
+    "checkpoint_blob_sha": "e4b1f1a4319b0430b8e7fb16d6d1945508dd4499",
+    "checkpoint_commit": "38799b3065304e4413a354b8ec19b7182f1dcc65",
+    "main_head_before_checkpoint": "c32f8b7705b38a07b4770de259b7bb21b979ecf1",
+    "windows_tick": {
+      "observed_at_host_local": "2026-10-26T08:44:21.951+07:00",
+      "host": "DESKTOP-86ITNQ4",
+      "task": {
+        "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+        "state": "Ready",
+        "enabled": true,
+        "last_run_local": "2026-10-26T08:41:33+07:00",
+        "last_result": 0,
+        "next_run_local": "2026-10-26T08:46:32+07:00",
+        "missed_runs": 0
+      },
+      "source": {
+        "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "bytes": 35389440,
+        "last_write_utc": "2026-10-23T08:45:56.2458701Z",
+        "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+      },
+      "tick": {
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T014141874745Z.json",
+        "bytes": 1635,
+        "sha256": "697a91811497f510296f55d78b08b0c71bd31c9bd823ceb8820170efdd78415f",
+        "observed_at_utc": "2026-10-26T01:41:41.874745Z",
+        "probe_observed_at_utc": "2026-10-26T01:41:39.379250Z",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_bytes": 35389440,
+        "live_sensor_reading_confirmed": false,
+        "targets": [
+          {
+            "role": "XIAOMI12_USB",
+            "target": "1056285",
+            "adb_state": "device",
+            "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+            "sensor_event_timestamp_sensor_count": 4,
+            "sensor_event_sensors_advanced": []
+          },
+          {
+            "role": "REDMI_NOTE14PRO_WIRELESS",
+            "target": "192.168.1.14:5556",
+            "adb_state": "NOT_LISTED",
+            "sensor_event_stream_status": "NOT_PROBED",
+            "sensor_event_timestamp_sensor_count": 0,
+            "sensor_event_sensors_advanced": []
+          }
+        ]
+      },
+      "consumer": {
+        "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T014138227Z.json",
+        "bytes": 6945,
+        "sha256": "5175ed22203a0450262105c7b43a117d36917192558f6e216325116973c56f70",
+        "observed_at_utc": "2026-10-26T01:41:42.0354940Z",
+        "status": "SOURCE_OBSERVED_READONLY",
+        "exit_code": 0,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_bytes": 35389440,
+        "consumer_hash_matches_verifier": true,
+        "source_content_hash_verified": true,
+        "live_sensor_reading_confirmed": false,
+        "tick_consistency": true,
+        "raw_rows_emitted": false,
+        "synthetic_rows_added": 0,
+        "cloud_export_enabled": false,
+        "github_push_enabled": false
+      },
+      "source_hash_matches_tick": true,
+      "source_hash_matches_consumer": true,
+      "previous_direct_probe": {
+        "observed_at_host_local": "2026-10-26T08:34:43.014+07:00",
+        "usb_event_timestamp_status": "EVENT_TIMESTAMP_STALE",
+        "usb_timestamps_advanced": 0,
+        "wireless_state": "NOT_LISTED",
+        "adb_connect_result": "TIMEOUT_WINERROR_10060"
+      },
+      "next_scheduled_tick_not_due_at_last_host_read": true
+    },
+    "cloud_continuity": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "181",
+      "status": "success",
+      "event_id": "X20261026010024098_CLOUD",
+      "row_id": 427,
+      "table_id": "Sk0EFJK5NzWVpBvm",
+      "state": "OPEN_WORK_REMAINS",
+      "recovery_rows": 45,
+      "pending_rows": 45,
+      "terminal_rows": 0,
+      "host_heartbeat_probed": false,
+      "host_operations": 0,
+      "tasks_closed": 0
+    },
+    "archive_pr36": {
+      "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "compared_main_head": "c32f8b7705b38a07b4770de259b7bb21b979ecf1",
+      "status": "diverged",
+      "ahead_by": 14,
+      "behind_by": 35,
+      "merge_base": "cbb8e2074695670398d2ee9ca4462bbbd55cee7c",
+      "state_last_verified": "OPEN_DRAFT",
+      "merged": false,
+      "force_push": false
+    },
+    "modual_pr35": {
+      "head": "f99d96e39f62245d23ad728daac2c2006061e393",
+      "compared_main_head": "c32f8b7705b38a07b4770de259b7bb21b979ecf1",
+      "status": "diverged",
+      "ahead_by": 9,
+      "behind_by": 404,
+      "merge_base": "aa1c3ab3c4e1a377198566508fb3dd43214fc399",
+      "state_last_verified": "OPEN",
+      "merged": false,
+      "force_push": false
+    },
+    "tesseract_pr6": {
+      "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+      "state_last_verified": "OPEN_DRAFT",
+      "runs": [
+        {
+          "id": 40220813600,
+          "conclusion": "failure"
+        },
+        {
+          "id": 40220813636,
+          "conclusion": "failure"
+        }
+      ],
+      "issuer_public_key_value_verified": false,
+      "runner_assignment_verified": false,
+      "ci_rerun_performed": false
+    },
+    "braid_runtime": {
+      "source_script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+      "source_script_sha256": "65e74121839c5bbcc35dc518c1999237d8267747b9fde26bd0c53a2d3c86e2e3",
+      "six_receipt": {
+        "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261026T013811029401Z.json",
+        "sha256": "a2278b481f34b8f2896316afc0c15e837eb0da11ac2c3b9776521aa27dd60d68",
+        "bytes": 3996,
+        "actions": 9,
+        "receipt_readback_ok": true,
+        "source_sha256_unchanged": true,
+        "mutation_executed": false
+      },
+      "plural_receipt": {
+        "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261026T013811194246Z.json",
+        "sha256": "b9d75814db8e3276290178098337641def324019b7b8fff66fdd5931b016ab9a",
+        "bytes": 2407,
+        "actions": 5,
+        "receipt_readback_ok": true,
+        "source_sha256_unchanged": true,
+        "mutation_executed": false
+      },
+      "cloud_host_wiring": "NOT_VERIFIED"
+    },
+    "exact_bulk_target_search": {
+      "pid": 50200,
+      "present_at_host_local": "2026-10-26T08:38:49.796+07:00",
+      "root": "W:\\Drive của tôi",
+      "last_output": "NO_NEW_OUTPUT",
+      "search_exhaustive": false,
+      "source_substitution": false,
+      "source_moved_or_deleted": false
+    },
+    "tasks_closed": 0,
+    "all_29_tasks_retained_open": true
+  },
+  "previous_latest_provider_observation_before_20261026T1009ICT": {
+    "id": "PROVIDER_READBACK_20261026T0542ICT",
+    "observed_at": "2026-10-26T05:42:43.0319943+07:00",
+    "record_type": "PROVIDER_READBACK",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0542ICT.json",
+    "checkpoint_blob_sha": "a52dcc3c90307bbb1a37ccf7c63ba1c2cc53c390",
+    "checkpoint_commit": "423dc207d384be76f9829e01cb015cfef5b1c32e",
+    "evidence": {
+      "tick_sha256": "4067d68297114155d867da523d50dff937355527eac54deb1b3a2fde288d247d",
+      "consumer_sha256": "47ab0e74be4473c4bbcab09d2ba2ab01d6ac2c839be4e6add62e22925440a28e",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "task_result": "0x0",
+      "missed_runs": 0,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "live_sensor_reading_confirmed": false,
+      "exact_bulk_target_exists": false,
+      "w_candidate_count": 3,
+      "w_exact_candidate_count": 0,
+      "w_search_exhaustive": false,
+      "archive_checks": "SUCCESS",
+      "archive_pr36_head": "692da0ccae224b66122af52875f8c9b038e05a48",
+      "tesseract_ci_rerun": false,
+      "n8n_execution_id": "176",
+      "n8n_status": "success",
+      "pending_rows": 45,
+      "wireless_adb_reconnect": "TIMEOUT_WINERROR_10060"
+    },
+    "tasks_closed": 0,
+    "history_preserved": true,
+    "source_mutated": false,
+    "secrets_written": false,
+    "raw_sensor_values_exported": false
+  },
+  "latest_provider_readback_20261026T1009ICT": {
+    "observed_at": "2026-10-26T10:09:27+07:00",
+    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1009ICT.json",
+    "checkpoint_blob_sha": "99280f8eb6db17cb5b78e19f89683f6f96d8952f",
+    "checkpoint_commit": "15153d73714c04c234bcd733e977e50292748096",
+    "main_head_before_checkpoint": "fefad491809aac684a08c7a79734b11371854ae9",
+    "dropbox": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "client_modified_utc": "2026-10-14T00:15:21Z",
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_fresh_read": true,
+      "raw_source_downloaded": false
+    },
+    "route": {
+      "desktop_commander": "ALL_LISTED_DEVICES_OFFLINE",
+      "remote_desktop_commander": "ALL_LISTED_DEVICES_OFFLINE",
+      "host_power_state": "NOT_INFERRED",
+      "direct_host_readback_this_run": false
+    },
+    "windows_tick": {
+      "latest_host_observation_at": "2026-10-26T10:01:12+07:00",
+      "direct_host_readback_this_run": false,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_reading_confirmed": false,
+      "status": "OPEN_PROVIDER_CARRIER_RESOLVED_WINDOWS_TICK_NOT_VERIFIED"
+    },
+    "cloud_continuity": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+      "execution_id": "185",
+      "status": "success",
+      "mode": "manual",
+      "event_id": "X20261026030927720_CLOUD",
+      "row_id": 435,
+      "table_id": "Sk0EFJK5NzWVpBvm",
+      "state": "OPEN_WORK_REMAINS",
+      "recovery_rows": 45,
+      "pending_rows": 45,
+      "terminal_rows": 0,
+      "host_heartbeat_probed": false,
+      "host_operations": 0,
+      "exact_row_readback": true,
+      "tasks_closed": 0
+    },
+    "tesseract_pr6": {
+      "repository": "2708halinh-cloud/x-time-web",
+      "pr": 6,
+      "state": "OPEN",
+      "draft": true,
+      "merged": false,
+      "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+      "runs": [
+        {
+          "id": 40220813600,
+          "name": "tesseract-desktop-ci",
+          "conclusion": "failure"
+        },
+        {
+          "id": 40220813636,
+          "name": "validate-x-time",
+          "conclusion": "failure"
+        }
+      ],
+      "issuer_public_key_verified": false,
+      "runner_assignment_verified": false,
+      "rerun_performed": false
+    },
+    "tasks_closed": 0,
+    "all_29_tasks_retained_nonterminal": true
+  },
+  "latest_provider_observation_20261026T1009ICT": {
+    "id": "PROVIDER_OBSERVATION_20261026T1009ICT",
+    "observed_at": "2026-10-26T10:09:27+07:00",
+    "record_type": "FRESH_PROVIDER_AND_CLOUD_CONTINUATION",
+    "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1009ICT.json",
+    "checkpoint_blob_sha": "99280f8eb6db17cb5b78e19f89683f6f96d8952f",
+    "checkpoint_commit": "15153d73714c04c234bcd733e977e50292748096",
+    "evidence": {
+      "dropbox": {
+        "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+        "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+        "revision": "0165dc1e4794ab00000000395cdfd73",
+        "size_bytes": 35389440,
+        "client_modified_utc": "2026-10-14T00:15:21Z",
+        "server_modified_utc": "2026-10-14T00:20:03Z",
+        "metadata_fresh_read": true,
+        "raw_source_downloaded": false
+      },
+      "route": {
+        "desktop_commander": "ALL_LISTED_DEVICES_OFFLINE",
+        "remote_desktop_commander": "ALL_LISTED_DEVICES_OFFLINE",
+        "host_power_state": "NOT_INFERRED",
+        "direct_host_readback_this_run": false
+      },
+      "cloud_continuity": {
+        "workflow_id": "BogzhFUDbRp7kuwh",
+        "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+        "execution_id": "185",
+        "status": "success",
+        "mode": "manual",
+        "event_id": "X20261026030927720_CLOUD",
+        "row_id": 435,
+        "table_id": "Sk0EFJK5NzWVpBvm",
+        "state": "OPEN_WORK_REMAINS",
+        "recovery_rows": 45,
+        "pending_rows": 45,
+        "terminal_rows": 0,
+        "host_heartbeat_probed": false,
+        "host_operations": 0,
+        "exact_row_readback": true,
+        "tasks_closed": 0
+      },
+      "tesseract_pr6": {
+        "repository": "2708halinh-cloud/x-time-web",
+        "pr": 6,
+        "state": "OPEN",
+        "draft": true,
+        "merged": false,
+        "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+        "runs": [
+          {
+            "id": 40220813600,
+            "name": "tesseract-desktop-ci",
+            "conclusion": "failure"
+          },
+          {
+            "id": 40220813636,
+            "name": "validate-x-time",
+            "conclusion": "failure"
+          }
+        ],
+        "issuer_public_key_verified": false,
+        "runner_assignment_verified": false,
+        "rerun_performed": false
+      },
+      "task_count": 29
+    },
+    "tasks_closed": 0,
+    "history_preserved": true,
+    "source_mutated": false,
+    "secrets_written": false,
+    "raw_sensor_values_exported": false
+  },
+  "latest_cloud_continuity_readback_20261026T1009ICT": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "execution_id": "185",
+    "status": "success",
+    "mode": "manual",
+    "event_id": "X20261026030927720_CLOUD",
+    "row_id": 435,
+    "table_id": "Sk0EFJK5NzWVpBvm",
+    "state": "OPEN_WORK_REMAINS",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "host_heartbeat_probed": false,
+    "host_operations": 0,
+    "exact_row_readback": true,
+    "tasks_closed": 0
+  },
+  "latest_provider_metadata_readback_20261026T1009ICT": {
+    "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+    "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "size_bytes": 35389440,
+    "client_modified_utc": "2026-10-14T00:15:21Z",
+    "server_modified_utc": "2026-10-14T00:20:03Z",
+    "metadata_fresh_read": true,
+    "raw_source_downloaded": false
+  },
+  "latest_route_status_20261026T1009ICT": {
+    "desktop_commander": "ALL_LISTED_DEVICES_OFFLINE",
+    "remote_desktop_commander": "ALL_LISTED_DEVICES_OFFLINE",
+    "host_power_state": "NOT_INFERRED",
+    "direct_host_readback_this_run": false
+  },
+  "latest_tesseract_status_readback_20261026T1009ICT": {
+    "repository": "2708halinh-cloud/x-time-web",
+    "pr": 6,
+    "state": "OPEN",
+    "draft": true,
+    "merged": false,
+    "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+    "runs": [
+      {
+        "id": 40220813600,
+        "name": "tesseract-desktop-ci",
+        "conclusion": "failure"
+      },
+      {
+        "id": 40220813636,
+        "name": "validate-x-time",
+        "conclusion": "failure"
+      }
+    ],
+    "issuer_public_key_verified": false,
+    "runner_assignment_verified": false,
+    "rerun_performed": false
   }
 }
