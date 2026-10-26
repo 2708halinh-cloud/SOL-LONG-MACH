@@ -1618,3 +1618,67 @@ The 11:26 host-local scheduled cycle was directly read and verified. This sectio
 - Main head before this checkpoint: `7476af1b22c21524f8f50b1ba04f93bb945c6335`. The next host read is after host-local `11:56:32+07`; do not infer the cycle from runtime time.
 - No raw sensor values or credentials written to public GitHub; no source moved/deleted, no synthetic rows, no task terminalization, no PR merge/force-push, no prohibited CI rerun.
 <!-- END VERIFIED_FINAL_RECONCILIATION_20261026T1157ICT -->
+
+
+<!-- BEGIN VERIFIED_FINAL_RECONCILIATION_20261026T1250ICT -->
+## VERIFIED FINAL RECONCILIATION — 2026-10-26 12:50 ICT
+
+**Main head before this reentry append:** `454fac20721172d89c633610d001f6022bfd012b`.  
+**Checkpoint:** `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1250ICT.json`; commit `ce52fbf883afb529f6db2c7a828fccdac31a16bf`; blob `6338b0e2ab8b75002edb05134697a07e44e9d676`. Exact target was fetched and parsed.
+
+### Fresh source and provider reads
+
+| Source | Blob SHA read back |
+|---|---|
+| `AGENTS.md` | `f18f9743de1e21d13bad47770f928ec85e79bd95` |
+| `CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md` before append | `53469eaeb8a23f87bf4b5a1bc723fd2f169a56b6` |
+| `CURRENT_RUNTIME/TASK_RESUME_POINTER.json` | `94a4d71b5ba24331f8ea6b4ccfaa5f4641d9479b` |
+| `CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json` | `ac941e1acf31cbd771be52d089f9110d01d44709` |
+| `CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json` | `6bff9ea7340c0a855dfec5242bb0c09c8d16e32f` |
+| `MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json` | `06821bd4b9633f1843ae7d61d957168523575eae` |
+| `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1250ICT.json` | `6338b0e2ab8b75002edb05134697a07e44e9d676` |
+
+The two large JSON ledgers were read through their exact Git blob SHAs and parsed successfully; their normal file-content endpoint returned empty content, so no empty payload was used for writes.
+
+### Windows Tick and consumer — direct post-scheduled readback
+
+Remote Desktop Commander read `DESKTOP-86ITNQ4` directly at host-local `2026-10-26T12:44:53.0296008+07:00`. Scheduled task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M` was `Ready`, enabled, last run `12:41:33+07`, result `0`, missed runs `0`; next run at that sample was `12:46:32+07`.
+
+| Artifact | Exact readback |
+|---|---|
+| Tick | `D:\SENSOR_LOGS\state\WINDOWS_TICK_20261026T054138471961Z.json` |
+| Tick SHA-256 | `954f580bdc9470825c54704b7d26705d0ff57d8b2bdb485288684cef6523478c` |
+| Consumer | `D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261026T054135860Z.json` |
+| Consumer SHA-256 | `22e80c78d14fd7d6057c8b294ad73af74b54d3cdaec8df993614875dd1d0e059` |
+| Source | `D:\SENSOR_LOGS\windows_SENSON.CSV`, 35,389,440 bytes |
+| Independently recomputed source SHA-256 | `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87` |
+
+The source hash matches the Tick and consumer. Consumer remains `SOURCE_OBSERVED_READONLY`, exit `0`, `source_content_hash_verified=true`; no raw rows, synthetic rows, cloud export, GitHub push, or source write.
+
+The Tick's embedded device probe succeeded: ADB binary present, devices command succeeded, USB target `1056285` reported `device`; four sensor timestamp histories remained `EVENT_TIMESTAMP_STALE` and zero advanced. Wireless target `192.168.1.14:5556` remained `NOT_LISTED`/not probed. `W32Time` remained `Stopped/Manual`; no service or clock mutation was performed. **The production sensor stream remains unverified.**
+
+### Append-only evidence and provenance corrections
+
+- n8n workflow `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN` remains active; execution `191` succeeded and row `451` (`X20261026053538224_CLOUD`) was read back exactly. It is a cloud task-table scan only; host heartbeat was not probed. All 45 recovery rows remain pending.
+- Host evidence row `452` (`X20261026123211587_HOST_DIRECT_READBACK`) was preserved. Its receipt incorrectly stated that ADB was not probed.
+- Correction row `453` (`X20261026124257316_HOST_TICK_PROBE_READBACK_CORRECTION`) was appended and read back; it corrects that note using the exact Tick content. The old row was not rewritten.
+- Latest post-scheduled host evidence row `454` (`X20261026124453029_HOST_DIRECT_READBACK`) was appended and read back exactly. Its Tick and consumer hashes are listed above.
+- `MODUAL_PARAMETER_CURRENT.json`, `OPEN_TASKS_CURRENT.json`, `TASK_RESUME_POINTER.json`, and `CLOUD_CONTINUITY_RESUME_POINTER.json` were updated append-only and each target was fetched again. The cloud pointer's mistaken task-pointer SHA field was corrected from the old cloud-pointer SHA to `94a4d71b5ba24331f8ea6b4ccfaa5f4641d9479b`; the prior pointer snapshot and correction record remain in history.
+
+### Provider and independent branches
+
+- Dropbox Outlook metadata was freshly read for `/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV`: revision `0165dc1e4794ab00000000395cdfd73`, size `35,389,440`, server-modified `2026-10-14T00:20:03Z`, client-modified `2026-10-14T00:15:21Z`. The content hash `becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d` is from the Tick/consumer receipt, not from Dropbox metadata itself.
+- TESSERACT Desktop PR [#6](https://github.com/2708halinh-cloud/x-time-web/pull/6) remains OPEN/Draft at head `5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8`. Runs `40220813600` and `40220813636` remain failures; Windows build failed and self-hosted Windows verification was skipped. Issuer variable value and runner assignment are still unverified; the inspected workflow/search route did not establish either. No CI rerun.
+- At main head `454fac20721172d89c633610d001f6022bfd012b`, Archive PR #36 was 14 ahead / 185 behind and PR #37 was 3 ahead / 141 behind; both diverged and remain OPEN/Draft. These are the exact comparison snapshot at that head, before this reentry commit. No merge or force-push.
+- The separate MODUAL bulk carrier expected at 89,814,328 bytes with SHA-256 `b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3` remains unresolved. W: candidates do not match the expected size/hash and search exhaustiveness is unproven; no substitute was selected.
+
+### Current ledger and continuation
+
+The ledger still contains 29 nonterminal tasks: 10 `OPEN`, 2 `OPEN_CARRIED`, 13 `OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK`, 1 `OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED`, and 3 `IN_PROGRESS`. Provider observations: 209; verified action events: 243; integrity corrections: 11; task closures: 0.
+
+Next actions: after host-local `12:46:32+07`, exact-read the next Tick and consumer, recompute the source SHA-256, and inspect the embedded device probe. Continue read-only sensor-client/HWiNFO/ADB investigation; keep all 45 cloud recovery rows pending; continue authorized TESSERACT issuer/runner provenance work; refresh PR comparisons before any branch mutation. No task is terminal.
+
+**Safety/provenance:** no source mutation, move, or deletion; no raw sensor values or credentials written to public GitHub; no synthetic rows; no task closure; no PR merge/force-push; no prohibited CI rerun.
+
+<!-- END VERIFIED_FINAL_RECONCILIATION_20261026T1250ICT -->
+
