@@ -1584,3 +1584,37 @@ The 11:26 host-local scheduled cycle was directly read and verified. This sectio
 - Main head before this re-entry append: `172fa7282fa64144a05831d9e57b02836e184eee`. No raw sensor values or credentials were written to public GitHub. No source moved/deleted, no synthetic rows, no task terminalization, no PR merge/force-push, no prohibited CI rerun.
 - Next: read host after host-local `11:36:32+07` before deciding whether that scheduled cycle ran; continue read-only sensor-client diagnosis; keep 45 cloud tasks pending; use an authorized elevated route before any time-service change; verify TESSERACT settings only through an authorized settings route.
 <!-- END VERIFIED_FINAL_RECONCILIATION_20261026T1137ICT -->
+
+ 
+<!-- BEGIN VERIFIED_FINAL_RECONCILIATION_20261026T1157ICT -->
+## FINAL EXACT-TARGET RECONCILIATION — 2026-10-26 11:57 ICT
+
+### Latest direct host readback — scheduled cycle verified
+- Host sample: `2026-10-26T11:51:40.6838638+07:00`, `DESKTOP-86ITNQ4`, Remote Desktop Commander online.
+- Scheduled task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M`: enabled, `Ready`; last run `11:51:33+07`, result `0`, next run `11:56:32+07` at sample time, missed runs `0`.
+- Tick: `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T045138622926Z.json`; SHA-256 `10488498be97e67b56e4b7ba90e2a3a6919053be5ef23f4d15ff9aef3736bc8f`; observed `2026-10-26T04:51:38.622926Z`.
+- Consumer: `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T045135987Z.json`; SHA-256 `1471ec7e80342a8c58c3c3b28254a7978476c17c6452e9c3b00eba07470a4399`; observed `2026-10-26T04:51:38.7288746Z`; `SOURCE_OBSERVED_READONLY`, exit `0`.
+- Source `D:\\SENSOR_LOGS\\windows_SENSON.CSV`: 35,389,440 bytes; SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`. Direct readback confirms the Tick source hash and consumer source hash both match. Content-hash verifier matched. Raw rows emitted `false`, synthetic rows `0`, cloud export `false`, GitHub push `false`; source unchanged.
+- **Live sensor stream remains unverified:** USB ADB `1056285` responds, but four event timestamps are stale and zero advanced; wireless ADB `192.168.1.14:5556` is `NOT_LISTED`. `W32Time` remains `STOPPED/MANUAL`; no clock or service configuration change attempted.
+
+### Provider and independent cloud branch
+- Dropbox metadata re-read: `/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV`, revision `0165dc1e4794ab00000000395cdfd73`, size 35,389,440 bytes, `server_modified=2026-10-14T00:20:03Z`. Raw CSV not downloaded.
+- n8n execution `189` succeeded; event `X20261026044855207_CLOUD`, row `444` was exact-read back. State `OPEN_WORK_REMAINS`; 45 recovery rows remain pending, 0 terminal. Evidence is from source task tables only; host heartbeat was not probed and no host operation was attributed to this scan.
+- Braid `prove_braid_actual_20261020.py` executed on host with exit `0`; SIX receipt SHA-256 `2796db3ff21323c72b7c01c3b824af932f952abb06709270b98277fcf902bfb6`, readback succeeded; PLURAL receipt readback succeeded. No mutation; cloud-host wiring remains `NOT_VERIFIED`.
+
+### TESSERACT and archive PR state
+- TESSERACT Desktop [PR #6](https://github.com/2708halinh-cloud/x-time-web/pull/6) remains OPEN/Draft, head `5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8`. Runs `40220813600` and `40220813636` are failures; the job API exposes no step payload and the PR event skipped `selfhosted_windows_verify`. Workflow source references `XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64`; variable value and runner assignment are not verified. No CI rerun.
+- Archive [PR #36](https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36): 14 ahead / 162 behind; [PR #37](https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37): 3 ahead / 118 behind. Both diverged at main head `7476af1b22c21524f8f50b1ba04f93bb945c6335`, remain OPEN/Draft. No merge, force-push or branch mutation.
+
+### Exact-target readback after checkpoint
+| Target | Commit | Blob SHA |
+|---|---|---|
+| `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1157ICT.json` | `4c6aec239834e617d5e2e62254c13ce235c9a6f5` | `5f6dae3477ab8fa5e80f88ec4d1291b4b6040d0f` |
+| `CURRENT_RUNTIME/TASK_RESUME_POINTER.json` | `62830a1625582101fa511f1085aed43923b50f6d` | `da58eff304e0898fcd5d076da2e8a172039e1f8a` |
+| `CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json` | `b9a7c38330f50dcc9241affb462cd627543fbc5e` | `538cf60dbd870a862f0db5ee0cdb1fc5e4e01e6d` |
+| `MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json` | `1225938e6287250d878bcdade58b9bf88febbfbd` | `647dc6255048636f22d296118755b0bffe0aceb2` |
+
+- The ledger still preserves all 29 task IDs and unchanged status counts: 10 OPEN, 2 OPEN_CARRIED, 13 OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK, 1 OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED, 3 IN_PROGRESS. Provider observations: 207; verified action events: 239; task closures: 0.
+- Main head before this checkpoint: `7476af1b22c21524f8f50b1ba04f93bb945c6335`. The next host read is after host-local `11:56:32+07`; do not infer the cycle from runtime time.
+- No raw sensor values or credentials written to public GitHub; no source moved/deleted, no synthetic rows, no task terminalization, no PR merge/force-push, no prohibited CI rerun.
+<!-- END VERIFIED_FINAL_RECONCILIATION_20261026T1157ICT -->
