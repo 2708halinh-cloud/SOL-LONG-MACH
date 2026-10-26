@@ -71,10 +71,13 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     if not isinstance(identity_status, str) or not identity_status.strip():
         errors.append("IDENTITY_STATUS_REQUIRED")
 
-    if identity_status == "VERIFIED" and (
-        not _nonempty_string(agent_id) or manifest.get("independent_readback") is not True
-    ):
-        errors.append("VERIFIED_STATUS_REQUIRES_ID_AND_BOOLEAN_READBACK")
+    # Treat case/whitespace variants of VERIFIED as attempted verification,
+    # then reject non-canonical spelling rather than bypassing the gate.
+    if isinstance(identity_status, str) and identity_status.strip().upper() == "VERIFIED":
+        if identity_status != "VERIFIED":
+            errors.append("IDENTITY_STATUS_NONCANONICAL")
+        if not _nonempty_string(agent_id) or manifest.get("independent_readback") is not True:
+            errors.append("VERIFIED_STATUS_REQUIRES_ID_AND_BOOLEAN_READBACK")
 
     return errors
 
