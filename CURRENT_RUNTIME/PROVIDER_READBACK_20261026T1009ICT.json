@@ -47,7 +47,7 @@
       "read": true
     },
     "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
-      "blob_sha": "54470d93a70ed749e571d54b401013a060ca9b69b",
+      "blob_sha": "54470d93a70ed749d157a31ae4c6ce7d972791dc",
       "read": true
     }
   },
@@ -170,5 +170,18 @@
     "Keep all 45 cloud recovery rows pending; the new execution is a deterministic table scan only and did not probe host heartbeat.",
     "Continue TESSERACT issuer-key and runner-assignment provenance without rerunning failed-before-step CI.",
     "Reconcile TASK_RESUME_POINTER.json to a newer checkpoint only through a verified append-preserving route; do not replace the large ledger with a partial response."
-  ]
+  ],
+  "integrity_corrections": [
+    {
+      "id": "CHECKPOINT_HASH_REFERENCE_CORRECTION_20261026T1010ICT",
+      "observed_at": "2026-10-26T10:10:00+07:00",
+      "target": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+      "prior_checkpoint_claimed_blob_sha": "54470d93a70ed749e571d54b401013a060ca9b69b",
+      "corrected_blob_sha": "54470d93a70ed749d157a31ae4c6ce7d972791dc",
+      "correction_scope": "Checkpoint metadata reference only; the source file was not modified.",
+      "prior_checkpoint_blob_sha": "99280f8eb6db17cb5b78e19f89683f6f96d8952f",
+      "prior_checkpoint_preserved_in_git_history": true
+    }
+  ],
+  "corrected_at": "2026-10-26T10:10:00+07:00"
 }
