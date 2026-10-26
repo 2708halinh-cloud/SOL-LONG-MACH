@@ -1286,3 +1286,55 @@ The preceding delta rendered Windows path separators doubled in Markdown. The ca
 
 This corrects path rendering only. It does not alter the receipts, source bytes, source hash, task state, or provider revision. Exact-target verification must use these single-separator paths.
 <!-- END WINDOWS_PATH_ESCAPING_CORRECTION_20261026T1002ICT -->
+
+
+<!-- BEGIN VERIFIED_PROVIDER_CLOUD_CONTINUATION_DELTA_20261026T1009ICT -->
+## DELTA — FRESH PROVIDER READBACK + INDEPENDENT CLOUD CONTINUATION — 2026-10-26 10:09 ICT
+
+SOURCE_DIRECT: Continue the MODUAL route and independent cloud-eligible work. A connector outage is not a global stop; no unfinished task is terminalized by a scan-only receipt.
+
+### Fresh source reads
+- `AGENTS.md`: blob `f18f9743de1e21d13bad47770f928ec85e79bd95`, read.
+- `CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md` before this append: blob `bc29e97c0fdf9aa9f2e0359d47bebdf3ec63549d`, read.
+- `CURRENT_RUNTIME/TASK_RESUME_POINTER.json`: exact Git blob read and parsed; blob `fbcd32aa6829b41ea7286cfee3a72005776f0747`. It still points to `PROVIDER_READBACK_20261026T0950ICT.json`; pointer timestamp is `2026-10-26T09:52:36+07:00`. Reconciliation to newer host/time-service and cloud evidence remains OPEN.
+- `CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json`: exact Git blob read and parsed; blob `fbce9e3e8992ae6f7c5d7e405462dd2a1570e1e2`, updated `2026-10-26T09:58:06+07:00`. 29 tasks remain nonterminal: 10 OPEN, 2 OPEN_CARRIED, 13 OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK, 1 OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED, and 3 IN_PROGRESS. No task status was changed.
+- The large pointer and ledger were read through exact Git blobs because the file-content endpoint returned empty content for these large JSON files; no partial response was written back.
+
+### Fresh Dropbox metadata
+Exact path `/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV`, file id `id:gvG29tEleJwAAAAAAAACOw`:
+- revision `0165dc1e4794ab00000000395cdfd73`
+- size `35,389,440` bytes
+- client modified `2026-10-14T00:15:21Z`
+- server modified `2026-10-14T00:20:03Z`
+- metadata was read directly from the Dropbox Outlook connector; no raw CSV bytes were downloaded and no content hash was inferred from metadata.
+
+### Windows Tick / consumer boundary
+- Both Desktop Commander and Remote Desktop Commander device inventories currently report all listed devices offline. Host power state is **NOT_INFERRED**; no new host-side Tick was read in this run.
+- Latest host evidence available in the prior source delta remains the Tick `D:\SENSOR_LOGS\state\WINDOWS_TICK_20261026T025421528082Z.json`, SHA-256 `4a67e48b76e7b9bbb8ec559ef29f300553afe62364e0031c17cb53a936b62972`, with zero sensor timestamps advanced and `live_sensor_reading_confirmed=false`.
+- Matching consumer `D:\SENSOR_LOGS\receipts\telemetry_buffer_sync_20261026T025417514Z.json`, SHA-256 `28836e88c7e73be751693e6a034a8fc556990ab020abbae61914e17df7e405bc`, returned `SOURCE_OBSERVED_READONLY`, exit 0. This confirms consumer execution, not sensor-stream recovery.
+- `W32Time` remained Stopped / Manual at the latest host read; the prior start attempt failed with `Cannot open W32Time service on computer '.'`. No clock change was attempted.
+- Status remains `OPEN_PROVIDER_CARRIER_RESOLVED_WINDOWS_TICK_NOT_VERIFIED`.
+
+### Independent cloud branch — actual execution and exact row readback
+- Workflow `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN` (`BogzhFUDbRp7kuwh`) was fresh-read as active; workflow details show a deterministic scan that appends a receipt and does not modify raw source data.
+- Executed its existing `Manual probe` trigger: execution `185`, status `success`, started `2026-10-26T03:09:25.829Z`, stopped `2026-10-26T03:09:27.853Z`.
+- Exact readback from data table `AISSTANGT_MANAGE_CONTINUITY_20261020`, row id `435`, event `X20261026030927720_CLOUD`, state `OPEN_WORK_REMAINS`, evidence level `N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED`.
+- Receipt reports 45 recovery tasks, 45 pending, 0 terminal; 6 selected targets were cloud-eligible. Host heartbeat was not probed and host operations remained 0. This is an actual cloud-side append, not proof of host recovery or completion of any recovery task.
+
+### TESSERACT and archive branch status
+- Fresh PR read: `https://github.com/2708halinh-cloud/x-time-web/pull/6` remains OPEN/Draft/unmerged at head `5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8`. Current observed runs `40220813600` (`tesseract-desktop-ci`) and `40220813636` (`validate-x-time`) failed. Issuer public key and runner assignment remain unverified; no CI rerun was performed, including no repeat of run `39153474587`.
+- Archive PR #37 remains OPEN/Draft/unmerged. No merge or force-push was performed; compare against the newest main ref again before any branch mutation.
+
+### Checkpoint artifact and exact-target readback
+- Created `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1009ICT.json`.
+- Creation commit: `15153d73714c04c234bcd733e977e50292748096`.
+- Exact-target readback blob SHA: `99280f8eb6db17cb5b78e19f89683f6f96d8952f`.
+- Readback confirmed event `X20261026030927720_CLOUD`, row `435`, Dropbox revision `0165dc1e4794ab00000000395cdfd73`, and 45 pending cloud recovery rows.
+
+### Safety / next edges
+No task closed; no ledger status changed; no raw sensor values or credentials written to public GitHub; no source file written, moved, or deleted; no synthetic rows; no PR merge/force-push; no CI rerun.
+1. When an authorized host route returns, exact-read the scheduled Tick after `09:56:32+07` and its matching consumer, verify timestamp advancement, and continue W32Time permission diagnosis without changing the clock.
+2. Keep all 45 cloud recovery rows pending until task-specific evidence exists; the host heartbeat remains unprobed.
+3. Continue TESSERACT issuer-key/runner-assignment provenance without rerunning fail-before-step CI.
+4. Reconcile the resume pointer to the newer checkpoint through a verified append-preserving route; do not replace either large JSON source with partial connector output.
+<!-- END VERIFIED_PROVIDER_CLOUD_CONTINUATION_DELTA_20261026T1009ICT -->
