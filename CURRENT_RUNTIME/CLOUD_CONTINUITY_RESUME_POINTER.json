@@ -1,8 +1,8 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-26T01:49:09.936Z",
-  "updated_at_local": "2026-10-26T08:49:09.936+07:00",
+  "updated_at_utc": "2026-10-26T03:13:47.417Z",
+  "updated_at_local": "2026-10-26T10:13:47.417+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended evidence row, not host event time. Latest host tick event time is recorded separately from provider timestamps; cloud/provider and host clocks are not offset-corrected or conflated.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0655ICT.json",
@@ -405,6 +405,64 @@
       "search_state": "RUNNING_READ_ONLY_NO_OUTPUT_YET",
       "tasks_closed": 0,
       "readback_verified": true
+    },
+    {
+      "type": "HOST_DIRECT_READBACK_ROW_434",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 434,
+      "event_id": "X20261026030206534_HOST_DIRECT_READBACK",
+      "provider_created_at_utc": "2026-10-26T03:08:34.877Z",
+      "host_observed_at_local": "2026-10-26T10:02:06.5343214+07:00",
+      "readback_verified": true,
+      "tick_sha256": "6296B062125A7E18166B16B18CB938FE4F0F50C8217C69C132DFF7639ABBEEE1",
+      "consumer_sha256": "14B2485FDD1B6D9D5A9DCB94B6334EBE94C15A711662855E27DD1BAD93369B59",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true,
+      "scheduler_next_run_local": "2026-10-26T10:06:32+07:00",
+      "process_50200_present": false
+    },
+    {
+      "type": "CLOUD_SCAN_ROW_435_EXECUTION_185",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 435,
+      "event_id": "X20261026030927720_CLOUD",
+      "provider_created_at_utc": "2026-10-26T03:09:27.790Z",
+      "execution_id": "185",
+      "execution_status": "success",
+      "scope": "CLOUD_HEARTBEAT_ONLY_HOST_HEARTBEAT_NOT_PROBED",
+      "recovery_rows": 45,
+      "unfinished_rows": 45,
+      "tasks_closed": 0
+    },
+    {
+      "type": "MODUAL_SEARCH_REENTRY_ROW_436",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 436,
+      "event_id": "X20261026030501386_MODUAL_SEARCH_REENTRY",
+      "provider_created_at_utc": "2026-10-26T03:10:38.385Z",
+      "exact_name_searches": "NO_MATCHES_WITHIN_TIMEBOXED_SEARCHES",
+      "search_completeness": "UNVERIFIED",
+      "previous_search_pid": 50200,
+      "process_termination": false,
+      "source_substitution": false
+    },
+    {
+      "type": "HOST_DIRECT_READBACK_ROW_437",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 437,
+      "event_id": "X20261026030731862_HOST_DIRECT_READBACK",
+      "provider_created_at_utc": "2026-10-26T03:13:47.417Z",
+      "host_observed_at_local": "2026-10-26T10:07:31.8623615+07:00",
+      "readback_verified": true,
+      "tick_sha256": "926B8041BA356DAB11B935ADC95763F4F00060D1E22F646A438068E7B43FAE09",
+      "consumer_sha256": "C9EE7B7EBAA14AF100322E8D3DCB7EBEF53D58F775AA71C2CDACC10B48835B17",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true,
+      "scheduler_last_run_local": "2026-10-26T10:06:33+07:00",
+      "scheduler_next_run_local": "2026-10-26T10:11:32+07:00",
+      "live_sensor_reading_confirmed": false,
+      "modual_search_pid": 8928,
+      "modual_search_state": "RUNNING_READ_ONLY_NO_OUTPUT_YET"
     }
   ],
   "n8n": {
@@ -596,14 +654,13 @@
     "tasks_closed": 0
   },
   "next": [
-    "Continue from this updated resume pointer and n8n evidence row #430; do not restart from scratch.",
-    "Verify the next Windows tick and consumer after host-clock scheduled run 2026-10-26T08:46:32+07:00. Host readback at 08:43:18 showed that run still in the future according to the host clock; keep cloud/provider timestamps separate and infer no clock offset.",
-    "Poll the existing read-only MODUAL search PID 50200; record exact candidate size/SHA and access errors if output appears. Do not restart or terminate it.",
-    "Keep sensor stream OPEN until event timestamps advance and a live reading is confirmed; Xiaomi 12 is connected but stale, Redmi Note 14 Pro is not listed.",
-    "Keep SV-20261020-02 OPEN; raw ZIP SHA is verified, but recovery row #2 remains stale and third Project raw-byte access is NOT_AUTHORIZED. Do not claim completion or alter the status without an exposed authorized update operation.",
-    "Keep SV-20261020-01-READBACK OPEN for future sync. Five Library logs have freshly recomputed SHA-256 values and exact GitHub main text matches; watch for a future revision delta.",
-    "Keep PR #36 OPEN/Draft. Pre-pointer-commit comparison was 14 ahead/30 behind and GitHub reported mergeable=true; this does not authorize merge. Do not merge or force-push, and avoid routine heartbeat-only main commits.",
-    "Refresh PR #36 compare after this pointer commit without creating another commit solely to mirror that comparison."
+    "Continue from this pointer and n8n evidence row #437; do not restart from scratch.",
+    "Verify the next Windows tick and consumer after host-clock scheduled run 2026-10-26T10:11:32+07:00; recompute both file SHA-256 values and independently recompute the source hash. Keep cloud/provider and host clocks separate.",
+    "Poll the existing read-only MODUAL search process PID 8928 for exact candidate path, byte count, SHA-256 and access-error count. It has produced no output yet; do not terminate it. Exact MODUAL source remains unverified.",
+    "Keep the sensor stream OPEN until event timestamps advance and a live reading is confirmed; Xiaomi 12 remains stale and Redmi Note 14 Pro is not listed.",
+    "Keep SV-20261020-02 OPEN; the historical ZIP hash is verified but third Project raw-byte access is NOT_AUTHORIZED and recovery row #2 remains stale.",
+    "Keep SV-20261020-01-READBACK OPEN for future sync; do not close from current content match alone.",
+    "Keep PR #36 OPEN/Draft. Current pre-pointer comparison is 14 ahead and 65 behind; do not merge or force-push. Avoid heartbeat-only main commits."
   ],
   "modual_control_state": {
     "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
@@ -670,48 +727,48 @@
     }
   },
   "current_readback": {
-    "provider_created_at_utc": "2026-10-26T01:49:09.936Z",
+    "provider_created_at_utc": "2026-10-26T03:13:47.417Z",
     "latest_cloud_execution": {
       "workflow_id": "BogzhFUDbRp7kuwh",
-      "execution_id": "181",
+      "execution_id": "185",
       "status": "success",
-      "started_at_utc": "2026-10-26T01:00:22.076Z",
-      "stopped_at_utc": "2026-10-26T01:00:24.243Z",
+      "mode": "manual",
+      "started_at_utc": "2026-10-26T03:09:25.829Z",
+      "stopped_at_utc": "2026-10-26T03:09:27.853Z",
       "scope": "CLOUD_HEARTBEAT_ONLY_HOST_HEARTBEAT_NOT_PROBED"
     },
-    "latest_cloud_evidence_row_id": 427,
-    "latest_host_evidence_row_id": 430,
-    "evidence_table_rows": 430,
+    "latest_cloud_evidence_row_id": 435,
+    "latest_host_evidence_row_id": 437,
+    "evidence_table_rows": 437,
     "recovery_rows": 45,
     "unfinished_rows": 45,
     "terminal_rows": 0,
     "tasks_closed": 0,
     "latest_host_tick": {
-      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T014141874745Z.json",
-      "observed_at_utc": "2026-10-26T01:41:41.874745Z",
-      "sha256": "697A91811497F510296F55D78B08B0C71BD31C9BD823CEB8820170EFDD78415F"
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T030640627161Z.json",
+      "observed_at_utc": "2026-10-26T03:06:40.627161Z",
+      "sha256": "926B8041BA356DAB11B935ADC95763F4F00060D1E22F646A438068E7B43FAE09"
     },
     "latest_consumer": {
-      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T014138227Z.json",
-      "observed_at_utc": "2026-10-26T01:41:42.035494Z",
-      "sha256": "5175ED22203A0450262105C7B43A117D36917192558F6E216325116973C56F70",
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T030637068Z.json",
+      "observed_at_utc": "2026-10-26T03:06:40.8533888Z",
+      "sha256": "C9EE7B7EBAA14AF100322E8D3DCB7EBEF53D58F775AA71C2CDACC10B48835B17",
       "hash_matches_verifier": true
     },
     "source": {
       "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
       "bytes": 35389440,
       "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
-      "recomputed_sha256_matches": true,
-      "source_modified_utc": "2026-10-23T08:45:56.2458701Z"
+      "recomputed_sha256_matches": true
     },
     "scheduler": {
       "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
       "state": "Ready",
-      "last_run_local": "2026-10-26T08:41:33+07:00",
+      "last_run_local": "2026-10-26T10:06:33+07:00",
       "last_result": 0,
-      "next_run_local": "2026-10-26T08:46:32+07:00",
-      "missed_runs": 0,
-      "host_clock_at_readback": "2026-10-26T08:43:18.8416483+07:00"
+      "next_run_local": "2026-10-26T10:11:32+07:00",
+      "missed_runs": "NOT_RECHECKED_IN_LATEST_SNAPSHOT",
+      "host_clock_at_readback": "2026-10-26T10:09:56.7151054+07:00"
     },
     "devices": {
       "xiaomi12": "ADB_RESPONDED_SENSOR_EVENT_TIMESTAMP_STALE",
@@ -719,9 +776,20 @@
       "live_sensor_reading_confirmed": false
     },
     "modual_search": {
-      "pid": 50200,
+      "expected_bytes": 89814328,
+      "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+      "previous_pid": 50200,
+      "previous_pid_present": false,
+      "active_search_process_pid": 8928,
       "state": "RUNNING_READ_ONLY_NO_OUTPUT_YET",
-      "process_terminated": false
+      "roots": [
+        "D:\\",
+        "W:\\Drive của tôi"
+      ],
+      "exact_name_searches": "NO_MATCHES_IN_TIMEBOXED_SEARCHES_SEARCH_COMPLETENESS_UNVERIFIED",
+      "source_verified": false,
+      "source_substitution_performed": false,
+      "process_termination": false
     },
     "five_wave_logs": {
       "library_raw_sha256_recomputed": true,
@@ -741,6 +809,26 @@
     "source_mutated": false,
     "raw_sensor_values_exported": false,
     "google_drive_written": false,
-    "process_termination": false
+    "process_termination": false,
+    "github": {
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "task_ledger_blob_sha": "fbce9e3e8992ae6f7c5d7e405462dd2a1570e1e2",
+      "task_ledger_size_bytes": 1888154,
+      "task_count_last_verified": 29,
+      "task_count_current": "NOT_RECOUNTED",
+      "tasks_closed": 0,
+      "pr36_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+      "pr36_state": "OPEN",
+      "pr36_draft": true,
+      "pr36_merged": false,
+      "pr36_head_sha": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "compare_main_sha_before_pointer_update": "e98da81c1229ae01255bbb29e63aab178bc604cd",
+      "pr36_compare_status_before_pointer_update": "diverged",
+      "pr36_ahead_by_before_pointer_update": 14,
+      "pr36_behind_by_before_pointer_update": 65,
+      "pr36_mergeable_before_pointer_update": false,
+      "compare_precedes_pointer_commit": true,
+      "merge_or_force_push": false
+    }
   }
 }
