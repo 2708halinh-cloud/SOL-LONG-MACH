@@ -1511,3 +1511,39 @@ This append reconciles the current provider checkpoint with the current runtime 
 - Main head before this final re-entry append: `ead7f116397f8e54cb535f2896097288a3726dd7`.
 - Final status remains `PARTIALLY_EXECUTED_ALL_OPEN_RETAINED`. The Windows Tick/consumer pair is hash-consistent but does not verify live sensor streaming. The cloud scan is successful but does not verify host heartbeat. TESSERACT issuer variable value and runner assignment remain unverified. No CI rerun, PR merge, force-push, source mutation, source deletion/move, raw sensor export, or credential write occurred.
 <!-- END VERIFIED_FINAL_RECONCILIATION_20261026T1125ICT -->
+
+ 
+<!-- BEGIN VERIFIED_FINAL_RECONCILIATION_20261026T1132ICT -->
+## FINAL EXACT-TARGET RECONCILIATION — 2026-10-26 11:32 ICT
+
+The 11:26 host-local scheduled cycle was directly read and verified. This section is append-only; earlier 11:06 and 11:16 receipts remain in Git history.
+
+### Latest direct host Tick/consumer
+- Host sample: `2026-10-26T11:26:53.6741361+07:00`, route `Remote Desktop Commander`, device `DESKTOP-86ITNQ4`.
+- Scheduled task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M`: last run `11:26:33+07`, result `0`, next run `11:31:32+07` at sample time, missed runs `0`.
+- Tick `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T042638558197Z.json`; SHA-256 `de1d4aa691f36a2d6b9c9191c187a8a4b2389ddebca2c69169cac63965d26942`; observed `2026-10-26T04:26:38.558197Z`.
+- Consumer `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T042635788Z.json`; SHA-256 `9d18f13b9a4bd093ae874c77decc81c54d28119cf522e011c2fbed508015b3a9`; observed `2026-10-26T04:26:38.6533661Z`; `SOURCE_OBSERVED_READONLY`, exit `0`.
+- Direct source `D:\\SENSOR_LOGS\\windows_SENSON.CSV`: 35,389,440 bytes, SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`. Tick, consumer, and source hashes agree; source-content verifier true; raw rows emitted false; synthetic rows 0; cloud export false; GitHub push false.
+- Sensor stream remains unverified: USB ADB `1056285` is listed, four timestamps stale, zero advanced; wireless `192.168.1.14:5556` is not listed/unreachable. The 11:18 read-only app inspection found Android `Dozing`, no candidate sensor-app process, and no declared-service lines for the two sensor packages. No app launch, install, permission change, or sensor payload persistence.
+- `W32Time` is still `STOPPED/MANUAL`; a paired host/runtime sample estimated the host clock about 5m30 behind the runtime reference. This is approximate; no clock change was attempted and elevated service-start authority was not available.
+
+### Provider/cloud/PR readback
+- Dropbox metadata: revision `0165dc1e4794ab00000000395cdfd73`, size 35,389,440 bytes, server modified `2026-10-14T00:20:03Z`; raw CSV not downloaded.
+- n8n execution `188` succeeded; exact row `443`, event `X20261026041905980_CLOUD`; 45 recovery rows pending, 0 terminal; host heartbeat unprobed.
+- Current PR comparison artifact: [Archive PR #36/#37 readback](https://github.com/2708halinh-cloud/SOL-LONG-MACH/blob/main/CURRENT_RUNTIME/ARCHIVE_PR36_PR37_COMPARE_READBACK_20261026T1133ICT.json), blob `ab469233d4be0b582d94393a70b7640445826bd0`, commit `3d102477171cce5844f8c6c7a0894913dbd1f33a`. At main head `60b58ea2bff639a2436d1b1ef5febde68b8423f5`, PR #36 is 14 ahead/133 behind; PR #37 is 3 ahead/89 behind; both diverged and remain OPEN/Draft. No branch mutation.
+- TESSERACT PR #6 remains OPEN/Draft at head `5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8`; latest runs `40220813636` and `40220813600` remain failures on that head. Issuer variable value and runner assignment remain unverified. No CI rerun.
+
+### Exact current carriers after readback
+| Target | Commit | Exact blob SHA |
+|---|---|---|
+| `CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1132ICT.json` | `60b58ea2bff639a2436d1b1ef5febde68b8423f5` | `66dfa9ad8e96ab6bbbc45f8e8b7ca6e0b7b978f5` |
+| `CURRENT_RUNTIME/ARCHIVE_PR36_PR37_COMPARE_READBACK_20261026T1133ICT.json` | `3d102477171cce5844f8c6c7a0894913dbd1f33a` | `ab469233d4be0b582d94393a70b7640445826bd0` |
+| `MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json` | `aa70407938f03df2abdd1e54c890f04fc2afa6d4` | `d4232d7670555181f98585eb61e87c53f0429979` |
+| `CURRENT_RUNTIME/TASK_RESUME_POINTER.json` | `85e4728d2c7c4ebc6af2f31371fb3184f41690e0` | `23305dc69406e3e686b0ed73bb4418e066180aec` |
+| `CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json` | `2af9db24f9922517a1cc21ba3d4d25972d8269c7` | `df5aee013f6e8aa9b9ad2cd845a70020b7634afd` |
+| `CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json` | `e7292733fb9d5d02e4dabbd1adbbb52905c122bb` | `2e4f546407b4ea863c8e6b315051a43acc8cee9b` |
+
+- The open-task ledger retains the same 29 task IDs and status counts (10 OPEN, 2 OPEN_CARRIED, 13 OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK, 1 OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED, 3 IN_PROGRESS); provider observations 204; verified action events 236; task closures 0.
+- Main head before this re-entry append: `67ee1f300b1b2e5517c02a62041b75b4890e13a8`. No task was terminalized, no source moved/deleted, no raw sensor values or credentials were written to public GitHub, no PR merged/force-pushed, and no prohibited CI run repeated.
+- Next: exact-read the host after host-local `11:31:32+07`; continue read-only sensor-client diagnosis; keep 45 cloud rows pending; verify TESSERACT settings only through an authorized settings route; refresh PR comparisons before any branch mutation.
+<!-- END VERIFIED_FINAL_RECONCILIATION_20261026T1132ICT -->
