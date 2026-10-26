@@ -1176,3 +1176,57 @@ No task was closed. No credentials or raw sensor values were written to public G
 3. Continue all 45 cloud recovery rows without terminalizing them from a scan-only receipt; probe host heartbeat through the available route only if permitted.
 4. Continue TESSERACT issuer-key/runner-assignment provenance and the TESSERACT Art source-identity/behavior-test task.
 5. Recompare PR #37 against current main before any branch operation; continue carrier-log writer/retention and exact-target search without source substitution or deletion.
+
+
+## REENTRY DELTA — ONE SCHEDULED TICK ADVANCED, PERSISTENCE STILL OPEN 20261026T0950ICT
+
+SOURCE_DIRECT: Append the new host observation without promoting a single timestamp advance to sustained sensor-stream recovery.
+
+### New exact Windows Tick/consumer readback
+- Source `D:\\SENSOR_LOGS\\windows_SENSON.CSV`: 35,389,440 bytes; SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87`; source hash matches the new Tick and consumer.
+- Tick `D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T023639966701Z.json`: 1,654 bytes; SHA-256 `b01ff8080cbb89a36091e8a228f0cbb3023679a1c2677eac4bb33156f3c0b489`; observed `2026-10-26T02:36:39.966701Z`; `live_sensor_reading_confirmed=true`; one allowlisted sensor timestamp advanced.
+- Consumer `D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T023636655Z.json`: 7,069 bytes; SHA-256 `e0bd6c8abb98873b0d0fa9e74f52f4506b7e025a4e08f2ef6ef72d09a7f9f16e`; `SOURCE_OBSERVED_READONLY`, exit 0; source hash and provider-content hash verified; exact latest Tick referenced; raw rows false, synthetic rows 0, cloud export false, GitHub push false.
+- Task `GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M`: Ready/enabled; last run `09:36:33+07`, result 0, next run `09:41:32+07`, missed runs 0.
+- The follow-on read process was started to verify the next scheduled receipt, but the remote route became unavailable before a result could be read back. The 09:41:32+07 cycle is therefore **UNVERIFIED**, not failed. The current connector inventory showed all listed devices offline; Windows power state was not inferred.
+
+### Interpretation and code provenance
+- The 09:36 Tick is a genuine positive observation: one allowlisted event timestamp advanced. It does **not** yet prove continuous sensor-stream recovery; the next scheduled Tick/consumer pair must be read back when an authorized host route returns.
+- Local Git blob SHA-1 readback remains exact for `telemetry_buffer_sync.py` (`9b75c645ac059162d91f612d2a4ea19e80f0be34`), `live_device_probe.py` (`91d242d9f0db0e171b9f1ccf3bdf9af3331ff395`), and `sensor_root_resolver.py` (`9b082c5c96ea13d02af35c23519653ad2e78d119`). No source code was modified.
+- Dropbox metadata was freshly read again: revision `0165dc1e4794ab00000000395cdfd73`, size 35,389,440 bytes, server-modified `2026-10-14T00:20:03Z`. No raw CSV was downloaded.
+
+### Independent cloud and GitHub branches
+- n8n `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN` remains active. Execution `183` succeeded; event `X20261026020525520_CLOUD`, row 432, was read back again. State remains `OPEN_WORK_REMAINS`; 45 recovery rows pending, 0 terminal. Host heartbeat is still unprobed.
+- PR #37 remains OPEN/Draft/unmerged at head `d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040`. At main head `7ccbc8678ae9dba8ebaa5bfe790abd23b052fb58`, comparison was diverged 3 ahead / 11 behind. No merge, force-push, or PR CI rerun. Main workflows on that head were still in progress at the checkpoint; earlier checks on the prior main head succeeded.
+- Braid SIX/PLURAL receipts from the prior section remain verified: 9 and 5 actions respectively, no mutation, source hash unchanged for SIX, readback true. Cloud-host wiring remains `NOT_VERIFIED`.
+
+### Current source updates and exact-target readback
+```
+MODUAL_PARAMETER_CURRENT.json:
+  commit=9febd4d2452f9524e906d93e8ff4e6abd4e672a3
+  blob=54470d93a70ed749d157a31ae4c6ce7d972791dc
+  exact_readback=true
+
+OPEN_TASKS_CURRENT.json:
+  commit=60994a98258c2857b2fa1ddc85a4b1d6680b9772
+  blob=4a1a4d0fd1bac715a791edd9a40f8155329c381c
+  exact_readback=true; 29 ledger tasks preserved; 0 terminalized
+
+PROVIDER_READBACK_20261026T0950ICT.json:
+  commit=6696ac0e3444a0776d0ed219e901c8b0ad86c7c7
+  blob=25706c55bb22fd08cb505bbb3ddbe43b6288ea2d
+  exact_readback=true
+
+TASK_RESUME_POINTER.json:
+  commit=5dd0c9cc17f944bdee0be9beb8fc2d013b369748
+  blob=d4642a1f51d01f7c5cd0c5801de0897851e6f12d
+  exact_readback=true
+```
+
+No task was closed. No raw sensor values or credentials were written to public GitHub. No source was moved/deleted; no synthetic rows were added; no PR was merged or force-pushed.
+
+### Next verified edges
+1. When the host route is reachable, exact-read the Tick and consumer after `09:41:32+07`, recompute source SHA, and confirm whether timestamp advancement persists.
+2. Continue read-only diagnosis of sensor-event continuity; do not change permissions or install/launch an app without an approved target.
+3. Keep the 45 cloud recovery rows pending until task-specific evidence exists; host heartbeat remains unprobed.
+4. Continue TESSERACT issuer-key/runner-assignment provenance and the TESSERACT Art source/runtime task through available authorized routes.
+5. Recompare PR #37 with current main before any branch action; continue carrier-log writer/retention and exact-target search without source substitution or deletion.
