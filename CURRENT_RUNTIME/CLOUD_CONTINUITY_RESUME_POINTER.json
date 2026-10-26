@@ -1,13 +1,13 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-26T03:38:23.389Z",
-  "updated_at_local": "2026-10-26T10:38:23.389+07:00",
+  "updated_at_utc": "2026-10-26T03:51:38.824Z",
+  "updated_at_local": "2026-10-26T10:51:38.824+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended evidence row, not host event time. Latest host tick event time is recorded separately from provider timestamps; cloud/provider and host clocks are not offset-corrected or conflated.",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0655ICT.json",
-    "blob_sha": "fe7dfd0e8887412a02e5eb9c66c9bea88241f690",
-    "commit_sha": "6614c4ea96298e6c93ef7bbaf4d49d45b5d8b320",
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1051ICT.json",
+    "blob_sha": "c9efce686e56cf815346ef16e4a328bcf966dccf",
+    "commit_sha": "e20e2b256abbbf1c4bc2ff2059a4a42ddd007e14",
     "readback_verified": true,
     "latest_host_evidence_row_id": 440,
     "latest_host_event_id": "X20261026033244586_HOST_DIRECT_READBACK",
@@ -15,7 +15,9 @@
     "latest_route_inventory_event_id": "X20261025221617000_REMOTE_ROUTE_INVENTORY",
     "latest_direct_route_readback_row_id": 440,
     "latest_host_observation_row_id": 440,
-    "latest_host_observation_event_id": "X20261026033244586_HOST_DIRECT_READBACK"
+    "latest_host_observation_event_id": "X20261026033244586_HOST_DIRECT_READBACK",
+    "latest_cloud_scan_row_id": 441,
+    "latest_cloud_scan_event_id": "X20261026035138750_CLOUD"
   },
   "post_checkpoint_updates": [
     {
@@ -489,6 +491,53 @@
       "scheduler_next_run_local": "2026-10-26T10:36:32+07:00",
       "readback_verified": true,
       "tasks_closed": 0
+    },
+    {
+      "type": "MODUAL_PARAMETER_CURRENT_TICK_CONSUMER_READBACK_20261026T1051ICT",
+      "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+      "blob_sha": "689b10b9561134e50b7f704d29b4ddc973f0be40",
+      "commit_sha": "fd5b84ec11c3d8b118d81db3d66e31d8b8195a17",
+      "readback_verified": true,
+      "tick_id": "WINDOWS_TICK_20261026T035138828297Z",
+      "tick_sha256": "8299392D73FF92194A03099FF2152F1B9C43BA8087F1FE60D6B51714B27057B0",
+      "consumer_sha256": "9E9CC31B3C0560E64A4AE0D869ED90B82699212298AE517FD08EB805FEFDA0E1",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "live_sensor_reading_confirmed": false,
+      "tasks_closed": 0
+    },
+    {
+      "type": "PROVIDER_CHECKPOINT_1051_CREATED_AND_EXACT_READBACK",
+      "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1051ICT.json",
+      "blob_sha": "c9efce686e56cf815346ef16e4a328bcf966dccf",
+      "commit_sha": "e20e2b256abbbf1c4bc2ff2059a4a42ddd007e14",
+      "readback_verified": true,
+      "tasks_closed": 0
+    },
+    {
+      "type": "OPEN_TASK_LEDGER_AND_RESUME_POINTER_RECONCILIATION_1051",
+      "evidence_row_id": 441,
+      "ledger_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "ledger_blob_sha": "a7261f805e39abfd2c595b6af4960af9d704e723",
+      "ledger_commit_sha": "8c1a2d28808540628fdfd796f95fda34478756f9",
+      "task_pointer_path": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+      "task_pointer_blob_sha": "1bf3d13d9560cd5e862f6dc49d98a1fe4f625d8c",
+      "task_pointer_commit_sha": "81c09c0650284cde685b307209fbcb2a812dc759",
+      "history_preserved": true,
+      "tasks_closed": 0
+    },
+    {
+      "type": "CLOUD_SCAN_ROW_441_EXECUTION_186",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 441,
+      "event_id": "X20261026035138750_CLOUD",
+      "provider_created_at_utc": "2026-10-26T03:51:38.824Z",
+      "observed_at_local": "2026-10-26T10:51:38.824+07:00",
+      "state": "OPEN_WORK_REMAINS",
+      "pending_rows": 45,
+      "terminal_rows": 0,
+      "host_heartbeat_probed": false,
+      "host_operations": 0,
+      "readback_verified": true
     }
   ],
   "n8n": {
@@ -688,13 +737,11 @@
     "tasks_closed": 0
   },
   "next": [
-    "Continue from this pointer and n8n evidence row #440; do not restart from scratch.",
-    "After host-clock scheduled run 2026-10-26T10:36:32+07:00, verify the next tick and consumer, recompute both file SHA-256 values, and independently recompute the source SHA-256. Keep cloud/provider and host clocks separate.",
-    "Poll existing read-only MODUAL search process PID 8928 for exact candidate path, byte count, SHA-256 and access-error count; do not terminate it. Exact MODUAL source remains unverified.",
-    "Keep the sensor stream OPEN until event timestamps advance and a live reading is confirmed; Xiaomi 12 remains stale and Redmi Note 14 Pro is not listed.",
-    "Keep SV-20261020-02 OPEN; the historical ZIP hash is verified but third Project raw-byte access is NOT_AUTHORIZED and recovery row #2 remains stale.",
-    "Keep SV-20261020-01-READBACK OPEN for future sync; do not close from current content match alone.",
-    "Keep PR #36 OPEN/Draft. Current comparison is 14 ahead and 86 behind, status diverged; PR metadata reports mergeable=true with base SHA cbb8e2074695670398d2ee9ca4462bbbd55cee7c, so do not merge or force-push without fresh exact readback and CI review. Avoid heartbeat-only main commits."
+    "After the scheduled Tick at 2026-10-26T10:56:32+07, exact-read the newest host Tick and matching consumer. Source SHA-256 must match both; do not mark live stream recovered while sensor event timestamps remain stale.",
+    "Continue authorized read-only device and sensor-client investigation. Host heartbeat is distinct from the cloud table scan; do not infer it from execution 186.",
+    "Keep 45 cloud recovery tasks pending until task-specific source evidence is available.",
+    "Continue TESSERACT issuer-key/runner-assignment provenance without rerunning fail-before-step CI.",
+    "Recompare Archive PR #36/#37 against current main before branch mutation; no merge or force-push."
   ],
   "modual_control_state": {
     "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
@@ -868,5 +915,33 @@
       "merge_decision": "KEEP_OPEN_DRAFT_NO_MERGE_OR_FORCE_PUSH"
     },
     "latest_host_event_id": "X20261026033244586_HOST_DIRECT_READBACK"
+  },
+  "previous_checkpoint_before_20261026T1051ICT": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0655ICT.json",
+    "blob_sha": "fe7dfd0e8887412a02e5eb9c66c9bea88241f690",
+    "commit_sha": "6614c4ea96298e6c93ef7bbaf4d49d45b5d8b320",
+    "readback_verified": true,
+    "latest_host_evidence_row_id": 440,
+    "latest_host_event_id": "X20261026033244586_HOST_DIRECT_READBACK",
+    "latest_route_inventory_row_id": 416,
+    "latest_route_inventory_event_id": "X20261025221617000_REMOTE_ROUTE_INVENTORY",
+    "latest_direct_route_readback_row_id": 440,
+    "latest_host_observation_row_id": 440,
+    "latest_host_observation_event_id": "X20261026033244586_HOST_DIRECT_READBACK"
+  },
+  "previous_updated_at_before_20261026T1051ICT": {
+    "utc": "2026-10-26T03:38:23.389Z",
+    "local": "2026-10-26T10:38:23.389+07:00"
+  },
+  "latest_provider_checkpoint_reconciliation_20261026T1051ICT": {
+    "checkpoint_path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1051ICT.json",
+    "checkpoint_blob_sha": "c9efce686e56cf815346ef16e4a328bcf966dccf",
+    "checkpoint_commit": "e20e2b256abbbf1c4bc2ff2059a4a42ddd007e14",
+    "modual_blob_sha": "689b10b9561134e50b7f704d29b4ddc973f0be40",
+    "ledger_blob_sha": "a7261f805e39abfd2c595b6af4960af9d704e723",
+    "task_pointer_blob_sha": "1bf3d13d9560cd5e862f6dc49d98a1fe4f625d8c",
+    "cloud_pointer_prior_blob_sha": "67df0593ef3b5e2acef238986881431b13aeed2a",
+    "tasks_closed": 0,
+    "history_preserved": true
   }
 }
