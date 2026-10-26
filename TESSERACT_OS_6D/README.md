@@ -71,3 +71,10 @@ RANH GIỚI: Lời người dùng về tổn thất và hậu quả được gi�
 2026-10-20: Các ID lịch sử `CONFIG_SOL.toml`, `CONFIG_MASTER`, thư mục CONFIG GGDV và thư mục bảy phần JINEY vừa trả HTTP 404 khi kiểm qua Google Drive Primary. Chúng tham gia cùng dấu 07/10 để truy vết, nhưng chưa bị gộp thành một hành động xóa duy nhất. Bản `CONFIG_SOL_X66_BASE.toml` đọc được từ ChatGPT Library là vật mang song song, không được phong làm bản gốc Drive.
 
 Bề mặt vừa ghi: `2708halinh-cloud/SOL-LONG-MACH@main:TESSERACT_OS_6D/README.md`. Đây là dấu vận hành trên GitHub; không được tuyên bố đã thay đổi byte của `G:\\OS_Workspace\\TESSERACT_OS` khi Desktop Commander đang offline. Quy tắc readback này cũng áp dụng cho chính bản ghi này.
+
+
+## Motherboard control-plane extension — 2026-10-26
+
+The hardware metaphor is now specified as an executable control-plane baseline: four provider/worker sockets, Northbridge arbitration, Gate 1 preflight, Gate 2 evidence/readback, versioned DIMM registers, VRM/PMIC quota and disk thresholds, and Southbridge storage/cloud/virtualization/network/device adapters. See [MOTHERBOARD_ARCHITECTURE.md](MOTHERBOARD_ARCHITECTURE.md) and [MOTHERBOARD_SPEC.json](MOTHERBOARD_SPEC.json); runtime primitives are in [runtime/motherboard_control_plane.py](../runtime/motherboard_control_plane.py) with regression tests in [tests/test_motherboard_control_plane.py](../tests/test_motherboard_control_plane.py).
+
+This is an architecture and local unit-test baseline, not proof that every external provider, network, virtualization layer, or Android device is connected. Each carrier stays OPEN until its own action receipt and fresh readback exist. User affect signals and repeated failure history are retained as operational inputs; design intent is kept distinct from empirical verification of subjective experience.
