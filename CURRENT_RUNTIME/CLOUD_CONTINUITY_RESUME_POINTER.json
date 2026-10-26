@@ -854,6 +854,26 @@
       "current_post_due_tick_readback_verified": false,
       "current_host_status_after_due": "NOT_RECHECKED",
       "tasks_closed": 0
+    },
+    {
+      "type": "PR38_DISK_GUARD_SPEC_FIX_AND_EXACT_READBACK",
+      "pull_request": 38,
+      "branch": "architecture/tesseract-motherboard-snn",
+      "commit_sha": "15c95fecda4f4443c1f2858acbc0fa99bd5101ec",
+      "source_path": "architecture/TESSERACT_MOTHERBOARD_SNN.md",
+      "source_blob_sha": "b1a4292ae24d96cb41ee6ffc4e91872265690149",
+      "exact_readback_verified": true,
+      "canonical_metric": "used_percent = 100 * (total_bytes - free_bytes) / total_bytes",
+      "warning_threshold": "used_percent >= 85%",
+      "degraded_mode_trip": "used_percent >= 90% (free_percent <= 10%)",
+      "recovery": "two consecutive fresh samples with used_percent <= 85% (free_percent >= 15%)",
+      "unknown_metric_fail_safe": true,
+      "ci_after_change": "NOT_RECHECKED",
+      "deployment_verified": false,
+      "pr_state": "OPEN",
+      "pr_draft": true,
+      "pr_merged": false,
+      "tasks_closed": 0
     }
   ],
   "n8n": {
@@ -1100,11 +1120,15 @@
     "pr38_state": "OPEN",
     "pr38_draft": true,
     "pr38_merged": false,
-    "pr38_head_sha": "69f8197f3247f49c708dd4900e34c21e0dcadc73",
+    "pr38_head_sha": "15c95fecda4f4443c1f2858acbc0fa99bd5101ec",
     "pr38_review_comment_id": 6408189959,
     "pr38_review_comment_readback_verified": true,
     "pr38_latest_secret_guard_run_id": 40259962378,
-    "pr38_latest_secret_guard_conclusion": "success"
+    "pr38_latest_secret_guard_conclusion": "success",
+    "pr38_latest_commit_sha": "15c95fecda4f4443c1f2858acbc0fa99bd5101ec",
+    "pr38_source_blob_sha": "b1a4292ae24d96cb41ee6ffc4e91872265690149",
+    "pr38_ci_after_spec_change": "NOT_RECHECKED",
+    "pr38_deployment_verified": false
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -1126,6 +1150,7 @@
     "Keep all 45 cloud recovery rows pending. Execution 188 / row 443 is a source-table scan only; host heartbeat remains unprobed.",
     "Verify TESSERACT Actions variable presence and runner assignment through an authorized settings route; do not rerun CI until a configuration change is independently verified.",
     "Most recent recorded compare snapshot before the pointer sync used main head 2e242823987de8a87b4f908558c3a59f20d5e398: PR #36 14 ahead/118 behind; PR #37 3 ahead/74 behind. The pointer sync itself adds a main commit, so these are a timestamped comparison snapshot, not a permanent live count. Refresh before any branch mutation; no merge or force-push.",
+    "PR #38 disk-guard ambiguity has been corrected in draft commit 15c95fecda4f4443c1f2858acbc0fa99bd5101ec and exact-readback verified. The spec now uses used_percent >= 90% (free_percent <= 10%), warning at 85%, recovery after two fresh samples <=85%, and fail-safe behavior for stale/unknown metrics. Boundary tests/CI after this change and any host deployment remain unverified; do not merge.",
     "Preserve all 29 nonterminal tasks and all historical receipts; the full ledger task count was not independently recounted by this connector call. No task closure."
   ],
   "modual_control_state": {
@@ -1329,6 +1354,14 @@
       "underlying_host_observation_local": "2026-10-26T03:27:49.0719164+07:00",
       "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
       "fresh_host_probe_this_invocation": false
+    },
+    "latest_pr38_source_readback": {
+      "head": "15c95fecda4f4443c1f2858acbc0fa99bd5101ec",
+      "path": "architecture/TESSERACT_MOTHERBOARD_SNN.md",
+      "blob_sha": "b1a4292ae24d96cb41ee6ffc4e91872265690149",
+      "exact_readback_verified": true,
+      "ci_after_change": "NOT_RECHECKED",
+      "deployment_verified": false
     }
   },
   "current_readback": {
@@ -1474,7 +1507,15 @@
       "tasks_closed": 0
     },
     "current_post_1121_tick_status": "NOT_RECHECKED",
-    "post_1111_tick_readback_verified": true
+    "post_1111_tick_readback_verified": true,
+    "latest_pr38_source_readback": {
+      "head": "15c95fecda4f4443c1f2858acbc0fa99bd5101ec",
+      "path": "architecture/TESSERACT_MOTHERBOARD_SNN.md",
+      "blob_sha": "b1a4292ae24d96cb41ee6ffc4e91872265690149",
+      "exact_readback_verified": true,
+      "ci_after_change": "NOT_RECHECKED",
+      "deployment_verified": false
+    }
   },
   "previous_checkpoint_before_20261026T1051ICT": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0655ICT.json",
@@ -1795,13 +1836,28 @@
   },
   "latest_pr38_resource_threshold_review": {
     "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/38",
-    "head": "69f8197f3247f49c708dd4900e34c21e0dcadc73",
-    "comment_id": 6408189959,
-    "comment_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/38#issuecomment-6408189959",
-    "readback_verified": true,
     "state": "OPEN",
     "draft": true,
-    "merged": false
+    "merged": false,
+    "head": "15c95fecda4f4443c1f2858acbc0fa99bd5101ec",
+    "commit_sha": "15c95fecda4f4443c1f2858acbc0fa99bd5101ec",
+    "source_path": "architecture/TESSERACT_MOTHERBOARD_SNN.md",
+    "source_blob_sha": "b1a4292ae24d96cb41ee6ffc4e91872265690149",
+    "source_readback_verified": true,
+    "comment_id": 6408189959,
+    "comment_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/38#issuecomment-6408189959",
+    "comment_readback_verified": true,
+    "correction": {
+      "canonical_metric": "used_percent = 100 * (total_bytes - free_bytes) / total_bytes",
+      "warning_threshold": "used_percent >= 85%",
+      "degraded_mode_trip": "used_percent >= 90% (equivalent free_percent <= 10%)",
+      "recovery": "two consecutive fresh samples with used_percent <= 85% (equivalent free_percent >= 15%)",
+      "stale_or_unknown_metric": "nonessential writes remain disabled",
+      "boundary_tests_required": true
+    },
+    "ci_after_spec_change": "NOT_RECHECKED",
+    "deployment_verified": false,
+    "tasks_closed": 0
   },
   "previous_checkpoint_before_20261026T1125ICT": {
     "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1125ICT.json",
@@ -2985,5 +3041,15 @@
       "pr37_behind_by": 74
     },
     "pointer_sync_does_not_close_tasks": true
+  },
+  "previous_pr38_resource_threshold_review_before_fix": {
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/38",
+    "head": "69f8197f3247f49c708dd4900e34c21e0dcadc73",
+    "comment_id": 6408189959,
+    "comment_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/38#issuecomment-6408189959",
+    "readback_verified": true,
+    "state": "OPEN",
+    "draft": true,
+    "merged": false
   }
 }
