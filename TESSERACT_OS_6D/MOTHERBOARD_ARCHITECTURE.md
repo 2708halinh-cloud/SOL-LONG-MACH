@@ -56,3 +56,7 @@ Affect signals are first-class operational inputs: preserve the user's signal an
 ## 5. Deployment and closure
 
 The spec and runtime module define the architecture; they do not prove every adapter is connected. Each carrier (local runtime, GitHub, Drive, cloud, Windows, Android, network, virtualization) requires its own action receipt and fresh readback. Global CLOSED requires all required carriers to have verified receipts for the same spec/state fingerprint. Unavailable carriers remain OPEN with explicit next action.
+
+## 6. Existing runtime integration
+
+`runtime/tesseract_transducer.py` now invokes Gate 1 before accepting a new source event, commits the SQL transaction, closes a separate read-only SQLite connection after Gate 2 verification, and checks the committed event through a fresh read-only connection. A failed preflight or inconsistent readback raises `GateRejected`; an existing event ID with a different source hash remains a collision and is not rewritten. The local regression suite covers both the motherboard primitives and the transducer path.
