@@ -104,6 +104,8 @@ def process_signal(
     required = set(required_branches)
     by_name = {r.branch: r for r in results}
     conflicts: list[str] = []
+    if not results:
+        conflicts.append("No branches executed")
     for name in sorted(required):
         if name not in by_name:
             conflicts.append(f"Required branch missing: {name}")
