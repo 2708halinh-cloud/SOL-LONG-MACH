@@ -16734,6 +16734,26 @@
       "private_chat_payload_added": false,
       "visibility_change_tool_available": false,
       "tasks_closed": 0
+    },
+    {
+      "id": "WINDOWS_TICK_CONSUMER_READBACK_20261026T1653ICT",
+      "observed_at": "2026-10-26T16:53:20+07:00",
+      "scope": "Authorized Windows host Tick/consumer and cloud provenance reconciliation",
+      "action": "Read Tick/consumer after the host-local 16:31 boundary; exact-read the n8n reconciliation rows; append a correction for the mismatched host-row reference",
+      "result": "Tick/consumer source hashes match; consumer SOURCE_OBSERVED_READONLY exit 0; 4 timestamps stale/0 advanced. Exact table readback proves row 481 is cloud event, not the host event claimed by row 483; row 486 is the direct host event and row 488 preserves the correction. Canonical cloud pointer remains stale and was not written.",
+      "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1653ICT.json",
+      "checkpoint_blob_sha": "9536059b2d7fea740ee7b66ac9d24ebeaff1b323",
+      "cloud_evidence_row_id": 482,
+      "host_evidence_row_id": 486,
+      "reconciliation_row_id": 483,
+      "provenance_correction_row_id": 488,
+      "source_mutated": false,
+      "raw_sensor_values_exported": false,
+      "secrets_written": false,
+      "synthetic_rows_added": 0,
+      "tasks_closed": 0,
+      "merge_performed": false,
+      "force_push": false
     }
   ],
   "energy_protection_current": {
@@ -30142,6 +30162,39 @@
       "secrets_written": false,
       "synthetic_rows_added": 0,
       "tasks_closed": 0
+    },
+    {
+      "id": "PROVIDER_OBSERVATION_20261026T1653ICT",
+      "observed_at": "2026-10-26T16:53:20+07:00",
+      "record_type": "VERIFIED_PROVIDER_READBACK",
+      "checkpoint_file": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1653ICT.json",
+      "checkpoint_blob_sha": "9536059b2d7fea740ee7b66ac9d24ebeaff1b323",
+      "checkpoint_commit": "5641f726651f09bc31ce33eaf6fd17ce17889d76",
+      "evidence": {
+        "cloud_scan_row_id": 482,
+        "reconciliation_row_id": 483,
+        "host_evidence_row_id": 486,
+        "provenance_correction_row_id": 488,
+        "tick_sha256": "71054FA1D7F45C19909E527DAE761CB68CAFBC2B8FB968C385A8457A4B2DDD6B",
+        "consumer_sha256": "64BBA037B1450AD0396A88BD7CC66781283609796643388E55FD187B9FA40900",
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "source_hash_matches": true,
+        "live_sensor_reading_confirmed": false,
+        "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+        "sensor_timestamp_count": 4,
+        "timestamps_advanced": 0,
+        "recovery_rows_pending": 45,
+        "terminal_recovery_rows": 0,
+        "canonical_cloud_resume_pointer_stale": true,
+        "canonical_pointer_write_attempted": false,
+        "tasks_closed": 0
+      },
+      "history_preserved": true,
+      "source_mutated": false,
+      "raw_sensor_values_exported": false,
+      "secrets_written": false,
+      "synthetic_rows_added": 0,
+      "tasks_closed": 0
     }
   ],
   "integrity_corrections": [
@@ -30350,18 +30403,41 @@
       "history_preserved": true,
       "task_status_changed": false,
       "tasks_closed": 0
+    },
+    {
+      "id": "IC_20261026T1653_N8N_ROW483_HOST_REFERENCE_MISMATCH",
+      "observed_at": "2026-10-26T16:53:20+07:00",
+      "finding": "n8n reconciliation row 483 claims row 481 is the latest direct host evidence row, but exact row 481 readback is X20261026091926872_CLOUD (OPEN_WORK_REMAINS).",
+      "correction": "Direct host Tick/consumer evidence is row 486 (X20261026093158284_HOST_TICK_CONSUMER_READBACK); row 488 appends the correction. Row 483 and row 481 are preserved unchanged. CLOUD_CONTINUITY_RESUME_POINTER.json remains stale and no pointer write was attempted.",
+      "prior_artifact": {
+        "row_id": 483,
+        "event_id": "X20261026093214497_POINTER_LEDGER_RECONCILIATION"
+      },
+      "corrected_artifact": {
+        "row_id": 488,
+        "event_id": "X20261026093214497_POINTER_LEDGER_RECONCILIATION_PROVENANCE_CORRECTION",
+        "host_evidence_row_id": 486
+      },
+      "source_data_changed": false,
+      "prior_artifact_overwritten": false,
+      "history_preserved": true,
+      "task_status_changed": false,
+      "tasks_closed": 0
     }
   ],
   "latest_provider_readback": {
-    "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1635ICT.json",
-    "commit": "fe83627e58420166715ba09cfecf67505302c951",
-    "blob_sha": "9f32f22ec9a0045235bc3284dec3ca71cd8da49e",
-    "observed_at": "2026-10-26T16:35:58+07:00",
+    "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1653ICT.json",
+    "commit": "5641f726651f09bc31ce33eaf6fd17ce17889d76",
+    "blob_sha": "9536059b2d7fea740ee7b66ac9d24ebeaff1b323",
+    "observed_at": "2026-10-26T16:53:20+07:00",
     "exact_target_readback": true,
     "evidence": {
-      "cloud_evidence_row_id": 481,
-      "tick_sha256": "8E1FF54050795528A331F7C65F0CCDD70C4E69107C92927A9F62002B57404599",
-      "consumer_sha256": "B3FEA98DFD31955EA398808F3E3B3256D294555E02B337B29296A727A7563292",
+      "cloud_scan_row_id": 482,
+      "reconciliation_row_id": 483,
+      "host_evidence_row_id": 486,
+      "provenance_correction_row_id": 488,
+      "tick_sha256": "71054FA1D7F45C19909E527DAE761CB68CAFBC2B8FB968C385A8457A4B2DDD6B",
+      "consumer_sha256": "64BBA037B1450AD0396A88BD7CC66781283609796643388E55FD187B9FA40900",
       "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
       "source_hash_matches": true,
       "live_sensor_reading_confirmed": false,
@@ -30370,6 +30446,8 @@
       "timestamps_advanced": 0,
       "recovery_rows_pending": 45,
       "terminal_recovery_rows": 0,
+      "canonical_cloud_resume_pointer_stale": true,
+      "canonical_pointer_write_attempted": false,
       "tasks_closed": 0
     }
   },
@@ -30907,7 +30985,7 @@
       "tasks_closed": 0
     }
   },
-  "provider_observations": 220,
+  "provider_observations": 221,
   "previous_latest_provider_readback_20261026T0025ICT": {
     "id": "PROVIDER_READBACK_20261026T0025ICT",
     "observed_at": "2026-10-26T00:25:25+07:00",
@@ -41004,6 +41082,76 @@
     "actual_credential_value_disclosed": false,
     "private_chat_payload_added": false,
     "visibility_change_tool_available": false,
+    "tasks_closed": 0
+  },
+  "latest_provider_readback_20261026T1653ICT": {
+    "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1653ICT.json",
+    "commit": "5641f726651f09bc31ce33eaf6fd17ce17889d76",
+    "blob_sha": "9536059b2d7fea740ee7b66ac9d24ebeaff1b323",
+    "observed_at": "2026-10-26T16:53:20+07:00",
+    "exact_target_readback": true,
+    "evidence": {
+      "cloud_scan_row_id": 482,
+      "reconciliation_row_id": 483,
+      "host_evidence_row_id": 486,
+      "provenance_correction_row_id": 488,
+      "tick_sha256": "71054FA1D7F45C19909E527DAE761CB68CAFBC2B8FB968C385A8457A4B2DDD6B",
+      "consumer_sha256": "64BBA037B1450AD0396A88BD7CC66781283609796643388E55FD187B9FA40900",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true,
+      "live_sensor_reading_confirmed": false,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "sensor_timestamp_count": 4,
+      "timestamps_advanced": 0,
+      "recovery_rows_pending": 45,
+      "terminal_recovery_rows": 0,
+      "canonical_cloud_resume_pointer_stale": true,
+      "canonical_pointer_write_attempted": false,
+      "tasks_closed": 0
+    }
+  },
+  "latest_tick_readback_20261026T1653ICT": {
+    "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T093158284212Z.json",
+    "sha256": "71054FA1D7F45C19909E527DAE761CB68CAFBC2B8FB968C385A8457A4B2DDD6B",
+    "observed_at_utc": "2026-10-26T09:31:58.284212Z",
+    "consumer_receipt": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T093154038Z.json",
+    "consumer_sha256": "64BBA037B1450AD0396A88BD7CC66781283609796643388E55FD187B9FA40900",
+    "consumer_status": "SOURCE_OBSERVED_READONLY",
+    "consumer_exit_code": 0,
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_bytes": 35389440,
+    "source_content_hash_verified": true,
+    "live_sensor_reading_confirmed": false,
+    "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "sensor_event_timestamp_sensor_count": 4,
+    "sensor_event_sensors_advanced": [],
+    "host_evidence_row_id": 486,
+    "cloud_scan_row_id": 482
+  },
+  "latest_cloud_continuity_readback_20261026T1653ICT": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "execution_id": "202",
+    "status": "success",
+    "cloud_scan_row_id": 482,
+    "reconciliation_row_id": 483,
+    "host_evidence_row_id": 486,
+    "provenance_correction_row_id": 488,
+    "pointer_state": "OPEN_RESUME_POINTER_STALE_LEDGER_NEWER",
+    "cloud_resume_pointer_blob_sha": "4443d46e828e76ee9deb1a8980e61c4d29e7c5a7",
+    "pointer_write_attempted": false,
+    "recovery_rows": 45,
+    "nonterminal_rows": 45,
+    "terminal_rows": 0,
+    "host_heartbeat_probed": false,
+    "tasks_closed": 0
+  },
+  "latest_provenance_correction_20261026T1653ICT": {
+    "correction_id": "IC_20261026T1653_N8N_ROW483_HOST_REFERENCE_MISMATCH",
+    "table_row_id": 488,
+    "source_reconciliation_row_id": 483,
+    "actual_host_row_id": 486,
+    "actual_row_481_event_id": "X20261026091926872_CLOUD",
+    "history_preserved": true,
     "tasks_closed": 0
   }
 }
