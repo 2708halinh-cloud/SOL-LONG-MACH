@@ -70,5 +70,60 @@
       "role": "Display + hash-only ledger",
       "equal_weight": 1
     }
-  ]
+  ],
+  "motherboard_architecture": {
+    "schema": "TESSERACT_MOTHERBOARD/2.0",
+    "source": "TESSERACT_OS_6D/MOTHERBOARD_ARCHITECTURE.md",
+    "cpu_sockets": [
+      "GEMINI",
+      "CHATGPT",
+      "LOCAL",
+      "TASK_WORKERS"
+    ],
+    "northbridge": [
+      "task_arbitration",
+      "gate_1_preflight",
+      "gate_2_independent_readback",
+      "bounded_failover"
+    ],
+    "dimm": {
+      "name": "RAM_L1_ACTIVE_BLACKBOARD",
+      "registers": {
+        "REG_00": "objective_scope_acceptance_dependencies",
+        "REG_01": "source_target_identity_account_revision_hash_provenance",
+        "REG_02": "action_consequence_receipt_readback",
+        "REG_03": "open_edges_recovery_next_callable_action"
+      },
+      "versioned": true,
+      "secret_values_allowed": false
+    },
+    "vrm_pmic": {
+      "disk_warning_used_percent": 85,
+      "disk_survival_used_percent": 90,
+      "disk_critical_used_percent": 97,
+      "disk_critical_free_gib": 5,
+      "blind_deletion": false,
+      "circuit_breaker": true
+    },
+    "southbridge": [
+      "SQLite_Core_Journal",
+      "Git_append_only_history",
+      "Google_Drive_provider_adapter",
+      "QEMU",
+      "Hyper-V",
+      "NextDNS",
+      "ADB",
+      "localhost_LAN"
+    ],
+    "action_before_conclusion": [
+      "ACTION",
+      "CONSEQUENCE",
+      "RECEIPT",
+      "INDEPENDENT_READBACK",
+      "SAME_STATE",
+      "CONCLUSION"
+    ],
+    "face_closure_requires_all_six": true,
+    "full_sync_requires_local_github_library_readback": true
+  }
 }
