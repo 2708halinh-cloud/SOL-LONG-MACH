@@ -2036,3 +2036,17 @@ All 29 repository tasks remain nonterminal; all 45 cloud recovery rows remain pe
 4. Refresh the PR #42 review pointer through its existing review branch; keep the PR draft and unmerged.
 5. Verify TESSERACT issuer variable/runner assignment via an authorized settings route; do not rerun CI `#39153474587` absent verified runner/workflow change.
 <!-- END VERIFIED_AUTOMATION_CONTINUATION_20261026T1840ICT -->
+
+
+<!-- BEGIN VERIFIED_LEDGER_AND_REVIEW_POINTER_SYNC_20261026T1850ICT -->
+## VERIFIED LEDGER + REVIEW POINTER SYNC — 26/10/2026 18:50 ICT
+
+- Main ledger update was committed and read back exactly: [OPEN_TASKS_CURRENT.json](OPEN_TASKS_CURRENT.json), commit `3a661a047fd8fc377b36765a48d29bd4a425f020`, blob `78a869dece7e5cbe65850ef44a65eacdebeff455`. The task array and all 29 task IDs/statuses are unchanged. Provider-observation history is now 233; verified-action-event history is 291; integrity corrections remain 21; closures remain 0.
+- The ledger now references checkpoint [PROVIDER_READBACK_20261026T1840ICT.json](PROVIDER_READBACK_20261026T1840ICT.json), blob `e710f18b9ff0400663b0478717ad80d51db0d5eb`, commit `4a9382477293d73e459c43516d8e284edcf87242`. Its exact-target readback and JSON parse passed.
+- PR #42 review branch `reconcile-cloud-continuity-pointer-20261026T1653ICT-review` was refreshed to reference checkpoint 1840ICT, cloud row 513 / event `X20261026113950641_CLOUD`, and the latest main ledger blob. Pointer exact-target readback passed at [CLOUD_CONTINUITY_RESUME_POINTER.json](https://github.com/2708halinh-cloud/SOL-LONG-MACH/blob/reconcile-cloud-continuity-pointer-20261026T1653ICT-review/CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json), commit `f37473fff6cc99d3b9c4d115394da084a17fbce7`, blob `e4756cb987046c02770702524c73ca5b813e8196`. This is a review-branch change only; the canonical main cloud pointer and main task pointer were not overwritten. PR #42 remains on the review-only path; no merge or force-push was performed.
+- n8n execution `210` succeeded and row `513` was exact-read back. It records 45 pending recovery rows, 0 terminal, and `HOST_HEARTBEAT_NOT_PROBED`. This proves the cloud workflow/table path only.
+- Dropbox metadata was freshly read: revision `0165dc1e4794ab00000000395cdfd73`, 35,389,440 bytes, server-modified `2026-10-14T00:20:03Z`. No raw CSV was downloaded.
+- Windows was not directly re-read after the 18:21:32+07 scheduled boundary. Desktop Commander inventory showed the device online, but its direct-read tool returned monthly quota exhausted / calls paused (0% remaining); no reconnect/retry was made. Last direct host evidence remains 18:18:27+07, with source SHA-256 `9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87` matching Tick/consumer, but four sensor timestamp histories stale, zero advanced, wireless ADB `NOT_LISTED`, and live sensor reading unconfirmed.
+- Preservation remains verified: `MODUAL_PARAMETER_CURRENT.json` blob `01c1dfe8682e25c7e2f5210bbae87a30231b1f58` unchanged; append delta blob `02192ee39c087c4471293a9a583bb6facdb6d1a4` unchanged; no raw sensor rows or credentials published; no source move/delete; no synthetic rows; no task closure.
+- Next edges: obtain a permitted host readback of the next Tick/consumer; review the 16 unmatched source-backed recovery rows without changing their statuses; continue authorized TESSERACT issuer-variable/runner provenance; keep PR #42 draft and unmerged.
+<!-- END VERIFIED_LEDGER_AND_REVIEW_POINTER_SYNC_20261026T1850ICT -->
