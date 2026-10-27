@@ -1,13 +1,13 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.3",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-27T05:24:00.634Z",
-  "updated_at_local": "2026-10-27T12:24:00.634+07:00",
-  "timestamp_basis": "Timestamp records provider-createdAt of evidence row 558 used by this checkpoint; the subsequent pointer-write timestamp was not returned by the connector. Host event timestamps remain separate.",
+  "updated_at_utc": "2026-10-27T05:26:13.524Z",
+  "updated_at_local": "2026-10-27T12:26:13.524+07:00",
+  "timestamp_basis": "Timestamp records provider-createdAt of evidence row 559 used by this checkpoint; the subsequent pointer-write timestamp was not returned by the connector. Host event timestamps remain separate.",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1224ICT.json",
-    "blob_sha": "4c7421a6fb0ab6b822acac7c32ef524fab893454",
-    "commit_sha": "e2f733010d5a65c791e2680ae20b26438e3f9cfe",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1226ICT.json",
+    "blob_sha": "8c24505721e2a4c95af773ef6b5616d7b1311c91",
+    "commit_sha": "ef2bdcafb80f13da582bb13f39960339860c09a9",
     "readback_verified": true,
     "latest_host_evidence_row_id": 550,
     "latest_host_event_id": "X20261027005144165_HOST_TICK_CONSUMER_READBACK",
@@ -17,8 +17,8 @@
     "latest_source_tail_readback_event_id": "X20261027005908226_HOST_SOURCE_TAIL_READBACK",
     "latest_cloud_scan_row_id": 557,
     "latest_cloud_scan_event_id": "X20261027050024069_CLOUD",
-    "latest_continuity_readback_row_id": 558,
-    "latest_continuity_readback_event_id": "X20261027052209000_GITHUB_LIBRARY_LOGS_AND_N8N_READBACK",
+    "latest_continuity_readback_row_id": 559,
+    "latest_continuity_readback_event_id": "X20261027052520000_GITHUB_ACTIONS_RUNLIST_READBACK",
     "latest_source_provenance_row_id": 558,
     "latest_source_provenance_event_id": "X20261027052209000_GITHUB_LIBRARY_LOGS_AND_N8N_READBACK",
     "recovery_rows_pending": 45,
@@ -41,14 +41,23 @@
     "latest_verified_github_schedule_run_number": 378,
     "latest_verified_github_schedule_run_status": "success",
     "latest_verified_github_schedule_run_created_at_utc": "2026-10-27T01:59:09Z",
-    "latest_github_schedule_run_list_rechecked_this_invocation": false,
+    "latest_github_schedule_run_list_rechecked_this_invocation": true,
+    "latest_github_schedule_run_list_total_count_repository": 6150,
+    "latest_github_schedule_run_list_returned": 100,
+    "latest_github_schedule_run_list_filter": ".github/workflows/windows-survival-cloud-continuity.yml",
+    "schedule_ticks_without_newer_target_run_visible": [
+      "2026-10-27T02:07:00Z",
+      "2026-10-27T03:07:00Z",
+      "2026-10-27T04:07:00Z",
+      "2026-10-27T05:07:00Z"
+    ],
     "latest_source_revision_delta_row_id": 558,
     "latest_source_revision_delta_event_id": "X20261027052209000_GITHUB_LIBRARY_LOGS_AND_N8N_READBACK",
     "latest_library_logs_blob_sha1_matches": 5,
     "latest_library_logs_blob_sha1_mismatches": 0,
     "raw_sha256_recomputed": false,
-    "main_head_before_checkpoint": "74a78f97f4589331795c7ff90bf607f037255d0d",
-    "main_head_after_checkpoint": "e2f733010d5a65c791e2680ae20b26438e3f9cfe"
+    "main_head_before_checkpoint": "eca146c89f24adc1067b415a992edd064fa84dae",
+    "main_head_after_checkpoint": "ef2bdcafb80f13da582bb13f39960339860c09a9"
   },
   "post_checkpoint_updates": [
     {
@@ -1997,6 +2006,33 @@
       "android_online_state": "UNVERIFIED",
       "github_actions_run_list_rechecked_this_invocation": false,
       "schedule_gap": "OPEN_SCHEDULE_GAP_UNRESOLVED"
+    },
+    {
+      "type": "GITHUB_ACTIONS_SCHEDULE_GAP_READBACK_AND_CHECKPOINT_20261027T1226ICT",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 559,
+      "event_id": "X20261027052520000_GITHUB_ACTIONS_RUNLIST_READBACK",
+      "provider_created_at_utc": "2026-10-27T05:26:13.524Z",
+      "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1226ICT.json",
+      "checkpoint_blob_sha": "8c24505721e2a4c95af773ef6b5616d7b1311c91",
+      "checkpoint_commit_sha": "ef2bdcafb80f13da582bb13f39960339860c09a9",
+      "readback_verified": true,
+      "latest_target_schedule_run_number": 378,
+      "latest_target_schedule_run_id": 40435757299,
+      "no_newer_target_run_in_latest_100_repository_runs": true,
+      "schedule_ticks_without_newer_target_run_visible": [
+        "2026-10-27T02:07:00Z",
+        "2026-10-27T03:07:00Z",
+        "2026-10-27T04:07:00Z",
+        "2026-10-27T05:07:00Z"
+      ],
+      "go_build_and_test_skipped_on_schedule": true,
+      "cause_verified": false,
+      "recovery_rows_pending": 45,
+      "recovery_rows_terminal": 0,
+      "tasks_closed": 0,
+      "host_heartbeat_probed": false,
+      "android_online_state": "UNVERIFIED"
     }
   ],
   "n8n": {
