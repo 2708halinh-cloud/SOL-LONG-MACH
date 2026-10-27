@@ -1,9 +1,9 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.3",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-27T11:54:12.800Z",
-  "updated_at_local": "2026-10-27T18:54:12.800+07:00",
-  "timestamp_basis": "Pointer timestamp captured immediately before write; provider commit timestamp is authoritative. Checkpoint blob SHA and evidence row 577 were read back first. Cloud heartbeat is not host heartbeat.",
+  "updated_at_utc": "2026-10-27T11:55:06.292Z",
+  "updated_at_local": "2026-10-27T18:55:06.292+07:00",
+  "timestamp_basis": "Pointer timestamp captured immediately before write; provider commit timestamp is authoritative. Latest checkpoint and evidence row 577 were read back first; source provenance comparison row is recorded as a post-checkpoint update.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1854ICT.json",
     "blob_sha": "18740c22d13df311e77f5c01715b7e10c743e596",
@@ -2204,6 +2204,19 @@
       "recovery_rows_terminal": 0,
       "target_workflow_run_inventory_status_this_invocation": "UNVERIFIED_FILTER_NOT_HONORED",
       "tasks_closed": 0
+    },
+    {
+      "type": "SOURCE_PROVENANCE_COMPARE_ROW_578",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 578,
+      "event_id": "X20261027115502128_GITHUB_BRAIN_WAVE_CURRENT_MAIN_COMPARE",
+      "base_head": "7df69bccc515856ac900c134398d6af5d4f20b37",
+      "current_main_head": "c48bb1b849473cc4c78222e60c2de15bee288516",
+      "compare_ahead_by": 14,
+      "brain_wave_logs_changed": false,
+      "prior_git_blob_sha1_matches": 5,
+      "raw_sha256_recomputed": false,
+      "readback_verified": true
     }
   ],
   "n8n": {
@@ -8893,8 +8906,8 @@
   "latest_cloud_scan_provider_created_at_utc": "2026-10-27T07:00:24.194Z",
   "latest_continuity_readback_row_id": 559,
   "latest_continuity_readback_event_id": "X20261027052520000_GITHUB_ACTIONS_RUNLIST_READBACK",
-  "latest_source_provenance_row_id": 568,
-  "latest_source_provenance_event_id": "X20261027074432000_GITHUB_BRAIN_WAVE_CURRENT_MAIN_READBACK",
+  "latest_source_provenance_row_id": 578,
+  "latest_source_provenance_event_id": "X20261027115502128_GITHUB_BRAIN_WAVE_CURRENT_MAIN_COMPARE",
   "recovery_rows_total": 45,
   "recovery_rows_pending": 45,
   "recovery_rows_terminal": 0,
@@ -9486,5 +9499,27 @@
     "latest_verified_github_schedule_run_number": 379,
     "latest_verified_github_schedule_run_id": 40468591667,
     "target_workflow_run_inventory_status_this_invocation": "UNVERIFIED_FILTER_NOT_HONORED"
+  },
+  "latest_source_provenance_readback": {
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_row_id": 578,
+    "event_id": "X20261027115502128_GITHUB_BRAIN_WAVE_CURRENT_MAIN_COMPARE",
+    "readback_verified": true,
+    "base_head": "7df69bccc515856ac900c134398d6af5d4f20b37",
+    "current_main_head": "c48bb1b849473cc4c78222e60c2de15bee288516",
+    "compare_status": "ahead",
+    "ahead_by": 14,
+    "changed_paths": [
+      "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1448ICT.json",
+      "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1554ICT.json",
+      "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1703ICT.json",
+      "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1706ICT.json",
+      "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1707ICT.json",
+      "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1854ICT.json",
+      "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json"
+    ],
+    "brain_wave_logs_changed": false,
+    "prior_verified_git_blob_sha1_matches": 5,
+    "raw_sha256_recomputed": false
   }
 }
