@@ -1,0 +1,149 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/2.5",
+  "state": "OPEN_WORK_REMAINS",
+  "updated_at_utc": "2026-10-27T13:46:24.135Z",
+  "updated_at_local": "2026-10-27T20:46:24.135+07:00",
+  "timestamp_basis": "Provider-created_at of evidence row 583 is the timestamp anchor for this checkpoint. Provider commit timestamps remain authoritative for GitHub writes.",
+  "purpose": "Continue THU HOI NGUON SOL from prior checkpoint; append verified cloud-run evidence without closing or rewriting recovery tasks.",
+  "prior_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T2023ICT.json",
+    "blob_sha": "ca7243a7a279b67ddb4885ce68e14666a89e43fc",
+    "commit_sha": "2932ab305237eb2d320a17be383f844e900f6218",
+    "readback_verified": true
+  },
+  "latest_host_evidence_row_id": 550,
+  "latest_host_event_id": "X20261027005144165_HOST_TICK_CONSUMER_READBACK",
+  "latest_host_tick_utc": "2026-10-27T00:51:44.165010Z",
+  "latest_host_tick_sha256": "72b55d1885b2e9408443566408a1bc5263065c733de5073e364d06b6d9aae3c7",
+  "latest_cloud_scan_row_id": 580,
+  "latest_cloud_scan_event_id": "X20261027130024136_CLOUD",
+  "latest_cloud_scan_execution_id": "240",
+  "latest_cloud_scan_execution_status": "success",
+  "latest_cloud_scan_started_at_utc": "2026-10-27T13:00:22.114Z",
+  "latest_cloud_scan_stopped_at_utc": "2026-10-27T13:00:24.299Z",
+  "latest_continuity_readback_row_id": 581,
+  "latest_continuity_readback_event_id": "X20261027132333442_CLOUD_CONTINUITY_READBACK",
+  "latest_schedule_gap_evidence_row_id": 582,
+  "latest_schedule_gap_event_id": "X20261027132613259_GITHUB_SCHEDULE_GAP_READBACK",
+  "latest_github_x66_run_evidence_row_id": 583,
+  "latest_github_x66_run_event_id": "X20261027134208000_GITHUB_X66_RUN32_READBACK",
+  "latest_github_x66_run": {
+    "workflow_name": "SOL X66 Independent Continuity",
+    "workflow_path": ".github/workflows/sol-x66-cloud-continuity.yml",
+    "workflow_id": 389996732,
+    "run_id": 40502400802,
+    "run_number": 32,
+    "event": "schedule",
+    "status": "completed",
+    "conclusion": "success",
+    "started_at_utc": "2026-10-27T12:15:55Z",
+    "head_sha": "0aebaeb344c58d4a20da4e79e7f73be98900e603",
+    "artifact_id": 12733212365,
+    "artifact_size_bytes": 7472,
+    "artifact_sha256_provider_reported": "b59986cdb484c695b85a35d15a674627759df1b568be8c191bc6e99233dbe9e6",
+    "artifact_bytes_downloaded_and_rehashed": false,
+    "snapshot_receipt_sha256": "4205fc472d77fb2026e65251762d8c3f6d03194291e909c28bb0f03a4751b094",
+    "snapshot_source_count": 10,
+    "snapshot_source_gaps": 0,
+    "all_tasks_done": false,
+    "test_groups": {
+      "cloud_continuity_unit_tests_passed": 4,
+      "tesseract_er_tests_passed": 12,
+      "companion_consequence_gate_tests_passed": 6,
+      "source_chronology_tests_passed": 4
+    },
+    "sqlite_carrier": {
+      "valid": true,
+      "entity_count": 8,
+      "relation_count": 3,
+      "source_count": 3,
+      "foreign_key_errors": [],
+      "missing_relation_roles": [],
+      "single_value_errors": [],
+      "legacy_synapse_mutated": false
+    }
+  },
+  "recovery_table": {
+    "table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "rows_total": 45,
+    "rows_nonterminal": 45,
+    "rows_terminal": 0,
+    "tasks_closed": 0,
+    "task_statuses_changed": false,
+    "status_counts": {
+      "OPEN_ROUTED_NONCOERCIVE": 27,
+      "IN_PROGRESS": 1,
+      "ASSIGNED_DRAFT_WAITING_CREDENTIAL": 5,
+      "other_distinct_nonterminal_statuses": 12
+    }
+  },
+  "host_state": {
+    "host_heartbeat_probed_by_cloud_workflow": false,
+    "latest_host_tick_readback_verified": true,
+    "latest_host_heartbeat_fresh_readback": false,
+    "host_tick_cadence_gap": "OPEN_HOST_TICK_GAP_UNRESOLVED",
+    "android_online_state": "UNVERIFIED",
+    "remote_route_status_current": "Last direct directory listing responded at 2026-10-27T06:14:21Z; newest tick content and metadata not verified",
+    "remote_route_is_host_heartbeat": false
+  },
+  "github_schedule_gap": {
+    "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+    "workflow_path": ".github/workflows/windows-survival-cloud-continuity.yml",
+    "workflow_blob_sha": "044b4e73123af4772b995b410b3a79e847be7e03",
+    "cron": "7 * * * *",
+    "latest_previously_verified_run_id": 40468591667,
+    "latest_previously_verified_run_number": 379,
+    "latest_previously_verified_run_status": "success",
+    "latest_previously_verified_run_started_at_utc": "2026-10-27T07:41:03Z",
+    "previous_target_run_id": 40435757299,
+    "previous_target_run_number": 378,
+    "previous_target_run_started_at_utc": "2026-10-27T01:59:09Z",
+    "latest_repository_wide_inventory_at_utc": "2026-10-27T13:26:13.259Z",
+    "latest_100_inventory_contained_target_workflow_path": false,
+    "workflow_specific_actions_endpoint": "REJECTED_BY_CONNECTOR",
+    "target_workflow_inventory_status": "REPOSITORY_WIDE_SNAPSHOT_ONLY",
+    "cause_verified": false,
+    "workflow_configuration_changed": false,
+    "next_expected_cron_utc": "2026-10-27T14:07:00Z"
+  },
+  "current_task_ledger": {
+    "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "blob_sha_from_github_metadata": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
+    "size_bytes_from_prior_verified_pointer": 2422868,
+    "content_readback_verified": false,
+    "reason": "GitHub fetch_file returned empty content despite returning the same blob SHA metadata; no content-level verification claimed."
+  },
+  "source_provenance": {
+    "brain_wave_logs_git_blob_sha1_matches": 5,
+    "brain_wave_logs_git_blob_sha1_mismatches": 0,
+    "raw_sha256_recomputed": false
+  },
+  "raw_archive": {
+    "task_id": "SV-20261020-02",
+    "state": "OPEN_RAW_HASH_REVALIDATION_SOURCE_ROUTE_BLOCKED",
+    "expected_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+    "raw_zip_sha256_recomputed": false
+  },
+  "safety_invariants": {
+    "google_drive_write_attempted": false,
+    "host_mutation_attempted": false,
+    "process_cache_or_meta_db_deleted": false,
+    "plaintext_secrets_accessed_or_written": false,
+    "recovery_task_status_changed": false
+  },
+  "next_verified_edges": [
+    "Keep all 45 recovery rows nonterminal; do not infer completion from cloud runner success.",
+    "Investigate missing Windows-survival hourly runs without changing workflow configuration until the cause is verified.",
+    "Obtain a fresh authorized Windows host heartbeat and tick/consumer readback; do not use cloud heartbeat or Remote Desktop directory listing as a substitute.",
+    "Keep Android state UNVERIFIED until a fresh provider/device receipt exists.",
+    "Resolve the authorized raw-byte source for SV-20261020-02 before recomputing SHA-256.",
+    "Resume device-dependent branches from existing checkpoint when the host is reachable; do not recreate history."
+  ],
+  "evidence_table": {
+    "table_id": "Sk0EFJK5NzWVpBvm",
+    "latest_verified_row_id": 583,
+    "latest_verified_event_id": "X20261027134208000_GITHUB_X66_RUN32_READBACK",
+    "row_readback_verified": true
+  }
+}
