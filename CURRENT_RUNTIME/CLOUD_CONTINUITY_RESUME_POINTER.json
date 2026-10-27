@@ -1,13 +1,13 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.3",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-27T06:56:00Z",
-  "updated_at_local": "2026-10-27T13:56:00+07:00",
+  "updated_at_utc": "2026-10-27T06:57:00Z",
+  "updated_at_local": "2026-10-27T13:57:00+07:00",
   "timestamp_basis": "Invocation clock rounded to minute. Evidence row provider-createdAt and host tick event time are distinct; route response does not itself establish host heartbeat.",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1356ICT.json",
-    "blob_sha": "b157e5d25b5e499910b5b14f0991f2a625ff326a",
-    "commit_sha": "19160b55f82654fda33c0e199588800822879d61",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1357ICT.json",
+    "blob_sha": "8cb5e79fdd529de45e398b4bcc2cc300047a3623",
+    "commit_sha": "595db7e2477ba9043d469c009ed95a8645b2ec75",
     "readback_verified": true,
     "latest_host_evidence_row_id": 550,
     "latest_host_event_id": "X20261027005144165_HOST_TICK_CONSUMER_READBACK",
@@ -18,8 +18,8 @@
     "latest_cloud_scan_row_id": 562,
     "latest_cloud_scan_event_id": "X20261027065045129_CLOUD",
     "latest_cloud_scan_execution_id": "233",
-    "latest_continuity_readback_row_id": 565,
-    "latest_continuity_readback_event_id": "X20261027065330000_CLOUD_SCHEDULER_SEMANTICS_READBACK",
+    "latest_continuity_readback_row_id": 566,
+    "latest_continuity_readback_event_id": "X20261027065700000_GITHUB_SCHEDULE_SCOPE_READBACK",
     "latest_source_provenance_row_id": 563,
     "latest_source_provenance_event_id": "X20261027065052000_GITHUB_LOGS_CURRENT_MAIN_READBACK",
     "recovery_rows_pending": 45,
@@ -58,8 +58,8 @@
     "latest_library_logs_blob_sha1_matches": 5,
     "latest_library_logs_blob_sha1_mismatches": 0,
     "raw_sha256_recomputed": false,
-    "main_head_before_checkpoint": "ba3066304f9cce9f3d5d4750c4331ec0d2a13974",
-    "main_head_after_checkpoint": "19160b55f82654fda33c0e199588800822879d61"
+    "main_head_before_checkpoint": "47aef619a42aadc7f81311fe0212d6e418712eb0",
+    "main_head_after_checkpoint": "595db7e2477ba9043d469c009ed95a8645b2ec75"
   },
   "post_checkpoint_updates": [
     {
@@ -2104,6 +2104,25 @@
       "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1356ICT.json",
       "blob_sha": "b157e5d25b5e499910b5b14f0991f2a625ff326a",
       "commit_sha": "19160b55f82654fda33c0e199588800822879d61",
+      "readback_verified": true
+    },
+    {
+      "type": "GITHUB_SCHEDULE_SCOPE_READBACK_ROW_566",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 566,
+      "event_id": "X20261027065700000_GITHUB_SCHEDULE_SCOPE_READBACK",
+      "schedule_event_run_count": 84,
+      "target_workflow_runs_visible": 3,
+      "other_workflow_scheduled_runs_observed": 2,
+      "target_schedule_gap_cause_verified": false,
+      "workflow_changed": false,
+      "readback_verified": true
+    },
+    {
+      "type": "CHECKPOINT_1357_CREATED_AND_READBACK",
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1357ICT.json",
+      "blob_sha": "8cb5e79fdd529de45e398b4bcc2cc300047a3623",
+      "commit_sha": "595db7e2477ba9043d469c009ed95a8645b2ec75",
       "readback_verified": true
     }
   ],
