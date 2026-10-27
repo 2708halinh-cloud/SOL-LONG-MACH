@@ -57,8 +57,8 @@ Introduce bounded, preallocated scratch memory for tool workloads where measurem
 
 - [x] Isolated feature branch created from the observed `main` commit.
 - [x] Test-first change recorded before implementation.
-- [x] Five focused unit tests pass against the implementation in an isolated Python 3.13 test run.
-- [ ] Re-run tests from the exact fetched GitHub bytes in the intended repository/test runner.
+- [x] Five focused unit tests pass against the exact GitHub branch bytes on the authorized Windows device (Python 3.12).
+- [x] Downloaded the exact GitHub branch bytes to `DESKTOP-86ITNQ4` and ran `python -m unittest -v test_fixed_buffer_pool` with Python 3.12: 5 tests passed (exit code 0).
 - [ ] Integrate into one measured tool only after baseline/peak-memory measurements.
 - [ ] Verify existing behavior and output hashes; record performance deltas.
 - [ ] Review and read back each provider destination independently.
