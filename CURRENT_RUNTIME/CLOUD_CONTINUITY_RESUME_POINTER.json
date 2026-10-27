@@ -1,13 +1,13 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.3",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-27T10:05:36.387Z",
-  "updated_at_local": "2026-10-27T17:05:36.387+07:00",
-  "timestamp_basis": "Pointer content timestamp captured immediately before the write; provider commit timestamp is authoritative. Checkpoint and evidence row 573 were read back first; cloud heartbeat is not host heartbeat.",
+  "updated_at_utc": "2026-10-27T10:07:24.344Z",
+  "updated_at_local": "2026-10-27T17:07:24.344+07:00",
+  "timestamp_basis": "Pointer timestamp captured immediately before write; provider commit timestamp is authoritative. Checkpoint and evidence row 574 were read back first; cloud heartbeat is not host heartbeat.",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1703ICT.json",
-    "blob_sha": "1a5f7aeecae9e90b09d44ff274101f9f08f83e6f",
-    "commit_sha": "618ae76c0770fa1f8c602bc4021c99faceaa337a",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1706ICT.json",
+    "blob_sha": "d0a26a2535894186e137dc8177406503674c5b6b",
+    "commit_sha": "276d0ea5bb527849aa4ea8628b0e49d4b7896df7",
     "readback_verified": true,
     "latest_host_evidence_row_id": 550,
     "latest_host_event_id": "X20261027005144165_HOST_TICK_CONSUMER_READBACK",
@@ -16,8 +16,8 @@
     "latest_cloud_scan_row_id": 572,
     "latest_cloud_scan_event_id": "X20261027100023986_CLOUD",
     "latest_cloud_scan_execution_id": "237",
-    "latest_continuity_readback_row_id": 573,
-    "latest_continuity_readback_event_id": "X20261027100059000_GITHUB_SCHEDULE_GAP_READBACK",
+    "latest_continuity_readback_row_id": 574,
+    "latest_continuity_readback_event_id": "X20261027100653766_RAW_ARCHIVE_SOURCE_LOOKUP",
     "latest_source_provenance_row_id": 568,
     "latest_source_provenance_event_id": "X20261027074432000_GITHUB_BRAIN_WAVE_CURRENT_MAIN_READBACK",
     "recovery_rows_pending": 45,
@@ -45,7 +45,10 @@
     "latest_library_logs_blob_sha1_mismatches": 0,
     "raw_sha256_recomputed": false,
     "main_head_before_checkpoint": "fd91de75ffc79136550f6fed344e04bd4a3da01c",
-    "main_head_after_checkpoint": "618ae76c0770fa1f8c602bc4021c99faceaa337a"
+    "main_head_after_checkpoint": "276d0ea5bb527849aa4ea8628b0e49d4b7896df7",
+    "raw_archive_source_lookup_state": "OPEN_RAW_HASH_REVALIDATION_SOURCE_ROUTE_BLOCKED",
+    "raw_archive_task_id": "SV-20261020-02",
+    "raw_archive_sha256_recomputed": false
   },
   "post_checkpoint_updates": [
     {
@@ -2149,6 +2152,23 @@
       "continuity_evidence_row_id": 573,
       "task_statuses_changed": false,
       "tasks_closed": 0
+    },
+    {
+      "type": "RAW_ARCHIVE_SOURCE_ROUTE_BLOCKER_READBACK",
+      "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1706ICT.json",
+      "checkpoint_blob_sha": "d0a26a2535894186e137dc8177406503674c5b6b",
+      "checkpoint_commit_sha": "276d0ea5bb527849aa4ea8628b0e49d4b7896df7",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 574,
+      "event_id": "X20261027100653766_RAW_ARCHIVE_SOURCE_LOOKUP",
+      "provider_created_at_utc": "2026-10-27T10:06:55.756Z",
+      "archive_name": "SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip",
+      "active_library_title_search_results": 0,
+      "dropbox_search_blocker": "link_id must identify an eligible linked account",
+      "raw_sha256_recomputed": false,
+      "recovery_task_status_preserved": "ASSIGNED_DRAFT_WAITING_CREDENTIAL",
+      "tasks_closed": 0,
+      "readback_verified": true
     }
   ],
   "n8n": {
@@ -9397,5 +9417,14 @@
     "android_online_state": "UNVERIFIED",
     "remote_route_is_host_heartbeat": false,
     "reason": "Cloud runner and n8n cloud scan do not probe the physical host; no new Windows/Android state inferred."
+  },
+  "latest_host_probe_20261027T1706ICT": {
+    "host_heartbeat_probed": false,
+    "latest_verified_host_evidence_row_id": 550,
+    "latest_verified_host_event_id": "X20261027005144165_HOST_TICK_CONSUMER_READBACK",
+    "latest_host_heartbeat_fresh_readback": false,
+    "android_online_state": "UNVERIFIED",
+    "remote_route_is_host_heartbeat": false,
+    "reason": "Cloud scan and source-route lookup did not probe the physical host."
   }
 }
