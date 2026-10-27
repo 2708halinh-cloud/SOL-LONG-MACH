@@ -1,13 +1,13 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.3",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-27T10:03:26.802Z",
-  "updated_at_local": "2026-10-27T17:03:26.802+07:00",
-  "timestamp_basis": "Pointer updated after independent readback of checkpoint, n8n scan receipt row 572, continuity evidence row 573, and current GitHub Actions run inventory; cloud heartbeat is not host heartbeat.",
+  "updated_at_utc": "2026-10-27T10:05:36.387Z",
+  "updated_at_local": "2026-10-27T17:05:36.387+07:00",
+  "timestamp_basis": "Pointer content timestamp captured immediately before the write; provider commit timestamp is authoritative. Checkpoint and evidence row 573 were read back first; cloud heartbeat is not host heartbeat.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1703ICT.json",
-    "blob_sha": "3b8ff03796d5af7f345452574f22b4d0775e4d0c",
-    "commit_sha": "94f157cacf061a40a9383f3bd4467715d6bb2e90",
+    "blob_sha": "1a5f7aeecae9e90b09d44ff274101f9f08f83e6f",
+    "commit_sha": "618ae76c0770fa1f8c602bc4021c99faceaa337a",
     "readback_verified": true,
     "latest_host_evidence_row_id": 550,
     "latest_host_event_id": "X20261027005144165_HOST_TICK_CONSUMER_READBACK",
@@ -45,7 +45,7 @@
     "latest_library_logs_blob_sha1_mismatches": 0,
     "raw_sha256_recomputed": false,
     "main_head_before_checkpoint": "fd91de75ffc79136550f6fed344e04bd4a3da01c",
-    "main_head_after_checkpoint": "94f157cacf061a40a9383f3bd4467715d6bb2e90"
+    "main_head_after_checkpoint": "618ae76c0770fa1f8c602bc4021c99faceaa337a"
   },
   "post_checkpoint_updates": [
     {
@@ -2138,6 +2138,17 @@
       "host_heartbeat_probed": false,
       "tasks_closed": 0,
       "readback_verified": true
+    },
+    {
+      "type": "CHECKPOINT_TIMESTAMP_PROVENANCE_CORRECTION",
+      "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1703ICT.json",
+      "prior_checkpoint_blob_sha": "3b8ff03796d5af7f345452574f22b4d0775e4d0c",
+      "corrected_checkpoint_blob_sha": "1a5f7aeecae9e90b09d44ff274101f9f08f83e6f",
+      "checkpoint_commit_sha": "618ae76c0770fa1f8c602bc4021c99faceaa337a",
+      "reason": "Removed a field that incorrectly equated the evidence-row creation timestamp with the checkpoint commit timestamp.",
+      "continuity_evidence_row_id": 573,
+      "task_statuses_changed": false,
+      "tasks_closed": 0
     }
   ],
   "n8n": {
