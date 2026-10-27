@@ -1,13 +1,13 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.2",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-27T01:01:18.224Z",
-  "updated_at_local": "2026-10-27T08:01:18.224+07:00",
+  "updated_at_utc": "2026-10-27T01:46:00.783Z",
+  "updated_at_local": "2026-10-27T08:46:00.783+07:00",
   "timestamp_basis": "updated_at follows provider createdAt of the latest appended evidence row, not host event time. Host-local timestamps and cloud/provider timestamps remain separate; CSV row timezone unspecified.",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0801ICT.json",
-    "blob_sha": "a02023d0493bf98236e2dfc356bdbd539bd47ffe",
-    "commit_sha": "ed899ac50ef605052831b1ffd8c7421e4211fc35",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0846ICT.json",
+    "blob_sha": "0e918e4e102d4a023249fd93b37503336c4de59e",
+    "commit_sha": "0a661bbfcd4c4a1fb879c746b170e875327543b2",
     "readback_verified": true,
     "latest_host_evidence_row_id": 550,
     "latest_host_event_id": "X20261027005144165_HOST_TICK_CONSUMER_READBACK",
@@ -17,10 +17,10 @@
     "latest_source_tail_readback_event_id": "X20261027005908226_HOST_SOURCE_TAIL_READBACK",
     "latest_cloud_scan_row_id": 549,
     "latest_cloud_scan_event_id": "X20261027010024014_CLOUD",
-    "latest_continuity_readback_row_id": 550,
-    "latest_continuity_readback_event_id": "X20261027005144165_HOST_TICK_CONSUMER_READBACK",
-    "latest_source_provenance_row_id": 546,
-    "latest_source_provenance_event_id": "X20261027005502438_CLOUD_CONTINUITY_READBACK",
+    "latest_continuity_readback_row_id": 551,
+    "latest_continuity_readback_event_id": "X20261027014400000_GITHUB_LIBRARY_LOG_CURRENT_MAIN_READBACK",
+    "latest_source_provenance_row_id": 551,
+    "latest_source_provenance_event_id": "X20261027014400000_GITHUB_LIBRARY_LOG_CURRENT_MAIN_READBACK",
     "recovery_rows_pending": 45,
     "recovery_rows_total": 45,
     "recovery_rows_terminal": 0,
@@ -34,7 +34,7 @@
     "current_task_ledger_blob_sha": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
     "current_task_ledger_size_bytes": 2422868,
     "android_online_state": "UNVERIFIED",
-    "remote_route_status_current": "Online at inventory readback around 2026-10-27T01:00:01Z; route is not host heartbeat",
+    "remote_route_status_current": "Not rechecked in this invocation; last inventory readback around 2026-10-27T01:00:01Z reported route Online, not host heartbeat",
     "remote_route_is_host_heartbeat": false,
     "github_schedule_gap": "OPEN_SCHEDULE_GAP_UNRESOLVED",
     "latest_github_schedule_run_id": 40413591198,
@@ -43,12 +43,12 @@
     "latest_github_schedule_run_created_at_utc": "2026-10-26T22:35:24Z",
     "latest_github_schedule_row_id": 542,
     "latest_github_schedule_state_correction_row_id": 543,
-    "latest_source_revision_delta_row_id": 546,
-    "latest_source_revision_delta_event_id": "X20261027005502438_CLOUD_CONTINUITY_READBACK",
+    "latest_source_revision_delta_row_id": 551,
+    "latest_source_revision_delta_event_id": "X20261027014400000_GITHUB_LIBRARY_LOG_CURRENT_MAIN_READBACK",
     "latest_library_logs_blob_sha1_matches": 5,
     "latest_library_logs_blob_sha1_mismatches": 0,
     "latest_library_logs_current_main_delta": "NONE_INDICATED_BY_MATCHING_BLOB_SHA1",
-    "main_head_before_checkpoint": "b8fb468f7200aef753ddb9300ff04b73dea4db9b"
+    "main_head_before_checkpoint": "6ce7e2dfee10ccbd89c5c13f888ae6664dff7e63"
   },
   "post_checkpoint_updates": [
     {
@@ -1909,6 +1909,28 @@
       "host_tick_readback_verified": true,
       "host_tick_cadence_gap": "OPEN_HOST_TICK_GAP_UNRESOLVED",
       "tasks_closed": 0
+    },
+    {
+      "type": "CURRENT_MAIN_BRAIN_WAVE_LOG_BLOB_SHA1_READBACK_20261027T0846ICT",
+      "path_prefix": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/BRAIN_WAVE_LOGS",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 551,
+      "event_id": "X20261027014400000_GITHUB_LIBRARY_LOG_CURRENT_MAIN_READBACK",
+      "provider_created_at_utc": "2026-10-27T01:46:00.783Z",
+      "repository_head_observed": "6ce7e2dfee10ccbd89c5c13f888ae6664dff7e63",
+      "file_count": 5,
+      "blob_sha1_matches": 5,
+      "blob_sha1_mismatches": 0,
+      "raw_sha256_recomputed": false,
+      "readback_verified": true,
+      "tasks_closed": 0
+    },
+    {
+      "type": "CHECKPOINT_0846_CREATED_AND_READBACK",
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T0846ICT.json",
+      "blob_sha": "0e918e4e102d4a023249fd93b37503336c4de59e",
+      "commit_sha": "0a661bbfcd4c4a1fb879c746b170e875327543b2",
+      "readback_verified": true
     }
   ],
   "n8n": {
@@ -8542,8 +8564,8 @@
   "latest_cloud_scan_event_id": "X20261027010024014_CLOUD",
   "latest_cloud_scan_execution_id": "227",
   "latest_cloud_scan_provider_created_at_utc": "2026-10-27T01:00:24.087Z",
-  "latest_continuity_readback_row_id": 550,
-  "latest_continuity_readback_event_id": "X20261027005144165_HOST_TICK_CONSUMER_READBACK",
+  "latest_continuity_readback_row_id": 551,
+  "latest_continuity_readback_event_id": "X20261027014400000_GITHUB_LIBRARY_LOG_CURRENT_MAIN_READBACK",
   "latest_source_provenance_row_id": 546,
   "latest_source_provenance_event_id": "X20261027005502438_CLOUD_CONTINUITY_READBACK",
   "recovery_rows_total": 45,
@@ -8882,5 +8904,7 @@
     "main_head_before_checkpoint": "b8fb468f7200aef753ddb9300ff04b73dea4db9b"
   },
   "latest_host_tick_readback_verified": true,
-  "host_tick_cadence_gap": "OPEN_HOST_TICK_GAP_UNRESOLVED"
+  "host_tick_cadence_gap": "OPEN_HOST_TICK_GAP_UNRESOLVED",
+  "latest_source_revision_delta_row_id": 551,
+  "latest_source_revision_delta_event_id": "X20261027014400000_GITHUB_LIBRARY_LOG_CURRENT_MAIN_READBACK"
 }
