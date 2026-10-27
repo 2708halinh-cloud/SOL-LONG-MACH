@@ -3,8 +3,7 @@
   "state": "OPEN_WORK_REMAINS",
   "observed_at_utc": "2026-10-27T10:00:59.000Z",
   "observed_at_local": "2026-10-27T17:00:59.000+07:00",
-  "checkpoint_persisted_at_utc": "2026-10-27T10:03:26.802Z",
-  "timestamp_basis": "n8n execution 237 and row 572 independently read back; GitHub Actions run inventory and workflow blob read; evidence row 573 appended and read back. Cloud evidence only, not a host heartbeat.",
+  "timestamp_basis": "observed_at_utc records the GitHub Actions inventory observation time; the n8n continuity evidence row was provider-created at 2026-10-27T10:03:26.802Z. The exact checkpoint commit time is not asserted inside this artifact.",
   "resume_from": {
     "prior_checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1554ICT.json",
     "prior_checkpoint_blob_sha": "f735a5c8a835221d0a362a179738208b8706aa0f",
@@ -144,5 +143,8 @@
     "Do not mark host heartbeat fresh until newest tick contents and consumer receipt are independently read and verified.",
     "Keep Android UNVERIFIED, sensor stream stale, and local OPEN_TASKS_CURRENT.json content readback unverified.",
     "Resume from this checkpoint and pointer; do not rebuild continuity state from scratch."
+  ],
+  "integrity_notes": [
+    "Removed checkpoint_persisted_at_utc because its prior value was the evidence-row creation timestamp, not the checkpoint commit timestamp."
   ]
 }
