@@ -1,9 +1,9 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.3",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-27T13:25:18.107Z",
-  "updated_at_local": "2026-10-27T20:25:18.107+07:00",
-  "timestamp_basis": "Pointer timestamp captured immediately before update; GitHub provider commit timestamp is authoritative. Checkpoint blob ca7243a7a279b67ddb4885ce68e14666a89e43fc and evidence row 581 were read back before this pointer update; pointer readback follows the update.",
+  "updated_at_utc": "2026-10-27T13:26:36.383Z",
+  "updated_at_local": "2026-10-27T20:26:36.383+07:00",
+  "timestamp_basis": "Pointer timestamp captured immediately before update; provider commit timestamp is authoritative. Checkpoint row 581 and schedule-gap evidence row 582 were read back before this pointer update; pointer readback follows.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T2023ICT.json",
     "blob_sha": "ca7243a7a279b67ddb4885ce68e14666a89e43fc",
@@ -2236,6 +2236,22 @@
       "android_online_state": "UNVERIFIED",
       "github_schedule_gap": "OPEN_SCHEDULE_GAP_UNRESOLVED",
       "raw_zip_current_source_revalidated": false
+    },
+    {
+      "type": "GITHUB_SCHEDULE_GAP_READBACK_20261027T2026ICT",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 582,
+      "event_id": "X20261027132613259_GITHUB_SCHEDULE_GAP_READBACK",
+      "provider_created_at_utc": "2026-10-27T13:26:14.796Z",
+      "repository_total_count": 6288,
+      "returned_latest_runs": 100,
+      "target_workflow_path_visible_in_page": false,
+      "target_specific_inventory_verified": false,
+      "workflow_file_blob_sha": "044b4e73123af4772b995b410b3a79e847be7e03",
+      "cron": "7 * * * *",
+      "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+      "cause_verified": false,
+      "workflow_changed": false
     }
   ],
   "n8n": {
@@ -2247,7 +2263,7 @@
     "latest_host_evidence_row_id": 522,
     "latest_route_inventory_evidence_row_id": 459,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_table_rows": 581,
+    "evidence_table_rows": 582,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_project_id": "6qKpRmicIGHA5snY",
     "recovery_rows": 45,
@@ -2293,7 +2309,10 @@
     "latest_continuity_readback_row_id": 581,
     "latest_continuity_readback_event_id": "X20261027132333442_CLOUD_CONTINUITY_READBACK",
     "latest_continuity_readback_created_at_utc": "2026-10-27T13:24:01.365Z",
-    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN"
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "latest_schedule_gap_readback_row_id": 582,
+    "latest_schedule_gap_readback_event_id": "X20261027132613259_GITHUB_SCHEDULE_GAP_READBACK",
+    "latest_schedule_gap_readback_created_at_utc": "2026-10-27T13:26:14.796Z"
   },
   "host": {
     "device": "DESKTOP-86ITNQ4",
@@ -2466,7 +2485,7 @@
     "go_build_and_hellocheck_on_schedule": "SKIPPED_BY_EXPLICIT_WORKFLOW_CONDITION",
     "github_tasks_last_verified_count": 29,
     "github_tasks_closed": 0,
-    "latest_run_inventory_repository_total_count": 6211,
+    "latest_run_inventory_repository_total_count": 6288,
     "latest_run_inventory_returned": 100,
     "latest_schedule_inventory_readback_utc": "2026-10-27T10:07:34.444Z",
     "schedule_run_list_rechecked_this_invocation": false,
@@ -2484,10 +2503,10 @@
     "latest_runner_artifact_id": 12717652516,
     "latest_runner_artifact_sha256": "6183cfa756af5e717f26419ea8b6fdee0fe97b20cb9f2104319b827602e0b80f",
     "cloud_survival_scheduler_blob_sha": "691fccaddc4c3c3f9f33f91753879f8c454d22a7",
-    "latest_run_inventory_readback_utc": "2026-10-27T08:51:37Z",
+    "latest_run_inventory_readback_utc": "2026-10-27T13:26:13.259Z",
     "latest_schedule_run_inventory_repository_total_count": 6199,
     "latest_schedule_run_inventory_returned": 100,
-    "target_path_runs_in_last_inventory": 2,
+    "target_path_runs_in_last_inventory": 0,
     "target_schedule_ticks_without_newer_run_visible_in_last_inventory": [
       "2026-10-27T02:07:00Z",
       "2026-10-27T03:07:00Z",
@@ -2510,7 +2529,8 @@
     "latest_previously_verified_target_run_number": 379,
     "latest_previously_verified_target_run_status": "success",
     "latest_previously_verified_target_run_started_at_utc": "2026-10-27T07:41:03Z",
-    "current_target_workflow_run_inventory_status": "UNVERIFIED_ENDPOINT_REJECTED"
+    "current_target_workflow_run_inventory_status": "REPO_WIDE_LAST_100_NO_TARGET_PATH; FILTERED_ENDPOINT_UNAVAILABLE",
+    "repository_wide_actions_inventory_rechecked_this_invocation": true
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -2689,7 +2709,16 @@
     "recovery_rows_terminal": 0,
     "host_heartbeat_fresh": false,
     "android_online_state": "UNVERIFIED",
-    "task_statuses_changed": false
+    "task_statuses_changed": false,
+    "latest_evidence_row_id": 582,
+    "latest_schedule_gap_readback_row_id": 582,
+    "latest_schedule_gap_readback_event_id": "X20261027132613259_GITHUB_SCHEDULE_GAP_READBACK",
+    "latest_schedule_gap_readback_created_at_utc": "2026-10-27T13:26:14.796Z",
+    "repository_wide_actions_total_count": 6288,
+    "repository_wide_actions_returned": 100,
+    "target_path_runs_in_last_inventory": 0,
+    "target_specific_run_inventory_verified": false,
+    "schedule_gap": "OPEN_SCHEDULE_GAP_UNRESOLVED"
   },
   "previous_checkpoint_before_20261026T1051ICT": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T0655ICT.json",
@@ -9581,5 +9610,23 @@
     "readback_verified": true,
     "tasks_closed": 0,
     "task_statuses_changed": false
+  },
+  "latest_github_schedule_gap_readback_20261027T2026ICT": {
+    "event_id": "X20261027132613259_GITHUB_SCHEDULE_GAP_READBACK",
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_row_id": 582,
+    "provider_created_at_utc": "2026-10-27T13:26:14.796Z",
+    "repository_total_count": 6288,
+    "returned_latest_runs": 100,
+    "target_workflow_path_visible_in_page": false,
+    "target_specific_inventory_verified": false,
+    "workflow_file_blob_sha": "044b4e73123af4772b995b410b3a79e847be7e03",
+    "cron": "7 * * * *",
+    "latest_previously_verified_target_run_id": 40468591667,
+    "latest_previously_verified_target_run_number": 379,
+    "latest_previously_verified_target_run_status": "success",
+    "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+    "cause_verified": false,
+    "workflow_changed": false
   }
 }
