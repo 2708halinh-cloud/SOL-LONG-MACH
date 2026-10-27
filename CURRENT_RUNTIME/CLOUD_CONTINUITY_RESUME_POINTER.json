@@ -1,23 +1,23 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.3",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-27T08:54:19.271Z",
-  "updated_at_local": "2026-10-27T15:54:19.271+07:00",
-  "timestamp_basis": "Pointer updated after readback verification of checkpoint, n8n scan receipt row 569, and GitHub schedule-gap evidence row 570; cloud heartbeat is not host heartbeat.",
+  "updated_at_utc": "2026-10-27T10:03:26.802Z",
+  "updated_at_local": "2026-10-27T17:03:26.802+07:00",
+  "timestamp_basis": "Pointer updated after independent readback of checkpoint, n8n scan receipt row 572, continuity evidence row 573, and current GitHub Actions run inventory; cloud heartbeat is not host heartbeat.",
   "checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1554ICT.json",
-    "blob_sha": "f735a5c8a835221d0a362a179738208b8706aa0f",
-    "commit_sha": "f6c5110577ce3354043e799160e6b52754fc5a14",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1703ICT.json",
+    "blob_sha": "3b8ff03796d5af7f345452574f22b4d0775e4d0c",
+    "commit_sha": "94f157cacf061a40a9383f3bd4467715d6bb2e90",
     "readback_verified": true,
     "latest_host_evidence_row_id": 550,
     "latest_host_event_id": "X20261027005144165_HOST_TICK_CONSUMER_READBACK",
     "latest_source_tail_readback_row_id": 548,
     "latest_source_tail_readback_event_id": "X20261027005908226_HOST_SOURCE_TAIL_READBACK",
-    "latest_cloud_scan_row_id": 569,
-    "latest_cloud_scan_event_id": "X20261027080024084_CLOUD",
-    "latest_cloud_scan_execution_id": "235",
-    "latest_continuity_readback_row_id": 570,
-    "latest_continuity_readback_event_id": "X20261027085137000_GITHUB_SCHEDULE_GAP_READBACK",
+    "latest_cloud_scan_row_id": 572,
+    "latest_cloud_scan_event_id": "X20261027100023986_CLOUD",
+    "latest_cloud_scan_execution_id": "237",
+    "latest_continuity_readback_row_id": 573,
+    "latest_continuity_readback_event_id": "X20261027100059000_GITHUB_SCHEDULE_GAP_READBACK",
     "latest_source_provenance_row_id": 568,
     "latest_source_provenance_event_id": "X20261027074432000_GITHUB_BRAIN_WAVE_CURRENT_MAIN_READBACK",
     "recovery_rows_pending": 45,
@@ -44,8 +44,8 @@
     "latest_library_logs_blob_sha1_matches": 5,
     "latest_library_logs_blob_sha1_mismatches": 0,
     "raw_sha256_recomputed": false,
-    "main_head_before_checkpoint": "cbaa08e00a17cf7585ca1cc62bc2f05a05db3454",
-    "main_head_after_checkpoint": "f6c5110577ce3354043e799160e6b52754fc5a14"
+    "main_head_before_checkpoint": "fd91de75ffc79136550f6fed344e04bd4a3da01c",
+    "main_head_after_checkpoint": "94f157cacf061a40a9383f3bd4467715d6bb2e90"
   },
   "post_checkpoint_updates": [
     {
@@ -2110,6 +2110,34 @@
       "blob_sha": "8cb5e79fdd529de45e398b4bcc2cc300047a3623",
       "commit_sha": "595db7e2477ba9043d469c009ed95a8645b2ec75",
       "readback_verified": true
+    },
+    {
+      "type": "GITHUB_SCHEDULE_GAP_RECHECK_AND_CHECKPOINT_1703ICT",
+      "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261027T1703ICT.json",
+      "checkpoint_blob_sha": "3b8ff03796d5af7f345452574f22b4d0775e4d0c",
+      "checkpoint_commit_sha": "94f157cacf061a40a9383f3bd4467715d6bb2e90",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 573,
+      "event_id": "X20261027100059000_GITHUB_SCHEDULE_GAP_READBACK",
+      "provider_created_at_utc": "2026-10-27T10:03:26.802Z",
+      "n8n_execution_id": "237",
+      "cloud_scan_row_id": 572,
+      "github_target_latest_run_id": 40468591667,
+      "github_target_latest_run_number": 379,
+      "github_target_latest_run_conclusion": "success",
+      "missing_schedule_ticks": [
+        "2026-10-27T02:07:00Z",
+        "2026-10-27T03:07:00Z",
+        "2026-10-27T04:07:00Z",
+        "2026-10-27T05:07:00Z",
+        "2026-10-27T06:07:00Z",
+        "2026-10-27T08:07:00Z",
+        "2026-10-27T09:07:00Z"
+      ],
+      "cause_verified": false,
+      "host_heartbeat_probed": false,
+      "tasks_closed": 0,
+      "readback_verified": true
     }
   ],
   "n8n": {
@@ -2334,7 +2362,7 @@
     "github_tasks_closed": 0,
     "latest_run_inventory_repository_total_count": 6186,
     "latest_run_inventory_returned": 100,
-    "latest_schedule_inventory_readback_utc": "2026-10-27T08:51:37Z",
+    "latest_schedule_inventory_readback_utc": "2026-10-27T10:00:59Z",
     "schedule_run_list_rechecked_this_invocation": false,
     "library_logs_blob_sha1_matches": 5,
     "library_logs_blob_sha1_mismatches": 0,
@@ -2350,7 +2378,25 @@
     "latest_runner_artifact_id": 12717652516,
     "latest_runner_artifact_sha256": "6183cfa756af5e717f26419ea8b6fdee0fe97b20cb9f2104319b827602e0b80f",
     "cloud_survival_scheduler_blob_sha": "691fccaddc4c3c3f9f33f91753879f8c454d22a7",
-    "latest_run_inventory_readback_utc": "2026-10-27T08:51:37Z"
+    "latest_run_inventory_readback_utc": "2026-10-27T08:51:37Z",
+    "latest_schedule_run_inventory_repository_total_count": 6199,
+    "latest_schedule_run_inventory_returned": 100,
+    "target_path_runs_in_last_inventory": 2,
+    "target_schedule_ticks_without_newer_run_visible_in_last_inventory": [
+      "2026-10-27T02:07:00Z",
+      "2026-10-27T03:07:00Z",
+      "2026-10-27T04:07:00Z",
+      "2026-10-27T05:07:00Z",
+      "2026-10-27T06:07:00Z",
+      "2026-10-27T08:07:00Z",
+      "2026-10-27T09:07:00Z"
+    ],
+    "next_expected_tick_utc": "2026-10-27T10:07:00Z",
+    "next_expected_tick_rechecked_this_invocation": false,
+    "schedule_gap": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+    "cause_verified": false,
+    "workflow_changed": false,
+    "host_heartbeat_probed": false
   },
   "continuation_guards": {
     "preserve_open_and_in_progress": true,
@@ -9331,5 +9377,14 @@
     "schedule_gap_cause_verified": false,
     "host_heartbeat_probed": false,
     "android_online_state": "UNVERIFIED"
+  },
+  "latest_host_probe_20261027T1703ICT": {
+    "host_heartbeat_probed": false,
+    "latest_verified_host_evidence_row_id": 550,
+    "latest_verified_host_event_id": "X20261027005144165_HOST_TICK_CONSUMER_READBACK",
+    "latest_host_heartbeat_fresh_readback": false,
+    "android_online_state": "UNVERIFIED",
+    "remote_route_is_host_heartbeat": false,
+    "reason": "Cloud runner and n8n cloud scan do not probe the physical host; no new Windows/Android state inferred."
   }
 }
