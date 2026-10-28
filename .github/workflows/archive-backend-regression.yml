@@ -33,6 +33,36 @@ jobs:
           sudo apt-get install -y 7zip lrzip
           command -v 7zz || command -v 7z
           command -v lrzip
+      - name: Fetch and verify pinned public RAR fixture (no extraction)
+        run: |
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/libarchive/libarchive/7574249bdc19f34c63b52ef0102d056f4fb7ba39/libarchive/test/test_read_format_rar.rar.uu \
+            --output "$RUNNER_TEMP/test_read_format_rar.rar.uu"
+          python - <<'PY'
+          import binascii, hashlib, os
+          from pathlib import Path
+
+          root = Path(os.environ["RUNNER_TEMP"])
+          source = root / "test_read_format_rar.rar.uu"
+          encoded = source.read_bytes()
+          git_blob_sha1 = hashlib.sha1(
+              b"blob " + str(len(encoded)).encode("ascii") + b"\\0" + encoded
+          ).hexdigest()
+          assert git_blob_sha1 == "f197a2983302f5829de2719bdddcf43b8c59b201", git_blob_sha1
+          lines = encoded.decode("ascii").splitlines()
+          assert lines[0] == "begin 644 test_read_format_rar.rar" and lines[-1] == "end"
+          archive = b"".join(
+              binascii.a2b_uu(line) for line in lines[1:-1] if line and line != "`"
+          )
+          archive_sha256 = hashlib.sha256(archive).hexdigest()
+          assert len(archive) == 336, len(archive)
+          assert archive_sha256 == "d421b86f6290aefad61b2a36737253b2b30fe27c156bd95abfc230f24fe0307e", archive_sha256
+          target = root / "sol-test-read-format-rar.rar"
+          target.write_bytes(archive)
+          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
+              env.write(f"SOL_RAR_FIXTURE_PATH={target}\\n")
+          print({"upstream_git_blob_sha1": git_blob_sha1, "rar_sha256": archive_sha256, "bytes": len(archive)})
+          PY
       - name: Verify mocked optional-adapter routing and safe-failure contracts
         run: python -m unittest tests.test_sol_archive_10_formats -v
       - name: Verify real 7Z and LR fixtures, malformed input, and no-extraction guard
