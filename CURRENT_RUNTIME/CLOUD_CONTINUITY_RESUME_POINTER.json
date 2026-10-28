@@ -1,13 +1,14 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.5",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-28T04:38:39.448Z",
-  "updated_at_local": "2026-10-28T11:38:39.448+07:00",
+  "updated_at_utc": "2026-10-28T04:43:55.134Z",
+  "updated_at_local": "2026-10-28T11:43:55.134+07:00",
   "timestamp_basis": "Cloud provider timestamps are not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "b9b557ed33b5425f1a93c2ba35a51d5e6ef36e60",
+    "blob_sha": "7b4ea36bc745b3b6ba4e15fbc000cd0751f68500",
     "prior_pointer_chain": [
+      "b9b557ed33b5425f1a93c2ba35a51d5e6ef36e60",
       "32cd1789a5adf6df9f44b307f3e87db34837915a",
       "733cfc10af93f9daaf5aa118906ec49c82014dc3",
       "6ef28c55f4646c6b754aed8501ca24e250350058",
@@ -18,21 +19,20 @@
     ]
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1132ICT.json",
-    "blob_sha": "4a1676c27433c3f6f551f0882e0e5ce83be3bcbf",
-    "commit_sha": "792ae3c9b40418896d35c7a1b892a09354047332"
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1137ICT.json",
     "blob_sha": "01e42fe00e76fee83494ed55430b1e3e1454f008",
-    "commit_sha": "61a3e7aea9354cc4dd3baf587437480c9a985fcd",
+    "commit_sha": "61a3e7aea9354cc4dd3baf587437480c9a985fcd"
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1142ICT.json",
+    "blob_sha": "807b27631f9bbc6a892ce9bc635b3f358780b942",
+    "commit_sha": "f13b2e177df6c655e368b304d983e2b2fd16bc4f",
     "readback_verified": true,
-    "observed_at_utc": "2026-10-28T04:37:32.083Z",
-    "latest_continuity_readback_evidence_row_id": 636,
-    "latest_continuity_readback_event_id": "X20261028T0437Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
-    "github_actions_inventory_evidence_row_id": 635,
-    "archive_adapter_evidence_row_id": 634,
-    "previous_checkpoint_blob_sha": "4a1676c27433c3f6f551f0882e0e5ce83be3bcbf"
+    "observed_at_utc": "2026-10-28T04:42:46.520Z",
+    "latest_continuity_readback_evidence_row_id": 639,
+    "latest_continuity_readback_event_id": "X20261028T0442Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+    "archive_rar_ci_evidence_row_id": 638,
+    "previous_checkpoint_blob_sha": "01e42fe00e76fee83494ed55430b1e3e1454f008"
   },
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -97,24 +97,35 @@
     "source_task_table_row_id": 14,
     "status": "OPEN_7Z_RAR_LR",
     "isolated_branch": "sol-cloud-continuity/archive-adapter-tests-20261028",
-    "branch_commit_sha": "ca2566642f1a9f971748504abd0235b44311bc05",
-    "test_file_blob_sha": "1f6de1ece57017e556c24c0e2198189244aaa623",
-    "workflow_file_blob_sha": "5a210f13c3529f4c684ce9289f6a19cda4f756c4",
+    "branch_commit_sha": "8c7bc6646ab64d039ed600d0987a178021003e54",
+    "test_file_blob_sha": "28b3a424a3b7481731d49eafa8d1474147384d02",
+    "workflow_file_blob_sha": "48d0598f0feb1544099298ef680a005cfd729436",
     "source_module_blob_sha": "336c01735d84f1830decae5952db0a9973d770b5",
-    "github_actions_run_id": 40633249428,
-    "github_actions_run_number": 4,
-    "github_actions_job_id": 122634267763,
+    "github_actions_run_id": 40633761872,
+    "github_actions_run_number": 7,
+    "github_actions_job_id": 122635945646,
     "job_status": "success",
-    "completed_at_utc": "2026-10-28T04:36:35Z",
+    "completed_at_utc": "2026-10-28T04:42:13Z",
     "real_7z_fixture_verified": true,
+    "real_rar_fixture_verified": true,
     "real_lr_fixture_verified": true,
     "malformed_7z_fails_closed": true,
     "signature_only_rar_fails_closed": true,
-    "real_rar_fixture_verified": false,
-    "verification_scope": "REAL_7Z_AND_LR_INTEGRITY_TESTS_WITH_HASH_READBACK_AND_NO_EXTRACTION;RAR_REAL_FIXTURE_NOT_AVAILABLE",
+    "extraction_performed": false,
+    "upstream_rar_fixture": {
+      "repository": "libarchive/libarchive",
+      "commit_sha": "7574249bdc19f34c63b52ef0102d056f4fb7ba39",
+      "path": "libarchive/test/test_read_format_rar.rar.uu",
+      "upstream_git_blob_sha1": "f197a2983302f5829de2719bdddcf43b8c59b201",
+      "decoded_bytes": 336,
+      "decoded_sha256": "d421b86f6290aefad61b2a36737253b2b30fe27c156bd95abfc230f24fe0307e",
+      "provenance_verified_in_ci": true
+    },
+    "verification_scope": "REAL_7Z_RAR_LR_INTEGRITY_TESTS_WITH_ARCHIVE_SHA_READBACK_AND_NO_EXTRACTION;MALFORMED_INPUT_FAIL_CLOSED;SAFE_MEMBER_PATH_UNIT_TESTS",
+    "remaining_acceptance": "9_FORMAT_CAPABILITY_AND_SOURCE_TARGET_HASH_MATRIX_NOT_YET_RECORDED_AS_ONE_RECEIPT",
     "main_branch_archive_code_merged": false,
     "task_closed": false,
-    "evidence_row_id": 634
+    "evidence_row_id": 638
   },
   "host_and_android": {
     "latest_verified_host_evidence_row_id": 550,
@@ -144,63 +155,14 @@
     "archive_code_merged_to_main": false
   },
   "next_edges": [
-    "Verify the scheduled n8n execution at or after 2026-10-28T05:00:00Z and read back its evidence row.",
-    "Recheck Windows-survival workflow ID 393485804 after the 2026-10-28T05:07:00Z tick; preserve OPEN_SCHEDULE_GAP_UNRESOLVED until the run and cause are reconciled.",
-    "Continue SV-20261020-13-ARCHIVE-FORMATS by locating an authorized real RAR fixture or retaining the explicit RAR blocker; do not claim RAR verification from signature-only bytes.",
-    "Continue callable cloud-only tasks only where source identity and permission are established; keep all 45 recovery tasks nonterminal.",
+    "Verify scheduled n8n execution at or after 2026-10-28T05:00:00Z and read back its evidence row.",
+    "Refresh Windows-survival workflow ID 393485804 after 2026-10-28T05:07:00Z; preserve OPEN_SCHEDULE_GAP_UNRESOLVED until reconciled.",
+    "Record one verified capability/source-target hash matrix for the nine concrete formats; do not close SV-20261020-13 until all acceptance criteria and readback are proven.",
+    "Keep all 45 recovery tasks nonterminal until each has its own verified action and readback.",
     "Obtain a fresh authorized host heartbeat separately; do not infer host state from cloud scans.",
-    "Retrieve original ingestion_gate_payload_03.txt bytes through an authorized source route and recompute SHA-256."
+    "Retrieve original ingestion_gate_payload_03.txt bytes through an authorized route and recompute SHA-256."
   ],
   "post_checkpoint_updates": [
-    {
-      "type": "GITHUB_ACTIONS_DELAY_RECHECK",
-      "evidence_row_id": 627,
-      "event_id": "X20261028T041211164_GITHUB_ACTIONS_DELAY_RECHECK",
-      "total_count": 6388,
-      "latest_target_run_number": 382,
-      "delayed_run_visible_by_04_12z": false,
-      "state": "OPEN_SCHEDULE_GAP_UNRESOLVED"
-    },
-    {
-      "type": "CHECKPOINT_1112_CREATED_READBACK",
-      "evidence_row_id": 628,
-      "event_id": "X20261028T041211164_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
-      "checkpoint_blob_sha": "e82c6addefddd14fc26c1f18421d0f76ea22ba7d",
-      "checkpoint_commit_sha": "e3ff5bb96f542ebfd7cb7056708aa1f1f80f71a7",
-      "readback_verified": true
-    },
-    {
-      "type": "N8N_EXECUTION_256_READBACK",
-      "evidence_row_id": 631,
-      "event_id": "X20261028T043150869_CLOUD_CONTINUITY_N8N_EXECUTION_READBACK",
-      "execution_id": "256",
-      "execution_status": "success",
-      "scan_evidence_row_id": 630,
-      "recovery_tasks_nonterminal": 45,
-      "tasks_closed": 0
-    },
-    {
-      "type": "CHECKPOINT_1132_CREATED_READBACK",
-      "evidence_row_id": 632,
-      "event_id": "X20261028T0432Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
-      "checkpoint_blob_sha": "4a1676c27433c3f6f551f0882e0e5ce83be3bcbf",
-      "checkpoint_commit_sha": "792ae3c9b40418896d35c7a1b892a09354047332",
-      "readback_verified": true
-    },
-    {
-      "type": "N8N_EXECUTION_256_READBACK",
-      "evidence_row_id": 631,
-      "event_id": "X20261028T043150869_CLOUD_CONTINUITY_N8N_EXECUTION_READBACK",
-      "execution_id": "256",
-      "execution_status": "success"
-    },
-    {
-      "type": "CHECKPOINT_1132_CREATED_READBACK",
-      "evidence_row_id": 632,
-      "event_id": "X20261028T0432Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
-      "checkpoint_blob_sha": "4a1676c27433c3f6f551f0882e0e5ce83be3bcbf",
-      "readback_verified": true
-    },
     {
       "type": "RESUME_POINTER_1132_READBACK",
       "evidence_row_id": 633,
@@ -230,6 +192,52 @@
       "evidence_row_id": 636,
       "event_id": "X20261028T0437Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
       "checkpoint_blob_sha": "01e42fe00e76fee83494ed55430b1e3e1454f008",
+      "readback_verified": true
+    },
+    {
+      "type": "ARCHIVE_REAL_BACKEND_CI_READBACK",
+      "evidence_row_id": 634,
+      "run_id": 40633249428,
+      "conclusion": "success",
+      "real_7z_verified": true,
+      "real_lr_verified": true,
+      "real_rar_verified": false
+    },
+    {
+      "type": "GITHUB_TARGET_WORKFLOW_INVENTORY",
+      "evidence_row_id": 635,
+      "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+      "latest_target_run_number": 382
+    },
+    {
+      "type": "CHECKPOINT_1137_CREATED_READBACK",
+      "evidence_row_id": 636,
+      "event_id": "X20261028T0437Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+      "checkpoint_blob_sha": "01e42fe00e76fee83494ed55430b1e3e1454f008",
+      "readback_verified": true
+    },
+    {
+      "type": "RESUME_POINTER_1137_READBACK",
+      "evidence_row_id": 637,
+      "event_id": "X20261028T0438Z_RESUME_POINTER_READBACK",
+      "pointer_blob_sha": "7b4ea36bc745b3b6ba4e15fbc000cd0751f68500",
+      "readback_verified": true
+    },
+    {
+      "type": "ARCHIVE_REAL_RAR_BACKEND_CI_READBACK",
+      "evidence_row_id": 638,
+      "event_id": "X20261028T0442Z_ARCHIVE_REAL_RAR_BACKEND_CI_READBACK",
+      "run_id": 40633761872,
+      "conclusion": "success",
+      "real_7z_verified": true,
+      "real_rar_verified": true,
+      "real_lr_verified": true
+    },
+    {
+      "type": "CHECKPOINT_1142_CREATED_READBACK",
+      "evidence_row_id": 639,
+      "event_id": "X20261028T0442Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+      "checkpoint_blob_sha": "807b27631f9bbc6a892ce9bc635b3f358780b942",
       "readback_verified": true
     }
   ]
