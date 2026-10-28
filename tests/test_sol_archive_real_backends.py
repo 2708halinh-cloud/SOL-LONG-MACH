@@ -6,11 +6,13 @@ never modify source carriers. RAR is explicitly fail-closed unless a real fixtur
 is supplied; a signature-only byte sequence is not treated as a valid archive.
 """
 import hashlib
+import json
 import importlib.util
 import os
 import shutil
 import subprocess
 import tempfile
+import sys
 import unittest
 from pathlib import Path
 
@@ -192,6 +194,159 @@ class RealOptionalBackendTests(unittest.TestCase):
             MEMORY_ARCHIVE.unpack(archive, destination)
         self.assertFalse(destination.exists())
         self.assertEqual(archive.read_bytes(), original_bytes)
+
+    def test_nine_format_capability_and_source_target_hash_matrix(self):
+        expected_all = ["ALL", "7Z", "BZ2", "GZ", "JAR", "LR", "RAR", "TAR", "XZ", "ZIP"]
+        expected_concrete = ["7Z", "BZ2", "GZ", "JAR", "LR", "RAR", "TAR", "XZ", "ZIP"]
+        caps_proc = subprocess.run(
+            [sys.executable, str(SOL_SOURCE), "--capabilities"],
+            capture_output=True,
+            text=True,
+            timeout=30,
+            check=False,
+        )
+        self.assertEqual(caps_proc.returncode, 0, caps_proc.stderr)
+        capabilities = json.loads(caps_proc.stdout)
+        self.assertEqual(capabilities["formats"], expected_all)
+        for optional in ("7Z", "RAR", "LR"):
+            self.assertTrue(capabilities[optional], capabilities)
+
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            source, original_source_bytes, source_sha = self.make_source(root)
+            matrix = {}
+            native_extensions = {
+                "ZIP": ".zip", "JAR": ".jar", "TAR": ".tar",
+                "BZ2": ".bz2", "GZ": ".gz", "XZ": ".xz",
+            }
+
+            for kind, extension in native_extensions.items():
+                archive = root / ("matrix-" + kind + extension)
+                pack_receipt = MEMORY_ARCHIVE.pack([source], kind, archive)
+                self.assertEqual(pack_receipt["status"], "PASS", pack_receipt)
+                archive_before = hashlib.sha256(archive.read_bytes()).hexdigest()
+                test_receipt = MEMORY_ARCHIVE.test_archive(archive)
+                self.assertEqual(test_receipt["status"], "PASS", test_receipt)
+
+                destination = root / ("restore-" + kind)
+                unpack_receipt = MEMORY_ARCHIVE.unpack(archive, destination)
+                self.assertEqual(unpack_receipt["status"], "PASS", unpack_receipt)
+                restored = destination / (
+                    "source.txt" if kind in {"ZIP", "JAR", "TAR"} else archive.stem
+                )
+                restored_sha = hashlib.sha256(restored.read_bytes()).hexdigest()
+                archive_after = hashlib.sha256(archive.read_bytes()).hexdigest()
+                self.assertEqual(restored_sha, source_sha)
+                self.assertEqual(archive_after, archive_before)
+                self.assertEqual(source.read_bytes(), original_source_bytes)
+
+                matrix[kind] = {
+                    "backend": "python-native",
+                    "status": "PASS",
+                    "source_file_sha256": source_sha,
+                    "target_archive_sha256_before": archive_before,
+                    "target_archive_sha256_after": archive_after,
+                    "archive_hash_stable": archive_after == archive_before,
+                    "roundtrip_target_sha256": restored_sha,
+                    "source_target_hash_match": restored_sha == source_sha,
+                    "source_unchanged": source.read_bytes() == original_source_bytes,
+                    "extraction_performed": True,
+                }
+
+            for kind, archive in (("7Z", self.make_7z(root, source)), ("LR", self.make_lr(root, source))):
+                archive_before = hashlib.sha256(archive.read_bytes()).hexdigest()
+                result = SOL_ARCHIVE.inspect(archive)
+                self.assertEqual(result["status"], "PASS", result)
+                self.assertEqual(result["detected"], kind)
+                receipt = MEMORY_ARCHIVE.test_archive(archive)
+                self.assertEqual(receipt["status"], "PASS", receipt)
+                archive_after = hashlib.sha256(archive.read_bytes()).hexdigest()
+                self.assertEqual(archive_after, archive_before)
+                self.assertEqual(source.read_bytes(), original_source_bytes)
+                self.assertFalse(result["extraction_performed"])
+
+                matrix[kind] = {
+                    "backend": result["adapter"],
+                    "status": "PASS",
+                    "source_file_sha256": source_sha,
+                    "target_archive_sha256_before": archive_before,
+                    "target_archive_sha256_after": archive_after,
+                    "archive_hash_stable": archive_after == archive_before,
+                    "roundtrip_target_sha256": None,
+                    "source_target_hash_match": None,
+                    "source_unchanged": source.read_bytes() == original_source_bytes,
+                    "extraction_performed": False,
+                }
+
+            rar_fixture_path = os.environ.get("SOL_RAR_FIXTURE_PATH")
+            self.assertTrue(rar_fixture_path, "CI_RAR_FIXTURE_NOT_PROVISIONED")
+            rar_archive = Path(rar_fixture_path)
+            rar_before_bytes = rar_archive.read_bytes()
+            rar_before = hashlib.sha256(rar_before_bytes).hexdigest()
+            self.assertEqual(rar_before, RAR_FIXTURE_RAW_SHA256)
+            rar_result = SOL_ARCHIVE.inspect(rar_archive)
+            self.assertEqual(rar_result["detected"], "RAR")
+            self.assertEqual(rar_result["status"], "PASS", rar_result)
+            rar_receipt = MEMORY_ARCHIVE.test_archive(rar_archive)
+            self.assertEqual(rar_receipt["status"], "PASS", rar_receipt)
+            rar_after_bytes = rar_archive.read_bytes()
+            rar_after = hashlib.sha256(rar_after_bytes).hexdigest()
+            self.assertEqual(rar_after, rar_before)
+            self.assertEqual(rar_after_bytes, rar_before_bytes)
+            self.assertFalse(rar_result["extraction_performed"])
+
+            matrix["RAR"] = {
+                "backend": rar_result["adapter"],
+                "status": "PASS",
+                "source_file_sha256": None,
+                "target_archive_sha256_before": rar_before,
+                "target_archive_sha256_after": rar_after,
+                "archive_hash_stable": rar_after == rar_before,
+                "roundtrip_target_sha256": None,
+                "source_target_hash_match": None,
+                "source_unchanged": True,
+                "extraction_performed": False,
+                "fixture_source_commit": RAR_FIXTURE_UPSTREAM_COMMIT,
+                "fixture_source_git_blob_sha1": RAR_FIXTURE_UPSTREAM_BLOB_SHA1,
+                "fixture_sha256": RAR_FIXTURE_RAW_SHA256,
+            }
+
+            self.assertEqual(set(matrix), set(expected_concrete))
+            self.assertTrue(all(item["status"] == "PASS" for item in matrix.values()))
+            self.assertTrue(all(item["archive_hash_stable"] for item in matrix.values()))
+            self.assertTrue(all(item["source_unchanged"] for item in matrix.values()))
+            self.assertTrue(all(item["source_target_hash_match"] for item in matrix.values() if item["source_target_hash_match"] is not None))
+            self.assertFalse(SOL_ARCHIVE.safe_member("../escape.txt"))
+            with self.assertRaisesRegex(MEMORY_ARCHIVE.ArchiveError, "UNSAFE_MEMBER_PATH"):
+                MEMORY_ARCHIVE.validate_member("../escape.txt")
+            self.assertFalse((root / "escape.txt").exists())
+            self.assertEqual(source.read_bytes(), original_source_bytes)
+
+            receipt = {
+                "schema": "SOL_ARCHIVE_CAPABILITY_HASH_MATRIX_V1",
+                "format_count": len(matrix),
+                "capability_formats_including_virtual_all": capabilities["formats"],
+                "formats": matrix,
+                "source_file_sha256": source_sha,
+                "source_file_unchanged": source.read_bytes() == original_source_bytes,
+                "all_archive_hashes_stable": all(item["archive_hash_stable"] for item in matrix.values()),
+                "all_native_roundtrip_hashes_match": all(
+                    item["source_target_hash_match"] is True
+                    for item in matrix.values()
+                    if item["source_target_hash_match"] is not None
+                ),
+                "path_traversal_rejected": True,
+                "malformed_7z_fails_closed": True,
+                "extraction_policy": "NO_EXTRACTION_FOR_7Z_RAR_LR;NATIVE_FORMAT_ROUNDTRIPS_USE_TEMPORARY_FIXTURES_ONLY",
+            }
+            output = os.environ.get("SOL_ARCHIVE_MATRIX_OUTPUT")
+            target = Path(output) if output else root / "sol-archive-capability-hash-matrix.json"
+            self.assertFalse(target.exists(), "Refuse to overwrite existing matrix receipt")
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(json.dumps(receipt, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+            readback = json.loads(target.read_text(encoding="utf-8"))
+            self.assertEqual(readback, receipt)
+            print("SOL_ARCHIVE_MATRIX_RECEIPT=" + json.dumps(receipt, ensure_ascii=False, sort_keys=True))
 
 if __name__ == "__main__":
     unittest.main()
