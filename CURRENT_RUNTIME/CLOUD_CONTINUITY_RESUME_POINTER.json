@@ -1,9 +1,9 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.3",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-28T00:59:40.560Z",
-  "updated_at_local": "2026-10-28T07:59:40.560+07:00",
-  "timestamp_basis": "Checkpoint CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T0758ICT.json was created and read back from GitHub; n8n execution 251 SUCCESS and scan evidence row 605 verified; GitHub Actions inventory evidence row 606 read back. Recovery ledger remains 45/45 nonterminal, 0 terminal. Host heartbeat not probed; Android UNVERIFIED; schedule gap remains OPEN.",
+  "updated_at_utc": "2026-10-28T01:00:06.538Z",
+  "updated_at_local": "2026-10-28T08:00:06.538+07:00",
+  "timestamp_basis": "Checkpoint CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T0758ICT.json blob b84dd513498e4fe98da44b5692249cf471e408bd and resume pointer were read back; checkpoint-readback evidence row 607 verified. n8n execution 251 SUCCESS, scan row 605; GitHub Actions inventory row 606; 45 recovery tasks remain nonterminal, 0 closed.",
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T0758ICT.json",
     "blob_sha": "b84dd513498e4fe98da44b5692249cf471e408bd",
@@ -16,8 +16,8 @@
     "latest_cloud_scan_row_id": 605,
     "latest_cloud_scan_event_id": "X20261028000024016_CLOUD",
     "latest_cloud_scan_execution_id": "251",
-    "latest_continuity_readback_row_id": 606,
-    "latest_continuity_readback_event_id": "X20261028005636000_GITHUB_ACTIONS_INVENTORY_READBACK",
+    "latest_continuity_readback_row_id": 607,
+    "latest_continuity_readback_event_id": "X20261028005940560_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
     "recovery_rows_pending": 45,
     "recovery_rows_total": 45,
     "recovery_rows_terminal": 0,
@@ -34,7 +34,8 @@
     "target_workflow_run_inventory_status_this_invocation": "Fresh repository-wide latest-30 inventory observed 2026-10-28T00:56:36Z; latest visible target run #382 SUCCESS at 2026-10-27T23:43:01Z; expected tick 2026-10-28T00:07:00Z not visible; cause unverified.",
     "current_task_ledger_content_readback_verified": false,
     "current_task_ledger_blob_sha": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
-    "main_head_after_checkpoint": "297bb4567e51afa638ff92d592c1c4a582a9fe4d"
+    "main_head_after_checkpoint": "297bb4567e51afa638ff92d592c1c4a582a9fe4d",
+    "latest_checkpoint_readback_evidence_row_id": 607
   },
   "post_checkpoint_updates": [
     {
@@ -2440,6 +2441,18 @@
       "state": "OPEN_WORK_REMAINS",
       "readback_verified": true,
       "tasks_closed": 0
+    },
+    {
+      "type": "checkpoint_readback_evidence",
+      "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+      "evidence_row_id": 607,
+      "event_id": "X20261028005940560_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+      "provider_created_at_utc": "2026-10-28T00:59:40.560Z",
+      "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T0758ICT.json",
+      "checkpoint_blob_sha": "b84dd513498e4fe98da44b5692249cf471e408bd",
+      "checkpoint_commit_sha": "297bb4567e51afa638ff92d592c1c4a582a9fe4d",
+      "readback_verified": true,
+      "tasks_closed": 0
     }
   ],
   "n8n": {
@@ -2821,11 +2834,11 @@
     "evidence_table_rows_last_verified": 470
   },
   "current_readback": {
-    "current_as_of_local": "2026-10-28T04:48:46.958+07:00",
-    "provider_created_at_utc": "2026-10-27T21:48:46.958Z",
-    "latest_provider_readback_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T0445ICT.json",
-    "latest_provider_readback_blob_sha": "461079fb42447d6dd9a9d3ae7d0526d14f8c11ae",
-    "latest_provider_readback_commit_sha": "67a3be1f0713095011645a14cef73a8127513edd",
+    "current_as_of_local": "2026-10-28T08:00:06.538+07:00",
+    "provider_created_at_utc": "2026-10-28T01:00:06.538Z",
+    "latest_provider_readback_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T0758ICT.json",
+    "latest_provider_readback_blob_sha": "b84dd513498e4fe98da44b5692249cf471e408bd",
+    "latest_provider_readback_commit_sha": "297bb4567e51afa638ff92d592c1c4a582a9fe4d",
     "latest_host_evidence_row_id": 550,
     "latest_cloud_evidence_row_id": 599,
     "latest_cloud_execution": "248",
@@ -2900,9 +2913,9 @@
     "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T0445ICT.json",
     "checkpoint_blob_sha": "461079fb42447d6dd9a9d3ae7d0526d14f8c11ae",
     "checkpoint_commit_sha": "67a3be1f0713095011645a14cef73a8127513edd",
-    "evidence_row_id": 600,
-    "evidence_event_id": "X20261027214535000_GITHUB_ACTIONS_RUN381_READBACK",
-    "n8n_execution_id": "240",
+    "evidence_row_id": 607,
+    "evidence_event_id": "X20261028005940560_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+    "n8n_execution_id": "251",
     "latest_cloud_scan_row_id": 580,
     "recovery_rows_pending": 45,
     "recovery_rows_terminal": 0,
@@ -9180,8 +9193,8 @@
   "latest_cloud_scan_event_id": "X20261028000024016_CLOUD",
   "latest_cloud_scan_execution_id": "251",
   "latest_cloud_scan_provider_created_at_utc": "2026-10-28T00:00:24.091Z",
-  "latest_continuity_readback_row_id": 606,
-  "latest_continuity_readback_event_id": "X20261028005636000_GITHUB_ACTIONS_INVENTORY_READBACK",
+  "latest_continuity_readback_row_id": 607,
+  "latest_continuity_readback_event_id": "X20261028005940560_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
   "latest_source_provenance_row_id": 594,
   "latest_source_provenance_event_id": "X20261027192045000_GITHUB_ENVIRONMENT_REGISTRY_READBACK",
   "recovery_rows_total": 45,
@@ -10174,7 +10187,9 @@
     "task_statuses_changed": false,
     "host_heartbeat_probed": false,
     "android_online_state": "UNVERIFIED",
-    "github_schedule_gap": "OPEN_SCHEDULE_GAP_UNRESOLVED"
+    "github_schedule_gap": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+    "checkpoint_readback_evidence_row_id": 607,
+    "checkpoint_readback_event_id": "X20261028005940560_CLOUD_CONTINUITY_CHECKPOINT_READBACK"
   },
   "latest_cloud_scan_readback_20261028T0758ICT": {
     "workflow_id": "BogzhFUDbRp7kuwh",
