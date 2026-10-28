@@ -1,13 +1,14 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/3.0",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-28T19:11:03.182Z",
-  "updated_at_local": "2026-10-29T02:11:03.182+07:00",
+  "updated_at_utc": "2026-10-28T19:12:29.888Z",
+  "updated_at_local": "2026-10-29T02:12:29.888+07:00",
   "timestamp_basis": "Cloud provider timestamps are not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "bb7d40f172e802975f512d13c92ad6fbd63e5d6d",
+    "blob_sha": "bac42e6df486478b4e55d476b222f0eaf02510ec",
     "prior_pointer_chain": [
+      "bb7d40f172e802975f512d13c92ad6fbd63e5d6d",
       "553d9d959f5dda215d815e009081024cdac98644",
       "c14fccee3f26eede82c02376116b61c1660fe6bf",
       "750344c6b3b27a6717556443fa92736e4f88e58b",
@@ -37,21 +38,21 @@
     ]
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T0036ICT.json",
-    "blob_sha": "5f9b0e4f2f64eeb935a12745e7d6e6e1d8daea60",
-    "commit_sha": "4c3f81d88fe619f38e8fdb361e59b4c75fdabad7",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T0210ICT.json",
     "blob_sha": "3564b759af66efda3d079613f1213879087d5c04",
     "commit_sha": "7039318f780f25187c973d617027497977e5fc86",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T0212ICT.json",
+    "blob_sha": "8a1b816c34b9835d710a241b96ff82e8326e854b",
+    "commit_sha": "0ce1970e1aaa4632d780228b478af99e3c64ec7d",
     "readback_verified": true,
-    "observed_at_utc": "2026-10-28T19:10:25.778Z",
-    "previous_checkpoint_blob_sha": "5f9b0e4f2f64eeb935a12745e7d6e6e1d8daea60",
+    "observed_at_utc": "2026-10-28T19:12:03.451Z",
+    "previous_checkpoint_blob_sha": "3564b759af66efda3d079613f1213879087d5c04",
     "latest_cloud_scan_evidence_row_id": 678,
     "latest_cloud_scan_event_id": "X20261028190024318_CLOUD",
-    "latest_source_readback_evidence_row_id": 683
+    "latest_source_readback_evidence_row_id": 684
   },
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -128,10 +129,10 @@
     "Resume from this checkpoint; do not rebuild from scratch.",
     "Keep all 45 n8n recovery rows nonterminal and the 29-object GitHub task ledger separate until canonical reconciliation is verified.",
     "Continue reconciling the 16 n8n-only task IDs by source_event/source_pointer/permission/result_receipt/next_verified_edge; do not mutate task statuses.",
-    "Keep SV-20261020-01-READBACK OPEN; the five Library logs match GitHub at the recorded commit after trailing-newline normalization; compare future revisions/deltas.",
+    "Keep SV-20261020-01-READBACK OPEN; five Library logs match GitHub at the recorded commit after trailing-newline normalization; compare future revisions/deltas.",
     "Keep SV-20261020-02 OPEN; raw archive SHA-256 matches the expected hash, but original provider ID/revision remains unresolved; do not extract archive contents.",
     "Recheck n8n after 2026-10-28T20:00:30Z.",
-    "Recheck Windows Survival after 2026-10-28T20:17:00Z; the 19:07Z tick was not visible at 19:09Z; cause remains unverified.",
+    "Recheck Windows Survival after 2026-10-28T20:17:00Z; the 19:07Z tick was not visible at 19:09:47Z; cause remains unverified.",
     "Recheck X66 after 2026-10-29T00:30:00Z; the 18:17Z tick was not visible; cause remains unverified.",
     "Obtain a fresh authorized Windows heartbeat separately; Android remains UNVERIFIED.",
     "No host, Google Drive, secret, destructive, or task-status operations."
@@ -153,9 +154,11 @@
       "evidence_rows": [
         681,
         682,
-        683
+        683,
+        684
       ],
-      "authoritative_evidence_row_id": 683,
+      "authoritative_hash_evidence_row_id": 683,
+      "provenance_absence_evidence_row_id": 684,
       "raw_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
       "size_bytes": 20882,
       "zip_directory_entry_count": 16,
@@ -164,7 +167,7 @@
       "task_id": "SV-20261020-02",
       "task_status": "ASSIGNED_DRAFT_WAITING_CREDENTIAL",
       "archive_contents_extracted_or_read": false,
-      "correction_note": "Rows 681 and 682 contain malformed receipt strings; row 683 is the authoritative correction."
+      "correction_note": "Rows 681 and 682 contain malformed receipt strings; row 683 is authoritative for SHA-256; row 684 records no original provider ID/revision field in CARRIER_MAP."
     }
   },
   "evidence_inventory": {
@@ -177,8 +180,9 @@
       681,
       682
     ],
-    "authoritative_correction_row": 683,
-    "evidence_table_count_at_last_query": 683
+    "authoritative_hash_correction_row": 683,
+    "provenance_absence_row": 684,
+    "total_rows_in_evidence_table": 684
   },
   "safety": {
     "host_writes": 0,
