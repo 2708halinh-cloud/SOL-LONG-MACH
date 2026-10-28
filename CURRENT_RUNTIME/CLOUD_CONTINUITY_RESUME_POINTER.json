@@ -1,13 +1,14 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.5",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-28T05:50:26.390Z",
-  "updated_at_local": "2026-10-28T12:50:26.390+07:00",
+  "updated_at_utc": "2026-10-28T06:23:35Z",
+  "updated_at_local": "2026-10-28T13:23:35+07:00",
   "timestamp_basis": "Cloud provider timestamps are not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "9501d15c429ee910c61b275c6b08f0471efe5e40",
+    "blob_sha": "3155dff0d0bdf253af1f6dbdeaa28d30d9b75511",
     "prior_pointer_chain": [
+      "9501d15c429ee910c61b275c6b08f0471efe5e40",
       "c26cc5b848da9c8ca3d8f6d9777d6d232203ad97",
       "86ee6f1da5a78175923222aa386a51eefefafbf6",
       "7b4ea36bc745b3b6ba4e15fbc000cd0751f68500",
@@ -22,37 +23,38 @@
     ]
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1154ICT.json",
-    "blob_sha": "c89c97afc2cad2dd614b6efd2192c3d2284bcd23",
-    "commit_sha": "50cd78376b50023448e5a421cf48916b5eedcfac"
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1250ICT.json",
     "blob_sha": "4c9f32d320afd65406b5473b509c678089b0304c",
     "commit_sha": "a0bc4356768040d33aa1934e6139d869360d0912",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1323ICT.json",
+    "blob_sha": "2c03cfa3e08d52961e49ad15bb3fe97d995a110f",
+    "commit_sha": "0da08373171fa5fe93b5bef36fd623e9b5f134a1",
     "readback_verified": true,
-    "observed_at_utc": "2026-10-28T05:50:26.390Z",
-    "latest_continuity_readback_evidence_row_id": 650,
-    "latest_continuity_readback_event_id": "X20261028T0550Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
-    "previous_checkpoint_blob_sha": "c89c97afc2cad2dd614b6efd2192c3d2284bcd23"
+    "observed_at_utc": "2026-10-28T06:23:35Z",
+    "latest_continuity_readback_evidence_row_id": 653,
+    "latest_continuity_readback_event_id": "X20261028T0623Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+    "previous_checkpoint_blob_sha": "4c9f32d320afd65406b5473b509c678089b0304c"
   },
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
     "version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
-    "execution_id": "257",
+    "execution_id": "258",
     "execution_mode": "trigger",
     "execution_status": "success",
-    "started_at_utc": "2026-10-28T05:00:22.069Z",
-    "stopped_at_utc": "2026-10-28T05:00:24.212Z",
+    "started_at_utc": "2026-10-28T06:00:22.070Z",
+    "stopped_at_utc": "2026-10-28T06:00:24.136Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_row_id": 648,
-    "event_id": "X20261028050024065_CLOUD",
-    "continuity_readback_evidence_row_id": 650,
-    "continuity_readback_event_id": "X20261028T0550Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
-    "inventory_readback_evidence_row_id": 649,
-    "inventory_readback_event_id": "X20261028T0545Z_CLOUD_CONTINUITY_INVENTORY_READBACK",
+    "evidence_row_id": 651,
+    "event_id": "X20261028060023981_CLOUD",
+    "continuity_readback_evidence_row_id": 653,
+    "continuity_readback_event_id": "X20261028T0623Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+    "inventory_readback_evidence_row_id": 652,
+    "inventory_readback_event_id": "X20261028T0623Z_GITHUB_TARGET_WORKFLOW_INVENTORY",
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "project_id": "6qKpRmicIGHA5snY",
     "recovery_rows_total": 45,
@@ -60,7 +62,6 @@
     "recovery_rows_terminal": 0,
     "tasks_closed": 0,
     "task_statuses_changed": false,
-    "selected_cloud_eligible_count_reported_by_scan": 6,
     "host_heartbeat_probed": false,
     "cloud_heartbeat_is_not_host_heartbeat": true
   },
@@ -70,11 +71,13 @@
     "workflow_id": 393485804,
     "workflow_file_blob_sha": "044b4e73123af4772b995b410b3a79e847be7e03",
     "cron": "7 * * * *",
-    "inventory_source": "Read-only GitHub Actions run detail API plus global run inventory; target workflow_id confirmed on run 40637925608",
-    "inventory_observed_at_utc": "2026-10-28T05:50:26.390Z",
-    "evidence_row_id": 649,
+    "inventory_source": "Read-only GitHub Actions global run inventory filtered by workflow_id",
+    "inventory_observed_at_utc": "2026-10-28T06:23:35Z",
+    "evidence_row_id": 652,
+    "repo_run_inventory_total_count": 6437,
+    "repo_runs_returned": 100,
+    "target_workflow_runs_visible_in_returned_page": 2,
     "workflow_run_total_count": null,
-    "workflow_runs_returned": null,
     "latest_visible_target_run": {
       "run_number": 383,
       "run_id": 40637925608,
@@ -100,7 +103,8 @@
       "2026-10-28T01:07:00Z",
       "2026-10-28T02:07:00Z",
       "2026-10-28T03:07:00Z",
-      "2026-10-28T04:07:00Z"
+      "2026-10-28T04:07:00Z",
+      "2026-10-28T06:07:00Z"
     ],
     "latest_expected_tick_observed_late": {
       "expected_at_utc": "2026-10-28T05:07:00Z",
@@ -112,7 +116,7 @@
     "cause_verified": false,
     "workflow_changed": false,
     "fresh_query_this_invocation": true,
-    "next_recheck_after_utc": "2026-10-28T06:07:00Z",
+    "next_recheck_after_utc": "2026-10-28T07:07:00Z",
     "workflow_state": "active",
     "schedule_gap_state": "OPEN_SCHEDULE_GAP_UNRESOLVED"
   },
@@ -251,14 +255,14 @@
     "github_resume_pointer_updated": true
   },
   "next_edges": [
-    "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1250ICT.json; do not rebuild from scratch.",
-    "Verify the next scheduled n8n execution at or after 2026-10-28T06:00:00Z and read back its evidence row.",
-    "Recheck Windows-survival workflow 393485804 after the 2026-10-28T06:07:00Z cron tick; keep OPEN_SCHEDULE_GAP_UNRESOLVED until prior missing ticks and cause are verified.",
-    "Keep all 45 recovery tasks nonterminal; no source task is closed by a cloud receipt alone.",
-    "Keep archive-format task OPEN_7Z_RAR_LR and HelloCheck TestNet task OPEN until their remaining gates are independently satisfied.",
+    "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1323ICT.json; do not rebuild from scratch.",
+    "Verify n8n execution 258 and evidence row 651; recovery ledger remains 45 nonterminal and 0 closed.",
+    "Recheck Windows-survival workflow 393485804 after the 2026-10-28T07:07:00Z cron tick; no 06:07Z run is visible as of 06:23:35Z.",
+    "Keep OPEN_SCHEDULE_GAP_UNRESOLVED until missing ticks and cause are verified; do not edit the workflow without verified cause.",
+    "Keep archive and HelloCheck tasks OPEN until remaining acceptance gates are independently verified.",
     "Obtain a fresh authorized Windows heartbeat separately; Android remains UNVERIFIED; cloud runs are not host heartbeat.",
-    "Retrieve original ingestion_gate_payload_03.txt bytes through an authorized route and recompute SHA-256; provider source ID/revision remains unresolved.",
-    "Continue provider-only branches only after exact source identity and permission are verified; no Google Drive writes, host writes, deletions, or secret access."
+    "Retrieve original ingestion_gate_payload_03.txt bytes through an authorized route and recompute SHA-256; verify provider ID/revision.",
+    "Continue cloud-only branches only with established source identity and permission; no host, Google Drive, secret, or destructive operations."
   ],
   "post_checkpoint_updates": [
     {
