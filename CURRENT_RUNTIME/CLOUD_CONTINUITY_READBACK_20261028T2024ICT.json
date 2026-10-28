@@ -1,0 +1,228 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.7",
+  "title": "THU HOI NGUON SOL — Cloud continuity readback",
+  "observed_at_utc": "2026-10-28T13:24:16.774Z",
+  "observed_at_local": "2026-10-28T20:24:16.774+07:00",
+  "state": "OPEN_WORK_REMAINS",
+  "timestamp_basis": "Cloud provider timestamps are not host heartbeat.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T2022ICT.json",
+    "blob_sha": "01d8d3b76685d9e01ea8bcc5b2de2099fc72073d",
+    "commit_sha": "7b6ab701dffa42d469a8617e9116dcce084c4c85",
+    "readback_verified": true
+  },
+  "latest_scan_receipt": {
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_row_id": 670,
+    "event_id": "X20261028130024036_CLOUD",
+    "occurred_at_utc": "2026-10-28T13:00:24.036Z",
+    "state": "OPEN_WORK_REMAINS",
+    "readback_verified": true,
+    "receipt_summary": "Live n8n scan: 45 recovery rows, all 45 nonterminal, 0 terminal; no task completion from scan; host heartbeat not probed."
+  },
+  "latest_continuity_readback_receipt": {
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_row_id": 671,
+    "event_id": "X20261028T131837Z_CLOUD_CONTINUITY_READBACK",
+    "occurred_at_utc": "2026-10-28T13:18:37Z",
+    "provider_created_at_utc": "2026-10-28T13:21:40.750Z",
+    "readback_verified": true
+  },
+  "latest_source_audit_receipt": {
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_row_id": 672,
+    "event_id": "X20261028T1323Z_SV20261020_03_SOURCE_READBACK",
+    "occurred_at_utc": "2026-10-28T13:24:04.938Z",
+    "provider_created_at_utc": "2026-10-28T13:24:07.016Z",
+    "task_id": "SV-20261020-03",
+    "source_file": "/Linh Hà/SENSOR_LOGS/windows_cpu_worker.py",
+    "source_provider_id": "gvG29tEleJwAAAAAAAACFw",
+    "source_server_modified_utc": "2026-10-12T19:59:31Z",
+    "raw_bytes_fetched": false,
+    "raw_sha256_measured": false,
+    "text_extraction_readback_verified": true,
+    "source_findings": {
+      "detect_avx_support": "Returns True on both normal import path and exception path; not a hardware feature probe.",
+      "latencyMs": "Constant 12 in source.",
+      "tempC": "Constant 39.5 in source.",
+      "loss_accuracy": "Deterministic exponential formulas from epoch ratio; not evidence of actual training quality.",
+      "live_windows_execution_verified": false,
+      "actual_training_receipt_verified": false
+    },
+    "mutation_performed": false,
+    "task_status_changed": false
+  },
+  "latest_cloud_scan": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
+    "execution_id": "265",
+    "execution_mode": "trigger",
+    "execution_status": "success",
+    "started_at_utc": "2026-10-28T13:00:22.069Z",
+    "stopped_at_utc": "2026-10-28T13:00:24.169Z",
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_row_id": 670,
+    "event_id": "X20261028130024036_CLOUD",
+    "continuity_readback_evidence_row_id": 671,
+    "continuity_readback_event_id": "X20261028T131837Z_CLOUD_CONTINUITY_READBACK",
+    "source_audit_evidence_row_id": 672,
+    "source_audit_event_id": "X20261028T1323Z_SV20261020_03_SOURCE_READBACK",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "recovery_rows_total": 45,
+    "recovery_rows_nonterminal": 45,
+    "recovery_rows_terminal": 0,
+    "tasks_closed": 0,
+    "task_statuses_changed": false,
+    "host_heartbeat_probed": false,
+    "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "recovery_ledger": {
+    "observed_rows": 45,
+    "terminal_rows": 0,
+    "task_sv_20261020_03_status": "ASSIGNED_DRAFT_WAITING_CREDENTIAL",
+    "task_sv_20261020_03_status_changed": false,
+    "task_status_mutations": 0
+  },
+  "github_sources": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "open_tasks_current": {
+      "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "blob_sha1": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
+      "schema": "SOL_OPEN_TASKS_PARALLEL_LEDGER/1.0",
+      "task_objects": 29,
+      "embedded_provenance_observed_at": "2026-10-26T19:56:40+07:00",
+      "content_read_via_git_blob_api": true,
+      "content_freshness": "STALE_SOURCE_TIMESTAMP"
+    },
+    "task_resume_pointer": {
+      "path": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+      "blob_sha1": "07cc60d91ea6a9ea3ad29080bc398c8153a2ffac",
+      "embedded_updated_at": "2026-10-26T21:50:06+07:00",
+      "content_read_via_git_blob_api": true
+    },
+    "actions_inventory": {
+      "observed_at_utc": "2026-10-28T13:24:16.774Z",
+      "endpoint": "https://api.github.com/repos/2708halinh-cloud/SOL-LONG-MACH/actions/runs?per_page=10",
+      "repo_run_inventory_total_count": 6480,
+      "pages_read": [
+        1
+      ],
+      "page_size": 10,
+      "newest_global_run_id": 40695958569,
+      "newest_global_run_created_at_utc": "2026-10-28T13:23:19Z",
+      "newest_global_run_conclusion": "success",
+      "latest_10_runs_checked": true
+    },
+    "windows_survival": {
+      "workflow_id": 393485804,
+      "workflow_path": ".github/workflows/windows-survival-cloud-continuity.yml",
+      "workflow_file_blob_sha": "044b4e73123af4772b995b410b3a79e847be7e03",
+      "cron": "7 * * * *",
+      "latest_visible_run_id": 40689736054,
+      "latest_visible_run_number": 384,
+      "latest_visible_run_created_at_utc": "2026-10-28T12:40:21Z",
+      "latest_visible_run_conclusion": "success",
+      "prior_expected_tick_utc": "2026-10-28T12:07:00Z",
+      "prior_tick_delayed_run_seen": true,
+      "prior_tick_delay_seconds": 2001,
+      "next_expected_tick_utc": "2026-10-28T13:07:00Z",
+      "next_expected_tick_visible": false,
+      "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+      "cause_verified": false,
+      "workflow_changed": false,
+      "next_recheck_after_utc": "2026-10-28T14:17:00Z"
+    },
+    "x66": {
+      "workflow_id": 389996732,
+      "workflow_path": ".github/workflows/sol-x66-cloud-continuity.yml",
+      "workflow_file_blob_sha": "b2f0d96d63ac112cced5d501704d909d3d44bac8",
+      "cron": "17 */6 * * *",
+      "latest_visible_run_id": 40692302037,
+      "latest_visible_run_number": 36,
+      "latest_visible_run_created_at_utc": "2026-10-28T12:58:41Z",
+      "latest_visible_run_conclusion": "success",
+      "prior_expected_tick_utc": "2026-10-28T12:17:00Z",
+      "prior_tick_delayed_run_seen": true,
+      "prior_tick_delay_seconds": 2501,
+      "next_expected_tick_utc": "2026-10-28T18:17:00Z",
+      "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+      "cause_verified": false,
+      "workflow_changed": false,
+      "next_recheck_after_utc": "2026-10-28T18:30:00Z"
+    }
+  },
+  "ledger_reconciliation": {
+    "github_task_objects": 29,
+    "n8n_recovery_rows": 45,
+    "exact_task_id_matches": 1,
+    "normalized_candidate_matches": 28,
+    "n8n_rows_without_github_ledger_counterpart": 16,
+    "reconciliation_status": "CANDIDATE_MAP_ONLY; CANONICAL_IDS_AND_STATUSES_NOT_MERGED",
+    "task_status_mutations": 0,
+    "n8n_only_task_ids": [
+      "SV-20261020-01",
+      "SV-20261020-01-READBACK",
+      "SV-20261020-02",
+      "SV-20261020-02-READBACK",
+      "SV-20261020-03",
+      "SV-20261020-04",
+      "SV-20261020-05",
+      "SV-20261020-09-PROPHECY-SOURCE",
+      "SV-20261020-10-CODEX-TRIHOST",
+      "SV-20261020-11-REAL_CHAT_USER",
+      "SV-20261020-12-API-VAULT",
+      "SV-20261020-FULL-DRIVE",
+      "SV-20261020-QEMU-C",
+      "SV-20261020-ROOTS-ARCHIVES",
+      "SV-20261021-ANDROID-OLLAMA-LOCALHOST",
+      "SV-20261021-R014-ACTION-FIRST-GATE"
+    ],
+    "permission_and_next_edge_source": "Live n8n table rSPFIOWbS7cfNJ8z; source_event/source_pointer/permission/result_receipt/next_verified_edge read back",
+    "blockers_summary": [
+      "Some source materialization requires explicit user consent.",
+      "Third Project ZIP carrier raw bytes remain unauthorized.",
+      "Host-only paths and Android private app paths are unavailable while host/device heartbeat is unverified.",
+      "Credential binding remains unverified; do not read or expose secret values."
+    ]
+  },
+  "host_and_android": {
+    "latest_verified_host_evidence_row_id": 550,
+    "latest_host_tick_utc": "2026-10-27T00:51:44.165010Z",
+    "fresh_host_heartbeat_verified": false,
+    "host_probed_this_invocation": false,
+    "android_online_state": "UNVERIFIED",
+    "remote_route_is_host_heartbeat": false
+  },
+  "unresolved_source_provenance": {
+    "ingestion_gate_payload_03_txt_original_bytes_fetched": false,
+    "ingestion_gate_payload_03_txt_raw_sha256_recomputed": false,
+    "historical_zip_sha256_expected": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+    "historical_zip_original_provider_id_revision_verified": false,
+    "third_project_carrier_raw_access_authorized": false
+  },
+  "safety": {
+    "host_writes": 0,
+    "google_drive_writes": 0,
+    "process_or_cache_deletions": 0,
+    "task_status_mutations": 0,
+    "secrets_or_plaintext_credentials_accessed": false,
+    "source_files_modified": 0,
+    "workflow_files_changed": false,
+    "ledger_rows_merged": 0,
+    "n8n_evidence_rows_appended": 3
+  },
+  "next_edges": [
+    "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T2024ICT.json; do not rebuild from scratch.",
+    "Keep all 45 n8n recovery rows nonterminal and the 29-object GitHub ledger separate until canonical reconciliation is verified.",
+    "For SV-20261020-03, preserve the verified source-level findings but do not patch until the authorized target and cloud-update permission are confirmed; require real execution/training receipts before claiming hardware performance.",
+    "Recheck Windows-survival workflow 393485804 after 2026-10-28T14:17:00Z; expected 13:07Z tick was not visible in the latest-10-run inventory.",
+    "Recheck X66 workflow 389996732 after 2026-10-28T18:30:00Z; prior expected tick had a delayed SUCCESS run but root cause remains unverified.",
+    "Continue reconciling the 16 n8n-only task IDs using source_event/source_pointer/permission/result_receipt/next_verified_edge; preserve exact identities and do not mutate statuses.",
+    "Obtain a fresh authorized Windows heartbeat separately; Android remains UNVERIFIED.",
+    "Retrieve original ingestion_gate_payload_03.txt bytes via an authorized route and recompute SHA-256; verify historical ZIP provider ID/revision.",
+    "No host, Google Drive, secret, or destructive operations."
+  ]
+}
