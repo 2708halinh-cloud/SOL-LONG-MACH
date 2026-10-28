@@ -1,13 +1,15 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/3.0",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-28T19:12:29.888Z",
-  "updated_at_local": "2026-10-29T02:12:29.888+07:00",
+  "updated_at_utc": "2026-10-28T19:33:44.964Z",
+  "updated_at_local": "2026-10-29T02:33:44.964+07:00",
   "timestamp_basis": "Cloud provider timestamps are not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "bac42e6df486478b4e55d476b222f0eaf02510ec",
+    "blob_sha": "6c178e008a4320aed5bf2e9c08bc0f07cb87de70",
+    "commit_sha": "067b0413d999a7e10f3c9012962eb1d59672f913",
     "prior_pointer_chain": [
+      "bac42e6df486478b4e55d476b222f0eaf02510ec",
       "bb7d40f172e802975f512d13c92ad6fbd63e5d6d",
       "553d9d959f5dda215d815e009081024cdac98644",
       "c14fccee3f26eede82c02376116b61c1660fe6bf",
@@ -38,21 +40,22 @@
     ]
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T0210ICT.json",
-    "blob_sha": "3564b759af66efda3d079613f1213879087d5c04",
-    "commit_sha": "7039318f780f25187c973d617027497977e5fc86",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T0212ICT.json",
     "blob_sha": "8a1b816c34b9835d710a241b96ff82e8326e854b",
     "commit_sha": "0ce1970e1aaa4632d780228b478af99e3c64ec7d",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T0233ICT.json",
+    "blob_sha": "f385e2c06d070269f4a1af18ac6d6f8167099483",
+    "commit_sha": "0e41b1f74e67800bf3e41a06af2d8c7ffe27b1ea",
     "readback_verified": true,
-    "observed_at_utc": "2026-10-28T19:12:03.451Z",
-    "previous_checkpoint_blob_sha": "3564b759af66efda3d079613f1213879087d5c04",
+    "observed_at_utc": "2026-10-28T19:33:44.964Z",
+    "previous_checkpoint_blob_sha": "8a1b816c34b9835d710a241b96ff82e8326e854b",
     "latest_cloud_scan_evidence_row_id": 678,
     "latest_cloud_scan_event_id": "X20261028190024318_CLOUD",
-    "latest_source_readback_evidence_row_id": 684
+    "latest_source_readback_evidence_row_id": 685,
+    "latest_source_readback_event_id": "X20261028193130Z_GITHUB_N8N_CROSSWALK_READBACK"
   },
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -75,21 +78,25 @@
     "tasks_closed": 0,
     "task_statuses_changed": false,
     "host_heartbeat_probed": false,
-    "cloud_heartbeat_is_not_host_heartbeat": true
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "next_expected_tick_utc": "2026-10-28T20:00:00Z"
   },
   "github_sources": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
     "open_tasks_current_blob_sha1": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
     "open_tasks_current_objects": 29,
-    "open_tasks_current_content_freshly_verified_this_invocation": false,
+    "open_tasks_current_content_freshly_verified_this_invocation": true,
+    "open_tasks_current_ledger_updated_at": "2026-10-26T21:50:06+07:00",
     "task_resume_pointer_blob_sha1": "07cc60d91ea6a9ea3ad29080bc398c8153a2ffac",
     "task_resume_pointer_content_freshly_verified_this_invocation": false,
-    "reconciliation_status": "CANDIDATE_MAP_ONLY; CANONICAL_IDS_AND_STATUSES_NOT_MERGED",
+    "reconciliation_status": "CANONICAL_ID_NORMALIZATION_VERIFIED; 16 N8N-ONLY LEGACY TASKS REMAIN SEPARATE",
+    "normalized_crosswalk_matches": 29,
     "n8n_rows_without_github_ledger_counterpart": 16,
-    "task_status_mutations": 0
+    "task_status_mutations": 0,
+    "ledger_rows_merged": 0
   },
   "actions_inventory": {
-    "observed_at_utc": "2026-10-28T19:11:03.182Z",
+    "observed_at_utc": "2026-10-28T19:33:44.964Z",
     "endpoint": "https://api.github.com/repos/2708halinh-cloud/SOL-LONG-MACH/actions/runs?per_page=10",
     "repo_run_inventory_total_count": 6499,
     "pages_read": [
@@ -114,7 +121,26 @@
     "x66_expected_tick_not_visible_utc": "2026-10-28T18:17:00Z",
     "x66_next_expected_tick_utc": "2026-10-29T00:17:00Z",
     "x66_state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
-    "x66_cause_verified": false
+    "x66_cause_verified": false,
+    "latest_run_inventory_freshly_verified_this_invocation": false,
+    "individually_read_run_records_this_invocation": [
+      {
+        "workflow_id": 393485804,
+        "run_id": 40748343196,
+        "run_number": 385,
+        "status": "completed",
+        "conclusion": "success",
+        "created_at_utc": "2026-10-28T18:47:12Z"
+      },
+      {
+        "workflow_id": 389996732,
+        "run_id": 40692302037,
+        "run_number": 36,
+        "status": "completed",
+        "conclusion": "success",
+        "created_at_utc": "2026-10-28T12:58:41Z"
+      }
+    ]
   },
   "host_and_android": {
     "latest_verified_host_evidence_row_id": 550,
@@ -126,16 +152,13 @@
     "remote_route_is_host_heartbeat": false
   },
   "next_edges": [
-    "Resume from this checkpoint; do not rebuild from scratch.",
-    "Keep all 45 n8n recovery rows nonterminal and the 29-object GitHub task ledger separate until canonical reconciliation is verified.",
-    "Continue reconciling the 16 n8n-only task IDs by source_event/source_pointer/permission/result_receipt/next_verified_edge; do not mutate task statuses.",
-    "Keep SV-20261020-01-READBACK OPEN; five Library logs match GitHub at the recorded commit after trailing-newline normalization; compare future revisions/deltas.",
-    "Keep SV-20261020-02 OPEN; raw archive SHA-256 matches the expected hash, but original provider ID/revision remains unresolved; do not extract archive contents.",
-    "Recheck n8n after 2026-10-28T20:00:30Z.",
-    "Recheck Windows Survival after 2026-10-28T20:17:00Z; the 19:07Z tick was not visible at 19:09:47Z; cause remains unverified.",
-    "Recheck X66 after 2026-10-29T00:30:00Z; the 18:17Z tick was not visible; cause remains unverified.",
-    "Obtain a fresh authorized Windows heartbeat separately; Android remains UNVERIFIED.",
-    "No host, Google Drive, secret, destructive, or task-status operations."
+    "Resume from checkpoint 20261029T0233ICT; do not rebuild from scratch.",
+    "Keep all 45 n8n recovery rows nonterminal; preserve the 29-task GitHub ledger separately.",
+    "Continue source_event/source_pointer/permission/result_receipt/next_verified_edge reconciliation for the 16 n8n-only legacy IDs; no task-status mutation.",
+    "Recheck n8n after 2026-10-28T20:00:00Z.",
+    "Refresh GitHub Actions run inventory through an approved collection endpoint; preserve OPEN_SCHEDULE_GAP_UNRESOLVED until verified.",
+    "Obtain a fresh authorized Windows host heartbeat separately; Android remains UNVERIFIED.",
+    "No Google Drive writes, host operations, secret access, destructive operations, or task-status mutations."
   ],
   "source_readbacks": {
     "brain_wave_logs": {
@@ -174,7 +197,11 @@
     "latest_scan_row_id": 678,
     "source_readback_rows": [
       679,
-      680
+      680,
+      681,
+      682,
+      683,
+      684
     ],
     "malformed_receipt_rows": [
       681,
@@ -182,7 +209,9 @@
     ],
     "authoritative_hash_correction_row": 683,
     "provenance_absence_row": 684,
-    "total_rows_in_evidence_table": 684
+    "total_rows_in_evidence_table": 685,
+    "canonical_crosswalk_readback_row_id": 685,
+    "canonical_crosswalk_readback_event_id": "X20261028193130Z_GITHUB_N8N_CROSSWALK_READBACK"
   },
   "safety": {
     "host_writes": 0,
