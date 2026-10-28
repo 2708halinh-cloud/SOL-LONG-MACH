@@ -1,13 +1,14 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.5",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-28T04:49:08.322Z",
-  "updated_at_local": "2026-10-28T11:49:08.322+07:00",
+  "updated_at_utc": "2026-10-28T04:54:52.803Z",
+  "updated_at_local": "2026-10-28T11:54:52.803+07:00",
   "timestamp_basis": "Cloud provider timestamps are not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "86ee6f1da5a78175923222aa386a51eefefafbf6",
+    "blob_sha": "c26cc5b848da9c8ca3d8f6d9777d6d232203ad97",
     "prior_pointer_chain": [
+      "86ee6f1da5a78175923222aa386a51eefefafbf6",
       "7b4ea36bc745b3b6ba4e15fbc000cd0751f68500",
       "b9b557ed33b5425f1a93c2ba35a51d5e6ef36e60",
       "32cd1789a5adf6df9f44b307f3e87db34837915a",
@@ -20,20 +21,20 @@
     ]
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1142ICT.json",
-    "blob_sha": "807b27631f9bbc6a892ce9bc635b3f358780b942",
-    "commit_sha": "f13b2e177df6c655e368b304d983e2b2fd16bc4f"
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1148ICT.json",
     "blob_sha": "335bfb2cd747e59f74fe638d23ea07fe86958905",
-    "commit_sha": "6be112dacbf4c74abbfb12828a215ce2e4840d9d",
+    "commit_sha": "6be112dacbf4c74abbfb12828a215ce2e4840d9d"
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1154ICT.json",
+    "blob_sha": "c89c97afc2cad2dd614b6efd2192c3d2284bcd23",
+    "commit_sha": "50cd78376b50023448e5a421cf48916b5eedcfac",
     "readback_verified": true,
-    "observed_at_utc": "2026-10-28T04:48:05.110Z",
-    "latest_continuity_readback_evidence_row_id": 643,
-    "latest_continuity_readback_event_id": "X20261028T0448Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
-    "archive_matrix_artifact_evidence_row_id": 642,
-    "previous_checkpoint_blob_sha": "807b27631f9bbc6a892ce9bc635b3f358780b942"
+    "observed_at_utc": "2026-10-28T04:54:21.264Z",
+    "latest_continuity_readback_evidence_row_id": 646,
+    "latest_continuity_readback_event_id": "X20261028T0454Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+    "hellocheck_build_evidence_row_id": 645,
+    "previous_checkpoint_blob_sha": "335bfb2cd747e59f74fe638d23ea07fe86958905"
   },
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -164,6 +165,40 @@
     "task_closed": false,
     "evidence_row_id": 641
   },
+  "hellocheck_task": {
+    "source_task_id": "SOL-HELLOCHECK_GO_TESTNET_R014_20261023",
+    "status": "OPEN",
+    "isolated_branch": "sol-cloud-continuity/hellocheck-go-r014-20261028",
+    "commit_sha": "3c58337bbfbfd0d3df791c926e8843174a1c3ad8",
+    "workflow_blob_sha": "cdb4027a70b7dbdecc9c3acf14e13b9e587d6e91",
+    "workflow_id": 399020381,
+    "run_id": 40634655369,
+    "run_number": 1,
+    "job_id": 122638709888,
+    "conclusion": "success",
+    "completed_at_utc": "2026-10-28T04:52:12Z",
+    "go_version": "go1.23.12 linux/amd64",
+    "go_mod_download": true,
+    "go_test_all": true,
+    "go_vet_all": true,
+    "linux_amd64_build_sha256": "bf2038ca6b7e6e69e419a9a3eee8be537d5a4e8ed8fe425833808e53d02e2233",
+    "windows_amd64_build_sha256": "5be78c6cdd7b8881ee88fa29cb0de6d36b73f00ce7aa94c90c08ec098e9ef465",
+    "offline_cli_smoke_test": true,
+    "artifact_id": 12792534730,
+    "artifact_zip_sha256": "8d29f1e81fa4272821b0da77eb819ea8e3c1c59565ab7306f3664d79278a1614",
+    "artifact_json_member_sha256": "fcac019f925a196672edbbf4d87e98501e68590d7f78420fcf71aa4ac000729e",
+    "artifact_downloaded_and_readback_verified": true,
+    "wallet_created": false,
+    "private_key_or_wif_printed": false,
+    "external_bitcoin_rpc_called": false,
+    "transaction_signed_or_broadcast": false,
+    "remaining_blockers": [
+      "AUTHENTICATED_CLOUD_V2_ENVIRONMENT_UNRESOLVED",
+      "LIVE_TESTNET_RPC_AND_UTXO_NOT_VERIFIED"
+    ],
+    "task_status_changed": false,
+    "evidence_row_id": 645
+  },
   "host_and_android": {
     "latest_verified_host_evidence_row_id": 550,
     "latest_host_tick_utc": "2026-10-27T00:51:44.165010Z",
@@ -188,42 +223,19 @@
     "process_or_cache_deletions": 0,
     "task_status_mutations": 0,
     "secrets_or_plaintext_credentials_accessed": false,
-    "main_branch_task_ledger_mutated": false,
-    "archive_code_merged_to_main": false
+    "archive_code_merged_to_main": false,
+    "hellocheck_code_merged_to_main": false
   },
   "next_edges": [
     "Verify scheduled n8n execution at or after 2026-10-28T05:00:00Z and read back its evidence row.",
-    "Refresh Windows-survival workflow ID 393485804 after 2026-10-28T05:07:00Z; workflow metadata is active but the schedule gap cause remains unverified.",
-    "Keep task SV-20261020-13-ARCHIVE-FORMATS in OPEN_7Z_RAR_LR as requested even though the acceptance evidence is complete; do not mutate task status or merge archive code to main.",
-    "Continue other callable cloud-only tasks only where permission and source identity are established; keep all 45 recovery tasks nonterminal.",
+    "Refresh Windows-survival workflow ID 393485804 after 2026-10-28T05:07:00Z; the workflow is active but the cause of missing schedule runs remains unverified.",
+    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN_7Z_RAR_LR as requested; its acceptance evidence and artifact readback are complete, but do not merge archive code to main.",
+    "Keep SOL-HELLOCHECK_GO_TESTNET_R014_20261023 OPEN until authenticated cloud-v2 environment, live TestNet RPC and valid UTXO are independently verified; do not create a wallet, sign or broadcast.",
+    "Continue other cloud-only tasks only where permission and source identity are established; keep all 45 recovery tasks nonterminal.",
     "Obtain a fresh authorized host heartbeat separately; do not infer host state from cloud scans.",
     "Retrieve original ingestion_gate_payload_03.txt bytes through an authorized route and recompute SHA-256."
   ],
   "post_checkpoint_updates": [
-    {
-      "type": "RESUME_POINTER_1137_READBACK",
-      "evidence_row_id": 637,
-      "event_id": "X20261028T0438Z_RESUME_POINTER_READBACK",
-      "pointer_blob_sha": "7b4ea36bc745b3b6ba4e15fbc000cd0751f68500",
-      "readback_verified": true
-    },
-    {
-      "type": "ARCHIVE_REAL_RAR_BACKEND_CI_READBACK",
-      "evidence_row_id": 638,
-      "event_id": "X20261028T0442Z_ARCHIVE_REAL_RAR_BACKEND_CI_READBACK",
-      "run_id": 40633761872,
-      "conclusion": "success",
-      "real_7z_verified": true,
-      "real_rar_verified": true,
-      "real_lr_verified": true
-    },
-    {
-      "type": "CHECKPOINT_1142_CREATED_READBACK",
-      "evidence_row_id": 639,
-      "event_id": "X20261028T0442Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
-      "checkpoint_blob_sha": "807b27631f9bbc6a892ce9bc635b3f358780b942",
-      "readback_verified": true
-    },
     {
       "type": "ARCHIVE_CAPABILITY_HASH_MATRIX_READBACK",
       "evidence_row_id": 641,
@@ -246,6 +258,48 @@
       "evidence_row_id": 643,
       "event_id": "X20261028T0448Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
       "checkpoint_blob_sha": "335bfb2cd747e59f74fe638d23ea07fe86958905",
+      "readback_verified": true
+    },
+    {
+      "type": "ARCHIVE_CAPABILITY_HASH_MATRIX_READBACK",
+      "evidence_row_id": 641,
+      "run_id": 40634148242,
+      "conclusion": "success",
+      "format_count": 9,
+      "artifact_id": 12792274368
+    },
+    {
+      "type": "ARCHIVE_MATRIX_ARTIFACT_BYTES_READBACK",
+      "evidence_row_id": 642,
+      "artifact_zip_sha256": "ec4f277f367295e5370c3a941dc7e69cd70aa1e8224bf97b67ddc70b9dde0ff2",
+      "member_sha256": "f79be2157897435fae9e0ac407a22b9cc082cf86a63d41d4be3c2dd0fc0243a1",
+      "readback_verified": true
+    },
+    {
+      "type": "CHECKPOINT_1148_CREATED_READBACK",
+      "evidence_row_id": 643,
+      "checkpoint_blob_sha": "335bfb2cd747e59f74fe638d23ea07fe86958905",
+      "readback_verified": true
+    },
+    {
+      "type": "RESUME_POINTER_1148_READBACK",
+      "evidence_row_id": 644,
+      "pointer_blob_sha": "c26cc5b848da9c8ca3d8f6d9777d6d232203ad97",
+      "readback_verified": true
+    },
+    {
+      "type": "HELLOCHECK_GO_CLOUD_BUILD_READBACK",
+      "evidence_row_id": 645,
+      "event_id": "X20261028T0453Z_HELLOCHECK_GO_CLOUD_BUILD_READBACK",
+      "run_id": 40634655369,
+      "conclusion": "success",
+      "artifact_id": 12792534730
+    },
+    {
+      "type": "CHECKPOINT_1154_CREATED_READBACK",
+      "evidence_row_id": 646,
+      "event_id": "X20261028T0454Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+      "checkpoint_blob_sha": "c89c97afc2cad2dd614b6efd2192c3d2284bcd23",
       "readback_verified": true
     }
   ]
