@@ -59,8 +59,10 @@ jobs:
           assert archive_sha256 == "d421b86f6290aefad61b2a36737253b2b30fe27c156bd95abfc230f24fe0307e", archive_sha256
           target = root / "sol-test-read-format-rar.rar"
           target.write_bytes(archive)
+          matrix_target = root / "sol-archive-capability-hash-matrix.json"
           with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
               env.write(f"SOL_RAR_FIXTURE_PATH={target}\n")
+              env.write(f"SOL_ARCHIVE_MATRIX_OUTPUT={matrix_target}\n")
           print({"upstream_git_blob_sha1": git_blob_sha1, "rar_sha256": archive_sha256, "bytes": len(archive)})
           PY
       - name: Verify mocked optional-adapter routing and safe-failure contracts
@@ -69,3 +71,11 @@ jobs:
         run: python -m unittest tests.test_sol_archive_real_backends -v
       - name: Regression-check existing archive carrier
         run: python -m unittest tests.test_memory_achive -v
+      - name: Upload verified capability and hash matrix
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sol-archive-capability-hash-matrix
+          path: ${{ runner.temp }}/sol-archive-capability-hash-matrix.json
+          if-no-files-found: warn
+          retention-days: 7
