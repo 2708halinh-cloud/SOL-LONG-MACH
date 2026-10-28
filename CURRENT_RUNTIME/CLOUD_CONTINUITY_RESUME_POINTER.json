@@ -1,47 +1,48 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.5",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-28T03:59:49.663Z",
-  "updated_at_local": "2026-10-28T10:59:49.663+07:00",
+  "updated_at_utc": "2026-10-28T04:03:30.263Z",
+  "updated_at_local": "2026-10-28T11:03:30.263+07:00",
   "timestamp_basis": "Cloud provider timestamps are not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "6d4677f7106d74b176b7a73140e57b85e4cc85d4",
+    "blob_sha": "1fab04c3ee1c36270d9234a2adff8b62a6223cb9",
     "prior_pointer_chain": [
+      "6d4677f7106d74b176b7a73140e57b85e4cc85d4",
       "75ba9e23e6ee354d08777177cb3ea068512640ef",
       "d494221f214a0d045258455cbfd58fa53e830240"
     ]
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1017ICT.json",
-    "blob_sha": "f4cc1c7414e6e9fa8691d4bfbb14cdb8182bfc47",
-    "commit_sha": "12ab236f809123abc90b13d70489cad9244558ac"
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1058ICT.json",
     "blob_sha": "ee77d5201d79ff4d6bafec8d93a3614ee74e1782",
-    "commit_sha": "59bdd6da88a4ea5c615787a5fc0633de080d4478",
+    "commit_sha": "59bdd6da88a4ea5c615787a5fc0633de080d4478"
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1101ICT.json",
+    "blob_sha": "1ee571fbdb7465d08f82161bb53d76fce46573d0",
+    "commit_sha": "496c09aa51e371287ff2a36d5b7fb9c49910c15e",
     "readback_verified": true,
-    "observed_at_utc": "2026-10-28T03:58:13.402Z",
-    "latest_continuity_readback_evidence_row_id": 617,
-    "latest_continuity_readback_event_id": "X20261028T035928445_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+    "observed_at_utc": "2026-10-28T04:01:17.445Z",
+    "latest_continuity_readback_evidence_row_id": 621,
+    "latest_continuity_readback_event_id": "X20261028T040302055_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
     "github_actions_inventory_evidence_row_id": 614,
     "archive_adapter_evidence_row_id": 616,
-    "previous_checkpoint_blob_sha": "f4cc1c7414e6e9fa8691d4bfbb14cdb8182bfc47",
-    "main_head_before_checkpoint": "2cd9e8f0f5f36997745edb921926c3e8b5536c25"
+    "previous_checkpoint_blob_sha": "ee77d5201d79ff4d6bafec8d93a3614ee74e1782",
+    "main_head_before_checkpoint": "18d8ed85d51f5a0e318e63bbfef710bdaaf6cbb1"
   },
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
     "version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
-    "execution_id": "254",
+    "execution_id": "255",
     "execution_status": "success",
-    "started_at_utc": "2026-10-28T03:00:22.080Z",
-    "stopped_at_utc": "2026-10-28T03:00:24.279Z",
+    "started_at_utc": "2026-10-28T04:00:22.076Z",
+    "stopped_at_utc": "2026-10-28T04:00:24.218Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_row_id": 612,
-    "event_id": "X20261028030024134_CLOUD",
+    "evidence_row_id": 619,
+    "event_id": "X20261028040024016_CLOUD",
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "project_id": "6qKpRmicIGHA5snY",
     "recovery_rows_total": 45,
@@ -49,6 +50,7 @@
     "recovery_rows_terminal": 0,
     "tasks_closed": 0,
     "task_statuses_changed": false,
+    "selected_cloud_eligible_count_reported_by_scan": 6,
     "host_heartbeat_probed": false,
     "cloud_heartbeat_is_not_host_heartbeat": true
   },
@@ -128,9 +130,10 @@
     "main_branch_task_ledger_mutated": false
   },
   "next_edges": [
-    "Verify n8n execution at or after 2026-10-28T04:00:00Z and read back its evidence row.",
-    "Refresh GitHub Actions inventory after 2026-10-28T04:07:00Z; preserve OPEN_SCHEDULE_GAP_UNRESOLVED until reconciled.",
+    "Refresh GitHub Actions inventory after the 2026-10-28T04:07:00Z cron tick; preserve OPEN_SCHEDULE_GAP_UNRESOLVED until reconciled.",
+    "Verify the next n8n hourly execution at or after 2026-10-28T05:00:00Z and read back its evidence row.",
     "Continue SV-20261020-13-ARCHIVE-FORMATS by verifying real optional backend availability and actual archive fixtures; mocked routing tests are not real backend verification.",
+    "Follow the six cloud-eligible candidates from execution 255 without changing their OPEN states; resolve authenticated cloud-v2 ID/storage only through supported access.",
     "Obtain a fresh authorized host tick/consumer receipt separately; do not infer host state from cloud scans.",
     "Retrieve original ingestion_gate_payload_03.txt bytes through an authorized source route and recompute SHA-256.",
     "Keep all 45 recovery tasks nonterminal until their own verified actions and readbacks are complete."
@@ -149,11 +152,37 @@
       "task_status": "OPEN_7Z_RAR_LR"
     },
     {
-      "type": "CHECKPOINT_CREATED_READBACK",
+      "type": "CHECKPOINT_1058_CREATED_READBACK",
       "evidence_row_id": 617,
       "event_id": "X20261028T035928445_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
       "checkpoint_blob_sha": "ee77d5201d79ff4d6bafec8d93a3614ee74e1782",
       "checkpoint_commit_sha": "59bdd6da88a4ea5c615787a5fc0633de080d4478",
+      "readback_verified": true
+    },
+    {
+      "type": "RESUME_POINTER_1058_READBACK",
+      "evidence_row_id": 618,
+      "event_id": "X20261028T040008166_RESUME_POINTER_READBACK",
+      "pointer_blob_sha": "1fab04c3ee1c36270d9234a2adff8b62a6223cb9",
+      "pointer_commit_sha": "18d8ed85d51f5a0e318e63bbfef710bdaaf6cbb1",
+      "readback_verified": true
+    },
+    {
+      "type": "N8N_EXECUTION_255_READBACK",
+      "evidence_row_id": 620,
+      "event_id": "X20261028T040117445_CLOUD_CONTINUITY_N8N_EXECUTION_READBACK",
+      "execution_id": "255",
+      "execution_status": "success",
+      "scan_evidence_row_id": 619,
+      "recovery_tasks_nonterminal": 45,
+      "tasks_closed": 0
+    },
+    {
+      "type": "CHECKPOINT_1101_CREATED_READBACK",
+      "evidence_row_id": 621,
+      "event_id": "X20261028T040302055_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+      "checkpoint_blob_sha": "1ee571fbdb7465d08f82161bb53d76fce46573d0",
+      "checkpoint_commit_sha": "496c09aa51e371287ff2a36d5b7fb9c49910c15e",
       "readback_verified": true
     }
   ]
