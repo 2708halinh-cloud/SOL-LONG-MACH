@@ -1,13 +1,14 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.9",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/3.0",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-28T13:25:09.837Z",
-  "updated_at_local": "2026-10-28T20:25:09.837+07:00",
+  "updated_at_utc": "2026-10-28T15:12:36Z",
+  "updated_at_local": "2026-10-28T22:12:36+07:00",
   "timestamp_basis": "Cloud provider timestamps are not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "cfec5dc3786c76bedb52b7f5f618c611247c57b0",
+    "blob_sha": "750344c6b3b27a6717556443fa92736e4f88e58b",
     "prior_pointer_chain": [
+      "cfec5dc3786c76bedb52b7f5f618c611247c57b0",
       "c75f62ec08c6d9719deeb2d1f4c0099bcfb338a5",
       "4d33c9b125622d9db9a82d862768c2816de0d73f",
       "eb99aa6362c5b044858ade7bd90c6b7ce3010a6e",
@@ -33,40 +34,38 @@
     ]
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T2022ICT.json",
-    "blob_sha": "01d8d3b76685d9e01ea8bcc5b2de2099fc72073d",
-    "commit_sha": "7b6ab701dffa42d469a8617e9116dcce084c4c85",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T2024ICT.json",
     "blob_sha": "b4b2881c65c30db91cb1ff29865419dcdf3dc004",
     "commit_sha": "fc4f75bde94f51fb7eba0186cfc39bebda109973",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T2212ICT.json",
+    "blob_sha": "5d0bfa8dfde9656e50fe3a8efa8d5eb675f68255",
+    "commit_sha": "f4a6b29225888aca5854260979e0263f8a6eec46",
     "readback_verified": true,
-    "observed_at_utc": "2026-10-28T13:24:16.774Z",
-    "previous_checkpoint_blob_sha": "01d8d3b76685d9e01ea8bcc5b2de2099fc72073d",
-    "latest_cloud_scan_evidence_row_id": 670,
-    "latest_cloud_scan_event_id": "X20261028130024036_CLOUD",
-    "latest_continuity_readback_evidence_row_id": 671,
-    "latest_continuity_readback_event_id": "X20261028T131837Z_CLOUD_CONTINUITY_READBACK",
-    "latest_source_audit_evidence_row_id": 672,
-    "latest_source_audit_event_id": "X20261028T1323Z_SV20261020_03_SOURCE_READBACK"
+    "observed_at_utc": "2026-10-28T15:12:36Z",
+    "previous_checkpoint_blob_sha": "b4b2881c65c30db91cb1ff29865419dcdf3dc004",
+    "latest_cloud_scan_evidence_row_id": 674,
+    "latest_cloud_scan_event_id": "X20261028150024089_CLOUD"
   },
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
     "version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
-    "execution_id": "265",
+    "execution_id": "267",
     "execution_mode": "trigger",
     "execution_status": "success",
-    "started_at_utc": "2026-10-28T13:00:22.069Z",
-    "stopped_at_utc": "2026-10-28T13:00:24.169Z",
+    "started_at_utc": "2026-10-28T15:00:22.068Z",
+    "stopped_at_utc": "2026-10-28T15:00:24.249Z",
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "evidence_row_id": 670,
-    "event_id": "X20261028130024036_CLOUD",
+    "evidence_row_id": 674,
+    "event_id": "X20261028150024089_CLOUD",
     "continuity_readback_evidence_row_id": 671,
     "continuity_readback_event_id": "X20261028T131837Z_CLOUD_CONTINUITY_READBACK",
+    "source_audit_evidence_row_id": 672,
+    "source_audit_event_id": "X20261028T1323Z_SV20261020_03_SOURCE_READBACK",
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "project_id": "6qKpRmicIGHA5snY",
     "recovery_rows_total": 45,
@@ -75,9 +74,7 @@
     "tasks_closed": 0,
     "task_statuses_changed": false,
     "host_heartbeat_probed": false,
-    "cloud_heartbeat_is_not_host_heartbeat": true,
-    "source_audit_evidence_row_id": 672,
-    "source_audit_event_id": "X20261028T1323Z_SV20261020_03_SOURCE_READBACK"
+    "cloud_heartbeat_is_not_host_heartbeat": true
   },
   "github_sources": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
@@ -89,15 +86,15 @@
     "task_resume_pointer_embedded_timestamp": "2026-10-26T21:50:06+07:00",
     "task_resume_pointer_read_via_git_blob_api": true,
     "actions_inventory": {
-      "observed_at_utc": "2026-10-28T13:25:09.837Z",
+      "observed_at_utc": "2026-10-28T15:12:00Z",
       "endpoint": "https://api.github.com/repos/2708halinh-cloud/SOL-LONG-MACH/actions/runs?per_page=10",
-      "repo_run_inventory_total_count": 6480,
+      "repo_run_inventory_total_count": 6486,
       "pages_read": [
         1
       ],
       "page_size": 10,
-      "newest_global_run_id": 40695958569,
-      "newest_global_run_created_at_utc": "2026-10-28T13:23:19Z",
+      "newest_global_run_id": 40696964304,
+      "newest_global_run_created_at_utc": "2026-10-28T13:30:00Z",
       "newest_global_run_conclusion": "success",
       "latest_10_runs_checked": true
     },
@@ -113,12 +110,17 @@
       "prior_expected_tick_utc": "2026-10-28T12:07:00Z",
       "prior_tick_delayed_run_seen": true,
       "prior_tick_delay_seconds": 2001,
-      "next_expected_tick_utc": "2026-10-28T13:07:00Z",
+      "next_expected_tick_utc": "2026-10-28T16:07:00Z",
       "next_expected_tick_visible": false,
       "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
       "cause_verified": false,
       "workflow_changed": false,
-      "next_recheck_after_utc": "2026-10-28T14:17:00Z"
+      "next_recheck_after_utc": "2026-10-28T16:17:00Z",
+      "expected_ticks_not_visible_utc": [
+        "2026-10-28T13:07:00Z",
+        "2026-10-28T14:07:00Z",
+        "2026-10-28T15:07:00Z"
+      ]
     },
     "x66": {
       "workflow_id": 389996732,
@@ -137,6 +139,20 @@
       "cause_verified": false,
       "workflow_changed": false,
       "next_recheck_after_utc": "2026-10-28T18:30:00Z"
+    },
+    "r014_root_carrier_protection": {
+      "workflow_id": 393503121,
+      "workflow_path": ".github/workflows/r014-root-carrier-protection.yml",
+      "run_id": 40696964304,
+      "run_number": 25,
+      "job_id": 122846225176,
+      "job_name": "harden-original-root",
+      "conclusion": "success",
+      "destructive_gate_step": "Deny repeated ROOTS and Drive-ID destruction",
+      "continuity_gate_step": "Verify continuity caller honors destructive gate",
+      "both_gate_steps_conclusion": "success",
+      "host_heartbeat_proven": false,
+      "task_closed": false
     }
   },
   "ledger_reconciliation": {
@@ -193,17 +209,20 @@
     "workflow_files_changed": false,
     "ledger_rows_merged": 0,
     "n8n_evidence_rows_appended": 3,
-    "source_files_modified": 0
+    "source_files_modified": 0,
+    "n8n_scan_evidence_row_id": 674,
+    "agent_added_n8n_rows": 0
   },
   "next_edges": [
-    "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T2024ICT.json; do not rebuild from scratch.",
+    "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T2212ICT.json; do not rebuild from scratch.",
     "Keep all 45 n8n recovery rows nonterminal and the 29-object GitHub task ledger separate until canonical reconciliation is verified.",
-    "For SV-20261020-03, preserve verified source-level findings but do not patch until target and cloud-update permission are verified; require real execution/training receipts before claiming hardware performance.",
-    "Recheck Windows-survival workflow 393485804 after 2026-10-28T14:17:00Z; the 13:07Z expected tick was not visible in the latest-10-run inventory.",
-    "Recheck X66 workflow 389996732 after 2026-10-28T18:30:00Z; prior expected tick had a delayed SUCCESS run but root cause remains unverified.",
-    "Continue reconciling the 16 n8n-only task IDs using source_event/source_pointer/permission/result_receipt/next_verified_edge; preserve exact identities and do not mutate statuses.",
+    "Windows Survival latest visible run remains #384; expected ticks 13:07Z, 14:07Z and 15:07Z were not visible. Recheck after 16:17Z; cause remains unverified.",
+    "X66 latest visible run remains #36; next expected tick 18:17Z. Recheck after 18:30Z; cause of prior delay remains unverified.",
+    "R-014 Root Carrier Protection run #25 passed both destructive-gate and continuity-gate steps; cloud CI evidence only, not host heartbeat or task completion.",
+    "Continue reconciling 16 n8n-only task IDs by source_event/source_pointer/permission/result_receipt/next_verified_edge; preserve exact identities and do not mutate statuses.",
+    "For SV-20261020-03, retain source-level findings but do not patch until target and cloud-update permission are verified; require real execution/training receipts.",
     "Obtain a fresh authorized Windows heartbeat separately; Android remains UNVERIFIED.",
-    "Retrieve original ingestion_gate_payload_03.txt bytes via an authorized route and recompute SHA-256; verify historical ZIP provider ID/revision.",
-    "No host, Google Drive, secret, or destructive operations."
+    "Retrieve original ingestion_gate_payload_03.txt bytes through an authorized route and recompute SHA-256; verify historical ZIP provider ID/revision.",
+    "No host, Google Drive, secret, destructive, or task-status operations."
   ]
 }
