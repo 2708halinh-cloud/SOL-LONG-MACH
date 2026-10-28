@@ -46,7 +46,7 @@ jobs:
           source = root / "test_read_format_rar.rar.uu"
           encoded = source.read_bytes()
           git_blob_sha1 = hashlib.sha1(
-              b"blob " + str(len(encoded)).encode("ascii") + b"\\0" + encoded
+              b"blob " + str(len(encoded)).encode("ascii") + b"\0" + encoded
           ).hexdigest()
           assert git_blob_sha1 == "f197a2983302f5829de2719bdddcf43b8c59b201", git_blob_sha1
           lines = encoded.decode("ascii").splitlines()
@@ -60,7 +60,7 @@ jobs:
           target = root / "sol-test-read-format-rar.rar"
           target.write_bytes(archive)
           with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
-              env.write(f"SOL_RAR_FIXTURE_PATH={target}\\n")
+              env.write(f"SOL_RAR_FIXTURE_PATH={target}\n")
           print({"upstream_git_blob_sha1": git_blob_sha1, "rar_sha256": archive_sha256, "bytes": len(archive)})
           PY
       - name: Verify mocked optional-adapter routing and safe-failure contracts
