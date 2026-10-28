@@ -131,7 +131,7 @@ class RealOptionalBackendTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             bad = root / "malformed.7z"
-            bad.write_bytes(b"7z\\xbc\\xaf'\\x1c" + b"not-a-real-archive")
+            bad.write_bytes(b"7z\xbc\xaf'\x1c" + b"not-a-real-archive")
             before = bad.read_bytes()
 
             result = SOL_ARCHIVE.inspect(bad)
@@ -145,7 +145,7 @@ class RealOptionalBackendTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             fake = root / "signature-only.rar"
-            fake.write_bytes(b"Rar!\\x1a\\x07\\x00" + b"not-a-real-rar")
+            fake.write_bytes(b"Rar!\x1a\x07\x00" + b"not-a-real-rar")
             before = fake.read_bytes()
 
             result = SOL_ARCHIVE.inspect(fake)
