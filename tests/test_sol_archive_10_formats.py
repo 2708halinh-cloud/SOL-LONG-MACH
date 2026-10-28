@@ -25,8 +25,8 @@ ARCHIVE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(ARCHIVE)
 
 SIGNATURES = {
-    "7Z": (".7z", b"7z\\xbc\\xaf'\\x1c"),
-    "RAR": (".rar", b"Rar!\\x1a\\x07\\x00"),
+    "7Z": (".7z", b"7z\xbc\xaf'\x1c"),
+    "RAR": (".rar", b"Rar!\x1a\x07\x00"),
     "LR": (".lrz", b"LRZI"),
 }
 
@@ -90,7 +90,7 @@ class OptionalAdapterTests(unittest.TestCase):
 
     def test_unsafe_member_paths_are_rejected(self):
         self.assertFalse(ARCHIVE.safe_member("../escape.txt"))
-        self.assertFalse(ARCHIVE.safe_member(r"C:\\escape.txt"))
+        self.assertFalse(ARCHIVE.safe_member(r"C:\escape.txt"))
         self.assertFalse(ARCHIVE.safe_member("link", symlink=True))
         self.assertTrue(ARCHIVE.safe_member("folder/data.txt"))
 
