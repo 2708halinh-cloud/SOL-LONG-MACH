@@ -1,0 +1,33 @@
+name: Archive optional-adapter regression (isolated branch)
+
+on:
+  push:
+    branches:
+      - sol-cloud-continuity/archive-adapter-tests-20261028
+    paths:
+      - 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py'
+      - 'tests/test_sol_archive_10_formats.py'
+      - 'tests/test_memory_achive.py'
+      - '.github/workflows/archive-backend-regression.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: archive-adapter-regression-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: false
+      - name: Verify optional adapter routing and safe-failure contracts
+        run: python -m unittest tests.test_sol_archive_10_formats -v
+      - name: Regression-check existing archive carrier
+        run: python -m unittest tests.test_memory_achive -v
