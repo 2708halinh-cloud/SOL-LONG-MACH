@@ -1,35 +1,36 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/2.5",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-28T04:03:30.263Z",
-  "updated_at_local": "2026-10-28T11:03:30.263+07:00",
+  "updated_at_utc": "2026-10-28T04:08:52.944Z",
+  "updated_at_local": "2026-10-28T11:08:52.944+07:00",
   "timestamp_basis": "Cloud provider timestamps are not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "1fab04c3ee1c36270d9234a2adff8b62a6223cb9",
+    "blob_sha": "6ef28c55f4646c6b754aed8501ca24e250350058",
     "prior_pointer_chain": [
+      "1fab04c3ee1c36270d9234a2adff8b62a6223cb9",
       "6d4677f7106d74b176b7a73140e57b85e4cc85d4",
       "75ba9e23e6ee354d08777177cb3ea068512640ef",
       "d494221f214a0d045258455cbfd58fa53e830240"
     ]
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1058ICT.json",
-    "blob_sha": "ee77d5201d79ff4d6bafec8d93a3614ee74e1782",
-    "commit_sha": "59bdd6da88a4ea5c615787a5fc0633de080d4478"
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1101ICT.json",
     "blob_sha": "1ee571fbdb7465d08f82161bb53d76fce46573d0",
-    "commit_sha": "496c09aa51e371287ff2a36d5b7fb9c49910c15e",
+    "commit_sha": "496c09aa51e371287ff2a36d5b7fb9c49910c15e"
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1107ICT.json",
+    "blob_sha": "1cd9b15ce34f9e31f4bd4ba64bb137db45459938",
+    "commit_sha": "efdac0c367f1b99df14b36f95e75889fa75a5245",
     "readback_verified": true,
-    "observed_at_utc": "2026-10-28T04:01:17.445Z",
-    "latest_continuity_readback_evidence_row_id": 621,
-    "latest_continuity_readback_event_id": "X20261028T040302055_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
-    "github_actions_inventory_evidence_row_id": 614,
+    "observed_at_utc": "2026-10-28T04:07:42.995Z",
+    "latest_continuity_readback_evidence_row_id": 625,
+    "latest_continuity_readback_event_id": "X20261028T040832078_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+    "github_actions_inventory_evidence_row_id": 624,
     "archive_adapter_evidence_row_id": 616,
-    "previous_checkpoint_blob_sha": "ee77d5201d79ff4d6bafec8d93a3614ee74e1782",
-    "main_head_before_checkpoint": "18d8ed85d51f5a0e318e63bbfef710bdaaf6cbb1"
+    "previous_checkpoint_blob_sha": "1ee571fbdb7465d08f82161bb53d76fce46573d0",
+    "main_head_before_checkpoint": "13fd4b02c52d56ef0dca670557bae994f6114872"
   },
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -43,6 +44,7 @@
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
     "evidence_row_id": 619,
     "event_id": "X20261028040024016_CLOUD",
+    "continuity_readback_evidence_row_id": 620,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "project_id": "6qKpRmicIGHA5snY",
     "recovery_rows_total": 45,
@@ -59,10 +61,12 @@
     "workflow_path": ".github/workflows/windows-survival-cloud-continuity.yml",
     "workflow_file_blob_sha": "044b4e73123af4772b995b410b3a79e847be7e03",
     "cron": "7 * * * *",
-    "inventory_source": "Last verified read-only GitHub Actions inventory",
-    "inventory_observed_at_utc": "2026-10-28T03:17:00Z",
-    "evidence_row_id": 614,
-    "last_verified_target_run": {
+    "inventory_source": "Read-only GitHub Actions run-list API filtered by workflow path",
+    "inventory_observed_at_utc": "2026-10-28T04:07:42.995Z",
+    "evidence_row_id": 624,
+    "repository_actions_run_total_count": 6384,
+    "repository_actions_runs_returned": 100,
+    "latest_visible_target_run": {
       "run_number": 382,
       "run_id": 40604006495,
       "event": "schedule",
@@ -74,12 +78,16 @@
       "2026-10-28T00:07:00Z",
       "2026-10-28T01:07:00Z",
       "2026-10-28T02:07:00Z",
-      "2026-10-28T03:07:00Z"
+      "2026-10-28T03:07:00Z",
+      "2026-10-28T04:07:00Z"
     ],
-    "refreshed_after_03_07z": false,
+    "refreshed_after_04_07z": true,
+    "new_target_run_visible_for_04_07z": false,
     "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
     "cause_verified": false,
-    "workflow_changed": false
+    "workflow_changed": false,
+    "next_recheck_after_utc": "2026-10-28T04:12:00Z",
+    "evidence_row_id_pre_tick": 623
   },
   "archive_adapter_task": {
     "source_task_id": "SV-20261020-13-ARCHIVE-FORMATS",
@@ -130,7 +138,7 @@
     "main_branch_task_ledger_mutated": false
   },
   "next_edges": [
-    "Refresh GitHub Actions inventory after the 2026-10-28T04:07:00Z cron tick; preserve OPEN_SCHEDULE_GAP_UNRESOLVED until reconciled.",
+    "Recheck GitHub Actions run-list after 2026-10-28T04:12:00Z to distinguish a delayed run from a missed schedule tick; do not change workflow without verified cause.",
     "Verify the next n8n hourly execution at or after 2026-10-28T05:00:00Z and read back its evidence row.",
     "Continue SV-20261020-13-ARCHIVE-FORMATS by verifying real optional backend availability and actual archive fixtures; mocked routing tests are not real backend verification.",
     "Follow the six cloud-eligible candidates from execution 255 without changing their OPEN states; resolve authenticated cloud-v2 ID/storage only through supported access.",
@@ -152,37 +160,44 @@
       "task_status": "OPEN_7Z_RAR_LR"
     },
     {
-      "type": "CHECKPOINT_1058_CREATED_READBACK",
-      "evidence_row_id": 617,
-      "event_id": "X20261028T035928445_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
-      "checkpoint_blob_sha": "ee77d5201d79ff4d6bafec8d93a3614ee74e1782",
-      "checkpoint_commit_sha": "59bdd6da88a4ea5c615787a5fc0633de080d4478",
-      "readback_verified": true
-    },
-    {
-      "type": "RESUME_POINTER_1058_READBACK",
-      "evidence_row_id": 618,
-      "event_id": "X20261028T040008166_RESUME_POINTER_READBACK",
-      "pointer_blob_sha": "1fab04c3ee1c36270d9234a2adff8b62a6223cb9",
-      "pointer_commit_sha": "18d8ed85d51f5a0e318e63bbfef710bdaaf6cbb1",
-      "readback_verified": true
-    },
-    {
-      "type": "N8N_EXECUTION_255_READBACK",
-      "evidence_row_id": 620,
-      "event_id": "X20261028T040117445_CLOUD_CONTINUITY_N8N_EXECUTION_READBACK",
-      "execution_id": "255",
-      "execution_status": "success",
-      "scan_evidence_row_id": 619,
-      "recovery_tasks_nonterminal": 45,
-      "tasks_closed": 0
-    },
-    {
       "type": "CHECKPOINT_1101_CREATED_READBACK",
       "evidence_row_id": 621,
       "event_id": "X20261028T040302055_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
       "checkpoint_blob_sha": "1ee571fbdb7465d08f82161bb53d76fce46573d0",
       "checkpoint_commit_sha": "496c09aa51e371287ff2a36d5b7fb9c49910c15e",
+      "readback_verified": true
+    },
+    {
+      "type": "RESUME_POINTER_1101_READBACK",
+      "evidence_row_id": 622,
+      "event_id": "X20261028T040344710_RESUME_POINTER_READBACK",
+      "pointer_blob_sha": "6ef28c55f4646c6b754aed8501ca24e250350058",
+      "pointer_commit_sha": "13fd4b02c52d56ef0dca670557bae994f6114872",
+      "readback_verified": true
+    },
+    {
+      "type": "GITHUB_ACTIONS_PRE_TICK_INVENTORY",
+      "evidence_row_id": 623,
+      "event_id": "X20261028T040414281_GITHUB_ACTIONS_INVENTORY_READBACK",
+      "total_count": 6384,
+      "latest_target_run_number": 382,
+      "state": "OPEN_SCHEDULE_GAP_UNRESOLVED"
+    },
+    {
+      "type": "GITHUB_ACTIONS_POST_TICK_INVENTORY",
+      "evidence_row_id": 624,
+      "event_id": "X20261028T040742995_GITHUB_ACTIONS_POST_TICK_READBACK",
+      "total_count": 6384,
+      "latest_target_run_number": 382,
+      "new_target_run_visible": false,
+      "state": "OPEN_SCHEDULE_GAP_UNRESOLVED"
+    },
+    {
+      "type": "CHECKPOINT_1107_CREATED_READBACK",
+      "evidence_row_id": 625,
+      "event_id": "X20261028T040832078_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+      "checkpoint_blob_sha": "1cd9b15ce34f9e31f4bd4ba64bb137db45459938",
+      "checkpoint_commit_sha": "efdac0c367f1b99df14b36f95e75889fa75a5245",
       "readback_verified": true
     }
   ]
