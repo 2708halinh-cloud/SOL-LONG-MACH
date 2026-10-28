@@ -7,6 +7,7 @@ is supplied; a signature-only byte sequence is not treated as a valid archive.
 """
 import hashlib
 import importlib.util
+import os
 import shutil
 import subprocess
 import tempfile
@@ -23,6 +24,10 @@ BIN_DIR = (
 )
 SOL_SOURCE = BIN_DIR / "sol_archive_10_formats.py"
 MEMORY_SOURCE = BIN_DIR / "memory_achive.py"
+
+RAR_FIXTURE_UPSTREAM_COMMIT = "7574249bdc19f34c63b52ef0102d056f4fb7ba39"
+RAR_FIXTURE_UPSTREAM_BLOB_SHA1 = "f197a2983302f5829de2719bdddcf43b8c59b201"
+RAR_FIXTURE_RAW_SHA256 = "d421b86f6290aefad61b2a36737253b2b30fe27c156bd95abfc230f24fe0307e"
 
 
 def load_module(name, source):
@@ -157,6 +162,36 @@ class RealOptionalBackendTests(unittest.TestCase):
             with self.assertRaises(MEMORY_ARCHIVE.ArchiveError):
                 MEMORY_ARCHIVE.test_archive(fake)
 
+
+    def test_real_rar_fixture_is_integrity_checked_without_extraction(self):
+        # Pinned source: libarchive/libarchive@7574249bdc19f34c63b52ef0102d056f4fb7ba39
+        # Path: libarchive/test/test_read_format_rar.rar.uu
+        # The workflow verifies upstream Git blob SHA-1 before decoding the 336-byte RAR.
+        fixture_path = os.environ.get("SOL_RAR_FIXTURE_PATH")
+        self.assertTrue(fixture_path, "CI_RAR_FIXTURE_NOT_PROVISIONED")
+        archive = Path(fixture_path)
+        self.assertTrue(archive.is_file(), "CI_RAR_FIXTURE_MISSING")
+        original_bytes = archive.read_bytes()
+        archive_sha = hashlib.sha256(original_bytes).hexdigest()
+        self.assertEqual(archive_sha, RAR_FIXTURE_RAW_SHA256)
+
+        result = SOL_ARCHIVE.inspect(archive)
+        self.assertEqual(result["detected"], "RAR")
+        self.assertEqual(result["status"], "PASS", result)
+        self.assertEqual(result["adapter"], Path(self.sevenzip).name)
+        self.assertEqual(result["sha256"], archive_sha)
+        self.assertFalse(result["extraction_performed"])
+
+        receipt = MEMORY_ARCHIVE.test_archive(archive)
+        self.assertEqual(receipt["status"], "PASS", receipt)
+        self.assertEqual(receipt["format"], "RAR")
+        self.assertEqual(receipt["sha256"], archive_sha)
+
+        destination = archive.parent / "must-not-be-created-rar"
+        with self.assertRaisesRegex(MEMORY_ARCHIVE.ArchiveError, "SAFE_EXTRACT_HANDLER_REQUIRED"):
+            MEMORY_ARCHIVE.unpack(archive, destination)
+        self.assertFalse(destination.exists())
+        self.assertEqual(archive.read_bytes(), original_bytes)
 
 if __name__ == "__main__":
     unittest.main()
