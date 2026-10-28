@@ -7,6 +7,7 @@ on:
     paths:
       - 'CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py'
       - 'tests/test_sol_archive_10_formats.py'
+      - 'tests/test_sol_archive_real_backends.py'
       - 'tests/test_memory_achive.py'
       - '.github/workflows/archive-backend-regression.yml'
 
@@ -20,13 +21,21 @@ concurrency:
 jobs:
   test:
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verify optional adapter routing and safe-failure contracts
+      - name: Install real optional archive backends in ephemeral runner
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y 7zip lrzip
+          command -v 7zz || command -v 7z
+          command -v lrzip
+      - name: Verify mocked optional-adapter routing and safe-failure contracts
         run: python -m unittest tests.test_sol_archive_10_formats -v
+      - name: Verify real 7Z and LR fixtures, malformed input, and no-extraction guard
+        run: python -m unittest tests.test_sol_archive_real_backends -v
       - name: Regression-check existing archive carrier
         run: python -m unittest tests.test_memory_achive -v
