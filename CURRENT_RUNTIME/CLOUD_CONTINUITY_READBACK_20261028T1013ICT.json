@@ -1,0 +1,104 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.1",
+  "title": "THU HOI NGUON SOL — cloud continuity checkpoint",
+  "observed_at_utc": "2026-10-28T03:13:45Z",
+  "observed_at_local": "2026-10-28T10:13:45+07:00",
+  "state": "OPEN_WORK_REMAINS",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T0912ICT.json",
+    "blob_sha": "cf9252e49a936a5e6ce90b01f4fa0b7fcb3077f9",
+    "commit_sha": "a4c9aa1d0cc77da4ff5565196d257fc3115348cb"
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
+    "execution_id": "254",
+    "execution_status": "success",
+    "started_at_utc": "2026-10-28T03:00:22.080Z",
+    "stopped_at_utc": "2026-10-28T03:00:24.279Z",
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "scan_evidence_row_id": 612,
+    "scan_event_id": "X20261028030024134_CLOUD",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "recovery_rows_total": 45,
+    "recovery_rows_nonterminal": 45,
+    "recovery_rows_terminal": 0,
+    "tasks_closed": 0,
+    "task_statuses_changed": false,
+    "selected_cloud_eligible_count_reported_by_scan": 7,
+    "host_heartbeat_probed": false,
+    "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "github_actions": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "workflow_path": ".github/workflows/windows-survival-cloud-continuity.yml",
+    "workflow_file_blob_sha": "044b4e73123af4772b995b410b3a79e847be7e03",
+    "cron": "7 * * * *",
+    "latest_verified_inventory_at_utc": "2026-10-28T02:12:29Z",
+    "latest_verified_inventory_evidence_row_id": 610,
+    "latest_verified_target_run": {
+      "run_number": 382,
+      "run_id": 40604006495,
+      "event": "schedule",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at_utc": "2026-10-27T23:43:01Z",
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/actions/runs/40604006495"
+    },
+    "expected_ticks_missing_in_last_verified_inventory_utc": [
+      "2026-10-28T00:07:00Z",
+      "2026-10-28T01:07:00Z",
+      "2026-10-28T02:07:00Z"
+    ],
+    "expected_tick_after_last_verified_inventory_utc": "2026-10-28T03:07:00Z",
+    "current_inventory_status": "NOT_REFRESHED_THIS_INVOCATION",
+    "current_inventory_blocker": "GitHub Actions run-list endpoint rejected by available connector; no fresh run-list evidence obtained.",
+    "schedule_gap": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+    "schedule_gap_cause_verified": false,
+    "workflow_changed": false
+  },
+  "recovery_ledger": {
+    "table_id": "rSPFIOWbS7cfNJ8z",
+    "total": 45,
+    "nonterminal": 45,
+    "terminal": 0,
+    "closed": 0,
+    "statuses_preserved": true
+  },
+  "host_and_android": {
+    "latest_verified_host_heartbeat_row_id": 550,
+    "latest_verified_host_heartbeat_utc": "2026-10-27T00:51:44.165010Z",
+    "fresh_host_heartbeat_verified": false,
+    "host_probed_this_invocation": false,
+    "android_online_state": "UNVERIFIED",
+    "remote_route_is_host_heartbeat": false
+  },
+  "unresolved_source_provenance": {
+    "ingestion_gate_payload_03_txt_original_bytes_fetched": false,
+    "ingestion_gate_payload_03_txt_raw_sha256_recomputed": false,
+    "environment_registry_blob_sha1": "9ffdc2da742bd9ad07fbdfb8b27fcd8c8cf8b74e",
+    "historical_zip_library_sha256_match": true,
+    "historical_zip_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+    "historical_zip_original_provider_id_revision_verified": false,
+    "open_task_ledger_content_readback_verified": false,
+    "open_task_ledger_blob_sha1": "8e4a1760001e4f5d20580c8bab5aad76ce760033"
+  },
+  "safety": {
+    "host_writes": 0,
+    "google_drive_writes": 0,
+    "process_or_cache_deletions": 0,
+    "task_status_mutations": 0,
+    "secrets_or_plaintext_credentials_accessed": false
+  },
+  "next_edges": [
+    "Refresh GitHub Actions run inventory for workflow windows-survival-cloud-continuity.yml after 2026-10-28T03:07:00Z through a supported read route; do not infer absence from the rejected endpoint.",
+    "Verify next n8n hourly execution at or after 2026-10-28T04:00:00Z and read its evidence row.",
+    "Obtain a fresh authorized host tick/consumer receipt separately; do not infer host state from cloud scans or route inventory.",
+    "Retrieve original ingestion_gate_payload_03.txt bytes through an authorized source route and recompute SHA-256.",
+    "Keep all 45 recovery tasks nonterminal until their own verified actions and readbacks are complete."
+  ],
+  "main_head_before_checkpoint": "f211d130b0b2d21fae5a4b562945facd1224395e"
+}
