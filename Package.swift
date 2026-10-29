@@ -6,6 +6,6 @@ let package = Package(
     products: [.library(name: "TesseractOSiOS", targets: ["TesseractOSiOS"])],
     targets: [
         .target(name: "TesseractOSiOS", path: "IOS_EXPORT", sources: ["TESSERACT_OS_iOS.swift"]),
-        .testTarget(name: "TesseractOSiOSTests", dependencies: ["TesseractOSiOS"], path: "Tests/TesseractOSiOSTests")
+        .testTarget(name: "TesseractOSiOSTests", dependencies: ["TesseractOSiOS"], path: "tests/swift/TesseractOSiOSTests")
     ]
 )
