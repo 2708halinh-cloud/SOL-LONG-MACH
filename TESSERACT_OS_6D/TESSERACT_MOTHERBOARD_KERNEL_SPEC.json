@@ -13,6 +13,7 @@
     "pid_file": "runtime/state/tesseract_motherboard_daemon.pid",
     "stop_file": "runtime/state/TESSERACT_MOTHERBOARD_DAEMON.STOP"
   },
+  "capability_manifest": "config/TESSERACT_MOTHERBOARD_CAPABILITIES_CURRENT.json",
   "components": {
     "mandatory_state_restore": {
       "enabled": true,
@@ -94,6 +95,7 @@
       "semantics": "UNBOUNDED_SEQUENCE_OF_BOUNDED_EVIDENCED_CYCLES",
       "cycle_actions": [
         "RESTORE_CHECKPOINT",
+        "REFRESH_5D_CAPABILITY_REGRESSION",
         "OBSERVE_PROCESS_AND_HEARTBEAT",
         "RECORD_OPEN_EDGES",
         "SLEEP",
@@ -140,7 +142,7 @@
       "Q_t": "risk",
       "L_t": "useless repetition"
     },
-    "weight_updates": "Generate event-conditioned weights per neuron from bounded observed inputs and evidence_ref; persist last values for inspection.",
+    "weight_updates": "Automatically generate event-conditioned weights for each observed tool event from bounded observed inputs and causal evidence_ref; persist last values for inspection.",
     "safety": "Risk and repetition increase penalties; no reward is inferred without a source/evidence reference."
   },
   "acceptance": {
@@ -159,6 +161,7 @@
     "daemon": "TESSERACT_OS_6D/tesseract_motherboard_daemon.py",
     "test_module": "TESSERACT_OS_6D/test_tesseract_motherboard_kernel.py",
     "specification": "TESSERACT_OS_6D/TESSERACT_MOTHERBOARD_KERNEL_SPEC.json",
+    "capability_manifest": "TESSERACT_OS_6D/TESSERACT_MOTHERBOARD_CAPABILITIES_CURRENT.json",
     "runtime_state_root": "TESSERACT_OS_6D/state/"
   }
 }
