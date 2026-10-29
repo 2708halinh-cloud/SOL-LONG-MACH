@@ -1,28 +1,28 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/4.5",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/4.6",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-29T14:35:31Z",
-  "updated_at_local": "2026-10-29T21:35:31+07:00",
+  "updated_at_utc": "2026-10-29T14:39:35Z",
+  "updated_at_local": "2026-10-29T21:39:35+07:00",
   "timestamp_basis": "Cloud provider timestamps and GitHub Actions are not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "db163968b351e6b7c8be13142114f177ca14b9b2",
-    "last_pointer_commit_sha": "0e7890083492335c57272e9837bef0e6ccd82cd7",
+    "blob_sha": "3c0000d1197e02e2e1c59f03d81c7f638ae0a714",
+    "last_pointer_commit_sha": "fcd30c3bcc517ea72fe5abc257af2dd6e785d074",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T2058ICT.json",
-    "blob_sha": "3ab3ec6ff659b2721581dbc625afd241a400e730",
-    "commit_sha": "e14b84b7017508e25d9125902ab3b0344c5c2657",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T2135ICT.json",
     "blob_sha": "a364f2adaab80e45d063db1ce05ab233f3932879",
     "commit_sha": "48004310cdf69d2b0e970a85a87b736ebe3d09ae",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T2139ICT.json",
+    "blob_sha": "b99b7a96b8af24cc6685d999ce7989338896bab9",
+    "commit_sha": "8e7574f5835545eacf74daef72462fa895f04c8c",
     "readback_verified": true,
-    "observed_at_utc": "2026-10-29T14:35:31Z",
-    "previous_checkpoint_blob_sha": "3ab3ec6ff659b2721581dbc625afd241a400e730",
+    "observed_at_utc": "2026-10-29T14:39:35Z",
+    "previous_checkpoint_blob_sha": "a364f2adaab80e45d063db1ce05ab233f3932879",
     "latest_cloud_scan_evidence_row_id": 705,
     "latest_cloud_scan_event_id": "X20261029140024039_CLOUD"
   },
@@ -51,9 +51,9 @@
   },
   "github_sources": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_before_checkpoint_write": "0a12ee9161f0760913c068aefe8cd2cf4560228a",
+    "main_head_before_checkpoint_write": "fcd30c3bcc517ea72fe5abc257af2dd6e785d074",
     "checkpoint_commit_vercel_state": "pending",
-    "checkpoint_commit_vercel_status_url": "https://vercel.com/sollasi/sol-long-mach/98PPQ1VDsRpapqZQnpoQSLzTzEn4",
+    "checkpoint_commit_vercel_status_url": "https://vercel.com/sollasi/sol-long-mach/AgT1irmqkijSQSTSACCg7YD6NSUX",
     "prior_main_commit_with_vercel_failure": "0a12ee9161f0760913c068aefe8cd2cf4560228a",
     "prior_main_commit_vercel_status": "failure",
     "vercel_failure_cause_verified": false,
@@ -87,10 +87,23 @@
     "task_id": "SV-20261020-03",
     "status_preserved": "ASSIGNED_DRAFT_WAITING_CREDENTIAL",
     "source_file_id": "id:gvG29tEleJwAAAAAAAACFw",
+    "source_path": "/Linh Hà/SENSOR_LOGS/windows_cpu_worker.py",
     "source_revision": "0165daa22de4b740000000395cdfd73",
+    "source_server_modified_utc": "2026-10-12T19:59:31Z",
+    "metadata_readback_verified": true,
+    "content_readback_verified": true,
+    "access_route": "Outlook-linked Dropbox connector",
     "source_patch_authorized": false,
     "source_modified": false,
-    "source_access_status": "BLOCKED_LINK_ID_INELIGIBLE"
+    "code_audit": {
+      "detect_avx_support_returns_true_in_try_and_except": true,
+      "temperature_telemetry_constant_celsius": 39.5,
+      "loss_and_accuracy_generated_from_epoch_ratio_formulas": true,
+      "numpy_import_present": true,
+      "matrix_gradient_or_backprop_operations_detected": false,
+      "torch_or_sklearn_import_detected": false,
+      "runtime_training_proof_present": false
+    }
   },
   "host_and_android": {
     "latest_verified_host_tick_utc_inherited": "2026-10-27T00:51:44.165010Z",
@@ -103,7 +116,7 @@
   "safety": {
     "checkpoint_write": "COMPLETED_AND_READBACK_VERIFIED",
     "checkpoint_readback": "COMPLETED_AND_READBACK_VERIFIED",
-    "resume_pointer_write": "COMPLETED_AND_READBACK_VERIFIED",
+    "resume_pointer_write": "IN_PROGRESS",
     "host_writes": 0,
     "google_drive_writes": 0,
     "process_or_cache_deletions": 0,
@@ -112,17 +125,16 @@
     "secrets_or_plaintext_credentials_accessed": false,
     "source_task_files_modified": 0,
     "deployment_configuration_changed": false,
-    "pull_requests_merged": 0,
-    "pointer_readback_of_prior_revision_blob_sha": "db163968b351e6b7c8be13142114f177ca14b9b2"
+    "pull_requests_merged": 0
   },
   "next_edges": [
-    "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T2135ICT.json; do not rebuild the recovery ledger.",
+    "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T2139ICT.json; do not rebuild the recovery ledger.",
     "Read actual n8n execution 291 and appended evidence row after 2026-10-29T15:00:00Z.",
     "Refresh GitHub Actions inventory; keep Windows Survival and X66 gaps OPEN until run-to-slot mapping is verified.",
     "Investigate Vercel failure only through authorized deployment logs; do not change deployment configuration meanwhile.",
-    "Keep SOL Library Stone Topology OPEN; PR #29 remains draft, unmerged, and test-only.",
+    "Keep SOL Library Stone Topology OPEN; PR #29 remains draft and unmerged.",
     "Keep SV-20261020-02-READBACK OPEN until original ZIP bytes are retrieved and SHA-256 verified.",
-    "Keep SV-20261020-03 read-only; Dropbox connector route remains blocked as ineligible.",
+    "Keep SV-20261020-03 OPEN and source unchanged; require real runtime/training evidence before accepting metrics.",
     "Obtain a separate authorized host heartbeat only when a valid Windows/Android route is available.",
     "Do not write Google Drive or delete local data, processes, caches, or Meta.db."
   ]
