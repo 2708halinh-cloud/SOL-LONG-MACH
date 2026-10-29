@@ -115,9 +115,12 @@ Implementation files in this GitHub carrier:
 - `tesseract_motherboard_kernel.py` — checkpoint restore, bounded CPU/memory/time scheduler, tool-call wrapper, causal journal, distinct brain-label provenance, event-conditioned scoring and 5D capability regression.
 - `tesseract_motherboard_daemon.py` — bounded continuity/heartbeat loop; it restores each cycle and records unresolved edges without claiming they are completed.
 - `TESSERACT_MOTHERBOARD_KERNEL_SPEC.json` — machine-readable component contract.
+- `TESSERACT_MOTHERBOARD_CAPABILITIES_CURRENT.json` — prior/current capability inventory for repeated 5D regression checks.
 - `test_tesseract_motherboard_kernel.py` — regression tests.
 
 The local Windows deployment maps these files to `runtime/`, `config/` and `tests/` under `G:\OS_Workspace\TESSERACT_OS`. The GitHub carrier keeps the source files at this directory root, matching the existing carrier convention.
+
+Each bounded daemon cycle re-runs 5D capability comparison, retains a historical union, and records missing/new capabilities without erasing the previous inventory. Each wrapped tool event also generates an evidence-conditioned per-neuron scoring record.
 
 The event journal uses ALPHA, BETA, GAMMA, DELTA and THETA bands. Its existing project cycle is ALPHA → BETA → DELTA → THETA → GAMMA → ALPHA. Tool calls are observed when routed through the wrapper; this is not a claim of invisible interception of every hosted ChatGPT tool call. Missing receipt/readback stays OPEN.
 
