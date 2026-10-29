@@ -140,9 +140,9 @@
     "cloud_heartbeat_is_not_host_heartbeat": true
   },
   "safety": {
-    "checkpoint_write": "PENDING",
-    "checkpoint_readback": "PENDING",
-    "resume_pointer_write": "PENDING",
+    "checkpoint_write": "COMPLETED_AND_READBACK_VERIFIED",
+    "checkpoint_readback": "COMPLETED_AND_READBACK_VERIFIED",
+    "resume_pointer_write": "COMPLETED_AND_READBACK_VERIFIED",
     "host_writes": 0,
     "google_drive_writes": 0,
     "process_or_cache_deletions": 0,
@@ -151,7 +151,8 @@
     "secrets_or_plaintext_credentials_accessed": false,
     "source_task_files_modified": 0,
     "deployment_configuration_changed": false,
-    "pull_requests_merged": 0
+    "pull_requests_merged": 0,
+    "resume_pointer_readback": "COMPLETED_AND_READBACK_VERIFIED"
   },
   "next_edges": [
     "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T2318ICT.json; do not rebuild the recovery ledger.",
