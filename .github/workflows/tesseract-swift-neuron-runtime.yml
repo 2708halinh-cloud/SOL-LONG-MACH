@@ -1,0 +1,39 @@
+name: TESSERACT Swift neuron runtime and Windows path audit
+
+on:
+  push:
+    branches: [feat/tesseract-neuron-runtime-windows-portability-20261029]
+    paths:
+      - 'IOS_EXPORT/**'
+      - 'Package.swift'
+      - 'Tests/TesseractOSiOSTests/**'
+      - 'scripts/check_windows_paths.py'
+      - '.github/workflows/tesseract-swift-neuron-runtime.yml'
+  pull_request:
+    paths:
+      - 'IOS_EXPORT/**'
+      - 'Package.swift'
+      - 'Tests/TesseractOSiOSTests/**'
+      - 'scripts/check_windows_paths.py'
+      - '.github/workflows/tesseract-swift-neuron-runtime.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  swift-tests:
+    runs-on: macos-14
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Swift package
+        run: swift test
+
+  windows-path-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Report non-portable tracked paths and case collisions
+        run: python3 scripts/check_windows_paths.py
