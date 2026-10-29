@@ -14,8 +14,8 @@ private struct FixedExecutor: NeuronToolExecutor {
 final class TesseractNeuronRuntimeTests: XCTestCase {
     func testReadOnlyNeuronRunsAndAxonReturnsNextNeuron() async throws {
         let neuron = ToolNeuron(id: "search", name: "Search", description: "Find source material",
-                                source: "test", suggestedNextNeuronIDs: ["summarize"])
-        let next = ToolNeuron(id: "summarize", name: "Summarize", description: "Summarize sources", source: "test")
+                                source: "test", effect: .readOnly, suggestedNextNeuronIDs: ["summarize"])
+        let next = ToolNeuron(id: "summarize", name: "Summarize", description: "Summarize sources", source: "test", effect: .readOnly)
         let runtime = try TesseractNeuronRuntime(neurons: [neuron, next],
             embeddingProvider: FixedEmbeddings(scores: ["Search": 0.91, "Summarize": 0.2]),
             executor: FixedExecutor(result: "source found"))
@@ -38,7 +38,7 @@ final class TesseractNeuronRuntimeTests: XCTestCase {
         XCTAssertEqual(result.output, "EXTERNAL_MUTATION_BLOCKED_BY_POLICY")
     }
     func testNoSemanticMatchRemainsOpen() async throws {
-        let neuron = ToolNeuron(id: "search", name: "Search", description: "Find source material", source: "test")
+        let neuron = ToolNeuron(id: "search", name: "Search", description: "Find source material", source: "test", effect: .readOnly)
         let runtime = try TesseractNeuronRuntime(neurons: [neuron],
             embeddingProvider: FixedEmbeddings(scores: ["Search": 0.1]),
             executor: FixedExecutor(result: "unused"), minimumSimilarity: 0.72)
