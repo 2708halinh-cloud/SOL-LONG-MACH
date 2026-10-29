@@ -6,23 +6,23 @@
   "timestamp_basis": "Cloud provider timestamps and GitHub Actions are not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "85460dd693d6f80592c89f0d3be59f1e02f11a8e",
-    "last_pointer_commit_sha": "8aabea882fb3ed73b8c900cda2456e89c6565cb3",
+    "blob_sha": "1ba9abc45b6d878d4e3fc410b03780276f8db6c8",
+    "last_pointer_commit_sha": "cd2b8411f1808d1081b2562286f4c5228f733099",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T2139ICT.json",
-    "blob_sha": "b99b7a96b8af24cc6685d999ce7989338896bab9",
-    "commit_sha": "8e7574f5835545eacf74daef72462fa895f04c8c",
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T2318ICT.json",
+    "blob_sha": "bbca1fe8a6506ee22bb42e73472adfb15544a304",
+    "commit_sha": "e18ad948aa85bde711a1d9375fbaa6369b35a4c9",
     "readback_verified": true
   },
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T2318ICT.json",
-    "blob_sha": "bbca1fe8a6506ee22bb42e73472adfb15544a304",
-    "commit_sha": "e18ad948aa85bde711a1d9375fbaa6369b35a4c9",
+    "blob_sha": "a4fc3fe222b095d10dc505db8791346846a36e2a",
+    "commit_sha": "84c9acf9377a2b40726a270e76d2db3a842fa1c1",
     "readback_verified": true,
     "observed_at_utc": "2026-10-29T16:18:29Z",
-    "previous_checkpoint_blob_sha": "b99b7a96b8af24cc6685d999ce7989338896bab9",
+    "previous_checkpoint_blob_sha": "bbca1fe8a6506ee22bb42e73472adfb15544a304",
     "latest_cloud_scan_evidence_row_id": 707,
     "latest_cloud_scan_event_id": "X20261029160024032_CLOUD"
   },
@@ -52,7 +52,7 @@
   "github_sources": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
     "main_head_before_checkpoint_write": "8aabea882fb3ed73b8c900cda2456e89c6565cb3",
-    "checkpoint_commit_vercel_state": "not_yet_observed",
+    "checkpoint_commit_vercel_state": "pending",
     "prior_main_commit_with_vercel_failure": "8aabea882fb3ed73b8c900cda2456e89c6565cb3",
     "prior_main_commit_vercel_status": "failure",
     "vercel_failure_cause_verified": false,
@@ -72,7 +72,8 @@
       "verification_conclusion": "success"
     },
     "task_status_mutations": 0,
-    "ledger_rows_merged": 0
+    "ledger_rows_merged": 0,
+    "checkpoint_commit_vercel_status_url": "https://vercel.com/sollasi/sol-long-mach/2KQpNs75E6g1WpNTJz4vEQ8NEw3F"
   },
   "archive_task": {
     "task_id": "SV-20261020-02-READBACK",
@@ -105,7 +106,7 @@
   "safety": {
     "checkpoint_write": "COMPLETED_AND_READBACK_VERIFIED",
     "checkpoint_readback": "COMPLETED_AND_READBACK_VERIFIED",
-    "resume_pointer_write": "IN_PROGRESS",
+    "resume_pointer_write": "COMPLETED_AND_READBACK_VERIFIED",
     "host_writes": 0,
     "google_drive_writes": 0,
     "process_or_cache_deletions": 0,
@@ -115,7 +116,9 @@
     "source_task_files_modified": 0,
     "deployment_configuration_changed": false,
     "pull_requests_merged": 0,
-    "prior_pointer_blob_sha_readback_verified": "85460dd693d6f80592c89f0d3be59f1e02f11a8e"
+    "prior_pointer_blob_sha_readback_verified": "85460dd693d6f80592c89f0d3be59f1e02f11a8e",
+    "resume_pointer_readback": "COMPLETED_AND_READBACK_VERIFIED",
+    "pointer_readback_of_prior_revision_blob_sha": "1ba9abc45b6d878d4e3fc410b03780276f8db6c8"
   },
   "next_edges": [
     "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T2318ICT.json; do not rebuild the recovery ledger.",
