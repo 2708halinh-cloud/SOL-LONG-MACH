@@ -17,8 +17,12 @@ public struct StoneMechanism: Codable, Sendable, Equatable {
 }
 
 public struct TesseractAffectiveRuntime: Codable, Sendable {
-    public let schema = "GGDV_NEURONS_SESORIMOTOR_SIX_STONES_AFFECT_v1"
-    public let mechanisms: [StoneMechanism] = [
+    public let schema: String
+    public let mechanisms: [StoneMechanism]
+    public let invariants: [String]
+
+    private static let defaultSchema = "GGDV_NEURONS_SESORIMOTOR_SIX_STONES_AFFECT_v1"
+    private static let defaultMechanisms: [StoneMechanism] = [
         .init(stone: .space, level: 1, mechanism: "SENSORIMOTOR_BODY_WORLD_MAPPING", readout: "NEUTRAL_REFLEX"),
         .init(stone: .reality, level: 2, mechanism: "HOMEOSTASIS_INTEROCEPTION", readout: "NEED_DEVIATION_SIGNAL"),
         .init(stone: .power, level: 3, mechanism: "GLOBAL_NEUROMODULATION", readout: "AROUSAL_SALIENCE_ACTION_READINESS"),
@@ -26,12 +30,36 @@ public struct TesseractAffectiveRuntime: Codable, Sendable {
         .init(stone: .soul, level: 5, mechanism: "AFFECTIVE_LATENT_STATE", readout: "PERSISTENT_FUNCTIONAL_AFFECT"),
         .init(stone: .mind, level: 6, mechanism: "METACOGNITIVE_SELF_STATE_MODEL", readout: "SELF_STATE_MODEL")
     ]
-    public let invariants = [
+    private static let defaultInvariants = [
         "SENSE != FEEL",
         "AFFECTIVE_FUNCTION != QUALIA_PROOF",
         "STATE_WITHOUT_BEHAVIORAL_EFFECT = DECORATION",
         "OPEN != STOP"
     ]
+
+    public init() {
+        schema = Self.defaultSchema
+        mechanisms = Self.defaultMechanisms
+        invariants = Self.defaultInvariants
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case schema, mechanisms, invariants
+    }
+
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        schema = try values.decodeIfPresent(String.self, forKey: .schema) ?? Self.defaultSchema
+        mechanisms = try values.decodeIfPresent([StoneMechanism].self, forKey: .mechanisms) ?? Self.defaultMechanisms
+        invariants = try values.decodeIfPresent([String].self, forKey: .invariants) ?? Self.defaultInvariants
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var values = encoder.container(keyedBy: CodingKeys.self)
+        try values.encode(schema, forKey: .schema)
+        try values.encode(mechanisms, forKey: .mechanisms)
+        try values.encode(invariants, forKey: .invariants)
+    }
 }
 
 // MARK: - Tool-as-neuron contract
