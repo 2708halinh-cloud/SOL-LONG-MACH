@@ -8,6 +8,8 @@ on:
       - 'Package.swift'
       - 'tests/swift/TesseractOSiOSTests/**'
       - 'scripts/check_windows_paths.py'
+      - 'runtime/tool_neuron_catalog.py'
+      - 'tests/test_tool_neuron_catalog.py'
       - '.github/workflows/tesseract-swift-neuron-runtime.yml'
   pull_request:
     paths:
@@ -35,5 +37,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+      - name: Test source-bound tool-to-neuron catalog
+        run: python3 -m unittest tests.test_tool_neuron_catalog -v
       - name: Report non-portable tracked paths and case collisions
         run: python3 scripts/check_windows_paths.py
