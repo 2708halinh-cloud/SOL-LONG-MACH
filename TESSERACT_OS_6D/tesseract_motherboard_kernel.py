@@ -270,6 +270,21 @@ class MotherboardKernel:
             "state_n": self._state["state_n"],
             "state_n_plus_1": self._state["state_n_plus_1"],
         }
+        score_progress = 1.0 if verification == "VERIFIED_EVIDENCE_CHAIN" else (0.1 if consequence else 0.0)
+        score_novelty = 0.0 if duplicate else (0.8 if tool_name not in self._weights else 0.4)
+        duration = float(consequence.get("duration_seconds", 0.0)) if isinstance(consequence, Mapping) else 0.0
+        score_efficiency = min(1.0, 1.0 / (1.0 + max(0.0, duration))) if consequence else 0.2
+        score_risk = 0.1 if verification == "VERIFIED_EVIDENCE_CHAIN" else (0.8 if verification == "OPEN_READBACK" else 0.6)
+        score = self.update_neuron_weights(
+            tool_name, category=str(action.get("kind", "TOOL")) if isinstance(action, Mapping) else "TOOL",
+            progress=score_progress, novelty=score_novelty, efficiency=score_efficiency,
+            risk=score_risk, repetition=1.0 if duplicate else 0.0, evidence_ref=causal,
+        )
+        event["neuron_scoring"] = {
+            "weights": score["weights"], "reward": score["reward"],
+            "evidence_ref": score["evidence_ref"],
+            "weight_semantics": score["weight_semantics"],
+        }
         self.journal_path.parent.mkdir(parents=True, exist_ok=True)
         with self.journal_path.open("a", encoding="utf-8", newline="\n") as stream:
             stream.write(json.dumps(event, ensure_ascii=False, sort_keys=True) + "\n")
@@ -343,6 +358,15 @@ class MotherboardKernel:
         """Run one bounded re-entry cycle; never equate an open edge with completion."""
         state = self.restore()
         heartbeat = Path(heartbeat_path) if heartbeat_path is not None else self.root / "state" / "heartbeat.json"
+        capability_regression = None
+        manifest_path = self.root.parent / "config" / "TESSERACT_MOTHERBOARD_CAPABILITIES_CURRENT.json"
+        if manifest_path.exists():
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            capability_regression = self.reconcile_capabilities(
+                manifest.get("current_capabilities", []),
+                previous_capabilities=manifest.get("baseline_capabilities", []),
+                snapshot_path=self.root / "state" / "capability_regression_current.json",
+            )
         pulse = write_heartbeat(heartbeat, process_id=os.getpid(), clock=self.clock)
         monitor = inspect_process(os.getpid(), heartbeat, max_age_seconds=60.0, now_epoch=self.clock())
         unfinished = list(state.get("unfinished_edges", []))
@@ -360,6 +384,7 @@ class MotherboardKernel:
             "heartbeat": pulse,
             "monitor": monitor,
             "action_policy": "NO_UNREGISTERED_ACTION_EXECUTION",
+            "capability_regression": capability_regression,
         }
         path = self.root / "state" / "loop_cycles.jsonl"
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -368,6 +393,36 @@ class MotherboardKernel:
             stream.flush()
             os.fsync(stream.fileno())
         return cycle
+    def reconcile_capabilities(self, current_capabilities: Iterable[str],
+                               previous_capabilities: Iterable[str] | None = None,
+                               snapshot_path: str | Path | None = None) -> dict[str, Any]:
+        """Run 5D capability regression and retain the historical union without flattening history."""
+        path = Path(snapshot_path) if snapshot_path is not None else self.root / "state" / "capability_regression_current.json"
+        current = sorted(set(str(x) for x in current_capabilities))
+        previous = sorted(set(str(x) for x in previous_capabilities or []))
+        historical = set(previous)
+        if path.exists():
+            prior = json.loads(path.read_text(encoding="utf-8"))
+            previous = sorted(set(prior.get("current_capabilities", [])))
+            historical.update(prior.get("historical_union", []))
+            historical.update(previous)
+        comparison = compare_capability_regression(previous, current)
+        historical.update(current)
+        record = {
+            "schema": "TESSERACT_5D_CAPABILITY_REGRESSION/1.0",
+            "observed_at_epoch": self.clock(),
+            "previous_capabilities": previous,
+            "current_capabilities": current,
+            "preserved": comparison["preserved"],
+            "missing": comparison["missing"],
+            "added": comparison["added"],
+            "regression_pass": comparison["regression_pass"],
+            "status": comparison["status"],
+            "historical_union": sorted(historical),
+            "runtime_truth": "CAPABILITY_INVENTORY_COMPARISON_NOT_PROVIDER_HEALTH_PROOF",
+        }
+        self._atomic_json(path, record)
+        return json.loads(json.dumps(record))
     def _load_weights(self) -> None:
         if self.weights_path.exists():
             loaded = json.loads(self.weights_path.read_text(encoding="utf-8"))
