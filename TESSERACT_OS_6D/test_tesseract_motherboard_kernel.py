@@ -4,7 +4,15 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tesseract_motherboard_kernel import (
+try:
+    from runtime.tesseract_motherboard_kernel import (
+    MotherboardKernel,
+    compare_capability_regression,
+    inspect_process,
+    resolve_brain_label,
+)
+except ImportError:
+    from tesseract_motherboard_kernel import (
     MotherboardKernel,
     compare_capability_regression,
     inspect_process,
@@ -127,5 +135,35 @@ class TestTesseractMotherboardKernel(unittest.TestCase):
             self.assertTrue(cycle["monitor"]["heartbeat_fresh"])
 
 
+    def test_tool_observation_generates_persisted_neuron_weights_automatically(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            kernel = MotherboardKernel(root)
+            event = kernel.observe_tool(
+                tool_name="neuron.auto", action={"kind": "READ"},
+                provider_receipt={"id": "r-auto"}, consequence={"ok": True},
+                readback={"verified": True}, causal_id="auto-weight-cause",
+            )
+            self.assertIn("neuron_scoring", event)
+            self.assertTrue((root / "state" / "neuron_weights.json").exists())
+            self.assertEqual(event["neuron_scoring"]["evidence_ref"], "auto-weight-cause")
+
+    def test_cycle_persists_5d_capability_regression_and_historical_union(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            kernel = MotherboardKernel(root)
+            first = kernel.reconcile_capabilities(
+                current_capabilities=["read", "write", "new_probe"],
+                previous_capabilities=["read", "write"],
+            )
+            second = kernel.reconcile_capabilities(
+                current_capabilities=["read", "new_probe", "new_sensor"],
+            )
+            self.assertEqual(first["added"], ["new_probe"])
+            self.assertEqual(second["missing"], ["write"])
+            self.assertEqual(second["added"], ["new_sensor"])
+            self.assertEqual(second["historical_union"], ["new_probe", "new_sensor", "read", "write"])
+            saved = json.loads((root / "state" / "capability_regression_current.json").read_text(encoding="utf-8"))
+            self.assertEqual(saved["historical_union"], second["historical_union"])
 if __name__ == "__main__":
     unittest.main()
