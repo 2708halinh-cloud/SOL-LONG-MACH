@@ -1,27 +1,27 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/3.4",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/3.5",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-29T02:19:09Z",
-  "updated_at_local": "2026-10-29T09:19:09+07:00",
+  "updated_at_utc": "2026-10-29T02:26:08Z",
+  "updated_at_local": "2026-10-29T09:26:08+07:00",
   "timestamp_basis": "Cloud provider timestamps and GitHub Actions are not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "821723aba249dff456346befd6d628a09e0ec6ad",
-    "last_pointer_commit_sha": "6042fecbf8a06fcfa18defd2fd128e68ac6761eb"
+    "blob_sha": "ddcaf1370e304a29b2212a738c444ec04b71cf02",
+    "last_pointer_commit_sha": "fdf12bb17b837f8887184dcf52a1c08291a10f1f"
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T0725ICT.json",
-    "blob_sha": "02e4489f1046ecc6a45ee4a1b322de9c617fb26a",
-    "commit_sha": "889298ae40a660ad0b5e5b157587889f88d76155",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T0919ICT.json",
     "blob_sha": "d8fcd5bd7fb15d7641107c1b5998fc640a51f00b",
     "commit_sha": "c83705e54d238a341415f650c0291067dfc6558b",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T0926ICT.json",
+    "blob_sha": "eb0fb3d546813120438ae50885a005f52c24179e",
+    "commit_sha": "a33433d2d515b9720a7c2b443bc3f5cf499b0b12",
     "readback_verified": true,
-    "observed_at_utc": "2026-10-29T02:19:09Z",
-    "previous_checkpoint_blob_sha": "02e4489f1046ecc6a45ee4a1b322de9c617fb26a",
+    "observed_at_utc": "2026-10-29T02:26:08Z",
+    "previous_checkpoint_blob_sha": "d8fcd5bd7fb15d7641107c1b5998fc640a51f00b",
     "latest_cloud_scan_evidence_row_id": 693,
     "latest_cloud_scan_event_id": "X20261029020024143_CLOUD"
   },
@@ -50,19 +50,40 @@
   },
   "github_sources": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_before_checkpoint_write": "6042fecbf8a06fcfa18defd2fd128e68ac6761eb",
-    "checkpoint_commit": "c83705e54d238a341415f650c0291067dfc6558b",
+    "main_head_before_checkpoint_write": "fdf12bb17b837f8887184dcf52a1c08291a10f1f",
+    "checkpoint_commit": "a33433d2d515b9720a7c2b443bc3f5cf499b0b12",
     "open_tasks_current_blob_sha1": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
-    "open_tasks_current_bytes": 2422868,
-    "reconciliation_status": "29_GITHUB_TASKS_MAPPED; 16_N8N_ONLY_LEGACY_TASKS_REMAIN_SEPARATE_FROM_PRIOR_VERIFIED_READBACK",
+    "reconciliation_status": "29_GITHUB_TASKS_MAPPED; 16_N8N_ONLY_LEGACY_TASKS_REMAIN_SEPARATE",
     "task_status_mutations": 0,
     "ledger_rows_merged": 0,
-    "main_head_combined_status": "VERCEL_FAILURE; CAUSE_UNVERIFIED"
+    "current_head_combined_status": "VERCEL_PENDING_ON_FDF12BB17B837F8887184DCF52A1C08291A10F1F",
+    "historical_vercel_failure_commit": "6042fecbf8a06fcfa18defd2fd128e68ac6761eb",
+    "historical_vercel_failure_cause_verified": false
   },
   "actions_inventory": {
-    "fresh_repository_workflow_run_inventory_retrieved": false,
-    "windows_survival_state": "OPEN_SCHEDULE_GAP_UNRESOLVED; EXPECTED_TICK_2026-10-29T01:07:00Z; CURRENT_RUN_INVENTORY_NOT_RETRIEVED",
-    "x66_state": "OPEN_SCHEDULE_GAP_UNRESOLVED; NEXT_EXPECTED_TICK_2026-10-29T06:17:00Z; CURRENT_RUN_INVENTORY_NOT_RETRIEVED"
+    "retrieved_at_utc": "2026-10-29T02:26:08Z",
+    "windows_survival": {
+      "workflow_id": 393485804,
+      "latest_run_id": 40806022880,
+      "latest_run_number": 387,
+      "conclusion": "success",
+      "created_at_utc": "2026-10-29T02:23:07Z",
+      "expected_tick_utc": "2026-10-29T02:07:00Z",
+      "observed_start_delay_seconds": 967,
+      "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+      "cause_verified": false
+    },
+    "x66": {
+      "workflow_id": 389996732,
+      "latest_run_id": 40781403700,
+      "latest_run_number": 37,
+      "conclusion": "success",
+      "created_at_utc": "2026-10-28T22:37:33Z",
+      "expected_tick_utc_not_seen": "2026-10-29T00:17:00Z",
+      "next_expected_tick_utc": "2026-10-29T06:17:00Z",
+      "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+      "cause_verified": false
+    }
   },
   "host_and_android": {
     "latest_verified_host_evidence_row_id": 550,
@@ -73,13 +94,14 @@
     "remote_route_is_host_heartbeat": false
   },
   "next_edges": [
-    "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T0919ICT.json; do not rebuild from scratch.",
+    "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T0926ICT.json; do not rebuild from scratch.",
     "Keep all 45 n8n recovery rows nonterminal and preserve the 29 GitHub / 16 legacy n8n-only split.",
     "Read the next n8n execution and evidence row after 2026-10-29T03:00:00Z.",
-    "Reacquire a fresh GitHub Actions run inventory; do not infer missing scheduled runs from connector coverage limitations.",
-    "Investigate Vercel failure on main commit 6042fecbf8a06fcfa18defd2fd128e68ac6761eb before any deployment change.",
+    "Investigate the 16m07s delay of Windows Survival run 387 without assuming a cause.",
+    "Recheck X66 after the unobserved 2026-10-29T00:17:00Z tick and at/after 2026-10-29T06:17:00Z.",
+    "Inspect Vercel provider details for the historical failure on commit 6042fecbf8a06fcfa18defd2fd128e68ac6761eb before any deployment change.",
     "Keep PR #36 OPEN+DRAFT until fresh PR-head CI and exact readback are verified.",
-    "Get a separate authorized host heartbeat when Windows route becomes available; Android remains UNVERIFIED."
+    "Get a separate authorized host heartbeat when a valid host route becomes available; Android remains UNVERIFIED."
   ],
   "safety": {
     "host_writes": 0,
