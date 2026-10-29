@@ -90,7 +90,7 @@ public struct ToolNeuron: Codable, Sendable, Equatable, Identifiable {
         name: String,
         description: String,
         source: String,
-        effect: ToolEffect = .readOnly,
+        effect: ToolEffect = .externalMutation,
         suggestedNextNeuronIDs: [String] = []
     ) {
         self.id = id
