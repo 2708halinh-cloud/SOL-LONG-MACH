@@ -1,28 +1,28 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/5.0",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-29T20:08:26Z",
-  "updated_at_local": "2026-10-30T03:08:26+07:00",
-  "timestamp_basis": "Cloud provider timestamps and GitHub Actions are not host heartbeat. Host status is separate and currently unverified by direct host probe.",
+  "updated_at_utc": "2026-10-29T20:28:46Z",
+  "updated_at_local": "2026-10-30T03:28:46+07:00",
+  "timestamp_basis": "Cloud provider timestamps and GitHub Actions are not host heartbeat. Host presence is recorded from Desktop Commander device status separately; the local file read is still pending.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "6363b8fc7d633c4ec0d24a0461335bc2504b25cf",
-    "last_pointer_commit_sha": "48de32bb52652086befb9a87972b27f70df6f198",
+    "blob_sha": "3f26137f59c70ff6d6df40287e5a5d12bb5c90ba",
+    "last_pointer_commit_sha": "9538a7902891302653d74adb7d6b9f1bc873b382",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0139ICT.json",
-    "blob_sha": "d65c6bc7b7d3567eb2ad27c4e6b248ea483fa0f5",
-    "commit_sha": "28591a4a75944eecaa7697ebb8391976da9b96b4",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0308ICT.json",
     "blob_sha": "960285674c819d79656914b00d92254ec5aef81c",
     "commit_sha": "5c6f9a1f9aeda9ab1aa593dd8377bb389b62921c",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0328ICT.json",
+    "blob_sha": "b468e8716304ec11f20e8b12b5fe4efb0ac3f2ac",
+    "commit_sha": "af9d8e0a1c37f792cef8703bed64ee57a7904f27",
     "readback_verified": true,
-    "observed_at_utc": "2026-10-29T20:08:26Z",
-    "previous_checkpoint_blob_sha": "d65c6bc7b7d3567eb2ad27c4e6b248ea483fa0f5",
+    "observed_at_utc": "2026-10-29T20:28:46Z",
+    "previous_checkpoint_blob_sha": "960285674c819d79656914b00d92254ec5aef81c",
     "latest_cloud_scan_evidence_row_id": 711,
     "latest_cloud_scan_event_id": "X20261029200024071_CLOUD"
   },
@@ -50,23 +50,26 @@
   },
   "github_sources": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_before_checkpoint_write": "48de32bb52652086befb9a87972b27f70df6f198",
-    "checkpoint_commit": "5c6f9a1f9aeda9ab1aa593dd8377bb389b62921c",
-    "main_head_vercel_status_before_checkpoint_write": "failure",
+    "main_head_before_checkpoint_write": "9538a7902891302653d74adb7d6b9f1bc873b382",
+    "checkpoint_commit": "af9d8e0a1c37f792cef8703bed64ee57a7904f27",
+    "current_main_gate_blob_sha": "295c69f1270248693566d454b6b37096ef9f7d92",
+    "vercel_status_refreshed_this_run": false,
     "vercel_failure_cause_verified": false,
     "deployment_configuration_changed": false,
     "scheduled_actions_inventory_refreshed_this_run": false,
-    "windows_survival_gap_status": "OPEN_UNRESOLVED_FROM_PRIOR_CHECKPOINT; NOT_RECHECKED_THIS_RUN",
-    "x66_gap_status": "OPEN_UNRESOLVED_FROM_PRIOR_CHECKPOINT; NOT_RECHECKED_THIS_RUN",
-    "topology_pr_29_state": "OPEN_DRAFT_NOT_MERGED",
+    "windows_survival_gap_status": "OPEN_UNRESOLVED; NOT_RECHECKED_THIS_RUN",
+    "x66_gap_status": "OPEN_UNRESOLVED; NOT_RECHECKED_THIS_RUN",
+    "topology_pr_29_state": "OPEN_DRAFT_NOT_MERGED; NOT_RECHECKED_THIS_RUN",
     "reconciliation_status": "29_GITHUB_TASKS_MAPPED; 16_N8N_ONLY_LEGACY_IDS_REMAIN_SEPARATE"
   },
   "host_and_android": {
     "hostname": "DESKTOP-86ITNQ4",
-    "remote_desktop_commander_status": "Offline",
-    "last_seen_reported": "58h ago",
-    "latest_historical_host_probe_utc": "2026-10-29T18:26:36.7874653Z",
-    "fresh_host_heartbeat_verified": false,
+    "desktop_commander_status": "Online",
+    "device_id": "ed0a02fa-f09d-464f-bd26-bf61b3703032",
+    "last_seen_reported": "13m ago",
+    "direct_host_file_readback_completed": false,
+    "pending_read_file_call_id": "b637ffd5-63d7-479d-be47-e0f567c9ac9b",
+    "pending_read_file_status": "PENDING; do not retry original call while pending",
     "android_status": "UNVERIFIED",
     "android_probe_route_available": false,
     "cloud_heartbeat_is_not_host_heartbeat": true
@@ -74,10 +77,11 @@
   "source_lineage": {
     "task_id": "SV-20261021-R014-ACTION-FIRST-GATE",
     "status": "OPEN_HOST_INTEGRATION_AND_INDEPENDENT_TEST",
-    "local_source_readback": "TIMED_OUT_PATH_VALIDATION_AT_PRIOR_CHECKPOINT",
+    "local_source_readback": "PENDING_REMOTE_READ_FILE_CALL",
     "local_git_head_and_blob_ids": "UNVERIFIED",
-    "current_main_gate_blob_sha_at_prior_verified_read": "295c69f1270248693566d454b6b37096ef9f7d92",
+    "current_main_gate_blob_sha": "295c69f1270248693566d454b6b37096ef9f7d92",
     "source_files_modified": false,
+    "host_wiring_performed": false,
     "task_closed": false
   },
   "safety": {
@@ -89,15 +93,17 @@
     "secrets_or_plaintext_credentials_accessed": false,
     "deployment_configuration_changed": false,
     "pull_requests_merged": 0,
+    "host_read_operation_status": "PENDING",
     "host_probe_read_only": true
   },
   "next_edges": [
-    "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0308ICT.json; do not rebuild the recovery ledger.",
-    "Continue cloud-only from execution 296 and evidence row 711; keep all 45 recovery rows nonterminal.",
-    "Desktop Commander reports DESKTOP-86ITNQ4 Offline; wait for a fresh host-specific route before inspecting local files.",
-    "Refresh GitHub Actions inventory and match exact runs to unresolved Windows Survival and X66 slots.",
+    "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0328ICT.json; do not rebuild the recovery ledger.",
+    "Poll the existing pending Remote Desktop Commander read_file call with get_tool_result; do not retry it while pending.",
+    "If local readback completes, compare local source content and Git blob IDs against current main before host wiring or tests.",
+    "Continue cloud-only from n8n execution 296 and evidence row 711; preserve all 45 recovery rows as nonterminal.",
+    "Refresh GitHub Actions inventory and match exact runs to unresolved Windows Survival and X66 slots before changing status.",
     "Inspect Vercel failure through authorized deployment logs only; do not change deployment configuration.",
-    "Keep Android UNVERIFIED and preserve 29 GitHub mappings separately from 16 n8n-only legacy IDs.",
-    "Do not write Google Drive or delete local data, processes, caches, or Meta.db."
+    "Keep Android UNVERIFIED and preserve 29 GitHub task mappings separately from 16 n8n-only legacy IDs.",
+    "Do not write Google Drive, access plaintext secrets, or delete local data, processes, caches, or Meta.db."
   ]
 }
