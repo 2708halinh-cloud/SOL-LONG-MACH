@@ -1,31 +1,32 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.0",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-30T09:13:33.385Z",
-  "updated_at_local": "2026-10-30T16:13:33.385+07:00",
-  "timestamp_basis": "Checkpoint CLOUD_CONTINUITY_READBACK_20261030T1613ICT; n8n evidence rows 762-764 provider readbacks; workflow active-version readback and production execution 311; GitHub Actions/commit-status API; direct Windows host and volume readback.",
+  "updated_at_utc": "2026-10-30T09:16:53.764Z",
+  "updated_at_local": "2026-10-30T16:16:53.764+07:00",
+  "timestamp_basis": "Checkpoint CLOUD_CONTINUITY_READBACK_20261030T1617ICT; n8n evidence rows 762-765 provider readbacks; production execution 311 against published workflow version; GitHub Actions/commit-status API; direct Windows heartbeat and verified local fast-forward.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "24ac53f313bcca1bd11d630a290d2595ef2f921a",
-    "last_pointer_commit_sha": "fe03ba3da5e9ecb849995f57d5141fb4ef870aef",
+    "blob_sha": "5b7f24ca9dde73a4572b2d2ac752c0d8ab635aa9",
+    "last_pointer_commit_sha": "9f5cef24d1494585f9f8291fef562ab962003396",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1503ICT.json",
-    "blob_sha": "6ed8ee5558e091b9dd6a4c70fd7ffa41bcabb765",
-    "commit_sha": "7305c847e9d074b06f46173fa9e332979e002739",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1613ICT.json",
     "blob_sha": "68d27d6841e14b3114567c4cfe470305f7641365",
     "commit_sha": "6a8bbab5deb44cb8c49eca77afb6536eb55f9e33",
     "readback_verified": true
   },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1617ICT.json",
+    "blob_sha": "438bc40f50cc845e03375740d8c5399c446efde1",
+    "commit_sha": "b84048a681b0e4af24eee362d0297ccb35c611b9",
+    "readback_verified": true
+  },
   "included_evidence_rows": [
     762,
     763,
-    764
+    764,
+    765
   ],
   "post_checkpoint_evidence_rows": [],
   "latest_cloud_scan": {
@@ -63,68 +64,87 @@
     "windows_device_registry_status": "ONLINE",
     "windows_device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
     "windows_hostname": "DESKTOP-86ITNQ4",
-    "windows_host_heartbeat": "VERIFIED_DIRECT_POWERSHELL",
-    "windows_host_timestamp_utc": "2026-10-30T09:04:44.9062129Z",
+    "windows_host_heartbeat": "VERIFIED_DIRECT_COMMANDS",
+    "windows_last_direct_command_at_utc": "2026-10-30T09:16:51.724Z",
     "android_status": "UNVERIFIED",
     "cloud_heartbeat_is_not_host_heartbeat": true,
     "c_drive_size_bytes": 509337399296,
-    "c_drive_free_bytes": 1920593920,
-    "c_drive_free_percent": 0.377,
+    "c_drive_free_bytes": 1912451072,
+    "c_drive_free_percent": 0.3755,
     "c_drive_status": "CRITICALLY_LOW; NO_CLEANUP_PERFORMED",
     "h_drive_role": "HIDDEN_EFI_SYSTEM_PARTITION_DO_NOT_TOUCH",
     "h_drive_partition_size_bytes": 4294967296
   },
   "local_repository": {
     "path": "G:/OS_Workspace/SOL-LONG-MACH",
+    "origin": "https://github.com/2708halinh-cloud/SOL-LONG-MACH.git",
     "branch": "main",
-    "head": "f98afd2f204d195a5112ebf452712d9215196094",
-    "status": "CLEAN; LOCAL TRACKING STATE BEHIND origin/main BY 57 COMMITS",
-    "local_pointer_blob_at_head": "691686fa886243a1949cf593233141050ba227ba",
-    "cloud_pointer_blob_before_update": "24ac53f313bcca1bd11d630a290d2595ef2f921a",
-    "fetch_performed": false,
-    "merge_performed": false
+    "last_verified_head": "9f5cef24d1494585f9f8291fef562ab962003396",
+    "last_verified_status": "CLEAN; main...origin/main",
+    "fast_forward_from": "f98afd2f204d195a5112ebf452712d9215196094",
+    "fast_forward_to": "9f5cef24d1494585f9f8291fef562ab962003396",
+    "local_pointer_blob": "5b7f24ca9dde73a4572b2d2ac752c0d8ab635aa9",
+    "cloud_pointer_blob_at_sync": "5b7f24ca9dde73a4572b2d2ac752c0d8ab635aa9",
+    "local_checkpoint_blob": "68d27d6841e14b3114567c4cfe470305f7641365",
+    "cloud_checkpoint_blob_at_sync": "68d27d6841e14b3114567c4cfe470305f7641365",
+    "local_sync_state": "FAST_FORWARD_VERIFIED_TO_1613ICT_POINTER; NEWER_1617ICT_CHECKPOINT_IS_CLOUD_SOURCE_OF_TRUTH",
+    "repository_recreated": false,
+    "reset_or_rebase": false
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_at_checkpoint_commit": "6a8bbab5deb44cb8c49eca77afb6536eb55f9e33",
+    "main_head_at_checkpoint_commit": "b84048a681b0e4af24eee362d0297ccb35c611b9",
     "latest_actions": {
+      "checkpoint_commit": {
+        "runtime_n_plus": {
+          "run_number": 2573,
+          "run_id": 41032386103,
+          "conclusion": "success"
+        },
+        "secret_guard": {
+          "run_number": 2149,
+          "run_id": 41032386163,
+          "conclusion": "success"
+        }
+      },
+      "prior_pointer_commit": {
+        "runtime_n_plus": {
+          "run_number": 2572,
+          "run_id": 41032059241,
+          "conclusion": "success"
+        },
+        "secret_guard": {
+          "run_number": 2148,
+          "run_id": 41032059287,
+          "conclusion": "success"
+        }
+      },
       "windows_survival": {
         "run_number": 392,
         "run_id": 41026892500,
         "conclusion": "success"
-      },
-      "runtime_n_plus": {
-        "run_number": 2570,
-        "run_id": 41024546920,
-        "conclusion": "success"
-      },
-      "secret_guard": {
-        "run_number": 2146,
-        "run_id": 41024546831,
-        "conclusion": "success"
       }
     },
-    "pointer_commit_vercel_status": {
-      "commit_sha": "fe03ba3da5e9ecb849995f57d5141fb4ef870aef",
-      "state": "failure",
-      "target": "https://vercel.com/sollasi/sol-long-mach/BperQhEiYicuyZ4htwMYdeF5p5Ws",
-      "failure_cause_verified": false
+    "checkpoint_commit_vercel_status": {
+      "commit_sha": "b84048a681b0e4af24eee362d0297ccb35c611b9",
+      "state": "pending",
+      "target": "https://vercel.com/sollasi/sol-long-mach/J8o5fbit1S1PzgkAiFkQYHM6nq4W",
+      "status_updated_at": "2026-10-30T09:17:49Z"
     }
   },
   "next_edges": [
     "Preserve all 45 recovery rows as nonterminal and row 45 IN_PROGRESS.",
-    "Use this pointer and the linked 1613ICT checkpoint to reconnect the local repository; do not recreate it.",
+    "Continue from CLOUD_CONTINUITY_READBACK_20261030T1617ICT and this pointer; local repository was fast-forwarded from its existing clean main branch, not recreated.",
     "Do not clean C: or touch H:; obtain the user's disk-relief decision before any cleanup.",
-    "Do not fast-forward local main until the C: risk is resolved and the origin is verified; local tree was clean but 57 commits behind its cached origin/main.",
-    "Verify the next scheduled production scan at 2026-10-30T10:00:00Z with active version 1bcc0041-f516-42a1-9153-9a12e94fc297.",
-    "Investigate Vercel FAILURE through an authorized read-only log route.",
+    "Verify the next scheduled production scan at 2026-10-30T10:00:00Z using active workflow version 1bcc0041-f516-42a1-9153-9a12e94fc297.",
+    "Track Vercel deployment J8o5fbit1S1PzgkAiFkQYHM6nq4W; do not change deployment settings.",
     "Continue Source Matrix and Dropbox raw-byte readback without overwriting or substituting carriers.",
     "Verify Android independently; do not infer its status from Windows or cloud heartbeat."
   ],
   "safety": {
     "recovery_task_status_mutations": 0,
     "google_drive_writes": 0,
-    "host_file_writes": 0,
+    "host_file_writes_outside_git_fast_forward": 0,
     "process_or_cache_deletions": 0,
     "meta_db_changes": 0,
     "plaintext_credentials_accessed": false,
@@ -132,6 +152,8 @@
     "pull_requests_merged": 0,
     "library_overwrites": 0,
     "deployment_configuration_changed": false,
-    "local_git_fetch_or_merge": 0
+    "local_git_fast_forward": true,
+    "local_git_reset_or_rebase": false,
+    "local_git_worktree_clean": true
   }
 }
