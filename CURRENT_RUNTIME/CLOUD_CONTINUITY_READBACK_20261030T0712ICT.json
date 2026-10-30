@@ -129,7 +129,10 @@
       "permission_unspecified_task_status": "IN_PROGRESS",
       "predicate_false_positive_count": 1,
       "workflow_changed": false,
-      "task_dispatch_performed": false
+      "task_dispatch_performed": false,
+      "evidence_row_ids": [
+        717
+      ]
     },
     "agent_runnability_audit": {
       "discovery_project_id": "6qKpRmicIGHA5snY",
@@ -184,8 +187,28 @@
       ],
       "subavengers_workflow_search_count": 0,
       "agent_invocations": 0,
-      "no_model_or_credential_created_or_bound": true
-    }
+      "no_model_or_credential_created_or_bound": true,
+      "evidence_row_ids": [
+        717
+      ]
+    },
+    "audit_evidence_rows": [
+      {
+        "row_id": 716,
+        "event_id": "X20261030001204000_STONE_MATRIX_READBACK",
+        "phase": "CROSS_PROVIDER_HASH_RECONCILIATION",
+        "state": "OPEN_WORK_REMAINS",
+        "readback_verified": true
+      },
+      {
+        "row_id": 717,
+        "event_id": "X20261030001204001_AGENT_DISPATCH_GUARD_AUDIT",
+        "phase": "WORKFLOW_AND_AGENT_RUNNABILITY_AUDIT",
+        "state": "OPEN_WORK_REMAINS",
+        "readback_verified": true
+      }
+    ],
+    "latest_evidence_table_row_id": 717
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
@@ -262,16 +285,20 @@
     "host_operations": 0,
     "agent_invocations": 0,
     "agent_configs_modified": false,
-    "workflow_modified": false
+    "workflow_modified": false,
+    "n8n_evidence_rows_appended": 2,
+    "library_source_writes": 0,
+    "github_source_file_writes": 0
   },
   "next_edges": [
     "Resume from this checkpoint; do not rebuild the recovery ledger.",
     "Keep all 45 recovery rows nonterminal; scan success is not task completion.",
-    "Evidence table row 715 was independently read back by event_id and is verified.",
-    "Do not treat selected_cloud_eligible_count=5 as five authorized tasks: the code predicate only excludes WINDOWS_HOST_OFFLINE and incorrectly counts SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023 despite permission NOT_SPECIFIED_IN_SOURCE.",
-    "Four selected tasks carry explicit CALLABLE_PROVIDER_ACCESS_ONLY permission, but their assigned INTEGRITY and READBACK agent drafts are unpublished, missing model and credential, and have zero configured tools; no agent dispatch occurred.",
-    "The active cloud continuity workflow performs a scheduled table scan and appends a receipt; it does not dispatch agents or execute recovery tasks.",
-    "Keep TESSERACT_ART task IN_PROGRESS and unexecuted until permission is explicitly sourced; do not infer authorization.",
+    "Cloud scan execution 300 and evidence row 715 were independently read back; audit evidence rows 716 and 717 were also independently read back.",
+    "Do not treat selected_cloud_eligible_count=5 as five authorized tasks: the code predicate admits TESSERACT_ART despite permission NOT_SPECIFIED_IN_SOURCE.",
+    "The active continuity workflow is a ledger scanner/receipt writer only; it has no agent-dispatch node.",
+    "The INTEGRITY, READBACK and OPEN-ROUTER agent drafts are unpublished, missing model+credential and have zero tools; do not invoke or publish them without valid configuration and authority.",
+    "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC remains OPEN: the six-stone manifest and MIND carrier match Library/GitHub; POWER registry diverges (25 vs 27 capabilities); exact SPACE, SOUL, REALITY and TIME carrier files are not in the direct Library folder listings, which is not deletion proof.",
+    "Do not overwrite the Library POWER registry or replace missing canonical carriers until the source-of-truth and target write scope are explicitly established.",
     "Keep Windows and Android UNVERIFIED until fresh authorized host/device responses are obtained; cloud heartbeat is not host heartbeat.",
     "Refresh exact Windows Survival minute-7 and X66 six-hour cron-slot coverage before changing their OPEN schedule-gap states.",
     "Keep R-014 host integration OPEN; local gate and emitter must not be written while host access is unavailable.",
@@ -279,5 +306,68 @@
     "Keep PR #29 OPEN and Draft; no merge authorization.",
     "Preserve 29 GitHub task mappings separately from 16 n8n-only historical IDs.",
     "Do not write Google Drive, access plaintext secrets, or delete local data, processes, caches, or Meta.db."
-  ]
+  ],
+  "source_matrix_cross_provider_readback": {
+    "task_id": "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
+    "task_row_id": 42,
+    "task_status_preserved": "OPEN_ROUTED_NONCOERCIVE",
+    "permission": "CALLABLE_PROVIDER_ACCESS_ONLY; NO_FORCED_MUTATIONS",
+    "assigned_agent_id": "bwjoN3TfQ8Ao717P",
+    "assigned_agent_runnable": false,
+    "source_manifest": {
+      "name": "EARTH_PEOPLE_6_STONES_7_PLANETS_CURRENT.json",
+      "library_file_id": "file_000000006c448230a472a76ad41d8cf8",
+      "library_version_id": "1",
+      "raw_sha256": "db5c33a02033e7ead95d3301d33cea9e0bf82ec023309c30a319034c9bf5527e",
+      "library_git_blob_sha1": "c5a9fc24df18960d15a4cf17e5514f234eb02956",
+      "github_main_blob_sha1": "c5a9fc24df18960d15a4cf17e5514f234eb02956",
+      "match": true
+    },
+    "mind": {
+      "name": "INPUT_INBOX_T007_LLM_TOOL_HUONG_DAN_CAM_KET_CURRENT.md",
+      "library_file_id": "file_00000000b20c82099432d6d7bfcbb8f1",
+      "library_version_id": "1",
+      "raw_sha256": "504f2b09bf4b0c1da24d4c5ade1fefcb8893183c6506576568a95303d1b241cc",
+      "library_git_blob_sha1": "3b8244b6bb9aac12c955f10214be0a050e8c656c",
+      "github_main_blob_sha1": "3b8244b6bb9aac12c955f10214be0a050e8c656c",
+      "match": true
+    },
+    "power": {
+      "name": "POWER_CAPABILITY_ROUTES_V2.json",
+      "library_file_id": "file_00000000801c8209ac1748585b7a306d",
+      "library_version_id": "2",
+      "raw_sha256": "9237383a078679bc764485fc4c73b37a65e24355ff30e797694ef2c4e1aa7a25",
+      "library_git_blob_sha1": "81798e06a806f5e29277af84389925c5bb9a3652",
+      "github_main_blob_sha1": "41f7b367d8c7e0e1674f3d59ad4109b841a7106d",
+      "match": false,
+      "library_capability_count": 25,
+      "github_capability_count": 27,
+      "github_only_capability_ids": [
+        "sol-win11-hyperv-gate",
+        "google-cloud-api-constellation-hypothesis"
+      ],
+      "source_write_performed": false
+    },
+    "github_only_carriers_with_no_exact_library_file_in_canonical_folder_listing": {
+      "SPACE": {
+        "github_main_blob_sha1": "935abcb6fca375085642abfd7a93dbf52581c45c",
+        "library_exact_carrier_found": false
+      },
+      "SOUL": {
+        "github_main_blob_sha1": "111fe11df990bed9357744d7dbba87de73a05290",
+        "library_exact_carrier_found": false
+      },
+      "REALITY": {
+        "github_main_blob_sha1": "0924143c430abd9fc630bc5ef332022a3a064f8d",
+        "library_exact_carrier_found": false
+      },
+      "TIME": {
+        "github_main_blob_sha1": "352dd9ea1f5f6e325fa543f910fdae36f83fc551",
+        "library_exact_carrier_found": false
+      }
+    },
+    "interpretation": "Two of the six named carriers (MIND and the six-stone manifest) match exactly; POWER differs by two capability entries; four exact canonical carrier files were not found in their direct Library folder listings although the GitHub main blobs exist. This is not deletion proof. Related differently named Library files are not assumed equivalent.",
+    "writes_performed": 0,
+    "next_verified_edge": "Resolve the four canonical Library carrier pointers and obtain source/target authority before reconciling POWER; do not overwrite either provider."
+  }
 }
