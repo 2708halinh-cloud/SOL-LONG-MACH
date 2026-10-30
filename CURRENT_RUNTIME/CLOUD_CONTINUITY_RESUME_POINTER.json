@@ -1,23 +1,23 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.6",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-30T14:42:50Z",
-  "updated_at_local": "2026-10-30T21:42:50+07:00",
+  "updated_at_utc": "2026-10-30T15:38:26Z",
+  "updated_at_local": "2026-10-30T22:38:26+07:00",
   "previous_pointer": {
-    "blob_sha": "49bba590ff5649be9694d9b98f54ddebab0e3783",
-    "commit_sha": "546c383b189ac982e4a8ae4e65054556f19d2883",
+    "blob_sha": "c26a3cf8956c1e124941e6cedb64c207e199d0a3",
+    "commit_sha": "b5a98eafc90bb6c01b951ddca621485dcc9468bf",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T2027ICT.json",
-    "blob_sha": "1a5258b06b10d26a9a11c784b9f5e4975df5b894",
-    "commit_sha": "6aa470c92fb8d5404ed3b574158259fc031eec1e",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T2142ICT.json",
     "blob_sha": "7162b4a9998ca17fdd8ee9bbb0ab613b7a79e8a8",
     "commit_sha": "d199b136f77f0c4bd3e967e1db6b74168ac86180",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T2238ICT.json",
+    "blob_sha": "c8d87ecabfd98836ae25adefa3b188cfa45dd021",
+    "commit_sha": "5896a7b1d40b27b5d758f7b0f365230292006b29",
     "readback_verified": true
   },
   "included_evidence_rows": [
@@ -34,15 +34,16 @@
     787,
     788,
     789,
-    790
+    790,
+    791
   ],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "active_version_id": "1bcc0041-f516-42a1-9153-9a12e94fc297",
-    "execution_id": "316",
+    "execution_id": "317",
     "status": "SUCCESS",
-    "event_id": "X20261030140024090_CLOUD",
-    "evidence_row_id": 790,
+    "event_id": "X20261030150024081_CLOUD",
+    "evidence_row_id": 791,
     "task_total": 45,
     "task_nonterminal": 45,
     "task_closed": 0,
@@ -67,19 +68,26 @@
     "cloud_heartbeat_is_not_host_heartbeat": true
   },
   "github": {
-    "main_head_before_pointer_update": "546c383b189ac982e4a8ae4e65054556f19d2883",
-    "checkpoint_blob_sha": "7162b4a9998ca17fdd8ee9bbb0ab613b7a79e8a8",
-    "checkpoint_commit_sha": "d199b136f77f0c4bd3e967e1db6b74168ac86180",
+    "main_head_before_pointer_update": "5896a7b1d40b27b5d758f7b0f365230292006b29",
+    "checkpoint_blob_sha": "c8d87ecabfd98836ae25adefa3b188cfa45dd021",
+    "checkpoint_commit_sha": "5896a7b1d40b27b5d758f7b0f365230292006b29",
     "vercel_combined_status": "FAILURE",
-    "vercel_failure_cause": "UNVERIFIED"
+    "vercel_target": "https://vercel.com/sollasi/sol-long-mach/3kojt3W87rjacSVj1woS4QtgeQCm",
+    "vercel_failure_cause": "UNVERIFIED",
+    "main_check_runs": {
+      "verify": "SUCCESS",
+      "secret_guard": "SUCCESS"
+    },
+    "pr_29": "OPEN_DRAFT_NOT_MERGED"
   },
   "next_edges": [
-    "Verify scheduled execution 317 at 22:00 ICT.",
+    "Verify scheduled execution 318 at 23:00 ICT; do not manually trigger duplicate production scans.",
     "Keep 45 recovery rows nonterminal and row 45 IN_PROGRESS.",
-    "Continue R-014 source-bound investigation; no runtime acceptance claim.",
-    "Investigate Vercel FAILURE via authorized redacted logs only.",
-    "No C: cleanup or file movement without explicit user decision.",
-    "No DNS writes or billed HOSPOSIK deployment.",
+    "Continue R-014 from row 18 using source-bound provider reads; no runtime acceptance claim from static source/test blobs.",
+    "Investigate Vercel FAILURE via authorized redacted logs only; do not change deployment configuration.",
+    "No C: cleanup or file movement without explicit user decision; no process/cache/Meta.db deletion.",
+    "No HOSPOSIK DNS writes or billed deployment without approved origin and price decision.",
+    "Obtain authorized raw-byte/source-bound readback for TESSERACT Art; preserve row 45 IN_PROGRESS.",
     "Do not infer current Windows/Android state from cloud heartbeat."
   ],
   "safety": {
