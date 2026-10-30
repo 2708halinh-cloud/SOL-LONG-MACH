@@ -1,0 +1,258 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/6.8",
+  "checkpoint_id": "CLOUD_CONTINUITY_READBACK_20261030T1344ICT",
+  "title": "THU HOI NGUON SOL — verify execution 307; repair and publish callable-only scan selection; preserve all OPEN rows",
+  "state": "OPEN_WORK_REMAINS",
+  "observed_at_utc": "2026-10-30T06:44:17.868Z",
+  "recorded_at_local": "2026-10-30T13:44:17.868+07:00",
+  "timestamp_basis": "Provider-createdAt readback for evidence row 756; n8n execution timestamps are direct provider execution metadata. Host heartbeat was not probed. GitHub Actions are cloud-hosted checks, not host heartbeat.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1238ICT.json",
+    "blob_sha": "d1d8374a7d6b67ba99f48c6a8703fb2b098fe70d",
+    "commit_sha": "dfcb6c2f63d8be72ff25a6e8cdb81590b3123c5f",
+    "readback_verified": true
+  },
+  "previous_resume_pointer": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
+    "blob_sha": "15136e64e58f31c63a5e13d3a06d46afe14e577e",
+    "commit_sha": "a395880dbb533149e02dd0f78789e422722dd84b",
+    "readback_verified": true
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "prior_active_version_id": "831cdfff-794f-41f8-81b1-1d292ab6b119",
+    "active_version_id": "f37f595c-7197-4a7a-9c63-7aead22cda72",
+    "node_count": 6,
+    "graph_scope": "Read evidence table -> read recovery table -> deterministic scan -> append receipt; no dispatch node.",
+    "permission_guard_change": {
+      "state": "PUBLISHED_AND_READBACK_VERIFIED",
+      "rule": "Only nonterminal rows with explicit CALLABLE_PROVIDER_ACCESS_ONLY and without WINDOWS_HOST_OFFLINE enter next_edge selection.",
+      "blocked_rows_remain_visible_in_receipt": true,
+      "task_status_mutations": 0,
+      "agent_dispatch": false
+    },
+    "latest_scheduled_execution": {
+      "id": "307",
+      "status": "success",
+      "mode": "trigger",
+      "started_at_utc": "2026-10-30T06:00:22.089Z",
+      "stopped_at_utc": "2026-10-30T06:00:24.185Z",
+      "event_id": "X20261030060024027_CLOUD",
+      "evidence_row_id": 755,
+      "readback_verified": true
+    },
+    "execution_307_pre_fix_finding": {
+      "selected_count": 8,
+      "selected_explicit_callable": 1,
+      "selected_without_explicit_callable_permission": 7,
+      "dispatch_node_present": false,
+      "recovery_task_status_mutations": 0
+    },
+    "latest_guard_repair_evidence_row_id": 756,
+    "next_expected_tick_utc": "2026-10-30T07:00:00Z",
+    "no_manual_execution_started": true
+  },
+  "recovery_table": {
+    "id": "rSPFIOWbS7cfNJ8z",
+    "name": "SUBAVENGERS_RECOVERY_TASKS_20261020",
+    "project_id": "6qKpRmicIGHA5snY",
+    "total_rows": 45,
+    "nonterminal_rows": 45,
+    "terminal_rows": 0,
+    "status_counts": {
+      "ASSIGNED_DRAFT_WAITING_CREDENTIAL": 5,
+      "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN": 1,
+      "OPEN_RAW_HASH_AND_CLOUD_TRANSFER": 1,
+      "OPEN_QEMU_C_DISCOVERY": 1,
+      "GUARD_APPLIED_FIVE_AGENT_DRAFTS_ACCOUNT_LEVEL_PAUSE_OPEN": 1,
+      "OPEN_SOURCE_DIRECT_TIMESTAMP": 1,
+      "OPEN_ANDROID_SOURCE_ACCESS": 1,
+      "OPEN_END_TO_END_USER_SESSION": 1,
+      "OPEN_CREDENTIAL_BINDING_AND_AUTH_TEST": 1,
+      "OPEN_7Z_RAR_LR": 1,
+      "SOURCE_BYTES_VERIFIED_FUTURE_SYNC_OPEN": 1,
+      "OPEN_HOST_ROUTING_AND_UI_READBACK": 1,
+      "OPEN_HOST_INTEGRATION_AND_INDEPENDENT_TEST": 1,
+      "OPEN_ROUTED_NONCOERCIVE": 27,
+      "IN_PROGRESS": 1
+    },
+    "explicit_callable_provider_rows_without_host_offline": 19,
+    "blocked_or_other_permission_rows": 26,
+    "in_progress_row": {
+      "id": 45,
+      "task_id": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+      "status": "IN_PROGRESS",
+      "permission": "NOT_SPECIFIED_IN_SOURCE"
+    },
+    "task_status_mutations": 0
+  },
+  "evidence_table": {
+    "id": "Sk0EFJK5NzWVpBvm",
+    "name": "AISSTANGT_MANAGE_CONTINUITY_20261020",
+    "latest_row_id": 756,
+    "latest_event_id": "X20261030134100_N8N_PERMISSION_GUARD_REPAIR",
+    "latest_row_provider_created_at": "2026-10-30T06:44:17.868Z",
+    "latest_row_readback_verified": true,
+    "included_rows": [
+      749,
+      750,
+      751,
+      752,
+      753,
+      754,
+      755,
+      756
+    ],
+    "row_755_event_id": "X20261030060024027_CLOUD",
+    "row_755_provider_created_at": "2026-10-30T06:00:24.111Z",
+    "row_756_occurred_at": null
+  },
+  "agents": {
+    "project_id": "6qKpRmicIGHA5snY",
+    "total": 5,
+    "published": 0,
+    "project_credentials": 0,
+    "gateway_credits_available": true,
+    "gateway_credentials_are_not_project_credentials": true,
+    "dispatch_performed": false,
+    "agent_configurations_changed": false
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "default_branch": "main",
+    "main_head_before_checkpoint": "a395880dbb533149e02dd0f78789e422722dd84b",
+    "previous_pointer_blob_sha": "15136e64e58f31c63a5e13d3a06d46afe14e577e",
+    "latest_actions_on_previous_pointer_commit": [
+      {
+        "workflow": "R-014 Root Carrier Protection",
+        "run_number": 30,
+        "run_id": 41013919511,
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-30T06:24:43Z"
+      },
+      {
+        "workflow": "THIT THO Architecture Materials",
+        "run_number": 32,
+        "run_id": 41013837722,
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-30T06:23:53Z"
+      },
+      {
+        "workflow": "SOL X66 Independent Continuity",
+        "run_number": 41,
+        "run_id": 41010810228,
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-30T05:52:13Z"
+      },
+      {
+        "workflow": "runtime-n-plus",
+        "run_number": 2566,
+        "run_id": 41009726092,
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-30T05:40:21Z"
+      },
+      {
+        "workflow": "High-Threshold Secret Exposure Guard",
+        "run_number": 2142,
+        "run_id": 41009726122,
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-30T05:40:21Z"
+      }
+    ],
+    "previous_pointer_commit_vercel": {
+      "state": "failure",
+      "target": "https://vercel.com/sollasi/sol-long-mach/7ZJfpbFBcHHtZkiDvXY8Uim7WT8f",
+      "failure_cause_verified": false
+    },
+    "pr_29": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "86e208ff05c06cf0e5dfabfc6481218dc10bc96c"
+    }
+  },
+  "host_and_android": {
+    "windows_device_registry_last_known": "OFFLINE",
+    "windows_last_seen": "67h ago at prior registry readback",
+    "windows_host_heartbeat": "UNVERIFIED_NO_FRESH_DIRECT_PROBE",
+    "android_heartbeat": "UNVERIFIED",
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "c_drive_last_known_free_percent": 0.418,
+    "c_drive_observed_at_utc": "2026-10-30T03:59:42.9125706Z",
+    "c_drive_freshness": "STALE_NOT_CURRENT",
+    "h_drive_role": "HIDDEN_EFI_SYSTEM_PARTITION_DO_NOT_TOUCH"
+  },
+  "source_matrix": {
+    "task": "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
+    "status": "OPEN",
+    "canonical_power_github_blob_sha": "41f7b367d8c7e0e1674f3d59ad4109b841a7106d",
+    "canonical_power_capabilities": 27,
+    "library_power_copies": [
+      {
+        "file_id": "file_00000000801c8209ac1748585b7a306d",
+        "bytes": 19249,
+        "sha256": "9237383a078679bc764485fc4c73b37a65e24355ff30e797694ef2c4e1aa7a25",
+        "git_blob_sha1": "81798e06a806f5e29277af84389925c5bb9a3652",
+        "capabilities": 25
+      },
+      {
+        "file_id": "file_000000005e3c820992edfe37d9cf9467",
+        "bytes": 14485,
+        "sha256": "37e9dbcf98f5d68a57d860641663dd58214902b8f170d426ef7d422620e4537d",
+        "git_blob_sha1": "5b3f157301f88ff8ef7ebcf558d5387724ab4d75",
+        "capabilities": 21
+      }
+    ],
+    "canonical_only_vs_25": [
+      "sol-win11-hyperv-gate",
+      "google-cloud-api-constellation-hypothesis"
+    ],
+    "other_canonical_carriers_still_open": [
+      "SPACE_MAP.json",
+      "DAI_NGUYEN_THE_MASTER_TEACHER_20261016.md",
+      "IDENTITY_PLACES_CORE.json",
+      "CROSS_CHAT_ENVIRONMENT_SURFACE_SPACE_CONTINUITY_20261016.md"
+    ],
+    "library_write_or_overwrite": false
+  },
+  "dropbox_sensor_csv": {
+    "path_display": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+    "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "size_bytes": 35389440,
+    "content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+    "metadata_readback_verified": true,
+    "raw_bytes_downloaded": false,
+    "header_read": false
+  },
+  "safety": {
+    "recovery_task_status_mutations": 0,
+    "google_drive_writes": 0,
+    "host_file_writes": 0,
+    "process_or_cache_deletions": 0,
+    "meta_db_changes": 0,
+    "plaintext_credentials_accessed": false,
+    "agent_publishes": 0,
+    "pull_requests_merged": 0,
+    "library_overwrites": 0,
+    "deployment_configuration_changed": false,
+    "n8n_workflow_updated": true,
+    "n8n_evidence_rows_appended": 1
+  },
+  "next_edges": [
+    "Verify scheduled execution 308 at 2026-10-30T07:00:00Z; read its exact output and evidence row; ensure next_edge contains only explicit callable rows.",
+    "Keep all 45 recovery rows nonterminal and preserve row 45 IN_PROGRESS.",
+    "Investigate Vercel FAILURE for previous pointer commit through an authorized read-only log/status route; do not change deployment configuration.",
+    "Preserve both Library POWER copies; resolve canonical source direction before any Library write; continue exact carrier reconciliation for SPACE/SOUL/REALITY/TIME.",
+    "Obtain an authorized direct raw-byte route for Dropbox CSV header retrieval; metadata/hash alone is not content verification.",
+    "Wait for fresh authorized Windows host heartbeat before local work; Android remains UNVERIFIED; treat C: reading as stale and never touch H:.",
+    "Do not publish agents or create credentials without a selected model, explicit configuration authority, and verified tool wiring."
+  ]
+}
