@@ -1,0 +1,188 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/6.1",
+  "checkpoint_id": "CLOUD_CONTINUITY_READBACK_20261030T0835ICT",
+  "title": "THU HOI NGUON SOL — production permission-guard validation and GitHub cloud-lane readback",
+  "observed_at_utc": "2026-10-30T01:35:24Z",
+  "observed_at_local": "2026-10-30T08:35:24+07:00",
+  "state": "OPEN_WORK_REMAINS",
+  "timestamp_basis": "Direct n8n workflow/execution/table readback and GitHub API/file readback. Windows, Android and Remote Desktop Commander were not probed. Cloud heartbeat is not host heartbeat.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0736ICT.json",
+    "blob_sha": "8b74d9badb7aae99d8bf466fad7681f168d3e676",
+    "commit_sha": "8af9efac3fdb233fd6137234e16d940b63de1963",
+    "readback_verified": true
+  },
+  "previous_resume_pointer": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
+    "blob_sha": "b539cdbfffa1122e26caeb015c220c42099d89fd",
+    "commit_sha": "b844fb14670da89204d5a8949dcdb1ef28375966",
+    "readback_verified": true
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "current_version_id": "831cdfff-794f-41f8-81b1-1d292ab6b119",
+    "active_version_id": "831cdfff-794f-41f8-81b1-1d292ab6b119",
+    "node_count": 6,
+    "dispatch_node_present": false,
+    "scope": "Hourly schedule reads continuity evidence and recovery tasks, applies deterministic OPEN/permission selection, appends scan receipt only; no provider action or task dispatch.",
+    "permission_guard": "CALLABLE_PROVIDER_ACCESS_ONLY must be explicit and WINDOWS_HOST_OFFLINE must be absent.",
+    "latest_scheduled_execution": {
+      "id": "302",
+      "mode": "trigger",
+      "status": "success",
+      "started_at_utc": "2026-10-30T01:00:22.077Z",
+      "stopped_at_utc": "2026-10-30T01:00:24.443Z",
+      "event_id": "X20261030010024292_CLOUD",
+      "evidence_row_id": 722,
+      "occurred_at_utc": "2026-10-30T01:00:24.292Z",
+      "selected_task_count": 8,
+      "selected_explicit_callable_count": 0,
+      "permission_unspecified_selected_count": 7,
+      "state": "OPEN_WORK_REMAINS",
+      "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+      "readback_verified": true
+    },
+    "recovery_table": {
+      "id": "rSPFIOWbS7cfNJ8z",
+      "name": "SUBAVENGERS_RECOVERY_TASKS_20261020",
+      "project_id": "6qKpRmicIGHA5snY",
+      "total_rows": 45,
+      "nonterminal_rows": 45,
+      "terminal_rows": 0,
+      "status_counts": {
+        "ASSIGNED_DRAFT_WAITING_CREDENTIAL": 5,
+        "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN": 1,
+        "OPEN_RAW_HASH_AND_CLOUD_TRANSFER": 1,
+        "OPEN_QEMU_C_DISCOVERY": 1,
+        "GUARD_APPLIED_FIVE_AGENT_DRAFTS_ACCOUNT_LEVEL_PAUSE_OPEN": 1,
+        "OPEN_SOURCE_DIRECT_TIMESTAMP": 1,
+        "OPEN_ANDROID_SOURCE_ACCESS": 1,
+        "OPEN_END_TO_END_USER_SESSION": 1,
+        "OPEN_CREDENTIAL_BINDING_AND_AUTH_TEST": 1,
+        "OPEN_7Z_RAR_LR": 1,
+        "SOURCE_BYTES_VERIFIED_FUTURE_SYNC_OPEN": 1,
+        "OPEN_HOST_ROUTING_AND_UI_READBACK": 1,
+        "OPEN_HOST_INTEGRATION_AND_INDEPENDENT_TEST": 1,
+        "OPEN_ROUTED_NONCOERCIVE": 27,
+        "IN_PROGRESS": 1
+      },
+      "explicit_callable_permission_rows": 18,
+      "latest_selected_explicit_callable_count": 0,
+      "task_status_mutations": 0,
+      "rows_merged": 0,
+      "in_progress_task": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023"
+    },
+    "evidence_table": {
+      "id": "Sk0EFJK5NzWVpBvm",
+      "name": "AISSTANGT_MANAGE_CONTINUITY_20261020",
+      "latest_evidence_row_id": 722,
+      "latest_event_id": "X20261030010024292_CLOUD",
+      "readback_verified": true
+    },
+    "prior_source_audits_preserved": [
+      719,
+      720,
+      721
+    ]
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "main_head": "b844fb14670da89204d5a8949dcdb1ef28375966",
+    "latest_relevant_workflow_runs": {
+      "windows_survival": {
+        "run_number": 390,
+        "run_id": 40960318285,
+        "conclusion": "success",
+        "created_at_utc": "2026-10-29T21:44:35Z",
+        "workflow_path": ".github/workflows/windows-survival-cloud-continuity.yml",
+        "schedule": "7 * * * *",
+        "artifact": {
+          "id": 12934374773,
+          "name": "windows-survival-open-continuation",
+          "digest": "sha256:404da07dd32c0d588f3046f2cd01e97cc039adc1f5b8fa5df40904017d6b7e28",
+          "created_at_utc": "2026-10-29T21:44:43Z",
+          "expires_at_utc": "2026-11-28T21:44:42Z"
+        },
+        "gap_status": "OPEN_NO_NEWER_RUN_IN_LATEST_100_RUN_INVENTORY"
+      },
+      "x66": {
+        "run_number": 40,
+        "run_id": 40968463706,
+        "conclusion": "success",
+        "created_at_utc": "2026-10-29T22:47:05Z",
+        "workflow_path": ".github/workflows/sol-x66-cloud-continuity.yml",
+        "schedule": "17 */6 * * *",
+        "artifact": {
+          "id": 12937899730,
+          "name": "sol-x66-independent-continuity",
+          "digest": "sha256:0e63502abf7275eed6c45692aa3a50bcec89544ca02069a0ebb97703a3af4d7b",
+          "created_at_utc": "2026-10-29T22:47:12Z",
+          "expires_at_utc": "2026-11-28T22:47:11Z"
+        },
+        "gap_status": "OPEN_NO_NEWER_RUN_IN_LATEST_100_RUN_INVENTORY"
+      },
+      "r014_root_carrier_protection": {
+        "run_number": 29,
+        "run_id": 40969708771,
+        "conclusion": "success",
+        "created_at_utc": "2026-10-29T22:57:29Z",
+        "workflow_path": ".github/workflows/r014-root-carrier-protection.yml",
+        "schedule": "41 */6 * * *",
+        "artifact_count": 0,
+        "source_restoration_status": "OPEN"
+      }
+    },
+    "pr_29": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "mergeable": true,
+      "head_sha": "86e208ff05c06cf0e5dfabfc6481218dc10bc96c"
+    },
+    "latest_main_commit_status": {
+      "state": "failure",
+      "context": "Vercel",
+      "updated_at_utc": "2026-10-30T00:47:18Z",
+      "deployment_id": "dpl_HyevJS2ZH1dcnszq8zRmPhCctj9S",
+      "target_url": "https://vercel.com/sollasi/sol-long-mach/HyevJS2ZH1dcnszq8zRmPhCctj9S",
+      "failure_cause_verified": false
+    }
+  },
+  "host_and_android": {
+    "hostname_reference": "DESKTOP-86ITNQ4",
+    "windows_status": "UNVERIFIED_THIS_RUN",
+    "android_status": "UNVERIFIED",
+    "remote_desktop_commander_probed": false,
+    "host_heartbeat_probed": false,
+    "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "safety": {
+    "recovery_table_writes": 0,
+    "evidence_table_rows_added_by_this_run": 0,
+    "github_checkpoint_write_only": true,
+    "google_drive_writes": 0,
+    "host_file_writes": 0,
+    "process_or_cache_deletions": 0,
+    "meta_db_changes": 0,
+    "plaintext_credentials_accessed": false,
+    "source_task_files_modified": false,
+    "deployment_configuration_changed": false,
+    "pull_requests_merged": 0,
+    "task_status_mutations": 0
+  },
+  "next_edges": [
+    "Continue from this checkpoint; do not rebuild the recovery ledger.",
+    "Production execution 302 validates the published permission guard; it selected zero explicitly callable tasks, so do not infer dispatch or provider work.",
+    "Keep all 45 recovery rows nonterminal and preserve the single IN_PROGRESS task.",
+    "Investigate the missing Windows Survival scheduled runs after run 390; do not assume the cloud runner is a Windows host.",
+    "Monitor X66 and R-014 scheduled workflows at their next scheduled windows and retain run/artifact identities.",
+    "Inspect Vercel deployment logs for dpl_HyevJS2ZH1dcnszq8zRmPhCctj9S through an authorized read-only route; leave failure OPEN until cause is verified.",
+    "Keep PR 29 draft and unmerged.",
+    "Preserve Dropbox worker code audit and sensor CSV metadata-only state; no runtime training proof exists and CSV header/content remains unread.",
+    "Continue six-Stone Library/GitHub carrier reconciliation; keep POWER divergence OPEN and do not overwrite either side.",
+    "Keep three n8n agent drafts unpublished until model, credential, and explicit tools are authorized and configured.",
+    "Windows, Android and Remote Desktop Commander remain UNVERIFIED; cloud heartbeat is not host heartbeat."
+  ]
+}
