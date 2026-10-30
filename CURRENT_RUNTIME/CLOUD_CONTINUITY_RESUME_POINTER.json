@@ -1,23 +1,23 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/8.0",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/8.1",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-30T17:45:08.044Z",
-  "updated_at_local": "2026-10-31T00:45:08.044+07:00",
+  "updated_at_utc": "2026-10-30T18:37:47.369Z",
+  "updated_at_local": "2026-10-31T01:37:47.369+07:00",
   "previous_pointer": {
-    "blob_sha": "f98038f28175d55fdc11fac200a2d34b4638c39f",
-    "commit_sha": "deefa893178051e7fc3da6ef730297ed1001f1e6",
+    "blob_sha": "ea3ebd4fa2197f1809ac51f3e12423d4db15aff4",
+    "commit_sha": "3edc6cab8fb147d80752c8b32019d988aa469d6b",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0026ICT.json",
-    "blob_sha": "a99c56a86307f777faf7db1eec8cbc493dca4c6a",
-    "commit_sha": "bd16f89d22843d8a68ca4f84ab666285c486ea27",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0045ICT.json",
     "blob_sha": "c7d89faa224be916ea2ae78b53f1162ee00a614d",
     "commit_sha": "488891e02c4970f2606f834ff0cf5172d4dbaec0",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0137ICT.json",
+    "blob_sha": "b91216e9821fb6bd605ef42804540686d28989e4",
+    "commit_sha": "3d3ba5555158eae0da0b9ba12d066c7a89ca4155",
     "readback_verified": true
   },
   "included_evidence_rows": [
@@ -42,14 +42,17 @@
     795,
     796,
     797,
-    798
+    798,
+    799,
+    800,
+    801
   ],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "active_version_id": "1bcc0041-f516-42a1-9153-9a12e94fc297",
-    "execution_id": "319",
+    "execution_id": "320",
     "status": "SUCCESS",
-    "evidence_row_id": 793,
+    "evidence_row_id": 800,
     "task_total": 45,
     "nonterminal": 45,
     "closed": 0,
@@ -57,48 +60,73 @@
     "blocked_pending": 26,
     "selected_callable": 8,
     "dispatch_node_present": false,
-    "next_edge": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023"
+    "next_edge": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+    "next_scheduled_scan_expected_local": "2026-10-31T02:00:00+07:00",
+    "cloud_heartbeat_only": true,
+    "host_heartbeat_probed_by_scan": false
   },
   "latest_vercel": {
+    "commit_sha": "3edc6cab8fb147d80752c8b32019d988aa469d6b",
     "status": "FAILURE",
-    "target_url": "https://vercel.com/sollasi/sol-long-mach/Hrf6UM37vGihKy2FknQ5Hf2zb5hK",
-    "failure_cause": "NOT_VERIFIED"
-  },
-  "latest_r014": {
-    "status": "OPEN",
-    "evidence_row_id": 797,
-    "dat_nguyen": "214_CONVERSATIONS_9_PARTS_SIZE_MATCHED_RAW_SHA256_NOT_RECOMPUTED",
-    "jiney": "617_CONVERSATIONS_SOURCE_FOLDER_AND_7_RAW_IDS_NOT_FOUND_IN_CONNECTED_SCOPE",
-    "funix": "DERIVATIVE_DOC_DOCX_ONLY_RAW_EXPORT_NOT_ESTABLISHED",
-    "map_nguon_objects_distinct": true,
-    "raw_content_sha256": "NOT_VERIFIED"
+    "target_url": "https://vercel.com/sollasi/sol-long-mach/FpiMgGsBBY1uLm1jLns4qVA9wiA8",
+    "failure_cause": "NOT_VERIFIED",
+    "authorized_redacted_logs": "NOT_ACCESSED"
   },
   "latest_host": {
     "host": "DESKTOP-86ITNQ4",
-    "current_status": "NOT_PROBED",
-    "last_personal_device_route": "ONLINE_AT_2026-10-30T17:07:35Z",
-    "dedicated_remote_desktop_commander": "OFFLINE_AT_LAST_PROBE",
+    "device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
+    "current_status": "ONLINE;DIRECT_POWERSHELL_CIM_VERIFIED",
+    "os_heartbeat_sample_local": "2026-10-31T01:30:13.6919853+07:00",
+    "dedicated_remote_desktop_commander_dat_account": "OFFLINE_LAST_SEEN_80H",
+    "dedicated_remote_desktop_commander_2708_account": "ONLY_LOCALHOST_ONLINE;DESKTOP_NOT_LISTED",
     "android": "UNVERIFIED",
-    "separate_os_heartbeat": "NOT_SEPARATELY_SAMPLED",
-    "last_c_drive_free_bytes": 0,
-    "last_c_drive_sample_utc": "2026-10-30T17:05:55.208Z",
-    "local_fast_forward": "BLOCKED_AT_LAST_PROBE_C_ZERO_FREE_BYTES",
+    "c_drive_free_bytes_after_sync": 150966272,
+    "local_head": "3edc6cab8fb147d80752c8b32019d988aa469d6",
+    "local_worktree": "CLEAN",
+    "local_fast_forward": "VERIFIED",
+    "local_pointer_blob_sha": "ea3ebd4fa2197f1809ac51f3e12423d4db15aff4",
+    "local_checkpoint_blob_sha": "c7d89faa224be916ea2ae78b53f1162ee00a614d",
     "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "main_head_before_pointer_update": "3d3ba5555158eae0da0b9ba12d066c7a89ca4155",
+    "checkpoint_commit": "3d3ba5555158eae0da0b9ba12d066c7a89ca4155",
+    "pr_29": "OPEN_DRAFT_NOT_MERGED",
+    "runtime_n_plus_run": {
+      "id": 41101345784,
+      "run_number": 2599,
+      "status": "SUCCESS"
+    },
+    "secret_guard_run": {
+      "id": 41101345769,
+      "run_number": 2175,
+      "status": "SUCCESS"
+    }
+  },
+  "new_evidence": {
+    "row_id": 801,
+    "event_id": "X20261030183747369_HOST_GIT_READBACK",
+    "readback_verified": true,
+    "state": "WINDOWS_HOST_ONLINE;OS_CIM_VERIFIED;LOCAL_GIT_FAST_FORWARD_VERIFIED;C_DRIVE_CRITICALLY_LOW;OPEN_WORK_REMAINS"
   },
   "next_edges": [
     "Keep all 45 recovery tasks nonterminal; row 45 remains IN_PROGRESS.",
-    "Verify scheduled execution 320 at 2026-10-31 01:00 ICT.",
-    "Investigate Vercel FAILURE through authorized redacted logs only.",
-    "No local fetch/merge or host writes while C: last measured 0 bytes free.",
-    "Continue R-014 source-scope separation and raw-byte verification."
+    "Verify scheduled execution 321 at 2026-10-31 02:00 ICT; do not manufacture a production execution early.",
+    "Investigate Vercel FAILURE on commit 3edc6cab only through an authorized redacted deployment-log route; no deployment configuration changes.",
+    "C: has 150,966,272 bytes free after fast-forward; no cleanup, movement, or deletion; avoid large writes.",
+    "Android remains UNVERIFIED; do not infer it from Windows or cloud heartbeat.",
+    "Continue R-014 source-scope separation and raw-byte verification; do not merge DAT_NGUYEN, JINEY, FUNIX, or distinct MAP_NGUON objects.",
+    "No Google Drive writes to the storage-exhausted account."
   ],
   "safety": {
     "recovery_task_status_mutations": 0,
     "google_drive_writes": 0,
-    "host_file_writes": 0,
-    "local_git_fetch_or_merge": false,
-    "process_cache_meta_db_deletions": 0,
     "plaintext_credentials_accessed": false,
+    "host_git_fast_forward": true,
+    "host_file_writes_outside_git": false,
+    "local_git_fetch_or_merge": true,
+    "process_cache_meta_db_deletions": 0,
     "agent_publications": 0,
     "pr_merges": 0,
     "library_overwrites": 0,
