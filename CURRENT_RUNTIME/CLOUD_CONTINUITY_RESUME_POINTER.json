@@ -18,8 +18,8 @@
   },
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0712ICT.json",
-    "blob_sha": "4aa2a30f6e14fefb9259e50eb94702fb13514780",
-    "commit_sha": "2397d802779f77728b4b7a02636eb4a6c46d00da",
+    "blob_sha": "496d83b0f8bfb7bc42a664368cce3eba4ae7e92d",
+    "commit_sha": "65640c5a4a949052a567096dfe048998619dd62c",
     "readback_verified": true,
     "observed_at_utc": "2026-10-30T00:12:04Z",
     "previous_checkpoint_blob_sha": "90b32a45e11648c555b66cf67b80c01fe17d03e2",
@@ -63,16 +63,23 @@
     },
     "workflow_execution_scope": "SCHEDULED_LEDGER_SCAN_AND_RECEIPT_ONLY; no agent dispatch node",
     "authorization_guard_finding": "selected_cloud_eligible_count=5 is not a valid authorization count: 4 selected rows have explicit CALLABLE_PROVIDER_ACCESS_ONLY; TESSERACT_ART is permission NOT_SPECIFIED_IN_SOURCE and is a false positive of the current predicate",
-    "agent_dispatch_status": "BLOCKED: assigned agent drafts are unpublished, missing model+credential, and have zero tools",
+    "agent_dispatch_status": "BLOCKED: INTEGRITY, READBACK, OPEN-ROUTER drafts unpublished, missing model+credential, zero tools",
     "workflow_code_changed": false,
     "agent_configs_changed": false,
-    "task_dispatch_performed": false
+    "task_dispatch_performed": false,
+    "latest_audit_evidence_row_id": 717,
+    "audit_evidence_row_ids": [
+      716,
+      717
+    ],
+    "source_matrix_status": "OPEN_PARTIAL_READBACK: manifest and MIND match; POWER differs; SPACE/SOUL/REALITY/TIME exact Library carriers not found in direct folder listings",
+    "permission_predicate_finding": "selected_cloud_eligible_count=5 includes one permission-unspecified task; only four selected tasks have explicit CALLABLE_PROVIDER_ACCESS_ONLY"
   },
   "github_sources": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_before_pointer_update": "2397d802779f77728b4b7a02636eb4a6c46d00da",
-    "checkpoint_commit": "2397d802779f77728b4b7a02636eb4a6c46d00da",
-    "checkpoint_blob_sha": "4aa2a30f6e14fefb9259e50eb94702fb13514780",
+    "main_head_before_pointer_update": "65640c5a4a949052a567096dfe048998619dd62c",
+    "checkpoint_commit": "65640c5a4a949052a567096dfe048998619dd62c",
+    "checkpoint_blob_sha": "496d83b0f8bfb7bc42a664368cce3eba4ae7e92d",
     "previous_resume_pointer_blob_sha": "bdc5cb51aaec8a626e3a5f1f856b5c2ff5ba22f2",
     "previous_checkpoint_blob_sha": "90b32a45e11648c555b66cf67b80c01fe17d03e2",
     "actions_inventory_reprobed": false,
@@ -121,6 +128,7 @@
     "Keep PR #29 OPEN and Draft; no merge authorization.",
     "Preserve 29 GitHub task mappings separately from 16 n8n-only historical IDs.",
     "Do not write Google Drive, access plaintext secrets, or delete local data, processes, caches, or Meta.db.",
-    "Keep TESSERACT_ART IN_PROGRESS and blocked: permission is NOT_SPECIFIED_IN_SOURCE; the workflow predicate currently counts it incorrectly."
+    "Keep TESSERACT_ART IN_PROGRESS and blocked: permission is NOT_SPECIFIED_IN_SOURCE; the workflow predicate currently counts it incorrectly.",
+    "Continue SOL-SOURCE_MATRIX_STONES_CROSS_SYNC from audit rows 716/717; preserve POWER mismatch and four unlocated Library carriers as OPEN."
   ]
 }
