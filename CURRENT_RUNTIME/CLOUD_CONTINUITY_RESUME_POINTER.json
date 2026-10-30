@@ -1,23 +1,23 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.7",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.8",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-30T17:12:17.603Z",
-  "updated_at_local": "2026-10-31T00:12:17.603+07:00",
+  "updated_at_utc": "2026-10-30T17:18:55.486Z",
+  "updated_at_local": "2026-10-31T00:18:55.486+07:00",
   "previous_pointer": {
-    "blob_sha": "e6676b2934cc34da6a76719388816b86c29daa37",
-    "commit_sha": "1e4c9d15d5c1b1a57ac7b064a28f7d52c36bbc75",
+    "blob_sha": "1fe8e6d4f22ddb1303cf96003381f86c3453d6bd",
+    "commit_sha": "2e77bb5e17857876ddbac415b443ae93470e1860",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T2238ICT.json",
-    "blob_sha": "c8d87ecabfd98836ae25adefa3b188cfa45dd021",
-    "commit_sha": "5896a7b1d40b27b5d758f7b0f365230292006b29",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0012ICT.json",
     "blob_sha": "7d51964e5e2462f1082d51cf08b54718ffca1761",
     "commit_sha": "99867ecba167c1d96b747326da12fcb8addaff26",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0019ICT.json",
+    "blob_sha": "801f85e8ed091cb9af6f5d108b809467423a6e7b",
+    "commit_sha": "f2c33bc7fa2a9eea0cfa3dd264bd749d735d51e1",
     "readback_verified": true
   },
   "included_evidence_rows": [
@@ -39,7 +39,8 @@
     792,
     793,
     794,
-    795
+    795,
+    796
   ],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -49,8 +50,8 @@
     "event_id": "X20261030170024051_CLOUD",
     "evidence_row_id": 793,
     "task_total": 45,
-    "task_nonterminal": 45,
-    "task_closed": 0,
+    "nonterminal": 45,
+    "closed": 0,
     "callable_pending": 19,
     "blocked_pending": 26,
     "selected_callable": 8,
@@ -58,59 +59,81 @@
     "dispatch_node_present": false,
     "host_heartbeat": "NOT_PROBED_BY_CLOUD_SCAN"
   },
+  "latest_r014": {
+    "status": "OPEN",
+    "evidence_row_id": 796,
+    "map_nguon_objects_distinct": true,
+    "object_a_id": "1rcRPnoBtErA634J1jfHkjZp8oTmc3HuN",
+    "object_a_parent": ".codex / MÁY TÍNH CỦA SOL",
+    "object_a_size_bytes": 99075,
+    "object_a_md5": "51c06303de7440622519df7e6b9e9d04",
+    "object_a_version": "5",
+    "object_b_id": "1WRp3AK2fpT66LckjclEWfvgqF9fDCOKz",
+    "object_b_parent": "ALL_OLD / KHÔNG GIAN 4 CHIỀU - HÀ LINH - MEI",
+    "object_b_size_bytes": 72348,
+    "object_b_md5": "7b8423883bf7421fc1186a916bd0f2f5",
+    "object_b_version": "19",
+    "raw_bytes_sha256": "NOT_READ",
+    "original_root_id": "1FAc3tfnlZhW9evhIJxSv2PcLlUuBLYDz",
+    "original_root_id_result": "FILE_NOT_FOUND_IN_CONNECTED_ACCOUNT; DELETION_VS_SCOPE_UNRESOLVED"
+  },
+  "latest_google_cloud_binding": {
+    "task": "SOL-GOOGLE_CLOUD_ACTIONS_SECRET",
+    "status": "OPEN",
+    "secret_provider": "NONE_CONNECTED_AT_CURRENT_INVOCATION",
+    "backend_write_verified": false,
+    "actual_provider_account_ids": "NOT_VERIFIED",
+    "secret_values_accessed": false,
+    "secret_material_embedded": false,
+    "policy": "SECRET_REF_ONLY",
+    "capabilities_blob": "4d325c66d35e16dc944bf7cdc43e4a64e7940f64",
+    "bindings_blob": "4a99021274eb4995c45494f35335929f1e366e2f",
+    "workspace_gate_config_blob": "0e147fedd71cf81e9739509aaad9204c64a43f6f",
+    "workspace_gate_healthcheck_blob": "2560f1dbe766a656e5b155b1315f9f723aaa5f56"
+  },
   "latest_host": {
     "host": "DESKTOP-86ITNQ4",
-    "device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
-    "personal_device_link": "ONLINE;DIRECT_FILE_AND_POWERSHELL_READBACK_VERIFIED",
+    "personal_device_route": "ONLINE;DIRECT_FILE_AND_POWERSHELL_READBACK_VERIFIED",
     "dedicated_remote_desktop_commander": "OFFLINE_LAST_SEEN_79H",
     "android": "UNVERIFIED",
     "separate_os_heartbeat": "NOT_SEPARATELY_SAMPLED",
     "c_drive_free_bytes": 0,
-    "c_drive_free_percent": 0,
-    "c_drive_measurements_utc": [
-      "2026-10-30T17:05:42.7865597Z",
-      "2026-10-30T17:05:55.2080719Z"
-    ],
     "local_git_head": "546c383b189ac982e4a8ae4e65054556f19d2883",
     "local_worktree": "CLEAN_AT_READ_TIME",
     "local_pointer_schema": "7.5_STALE_VS_CLOUD_7.6",
-    "local_checkpoint_20261030T2238ICT": "NOT_FOUND_AT_EXPECTED_LOCAL_PATH",
     "local_fast_forward": "BLOCKED_C_ZERO_FREE_BYTES",
     "cloud_heartbeat_is_not_host_heartbeat": true
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_before_pointer_update": "99867ecba167c1d96b747326da12fcb8addaff26",
-    "checkpoint_blob_sha": "7d51964e5e2462f1082d51cf08b54718ffca1761",
-    "checkpoint_commit_sha": "99867ecba167c1d96b747326da12fcb8addaff26",
-    "vercel_combined_status": "FAILURE",
-    "vercel_target": "https://vercel.com/sollasi/sol-long-mach/84MN424RDhz4RosWPZAJMd56NLVg",
-    "vercel_failure_cause": "UNVERIFIED",
+    "main_head_before_pointer_update": "f2c33bc7fa2a9eea0cfa3dd264bd749d735d51e1",
+    "vercel_previous_pointer_status": "PENDING",
+    "vercel_previous_pointer_target": "https://vercel.com/sollasi/sol-long-mach/BKtSRaT5vsQPGF94Arn67K9sVJBM",
     "pr_29": "OPEN_DRAFT_NOT_MERGED"
   },
   "next_edges": [
     "Keep all 45 recovery rows nonterminal; row 45 remains IN_PROGRESS.",
-    "Do not write locally while C: has zero free bytes; no git fetch/merge, cleanup, file movement or process/cache/Meta.db deletion.",
-    "After user-approved storage action and a safe free-space margin, re-read checkpoint and perform git fetch plus ff-only only if local worktree remains clean.",
-    "Investigate Vercel FAILURE only via an authorized redacted deployment-log route; no deployment configuration changes.",
-    "Continue R-014 with source-bound provider reads; static blob/test-source matches do not establish runtime acceptance.",
-    "Keep HOSPOSIK DNS writes and billed deployment blocked pending approved HTTPS origin and price.",
-    "Obtain authorized raw-byte/source-bound access for TESSERACT Art; preserve row 45 IN_PROGRESS.",
-    "Do not infer Android or host status from cloud heartbeat."
+    "Do not perform local writes while C: has 0 free bytes; no fetch, merge, cleanup, file movement, process/cache/Meta.db deletion.",
+    "Keep both MAP_NGUON provider objects separate; obtain raw bytes and SHA-256 through an authorized read route before content identity decisions.",
+    "Keep original root ID 1FAc3tfnlZhW9evhIJxSv2PcLlUuBLYDz as FILE_NOT_FOUND_IN_CONNECTED_ACCOUNT, not proven deleted.",
+    "Keep Google Cloud secret task OPEN until an authorized secret provider is connected and backend write/readback is verified without exposing values.",
+    "Investigate Vercel only through authorized redacted logs; no deployment config changes.",
+    "Continue R-014 provider-bound recovery and preserve original JINEY/FUNIX/DATNGUYEN identities."
   ],
   "safety": {
     "recovery_task_status_mutations": 0,
     "google_drive_writes": 0,
-    "host_file_writes": 0,
-    "process_cache_meta_db_deletions": 0,
+    "google_drive_metadata_reads_only": true,
+    "raw_file_downloads": 0,
     "plaintext_credentials_accessed": false,
-    "agent_publishes": 0,
+    "host_file_writes": 0,
+    "local_git_fetch_or_merge": false,
+    "process_cache_meta_db_deletions": 0,
+    "agent_publications": 0,
     "pr_merges": 0,
     "library_overwrites": 0,
     "dns_writes": 0,
     "billed_services_created": 0,
-    "deployment_configuration_changed": false,
-    "local_git_fetch_or_merge": false,
-    "local_cleanup": false
+    "deployment_configuration_changed": false
   }
 }
