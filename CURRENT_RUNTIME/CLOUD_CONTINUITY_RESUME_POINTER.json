@@ -18,8 +18,8 @@
   },
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0712ICT.json",
-    "blob_sha": "496d83b0f8bfb7bc42a664368cce3eba4ae7e92d",
-    "commit_sha": "65640c5a4a949052a567096dfe048998619dd62c",
+    "blob_sha": "d6ea34b74edef3c7d271dd5e23346aacfb5d0831",
+    "commit_sha": "afc8587c3359cd84fec4581b8a71886837645e5c",
     "readback_verified": true,
     "observed_at_utc": "2026-10-30T00:12:04Z",
     "previous_checkpoint_blob_sha": "90b32a45e11648c555b66cf67b80c01fe17d03e2",
@@ -73,13 +73,27 @@
       717
     ],
     "source_matrix_status": "OPEN_PARTIAL_READBACK: manifest and MIND match; POWER differs; SPACE/SOUL/REALITY/TIME exact Library carriers not found in direct folder listings",
-    "permission_predicate_finding": "selected_cloud_eligible_count=5 includes one permission-unspecified task; only four selected tasks have explicit CALLABLE_PROVIDER_ACCESS_ONLY"
+    "permission_predicate_finding": "selected_cloud_eligible_count=5 includes one permission-unspecified task; only four selected tasks have explicit CALLABLE_PROVIDER_ACCESS_ONLY",
+    "workflow_active_version_id": "831cdfff-794f-41f8-81b1-1d292ab6b119",
+    "workflow_permission_guard": "CALLABLE_PROVIDER_ACCESS_ONLY_REQUIRED_AND_NOT_WINDOWS_HOST_OFFLINE",
+    "workflow_permission_guard_published": true,
+    "scheduled_execution_id": "300",
+    "manual_validation_execution_id": "301",
+    "manual_validation_status": "success",
+    "manual_validation_evidence_row_id": 718,
+    "manual_validation_evidence_row_readback": true,
+    "manual_validation_selected_explicit_callable_count": 1,
+    "manual_validation_permission_unspecified_count": 7,
+    "recovery_rows_total_after_manual_validation": 45,
+    "recovery_rows_nonterminal_after_manual_validation": 45,
+    "recovery_rows_terminal_after_manual_validation": 0,
+    "workflow_dispatch_scope": "ledger scan and receipt only; no agent dispatch"
   },
   "github_sources": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_before_pointer_update": "65640c5a4a949052a567096dfe048998619dd62c",
-    "checkpoint_commit": "65640c5a4a949052a567096dfe048998619dd62c",
-    "checkpoint_blob_sha": "496d83b0f8bfb7bc42a664368cce3eba4ae7e92d",
+    "main_head_before_pointer_update": "afc8587c3359cd84fec4581b8a71886837645e5c",
+    "checkpoint_commit": "afc8587c3359cd84fec4581b8a71886837645e5c",
+    "checkpoint_blob_sha": "d6ea34b74edef3c7d271dd5e23346aacfb5d0831",
     "previous_resume_pointer_blob_sha": "bdc5cb51aaec8a626e3a5f1f856b5c2ff5ba22f2",
     "previous_checkpoint_blob_sha": "90b32a45e11648c555b66cf67b80c01fe17d03e2",
     "actions_inventory_reprobed": false,
@@ -117,18 +131,14 @@
     "host_operations": 0
   },
   "next_edges": [
-    "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0712ICT.json; do not rebuild the recovery ledger.",
-    "Keep all 45 recovery rows nonterminal; a successful cloud scan is not task completion.",
-    "Evidence row 715 independently read back and verified; preserve its OPEN_WORK_REMAINS state.",
-    "Do not treat the scan's selected_cloud_eligible_count as authorization; four selected rows have explicit callable permission, but their assigned agent drafts are not runnable.",
-    "Keep Windows and Android UNVERIFIED until fresh authorized host/device responses are obtained; cloud heartbeat is not host heartbeat.",
-    "Refresh exact Windows Survival minute-7 and X66 six-hour cron-slot coverage before changing their OPEN schedule-gap states.",
-    "Keep R-014 host integration OPEN; local gate and emitter must not be written while host access is unavailable.",
-    "Keep Vercel failure OPEN until authorized deployment logs are available.",
-    "Keep PR #29 OPEN and Draft; no merge authorization.",
-    "Preserve 29 GitHub task mappings separately from 16 n8n-only historical IDs.",
-    "Do not write Google Drive, access plaintext secrets, or delete local data, processes, caches, or Meta.db.",
-    "Keep TESSERACT_ART IN_PROGRESS and blocked: permission is NOT_SPECIFIED_IN_SOURCE; the workflow predicate currently counts it incorrectly.",
-    "Continue SOL-SOURCE_MATRIX_STONES_CROSS_SYNC from audit rows 716/717; preserve POWER mismatch and four unlocated Library carriers as OPEN."
+    "Resume from the 07:12 ICT checkpoint; do not rebuild the recovery ledger.",
+    "Verify the next scheduled production scan uses active workflow version 831cdfff-794f-41f8-81b1-1d292ab6b119 and reports selected_explicit_callable.",
+    "Keep all 45 recovery rows nonterminal; manual validation did not change task statuses.",
+    "Do not invoke the INTEGRITY, READBACK or OPEN-ROUTER drafts until model, credential and explicit tools are configured under authorized scope.",
+    "Continue SOL-SOURCE_MATRIX_STONES_CROSS_SYNC from evidence rows 716/717; preserve the POWER mismatch and four unlocated Library carriers as OPEN.",
+    "Keep TESSERACT_ART permission-unverified; its source row does not grant explicit callable permission.",
+    "Keep Windows and Android UNVERIFIED; cloud heartbeat is not host heartbeat.",
+    "Keep GitHub Actions schedule gaps, Vercel failure, PR #29 and R-014 OPEN until their exact evidence gates pass.",
+    "Do not write Google Drive, access plaintext secrets, or delete processes, caches, local files, or Meta.db."
   ]
 }
