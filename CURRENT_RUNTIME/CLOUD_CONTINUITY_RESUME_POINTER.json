@@ -18,8 +18,8 @@
   },
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0712ICT.json",
-    "blob_sha": "5ed0966abea0efb9284f70f243482d376d1fe5be",
-    "commit_sha": "cbc5defc35ef1756c95e2f5d15a7b4d0822984ce",
+    "blob_sha": "c6ae814629c2581f812c9b0bbaa7eb12b18e2be2",
+    "commit_sha": "413940bd9d1a386bb819c30cd9e6fc2bbdff20a0",
     "readback_verified": true,
     "observed_at_utc": "2026-10-30T00:12:04Z",
     "previous_checkpoint_blob_sha": "90b32a45e11648c555b66cf67b80c01fe17d03e2",
@@ -41,7 +41,7 @@
     "event_id": "X20261030000024077_CLOUD",
     "evidence_row_created_at_utc": "2026-10-30T00:00:24.149Z",
     "evidence_row_append_output_visible": true,
-    "independent_evidence_table_readback": false,
+    "independent_evidence_table_readback": true,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "project_id": "6qKpRmicIGHA5snY",
     "recovery_rows_total": 45,
@@ -51,13 +51,22 @@
     "ledger_rows_merged": 0,
     "host_heartbeat_probed": false,
     "cloud_heartbeat_is_not_host_heartbeat": true,
-    "next_expected_tick_utc": "2026-10-30T01:00:00Z"
+    "next_expected_tick_utc": "2026-10-30T01:00:00Z",
+    "evidence_table_name": "AISSTANGT_MANAGE_CONTINUITY_20261020",
+    "evidence_row_readback_verified": true,
+    "evidence_row_readback": {
+      "row_id": 715,
+      "event_id": "X20261030000024077_CLOUD",
+      "state": "OPEN_WORK_REMAINS",
+      "created_at_utc": "2026-10-30T00:00:24.149Z",
+      "filter": "event_id eq X20261030000024077_CLOUD"
+    }
   },
   "github_sources": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_before_pointer_update": "cbc5defc35ef1756c95e2f5d15a7b4d0822984ce",
-    "checkpoint_commit": "cbc5defc35ef1756c95e2f5d15a7b4d0822984ce",
-    "checkpoint_blob_sha": "5ed0966abea0efb9284f70f243482d376d1fe5be",
+    "main_head_before_pointer_update": "413940bd9d1a386bb819c30cd9e6fc2bbdff20a0",
+    "checkpoint_commit": "413940bd9d1a386bb819c30cd9e6fc2bbdff20a0",
+    "checkpoint_blob_sha": "c6ae814629c2581f812c9b0bbaa7eb12b18e2be2",
     "previous_resume_pointer_blob_sha": "bdc5cb51aaec8a626e3a5f1f856b5c2ff5ba22f2",
     "previous_checkpoint_blob_sha": "90b32a45e11648c555b66cf67b80c01fe17d03e2",
     "actions_inventory_reprobed": false,
@@ -97,7 +106,7 @@
   "next_edges": [
     "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0712ICT.json; do not rebuild the recovery ledger.",
     "Keep all 45 recovery rows nonterminal; a successful cloud scan is not task completion.",
-    "Independently read evidence table row 715 if its table name/ID can be resolved; the append node output is present, but separate table readback was not performed.",
+    "Evidence row 715 independently read back and verified; preserve its OPEN_WORK_REMAINS state.",
     "Continue only cloud-eligible read branches with explicit callable-provider permission; do not infer which five of the eight selected edges are eligible.",
     "Keep Windows and Android UNVERIFIED until fresh authorized host/device responses are obtained; cloud heartbeat is not host heartbeat.",
     "Refresh exact Windows Survival minute-7 and X66 six-hour cron-slot coverage before changing their OPEN schedule-gap states.",
