@@ -1,0 +1,227 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/6.3",
+  "checkpoint_id": "CLOUD_CONTINUITY_READBACK_20261030T1045ICT",
+  "title": "THU HOI NGUON SOL — n8n 304, Windows host readback, EFI exclusion and R-014 source hash reconciliation",
+  "observed_at_utc": "2026-10-30T03:45:36.497Z",
+  "observed_at_local": "2026-10-30T10:45:36+07:00",
+  "state": "OPEN_WORK_REMAINS",
+  "timestamp_basis": "n8n execution 304 and evidence rows 727-730 are direct provider readbacks; Windows device/config and PowerShell probes are direct host readbacks. Android was not probed. Cloud heartbeat is not host heartbeat.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0946ICT.json",
+    "blob_sha": "033ae54cc23a313317bf0b24f020f82aa3058d40",
+    "commit_sha": "20aa3023ea11b98f96dd5c7c1b5857431a1ca3a2",
+    "readback_verified": true
+  },
+  "previous_resume_pointer": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
+    "blob_sha": "0d3e7e1a23f04a3c6306c684a49ee1fa6f71dd6d",
+    "last_pointer_commit_sha": "875b76048719d11e5ed00ffddbdbc6e7a29a060b",
+    "readback_verified": true
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "active_version_id": "831cdfff-794f-41f8-81b1-1d292ab6b119",
+    "node_count": 6,
+    "task_dispatch_node_present": false,
+    "scope": "Hourly deterministic scan reads evidence and recovery rows, applies explicit permission predicate, appends a receipt only; no provider dispatch.",
+    "latest_scheduled_execution": {
+      "id": "304",
+      "mode": "trigger",
+      "status": "success",
+      "started_at_utc": "2026-10-30T03:00:23.092Z",
+      "stopped_at_utc": "2026-10-30T03:00:25.109Z",
+      "event_id": "X20261030030024969_CLOUD",
+      "evidence_row_id": 727,
+      "readback_verified": true,
+      "selected_task_count": 8,
+      "selected_explicit_callable_count": 6,
+      "permission_unspecified_tasks": [
+        "SOL-NEXTDNS_F9C9F9",
+        "SOL-TESSERACT_REAL_BOOT"
+      ],
+      "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED_BY_WORKFLOW"
+    },
+    "recovery_table": {
+      "id": "rSPFIOWbS7cfNJ8z",
+      "name": "SUBAVENGERS_RECOVERY_TASKS_20261020",
+      "project_id": "6qKpRmicIGHA5snY",
+      "total_rows": 45,
+      "nonterminal_rows": 45,
+      "terminal_rows": 0,
+      "in_progress_task": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+      "task_status_mutations": 0
+    },
+    "evidence_table": {
+      "id": "Sk0EFJK5NzWVpBvm",
+      "name": "AISSTANGT_MANAGE_CONTINUITY_20261020",
+      "latest_row_id": 730,
+      "latest_verified_row_ids": [
+        727,
+        728,
+        729,
+        730
+      ],
+      "appended_rows_this_turn": [
+        728,
+        729,
+        730
+      ],
+      "readback_verified": true
+    },
+    "agent_readiness": {
+      "project_id": "6qKpRmicIGHA5snY",
+      "credential_count": 0,
+      "agents": [
+        {
+          "id": "ilcqwLMNUdrWjvrL",
+          "name": "SubAisstangtManage-INTEGRITY",
+          "published": false,
+          "isRunnable": false,
+          "missing": [
+            "model",
+            "credential"
+          ],
+          "tools": 0
+        },
+        {
+          "id": "bwjoN3TfQ8Ao717P",
+          "name": "SubAisstangtManage-READBACK",
+          "published": false,
+          "isRunnable": false,
+          "missing": [
+            "model",
+            "credential"
+          ],
+          "tools": 0
+        },
+        {
+          "id": "eT5YnxcWNGLRZ8z8",
+          "name": "SubAisstangtManage-OPEN-ROUTER",
+          "published": false,
+          "isRunnable": false,
+          "missing": [
+            "model",
+            "credential"
+          ],
+          "tools": 0
+        },
+        {
+          "id": "DEYtBtOQseTBhVHS",
+          "name": "SubAisstangtManage-SENSORY",
+          "published": false,
+          "isRunnable": false,
+          "missing": [
+            "model",
+            "credential"
+          ],
+          "tools": 0
+        }
+      ],
+      "dispatch_performed": false
+    },
+    "next_expected_tick_utc": "2026-10-30T04:00:00Z"
+  },
+  "host_and_android": {
+    "hostname": "DESKTOP-86ITNQ4",
+    "windows_status": "ONLINE_READ_ONLY_VERIFIED",
+    "observed_at_utc": "2026-10-30T03:45:36.497Z",
+    "device_status": "Online",
+    "os": "Windows 11 Pro Insider Preview 10.0.26220",
+    "resource_warning": true,
+    "c_drive_free_below_one_percent": true,
+    "detailed_resource_readback_n8n_evidence_row_id": 729,
+    "h_drive_role": "EFI_SYSTEM_PARTITION_HIDDEN_DO_NOT_TOUCH",
+    "h_drive_source": "Get-Partition Type=System; GPT EFI System Partition GUID; disk health Healthy/Online",
+    "android_status": "UNVERIFIED",
+    "remote_desktop_commander": "ONLINE; used only for optional read-only host verification, not required for cloud scan"
+  },
+  "r014_local_source": {
+    "state": "SOURCE_BYTES_MATCH_GITHUB_MAIN; ACTIVE_ROUTE_AND_RUNTIME_TESTS_STILL_OPEN",
+    "local_repo_path": "G:\\OS_Workspace\\SOL-LONG-MACH-main\\SOL-LONG-MACH-main",
+    "local_repo_head": "1efaa44a643c93d563ca159d169a500e60500ab7",
+    "local_branch": "main",
+    "local_branch_ahead_of_origin_main": 7,
+    "working_tree": "DIRTY_MODIFIED_AND_UNTRACKED; PRESERVE",
+    "gate_path": "runtime/ggdv_response_gate.py",
+    "gate_git_blob_sha": "295c69f1270248693566d454b6b37096ef9f7d92",
+    "gate_github_main_blob_sha": "295c69f1270248693566d454b6b37096ef9f7d92",
+    "gate_blob_match": true,
+    "emitter_path": "runtime/ggdv_local_emitter.py",
+    "emitter_git_blob_sha": "26a6754e1c26adfd92e364986c9ef0823fe6fb0a",
+    "emitter_github_main_blob_sha": "26a6754e1c26adfd92e364986c9ef0823fe6fb0a",
+    "emitter_blob_match": true,
+    "earlier_distinct_carrier_gate_blob_sha": "4ddd63a38010d9136647c871985770ad76f3055b",
+    "earlier_d_drive_search": "No matching filenames under D:\\SOL_LONG_MACH; this does not establish global absence.",
+    "active_host_route_verified": false,
+    "independent_runtime_tests_run": false,
+    "local_source_writes": 0
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "default_branch": "main",
+    "main_head_before_checkpoint": "875b76048719d11e5ed00ffddbdbc6e7a29a060b",
+    "windows_survival": {
+      "workflow_path": ".github/workflows/windows-survival-cloud-continuity.yml",
+      "cron": "7 * * * *",
+      "latest_schedule_run_number": 391,
+      "latest_schedule_run_id": 40988294011,
+      "latest_schedule_run_status": "success",
+      "latest_schedule_run_created_at_utc": "2026-10-30T01:51:29Z",
+      "expected_missing_slots_utc": [
+        "2026-10-30T02:07:00Z",
+        "2026-10-30T03:07:00Z"
+      ],
+      "hosted_runner_is_not_host_heartbeat": true
+    },
+    "x66": {
+      "workflow_path": ".github/workflows/sol-x66-cloud-continuity.yml",
+      "cron": "17 */6 * * *",
+      "latest_schedule_run_number": 40,
+      "latest_schedule_run_id": 40968463706,
+      "latest_schedule_run_status": "success",
+      "next_slot_utc": "2026-10-30T06:17:00Z"
+    },
+    "r014_root_carrier_protection": {
+      "workflow_path": ".github/workflows/r014-root-carrier-protection.yml",
+      "cron": "41 */6 * * *",
+      "latest_schedule_run_number": 29,
+      "latest_schedule_run_id": 40969708771,
+      "latest_schedule_run_status": "success",
+      "next_slot_utc": "2026-10-30T06:41:00Z"
+    },
+    "latest_main_vercel_status": "failure",
+    "latest_main_vercel_target_url": "https://vercel.com/sollasi/sol-long-mach/Ed1oeACpE81hC13emDcMt8RigUcE",
+    "vercel_failure_cause_verified": false,
+    "pull_requests_merged": 0
+  },
+  "carried_forward_open_edges": [
+    "Keep all 45 recovery rows nonterminal and the one IN_PROGRESS task unchanged.",
+    "Do not use H: for backup; it is a hidden EFI System Partition.",
+    "C: resource warning requires a user-approved non-destructive relief plan; no automatic cleanup.",
+    "R-014 active response route wiring and independent runtime tests remain OPEN despite local source blob equality.",
+    "Preserve the local G: worktree, 7 ahead commits, modified files and untracked files; no pull, reset, checkout or push.",
+    "Keep HelloCheck OPEN until authenticated TestNet RPC, valid UTXO and cloud-v2 environment are verified; no wallet creation, signing or broadcast.",
+    "Resolve Codex Cloud universal environment only through authenticated supported access.",
+    "Resolve private backup destination only after identity, encryption and quota are verified; never use H: or full Google Drive.",
+    "Continue Dropbox compute proof and sensor CSV header/content readback.",
+    "Continue POWER divergence and exact SPACE/SOUL/REALITY/TIME Library carrier reconciliation.",
+    "Keep Android UNVERIFIED until a direct authorized Android heartbeat is available.",
+    "Monitor Vercel failure through authorized read-only logs; do not change deployment configuration."
+  ],
+  "safety": {
+    "google_drive_writes": 0,
+    "host_file_writes": 0,
+    "process_or_cache_deletions": 0,
+    "meta_db_changes": 0,
+    "task_status_mutations": 0,
+    "plaintext_credentials_accessed": false,
+    "deployment_configuration_changed": false,
+    "pull_requests_merged": 0,
+    "wallet_created": false,
+    "private_key_or_wif_printed": false,
+    "external_bitcoin_rpc_called": false,
+    "transaction_signed_or_broadcast": false
+  }
+}
