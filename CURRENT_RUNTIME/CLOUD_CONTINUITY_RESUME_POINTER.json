@@ -1,13 +1,13 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/6.0",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-30T00:36:45.640Z",
-  "updated_at_local": "2026-10-30T07:36:45.640+07:00",
+  "updated_at_utc": "2026-10-30T00:37:46.119Z",
+  "updated_at_local": "2026-10-30T07:37:46+07:00",
   "timestamp_basis": "n8n, Dropbox, ChatGPT Library, and GitHub are direct cloud/provider readbacks. Windows, Android, and Remote Desktop Commander were not probed. Cloud heartbeat is not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "17af325f8aff38e1f198ad8465494478b0a8fdc8",
-    "last_pointer_commit_sha": "276be742337fdb472fdf729e6f73aaf464dbdf28",
+    "blob_sha": "7f3815da2bfb33b23cd192ba8c79fff8a58ad651",
+    "last_pointer_commit_sha": "fd559c7eb204a9124c12c83bc099627b1bb6cc5f",
     "readback_verified": true
   },
   "previous_checkpoint": {
@@ -18,14 +18,11 @@
   },
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0736ICT.json",
-    "blob_sha": null,
+    "blob_sha": "8b74d9badb7aae99d8bf466fad7681f168d3e676",
     "commit_sha": "8af9efac3fdb233fd6137234e16d940b63de1963",
-    "readback_verified": false,
+    "readback_verified": true,
     "observed_at_utc": "2026-10-30T00:36:45.640Z",
     "previous_checkpoint_blob_sha": "639683502bb3bdda26e283593e4fc7436e48ec21",
-    "n8n_latest_scheduled_execution_id": "300",
-    "n8n_latest_manual_validation_execution_id": "301",
-    "n8n_latest_manual_validation_evidence_row_id": 718,
     "n8n_new_evidence_rows": [
       719,
       720,
@@ -82,6 +79,7 @@
   "github_sources": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
     "checkpoint_commit": "8af9efac3fdb233fd6137234e16d940b63de1963",
+    "pointer_commit": "",
     "actions_pointer_validation_runs": [
       40979697808,
       40979697779
@@ -116,7 +114,7 @@
   },
   "next_edges": [
     "Resume from CLOUD_CONTINUITY_READBACK_20261030T0736ICT.json; do not rebuild the recovery ledger.",
-    "Verify the next scheduled production scan after the permission guard publication.",
+    "Verify the next scheduled production execution after permission guard publication.",
     "Keep all 45 recovery rows nonterminal and preserve the IN_PROGRESS task.",
     "Do not dispatch agent drafts until model, credential and tools are configured under authorized scope.",
     "Continue Dropbox sensor CSV bounded readback and actual compute proof.",
