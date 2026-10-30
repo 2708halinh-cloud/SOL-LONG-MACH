@@ -1,44 +1,42 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/6.5",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-30T04:59:08.493Z",
-  "updated_at_local": "2026-10-30T11:59:08.493+07:00",
-  "timestamp_basis": "n8n readbacks, Remote Desktop Commander device inventory, Library source-manifest readback, GitHub canonical-file fetches and combined commit status; no fresh host heartbeat.",
+  "updated_at_utc": "2026-10-30T05:01:16.087Z",
+  "updated_at_local": "2026-10-30T12:01:16.087+07:00",
+  "timestamp_basis": "Direct n8n execution/table readbacks, Remote Desktop Commander device inventory, Library full-file reads, GitHub canonical-file fetches and combined commit status. No fresh Windows host heartbeat or Android probe.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "eb0018250370d7980ff132bc47ee44723b72c0ea",
-    "last_pointer_commit_sha": "bd94ee8b5cdf7936ffce2f304c17e94d2802d494",
+    "blob_sha": "90b80b533c9e205e20e6bfa6d47372f832180ee6",
+    "last_pointer_commit_sha": "780ee2c6e312ee89c432de992baad575729bc740",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1105ICT.json",
-    "blob_sha": "d56a7629cd7f67e844526e45d6f37a54f5559d63",
-    "commit_sha": "331d1c40c87c7da37d0db56203f7dd13f3b09659",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1156ICT.json",
     "blob_sha": "1d163c1d251455d109159c453edc90b1f65af776",
     "commit_sha": "8629cfdc6fd6ab954ca8fe530919c2de35c78e76",
     "readback_verified": true
   },
-  "post_checkpoint_evidence_rows": [
-    744,
-    745,
-    746,
-    747
-  ],
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1200ICT.json",
+    "blob_sha": "cc80b34d5ae9a2666d4b36e70fa43e9ae153bc15",
+    "commit_sha": "6fd8177e566185fa893e9c1bab602a41fd61fb5e",
+    "readback_verified": true
+  },
+  "post_checkpoint_evidence_rows": [],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
     "active_version_id": "831cdfff-794f-41f8-81b1-1d292ab6b119",
-    "latest_scheduled_execution_id": "305",
+    "latest_scheduled_execution_id": "306",
     "latest_scheduled_execution_status": "success",
-    "latest_scheduled_execution_event_id": "X20261030040023989_CLOUD",
-    "latest_scan_evidence_row_id": 735,
-    "next_expected_tick_utc": "2026-10-30T05:00:00Z",
-    "dispatch_node_present": false
+    "latest_scheduled_execution_event_id": "X20261030050023989_CLOUD",
+    "latest_scan_evidence_row_id": 748,
+    "next_expected_tick_utc": "2026-10-30T06:00:00Z",
+    "dispatch_node_present": false,
+    "selected_count": 8,
+    "selected_explicit_callable_count": 4,
+    "permission_ineligible_selected_count": 4
   },
   "recovery_table": {
     "id": "rSPFIOWbS7cfNJ8z",
@@ -56,8 +54,8 @@
   },
   "evidence_table": {
     "id": "Sk0EFJK5NzWVpBvm",
-    "latest_row_id": 747,
-    "latest_event_id": "X20261030045900_STONES_PARITY_TIMESTAMP_CORRECTION",
+    "latest_row_id": 748,
+    "latest_event_id": "X20261030050023989_CLOUD",
     "latest_row_readback_verified": true
   },
   "host_and_android": {
@@ -83,7 +81,7 @@
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_before_pointer_update": "bd94ee8b5cdf7936ffce2f304c17e94d2802d494",
+    "main_head_before_pointer_update": "6fd8177e566185fa893e9c1bab602a41fd61fb5e",
     "checkpoint_blob_sha": "1d163c1d251455d109159c453edc90b1f65af776",
     "runtime_n_plus_run": {
       "number": 2557,
@@ -99,7 +97,7 @@
     "vercel_target": "https://vercel.com/sollasi/sol-long-mach/7hLcw7oexXAovsMhR1U4MzE1UCUn",
     "vercel_failure_cause_verified": false,
     "deployment_configuration_changed": false,
-    "latest_evidence_row_id": 745
+    "latest_evidence_row_id": 748
   },
   "dropbox_sensor_csv": {
     "evidence_row_id": 732,
@@ -117,15 +115,15 @@
     "pull_requests_merged": 0
   },
   "next_edges": [
-    "Verify scheduled n8n execution 306 after 2026-10-30T05:00:00Z and its exact evidence row.",
+    "Verify scheduled n8n execution 307 at 2026-10-30T06:00:00Z and read its exact evidence row.",
     "Keep all 45 recovery rows nonterminal and preserve the single IN_PROGRESS row.",
+    "Do not dispatch any task or agent: workflow has no dispatch node and all five agents are unpublished/unrunnable.",
     "Keep host actions blocked until a fresh authorized host heartbeat; Android remains UNVERIFIED.",
-    "Treat C: free-space warning as stale; no automatic deletion; never touch H:.",
+    "Treat C: warning as stale; no automatic deletion; never touch H:.",
     "Investigate Vercel FAILURE only through an authorized read-only log/status route; do not change deployment configuration.",
-    "Do not dispatch the five unpublished agents while model, credential and tools are absent.",
+    "Continue canonical five-carrier Library/GitHub reconciliation; manifest/guidance parity is not proof of canonical carrier sync.",
     "Preserve local G: worktree and seven ahead commits; no pull/reset/checkout/push/overwrite.",
-    "Continue Dropbox CSV header retrieval only through a supported authorized byte-range/chunked route.",
-    "Continue source-bound Library/GitHub carrier reconciliation without substitution or global absence claims."
+    "Continue Dropbox CSV header retrieval only through an authorized supported byte-range/chunked route."
   ],
   "source_matrix": {
     "library_manifest_file_id": "file_000000006c448230a472a76ad41d8cf8",
@@ -151,8 +149,7 @@
     "timestamp_qualification": {
       "evidence_row_746_event_time": "UNVERIFIED",
       "evidence_row_746_provider_created_at": "2026-10-30T04:58:57.211Z",
-      "correction_evidence_row_id": 747,
-      "correction_event_time_field": null
+      "correction_evidence_row_id": 747
     }
   }
 }
