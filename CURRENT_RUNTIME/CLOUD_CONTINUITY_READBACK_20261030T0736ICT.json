@@ -1,0 +1,305 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/6.0",
+  "checkpoint_id": "CLOUD_CONTINUITY_READBACK_20261030T0736ICT",
+  "title": "THU HOI NGUON SOL — n8n permission guard readback, Dropbox code audit, Library multi-carrier reconciliation",
+  "observed_at_utc": "2026-10-30T00:36:45.640Z",
+  "observed_at_local": "2026-10-30T07:36:45.640+07:00",
+  "state": "OPEN_WORK_REMAINS",
+  "timestamp_basis": "n8n, Dropbox, ChatGPT Library, and GitHub are direct cloud/provider readbacks. Windows, Android, and Remote Desktop Commander were not probed. Cloud heartbeat is not host heartbeat.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0725ICT.json",
+    "blob_sha": "639683502bb3bdda26e283593e4fc7436e48ec21",
+    "commit_sha": "dd139b04648aa9bbf86dd0596cc6b67ac87a0128",
+    "readback_verified": true
+  },
+  "previous_resume_pointer": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
+    "blob_sha": "17af325f8aff38e1f198ad8465494478b0a8fdc8",
+    "commit_sha": "276be742337fdb472fdf729e6f73aaf464dbdf28",
+    "readback_verified": true
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "current_version_id": "831cdfff-794f-41f8-81b1-1d292ab6b119",
+    "current_active_version_id": "831cdfff-794f-41f8-81b1-1d292ab6b119",
+    "previous_version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
+    "current_version_published_at_utc": "2026-10-30T00:23:55.692Z",
+    "version_diff": {
+      "modified_nodes": [
+        "Deterministic OPEN scan"
+      ],
+      "added_nodes": 0,
+      "removed_nodes": 0,
+      "added_connections": 0,
+      "removed_connections": 0,
+      "guard": "permission must explicitly contain CALLABLE_PROVIDER_ACCESS_ONLY and must not contain WINDOWS_HOST_OFFLINE",
+      "no_dispatch_node": true
+    },
+    "executions": {
+      "latest_scheduled": {
+        "id": "300",
+        "mode": "trigger",
+        "status": "success",
+        "started_at_utc": "2026-10-30T00:00:22.100Z",
+        "stopped_at_utc": "2026-10-30T00:00:24.228Z",
+        "evidence_row_id": 715,
+        "event_id": "X20261030000024077_CLOUD",
+        "version_relation": "PRE_PUBLICATION; old version 6caa22c1"
+      },
+      "latest_manual_validation": {
+        "id": "301",
+        "mode": "manual",
+        "status": "success",
+        "started_at_utc": "2026-10-30T00:24:24.959Z",
+        "stopped_at_utc": "2026-10-30T00:24:26.871Z",
+        "evidence_row_id": 718,
+        "event_id": "X20261030002426739_CLOUD",
+        "version_relation": "POST_PUBLICATION; current draft equals active version at readback",
+        "selected_tasks": 8,
+        "selected_explicit_callable": 1,
+        "selected_permission_unspecified": 7,
+        "selected_explicit_callable_task": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+        "workflow_scope": "scan and append receipt only; no task dispatch or provider action"
+      },
+      "next_expected_scheduled_tick_utc": "2026-10-30T01:00:00Z",
+      "production_validation_of_new_guard": "PENDING_NEXT_SCHEDULED_EXECUTION"
+    },
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_table_name": "AISSTANGT_MANAGE_CONTINUITY_20261020",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "recovery_ledger": {
+      "total_rows": 45,
+      "nonterminal_rows": 45,
+      "terminal_rows": 0,
+      "status_counts": {
+        "ASSIGNED_DRAFT_WAITING_CREDENTIAL": 5,
+        "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN": 1,
+        "OPEN_RAW_HASH_AND_CLOUD_TRANSFER": 1,
+        "OPEN_QEMU_C_DISCOVERY": 1,
+        "GUARD_APPLIED_FIVE_AGENT_DRAFTS_ACCOUNT_LEVEL_PAUSE_OPEN": 1,
+        "OPEN_SOURCE_DIRECT_TIMESTAMP": 1,
+        "OPEN_ANDROID_SOURCE_ACCESS": 1,
+        "OPEN_END_TO_END_USER_SESSION": 1,
+        "OPEN_CREDENTIAL_BINDING_AND_AUTH_TEST": 1,
+        "OPEN_7Z_RAR_LR": 1,
+        "SOURCE_BYTES_VERIFIED_FUTURE_SYNC_OPEN": 1,
+        "OPEN_HOST_ROUTING_AND_UI_READBACK": 1,
+        "OPEN_HOST_INTEGRATION_AND_INDEPENDENT_TEST": 1,
+        "OPEN_ROUTED_NONCOERCIVE": 27,
+        "IN_PROGRESS": 1
+      },
+      "task_status_mutations": 0,
+      "ledger_rows_merged": 0
+    },
+    "new_readback_evidence_rows": [
+      {
+        "id": 719,
+        "event_id": "X20261030003304001_DROPBOX_WORKER_SOURCE_READBACK",
+        "readback_verified": true
+      },
+      {
+        "id": 720,
+        "event_id": "X20261030003304002_POWER_LIBRARY_MULTI_CARRIER_READBACK",
+        "readback_verified": true
+      },
+      {
+        "id": 721,
+        "event_id": "X20261030003304003_N8N_AGENT_READINESS_READBACK",
+        "readback_verified": true
+      }
+    ],
+    "agent_readiness": {
+      "agents": [
+        {
+          "id": "ilcqwLMNUdrWjvrL",
+          "name": "SubAisstangtManage-INTEGRITY",
+          "published": false,
+          "isRunnable": false,
+          "missing": [
+            "model",
+            "credential"
+          ],
+          "tools": 0,
+          "customTools": 0,
+          "integrations": 0,
+          "configHash": "9f6149f7a4f7eaf3d0fdbf5d1a4e083ba64d6e6c5463a1eb04a6e9b7e667904f"
+        },
+        {
+          "id": "bwjoN3TfQ8Ao717P",
+          "name": "SubAisstangtManage-READBACK",
+          "published": false,
+          "isRunnable": false,
+          "missing": [
+            "model",
+            "credential"
+          ],
+          "tools": 0,
+          "customTools": 0,
+          "integrations": 0,
+          "configHash": "0557149343248fca8b63869519e8ba3fb51bb7016f4ffe7c0873aeeb663cae10"
+        },
+        {
+          "id": "eT5YnxcWNGLRZ8z8",
+          "name": "SubAisstangtManage-OPEN-ROUTER",
+          "published": false,
+          "isRunnable": false,
+          "missing": [
+            "model",
+            "credential"
+          ],
+          "tools": 0,
+          "customTools": 0,
+          "integrations": 0,
+          "configHash": "de93e09d7e442496a78bf0368bbef53c3e0f2b7d6d0716768496a3764d7a1400"
+        }
+      ],
+      "project_credentials_accessible": 0,
+      "openai_model_catalog_verified": false,
+      "gateway_credits_available_for_selected_node_credentials": true,
+      "no_agent_invocation": true,
+      "no_agent_config_mutation": true
+    }
+  },
+  "dropbox": {
+    "account": "Outlook",
+    "worker_file": {
+      "id": "gvG29tEleJwAAAAAAAACFw",
+      "path": "/Linh Hà/SENSOR_LOGS/windows_cpu_worker.py",
+      "revision": "0165daa22de4b740000000395cdfd73",
+      "size_bytes": 4575,
+      "server_modified_utc": "2026-10-12T19:59:31Z",
+      "readback": "Direct extracted text read",
+      "findings": [
+        "detect_avx_support() returns True on both import-success and exception paths",
+        "hardwareTelemetry.tempC is hardcoded to 39.5",
+        "train_softmax_task counts samples and labels but contains no observed gradient or parameter update",
+        "loss and accuracy are deterministic exp(epoch) formulas with time.sleep(0.04)",
+        "progress is POSTed every 5 epochs; source read is not runtime proof"
+      ],
+      "task_id": "SV-20261020-03",
+      "task_status": "ASSIGNED_DRAFT_WAITING_CREDENTIAL",
+      "source_write_performed": false
+    },
+    "sensor_csv": {
+      "id": "gvG29tEleJwAAAAAAAACOw",
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "metadata_only": true,
+      "content_or_header_read": false,
+      "task_remains_open": true
+    }
+  },
+  "source_matrix": {
+    "task_id": "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
+    "state": "OPEN_SOURCE_DIVERGENCE",
+    "power_library_copies": [
+      {
+        "library_file_id": "libfile_f0efb51a7f388191871716d08b2aaac3",
+        "file_id": "file_00000000801c8209ac1748585b7a306d",
+        "capability_count": 25
+      },
+      {
+        "library_file_id": "libfile_2bc1ab2cd5bc81918b350b1f40d0566f",
+        "file_id": "file_000000005e3c820992edfe37d9cf9467",
+        "capability_count": 21
+      }
+    ],
+    "github_current_power_blob_sha": "41f7b367d8c7e0e1674f3d59ad4109b841a7106d",
+    "github_current_power_capability_count": 27,
+    "github_legacy_power_blob_sha": "2cf0fde6710b529012ca89902f1bb73df3c89e7e",
+    "github_only_capability_ids": [
+      "sol-win11-hyperv-gate",
+      "google-cloud-api-constellation-hypothesis"
+    ],
+    "capabilities_in_25_copy_but_not_21_copy": [
+      "remote-desktop-connection-windows",
+      "google-cloud-usage-guard",
+      "hostinger-dns-rdp-binding",
+      "agent-core-diagnostics"
+    ],
+    "other_canonical_library_carriers": {
+      "names": [
+        "SPACE_MAP.json",
+        "DAI_NGUYEN_THE_MASTER_TEACHER_20261016.md",
+        "IDENTITY_PLACES_CORE.json",
+        "CROSS_CHAT_ENVIRONMENT_SURFACE_SPACE_CONTINUITY_20261016.md"
+      ],
+      "exact_title_search_returned_no_exact_match_in_first_result_page": true,
+      "absence_or_deletion_proven": false
+    },
+    "no_library_or_github_source_writes": true
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "main_head_before_new_checkpoint": "276be742337fdb472fdf729e6f73aaf464dbdf28",
+    "latest_pointer_validation_runs": [
+      {
+        "id": 40979697808,
+        "name": "runtime-n-plus",
+        "run_number": 2544,
+        "conclusion": "success",
+        "head_sha": "276be742337fdb472fdf729e6f73aaf464dbdf28"
+      },
+      {
+        "id": 40979697779,
+        "name": "High-Threshold Secret Exposure Guard",
+        "run_number": 2120,
+        "conclusion": "success",
+        "head_sha": "276be742337fdb472fdf729e6f73aaf464dbdf28"
+      }
+    ],
+    "windows_survival_last_known_run_number": 390,
+    "windows_survival_gap_status": "OPEN_UNRESOLVED",
+    "x66_last_known_run_number": 40,
+    "x66_gap_status": "OPEN_UNRESOLVED",
+    "r014_root_carrier_protection_last_known_run_number": 29,
+    "r014_source_restoration_status": "OPEN",
+    "topology_pr_29": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "86e208ff05c06cf0e5dfabfc6481218dc10bc96c"
+    },
+    "vercel_last_known_status": "failure",
+    "vercel_failure_cause_verified": false,
+    "no_deployment_configuration_change": true
+  },
+  "host_and_android": {
+    "hostname": "DESKTOP-86ITNQ4",
+    "windows_status": "UNVERIFIED_THIS_RUN",
+    "android_status": "UNVERIFIED",
+    "remote_desktop_commander_probed": false,
+    "host_heartbeat_probed": false,
+    "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "safety": {
+    "host_file_writes": 0,
+    "google_drive_writes": 0,
+    "process_or_cache_deletions": 0,
+    "meta_db_changes": 0,
+    "task_status_mutations": 0,
+    "ledger_rows_merged": 0,
+    "agent_invocations": 0,
+    "source_task_files_modified": 0,
+    "deployment_configuration_changed": false,
+    "pull_requests_merged": 0,
+    "plaintext_credentials_accessed": false
+  },
+  "next_edges": [
+    "Resume from this checkpoint; do not rebuild the recovery ledger.",
+    "Verify the first scheduled production execution after 2026-10-30T00:23:55.692Z uses active version 831cdfff and emits selected_explicit_callable; do not treat manual execution 301 as production schedule proof.",
+    "Keep all 45 recovery rows nonterminal and preserve the one IN_PROGRESS task exactly.",
+    "No dispatch node exists; do not describe scan selection as task execution.",
+    "Do not invoke the three agent drafts until a model, credential, and explicit tools are configured under authorized scope.",
+    "Continue Dropbox sensor CSV header readback through an authorized bounded read path; do not claim the 35MB file content was inspected.",
+    "Keep SV-20261020-03 OPEN until actual runtime compute and independent job output are proven.",
+    "Continue source matrix exact carrier reconciliation; keep POWER divergence open and do not overwrite either side.",
+    "Keep Windows, Android, and Remote Desktop Commander unverified; cloud heartbeat is not host heartbeat.",
+    "Keep Windows Survival, X66, R-014 source restoration, PR #29, and Vercel failure OPEN until exact evidence gates pass.",
+    "Do not write Google Drive, access plaintext credentials, delete processes/caches/local files, or change Meta.db."
+  ]
+}
