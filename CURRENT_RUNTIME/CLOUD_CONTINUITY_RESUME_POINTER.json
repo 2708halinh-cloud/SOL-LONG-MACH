@@ -1,55 +1,47 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.1",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.2",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-30T09:40:51.367Z",
-  "updated_at_local": "2026-10-30T16:40:51.367+07:00",
-  "timestamp_basis": "Existing checkpoint CLOUD_CONTINUITY_READBACK_20261030T1617ICT remains verified; post-checkpoint n8n evidence rows 766-769 were provider-read back; workflow execution 311 node data and recovery table 45-row readback; GitHub blob/Actions/status APIs; direct read-only Windows PowerShell and local Git blob/status readbacks. Use provider createdAt for ordering rows with occurred_at=null.",
+  "updated_at_utc": "2026-10-30T10:50:22.782Z",
+  "updated_at_local": "2026-10-30T17:50:22+07:00",
+  "timestamp_basis": "Checkpoint CLOUD_CONTINUITY_READBACK_20261030T1744ICT was created on GitHub main and fetched back with matching content and blob SHA; evidence row was inserted and read back; n8n execution 312 node data and 45-row recovery table were fetched; GitHub status/Actions/PR APIs and exact source blobs were read; Library exact-title search and two POWER file bodies were read; device registry only, no fresh direct host command. Use provider createdAt for rows whose occurred_at is null.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "5b7f24ca9dde73a4572b2d2ac752c0d8ab635aa9",
-    "last_pointer_commit_sha": "9f5cef24d1494585f9f8291fef562ab962003396",
+    "blob_sha": "ed4a4a7bac9dab1a6fa62058e01696cbb6829397",
+    "last_pointer_commit_sha": "2086f2751ea1f9eb21467a4081f7ca092300e4af",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1613ICT.json",
-    "blob_sha": "68d27d6841e14b3114567c4cfe470305f7641365",
-    "commit_sha": "6a8bbab5deb44cb8c49eca77afb6536eb55f9e33",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1617ICT.json",
     "blob_sha": "438bc40f50cc845e03375740d8c5399c446efde1",
     "commit_sha": "b84048a681b0e4af24eee362d0297ccb35c611b9",
     "readback_verified": true
   },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1744ICT.json",
+    "blob_sha": "8c1a20e293e3a87a5a3d4e8491b62cae0c161a98",
+    "commit_sha": "f68af1d33ab005f335908e0571cd127fbe68abf1",
+    "readback_verified": true
+  },
   "included_evidence_rows": [
-    762,
-    763,
-    764,
-    765
-  ],
-  "post_checkpoint_evidence_rows": [
     766,
     767,
     768,
-    769
+    769,
+    770,
+    771,
+    772
   ],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
     "active_version_id": "1bcc0041-f516-42a1-9153-9a12e94fc297",
-    "latest_scheduled_execution_id": "310",
+    "latest_scheduled_execution_id": "312",
     "latest_scheduled_execution_status": "success",
-    "latest_scheduled_execution_event_id": "X20261030090024103_CLOUD",
-    "latest_scheduled_scan_evidence_row_id": 762,
-    "latest_production_validation_execution_id": "311",
-    "latest_production_validation_status": "success",
-    "latest_production_validation_event_id": "X20261030090937153_CLOUD",
-    "latest_production_validation_evidence_row_id": 763,
+    "latest_scheduled_execution_event_id": "X20261030100024118_CLOUD",
+    "latest_scheduled_scan_evidence_row_id": 771,
     "next_edge_pointer": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
     "full_selected_ids_retained_in_receipt": true,
-    "next_edge_truncation_repaired": true,
     "dispatch_node_present": false,
     "no_recovery_task_status_mutation": true
   },
@@ -67,77 +59,81 @@
   },
   "host_and_android": {
     "windows_device_registry_status": "ONLINE_ON_SEPARATE_PERSONAL_LINK;DEDICATED_REMOTE_DESKTOP_COMMANDER_LINK_OFFLINE",
-    "windows_device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
     "windows_hostname": "DESKTOP-86ITNQ4",
-    "windows_host_heartbeat": "VERIFIED_DIRECT_READONLY_POWERSHELL",
-    "windows_last_direct_command_at_utc": "2026-10-30T09:34:11.9381627Z",
-    "windows_clock_integrity": "HOST_CLOCK_APPEARS_APPROXIMATELY_346_SECONDS_BEHIND_AUTOMATION_TIMESTAMP;NO_CORRECTION",
-    "c_drive_size_bytes": 509337399296,
-    "c_drive_free_bytes": 1089646592,
-    "c_drive_free_percent": 0.213934,
-    "c_drive_status": "CRITICALLY_LOW;HEALTH_STATUS_HEALTHY;NO_CLEANUP_PERFORMED",
-    "c_drive_previous_free_bytes": 1911418880,
-    "c_drive_decrease_since_prior_readback_bytes": 821772288,
+    "windows_host_heartbeat": "LAST_DIRECT_READONLY_POWERSHELL_VERIFIED_2026-10-30T09:34:11.9381627Z;NOT_REFRESHED_THIS_RUN",
+    "c_drive_free_bytes_last_measured": 1089646592,
+    "c_drive_free_percent_last_measured": 0.213934,
+    "c_drive_measurement_current": false,
     "h_drive_role": "HIDDEN_EFI_SYSTEM_PARTITION_DO_NOT_TOUCH",
-    "h_drive_partition_size_bytes": 4294967296,
     "android_status": "UNVERIFIED",
     "cloud_heartbeat_is_not_host_heartbeat": true
   },
   "local_repository": {
     "path": "G:/OS_Workspace/SOL-LONG-MACH",
-    "origin": "https://github.com/2708halinh-cloud/SOL-LONG-MACH.git",
     "branch": "main",
-    "last_verified_head": "e0f2258ca7a606fb3d04f1eef82fbebcf1b45f88",
-    "last_verified_status": "CLEAN; zero git status porcelain rows",
-    "local_pointer_blob": "ea6d061c601aa18c0cf994f72a0bb89b1e26e9ce",
-    "cloud_pointer_blob_at_sync": "ea6d061c601aa18c0cf994f72a0bb89b1e26e9ce",
-    "local_checkpoint_blob": "438bc40f50cc845e03375740d8c5399c446efde1",
-    "cloud_checkpoint_blob_at_sync": "438bc40f50cc845e03375740d8c5399c446efde1",
-    "local_sync_state": "MATCHES_CURRENT_CLOUD_POINTER_AND_CHECKPOINT;WORKTREE_CLEAN",
+    "last_verified_head": "2086f2751ea1f9eb21467a4081f7ca092300e4af",
+    "last_verified_status": "CLEAN",
+    "local_sync_state": "MATCHES_CLOUD_POINTER_AT_EVIDENCE_ROW_770;NO_FRESH_LOCAL_PROBE_THIS_RUN",
     "repository_recreated": false,
     "reset_or_rebase": false
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
     "default_branch": "main",
-    "main_head_before_pointer_update": "e0f2258ca7a606fb3d04f1eef82fbebcf1b45f88",
-    "pointer_commit_combined_status_before_update": {
-      "commit_sha": "e0f2258ca7a606fb3d04f1eef82fbebcf1b45f88",
-      "state": "failure",
-      "context": "Vercel",
-      "target": "https://vercel.com/sollasi/sol-long-mach/JCvsPYpZZsKaJQF1a6M8kwEfMwmi",
-      "failure_cause": "UNVERIFIED"
+    "main_head_before_pointer_update": "f68af1d33ab005f335908e0571cd127fbe68abf1",
+    "previous_pointer_commit_vercel_status": "FAILURE",
+    "previous_pointer_commit": "2086f2751ea1f9eb21467a4081f7ca092300e4af",
+    "failure_cause": "UNVERIFIED",
+    "runtime_n_plus_run_id": 41032489638,
+    "runtime_n_plus_conclusion": "success",
+    "secret_guard_run_id": 41032489575,
+    "secret_guard_conclusion": "success",
+    "pull_request_29": "OPEN_DRAFT_NOT_MERGED"
+  },
+  "source_matrix": {
+    "task": "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
+    "status": "OPEN",
+    "canonical_github_blobs": {
+      "SPACE_MAP_json": "935abcb6fca375085642abfd7a93dbf52581c45c",
+      "DAI_NGUYEN_THE_MASTER_TEACHER_20261016_md": "111fe11df990bed9357744d7dbba87de73a05290",
+      "IDENTITY_PLACES_CORE_json": "0924143c430abd9fc630bc5ef332022a3a064f8d",
+      "CROSS_CHAT_ENVIRONMENT_SURFACE_SPACE_CONTINUITY_20261016_md": "352dd9ea1f5f6e325fa543f910fdae36f83fc551",
+      "POWER_CAPABILITY_ROUTES_V2_json": "41f7b367d8c7e0e1674f3d59ad4109b841a7106d"
     },
-    "historical_open_tasks_ledger": {
-      "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
-      "blob_sha": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
-      "snapshot_observed_at": "2026-10-26T19:56:40+07:00",
-      "snapshot_updated_at": "2026-10-26T21:50:06+07:00",
-      "task_count": 29,
-      "verified_action_events": 305,
-      "state": "HISTORICAL_SNAPSHOT;NOT_CURRENT_N8N_45_ROW_TABLE"
+    "power_canonical_capabilities": 27,
+    "library_power_copy_capabilities": [
+      25,
+      21
+    ],
+    "library_power_missing_vs_canonical": {
+      "21": [
+        "agent-core-diagnostics",
+        "google-cloud-api-constellation-hypothesis",
+        "google-cloud-usage-guard",
+        "hostinger-dns-rdp-binding",
+        "remote-desktop-connection-windows",
+        "sol-win11-hyperv-gate"
+      ],
+      "25": [
+        "google-cloud-api-constellation-hypothesis",
+        "sol-win11-hyperv-gate"
+      ]
     },
-    "hellocheck_build": {
-      "run_id": 40634655369,
-      "job_name": "build-test",
-      "conclusion": "success",
-      "artifact_id": 12792534730,
-      "artifact_name": "hellocheck-r014-build-receipt",
-      "artifact_size_bytes": 987,
-      "artifact_sha256": "8d29f1e81fa4272821b0da77eb819ea8e3c1c59565ab7306f3664d79278a1614",
-      "live_testnet_utxo_verified": false,
-      "broadcast_verified": false
-    }
+    "exact_title_search_result_entries": 97,
+    "other_four_carrier_exact_title_matches": 0,
+    "global_absence_proven": false,
+    "library_overwrites": 0
   },
   "next_edges": [
-    "Preserve all 45 recovery rows as nonterminal and row 45 IN_PROGRESS; do not dispatch agents without model/credential/tools.",
-    "Verify next scheduled production scan execution 312 at 2026-10-30T10:00:00Z against active workflow version 1bcc0041-f516-42a1-9153-9a12e94fc297.",
-    "Read-only investigate Vercel FAILURE on pre-update pointer commit e0f2258; do not change deployment configuration.",
-    "C: free space is now 0.213934%; require explicit user decision before any relief action; do not delete processes, cache, Meta.db or files; never use H: EFI.",
+    "Verify next scheduled production scan execution 313 at 2026-10-30T11:00:00Z against active workflow version 1bcc0041-f516-42a1-9153-9a12e94fc297.",
+    "Read-only investigate Vercel FAILURE on pointer commit 2086f2751ea1f9eb21467a4081f7ca092300e4af; do not change deployment configuration.",
+    "Keep all 45 recovery rows nonterminal and row 45 IN_PROGRESS; do not dispatch agents without model/credential/tools.",
+    "Refresh direct host heartbeat only through an authorized read-only host route; do not infer host state from cloud or device registry.",
+    "C: last measurement was critically low; require explicit user decision before any relief action; do not delete process/cache/Meta.db/files; never use H: EFI.",
     "Verify Android independently; current Android state remains UNVERIFIED.",
-    "Continue Source Matrix from exact GitHub canonical blobs and Library IDs; do not substitute or overwrite carriers.",
-    "Continue HelloCheck only when an authorized TestNet UTXO provider is available; build success is not UTXO or broadcast proof.",
-    "Keep historical OPEN_TASKS_CURRENT.json (29-task snapshot) distinct from current n8n recovery table (45 rows)."
+    "Continue Source Matrix using exact GitHub blob hashes and Library IDs; no source substitution or overwrite.",
+    "Continue Dropbox CSV raw-byte/header readback without modifying original.",
+    "Continue HelloCheck only with an authorized TestNet UTXO provider; build success is not live UTXO or broadcast proof."
   ],
   "safety": {
     "recovery_task_status_mutations": 0,
@@ -151,15 +147,6 @@
     "library_overwrites": 0,
     "deployment_configuration_changed": false,
     "local_git_reset_or_rebase": false,
-    "local_git_worktree_clean": true
-  },
-  "library_source_matrix_search": {
-    "exact_title_search": "Two POWER_CAPABILITY_ROUTES_V2.json Library copies returned (19249 and 14485 bytes); the four exact canonical SPACE/SOUL/REALITY/TIME titles were not returned in this result set. This is not global absence.",
-    "power_copy_ids": [
-      "file_00000000801c8209ac1748585b7a306d",
-      "file_000000005e3c820992edfe37d9cf9467"
-    ],
-    "canonical_power_github_blob": "41f7b367d8c7e0e1674f3d59ad4109b841a7106d",
-    "status": "OPEN;NO_LIBRARY_OVERWRITE;NO_SOURCE_SUBSTITUTION"
+    "local_git_worktree_last_verified_clean": true
   }
 }
