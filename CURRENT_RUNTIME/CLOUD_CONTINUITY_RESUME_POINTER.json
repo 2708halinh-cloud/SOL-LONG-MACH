@@ -18,8 +18,8 @@
   },
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0712ICT.json",
-    "blob_sha": "c6ae814629c2581f812c9b0bbaa7eb12b18e2be2",
-    "commit_sha": "413940bd9d1a386bb819c30cd9e6fc2bbdff20a0",
+    "blob_sha": "4aa2a30f6e14fefb9259e50eb94702fb13514780",
+    "commit_sha": "2397d802779f77728b4b7a02636eb4a6c46d00da",
     "readback_verified": true,
     "observed_at_utc": "2026-10-30T00:12:04Z",
     "previous_checkpoint_blob_sha": "90b32a45e11648c555b66cf67b80c01fe17d03e2",
@@ -60,13 +60,19 @@
       "state": "OPEN_WORK_REMAINS",
       "created_at_utc": "2026-10-30T00:00:24.149Z",
       "filter": "event_id eq X20261030000024077_CLOUD"
-    }
+    },
+    "workflow_execution_scope": "SCHEDULED_LEDGER_SCAN_AND_RECEIPT_ONLY; no agent dispatch node",
+    "authorization_guard_finding": "selected_cloud_eligible_count=5 is not a valid authorization count: 4 selected rows have explicit CALLABLE_PROVIDER_ACCESS_ONLY; TESSERACT_ART is permission NOT_SPECIFIED_IN_SOURCE and is a false positive of the current predicate",
+    "agent_dispatch_status": "BLOCKED: assigned agent drafts are unpublished, missing model+credential, and have zero tools",
+    "workflow_code_changed": false,
+    "agent_configs_changed": false,
+    "task_dispatch_performed": false
   },
   "github_sources": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_before_pointer_update": "413940bd9d1a386bb819c30cd9e6fc2bbdff20a0",
-    "checkpoint_commit": "413940bd9d1a386bb819c30cd9e6fc2bbdff20a0",
-    "checkpoint_blob_sha": "c6ae814629c2581f812c9b0bbaa7eb12b18e2be2",
+    "main_head_before_pointer_update": "2397d802779f77728b4b7a02636eb4a6c46d00da",
+    "checkpoint_commit": "2397d802779f77728b4b7a02636eb4a6c46d00da",
+    "checkpoint_blob_sha": "4aa2a30f6e14fefb9259e50eb94702fb13514780",
     "previous_resume_pointer_blob_sha": "bdc5cb51aaec8a626e3a5f1f856b5c2ff5ba22f2",
     "previous_checkpoint_blob_sha": "90b32a45e11648c555b66cf67b80c01fe17d03e2",
     "actions_inventory_reprobed": false,
@@ -107,13 +113,14 @@
     "Resume from CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T0712ICT.json; do not rebuild the recovery ledger.",
     "Keep all 45 recovery rows nonterminal; a successful cloud scan is not task completion.",
     "Evidence row 715 independently read back and verified; preserve its OPEN_WORK_REMAINS state.",
-    "Continue only cloud-eligible read branches with explicit callable-provider permission; do not infer which five of the eight selected edges are eligible.",
+    "Do not treat the scan's selected_cloud_eligible_count as authorization; four selected rows have explicit callable permission, but their assigned agent drafts are not runnable.",
     "Keep Windows and Android UNVERIFIED until fresh authorized host/device responses are obtained; cloud heartbeat is not host heartbeat.",
     "Refresh exact Windows Survival minute-7 and X66 six-hour cron-slot coverage before changing their OPEN schedule-gap states.",
     "Keep R-014 host integration OPEN; local gate and emitter must not be written while host access is unavailable.",
     "Keep Vercel failure OPEN until authorized deployment logs are available.",
     "Keep PR #29 OPEN and Draft; no merge authorization.",
     "Preserve 29 GitHub task mappings separately from 16 n8n-only historical IDs.",
-    "Do not write Google Drive, access plaintext secrets, or delete local data, processes, caches, or Meta.db."
+    "Do not write Google Drive, access plaintext secrets, or delete local data, processes, caches, or Meta.db.",
+    "Keep TESSERACT_ART IN_PROGRESS and blocked: permission is NOT_SPECIFIED_IN_SOURCE; the workflow predicate currently counts it incorrectly."
   ]
 }
