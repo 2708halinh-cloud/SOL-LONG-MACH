@@ -1,51 +1,42 @@
 {
   "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/6.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-30T04:05:55Z",
-  "updated_at_local": "2026-10-30T11:05:55+07:00",
-  "timestamp_basis": "n8n execution 305, GitHub Actions, Dropbox metadata, Library metadata and direct Windows host probes are separately sourced. Cloud heartbeat is not host heartbeat; Android was not probed.",
+  "updated_at_utc": "2026-10-30T04:07:30Z",
+  "updated_at_local": "2026-10-30T11:07:30+07:00",
+  "timestamp_basis": "n8n execution, GitHub Actions inventory, Dropbox metadata, Library listing and direct Windows host probes are separately sourced. Cloud heartbeat is not host heartbeat.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "b06d51a52f1853cedd73b1ab9eda7640fa922030",
-    "last_pointer_commit_sha": "b5785b2c2b2ca4ca631e4c55f6e7d980bfa388f4",
-    "readback_verified": true
-  },
-  "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1045ICT.json",
-    "blob_sha": "1b0ff8736c5c2c8bc2ec01aed00a861bcc5cd2b7",
-    "commit_sha": "064c03f6c63b38b5450a8fc591fd31e064a7bf55",
+    "blob_sha": "02a1106665189e8a0667f5cee72acc05eb030e4c",
+    "last_pointer_commit_sha": "bd8dafcf208d2cf1a83c2625241e2a36b29b71b5",
     "readback_verified": true
   },
   "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1105ICT.json",
     "blob_sha": "d56a7629cd7f67e844526e45d6f37a54f5559d63",
     "commit_sha": "331d1c40c87c7da37d0db56203f7dd13f3b09659",
-    "readback_verified": true,
-    "observed_at_utc": "2026-10-30T04:05:55.107Z"
+    "readback_verified": true
   },
   "post_checkpoint_evidence_rows": [
-    734,
-    735,
-    736,
-    737,
-    738
+    739,
+    740,
+    741
   ],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
     "active_version_id": "831cdfff-794f-41f8-81b1-1d292ab6b119",
-    "latest_scheduled_execution_id": "305",
-    "latest_scheduled_execution_status": "success",
-    "latest_scheduled_execution_event_id": "X20261030040023989_CLOUD",
-    "latest_scheduled_execution_evidence_row_id": 735,
+    "latest_execution_id": "305",
+    "latest_execution_status": "success",
+    "latest_execution_event_id": "X20261030040023989_CLOUD",
+    "latest_scan_evidence_row_id": 735,
     "selected_task_count": 8,
     "selected_explicit_callable_count": 6,
     "permission_unspecified_tasks": [
       "SOL-STAMP_TRIAD_LIVE_PARTICIPATION_AND_C_DRIVE_RELIEF_20261023",
       "SOL-SOL_LOCAL_WSL_MCP_BRIDGE"
     ],
-    "task_dispatch": "NOT_PRESENT_IN_WORKFLOW_GRAPH",
+    "dispatch_node_present": false,
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
     "recovery_rows_total": 45,
     "recovery_rows_nonterminal": 45,
@@ -53,12 +44,15 @@
     "in_progress_task": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
     "task_status_mutations": 0,
     "evidence_table_id": "Sk0EFJK5NzWVpBvm",
-    "latest_evidence_row_id": 738,
+    "latest_evidence_row_id": 741,
     "verified_evidence_rows": [
       735,
       736,
       737,
-      738
+      738,
+      739,
+      740,
+      741
     ],
     "next_expected_tick_utc": "2026-10-30T05:00:00Z"
   },
@@ -67,7 +61,7 @@
     "windows_status": "ONLINE_READ_ONLY_VERIFIED",
     "host_heartbeat_utc": "2026-10-30T03:59:42.9125706Z",
     "device_status": "Online",
-    "resource_warning": "C_DRIVE_BELOW_0.5_PERCENT_FREE; detailed metrics in private n8n evidence row 737",
+    "resource_warning": "C_DRIVE_BELOW_0.5_PERCENT_FREE; details in private evidence row 737",
     "h_drive_role": "HIDDEN_EFI_SYSTEM_PARTITION_DO_NOT_TOUCH",
     "android_status": "UNVERIFIED",
     "cloud_heartbeat_is_not_host_heartbeat": true
@@ -80,6 +74,7 @@
     "gate_matches_github_main": true,
     "emitter_git_blob_sha": "26a6754e1c26adfd92e364986c9ef0823fe6fb0a",
     "emitter_matches_github_main": true,
+    "earlier_distinct_carrier_gate_blob_sha": "4ddd63a38010d9136647c871985770ad76f3055b",
     "active_route_verified": false,
     "independent_runtime_tests_run": false,
     "task_remains_open": true
@@ -90,7 +85,7 @@
     "content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
     "size_bytes": 35389440,
     "revision": "0165dc1e4794ab00000000395cdfd73",
-    "header_and_content": "NOT_READ; connector extraction cap is 5 MiB; no bytes read"
+    "content_read": "BLOCKED_BY_5MIB_TEXT_EXTRACTION_LIMIT"
   },
   "library_carrier_scan": {
     "evidence_row_id": 736,
@@ -102,31 +97,27 @@
       "/SOL_GGDV": 38,
       "/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL": 1
     },
-    "library_root_scan": "first 1500 only; traversal limit warning; not exhaustive",
+    "root_scan": "first 1500 only; traversal limit warning; not exhaustive",
     "global_absence_claim": false
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_after_checkpoint_commit": "331d1c40c87c7da37d0db56203f7dd13f3b09659",
-    "checkpoint_blob_sha": "d56a7629cd7f67e844526e45d6f37a54f5559d63",
+    "main_head_before_pointer_update": "bd8dafcf208d2cf1a83c2625241e2a36b29b71b5",
     "runtime_n_plus_run": {
-      "number": 2554,
-      "id": 41000004139,
+      "number": 2556,
+      "id": 41001038353,
       "status": "success"
     },
     "secret_guard_run": {
-      "number": 2130,
-      "id": 41000004150,
+      "number": 2132,
+      "id": 41001038265,
       "status": "success"
     },
     "windows_survival_latest_schedule_run": {
       "number": 391,
       "id": 40988294011,
       "status": "success",
-      "missing_slots_utc": [
-        "2026-10-30T02:07:00Z",
-        "2026-10-30T03:07:00Z"
-      ]
+      "no_newer_run_observed_as_of_2026_10_30T04_07Z": true
     },
     "x66_latest_schedule_run": {
       "number": 40,
@@ -141,7 +132,7 @@
       "next_slot_utc": "2026-10-30T06:41:00Z"
     },
     "latest_main_vercel_status": "pending",
-    "latest_main_vercel_failure_cause_verified": false
+    "vercel_failure_cause_verified": false
   },
   "agent_readiness": {
     "project_id": "6qKpRmicIGHA5snY",
@@ -161,21 +152,19 @@
     "task_status_mutations": 0,
     "plaintext_credentials_accessed": false,
     "deployment_configuration_changed": false,
-    "pull_requests_merged": 0,
-    "wallet_created": false,
-    "transaction_signed_or_broadcast": false
+    "pull_requests_merged": 0
   },
   "next_edges": [
-    "Verify n8n execution at 2026-10-30T05:00:00Z and its exact evidence row.",
-    "Keep all 45 recovery rows nonterminal and the single IN_PROGRESS row unchanged.",
-    "C: is below 0.5 percent free; do not delete processes, cache, Meta.db or files automatically; a user-approved non-destructive relief plan is required.",
-    "Do not use H:; it is a hidden EFI System Partition.",
-    "Preserve local G: worktree, 7 ahead commits, modified and untracked files; do not pull, reset, checkout, push or overwrite.",
+    "Verify n8n execution at 2026-10-30T05:00:00Z and exact evidence row.",
+    "Keep all 45 recovery rows nonterminal and one IN_PROGRESS task unchanged.",
+    "C: below 0.5 percent free; no automatic deletion; user decision required for any non-destructive relief plan.",
+    "Never use H:; it is a hidden EFI System Partition.",
+    "Preserve local G: worktree, 7 ahead commits, modified and untracked files; no pull/reset/checkout/push/overwrite.",
     "R-014 source blobs match GitHub main; active route wiring and independent runtime tests remain OPEN.",
     "Continue Dropbox CSV header read only through an authorized supported chunked/byte-range route; do not write or move original.",
-    "Continue exact-name carrier search in mapped source-bound parent folders; no substitution or global absence claim.",
+    "Continue source-bound Library search; no exact matches in scanned folders is not global absence.",
     "Keep Android UNVERIFIED until direct authorized heartbeat.",
-    "Monitor Vercel pending; do not change deployment configuration.",
-    "Monitor Windows Survival schedule, X66 at 06:17Z and R-014 Root Carrier Protection at 06:41Z."
+    "Monitor Windows Survival schedule; #391 remains latest. X66 next 06:17Z; R-014 Root Carrier Protection next 06:41Z.",
+    "Monitor Vercel pending through authorized read-only status/log route; no deployment changes."
   ]
 }
