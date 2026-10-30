@@ -1,45 +1,49 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/6.6",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/6.8",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": null,
-  "updated_at_local": null,
-  "recorded_at_provider_utc": "2026-10-30T05:38:46.042Z",
-  "timestamp_basis": "Checkpoint and evidence row provider readbacks. Row 751 occurred_at is unverified; row 752 is the append-only timestamp correction. Do not infer a fresh host heartbeat from cloud activity.",
+  "updated_at_utc": "2026-10-30T06:44:17.868Z",
+  "updated_at_local": "2026-10-30T13:44:17.868+07:00",
+  "timestamp_basis": "Checkpoint and n8n evidence row provider readbacks. Row 756 occurred_at is null; provider createdAt is used for ordering. No fresh host heartbeat. GitHub Actions and n8n schedule activity are cloud signals only.",
   "previous_pointer": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "8c48daacc8996a429661848b37b205264ad828db",
-    "last_pointer_commit_sha": "1c8d4a933ea2f76b440e4ab113d0340500386222",
+    "blob_sha": "15136e64e58f31c63a5e13d3a06d46afe14e577e",
+    "last_pointer_commit_sha": "a395880dbb533149e02dd0f78789e422722dd84b",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1200ICT.json",
-    "blob_sha": "cc80b34d5ae9a2666d4b36e70fa43e9ae153bc15",
-    "commit_sha": "6fd8177e566185fa893e9c1bab602a41fd61fb5e",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1238ICT.json",
     "blob_sha": "d1d8374a7d6b67ba99f48c6a8703fb2b098fe70d",
     "commit_sha": "dfcb6c2f63d8be72ff25a6e8cdb81590b3123c5f",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1344ICT.json",
+    "blob_sha": "5d3ea5ad8d4867e10d2dd48c333b8918020e91bc",
+    "commit_sha": "1127993d6fb2284b785b30ae0e88ede5f639008d",
     "readback_verified": true
   },
   "included_evidence_rows": [
     749,
     750,
     751,
-    752
+    752,
+    753,
+    754,
+    755,
+    756
   ],
   "post_checkpoint_evidence_rows": [],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
-    "active_version_id": "831cdfff-794f-41f8-81b1-1d292ab6b119",
-    "latest_scheduled_execution_id": "306",
+    "active_version_id": "f37f595c-7197-4a7a-9c63-7aead22cda72",
+    "latest_scheduled_execution_id": "307",
     "latest_scheduled_execution_status": "success",
-    "latest_scheduled_execution_event_id": "X20261030050023989_CLOUD",
-    "latest_scan_evidence_row_id": 748,
-    "next_expected_tick_utc": "2026-10-30T06:00:00Z",
+    "latest_scheduled_execution_event_id": "X20261030060024027_CLOUD",
+    "latest_scan_evidence_row_id": 755,
+    "guard_repair_evidence_row_id": 756,
+    "next_expected_tick_utc": "2026-10-30T07:00:00Z",
     "dispatch_node_present": false,
     "no_manual_execution_started": true
   },
@@ -49,117 +53,81 @@
     "rows_total": 45,
     "rows_nonterminal": 45,
     "rows_terminal": 0,
-    "status_counts": {
-      "OPEN_ROUTED_NONCOERCIVE": 27,
-      "IN_PROGRESS": 1,
-      "ASSIGNED_DRAFT_WAITING_CREDENTIAL": 5,
-      "other_nonterminal": 12
-    },
+    "explicit_callable_provider_rows_without_host_offline": 19,
+    "blocked_or_other_permission_rows": 26,
     "in_progress_row_id": 45,
     "in_progress_task_id": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
     "task_status_mutations": 0
   },
   "evidence_table": {
     "id": "Sk0EFJK5NzWVpBvm",
-    "latest_row_id": 752,
-    "latest_event_id": "X20261030053836_CLOUD_READBACK_TIME_CORRECTION",
-    "latest_row_provider_created_at": "2026-10-30T05:38:46.042Z",
+    "latest_row_id": 756,
+    "latest_event_id": "X20261030134100_N8N_PERMISSION_GUARD_REPAIR",
+    "latest_row_provider_created_at": "2026-10-30T06:44:17.868Z",
     "latest_row_readback_verified": true,
-    "row_751_event_time": "UNVERIFIED",
-    "row_752_correction": "VERIFIED"
+    "row_755_selection_mismatch_verified": true,
+    "row_756_guard_repair_readback_verified": true
   },
   "host_and_android": {
     "windows_device_registry_status": "OFFLINE_LAST_KNOWN",
-    "windows_device_last_seen": "66h ago at previous registry readback",
     "windows_host_heartbeat": "UNVERIFIED_NO_FRESH_DIRECT_PROBE",
     "android_status": "UNVERIFIED",
     "cloud_heartbeat_is_not_host_heartbeat": true,
     "c_drive_last_known_free_percent": 0.418,
-    "c_drive_observed_at_utc": "2026-10-30T03:59:42.9125706Z",
     "c_drive_readback_freshness": "STALE_NOT_CURRENT",
     "h_drive_role": "HIDDEN_EFI_SYSTEM_PARTITION_DO_NOT_TOUCH"
   },
-  "agent_readiness": {
-    "project_id": "6qKpRmicIGHA5snY",
-    "project_credentials": 0,
-    "agents_total": 5,
-    "agents_unpublished": 5,
-    "agents_unrunnable": 5,
-    "missing_model_and_credential": 5,
-    "configured_tools": 0,
-    "dispatch_performed": false
-  },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_before_pointer_update": "dfcb6c2f63d8be72ff25a6e8cdb81590b3123c5f",
-    "checkpoint_blob_sha": "d1d8374a7d6b67ba99f48c6a8703fb2b098fe70d",
-    "runtime_n_plus_run": {
-      "number": 2564,
-      "id": 41006117613,
-      "status": "success"
-    },
-    "secret_guard_run": {
-      "number": 2140,
-      "id": 41006117593,
-      "status": "success"
-    },
+    "main_head_before_pointer_update": "1127993d6fb2284b785b30ae0e88ede5f639008d",
+    "checkpoint_blob_sha": "5d3ea5ad8d4867e10d2dd48c333b8918020e91bc",
     "previous_pointer_commit_vercel_status": {
-      "commit_sha": "1c8d4a933ea2f76b440e4ab113d0340500386222",
-      "status": "failure",
-      "target": "https://vercel.com/sollasi/sol-long-mach/3iV7S3fusW4HGQx96MMagfqL2grT",
+      "commit_sha": "a395880dbb533149e02dd0f78789e422722dd84b",
+      "state": "failure",
+      "target": "https://vercel.com/sollasi/sol-long-mach/7ZJfpbFBcHHtZkiDvXY8Uim7WT8f",
       "failure_cause_verified": false
     },
-    "deployment_configuration_changed": false
-  },
-  "source_matrix": {
-    "task": "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
-    "status": "OPEN",
-    "canonical_power_github_blob_sha": "41f7b367d8c7e0e1674f3d59ad4109b841a7106d",
-    "canonical_power_capabilities": 27,
-    "library_power_copies": [
-      {
-        "file_id": "file_00000000801c8209ac1748585b7a306d",
-        "bytes": 19249,
-        "sha256": "9237383a078679bc764485fc4c73b37a65e24355ff30e797694ef2c4e1aa7a25",
-        "git_blob_sha1": "81798e06a806f5e29277af84389925c5bb9a3652",
-        "capabilities": 25
+    "latest_cloud_actions": {
+      "r014_root_carrier_protection": {
+        "run_number": 30,
+        "run_id": 41013919511,
+        "conclusion": "success"
       },
-      {
-        "file_id": "file_000000005e3c820992edfe37d9cf9467",
-        "bytes": 14485,
-        "sha256": "37e9dbcf98f5d68a57d860641663dd58214902b8f170d426ef7d422620e4537d",
-        "git_blob_sha1": "5b3f157301f88ff8ef7ebcf558d5387724ab4d75",
-        "capabilities": 21
+      "architecture_materials": {
+        "run_number": 32,
+        "run_id": 41013837722,
+        "conclusion": "success"
+      },
+      "x66": {
+        "run_number": 41,
+        "run_id": 41010810228,
+        "conclusion": "success"
+      },
+      "runtime_n_plus": {
+        "run_number": 2566,
+        "run_id": 41009726092,
+        "conclusion": "success"
+      },
+      "secret_guard": {
+        "run_number": 2142,
+        "run_id": 41009726122,
+        "conclusion": "success"
       }
-    ],
-    "canonical_only_vs_25": [
-      "sol-win11-hyperv-gate",
-      "google-cloud-api-constellation-hypothesis"
-    ],
-    "25_only_vs_21": [
-      "remote-desktop-connection-windows",
-      "google-cloud-usage-guard",
-      "hostinger-dns-rdp-binding",
-      "agent-core-diagnostics"
-    ],
-    "other_canonical_carriers_still_open": [
-      "SPACE_MAP.json",
-      "DAI_NGUYEN_THE_MASTER_TEACHER_20261016.md",
-      "IDENTITY_PLACES_CORE.json",
-      "CROSS_CHAT_ENVIRONMENT_SURFACE_SPACE_CONTINUITY_20261016.md"
-    ],
-    "library_write_or_overwrite": false
+    },
+    "pr_29": {
+      "state": "open",
+      "draft": true,
+      "merged": false
+    }
   },
-  "dropbox_sensor_csv": {
-    "account_link": "Outlook",
-    "path_display": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
-    "file_id": "id:gvG29tEleJwAAAAAAAACOw",
-    "revision": "0165dc1e4794ab00000000395cdfd73",
-    "size_bytes": 35389440,
-    "content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
-    "raw_bytes_downloaded": false,
-    "header_read": false
-  },
+  "next_edges": [
+    "Verify scheduled execution 308 at 2026-10-30T07:00:00Z; confirm callable-only next_edge and read its receipt.",
+    "Keep all 45 recovery rows nonterminal; preserve row 45 IN_PROGRESS.",
+    "Read the new pointer commit's Actions and Vercel status without creating another pointer commit solely for its own deployment result.",
+    "Investigate the prior Vercel FAILURE through an authorized read-only log route; no deployment configuration changes.",
+    "Continue Source Matrix and Dropbox raw-byte readback from prior verified SHA/revision; do not overwrite originals.",
+    "Wait for direct authorized Windows host heartbeat before local work; Android remains UNVERIFIED."
+  ],
   "safety": {
     "recovery_task_status_mutations": 0,
     "google_drive_writes": 0,
@@ -167,17 +135,9 @@
     "process_or_cache_deletions": 0,
     "meta_db_changes": 0,
     "plaintext_credentials_accessed": false,
-    "deployment_configuration_changed": false,
+    "agent_publishes": 0,
     "pull_requests_merged": 0,
-    "library_overwrites": 0
-  },
-  "next_edges": [
-    "Verify scheduled n8n execution 307 at 2026-10-30T06:00:00Z and read its exact evidence row.",
-    "Investigate Vercel FAILURE on previous pointer commit through an authorized read-only log/status route; do not change deployment configuration.",
-    "Keep all 45 recovery rows nonterminal and preserve row 45 IN_PROGRESS.",
-    "Do not dispatch agents while all five remain unpublished/unrunnable and no project credential exists.",
-    "Preserve both Library POWER copies; resolve canonical source direction before any Library write; continue the other four canonical carrier lookups.",
-    "Obtain an authorized direct raw-byte route for Dropbox CSV header retrieval; do not claim content from metadata/hash alone.",
-    "Wait for fresh authorized Windows host heartbeat before local work; Android remains UNVERIFIED; treat C: reading as stale and never touch H:."
-  ]
+    "library_overwrites": 0,
+    "deployment_configuration_changed": false
+  }
 }
