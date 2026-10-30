@@ -102,7 +102,7 @@
     "workflow_code_audit": {
       "workflow_version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
       "node": "Deterministic OPEN scan",
-      "permission_predicate": "picked.filter(x => !String(x.permission||'').includes('WINDOWS_HOST_OFFLINE'))",
+      "permission_predicate": "explicit permission includes CALLABLE_PROVIDER_ACCESS_ONLY AND excludes WINDOWS_HOST_OFFLINE",
       "interpretation": "selected_cloud_eligible_count is not a reliable authorization count: the predicate only excludes WINDOWS_HOST_OFFLINE and admits a task whose permission is NOT_SPECIFIED_IN_SOURCE.",
       "picked_task_ids": [
         "SOL-WINDOWS_RECOVERY_DISK_SPACE",
@@ -132,7 +132,9 @@
       "task_dispatch_performed": false,
       "evidence_row_ids": [
         717
-      ]
+      ],
+      "corrected_permission_metric": "selected_explicit_callable",
+      "legacy_exclusion_only_count_recorded_for_comparison": true
     },
     "agent_runnability_audit": {
       "discovery_project_id": "6qKpRmicIGHA5snY",
@@ -208,7 +210,44 @@
         "readback_verified": true
       }
     ],
-    "latest_evidence_table_row_id": 717
+    "latest_evidence_table_row_id": 718,
+    "workflow_version": {
+      "active": true,
+      "active_version_id": "831cdfff-794f-41f8-81b1-1d292ab6b119",
+      "prior_active_version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
+      "draft_tested_before_publish": true,
+      "published": true,
+      "change": "Require explicit CALLABLE_PROVIDER_ACCESS_ONLY and exclude WINDOWS_HOST_OFFLINE when counting callable tasks.",
+      "no_agent_dispatch_added": true,
+      "no_task_status_mutation_added": true
+    },
+    "latest_scheduled_execution_id": "300",
+    "latest_scheduled_execution_status": "success",
+    "latest_manual_validation_execution": {
+      "execution_id": "301",
+      "mode": "manual",
+      "status": "success",
+      "started_at_utc": "2026-10-30T00:24:24.959Z",
+      "stopped_at_utc": "2026-10-30T00:24:26.871Z",
+      "event_id": "X20261030002426739_CLOUD",
+      "evidence_row_id": 718,
+      "evidence_row_readback_verified": true,
+      "selected_explicit_callable_count": 1,
+      "permission_unspecified_task_ids": [
+        "SV-20261020-01",
+        "SV-20261020-02",
+        "SV-20261020-03",
+        "SV-20261020-04",
+        "SV-20261020-05",
+        "SV-20261020-01-READBACK",
+        "SV-20261020-ROOTS-ARCHIVES"
+      ],
+      "legacy_exclusion_only_count": 8,
+      "workflow_active_version_after_publish": "831cdfff-794f-41f8-81b1-1d292ab6b119"
+    },
+    "recovery_rows_total_after_manual_validation": 45,
+    "recovery_rows_nonterminal_after_manual_validation": 45,
+    "recovery_rows_terminal_after_manual_validation": 0
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
@@ -285,20 +324,22 @@
     "host_operations": 0,
     "agent_invocations": 0,
     "agent_configs_modified": false,
-    "workflow_modified": false,
+    "workflow_modified": true,
     "n8n_evidence_rows_appended": 2,
     "library_source_writes": 0,
-    "github_source_file_writes": 0
+    "github_source_file_writes": 0,
+    "workflow_published": true
   },
   "next_edges": [
     "Resume from this checkpoint; do not rebuild the recovery ledger.",
     "Keep all 45 recovery rows nonterminal; scan success is not task completion.",
-    "Cloud scan execution 300 and evidence row 715 were independently read back; audit evidence rows 716 and 717 were also independently read back.",
-    "Do not treat selected_cloud_eligible_count=5 as five authorized tasks: the code predicate admits TESSERACT_ART despite permission NOT_SPECIFIED_IN_SOURCE.",
-    "The active continuity workflow is a ledger scanner/receipt writer only; it has no agent-dispatch node.",
-    "The INTEGRITY, READBACK and OPEN-ROUTER agent drafts are unpublished, missing model+credential and have zero tools; do not invoke or publish them without valid configuration and authority.",
-    "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC remains OPEN: the six-stone manifest and MIND carrier match Library/GitHub; POWER registry diverges (25 vs 27 capabilities); exact SPACE, SOUL, REALITY and TIME carrier files are not in the direct Library folder listings, which is not deletion proof.",
-    "Do not overwrite the Library POWER registry or replace missing canonical carriers until the source-of-truth and target write scope are explicitly established.",
+    "Scheduled execution 300 and row 715 were verified; audit rows 716/717 and manual validation execution 301 with row 718 were also read back.",
+    "Workflow version 831cdfff-794f-41f8-81b1-1d292ab6b119 is now active; it counts only explicit CALLABLE_PROVIDER_ACCESS_ONLY permission and excludes WINDOWS_HOST_OFFLINE.",
+    "The manual test counted 1 explicit callable among its selected 8; 7 selected rows lacked explicit callable permission. The next scheduled production scan must verify the active version's receipt.",
+    "The workflow remains a ledger scanner/receipt writer only; it does not dispatch agents or execute recovery tasks.",
+    "INTEGRITY, READBACK and OPEN-ROUTER agent drafts remain unpublished, missing model+credential and have zero tools; no invocation or configuration was attempted.",
+    "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC remains OPEN: manifest and MIND match; POWER registry diverges by two GitHub-only capabilities; exact SPACE, SOUL, REALITY and TIME carrier files were not found in direct Library folder listings, which is not deletion proof.",
+    "Do not overwrite the Library POWER registry or replace missing canonical carriers until source-of-truth and target write scope are established.",
     "Keep Windows and Android UNVERIFIED until fresh authorized host/device responses are obtained; cloud heartbeat is not host heartbeat.",
     "Refresh exact Windows Survival minute-7 and X66 six-hour cron-slot coverage before changing their OPEN schedule-gap states.",
     "Keep R-014 host integration OPEN; local gate and emitter must not be written while host access is unavailable.",
