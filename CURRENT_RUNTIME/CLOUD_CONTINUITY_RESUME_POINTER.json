@@ -1,115 +1,98 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.3",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-30T13:12:45.925Z",
-  "updated_at_local": "2026-10-30T20:12:45.925+07:00",
-  "timestamp_basis": "Checkpoint file created on GitHub main, fetched back, and blob SHA verified; n8n execution 315, recovery table 45 rows, evidence rows 777-779, GitHub current pointer status, direct Windows read-only host and local repository readback were verified.",
+  "updated_at_utc": "2026-10-30T13:19:58.830Z",
+  "updated_at_local": "2026-10-30T20:19:58.830+07:00",
   "previous_pointer": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
-    "blob_sha": "629769aba05177a2bcd4d84f90685550265b3bd6",
-    "last_pointer_commit_sha": "b4fe3c6f51c51df59b63fcd1a715c1583f86084b",
+    "blob_sha": "bfa9d3e2c29794f6747739a27fd3e68bc661480b",
+    "commit_sha": "e27df9c03023e677180dc6ac566153273c49756c",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1924ICT.json",
-    "blob_sha": "a93783adbb36c52d9198f6cb6fa00abdb7734d71",
-    "commit_sha": "e54396681a98edc05f4e613fad1c803061a4cd3e",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T2012ICT.json",
     "blob_sha": "2d7eedd28171c959e807dd236aa634c2a49bda16",
     "commit_sha": "ecdefc7ef0af8a5891a24fe3997f15f5515f6b9c",
     "readback_verified": true
   },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T2020ICT.json",
+    "blob_sha": "094f385c2b9223f6ff20933ff2e03d9ca467f030",
+    "commit_sha": "aa96ad32155d27f04590df817c9212b925109fa7",
+    "readback_verified": true
+  },
   "included_evidence_rows": [
     777,
     778,
-    779
+    779,
+    780,
+    781,
+    782
   ],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
-    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
-    "active": true,
     "active_version_id": "1bcc0041-f516-42a1-9153-9a12e94fc297",
-    "latest_scheduled_execution_id": "315",
-    "latest_scheduled_execution_status": "success",
-    "latest_scheduled_execution_event_id": "X20261030130024184_CLOUD",
-    "latest_scheduled_scan_evidence_row_id": 777,
-    "pending_tasks": 45,
+    "execution_id": "315",
+    "status": "SUCCESS",
+    "event_id": "X20261030130024184_CLOUD",
+    "evidence_row_id": 777,
+    "task_total": 45,
+    "task_nonterminal": 45,
+    "task_closed": 0,
     "callable_pending": 19,
+    "blocked_pending": 26,
     "selected_callable": 8,
-    "blocked_tasks": 26,
-    "next_edge_pointer": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
-    "full_selected_ids_retained_in_receipt": true,
-    "dispatch_node_present": false,
-    "no_recovery_task_status_mutation": true
+    "next_edge": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+    "dispatch_node_present": false
   },
-  "recovery_table": {
-    "id": "rSPFIOWbS7cfNJ8z",
-    "project_id": "6qKpRmicIGHA5snY",
-    "rows_total": 45,
-    "rows_nonterminal": 45,
-    "rows_terminal": 0,
-    "in_progress_row_id": 45,
-    "in_progress_task_id": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
-    "task_status_mutations": 0
-  },
-  "host_and_android": {
-    "windows_device_registry_status": "ONLINE_ON_SEPARATE_PERSONAL_ACCOUNT; DIRECT_READONLY_POWERSHELL_VERIFIED",
+  "latest_host": {
     "device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
-    "windows_host_heartbeat": "DIRECT_READONLY_READBACK_2026-10-30T13:05:43.2403324Z",
-    "dedicated_remote_desktop_commander": "OFFLINE; last seen about 75h",
-    "android_status": "UNVERIFIED",
-    "c_drive_total_bytes": 509337399296,
+    "host": "DESKTOP-86ITNQ4",
+    "status": "ONLINE_BY_DIRECT_READONLY_POWERSHELL",
+    "android": "UNVERIFIED",
+    "dedicated_remote_desktop_commander": "OFFLINE",
     "c_drive_free_bytes": 698064896,
     "c_drive_free_percent": 0.13705353209186227,
-    "c_drive_measurement_current": true,
-    "c_drive_prior_checkpoint_free_bytes": 1089646592,
-    "c_drive_delta_free_bytes": -391581696,
-    "c_drive_cleanup_performed": false,
-    "h_drive_role": "PRIOR_VERIFIED_HIDDEN_EFI_SYSTEM_PARTITION_DO_NOT_TOUCH",
+    "c_drive_cleanup": false,
     "cloud_heartbeat_is_not_host_heartbeat": true
   },
   "local_repository": {
     "path": "G:/OS_Workspace/SOL-LONG-MACH",
     "branch": "main",
-    "last_verified_head": "b4fe3c6f51c51df59b63fcd1a715c1583f86084b",
-    "last_verified_status": "CLEAN",
-    "local_pointer_blob_sha": "629769aba05177a2bcd4d84f90685550265b3bd6",
-    "local_checkpoint_blob_sha": "a93783adbb36c52d9198f6cb6fa00abdb7734d71",
-    "local_sync_state": "MATCHES_PREVIOUS_CURRENT_CLOUD_POINTER; new checkpoint/pointer commits not yet fast-forwarded",
-    "repository_recreated": false,
-    "reset_or_rebase": false
+    "last_verified_head": "e27df9c03023e677180dc6ac566153273c49756c",
+    "working_tree": "CLEAN",
+    "matches_previous_pointer": true
   },
-  "github": {
-    "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "default_branch": "main",
-    "pointer_commit_vercel_status": "FAILURE",
-    "pointer_commit": "b4fe3c6f51c51df59b63fcd1a715c1583f86084b",
-    "failure_target": "https://vercel.com/sollasi/sol-long-mach/H16vtEbaWPMd4U5GSBiGjoRwuLi6",
-    "failure_cause": "UNVERIFIED"
+  "vercel": {
+    "last_verified_commit": "e27df9c03023e677180dc6ac566153273c49756c",
+    "status": "PENDING",
+    "target": "https://vercel.com/sollasi/sol-long-mach/GzEaNC3v2eLTmwcERjtEZhYHTZEh",
+    "older_pointer_failure_cause": "UNVERIFIED"
+  },
+  "tesseract_art": {
+    "task_status": "IN_PROGRESS",
+    "candidate_archives": 8,
+    "raw_byte_materialization": "DENIED_FOR_ALL_8",
+    "port_8777_listener_matches": 0,
+    "browser_runtime_verified": false,
+    "token_read": false
   },
   "next_edges": [
-    "Fast-forward local main from the verified checkpoint/pointer after cloud pointer update; worktree was clean before sync.",
-    "Obtain user decision before any C: cleanup or file movement; no autonomous cleanup.",
-    "Verify scheduled production execution 316 and its exact evidence row.",
-    "Investigate current Vercel FAILURE through authenticated read-only deployment/log route.",
-    "Continue independent callable cloud tasks without changing recovery statuses.",
-    "Read Hostinger DNS records only through an authorized non-interactive read-only route; no DNS writes.",
-    "Continue Source Matrix and Dropbox CSV readback without replacing originals.",
-    "Verify Android independently; status remains UNVERIFIED.",
-    "Keep row 45 IN_PROGRESS and preserve its non-destructive HTML/JS test edge."
+    "Fast-forward local main to this new pointer after pointer commit is verified.",
+    "Verify scheduled execution 316.",
+    "Obtain user decision before C: cleanup.",
+    "Investigate Vercel pending deployment with authenticated read-only logs.",
+    "Obtain authorized raw-byte access or source-bound readback for TESSERACT candidates; keep task 45 IN_PROGRESS.",
+    "Continue callable cloud branches without task status changes.",
+    "Android remains UNVERIFIED."
   ],
   "safety": {
-    "recovery_task_status_mutations": 0,
+    "task_status_mutations": 0,
     "google_drive_writes": 0,
     "host_file_writes": 0,
-    "process_or_cache_deletions": 0,
-    "meta_db_changes": 0,
+    "process_cache_meta_db_deletions": 0,
     "plaintext_credentials_accessed": false,
     "agent_publishes": 0,
-    "pull_requests_merged": 0,
+    "pr_merges": 0,
     "library_overwrites": 0,
     "deployment_configuration_changed": false,
     "local_git_reset_or_rebase": false
