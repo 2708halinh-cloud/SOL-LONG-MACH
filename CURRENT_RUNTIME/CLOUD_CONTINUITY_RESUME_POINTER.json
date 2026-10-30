@@ -1,23 +1,23 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.4",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.5",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-30T13:19:58.830Z",
-  "updated_at_local": "2026-10-30T20:19:58.830+07:00",
+  "updated_at_utc": "2026-10-30T13:26:46.983Z",
+  "updated_at_local": "2026-10-30T20:26:46.983+07:00",
   "previous_pointer": {
-    "blob_sha": "bfa9d3e2c29794f6747739a27fd3e68bc661480b",
-    "commit_sha": "e27df9c03023e677180dc6ac566153273c49756c",
+    "blob_sha": "a07e8b78f8dfdacbbe373f79d54df9d74267cc62",
+    "commit_sha": "7e94ec05ee3d02f8977d6f94289106c515dcdc6d",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T2012ICT.json",
-    "blob_sha": "2d7eedd28171c959e807dd236aa634c2a49bda16",
-    "commit_sha": "ecdefc7ef0af8a5891a24fe3997f15f5515f6b9c",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T2020ICT.json",
     "blob_sha": "094f385c2b9223f6ff20933ff2e03d9ca467f030",
     "commit_sha": "aa96ad32155d27f04590df817c9212b925109fa7",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T2027ICT.json",
+    "blob_sha": "1a5258b06b10d26a9a11c784b9f5e4975df5b894",
+    "commit_sha": "6aa470c92fb8d5404ed3b574158259fc031eec1e",
     "readback_verified": true
   },
   "included_evidence_rows": [
@@ -26,7 +26,11 @@
     779,
     780,
     781,
-    782
+    782,
+    783,
+    784,
+    785,
+    786
   ],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -50,40 +54,41 @@
     "status": "ONLINE_BY_DIRECT_READONLY_POWERSHELL",
     "android": "UNVERIFIED",
     "dedicated_remote_desktop_commander": "OFFLINE",
-    "c_drive_free_bytes": 698064896,
-    "c_drive_free_percent": 0.13705353209186227,
+    "c_drive_free_bytes": 748457984,
+    "c_drive_free_percent": 0.14694738400017543,
     "c_drive_cleanup": false,
     "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "hosposik": {
+    "task_id": "SOL-HOSPOSIK_DOMAIN_MEMORY_RUNTIME",
+    "status": "OPEN_ROUTED_NONCOERCIVE",
+    "public_txt_verified": true,
+    "public_a_aaaa_cname": "NO_ADDRESS_OR_ALIAS_DATA",
+    "public_route": "UNAVAILABLE",
+    "dns_writes": 0,
+    "paid_service_created": false
   },
   "local_repository": {
     "path": "G:/OS_Workspace/SOL-LONG-MACH",
     "branch": "main",
-    "last_verified_head": "e27df9c03023e677180dc6ac566153273c49756c",
+    "last_verified_head": "7e94ec05ee3d02f8977d6f94289106c515dcdc6d",
     "working_tree": "CLEAN",
-    "matches_previous_pointer": true
+    "last_verified_pointer_blob": "a07e8b78f8dfdacbbe373f79d54df9d74267cc62",
+    "last_verified_checkpoint_blob": "094f385c2b9223f6ff20933ff2e03d9ca467f030"
   },
   "vercel": {
-    "last_verified_commit": "e27df9c03023e677180dc6ac566153273c49756c",
+    "last_verified_commit": "7e94ec05ee3d02f8977d6f94289106c515dcdc6d",
     "status": "PENDING",
-    "target": "https://vercel.com/sollasi/sol-long-mach/GzEaNC3v2eLTmwcERjtEZhYHTZEh",
+    "target": "https://vercel.com/sollasi/sol-long-mach/FgH6Ty8nz245iPeEnVfcHkxK6JoP",
     "older_pointer_failure_cause": "UNVERIFIED"
   },
-  "tesseract_art": {
-    "task_status": "IN_PROGRESS",
-    "candidate_archives": 8,
-    "raw_byte_materialization": "DENIED_FOR_ALL_8",
-    "port_8777_listener_matches": 0,
-    "browser_runtime_verified": false,
-    "token_read": false
-  },
   "next_edges": [
-    "Fast-forward local main to this new pointer after pointer commit is verified.",
-    "Verify scheduled execution 316.",
-    "Obtain user decision before C: cleanup.",
-    "Investigate Vercel pending deployment with authenticated read-only logs.",
-    "Obtain authorized raw-byte access or source-bound readback for TESSERACT candidates; keep task 45 IN_PROGRESS.",
-    "Continue callable cloud branches without task status changes.",
-    "Android remains UNVERIFIED."
+    "Fast-forward local main to this checkpoint/pointer after the pointer commit is verified.",
+    "Verify scheduled execution 316 at the next hourly slot.",
+    "Obtain user decision before C: cleanup or file movement.",
+    "Continue HOSPOSIK only after approved HTTPS origin and price decision; no DNS writes.",
+    "Continue TESSERACT Art only with an authorized raw-byte or source-bound readback path.",
+    "Keep all recovery rows nonterminal and row 45 IN_PROGRESS."
   ],
   "safety": {
     "task_status_mutations": 0,
@@ -94,6 +99,8 @@
     "agent_publishes": 0,
     "pr_merges": 0,
     "library_overwrites": 0,
+    "dns_writes": 0,
+    "billed_services_created": 0,
     "deployment_configuration_changed": false,
     "local_git_reset_or_rebase": false
   }
