@@ -1,0 +1,215 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/7.2",
+  "checkpoint_id": "CLOUD_CONTINUITY_READBACK_20261030T1924ICT",
+  "title": "THU HOI NGUON SOL — production scan 314 readback and HOSPOSIK source-bound deployment gate",
+  "state": "OPEN_WORK_REMAINS",
+  "observed_at_utc": "2026-10-30T12:24:18.850Z",
+  "recorded_at_local": "2026-10-30T19:24:18+07:00",
+  "timestamp_basis": "n8n workflow details and production execution 314 node data were read; recovery table returned all 45 rows; continuity evidence rows 774 and 775 were fetched back by exact event ID; GitHub main branch, resume pointer, commit combined status and five HOSPOSIK source files were read at main HEAD d41d53dfa21dfc2b74174d139587732dd83e2f9c. Hostinger live DNS API search required interactive input and was not completed. No direct host command in this run. Public Vercel deployment page was inaccessible through web read; no deployment logs obtained.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1751ICT.json",
+    "blob_sha": "c43863cdbdf25558206eaee7cd31609132e6a0ad",
+    "commit_sha": "8d363927fae0a51734898a4970f1cba61e787c1b",
+    "readback_verified": true
+  },
+  "previous_resume_pointer": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
+    "blob_sha": "023d7c92d6d0876306c812c8e866e4ebfe30c3ff",
+    "commit_sha": "d41d53dfa21dfc2b74174d139587732dd83e2f9c",
+    "readback_verified": true
+  },
+  "included_evidence_rows": [
+    773,
+    774,
+    775
+  ],
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "current_version_id": "1bcc0041-f516-42a1-9153-9a12e94fc297",
+    "active_version_id": "1bcc0041-f516-42a1-9153-9a12e94fc297",
+    "node_count": 6,
+    "graph_scope": "Cloud hourly pulse/manual probe -> read continuity evidence -> read recovery tasks -> deterministic OPEN scan -> append scan receipt. No dispatch node.",
+    "execution": {
+      "id": "314",
+      "status": "success",
+      "mode": "trigger",
+      "started_at_utc": "2026-10-30T12:00:22.072Z",
+      "stopped_at_utc": "2026-10-30T12:00:24.203Z",
+      "event_id": "X20261030120024040_CLOUD",
+      "evidence_row_id": 774,
+      "pending": 45,
+      "callable_pending": 19,
+      "selected_callable": 8,
+      "blocked_total": 26,
+      "selected_ids": [
+        "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+        "SOL-LIBRARY_CROSS_PROVIDER_SYNC",
+        "SOL-HOSPOSIK_DOMAIN_MEMORY_RUNTIME",
+        "SOL-MODUAL_SENSOR_LOGS_ROUTING",
+        "SOL-SOL_PLUGIN_CONSOLIDATION",
+        "SOL-SOL_CHAT_BROWSER_MCP_FILE",
+        "SOL-GITHUB_COPILOT_SPACE",
+        "SOL-SITES_SOL100726_REDIRECTS"
+      ],
+      "next_edge": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+      "next_edge_is_first_selected_id": true,
+      "full_selected_ids_retained_in_receipt": true,
+      "all_selected_callable": true,
+      "host_heartbeat_probed": false,
+      "task_status_mutations": 0
+    },
+    "permission_guard": {
+      "callable_provider_access_only_required": true,
+      "windows_host_offline_excluded": true,
+      "selected_ids_are_callable_only": true,
+      "dispatch_node_present": false
+    },
+    "next_expected_scheduled_execution": "315"
+  },
+  "recovery_table": {
+    "id": "rSPFIOWbS7cfNJ8z",
+    "name": "SUBAVENGERS_RECOVERY_TASKS_20261020",
+    "project_id": "6qKpRmicIGHA5snY",
+    "total_rows": 45,
+    "nonterminal_rows": 45,
+    "terminal_rows": 0,
+    "status_counts": {
+      "ASSIGNED_DRAFT_WAITING_CREDENTIAL": 5,
+      "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN": 1,
+      "OPEN_RAW_HASH_AND_CLOUD_TRANSFER": 1,
+      "OPEN_QEMU_C_DISCOVERY": 1,
+      "GUARD_APPLIED_FIVE_AGENT_DRAFTS_ACCOUNT_LEVEL_PAUSE_OPEN": 1,
+      "OPEN_SOURCE_DIRECT_TIMESTAMP": 1,
+      "OPEN_ANDROID_SOURCE_ACCESS": 1,
+      "OPEN_END_TO_END_USER_SESSION": 1,
+      "OPEN_CREDENTIAL_BINDING_AND_AUTH_TEST": 1,
+      "OPEN_7Z_RAR_LR": 1,
+      "SOURCE_BYTES_VERIFIED_FUTURE_SYNC_OPEN": 1,
+      "OPEN_HOST_ROUTING_AND_UI_READBACK": 1,
+      "OPEN_HOST_INTEGRATION_AND_INDEPENDENT_TEST": 1,
+      "OPEN_ROUTED_NONCOERCIVE": 27,
+      "IN_PROGRESS": 1
+    },
+    "explicit_callable_provider_rows_without_host_offline": 19,
+    "blocked_or_other_permission_rows": 26,
+    "host_offline_blocked_rows": 8,
+    "permission_unspecified_rows": 18,
+    "in_progress_row": {
+      "id": 45,
+      "task_id": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+      "status": "IN_PROGRESS",
+      "permission": "NOT_SPECIFIED_IN_SOURCE"
+    },
+    "task_status_mutations": 0
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "default_branch": "main",
+    "main_head_before_checkpoint_write": "d41d53dfa21dfc2b74174d139587732dd83e2f9c",
+    "prior_pointer_blob_sha": "023d7c92d6d0876306c812c8e866e4ebfe30c3ff",
+    "pointer_commit_combined_status": {
+      "commit_sha": "d41d53dfa21dfc2b74174d139587732dd83e2f9c",
+      "state": "failure",
+      "context": "Vercel",
+      "target": "https://vercel.com/sollasi/sol-long-mach/5c2tWjZVEqNgXLQY3nuTsGTXw6P1",
+      "failure_cause": "UNVERIFIED",
+      "deployment_page_read": "INACCESSIBLE_THROUGH_WEB_READ"
+    },
+    "pull_request_29": "LAST_KNOWN_OPEN_DRAFT_NOT_MERGED_FROM_20261030T1751ICT; NOT_RECHECKED_THIS_RUN",
+    "local_repository": {
+      "path": "G:/OS_Workspace/SOL-LONG-MACH",
+      "branch": "main",
+      "last_verified_head": "2086f2751ea1f9eb21467a4081f7ca092300e4af",
+      "last_verified_status": "CLEAN",
+      "local_sync_state": "NOT_REPROBED_THIS_RUN; last known local HEAD predates current cloud pointer",
+      "reset_or_rebase": false
+    }
+  },
+  "hosposik": {
+    "task_id": "SOL-HOSPOSIK_DOMAIN_MEMORY_RUNTIME",
+    "status": "OPEN",
+    "source_readback_commit": "d41d53dfa21dfc2b74174d139587732dd83e2f9c",
+    "files": {
+      "CURRENT_RUNTIME/HOSPOSIK_HOSTINGER_DNS_20261016.json": "1ab350145d6683158d876b6935c3d2540409bb4e",
+      "CURRENT_RUNTIME/HOSPOSIK_AGENT_NETWORK_READBACK.json": "d91de4e9b5e598f617947cc8bbd798f23f70584f",
+      "HOSPOSIK_AGENT_NETWORK/PUBLIC_DEPLOYMENT.md": "460ff6ae2d9ebd2d616b2930ceff6db7006ee159",
+      "HOSPOSIK_AGENT_NETWORK/config/domain_binding.json": "90ccfcc510603c2aab8fa5be4cabef6fb2851cf3",
+      "HOSPOSIK_AGENT_NETWORK/render.yaml": "896e65d9ec5c6dfc8533490861cdd0fa9aececd2"
+    },
+    "source_level_findings": {
+      "domain": "gambbrazil.gambbrazil.fun",
+      "hostinger_zone": "gambbrazil.fun",
+      "historical_txt_records": "PUBLISHED_IN_20261016_SOURCE_READBACK",
+      "historical_public_route": "NOT_AVAILABLE_NO_PUBLIC_ENDPOINT",
+      "historical_a_or_aaaa": null,
+      "historical_https_origin": null,
+      "historical_tls": "NOT_CONFIGURED",
+      "historical_reachable": false,
+      "historical_local_runtime": "Termux runit; 127.0.0.1:8788 HTTP and 127.0.0.1:15353/UDP; not refreshed this run",
+      "public_deployment_plan": "Render Starter, Singapore, persistent 1 GiB disk",
+      "provisioning_gate": "PAID_SERVICE_REQUIRES_USER_PRICE_APPROVAL",
+      "live_provider_dns_read": "NOT_PERFORMED",
+      "hostinger_connector_blocker": "Operation search requested interactive user input in this non-interactive run; two linked accounts are available and no live account was selected",
+      "dns_or_deployment_writes": 0
+    },
+    "evidence_row_id": 775,
+    "evidence_event_id": "X20261030122053000_HOSPOSIK_SOURCE_READBACK",
+    "evidence_readback_verified": true
+  },
+  "source_matrix": {
+    "task": "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
+    "status": "OPEN",
+    "last_verified_canonical_github_blobs_from_previous_checkpoint": {
+      "SPACE_MAP_json": "935abcb6fca375085642abfd7a93dbf52581c45c",
+      "DAI_NGUYEN_THE_MASTER_TEACHER_20261016_md": "111fe11df990bed9357744d7dbba87de73a05290",
+      "IDENTITY_PLACES_CORE_json": "0924143c430abd9fc630bc5ef332022a3a064f8d",
+      "CROSS_CHAT_ENVIRONMENT_SURFACE_SPACE_CONTINUITY_20261016_md": "352dd9ea1f5f6e325fa543f910fdae36f83fc551",
+      "POWER_CAPABILITY_ROUTES_V2_json": "41f7b367d8c7e0e1674f3d59ad4109b841a7106d"
+    },
+    "verification_freshness": "CARRIED_FROM_20261030T1751ICT; NOT_RECOMPUTED_THIS_RUN",
+    "library_overwrites": 0,
+    "source_substitution": false
+  },
+  "host_and_android": {
+    "windows_hostname": "DESKTOP-86ITNQ4",
+    "direct_host_heartbeat": "LAST_VERIFIED_2026-10-30T09:34:11.9381627Z; NOT_REFRESHED_THIS_RUN",
+    "dedicated_remote_desktop_commander": "LAST_KNOWN_OFFLINE_IN_20261030T1751ICT",
+    "separate_personal_device_registry": "LAST_KNOWN_ONLINE_IN_20261030T1751ICT; NOT_REPROBED_THIS_RUN",
+    "android_status": "UNVERIFIED",
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "c_drive": {
+      "last_measured_free_bytes": 1089646592,
+      "last_measured_free_percent": 0.213934,
+      "measured_at_utc": "2026-10-30T09:34:11.9381627Z",
+      "current_measurement": false,
+      "cleanup_performed": false
+    },
+    "h_drive": "HIDDEN_EFI_SYSTEM_PARTITION_DO_NOT_TOUCH"
+  },
+  "safety": {
+    "recovery_task_status_mutations": 0,
+    "google_drive_writes": 0,
+    "host_file_writes": 0,
+    "process_or_cache_deletions": 0,
+    "meta_db_changes": 0,
+    "plaintext_credentials_accessed": false,
+    "agent_publishes": 0,
+    "pull_requests_merged": 0,
+    "library_overwrites": 0,
+    "deployment_configuration_changed": false,
+    "local_git_reset_or_rebase": false
+  },
+  "next_edges": [
+    "Verify next scheduled production scan execution 315 and read back its evidence row; do not infer task completion from SUCCESS.",
+    "Read Hostinger DNS records through a confirmed account and authorized read-only operation; do not change records.",
+    "Obtain explicit price approval before provisioning the Render Starter service or persistent disk.",
+    "Investigate Vercel failure through an authenticated read-only deployment/log route; current deployment page was inaccessible and cause remains UNVERIFIED.",
+    "Keep all 45 recovery rows nonterminal and row 45 IN_PROGRESS; do not dispatch agents without valid model, credential and tools.",
+    "Refresh Windows heartbeat and C: capacity only through an authorized direct read-only host route; do not clean up automatically.",
+    "Verify Android independently; current status remains UNVERIFIED.",
+    "Continue Source Matrix from exact GitHub blob SHAs and Library IDs; no substitution or overwrite.",
+    "Continue Dropbox windows_SENSON.CSV raw-byte/header readback without modifying the original."
+  ]
+}
