@@ -36,7 +36,7 @@
     "latest_evidence_event_id": "X20261030000024077_CLOUD",
     "latest_evidence_row_created_at_utc": "2026-10-30T00:00:24.149Z",
     "append_node_receipt_visible_in_execution": true,
-    "independent_evidence_table_readback": false,
+    "independent_evidence_table_readback": true,
     "evidence_state": "OPEN_WORK_REMAINS",
     "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
     "recovery_table_id": "rSPFIOWbS7cfNJ8z",
@@ -84,7 +84,20 @@
       "next_expected_tick_utc": "2026-10-30T01:00:00Z",
       "next_expected_tick_local": "2026-10-30T08:00:00+07:00"
     },
-    "ledger_rows_merged": 0
+    "ledger_rows_merged": 0,
+    "evidence_table_name": "AISSTANGT_MANAGE_CONTINUITY_20261020",
+    "evidence_row_readback_verified": true,
+    "evidence_row_readback": {
+      "table_id": "Sk0EFJK5NzWVpBvm",
+      "table_name": "AISSTANGT_MANAGE_CONTINUITY_20261020",
+      "project_id": "6qKpRmicIGHA5snY",
+      "row_id": 715,
+      "event_id": "X20261030000024077_CLOUD",
+      "state": "OPEN_WORK_REMAINS",
+      "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+      "created_at_utc": "2026-10-30T00:00:24.149Z",
+      "readback_filter": "event_id eq X20261030000024077_CLOUD"
+    }
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
@@ -163,7 +176,7 @@
   "next_edges": [
     "Resume from this checkpoint; do not rebuild the recovery ledger.",
     "Keep all 45 recovery rows nonterminal; scan success is not task completion.",
-    "Read back evidence table row 715 directly if the evidence table name/ID can be resolved; execution append-node output is visible but independent table readback was not performed.",
+    "Evidence table row 715 was independently read back by event_id; preserve its OPEN_WORK_REMAINS state and receipt.",
     "Continue only cloud-eligible read branches with explicit callable-provider permission; do not infer the five eligible tasks from the eight selected names.",
     "Keep Windows and Android UNVERIFIED until a fresh authorized host/device response is obtained; cloud heartbeat is not host heartbeat.",
     "Reconcile exact Windows Survival minute-7 and X66 six-hour cron slots; last known inventory is 2026-10-29T23:20:00Z and was not refreshed in this run.",
