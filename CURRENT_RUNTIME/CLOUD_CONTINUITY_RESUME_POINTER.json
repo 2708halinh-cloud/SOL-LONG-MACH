@@ -1,23 +1,23 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.6",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/7.7",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-30T15:38:26Z",
-  "updated_at_local": "2026-10-30T22:38:26+07:00",
+  "updated_at_utc": "2026-10-30T17:12:17.603Z",
+  "updated_at_local": "2026-10-31T00:12:17.603+07:00",
   "previous_pointer": {
-    "blob_sha": "c26a3cf8956c1e124941e6cedb64c207e199d0a3",
-    "commit_sha": "b5a98eafc90bb6c01b951ddca621485dcc9468bf",
+    "blob_sha": "e6676b2934cc34da6a76719388816b86c29daa37",
+    "commit_sha": "1e4c9d15d5c1b1a57ac7b064a28f7d52c36bbc75",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T2142ICT.json",
-    "blob_sha": "7162b4a9998ca17fdd8ee9bbb0ab613b7a79e8a8",
-    "commit_sha": "d199b136f77f0c4bd3e967e1db6b74168ac86180",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T2238ICT.json",
     "blob_sha": "c8d87ecabfd98836ae25adefa3b188cfa45dd021",
     "commit_sha": "5896a7b1d40b27b5d758f7b0f365230292006b29",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0012ICT.json",
+    "blob_sha": "7d51964e5e2462f1082d51cf08b54718ffca1761",
+    "commit_sha": "99867ecba167c1d96b747326da12fcb8addaff26",
     "readback_verified": true
   },
   "included_evidence_rows": [
@@ -35,15 +35,19 @@
     788,
     789,
     790,
-    791
+    791,
+    792,
+    793,
+    794,
+    795
   ],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "active_version_id": "1bcc0041-f516-42a1-9153-9a12e94fc297",
-    "execution_id": "317",
+    "execution_id": "319",
     "status": "SUCCESS",
-    "event_id": "X20261030150024081_CLOUD",
-    "evidence_row_id": 791,
+    "event_id": "X20261030170024051_CLOUD",
+    "evidence_row_id": 793,
     "task_total": 45,
     "task_nonterminal": 45,
     "task_closed": 0,
@@ -55,40 +59,44 @@
     "host_heartbeat": "NOT_PROBED_BY_CLOUD_SCAN"
   },
   "latest_host": {
-    "device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
     "host": "DESKTOP-86ITNQ4",
-    "last_direct_status": "ONLINE_AT_2026-10-30T13:44:15.624Z_VIA_PERSONAL_DEVICE_LINK",
-    "current_status": "NOT_PROBED",
+    "device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
+    "personal_device_link": "ONLINE;DIRECT_FILE_AND_POWERSHELL_READBACK_VERIFIED",
+    "dedicated_remote_desktop_commander": "OFFLINE_LAST_SEEN_79H",
     "android": "UNVERIFIED",
-    "dedicated_remote_desktop_commander": "OFFLINE_AT_LAST_REGISTRY_READ",
-    "c_drive_last_verified_free_bytes": 726953984,
-    "c_drive_last_verified_free_percent": 0.142725,
-    "c_drive_measurement_is_stale": true,
-    "c_drive_cleanup": false,
+    "separate_os_heartbeat": "NOT_SEPARATELY_SAMPLED",
+    "c_drive_free_bytes": 0,
+    "c_drive_free_percent": 0,
+    "c_drive_measurements_utc": [
+      "2026-10-30T17:05:42.7865597Z",
+      "2026-10-30T17:05:55.2080719Z"
+    ],
+    "local_git_head": "546c383b189ac982e4a8ae4e65054556f19d2883",
+    "local_worktree": "CLEAN_AT_READ_TIME",
+    "local_pointer_schema": "7.5_STALE_VS_CLOUD_7.6",
+    "local_checkpoint_20261030T2238ICT": "NOT_FOUND_AT_EXPECTED_LOCAL_PATH",
+    "local_fast_forward": "BLOCKED_C_ZERO_FREE_BYTES",
     "cloud_heartbeat_is_not_host_heartbeat": true
   },
   "github": {
-    "main_head_before_pointer_update": "5896a7b1d40b27b5d758f7b0f365230292006b29",
-    "checkpoint_blob_sha": "c8d87ecabfd98836ae25adefa3b188cfa45dd021",
-    "checkpoint_commit_sha": "5896a7b1d40b27b5d758f7b0f365230292006b29",
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "main_head_before_pointer_update": "99867ecba167c1d96b747326da12fcb8addaff26",
+    "checkpoint_blob_sha": "7d51964e5e2462f1082d51cf08b54718ffca1761",
+    "checkpoint_commit_sha": "99867ecba167c1d96b747326da12fcb8addaff26",
     "vercel_combined_status": "FAILURE",
-    "vercel_target": "https://vercel.com/sollasi/sol-long-mach/3kojt3W87rjacSVj1woS4QtgeQCm",
+    "vercel_target": "https://vercel.com/sollasi/sol-long-mach/84MN424RDhz4RosWPZAJMd56NLVg",
     "vercel_failure_cause": "UNVERIFIED",
-    "main_check_runs": {
-      "verify": "SUCCESS",
-      "secret_guard": "SUCCESS"
-    },
     "pr_29": "OPEN_DRAFT_NOT_MERGED"
   },
   "next_edges": [
-    "Verify scheduled execution 318 at 23:00 ICT; do not manually trigger duplicate production scans.",
-    "Keep 45 recovery rows nonterminal and row 45 IN_PROGRESS.",
-    "Continue R-014 from row 18 using source-bound provider reads; no runtime acceptance claim from static source/test blobs.",
-    "Investigate Vercel FAILURE via authorized redacted logs only; do not change deployment configuration.",
-    "No C: cleanup or file movement without explicit user decision; no process/cache/Meta.db deletion.",
-    "No HOSPOSIK DNS writes or billed deployment without approved origin and price decision.",
-    "Obtain authorized raw-byte/source-bound readback for TESSERACT Art; preserve row 45 IN_PROGRESS.",
-    "Do not infer current Windows/Android state from cloud heartbeat."
+    "Keep all 45 recovery rows nonterminal; row 45 remains IN_PROGRESS.",
+    "Do not write locally while C: has zero free bytes; no git fetch/merge, cleanup, file movement or process/cache/Meta.db deletion.",
+    "After user-approved storage action and a safe free-space margin, re-read checkpoint and perform git fetch plus ff-only only if local worktree remains clean.",
+    "Investigate Vercel FAILURE only via an authorized redacted deployment-log route; no deployment configuration changes.",
+    "Continue R-014 with source-bound provider reads; static blob/test-source matches do not establish runtime acceptance.",
+    "Keep HOSPOSIK DNS writes and billed deployment blocked pending approved HTTPS origin and price.",
+    "Obtain authorized raw-byte/source-bound access for TESSERACT Art; preserve row 45 IN_PROGRESS.",
+    "Do not infer Android or host status from cloud heartbeat."
   ],
   "safety": {
     "recovery_task_status_mutations": 0,
@@ -102,6 +110,7 @@
     "dns_writes": 0,
     "billed_services_created": 0,
     "deployment_configuration_changed": false,
-    "local_git_reset_or_rebase": false
+    "local_git_fetch_or_merge": false,
+    "local_cleanup": false
   }
 }
