@@ -97,6 +97,94 @@
       "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
       "created_at_utc": "2026-10-30T00:00:24.149Z",
       "readback_filter": "event_id eq X20261030000024077_CLOUD"
+    },
+    "workflow_execution_scope": "SCHEDULED_LEDGER_SCAN_AND_RECEIPT_ONLY; no agent dispatch node in the six-node workflow",
+    "workflow_code_audit": {
+      "workflow_version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
+      "node": "Deterministic OPEN scan",
+      "permission_predicate": "picked.filter(x => !String(x.permission||'').includes('WINDOWS_HOST_OFFLINE'))",
+      "interpretation": "selected_cloud_eligible_count is not a reliable authorization count: the predicate only excludes WINDOWS_HOST_OFFLINE and admits a task whose permission is NOT_SPECIFIED_IN_SOURCE.",
+      "picked_task_ids": [
+        "SOL-WINDOWS_RECOVERY_DISK_SPACE",
+        "SOL-SOL_SOURCE_12_CARRIERS",
+        "SOL-TESSERACT_BOOT_AGENT_ROUTE",
+        "SOL-CODEX_SECRET_RUNTIME_VERSIONS",
+        "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
+        "SOL-ANDROID_OLLAMA_LOCALHOST_CHAT_UI",
+        "SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY",
+        "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023"
+      ],
+      "explicit_callable_permission_task_ids": [
+        "SOL-SOL_SOURCE_12_CARRIERS",
+        "SOL-CODEX_SECRET_RUNTIME_VERSIONS",
+        "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
+        "SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY"
+      ],
+      "excluded_by_host_offline_permission": [
+        "SOL-WINDOWS_RECOVERY_DISK_SPACE",
+        "SOL-TESSERACT_BOOT_AGENT_ROUTE",
+        "SOL-ANDROID_OLLAMA_LOCALHOST_CHAT_UI"
+      ],
+      "permission_unspecified_task_id": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+      "permission_unspecified_task_status": "IN_PROGRESS",
+      "predicate_false_positive_count": 1,
+      "workflow_changed": false,
+      "task_dispatch_performed": false
+    },
+    "agent_runnability_audit": {
+      "discovery_project_id": "6qKpRmicIGHA5snY",
+      "discovered_agents": [
+        {
+          "agent_id": "ilcqwLMNUdrWjvrL",
+          "name": "SubAisstangtManage-INTEGRITY",
+          "published": false,
+          "isRunnable": false,
+          "missing": [
+            "model",
+            "credential"
+          ],
+          "configured_tools": 0,
+          "configured_custom_tools": 0,
+          "assigned_selected_tasks": [
+            "SOL-SOL_SOURCE_12_CARRIERS",
+            "SOL-CODEX_SECRET_RUNTIME_VERSIONS"
+          ]
+        },
+        {
+          "agent_id": "bwjoN3TfQ8Ao717P",
+          "name": "SubAisstangtManage-READBACK",
+          "published": false,
+          "isRunnable": false,
+          "missing": [
+            "model",
+            "credential"
+          ],
+          "configured_tools": 0,
+          "configured_custom_tools": 0,
+          "assigned_selected_tasks": [
+            "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
+            "SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY"
+          ]
+        },
+        {
+          "agent_id": "eT5YnxcWNGLRZ8z8",
+          "name": "SubAisstangtManage-OPEN-ROUTER",
+          "published": false,
+          "isRunnable": false,
+          "missing": [
+            "model",
+            "credential"
+          ],
+          "configured_tools": 0,
+          "configured_custom_tools": 0,
+          "assigned_selected_tasks": [
+            "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023"
+          ]
+        }
+      ],
+      "subavengers_workflow_search_count": 0,
+      "agent_invocations": 0,
+      "no_model_or_credential_created_or_bound": true
     }
   },
   "github": {
@@ -171,18 +259,25 @@
     "source_task_files_modified": 0,
     "deployment_configuration_changed": false,
     "pull_requests_merged": 0,
-    "host_operations": 0
+    "host_operations": 0,
+    "agent_invocations": 0,
+    "agent_configs_modified": false,
+    "workflow_modified": false
   },
   "next_edges": [
     "Resume from this checkpoint; do not rebuild the recovery ledger.",
     "Keep all 45 recovery rows nonterminal; scan success is not task completion.",
-    "Evidence table row 715 was independently read back by event_id; preserve its OPEN_WORK_REMAINS state and receipt.",
-    "Continue only cloud-eligible read branches with explicit callable-provider permission; do not infer the five eligible tasks from the eight selected names.",
-    "Keep Windows and Android UNVERIFIED until a fresh authorized host/device response is obtained; cloud heartbeat is not host heartbeat.",
-    "Reconcile exact Windows Survival minute-7 and X66 six-hour cron slots; last known inventory is 2026-10-29T23:20:00Z and was not refreshed in this run.",
-    "Keep PR #29 OPEN and Draft; no merge authorization.",
+    "Evidence table row 715 was independently read back by event_id and is verified.",
+    "Do not treat selected_cloud_eligible_count=5 as five authorized tasks: the code predicate only excludes WINDOWS_HOST_OFFLINE and incorrectly counts SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023 despite permission NOT_SPECIFIED_IN_SOURCE.",
+    "Four selected tasks carry explicit CALLABLE_PROVIDER_ACCESS_ONLY permission, but their assigned INTEGRITY and READBACK agent drafts are unpublished, missing model and credential, and have zero configured tools; no agent dispatch occurred.",
+    "The active cloud continuity workflow performs a scheduled table scan and appends a receipt; it does not dispatch agents or execute recovery tasks.",
+    "Keep TESSERACT_ART task IN_PROGRESS and unexecuted until permission is explicitly sourced; do not infer authorization.",
+    "Keep Windows and Android UNVERIFIED until fresh authorized host/device responses are obtained; cloud heartbeat is not host heartbeat.",
+    "Refresh exact Windows Survival minute-7 and X66 six-hour cron-slot coverage before changing their OPEN schedule-gap states.",
+    "Keep R-014 host integration OPEN; local gate and emitter must not be written while host access is unavailable.",
     "Keep Vercel failure OPEN until authorized deployment logs are available.",
-    "Preserve 29 GitHub mappings separately from 16 n8n-only historical IDs.",
-    "Do not write Google Drive, access plaintext secrets, or delete processes, caches, local files, or Meta.db."
+    "Keep PR #29 OPEN and Draft; no merge authorization.",
+    "Preserve 29 GitHub task mappings separately from 16 n8n-only historical IDs.",
+    "Do not write Google Drive, access plaintext secrets, or delete local data, processes, caches, or Meta.db."
   ]
 }
