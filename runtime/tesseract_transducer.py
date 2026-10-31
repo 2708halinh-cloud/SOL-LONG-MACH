@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """GGDV TESSERACT 6D: X2 Âm/Dương -> provenance -> Hebbian activation.
 
-Reads an authorized SQLite event carrier in read-only mode; never reads hidden RAM,
+Reads an SQLite event carrier in read-only mode; never reads hidden RAM,
 modifies the source, mounts VHDX, or manufactures events. Derived weights are
-transactional and idempotent. Existing UBUBU API/journals remain authoritative.
+transactional and idempotent. Ingest requires a trusted authorization verifier
+injected by an authorized caller; the CLI intentionally exposes no ingest action
+until that verifier is wired. A non-empty origin string is not authorization.
+Existing UBUBU API/journals remain authoritative.
 """
 from __future__ import annotations
 import argparse
@@ -14,6 +17,7 @@ import re
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
+from collections.abc import Callable, Mapping
 
 try:
     from .motherboard_control_plane import gate1_preflight, gate2_readback
@@ -112,18 +116,40 @@ def tokenize(row: dict) -> list[str]:
     return selected
 
 
-def activate(c: sqlite3.Connection, row: dict, source: Path, origin: str, will: str, branch: str) -> str:
+def activate(*args, **kwargs) -> str:
+    """Public direct activation is disabled; only the guarded run() path may mutate the graph."""
+    raise GateRejected(
+        "GATE1: direct activation disabled; use run(..., action='ingest') with trusted authorization verifier"
+    )
+
+
+def _activate_authorized(
+    c: sqlite3.Connection, row: dict, source: Path, origin: str, will: str, branch: str,
+    *, gate1_context: Mapping[str, bool] | None = None,
+    expected_target: Path | None = None,
+) -> str:
     # Gate 1: source/causality and X2 polarities, no premature action.
     eid = str(row.get("event_id") or "").strip()
     created = str(row.get("created_at") or "").strip()
     if not eid or not created or not row.get("content") or not origin or not will or not branch:
         raise GateRejected("GATE1: required provenance, timestamp, objective, or source missing")
     db_identity = c.execute("PRAGMA database_list").fetchone()[2]
+    actual_target = Path(db_identity).resolve() if db_identity else None
+    expected_target_resolved = expected_target.resolve() if expected_target is not None else None
+    target_matches = bool(
+        gate1_context
+        and gate1_context.get("target_identity_verified") is True
+        and actual_target is not None
+        and expected_target_resolved is not None
+        and actual_target == expected_target_resolved
+        and actual_target.is_file()
+        and source.is_file()
+    )
     preflight = gate1_preflight(
-        authorized=bool(origin.strip()),
-        target_identity_verified=bool(db_identity and Path(db_identity).is_file() and source.is_file()),
-        policy_allowed=bool(will.strip() and branch.strip()),
-        quota_available=True,
+        authorized=bool(gate1_context and gate1_context.get("authorized") is True),
+        target_identity_verified=target_matches,
+        policy_allowed=bool(gate1_context and gate1_context.get("policy_allowed") is True),
+        quota_available=bool(gate1_context and gate1_context.get("quota_available") is True),
     )
     if not preflight.allowed:
         raise GateRejected("GATE1: " + ",".join(preflight.reasons))
@@ -173,12 +199,15 @@ def activate(c: sqlite3.Connection, row: dict, source: Path, origin: str, will: 
     consistent = independent is not None and tuple(independent) == (row_hash, 1, 1)
     gate2 = gate2_readback(
         action_receipt=reread is not None,
-        consequence_observed=True,
+        consequence_observed=consistent,
         independent_readback=independent is not None,
         state_consistent=consistent,
     )
     if not gate2.allowed:
-        raise GateRejected("GATE2: " + ",".join(gate2.reasons))
+        raise GateRejected(
+            "GATE2: post-commit readback failed; mutation may already be committed; "
+            "reconcile exact target before retry: " + ",".join(gate2.reasons)
+        )
     return "ACTIVATED"
 
 
@@ -220,22 +249,62 @@ def rows_from_source(c: sqlite3.Connection, max_rows: int):
         yield dict(r)
 
 
-def run(source: Path, root: Path, action: str, max_rows: int, will: str, branch: str) -> dict:
+def run(
+    source: Path, root: Path, action: str, max_rows: int, will: str, branch: str, *,
+    authorization_verifier: Callable[..., Mapping[str, bool]] | None = None,
+) -> dict:
     source_c = connect_readonly(source)
     try:
         d = discover_source(source_c)
         if action == "probe":
             return {"action":"probe","source":str(source),"source_schema":d,"axes":AXES,"x2":"YIN_SOURCE_AND_CONSEQUENCE + YANG_GATED_ACTION"}
+        if action not in {"dry-run", "ingest"}:
+            raise GateRejected("GATE1: unsupported run action; recall uses recall_network")
         if not d["compatible"]:
             raise GateRejected("GATE1: unsupported source schema; use provider-specific adapter")
         if action == "dry-run":
             samples = list(rows_from_source(source_c, max_rows))
             return {"action":"dry-run","candidate_events":len(samples),"eligible":sum(bool(tokenize(row)) for row in samples),"mutated":False}
+        gate1_context = None
+        expected_target = None
+        if action == "ingest":
+            if authorization_verifier is None:
+                raise GateRejected("GATE1: trusted authorization verifier not configured; ingest disabled")
+            source_identity = source.resolve(strict=True)
+            root_identity = root.resolve()
+            expected_target = (root_identity / DB_REL).resolve()
+            try:
+                expected_target.relative_to(root_identity)
+            except ValueError as exc:
+                raise GateRejected("GATE1: graph target resolves outside the authorized root") from exc
+            gate1_context = authorization_verifier(
+                action="ingest",
+                source=source_identity,
+                target=expected_target,
+                will=will,
+                branch=branch,
+            )
+            if not isinstance(gate1_context, Mapping):
+                raise GateRejected("GATE1: authorization verifier returned no structured decision")
+            preflight = gate1_preflight(
+                authorized=gate1_context.get("authorized") is True,
+                target_identity_verified=(
+                    gate1_context.get("target_identity_verified") is True
+                    and expected_target.is_relative_to(root_identity)
+                ),
+                policy_allowed=gate1_context.get("policy_allowed") is True,
+                quota_available=gate1_context.get("quota_available") is True,
+            )
+            if not preflight.allowed:
+                raise GateRejected("GATE1: " + ",".join(preflight.reasons))
         graph = connect_graph(root)
         try:
             new = old = 0
             for row in rows_from_source(source_c, max_rows):
-                result = activate(graph,row,source,"UBUBU_SQLITE_READONLY",will,branch)
+                result = _activate_authorized(
+                    graph, row, source, "UBUBU_SQLITE_READONLY", will, branch,
+                    gate1_context=gate1_context, expected_target=expected_target,
+                )
                 new += result == "ACTIVATED"
                 old += result == "REUSED"
             neurons,edges,anchors=(graph.execute("SELECT COUNT(*) FROM "+table).fetchone()[0] for table in ("neurons","synapses","source_anchors"))
@@ -248,7 +317,7 @@ def run(source: Path, root: Path, action: str, max_rows: int, will: str, branch:
 
 def main():
     ap=argparse.ArgumentParser(description="GGDV TESSERACT 6D Hebbian transducer")
-    ap.add_argument("action",choices=["probe","dry-run","ingest","recall"])
+    ap.add_argument("action",choices=["probe","dry-run","recall"], help="ingest is disabled in the CLI until a trusted authorization verifier is wired")
     ap.add_argument("--source",type=Path,default=DEFAULT_SOURCE)
     ap.add_argument("--root",type=Path,default=DEFAULT_ROOT)
     ap.add_argument("--limit",type=int,default=500)
