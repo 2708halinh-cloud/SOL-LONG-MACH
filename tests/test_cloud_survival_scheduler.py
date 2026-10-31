@@ -1,6 +1,8 @@
 """Independent cloud survival and source-preserving OPEN continuity tests."""
 from __future__ import annotations
+import configparser
 import json
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -39,9 +41,11 @@ class CloudSurvivalTests(unittest.TestCase):
     def test_all_source_open_nodes_have_single_real_subagent_route(self):
         ledger,_,_=survivor.classify_open_ledger(ROOT)
         routes=survivor.reconcile_agent_tasks(ledger)
-        self.assertGreaterEqual(len(ledger["tasks"]),27)
-        self.assertEqual(len(routes),len(ledger["tasks"]))
-        self.assertEqual(len(set(x["task_id"] for x in routes)),len(ledger["tasks"]))
+        source_ids={item["id"] for item in ledger["tasks"]}
+        routed_ids=[item["task_id"] for item in routes]
+        self.assertEqual(set(routed_ids),source_ids)
+        self.assertEqual(len(routed_ids),len(source_ids))
+        self.assertEqual(len(routed_ids),len(set(routed_ids)))
         self.assertEqual({x["capability_offer"]["role"] for x in routes},
                          {"SENSORY","INTEGRITY","OPEN_ROUTER","READBACK"})
         for item in routes:
@@ -49,6 +53,44 @@ class CloudSurvivalTests(unittest.TestCase):
             self.assertFalse(item["stamp_beta_is_realized"])
             self.assertEqual(item["capability_offer"]["n8n_runtime"],
                              "DRAFT_MISSING_MODEL_AND_CREDENTIAL")
+
+    def test_gitmodules_paths_match_tracked_gitlinks(self):
+        config=configparser.ConfigParser()
+        loaded=config.read(ROOT/".gitmodules",encoding="utf-8")
+        self.assertTrue(loaded)
+        configured={section:config[section].get("path") for section in config.sections()
+                    if section.startswith('submodule "')}
+        tree=subprocess.run(["git","-c","core.quotePath=false","ls-tree","-r","-z","HEAD"],
+                            cwd=ROOT,check=True,capture_output=True,text=True).stdout
+        gitlink_paths=set()
+        for entry in tree.split("\0"):
+            if not entry:
+                continue
+            metadata,path=entry.split("\t",1)
+            if metadata.startswith("160000 commit "):
+                gitlink_paths.add(path)
+        self.assertTrue(configured)
+        self.assertEqual(set(configured.values()),gitlink_paths)
+
+    def test_small_ledger_is_validated_without_27_item_threshold(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            ledger_path=root/"CURRENT_RUNTIME"/"OPEN_TASKS_CURRENT.json"
+            ledger_path.parent.mkdir(parents=True)
+            valid_task={"id":"SMALL_TASK","status":"OPEN",
+                        "assigned_subagent":"OPEN_ROUTER","assigned_agent_id":"agent-1",
+                        "real_execution_status":"OPEN_NOT_PROVEN_COMPLETED"}
+            ledger_path.write_text(json.dumps({"tasks":[valid_task]}),encoding="utf-8")
+            ledger,states,_=survivor.classify_open_ledger(root)
+            self.assertEqual([item["id"] for item in ledger["tasks"]],["SMALL_TASK"])
+            self.assertEqual(states,{"OPEN":1})
+
+            invalid_task={key:value for key,value in valid_task.items()
+                          if key!="assigned_agent_id"}
+            ledger_path.write_text(json.dumps({"tasks":[invalid_task]}),encoding="utf-8")
+            with self.assertRaisesRegex(ValueError,
+                                        "OPEN_TASK_WITHOUT_ASSIGNED_AGENT:SMALL_TASK"):
+                survivor.classify_open_ledger(root)
 
     def test_agent_route_rejects_missing_source_without_mutating_ledger(self):
         ledger,_,_=survivor.classify_open_ledger(ROOT)
