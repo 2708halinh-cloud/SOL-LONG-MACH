@@ -1,23 +1,23 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/9.1",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/9.2",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-31T02:42:00.000Z",
-  "updated_at_local": "2026-10-31T09:42:00+07:00",
+  "updated_at_utc": "2026-10-31T04:26:00.000Z",
+  "updated_at_local": "2026-10-31T11:26:00+07:00",
   "previous_pointer": {
-    "blob_sha": "b3f6182d17d1dc43b714a4a46c24ef785c5e10d4",
-    "commit_sha": "9b85589ad06b911e681dafc8dd74d9583421ce25",
+    "blob_sha": "51d6630c4df69f238722777387907fdbf383237f",
+    "commit_sha": "abab5a3d201a38275ce98bed495571260e0f22a1",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0939ICT.json",
-    "blob_sha": "4f8b7f5b52b2f4104ef8c524976ce5cbaf9e8fa6",
-    "commit_sha": "92d6997f348f27f0c307f1f97c973c4c3225a7ab",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0942ICT.json",
     "blob_sha": "8a47cc599e9912a3c665ada9ecfe77f4032ed22b",
     "commit_sha": "7a48003881d80fe07a97b83e3c4f5dedaa0d0883",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T1126ICT.json",
+    "blob_sha": "8678353e3be8ddfeac9110058c8895a2fb4bbf50",
+    "commit_sha": "5e9dbef1719aa636e7515d769e42cdc464569adf",
     "readback_verified": true
   },
   "included_evidence_rows": [
@@ -104,7 +104,11 @@
     857,
     858,
     859,
-    860
+    860,
+    861,
+    862,
+    863,
+    864
   ],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -113,12 +117,12 @@
     "active_version_id": "1bcc0041-f516-42a1-9153-9a12e94fc297",
     "node_count": 6,
     "dispatch_node_present": false,
-    "latest_execution_id": "328",
+    "latest_execution_id": "330",
     "latest_execution_status": "SUCCESS",
     "latest_execution_mode": "trigger",
-    "latest_execution_started_at_utc": "2026-10-31T02:00:22.117Z",
-    "latest_execution_stopped_at_utc": "2026-10-31T02:00:24.323Z",
-    "latest_evidence_row_id": 847,
+    "latest_execution_started_at_utc": "2026-10-31T04:00:22.100Z",
+    "latest_execution_stopped_at_utc": "2026-10-31T04:00:24.180Z",
+    "latest_evidence_row_id": 863,
     "task_total": 45,
     "nonterminal": 45,
     "closed": 0,
@@ -127,17 +131,17 @@
     "selected_callable": 8,
     "selected": [
       "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+      "SOL-SOL_CHAT_BROWSER_MCP_FILE",
+      "SOL-GITHUB_COPILOT_SPACE",
+      "SOL-SITES_SOL100726_REDIRECTS",
+      "SOL-SOL_SOURCE_12_CARRIERS",
       "SOL-CODEX_SECRET_RUNTIME_VERSIONS",
       "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
-      "SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY",
-      "SOL-HELLOCHECK_GO_TESTNET_R014_20261023",
-      "SOL-CLOUD_UNIVERSAL",
-      "SOL-CODEX_CONFIG_PRIVATE_BACKUP",
-      "SOL-WORKSPACE_32GB_DURABLE"
+      "SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY"
     ],
     "next_edge": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
     "execution_semantics": "READ_EVIDENCE;READ_45_TASKS;DETERMINISTIC_SCAN;APPEND_RECEIPT_ONLY;NO_DISPATCH",
-    "execution_329": "NOT_PRESENT_AT_2026-10-31T02:33:39Z"
+    "execution_329": "SUCCESS;2026-10-31T03:00:22.092Z–03:00:24.192Z"
   },
   "recovery_table": {
     "id": "rSPFIOWbS7cfNJ8z",
@@ -154,16 +158,6 @@
       "status": "OPEN_ROUTED_NONCOERCIVE",
       "permission": "CALLABLE_PROVIDER_ACCESS_ONLY; NO_FORCED_MUTATIONS"
     },
-    "row_19": {
-      "task_id": "SOL-HELLOCHECK_GO_TESTNET_R014_20261023",
-      "status": "OPEN_ROUTED_NONCOERCIVE",
-      "permission": "CALLABLE_PROVIDER_ACCESS_ONLY; NO_FORCED_MUTATIONS"
-    },
-    "row_21": {
-      "task_id": "SOL-CLOUD_UNIVERSAL",
-      "status": "OPEN_ROUTED_NONCOERCIVE",
-      "next_verified_edge": "Resolve the cloud-v2 environment ID from authenticated supported Cloud access"
-    },
     "row_45": {
       "task_id": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
       "status": "IN_PROGRESS"
@@ -171,82 +165,84 @@
   },
   "latest_host": {
     "host": "DESKTOP-86ITNQ4",
-    "current_os_cim_heartbeat": "NOT_PROBED_THIS_RUN",
-    "last_direct_os_cim_heartbeat": "2026-10-31T09:15:58.0952942+07:00",
+    "current_os_cim_heartbeat": "VERIFIED",
+    "direct_os_cim_heartbeat_local": "2026-10-31T11:16:52.1795741+07:00",
+    "os_caption": "Microsoft Windows 11 Pro Insider Preview",
+    "ram_free_kb": 12814064,
+    "c_free_bytes": 21103636480,
+    "g_free_bytes": 154384220160,
     "personal_desktop_commander_links": {
-      "link_6ad4e1ed81208191b14563bb93740ede": "OFFLINE",
-      "link_6adeca4fb1048191a93ae5f0d0dee3e9": "ONLINE; device bca58242-9cf0-407e-afb4-fb9ecfcce34b; last_seen 5m"
+      "link_6acea4d322fc8191a6e2c43712169fbe": "OFFLINE; account Primary",
+      "link_6ad3cb5c065c819181463732f3702f67": "OFFLINE; account mmmm",
+      "link_6adec9debe408191b9c933ebbfb5d71b": "ONLINE; account new; device bca58242-9cf0-407e-afb4-fb9ecfcce34b; last_seen 3m"
     },
-    "dedicated_remote_desktop_commander_links": {
-      "link_6ad789ac623c8191b7aef01b70a067ee": "OFFLINE; last_seen 88h",
-      "link_6ae48eca8fb08191a7054a77c14d940c": "OFFLINE; localhost last_seen 2h"
+    "remote_desktop_commander_namespace": {
+      "device": "DESKTOP-86ITNQ4",
+      "status": "ONLINE",
+      "device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
+      "account_identity": "NOT_RESOLVED"
+    },
+    "dedicated_rdc_accounts": {
+      "Primary": "OFFLINE",
+      "mmmm": "OFFLINE"
     },
     "android": "UNVERIFIED",
+    "local_repository_resume": {
+      "status": "NOT_PERFORMED",
+      "search_paths": [
+        "D:\\PHÒNG CHỈ HUY",
+        "C:\\Users\\halin"
+      ],
+      "result": "RESUME_POINTER_FILE_NOT_FOUND_IN_SCANNED_PATHS",
+      "search_exhaustive": false,
+      "repository_not_recreated": true
+    },
     "cloud_heartbeat_is_not_host_heartbeat": true
   },
-  "cloud_universal_candidate": {
-    "monid_workspace_id": "org_3KrhfmWpKGjz5rxMIQXUnwQ2hi0",
-    "workspace_slug": "linh-s-workspace-1792321699799177035",
-    "exact_cloud_v2_environment_id": "UNRESOLVED",
-    "provider": "smolmachine",
-    "resource_id": "01M57Z3CC6S6DEHFT1DTM7TXCY",
-    "machine_id": "mach-7492dc3537414092b799fc591c53c5b8",
-    "display_name": "SOL-X66-MAY-AO",
-    "monid_resource_state": "ACTIVE",
-    "external_state": "error",
-    "ready": false,
-    "network_mode": "blocked",
-    "last_activity_at": "2026-10-20T01:49:14.489191611+00:00",
-    "latest_error_event": {
-      "id": "evt-d05ac594ac5c48b78f15edf9f5d7643f",
-      "message": "auto-start failed: no ready amd64 node",
-      "created_at": "2026-10-22T17:11:53.717288701+00:00"
-    },
-    "disposition": "CANDIDATE_RESOURCE_ONLY;NOT_CONFIRMED_AS_CLOUD_V2_ENVIRONMENT;NO_START_CREATE_OR_EXEC"
-  },
   "latest_vercel": {
-    "main_commit_sha": "9b85589ad06b911e681dafc8dd74d9583421ce25",
-    "main_status": "PENDING",
-    "main_target_url": "https://vercel.com/sollasi/sol-long-mach/Hwwu5DYMirVPiqCuAHLjpeMSFR9s",
-    "pr_48_head_sha": "3c58337bbfbfd0d3df791c926e8843174a1c3ad8",
-    "pr_48_status": "FAILURE",
-    "pr_49_head_sha": "59289a8423edf0b05e41867214dca2a7e9c94178",
-    "pr_49_status": "FAILURE",
-    "failure_cause": "NOT_VERIFIED"
-  },
-  "r014_main_runtime_readback": {
-    "emitter_path": "runtime/ggdv_local_emitter.py",
-    "emitter_blob_sha": "26a6754e1c26adfd92e364986c9ef0823fe6fb0a",
-    "emitter_bytes": 3239,
-    "emitter_import": "from ggdv_response_gate import prepare_host_response",
-    "shared_consequence_gate_reference_in_emitter": false,
-    "gate_path": "runtime/companion_consequence_gate.py",
-    "gate_blob_sha": "5bb84b5a18a1d79ebc9bd348edeb6e9fc452d917",
-    "gate_test_path": "tests/test_companion_consequence_gate.py",
-    "gate_test_blob_sha": "c64e2295ee26cd4546ac100b16b804289faa4fa2",
-    "main_runtime_integration": "NOT_VERIFIED",
-    "issue_18": "OPEN"
+    "main": {
+      "commit_sha": "abab5a3d201a38275ce98bed495571260e0f22a1",
+      "state": "FAILURE",
+      "deployment_id": "dpl_GTEM9CHwUGhQWVfG7jjtR4xXFV2s",
+      "target_url": "https://vercel.com/sollasi/sol-long-mach/GTEM9CHwUGhQWVfG7jjtR4xXFV2s",
+      "status_updated_at_utc": "2026-10-31T02:51:13Z"
+    },
+    "pr_48": {
+      "commit_sha": "3c58337bbfbfd0d3df791c926e8843174a1c3ad8",
+      "state": "FAILURE",
+      "deployment_id": "dpl_2XUR2rzhT7jUszQpDeCddPnHZZvH",
+      "target_url": "https://vercel.com/sollasi/sol-long-mach/2XUR2rzhT7jUszQpDeCddPnHZZvH"
+    },
+    "pr_49": {
+      "commit_sha": "59289a8423edf0b05e41867214dca2a7e9c94178",
+      "state": "FAILURE",
+      "deployment_id": "dpl_Cazga4ZMD6QpMLfEZwJeKTrTcSdw",
+      "target_url": "https://vercel.com/sollasi/sol-long-mach/Cazga4ZMD6QpMLfEZwJeKTrTcSdw"
+    },
+    "failure_cause": "NOT_VERIFIED",
+    "logs_access": "NO_AUTHORIZED_VERCEL_LOG_ENDPOINT_FOUND_IN_AVAILABLE_MONID_DISCOVERY; BROWSER_CONTEXT_UNAVAILABLE; NO_CLI_AUTH_TESTED"
   },
   "new_evidence_rows": [
-    852,
-    853,
-    854,
-    855,
-    856,
-    857,
-    858,
-    859,
-    860
-  ],
-  "next_edges": [
-    "Keep all 45 n8n recovery tasks nonterminal; do not mark routing or provider readback as task completion.",
-    "Check execution 329 when it appears; execution 328 is read/scan/append only and has no dispatch node.",
-    "Resolve the exact cloud-v2 environment ID from the correct authenticated Cloud provider; do not equate the Monid workspace ID or Smol Machines resource ID with it.",
-    "Treat SOL-X66-MAY-AO as an existing but non-ready candidate machine; no start/create/exec until the target environment and required action are source-verified.",
-    "Investigate Vercel FAILURE for PR #48 and PR #49 only through authorized redacted logs; main pointer 8.9 remains PENDING.",
-    "Verify the actual HelloCheck Go build run and build receipt; the fetched run is Secret Exposure Guard only.",
-    "Keep issue #18, PR #43 and PR #44 OPEN until runtime-wide consequence-gate loading and source-conflict acceptance are proven.",
-    "Continue R-014 raw source recovery, Source Matrix Library counterpart matching, and JINEY original export search without replacing sources with derivatives."
+    {
+      "row_id": 861,
+      "event_id": "X20261031024113_POST_POINTER_91_VERCEL_STATUS",
+      "readback_verified": true
+    },
+    {
+      "row_id": 862,
+      "event_id": "X20261031030024024_CLOUD",
+      "readback_verified": true
+    },
+    {
+      "row_id": 863,
+      "event_id": "X20261031040024010_CLOUD",
+      "readback_verified": true
+    },
+    {
+      "row_id": 864,
+      "event_id": "X20261031111652_HOST_HEARTBEAT_AND_CLOUD_RECHECK",
+      "readback_verified": true
+    }
   ],
   "safety": {
     "recovery_task_status_mutations": 0,
@@ -254,10 +250,14 @@
     "plaintext_credentials_accessed": false,
     "process_cache_meta_db_deletions": 0,
     "host_cleanup": 0,
-    "host_os_commands_this_run": 0,
+    "host_os_commands_this_run": 2,
     "pr_merges": 0,
     "deployment_configuration_changes": 0,
     "machine_create_start_exec": 0,
-    "billed_services_created": 0
+    "billed_services_created": 0,
+    "host_os_commands_read_only": true,
+    "local_repository_writes": 0,
+    "n8n_evidence_rows_appended": 1,
+    "evidence_row_864_readback_verified": true
   }
 }
