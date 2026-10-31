@@ -1,0 +1,338 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/9.3",
+  "state": "OPEN_WORK_REMAINS",
+  "observed_at_utc": "2026-10-31T04:34:19.347Z",
+  "observed_at_local": "2026-10-31T11:34:19.347+07:00",
+  "previous_pointer": {
+    "blob_sha": "2d33bd01bd99e8af8b329fb4ba650bb6c67e5af0",
+    "commit_sha": "b2ef13d75f3112a1af8b4b8c9f5c755d9755fecc",
+    "readback_verified": true
+  },
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T1126ICT.json",
+    "blob_sha": "8678353e3be8ddfeac9110058c8895a2fb4bbf50",
+    "commit_sha": "5e9dbef1719aa636e7515d769e42cdc464569adf",
+    "readback_verified": true
+  },
+  "latest_cloud_scan": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "active_version_id": "1bcc0041-f516-42a1-9153-9a12e94fc297",
+    "node_count": 6,
+    "dispatch_node_present": false,
+    "latest_execution_id": "330",
+    "latest_execution_status": "SUCCESS",
+    "latest_execution_mode": "trigger",
+    "latest_execution_started_at_utc": "2026-10-31T04:00:22.100Z",
+    "latest_execution_stopped_at_utc": "2026-10-31T04:00:24.180Z",
+    "executed_nodes": [
+      "Cloud hourly pulse",
+      "Read continuity evidence",
+      "Read recovery tasks",
+      "Deterministic OPEN scan",
+      "Append scan receipt"
+    ],
+    "all_executed_nodes_success": true,
+    "latest_evidence_row_id": 863,
+    "execution_331": "NOT_OBSERVED_AT_2026-10-31T04:34:19Z;NEXT_SCHEDULED_PULSE_12:00_ICT",
+    "execution_semantics": "READ_EVIDENCE;READ_45_TASKS;DETERMINISTIC_SCAN;APPEND_RECEIPT_ONLY;NO_DISPATCH",
+    "selected_callable": [
+      "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+      "SOL-SOL_CHAT_BROWSER_MCP_FILE",
+      "SOL-GITHUB_COPILOT_SPACE",
+      "SOL-SITES_SOL100726_REDIRECTS",
+      "SOL-SOL_SOURCE_12_CARRIERS",
+      "SOL-CODEX_SECRET_RUNTIME_VERSIONS",
+      "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
+      "SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY"
+    ],
+    "next_edge": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023"
+  },
+  "recovery_table": {
+    "id": "rSPFIOWbS7cfNJ8z",
+    "name": "SUBAVENGERS_RECOVERY_TASKS_20261020",
+    "project_id": "6qKpRmicIGHA5snY",
+    "total": 45,
+    "nonterminal": 45,
+    "callable_pending": 19,
+    "blocked_pending": 26,
+    "closed": 0,
+    "task_status_mutations_this_run": 0,
+    "row_18": {
+      "task_id": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+      "status": "OPEN_ROUTED_NONCOERCIVE",
+      "permission": "CALLABLE_PROVIDER_ACCESS_ONLY; NO_FORCED_MUTATIONS"
+    },
+    "row_45": {
+      "task_id": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+      "status": "IN_PROGRESS",
+      "permission": "NOT_SPECIFIED_IN_SOURCE"
+    }
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "default_branch": "main",
+    "main_head_before_checkpoint_update": "b2ef13d75f3112a1af8b4b8c9f5c755d9755fecc",
+    "current_pointer_blob_sha": "2d33bd01bd99e8af8b329fb4ba650bb6c67e5af0",
+    "previous_checkpoint_blob_sha": "8678353e3be8ddfeac9110058c8895a2fb4bbf50",
+    "commit_signature": "UNSIGNED"
+  },
+  "latest_vercel": {
+    "main": {
+      "commit_sha": "b2ef13d75f3112a1af8b4b8c9f5c755d9755fecc",
+      "state": "PENDING",
+      "deployment_id": "dpl_7Cu5eqDoRprx8QdtPFZc6JbR1v3U",
+      "target_url": "https://vercel.com/sollasi/sol-long-mach/7Cu5eqDoRprx8QdtPFZc6JbR1v3U"
+    },
+    "pr_48": {
+      "state": "FAILURE",
+      "head_sha": "3c58337bbfbfd0d3df791c926e8843174a1c3ad8",
+      "deployment_url": "https://vercel.com/sollasi/sol-long-mach/2XUR2rzhT7jUszQpDeCddPnHZZvH",
+      "github_run_id": 40840356980,
+      "github_run": "SECRET_EXPOSURE_GUARD_SUCCESS_ONLY",
+      "go_build_receipt": "NOT_VERIFIED",
+      "workflow_path": ".github/workflows/hellocheck-go-r014.yml",
+      "workflow_blob_sha": "cdb4027a70b7dbdecc9c3acf14e13b9e587d6e91",
+      "trigger": "PUSH_ONLY_ON_DEDICATED_BRANCH",
+      "workflow_dispatch": false,
+      "pr_state": "OPEN",
+      "draft": false,
+      "merged": false
+    },
+    "pr_49": {
+      "state": "FAILURE",
+      "head_sha": "59289a8423edf0b05e41867214dca2a7e9c94178",
+      "deployment_url": "https://vercel.com/sollasi/sol-long-mach/Cazga4ZMD6QpMLfEZwJeKTrTcSdw",
+      "topology_workflow_run": 40844487605,
+      "topology_workflow_conclusion": "FAILURE",
+      "topology_failed_step": "Verify Library topology",
+      "exact_failed_assertion": "NOT_AVAILABLE",
+      "artifacts": [],
+      "swift_runtime_workflow_run": 40844487617,
+      "swift_runtime_conclusion": "SUCCESS",
+      "secret_guard_workflow_run": 40844487612,
+      "secret_guard_conclusion": "SUCCESS",
+      "pr_state": "OPEN",
+      "draft": false,
+      "merged": false
+    },
+    "pr_43": {
+      "state": "OPEN",
+      "draft": true,
+      "merged": false,
+      "head_sha": "7d534e961ab9dad74677cee06fb21f1496c44b61",
+      "workflow_run": 40323431187,
+      "workflow_conclusion": "SUCCESS"
+    },
+    "pr_44": {
+      "state": "OPEN",
+      "draft": true,
+      "merged": false,
+      "head_sha": "61d314fd622c563ffbd5e37c1daa8cdd2910b944",
+      "workflow_run": 40328357950,
+      "workflow_conclusion": "SUCCESS"
+    },
+    "issue_18": "OPEN",
+    "failure_causes": "Vercel deployment failure causes not verified; PR49 topology assertion text unavailable; PR48 Go build not verified"
+  },
+  "latest_host": {
+    "host": "DESKTOP-86ITNQ4",
+    "current_os_cim_heartbeat": "VERIFIED",
+    "direct_os_cim_heartbeat_local": "2026-10-31T11:25:25.4609818+07:00",
+    "os_caption": "Microsoft Windows 11 Pro Insider Preview",
+    "last_boot_local": "2026-10-31T07:10:34.5000000+07:00",
+    "ram_free_kb": 10426744,
+    "drives_free_bytes": {
+      "C": 21155958784,
+      "D": 203728769024,
+      "G": 154338197504,
+      "W": 193542328320,
+      "Z": 0
+    },
+    "personal_desktop_commander": {
+      "account_link": "halinh270803",
+      "device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
+      "status": "ONLINE_AT_LAST_DEVICE_READ"
+    },
+    "dedicated_rdc_accounts": {
+      "dat123456790": "OFFLINE",
+      "2708halinh": "OFFLINE"
+    },
+    "other_personal_link": {
+      "ntdfle6v13": "OFFLINE"
+    },
+    "android": "UNVERIFIED",
+    "local_repository_resume": {
+      "status": "UNRESOLVED",
+      "result": "NO_VERIFIED_CLONE_PATH_RETURNED;SEARCH_INCOMPLETE",
+      "repository_not_recreated": true,
+      "local_repository_writes": 0
+    },
+    "desktop_commander_monthly_usage_warning": "92%; avoid nonessential host calls"
+  },
+  "latest_source_recovery": {
+    "jiney_raw_export": "OPEN_NOT_RECOVERED",
+    "dropbox_outlook_namespace": "ns:15399976787",
+    "dropbox_root_listing": {
+      "has_more": false,
+      "direct_entry_count": 3,
+      "entries": [
+        "BÉ LINH - LIVING MEMORY",
+        "SENSOR_LOGS",
+        ".agents"
+      ],
+      "jiney_at_root": false,
+      "search_exhaustive": false
+    },
+    "dropbox_search": "SCHEMA_VALIDATION_REJECTED; no Dropbox write or download",
+    "r014_runtime_integration": "NOT_VERIFIED; main emitter does not load shared consequence gate per checkpoint 9.2",
+    "source_matrix": "GITHUB_MANIFEST_MATCHES_VERIFIED; LIBRARY_RAW_COUNTERPARTS_OPEN"
+  },
+  "included_evidence_rows": [
+    777,
+    778,
+    779,
+    780,
+    781,
+    782,
+    783,
+    784,
+    785,
+    786,
+    787,
+    788,
+    789,
+    790,
+    791,
+    792,
+    793,
+    794,
+    795,
+    796,
+    797,
+    798,
+    799,
+    800,
+    801,
+    802,
+    803,
+    804,
+    805,
+    806,
+    807,
+    808,
+    809,
+    810,
+    811,
+    812,
+    813,
+    814,
+    815,
+    816,
+    817,
+    818,
+    819,
+    820,
+    821,
+    822,
+    823,
+    824,
+    825,
+    826,
+    827,
+    828,
+    829,
+    830,
+    831,
+    832,
+    833,
+    834,
+    835,
+    836,
+    837,
+    838,
+    839,
+    840,
+    841,
+    842,
+    843,
+    844,
+    845,
+    846,
+    847,
+    848,
+    849,
+    850,
+    851,
+    852,
+    853,
+    854,
+    855,
+    856,
+    857,
+    858,
+    859,
+    860,
+    861,
+    862,
+    863,
+    864,
+    865,
+    866,
+    867,
+    868,
+    869,
+    870
+  ],
+  "new_evidence_rows": [
+    {
+      "row_id": 867,
+      "event_id": "X20261031042956_CLOUD_CONTINUITY_AUTOMATION_READBACK",
+      "readback_verified": true
+    },
+    {
+      "row_id": 868,
+      "event_id": "X20261031043040_DROPBOX_OUTLOOK_ROOT_READBACK",
+      "readback_verified": true
+    },
+    {
+      "row_id": 869,
+      "event_id": "X20261031043040_PR49_TOPOLOGY_CI_READBACK",
+      "readback_verified": true
+    },
+    {
+      "row_id": 870,
+      "event_id": "X20261031043040_PR48_GO_BUILD_RECEIPT_READBACK",
+      "readback_verified": true
+    }
+  ],
+  "safety": {
+    "recovery_task_status_mutations": 0,
+    "google_drive_writes": 0,
+    "plaintext_credentials_accessed": false,
+    "process_cache_meta_db_deletions": 0,
+    "host_cleanup": 0,
+    "host_os_commands_this_run": 1,
+    "host_os_commands_read_only": true,
+    "local_repository_writes": 0,
+    "local_repository_recreated": false,
+    "n8n_evidence_rows_appended": 4,
+    "evidence_rows_867_870_readback_verified": true,
+    "dropbox_writes": 0,
+    "dropbox_downloads": 0,
+    "pr_merges": 0,
+    "deployment_configuration_changes": 0
+  },
+  "next_edges": [
+    "Keep all 45 n8n recovery tasks nonterminal; do not treat scan selection or provider readback as completion.",
+    "Check execution 331 at the next scheduled hourly pulse; the workflow is read/scan/append-only and has no dispatch node.",
+    "Use Windows heartbeat only from direct OS/CIM evidence; do not infer Android state or equate cloud heartbeat with host heartbeat.",
+    "Resolve the local repository clone path before any local write; fast-forward from the verified GitHub checkpoint rather than recreating the clone.",
+    "Investigate PR49 Verify Library topology failure through authorized logs or a read-only reproduction; exact assertion is currently unavailable.",
+    "Keep PR48 open until a real Go build receipt is available; current run proves only Secret Exposure Guard success.",
+    "Keep issue #18 and PRs #43/#44 open until runtime-wide consequence-gate loading and source-conflict acceptance are proven.",
+    "Continue JINEY raw export and R-014 source recovery; do not substitute derivatives or infer deletion.",
+    "Do not use the full mapped Z: drive; do not write to Google Drive; no credential plaintext access."
+  ]
+}
