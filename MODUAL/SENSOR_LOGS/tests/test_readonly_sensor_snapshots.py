@@ -49,6 +49,23 @@ class SensorSnapshotIntegrity(unittest.TestCase):
         self.assertIn("source_file_written", code)
         self.assertIn("synthetic_rows_added", code)
 
+
+    def test_live_stream_flag_is_derived_from_probe_and_not_hardcoded(self):
+        source = SOURCE.read_text(encoding="utf-8")
+        tree = ast.parse(source)
+        functions = [n for n in tree.body if isinstance(n, ast.FunctionDef)]
+        helper = next(n for n in functions if n.name == "_live_sensor_reading_confirmed")
+        helper_code = ast.get_source_segment(source, helper)
+        tick = next(n for n in functions if n.name == "record_telemetry_tick")
+        tick_code = ast.get_source_segment(source, tick)
+        receipt = next(n for n in functions if n.name == "write_tick_receipt")
+        receipt_code = ast.get_source_segment(source, receipt)
+
+        self.assertIn('probe.get("live_sensor_reading_confirmed") is True', helper_code)
+        self.assertIn('result["live_sensor_reading_confirmed"] = _live_sensor_reading_confirmed(result)', tick_code)
+        self.assertIn('"live_sensor_reading_confirmed": _live_sensor_reading_confirmed(result)', receipt_code)
+        self.assertIn('"schema": "GGDV_LIVE_DEVICE_PROBE/1.1"', receipt_code)
+
     def test_exports_require_separate_enable_flags(self):
         content = SOURCE.read_text(encoding="utf-8")
         self.assertIn("SOL_ENABLE_SENSOR_CLOUD_EXPORT", content)
