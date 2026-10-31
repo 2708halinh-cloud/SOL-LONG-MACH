@@ -5,15 +5,19 @@ on:
     paths:
       - "runtime/motherboard_control_plane.py"
       - "runtime/tesseract_transducer.py"
+      - "runtime/am_duong_phap_su.py"
       - "tests/test_motherboard_control_plane.py"
       - "tests/test_tesseract_transducer.py"
+      - "tests/test_am_duong_phap_su.py"
       - ".github/workflows/tesseract-motherboard-tests.yml"
   pull_request:
     paths:
       - "runtime/motherboard_control_plane.py"
       - "runtime/tesseract_transducer.py"
+      - "runtime/am_duong_phap_su.py"
       - "tests/test_motherboard_control_plane.py"
       - "tests/test_tesseract_transducer.py"
+      - "tests/test_am_duong_phap_su.py"
       - ".github/workflows/tesseract-motherboard-tests.yml"
 
 permissions:
@@ -32,7 +36,14 @@ jobs:
           python -m py_compile
           runtime/motherboard_control_plane.py
           runtime/tesseract_transducer.py
+          runtime/am_duong_phap_su.py
           tests/test_motherboard_control_plane.py
           tests/test_tesseract_transducer.py
-      - name: Run motherboard and transducer regression tests
-        run: python -m unittest tests.test_motherboard_control_plane tests.test_tesseract_transducer -v
+          tests/test_am_duong_phap_su.py
+      - name: Run motherboard, transducer and Âm Dương DSL regression tests
+        run: >-
+          python -m unittest
+          tests.test_motherboard_control_plane
+          tests.test_tesseract_transducer
+          tests.test_am_duong_phap_su
+          -v
