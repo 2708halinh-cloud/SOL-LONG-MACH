@@ -1,23 +1,23 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/9.3",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/9.4",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-31T04:34:19.347Z",
-  "updated_at_local": "2026-10-31T11:34:19.347+07:00",
+  "updated_at_utc": "2026-10-31T04:36:33.280Z",
+  "updated_at_local": "2026-10-31T11:36:33.280+07:00",
   "previous_pointer": {
-    "blob_sha": "2d33bd01bd99e8af8b329fb4ba650bb6c67e5af0",
-    "commit_sha": "b2ef13d75f3112a1af8b4b8c9f5c755d9755fecc",
+    "blob_sha": "c42cca8be5d20ee35e40325c4c10af1d4e8eaa8d",
+    "commit_sha": "405cee07fa64864db1694f972de5f9c3b695e04b",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T1126ICT.json",
-    "blob_sha": "8678353e3be8ddfeac9110058c8895a2fb4bbf50",
-    "commit_sha": "5e9dbef1719aa636e7515d769e42cdc464569adf",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T1134ICT.json",
     "blob_sha": "f92e2ea5a7ff3c01d1e7f1c58fffc5862726f731",
     "commit_sha": "3d8f2ec7e30763b4bfb22db6cb29cb129c1c2452",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T1136ICT.json",
+    "blob_sha": "4906499ca036dba949405bd79eff000888a72f14",
+    "commit_sha": "6a3e245c779c36eb0b4e432a4794f3dd7de10d18",
     "readback_verified": true
   },
   "included_evidence_rows": [
@@ -114,7 +114,8 @@
     867,
     868,
     869,
-    870
+    870,
+    871
   ],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
@@ -128,7 +129,7 @@
     "latest_execution_mode": "trigger",
     "latest_execution_started_at_utc": "2026-10-31T04:00:22.100Z",
     "latest_execution_stopped_at_utc": "2026-10-31T04:00:24.180Z",
-    "latest_evidence_row_id": 863,
+    "latest_scan_receipt_row_id": 863,
     "execution_semantics": "READ_EVIDENCE;READ_45_TASKS;DETERMINISTIC_SCAN;APPEND_RECEIPT_ONLY;NO_DISPATCH"
   },
   "recovery_table": {
@@ -158,18 +159,28 @@
   "latest_vercel": {
     "main": "PENDING",
     "pr_48": "FAILURE;GO_BUILD_NOT_VERIFIED",
-    "pr_49": "FAILURE;VERIFY_LIBRARY_TOPOLOGY_STEP_FAILED;EXACT_ASSERTION_UNAVAILABLE"
+    "pr_49": "FAILURE;STATICALLY_REPRODUCED_LIBRARY_ROOT_ASSERTION_MISMATCH"
   },
   "latest_source_recovery": {
     "jiney_raw_export": "OPEN_NOT_RECOVERED",
     "dropbox_root": "3 direct folders; no JINEY at root; search not exhaustive",
     "r014_runtime_integration": "NOT_VERIFIED"
   },
+  "pr49_topology_static_reproduction": {
+    "failing_assertion": "test_two_github_library_roots",
+    "expected_root_dirs": [
+      "COMPUTER_KHÍ💜BRAIN_OS_POWER",
+      "OS_WORK"
+    ],
+    "actual_root_dirs": [
+      "BRAIN_WAVE_LOGS",
+      "COMPUTER_KHÍ💜BRAIN_OS_POWER",
+      "OS_WORK"
+    ],
+    "root_placement_decision": "OPEN"
+  },
   "new_evidence_rows": [
-    867,
-    868,
-    869,
-    870
+    871
   ],
   "safety": {
     "recovery_task_status_mutations": 0,
