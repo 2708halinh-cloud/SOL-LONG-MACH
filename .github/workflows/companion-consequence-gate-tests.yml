@@ -1,0 +1,29 @@
+name: Companion Consequence Gate Tests
+
+on:
+  push:
+    branches:
+      - "fix/companion-consequence-gate-path-validation-*"
+  pull_request:
+    paths:
+      - "runtime/companion_consequence_gate.py"
+      - "tests/test_companion_consequence_gate.py"
+      - ".github/workflows/companion-consequence-gate-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  focused-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run focused regression suite
+        env:
+          PYTHONPATH: .
+        run: python -m unittest discover -s tests -p "test_companion_consequence_gate.py" -v
