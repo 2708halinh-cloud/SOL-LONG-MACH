@@ -1,23 +1,23 @@
 {
-  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/8.6",
+  "schema": "SOL_CLOUD_CONTINUITY_RESUME_POINTER/8.7",
   "state": "OPEN_WORK_REMAINS",
-  "updated_at_utc": "2026-10-31T01:14:53.847Z",
-  "updated_at_local": "2026-10-31T08:14:53.847+07:00",
+  "updated_at_utc": "2026-10-31T01:19:21.854Z",
+  "updated_at_local": "2026-10-31T08:19:21.854+07:00",
   "previous_pointer": {
-    "blob_sha": "6804f870f981fea471851f60059c6a6b43715f3e",
-    "commit_sha": "b121bee759527cd946499d55b06f4297abf4131e",
+    "blob_sha": "a164660f19903eb9b5f3c350e117ebb4c10be904",
+    "commit_sha": "68383f3eb2233051831c1c3fc08afb9c7938a02e",
     "readback_verified": true
   },
   "previous_checkpoint": {
-    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0646ICT.json",
-    "blob_sha": "cd75fc5fa6d07f952178ebc7972385aefdca7607",
-    "commit_sha": "44e8171d426f13a8edf30561b63087b3d5dea371",
-    "readback_verified": true
-  },
-  "checkpoint": {
     "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0813ICT.json",
     "blob_sha": "f0ff1fad88a9df1ecf464de74cf657cceea9bf9e",
     "commit_sha": "8ba19eed6dbdb495a166394e539ff26501d4d7f6",
+    "readback_verified": true
+  },
+  "checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0818ICT.json",
+    "blob_sha": "a64ef3e4d4a12ee589a8f2688e043d8cf60ec7e4",
+    "commit_sha": "0cb519d48b7b63b2e58e9adcb0288e9bd0484fe7",
     "readback_verified": true
   },
   "included_evidence_rows": [
@@ -77,21 +77,28 @@
     830,
     831,
     832,
-    833
+    833,
+    834,
+    835,
+    836,
+    837,
+    838,
+    839,
+    840,
+    841
   ],
   "latest_cloud_scan": {
     "workflow_id": "BogzhFUDbRp7kuwh",
     "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
     "active": true,
     "active_version_id": "1bcc0041-f516-42a1-9153-9a12e94fc297",
+    "trigger_name": "Cloud hourly pulse",
     "node_count": 6,
     "dispatch_node_present": false,
     "execution_id": "327",
-    "execution_mode": "trigger",
     "execution_status": "SUCCESS",
     "started_at_utc": "2026-10-31T01:00:22.063Z",
     "stopped_at_utc": "2026-10-31T01:00:24.358Z",
-    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
     "evidence_row_id": 827,
     "task_total": 45,
     "nonterminal": 45,
@@ -125,10 +132,14 @@
     "blocked_pending": 26,
     "closed": 0,
     "task_status_mutations": 0,
+    "status_counts": {
+      "OPEN_ROUTED_NONCOERCIVE": 27,
+      "IN_PROGRESS": 1,
+      "OTHER_NONTERMINAL": 17
+    },
     "row_18": {
       "task_id": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
-      "status": "OPEN_ROUTED_NONCOERCIVE",
-      "permission": "CALLABLE_PROVIDER_ACCESS_ONLY; NO_FORCED_MUTATIONS"
+      "status": "OPEN_ROUTED_NONCOERCIVE"
     },
     "row_31": {
       "task_id": "SOL-HOSPOSIK_DOMAIN_MEMORY_RUNTIME",
@@ -138,6 +149,51 @@
       "task_id": "SOL-MODUAL_SENSOR_LOGS_ROUTING",
       "status": "OPEN_ROUTED_NONCOERCIVE"
     },
+    "row_34": {
+      "task_id": "SOL-SOL_PLUGIN_CONSOLIDATION",
+      "status": "OPEN_ROUTED_NONCOERCIVE"
+    },
+    "row_35": {
+      "task_id": "SOL-SOL_CHAT_BROWSER_MCP_FILE",
+      "status": "OPEN_ROUTED_NONCOERCIVE"
+    },
+    "row_36": {
+      "task_id": "SOL-GITHUB_COPILOT_SPACE",
+      "status": "OPEN_ROUTED_NONCOERCIVE"
+    },
+    "row_37": {
+      "task_id": "SOL-SITES_SOL100726_REDIRECTS",
+      "status": "OPEN_ROUTED_NONCOERCIVE"
+    },
+    "row_38": {
+      "task_id": "SOL-WINDOWS_RECOVERY_DISK_SPACE",
+      "status": "OPEN_ROUTED_NONCOERCIVE",
+      "permission": "WINDOWS_HOST_OFFLINE; CLOUD_SAFE_WORK_ONLY; NO_AUTO_HOST_WRITE"
+    },
+    "row_39": {
+      "task_id": "SOL-SOL_SOURCE_12_CARRIERS",
+      "status": "OPEN_ROUTED_NONCOERCIVE"
+    },
+    "row_40": {
+      "task_id": "SOL-TESSERACT_BOOT_AGENT_ROUTE",
+      "status": "OPEN_ROUTED_NONCOERCIVE"
+    },
+    "row_41": {
+      "task_id": "SOL-CODEX_SECRET_RUNTIME_VERSIONS",
+      "status": "OPEN_ROUTED_NONCOERCIVE"
+    },
+    "row_42": {
+      "task_id": "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
+      "status": "OPEN_ROUTED_NONCOERCIVE"
+    },
+    "row_43": {
+      "task_id": "SOL-ANDROID_OLLAMA_LOCALHOST_CHAT_UI",
+      "status": "OPEN_ROUTED_NONCOERCIVE"
+    },
+    "row_44": {
+      "task_id": "SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY",
+      "status": "OPEN_ROUTED_NONCOERCIVE"
+    },
     "row_45": {
       "task_id": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
       "status": "IN_PROGRESS"
@@ -145,63 +201,79 @@
   },
   "latest_host": {
     "host": "DESKTOP-86ITNQ4",
-    "direct_host_probe": "ONLINE_AT_LAST_SAMPLE;DIRECT_POWERSHELL_CIM_VOLUME_AND_GIT_READBACK",
-    "host_sample_local": "2026-10-31T08:06:36.4268787+07:00",
-    "host_sample_utc": "2026-10-31T01:06:36.4419175+00:00",
+    "direct_host_probe": "ONLINE_AT_LAST_DIRECT_SAMPLE",
+    "os_cim_heartbeat": "VERIFIED_AT_2026-10-31T08:06:36+07:00",
+    "local_git_fast_forward": "VERIFIED_AT_2026-10-31T08:09:09+07:00",
     "current_host_heartbeat": "NOT_CONTINUOUSLY_PROBED",
-    "os_cim_heartbeat": "VERIFIED_AT_LAST_SAMPLE",
     "free_ram_kb": 14529980,
-    "c_drive_free_bytes": 22176440320,
+    "c_drive_free_bytes": 22175412224,
     "c_drive_health": "Healthy",
-    "g_drive_free_bytes": 155495854080,
+    "g_drive_free_bytes": 155485028352,
     "g_drive_health": "Healthy",
-    "desktop_commander_personal_device": {
-      "name": "DESKTOP-86ITNQ4",
-      "id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
-      "status": "ONLINE_AT_LAST_DEVICE_REGISTRY_READ"
+    "personal_desktop_commander": {
+      "device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
+      "status": "ONLINE",
+      "last_seen_seconds": 51
     },
     "dedicated_remote_desktop_commander": {
-      "dat_account_device_id": "59f03001-c732-403e-b80c-b4191266809c",
-      "dat_account_status": "OFFLINE",
-      "secondary_account_localhost_id": "78fbe9ac-a314-4bde-98ae-eff6201b5936",
-      "secondary_account_localhost_status": "OFFLINE"
+      "link_6ad789ac623c8191b7aef01b70a067ee": [
+        {
+          "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+          "status": "OFFLINE",
+          "last_seen_hours": 87
+        },
+        {
+          "device_id": "bcae1dd6-bf63-4f27-9476-d5621b590c16",
+          "status": "OFFLINE",
+          "last_seen_hours": 185
+        },
+        {
+          "device_id": "5a9bbfa4-7628-4a37-936a-5a02e5f23231",
+          "status": "OFFLINE",
+          "last_seen_hours": 275
+        }
+      ],
+      "link_6ae48eca8fb08191a7054a77c14d940c": [
+        {
+          "device_id": "78fbe9ac-a314-4bde-98ae-eff6201b5936",
+          "status": "OFFLINE",
+          "last_seen_minutes": 35
+        }
+      ]
     },
     "android": "UNVERIFIED",
     "local_repo_path": "G:\\OS_Workspace\\SOL-LONG-MACH",
     "local_branch": "main",
-    "local_head_last_verified": "b121bee759527cd946499d55b06f4297abf4131e",
-    "local_worktree_last_verified": "CLEAN",
-    "local_pointer_blob_sha_last_verified": "6804f870f981fea471851f60059c6a6b43715f3e",
-    "local_checkpoint_blob_sha_last_verified": "f0ff1fad88a9df1ecf464de74cf657cceea9bf9e",
-    "local_pointer_matches_github": true,
-    "local_checkpoint_matches_github": true,
+    "local_head": "68383f3eb2233051831c1c3fc08afb9c7938a02e",
+    "local_worktree": "CLEAN",
+    "local_pointer_blob_sha": "a164660f19903eb9b5f3c350e117ebb4c10be904",
+    "local_checkpoint_blob_sha": "f0ff1fad88a9df1ecf464de74cf657cceea9bf9e",
+    "local_matches_github": true,
     "cloud_heartbeat_is_not_host_heartbeat": true
   },
   "latest_vercel": {
-    "current_commit_sha": "b121bee759527cd946499d55b06f4297abf4131e",
+    "current_commit_sha": "68383f3eb2233051831c1c3fc08afb9c7938a02e",
     "current_status": "PENDING",
-    "current_target_url": "https://vercel.com/sollasi/sol-long-mach/7bsGqPud1FQSDdUZb5vSd9Ef5fif",
-    "current_updated_at_utc": "2026-10-31T01:11:08Z",
+    "current_target_url": "https://vercel.com/sollasi/sol-long-mach/5KAjKwJMHmuMTkbKnfxPorfNmYy4",
+    "current_updated_at_utc": "2026-10-31T01:14:58Z",
     "current_github_checks": {
-      "test": "SUCCESS",
-      "secret_guard": "SUCCESS",
-      "verify": "SUCCESS"
+      "verify": "SUCCESS",
+      "secret_guard": "SUCCESS"
     },
     "previous_commit_sha": "a54aea63724eeaac71da3d7bf53ce3d57b03d17e",
     "previous_status": "FAILURE",
     "previous_target_url": "https://vercel.com/sollasi/sol-long-mach/j5GeWM5thmBfsxs2PhVCyRmYmdWP",
     "failure_cause": "NOT_VERIFIED",
     "authorized_redacted_logs": "NOT_ACCESSED",
-    "deployment_configuration_changed": false,
-    "evidence_correction_row": 833
+    "deployment_configuration_changed": false
   },
   "github": {
     "repository": "2708halinh-cloud/SOL-LONG-MACH",
-    "main_head_before_checkpoint_update": "b121bee759527cd946499d55b06f4297abf4131e",
-    "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0813ICT.json",
-    "checkpoint_blob_sha": "f0ff1fad88a9df1ecf464de74cf657cceea9bf9e",
-    "checkpoint_commit": "8ba19eed6dbdb495a166394e539ff26501d4d7f6",
-    "main_commit_signature": "UNSIGNED",
+    "main_head_before_checkpoint_update": "68383f3eb2233051831c1c3fc08afb9c7938a02e",
+    "checkpoint_path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T0818ICT.json",
+    "checkpoint_blob_sha": "a64ef3e4d4a12ee589a8f2688e043d8cf60ec7e4",
+    "checkpoint_commit": "0cb519d48b7b63b2e58e9adcb0288e9bd0484fe7",
+    "pointer_commit_signature": "UNSIGNED",
     "pr_29": {
       "state": "OPEN",
       "draft": true,
@@ -285,70 +357,60 @@
   },
   "new_evidence": [
     {
-      "row_id": 825,
-      "event_id": "X20261031064251_LOCAL_FAST_FORWARD_C_DRIVE_CRITICAL",
+      "row_id": 834,
+      "event_id": "X20261031010909_LOCAL_CHECKPOINT_FAST_FORWARD_READBACK",
       "readback_verified": true
     },
     {
-      "row_id": 826,
-      "event_id": "X20261031000024179_CLOUD",
-      "execution_id": "326",
-      "status": "SUCCESS",
+      "row_id": 835,
+      "event_id": "X20261031_POST_POINTER_86_STATUS_AND_RECOVERY_READBACK",
       "readback_verified": true
     },
     {
-      "row_id": 827,
-      "event_id": "X20261031010024221_CLOUD",
-      "execution_id": "327",
-      "status": "SUCCESS",
+      "row_id": 836,
+      "event_id": "X20261031_DEDICATED_RDC_LINK_STATUS",
       "readback_verified": true
     },
     {
-      "row_id": 828,
-      "event_id": "X20261031_HOSTINGER_HOSPOSIK_DNS_READBACK",
+      "row_id": 837,
+      "event_id": "X20261031_PLUGIN_CONSOLIDATION_REPO_READBACK",
       "readback_verified": true
     },
     {
-      "row_id": 829,
-      "event_id": "X20261031011127_HOSPOSIK_CI_PATH_FIX",
+      "row_id": 838,
+      "event_id": "X20261031_CHAT_BROWSER_MCP_SOURCE_READBACK",
       "readback_verified": true
     },
     {
-      "row_id": 830,
-      "event_id": "X20261031010624_MODUAL_LOCAL_TESTS",
-      "tests_passed": 11,
-      "exit_code": 0,
+      "row_id": 839,
+      "event_id": "X20261031_GITHUB_COPILOT_SPACE_CAPABILITY_GAP",
       "readback_verified": true
     },
     {
-      "row_id": 831,
-      "event_id": "X20261031010636_HOST_GIT_FAST_FORWARD_READBACK",
-      "local_head": "b121bee759527cd946499d55b06f4297abf4131e",
-      "worktree": "CLEAN",
+      "row_id": 840,
+      "event_id": "X20261031_SOL100726_REDIRECT_SOURCE_READBACK",
       "readback_verified": true
     },
     {
-      "row_id": 832,
-      "event_id": "X20261031_GITHUB_CHECKS_VERCEL_STATUS",
-      "attribution_corrected_by_row": 833
-    },
-    {
-      "row_id": 833,
-      "event_id": "X20261031_POST_POINTER_VERCEL_STATUS_CORRECTION",
-      "current_vercel": "PENDING",
-      "previous_commit_vercel": "FAILURE",
+      "row_id": 841,
+      "event_id": "X20261031_SOURCE_12_CARRIERS_SOURCE_SEARCH",
       "readback_verified": true
     }
   ],
   "next_edges": [
-    "Keep all 45 n8n recovery tasks nonterminal; row 18 remains OPEN_ROUTED_NONCOERCIVE and row 45 remains IN_PROGRESS.",
-    "Poll Vercel deployment 7bsGqPud1FQSDdUZb5vSd9Ef5fif; investigate prior a54aea FAILURE only through an authorized redacted-log route.",
+    "Keep all 45 n8n recovery tasks nonterminal; row 18 and rows 31-44 remain OPEN_ROUTED_NONCOERCIVE; row 45 remains IN_PROGRESS.",
+    "Poll Vercel deployment 5KAjKwJMHmuMTkbKnfxPorfNmYy4; investigate prior a54aea FAILURE only through an authorized redacted-log route.",
     "R-014: preserve divergent local response gate/test; locate raw source carriers and perform runtime acceptance only with exact provenance.",
-    "HOSPOSIK: Android Termux runtime and public HTTPS endpoint remain unverified; TXT records are present but advertise public_endpoint=pending.",
+    "HOSPOSIK: Android Termux runtime and public HTTPS endpoint remain unverified; Hostinger account owner not resolved.",
     "MODUAL: 11 regression tests pass; verify exact source bytes and live sensor device readback; do not enable W: Drive export.",
-    "Source Matrix: GitHub 4/4 matches manifest; exact Library raw carriers remain unresolved.",
+    "Plugin consolidation: resolve actual ChatGPT plugin target identity before any publish/uninstall.",
+    "Chat Browser MCP: verify active client and OAuth/tool discovery without reading credentials; inventory of MCP definitions remains incomplete.",
+    "GitHub Copilot Space: current connector exposes no Copilot Space action; account existence not determined.",
+    "Redirects: resolve valid domain and exact domain-to-target mapping; select Hostinger account before any write.",
+    "Source 12 carriers: retrieve exact original source pointer; do not substitute unrelated toolchain/XTIME files.",
+    "Source Matrix: GitHub 4/4 matches manifest; exact Library raw counterparts remain unresolved.",
     "Keep the 29-task GitHub ledger separate from the 45-row n8n recovery table.",
-    "Android remains UNVERIFIED; dedicated Remote Desktop Commander account devices remain OFFLINE.",
+    "Android remains UNVERIFIED; dedicated Remote Desktop Commander links remain OFFLINE.",
     "No writes to the storage-exhausted Google Drive account."
   ],
   "safety": {
@@ -356,19 +418,24 @@
     "google_drive_writes": 0,
     "plaintext_credentials_accessed": false,
     "process_cache_meta_db_deletions": 0,
-    "host_file_writes_outside_git": 0,
-    "local_git_sync": "FAST_FORWARD_ONLY",
+    "host_cleanup": 0,
+    "host_test_temp_files": "AUTOMATICALLY_CREATED_AND_REMOVED_BY_UNITTEST;NO_SOURCE_MUTATION",
+    "host_git_sync": "FAST_FORWARD_ONLY",
     "local_git_reset_rebase": false,
+    "agent_plugin_publish_or_uninstall": 0,
     "agent_publications": 0,
     "pr_merges": 0,
     "library_overwrites": 0,
-    "dns_writes": 0,
+    "dns_or_forwarding_writes": 0,
     "billed_services_created": 0,
     "deployment_configuration_changed": false,
     "vercel_logs_accessed": false,
     "sensor_exports_performed": 0,
-    "evidence_rows_appended": 6,
-    "evidence_rows_828_833_readback_verified": true
+    "mcp_config_mutations": 0,
+    "github_workflow_path_correction": 1,
+    "checkpoint_pointer_git_writes": 2,
+    "evidence_rows_appended_since_8_5": 14,
+    "evidence_rows_828_841_readback_verified": true
   },
   "hosposik_provider_readback": {
     "task_id": "SOL-HOSPOSIK_DOMAIN_MEMORY_RUNTIME",
@@ -397,15 +464,110 @@
   "modual_sensor_logs": {
     "task_id": "SOL-MODUAL_SENSOR_LOGS_ROUTING",
     "status": "OPEN",
-    "local_test_command": "python -B -m unittest discover -s MODUAL/SENSOR_LOGS/tests -v",
     "tests_passed": 11,
     "exit_code": 0,
     "duration_seconds": 0.119,
     "working_tree_clean": true,
-    "source_data_mutated": false,
-    "google_drive_export_performed": false,
-    "github_export_performed": false,
     "live_sensor_stream": "NOT_VERIFIED",
-    "evidence_row_id": 830
+    "google_drive_export_performed": false,
+    "evidence_row": 830
+  },
+  "hosposik": {
+    "task_id": "SOL-HOSPOSIK_DOMAIN_MEMORY_RUNTIME",
+    "status": "OPEN",
+    "workflow_path_corrected": true,
+    "workflow_commit": "b121bee759527cd946499d55b06f4297abf4131e",
+    "workflow_blob_sha": "aa4578538fd37ad73b3d68bb72cc8462bd3125ff",
+    "actions_run_id": 41154078191,
+    "actions_run_status": "SUCCESS",
+    "hostinger_domain": "gambbrazil.fun",
+    "hostinger_domain_id": 31388869,
+    "account_links_checked_read_only": [
+      "Primary",
+      "Halin"
+    ],
+    "account_link_results": "IDENTICAL_DOMAIN_PORTFOLIO_AND_DNS;OWNER_NOT_RESOLVED",
+    "txt_records_present": [
+      "gambbrazil",
+      "_hosposik.gambbrazil"
+    ],
+    "public_endpoint": "PENDING",
+    "http_tls": "NOT_CONFIGURED_IN_REPOSITORY_README",
+    "forwarding": "NO_ACTIVE_REDIRECT_RETURNED",
+    "android_termux_runtime": "UNVERIFIED",
+    "evidence_rows": [
+      828,
+      829
+    ]
+  },
+  "plugin_consolidation": {
+    "task_id": "SOL-SOL_PLUGIN_CONSOLIDATION",
+    "status": "OPEN",
+    "marketplace_blob_sha": "965fb4536ecc3d6db6baa0d3a6728fcbd809fe25",
+    "plugin_manifest_blob_sha": "ec60a10e154b64d0443e0ba42ce50dbf68f464d4",
+    "migration_ledger_blob_sha": "fb3b91d6be1c4ad378b370901a759e0a8add8c07",
+    "source_merge_complete": true,
+    "repo_readback_passed": true,
+    "merged_skill_count": 9,
+    "merged_resource_count": 6,
+    "target_chatgpt_plugin_resolved": false,
+    "target_installed_skill_matches": 0,
+    "installed_target_namespace_observed": false,
+    "old_shells_uninstalled": false,
+    "publish_or_uninstall_action_invoked": false,
+    "evidence_row": 837
+  },
+  "chat_browser_mcp": {
+    "task_id": "SOL-SOL_CHAT_BROWSER_MCP_FILE",
+    "status": "OPEN",
+    "mcp_json_blob_sha": "796d871ede9d222c5dabb5b43243fb417a48c9de",
+    "dot_mcp_json_blob_sha": "a0d59cea5bf493cda115dfbb978767d847dbdbc9",
+    "root_vscode_mcp_blob_sha": "f7947200eff61b87e57279e27a2956bd568522cc",
+    "os_work_vscode_mcp_blob_sha": "b531042a9e8bcb46b84a7958409e337c8bf26435",
+    "declared_servers": [
+      "chrome-devtools-local",
+      "apify-browser-https",
+      "posthog-https"
+    ],
+    "runtime_auth": "UNVERIFIED",
+    "callable_tool_surface_inventory_is_server_export": false,
+    "migration_index_mcp_inventory": "INCOMPLETE_NOT_TRANSFERRED",
+    "evidence_row": 838
+  },
+  "github_copilot_space": {
+    "task_id": "SOL-GITHUB_COPILOT_SPACE",
+    "status": "OPEN",
+    "current_connector_action": "NOT_EXPOSED",
+    "repository_tree_path_match": "NOT_FOUND_IN_INSPECTED_TREE",
+    "account_space_existence": "NOT_DETERMINED",
+    "evidence_row": 839
+  },
+  "redirects": {
+    "task_id": "SOL-SITES_SOL100726_REDIRECTS",
+    "status": "OPEN",
+    "prior_domain_strings": [
+      "gambbrazil@Sol100726.fun",
+      "gambbrazil@Sol100726.is"
+    ],
+    "prior_targets": [
+      "https://github.com/2708halinh-cloud/SOL-LONG-MACH",
+      "https://github.com/settings/apps/t-time-spone"
+    ],
+    "domain_label_validation": "AT_SIGN_FORM_INVALID_OR_UNRESOLVED",
+    "hostinger_active_domain": "gambbrazil.fun",
+    "hostinger_domain_id": 31388869,
+    "sol100726_fun": "NOT_IN_RETURNED_PORTFOLIO",
+    "sol100726_is": "NOT_IN_RETURNED_PORTFOLIO",
+    "forwarding_for_gambbrazil_fun": "EMPTY",
+    "account_owner": "NOT_RESOLVED",
+    "dns_or_forwarding_writes": 0,
+    "evidence_row": 840
+  },
+  "source_12_carriers": {
+    "task_id": "SOL-SOL_SOURCE_12_CARRIERS",
+    "status": "OPEN",
+    "exact_source_pointer": "NOT_FOUND_IN_SEARCHED_GITHUB_TREE_OR_LIBRARY_SEARCH",
+    "search_scope": "GITHUB_RECURSIVE_TREE_AND_LIBRARY_SEMANTIC_SEARCH",
+    "evidence_row": 841
   }
 }
