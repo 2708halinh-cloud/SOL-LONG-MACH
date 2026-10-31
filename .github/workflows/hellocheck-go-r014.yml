@@ -1,12 +1,20 @@
-name: HelloCheck R-014 cloud build verification (isolated branch)
+name: HelloCheck R-014 Go build/test and safety verification
 
 on:
   push:
     branches:
+      - main
       - sol-cloud-continuity/hellocheck-go-r014-20261028
     paths:
       - 'integrations/hellocheck/**'
       - '.github/workflows/hellocheck-go-r014.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'integrations/hellocheck/**'
+      - '.github/workflows/hellocheck-go-r014.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -65,7 +73,6 @@ jobs:
           import hashlib, json, os, subprocess
           from pathlib import Path
 
-          root = Path.cwd()
           runner_temp = Path(os.environ["RUNNER_TEMP"])
           def sha(path):
               return hashlib.sha256(Path(path).read_bytes()).hexdigest()
