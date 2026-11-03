@@ -187,7 +187,7 @@ class TesseractMainboardIntegrationTests(unittest.TestCase):
                         disk_sample={"total_bytes": 100, "free_bytes": 20, "sample_fresh": True})
         out = board.run_cycle(cp, source_refs=["repo://source"], history_refs=["sha256:" + "f" * 64],
                               disk_sample={"total_bytes": 100, "free_bytes": 20, "sample_fresh": True})
-        self.assertIn("WRITE", [edge_id for _, edge_id in self.calls])
+        self.assertIn("WRITE", self.calls)
         self.assertTrue(out["objective_done"])
 
     def test_missing_source_or_history_keeps_task_open_without_action(self):
