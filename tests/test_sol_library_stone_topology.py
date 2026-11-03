@@ -7,11 +7,27 @@ ROOT = Path(__file__).resolve().parents[1]
 LIB = ROOT / "CHATGPT_LIBRARY" / "SOL LONG MẠCH - HẬU THIÊN TĨNH"
 CORE = LIB / "COMPUTER_KHÍ💜BRAIN_OS_POWER"
 SPACE = CORE / "EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE"
+BRAIN_WAVE_LOGS = LIB / "BRAIN_WAVE_LOGS"
+
 
 class LibraryStoneTopologyTests(unittest.TestCase):
-    def test_two_github_library_roots(self):
-        self.assertEqual({p.name for p in LIB.iterdir() if p.is_dir()},
-                         {"COMPUTER_KHÍ💜BRAIN_OS_POWER", "OS_WORK"})
+    def test_two_canonical_roots_and_preserved_wave_logs(self):
+        # BRAIN_WAVE_LOGS is a pre-existing historical/observability carrier,
+        # not a third canonical library root. Preserve it rather than deleting
+        # evidence merely to satisfy the two-root topology assertion.
+        self.assertEqual(
+            {p.name for p in LIB.iterdir() if p.is_dir()},
+            {"COMPUTER_KHÍ💜BRAIN_OS_POWER", "OS_WORK", "BRAIN_WAVE_LOGS"},
+        )
+        for name in (
+            "1_RAW_INPUT_OUTPUT.log",
+            "2_SPATIAL_VECTOR.log",
+            "3_LOGPROBS_GATING.log",
+            "4_TEMP_STATE.log",
+            "5_CHRONO_CONTINUOUS.log",
+            "README_TOKEN_OBSERVABILITY.md",
+        ):
+            self.assertTrue((BRAIN_WAVE_LOGS / name).is_file(), name)
         self.assertFalse((LIB / "SPACE_STONE_WORKSPACE").exists())
 
     def test_computer_five_stones_and_one_agents(self):
@@ -52,6 +68,7 @@ class LibraryStoneTopologyTests(unittest.TestCase):
         self.assertNotIn("HẬU THIÊN TĨNH/SPACE_STONE_WORKSPACE/",boot)
         self.assertIn("EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/SOL_TOPOLOGY_PLANETS",boot)
         self.assertIn("../EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/",time)
+
 
 if __name__ == "__main__":
     unittest.main()
