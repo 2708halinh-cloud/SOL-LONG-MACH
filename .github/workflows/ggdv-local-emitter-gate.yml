@@ -33,3 +33,7 @@ jobs:
         env:
           PYTHONPATH: .
         run: python3 -m unittest discover -s tests -p "test_companion_consequence_gate.py" -v
+      - name: Run full repository unittest suite
+        env:
+          PYTHONPATH: .:runtime
+        run: python3 -m unittest discover -s . -p "test_*.py" -v
