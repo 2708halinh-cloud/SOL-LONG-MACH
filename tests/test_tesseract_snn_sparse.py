@@ -25,7 +25,11 @@ class SparseSchedulerTests(unittest.TestCase):
         self.assertEqual(engine.step(), [37])
 
     def test_spike_propagation_does_not_scan_the_full_synapse_population(self):
-        neurons = [Neuron(threshold=1, leak=1) for _ in range(3)]
+        neurons = [
+            Neuron(threshold=1, leak=1),
+            Neuron(threshold=0.5, leak=1),
+            Neuron(threshold=1, leak=1),
+        ]
         synapses = [
             Synapse(0, 1, 0.75, delay=1),
             Synapse(2, 1, 0.25, delay=1),
