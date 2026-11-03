@@ -16,13 +16,15 @@ from .sparse_router import SparseRegionRouter
 
 
 _ITEM_MARKER = re.compile(
-    r"<!-- BEGIN_ITEM_(R-\d{3}) -->\s*(.*?)\s*<!-- END_ITEM_\1 -->",
+    r"<!-- BEGIN_ITEM_(R-\\d{3}) -->\\s*(.*?)\\s*<!-- END_ITEM_\\1 -->",
     re.DOTALL,
 )
-_BEGIN_MARKER = re.compile(r"<!-- BEGIN_ITEM_(R-\d{3}) -->")
-_END_MARKER = re.compile(r"<!-- END_ITEM_(R-\d{3}) -->")
-_RELATED = re.compile(r"^\s*RELATED_ITEMS\s*:\s*(.*?)\s*$", re.MULTILINE)
-_ITEM_REF = re.compile(r"R-\d{3}")
+_BEGIN_MARKER = re.compile(r"<!-- BEGIN_ITEM_(R-\\d{3}) -->")
+_END_MARKER = re.compile(r"<!-- END_ITEM_(R-\\d{3}) -->")
+_RELATED = re.compile(r"^\\s*RELATED_ITEMS\\s*:\\s*(.*?)\\s*$", re.MULTILINE)
+_ITEM_REF = re.compile(r"R-\\d{3}")
+_REVISION_KINDS = {"git-blob-sha1", "git-commit-sha1", "sha256", "version-id"}
+_OPAQUE_VERSION_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9._:/+-]{0,255}")
 
 
 @dataclass(frozen=True)
@@ -32,6 +34,26 @@ class MatrixRuntime:
     router: SparseRegionRouter
     neuron_by_item: Mapping[str, int]
     source_ref: str
+
+
+def _validate_revision(source_revision: str, revision_kind: str) -> str:
+    """Validate a revision according to its declared namespace and return its locator form."""
+    if revision_kind not in _REVISION_KINDS:
+        raise ValueError("SUPPORTED_REVISION_KIND_REQUIRED")
+    if not isinstance(source_revision, str) or not source_revision:
+        raise ValueError("SOURCE_REVISION_REQUIRED")
+
+    if revision_kind in {"git-blob-sha1", "git-commit-sha1"}:
+        if not re.fullmatch(r"[0-9a-fA-F]{40}", source_revision):
+            raise ValueError("SOURCE_REVISION_REQUIRED")
+        return source_revision.lower()
+    if revision_kind == "sha256":
+        if not re.fullmatch(r"[0-9a-fA-F]{64}", source_revision):
+            raise ValueError("SOURCE_REVISION_REQUIRED")
+        return source_revision.lower()
+    if not _OPAQUE_VERSION_ID.fullmatch(source_revision):
+        raise ValueError("SOURCE_REVISION_REQUIRED")
+    return source_revision
 
 
 def parse_item_matrix(
@@ -46,10 +68,7 @@ def parse_item_matrix(
         raise ValueError("MATRIX_SOURCE_REQUIRED")
     if not isinstance(source_uri, str) or not source_uri.strip():
         raise ValueError("SOURCE_URI_REQUIRED")
-    if not isinstance(source_revision, str) or not re.fullmatch(r"[0-9a-fA-F]{7,64}", source_revision):
-        raise ValueError("SOURCE_REVISION_REQUIRED")
-    if revision_kind not in {"git-blob-sha1", "git-commit-sha1", "sha256", "version-id"}:
-        raise ValueError("SUPPORTED_REVISION_KIND_REQUIRED")
+    revision = _validate_revision(source_revision, revision_kind)
 
     begins = list(_BEGIN_MARKER.finditer(markdown))
     ends = list(_END_MARKER.finditer(markdown))
@@ -57,7 +76,7 @@ def parse_item_matrix(
     if not begins or len(begins) != len(ends) or len(matches) != len(begins):
         raise ValueError("ITEM_BOUNDARY_MISMATCH")
 
-    source_ref = f"{source_uri.strip()}@{revision_kind}:{source_revision.lower()}"
+    source_ref = f"{source_uri.strip()}@{revision_kind}:{revision}"
     seen: set[str] = set()
     descriptors: list[RegionDescriptor] = []
     for match in matches:
@@ -66,7 +85,7 @@ def parse_item_matrix(
             raise ValueError(f"DUPLICATE_ITEM:{item_id}")
         seen.add(item_id)
 
-        title_match = re.search(r"^\s*#\s+(.+?)\s*$", body, re.MULTILINE)
+        title_match = re.search(r"^\\s*#\\s+(.+?)\\s*$", body, re.MULTILINE)
         title = title_match.group(1).strip() if title_match else item_id
 
         related: list[str] = []
@@ -106,7 +125,7 @@ def build_matrix_runtime(
         source_revision=source_revision,
         revision_kind=revision_kind,
     )
-    if not isinstance(initial_energy, (int, float)) or isinstance(initial_energy, bool) or not re.fullmatch(r"(?:0|[1-9]\d*)(?:\.\d+)?", str(initial_energy)):
+    if not isinstance(initial_energy, (int, float)) or isinstance(initial_energy, bool) or not re.fullmatch(r"(?:0|[1-9]\\d*)(?:\\.\\d+)?", str(initial_energy)):
         raise ValueError("INITIAL_ENERGY_MUST_BE_NON_NEGATIVE")
     if initial_energy < 0:
         raise ValueError("INITIAL_ENERGY_MUST_BE_NON_NEGATIVE")
