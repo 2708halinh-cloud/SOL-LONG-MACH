@@ -9,8 +9,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / (
-    "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/"
-    "_Plugins/power_router.py"
+    "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ/"
+    "_Plugins/Legacy_Plugins/power_router.py"
 )
 spec = importlib.util.spec_from_file_location("sol_power_router", SRC)
 power = importlib.util.module_from_spec(spec)
@@ -23,7 +23,7 @@ class PowerRouterTest(unittest.TestCase):
         self.assertEqual(len(idx["groups"]), 10)
         self.assertEqual(back["target"]["name"], "_Plugins")
         self.assertEqual(back["link_type"], "METADATA_POINTER_ONLY")
-        self.assertTrue((tools / "_Plugins" / "power_router.py").exists())
+        self.assertTrue((tools / "_Plugins" / "Legacy_Plugins" / "power_router.py").exists())
 
     def test_real_source_paths_reachable(self):
         tools, index, back = power.load(ROOT)

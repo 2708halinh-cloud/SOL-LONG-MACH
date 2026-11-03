@@ -10,7 +10,7 @@ import unicodedata
 from pathlib import Path
 
 ROOT_REL = "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools"
-REGISTRY = "Power_Router_V2/POWER_CAPABILITY_ROUTES_V2.json"
+REGISTRY = "Chuỗi công cụ/_Plugins/Power_Router_V2/POWER_CAPABILITY_ROUTES_V2.json"
 LEGACY = "Chuỗi công cụ/_Plugins/Legacy_Plugins/power_router.py"
 SKILL_POLICY = "SKILL_PRIORITY_POLICY_CURRENT.json"
 
@@ -47,6 +47,12 @@ def load(repo_root: Path):
     source = tools / REGISTRY
     if source.is_symlink():
         raise ValueError("REGISTRY_SYMLINK_REFUSED")
+    if not source.is_file():
+        # A personal Library may carry only the portable manifest mirror.
+        mirror = tools / "_Plugins" / "POWER_CAPABILITY_ROUTES_V2.json"
+        if mirror.is_symlink() or not mirror.is_file():
+            raise FileNotFoundError(source)
+        source = mirror
     info = json.loads(source.read_text(encoding="utf-8"))
     if info.get("schema") != "SOL_POWER_CAPABILITY_ROUTER/2.0":
         raise ValueError("REGISTRY_SCHEMA_INVALID")
@@ -57,10 +63,14 @@ def load(repo_root: Path):
         legacy = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(legacy)
         _, parent, back = legacy.load(repo)
+        legacy_tools = _safe(repo, legacy.ROOT_REL)
+        legacy_back = _safe(legacy_tools, legacy.BACK)
+        parent_back = _safe(legacy_tools, parent.get("terminal_back_edge", ""))
+        registry_back = _safe(tools, info.get("return_pointer", ""))
+        if registry_back != legacy_back or parent_back != legacy_back:
+            raise ValueError("REGISTRY_BACK_EDGE_MISMATCH")
         if back.get("target", {}).get("name") != "_Plugins":
             raise ValueError("RETURN_EDGE_NOT_PLUGINS")
-        if info.get("return_pointer") != parent.get("terminal_back_edge"):
-            raise ValueError("REGISTRY_BACK_EDGE_MISMATCH")
         back_verified = True
     ids = [x["id"] for x in info["capabilities"]]
     if len(ids) != len(set(ids)):

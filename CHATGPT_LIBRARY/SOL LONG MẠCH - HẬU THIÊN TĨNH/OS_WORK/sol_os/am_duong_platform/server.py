@@ -22,7 +22,7 @@ from capabilities import (analyze_text, configured, image_details,
                           transcribe_local, translate, video_objects)
 
 MAX_BODY_BYTES = 13_000_000
-PLUGIN_ROUTER = REPO / "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/_Plugins/power_router.py"
+PLUGIN_ROUTER = REPO / "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ/_Plugins/Legacy_Plugins/power_router.py"
 
 def power_route(task: str):
     if not PLUGIN_ROUTER.is_file():

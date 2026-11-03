@@ -11,9 +11,9 @@ import re
 import unicodedata
 from pathlib import Path
 
-ROOT_REL = "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools"
-CONFIG = "_Plugins/POWER_ROUTER_CURRENT.json"
-BACK = "_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/RETURN_TO_PLUGINS.json"
+ROOT_REL = "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ"
+CONFIG = "_Plugins/Legacy_Plugins/POWER_ROUTER_CURRENT.json"
+BACK = "_Plugins/Legacy_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/RETURN_TO_PLUGINS.json"
 
 
 def _normalize(value: str) -> str:
