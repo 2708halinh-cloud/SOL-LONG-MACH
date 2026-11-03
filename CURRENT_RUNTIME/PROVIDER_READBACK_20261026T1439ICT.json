@@ -1,0 +1,238 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "observed_at": "2026-10-26T14:40:13.330+07:00",
+  "observed_at_utc": "2026-10-26T07:40:13.330Z",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "main_head_before_checkpoint": "9cf5f97bf5d3466c8a14240f92ef626805565afa",
+  "task": "MODUAL_SENSOR_LOGS_ROUTING",
+  "current_status": "OPEN_PROVIDER_CARRIER_RESOLVED_WINDOWS_TICK_NOT_VERIFIED",
+  "mandatory_fresh_reads": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "bytes": 72420
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "7b3dde0cad80006be151e693c0e2e356eabee1e9",
+      "bytes": 256551
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "0664f08d782747dafb6a864c5260fd417c3ce0c8",
+      "bytes": 2130018,
+      "parsed": true
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "0285e01d486801b3566b17735e6db077684d2d0b",
+      "bytes": 2060673,
+      "parsed": true
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "blob_sha": "01c1dfe8682e25c7e2f5210bbae87a30231b1f58",
+      "bytes": 1183748,
+      "parsed": true
+    }
+  },
+  "dropbox": {
+    "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+    "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "size": 35389440,
+    "server_modified": "2026-10-14T00:20:03Z",
+    "content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+    "content_hash_evidence": "Windows consumer receipt reports source_content_hash_verified=true; Dropbox metadata endpoint itself supplied revision/size/server_modified, not this content hash."
+  },
+  "windows_host": {
+    "device": "DESKTOP-86ITNQ4",
+    "host_observed_at_utc": "2026-10-26T07:28:10.8790582Z",
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run": "2026-10-26T14:26:33+07:00",
+      "last_result": 0,
+      "missed_runs": 0,
+      "next_run": "2026-10-26T14:31:32+07:00",
+      "action": "D:\\SENSOR_LOGS\\run_telemetry_buffer_sync.ps1"
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "size": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T072639090945Z.json",
+      "sha256": "D8A4BADC85ADCF13A7B53594FFB1BA396E9B61DAC7E5CEA9F1E47991287A8A70",
+      "size": 1635,
+      "observed_at_utc": "2026-10-26T07:26:39.090945Z",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "live_sensor_reading_confirmed": false,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T072636367Z.json",
+      "sha256": "4F18E94DDBCD70F7F378540C7C38E1566FC410B279D1AA063CB10A4CC981A3A9",
+      "size": 6945,
+      "observed_at_utc": "2026-10-26T07:26:39.2140497Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_content_hash_verified": true,
+      "consumer_hash_matches_verifier": true,
+      "dropbox_revision": "0165dc1e4794ab00000000395cdfd73",
+      "dropbox_content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "raw_rows_emitted": false,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false,
+      "tick_filename_explicitly_linked": false,
+      "note": "Receipt and Tick were created/read back in the same wrapper cycle; both match the pinned source hash. The receipt does not contain an explicit tick filename, so a direct filename link is not claimed."
+    },
+    "wrapper_trace": {
+      "path": "D:\\SENSOR_LOGS\\state\\telemetry_buffer_sync_wrapper_trace.log",
+      "last_write_utc": "2026-10-26T07:26:39.3241664Z",
+      "last_markers": [
+        "VERIFIER_END exit=0 lines=1",
+        "CONSUMER_BEGIN",
+        "CONSUMER_END exit=0 lines=4",
+        "RECEIPT_READBACK_OK"
+      ]
+    },
+    "device_probe": {
+      "status": "ADB_TRANSPORT_RESPONDED",
+      "adb_binary_present": true,
+      "adb_devices_command_succeeded": true,
+      "targets": [
+        {
+          "target": "1056285",
+          "role": "XIAOMI12_USB",
+          "adb_state": "device",
+          "battery_probe_succeeded": true,
+          "sensorservice_probe_succeeded": true,
+          "sensorservice_output_line_count": 880,
+          "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+          "sensor_event_timestamp_sensor_count": 4,
+          "sensor_event_sensors_advanced": [],
+          "live_sensor_event_stream_confirmed": false
+        },
+        {
+          "target": "192.168.1.14:5556",
+          "role": "REDMI_NOTE14PRO_WIRELESS",
+          "adb_state": "NOT_LISTED",
+          "battery_probe_succeeded": false,
+          "sensorservice_probe_succeeded": false,
+          "sensor_event_stream_status": "NOT_PROBED",
+          "sensor_event_timestamp_sensor_count": 0,
+          "sensor_event_sensors_advanced": [],
+          "live_sensor_event_stream_confirmed": false
+        }
+      ]
+    },
+    "code_provenance": {
+      "consumer_local_sha256": "80C17A544C69D6A8F105B88E9102AD04C6399ACD188FD4F8FC21A00521969F64",
+      "consumer_git_blob_sha": "9b75c645ac059162d91f612d2a4ea19e80f0be34",
+      "consumer_git_ref": "fix/modual-live-device-probe-20261025",
+      "live_device_probe_local_sha256": "8198C0D71D27DA1BDA00CA8360EFF09EADB230FC88AD3DFCC00C6EAFED4FD18D",
+      "live_device_probe_git_blob_sha": "91d242d9f0db0e171b9f1ccf3bdf9af3331ff395",
+      "resolver_local_sha256": "117BCB01AEFA908AAC861F97C83DCCCFF7E84A5D080D771DA09134378DB98471",
+      "resolver_git_blob_sha": "9b082c5c96ea13d02af35c23519653ad2e78d119",
+      "verification": "Local git hash-object results matched the three GitHub blob SHAs on fix/modual-live-device-probe-20261025."
+    },
+    "w32time": {
+      "status": "Stopped",
+      "start_type": "Manual",
+      "changed": false
+    },
+    "clock_note": "Host-local clock differs from automation runtime; next scheduled time is interpreted only using host-local task metadata. Do not infer that a later tick exists until directly read back."
+  },
+  "cloud_continuity": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "execution_id": "196",
+    "status": "success",
+    "event_id": "X20261026073013851_CLOUD",
+    "row_id": 467,
+    "table_id": "Sk0EFJK5NzWVpBvm",
+    "exact_row_readback": true,
+    "state": "OPEN_WORK_REMAINS",
+    "pending_recovery_rows": 45,
+    "terminal_recovery_rows": 0,
+    "host_heartbeat_probed": false,
+    "host_operations": 0,
+    "task_closures": 0
+  },
+  "tesseract": {
+    "desktop_pr6": {
+      "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+      "runs": [
+        {
+          "id": 40220813600,
+          "workflow": "tesseract-desktop-ci",
+          "conclusion": "failure",
+          "jobs_with_steps": 0
+        },
+        {
+          "id": 40220813636,
+          "workflow": "validate-x-time",
+          "conclusion": "failure",
+          "jobs_with_steps": 0
+        }
+      ],
+      "selfhosted_windows_verify": "skipped",
+      "issuer_variable_reference": "vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+      "issuer_public_key_value_verified": false,
+      "runner_assignment_verified": false,
+      "ci_rerun_performed": false
+    },
+    "transducer_pr39": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/39",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "6ba7ce9b3bbfd57770dd8d45dee54a82a1ae3471",
+      "base_head_at_compare": "9cf5f97bf5d3466c8a14240f92ef626805565afa",
+      "ahead_by": 6,
+      "behind_by": 45,
+      "status": "diverged",
+      "regression_runs": [
+        40281069106,
+        40281064535
+      ],
+      "secret_guard_runs": [
+        40281069271,
+        40281064526
+      ],
+      "all_four_checks_observed": "success",
+      "force_push": false
+    }
+  },
+  "preservation": {
+    "all_29_repository_tasks_nonterminal": true,
+    "task_closures": 0,
+    "raw_sensor_values_written_to_public_github": false,
+    "credentials_written_to_public_github": false,
+    "source_written_or_mutated": false,
+    "source_moved_or_deleted": false,
+    "synthetic_rows_added": 0,
+    "pr_merge": false,
+    "force_push": false,
+    "prohibited_ci_rerun": false
+  },
+  "next_edges": [
+    "After the host-local scheduled run following 2026-10-26T14:31:32+07:00, exact-read the new Tick and receipt; do not infer from runtime clock.",
+    "Continue read-only sensor/client diagnostics. USB target 1056285 responds but 4 event timestamps remain stale; wireless target 192.168.1.14:5556 is NOT_LISTED. Do not change W32Time, Android permissions, or install/launch apps without authorization.",
+    "Keep all 45 cloud recovery rows pending until task-specific evidence exists; scan-only evidence does not verify host heartbeat.",
+    "Continue TESSERACT issuer public-key variable value and runner-assignment provenance through authorized settings/runner routes. Do not rerun CI #39153474587 without a verified runner/workflow change.",
+    "Refresh PR #39 comparison against current main before any branch mutation; no merge or force-push.",
+    "Keep the canonical 89,814,328-byte bulk carrier unresolved; do not substitute the 35,389,440-byte Dropbox CSV or the nonmatching W: candidates."
+  ]
+}

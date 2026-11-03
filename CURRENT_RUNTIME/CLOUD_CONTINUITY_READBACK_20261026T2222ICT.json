@@ -1,0 +1,163 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/2.7",
+  "checkpoint_id": "CLOUD_CONTINUITY_READBACK_20261026T2222ICT",
+  "state": "OPEN_WORK_REMAINS",
+  "recorded_at_utc": "2026-10-26T15:22:21.996391Z",
+  "recorded_at_local_ict": "2026-10-26T22:22:21.996391+07:00",
+  "clock_basis": "Host-local observation time and n8n provider-created time are recorded separately. The latest n8n row provider timestamp is later than this host observation; no clock-drift cause is inferred.",
+  "repository": {
+    "name": "2708halinh-cloud/SOL-LONG-MACH",
+    "branch": "main",
+    "main_head_before_checkpoint": "457e575be3407fd219247ea1de76561259856872",
+    "prior_cloud_continuity_pointer_blob_sha": "1e9b2f1d49ccf37b7469c918a0fc74068b7ffe17"
+  },
+  "provenance": {
+    "previous_checkpoint": {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261026T2218ICT.json",
+      "blob_sha": "d5cc5d14f24e08971f68b9638bc742ddd1565d6f",
+      "commit_sha": "457e575be3407fd219247ea1de76561259856872",
+      "previous_host_evidence_row_id": 521,
+      "previous_checkpoint_latest_tick_sha256": "57e6663872d85765fb7c88ec680844618be77ae9feb927b0d694d4d8391de8c4"
+    },
+    "latest_n8n_host_row": {
+      "id": 522,
+      "event_id": "X20261026152140359_HOST_TICK_CONSUMER_READBACK",
+      "occurred_at_utc": "2026-10-26T15:21:40.359Z",
+      "provider_created_at_utc": "2026-10-26T15:30:35.041Z",
+      "exact_event_id_readback_verified": true
+    }
+  },
+  "n8n": {
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "active": true,
+    "active_version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
+    "latest_scheduled_execution": {
+      "id": "216",
+      "status": "success",
+      "started_at_utc": "2026-10-26T15:00:22.075Z",
+      "stopped_at_utc": "2026-10-26T15:00:24.210Z"
+    },
+    "latest_cloud_scan_row": {
+      "id": 519,
+      "event_id": "X20261026150024019_CLOUD",
+      "state": "OPEN_WORK_REMAINS",
+      "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED"
+    },
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "evidence_rows_before_host_append": 521,
+    "evidence_rows_after_host_append": 522,
+    "recovery_rows_pending": 45,
+    "recovery_rows_terminal": 0,
+    "user_20261023_27_open_inbox_rows": 27,
+    "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "host": {
+    "direct_host_readback_this_run": true,
+    "host_name": "DESKTOP-86ITNQ4",
+    "remote_route": {
+      "account_link_name": "new",
+      "device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
+      "status": "Online",
+      "inventory_last_seen": "4s before device inventory response"
+    },
+    "observed_at_local": "2026-10-26T22:22:21.9963910+07:00",
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "last_run_local": "2026-10-26T22:21:33+07:00",
+      "last_task_result": 0,
+      "next_run_local": "2026-10-26T22:26:32+07:00",
+      "missed_runs": 0
+    },
+    "latest_tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T152140359077Z.json",
+      "observed_at_utc": "2026-10-26T15:21:40.359077Z",
+      "mtime_utc": "2026-10-26T15:21:40.3587919Z",
+      "bytes": 1635,
+      "sha256": "13f3306fd2b004f70f49043ab44c5d499b295154e90141b21c1f8e1a18df2380",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true,
+      "live_sensor_reading_confirmed": false,
+      "device_probe_status": "ADB_TRANSPORT_RESPONDED",
+      "adb_binary_present": true,
+      "adb_devices_command_succeeded": true,
+      "sensor_event_stream_status": "NOT_REPORTED_IN_LATEST_TICK"
+    },
+    "latest_consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T152137121Z.json",
+      "observed_at_utc": "2026-10-26T15:21:40.6453063Z",
+      "mtime_utc": "2026-10-26T15:21:40.6453063Z",
+      "bytes": 6945,
+      "sha256": "3a8dd601614a40d04d126f55749c710e4c141efc9608ea8fcfe4070a4251c2df",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "consumer_hash_matches_verifier": true,
+      "source_content_hash_verified": true,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "raw_rows_emitted": false,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "matches_tick": true,
+      "matches_consumer": true,
+      "source_written": false
+    },
+    "android_probe": {
+      "adb_binary_in_current_probe_shell": false,
+      "tcp_192_168_1_14_5556": false,
+      "tick_embedded_adb_probe_status": "ADB_TRANSPORT_RESPONDED",
+      "android_online_claim": false,
+      "live_sensor_reading_confirmed": false,
+      "interpretation": "Preserve both observations; the current direct shell cannot resolve adb on PATH and the specified TCP endpoint did not respond. The tick's embedded ADB probe is not proof of Android online or live sensor data."
+    },
+    "safety": {
+      "host_source_written": false,
+      "synthetic_rows_added": 0,
+      "raw_sensor_values_exported": false,
+      "task_definition_changed": false,
+      "task_started_manually": false,
+      "process_killed": false,
+      "cache_or_Meta_db_deleted": false,
+      "google_drive_written": false,
+      "credentials_or_cookies_exposed": false
+    }
+  },
+  "task_ledgers": {
+    "recovery_rows_pending": 45,
+    "recovery_rows_terminal": 0,
+    "recovery_task_statuses_changed": false,
+    "tasks_closed": 0,
+    "repository_open_task_ledger_blob_sha_from_metadata": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
+    "repository_task_resume_pointer_blob_sha_from_metadata": "07cc60d91ea6a9ea3ad29080bc398c8153a2ffac",
+    "repository_task_count": 29,
+    "repository_task_status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "task_ledger_content_fetched_via_github_contents_api": true,
+    "task_pointer_content_fetched_via_github_contents_api": true,
+    "blob_content_hash_recomputed": false,
+    "canonical_task_ledger_or_task_pointer_mutated": false
+  },
+  "next_edges": [
+    "Read the next scheduled Tick/consumer after host-local 2026-10-26T22:26:32+07:00; recompute the source SHA-256 and compare tick.source.sha256 and consumer.source_sha256.",
+    "Keep live_sensor_reading_confirmed=false and the sensor event stream unverified unless a fresh provider/host reading proves advancement.",
+    "Keep Android online state UNVERIFIED: current direct TCP 192.168.1.14:5556 did not respond and adb was not found on the direct probe shell's PATH; do not infer device state from stale snapshots.",
+    "Cloud workflow execution 216 and row 519 are cloud heartbeat only; host heartbeat is separately evidenced by host row 522.",
+    "Keep all 45 n8n recovery rows nonterminal and preserve all 29 GitHub task statuses; no task closure from this readback.",
+    "Continue cloud-safe work from this checkpoint; no Google Drive writes to the full account, no credential/cookie exposure, no process/cache/Meta.db deletion."
+  ],
+  "n8n_host_readback_row_id": 522
+}

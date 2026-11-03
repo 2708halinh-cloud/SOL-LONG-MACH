@@ -1,0 +1,81 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "observed_at": "2026-10-26T17:48:00+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "main_head_before_checkpoint": "4ec1eb6994507415f11ce7c92fa6ead18265bca3",
+  "task_status": "OPEN_PROVIDER_CARRIER_RESOLVED_WINDOWS_TICK_NOT_VERIFIED",
+  "fresh_read_blob_shas": {
+    "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "302c3ce4add65d5cd6a5209bbc41247273fac2cc",
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "4692b4044acdbaa51caf7fa7e06a97b73f3e53b0",
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "85f5bdaefa7e01c1b548106209f9c80d18f023f6",
+    "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json": "4443d46e828e76ee9deb1a8980e61c4d29e7c5a7",
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "01c1dfe8682e25c7e2f5210bbae87a30231b1f58",
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT_APPEND_20261026T1445ICT.json": "02192ee39c087c4471293a9a583bb6facdb6d1a4",
+    "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1738ICT.json": "9be7abbbba587a98f90c85acae5aa9e3986a7009"
+  },
+  "latest_host_readback": {
+    "evidence_row_id": 503,
+    "tick_name": "WINDOWS_TICK_20261026T103639388704Z.json",
+    "tick_sha256": "571090DB2FBC8B41A2B093D5587940F15431FE88AED80BC4041E1FB7A8C201AC",
+    "consumer_name": "telemetry_buffer_sync_20261026T103636505Z.json",
+    "consumer_sha256": "A482E6627A03F8674CE782054C3EC3F282CC3F379E9A4EB6935B229077F7AABF",
+    "source_bytes": 35389440,
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_hash_matches_tick_and_consumer": true,
+    "consumer_status": "SOURCE_OBSERVED_READONLY",
+    "consumer_exit_code": 0,
+    "device_probe_status": "ADB_TRANSPORT_RESPONDED",
+    "timestamp_count": 4,
+    "timestamps_advanced": 0,
+    "live_sensor_reading_confirmed": false,
+    "next_tick_due_local": "2026-10-26T17:41:32+07:00",
+    "post_due_tick_readback_verified": false
+  },
+  "cloud_readback": {
+    "workflow_execution_id": "206",
+    "status": "success",
+    "evidence_row_id": 502,
+    "event_id": "X20261026104305465_CLOUD",
+    "recovery_rows_pending": 45,
+    "terminal_rows": 0,
+    "host_heartbeat_probed": false
+  },
+  "provenance": {
+    "prior_correction_row_id": 500,
+    "latest_ordering_reconciliation_row_id": 504,
+    "host_row_503_created_after_cloud_row_502": true,
+    "cloud_row_502_reference_row_id": 501,
+    "interpretation": "Row 502 referenced the latest persisted host evidence at scan time. Row 503 was inserted afterward; row 504 preserves this ordering. Keep both rows unchanged."
+  },
+  "ledger_before_update": {
+    "blob_sha": "85f5bdaefa7e01c1b548106209f9c80d18f023f6",
+    "task_count": 29,
+    "provider_observations": 226,
+    "verified_action_events": 283,
+    "integrity_corrections": 18,
+    "tasks_closed": 0,
+    "latest_provider_readback": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1729ICT.json"
+  },
+  "pointer_review": {
+    "main_cloud_pointer_blob": "4443d46e828e76ee9deb1a8980e61c4d29e7c5a7",
+    "main_task_pointer_blob": "4692b4044acdbaa51caf7fa7e06a97b73f3e53b0",
+    "review_branch": "reconcile-cloud-continuity-pointer-20261026T1653ICT-review",
+    "review_branch_pointer_blob": "44459e69a1002338666a151006870039e6bf32a4",
+    "pull_request_url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/42",
+    "pull_request_state": "OPEN_DRAFT_UNMERGED"
+  },
+  "preservation": {
+    "sensor_rows_included": false,
+    "authentication_material_included": false,
+    "source_changed": false,
+    "tasks_closed": 0,
+    "merge_performed": false,
+    "force_push": false
+  },
+  "next_edges": [
+    "Read the next host Tick after the scheduled host-local boundary and recompute the source hash.",
+    "Refresh the review-branch pointer and ledger to this checkpoint; keep PR #42 draft/unmerged.",
+    "Production sensor stream remains unverified; do not infer recovery from a successful consumer receipt."
+  ]
+}

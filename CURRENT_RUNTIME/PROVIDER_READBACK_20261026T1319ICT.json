@@ -1,0 +1,280 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "observed_at_local": "2026-10-26T13:19:16.922+07:00",
+  "source_event_type": "VERIFIED_POST_SCHEDULED_WINDOWS_TICK_CONSUMER_AND_CLOUD_ROW_READBACK;TESSERACT_RUNNER_ISSUER_SOURCE_INSPECTION;NO_TASK_CLOSURE",
+  "main_head_before_checkpoint": "2da03849c092625ade89f5c0d60689df2cf7cfb3",
+  "source_reads": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "fresh_read": true,
+      "bytes": 72420
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "353f8c29b9c68311cb52521f6d2affa5b146333a",
+      "fresh_read": true,
+      "bytes": 251771
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "94a4d71b5ba24331f8ea6b4ccfaa5f4641d9479b",
+      "fresh_read": true,
+      "bytes": 2120028,
+      "content_read_via_fetch_blob": true,
+      "json_parse_verified": true
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "d2a7ee1539dd8aab64efedca7b08f0ee472f792c",
+      "fresh_read": true,
+      "bytes": 2025443,
+      "content_read_via_fetch_blob": true,
+      "json_parse_verified": true
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "blob_sha": "bd146b6f716c5138b1147764f00571b04a2ec11c",
+      "fresh_read": true,
+      "bytes": 1166680,
+      "content_read_via_fetch_blob": true,
+      "json_parse_verified": true,
+      "metadata_correction_required": "Previous latest_consumer_readback.bytes=0 was an unmeasured placeholder; exact host metadata readback proves prior receipt bytes=6945. Preserve prior blob and append correction."
+    },
+    "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json": {
+      "blob_sha": "057a00fdf078d5da3bc3d4a62a7ca4477ae6a5aa",
+      "fresh_read": true,
+      "bytes": 289775,
+      "json_parse_verified": true
+    },
+    "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1311ICT.json": {
+      "blob_sha": "108f9531cc014d876e213f8ad4809e8dd8cd659d",
+      "fresh_read": true
+    },
+    "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1303ICT.json": {
+      "blob_sha": "ba74033bb736bf90f9f345eacc303ac250ff0002",
+      "fresh_read": true
+    }
+  },
+  "host": {
+    "host": "DESKTOP-86ITNQ4",
+    "route": "Desktop Commander account new; device bca58242-9cf0-407e-afb4-fb9ecfcce34b",
+    "observed_at_local": "2026-10-26T13:11:53.4652733+07:00",
+    "scheduler": {
+      "task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T13:11:33+07:00",
+      "last_result": 0,
+      "next_run_local": "2026-10-26T13:16:32+07:00",
+      "missed_runs": 0
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z",
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "direct_hash_recomputed": true
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T061138550290Z.json",
+      "bytes": 1635,
+      "sha256": "f0f5fb1739078da45c46788a91a085ff223a8ee6242b7ca3c2156fd652e8e1a7",
+      "observed_at_utc": "2026-10-26T06:11:38.550290Z",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true,
+      "live_sensor_reading_confirmed": false,
+      "device_probe": {
+        "adb_binary_present": true,
+        "adb_devices_command_succeeded": true,
+        "status": "ADB_TRANSPORT_RESPONDED",
+        "usb_target": "1056285",
+        "usb_adb_state": "device",
+        "sensorservice_probe_succeeded": true,
+        "usb_sensor_timestamp_count": 4,
+        "usb_sensor_timestamps_advanced": 0,
+        "usb_sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+        "wireless_target": "192.168.1.14:5556",
+        "wireless_adb_state": "NOT_LISTED",
+        "wireless_sensorservice_probe_succeeded": false,
+        "live_sensor_reading_confirmed": false
+      }
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T061135919Z.json",
+      "bytes": 6944,
+      "sha256": "d65b8b45787858faef3fc7cb8e7824e1366e6614ea28d0ea736d4e2a2886e617",
+      "observed_at_utc": "2026-10-26T06:11:38.6465934Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_hash_matches": true,
+      "consumer_hash_matches_verifier": true,
+      "source_content_hash_verified": true,
+      "raw_rows_emitted": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "w32time": {
+      "status": "Stopped",
+      "start_type": "Manual",
+      "changed": false
+    },
+    "source_mutated": false,
+    "source_moved_or_deleted": false
+  },
+  "code_provenance": {
+    "branch": "fix/modual-live-device-probe-20261025",
+    "local_git_blob_hashes_match_github": true,
+    "files": [
+      {
+        "local_path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+        "github_path": "MODUAL/SENSOR_LOGS/source/telemetry_buffer_sync.py",
+        "blob_sha": "9b75c645ac059162d91f612d2a4ea19e80f0be34"
+      },
+      {
+        "local_path": "D:\\SENSOR_LOGS\\live_device_probe.py",
+        "github_path": "MODUAL/SENSOR_LOGS/source/live_device_probe.py",
+        "blob_sha": "91d242d9f0db0e171b9f1ccf3bdf9af3331ff395"
+      },
+      {
+        "local_path": "D:\\SENSOR_LOGS\\sensor_root_resolver.py",
+        "github_path": "MODUAL/SENSOR_LOGS/source/sensor_root_resolver.py",
+        "blob_sha": "9b082c5c96ea13d02af35c23519653ad2e78d119"
+      }
+    ]
+  },
+  "dropbox": {
+    "account": "Outlook",
+    "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+    "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "bytes": 35389440,
+    "server_modified_utc": "2026-10-14T00:20:03Z",
+    "client_modified_utc": "2026-10-14T00:15:21Z",
+    "metadata_readback_window_utc": {
+      "before": "2026-10-26T06:19:16.535Z",
+      "after": "2026-10-26T06:19:16.922Z"
+    },
+    "raw_bytes_downloaded": false,
+    "content_hash_from_existing_consumer_receipt": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d"
+  },
+  "cloud": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "execution_id": "193",
+    "execution_status": "success",
+    "event_id": "X20261026060254873_CLOUD",
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "cloud_row_id": 457,
+    "cloud_row_exact_readback": true,
+    "host_evidence_row_id": 462,
+    "host_event_id": "X20261026061153465_HOST_TICK_CONSUMER_READBACK",
+    "host_row_exact_readback": true,
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_rows": 45,
+    "nonterminal_rows": 45,
+    "terminal_rows": 0,
+    "host_heartbeat_probed_by_workflow": false,
+    "tasks_closed": 0
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "main_head_at_latest_compare": "2da03849c092625ade89f5c0d60689df2cf7cfb3",
+    "archive_pr36": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+      "state": "OPEN_DRAFT",
+      "head": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "status": "diverged",
+      "ahead_by": 14,
+      "behind_by": 195,
+      "merged": false
+    },
+    "archive_pr37": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/37",
+      "state": "OPEN_DRAFT",
+      "head": "d3f3d6e7bb7ed1e5c414a9aa79c7d17fad982040",
+      "status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 151,
+      "merged": false
+    },
+    "tesseract_pr6": {
+      "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+      "state": "OPEN_DRAFT",
+      "head": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+      "workflow_blob_sha": "9f1133617e683a7b15a588a205c4dee36cafad40",
+      "workflow_issuer_variable_reference": "vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+      "selfhosted_windows_verify_if": "github.event_name != 'pull_request'",
+      "selfhosted_windows_runs_on": [
+        "self-hosted",
+        "Windows",
+        "X64"
+      ],
+      "runs": [
+        40220813636,
+        40220813600
+      ],
+      "conclusions": [
+        "failure",
+        "failure"
+      ],
+      "verify_job_steps": [],
+      "readback_job_steps": [],
+      "selfhosted_job_conclusion": "skipped",
+      "logs_fetch": "404 BlobNotFound",
+      "issuer_public_key_value_verified": false,
+      "runner_assignment_verified": false,
+      "ci_rerun": false
+    }
+  },
+  "ledger": {
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "provider_observations_before_update": 210,
+    "verified_action_events_before_update": 245,
+    "integrity_corrections_before_update": 12,
+    "tasks_closed": 0
+  },
+  "corrections": {
+    "id": "MODUAL_CONSUMER_BYTE_COUNT_CORRECTION_20261026T1319ICT",
+    "target": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json#/independent_provider_continuation.latest_consumer_readback/bytes",
+    "prior_value": 0,
+    "corrected_value": 6945,
+    "evidence": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T060135790Z.json",
+      "bytes": 6945,
+      "sha256": "71f40a248b9b7d98766425963a9b39e476074091fb8fd70a79f262222c1870fa",
+      "observed_at_host_local": "2026-10-26T13:08:12.6564237+07:00"
+    },
+    "reason": "The 13:03 metadata update used 0 as an unmeasured placeholder. Exact host file metadata readback proves 6945 bytes. The 13:11 consumer is a distinct newer receipt of 6944 bytes.",
+    "historical_blob_preserved": "bd146b6f716c5138b1147764f00571b04a2ec11c",
+    "source_file_changed": false,
+    "task_status_changed": false
+  },
+  "safety": {
+    "source_mutated": false,
+    "source_moved_or_deleted": false,
+    "raw_sensor_values_exported": false,
+    "credentials_written": false,
+    "synthetic_rows_added": 0,
+    "github_export_enabled": false,
+    "prohibited_ci_rerun": false,
+    "task_status_changed": false,
+    "tasks_closed": 0,
+    "pr_merged": false,
+    "force_push": false
+  },
+  "next": [
+    "After host-local 2026-10-26T13:16:32+07:00, exact-read the next Tick and consumer; this checkpoint's latest host sample is 13:11:53+07 and the next due run was not yet observed.",
+    "Keep MODUAL_SENSOR_LOGS_ROUTING OPEN until sensor timestamp advancement and production stream are independently verified.",
+    "Correct the MODUAL consumer byte-count placeholder by preserving the prior blob and appending the verified correction; current latest consumer is 6944 bytes.",
+    "Keep all 45 cloud recovery rows nonterminal until each has task-specific evidence; cloud scan did not probe host heartbeat.",
+    "Continue read-only sensor-client/HWiNFO/ADB diagnosis; do not launch/install apps, change permissions, or alter W32Time without authorization.",
+    "Continue TESSERACT issuer-key and runner-assignment investigation; logs are unavailable and job steps are empty, so do not rerun CI until runner or issuer settings have a verified change.",
+    "Refresh PR #36/#37 comparisons before branch mutation; do not merge or force-push."
+  ]
+}

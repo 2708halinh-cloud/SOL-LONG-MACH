@@ -1,0 +1,28 @@
+# Intel Core Ultra Software Emulation Layer — TESSERACT 6D
+
+## Purpose
+A configurable CPU profile registry and deterministic task-slot scheduler. It models a CPU's listed core count as virtual worker slots, exposes cache size as a software budget, and routes GPU work only when a real backend is separately detected and enabled.
+
+It does **not** reproduce Intel silicon, microcode, instruction-set behavior, physical cache, clock frequency, thermal behavior, or real benchmark performance.
+
+## Profile fields
+- `cores`: source-reported core count; used as a scheduler slot ceiling only.
+- `reported_max_turbo_ghz`: catalog metadata, not a clock control.
+- `smart_cache_mb`: metadata plus software budget calculation; not actual cache.
+- `integrated_gpu`: exact label from supplied catalog; null means no GPU label was provided, not that the CPU lacks an integrated GPU.
+- `gpu_status`: distinguishes a listed GPU from a GPU field omitted in the supplied catalog.
+- `source_verified`: false until independently checked against Intel's official product documentation.
+
+## Runtime integration
+- Northbridge requests a profile and receives bounded worker slots.
+- RAM_L1 stores only the active plan, version, source identity, and receipt—not credentials.
+- VRM/PMIC still governs real RAM/disk/quota limits. A virtual cache budget cannot allocate physical memory by itself.
+- GPU execution remains disabled until a real driver/backend probe confirms availability.
+- Missing GPU data stays unknown; the runtime does not infer hardware presence or absence.
+- Gate 1 validates model name and input bounds; Gate 2 reads back the plan and checks expected task counts.
+
+## File mapping
+In the local `TESSERACT_OS` project, the registry, runtime, and tests are under `config/`, `runtime/`, and `tests/`. The GitHub carrier stores these files at the root of `TESSERACT_OS_6D/`; the runtime supports both layouts.
+
+## Source provenance
+All rows in the profile registry were transcribed from the user-provided catalog on 2026-10-26. They are marked `source_verified=false`; validate product names and specifications against Intel ARK before treating them as official specifications.

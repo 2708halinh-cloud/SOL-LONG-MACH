@@ -1,0 +1,280 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/6.9",
+  "checkpoint_id": "CLOUD_CONTINUITY_READBACK_20261030T1503ICT",
+  "title": "THU HOI NGUON SOL — verify scheduled executions 308/309, preserve 45 OPEN rows, reconcile canonical Stones carriers",
+  "state": "OPEN_WORK_REMAINS",
+  "observed_at_utc": "2026-10-30T08:03:27.000Z",
+  "recorded_at_local": "2026-10-30T15:03:27.000+07:00",
+  "timestamp_basis": "Direct n8n execution metadata and provider-createdAt table readbacks; GitHub main commit search and combined status; exact GitHub blob readbacks; Dropbox metadata readback; Remote Desktop Commander device registry. No direct Windows or Android host heartbeat.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261030T1344ICT.json",
+    "blob_sha": "5d3ea5ad8d4867e10d2dd48c333b8918020e91bc",
+    "commit_sha": "1127993d6fb2284b785b30ae0e88ede5f639008d",
+    "readback_verified": true
+  },
+  "previous_resume_pointer": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
+    "blob_sha": "ece1e6997d13a0dc0d2b6506ba66151726857598",
+    "last_pointer_commit_sha": "2e15f2983fd69cd780e711b34ad8706fabc8764c",
+    "readback_verified": true
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "active_version_id": "f37f595c-7197-4a7a-9c63-7aead22cda72",
+    "node_count": 6,
+    "graph_scope": "Schedule/manual trigger -> read evidence -> read recovery rows -> deterministic OPEN scan -> append evidence receipt; no dispatch node.",
+    "latest_scheduled_executions": [
+      {
+        "id": "308",
+        "status": "success",
+        "mode": "trigger",
+        "started_at_utc": "2026-10-30T07:00:22.089Z",
+        "stopped_at_utc": "2026-10-30T07:00:24.280Z",
+        "event_id": "X20261030070024125_CLOUD",
+        "evidence_row_id": 759,
+        "readback_verified": true
+      },
+      {
+        "id": "309",
+        "status": "success",
+        "mode": "trigger",
+        "started_at_utc": "2026-10-30T08:00:22.090Z",
+        "stopped_at_utc": "2026-10-30T08:00:24.265Z",
+        "event_id": "X20261030080024112_CLOUD",
+        "evidence_row_id": 760,
+        "readback_verified": true
+      }
+    ],
+    "permission_guard": {
+      "state": "VERIFIED_BY_TWO_SCHEDULED_EXECUTIONS",
+      "rule": "Only nonterminal rows with explicit CALLABLE_PROVIDER_ACCESS_ONLY and without WINDOWS_HOST_OFFLINE enter next_edge selection.",
+      "execution_308": {
+        "callable_pending": 19,
+        "selected_callable": 8,
+        "blocked_total": 26
+      },
+      "execution_309": {
+        "callable_pending": 19,
+        "selected_callable": 8,
+        "blocked_total": 26
+      },
+      "dispatch_node_present": false,
+      "recovery_task_status_mutations": 0
+    },
+    "next_edge_integrity": {
+      "state": "PARTIAL_FIELD_TRUNCATION;FULL_SELECTION_RETAINED_IN_RECEIPT",
+      "execution_308_next_edge_ends_with": "SOL-LIBRARY_CROSS_PROVIDE",
+      "execution_308_full_final_id_in_receipt": "SOL-LIBRARY_CROSS_PROVIDER_SYNC",
+      "execution_309_next_edge_ends_with": "SOL-SOL_SOURCE_12_",
+      "execution_309_full_final_id_in_receipt": "SOL-SOL_SOURCE_12_CARRIERS",
+      "note": "next_edge is sliced to 245 characters in the workflow code. The receipt field retains the complete selected ID list. Do not treat the truncated next_edge string as a complete selection list."
+    },
+    "latest_scan_evidence_row_id": 760,
+    "latest_continuity_readback_evidence_row_id": 761
+  },
+  "recovery_table": {
+    "id": "rSPFIOWbS7cfNJ8z",
+    "name": "SUBAVENGERS_RECOVERY_TASKS_20261020",
+    "project_id": "6qKpRmicIGHA5snY",
+    "total_rows": 45,
+    "nonterminal_rows": 45,
+    "terminal_rows": 0,
+    "explicit_callable_provider_rows_without_host_offline": 19,
+    "blocked_or_other_permission_rows": 26,
+    "status_counts": {
+      "OPEN_ROUTED_NONCOERCIVE": 27,
+      "IN_PROGRESS": 1,
+      "ASSIGNED_DRAFT_WAITING_CREDENTIAL": 5,
+      "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN": 1,
+      "OPEN_RAW_HASH_AND_CLOUD_TRANSFER": 1,
+      "OPEN_QEMU_C_DISCOVERY": 1,
+      "GUARD_APPLIED_FIVE_AGENT_DRAFTS_ACCOUNT_LEVEL_PAUSE_OPEN": 1,
+      "OPEN_SOURCE_DIRECT_TIMESTAMP": 1,
+      "SOURCE_BYTES_VERIFIED_FUTURE_SYNC_OPEN": 1,
+      "OPEN_HOST_ROUTING_AND_UI_READBACK": 1,
+      "OPEN_HOST_INTEGRATION_AND_INDEPENDENT_TEST": 1,
+      "OPEN_ANDROID_SOURCE_ACCESS": 1,
+      "OPEN_END_TO_END_USER_SESSION": 1,
+      "OPEN_CREDENTIAL_BINDING_AND_AUTH_TEST": 1,
+      "OPEN_7Z_RAR_LR": 1
+    },
+    "in_progress_row": {
+      "id": 45,
+      "task_id": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+      "status": "IN_PROGRESS",
+      "permission": "NOT_SPECIFIED_IN_SOURCE"
+    },
+    "task_status_mutations": 0
+  },
+  "evidence_table": {
+    "id": "Sk0EFJK5NzWVpBvm",
+    "name": "AISSTANGT_MANAGE_CONTINUITY_20261020",
+    "row_759_event_id": "X20261030070024125_CLOUD",
+    "row_760_event_id": "X20261030080024112_CLOUD",
+    "row_761_event_id": "X20261030T080327Z_CLOUD_CONTINUITY_READBACK",
+    "row_761_provider_id": 761,
+    "row_761_readback_verified": true
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "default_branch": "main",
+    "main_head_before_checkpoint": "2e15f2983fd69cd780e711b34ad8706fabc8764c",
+    "current_pointer_commit_vercel_status": {
+      "commit_sha": "2e15f2983fd69cd780e711b34ad8706fabc8764c",
+      "state": "failure",
+      "target": "https://vercel.com/sollasi/sol-long-mach/EPQyasTi97S19GUyMGyQLAMscwu9",
+      "failure_cause_verified": false
+    },
+    "latest_actions": {
+      "runtime_n_plus": {
+        "run_number": 2568,
+        "run_id": 41016015878,
+        "conclusion": "success",
+        "job_id": 123932390709
+      },
+      "high_threshold_secret_guard": {
+        "run_number": 2144,
+        "run_id": 41016015891,
+        "conclusion": "success",
+        "job_id": 123932390799
+      }
+    },
+    "pr_29": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "source": "previous checkpoint; not re-probed in this run"
+    }
+  },
+  "source_matrix": {
+    "task": "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
+    "status": "OPEN",
+    "power": {
+      "canonical_github_path": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ/_Plugins/Power_Router_V2/POWER_CAPABILITY_ROUTES_V2.json",
+      "canonical_github_blob_sha": "41f7b367d8c7e0e1674f3d59ad4109b841a7106d",
+      "canonical_capabilities": 27,
+      "library_copy_25": {
+        "file_id": "file_00000000801c8209ac1748585b7a306d",
+        "library_file_id": "libfile_f0efb51a7f388191871716d08b2aaac3",
+        "bytes": 19249,
+        "sha256": "9237383a078679bc764485fc4c73b37a65e24355ff30e797694ef2c4e1aa7a25",
+        "git_blob_sha1": "81798e06a806f5e29277af84389925c5bb9a3652",
+        "capabilities": 25
+      },
+      "library_copy_21": {
+        "file_id": "file_000000005e3c820992edfe37d9cf9467",
+        "library_file_id": "libfile_2bc1ab2cd5bc81918b350b1f40d0566f",
+        "bytes": 14485,
+        "sha256": "37e9dbcf98f5d68a57d860641663dd58214902b8f170d426ef7d422620e4537d",
+        "git_blob_sha1": "5b3f157301f88ff8ef7ebcf558d5387724ab4d75",
+        "capabilities": 21
+      },
+      "canonical_only_vs_25": [
+        "sol-win11-hyperv-gate",
+        "google-cloud-api-constellation-hypothesis"
+      ],
+      "copy25_only_vs_copy21": [
+        "remote-desktop-connection-windows",
+        "google-cloud-usage-guard",
+        "hostinger-dns-rdp-binding",
+        "agent-core-diagnostics"
+      ],
+      "library_text_matches_canonical": false,
+      "library_overwrite": false
+    },
+    "other_canonical_github_carriers": {
+      "SPACE_MAP_json": {
+        "blob_sha": "935abcb6fca375085642abfd7a93dbf52581c45c",
+        "bytes": 11205
+      },
+      "DAI_NGUYEN_THE_MASTER_TEACHER_20261016_md": {
+        "blob_sha": "111fe11df990bed9357744d7dbba87de73a05290",
+        "bytes": 12686
+      },
+      "IDENTITY_PLACES_CORE_json": {
+        "blob_sha": "0924143c430abd9fc630bc5ef332022a3a064f8d",
+        "bytes": 3735
+      },
+      "CROSS_CHAT_ENVIRONMENT_SURFACE_SPACE_CONTINUITY_20261016_md": {
+        "blob_sha": "352dd9ea1f5f6e325fa543f910fdae36f83fc551",
+        "bytes": 4697
+      }
+    },
+    "library_exact_name_search": {
+      "SPACE_MAP_json": "no exact title result",
+      "DAI_NGUYEN_THE_MASTER_TEACHER_20261016_md": "no exact title result",
+      "IDENTITY_PLACES_CORE_json": "no exact title result",
+      "CROSS_CHAT_ENVIRONMENT_SURFACE_SPACE_CONTINUITY_20261016_md": "no exact title result",
+      "note": "Zero search results do not prove absence. Prior complete scans of five Library folders also recorded zero exact-name matches; broader Library scope remains unexhausted."
+    },
+    "no_source_substitution": true
+  },
+  "dropbox_sensor_csv": {
+    "path_display": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+    "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "size_bytes": 35389440,
+    "metadata_readback_verified": true,
+    "raw_bytes_downloaded": false,
+    "header_read": false
+  },
+  "host_and_android": {
+    "remote_desktop_commander_registry": {
+      "DESKTOP_86ITNQ4": {
+        "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+        "status": "offline",
+        "last_seen_hours_ago": 69,
+        "app_version": "0.3.1"
+      },
+      "localhost": {
+        "device_id": "bcae1dd6-bf63-4f27-9476-d5621b590c16",
+        "status": "offline",
+        "last_seen_hours_ago": 168,
+        "app_version": "0.3.0"
+      },
+      "DESKTOP_86ITNQ4_duplicate": {
+        "device_id": "5a9bbfa4-7628-4a37-936a-5a02e5f23231",
+        "status": "offline",
+        "last_seen_hours_ago": 257,
+        "app_version": "0.3.0"
+      }
+    },
+    "windows_host_heartbeat": "UNVERIFIED_NO_FRESH_DIRECT_PROBE",
+    "android_heartbeat": "UNVERIFIED",
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "c_drive_last_known_free_percent": 0.418,
+    "c_drive_freshness": "STALE_NOT_CURRENT",
+    "h_drive_role": "HIDDEN_EFI_SYSTEM_PARTITION_DO_NOT_TOUCH"
+  },
+  "blockers": {
+    "hostinger_dns_read": "Search connector returned user-input-required in non-interactive run; no API operation executed.",
+    "vercel_logs": "No Vercel connector available in this run; failure cause not verified.",
+    "agent_dispatch": "Workflow has no dispatch node; five agent drafts remain unpublished and project credential count was previously verified as zero; no new credential check this run."
+  },
+  "safety": {
+    "recovery_task_status_mutations": 0,
+    "google_drive_writes": 0,
+    "host_file_writes": 0,
+    "process_or_cache_deletions": 0,
+    "meta_db_changes": 0,
+    "plaintext_credentials_accessed": false,
+    "agent_publishes": 0,
+    "pull_requests_merged": 0,
+    "library_overwrites": 0,
+    "deployment_configuration_changed": false,
+    "n8n_evidence_rows_appended": 1,
+    "n8n_workflow_updated": false
+  },
+  "next_edges": [
+    "Verify scheduled execution 310 at 2026-10-30T09:00:00Z and read its exact receipt; keep the permission guard in force.",
+    "Keep all 45 recovery rows nonterminal; preserve row 45 IN_PROGRESS.",
+    "Resolve the 245-character next_edge truncation without changing the selection guard or dispatching tasks.",
+    "Investigate Vercel FAILURE for commit 2e15f2983fd69cd780e711b34ad8706fabc8764c through an authorized read-only log route; no deployment configuration changes.",
+    "Continue source-matrix carrier comparison using the four verified GitHub blob SHAs and the two preserved POWER Library copies; do not overwrite or substitute.",
+    "Obtain an authorized raw-byte route for Dropbox CSV header readback; metadata/hash alone is not content verification.",
+    "Wait for fresh direct Windows host heartbeat before local work; Android remains UNVERIFIED; treat C: reading as stale and never touch H:.",
+    "Do not publish agents or create credentials without a selected model, explicit configuration authority, and verified tool wiring."
+  ]
+}
