@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import heapq
 from typing import Mapping, Iterable
 
 
@@ -71,28 +72,26 @@ class RegionIndex:
 
     def query(self, facets: Mapping[str, str], limit: int = 32) -> list[RegionDescriptor]:
         """Return bounded candidates matching every requested dimension/value."""
-        if not isinstance(facets, Mapping):
-            raise ValueError("FACET_QUERY_MAPPING_REQUIRED")
+        if not isinstance(facets, Mapping) or not facets:
+            raise ValueError("NON_EMPTY_FACET_QUERY_REQUIRED")
         if not isinstance(limit, int) or isinstance(limit, bool) or limit < 1:
             raise ValueError("POSITIVE_QUERY_LIMIT_REQUIRED")
-        if not facets:
-            candidates = set(self._regions)
-        else:
-            postings = []
-            for dimension, value in facets.items():
-                key = (_token(dimension, "FACET_DIMENSION"),
-                       _token(value, "FACET_VALUE"))
-                posting = self._facet_postings.get(key)
-                if not posting:
-                    return []
-                postings.append(posting)
-            postings.sort(key=len)
-            candidates = set(postings[0])
-            for posting in postings[1:]:
-                candidates.intersection_update(posting)
-                if not candidates:
-                    return []
-        return [self._regions[key] for key in sorted(candidates)[:limit]]
+        postings = []
+        for dimension, value in facets.items():
+            key = (_token(dimension, "FACET_DIMENSION"),
+                   _token(value, "FACET_VALUE"))
+            posting = self._facet_postings.get(key)
+            if not posting:
+                return []
+            postings.append(posting)
+        postings.sort(key=len)
+        candidates = set(postings[0])
+        for posting in postings[1:]:
+            candidates.intersection_update(posting)
+            if not candidates:
+                return []
+        selected = heapq.nsmallest(limit, candidates)
+        return [self._regions[key] for key in selected]
 
     def related(self, region_ref: str, limit: int = 32) -> list[RegionDescriptor]:
         """Return known direct inbound/outbound neighbors without source reads."""
@@ -101,8 +100,8 @@ class RegionIndex:
             raise ValueError("POSITIVE_QUERY_LIMIT_REQUIRED")
         neighbors = (self._outgoing.get(region_id, set()) |
                      self._incoming.get(region_id, set()))
-        return [self._regions[key] for key in sorted(neighbors)
-                if key in self._regions][:limit]
+        selected = heapq.nsmallest(limit, (key for key in neighbors if key in self._regions))
+        return [self._regions[key] for key in selected]
 
     def get(self, region_ref: str) -> RegionDescriptor | None:
         return self._regions.get(_token(region_ref, "REGION_REF"))

@@ -6,10 +6,11 @@ from .journal import AppendOnlyJournal
 from .pulse import Pulse, decode_pulse, encode_pulse
 from .region_index import RegionDescriptor, RegionIndex
 from .resource_guard import DiskGuard, DiskSample, GuardResult
+from .sparse_router import SparseRegionRouter
 
 __all__ = [
     "ActiveBlackboard", "AnapanaMonitor", "AppendOnlyJournal", "DiskGuard", "DiskSample",
     "EnergyCluster", "GuardResult", "Neuron", "Pulse", "Register", "RegionDescriptor",
-    "RegionIndex", "SNNEngine", "TelemetrySnapshot", "Synapse", "VersionConflict",
-    "decode_pulse", "encode_pulse",
+    "RegionIndex", "SNNEngine", "SparseRegionRouter", "TelemetrySnapshot", "Synapse",
+    "VersionConflict", "decode_pulse", "encode_pulse",
 ]
