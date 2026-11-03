@@ -4,6 +4,7 @@ from pathlib import Path
 
 from runtime.continuity_guard import Checkpoint, Edge, load_checkpoint
 from runtime.motherboard_control_plane import CpuSocket, DiskWriteGuard
+from runtime.companion_consequence_gate import SOURCE as CONSEQUENCE_SOURCE
 from runtime.tesseract_mainboard import TesseractMotherboard
 from runtime.tesseract_snn.core import EnergyCluster, Neuron, SNNEngine
 
@@ -234,6 +235,81 @@ class TesseractMainboardIntegrationTests(unittest.TestCase):
         self.assertTrue(out["journal_verified"])
         self.assertEqual(out["snn_spikes"], [0])
         self.assertTrue(out["objective_done"])
+
+
+    def test_companion_gate_verifies_exact_local_target_bytes(self):
+        target = Path(self.temp.name) / "target.txt"
+        target.write_bytes(b"grounded consequence")
+        digest = __import__("hashlib").sha256(target.read_bytes()).hexdigest()
+        edge = self.edge()
+        edge.evidence["local_file_target"] = True
+        edge.evidence["consequence_source_ref"] = CONSEQUENCE_SOURCE
+
+        def execute(socket, edge, carrier):
+            result = self.good_result(edge, carrier)
+            result.update({
+                "action_id": "ACTION-LOCAL-1",
+                "target_relpath": "target.txt",
+                "consequence_ref": "target://target.txt",
+                "receipt_ref": "receipt://provider/1",
+            })
+            result["readback"]["sha256"] = digest
+            return result
+
+        cp = Checkpoint("OBJ-CONSEQUENCE", "SOURCE_DIRECT", "LINEAGE-8", edges=[edge])
+        board = TesseractMotherboard(
+            sockets=self.sockets,
+            executors={"cpu1": execute},
+            checkpoint_path=self.checkpoint_path,
+            journal_path=self.journal_path,
+            disk_guard=self.guard,
+            consequence_root=Path(self.temp.name),
+        )
+        out = board.run_cycle(
+            cp,
+            source_refs=["repo://source"],
+            history_refs=["sha256:" + "3" * 64],
+            disk_sample={"total_bytes": 100, "free_bytes": 20, "sample_fresh": True},
+        )
+        self.assertEqual(out["state"], "OBJECTIVE_DONE")
+        self.assertTrue(out["completion_allowed"])
+
+    def test_companion_gate_rejects_mismatched_target_hash(self):
+        target = Path(self.temp.name) / "target.txt"
+        target.write_bytes(b"actual target bytes")
+        edge = self.edge()
+        edge.evidence["local_file_target"] = True
+        edge.evidence["consequence_source_ref"] = CONSEQUENCE_SOURCE
+
+        def execute(socket, edge, carrier):
+            result = self.good_result(edge, carrier)
+            result.update({
+                "action_id": "ACTION-LOCAL-2",
+                "target_relpath": "target.txt",
+                "consequence_ref": "target://target.txt",
+                "receipt_ref": "receipt://provider/2",
+            })
+            result["readback"]["sha256"] = "0" * 64
+            return result
+
+        cp = Checkpoint("OBJ-CONSEQUENCE-MISMATCH", "SOURCE_DIRECT", "LINEAGE-9", edges=[edge])
+        board = TesseractMotherboard(
+            sockets=self.sockets,
+            executors={"cpu1": execute},
+            checkpoint_path=self.checkpoint_path,
+            journal_path=self.journal_path,
+            disk_guard=self.guard,
+            consequence_root=Path(self.temp.name),
+        )
+        out = board.run_cycle(
+            cp,
+            source_refs=["repo://source"],
+            history_refs=["sha256:" + "4" * 64],
+            disk_sample={"total_bytes": 100, "free_bytes": 20, "sample_fresh": True},
+        )
+        self.assertFalse(out["objective_done"])
+        self.assertEqual(out["state"], "OPEN_ROUTE_DISCOVERY_REQUIRED")
+        self.assertFalse(cp.edges[0].grounded_done())
 
 
 if __name__ == "__main__":
