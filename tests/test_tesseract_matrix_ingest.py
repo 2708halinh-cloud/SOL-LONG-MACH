@@ -61,6 +61,32 @@ class MatrixIngestTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse(FIXTURE.replace(marker, "", 1))
 
+
+    def test_git_sha_revision_kinds_require_their_exact_digest_lengths(self):
+        with self.assertRaisesRegex(ValueError, "SOURCE_REVISION_REQUIRED"):
+            parse_item_matrix(
+                FIXTURE,
+                source_uri=SOURCE["source_uri"],
+                source_revision="a" * 7,
+                revision_kind="git-blob-sha1",
+            )
+        with self.assertRaisesRegex(ValueError, "SOURCE_REVISION_REQUIRED"):
+            parse_item_matrix(
+                FIXTURE,
+                source_uri=SOURCE["source_uri"],
+                source_revision="b" * 40,
+                revision_kind="sha256",
+            )
+
+    def test_version_id_accepts_opaque_non_hex_revision_tokens(self):
+        regions = parse_item_matrix(
+            FIXTURE,
+            source_uri=SOURCE["source_uri"],
+            source_revision="release/2026.11:build-7",
+            revision_kind="version-id",
+        )
+        self.assertIn("@version-id:release/2026.11:build-7", regions[0].source_ref)
+
     def test_builds_stable_item_to_neuron_mapping_and_router(self):
         runtime = build_matrix_runtime(
             FIXTURE,
