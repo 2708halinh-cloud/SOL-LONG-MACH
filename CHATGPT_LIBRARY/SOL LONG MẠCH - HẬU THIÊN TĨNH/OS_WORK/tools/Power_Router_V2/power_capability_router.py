@@ -103,7 +103,7 @@ def route(task: str, repo_root: Path) -> dict:
             "tools": "Chuỗi công cụ/_Dụng cụ",
             "app_browser": "Chuỗi công cụ/_App_Browser",
             "devops": "Chuỗi công cụ/_MCPs",
-            "storage": "Chuỗi công cụ/_Plugins",
+            "storage": "Chuỗi công cụ/_Ứng dụng",
         }
         portal = known_portals.get(cap["group"])
         if not portal:
