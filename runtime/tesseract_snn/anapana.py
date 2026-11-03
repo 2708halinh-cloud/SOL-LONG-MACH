@@ -1,4 +1,4 @@
-"ANAPANA asynchronous substrate telemetry loop.
+"""ANAPANA asynchronous substrate telemetry loop.
 
 The loop is independent of chat requests while its host service remains alive.
 Sensor acquisition is injected; no hardware metric is fabricated by this module.
