@@ -19,6 +19,10 @@ from runtime.continuity_guard import (
     stop_allowed,
     visible_output_allowed,
 )
+from runtime.companion_consequence_gate import (
+    SOURCE as CONSEQUENCE_SOURCE,
+    evaluate as evaluate_consequence,
+)
 from runtime.motherboard_control_plane import (
     AffectEvent,
     Blackboard,
@@ -53,6 +57,7 @@ class TesseractMotherboard:
         disk_guard: DiskWriteGuard | None = None,
         blackboard: Blackboard | None = None,
         snn_engine: SNNEngine | None = None,
+        consequence_root: str | Path | None = None,
     ) -> None:
         ids = [socket.socket_id for socket in sockets]
         if len(ids) != len(set(ids)):
@@ -64,6 +69,7 @@ class TesseractMotherboard:
         self.disk_guard = disk_guard or DiskWriteGuard()
         self.blackboard = blackboard or Blackboard()
         self.snn_engine = snn_engine
+        self.consequence_root = Path(consequence_root).resolve() if consequence_root is not None else None
         self._cycle = 0
 
     @staticmethod
@@ -117,9 +123,12 @@ class TesseractMotherboard:
             "readback": readback,
             "state_consistent": raw.get("state_consistent") is True,
         }
-        for key in ("last_consequence_ref", "error_code", "error_class"):
+        for key in ("last_consequence_ref", "error_code", "error_class", "action_id",
+                    "target_relpath", "consequence_ref", "receipt_ref"):
             if isinstance(raw.get(key), str):
                 result[key] = raw[key]
+        if isinstance(raw.get("attempted_to_assert_remote_provider_outcome"), bool):
+            result["attempted_to_assert_remote_provider_outcome"] = raw["attempted_to_assert_remote_provider_outcome"]
         if isinstance(raw.get("retryable"), bool):
             result["retryable"] = raw["retryable"]
         return result
@@ -220,6 +229,35 @@ class TesseractMotherboard:
             result["success"] = False
             result["error_code"] = "GATE2_READBACK_DENIED"
             result["gate2_reasons"] = list(gate2.reasons)
+            return result
+
+        # PR #51 Companion Consequence Gate: local-file completion requires
+        # an exact target path, provider receipt, consequence reference and
+        # SHA-256 readback of the bytes actually present at that target.
+        if edge.evidence.get("local_file_target") is True:
+            if self.consequence_root is None:
+                result["success"] = False
+                result["error_code"] = "COMPANION_GATE_ROOT_MISSING"
+                return result
+            readback = result.get("readback") or {}
+            decision = evaluate_consequence(
+                {
+                    "source_ref": edge.evidence.get("consequence_source_ref"),
+                    "action_id": result.get("action_id"),
+                    "target_relpath": result.get("target_relpath"),
+                    "consequence_ref": result.get("consequence_ref"),
+                    "receipt_ref": result.get("receipt_ref"),
+                    "readback_sha256": readback.get("sha256"),
+                    "attempted_to_assert_remote_provider_outcome": result.get(
+                        "attempted_to_assert_remote_provider_outcome", False
+                    ),
+                },
+                self.consequence_root,
+            )
+            if decision.state != "LOCAL_TARGET_READBACK_VERIFIED":
+                result["success"] = False
+                result["error_code"] = "COMPANION_CONSEQUENCE_GATE_DENIED"
+                result["consequence_missing"] = list(decision.missing)
         return result
 
     def _write_blocked_edges(self, checkpoint: Checkpoint) -> None:
