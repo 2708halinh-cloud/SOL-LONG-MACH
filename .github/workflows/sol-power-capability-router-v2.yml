@@ -19,8 +19,8 @@ jobs:
         with:
           python-version: '3.12'
       - name: Compile routing code
-        run: python -m py_compile "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/_Plugins/power_capability_router.py"
+        run: python -m py_compile "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Power_Router_V2/power_capability_router.py"
       - name: Run capability routing regression
         run: python -m unittest discover -s tests -p 'test_power_capability_router_v2.py' -v
       - name: Verify Plugins back-edge
-        run: python "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/_Plugins/power_capability_router.py" --repo-root . --task "GGDV Template Creator Azure DevOps"
+        run: python "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Power_Router_V2/power_capability_router.py" --repo-root . --task "GGDV Template Creator Azure DevOps"
