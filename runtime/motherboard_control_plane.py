@@ -249,3 +249,48 @@ def route_candidates(sockets: list[CpuSocket], capability: str,
                      prefer_local: bool = True) -> list[CpuSocket]:
     eligible = [s for s in sockets if s.can_run(capability)]
     return sorted(eligible, key=lambda s: (0 if prefer_local and s.name == "LOCAL" else 1, s.socket_id))
+
+
+@dataclass(frozen=True)
+class RouteAttempt:
+    socket_id: str
+    outcome: str
+    error_type: str | None = None
+
+
+@dataclass(frozen=True)
+class RouteExecution:
+    success: bool
+    socket_id: str | None
+    result: Any = None
+    attempts: tuple[RouteAttempt, ...] = ()
+
+
+def execute_with_failover(
+    sockets: list[CpuSocket],
+    capability: str,
+    handlers: Mapping[str, Any],
+    payload: Any,
+    *,
+    retryable_exceptions: tuple[type[BaseException], ...] = (ConnectionError, TimeoutError, OSError),
+) -> RouteExecution:
+    """Execute on eligible sockets in route order, falling back only on transport failures.
+
+    The caller supplies already-authorized adapters keyed by socket_id. This function
+    performs no discovery, credential handling, or network I/O itself. Programming
+    errors intentionally propagate instead of being hidden as a failover event.
+    """
+    attempts: list[RouteAttempt] = []
+    for socket in route_candidates(sockets, capability):
+        handler = handlers.get(socket.socket_id)
+        if not callable(handler):
+            attempts.append(RouteAttempt(socket.socket_id, "SKIPPED", "HANDLER_MISSING"))
+            continue
+        try:
+            result = handler(payload)
+        except retryable_exceptions as exc:
+            attempts.append(RouteAttempt(socket.socket_id, "FAILED", type(exc).__name__))
+            continue
+        attempts.append(RouteAttempt(socket.socket_id, "SUCCEEDED"))
+        return RouteExecution(True, socket.socket_id, result, tuple(attempts))
+    return RouteExecution(False, None, None, tuple(attempts))
