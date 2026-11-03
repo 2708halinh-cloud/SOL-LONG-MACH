@@ -1,7 +1,7 @@
 import unittest
 from runtime.motherboard_control_plane import (
     AffectEvent, Blackboard, CpuSocket, DiskSafety, DiskWriteGuard, RouteState,
-    gate1_preflight, gate2_readback, route_candidates,
+    gate1_preflight, gate2_readback, route_candidates, execute_with_failover,
 )
 
 class MotherboardTests(unittest.TestCase):
