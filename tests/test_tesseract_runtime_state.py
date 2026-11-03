@@ -29,7 +29,7 @@ class JournalTests(unittest.TestCase):
 
 class DiskGuardTests(unittest.TestCase):
     def test_warn_trip_unknown_and_recovery_hysteresis(self):
-        g=DiskGuard(absolute_free_floor=5*GIB)
+        g=DiskGuard(absolute_free_floor=5)
         self.assertEqual(g.evaluate(DiskSample(100,15)).mode,"WARNING")
         self.assertEqual(g.evaluate(DiskSample(100,10)).mode,"DEGRADED")
         self.assertEqual(g.evaluate(DiskSample(100,20,False)).mode,"DEGRADED")
