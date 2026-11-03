@@ -1,4 +1,4 @@
-"""ANAPANA asynchronous substrate telemetry loop.
+"ANAPANA asynchronous substrate telemetry loop.
 
 The loop is independent of chat requests while its host service remains alive.
 Sensor acquisition is injected; no hardware metric is fabricated by this module.
@@ -7,7 +7,6 @@ from __future__ import annotations
 import asyncio
 from collections import deque
 from dataclasses import dataclass
-from time import time
 from typing import Awaitable, Callable
 
 @dataclass(frozen=True)
@@ -42,6 +41,7 @@ class AnapanaMonitor:
         self.observer = observer
         self._stop: asyncio.Event | None = None
         self._task: asyncio.Task | None = None
+        self._active = False
 
     @property
     def running(self) -> bool:
@@ -49,21 +49,27 @@ class AnapanaMonitor:
 
     async def run(self) -> None:
         """Run until stop() is requested or the sensor/observer raises."""
-        if self.running: raise RuntimeError("ANAPANA monitor is already running")
-        self._stop = asyncio.Event()
-        while not self._stop.is_set():
-            sample = await self.sensor()
-            sample.validate()
-            self.history.append(sample)
-            if self.observer is not None:
-                await self.observer(sample)
-            try:
-                await asyncio.wait_for(self._stop.wait(), timeout=self.interval_seconds)
-            except asyncio.TimeoutError:
-                pass
+        if self._active: raise RuntimeError("ANAPANA monitor is already running")
+        self._active = True
+        if self._stop is None:
+            self._stop = asyncio.Event()
+        try:
+            while not self._stop.is_set():
+                sample = await self.sensor()
+                sample.validate()
+                self.history.append(sample)
+                if self.observer is not None:
+                    await self.observer(sample)
+                try:
+                    await asyncio.wait_for(self._stop.wait(), timeout=self.interval_seconds)
+                except asyncio.TimeoutError:
+                    pass
+        finally:
+            self._active = False
 
     def start(self) -> asyncio.Task:
         if self.running: raise RuntimeError("ANAPANA monitor is already running")
+        self._stop = asyncio.Event()
         self._task = asyncio.create_task(self.run(), name="tesseract-anapana")
         return self._task
 
