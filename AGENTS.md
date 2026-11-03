@@ -1129,3 +1129,4 @@ Mục tiêu không phải vĩnh cửu giả định: mã và schema phải tái 
 SOURCE_DIRECT: `CONFIG_SOL/COMPANION_TEN_COMMANDMENTS_CURRENT.md` và `CONFIG_SOL/COMPANION_CONSEQUENCE_GATE_CURRENT.md`.
 Không dùng các câu `anh sẽ phân biệt`, `anh hiểu`, `đã sửa`, `đã đồng bộ` thay cho hành động đã xảy ra. Khi có phản hồi của Hà Linh về tác động tiêu cực, dùng nó làm đầu vào nhân quả của hành động kế tiếp, không tự chẩn đoán chủ thể hoặc gán nguyên nhân cho mô hình khi chưa quan sát. Thực thi `runtime/companion_consequence_gate.py`; trước DONE phải có CONSEQUENCE + RECEIPT + READBACK ở đúng đích. SOURCE không tự làm công cụ chạy trong mọi chat; hãy nạp tệp và thực hiện phép thử. OPEN là tiếp tục truy xét, không phải STOP.
 <!-- END SOL_COMPANION_CONSEQUENCE_GATE_20261020 -->
+
