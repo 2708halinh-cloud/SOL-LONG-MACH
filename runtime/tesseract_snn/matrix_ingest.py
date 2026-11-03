@@ -16,13 +16,13 @@ from .sparse_router import SparseRegionRouter
 
 
 _ITEM_MARKER = re.compile(
-    r"<!-- BEGIN_ITEM_(R-\\d{3}) -->\\s*(.*?)\\s*<!-- END_ITEM_\\1 -->",
+    r"<!-- BEGIN_ITEM_(R-\d{3}) -->\s*(.*?)\s*<!-- END_ITEM_\1 -->",
     re.DOTALL,
 )
-_BEGIN_MARKER = re.compile(r"<!-- BEGIN_ITEM_(R-\\d{3}) -->")
-_END_MARKER = re.compile(r"<!-- END_ITEM_(R-\\d{3}) -->")
-_RELATED = re.compile(r"^\\s*RELATED_ITEMS\\s*:\\s*(.*?)\\s*$", re.MULTILINE)
-_ITEM_REF = re.compile(r"R-\\d{3}")
+_BEGIN_MARKER = re.compile(r"<!-- BEGIN_ITEM_(R-\d{3}) -->")
+_END_MARKER = re.compile(r"<!-- END_ITEM_(R-\d{3}) -->")
+_RELATED = re.compile(r"^\s*RELATED_ITEMS\s*:\s*(.*?)\s*$", re.MULTILINE)
+_ITEM_REF = re.compile(r"R-\d{3}")
 _REVISION_KINDS = {"git-blob-sha1", "git-commit-sha1", "sha256", "version-id"}
 _OPAQUE_VERSION_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9._:/+-]{0,255}")
 
@@ -85,7 +85,7 @@ def parse_item_matrix(
             raise ValueError(f"DUPLICATE_ITEM:{item_id}")
         seen.add(item_id)
 
-        title_match = re.search(r"^\\s*#\\s+(.+?)\\s*$", body, re.MULTILINE)
+        title_match = re.search(r"^\s*#\s+(.+?)\s*$", body, re.MULTILINE)
         title = title_match.group(1).strip() if title_match else item_id
 
         related: list[str] = []
@@ -125,7 +125,7 @@ def build_matrix_runtime(
         source_revision=source_revision,
         revision_kind=revision_kind,
     )
-    if not isinstance(initial_energy, (int, float)) or isinstance(initial_energy, bool) or not re.fullmatch(r"(?:0|[1-9]\\d*)(?:\\.\\d+)?", str(initial_energy)):
+    if not isinstance(initial_energy, (int, float)) or isinstance(initial_energy, bool) or not re.fullmatch(r"(?:0|[1-9]\d*)(?:\.\d+)?", str(initial_energy)):
         raise ValueError("INITIAL_ENERGY_MUST_BE_NON_NEGATIVE")
     if initial_energy < 0:
         raise ValueError("INITIAL_ENERGY_MUST_BE_NON_NEGATIVE")
