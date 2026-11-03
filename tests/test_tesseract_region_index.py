@@ -54,7 +54,12 @@ class RegionIndexTests(unittest.TestCase):
         self.assertEqual(self.index.query({"dimension": "TIME"}), [])
 
     def test_query_limit_is_bounded(self):
-        self.assertEqual(len(self.index.query({}, limit=1)), 1)
+        hits = self.index.query({"function": "review"}, limit=1)
+        self.assertEqual(len(hits), 1)
+
+    def test_empty_query_is_rejected_to_prevent_full_catalog_enumeration(self):
+        with self.assertRaises(ValueError):
+            self.index.query({}, limit=1)
 
     def test_invalid_empty_source_is_rejected(self):
         with self.assertRaises(ValueError):
