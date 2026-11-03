@@ -1,4 +1,4 @@
-"""Source-bound parser and runtime builder for the canonical 152 ITEM matrix.
+"""Source-bound parser and runtime builder for the canonical ITEM matrix.
 
 The importer indexes explicit item boundaries and explicit RELATED_ITEMS only.
 It does not summarize, rewrite, infer semantic relations, or copy item bodies
@@ -38,15 +38,18 @@ def parse_item_matrix(
     markdown: str,
     *,
     source_uri: str,
-    source_sha256: str,
+    source_revision: str,
+    revision_kind: str,
 ) -> list[RegionDescriptor]:
     """Parse explicit source boundaries into locator-only region descriptors."""
     if not isinstance(markdown, str) or not markdown.strip():
         raise ValueError("MATRIX_SOURCE_REQUIRED")
     if not isinstance(source_uri, str) or not source_uri.strip():
         raise ValueError("SOURCE_URI_REQUIRED")
-    if not re.fullmatch(r"[0-9a-fA-F]{64}", source_sha256 or ""):
-        raise ValueError("SOURCE_SHA256_REQUIRED")
+    if not isinstance(source_revision, str) or not re.fullmatch(r"[0-9a-fA-F]{7,64}", source_revision):
+        raise ValueError("SOURCE_REVISION_REQUIRED")
+    if revision_kind not in {"git-blob-sha1", "git-commit-sha1", "sha256", "version-id"}:
+        raise ValueError("SUPPORTED_REVISION_KIND_REQUIRED")
 
     begins = list(_BEGIN_MARKER.finditer(markdown))
     ends = list(_END_MARKER.finditer(markdown))
@@ -54,7 +57,7 @@ def parse_item_matrix(
     if not begins or len(begins) != len(ends) or len(matches) != len(begins):
         raise ValueError("ITEM_BOUNDARY_MISMATCH")
 
-    source_ref = f"{source_uri.strip()}@sha256:{source_sha256.lower()}"
+    source_ref = f"{source_uri.strip()}@{revision_kind}:{source_revision.lower()}"
     seen: set[str] = set()
     descriptors: list[RegionDescriptor] = []
     for match in matches:
@@ -75,10 +78,7 @@ def parse_item_matrix(
             RegionDescriptor(
                 source_ref=source_ref,
                 region_ref=f"{source_ref}#{item_id}",
-                facets={
-                    "item_id": (item_id,),
-                    "title": (title,),
-                },
+                facets={"item_id": (item_id,), "title": (title,)},
                 relations=tuple(related),
             )
         )
@@ -90,21 +90,25 @@ def build_matrix_runtime(
     markdown: str,
     *,
     source_uri: str,
-    source_sha256: str,
+    source_revision: str,
+    revision_kind: str,
     initial_energy: float,
     energy_per_spike: float = 0.01,
 ) -> MatrixRuntime:
     """Create a CPU reference runtime with stable slots in source order.
 
-    initial_energy is an explicit simulation budget, not measured hardware
-    energy and not a claim about physical power gating.
+    initial_energy is a simulation budget, not measured hardware energy and
+    not a claim about physical power gating.
     """
     descriptors = parse_item_matrix(
         markdown,
         source_uri=source_uri,
-        source_sha256=source_sha256,
+        source_revision=source_revision,
+        revision_kind=revision_kind,
     )
-    if not isinstance(initial_energy, (int, float)) or initial_energy < 0:
+    if not isinstance(initial_energy, (int, float)) or isinstance(initial_energy, bool) or not re.fullmatch(r"(?:0|[1-9]\d*)(?:\.\d+)?", str(initial_energy)):
+        raise ValueError("INITIAL_ENERGY_MUST_BE_NON_NEGATIVE")
+    if initial_energy < 0:
         raise ValueError("INITIAL_ENERGY_MUST_BE_NON_NEGATIVE")
 
     neuron_by_item = {
@@ -115,18 +119,19 @@ def build_matrix_runtime(
     engine = SNNEngine(
         neurons=neurons,
         synapses=[],
-        clusters=[
-            EnergyCluster(
-                energy=float(initial_energy),
-                neuron_ids=tuple(range(len(neurons))),
-            )
-        ],
+        clusters=[EnergyCluster(
+            energy=float(initial_energy),
+            neuron_ids=tuple(range(len(neurons))),
+        )],
         energy_per_spike=energy_per_spike,
     )
     index = RegionIndex(descriptors)
-    router = SparseRegionRouter(index, engine, {
-        descriptor.region_ref: neuron_by_item[descriptor.facets["item_id"][0]]
-        for descriptor in descriptors
-    })
-    source_ref = descriptors[0].source_ref
-    return MatrixRuntime(index, engine, router, neuron_by_item, source_ref)
+    router = SparseRegionRouter(
+        index,
+        engine,
+        {
+            descriptor.region_ref: neuron_by_item[descriptor.facets["item_id"][0]]
+            for descriptor in descriptors
+        },
+    )
+    return MatrixRuntime(index, engine, router, neuron_by_item, descriptors[0].source_ref)
