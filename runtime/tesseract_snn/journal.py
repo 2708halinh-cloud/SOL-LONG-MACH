@@ -20,6 +20,8 @@ class AppendOnlyJournal:
     def append(self, event: dict[str, Any]) -> dict[str, Any]:
         if not isinstance(event, dict) or not event:
             raise ValueError("event must be a non-empty object")
+        if not self.verify():
+            raise ValueError("journal integrity check failed; refusing to append")
         records = self.read_all()
         previous = records[-1]["record_hash"] if records else GENESIS
         body = {"sequence": len(records) + 1, "previous_hash": previous, "event": event}
