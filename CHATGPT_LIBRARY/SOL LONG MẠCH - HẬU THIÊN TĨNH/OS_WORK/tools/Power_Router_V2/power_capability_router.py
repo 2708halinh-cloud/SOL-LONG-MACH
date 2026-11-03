@@ -21,6 +21,14 @@ def normalize(s: str) -> str:
 
 
 
+def _safe(root: Path, relative: str) -> Path:
+    """Resolve a source path while refusing traversal outside its carrier."""
+    candidate = (root / relative).resolve()
+    if not candidate.is_relative_to(root.resolve()):
+        raise ValueError("ROUTE_ESCAPES_ROOT")
+    return candidate
+
+
 def select_skill_priority(entry: str, policy: dict) -> int | None:
     """Apply user's personal-first, legacy-platform-last preference.
 
