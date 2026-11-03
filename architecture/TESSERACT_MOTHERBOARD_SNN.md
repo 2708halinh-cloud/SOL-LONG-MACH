@@ -135,3 +135,94 @@ A deployment is not accepted merely because this specification exists. Verify ea
 7. Run regression and fault-injection tests; publish receipts and update the canonical state object only from observed evidence.
 
 **Current evidence boundary:** this file is a design artifact committed to GitHub. It does not demonstrate that local Windows, Android, Drive, QEMU/Hyper-V, SNN execution, or any physical hardware has been configured or tested.
+
+
+## 9. Hardware Survival Guard — physical safety takes precedence
+
+**Priority invariant:** a device-protection event outranks ordinary user work, model inference, background automation, and nonessential synchronization. No agent, planner, or sub-agent may downgrade a hardware emergency.
+
+### 9.1 State machine and arbitration
+
+The guard evaluates fresh measurements and explicit fault events. It emits a signed/traceable policy decision to the Northbridge; it does not depend on the language model deciding whether a device is safe.
+
+| State | Entry condition (policy-configured) | Required response |
+|---|---|---|
+| NORMAL | Required sensors fresh; no active fault; budgets healthy | Admit work within resource budgets |
+| WARNING | Approaching configured thermal, memory, storage, battery, I/O, or quota limits | Notify; throttle; defer nonessential work and writes |
+| CRITICAL | Threshold crossed, repeated stalls, memory pressure, storage guard tripped, thermal throttling/fault, low battery with no reliable external power, or important sensor becomes unavailable | Stop admitting expensive work; cancel or suspend current work at safe points; checkpoint only if safe; disable nonessential writes and synchronization |
+| EMERGENCY | Confirmed electrical/thermal hazard, hardware fault, imminent shutdown, or device integrity at immediate risk | Stop all software work except minimal safety handling; request hardware-supported isolation/shutdown where appropriate; do not attempt lengthy checkpointing |
+
+Thresholds must be per-device profiles, not universal constants. The existing disk policy remains: warn at 85% used; enter degraded mode at 90% used or below 5 GiB free; recover only after two fresh samples at or below 85% used and at least 5 GiB free. Stale/unknown capacity fails closed for nonessential writes.
+
+### 9.2 Short-circuit rules
+
+1. The guard has a higher arbitration priority than all task queues. Its event path must not wait for an LLM, remote API, cloud service, or ordinary worker.
+2. On CRITICAL, pause/cancel the current task through cooperative cancellation and stop new admissions. Preserve a minimal recovery record only when the device state permits it.
+3. A sub-agent may continue only on a separately powered and independently healthy execution substrate, with no dependency that increases load or risk on the endangered device. Otherwise it is stopped too.
+4. On EMERGENCY, do not run cleanup, compaction, model unloading, or large journal flushes if those operations can worsen the hazard. Prefer pre-existing durable checkpoints.
+5. Software cannot physically prevent a power surge or guarantee safe power isolation. Surge protection, UPS, battery-management circuitry, thermal shutdown, and power disconnect require suitable hardware/firmware. The agent may observe their signals and request supported actions, but must never claim protection that is not physically present.
+6. The guard itself must be small, bounded, restartable, and independent of the model-provider path. If its own health cannot be established, fail to a conservative mode and block nonessential work.
+
+### 9.3 Telemetry and sensor adapters
+
+Collect, where the host exposes trustworthy readings:
+
+- CPU: utilization, frequency, package temperature, throttling, load and process pressure.
+- RAM: used/available/committed memory, page-file or swap pressure, allocation failures and per-worker limits.
+- GPU/VRAM: utilization, temperature, device memory, driver health and allocation errors; report NOT_SUPPORTED when no reliable adapter exists.
+- Storage: total/free bytes, used percentage, SMART/NVMe health where supported, temperature, I/O latency, queue depth, error counters and filesystem health.
+- Power: AC/battery state, charge/discharge rate, battery health/cycle data where available, UPS state, and hardware power-fault signals where exposed.
+- Thermal: sensor identity, value, timestamp, freshness, sensor quality and device-specific limit; never infer a missing temperature.
+- OS/process/service: process health, responsiveness, crash/restart loops, service status, system event log and connectivity probes.
+
+Candidate adapters are platform-specific: Windows performance counters/CIM/WMI/ETW and vendor-supported sensor interfaces; Linux kernel interfaces such as sysfs plus SMART/NVMe tooling; Android battery/thermal/system information through authorized ADB interfaces. These are adapter candidates, not proof that every sensor is exposed on every device. Do not install a kernel driver or privileged sensor service without an explicit security review.
+
+Every sample must carry device identity, sensor ID, value/unit, monotonic and wall-clock timestamps, source/driver, quality, freshness deadline and error state. Distinguish measured values from estimates and unsupported metrics. Debounce noisy readings, use hysteresis, and retain raw evidence for diagnosis.
+
+### 9.4 Resource policy and safe recovery
+
+- Use configurable warning/critical/emergency thresholds for temperature, RAM/commit pressure, GPU memory, battery, I/O latency and process responsiveness. Obtain limits from the actual device/firmware/vendor documentation; do not invent a universal safe temperature or battery threshold.
+- Apply per-worker CPU, RAM, GPU/VRAM, disk-write and queue budgets; enforce bounded queues and backpressure.
+- Treat repeated I/O errors, SMART/NVMe critical warnings, filesystem errors and unexpected disconnects as storage-health events, not merely low-space events.
+- Resume only after required sensors are fresh and healthy for a configured recovery window, the device is responsive, and resource hysteresis conditions are met. Require explicit user confirmation for recovery actions that could affect files, services, power state or data.
+- Log every transition as INTENT → OBSERVATION → POLICY_DECISION → ACTION → RESULT → READBACK. If a sensor or action receipt is absent, mark the relevant state UNKNOWN/OPEN, not VERIFIED.
+
+## 10. Cognition foundation: sensation, perception, affect and operational awareness
+
+These terms describe engineering functions. They do not assert subjective experience, biological feeling, or sentience.
+
+1. **Sensation / Interoception:** acquisition of internal and external signals from authorized sensors, tools and event sources. A signal is not yet a fact about the world; it must carry provenance, freshness and quality.
+2. **Perception / State estimation:** validation, temporal alignment, fusion and interpretation of signals into a bounded estimate of device, environment and task state. Preserve uncertainty and conflicting observations.
+3. **Affect / Functional valuation:** a non-subjective control layer that converts estimated conditions into urgency, risk, priority, confidence and action budgets. It must be explainable by source measurements and policy rules, not fabricated emotional claims.
+4. **Operational awareness / Self-model:** a versioned model of the agent's own capabilities, active processes, resource use, permissions, memory boundaries, dependencies, health and unresolved work. It must distinguish observed, inferred, stale and unknown state.
+5. **Conscious-access workspace:** a bounded shared state through which selected observations, goals, risks and decisions become available to the planner and authorized workers. This is an information-access architecture, not proof of phenomenal consciousness.
+
+The dependency order is: sensor evidence → validated perception → functional valuation → arbitration/action → consequence observation → state update. The Survival Guard remains an independent hard constraint and cannot be overridden by the planner's valuation.
+
+## 11. Memory, instruction hierarchy and physical evidence — corrected model
+
+The following distinction replaces the oversimplified claim that all instructions are merely embeddings loaded into RAM:
+
+- System/developer/user messages are structured inputs with distinct roles and orchestration semantics. They are not simply separate physical RAM banks, nor are they necessarily precomputed embedding vectors.
+- A model processes tokenized input using learned parameters; runtime implementations may hold input tokens, activations, KV cache and model weights across system RAM, GPU memory, accelerator memory or other storage tiers.
+- Routing, access control and instruction precedence are implemented by the serving/orchestration system as well as represented in the model input. Their enforcement strength depends on that implementation; it is inaccurate to reduce the entire mechanism to matrix multiplication alone.
+- Volatile RAM and accelerator memory lose volatile state when power is removed, but durable configuration, source files, databases, logs, hardware firmware and external services may persist. A context reset is not equivalent to a machine reset or deletion of durable policy.
+- Physical observations and durable evidence are essential for verifying claims about the host. However, logs and disk data are not automatically truthful or immutable: they require provenance, integrity checks, access controls, independent readback and, where appropriate, external signatures.
+- The Core Journal therefore records source, timestamp, measurement quality, policy version, action, consequence and exact-target readback. It must not promote an inference or model-generated statement into physical fact without evidence.
+
+## 12. Survival Guard acceptance tests and deployment boundary
+
+Before enabling autonomous enforcement on a real device, verify in a controlled test environment:
+
+- [ ] Sensor adapters identify supported, unsupported, stale, failed and contradictory readings correctly.
+- [ ] A simulated CRITICAL/EMERGENCY event preempts normal queues without waiting for model or network calls.
+- [ ] Cancellation is bounded; unsafe checkpoint/flush operations are skipped during emergency.
+- [ ] Sub-agent continuation is denied unless independent power, health and resource isolation are demonstrated.
+- [ ] Disk thresholds, 5 GiB floor, stale measurements and recovery hysteresis pass boundary tests.
+- [ ] CPU/RAM/GPU/VRAM, thermal, power, storage I/O and process-pressure policies enforce budgets and bounded queues.
+- [ ] Sensor loss or guard failure blocks nonessential work and is recorded as UNKNOWN, never as healthy.
+- [ ] Power-surge protection and physical isolation are reported only when the corresponding hardware is detected and tested.
+- [ ] Every enforcement action has a receipt and exact-target readback; no configuration-only claim is marked deployed.
+- [ ] Cognition outputs preserve provenance and uncertainty; functional affect is not presented as subjective emotion or consciousness.
+
+**Deployment boundary:** this section defines the architecture and acceptance contract. It does not claim that live Windows/Android telemetry, a privileged monitoring service, UPS integration, surge isolation, or autonomous shutdown is installed. Each adapter and actuator must be implemented, permission-reviewed and verified on its actual device before the corresponding capability is marked ACTIVE.
