@@ -129,3 +129,20 @@ No claim of full-system synchronization is valid until each target has its own f
 
 ### Verification contract
 Each inventory entry is reported_by_operator=true, source_verified=false, observed_at=null until freshly probed. A path or declaration alone does not prove a running service, installed model, GPU/NPU execution, API authorization or provider synchronization.
+
+
+## 10. Durable motherboard kernel — 2026-10-29 integration
+
+Runtime carrier:
+- `tesseract_motherboard_kernel.py`: checkpoint restore, bounded CPU/memory/time scheduling, tool-call observation wrapper, append-only wave journal, separate brain-label provenance, automatic event-conditioned neuron scoring, and 5D capability regression.
+- `tesseract_motherboard_daemon.py`: bounded loop with checkpoint restore, PID probe, fresh heartbeat and explicit unresolved-edge status.
+- `TESSERACT_MOTHERBOARD_KERNEL_SPEC.json` and `TESSERACT_MOTHERBOARD_CAPABILITIES_CURRENT.json`: machine-readable behavior contract and prior/current capability inventory.
+- `test_tesseract_motherboard_kernel.py`: focused regression tests.
+
+Each new kernel/orchestrator process restores the durable checkpoint. The daemon compares the capability manifest on every bounded cycle, retains a historical union, and reports missing/added/preserved capabilities without erasing prior evidence. The local runtime stores its checkpoint under `runtime/state/`; the GitHub carrier keeps the source files at this directory root.
+
+Tool-call observation applies to tools routed through `MotherboardKernel.wrap_tool` and integrated local motherboard actions. It does not claim invisible interception of every hosted ChatGPT tool. The append-only journal includes ALPHA, BETA, GAMMA, DELTA and THETA bands, with the existing cycle ALPHA → BETA → DELTA → THETA → GAMMA → ALPHA. Missing receipt/readback remains OPEN.
+
+`UBUBU` and `UNTUNBU` are separate exact labels and cannot be merged from spelling similarity alone. Event-conditioned scoring uses progress, novelty, efficiency, risk and repetition; it is a computational heuristic, not biological dopamine or model-weight training.
+
+The supervisor is reported RUNNING_VERIFIED only when a live PID probe and fresh heartbeat both pass. A file, registry row or historical receipt alone is not runtime proof.
