@@ -29,8 +29,10 @@ from pathlib import Path
 
 try:
     from .sensor_root_resolver import inspect_sources
+    from .live_device_probe import probe_live_devices
 except ImportError:  # direct script invocation
     from sensor_root_resolver import inspect_sources
+    from live_device_probe import probe_live_devices
 
 # Pin this consumer to the provider-verified materialization. Fail closed; never auto-select another CSV.
 os.environ["SOL_SENSOR_SOURCE_FILE"] = r"D:\SENSOR_LOGS\windows_SENSON.CSV"
@@ -194,6 +196,12 @@ def sync_snapshot_to_github():
         print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] GitHub sync notice: {e}")
         return False
 
+def _live_sensor_reading_confirmed(result: dict) -> bool:
+    """Accept only an explicit positive flag from the timestamp-advancement probe."""
+    probe = result.get("device_probe")
+    return isinstance(probe, dict) and probe.get("live_sensor_reading_confirmed") is True
+
+
 def record_telemetry_tick():
     """Read a real sensor carrier; never manufacture readings or append to it.
 
@@ -220,7 +228,12 @@ def record_telemetry_tick():
         "synthetic_rows_added": 0,
         "live_sensor_reading_confirmed": False,
     }
+    # Probe configured Android transports without persisting battery values or sensor event payloads.
+    # A responding SensorService is not proof of a continuous live sensor stream.
+    result["device_probe"] = probe_live_devices(ADB_PATH)
+    result["live_sensor_reading_confirmed"] = _live_sensor_reading_confirmed(result)
     print(f"SOURCE_OBSERVED bytes={result['bytes']} sha256={result['sha256']}")
+    print("DEVICE_PROBE_JSON=" + json.dumps(result["device_probe"], sort_keys=True, separators=(",", ":")))
     return result
 
 
@@ -241,7 +254,13 @@ def write_tick_receipt(result: dict, mode: str) -> dict:
             "source_file_written": False,
             "synthetic_rows_added": 0,
         },
-        "live_sensor_reading_confirmed": False,
+        "device_probe": result.get("device_probe", {
+            "schema": "GGDV_LIVE_DEVICE_PROBE/1.1",
+            "status": "NOT_RUN",
+            "live_sensor_reading_confirmed": False,
+            "targets": [],
+        }),
+        "live_sensor_reading_confirmed": _live_sensor_reading_confirmed(result),
         "exports": {
             "cloud_enabled": os.getenv("SOL_ENABLE_SENSOR_CLOUD_EXPORT", "").strip() == "1",
             "github_enabled": os.getenv("SOL_ENABLE_SENSOR_GITHUB_PUSH", "").strip() == "1",
