@@ -1,7 +1,7 @@
 import unittest
 from runtime.motherboard_control_plane import (
     AffectEvent, Blackboard, CpuSocket, DiskSafety, DiskWriteGuard, RouteState,
-    gate1_preflight, gate2_readback, route_candidates, execute_with_failover,
+    gate1_preflight, gate2_readback, route_candidates, execute_with_failover, NotDispatchedError,
 )
 
 class MotherboardTests(unittest.TestCase):
@@ -148,7 +148,7 @@ class MotherboardTests(unittest.TestCase):
         calls = []
         def local_handler(payload):
             calls.append(("LOCAL", payload))
-            raise ConnectionError("local device disconnected")
+            raise NotDispatchedError("adapter confirms request was not dispatched")
         def cloud_handler(payload):
             calls.append(("CHATGPT", payload))
             return "remote-result"
@@ -178,13 +178,43 @@ class MotherboardTests(unittest.TestCase):
         b = CpuSocket("CPU2", "CHATGPT", "api", True, True, True, True, ("code",))
         result = execute_with_failover(
             [a, b], "code",
-            {"CPU1": lambda payload: (_ for _ in ()).throw(TimeoutError()),
-             "CPU2": lambda payload: (_ for _ in ()).throw(ConnectionError())},
+            {"CPU1": lambda payload: (_ for _ in ()).throw(NotDispatchedError()),
+             "CPU2": lambda payload: (_ for _ in ()).throw(NotDispatchedError())},
             {},
         )
         self.assertFalse(result.success)
         self.assertIsNone(result.socket_id)
-        self.assertEqual([x.error_type for x in result.attempts], ["TimeoutError", "ConnectionError"])
+        self.assertEqual([x.error_type for x in result.attempts], ["NotDispatchedError", "NotDispatchedError"])
+
+    def test_execution_does_not_retry_ambiguous_connection_failure(self):
+        local = CpuSocket("CPU3", "LOCAL", "ollama", True, True, True, True, ("code",))
+        cloud = CpuSocket("CPU2", "CHATGPT", "api", True, True, True, True, ("code",))
+        calls = []
+        def ambiguous(payload):
+            calls.append("LOCAL")
+            raise ConnectionError("response lost after possible dispatch")
+        def cloud_handler(payload):
+            calls.append("CHATGPT")
+            return "must-not-run"
+        with self.assertRaises(ConnectionError):
+            execute_with_failover([local, cloud], "code",
+                {"CPU3": ambiguous, "CPU2": cloud_handler}, {"op": "write"})
+        self.assertEqual(calls, ["LOCAL"])
+
+    def test_execution_does_not_retry_permission_error(self):
+        local = CpuSocket("CPU3", "LOCAL", "ollama", True, True, True, True, ("code",))
+        cloud = CpuSocket("CPU2", "CHATGPT", "api", True, True, True, True, ("code",))
+        calls = []
+        def denied(payload):
+            calls.append("LOCAL")
+            raise PermissionError("local access denied")
+        def cloud_handler(payload):
+            calls.append("CHATGPT")
+            return "must-not-run"
+        with self.assertRaises(PermissionError):
+            execute_with_failover([local, cloud], "code",
+                {"CPU3": denied, "CPU2": cloud_handler}, {})
+        self.assertEqual(calls, ["LOCAL"])
 
     def test_execution_does_not_hide_non_transport_programming_errors(self):
         a = CpuSocket("CPU1", "GEMINI", "api", True, True, True, True, ("code",))
