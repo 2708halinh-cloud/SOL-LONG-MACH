@@ -1,7 +1,7 @@
 import unittest
 from runtime.motherboard_control_plane import (
     AffectEvent, Blackboard, CpuSocket, DiskSafety, DiskWriteGuard, RouteState,
-    gate1_preflight, gate2_readback, route_candidates,
+    gate1_preflight, gate2_readback, route_candidates, execute_with_failover,
 )
 
 class MotherboardTests(unittest.TestCase):
@@ -140,6 +140,59 @@ class MotherboardTests(unittest.TestCase):
         a = CpuSocket("CPU1", "GEMINI", "api", True, True, True, True, ("text",))
         b = CpuSocket("CPU2", "CHATGPT", "api", True, True, True, True, ("code",))
         self.assertEqual([s.name for s in route_candidates([a, b], "code")], ["CHATGPT"])
+
+
+    def test_execution_fails_over_when_preferred_device_disconnects(self):
+        local = CpuSocket("CPU3", "LOCAL", "ollama", True, True, True, True, ("code",))
+        cloud = CpuSocket("CPU2", "CHATGPT", "api", True, True, True, True, ("code",))
+        calls = []
+        def local_handler(payload):
+            calls.append(("LOCAL", payload))
+            raise ConnectionError("local device disconnected")
+        def cloud_handler(payload):
+            calls.append(("CHATGPT", payload))
+            return "remote-result"
+        result = execute_with_failover(
+            [local, cloud], "code",
+            {"CPU3": local_handler, "CPU2": cloud_handler},
+            {"task": "continue"},
+        )
+        self.assertTrue(result.success)
+        self.assertEqual(result.socket_id, "CPU2")
+        self.assertEqual(result.result, "remote-result")
+        self.assertEqual([a.outcome for a in result.attempts], ["FAILED", "SUCCEEDED"])
+        self.assertEqual(calls, [("LOCAL", {"task": "continue"}), ("CHATGPT", {"task": "continue"})])
+
+    def test_execution_skips_unavailable_device_and_uses_ready_route(self):
+        offline = CpuSocket("CPU3", "LOCAL", "ollama", True, False, True, True, ("code",))
+        cloud = CpuSocket("CPU2", "CHATGPT", "api", True, True, True, True, ("code",))
+        result = execute_with_failover(
+            [offline, cloud], "code", {"CPU2": lambda payload: "cloud-ok"}, None
+        )
+        self.assertTrue(result.success)
+        self.assertEqual(result.socket_id, "CPU2")
+        self.assertEqual(len(result.attempts), 1)
+
+    def test_execution_reports_unavailable_when_all_routes_fail(self):
+        a = CpuSocket("CPU1", "GEMINI", "api", True, True, True, True, ("code",))
+        b = CpuSocket("CPU2", "CHATGPT", "api", True, True, True, True, ("code",))
+        result = execute_with_failover(
+            [a, b], "code",
+            {"CPU1": lambda payload: (_ for _ in ()).throw(TimeoutError()),
+             "CPU2": lambda payload: (_ for _ in ()).throw(ConnectionError())},
+            {},
+        )
+        self.assertFalse(result.success)
+        self.assertIsNone(result.socket_id)
+        self.assertEqual([x.error_type for x in result.attempts], ["TimeoutError", "ConnectionError"])
+
+    def test_execution_does_not_hide_non_transport_programming_errors(self):
+        a = CpuSocket("CPU1", "GEMINI", "api", True, True, True, True, ("code",))
+        b = CpuSocket("CPU2", "CHATGPT", "api", True, True, True, True, ("code",))
+        def broken(payload):
+            raise ValueError("bug in adapter")
+        with self.assertRaises(ValueError):
+            execute_with_failover([a, b], "code", {"CPU1": broken, "CPU2": lambda p: "should-not-run"}, {})
 
 if __name__ == "__main__":
     unittest.main()
