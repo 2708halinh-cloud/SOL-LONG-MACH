@@ -53,7 +53,7 @@ class ConversationIngestor:
                     raw = json.loads(line)
                 except json.JSONDecodeError:
                     yield {"source_ref":f"{source.as_posix()}#{n}",
-                           "raw_line":line.rstrip("\\n"),
+                           "raw_line":line.rstrip("\n"),
                            "normalization_status":"INVALID_JSON_PRESERVED"}
                     continue
                 row = self.normalize(raw)
