@@ -251,6 +251,10 @@ def route_candidates(sockets: list[CpuSocket], capability: str,
     return sorted(eligible, key=lambda s: (0 if prefer_local and s.name == "LOCAL" else 1, s.socket_id))
 
 
+class NotDispatchedError(ConnectionError):
+    """Adapter proves the request was not dispatched and no side effect occurred."""
+
+
 @dataclass(frozen=True)
 class RouteAttempt:
     socket_id: str
@@ -272,13 +276,18 @@ def execute_with_failover(
     handlers: Mapping[str, Any],
     payload: Any,
     *,
-    retryable_exceptions: tuple[type[BaseException], ...] = (ConnectionError, TimeoutError, OSError),
+    retryable_exceptions: tuple[type[BaseException], ...] = (NotDispatchedError,),
 ) -> RouteExecution:
-    """Execute on eligible sockets in route order, falling back only on transport failures.
+    """Execute in route order; retry only when an adapter proves no dispatch occurred.
+
+    Ambiguous ConnectionError/TimeoutError/OSError can happen after a side effect was
+    applied, so they must not trigger another route by default. An adapter may raise
+    NotDispatchedError only when it can prove the operation was not dispatched. Callers
+    may explicitly widen retryable_exceptions only for idempotent or proven-safe work.
 
     The caller supplies already-authorized adapters keyed by socket_id. This function
     performs no discovery, credential handling, or network I/O itself. Programming
-    errors intentionally propagate instead of being hidden as a failover event.
+    and permission errors intentionally propagate instead of being hidden as failover.
     """
     attempts: list[RouteAttempt] = []
     for socket in route_candidates(sockets, capability):
