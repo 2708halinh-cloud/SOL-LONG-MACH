@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, architecture/tesseract-motherboard-snn, feature/tesseract-os-mainboard]
   pull_request:
-    branches: [main]
+    branches: [main, feature/tesseract-os-mainboard]
   workflow_dispatch:
 
 jobs:
@@ -14,9 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+        uses: actions/setup-python@v5
       - name: Run TESSERACT and Digital Nervous System tests
         run: |
           python -m unittest discover -s tests -p 'test_tesseract_*.py' -v
