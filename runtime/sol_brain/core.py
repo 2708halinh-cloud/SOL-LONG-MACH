@@ -53,7 +53,7 @@ class ConversationIngestor:
                     raw = json.loads(line)
                 except json.JSONDecodeError:
                     yield {"source_ref":f"{source.as_posix()}#{n}",
-                           "raw_line":line.rstrip("\n"),
+                           "raw_line":line.rstrip("\\n"),
                            "normalization_status":"INVALID_JSON_PRESERVED"}
                     continue
                 row = self.normalize(raw)
@@ -141,5 +141,4 @@ def infer_affect(text: str) -> dict[str, Any]:
     return {"hypotheses":{k:v for k,v in scores.items() if v > 0},
             "ephemeral":True, "basis":"LEXICAL_CUES_ONLY",
             "confidence_limit":"LOW_WITHOUT_CONTEXT",
-            "personality":None, "interaction_status":None,
             "persistent_memory_write":False}
