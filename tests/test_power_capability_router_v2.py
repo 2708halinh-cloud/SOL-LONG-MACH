@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / (
     "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/"
-    "OS_WORK/tools/_Plugins/power_capability_router.py"
+    "OS_WORK/tools/Power_Router_V2/power_capability_router.py"
 )
 spec = importlib.util.spec_from_file_location("power_capability_router_v2", SOURCE)
 router = importlib.util.module_from_spec(spec)
@@ -80,8 +80,12 @@ class PowerCapabilityRouterTests(unittest.TestCase):
             root = Path(temp)
             target = root / router.ROOT_REL / "_Plugins"
             target.mkdir(parents=True)
-            current = SOURCE.parent
-            shutil.copy2(current / "POWER_CAPABILITY_ROUTES_V2.json", target)
+            registry_source = ROOT / router.ROOT_REL / router.REGISTRY
+            shutil.copy2(registry_source, target / "POWER_CAPABILITY_ROUTES_V2.json")
+            policy_source = ROOT / router.ROOT_REL / router.SKILL_POLICY
+            policy_target = root / router.ROOT_REL / router.SKILL_POLICY
+            policy_target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(policy_source, policy_target)
             output = router.route("GGDV Template Creator", root)
             self.assertEqual(output["candidates"][0]["capability_id"], "ggdv-template-creator")
             self.assertEqual(output["return_to"], "_Plugins")

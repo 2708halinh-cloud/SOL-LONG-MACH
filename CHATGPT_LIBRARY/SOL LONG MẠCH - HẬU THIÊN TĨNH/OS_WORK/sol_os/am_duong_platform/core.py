@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import re
+from contextlib import contextmanager
 import sqlite3
 import threading
 import uuid
@@ -67,12 +68,20 @@ class Workrooms:
             c.execute("INSERT OR IGNORE INTO rooms(id,title,created_at) VALUES(?,?,?)",
                       ("sol-main", "SOL — ÂM–DƯƠNG PHÁP SƯ", utc_now()))
 
+    @contextmanager
     def _connect(self):
-        c = sqlite3.connect(str(self.db), timeout=10)
-        c.row_factory = sqlite3.Row
-        c.execute("PRAGMA busy_timeout = 10000")
-        c.execute("PRAGMA foreign_keys = ON")
-        return c
+        connection = sqlite3.connect(str(self.db), timeout=10)
+        connection.row_factory = sqlite3.Row
+        try:
+            connection.execute("PRAGMA busy_timeout = 10000")
+            connection.execute("PRAGMA foreign_keys = ON")
+            yield connection
+            connection.commit()
+        except Exception:
+            connection.rollback()
+            raise
+        finally:
+            connection.close()
 
     def rooms(self):
         with self.lock, self._connect() as c:
