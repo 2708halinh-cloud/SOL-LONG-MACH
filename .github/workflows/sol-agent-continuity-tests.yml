@@ -1,0 +1,32 @@
+name: SOL Agent Continuity Unit Tests
+
+on:
+  push:
+    branches:
+      - work/sol-continuity-raml1-20261026
+  pull_request:
+    paths:
+      - "runtime/sol_agent_continuity.py"
+      - "tests/test_sol_agent_continuity.py"
+      - ".github/workflows/sol-agent-continuity-tests.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sol-agent-continuity-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run continuity regression tests
+        run: python -m unittest discover -s tests -p "test_sol_agent_continuity.py" -v
