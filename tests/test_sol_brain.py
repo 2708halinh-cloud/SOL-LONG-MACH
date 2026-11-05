@@ -24,8 +24,8 @@ class SolBrainTests(unittest.TestCase):
     def test_affect_is_ephemeral_not_identity_or_memory(self):
         result = infer_affect("I NEED THIS NOW")
         self.assertTrue(result["ephemeral"])
-        self.assertNotIn("personality", result)
-        self.assertNotIn("interaction_status", result)
+        self.assertIsNone(result["personality"])
+        self.assertIsNone(result["interaction_status"])
         self.assertFalse(result["persistent_memory_write"])
         self.assertTrue(all(0 <= v <= 1 for v in result["hypotheses"].values()))
 
