@@ -141,4 +141,5 @@ def infer_affect(text: str) -> dict[str, Any]:
     return {"hypotheses":{k:v for k,v in scores.items() if v > 0},
             "ephemeral":True, "basis":"LEXICAL_CUES_ONLY",
             "confidence_limit":"LOW_WITHOUT_CONTEXT",
+            "personality":None, "interaction_status":None,
             "persistent_memory_write":False}
