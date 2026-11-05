@@ -16,10 +16,8 @@ class DigitalNervousSystemTests(unittest.TestCase):
 
     def test_sensory_signal_keeps_provenance_and_does_not_infer_emotion_from_caps(self):
         signal = self.sensory.receive(
-            modality="text",
-            source_ref="chat://turn/1",
-            observed_at="2026-11-05T10:00:00+07:00",
-            content="I NEED THIS NOW",
+            modality="text", source_ref="chat://turn/1",
+            observed_at="2026-11-05T10:00:00+07:00", content="I NEED THIS NOW",
         )
         self.assertEqual(signal.source_ref, "chat://turn/1")
         self.assertEqual(signal.features["uppercase_ratio"], 1.0)
@@ -27,14 +25,11 @@ class DigitalNervousSystemTests(unittest.TestCase):
 
     def test_interneuron_keeps_emotion_as_scored_hypothesis(self):
         signal = self.sensory.receive(
-            modality="text",
-            source_ref="chat://turn/2",
-            observed_at="2026-11-05T10:01:00+07:00",
-            content="I'm frustrated",
+            modality="text", source_ref="chat://turn/2",
+            observed_at="2026-11-05T10:01:00+07:00", content="I'm frustrated",
         )
         state = self.interneuron.integrate(
-            signal,
-            memory_refs=["memory://preference/1"],
+            signal, memory_refs=["memory://preference/1"],
             hypotheses={"frustration": 0.8, "urgency": 0.4},
             strategy="brief_support",
         )
@@ -54,9 +49,12 @@ class DigitalNervousSystemTests(unittest.TestCase):
         result = self.motor.dispatch(
             action={"kind": "mute_notifications"},
             executor=lambda action: {
-                "executed": True,
-                "receipt_ref": "receipt://action/1",
-                "readback": {"verified": True, "state_consistent": True},
+                "executed": True, "receipt_ref": "receipt://action/1",
+                "consequence_ref": "desktop://notifications/muted",
+                "readback": {
+                    "verified": True, "state_consistent": True,
+                    "consequence_ref": "desktop://notifications/muted",
+                },
             },
         )
         self.assertTrue(result.success)
@@ -64,17 +62,12 @@ class DigitalNervousSystemTests(unittest.TestCase):
 
     def test_cognitive_loop_returns_all_three_layers_and_preserves_open_failure(self):
         signal = self.sensory.receive(
-            modality="text",
-            source_ref="chat://turn/3",
-            observed_at="2026-11-05T10:02:00+07:00",
-            content="Please help",
+            modality="text", source_ref="chat://turn/3",
+            observed_at="2026-11-05T10:02:00+07:00", content="Please help",
         )
         out = run_cognitive_loop(
-            signal,
-            self.interneuron,
-            self.motor,
-            strategy="respond_briefly",
-            hypotheses={"request_for_help": 0.9},
+            signal, self.interneuron, self.motor,
+            strategy="respond_briefly", hypotheses={"request_for_help": 0.9},
             executor=lambda action: {"executed": True},
         )
         self.assertEqual(out["layers"], ["SENSORY", "INTERNEURON", "MOTOR"])
