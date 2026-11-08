@@ -5,6 +5,7 @@
 **R-000:** Không đánh tráo công cụ đã được liệt kê thành công cụ đã được chạy. Không đổi sự thật hay dấu vết lịch sử để có bề mặt sạch.
 
 - [Chuỗi công cụ](./Chuỗi%20công%20cụ/): phân loại toàn bộ registry và hiện vật.
+- [TOOLS_ROOT_CONTRACT.md](./TOOLS_ROOT_CONTRACT.md): hợp đồng gốc cho Tools như logical drive, tuyến quay về `_Plugins`, phân loại, đồng bộ đa carrier và các sai khác đang OPEN.
 - [AGENTS.md](./AGENTS.md): quy tắc và phân quyền.
 - [POWER_ROUTER.md](./POWER_ROUTER.md): nút tốc biến 🟣 POWER STONE.
 - [Kỹ năng Phân chia công việc](./_Skills/phan-chia-cong-viec/SKILL.md): quy trình bổ sung để phân rã mục tiêu, giao trách nhiệm, xác định phụ thuộc, điều phối nhánh song song và nghiệm thu bằng chứng.
