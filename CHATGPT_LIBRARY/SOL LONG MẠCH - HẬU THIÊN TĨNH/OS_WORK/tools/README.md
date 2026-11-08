@@ -6,6 +6,7 @@
 
 - [Chuỗi công cụ](./Chuỗi%20công%20cụ/): phân loại toàn bộ registry và hiện vật.
 - [TOOLS_ROOT_CONTRACT.md](./TOOLS_ROOT_CONTRACT.md): hợp đồng gốc cho Tools như logical drive, tuyến quay về `_Plugins`, phân loại, đồng bộ đa carrier và các sai khác đang OPEN.
+- [TOOLS_ROOT_READBACK_20261108.md](./TOOLS_ROOT_READBACK_20261108.md): readback cấu trúc Library, WSL2, local clone, `.adp`, motherboard và trạng thái đồng bộ ngày 08/11/2026.
 - [AGENTS.md](./AGENTS.md): quy tắc và phân quyền.
 - [POWER_ROUTER.md](./POWER_ROUTER.md): nút tốc biến 🟣 POWER STONE.
 - [Kỹ năng Phân chia công việc](./_Skills/phan-chia-cong-viec/SKILL.md): quy trình bổ sung để phân rã mục tiêu, giao trách nhiệm, xác định phụ thuộc, điều phối nhánh song song và nghiệm thu bằng chứng.
