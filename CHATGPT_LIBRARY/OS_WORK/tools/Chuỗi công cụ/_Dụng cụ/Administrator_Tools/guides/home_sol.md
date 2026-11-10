@@ -1,0 +1,3 @@
+# HOME SOL / MINH BODY — API localhost
+
+Tuyến có sẵn: `http://127.0.0.1:8765/` (MINH BODY), `/sandbox/sol` và `/api/devices`; nguồn `HOME_SOL/README.md` và JSON host. Chỉ GET đọc, không tự chiếm port 8765 hoặc khởi chạy daemon thứ hai. `127.0.0.1` phải thuộc máy Windows/WSL chạy dịch vụ; Android/Termux `localhost` khác, cloud cũng khác. Trạng thái người dùng báo không đủ chứng minh dịch vụ LIVE. Kiểm schema/host của API để tránh trộn host khác; giữ nguyên dữ liệu cảm biến.
