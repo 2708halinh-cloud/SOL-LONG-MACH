@@ -1,3 +1,0 @@
-# GitHub & ChatGPT Library — lịch sử và đọc lại
-
-Trước đọc/sửa: xác định repo, nhánh, path chính xác, hash/phiên bản hiện tại, mối quan hệ với Library. GitHub fetch hay Files read lấy SOURCE; khi ghi, chọn công cụ thực được cấp quyền, lưu lịch sử, hạn chế phạm vi, sau đó fresh-read cùng đích và so nội dung. Không lấy `SAFETY_BLOCKED` hay `404` từ một đường làm kết luận toàn hệ. Không công bố credentials, token hoặc private path không cần thiết. Không dùng copy từ repo để khẳng định đã thay đổi PC.

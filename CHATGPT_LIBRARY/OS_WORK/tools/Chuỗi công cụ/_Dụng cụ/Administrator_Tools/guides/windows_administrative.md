@@ -1,7 +1,0 @@
-# Windows Administrative Tools — lấy cảm hứng, KHÔNG tự nâng quyền
-
-Các mặc định lấy cảm hứng từ Windows: **Computer Management** (nhật ký, người dùng/nhóm, thiết bị); **Event Viewer** (quan sát sự cố); **Services** (trạng thái dịch vụ); **Task Scheduler** (công việc theo lịch); **Device Manager** (driver, GPU, thiết bị); **Disk Management** (phân vùng/ổ); **Windows Defender Firewall with Advanced Security** (quy tắc inbound/outbound); **Local Security Policy** (cấu hình chính sách); **Performance Monitor / Resource Monitor** (tài nguyên).
-
-Đọc bản hướng dẫn và trạng thái thật theo từng thao tác được ủy thác. Ưu tiên truy vấn không làm thay đổi như `whoami /groups`, `Get-NetIPConfiguration`, nhật ký sự kiện, tình trạng GPU/driver; không tự restart service, sửa hosts/DNS/firewall, format ổ, chỉnh partition, cấp Administrators, vô hiệu hóa Defender hoặc thay quyền. Lỗi WSL `HCS_E_CONNECTION_TIMEOUT` và MODUAL CSV là hai tín hiệu riêng. Không coi remote Desktop Commander `Online` trên Android là Windows Online.
-
-Windows UAC và nhóm Administrators chỉ được biết bằng quyền thật khi thực hiện trên Windows. Tài liệu SOL không cấp quyền hệ điều hành. Trạng thái hành động/đọc lại phải ghi đúng thiết bị, đúng phiên và đích.

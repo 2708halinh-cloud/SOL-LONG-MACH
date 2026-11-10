@@ -1,3 +1,0 @@
-# Azure DevOps — nguồn toolset không đồng nghĩa session
-
-Bộ nguồn `Administrator_System` xác minh 97 tuyến, 44 công cụ, 9 họ. Trước thao tác: đọc `docs/TOOLSET.md`, index, family match và kiểm tên operation do provider thật xuất. Không gọi `az`/DevOps API chỉ bằng ví dụ source, không bịa quyền, không suy connect từ CI pass. Nếu không có DevOps plugin, hướng tiếp theo là khám phá tool callable rồi kiểm quyền, không đóng OPEN bằng một nhãn từ chối mặc định.
