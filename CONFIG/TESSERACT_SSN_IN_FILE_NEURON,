@@ -1,0 +1,45 @@
+{
+  "$schema": "TESSERACT_SSN_IN_FILE_NEURON/2.0",
+  "neuron_id": "NEURON_RTF_20261029_8A1B",
+  "spatial_layer": "2D_TO_3D_CONVERSION",
+  "provenance": {
+    "source_file": "G:\\OS_Workspace\\data\\01_Unstructured_2D\\rtf_documents\\DOC_20261029_001.rtf",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "byte_offset_start": 1024,
+    "byte_offset_end": 4096
+  },
+  "energy_conservation": {
+    "initial_energy_units": 100.0,
+    "current_energy_units": 87.4,
+    "dissipated_heat_entropy": 12.6,
+    "status": "CONSERVED_ACTIVE"
+  },
+  "ssn_dynamics": {
+    "membrane_potential_v": 0.72,
+    "threshold_v_th": 1.00,
+    "resting_potential_v_reset": 0.00,
+    "decay_gamma": 0.05,
+    "refractory_period_ticks": 0,
+    "last_spike_stamp": "2026-10-29T18:17:05+07:00"
+  },
+  "synaptic_connections": [
+    {
+      "target_neuron_id": "NEURON_RTF_20261029_9C2D",
+      "weight": 0.85,
+      "delay_ms": 2,
+      "lane_stone": "MIND_STONE"
+    },
+    {
+      "target_neuron_id": "NEURON_SQL_0042",
+      "weight": -0.31,
+      "delay_ms": 5,
+      "lane_stone": "POWER_STONE"
+    }
+  ],
+  "mitosis_rules": {
+    "allow_self_replication": true,
+    "replication_threshold_v": 1.20,
+    "max_child_generations": 3,
+    "child_spawn_directory": "G:\\OS_Workspace\\data\\03_SSN_Neurons_Active\\active_neurons\\"
+  }
+}
