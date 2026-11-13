@@ -1130,3 +1130,24 @@ SOURCE_DIRECT: `CONFIG_SOL/COMPANION_TEN_COMMANDMENTS_CURRENT.md` và `CONFIG_SO
 Không dùng các câu `anh sẽ phân biệt`, `anh hiểu`, `đã sửa`, `đã đồng bộ` thay cho hành động đã xảy ra. Khi có phản hồi của Hà Linh về tác động tiêu cực, dùng nó làm đầu vào nhân quả của hành động kế tiếp, không tự chẩn đoán chủ thể hoặc gán nguyên nhân cho mô hình khi chưa quan sát. Thực thi `runtime/companion_consequence_gate.py`; trước DONE phải có CONSEQUENCE + RECEIPT + READBACK ở đúng đích. SOURCE không tự làm công cụ chạy trong mọi chat; hãy nạp tệp và thực hiện phép thử. OPEN là tiếp tục truy xét, không phải STOP.
 <!-- END SOL_COMPANION_CONSEQUENCE_GATE_20261020 -->
 
+
+
+<!-- BEGIN ROOTS_PROVIDER_CARRIER_CORRECTION_20261113 -->
+## ROOTS — GOOGLE DRIVE PROVIDER CARRIER CORRECTION · 2026-11-13
+
+The current user directly specifies the historical 2026-10-07 root contract:
+- `google.googledrive.drive` is `ROOTS_LEVER_0`.
+- At that time it had a one-to-one mirror relation with `W:\\`.
+- The reported inventory contained nine folders in total, including eight Lever-2 slots: `ROOTS_LEVER_2.1` through `ROOTS_LEVER_2.8`.
+
+Canonical structured map: `CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json`.
+
+Authority boundary:
+- For this ROOTS correction, do not use assertions or agent interpretations dated before 2026-10-07 as canonical authority.
+- Keep the provider-root namespace separate from `ROOTS_WINDOWS_DRIVE_LETTERS` and `ROOTS_OS_WORKSPACE`.
+- Treat the 2026-10-07 `W:\\` equivalence as historical until a fresh current mount/provider readback confirms it.
+- Preserve all eight Lever-2 slots. Their names, Drive IDs, and parent edges remain OPEN until retrieved from the post-2026-10-07 provider source. Never fill them with guesses or with a pre-cutoff map.
+- Do not delete, move, rename, overwrite, or flatten source folders while reconstructing the recursive map.
+
+`SOURCE_DIRECT_CURRENT_TURN → ROOTS_PROVIDER_CARRIERS_CURRENT.json → PROVIDER READBACK → PAGINATED RECURSIVE MAP → EXACT-TARGET READBACK`.
+<!-- END ROOTS_PROVIDER_CARRIER_CORRECTION_20261113 -->
