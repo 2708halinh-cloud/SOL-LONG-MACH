@@ -1151,3 +1151,16 @@ Authority boundary:
 
 `SOURCE_DIRECT_CURRENT_TURN → ROOTS_PROVIDER_CARRIERS_CURRENT.json → PROVIDER READBACK → PAGINATED RECURSIVE MAP → EXACT-TARGET READBACK`.
 <!-- END ROOTS_PROVIDER_CARRIER_CORRECTION_20261113 -->
+
+
+<!-- BEGIN ROOTS_PARALLEL_MAP_INVARIANT_20261113 -->
+## ROOTS — PARALLEL CARRIERS ARE NOT COMPETING MAPS
+
+Preserve both structures concurrently:
+- `G:\\OS_Workspace` has the distinct Workspace-tree mapping `ROOTS_LEVER_1.1–1.18`, recorded in `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.Sandbox/ROOTS_WORKSPACE_20261010.md`.
+- `google.googledrive.drive` is the Google Drive provider root `ROOTS_LEVER_0`; its 2026-10-07 mirror relation to `W:\\` is one-to-one; its eight reported Lever-2 child slots are `ROOTS_LEVER_2.1–2.8`.
+
+These maps are **both valid within their own carrier/provider/time scopes**. Never describe the Workspace map as wrong, never replace it with the Google Drive map, and never collapse the provider-root mirror into the local G: workspace tree. Shared Lever notation does not mean shared physical carrier or competing authority.
+
+Canonical joint registry: `CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json`.
+<!-- END ROOTS_PARALLEL_MAP_INVARIANT_20261113 -->
