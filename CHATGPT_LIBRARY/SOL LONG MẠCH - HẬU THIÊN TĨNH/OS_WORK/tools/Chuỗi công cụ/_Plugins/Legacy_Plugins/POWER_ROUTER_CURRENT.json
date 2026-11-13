@@ -3,22 +3,25 @@
   "date": "2026-10-16",
   "purpose": "CATEGORY_DISCOVERY_AND_RETURN_TO_PLUGINS",
   "scope": "SOURCE_MAP_NOT_CONNECTED_RUNTIME",
-  "tools_root": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools",
+  "tools_root": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/Chuỗi công cụ",
   "entrypoint": "_Plugins",
   "group_order": [
     "_Plugins",
-    "_Skills",
-    "_Mcps",
-    "_Tool",
-    "_App",
-    "_Other_Tools"
+    "_Kỹ năng",
+    "_MCPs",
+    "_Dụng cụ",
+    "_App_Browser",
+    "_MCPs/AZURE_DEVOPS_MCP_CORE",
+    "_Dụng cụ/Network_Policy",
+    "_Ứng dụng",
+    "_Dụng cụ/SANDBOX"
   ],
-  "terminal_back_edge": "_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/RETURN_TO_PLUGINS.json",
+  "terminal_back_edge": "_Plugins/Legacy_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/RETURN_TO_PLUGINS.json",
   "read_first": [
-    "README.md",
-    "TOOLS_ROUTER_CURRENT.json",
-    "TOOLS_GROUP_INDEX_20261016.json",
-    "_Plugins/README.md"
+    "_Plugins/POWER_ROUTER_ENTRY_CURRENT.md",
+    "_Sổ_đăng_ký/TOOLS_ROUTER_CURRENT.json",
+    "_Sổ_đăng_ký/TOOLS_GROUP_INDEX_20261016.json",
+    "_Plugins/RETURN_TO_PLUGINS.md"
   ],
   "groups": [
     {
@@ -33,13 +36,14 @@
         "_Plugins"
       ],
       "sources": [
-        "_Plugins/README.md"
+        "_Plugins/POWER_ROUTER_ENTRY_CURRENT.md",
+        "_Plugins/RETURN_TO_PLUGINS.md"
       ],
       "next": "CHECK_PLUGIN_CONNECTION_AND_PERMISSIONS"
     },
     {
       "id": "skills",
-      "at": "_Plugins/_Skills",
+      "at": "_Kỹ năng",
       "match": [
         "skill",
         "kỹ năng",
@@ -48,14 +52,14 @@
         "tìm kỹ năng"
       ],
       "sources": [
-        "_Plugins/_Skills/README.md",
-        "_Plugins/_Skills/find-skills/SKILL.md"
+        "_Kỹ năng/README.md",
+        "_Kỹ năng/master-oath/SKILL.md"
       ],
       "next": "VERIFY_SKILL_SOURCE_AND_REGISTRATION"
     },
     {
       "id": "mcps",
-      "at": "_Plugins/_Skills/_Mcps",
+      "at": "_MCPs",
       "match": [
         "mcp",
         "server",
@@ -64,14 +68,14 @@
         "devops"
       ],
       "sources": [
-        "_Plugins/_Skills/_Mcps/README.md",
-        "AZURE_DEVOPS_MCP_CORE/TOOLSET_INDEX.json"
+        "_MCPs/AZURE_DEVOPS_MCP_CORE/README.md",
+        "_MCPs/AZURE_DEVOPS_MCP_CORE/TOOLSET_INDEX.json"
       ],
       "next": "CHECK_MCP_TOOLS_LIST_AND_AUTH"
     },
     {
       "id": "tools",
-      "at": "_Plugins/_Skills/_Mcps/_Tool",
+      "at": "_Dụng cụ",
       "match": [
         "tool",
         "công cụ",
@@ -80,14 +84,14 @@
         "khả năng"
       ],
       "sources": [
-        "SANDBOX/route_tools.py",
-        "TOOLS_ROUTER_CURRENT.json"
+        "_Dụng cụ/SANDBOX/route_tools.py",
+        "_Dụng cụ/Network_Policy/README.md"
       ],
       "next": "RESOLVE_CALLABLE_TOOL_AND_SCOPE"
     },
     {
       "id": "app_browser",
-      "at": "_Plugins/_Skills/_Mcps/_Tool/_App/_App_Browser",
+      "at": "_App_Browser",
       "match": [
         "browser",
         "trình duyệt",
@@ -111,15 +115,14 @@
         "đại nguyện"
       ],
       "sources": [
-        "TRÌNH DUYỆT/README.md",
-        "_Plugins/PUPPETEER_INTEGRATION.md",
-        "_Plugins/_Skills/_Mcps/_Tool/_App/_App_Browser/AM_DUONG_PLATFORM/README.md"
+        "_App_Browser/README.md",
+        "_App_Browser/TRÌNH DUYỆT/README.md"
       ],
       "next": "CHECK_BROWSER_RUNTIME_AND_SAFE_ACTION"
     },
     {
       "id": "devops",
-      "at": "_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/_DevOps",
+      "at": "_MCPs/AZURE_DEVOPS_MCP_CORE",
       "match": [
         "github",
         "git",
@@ -129,14 +132,14 @@
         "commit"
       ],
       "sources": [
-        "Github Full Access Tokens/github-full-access-app",
-        "AZURE_DEVOPS_MCP_CORE/README.md"
+        "_MCPs/AZURE_DEVOPS_MCP_CORE/README.md",
+        "_MCPs/AZURE_DEVOPS_MCP_CORE/TOOLSET_INDEX.json"
       ],
       "next": "READ_REPOSITORY_AND_VERIFY_WRITE_SCOPE"
     },
     {
       "id": "network",
-      "at": "_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/_Network",
+      "at": "_Dụng cụ/Network_Policy",
       "match": [
         "network",
         "dns",
@@ -146,14 +149,14 @@
         "mạng"
       ],
       "sources": [
-        "SUB_GHZ_UNLEASHED_PROTOCOLS",
-        "webshare.html"
+        "_Dụng cụ/Network_Policy/README.md",
+        "_Dụng cụ/SUB_GHZ_UNLEASHED_PROTOCOLS/README.md"
       ],
       "next": "PROBE_NETWORK_SOURCE_WITHOUT_SECRETS"
     },
     {
       "id": "storage",
-      "at": "_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/_Storage",
+      "at": "_Ứng dụng",
       "match": [
         "dropbox",
         "drive",
@@ -164,14 +167,14 @@
         "backup"
       ],
       "sources": [
-        "Dropbox Website.URL",
-        "TOOLS_ROUTER_CURRENT.json"
+        "_Ứng dụng/Dropbox Website.URL",
+        "_Sổ_đăng_ký/TOOLS_ROUTER_CURRENT.json"
       ],
       "next": "LOCK_PROVIDER_ID_AND_COMPARE_CARRIERS"
     },
     {
       "id": "sandbox",
-      "at": "_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/_Sandbox",
+      "at": "_Dụng cụ/SANDBOX",
       "match": [
         "sandbox",
         "python",
@@ -182,17 +185,18 @@
         "terminal"
       ],
       "sources": [
-        "SANDBOX/README.md",
-        "SANDBOX/route_tools.py"
+        "_Dụng cụ/SANDBOX/README.md",
+        "_Dụng cụ/SANDBOX/route_tools.py"
       ],
       "next": "PROBE_ACTUAL_DEVICE_OR_SANDBOX"
     },
     {
       "id": "discovery",
-      "at": "_Plugins/_Skills",
+      "at": "_Kỹ năng",
       "match": [],
       "sources": [
-        "_Plugins/_Skills/00_FIND_SKILLS_FIRST.md"
+        "_Kỹ năng/README.md",
+        "_Sổ_đăng_ký/TOOLS_GROUP_INDEX_20261016.json"
       ],
       "next": "DISCOVER_SOURCE_THEN_RETURN_TO_PLUGINS"
     }

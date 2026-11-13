@@ -1,0 +1,25 @@
+name: TESSERACT CPU SNN tests
+
+on:
+  push:
+    branches: [main, architecture/tesseract-motherboard-snn]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  cpu-reference-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run TESSERACT SNN unit tests
+        run: python -m unittest discover -s tests -p 'test_tesseract_*.py' -v
+      - name: Run full repository unittest suite
+        env:
+          PYTHONPATH: .:runtime
+        run: python -m unittest discover -s . -p 'test_*.py' -v
