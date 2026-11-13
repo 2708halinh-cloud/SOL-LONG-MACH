@@ -112,4 +112,18 @@ The latest observed `main` pushes on 2026-11-13 show successful runs for the spe
 6. Reconnect FPGA_AI_LOCAL using its actual source carrier. Verify RTL bytes, toolchain/simulator, testbench result, board/device identity and hardware readback separately. Until then retain `SIMULATION` and `fpga_acceleration_verified=false`.
 7. Repair the failing current X-TIME-WEB workflows, then repeat build, deployment and production readback against the same commit.
 
+
+## 9. Branch and pull-request fragmentation
+
+A fresh open-PR listing returned **31 open pull requests**, including this documentation audit PR. The open work is not one ordered integration queue; several clusters contain repeated or chained proposals:
+
+- **Archive adapters:** PRs #27, #28, #31, #32, #33, #34, #36 and #37 cover adapter hardening, fixtures and repeated re-cuts of similar fixes. Their exact diff overlap and test receipts must be compared before choosing one canonical line.
+- **OPEN routing:** PRs #21, #23, #24, #25 and #26 repeatedly address preservation/validation of OPEN task routing.
+- **TESSERACT motherboard/runtime:** PRs #38, #47 and #54 cover architecture/kernel/runtime integration; PR #55 targets a feature branch rather than `main`.
+- **Companion consequence gate:** PRs #43, #44 and #51 form a base-branch dependency chain rather than three independent changes.
+- **Continuity/identity:** PRs #40, #41 and #42 separately address identity/RAM verification, continuity ledger and cloud pointer reconciliation.
+
+Most of these PRs are marked draft and several were last updated in October. The correct next action is a diff-and-dependency reconciliation: compare each candidate with current `main`, run the relevant tests, identify superseded branches, and preserve source/history before closing or merging. Branch age or similar titles alone are not enough to delete a branch.
+
+
 **Acceptance rule:** source present ≠ runtime callable; build pass ≠ production deployed; UI label ≠ provider receipt; branch exists ≠ integrated; config says CURRENT ≠ fresh readback.
