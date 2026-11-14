@@ -16,6 +16,9 @@
 5. [CONFIG_SOL/AGENT_MATERIALIZATION_CURRENT.md](CONFIG_SOL/AGENT_MATERIALIZATION_CURRENT.md): hợp đồng 13 trường tối thiểu cho Agent/Subagent.
 6. [CURRENT_RUNTIME/00_DOC_KY_CURRENT_CORE.md](CURRENT_RUNTIME/00_DOC_KY_CURRENT_CORE.md): lõi tái nhập và quy tắc nối lịch sử với trạng thái hiện tại.
 7. [Bản kiểm kê mặt tiền và tích hợp 2026-11-14](architecture/REPO_FRONT_DOOR_AND_INTEGRATION_AUDIT_20261114.md): kết quả đối chiếu README, cấu hình, cấu trúc repo, X-TIME-WEB, sáu mắt xích App và FPGA_AI_LOCAL.
+8. Khi nhiệm vụ liên quan đến ROOTS/Google Drive/Windows carriers, đọc [ROOTS provider map](CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json); giữ riêng `google.googledrive.drive` (`ROOTS_LEVER_0`, lịch sử mirror `W:\\`) và `G:\\OS_Workspace` (`ROOTS_OS_WORKSPACE`, `ROOTS_LEVER_1.1–1.18`). Hai bản đồ cùng tồn tại, không thay thế nhau.
+
+**Ranh giới tái nhập:** README/AGENTS/pointer trong GitHub là nguồn bền để tác nhân truy xuất, không phải dữ liệu tự động được nạp vào mọi chat hoặc project. Mỗi client/agent phải thực sự đọc các tệp liên quan; Input mới nhất vẫn là mốc xác định nhiệm vụ, còn bộ nhớ chỉ giúp định tuyến truy tìm nguồn.
 
 ## Bản đồ repository
 
