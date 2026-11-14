@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+
+git diff --cached --check
+blocked=$(git diff --cached --name-only --diff-filter=ACMR | grep -Ei '(^|/)([^/]*\.env([.].*)?|\.env([.].*)?|.*client[_-]?secret.*\.json|.*credentials.*\.json|id_(rsa|ed25519)|.*\.(pem|p12|pfx|key))$' || true)
+if [ -n "$blocked" ]; then
+  printf '%s\n' 'BLOCKED: secret-bearing file path staged:' "$blocked" >&2
+  exit 1
+fi
+if git diff --cached --unified=0 | grep -Eiq '^\+.*(BEGIN (RSA |OPENSSH |EC )?PRIVATE KEY|gh[pousr]_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16})'; then
+  echo 'BLOCKED: possible private key or access token in staged diff.' >&2
+  exit 1
+fi

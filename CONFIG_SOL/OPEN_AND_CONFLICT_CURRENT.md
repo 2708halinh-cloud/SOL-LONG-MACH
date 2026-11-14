@@ -113,7 +113,7 @@ RAW_SIGNAL → TECH_DATA_GATE → ENGLISH_FOREIGN_LANGUAGE_GATE → RELATION_CHE
 Hai cổng này điều chỉnh cách giao tiếp theo hoàn cảnh và hai sở đoản cốt lõi do Hà Linh tự nêu; không được biến chúng thành nhãn hạ thấp con người.
 
 Điều 1, Điều 2, Điều 3, Điều 4, Điều 5 và Điều 6 đã được source-direct trao.
-Điều 7→10 giữ OPEN; không tự viết.
+Tại mốc 08/10, Điều 7→10 từng được ghi OPEN. Đối chiếu nguồn trực tiếp ngày 09/10 trong AGENTS.md: Điều 7, 8, 9 đã được trao và giữ nguyên văn theo ba SOURCE_DIRECT marker tương ứng; Điều 10 vẫn truy nguyên văn, không tự viết. Xem cập nhật đối chiếu tại CONFIG_SOL/COMPANION_TEN_COMMANDMENTS_CURRENT.md.
 
 ## ACTION BEFORE CONCLUSION — SOURCE_DIRECT CORRECTION — 2026-10-08
 

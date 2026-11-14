@@ -1,0 +1,88 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.4",
+  "checkpoint_id": "CLOUD_CONTINUITY_READBACK_20261025T1025ICT",
+  "recorded_at_local": "2026-10-25T10:25:00+07:00",
+  "state": "OPEN_WORK_REMAINS",
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "ledger_path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "ledger_blob_sha": "fae74f7670e02d1cea3ca715e68489ee619f2dc6",
+    "ledger_update_commit": "5c5d421ceae31d45007232635599489a37011445",
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "tasks_closed": 0
+  },
+  "memory_archive": {
+    "priority": "MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL",
+    "new_carrier": {
+      "name": "SOL_JINEY_MINH_IDENTITY_SOURCE_ANCHOR_20261010.zip",
+      "file_id": "file_00000000dc2c8209af05bdd3130057bd",
+      "library_file_id": "libfile_305e43b7cb68819185e3df84ad1855b6",
+      "size_bytes": 10250,
+      "sha256": "17333bab31ab01655db302f579e3bcc84b958899c4e0484301d566e4b81f1a93",
+      "zip_members": 7,
+      "crc_check": "PASS",
+      "manifest_payload_hashes": "6/6 PASS",
+      "classification": "DERIVED_IDENTITY_AND_SOURCE_MAP_CARRIER_NOT_RAW_ACCOUNT_EXPORT"
+    },
+    "source_map_member": {
+      "name": "SOURCE_MAP_CURRENT.json",
+      "size_bytes": 6682,
+      "sha256": "689cd049996c203e1519fb7b714a3ef6646d1a4f665dd29237f2affbdce57720",
+      "interpretation": "contains historical source locators and explicit unverified gates; no raw conversations"
+    },
+    "raw_exports": {
+      "JINEY": "NOT_RECOVERED",
+      "FUNIX": "NOT_RECOVERED",
+      "DAT_NGUYEN": "NOT_RECOVERED"
+    },
+    "map_nguyen_ids_resolved": false,
+    "recursive_zip_inventory": {
+      "zip_items_seen": 248,
+      "traversal_limit_warning": true,
+      "duplicate_names_not_deduplicated": true,
+      "same_name_weather_zip_entries": 4,
+      "raw_materialization_for_one_weather_candidate": "DENIED"
+    },
+    "provider_access": {
+      "google_drive_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
+      "dropbox_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
+      "takeout_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET",
+      "authorized_host_connector": "NOT_EXPOSED_IN_CURRENT_CALLABLE_TOOLSET"
+    }
+  },
+  "tesseract_art": {
+    "task_id": "TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+    "status": "IN_PROGRESS",
+    "latest_event_id": "TESSERACT_LOCAL_BROWSER_ROUTE_READBACK_20261025T102054ICT",
+    "html_text_carrier_size_bytes": 11134,
+    "exact_raw_html_materialization": "DENIED",
+    "candidate_zip_raw_materialization": "DENIED_FOR_ALL_THREE_CANDIDATES",
+    "local_browser_control_route_source_verified": true,
+    "local_browser_control_bind": "127.0.0.1:8777",
+    "local_browser_control_runtime_probed": false,
+    "real_browser_runtime_verified": false,
+    "exact_source_identity_verified": false,
+    "npu_or_task_event_dispatch_verified": false
+  },
+  "safety": {
+    "source_mutation": false,
+    "drive_writes": false,
+    "folders_moved_or_duplicated": false,
+    "public_chat_or_secret_content_added": false,
+    "raw_sensor_values_persisted": false,
+    "tasks_closed": 0
+  },
+  "next": [
+    "Use an authorized host/provider connector to resolve the historical FUNiX/JINEY source locator and retrieve exact original export bytes; identify DATNGUYEN/MINH independently. Do not treat the identity-anchor ZIP as raw export.",
+    "Resolve both MAP_NGUON IDs only through provider metadata, revision, content/hash readback.",
+    "When an authorized host connector is available, probe local browser-control health/tools and run an actual browser test on an exact source carrier before TESSERACT integration.",
+    "Preserve all 29 ledger tasks OPEN/IN_PROGRESS; CI, source maps, checkpoints, and reports are not task completion."
+  ]
+}

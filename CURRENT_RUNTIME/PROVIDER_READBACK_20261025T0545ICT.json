@@ -1,0 +1,181 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "id": "PROVIDER_READBACK_20261025T0545ICT",
+  "observed_at": "2026-10-25T05:45:47+07:00",
+  "observed_at_utc": "2026-10-24T22:45:47Z",
+  "source": "Fresh GitHub mandatory source reads; Dropbox Outlook metadata; n8n workflow/execution and exact row readback; Desktop Commander inventories; independent Archive branch workflow/job/artifact readbacks; TESSERACT PR/head workflow/artifact readbacks.",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "mandatory_source_reads": {
+    "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "cf89c4415b534d28a8cd042477dbb4588f65762f",
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "db087a8c97381ec1bb3e0e4e06aa2870447ca54d",
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "da4edd17c31dbe9e6898a5617d6f493dfa335dcb"
+  },
+  "windows_tick": {
+    "latest_verified_receipt": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T212204946757Z.json",
+    "receipt_sha256": "653c6cfa07177efee93c3c3912c35165f3a3287406bc37d287e23b3da9626aac",
+    "source_bytes": 35389440,
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "last_direct_host_readback_at": "2026-10-25T04:23:47.498+07:00",
+    "current_cycle": "NOT_REPROBED_THIS_TURN",
+    "live_sensor_reading_confirmed": false,
+    "no_source_write": true,
+    "no_synthetic_rows": true,
+    "cloud_export_enabled": false,
+    "github_export_enabled": false
+  },
+  "dropbox": {
+    "account_scope": "Outlook",
+    "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "bytes": 35389440,
+    "server_modified_utc": "2026-10-14T00:20:03Z",
+    "metadata_readback": true,
+    "raw_csv_downloaded": false
+  },
+  "desktop_connectors": {
+    "desktop_commander": {
+      "registered_devices_offline": true,
+      "latest_DESKTOP_last_seen": "109h ago",
+      "other_duplicate_registration_last_seen": "334h ago"
+    },
+    "remote_desktop_commander": {
+      "registered_devices_offline": true,
+      "DESKTOP_last_seen": "57m ago",
+      "secondary_registration_last_seen": "128h ago"
+    },
+    "interpretation": "Connector inventories only; physical host power state remains unknown."
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "latest_execution_id": "151",
+    "execution_status": "success",
+    "execution_started_at_utc": "2026-10-24T22:00:22.076Z",
+    "table_id": "Sk0EFJK5NzWVpBvm",
+    "project_id": "6qKpRmicIGHA5snY",
+    "row_id": 318,
+    "event_id": "X20261024220024058_CLOUD",
+    "exact_row_readback": true,
+    "state": "OPEN_WORK_REMAINS",
+    "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "tasks_closed": 0
+  },
+  "archive": {
+    "branch": "fix/archive-real-fixtures-20261025",
+    "tested_commit": "945eeca3419be2b7151d5761eb5aadfa65c31434",
+    "topology_test_blob_sha": "f42232285dfd9396de4ad1d20274029ba2245a75",
+    "runs": [
+      {
+        "id": 40138464127,
+        "name": "SOL Library Stone Topology",
+        "status": "completed",
+        "conclusion": "success",
+        "job": "verify-stone-folders"
+      },
+      {
+        "id": 40138464130,
+        "name": "SOL Archive Read-only Adapters",
+        "status": "completed",
+        "conclusion": "success",
+        "job": "readonly-adapters",
+        "artifact": {
+          "id": 12577588524,
+          "name": "sol-archive-real-fixture-readback",
+          "size_bytes": 959,
+          "expired": false
+        }
+      },
+      {
+        "id": 40138464176,
+        "name": "High-Threshold Secret Exposure Guard",
+        "status": "completed",
+        "conclusion": "success",
+        "job": "secret-guard"
+      }
+    ],
+    "current_PR_28_state": "OPEN",
+    "PR_28_updated_at_utc": "2026-10-24T22:25:01Z",
+    "tested_commit_is_branch_run_head": true,
+    "PR_28_head_relationship_verified": false,
+    "prior_divergence_checkpoint": {
+      "ahead_by": 8,
+      "behind_by": 65,
+      "mergeable": false
+    },
+    "no_force_push": true,
+    "no_merge": true,
+    "task_status": "OPEN_NOT_PROVEN_COMPLETED",
+    "target_host_validation": "NOT_PERFORMED"
+  },
+  "tesseract_desktop": {
+    "repository": "2708halinh-cloud/x-time-web",
+    "pr": 6,
+    "state": "open",
+    "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "runs": [
+      {
+        "id": 39994207477,
+        "conclusion": "failure",
+        "artifacts": 0
+      },
+      {
+        "id": 39994207667,
+        "conclusion": "failure",
+        "artifacts": 0
+      }
+    ],
+    "build_time_variable_reference_verified": true,
+    "actual_public_key_value_verified": false,
+    "runner_assignment_change_verified": false,
+    "rerun": false,
+    "pr_merged": false
+  },
+  "last_carried_local_provider_observations": {
+    "xtime": {
+      "endpoint": "127.0.0.1:8769",
+      "last_recorded_http_status": 200,
+      "live_device_proven": false,
+      "not_probed_this_turn": true
+    },
+    "ollama": {
+      "endpoint": "127.0.0.1:11434/api/tags",
+      "last_recorded_http_status": 200,
+      "model_count": 11,
+      "not_probed_this_turn": true
+    },
+    "android": {
+      "serial": "1056285",
+      "model": "2201123G",
+      "last_recorded_live_sensor_stream_verified": false,
+      "not_probed_this_turn": true
+    },
+    "hwinfo": {
+      "last_recorded_file_bytes": 39922785,
+      "last_write_utc": "2026-10-21T02:20:45.8565035Z",
+      "fresh_sample_proven": false,
+      "not_probed_this_turn": true
+    }
+  },
+  "invariants": {
+    "tasks_closed": 0,
+    "raw_sensor_data_committed": false,
+    "credentials_committed": false,
+    "source_deleted_or_moved": false,
+    "source_csv_written": false,
+    "synthetic_rows_added": 0,
+    "task_settings_changed": false,
+    "process_terminated": false,
+    "force_push_or_merge": false
+  },
+  "result": "N8N_ROW_318_EXACT_READBACK;ARCHIVE_BRANCH_THREE_CI_RUNS_SUCCESS_ON_COMMIT_945E;PR28_HEAD_RELATION_AND_DIVERGENCE_REMAIN_UNRESOLVED;TESSERACT_CI_STILL_FAILS_WITHOUT_ARTIFACTS;WINDOWS_TICK_NOT_REPROBED;ALL_OPEN_RETAINED",
+  "next_edges": [
+    "Use an authorized alternate host carrier to read the newest Windows Tick and consumer receipt; do not infer physical power state from connector inventory.",
+    "Reconcile the successful Archive fix branch to PR #28 only after exact current PR head and divergence are read back; no force-push or merge.",
+    "Continue TESSERACT issuer public-key value and runner assignment discovery; no CI rerun without verified configuration/runner change."
+  ]
+}

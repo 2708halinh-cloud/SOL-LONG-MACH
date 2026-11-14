@@ -10,7 +10,7 @@ CHỨC NĂNG:
    - Xiaomi 12 (Live USB ADB: Battery, Temp, Voltage, Sensors)
    - Redmi Note 14 Pro 5G (Specs, Cache, CrossDevice Storage)
 2. Ghi liên tục (append) vào vùng đệm cục bộ SSD tốc độ cao:
-   D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV
+   Thư mục cảm biến được kiểm từ vật mang hiện có, ưu tiên C:\\Dropbox\\SESON_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV
 3. Tự động đồng bộ định kỳ (Snapshot Atomic Write) sang Google Drive:
    W:\\Drive của tôi\\.vscode\\thiẾT bỊ\\Thành Lập 6 viên ĐÁ VÔ CỰC - The Creation of the 6 Infinity Stones\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV
    -> Khắc phục triệt để lỗi xung đột file lock, crash ổ W: và lỗi tự xóa file vào thùng rác.
@@ -23,14 +23,27 @@ import csv
 import shutil
 import datetime
 import subprocess
+import hashlib
+import json
+from pathlib import Path
 
-BUFFER_DIR = r"D:\SENSOR_LOGS"
-BUFFER_CSV = os.path.join(BUFFER_DIR, "_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV")
+try:
+    from .sensor_root_resolver import inspect_sources
+except ImportError:  # direct script invocation
+    from sensor_root_resolver import inspect_sources
+
+# Pin this consumer to the provider-verified materialization. Fail closed; never auto-select another CSV.
+os.environ["SOL_SENSOR_SOURCE_FILE"] = r"D:\SENSOR_LOGS\windows_SENSON.CSV"
+_source_observation = inspect_sources()
+if not _source_observation["source_verified"] or not _source_observation.get("selected_evidence"):
+    raise FileNotFoundError("NO_SENSOR_CSV_BYTES_VERIFIED; no synthetic file is created")
+BUFFER_CSV = _source_observation["selected_evidence"]["file"]
+BUFFER_DIR = str(Path(BUFFER_CSV).parent)
+
 TARGET_CSV = r"w:\Drive của tôi\.vscode (1)\thiẾT bỊ\Thành Lập 6 viên ĐÁ VÔ CỰC - The Creation of the 6 Infinity Stones\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV"
 ADB_PATH = r"C:\Users\halin\platform-tools-latest-windows\platform-tools\adb.exe"
-MODUAL_GITHUB_SYNC = os.path.join(BUFFER_DIR, "modual_github_sync.py")
+MODUAL_GITHUB_SYNC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "modual_github_sync.py")
 
-os.makedirs(BUFFER_DIR, exist_ok=True)
 
 def get_xiaomi_telemetry():
     telemetry = {
@@ -116,6 +129,10 @@ def get_pc_telemetry():
     }
 
 def sync_snapshot_to_cloud():
+    # NEVER send private sensor bytes or replace an existing cloud carrier by
+    # default. Separate explicit export requires a reviewed target.
+    if os.getenv("SOL_ENABLE_SENSOR_CLOUD_EXPORT", "").strip() != "1":
+        return False
     try:
         if not os.path.exists(BUFFER_CSV):
             return False
@@ -154,6 +171,10 @@ def sync_snapshot_to_cloud():
         return False
 
 def sync_snapshot_to_github():
+    # GitHub snapshot may commit/push source-derived metadata and latest rows.
+    # It must not run merely because this reader started.
+    if os.getenv("SOL_ENABLE_SENSOR_GITHUB_PUSH", "").strip() != "1":
+        return False
     try:
         if not os.path.exists(MODUAL_GITHUB_SYNC):
             print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] GitHub sync helper missing: {MODUAL_GITHUB_SYNC}")
@@ -174,42 +195,74 @@ def sync_snapshot_to_github():
         return False
 
 def record_telemetry_tick():
-    now = datetime.datetime.now()
-    cur_date = now.strftime("%d.%m.%Y")
-    cur_time = now.strftime("%H:%M:%S.%f")[:-3]
+    """Read a real sensor carrier; never manufacture readings or append to it.
 
-    xiaomi = get_xiaomi_telemetry()
-    redmi = get_redmi_telemetry()
-    pc = get_pc_telemetry()
+    This is a read-only sample: byte count, SHA-256 and modification time.
+    A genuine HWiNFO live sample requires a separate before/after observation.
+    """
+    source = Path(BUFFER_CSV)
+    before = source.stat()
+    if before.st_size < 12:
+        raise ValueError("SOURCE_FILE_TOO_SMALL")
+    digest = hashlib.sha256()
+    with source.open("rb") as fd:
+        for block in iter(lambda: fd.read(1024 * 1024), b""):
+            digest.update(block)
+    after = source.stat()
+    if (before.st_size, before.st_mtime_ns) != (after.st_size, after.st_mtime_ns):
+        raise RuntimeError("SOURCE_CHANGED_DURING_READ_RETRY_LATER")
+    result = {
+        "source": str(source),
+        "bytes": before.st_size,
+        "modified_ns": before.st_mtime_ns,
+        "sha256": digest.hexdigest(),
+        "source_file_written": False,
+        "synthetic_rows_added": 0,
+        "live_sensor_reading_confirmed": False,
+    }
+    print(f"SOURCE_OBSERVED bytes={result['bytes']} sha256={result['sha256']}")
+    return result
 
-    # Read base header to match column count
-    with open(BUFFER_CSV, "r", encoding="utf-8", errors="ignore") as f:
-        reader = csv.reader(f)
-        header = next(reader)
-    
-    # 357 original PC sensor columns + 51 expanded modules = 408 columns
-    base_pc_values = [cur_date, cur_time] + ["0.0"] * (357 - 2)
-    
-    expanded_values = [
-        xiaomi["model"], xiaomi["os"], xiaomi["soc"], xiaomi["cpu"], xiaomi["gpu"], xiaomi["ram_gb"],
-        xiaomi["battery_pct"], xiaomi["battery_temp_c"], xiaomi["battery_voltage_mv"], xiaomi["battery_status"],
-        xiaomi["usb_powered"], xiaomi["active_sensors_count"], xiaomi["lsm6dso_accel"], xiaomi["lsm6dso_gyro"],
-        xiaomi["ak0991x_mag"], xiaomi["tmd3719_light"], xiaomi["transport"],
 
-        redmi["model"], redmi["os"], redmi["soc"], redmi["cpu"], redmi["gpu"], redmi["ram_gb"],
-        redmi["storage_gb"], redmi["battery_mah"], redmi["charging_w"], redmi["display"], redmi["camera_mp"],
-        redmi["sensors"], redmi["crossdevice_path"], redmi["wireless_adb"],
+def write_tick_receipt(result: dict, mode: str) -> dict:
+    """Persist a unique metadata-only receipt; never copy sensor rows."""
+    observed_at = datetime.datetime.now(datetime.timezone.utc)
+    receipt = {
+        "schema": "GGDV_WINDOWS_TICK_RECEIPT/1.0",
+        "observed_at_utc": observed_at.isoformat(timespec="microseconds").replace("+00:00", "Z"),
+        "mode": mode,
+        "source": {
+            "path": result["source"],
+            "bytes": result["bytes"],
+            "modified_ns": result["modified_ns"],
+            "sha256": result["sha256"],
+        },
+        "mutations": {
+            "source_file_written": False,
+            "synthetic_rows_added": 0,
+        },
+        "live_sensor_reading_confirmed": False,
+        "exports": {
+            "cloud_enabled": os.getenv("SOL_ENABLE_SENSOR_CLOUD_EXPORT", "").strip() == "1",
+            "github_enabled": os.getenv("SOL_ENABLE_SENSOR_GITHUB_PUSH", "").strip() == "1",
+        },
+    }
+    receipt_dir = Path(__file__).resolve().parent / "state"
+    receipt_dir.mkdir(parents=True, exist_ok=True)
+    filename = "WINDOWS_TICK_" + observed_at.strftime("%Y%m%dT%H%M%S%fZ") + ".json"
+    target = receipt_dir / filename
+    encoded = json.dumps(receipt, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
+    with target.open("x", encoding="utf-8", newline="\n") as stream:
+        stream.write(encoded)
+        stream.flush()
+        os.fsync(stream.fileno())
+    readback = target.read_text(encoding="utf-8")
+    if readback != encoded:
+        raise RuntimeError("TICK_RECEIPT_EXACT_READBACK_FAILED")
+    digest = hashlib.sha256(readback.encode("utf-8")).hexdigest()
+    print(f"TICK_RECEIPT path={target} bytes={len(readback.encode('utf-8'))} sha256={digest} readback_ok=true")
+    return {"path": str(target), "bytes": len(readback.encode("utf-8")), "sha256": digest}
 
-        pc["hostname"], pc["os"], pc["cpu"], pc["ram_total_gb"], pc["gpu"], pc["deskin_id"], pc["deskin_status"],
-        pc["ollama_endpoint"], pc["ollama_models"], pc["port_minh"], pc["port_sol"], pc["port_mei"], pc["port_cockpit"],
-        pc["storage_c"], pc["storage_d"], pc["storage_g"], pc["storage_w"], pc["sync_mechanism"],
-        pc["provenance_code"], pc["canonical_rule"]
-    ]
-
-    row = base_pc_values + expanded_values
-    with open(BUFFER_CSV, "a", encoding="utf-8", newline="") as f:
-        writer = csv.writer(f)
-        writer.writerow(row)
 
 def main():
     print("=" * 60)
@@ -226,7 +279,7 @@ def main():
     tick_count = 0
     while True:
         try:
-            record_telemetry_tick()
+            write_tick_receipt(record_telemetry_tick(), mode="loop")
             tick_count += 1
             # Every 10 ticks (~5 minutes if sleep 30s), trigger cloud snapshot
             if tick_count % 10 == 0:
@@ -242,10 +295,14 @@ def main():
         time.sleep(30)
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "--once":
-        record_telemetry_tick()
+    args = sys.argv[1:]
+    # Task Scheduler defaults to one finite observation; daemon mode is opt-in.
+    if args in ([], ["--once"]):
+        write_tick_receipt(record_telemetry_tick(), mode="once")
         sync_snapshot_to_cloud()
         sync_snapshot_to_github()
-        print("Completed one-time telemetry update and sync.")
-    else:
+        print("Completed one-shot sensor observation; export requires explicit enable flags.")
+    elif args == ["--loop"]:
         main()
+    else:
+        raise SystemExit("Usage: telemetry_buffer_sync.py [--once|--loop]")

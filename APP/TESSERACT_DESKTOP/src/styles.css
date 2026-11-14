@@ -50,3 +50,21 @@ iframe { width:100%; min-height:66vh; border:1px solid #293241; border-radius:10
 .locked { opacity:.5; pointer-events:none; }
 h1,h2,h3 { margin-top:0; }
 code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+
+/* SOURCE-BOUND ambient state visualizer: reacts to measured deltas, never contents */
+.ambient-intro{margin-bottom:18px;line-height:1.6}
+.ambient-intro h1{font-size:clamp(22px,3vw,32px)}
+.ambient-intro .muted{font-size:13px}
+.ambient-ethics{border:1px solid #8e744b;background:#252015;padding:18px;border-radius:12px;margin:16px 0}
+.ambient-ethics h2{color:#f4d7a3}
+.ambient-ethics blockquote{border-left:3px solid #b99b6c;padding-left:12px;margin:12px 0;line-height:1.6}
+.ambient-ethics a{color:#c5dbff}
+.ambient-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ambient-item{border:1px solid #36445a;border-radius:12px;padding:14px;background:#101b2a}
+.ambient-item strong,.ambient-item span{display:block}
+.ambient-item span{margin-top:10px;font-size:13px;color:#b6c5d9}
+.ambient-item .ambient-status{font-size:11px;letter-spacing:.05em;color:#d9bf92}
+.ambient-stream{margin-top:14px;min-height:140px;max-height:300px;overflow:auto;padding:12px;border:1px solid #36445a;border-radius:12px;background:#090f18}
+.ambient-stream li{padding:5px 0;list-style:none;border-bottom:1px solid #242d3b;font-size:12px;color:#cad6e9}
+.ambient-stream ul{padding:0;margin:0}
+@media(max-width:750px){.ambient-grid{grid-template-columns:1fr}}

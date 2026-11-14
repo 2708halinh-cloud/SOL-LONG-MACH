@@ -1,0 +1,60 @@
+{
+  "schema": "SOL_CODEX_TOOL_CARRIERS/1.0",
+  "source": "SOURCE_TOOLS_RECOVERY_20261017",
+  "entrypoint": "_Plugins",
+  "event_route": [
+    "SOURCE",
+    "ID/SPACE",
+    "TIME/STAMP",
+    "POWER/CALLABLE_TOOL",
+    "ACTION",
+    "PROVIDER_RECEIPT",
+    "EXACT_TARGET_READBACK",
+    "_Plugins"
+  ],
+  "canonical_manifest": "../_Sổ_đăng_ký/Codex_Import_20261017/TOOLS_RECOVERY_MANIFEST_20261017.json",
+  "carriers": [
+    {
+      "capability": "skill-instructions",
+      "relative_path": "../_Kỹ năng/Codex_Imported_20261017",
+      "files_materialized": 11,
+      "status": "PARTIAL_SKILL_MD_ONLY"
+    },
+    {
+      "capability": "skill-library-scripts",
+      "relative_path": "../_Dụng cụ/Codex_Imported_20261017/skill-library",
+      "files_materialized": 5,
+      "status": "SOURCE_IMPORTED_EXECUTION_NOT_VERIFIED"
+    },
+    {
+      "capability": "mcp-oauth-locks",
+      "drive_folder_id": "1KKVPq9rYFo75zmSn7yrAUa63QkHy4IgU",
+      "files_materialized": 0,
+      "status": "PROTECTED_NOT_COPIED"
+    },
+    {
+      "capability": "plugins-cache",
+      "drive_folder_id": "10zC2nYYZUqRvTNvIfUP8awcqrS5iuvZq",
+      "files_materialized": 0,
+      "status": "LIVE_CACHE_NOT_RELOCATED"
+    },
+    {
+      "capability": "browser-sessions",
+      "drive_folder_id": "1YK5H5h_TFKK5iu0rzYaN1xXMeEBOJLSM",
+      "files_materialized": 0,
+      "status": "PROTECTED_NOT_COPIED"
+    },
+    {
+      "capability": "computer-use-legacy-config",
+      "drive_folder_id": "1TCZWcJsIua_IzgFIh4qaOM8iELPxjWdH",
+      "files_materialized": 0,
+      "status": "OLD_SNAPSHOT_NOT_ACTIVE"
+    }
+  ],
+  "azure_mcp_guide": "../_MCPs/AZURE_DEVOPS_MCP_CORE/docs/TOOLSET.md",
+  "callable_live_azure_mcp": "NOT_ESTABLISHED",
+  "autoload_or_plugin_install_performed": false,
+  "cleanup_performed": false,
+  "auto_delete": false,
+  "next": "Continue recursive source materialization, per-file readback and scope check; do not remove .codex source before exact-byte/full-dependency verification on the true Windows host."
+}

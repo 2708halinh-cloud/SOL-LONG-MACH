@@ -1,0 +1,209 @@
+{
+  "schema": "GGDV_PROVIDER_READBACK/1.0",
+  "id": "PROVIDER_READBACK_20261025T1227ICT",
+  "observed_at": "2026-10-25T12:27:40.6454324+07:00",
+  "source": "Direct Windows scheduled Tick and consumer exact-target readback after the 12:26:32+07 boundary; read-only Android package/service inspection; fresh Dropbox metadata; n8n execution 158; GitHub Archive PR #34 jobs/artifact and TESSERACT PR #6 jobs; current GitHub runtime files.",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "preceding_checkpoint": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1222ICT.json",
+    "blob_sha": "594e1840d12bcfc5ae1a477b3613419c3a3fcb36",
+    "commit": "eff2a8a59b9530da70792588a4e2c3030bf27c69"
+  },
+  "fresh_readback_before_this_checkpoint": {
+    "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "b26b715ae4af144c07da4969e1e999c4b726d531",
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "9b86d17dc793fb07ec6cd47a6975b74bb91fa2a4",
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "8e778fb6ca40a7748eb32babeaa131b723b7dead",
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "9d2b9daba5a51fdf4447bd26a6c3fa799265a504"
+  },
+  "modual": {
+    "status": "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED",
+    "host": "DESKTOP-86ITNQ4",
+    "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "enabled": true,
+      "last_run_local": "2026-10-25T12:26:33+07:00",
+      "next_run_local": "2026-10-25T12:31:32+07:00",
+      "last_result": "0x0",
+      "missed_runs": 0
+    },
+    "tick_receipt": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T052638905290Z.json",
+      "bytes": 1635,
+      "sha256": "07971b0353416440187997d48d3ddea9fd2386ef28b10798ddc5f00edcb1e6cd",
+      "observed_at_utc": "2026-10-25T05:26:38.905290Z",
+      "live_sensor_reading_confirmed": false,
+      "source": {
+        "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "bytes": 35389440,
+        "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+      },
+      "mutations": {
+        "source_file_written": false,
+        "synthetic_rows_added": 0
+      },
+      "exports": {
+        "cloud_enabled": false,
+        "github_enabled": false
+      },
+      "device_probe": {
+        "status": "ADB_TRANSPORT_RESPONDED",
+        "adb_binary_present": true,
+        "adb_devices_command_succeeded": true,
+        "usb": {
+          "target": "1056285",
+          "adb_state": "device",
+          "sensorservice_probe_succeeded": true,
+          "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+          "sensor_event_timestamp_sensor_count": 4,
+          "sensor_event_sensors_advanced": []
+        },
+        "wireless": {
+          "target": "192.168.1.14:5556",
+          "adb_state": "NOT_LISTED",
+          "sensorservice_probe_succeeded": false
+        }
+      }
+    },
+    "consumer_receipt": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T052635846Z.json",
+      "bytes": 6944,
+      "sha256": "5fa2c6979f5980bd2170cc592c25d1072aaf6c6737b02fbfcde2ba75243d9240",
+      "observed_at_utc": "2026-10-25T05:26:35.846Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "consumer_hash_matches_verifier": true,
+      "source_content_hash_verified": true,
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "dropbox_revision": "0165dc1e4794ab00000000395cdfd73",
+      "dropbox_content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+      "dropbox_server_modified_utc": "2026-10-14T00:20:03Z",
+      "live_sensor_reading_confirmed": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "raw_rows_emitted": false,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "package_route_inspection": {
+      "observed_at_local": "2026-10-25T12:27:17.8136879+07:00",
+      "adb_path": "C:\\Users\\halin\\platform-tools-latest-windows\\platform-tools\\adb.exe",
+      "adb_path_exists": true,
+      "target": "1056285",
+      "packages": {
+        "com.exatools.sensors": {
+          "installed": true,
+          "stopped": true,
+          "main_activity": "com.examobile.sensors.activity.MainActivity",
+          "workmanager_system_job_service_seen": true,
+          "active_service_readback": "no matching active service returned",
+          "changed": false
+        },
+        "com.galaxy.sensortoolbox": {
+          "installed": true,
+          "stopped": true,
+          "not_launched": true,
+          "foreground_sensor_service_verified": false,
+          "changed": false
+        },
+        "com.termux": {
+          "installed": true
+        },
+        "com.termux.boot": {
+          "installed": true
+        },
+        "com.termux.api": {
+          "installed": false
+        }
+      },
+      "conclusion": "No already-installed persistent sensor client/bridge was verified. No package was installed, launched, or reconfigured."
+    },
+    "conclusion": "Scheduled Tick and consumer run successfully and verify the source hash. The device SensorService responds, but four allowlisted event timestamps remain stale; production continuous stream is not restored."
+  },
+  "braid": {
+    "script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+    "exit_code": 0,
+    "six_receipt_sha256": "d87ca8bb0a56bc3119d647e92a6c8c4b56949f84cdcd3daa3c505abb7160eb94",
+    "six_action_count": 9,
+    "six_readback_ok": true,
+    "plural_receipt_sha256": "f121d26214bced8baf3daf131c6de20686a7bd496a3aafbff23b6df018d23981",
+    "plural_action_count": 5,
+    "plural_readback_ok": true,
+    "source_sha256_unchanged": true,
+    "requested_mutation_executed": false,
+    "cloud_host_wiring": "NOT_VERIFIED"
+  },
+  "providers": {
+    "dropbox": {
+      "path_display": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z"
+    },
+    "n8n": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "158",
+      "status": "success",
+      "event_id": "X20261025050024007_CLOUD",
+      "row_id": 337,
+      "state": "OPEN_WORK_REMAINS",
+      "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED"
+    }
+  },
+  "independent_branch": {
+    "archive_pr34": {
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "compare_base": "0b28aec6c742da7c98c8882c86f72fe926ba4333",
+      "ahead_by": 1,
+      "behind_by": 90,
+      "successful_runs": [
+        40145523744,
+        40145523727,
+        40145523754
+      ],
+      "artifact": {
+        "id": 12580351639,
+        "name": "sol-archive-real-fixture-readback",
+        "size_bytes": 958,
+        "expired": false,
+        "head_sha": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c"
+      },
+      "no_merge": true,
+      "no_force_push": true
+    },
+    "tesseract_pr6": {
+      "repository": "2708halinh-cloud/x-time-web",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "failed_runs": [
+        39994207477,
+        39994207667
+      ],
+      "selfhosted_windows_verify": "skipped",
+      "issuer_public_key_verified": false,
+      "runner_assignment_verified": false,
+      "rerun": false
+    }
+  },
+  "invariants": {
+    "tasks_closed": 0,
+    "source_file_written": false,
+    "source_moved_or_deleted": false,
+    "raw_sensor_values_persisted": false,
+    "secrets_written_to_public_github": false,
+    "cloud_export_enabled": false,
+    "github_export_enabled": false,
+    "package_install_or_configuration_change": false
+  },
+  "next": {
+    "modual": "After the next scheduled Tick, exact-read the new Tick and consumer receipts and source SHA. Continue identifying a supported persistent sensor client/bridge; no install or persistent app launch until the route and provenance are verified.",
+    "archive": "Keep PR #34 open while diverged; preserve exact head and successful test/artifact receipts. No merge/force-push.",
+    "tesseract": "Continue issuer public-key and runner-assignment verification. Do not rerun CI until a verified runner/config change exists.",
+    "cloud": "Continue fresh scan and keep row 337 OPEN_WORK_REMAINS until host heartbeat and original-source evidence are verified."
+  }
+}

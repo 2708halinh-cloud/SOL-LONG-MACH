@@ -1,0 +1,36 @@
+{
+  "schema": "SOL_UNLEASHED_READBACK_NEXT/1.0",
+  "date_local": "2026-10-17",
+  "work": "Flipper Unleashed firmware source + SENSORIMOTOR Termux deployed runtime",
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "branch": "main",
+    "last_verified_commit": "4ac7d6d9b118fd229a11a832fff1b329e202eb61",
+    "library_fresh_read_matches": 8
+  },
+  "tests": {
+    "python_unittest": "PASS",
+    "count": 15,
+    "RPC_streaming": "PASS",
+    "API_loopback_real_HTTP": "PASS",
+    "STM32_mock_C_host_syntax": "PASS"
+  },
+  "device": {
+    "platform": "Android Termux AArch64",
+    "api_address": "http://127.0.0.1:8767/v1/readback",
+    "last_http_status": 200,
+    "reentry_local_api_and_disk": "VERIFIED",
+    "compiled_objects_elf_machine": 183
+  },
+  "journal": {
+    "events": 8,
+    "last_hash": "061616021baa4e8dd24693bfb85061c8ad093fd7df1aa7af2ffbb6b54dc3cb18",
+    "integrity": "VERIFIED"
+  },
+  "next": {
+    "action": "Use existing connected Desktop Commander Termux localhost, read loopback API and disk journal with unleashed_reentry.py; resume from verified hash",
+    "command": "cd ~/SOL_LONG_MACH_RUNTIME/UNLEASHED_SENSORIMOTOR && python3 unleashed_reentry.py --logs-dir SENSORIMOTOR_LOGS",
+    "when_change": "If TIP_CHANGED, inspect /v1/events?after=8 before continuing; do not overwrite old ledger."
+  },
+  "scope_note": "GitHub and Library content mirrored; device service observed active, no promise of uptime after Android stops the process."
+}

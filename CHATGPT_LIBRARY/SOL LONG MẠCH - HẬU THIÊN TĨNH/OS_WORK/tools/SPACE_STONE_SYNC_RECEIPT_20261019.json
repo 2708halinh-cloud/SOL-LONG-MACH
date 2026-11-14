@@ -1,0 +1,53 @@
+{
+  "schema": "SOL_SPACE_STONE_SYNC_RECEIPT/1.0",
+  "date": "2026-10-19",
+  "source_authority": "user_request_in_current_project_and_exact_chatgpt_library_source",
+  "sync_mode": "SOURCE_TO_TARGET_COPY_NON_DESTRUCTIVE",
+  "canonical_path": "ChatGPT Library/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools",
+  "artifact_manifest_sha256": "703276ad949f07a5b253a6c5b547546216da06fbe2782f19baa079de7bfcec8d",
+  "files_matched_between_library_and_both_github_mirrors": [
+    "agent_core_runtime.py",
+    "agent_core_runtime.sql",
+    "test_agent_core_runtime.py",
+    "agent_capability_lifecycle.py",
+    "agent_capability_lifecycle.sql",
+    "agent_bootstrap.py",
+    "capability_manifest.json",
+    "test_agent_capability_lifecycle.py",
+    "AGENT_CORE_BAGUA_STAMPS_CURRENT.md"
+  ],
+  "carriers": [
+    {
+      "provider": "ChatGPT Library",
+      "path": "/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools",
+      "status": "PROVIDER_UPLOAD_AND_METADATA_READBACK_VERIFIED",
+      "note": "9 source files present; 5 new files plus documentation update in this stage, other 3 already present"
+    },
+    {
+      "provider": "GitHub",
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "branch": "main",
+      "path_prefix": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/",
+      "status": "EXACT_CONTENT_READBACK_MATCHED_ALL_9",
+      "manifest_update_commit": "9a9f9cf6013935554f71cb259defd43b5c3d9b08",
+      "manifest_blob_sha": "e38196c2a01bf845de2e874ed1be40a63cccf207"
+    },
+    {
+      "provider": "GitHub",
+      "repository": "2708halinh-cloud/x-time-web",
+      "branch": "master",
+      "path_prefix": "tools/",
+      "status": "EXACT_CONTENT_READBACK_MATCHED_ALL_9",
+      "manifest_update_commit": "a0e1873976809765e257f5661dd086d02ee2e036",
+      "manifest_blob_sha": "e38196c2a01bf845de2e874ed1be40a63cccf207"
+    },
+    {"provider": "Google Drive", "status": "TARGET_FOLDER_NOT_ESTABLISHED_NOT_SYNCED"},
+    {"provider": "Dropbox", "status": "EXACT_TARGET_NOT_ESTABLISHED_NOT_SYNCED"},
+    {"provider": "Windows/WSL/Docker", "status": "LOCAL_RUNTIME_READBACK_NOT_OBSERVED"},
+    {"provider": "Redmi/Android", "status": "DEVICE_RUNTIME_READBACK_NOT_OBSERVED"}
+  ],
+  "tests": {"local_python_unittest_total": 29, "failed": 0},
+  "runtime_calibration": {"scope": "local_simulation_only", "external_provider_actions_verified": false},
+  "integrity_boundary": "SHA-256 is content integrity relative to trusted commit/Library version, not independent provider trust or an unforgeable signature.",
+  "next_action": "Install trusted host startup hook, independently back up encrypted private SQLite state, then sync other carrier targets only after exact provider path and permission readback."
+}

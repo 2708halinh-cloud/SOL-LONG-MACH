@@ -1,0 +1,136 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "observed_at": "2026-10-26T06:32:27.371Z",
+  "repo": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "main_head_before_checkpoint": "edb00f4d4ac48eb912216f2b777e8b5621631043",
+  "source_reads": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "fresh_read": true
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "353f8c29b9c68311cb52521f6d2affa5b146333a",
+      "fresh_read": true,
+      "prior_checkpoint_marker": "VERIFIED_FINAL_RECONCILIATION_20261026T1250ICT"
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "0664f08d782747dafb6a864c5260fd417c3ce0c8",
+      "reported_size_bytes": 2131014,
+      "raw_fetch": "Retrieved from the exact GitHub raw URL at main head edb00f4; Markdown escaping prevented a clean full JSON parse, so no content mutation was attempted.",
+      "latest_pointer_checkpoint": "PROVIDER_READBACK_20261026T1319ICT",
+      "latest_pointer_commit": "ba7737479d42e7747af5c94f1568fcde31fcbcf9"
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "7696ff40fe00ea7078e2905a9268456e0b61e911",
+      "reported_size_bytes": 2055588,
+      "raw_fetch": "Retrieved from the exact GitHub raw URL at main head edb00f4; Markdown escaping prevented a clean full JSON parse, so no content mutation was attempted.",
+      "latest_direct_host_event": "X20261026061153465_HOST_TICK_CONSUMER_READBACK",
+      "latest_direct_host_row_id": 462,
+      "task_closures": 0
+    }
+  },
+  "cloud_continuity": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "execution_id": "194",
+    "execution_status": "success",
+    "execution_started_at": "2026-10-26T06:32:25.358Z",
+    "event_id": "X20261026063227278_CLOUD",
+    "table_id": "Sk0EFJK5NzWVpBvm",
+    "exact_row_readback": true,
+    "row_id": 463,
+    "row_created_at": "2026-10-26T06:32:27.371Z",
+    "state": "OPEN_WORK_REMAINS",
+    "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "terminal_rows": 0,
+    "host_heartbeat_probed": false,
+    "host_operations": 0,
+    "task_closures": 0
+  },
+  "host": {
+    "current_host_readback_this_run": false,
+    "reason": "Desktop Commander inventory listed localhost and both DESKTOP-86ITNQ4 entries offline; this is connector reachability only, not proof that Windows is powered off.",
+    "latest_verified_sample_at": "2026-10-26T13:19:16.922+07:00",
+    "latest_host_event": "X20261026061153465_HOST_TICK_CONSUMER_READBACK",
+    "host_evidence_row_id": 462,
+    "tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261026T061138550290Z.json",
+    "tick_sha256": "f0f5fb1739078da45c46788a91a085ff223a8ee6242b7ca3c2156fd652e8e1a7",
+    "consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261026T061135919Z.json",
+    "consumer_sha256": "d65b8b45787858faef3fc7cb8e7824e1366e6614ea28d0ea736d4e2a2886e617",
+    "consumer_bytes": 6944,
+    "source_bytes": 35389440,
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_hash_matches_tick_and_consumer": true,
+    "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "usb_sensor_timestamp_count": 4,
+    "usb_timestamps_advanced": 0,
+    "live_sensor_reading_confirmed": false,
+    "wireless_adb_state": "NOT_LISTED",
+    "next_scheduled_tick_local_at_last_readback": "2026-10-26T13:16:32+07:00",
+    "post_1316_tick_readback_verified": false
+  },
+  "provider": {
+    "dropbox_outlook": {
+      "last_verified_metadata_at": "2026-10-26T13:19:16.922+07:00",
+      "source_path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "server_modified": "2026-10-14T00:20:03Z",
+      "client_modified": "2026-10-14T00:15:21Z",
+      "connector_refresh_attempt": "FAILED_BEFORE_PROVIDER_RESPONSE",
+      "connector_error": "link_id must identify an eligible linked account",
+      "content_hash_note": "The recorded SHA-256 is from the Windows Tick/consumer receipt, not from Dropbox metadata."
+    }
+  },
+  "tesseract_desktop_pr6": {
+    "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+    "latest_runs": [
+      {
+        "id": 40220813600,
+        "name": "tesseract-desktop-ci",
+        "conclusion": "failure"
+      },
+      {
+        "id": 40220813636,
+        "name": "validate-x-time",
+        "conclusion": "failure"
+      }
+    ],
+    "failed_jobs": [
+      "build (ubuntu-24.04, x86_64-unknown-linux-gnu, linux-x64)",
+      "build (macos-14, aarch64-apple-darwin, macos-apple-silicon)",
+      "build (windows-latest, x86_64-pc-windows-msvc, windows-x64)",
+      "tesseract_os",
+      "readback"
+    ],
+    "selfhosted_windows_verify": "skipped",
+    "logs_fetch": "GitHub returned NOT_FOUND/BlobNotFound for the failed job log downloads.",
+    "issuer_variable_name": "XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+    "issuer_variable_value_verified": false,
+    "runner_assignment_verified": false,
+    "ci_rerun": false
+  },
+  "preservation": {
+    "raw_sensor_rows_exported": false,
+    "credentials_written_to_public_git": false,
+    "source_moved_or_deleted": false,
+    "synthetic_rows_added": false,
+    "task_closures": 0,
+    "pr_merge": false,
+    "force_push": false
+  },
+  "next_edges": [
+    "When a permitted host route returns, read the next Tick and consumer exactly and recompute the source SHA-256.",
+    "Resolve the Dropbox connector account selection or use another authorized provider route; do not claim a fresh Dropbox metadata read from the failed attempt.",
+    "Continue TESSERACT issuer-variable and runner-assignment provenance through an authorized settings/runner route; do not rerun CI without verified runner/workflow change.",
+    "Keep all 45 cloud recovery rows pending until each has its own evidence."
+  ]
+}

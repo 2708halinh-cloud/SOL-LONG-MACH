@@ -1,0 +1,94 @@
+{
+  "schema": "SOL_TESSERACT_WORKFLOW_READBACK/1.0",
+  "id": "TESSERACT_WORKFLOW_READBACK_20261025T1741ICT",
+  "observed_at_utc": "2026-10-25T10:41:38Z",
+  "observed_at_local": "2026-10-25T17:41:38+07:00",
+  "repository": "2708halinh-cloud/x-time-web",
+  "pull_request": 6,
+  "pr_state": "OPEN_DRAFT_UNMERGED",
+  "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+  "workflow_path": ".github/workflows/tesseract-desktop-ci.yml",
+  "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+  "workflow_readback_verified": true,
+  "findings": {
+    "required_public_key_variable_name": "XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+    "variable_reference_line": 7,
+    "self_hosted_windows_runner_labels": [
+      "self-hosted",
+      "Windows",
+      "X64"
+    ],
+    "self_hosted_job_condition": "github.event_name != 'pull_request'",
+    "self_hosted_job_condition_line": 119,
+    "self_hosted_runner_line": 120,
+    "implication": "For pull_request events the self-hosted Windows verification job is skipped by workflow condition; this does not prove the runner is missing or assigned.",
+    "actual_public_variable_value_readable_through_available_connector": false
+  },
+  "failed_run_readback": [
+    {
+      "run_id": 39994207477,
+      "jobs": [
+        {
+          "job_id": 120553389474,
+          "name": "build (macos-14, aarch64-apple-darwin, macos-apple-silicon)",
+          "conclusion": "failure",
+          "step_count": 0
+        },
+        {
+          "job_id": 120553389661,
+          "name": "build (windows-latest, x86_64-pc-windows-msvc, windows-x64)",
+          "conclusion": "failure",
+          "step_count": 0
+        },
+        {
+          "job_id": 120553389829,
+          "name": "build (ubuntu-24.04, x86_64-unknown-linux-gnu, linux-x64)",
+          "conclusion": "failure",
+          "step_count": 0
+        },
+        {
+          "job_id": 120553390017,
+          "name": "tesseract_os",
+          "conclusion": "failure",
+          "step_count": 0
+        },
+        {
+          "job_id": 120553391899,
+          "name": "selfhosted_windows_verify",
+          "conclusion": "skipped",
+          "step_count": 0
+        },
+        {
+          "job_id": 120553405219,
+          "name": "readback",
+          "conclusion": "failure",
+          "step_count": 0
+        }
+      ]
+    },
+    {
+      "run_id": 39994207667,
+      "jobs": [
+        {
+          "name": "verify",
+          "conclusion": "failure",
+          "step_count": 0
+        }
+      ]
+    }
+  ],
+  "log_fetch": {
+    "attempted_for_failed_job_id": 120553389474,
+    "result": "BLOB_NOT_FOUND_404",
+    "full_job_logs_available": false
+  },
+  "safety": {
+    "ci_rerun_performed": false,
+    "secret_value_read": false,
+    "secret_or_credential_exported": false,
+    "pr_mutated": false,
+    "merged": false,
+    "force_push": false
+  },
+  "result": "WORKFLOW_AND_ZERO_STEP_JOB_SUMMARIES_VERIFIED; JOB_LOGS_UNAVAILABLE; ISSUER_VALUE_AND_RUNNER_ASSIGNMENT_UNVERIFIED; NO_CI_RERUN"
+}

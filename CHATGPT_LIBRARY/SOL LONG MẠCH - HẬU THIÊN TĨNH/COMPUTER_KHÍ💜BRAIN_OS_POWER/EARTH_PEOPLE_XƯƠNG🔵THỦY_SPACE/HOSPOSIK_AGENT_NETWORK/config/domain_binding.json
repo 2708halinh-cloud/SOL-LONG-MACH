@@ -1,0 +1,40 @@
+{
+  "schema": "HOSPOSIK_DNS_BINDING/1.0",
+  "confirmed_domain": "gambbrazil.gambbrazil.fun",
+  "dns_provider": "Hostinger",
+  "dns_zone": "gambbrazil.fun",
+  "dns_owner_relative": "gambbrazil",
+  "discovery_txt_owner_relative": "_hosposik.gambbrazil",
+  "dns_records": [
+    {
+      "fqdn": "gambbrazil.gambbrazil.fun",
+      "type": "TXT",
+      "ttl": 3600,
+      "content": "v=HOSPOSIK1; service=agent-dns-memory-router; scope=local; public_endpoint=pending",
+      "published": true
+    },
+    {
+      "fqdn": "_hosposik.gambbrazil.gambbrazil.fun",
+      "type": "TXT",
+      "ttl": 300,
+      "content": "v=HOSPOSIK1; role=agent-dns-memory-router; scope=local; zone=hosposik.test; public_endpoint=pending",
+      "published": true
+    }
+  ],
+  "local_runtime": {
+    "zone": "hosposik.test",
+    "dns": "127.0.0.1:15353/udp",
+    "http": "http://127.0.0.1:8788",
+    "persistent_storage": "SQLite WAL/FULL"
+  },
+  "public_runtime": {
+    "hostname": "gambbrazil.gambbrazil.fun",
+    "https_origin": null,
+    "a_or_aaaa": null,
+    "tls": "NOT_CONFIGURED",
+    "reachable": false
+  },
+  "status": "PUBLIC_DNS_METADATA_ACTIVE_NO_PUBLIC_AGENT_ROUTE",
+  "verified_date": "2026-10-16",
+  "dns_existing_mail_records_preserved": true
+}

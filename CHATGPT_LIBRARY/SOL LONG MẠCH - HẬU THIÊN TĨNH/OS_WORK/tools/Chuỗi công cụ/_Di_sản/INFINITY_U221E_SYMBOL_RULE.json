@@ -1,0 +1,60 @@
+{
+  "schema": "SOL_TOOLS_UNICODE_SYMBOL_RULE_V1",
+  "rule_id": "TOOLS_INFINITY_U221E",
+  "source_direct": "Yêu cầu của người dùng ngày 2026-10-14",
+  "target_library_folder_id": "6acde998dc8c819197a013b6819e9b0b",
+  "target_library_path": "/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools",
+  "purpose": "Phân biệt chính xác ký hiệu vô cực toán học với các ký hiệu Unicode dễ nhầm lẫn trong công cụ, tài liệu, chỉ mục và giao diện Tools.",
+  "canonical": {
+    "concept_vi": ["vô cực", "vô tận", "vô hạn"],
+    "meaning_vi": "Khái niệm không bị chặn bởi giới hạn hữu hạn, không có điểm kết thúc; trong ngữ cảnh mở rộng có thể lớn hơn mọi số tự nhiên.",
+    "unicode_scalar": "U+221E",
+    "character": "∞",
+    "unicode_name": "INFINITY",
+    "html_entity": "&infin;",
+    "html_numeric_entity": "&#8734;",
+    "json_unicode_escape": "\\u221E",
+    "normalization_target_for_semantic_infinity": "∞",
+    "note": "Ký hiệu vô cực không mặc nhiên là một số thực hữu hạn hay một quyền năng/khả năng vô hạn đã được xác minh."
+  },
+  "distinct_characters": [
+    {
+      "unicode_scalar": "U+267E",
+      "character_base": "♾",
+      "emoji_presentation_example": "♾️",
+      "emoji_sequence": ["U+267E", "U+FE0F"],
+      "unicode_name": "PERMANENT PAPER SIGN",
+      "relation_to_infinity": "DISTINCT_NOT_CANONICAL_MATHEMATICAL_INFINITY"
+    },
+    {
+      "unicode_scalar": "U+26AD",
+      "character_base": "⚭",
+      "unicode_name": "MARRIAGE SYMBOL",
+      "relation_to_infinity": "DISTINCT"
+    },
+    {
+      "unicode_scalar": "U+2180",
+      "character_base": "ↀ",
+      "unicode_name": "ROMAN NUMERAL ONE THOUSAND C D",
+      "relation_to_infinity": "DISTINCT"
+    }
+  ],
+  "operational_rules": [
+    "Khi ý định/khái niệm đích là VÔ CỰC toán học, phát ra đúng ký tự U+221E (∞).",
+    "Không thay thế ∞ bằng ♾️, ⚭ hay ↀ do nét hình tương tự hoặc do tên gọi không chính xác.",
+    "Khi đầu vào thật sự chứa ♾️, ⚭ hoặc ↀ, giữ nguyên ký tự và mã gốc trong SOURCE_DIRECT; không tự viết lại lịch sử.",
+    "Phân biệt glyph hiển thị với mã Unicode; riêng ♾️ thường là chuỗi U+267E U+FE0F.",
+    "Đối chiếu theo mã Unicode, ngữ cảnh và nguồn, không chỉ theo hình thức trực quan.",
+    "Không suy ra công cụ/runtime vô hạn từ tên gọi hoặc một biểu tượng; kiểm chứng năng lực thực tế và READBACK riêng."
+  ],
+  "acceptance_tests": [
+    {"input": "vô cực", "expected_symbol": "∞", "expected_codepoint": "U+221E"},
+    {"input": "♾️", "preserve_input_codepoints": ["U+267E", "U+FE0F"], "must_not_equate_to": "U+221E"},
+    {"input": "⚭", "preserve_input_codepoints": ["U+26AD"], "must_not_equate_to": "U+221E"},
+    {"input": "ↀ", "preserve_input_codepoints": ["U+2180"], "must_not_equate_to": "U+221E"}
+  ],
+  "change_scope": "ADDITIVE_SYMBOL_RULE_ONLY",
+  "existing_tools_unchanged": true,
+  "runtime_activated_by_file_alone": false,
+  "status": "LIBRARY_RULE_FILE"
+}

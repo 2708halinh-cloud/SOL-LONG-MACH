@@ -1,4 +1,5 @@
 import "./styles.css";
+import { ambientPanel, syncAmbient } from "./ambient.js";
 import { invoke } from "@tauri-apps/api/core";
 
 const app = document.querySelector("#app");
@@ -150,6 +151,7 @@ function nav() {
     ["terminal","TERMINAL"],
     ["git","GIT"],
     ["web","WEB"],
+    ["ambient","BIẾN ĐỔI"],
     ["conda","CONDA"],
     ["models","MÔ HÌNH"]
   ];
@@ -235,6 +237,10 @@ function mainPanels() {
           <iframe id="web-frame" referrerpolicy="no-referrer"></iframe>
         </div>
 
+        <div class="panel ${activeTab==="ambient"?"active":""}" data-panel="ambient">
+          ${ambientPanel()}
+        </div>
+
         <div class="panel ${activeTab==="conda"?"active":""}" data-panel="conda">
           <div class="card">
             <h2>Conda</h2>
@@ -276,6 +282,7 @@ function render() {
   app.innerHTML = `<div class="shell">${workspaceSidebar()}${mainPanels()}</div>` +
     (!state.enrollment_complete ? renderEnrollment() : "");
   bind();
+  syncAmbient(activeTab === "ambient" && state.enrollment_complete, invoke, state.workspaces?.[0]?.path || null);
 }
 
 function bind() {

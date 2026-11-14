@@ -1,0 +1,81 @@
+{
+  "schema": "GGDV_WINDOWS_TICK_READBACK/1.0",
+  "observed_at": "2026-10-24T23:48:41.3743778+07:00",
+  "observed_at_utc": "2026-10-24T16:48:41.3743778Z",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "previous_provider_checkpoint": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261024T2345ICT.json",
+    "blob_sha": "88add2b7124254766082ccabf2518a985ee5f6bf",
+    "commit": "90b86772f54727ac77374cbc675ba690c0158381"
+  },
+  "host": "DESKTOP-86ITNQ4",
+  "task": {
+    "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+    "state": "Ready",
+    "enabled": true,
+    "last_run_local": "2026-10-24T23:46:33+07:00",
+    "last_result": "0x0",
+    "next_run_local": "2026-10-24T23:51:32+07:00",
+    "missed_runs": 0
+  },
+  "receipt": {
+    "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T164634219800Z.json",
+    "observed_at_utc": "2026-10-24T16:46:34.219800Z",
+    "bytes": 450,
+    "sha256": "0436d7b164c227d5b1a1da532f8959b21aa7494992f8363ff45d40dcd64d99ca",
+    "content_readback": true,
+    "sha256_recomputed": true
+  },
+  "source": {
+    "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+    "bytes": 35389440,
+    "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "receipt_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "hash_matches": true,
+    "last_modified_at_utc": "2026-10-23T08:45:56.2458701Z"
+  },
+  "receipt_flags": {
+    "live_sensor_reading_confirmed": false,
+    "source_file_written": false,
+    "synthetic_rows_added": 0,
+    "cloud_enabled": false,
+    "github_enabled": false
+  },
+  "consumer_status_from_previous_checkpoint": {
+    "checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261024T2345ICT.json",
+    "observed_at_local": "2026-10-24T23:45:06.4477898+07:00",
+    "xtime_health_http": 200,
+    "xtime_configured_host": "127.0.0.1",
+    "xtime_configured_port": 8769,
+    "source_present": true,
+    "live_device_proven": false,
+    "state_n_equals_state_n_plus_1": true,
+    "android_recent_event_section_changed_since_prior_sample": true,
+    "android_two_snapshots_17_seconds_apart_identical": true,
+    "continuous_live_sensor_stream_verified": false,
+    "hwinfo_process_running": true,
+    "hwinfo_matching_csv_under_D_SENSOR_LOGS": 0
+  },
+  "source_script_safety": {
+    "path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+    "bytes": 13245,
+    "sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+    "task_action": "python.exe D:\\SENSOR_LOGS\\telemetry_buffer_sync.py --once",
+    "behavior": "Metadata-only source hash receipt; cloud and GitHub export helpers are gated and latest flags are false.",
+    "historical_dropbox_copy_executed": false
+  },
+  "invariants": {
+    "tasks_closed": 0,
+    "raw_sensor_data_committed": false,
+    "credentials_committed": false,
+    "source_deleted_or_moved": false,
+    "host_config_changed": false
+  },
+  "next_edges": [
+    "After 2026-10-24T23:51:32+07:00, read the next Tick receipt and recompute the direct source hash.",
+    "Keep the Tick state distinct from live-sensor status; the receipt explicitly reports live_sensor_reading_confirmed=false.",
+    "Continue HWiNFO/Android genuine sensor-source verification and preserve X-TIME loopback-only configuration.",
+    "Continue TESSERACT issuer/runner and cloud continuity work; do not rerun CI without verified runner assignment change."
+  ]
+}

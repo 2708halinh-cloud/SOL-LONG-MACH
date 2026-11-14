@@ -1,0 +1,80 @@
+name: sol-computer-khi-puppeteer-runtime
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME/**"
+      - ".github/workflows/puppeteer-computer-khi.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage-runtime:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME/
+          sparse-checkout-cone-mode: false
+      - name: Stage only the Puppeteer runtime
+        run: |
+          mkdir -p runtime-stage
+          cp -a "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/PUPPETEER_RUNTIME/." runtime-stage/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sol-computer-khi-runtime-source
+          path: runtime-stage/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 2
+
+  browser-smoke:
+    needs: stage-runtime
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: runtime-src
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: sol-computer-khi-runtime-source
+          path: runtime-src
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: runtime-src/package-lock.json
+      - name: Install Puppeteer and compatible Chrome
+        run: npm ci
+      - name: Launch Chrome, render page, and verify loopback service
+        env:
+          CI: "true"
+        run: npm test
+      - name: Validate Windows startup script
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          [void][scriptblock]::Create((Get-Content 'scripts/start-windows.ps1' -Raw))
+      - name: Boot and read back persistent Windows background service
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          & ./scripts/start-windows.ps1 -Port 8776
+          $health = Invoke-RestMethod -Uri 'http://127.0.0.1:8776/health' -TimeoutSec 5
+          if ($health.status -ne 'ready' -or -not $health.browser_connected) {
+            throw 'Windows bootstrap did not start a live Puppeteer browser'
+          }
+          $statePath = Join-Path $env:LOCALAPPDATA 'SOL\Puppeteer\runtime-state.json'
+          $state = Get-Content $statePath -Raw | ConvertFrom-Json
+          Write-Output ('SOL_WINDOWS_BACKGROUND_READY PID=' + $state.pid)
+          Stop-Process -Id ([int]$state.pid) -ErrorAction Stop
+          Write-Output 'SOL_WINDOWS_BACKGROUND_STOPPED_AFTER_TEST'

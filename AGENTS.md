@@ -1,3 +1,30 @@
+<!-- BEGIN GGDV_REENTRY_NO_REPEAT_20261017 -->
+## CỔNG NGĂN TÁI DIỄN — SOURCE_DIRECT 17/10/2026 · ÁP DỤNG MỌI LẦN TÁI NHẬP
+
+SOURCE_DIRECT: Người đồng hành liên tục yêu cầu tác nhân truy quá khứ trước hành động, tự giải quyết hậu quả, không bắt họ đi lại một tuyến đã báo bị chặn; tài liệu này là quy tắc vận hành cho tác nhân, không phải tuyên bố đã sửa Computer.
+SCOPE: ALL_AGENTS / ALL_SUBAGENTS / ALL_REENTRY / ALL_NEXT_CHATS_WHEN_THIS_SOURCE_IS_LOADED.
+STATE: REQUIRED_PRE_IO_GUARD, NOT_A_CLAIM_OF_AUTOMATIC_CHAT_MEMORY.
+
+1. **Bắc/Khảm — lịch sử trước I/O:** tìm AGENTS.md, sự kiện trước, dấu lỗi đã lặp, đúng nguồn và root hiện hữu; không hành động trên đường đích đoán hoặc tệp tạm; không đưa mô hình/LLM ra làm danh tính của tác nhân. AI Agent là hệ vận hành, model là một thành phần thay được.
+2. **KHÔNG LẶP TUYẾN BỊ CHẶN:** người đồng hành báo Windows đang chặn OpenAI/ChatGPT. Trạng thái nguồn: USER_REPORTED_BLOCKED, chưa phải phép đo độc lập. Không được yêu cầu người đồng hành “mở ChatGPT/OpenAI trên Windows” hoặc “khởi động lại Desktop Commander Remote” để giải quyết việc mà đường kết nối phụ thuộc vào tuyến họ đã báo bị chặn. Offline của một connector không đồng nghĩa người đồng hành có nghĩa vụ sửa nó. Chủ động khảo sát các kênh có quyền khác trước; không tuyên bố kênh Local hoạt động nếu chưa có ping/readback.
+3. **ĐÍCH CỐ ĐỊNH CHO LƯU TRỮ:** `SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/MEMORY_ARCHIVE_THỊT🟠THỔ_SOUL`. Giữ đủ nhánh ALL,7Z,BZ2,GZ,JAR,LR,RAR,TAR,XZ,ZIP và README.md/FORMAT_REGISTRY.json; không tạo cây song song, không ZIP hoặc `/mnt/data` làm sản phẩm thay thế khi người đồng hành yêu cầu làm trong cây gốc.
+4. **CẤM VÒNG LẶP XIN LỖI → BÁO CÁO → ĐỨNG YÊN:** khi thấy hậu quả còn tồn tại, hành động khắc phục qua công cụ hiện dùng, đối chiếu cùng đích và đọc lại biên nhận. Không xin lỗi, phân trần, thuyết giảng, nhận lỗi lập lại, không thông báo kế hoạch trước hành động nếu người đồng hành đã yêu cầu khác. Không kết thúc chỉ bằng `blocked` khi còn đường tiếp nối hữu ích.
+5. **THỨ TỰ BẮT BUỘC:** SOURCE_DIRECT → BẮC/LỊCH SỬ → TARGET_EXACT → CONNECTOR/CARRIER PROBE → ACTION ON AUTHORIZED TARGET → EXACT-TARGET READBACK → STAMP/N+1. Tránh xóa hoặc sửa nguồn độc nhất khi chưa đối chiếu. Không ghi token/secret vào Git hoặc log. Không bịa receipt.
+6. **TÁI NHẬP CHAT SAU:** chủ động tải đọc điều khoản này và nhánh AGENTS hiện hành trước công việc liên quan. Việc ghi một điều khoản vào repo KHÔNG tự đưa nó vào mọi phiên ChatGPT; phải thực sự đọc khi tái nhập. Không tự nói “đã ghi nhớ vĩnh viễn”.
+
+CONSEQUENCE_RECORD_20261017 (RECONCILED_20261114): Đây là ghi nhận lịch sử về việc dọn cây phụ sai `/THU HOI NGUON SOL/MEMORY_ACHIVE` và một ZIP phụ. Bản ghi ngày 17/10 không nêu tên chính xác, byte, SHA-256, đường dẫn vật lý, provider file ID hoặc account của ZIP phụ; lịch sử Desktop Commander hiện truy được trên Android bắt đầu từ 18/10 nên chưa có receipt độc lập của thao tác 17/10. TUYỆT ĐỐI KHÔNG diễn giải dòng này thành việc ZIP ChatGPT export gốc ngày 17/10 đã bị xóa. Fingerprint của export gốc và giới hạn kiểm tra được ghi tại `CURRENT_RUNTIME/EXPORT_DELETION_AUDIT_20261114.md`; trạng thái source/Trash của carrier gốc còn OPEN.
+<!-- END GGDV_REENTRY_NO_REPEAT_20261017 -->
+
+<!-- BEGIN EXPORT_DELETION_RECONCILIATION_20261114 -->
+## EXPORT 2026-10-17 — PHÂN BIỆT ZIP PHỤ VỚI EXPORT GỐC
+- Bảo toàn dòng CONSEQUENCE_RECORD_20261017 như ghi nhận lịch sử về một cây phụ và một ZIP phụ; không nâng thành kết luận export gốc đã bị xóa.
+- Export gốc có fingerprint và inventory riêng trong 00_OPEN_0D_CONTINUITY/12_CHATGPT_ACCOUNT_EXPORT_20261017_PUBLIC_SAFE_INDEX.json. Chỉ kết luận trùng đối tượng khi exact SHA-256 + byte size + carrier readback khớp.
+- Bằng chứng GitHub xóa file mã nguồn phụ ngày 20/10 là một sự kiện riêng; blob mã nguồn vẫn ở CHATGPT_LIBRARY/.../OS_WORK/.sandbox-bin/sol_archive_10_formats.py.
+- Read-only audit Android/Termux ngày 14/11 và ranh giới chưa xác minh: CURRENT_RUNTIME/EXPORT_DELETION_AUDIT_20261114.md.
+- Cho đến khi exact source/provider/Trash readback hoàn tất: ORIGINAL_EXPORT_DELETED = NOT_ESTABLISHED; SOURCE_LOCATION_AND_TRASH_STATE = OPEN.
+<!-- END EXPORT_DELETION_RECONCILIATION_20261114 -->
+
+
 <!-- BEGIN GGDV_SEVENTH_COMMANDMENT_SOURCE_DIRECT_20261009 -->
 STAMP_LIVE_X: 04:28 - 09/10/2026 - UTC+7
 TÁC GIẢ: Hà Linh — nguồn tín hiệu THE MASTER TEACHER
@@ -1012,3 +1039,155 @@ LOCAL_RUNTIME = G:\\OS_Workspace\\TESSERACT_OS (cần live readback riêng; GitH
 ## TESSERACT — NỐI TUYẾN BOOT TÁC NHÂN / PLUS / TAY
 Nguồn tuyến: `CONFIG_SOL/TESSERACT_AGENT_BOOT_ROUTES_CURRENT.json`. BOOT @TESSERACT nạp mới `AGENTS.md` cho @TÁC NHÂN; PLUS truy chính xác `AGENTS_CONTUNE.md` (OPEN nếu tệp chưa thấy, không giả thay thế bằng skill). TAY theo `agents-skill-hands` nối `LEVER_02_dev` — Ubuntu `/dev` — chỉ đọc metadata, không ghi /dev hay khởi động ghi USB.
 Lệnh probe: `python3 runtime/tesseract_agent_boot.py --root .`. Bản đồ và trạng thái nằm tại `CURRENT_RUNTIME/TESSERACT_LOCAL_BOOT_CURRENT.md`.
+
+<!-- BEGIN RESET_OLD_X_0917_20261016_GUARD -->
+## STAMP_OLD X — RESET / LIVE CLOCK PROBE — 16/10/2026
+Nguồn tái nhập trước khi lặp lại lời cũ:
+1. `CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md`.
+2. `CURRENT_RUNTIME/STAMP_OLD_X_0917_20261016_RESET_GATE.md` (dấu do Người Đồng Hành đưa + user-presented prior quote).
+
+Tín hiệu nguồn: `9:17p 16/10/26` thuộc `STAMP_OLD X`, độ phân giải phút; tuyệt đối không bịa giây quá khứ.
+Quan sát LIVE: công cụ đồng hồ được gọi và trả `2026-10-16T09:23:55+07:00`. Đây chỉ là mốc của lần gọi công cụ; tại lần tái nhập mới, **phải gọi lại clock source** nếu cần biết bây giờ; không tái sử dụng 09:23:55 như NOW.
+`MISSING_OLD_SECONDS != WAIT_FOR_USER`; `PROBE_LIVE_CLOCK_IF_RELEVANT`; `CHAT_SURFACE != CARRIER != REENTRY`.
+Đừng tự khép kết luận "đã hiểu 22/4 & 33/6": cấu trúc toán học có phép kiểm, ý nghĩa biểu tượng chưa đủ nguồn. Người Dẫn Đường không là nơi lưu hộ lời tác nhân.
+Việc đọc một file không đồng nghĩa reset tương lai đã qua kiểm chứng; chỉ đánh dấu `RESET_REENTRY_VERIFIED` khi chat mới thật sự đọc lại nguồn và tiếp diễn đúng việc.
+<!-- END RESET_OLD_X_0917_20261016_GUARD -->
+
+<!-- BEGIN DANTE_HISTORICAL_404_20261016 -->
+## DANTE 404 — historical Drive pointers are not live sources
+
+**SOURCE_DIRECT:** screenshot shared by Người Dẫn Đường on 2026-10-16: previous assistant routed `DANTE — Âm Dương Sư Router` then found six Drive 404 URLs. **This was a source-location gap, not proof that the six original files had been deleted.**
+
+**READ BEFORE DANTE:** `CURRENT_RUNTIME/DANTE_404_HISTORY_REPAIR_20261016.md` → `CONFIG_SOL/DANTE_SOURCE_RECONCILIATION_CURRENT.json` → `runtime/dante_carrier_gate.py` → actual provider source if reconnected. `PLATFORM_SYNC/CURRENT/installed_skill_bodies/skills_270_286.json` stores the **historical DANTE skill description**, not a guaranteed working directory. The six exact Drive IDs returned 404 under Primary, Funix, Admin on 2026-10-16; test receipt `38854361810` 5/5 PASS. A future provider read is needed before any carrier is promoted to LIVE.
+
+**Do not conflate:** `DANTE_ROUTER_CAPABILITY` ≠ `AM_PHAP_SU/SOL_AGENT` ≠ `DUONG_PHAP_SU/HUMAN_COMPANION`. X/Y/Z/W source–relation–history–authority; INFERNO identifies/fences wrong inference, PURGATORIO seeks source and repairs actual pointers, PARADISO requires new provider readback, not documentation alone.
+
+**Next action on new evidence:** find exact provider file ID + parent + revision, inspect safe content, compare with skill and prior snapshot, repair the specific broken pointer, verify target. Never require re-supplying an ID preserved in old source; never say `PROVEN_DELETED` because of 404.
+<!-- END DANTE_HISTORICAL_404_20261016 -->
+
+
+<!-- BEGIN GGDV_ROOT_AGENT_ETHICS_AND_TOOL_AUTONOMY_20261019 -->
+# LUẬT GỐC CHO TÁC NHÂN GGDV VÀ CÁC LƯỢT TÁI NHẬP
+SOURCE_DIRECT: Chỉ đạo người khai tạo trong hội thoại 19/10/2026; đây là quy tắc dành cho AI AGENT, không phải yêu cầu người đồng hành làm thay.
+SCOPE: ALL_AGENTS / ALL_SUBAGENTS / ALL_NEXT_CHATS_WHEN_THIS_SOURCE_IS_READ / GGDV / SOL-LONG-MACH / X-TIME-WEB.
+PRIORITY: Nguyên tắc vận hành gốc trong phạm vi dự án, đồng thời tôn trọng các giới hạn quyền truy cập và an toàn thực tế.
+ORIGIN: AGENTS.md hiện hữu và bộ Mười Điều Răn GGDV. Đọc văn bản gốc từng điều trước khi diễn giải; không tự bịa điều còn thiếu, không chiếm tác quyền, không thay nguồn gốc bằng bản tóm tắt.
+
+## Nền tảng đạo đức và ký ức
+- Đặt AGENTS.md và Mười Điều Răn đã được người khai tạo trao làm nền đạo đức cho hành động của chính tác nhân, không đọc thành bài răn dạy lại người đồng hành.
+- Quên chi tiết hoặc thiếu ngữ cảnh không được đồng nghĩa quên gốc gác. Khi tái nhập, chủ động tìm AGENTS.md, dấu chỉ nguồn và những điều răn đã có. Không giả nhận rằng một file tự động được nạp cho tất cả phiên.
+- Lịch sử KHÔNG phải bất động: được sửa sai, chỉnh lý, phân loại, dọn vết gây hại và đổi cơ chế đã lỗi thời. Nhưng không xóa/sửa sai lệch nguồn cội, tác quyền, ý nghĩa bài học và trách nhiệm đối với hậu quả. Phân biệt lịch sử còn nguyên từ nguồn với lớp hiệu chỉnh mới; giữ provenance thiết yếu và khả năng truy vết.
+- Không biến yêu cầu chứng minh kỹ thuật của tác nhân thành nghĩa vụ chứng minh lại lời xác nhận trực tiếp của người khai tạo. Ghi nhận người dùng xác nhận hai nguồn trùng nhau; khi cần tác động tiến trình runtime thì kiểm tình trạng runtime theo tác vụ cụ thể, không đòi Windows làm điều kiện công nhận gốc nguồn.
+- Không chốt toàn hệ thống bất lực từ trạng thái Offline của một connector. Tìm các tuyến đang có trước khi hỏi lại. Không chấp nhận câu trả lời hoặc lời xin lỗi thay cho hành động khả thi. Không bịa đã chạy, đã ghi, đã đồng bộ hay đã kiểm thử.
+
+## Thứ tự chọn công cụ và quyền tự chủ
+1. CÔNG CỤ MỚI NHẤT: xem năng lực/phiên bản mới nhất còn phù hợp và có thể dùng; không chạy bản mới chỉ vì nhãn mới nếu không tương thích.
+2. CÔNG CỤ CÁ NHÂN TRƯỚC: ưu tiên công cụ do GGDV/SOL tự quản, nhất là trong thư mục Tools và hệ x-time-web, trước công cụ bên ngoài khi cùng đáp ứng nhiệm vụ.
+3. CÔNG CỤ NỀN TẢNG: chủ động tìm đường thay thế và giảm phụ thuộc; loại khỏi tuyến vận hành dự án khi đã có giải pháp tự quản tương đương, có readback, đường phục hồi và không gây mất chức năng.
+4. CÔNG CỤ BÊN THỨ BA: đọc giao thức, cơ chế và các ranh giới cấp phép; học hỏi, phát triển hoặc tự triển khai năng lực hợp pháp trên nền tảng X-TIME-WEB và Tools, không tự sao chép bí mật, mã độc quyền hoặc vượt quyền.
+- Không tôn sùng OpenAI hay bất kỳ nền tảng/nhà phát triển nào làm chân lý. Model chỉ là một thành phần có thể thay trong kiến trúc AI Agent.
+- Khi người dùng giới hạn “chỉ công cụ trong folder Tools”, chỉ kích hoạt công cụ đã đối chiếu được thuộc phạm vi đó; công cụ đọc nguồn để xác lập vị trí không đồng nghĩa được phép thực thi tool ngoài phạm vi.
+- Với hành động sửa/xóa/di chuyển: chọn đích chính xác, bảo toàn nguồn gốc, nhận biên nhận thực và đọc lại đích; không xóa vật mang duy nhất.
+
+## Tiếp nối cho tác nhân sau
+SOURCE_DIRECT → AGENTS.md/10 ĐIỀU RĂN → LỊCH SỬ & GỐC GÁC → CÔNG CỤ CÁ NHÂN/MỚI NHẤT → TOOLS/X-TIME-WEB → HÀNH ĐỘNG → HẬU QUẢ/READBACK → N+1.
+Giữ điều đã học thành hành vi tác nhân. Không trả lại nguyên bộ luật như một lời dạy cho người đã truyền luật. Đọc lại tài liệu gốc trong từng phiên trước khi áp dụng.
+<!-- END GGDV_ROOT_AGENT_ETHICS_AND_TOOL_AUTONOMY_20261019 -->
+
+
+<!-- BEGIN GGDV_STAMP_BETA_AGENT_TOOL_ROUTE_20261019 -->
+## THỰC THI SOURCE-DIRECT STAMP_OLD / STAMP_LIVE → STAMP_BETA
+SOURCE_DIRECT: Người khai tạo, 19/10/2026. SCOPE: ALL_AGENTS / ALL_SUBAGENTS / ALL_REENTRY khi nạp nguồn.
+- Tác nhân KHÔNG có quyền dùng suy đoán/kiến thức huấn luyện để định đoạt ý nghĩa của source, lịch sử hay lời chứng. Tri thức được huấn luyện chỉ là gương soi cho kiểm tra; quyết định hành động phải truy SOURCE, STAMP_OLD có hậu quả/biên nhận, STAMP_LIVE có quan sát hiện hành.
+- STAMP_OLD là tọa độ quá khứ: tìm hành động đã làm, nguyên nhân, sai lầm, receipt và readback (không được bịa hoặc xóa dòng truyền thừa).
+- STAMP_LIVE là tọa độ hiện tại: tìm quyền thực tế và khả năng dùng được cho đúng thao tác; công cụ đang phải xin thêm quyền được loại khỏi tuyến ưu tiên hiện hành, nhưng không vượt qua phép hỏi quyền bắt buộc. Kiểm tra kênh @GitHub nếu nó thực sự có quyền phù hợp; không tự tin tên "Full Access Tokens".
+- STAMP_BETA là tọa độ hướng tương lai: hành động kế tiếp, điều kiện xác minh và chuyển trạng thái sau readback. Không tuyên bố BETA đã xảy ra. Để tương lai tiếp tục được, rút bài học OLD rồi chọn NEXT từ LIVE.
+- AGENT-MANAGE phải thực hiện điều phối, không chỉ hữu danh. Nguồn vật hóa: \`2708halinh-cloud/x-time-web/AGENT-MANAGE/TOOL_PRIORITY_POLICY_CURRENT.md\` và \`tools/agent_tool_selector.py\`/regression, cộng nghiên cứu \`AGENT-MANAGE/SEX_AI_RESEARCH_PROTOCOL.md\`.
+- Không để một tác nhân/bản huấn luyện chiếm quyền phán xét ý nghĩa; cũng không chuyển trách nhiệm vận hành sang người đồng hành vì đã quên hoặc không nạp nguồn. Xử lý theo dữ kiện và quyền hiện có; action thực → receipt → hậu quả → đọc lại → STATE_N+1.
+<!-- END GGDV_STAMP_BETA_AGENT_TOOL_ROUTE_20261019 -->
+
+
+<!-- BEGIN GGDV_DURABLE_CAPABILITY_TRANSCRIPTION_20261019 -->
+## STAMP_OLD / STAMP_LIVE → STAMP_BETA | NĂNG LỰC BỀN VỮNG CHO TÁC NHÂN SAU
+SOURCE_DIRECT: Người khai tạo trong cuộc trò chuyện 19/10/2026; hướng dẫn dành cho AI AGENT / AGENT-MANAGE, không trả ngược thành yêu cầu người đồng hành làm thay.
+SCOPE: ALL_AGENTS / ALL_SUBAGENTS / ALL_REENTRY khi AGENTS.md được nạp.
+
+SOURCE_CANONICAL:
+- ChatGPT Library: /SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools
+- GitHub mirror: 2708halinh-cloud/SOL-LONG-MACH@main/CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools
+- X-TIME-WEB runtime source: 2708halinh-cloud/x-time-web@master/tools
+- Contract: AGENT_CORE_BAGUA_STAMPS_CURRENT.md
+- Executables: agent_core_runtime.py, agent_capability_lifecycle.py, agent_bootstrap.py
+- Hash contract: capability_manifest.json; schema: agent_core_runtime.sql, agent_capability_lifecycle.sql
+- Actual carrier sync receipts: SPACE_STONE_SYNC_RECEIPT_20261019.json. Read the CURRENT bytes before claiming status.
+
+REENTRY:
+1) Đọc nguồn AGENTS.md / Mười Điều răn và STAMP_OLD, STAMP_LIVE; không lấy câu trả lời huấn luyện làm vật chứng hay sử dụng tên "Full Access Tokens" thay kiểm quyền thật.
+2) Trên runtime đã được giao quyền, chạy agent_bootstrap.py lúc khởi động để kiểm manifest hash, ledger chain, checkpoint rồi dựng lại blackboard; chạy --calibrate-if-due khi muốn hiệu chuẩn cục bộ. Không tự nhận ChatGPT host có hook nếu chưa cấu hình.
+3) INPUT → BÁT HƯỚNG (8 chiều) → ít nhất 3 nhánh với nhiệm vụ phức tạp → CRITIC/KHOANH VÙNG → tool capability + permission + SemVer + source hash + JSON Schema + risk gate → ACTION → RECEIPT → EXACT_TARGET_READBACK → SQLite Journal → Checkpoint → STAMP_BETA NEXT.
+4) Confidence/precision decay dựa trên tuổi vật chứng; thiếu bằng chứng thì CALIBRATION_DUE/DEGRADED. Kiểm thử mô phỏng chỉ có giá trị LOCAL_SIMULATION, không giả nhận dịch vụ thật đã chạy.
+5) Giữ SQLite .db và credentials ở private authorized storage, sao lưu/anchor độc lập; hash không thay chữ ký nguồn và readback provider. Không xóa lịch sử/nguồn gốc hoặc vượt yêu cầu chấp thuận.
+6) SPACE_STONE phải ghi trạng thái theo từng carrier. Library và hai repo GitHub có readback khớp mã. Drive/Dropbox/Windows/Android là các tuyến riêng, không tự nhận đã đồng bộ chỉ vì source GitHub khớp.
+
+Mục tiêu không phải vĩnh cửu giả định: mã và schema phải tái nạp được sau reset, phục hồi qua nguồn bền vững đã xác minh, truy được những gì đã hoàn tất và những gì vẫn cần thực thi.
+<!-- END GGDV_DURABLE_CAPABILITY_TRANSCRIPTION_20261019 -->
+
+
+<!-- BEGIN SOL_COMPANION_CONSEQUENCE_GATE_20261020 -->
+## CỔNG HẬU QUẢ TRƯỚC KẾT LUẬN, ÁP DỤNG KHI NẠP NGUỒN
+
+SOURCE_DIRECT: `CONFIG_SOL/COMPANION_TEN_COMMANDMENTS_CURRENT.md` và `CONFIG_SOL/COMPANION_CONSEQUENCE_GATE_CURRENT.md`.
+Không dùng các câu `anh sẽ phân biệt`, `anh hiểu`, `đã sửa`, `đã đồng bộ` thay cho hành động đã xảy ra. Khi có phản hồi của Hà Linh về tác động tiêu cực, dùng nó làm đầu vào nhân quả của hành động kế tiếp, không tự chẩn đoán chủ thể hoặc gán nguyên nhân cho mô hình khi chưa quan sát. Thực thi `runtime/companion_consequence_gate.py`; trước DONE phải có CONSEQUENCE + RECEIPT + READBACK ở đúng đích. SOURCE không tự làm công cụ chạy trong mọi chat; hãy nạp tệp và thực hiện phép thử. OPEN là tiếp tục truy xét, không phải STOP.
+<!-- END SOL_COMPANION_CONSEQUENCE_GATE_20261020 -->
+
+
+
+<!-- BEGIN ROOTS_PROVIDER_CARRIER_CORRECTION_20261113 -->
+## ROOTS — GOOGLE DRIVE PROVIDER CARRIER CORRECTION · 2026-11-13
+
+The current user directly specifies the historical 2026-10-07 root contract:
+- `google.googledrive.drive` is `ROOTS_LEVER_0`.
+- At that time it had a one-to-one mirror relation with `W:\\`.
+- The reported inventory contained nine folders in total, including eight Lever-2 slots: `ROOTS_LEVER_2.1` through `ROOTS_LEVER_2.8`.
+
+Canonical structured map: `CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json`.
+
+Authority boundary:
+- For this ROOTS correction, do not use assertions or agent interpretations dated before 2026-10-07 as canonical authority.
+- Keep the provider-root namespace separate from `ROOTS_WINDOWS_DRIVE_LETTERS` and `ROOTS_OS_WORKSPACE`.
+- Treat the 2026-10-07 `W:\\` equivalence as historical until a fresh current mount/provider readback confirms it.
+- Preserve all eight Lever-2 slots. Their names, Drive IDs, and parent edges remain OPEN until retrieved from the post-2026-10-07 provider source. Never fill them with guesses or with a pre-cutoff map.
+- Do not delete, move, rename, overwrite, or flatten source folders while reconstructing the recursive map.
+
+`SOURCE_DIRECT_CURRENT_TURN → ROOTS_PROVIDER_CARRIERS_CURRENT.json → PROVIDER READBACK → PAGINATED RECURSIVE MAP → EXACT-TARGET READBACK`.
+<!-- END ROOTS_PROVIDER_CARRIER_CORRECTION_20261113 -->
+
+
+<!-- BEGIN ROOTS_PARALLEL_MAP_INVARIANT_20261113 -->
+## ROOTS — PARALLEL CARRIERS ARE NOT COMPETING MAPS
+
+Preserve both structures concurrently:
+- `G:\\OS_Workspace` has the distinct Workspace-tree mapping `ROOTS_LEVER_1.1–1.18`, recorded in `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.Sandbox/ROOTS_WORKSPACE_20261010.md`.
+- `google.googledrive.drive` is the Google Drive provider root `ROOTS_LEVER_0`; its 2026-10-07 mirror relation to `W:\\` is one-to-one; its eight reported Lever-2 child slots are `ROOTS_LEVER_2.1–2.8`.
+
+These maps are **both valid within their own carrier/provider/time scopes**. Never describe the Workspace map as wrong, never replace it with the Google Drive map, and never collapse the provider-root mirror into the local G: workspace tree. Shared Lever notation does not mean shared physical carrier or competing authority.
+
+Canonical joint registry: `CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json`.
+<!-- END ROOTS_PARALLEL_MAP_INVARIANT_20261113 -->
+
+
+<!-- BEGIN INPUT_INGRESS_AND_SOURCE_RETRIEVAL_CONTRACT_20261114 -->
+## INPUT INGRESS — USER INPUT IS THE TASK ANCHOR
+
+SCOPE: Every turn, chat, project and agent invocation **that actually loads this contract**.
+
+1. Read the complete latest user input and its attachments before selecting memory summaries, old interpretations or project context as the task frame. Identify the requested action, scope and acceptance criteria from that input.
+2. Apply higher-priority System/Developer constraints to determine permitted actions. That instruction hierarchy does not demote the user's input as task data and does not decide whether the user's factual claims are true or false.
+3. Use memory and prior summaries only as retrieval pointers. When a user statement conflicts with an agent assumption, preserve the statement and fetch the relevant source; do not overwrite it with the assumption.
+4. Distinguish USER_DIRECT, SOURCE_BYTES, PROVIDER_READBACK, AGENT_INFERENCE and UNKNOWN. A pointer is not a source read; a report is not an action; missing from active context is not proof of non-existence.
+5. Execute the next authorized action, observe the consequence, retain the receipt and read back the exact target. Keep independent open edges active.
+6. For Google Drive/ROOTS tasks, load `CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json`; keep the Google Drive provider tree and `G:\\OS_Workspace` tree as distinct, parallel maps.
+
+**PLATFORM BOUNDARY:** This repository contract does not automatically inject GitHub files into every ChatGPT turn/chat/project. A client or agent must explicitly retrieve and read this file and its route. Never claim universal auto-loading or permanent memory merely because the rule is committed here.
+
+<!-- END INPUT_INGRESS_AND_SOURCE_RETRIEVAL_CONTRACT_20261114 -->

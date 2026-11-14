@@ -1,0 +1,125 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.0",
+  "observed_at_local": "2026-10-25T15:34:21+07:00",
+  "observed_at_utc": "2026-10-25T08:34:21Z",
+  "state": "OPEN_WORK_REMAINS",
+  "time_basis": "Fresh n8n connector readback, GitHub default-branch readback, and current GitHub issue-state readback. No fresh host or Android probe in this turn.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1519ICT.json",
+    "blob_sha": "f0c14d6d1bec6c558cb3b5fce51e8ee3b47280eb",
+    "commit_sha": "256fe1c02a106203ad81c591847af0eac73ae5c7",
+    "readback_verified": true
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "latest_execution_id": "161",
+    "latest_execution_status": "success",
+    "latest_execution_mode": "trigger",
+    "started_at_utc": "2026-10-25T08:00:22.077Z",
+    "stopped_at_utc": "2026-10-25T08:00:24.257Z",
+    "exact_execution_data_readback": true,
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_table_rows": 350,
+    "latest_cloud_row_id": 350,
+    "latest_cloud_event_id": "X20261025080024100_CLOUD",
+    "latest_cloud_state": "OPEN_WORK_REMAINS",
+    "latest_cloud_evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_project_id": "6qKpRmicIGHA5snY",
+    "recovery_rows": 45,
+    "unfinished_rows": 45,
+    "tasks_closed": 0,
+    "host_heartbeat_probed_by_workflow": false,
+    "interpretation": "Execution 161 read back from actual execution data; successful cloud scan only. It does not establish host or Android availability."
+  },
+  "recovery_status_counts": {
+    "total_rows": 45,
+    "OPEN_ROUTED_NONCOERCIVE": 27,
+    "IN_PROGRESS": 1,
+    "other_nonterminal_statuses": 17,
+    "terminal_rows": 0
+  },
+  "github_task_ledger": {
+    "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "blob_sha": "0782e1def4e9f21b596f1efafa86def614006a6e",
+    "fetch_blob_json_parse": "PASS",
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "tasks_closed": 0,
+    "latest_ledger_commit_observed": "638f5b7c746c786f7395c9ec37e7d3b32bccadd0",
+    "latest_pointer_only_commit_observed": "fbb49aa121fc526dcae9a321fe565a90ac610283",
+    "exact_blob_readback_and_json_parse": true
+  },
+  "github_issue_state_readback": {
+    "observed_at_local": "2026-10-25T15:34:21+07:00",
+    "PR34": {
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "number": 34,
+      "state": "open",
+      "updated_at_utc": "2026-10-25T00:11:31Z"
+    },
+    "PR35": {
+      "repository": "2708halinh-cloud/SOL-LONG-MACH",
+      "number": 35,
+      "state": "open",
+      "updated_at_utc": "2026-10-25T02:28:52Z"
+    },
+    "PR6": {
+      "repository": "2708halinh-cloud/x-time-web",
+      "number": 6,
+      "state": "open",
+      "updated_at_utc": "2026-10-24T16:46:27Z"
+    },
+    "note": "Issue endpoint confirms open state only; no new merge, CI, or head-state claim inferred."
+  },
+  "host": {
+    "fresh_host_probe_this_turn": false,
+    "latest_recorded_host_probe_local": "2026-10-25T15:08:09.165+07:00",
+    "host_clock_at_latest_recorded_probe_local": "2026-10-25T15:01:58.0165168+07:00",
+    "scheduled_task_next_run_at_last_probe_local": "2026-10-25T15:06:32+07:00",
+    "current_host_state": "UNKNOWN_AFTER_LAST_RECORDED_PROBE",
+    "live_sensor_stream_status": "EVENT_TIMESTAMP_STALE_AT_LAST_RECORDED_PROBE",
+    "exact_modual_source_found_at_last_recorded_probe": false,
+    "expected_modual_source_bytes": 89814328,
+    "expected_modual_source_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "source_sha256_last_recorded": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_bytes_last_recorded": 35389440,
+    "interpretation": "Do not infer any host tick after the host-local scheduled time from cloud timestamps or n8n success."
+  },
+  "provider_access": {
+    "github_connector": "AVAILABLE_AND_USED",
+    "n8n_connector": "AVAILABLE_AND_USED",
+    "dropbox_tools": "SURFACED_BUT_READ_ATTEMPT_REJECTED_BY_LINK_ID_SELECTOR; NO_PROVIDER_DATA_READ",
+    "google_drive_connector": "NOT_EXPOSED_IN_THIS_TURN",
+    "authorized_host_connector": "NOT_USED_OR_EXPOSED_FOR_FRESH_PROBE"
+  },
+  "next": [
+    "After the next n8n hourly pulse, read the actual execution payload and evidence-table row; do not trigger a duplicate manual scan.",
+    "Use an authorized provider account/connector to read metadata, revision, bytes and hash for both MAP_NGUON object references; preserve the discrepancy until proved.",
+    "Retrieve original JINEY, FUNiX and DATNGUYEN/MINH exports independently from an authorized source; do not treat derived archives as raw exports.",
+    "Fresh-read the Windows host using an authorized callable route; do not infer a tick from cloud heartbeat.",
+    "Review the five PR #34 paths with a three-way diff against current main before any re-cut. Keep PR #34, #35 and #6 open; no merge, force-push, or CI rerun without the missing verified preconditions.",
+    "Preserve all 29 GitHub task states and all 45 n8n recovery rows as nonterminal."
+  ],
+  "continuation_guards": {
+    "preserve_open_and_in_progress": true,
+    "no_google_drive_writes": true,
+    "no_process_termination": true,
+    "no_cache_or_meta_db_deletion": true,
+    "no_source_mutation": true,
+    "no_secret_values": true,
+    "no_raw_sensor_values_stored": true,
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "no_merge_or_force_push": true,
+    "no_candidate_substitution_for_exact_modual_source": true,
+    "tasks_closed": 0
+  }
+}

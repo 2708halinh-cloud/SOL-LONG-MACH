@@ -1,0 +1,46 @@
+{
+  "record_type": "APPEND_ONLY_GITHUB_PR_COMPARE_READBACK",
+  "id": "ARCHIVE_PR36_COMPARE_READBACK_20261026T0701ICT",
+  "observed_at_utc": "2026-10-26T00:09:44.745Z",
+  "observed_at_local": "2026-10-26T07:09:44.745+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "main_head_at_current_compare": "962f6993cad3df69a95923f50d533a17c100ddd4",
+  "pull_request": {
+    "number": 36,
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+    "state": "OPEN",
+    "draft": true,
+    "merged": false,
+    "head_sha": "00400b4f81a31293b1960ed1709280130cc25db3",
+    "base_sha_reported_by_pr_metadata": "cbb8e2074695670398d2ee9ca4462bbbd55cee7c"
+  },
+  "current_compare": {
+    "base": "main",
+    "head": "fix/archive-adapters-main-recut-20261025T1534ICT",
+    "status": "diverged",
+    "ahead_by": 14,
+    "behind_by": 18,
+    "merge_base_sha": "cbb8e2074695670398d2ee9ca4462bbbd55cee7c",
+    "changed_paths": [
+      ".github/workflows/archive-readonly-adapters.yml",
+      "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py",
+      "tests/test_sol_archive_10_formats.py",
+      "tests/test_sol_library_stone_topology.py",
+      "tests/verify_real_archive_fixtures.py"
+    ]
+  },
+  "prior_observation_correction": {
+    "prior_record": "PROVIDER_READBACK_20261026T0700ICT.json",
+    "prior_compare_main_sha": "240dfaa1e738855857ce26005dfebbfaf27bf6ee",
+    "prior_compare_ahead_by": 14,
+    "prior_compare_behind_by": 14,
+    "finding": "The 14/14 comparison was performed against main at 240dfaa1, not against the later main head recorded immediately before checkpoint creation.",
+    "correction": "The fresh compare against main 962f6993 reports 14 ahead / 18 behind. The preceding re-entry sentence that attached 14/14 to main 62e7d663 is superseded by this append-only correction."
+  },
+  "action": {
+    "branch_update_performed": false,
+    "merge_performed": false,
+    "force_push_performed": false,
+    "reason": "The branch is diverged; preserve the five-path patch and review current-main integration before any non-force update."
+  }
+}

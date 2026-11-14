@@ -1,0 +1,57 @@
+{
+  "id": "REALITY_STONE",
+  "name": "@REALITY_STONE",
+  "version": "0.1.0",
+  "type": "SOL_LOCAL_SOURCE_PLUGIN",
+  "description": "Read-only provenance, anomaly signals and defensive recovery plans for SOL; not an offensive access or destructive tool.",
+  "canonical_location": "OS_WORK/tools/Chuỗi công cụ/_Plugins/REALITY_STONE",
+  "capability_router": "Chuỗi công cụ/_Plugins/Power_Router_V2/POWER_CAPABILITY_ROUTES_V2.json",
+  "skill_index": "SKILL_INDEX.json",
+  "main": "reality_stone.py",
+  "operations": [
+    {
+      "id": "list_skills",
+      "mode": "read_only",
+      "requires_approval": false
+    },
+    {
+      "id": "trace_skill",
+      "mode": "read_only",
+      "requires_approval": false
+    },
+    {
+      "id": "audit_event",
+      "mode": "read_only",
+      "requires_approval": false
+    },
+    {
+      "id": "recovery_plan",
+      "mode": "dry_run",
+      "requires_approval": false
+    }
+  ],
+  "enabled_remote_network": false,
+  "default_dry_run": true,
+  "write_access": false,
+  "credential_access": false,
+  "forbidden": [
+    "code injection",
+    "unauthorized system access",
+    "resource exhaustion",
+    "data poisoning",
+    "live monitoring evasion",
+    "ransomware",
+    "firmware modification",
+    "partition destruction"
+  ],
+  "runtime_requirements": {
+    "environment": "AUTHORIZED_SOL_RUNTIME_ONLY",
+    "live_installation": "UNVERIFIED",
+    "secret_policy": "NO_SECRETS_IN_SOURCE"
+  },
+  "source_ref": "SOURCE_DIRECT_USER_2026-10-18",
+  "labels": {
+    "reality": "defensive evidence/readback",
+    "performance": "10 → 13ms/s UNBENCHMARKED"
+  }
+}

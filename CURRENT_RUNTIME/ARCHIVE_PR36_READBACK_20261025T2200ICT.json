@@ -1,0 +1,97 @@
+{
+  "schema": "SOL_GITHUB_BRANCH_READBACK/1.0",
+  "id": "ARCHIVE_PR36_READBACK_20261025T2200ICT",
+  "observed_at_utc": "2026-10-25T15:00:29.200Z",
+  "observed_at_local": "2026-10-25T22:00:29+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "main_head_before_readback_commit": "9a16f8e711779218f57daef6d7aa196d58af0729",
+  "branch": {
+    "pull_request": 36,
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "branch_name": "fix/archive-adapters-main-recut-20261025T1534ICT",
+    "head_sha": "8ac57f8a751d7c9c679bc8d32b6e8b19c52c9340",
+    "updated_at_utc": "2026-10-25T14:56:06Z",
+    "commits": 8,
+    "compare_to_main_before_readback_commit": {
+      "main_sha": "9a16f8e711779218f57daef6d7aa196d58af0729",
+      "status": "diverged",
+      "ahead_by": 8,
+      "behind_by": 87,
+      "merge_base": "4368bd266003a8c0eb455618dc1c4ce7c4efe8f3"
+    },
+    "current_head_check_runs": [
+      {
+        "run_id": 40204553609,
+        "name": "secret-guard",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40204553603,
+        "name": "readonly-adapters",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40204553577,
+        "name": "verify-stone-folders",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40204550202,
+        "name": "verify-stone-folders",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40204550214,
+        "name": "secret-guard",
+        "conclusion": "success"
+      }
+    ],
+    "changed_paths": [
+      {
+        "path": ".github/workflows/archive-readonly-adapters.yml",
+        "status": "added"
+      },
+      {
+        "path": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py",
+        "status": "modified"
+      },
+      {
+        "path": "tests/test_sol_archive_10_formats.py",
+        "status": "added"
+      },
+      {
+        "path": "tests/test_sol_library_stone_topology.py",
+        "status": "modified"
+      },
+      {
+        "path": "tests/verify_real_archive_fixtures.py",
+        "status": "added"
+      }
+    ],
+    "merge_or_force_push_performed": false
+  },
+  "correction": {
+    "prior_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T2157ICT.json",
+    "prior_checkpoint_blob_sha": "76526ec34ccb46b9d60e677049e67b2cd5361097",
+    "prior_snapshot_pr_head": "e9c299594447d75bebb75c343cdb707731c7ea50",
+    "latest_pr_readback_head": "8ac57f8a751d7c9c679bc8d32b6e8b19c52c9340",
+    "reason": "The first PR readback returned an older cached head. A later exact PR readback shows three additional commits and current-head check runs; preserve the prior snapshot as historical and use this record for the newer observation.",
+    "prior_snapshot_overwritten": false
+  },
+  "continuity": {
+    "task_resume_pointer_still_points_to": "CURRENT_RUNTIME/PROVIDER_READBACK_202610251902ICT.json",
+    "pointer_reconciliation_applied": false,
+    "open_task_count": 29,
+    "tasks_closed": 0
+  },
+  "safety": {
+    "merge": false,
+    "force_push": false,
+    "_ci_rerun": false,
+    "source_data_export": false,
+    "credentials_exported": false
+  }
+}

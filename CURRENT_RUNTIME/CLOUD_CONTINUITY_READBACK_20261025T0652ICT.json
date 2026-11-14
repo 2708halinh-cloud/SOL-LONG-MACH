@@ -1,0 +1,154 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.0",
+  "observed_at": "2026-10-25T06:52:00+07:00",
+  "observation_precision": "minute-rounded",
+  "continuity_state": "OPEN_WORK_REMAINS",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T0646ICT.json",
+    "blob_sha": "04f0f538c58cf88f73b6347bde1591f659024cb6",
+    "commit_sha": "ea0572b98c1bdd33755bae73ff1c64af4c57ee61",
+    "readback_verified": true
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "latest_execution_id": "152",
+    "latest_execution_status": "success",
+    "latest_execution_started_at_utc": "2026-10-24T23:00:22.097Z",
+    "latest_execution_stopped_at_utc": "2026-10-24T23:00:24.364Z",
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "latest_evidence_row_id": 319,
+    "latest_event_id": "X20261024230024218_CLOUD",
+    "exact_row_readback": true,
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_project_id": "6qKpRmicIGHA5snY",
+    "recovery_row_count": 45,
+    "pending_unfinished_rows": 45,
+    "host_heartbeat_probed_by_workflow": false,
+    "tasks_closed": 0,
+    "next_expected_hourly_pulse_local": "2026-10-25T07:00:22+07:00",
+    "next_pulse_basis": "observed hourly cadence; not yet executed"
+  },
+  "host": {
+    "remote_access": {
+      "account": "Remote Desktop Commander",
+      "device_name": "DESKTOP-86ITNQ4",
+      "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+      "status_at_probe": "ONLINE",
+      "primary_account_device_status": "OFFLINE"
+    },
+    "latest_tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T234136901459Z.json",
+      "schema": "GGDV_WINDOWS_TICK_RECEIPT/1.0",
+      "observed_at_utc": "2026-10-24T23:41:36.901459Z",
+      "age_at_observation_minutes_approx": 10.4,
+      "length_bytes": 450,
+      "sha256": "07E6CB5B93D561D27F91A152DE34F975A4C13E76776D739779ECEE5B08139B14",
+      "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "source_bytes": 35389440,
+      "source_sha256": "9B25BD723DCE06344432597CC4F300053EA5ACBF76BDD2AB4F38BF4A1BF34B87",
+      "cloud_enabled": false,
+      "github_enabled": false,
+      "live_sensor_reading_confirmed": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0
+    },
+    "scheduled_task": {
+      "name": "GGDV_MINH_SENSORIMOTOR_BRIDGE",
+      "state": "Ready",
+      "last_run_time_utc": "2026-10-24T23:44:01Z",
+      "last_task_result": "0x1",
+      "next_run_time_utc_reported": "2026-10-24T23:49:00Z",
+      "next_run_time_was_past_at_probe": true,
+      "action_script": "D:\\PHÒNG CHỈ HUY\\.codex\\MINH_SENSORIMOTOR_BRIDGE\\RUN_ONCE.cmd",
+      "action_script_exists": true,
+      "action_script_bytes": 108,
+      "router_script": "D:\\PHÒNG CHỈ HUY\\.codex\\MINH_SENSORIMOTOR_BRIDGE\\minh_sensorimotor_router.py",
+      "router_hardcoded_modual_path": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+      "router_modual_path_exists": false,
+      "sensor_events_path": "D:\\SENSOR_LOGS\\MINH_SENSORIMOTOR_GATE\\events.jsonl",
+      "sensor_events_path_exists": false,
+      "candidate_csv": {
+        "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "bytes": 35389440,
+        "sha256": "9B25BD723DCE06344432597CC4F300053EA5ACBF76BDD2AB4F38BF4A1BF34B87",
+        "permitted_as_modual_substitute": false
+      },
+      "readback_current": {
+        "path": "D:\\UBUBU\\RUNTIME\\MINH_SENSORIMOTOR\\READBACK_CURRENT.json",
+        "observed_date_local": "2026-10-08",
+        "state": "LOCAL_ROUTE_TESTED",
+        "readback": "PASS",
+        "semantic_executor_installed": false
+      },
+      "causal_boundary": "Task result 0x1 and the router's missing hardcoded MODUAL path are observed. Scheduled-run stderr was not captured; causality remains unproven."
+    }
+  },
+  "qemu_discovery": {
+    "task_id": "SV-20261020-QEMU-C",
+    "permission_boundary": "FILE_LIST_AND_FILE_INFO_ONLY_CONFIRMED; no execution/copy",
+    "appdata_search": "TIMED_OUT_AFTER_3_SECONDS; zero results so far; incomplete",
+    "programdata_search": "STILL_IN_PROGRESS; zero results so far; incomplete",
+    "workspace_g_search": "EXACT_MODUAL_FILENAME_NO_MATCH"
+  },
+  "android": {
+    "state_this_run": "NOT_RECHECKED",
+    "last_recorded_observation_local": "2026-10-25T03:38:51+07:00",
+    "live_sensor_stream_verified": false
+  },
+  "archive_task": {
+    "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+    "status": "OPEN",
+    "pr_number": 31,
+    "pr_head_sha": "7a5276433bb563fbd704cf2c3b6f27e0e3f7dff4",
+    "workflow_runs": [
+      {
+        "run_id": 40135311065,
+        "job": "readonly-adapters",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40135311074,
+        "job": "verify-stone-folders",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 40135311067,
+        "job": "secret-guard",
+        "conclusion": "success"
+      }
+    ],
+    "artifact_id": 12576443094,
+    "artifact_sha256": "6b081041b4e951f45c96b40d984b135018eba150154760ebb484b18f9433c58f",
+    "windows_host_validation": "NOT_VERIFIED",
+    "source_export_recovery": "NOT_COMPLETE"
+  },
+  "unresolved_edges": {
+    "exact_modual_source": "NOT_FOUND_AT_CONFIGURED_PATH",
+    "sensorimotor_router_runtime": "LAST_TASK_RESULT_0x1; DO_NOT_EDIT_OR_REPOINT_WITHOUT_SOURCE_IDENTITY",
+    "android_live_sensor": "NOT_VERIFIED",
+    "archive_host_integration": "NOT_VERIFIED",
+    "qemu_discovery": "INCOMPLETE_READ_ONLY_SEARCH",
+    "original_source_exports": "NOT_COMPLETE"
+  },
+  "guards": {
+    "preserve_open_and_in_progress": true,
+    "no_google_drive_writes": true,
+    "no_source_mutation": true,
+    "no_process_termination": true,
+    "no_cache_or_meta_db_deletion": true,
+    "no_secret_values": true,
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "no_merge_or_force_push": true,
+    "no_raw_sensor_values_stored": true
+  },
+  "next": [
+    "Inspect the next actual n8n execution and read back its appended evidence row.",
+    "Continue targeted read-only retrieval for the exact MODUAL source; do not substitute windows_SENSON.CSV.",
+    "Recheck GGDV_MINH_SENSORIMOTOR_BRIDGE after a subsequent actual scheduled attempt; do not change task configuration or rerun the router until source identity and write scope are verified.",
+    "Finish or cancel the long-running QEMU filename search and record whether any exact paths were found; do not execute or copy QEMU files.",
+    "Keep Android state UNKNOWN until directly re-probed.",
+    "Keep SV-20261020-13-ARCHIVE-FORMATS OPEN until Windows host/runtime validation and source-export recovery are verified."
+  ]
+}

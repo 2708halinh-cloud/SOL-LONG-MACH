@@ -1,0 +1,610 @@
+{
+  "schema": "SOL_AZURE_DEVOPS_MCP_TOOLSET_INDEX_V1",
+  "source_document": "docs/TOOLSET.md",
+  "source_repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "source_blob_sha": "364f5c9e175d79a9ca0a15f9e6d593a03e686224",
+  "source_basis": "User-supplied Azure DevOps local MCP toolset; canonical table already exists in tools",
+  "date": "2026-10-15",
+  "mcp_server": "Azure DevOps local MCP",
+  "connection_status": "NOT_CONNECTED_IN_THIS_CHAT",
+  "mcp_invocation_verified": false,
+  "parameter_schemas_in_source": false,
+  "tool_count": 44,
+  "route_count": 97,
+  "category_count": 9,
+  "category_order": [
+    "Core",
+    "Work",
+    "Work Items",
+    "Repositories",
+    "Pipelines",
+    "Test Plans",
+    "Wiki",
+    "Search",
+    "Advanced Security"
+  ],
+  "entries": [
+    {
+      "category": "Core",
+      "tool": "core_list_projects",
+      "action": null,
+      "description": "List all projects in the organization"
+    },
+    {
+      "category": "Core",
+      "tool": "core_list_project_teams",
+      "action": null,
+      "description": "List teams within a project"
+    },
+    {
+      "category": "Core",
+      "tool": "core_get_identity_ids",
+      "action": null,
+      "description": "Retrieve identity IDs by search filter"
+    },
+    {
+      "category": "Work",
+      "tool": "work",
+      "action": "list_iterations",
+      "description": "List all iterations in a project"
+    },
+    {
+      "category": "Work",
+      "tool": "work",
+      "action": "list_team_iterations",
+      "description": "List iterations assigned to a team"
+    },
+    {
+      "category": "Work",
+      "tool": "work",
+      "action": "get_team_settings",
+      "description": "Get team settings including default iteration, backlog iteration, and default area path"
+    },
+    {
+      "category": "Work",
+      "tool": "work",
+      "action": "get_team_capacity",
+      "description": "Get team capacity for an iteration"
+    },
+    {
+      "category": "Work",
+      "tool": "work",
+      "action": "get_iteration_capacities",
+      "description": "Get an iteration's capacity for all teams in the iteration and project"
+    },
+    {
+      "category": "Work",
+      "tool": "work_iteration_write",
+      "action": "create",
+      "description": "Create iterations"
+    },
+    {
+      "category": "Work",
+      "tool": "work_iteration_write",
+      "action": "assign",
+      "description": "Assign iterations to a team"
+    },
+    {
+      "category": "Work",
+      "tool": "work_capacity_write",
+      "action": "update",
+      "description": "Update the team capacity of a team member for a specific iteration"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item",
+      "action": "get",
+      "description": "Get a single work item by ID"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item",
+      "action": "get_batch",
+      "description": "Retrieve multiple work items by IDs"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item",
+      "action": "list_comments",
+      "description": "List comments on a work item"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item",
+      "action": "my",
+      "description": "List work items relevant to the authenticated user"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item",
+      "action": "list_revisions",
+      "description": "Get revision history of a work item"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item",
+      "action": "list_for_iteration",
+      "description": "Get work items in a specific team iteration"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item",
+      "action": "get_type",
+      "description": "Get metadata for a work item type"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_write",
+      "action": "create",
+      "description": "Create a new work item"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_write",
+      "action": "update",
+      "description": "Patch fields and relations; supports `test /rev` concurrency"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_write",
+      "action": "update_batch",
+      "description": "Update multiple work items in one call"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_write",
+      "action": "add_child",
+      "description": "Create child work items under a parent"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_comment_write",
+      "action": "add",
+      "description": "Add a comment to a work item"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_comment_write",
+      "action": "update",
+      "description": "Update an existing comment on a work item"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_link_write",
+      "action": "link",
+      "description": "Link two work items together"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_link_write",
+      "action": "unlink",
+      "description": "Remove links from a work item"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_link_write",
+      "action": "link_to_pull_request",
+      "description": "Link a work item to a pull request"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_link_write",
+      "action": "add_artifact_link",
+      "description": "Add a repository, branch, commit, or build artifact link to a work item"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_query",
+      "action": "get",
+      "description": "Get a work item query by ID or path"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_query",
+      "action": "get_results",
+      "description": "Execute a saved query and return results"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_query",
+      "action": "wiql",
+      "description": "Execute an ad-hoc WIQL query"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_backlog",
+      "action": "list",
+      "description": "List backlog levels for a team"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_backlog",
+      "action": "list_work_items",
+      "description": "Get work items in a specific backlog level"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_backlog",
+      "action": "reorder",
+      "description": "Reorder work items in a backlog or iteration"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_attachment",
+      "action": null,
+      "description": "Download a work item attachment; save locally or return as base64"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_attachment_upload",
+      "action": null,
+      "description": "Upload a file as a new work item attachment without linking it"
+    },
+    {
+      "category": "Work Items",
+      "tool": "wit_work_item_attachment_link",
+      "action": null,
+      "description": "Link an uploaded attachment to a work item"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_repository",
+      "action": "get",
+      "description": "Get a repository by name or ID"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_repository",
+      "action": "list",
+      "description": "List repositories in a project"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request",
+      "action": "get",
+      "description": "Get a pull request by ID"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request",
+      "action": "list",
+      "description": "List pull requests in a repository or project"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request",
+      "action": "list_by_commits",
+      "description": "Find pull requests that contain specific commit IDs"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request_org",
+      "action": null,
+      "description": "List the authenticated user's active pull requests organization-wide"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request_thread",
+      "action": "list",
+      "description": "List comment threads on a pull request"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request_thread",
+      "action": "list_comments",
+      "description": "List comments in a specific thread"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_branch",
+      "action": "get",
+      "description": "Get a branch by name"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_branch",
+      "action": "list",
+      "description": "List branches in a repository"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_branch",
+      "action": "list_mine",
+      "description": "List branches the current user has pushed to"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_file",
+      "action": "get_content",
+      "description": "Get the text content of a file at a specific branch, tag, or commit"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_file",
+      "action": "list_directory",
+      "description": "List files and folders in a directory"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_file_write",
+      "action": "create",
+      "description": "Create a text file on an existing branch and commit the change"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_file_write",
+      "action": "update",
+      "description": "Update a text file on an existing branch and commit the change"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_search_commits",
+      "action": null,
+      "description": "Search commits with filtering by text, author, date range, and more"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request_write",
+      "action": "create",
+      "description": "Create a pull request"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request_write",
+      "action": "update",
+      "description": "Update a pull request, including setting autocomplete"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request_write",
+      "action": "update_reviewers",
+      "description": "Add or remove pull request reviewers"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request_write",
+      "action": "vote",
+      "description": "Cast a vote on a pull request"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request_thread_write",
+      "action": "create",
+      "description": "Create a new comment thread on a pull request"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request_thread_write",
+      "action": "reply",
+      "description": "Reply to a comment in a thread"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request_thread_write",
+      "action": "update",
+      "description": "Update an existing comment in a thread"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_pull_request_thread_write",
+      "action": "update_status",
+      "description": "Update the status of a comment thread"
+    },
+    {
+      "category": "Repositories",
+      "tool": "repo_create_branch",
+      "action": null,
+      "description": "Create a branch"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_build",
+      "action": "list",
+      "description": "List builds with optional filters"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_build",
+      "action": "get_status",
+      "description": "Get status, issues, and report metadata for a build"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_build",
+      "action": "get_changes",
+      "description": "Get commits and work items associated with a build"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_build_log",
+      "action": "list",
+      "description": "List available logs for a build"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_build_log",
+      "action": "get_content",
+      "description": "Get the text content of a specific log by ID"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_definition",
+      "action": "list",
+      "description": "List pipeline definitions with optional filters"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_definition",
+      "action": "list_revisions",
+      "description": "List revision history for a pipeline definition"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_run",
+      "action": "get",
+      "description": "Get a single pipeline run"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_run",
+      "action": "list",
+      "description": "List runs for a pipeline"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_artifact",
+      "action": "list",
+      "description": "List artifacts for a build"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_artifact",
+      "action": "download",
+      "description": "Download a named build artifact"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_write",
+      "action": "run_pipeline",
+      "description": "Queue a new pipeline run"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_write",
+      "action": "create_pipeline",
+      "description": "Create a new YAML pipeline definition"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_write",
+      "action": "rename_pipeline",
+      "description": "Rename an existing pipeline definition"
+    },
+    {
+      "category": "Pipelines",
+      "tool": "pipelines_write",
+      "action": "update_build_stage",
+      "description": "Cancel, retry, or run a stage on an in-flight build"
+    },
+    {
+      "category": "Test Plans",
+      "tool": "testplan",
+      "action": "list_plans",
+      "description": "List test plans in a project"
+    },
+    {
+      "category": "Test Plans",
+      "tool": "testplan",
+      "action": "list_suites",
+      "description": "List test suites under a test plan"
+    },
+    {
+      "category": "Test Plans",
+      "tool": "testplan",
+      "action": "list_cases",
+      "description": "List test cases under a test suite"
+    },
+    {
+      "category": "Test Plans",
+      "tool": "testplan_show_test_results_from_build_id",
+      "action": null,
+      "description": "Get test results for a specific build"
+    },
+    {
+      "category": "Test Plans",
+      "tool": "testplan_test_plan_write",
+      "action": "create",
+      "description": "Create a new test plan"
+    },
+    {
+      "category": "Test Plans",
+      "tool": "testplan_test_suite_write",
+      "action": "create",
+      "description": "Create a test suite within a test plan"
+    },
+    {
+      "category": "Test Plans",
+      "tool": "testplan_test_suite_write",
+      "action": "add_test_cases",
+      "description": "Add test cases to a test suite"
+    },
+    {
+      "category": "Test Plans",
+      "tool": "testplan_test_case_write",
+      "action": "create",
+      "description": "Create a new test case work item"
+    },
+    {
+      "category": "Test Plans",
+      "tool": "testplan_test_case_write",
+      "action": "update_steps",
+      "description": "Update steps of an existing test case"
+    },
+    {
+      "category": "Wiki",
+      "tool": "wiki",
+      "action": "list_wikis",
+      "description": "List all wikis in an organization or project"
+    },
+    {
+      "category": "Wiki",
+      "tool": "wiki",
+      "action": "get_wiki",
+      "description": "Get details of a specific wiki"
+    },
+    {
+      "category": "Wiki",
+      "tool": "wiki",
+      "action": "list_pages",
+      "description": "List pages in a wiki"
+    },
+    {
+      "category": "Wiki",
+      "tool": "wiki",
+      "action": "get_page",
+      "description": "Get wiki page metadata (without content)"
+    },
+    {
+      "category": "Wiki",
+      "tool": "wiki",
+      "action": "get_page_content",
+      "description": "Retrieve wiki page content"
+    },
+    {
+      "category": "Wiki",
+      "tool": "wiki_upsert_page",
+      "action": null,
+      "description": "Create or update a wiki page"
+    },
+    {
+      "category": "Search",
+      "tool": "search_code",
+      "action": null,
+      "description": "Search for code across repositories"
+    },
+    {
+      "category": "Search",
+      "tool": "search_wiki",
+      "action": null,
+      "description": "Search wiki pages by keywords"
+    },
+    {
+      "category": "Search",
+      "tool": "search_workitem",
+      "action": null,
+      "description": "Search work items by text and filters"
+    },
+    {
+      "category": "Advanced Security",
+      "tool": "advsec_get_alerts",
+      "action": null,
+      "description": "Retrieve Advanced Security alerts for a repository"
+    },
+    {
+      "category": "Advanced Security",
+      "tool": "advsec_get_alert_details",
+      "action": null,
+      "description": "Get detailed information about a specific security alert"
+    }
+  ]
+}

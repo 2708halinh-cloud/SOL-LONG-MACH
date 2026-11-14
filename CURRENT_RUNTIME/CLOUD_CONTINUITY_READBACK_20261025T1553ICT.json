@@ -1,0 +1,132 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.0",
+  "observed_at_utc": "2026-10-25T08:53:49.386Z",
+  "observed_at_local": "2026-10-25T15:53:49.386+07:00",
+  "state": "OPEN_WORK_REMAINS",
+  "prior_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1534_PR36.json",
+    "blob_sha": "83dad11b186557757fa857ec7f8e84368608a6e7",
+    "commit_sha": "0452a2ee17f357d6d9f0f21396d43918d987c033"
+  },
+  "provider_status": {
+    "github": "AVAILABLE_AND_USED",
+    "dropbox_outlook": {
+      "status": "METADATA_READ_SUCCESS",
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "rev": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "raw_bytes_downloaded": false,
+      "content_sha_recomputed": false
+    },
+    "remote_desktop_commander": {
+      "status": "DEVICE_INVENTORY_READ_SUCCESS",
+      "runtime_host_probe": false,
+      "devices": [
+        {
+          "name": "localhost",
+          "status": "Offline",
+          "last_seen": "12h ago"
+        },
+        {
+          "name": "DESKTOP-86ITNQ4",
+          "status": "Offline",
+          "last_seen": "119h ago"
+        },
+        {
+          "name": "DESKTOP-86ITNQ4 (older)",
+          "status": "Offline",
+          "last_seen": "344h ago"
+        }
+      ]
+    },
+    "n8n": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "161",
+      "status": "success",
+      "event_id": "X20261025080024100_CLOUD",
+      "row_id": 350,
+      "state": "OPEN_WORK_REMAINS",
+      "recovery_tasks": 45,
+      "pending_tasks": 45,
+      "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED",
+      "host_operations": 0,
+      "manual_duplicate_execution": false
+    }
+  },
+  "archive_branch": {
+    "pr36": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "e9c299594447d75bebb75c343cdb707731c7ea50",
+      "compare_to_main": "8c993b0de4b69289c0351aa97b49baaa3cdd56ca",
+      "status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 2,
+      "ci_runs": [
+        40177456089,
+        40177456127,
+        40177456080
+      ],
+      "all_ci_success": true,
+      "artifact_id": 12592822576,
+      "artifact_expired": false,
+      "exact_five_source_blob_matches_pr34": true,
+      "merge": false,
+      "force_push": false
+    },
+    "pr34": {
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "ahead_by": 1,
+      "behind_by": 169
+    },
+    "pr35": {
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "f99d96e39f62245d23ad728daac2c2006061e393",
+      "ahead_by": 9,
+      "behind_by": 153
+    },
+    "pr6": {
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "failed_runs": [
+        39994207477,
+        39994207667
+      ],
+      "steps": 0,
+      "artifacts": 0,
+      "issuer_public_key_verified": false,
+      "runner_assignment_verified": false,
+      "rerun": false
+    }
+  },
+  "github_ledger": {
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "tasks_closed": 0
+  },
+  "continuation_guards": {
+    "preserve_open": true,
+    "no_merge": true,
+    "no_force_push": true,
+    "no_source_mutation": true,
+    "no_secrets": true,
+    "no_raw_sensor_data": true,
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "tasks_closed": 0
+  },
+  "next": [
+    "Read the next actual hourly n8n execution and row after it occurs; do not trigger a duplicate manual scan.",
+    "Use an authorized callable host route when available; device inventory currently reports all Desktop Commander devices offline.",
+    "Keep PR #36 open and review the two-commit divergence against current main before any sync; preserve PR #34 and #35 without force-push or merge.",
+    "Keep PR #6 open; no CI rerun until issuer public-key provenance and runner assignment are verified."
+  ]
+}

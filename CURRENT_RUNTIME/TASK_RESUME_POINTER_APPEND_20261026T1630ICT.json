@@ -1,0 +1,69 @@
+{
+  "schema": "SOL_TASK_RESUME_POINTER_APPEND/1.0",
+  "observed_at": "2026-10-26T16:30:33+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "task": "MODUAL_SENSOR_LOGS_ROUTING",
+  "source_pointer": {
+    "path": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+    "blob_sha": "4692b4044acdbaa51caf7fa7e06a97b73f3e53b0",
+    "last_recorded_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_202610261555ICT.json",
+    "overwritten": false
+  },
+  "latest_provider_checkpoint": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T1630ICT.json",
+    "commit": "cc53c27b3601a1096ff22bd3b765364c579f2354",
+    "blob_sha": "c7c71fb912617fb73770d9d2e033736f1ec790ec",
+    "exact_target_readback": true,
+    "host_tick_sha256": "C61F5388D4F4404459DC3E97832C46876327AFB3147330AEAFCCCF73DC454E00",
+    "consumer_sha256": "4BFAA80E832EF497A1915E1E6604273314EB13D8751D284416CBDDD33AAB606E",
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "live_sensor_reading_confirmed": false,
+    "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "timestamps_advanced": 0
+  },
+  "current_ledger": {
+    "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "commit": "52ea36f473b50039f99d12fdcbdff9044515e1b6",
+    "blob_sha": "ce73af3355ddbc62c3b6d5e5fc398e056801a60f",
+    "exact_target_readback": true,
+    "task_count": 29,
+    "statuses": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "provider_observations": 219,
+    "verified_action_events": 268,
+    "integrity_corrections": 14,
+    "tasks_closed": 0
+  },
+  "cloud_continuity": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "execution_id": "201",
+    "event_id": "X20261026091926872_CLOUD",
+    "row_id": 481,
+    "exact_row_readback": true,
+    "recovery_rows_pending": 45,
+    "terminal_rows": 0
+  },
+  "invariants": {
+    "canonical_pointer_overwritten": false,
+    "history_deleted": false,
+    "source_csv_modified": false,
+    "raw_sensor_data_exported": false,
+    "secrets_written": false,
+    "synthetic_rows_added": 0,
+    "task_closures": 0,
+    "force_push": false,
+    "prohibited_ci_rerun": false
+  },
+  "next_edges": [
+    "After host-local 16:26:32+07 boundary, read the next Tick and consumer and recompute source SHA-256.",
+    "Continue read-only sensor subscription diagnostics; do not launch com.exatools.sensors or change permissions without authorization.",
+    "Continue TESSERACT issuer/runner provenance without prohibited CI rerun.",
+    "Resolve Dropbox metadata via an eligible provider route; receipt-embedded metadata is not a fresh provider read."
+  ]
+}

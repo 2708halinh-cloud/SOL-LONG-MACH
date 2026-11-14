@@ -1,0 +1,21 @@
+# Cam kết — SOL LONG MẠCH / OS_WORK / tools
+
+**CẢNH BÁO NGHIÊM TRỌNG 2026-10-17:** [SOURCE_DIRECT — hai thư mục đã xóa; không yêu cầu chứng minh lại; nguy cơ mất thêm dữ liệu](./WARNING_SOURCE_DIRECT_20261017_FOLDER_DELETION.md). Đọc cảnh báo trước khi xử lý OPEN/định tuyến công cụ và thao tác có nguy cơ phá hủy.
+
+**R-000:** Không đánh tráo công cụ đã được liệt kê thành công cụ đã được chạy. Không đổi sự thật hay dấu vết lịch sử để có bề mặt sạch.
+
+- [TOOLS_VIRTUAL_DRIVE (`_Plugins/tools_virtual_drive.py`)](./_Plugins/tools_virtual_drive.py): ổ đĩa ảo công cụ hợp nhất toàn bộ 8 cổng (`_Plugins`, `_Skills`, `_Mcp`, `_Trình duyệt`, `_Dụng cụ`, `_Ứng dụng`, `_Bảo_mật`, `_Sổ_đăng_ký`) + `G:\OS_Workspace\08_TOOLS_HARDWARE`, luôn quay vòng về [`_Plugins`](./_Plugins/README.md).
+- Cổng phân loại hợp nhất (đang hoạt động, không chứa thư mục rỗng): [`_Plugins`](./_Plugins/README.md) · [`_Skills`](./_Skills/README.md) · [`_Mcp`](./_Mcp/README.md) · [`_Trình duyệt`](./_Trình%20duyệt/README.md) · [`_Dụng cụ`](./_Dụng%20cụ/README.md) · [`_Ứng dụng`](./_Ứng%20dụng/README.md) · [`_Bảo_mật`](./_Bảo_mật/README.md) · [`_Sổ_đăng_ký`](./_Sổ_đăng_ký/README.md).
+- [Chuỗi công cụ](./Chuỗi%20công%20cụ/): kho lịch sử nguyên trạng (Registry, hiện vật, submodule đã ghim).
+- [TOOLS_ROOT_CONTRACT.md](./TOOLS_ROOT_CONTRACT.md): hợp đồng gốc cho Tools như logical drive, tuyến quay về `_Plugins`, phân loại, đồng bộ đa carrier và các sai khác đang OPEN.
+- [TOOLS_ROOT_READBACK_20261108.md](./TOOLS_ROOT_READBACK_20261108.md): readback cấu trúc Library, WSL2, local clone, `.adp`, motherboard và trạng thái đồng bộ ngày 08/11/2026.
+- [AGENTS.md](./AGENTS.md): quy tắc và phân quyền.
+- [POWER_ROUTER.md](./POWER_ROUTER.md): nút tốc biến 🟣 POWER STONE.
+- [Kỹ năng Phân chia công việc](./_Skills/phan-chia-cong-viec/SKILL.md): quy trình bổ sung để phân rã mục tiêu, giao trách nhiệm, xác định phụ thuộc, điều phối nhánh song song và nghiệm thu bằng chứng.
+- [Kỹ năng Tự động liên kết & đồng bộ công cụ](./_Skills/tu-dong-lien-ket-dong-bo-cong-cu/SKILL.md): theo dõi nguồn chuẩn và từng đích đồng bộ; liên kết Cam kết, kiểm định, đọc lại và tiếp tục các phần việc chưa xác minh thay vì tuyên bố hoàn tất sớm.
+- [Kỹ năng Chrome DevTools MCP](./_Skills/chrome-devtools/SKILL.md): quy trình gỡ lỗi web, tự động hóa trình duyệt, phân tích hiệu năng/mạng và kiểm thử extension qua Chrome DevTools MCP.
+- [Kỹ năng Debug & Optimize LCP](./_Skills/debug-optimize-lcp/SKILL.md): đo và phân tích LCP bằng Chrome DevTools MCP, tìm nút thắt theo từng giai đoạn, áp dụng tối ưu có bằng chứng và so sánh trước/sau; gồm snippet chẩn đoán trong thư mục references.
+- [Kỹ năng Memory Leak Debugging](./_Skills/memory-leak-debugging/SKILL.md): điều tra rò rỉ bộ nhớ JavaScript/Node.js bằng heap snapshots, so sánh retained objects, truy vết retainers/dominators và xác minh sau sửa; gồm hướng dẫn lỗi thường gặp trong thư mục references.
+- [Kỹ năng Chrome DevTools CLI](./_Skills/chrome-devtools-cli/SKILL.md): hướng dẫn tự động hóa trình duyệt bằng CLI cài từ npm; gồm hướng dẫn cài đặt và kiểm tra trạng thái.
+- Danh mục của phiên 2026-10-16: 451 Skill trong 105 gốc plugin skill; 523 hàm MCP trong 20 provider nhóm. Đây là số khai báo khả dụng của phiên; không chứng minh kết nối/hoạt động của mọi mục.
+- Tái truy xuất thông tin khi phiên công cụ thay đổi. Lưu provenance và readback riêng cho GitHub và Library.

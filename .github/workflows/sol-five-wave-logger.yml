@@ -1,0 +1,30 @@
+name: SOL Five-Wave Journal Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/brainwave_logger.py"
+      - "tests/test_brainwave_logger.py"
+      - ".github/workflows/sol-five-wave-logger.yml"
+  pull_request:
+    paths:
+      - "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/brainwave_logger.py"
+      - "tests/test_brainwave_logger.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-five-waves:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile journal implementation
+        run: python -m py_compile "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/brainwave_logger.py"
+      - name: Run 7 journal regression tests without secrets or live API
+        run: python -m unittest discover -s tests -p "test_brainwave_logger.py" -v

@@ -1,0 +1,293 @@
+{
+  "schema": "GGDV_PROVIDER_READBACK/1.0",
+  "id": "PROVIDER_READBACK_20261025T1502ICT",
+  "observed_at": "2026-10-25T15:03:25.252+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "main_head_before_checkpoint": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4",
+  "main_tree_before_checkpoint": "961f40b3d9e21eb50b9f7e23fdd53ab486d7b20a",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1454ICT.json",
+    "blob_sha": "10fead197dab635e4d43be6a9dd239db29034af1",
+    "commit": "5ef88853157ea2329d065936ebd522998c9d30a2"
+  },
+  "source_reads": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "fresh_read": true,
+      "exact_readback_after_tree_repair": true
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "b6bf672545d0ebbc631655cad675322a61995499",
+      "fresh_read": true,
+      "exact_readback_after_tree_repair": true
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "3ec3e93fdf5f85d9fe56876faf551a6aab499fbc",
+      "fresh_blob_readback": true
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "93f9c33ac96c9b15868a34f2eaa0e4aeef8c6ae0",
+      "fresh_blob_readback": true
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "blob_sha": "91d1f7dd2a29e46ea719f7b43efefb99d14414ab",
+      "fresh_read": true
+    },
+    "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1454ICT.json": {
+      "blob_sha": "10fead197dab635e4d43be6a9dd239db29034af1",
+      "fresh_read": true
+    }
+  },
+  "main_tree_repair": {
+    "incident": "A state update commit briefly made AGENTS.md, SOL_REENTRY_CURRENT.md and the 14:54 checkpoint unreadable at main; exact-target reads returned 404 while state JSON files remained readable.",
+    "affected_commit": "e23cea062381a21674ec8f6708e16ae279f79893",
+    "affected_tree": "ec00c0320c0b63dce176c338778bc32fce593877",
+    "repair_commit": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4",
+    "repair_tree": "961f40b3d9e21eb50b9f7e23fdd53ab486d7b20a",
+    "restored_from_full_tree": "41c408d2ec39eac20d03b229ada58ce800464956",
+    "repair_method": "Create a new full-tree commit on main; no force-push; prior commits retained.",
+    "verified_restored_paths": [
+      "AGENTS.md",
+      "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md",
+      "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1454ICT.json",
+      "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+      "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json"
+    ],
+    "result": "FULL_TREE_RESTORED_AND_EXACT_READBACK_VERIFIED"
+  },
+  "windows": {
+    "device": "DESKTOP-86ITNQ4",
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_device_local": "2026-10-25T14:56:33+07:00",
+      "next_run_device_local": "2026-10-25T15:01:32+07:00",
+      "last_result": "0x0",
+      "missed_runs": 0
+    },
+    "tick_receipt": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T075639106737Z.json",
+      "observed_at_utc": "2026-10-25T07:56:39.106737Z",
+      "sha256": "bc2895ee35032a28745923096ca539317f4e244eb6376779fc416719c9b9aa17",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "live_sensor_reading_confirmed": false,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "sensor_event_timestamp_sensor_count": 4,
+      "sensor_event_sensors_advanced": [],
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false
+    },
+    "consumer_receipt": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T075635961Z.json",
+      "observed_at_utc": "2026-10-25T07:56:39.2120144Z",
+      "sha256": "914c6e1fe4fae62bbab336821d8a625c82d38cf620ad8fe3c25f6f0f3a70d1db",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_bytes": 35389440,
+      "source_content_hash_verified": true,
+      "consumer_hash_matches_verifier": true,
+      "live_sensor_reading_confirmed": false,
+      "raw_rows_emitted": false,
+      "source_file_written": false,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "source_file": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z"
+    },
+    "clock_probe": {
+      "host_time_observed": "2026-10-25T14:57:07.6927452+07:00",
+      "runtime_observed_at": "2026-10-25T15:03:25.252+07:00",
+      "approximate_host_clock_lag_seconds": 311,
+      "w32time_status": "Stopped",
+      "w32time_start_mode": "Manual",
+      "w32time_source_probe": "Service has not been started (0x80070426)",
+      "current_user_is_administrator": false,
+      "system_clock_changed": false
+    },
+    "android_probe": {
+      "adb_binary_present": true,
+      "usb_target": "1056285",
+      "usb_state": "device",
+      "sensorservice_probe_succeeded": true,
+      "sensor_event_timestamp_sensor_count": 4,
+      "sensor_event_sensors_advanced": [],
+      "stream_status": "EVENT_TIMESTAMP_STALE",
+      "wireless_target": "192.168.1.14:5556",
+      "wireless_state": "NOT_LISTED",
+      "package": "com.exatools.sensors",
+      "package_version": "2.1.01",
+      "package_service_query": "No services found",
+      "other_sensor_app": "com.galaxy.sensortoolbox",
+      "other_sensor_app_services": "No services found",
+      "termux_installed": true,
+      "termux_run_command_service_present": true,
+      "termux_api_installed": false,
+      "controlled_foreground_test": {
+        "live_sensor_timestamps_advanced_while_app_active": true,
+        "advanced_sensors": [
+          "AK099_MAGNETOMETER",
+          "LSM6DSO_ACCELEROMETER",
+          "LSM6DSO_GYROSCOPE"
+        ],
+        "force_stopped_after_test": true,
+        "post_stop_status": "EVENT_TIMESTAMP_STALE"
+      },
+      "production_continuous_stream_verified": false,
+      "raw_sensor_values_persisted": false
+    }
+  },
+  "braid": {
+    "script": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\prove_braid_actual_20261020.py",
+    "exit_code": 0,
+    "six": {
+      "receipt": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261025T074536096210Z.json",
+      "sha256": "b08eb3ab73e4fe3901c9767d3fb4f25b264e337ff1cc1ce911f7bbfc875f9beb",
+      "executed_action_count": 9,
+      "receipt_readback_ok": true
+    },
+    "plural": {
+      "receipt": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261025T074536150268Z.json",
+      "sha256": "84abc8f94207df4dd53e4c8735f2d288fcec6258288fa38940ba52ed3620b21f",
+      "executed_action_count": 5,
+      "receipt_readback_ok": true
+    },
+    "source_sha256_unchanged": true,
+    "mutation_executed": false,
+    "cloud_host_wiring": "NOT_VERIFIED"
+  },
+  "continuity_guard_regression": {
+    "source": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\continuity_guard.py",
+    "tests": "G:\\OS_Workspace\\TESSERACT_OS\\tests\\test_continuity_guard.py",
+    "python_version": "3.12.10",
+    "test_count": 25,
+    "passed": 25,
+    "failed": 0,
+    "exit_code": 0
+  },
+  "provider": {
+    "dropbox": {
+      "account_scope": "Outlook-linked authenticated account",
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z"
+    },
+    "n8n": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "161",
+      "status": "success",
+      "event_id": "X20261025080024100_CLOUD",
+      "row_id": 350,
+      "state": "OPEN_WORK_REMAINS",
+      "recovery_tasks": 45,
+      "pending_tasks": 45,
+      "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED",
+      "host_operations": 0,
+      "tasks_closed": 0
+    }
+  },
+  "parallel_branches": {
+    "archive_pr34": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/34",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "compare_base_head": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4",
+      "compare_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 156,
+      "mergeable": false,
+      "ci_runs": [
+        40145523744,
+        40145523727,
+        40145523754
+      ],
+      "ci_conclusions": [
+        "success",
+        "success",
+        "success"
+      ],
+      "artifact": {
+        "id": 12580351639,
+        "name": "sol-archive-real-fixture-readback",
+        "run_id": 40145523727,
+        "size_bytes": 958,
+        "expired": false,
+        "expires_at": "2026-11-08T00:08:44Z"
+      },
+      "merged": false,
+      "force_push": false
+    },
+    "modual_pr35": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/35",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "f99d96e39f62245d23ad728daac2c2006061e393",
+      "compare_base_head": "24e9cc3855e7d36e69972bbf8094c870dd8dd6f4",
+      "compare_status": "diverged",
+      "ahead_by": 9,
+      "behind_by": 140,
+      "mergeable": false,
+      "test_run": {
+        "id": 40154600501,
+        "conclusion": "success"
+      },
+      "secret_guard_run": {
+        "id": 40154600506,
+        "conclusion": "success"
+      },
+      "merged": false,
+      "force_push": false
+    },
+    "tesseract_pr6": {
+      "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "runs": [
+        {
+          "id": 39994207477,
+          "conclusion": "failure",
+          "steps": 0,
+          "artifacts": 0
+        },
+        {
+          "id": 39994207667,
+          "conclusion": "failure",
+          "steps": 0,
+          "artifacts": 0
+        }
+      ],
+      "issuer_public_key_verified": false,
+      "runner_assignment_verified": false,
+      "ci_rerun_performed": false
+    }
+  },
+  "ledger_summary": {
+    "tasks": 29,
+    "statuses": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "tasks_closed": 0
+  },
+  "result": "FULL_TREE_RESTORED; TICK_AND_CONSUMER_VERIFIED_READONLY; CONTINUITY_GUARD_25_TESTS_PASS; LIVE_SENSOR_STREAM_NOT_VERIFIED; ALL_OPEN_RETAINED",
+  "next": [
+    "After the next device-clock Tick due 2026-10-25T15:01:32+07, exact-read the newest Tick/consumer receipts and recompute source SHA.",
+    "Continue finding a supported persistent sensor service/bridge; the existing sensor apps expose no services and timestamps stale after stop.",
+    "Keep Archive PR #34, MODUAL PR #35 and TESSERACT PR #6 open; no merge, force-push or CI rerun without verified evidence.",
+    "Keep tree-repair incident in append-only provenance; do not rewrite historical checkpoints or erase the affected commit."
+  ]
+}

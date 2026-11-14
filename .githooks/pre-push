@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+if ! command -v python >/dev/null 2>&1; then
+  echo 'BLOCKED: Python is unavailable; run the repository tests before pushing.' >&2
+  exit 1
+fi
+# Fast gate for source-principle, memory stewardship, and continuity invariants.
+# Run the complete test suite and CI checks before release.
+python -m unittest \
+  tests.test_continuity_guard \
+  tests.test_master_teacher_ethics \
+  tests.test_memory_stewardship \
+  tests.test_tesseract_agent_boot \
+  tests.test_companion_trust_guard \
+  tests.test_companion_consequence_gate

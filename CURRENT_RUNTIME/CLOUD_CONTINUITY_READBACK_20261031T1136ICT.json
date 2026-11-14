@@ -1,0 +1,361 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/9.4",
+  "state": "OPEN_WORK_REMAINS",
+  "observed_at_utc": "2026-10-31T04:36:33.280Z",
+  "observed_at_local": "2026-10-31T11:36:33.280+07:00",
+  "previous_pointer": {
+    "blob_sha": "c42cca8be5d20ee35e40325c4c10af1d4e8eaa8d",
+    "commit_sha": "405cee07fa64864db1694f972de5f9c3b695e04b",
+    "readback_verified": true
+  },
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261031T1134ICT.json",
+    "blob_sha": "f92e2ea5a7ff3c01d1e7f1c58fffc5862726f731",
+    "commit_sha": "3d8f2ec7e30763b4bfb22db6cb29cb129c1c2452",
+    "readback_verified": true
+  },
+  "latest_cloud_scan": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "active_version_id": "1bcc0041-f516-42a1-9153-9a12e94fc297",
+    "node_count": 6,
+    "dispatch_node_present": false,
+    "latest_execution_id": "330",
+    "latest_execution_status": "SUCCESS",
+    "latest_execution_mode": "trigger",
+    "latest_execution_started_at_utc": "2026-10-31T04:00:22.100Z",
+    "latest_execution_stopped_at_utc": "2026-10-31T04:00:24.180Z",
+    "executed_nodes": [
+      "Cloud hourly pulse",
+      "Read continuity evidence",
+      "Read recovery tasks",
+      "Deterministic OPEN scan",
+      "Append scan receipt"
+    ],
+    "all_executed_nodes_success": true,
+    "latest_scan_receipt_row_id": 863,
+    "execution_331": "NOT_OBSERVED_AS_OF_2026-10-31T04:36:33Z;NEXT_SCHEDULED_PULSE_12:00_ICT",
+    "semantics": "READ_EVIDENCE;READ_45_TASKS;DETERMINISTIC_SCAN;APPEND_RECEIPT_ONLY;NO_DISPATCH",
+    "selected_callable": [
+      "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+      "SOL-SOL_CHAT_BROWSER_MCP_FILE",
+      "SOL-GITHUB_COPILOT_SPACE",
+      "SOL-SITES_SOL100726_REDIRECTS",
+      "SOL-SOL_SOURCE_12_CARRIERS",
+      "SOL-CODEX_SECRET_RUNTIME_VERSIONS",
+      "SOL-SOURCE_MATRIX_STONES_CROSS_SYNC",
+      "SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY"
+    ],
+    "next_edge": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023"
+  },
+  "recovery_table": {
+    "id": "rSPFIOWbS7cfNJ8z",
+    "name": "SUBAVENGERS_RECOVERY_TASKS_20261020",
+    "project_id": "6qKpRmicIGHA5snY",
+    "total": 45,
+    "nonterminal": 45,
+    "callable_pending": 19,
+    "blocked_pending": 26,
+    "closed": 0,
+    "task_status_mutations_this_run": 0,
+    "row_18": {
+      "task_id": "SOL-SUPER_R014_SUBSCRIBE_RESET_DIRECT_20261023",
+      "status": "OPEN_ROUTED_NONCOERCIVE",
+      "permission": "CALLABLE_PROVIDER_ACCESS_ONLY; NO_FORCED_MUTATIONS"
+    },
+    "row_45": {
+      "task_id": "SOL-TESSERACT_ART_ACTIVE_TEST_AND_6D_INTEGRATION_20261023",
+      "status": "IN_PROGRESS",
+      "permission": "NOT_SPECIFIED_IN_SOURCE"
+    }
+  },
+  "github": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "default_branch": "main",
+    "main_head_before_checkpoint_update": "405cee07fa64864db1694f972de5f9c3b695e04b",
+    "previous_pointer_blob_sha": "c42cca8be5d20ee35e40325c4c10af1d4e8eaa8d",
+    "previous_checkpoint_blob_sha": "f92e2ea5a7ff3c01d1e7f1c58fffc5862726f731",
+    "commit_signature": "UNSIGNED"
+  },
+  "latest_vercel": {
+    "main": {
+      "commit_sha": "405cee07fa64864db1694f972de5f9c3b695e04b",
+      "state": "PENDING",
+      "deployment_id": "dpl_7Cu5eqDoRprx8QdtPFZc6JbR1v3U",
+      "target_url": "https://vercel.com/sollasi/sol-long-mach/7Cu5eqDoRprx8QdtPFZc6JbR1v3U"
+    },
+    "pr_48": {
+      "state": "FAILURE",
+      "head_sha": "3c58337bbfbfd0d3df791c926e8843174a1c3ad8",
+      "github_run_id": 40840356980,
+      "github_run": "SECRET_EXPOSURE_GUARD_SUCCESS_ONLY",
+      "go_build_receipt": "NOT_VERIFIED",
+      "workflow_blob_sha": "cdb4027a70b7dbdecc9c3acf14e13b9e587d6e91",
+      "workflow_dispatch": false,
+      "pr_state": "OPEN",
+      "draft": false,
+      "merged": false
+    },
+    "pr_49": {
+      "state": "FAILURE",
+      "head_sha": "59289a8423edf0b05e41867214dca2a7e9c94178",
+      "topology_workflow_run": 40844487605,
+      "topology_conclusion": "FAILURE",
+      "failed_step": "Verify Library topology",
+      "exact_assertion_from_job_log": "NOT_AVAILABLE",
+      "static_reproduction": "test_two_github_library_roots fails because BRAIN_WAVE_LOGS is a third root directory",
+      "swift_runtime_workflow_run": 40844487617,
+      "swift_runtime_conclusion": "SUCCESS",
+      "secret_guard_workflow_run": 40844487612,
+      "secret_guard_conclusion": "SUCCESS",
+      "pr_state": "OPEN",
+      "draft": false,
+      "merged": false
+    },
+    "pr_43": {
+      "state": "OPEN",
+      "draft": true,
+      "merged": false,
+      "head_sha": "7d534e961ab9dad74677cee06fb21f1496c44b61",
+      "workflow_run": 40323431187,
+      "workflow_conclusion": "SUCCESS"
+    },
+    "pr_44": {
+      "state": "OPEN",
+      "draft": true,
+      "merged": false,
+      "head_sha": "61d314fd622c563ffbd5e37c1daa8cdd2910b944",
+      "workflow_run": 40328357950,
+      "workflow_conclusion": "SUCCESS"
+    },
+    "issue_18": "OPEN",
+    "failure_cause_boundary": "Vercel causes not verified; PR49 static tree/test mismatch found but no job log retrieved; PR48 Go build not verified"
+  },
+  "pr49_topology_static_reproduction": {
+    "head_branch": "feat/tesseract-neuron-runtime-windows-portability-20261029",
+    "head_sha": "59289a8423edf0b05e41867214dca2a7e9c94178",
+    "test_source_path": "tests/test_sol_library_stone_topology.py",
+    "test_source_blob_sha": "5fea826f737d0028c89a7637f1837220fe8f7897",
+    "workflow_path": ".github/workflows/sol-library-stone-topology.yml",
+    "workflow_blob_sha": "d869a6492c3a8568cc3d03938f7950496bde692b",
+    "failing_assertion": "test_two_github_library_roots",
+    "expected_library_root_directories": [
+      "COMPUTER_KHÍ💜BRAIN_OS_POWER",
+      "OS_WORK"
+    ],
+    "actual_library_root_directories": [
+      "BRAIN_WAVE_LOGS",
+      "COMPUTER_KHÍ💜BRAIN_OS_POWER",
+      "OS_WORK"
+    ],
+    "other_four_test_methods_static_checks": "PASS",
+    "brain_wave_logs": {
+      "entry_count": 8,
+      "entries": [
+        ".gitignore",
+        "1_RAW_INPUT_OUTPUT.log",
+        "2_SPATIAL_VECTOR.log",
+        "3_LOGPROBS_GATING.log",
+        "4_TEMP_STATE.log",
+        "5_CHRONO_CONTINUOUS.log",
+        "API_TOKEN_OBSERVER.py",
+        "README_TOKEN_OBSERVABILITY.md"
+      ],
+      "role": "API_TOKEN_OBSERVABILITY_AND_HISTORICAL_WAVE_LOGS",
+      "source_is_populated": true
+    },
+    "soul_brainwave_registry": {
+      "entry_count": 6,
+      "role": "GATEWAY_AND_REGISTRY_JSON_FILES",
+      "distinct_from_root_brain_wave_logs": true
+    },
+    "resolution": "UNDECIDED; no move/delete/test weakening performed",
+    "evidence_boundary": "STATIC_GITHUB_TREE_AND_TEST_SOURCE_REPRODUCTION; NOT_JOB_LOG_OR_PYTHON_EXECUTION"
+  },
+  "latest_host": {
+    "host": "DESKTOP-86ITNQ4",
+    "current_os_cim_heartbeat": "VERIFIED",
+    "direct_os_cim_heartbeat_local": "2026-10-31T11:25:25.4609818+07:00",
+    "os_caption": "Microsoft Windows 11 Pro Insider Preview",
+    "last_boot_local": "2026-10-31T07:10:34.5000000+07:00",
+    "ram_free_kb": 10426744,
+    "drives_free_bytes": {
+      "C": 21155958784,
+      "D": 203728769024,
+      "G": 154338197504,
+      "W": 193542328320,
+      "Z": 0
+    },
+    "personal_desktop_commander": {
+      "account_link": "halinh270803",
+      "device_id": "bca58242-9cf0-407e-afb4-fb9ecfcce34b",
+      "status": "ONLINE_AT_LAST_DEVICE_READ"
+    },
+    "dedicated_rdc_accounts": {
+      "dat123456790": "OFFLINE",
+      "2708halinh": "OFFLINE"
+    },
+    "other_personal_link": {
+      "ntdfle6v13": "OFFLINE"
+    },
+    "android": "UNVERIFIED",
+    "local_repository_resume": {
+      "status": "UNRESOLVED",
+      "result": "NO_VERIFIED_CLONE_PATH_RETURNED;SEARCH_INCOMPLETE",
+      "repository_not_recreated": true,
+      "local_repository_writes": 0
+    },
+    "desktop_commander_monthly_usage_warning": "92%; avoid nonessential host calls"
+  },
+  "latest_source_recovery": {
+    "jiney_raw_export": "OPEN_NOT_RECOVERED",
+    "dropbox_outlook_namespace": "ns:15399976787",
+    "dropbox_root_listing": {
+      "has_more": false,
+      "direct_entry_count": 3,
+      "entries": [
+        "BÉ LINH - LIVING MEMORY",
+        "SENSOR_LOGS",
+        ".agents"
+      ],
+      "jiney_at_root": false,
+      "search_exhaustive": false
+    },
+    "dropbox_search": "SCHEMA_VALIDATION_REJECTED; no Dropbox write or download",
+    "r014_runtime_integration": "NOT_VERIFIED; main emitter does not load shared consequence gate per checkpoint 9.2",
+    "source_matrix": "GITHUB_MANIFEST_MATCHES_VERIFIED; LIBRARY_RAW_COUNTERPARTS_OPEN"
+  },
+  "included_evidence_rows": [
+    777,
+    778,
+    779,
+    780,
+    781,
+    782,
+    783,
+    784,
+    785,
+    786,
+    787,
+    788,
+    789,
+    790,
+    791,
+    792,
+    793,
+    794,
+    795,
+    796,
+    797,
+    798,
+    799,
+    800,
+    801,
+    802,
+    803,
+    804,
+    805,
+    806,
+    807,
+    808,
+    809,
+    810,
+    811,
+    812,
+    813,
+    814,
+    815,
+    816,
+    817,
+    818,
+    819,
+    820,
+    821,
+    822,
+    823,
+    824,
+    825,
+    826,
+    827,
+    828,
+    829,
+    830,
+    831,
+    832,
+    833,
+    834,
+    835,
+    836,
+    837,
+    838,
+    839,
+    840,
+    841,
+    842,
+    843,
+    844,
+    845,
+    846,
+    847,
+    848,
+    849,
+    850,
+    851,
+    852,
+    853,
+    854,
+    855,
+    856,
+    857,
+    858,
+    859,
+    860,
+    861,
+    862,
+    863,
+    864,
+    865,
+    866,
+    867,
+    868,
+    869,
+    870,
+    871
+  ],
+  "new_evidence_rows": [
+    {
+      "row_id": 871,
+      "event_id": "X20261031043600_PR49_TOPOLOGY_STATIC_REPRO",
+      "readback_verified": true
+    }
+  ],
+  "safety": {
+    "recovery_task_status_mutations": 0,
+    "google_drive_writes": 0,
+    "plaintext_credentials_accessed": false,
+    "process_cache_meta_db_deletions": 0,
+    "host_cleanup": 0,
+    "host_os_commands_this_run": 1,
+    "host_os_commands_read_only": true,
+    "local_repository_writes": 0,
+    "local_repository_recreated": false,
+    "n8n_evidence_rows_appended": 1,
+    "evidence_row_871_readback_verified": true,
+    "dropbox_writes": 0,
+    "dropbox_downloads": 0,
+    "pr_merges": 0,
+    "deployment_configuration_changes": 0
+  },
+  "next_edges": [
+    "Keep all 45 n8n recovery tasks nonterminal; scan selection and provider readback do not mean completion.",
+    "Check execution 331 at the 12:00 ICT scheduled pulse; workflow is read/scan/append-only with no dispatch.",
+    "Preserve BRAIN_WAVE_LOGS; decide its canonical placement or narrow the topology test invariant; do not move/delete or weaken tests without source decision.",
+    "Keep PR49 open until topology conflict is resolved and CI passes.",
+    "Keep PR48 open until an actual Go build receipt is available.",
+    "Keep issue #18 and PRs #43/#44 open until runtime-wide consequence-gate loading and source-conflict acceptance are proven.",
+    "Resolve local repository path before local writes; fast-forward from checkpoint rather than recreating clone.",
+    "Continue JINEY raw export and R-014 source recovery without substituting derivatives or inferring deletion.",
+    "Do not write to Google Drive or use mapped Z: drive; do not access plaintext credentials."
+  ]
+}

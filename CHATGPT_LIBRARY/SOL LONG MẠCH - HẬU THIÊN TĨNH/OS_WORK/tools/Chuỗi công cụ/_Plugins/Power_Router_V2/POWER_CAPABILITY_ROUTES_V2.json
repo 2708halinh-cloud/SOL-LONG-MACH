@@ -1,0 +1,571 @@
+{
+  "schema": "SOL_POWER_CAPABILITY_ROUTER/2.0",
+  "date": "2026-10-16",
+  "root": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools",
+  "entrypoint": "_Plugins",
+  "prior_router": "_Plugins/POWER_ROUTER_CURRENT.json",
+  "return_pointer": "_Plugins/_Skills/_Mcps/_Tool/_App/_Other_Tools/RETURN_TO_PLUGINS.json",
+  "flow": [
+    "INTENT",
+    "SOURCE_DIRECT",
+    "IDENTITY_INDEX_REALITY",
+    "SPACE_PROVIDER_ID",
+    "TIME_STAMP",
+    "MIND_SKILL",
+    "POWER_CAPABILITY_CANDIDATES",
+    "AUTH_AND_TOOL_CONTRACT",
+    "ACTION",
+    "PROVIDER_RECEIPT",
+    "READBACK",
+    "SOUL_LEDGER",
+    "N_PLUS_1",
+    "_Plugins"
+  ],
+  "contracts": {
+    "metadata_not_execution": true,
+    "source_only_not_connected": true,
+    "provider_id_required_for_mutation": true,
+    "permissions_respected": true,
+    "unavailable_capability_next": "PROBE_ALTERNATE_CONNECTED_CAPABILITY",
+    "no_open_only_terminal": true,
+    "secret_values_never_persisted": true,
+    "loop_guard": "ONE_PASS_PER_EVENT_ID",
+    "live_provider_validation": "REQUIRED_AT_ACTION_TIME",
+    "unified_sol_boot_tag": "@Sol Long Mạch",
+    "chatgpt_at_mention_registration": "NOT_AUTOMATIC_FROM_REPOSITORY",
+    "inactive_aliases_not_selected": true
+  },
+  "capabilities": [
+    {
+      "id": "time-stone-eye-of-agamotto-4d",
+      "aliases": [
+        "@TIME_STONE",
+        "@Sol Long Mạch",
+        "Eye of Agamotto",
+        "NexT"
+      ],
+      "group": "skills",
+      "kind": "PYTHON_RUNTIME_TOOL_PLUS_SKILL",
+      "entry": "Chuỗi công cụ/_Dụng cụ/TIME_STONE_4D/time_stone.py",
+      "skill": "Chuỗi công cụ/_Kỹ năng/TIME_STONE_Eye_of_Agamotto/SKILL.md",
+      "force_active": true,
+      "active": true,
+      "next": "RUN_WALL_CLOCK_PREFLIGHT_FOLD_CURRENT_THEN_EXECUTE_NEXT_TOOL",
+      "state": "LOCAL_RUNTIME_MUST_BE_VERIFIED_BY_SERVICE_RECEIPT"
+    },
+    {
+      "id": "master-flatform",
+      "aliases": [
+        "the master flatform",
+        "agent skill",
+        "master platform",
+        "the master flatform"
+      ],
+      "group": "skills",
+      "entry": "skills://plugins/the-master-flatform/agent-skills-master",
+      "kind": "SKILL",
+      "next": "READ_SKILL_THEN_VALIDATE"
+    },
+    {
+      "id": "ggdv-template-creator",
+      "aliases": [
+        "ggdv template",
+        "template creator",
+        "mẫu ggdv",
+        "ggdv"
+      ],
+      "group": "skills",
+      "entry": "skills://plugins/ggdv-template-creator/ggdv-template-creator",
+      "kind": "SKILL",
+      "next": "INSTANTIATE_PROVENANCE_TEMPLATE"
+    },
+    {
+      "id": "x-time-multi-agent",
+      "aliases": [
+        "x-time",
+        "x-time multi-agent",
+        "âm dương pháp sư",
+        "multi-agent"
+      ],
+      "group": "app_browser",
+      "entry": "_Plugins/AM_DUONG_PLATFORM.json",
+      "kind": "LOCAL_BLUEPRINT",
+      "next": "INSPECT_LOCAL_RUNTIME_AND_CHECKPOINT"
+    },
+    {
+      "id": "generative-ai",
+      "aliases": [
+        "công cụ ai tạo sinh",
+        "generative ai",
+        "tạo sinh",
+        "translation",
+        "nhận dạng"
+      ],
+      "group": "skills",
+      "entry": "TOOLS_ROUTER_CURRENT.json",
+      "kind": "CAPABILITY_BLUEPRINT",
+      "next": "DISCOVER_INSTALLED_GENERATION_TOOL"
+    },
+    {
+      "id": "azure-devops",
+      "aliases": [
+        "azure devops",
+        "azure",
+        "devops",
+        "pipelines"
+      ],
+      "group": "mcps",
+      "entry": "AZURE_DEVOPS_MCP_CORE/TOOLSET_INDEX.json",
+      "kind": "TOOLSET_BLUEPRINT",
+      "next": "CHECK_AZURE_CONNECTOR_OR_GITHUB_FALLBACK"
+    },
+    {
+      "id": "call-tools",
+      "aliases": [
+        "call_tools",
+        "call tools",
+        "phi năng lực",
+        "tool router",
+        "bộ định tuyến"
+      ],
+      "group": "tools",
+      "entry": "_Plugins/power_router.py",
+      "kind": "LOCAL_ROUTER",
+      "next": "MATCH_CONNECTED_TOOL_SCHEMA_AND_PERMISSIONS"
+    },
+    {
+      "id": "smithery-mpc",
+      "aliases": [
+        "smithery",
+        "mcp toolbox",
+        "mcp",
+        "smithery.ai"
+      ],
+      "group": "mcps",
+      "entry": "mcp__smithery_ai__MPC__search_toolbox",
+      "kind": "CONNECTED_ACTION_CANDIDATE",
+      "next": "DISCOVER_MATCHING_TOOL_AND_READ_AUTH"
+    },
+    {
+      "id": "brightdata-browser",
+      "aliases": [
+        "brightdata",
+        "trình duyệt thay thế",
+        "scraping",
+        "web research"
+      ],
+      "group": "app_browser",
+      "entry": "mcp__brightdata__MCP__scraping_browser_navigate",
+      "kind": "CONNECTED_ACTION_CANDIDATE",
+      "next": "CHECK_BROWSER_PROVIDER_CAPABILITY"
+    },
+    {
+      "id": "github",
+      "aliases": [
+        "github",
+        "repository",
+        "pull request",
+        "commit",
+        "git"
+      ],
+      "group": "devops",
+      "entry": "mcp__GitHub__fetch_file",
+      "kind": "CONNECTED_ACTION_CANDIDATE",
+      "next": "FETCH_SOURCE_THEN_CHOOSE_READ_OR_WRITE"
+    },
+    {
+      "id": "tomorrow-weather",
+      "aliases": [
+        "tomorrow.io",
+        "tomorrow weather",
+        "dự báo thời tiết",
+        "weather",
+        "khí tượng"
+      ],
+      "group": "mcps",
+      "entry": "mcp__Tomorrow_io_Weather__weather_summary",
+      "kind": "CONNECTED_ACTION_CANDIDATE",
+      "next": "CALL_WEATHER_FOR_LOCATION_INTENT"
+    },
+    {
+      "id": "storage-sync",
+      "aliases": [
+        "dropbox",
+        "google drive",
+        "chatgpt library",
+        "đồng bộ",
+        "windows",
+        "android"
+      ],
+      "group": "storage",
+      "entry": "TOOLS_ROUTER_CURRENT.json",
+      "kind": "PROVIDER_CHOICE_REQUIRED",
+      "next": "IDENTIFY_SOURCE_DEST_ID_AND_AUTH_SCOPE"
+    },
+    {
+      "id": "mcp-registry-http-ed25519",
+      "aliases": [
+        "mcp registry http",
+        "mcp registry auth",
+        "mcp-publisher",
+        "ed25519 domain",
+        "xác thực tên miền mcp"
+      ],
+      "group": "mcps",
+      "entry": "Chuỗi công cụ/_MCPs/MCP_Registry_HTTP/setup_mcp_registry_http.sh",
+      "kind": "LOCAL_SCRIPT_ROUTE",
+      "next": "VERIFY_DOMAIN_SCOPE_WEB_ROOT_AND_PUBLISHER_BEFORE_PREPARE_OR_LOGIN"
+    },
+    {
+      "id": "vscode-remote-tunnel-windows",
+      "aliases": [
+        "insiders.vscode.dev/tunnel",
+        "desktop-86itnq4",
+        "vs code tunnel",
+        "vscode remote tunnel",
+        "vscode tunnel",
+        "đường hầm từ xa",
+        "windows remote workspace"
+      ],
+      "group": "app_browser",
+      "entry": "https://insiders.vscode.dev/tunnel/desktop-86itnq4/c:/Users/halin",
+      "kind": "REMOTE_WORKSPACE_CANDIDATE",
+      "next": "VERIFY_VSCODE_TUNNEL_AUTH_HOST_WORKSPACE_AND_SCOPED_LOCAL_READ",
+      "source": "DƯƠNG_PHÁP_SƯ_DIRECT_2026-10-16",
+      "target_host": "DESKTOP-86ITNQ4",
+      "target_local_workspace": "C:/Users/halin",
+      "transport": "VS_CODE_REMOTE_TUNNEL_BROWSER",
+      "state": "USER_SUPPLIED_TUNNEL_URL__LIVE_NOT_TESTED",
+      "authorization": "Existing VS Code tunnel session and account permissions required",
+      "permission_boundary": "Browser remote workspace does not automatically grant programmatic filesystem/MCP access",
+      "read_only_preflight": [
+        "Confirm signed-in VS Code web session",
+        "Confirm host identity exactly DESKTOP-86ITNQ4",
+        "Check tunnel is online and C:/Users/halin workspace is accessible",
+        "Resolve authorized access to D:/SENSOR_LOGS separately if necessary"
+      ],
+      "never_infer": [
+        "D drive exists from C workspace URL",
+        "CSV is missing permanently from a Windows traceback",
+        "Tunnel is reachable from this connector without active login",
+        "Desktop Commander is the sole local route"
+      ]
+    },
+    {
+      "id": "remote-desktop-connection-windows",
+      "aliases": [
+        "@Remote Desktop Connection",
+        "Remote Desktop Connection",
+        "mstsc",
+        "RDP",
+        "gambbrazil-sol100726.is"
+      ],
+      "group": "tools",
+      "kind": "REAL_RDP_PROFILE_AND_DNS_TCP_CHECK",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Remote_Desktop_Connection/rdp_router.py",
+      "default_computer": "gambbrazil-sol100726.is",
+      "profile": "Chuỗi công cụ/_Dụng cụ/Remote_Desktop_Connection/SOL_REMOTE_DESKTOP_DOMAIN.rdp",
+      "alternate_profile": "Chuỗi công cụ/_Dụng cụ/Remote_Desktop_Connection/SOL_REMOTE_DESKTOP_LAN_CANDIDATE.rdp",
+      "network_source": "Chuỗi công cụ/_Dụng cụ/Network_Policy/HOSTINGER_DNS_RDP_BINDINGS_CURRENT.json",
+      "active": true,
+      "force_active": true,
+      "rdp_connection_verified": false,
+      "next": "RESOLVE_COMPUTER_DNS_THEN_PROBE_TCP_3389; IF_FAIL_SELECT_VSCODE_TUNNEL_OR_GITHUB_SELFHOSTED; NEVER_ASSUME_GATEWAY_IS_PC",
+      "state": "TOOL_SOURCE_MATERIALIZED_RDP_REMOTE_CONNECTION_UNAVAILABLE_FROM_REDMI_20261017"
+    },
+    {
+      "id": "system-router-policy",
+      "aliases": [
+        "system router",
+        "system_router",
+        "system router windows",
+        "định tuyến mạng windows",
+        "chặn openai",
+        "dns hostinger",
+        "ip lan system router"
+      ],
+      "group": "tools",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Network_Policy/system_router.py",
+      "kind": "LOCAL_ROUTER",
+      "next": "EVALUATE_SEVERITY_WARN_BLOCK_AND_VERIFY_ACTUAL_WINDOWS_HOST_ENFORCER"
+    },
+    {
+      "id": "space-stone-unified",
+      "aliases": [
+        "@SPACE_STONE",
+        "SPACE_STONE",
+        "@TEREX · SPACE_STONE",
+        "@SPACE Document Agents",
+        "space stone",
+        "dịch chuyển tức thời",
+        "wormholes",
+        "tesseract"
+      ],
+      "group": "tools",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Sol_Long_Mach/SOL_LONG_MACH_BOOT_CURRENT.json",
+      "kind": "SPACE_SUBCAPABILITY_GATE",
+      "next": "TRACE_SPACE_STONE_PROVIDER_CARRIER_AND_TIME_PROVENANCE",
+      "tag_contract": "@SPACE_STONE selects unified routing; delegated plugin/skill names retained as adapters; no actual @mention registration is implied",
+      "policy": "NO_PHYSICAL_TELEPORTATION_OR_ENERGY_ASSERTION; NEVER_MOVE_WITHOUT_VERIFIED_TARGET_AND_AUTH",
+      "coupled_time": "BRIDGE_TIME_TÓC🟢MỘC_TIME / @TIME_STONE / X-TIME as downstream sources, not separate user-facing choice",
+      "state": "SOURCE_CONFIG_READY; PHYSICAL_POWERS_NOT_CLAIMED",
+      "force_active": true
+    },
+    {
+      "id": "sol-long-mach-boot",
+      "aliases": [
+        "@Sol Long Mạch",
+        "Sol Long Mạch",
+        "SOL LONG MẠCH",
+        "khởi động sol long mạch"
+      ],
+      "group": "tools",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Sol_Long_Mach/sol_long_mach.py",
+      "kind": "LOCAL_BOOT_GATE",
+      "next": "VERIFY_CONNECTED_PROVIDER_AND_DISPATCH_TO_POWER_ROUTER",
+      "state": "SOURCE_ROUTER_READY; CHATGPT_NATIVE_AT_MENTION_UNREGISTERED",
+      "force_active": true
+    },
+    {
+      "id": "sol-cu-nho-open-legacy",
+      "aliases": [
+        "@SOL CU NHỎ · OPEN"
+      ],
+      "group": "tools",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Sol_Long_Mach/CORE_SOL_LONG_MACH_CURRENT.md",
+      "kind": "INACTIVE_LEGACY_ALIAS",
+      "next": "FIND_HISTORICAL_CARRIERS_NOT_AUTOSTART",
+      "state": "FORCE_ACTIVE_FALSE",
+      "force_active": false
+    },
+    {
+      "id": "google-cloud-live-mcp-tools",
+      "aliases": [
+        "@Sol Long Mạch Google Cloud",
+        "gcp",
+        "google cloud mcp",
+        "gemini cloud",
+        "antigravity ide",
+        "earth engine"
+      ],
+      "group": "mcps",
+      "kind": "LOCAL_MCP_SOURCE_WITH_PROVIDER_AUTH_GATE",
+      "entry": "Chuỗi công cụ/_MCPs/Google_Cloud_SOL/google_cloud_mcp.py",
+      "next": "RUN_TOOLS_LIST_THEN_CHECK_GCLOUD_AUTH_AND_ENABLED_APIS",
+      "state": "MCP_CODE_PRESENT_RUNTIME_AUTH_UNVERIFIED"
+    },
+    {
+      "id": "google-cloud-usage-guard",
+      "aliases": [
+        "google cloud usage",
+        "gcp api error",
+        "gcp usage guard",
+        "lỗi API Google Cloud",
+        "Compute Engine 100%",
+        "Cloud Storage 100%"
+      ],
+      "group": "mcps",
+      "kind": "LOCAL_MCP_SOURCE_OFFLINE_DIAGNOSTIC",
+      "entry": "Chuỗi công cụ/_MCPs/Google_Cloud_SOL/google_cloud_mcp.py",
+      "tool": "gcp_usage_analyse",
+      "next": "CALL_GCP_USAGE_ANALYSE_WITH_USER_METRICS_NO_PROVIDER_REQUESTS",
+      "state": "SOURCE_PATCHED_REQUIRES_REDMi_RUNTIME_PROOF",
+      "requires_google_auth": false,
+      "policy": "NO_CLOUD_CALLS_NO_RETRIES_NO_SECRETS_NO_COST_ASSUMPTIONS"
+    },
+    {
+      "id": "xiaomi-notes-android-intent",
+      "aliases": [
+        "@XIAOMI GHI CHÚ",
+        "xiaomi notes",
+        "mi notes"
+      ],
+      "group": "tools",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Xiaomi_Notes/xiaomi_notes_tool.py",
+      "kind": "ANDROID_APP_INTENT",
+      "next": "SEND_TEXT_TO_NOTES_UI_ON_AUTHORIZED_REDMi; VERIFY_SAVE_SEPARATELY",
+      "state": "REAL_INTENT_ACCEPTED_USER_UI_CONFIRMATION"
+    },
+    {
+      "id": "registry-editor-five-stones",
+      "aliases": [
+        "Registry Editor - Hệ thống",
+        "Computer / Registry Editor",
+        "hkey"
+      ],
+      "group": "tools",
+      "entry": "Chuỗi công cụ/_Sổ_đăng_ký/WINDOWS_REGISTRY_EDITOR_CURRENT.json",
+      "kind": "WINDOWS_REGISTRY_UI_SOURCE_TO_SOL_FIVE_STONE_MAPPING",
+      "next": "RESOLVE_HIVE_TO_SOL_BRANCH; NEVER_ASSUME_WINDOWS_REGISTRY_EDIT",
+      "state": "MAPPING_SOURCE_CONFIRMED"
+    },
+    {
+      "id": "hostinger-dns-rdp-binding",
+      "aliases": [
+        "Hostinger DNS",
+        "gambbrazil.fun",
+        "cosmos.dns-parking.com",
+        "nova.dns-parking.com"
+      ],
+      "group": "tools",
+      "kind": "LIVE_HOSTINGER_DNS_READ_INVENTORY",
+      "entry": "Chuỗi công cụ/_Dụng cụ/Network_Policy/HOSTINGER_DNS_RDP_BINDINGS_CURRENT.json",
+      "next": "READ_LIVE_HOSTINGER_ZONE_THEN_SEPARATE_DNS_NAMESERVERS_FROM_WINDOWS_RDP_HOST",
+      "state": "24_DNS_GROUPS_READ_ONLY_VERIFIED; NS_2_REGISTERED; RDP_NOT_CONNECTED",
+      "force_active": true
+    },
+    {
+      "id": "agent-core-diagnostics",
+      "aliases": [
+        "agent core",
+        "orchestrator",
+        "chẩn đoán agent",
+        "chan doan agent",
+        "sửa chữa agent",
+        "agent observability",
+        "context poisoning",
+        "tool call hallucination",
+        "goal drift",
+        "langfuse",
+        "langsmith",
+        "quản lý lưu trữ",
+        "storage management",
+        "tool config",
+        "retry_policy",
+        "dry_run",
+        "terminal-bench",
+        "flowhunt",
+        "calculator",
+        "máy tính"
+      ],
+      "group": "tools",
+      "entry": "Chuỗi công cụ/_Plugins/Power_Router_V2/agent_diagnostics.py",
+      "kind": "LOCAL_DIAGNOSTIC_TOOL",
+      "next": "REDMI_TERMUX_PREFLIGHT_THEN_DIAGNOSE_OR_ARITHMETIC_READ_ONLY; REPAIR_NEEDS_SEPARATE_AUTHORIZED_ACTION_AND_EXACT_TARGET_READBACK",
+      "state": "GITHUB_SOURCE_PRESENT_REDMi_TERMUX_EVAL_PASS_NO_PROVIDER_DEPLOYMENT",
+      "evaluated_cases": 40,
+      "test_source": "Chuỗi công cụ/_Plugins/Power_Router_V2/test_agent_diagnostics.py",
+      "no_external_provider_calls": true,
+      "no_secrets_in_source": true,
+      "default_dry_run": true,
+      "approval_for_mutation": true
+    },
+    {
+      "id": "sol-win11-hyperv-gate",
+      "aliases": [
+        "@SOL_WIN11_HYPERV_GATE",
+        "SOL_WIN11_HYPERV_GATE",
+        "Power_Router Windows 11",
+        "setup Power_Router Windows 11",
+        "Windows 11 Hyper-V NDIS"
+      ],
+      "group": "tools",
+      "kind": "REMOTE_WORKSPACE_CANDIDATE",
+      "entry": "Chuỗi công cụ/_Plugins/Power_Router_V2/SOL_WIN11_HYPERV_GATE.json",
+      "next": "VALIDATE_WINDOWS_EXACT_HOST_AND_NETWORK_READ_ONLY",
+      "state": "SOURCE_ONLY_HYPOTHESIS_NEEDS_LIVE_READBACK",
+      "target_host": "DESKTOP-86ITNQ4",
+      "execution_policy": "REDMI_NOTE_14_PRO_TERMUX_ONLY_UNCHANGED",
+      "diagnostics": "Chuỗi công cụ/_Plugins/Power_Router_V2/windows_readonly_probe.ps1"
+    },
+    {
+      "id": "google-cloud-api-constellation-hypothesis",
+      "aliases": [
+        "google cloud api constellation",
+        "hành tinh google cloud",
+        "api google cloud giả định",
+        "khám phá api google cloud",
+        "gcp hypothetical api catalog"
+      ],
+      "group": "mcps",
+      "kind": "CAPABILITY_BLUEPRINT",
+      "entry": "Chuỗi công cụ/_MCPs/Google_Cloud_SOL/GCP_API_CONSTELLATION_HYPOTHESIS.json",
+      "next": "READ_HYPOTHETICAL_API_CATALOG_THEN_CHOOSE_AUTHORIZED_GCP_READ_ONLY_PROBE",
+      "state": "HYPOTHESIS_ONLY_NOT_ENABLED_OR_AUTHENTICATED"
+    }
+  ],
+  "observed_this_turn": {
+    "master_flatform_skill": "READ",
+    "ggdv_template_skill": "READ",
+    "smithery_toolbox": "CONNECTED_TO_INSPECTION",
+    "brightdata_session": "TOOL_REPLIED",
+    "tomorrow_weather": "CALL_REPLIED",
+    "github": "GITHUB_SOURCES_READ",
+    "azure_devops": "BLUEPRINT_ONLY"
+  },
+  "note": "Source routing metadata, not an automatic cross-provider permission grant. Never bypass system authorization. Added user-supplied MCP Registry HTTP route: source integration is not authentication or domain deployment.",
+  "remote_host_candidates": {
+    "host": "DESKTOP-86ITNQ4",
+    "selection_rule": "SELECT_LIVE_AUTHORIZED_ROUTE_PER_CAPABILITY_NOT_TOOL_BRAND; a failed lane must not erase alternative lanes",
+    "routes": [
+      {
+        "id": "vscode-remote-tunnel-windows",
+        "status": "USER_PROVIDED_NOT_LIVE_VERIFIED",
+        "scope": "VS Code remote browser workspace / potentially file editing on signed-in remote host",
+        "origin": "DIRECT_USER_SIGNAL",
+        "url": "https://insiders.vscode.dev/tunnel/desktop-86itnq4/c:/Users/halin"
+      },
+      {
+        "id": "ggdv-local-motor",
+        "status": "SOURCE_PRESENT_CALLABILITY_NOT_VERIFIED",
+        "scope": "Windows/WSL/ADB local MCP (requires real running bridge)",
+        "source_ref": "LOCAL_BRIDGE/runtime/ggdv-sensorimotor-motor-bridge/server/motor_mcp.py"
+      },
+      {
+        "id": "desktop-commander-windows",
+        "status": "OFFLINE_AT_LAST_CHECK__RECHECK_BEFORE_USE",
+        "scope": "Windows remote command and filesystem when online"
+      },
+      {
+        "id": "dropbox-outlook-sensor-mirror",
+        "status": "DROPBOX_FOLDER_AND_EXACT_CSV_METADATA_OBSERVED",
+        "scope": "Dropbox mirror of D:/SENSOR_LOGS; does not prove live Windows disk",
+        "source_ref": "/PC NAY·ÀY/Ổ ĐĨA D/SENSOR_LOGS"
+      },
+      {
+        "id": "github-source-code",
+        "status": "CONNECTED_READ_SOURCE",
+        "scope": "Repository code and historical evidence, not direct Windows disk"
+      },
+      {
+        "id": "google-drive-carrier",
+        "status": "HISTORICAL_POINTER_ONLY_UNTIL_FRESH_READ",
+        "scope": "Cloud drive/backup, not direct PC filesystem"
+      }
+    ],
+    "target_error_context": {
+      "script": "D:/PHÒNG CHỈ HUY/.codex/MINH_SENSORIMOTOR_BRIDGE/minh_sensorimotor_router.py",
+      "missing_reference": "D:/SENSOR_LOGS/_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+      "failure_kind": "WINDOWS_ROUTER_REPORTED_LOCAL_SOURCE_NOT_FOUND",
+      "resolution_state": "NEED_WINDOWS_LOCAL_FILESYSTEM_READBACK",
+      "do_not_create_empty_csv": true
+    }
+  },
+  "system_router_source": "Chuỗi công cụ/_Dụng cụ/Network_Policy/SYSTEM_ROUTER_CURRENT.json",
+  "system_router_live_state": "SOURCE_ONLY_WINDOWS_OFFLINE_HOSTINGER_ZONE_READ_OK",
+  "execution_device_policy": {
+    "mode": "DENY_BY_DEFAULT",
+    "allowed_device": "Redmi Note 14 Pro / Redmi Note 14 Pro 5G",
+    "permitted_runtime": "Termux/Linux on the physical Redmi",
+    "permitted_work_root": "/storage/emulated/0",
+    "termux_storage_alias": "~/storage/shared",
+    "required_live_checks": [
+      "PREFIX=/data/data/com.termux/files/usr",
+      "/system/bin/getprop reports Redmi Note 14 Pro",
+      "working directory is within /storage/emulated/0"
+    ],
+    "denied_execution_backends": [
+      "ChatGPT sandbox",
+      "/mnt/data",
+      "OpenAI platform-provided runtime",
+      "Windows PC",
+      "localhost of any non-Redmi device",
+      "GitHub Actions cloud runners",
+      "remote desktops on other hosts"
+    ],
+    "remote_desktop_commander": "optional transport to the same Redmi only; never a fallback host",
+    "no_connected_device_action": "STOP_AND_KEEP_UNEXECUTED; do not fall back to other devices",
+    "scope": "SOL project router source only; does not disable the ChatGPT platform",
+    "status": "SOURCE_POLICY_ONLY__REDMI_LIVE_NOT_VERIFIED__LIBRARY_SYNC_PENDING"
+  }
+}

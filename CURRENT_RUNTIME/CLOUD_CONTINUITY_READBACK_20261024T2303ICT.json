@@ -1,0 +1,99 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_AND_TESSERACT_READBACK/1.0",
+  "checkpoint_id": "CLOUD_CONTINUITY_READBACK_20261024T2303ICT",
+  "observed_at_local": "2026-10-24T23:05:02+07:00",
+  "observed_at_utc": "2026-10-24T16:05:02Z",
+  "source": "Fresh n8n execution metadata and exact Data Table event_id readback; fresh GitHub PR/branch comparison and issuer-key code search.",
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "execution_id": "141",
+    "execution_status": "success",
+    "mode": "trigger",
+    "started_at_utc": "2026-10-24T16:00:22.078Z",
+    "stopped_at_utc": "2026-10-24T16:00:24.111Z",
+    "table_id": "Sk0EFJK5NzWVpBvm",
+    "project_id": "6qKpRmicIGHA5snY",
+    "row_id": 290,
+    "event_id": "X20261024160023966_CLOUD",
+    "occurred_at_utc": "2026-10-24T16:00:23.966Z",
+    "exact_row_readback": true,
+    "exact_filter_count": 1,
+    "state": "OPEN_WORK_REMAINS",
+    "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "selected_cloud_eligible": 6,
+    "host_heartbeat_probed": false,
+    "host_operations": 0,
+    "tasks_closed": 0,
+    "raw_sensor_data_committed": false,
+    "credentials_committed": false
+  },
+  "tesseract": {
+    "repository": "2708halinh-cloud/x-time-web",
+    "pr_number": 6,
+    "pr_url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+    "pr_state": "open",
+    "merged": false,
+    "pr_head_commit": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "security_branch": "security/repo-relative-read-containment-20261024",
+    "comparison_base": "tesseract-desktop-mvp-20261006",
+    "comparison_head": "security/repo-relative-read-containment-20261024",
+    "ahead_by": 5,
+    "behind_by": 0,
+    "security_main_rs_blob_sha": "7b7f90ffe7b9996254d9f690a3575656185d49dd",
+    "changed_file": "TESSERACT_DESKTOP/src-tauri/src/main.rs",
+    "additions": 147,
+    "deletions": 20,
+    "issuer_key_code_search_results": 0,
+    "issuer_public_key_verified": false,
+    "runner_assignment_change_verified": false,
+    "run_39994207477": {
+      "status": "failure",
+      "jobs": [
+        {
+          "name": "build (macos-14, aarch64-apple-darwin, macos-apple-silicon)",
+          "conclusion": "failure"
+        },
+        {
+          "name": "build (windows-latest, x86_64-pc-windows-msvc, windows-x64)",
+          "conclusion": "failure"
+        },
+        {
+          "name": "build (ubuntu-24.04, x86_64-unknown-linux-gnu, linux-x64)",
+          "conclusion": "failure"
+        },
+        {
+          "name": "tesseract_os",
+          "conclusion": "failure"
+        },
+        {
+          "name": "selfhosted_windows_verify",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "readback",
+          "conclusion": "failure"
+        }
+      ],
+      "artifacts": 0
+    },
+    "rerun_performed": false,
+    "tasks_closed": 0
+  },
+  "interpretation": {
+    "cloud_scan_success_is_table_level_only": true,
+    "live_host_heartbeat_verified": false,
+    "live_sensor_stream_verified": false,
+    "security_branch_tests_verified": false,
+    "no_task_closed": true,
+    "no_service_or_source_mutation": true
+  },
+  "next_edges": [
+    "Continue reading the current host tick and exact consumer route; do not infer live sensor recovery from metadata or cloud scan success.",
+    "Identify the actual issuer public key and runner assignment through authorized control surfaces; do not rerun CI without verified runner-assignment change.",
+    "Keep all 45 cloud recovery tasks pending until each has its own exact-target action, provider/host receipt, observable consequence and readback."
+  ]
+}

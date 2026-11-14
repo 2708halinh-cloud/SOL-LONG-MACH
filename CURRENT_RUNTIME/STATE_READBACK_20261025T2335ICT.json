@@ -1,0 +1,142 @@
+{
+  "schema": "SOL_STATE_READBACK/1.0",
+  "id": "STATE_READBACK_20261025T2335ICT",
+  "observed_at_local": "2026-10-25T23:35:20+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "main_head_before_state_readback": "db7edac302eb3bd2791f15ea7b14289577b66370",
+  "canonical_exact_target_readbacks": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "content_read": true
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "63534c0bf72f1269a3a4aeff42274b3c53703b23",
+      "content_read": true,
+      "tail_observation": "2026-10-25 23:34 ICT"
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "8254abb2dab958d5675d7948d1aa660b1a1e496d",
+      "full_blob_read_and_json_parse": true,
+      "size_bytes": 1254584
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "2b8ade60d3b7de5f11eb2c0972dc16d6994ce4bf",
+      "full_blob_read_and_json_parse": true,
+      "size_bytes": 1126183
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "blob_sha": "182f080dabdc15555a2a42bd291caf61d5362ca2",
+      "full_content_read_and_json_parse": true,
+      "size_bytes": 576292
+    },
+    "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T2334ICT.json": {
+      "blob_sha": "09df61d60fe7fd306f508f2e88087520c6611f53",
+      "content_read_and_json_parse": true,
+      "size_bytes": 7889
+    }
+  },
+  "writes": {
+    "provider_checkpoint": {
+      "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T2334ICT.json",
+      "blob_sha": "09df61d60fe7fd306f508f2e88087520c6611f53",
+      "commit": "8392ad038260c54de397ba61a585420535fd1a33"
+    },
+    "reentry_append": {
+      "path": "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md",
+      "blob_sha": "63534c0bf72f1269a3a4aeff42274b3c53703b23",
+      "commit": "60c8e01fa5913a35f324c0b1c2d8f47abcac4061"
+    },
+    "modual_append": {
+      "path": "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json",
+      "blob_sha": "182f080dabdc15555a2a42bd291caf61d5362ca2",
+      "commit": "3b0bbf0aaf0fa98629a27279bb8b3b39ae06da2b"
+    },
+    "ledger_append": {
+      "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "blob_sha": "2b8ade60d3b7de5f11eb2c0972dc16d6994ce4bf",
+      "commit": "5a3772257dfc033579326e0cad261832b5735c07"
+    },
+    "pointer_reconciliation": {
+      "path": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+      "blob_sha": "8254abb2dab958d5675d7948d1aa660b1a1e496d",
+      "commit": "db7edac302eb3bd2791f15ea7b14289577b66370"
+    }
+  },
+  "pointer_integrity": {
+    "top_level_checkpoint": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T2334ICT.json",
+    "checkpoint_commit": "8392ad038260c54de397ba61a585420535fd1a33",
+    "ledger_blob_sha": "2b8ade60d3b7de5f11eb2c0972dc16d6994ce4bf",
+    "ledger_counts": {
+      "task_count": 29,
+      "verified_action_events": 170,
+      "provider_observations": 170,
+      "integrity_corrections": 6,
+      "tasks_closed": 0
+    },
+    "task_status_distribution": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "all_tasks_nonterminal": true
+  },
+  "provider_status": {
+    "dropbox_outlook": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_readback_this_turn": true,
+      "raw_bytes_downloaded": false
+    },
+    "windows_host": {
+      "direct_tick_readback_this_turn": false,
+      "route_status": "NOT_REACHED_THROUGH_CURRENT_AUTHORIZED_LINKS",
+      "last_verified_tick_sha256": "dd4d72cc1e938cffd0396287d3e0ec23ee4e1a3a411d747c41ecdc7fe27df187",
+      "last_verified_consumer_sha256": "874239f854fef9429360b8e9ffb04dc09c53475382ae200d735d96694271628d",
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE"
+    },
+    "n8n": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "170",
+      "row_id": 389,
+      "status": "success",
+      "row_state": "OPEN_WORK_REMAINS",
+      "pending_rows": 45,
+      "host_heartbeat_probed": false
+    },
+    "archive_pr36": {
+      "head_sha": "9762b8867b4ef17d608cccc37609164d73974573",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "main_head": "0c1eca79f2f0fbd44db579ac27ddffe92e44d287",
+      "ahead_by": 9,
+      "behind_by": 109,
+      "latest_checked_run": 40209039302,
+      "conclusion": "success",
+      "exact_changed_file_count": 5
+    },
+    "tesseract_pr6": {
+      "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "issuer_public_key_verified": false,
+      "runner_assignment_verified": false
+    }
+  },
+  "safety": {
+    "raw_sensor_bytes_downloaded_or_committed": false,
+    "credentials_exported": false,
+    "source_moved_deleted_or_overwritten": false,
+    "cloud_or_github_sensor_export_enabled": false,
+    "merge_or_force_push": false,
+    "ci_rerun_performed": false,
+    "tasks_closed": 0
+  },
+  "status": "PARTIALLY_EXECUTED_ALL_OPEN_RETAINED"
+}

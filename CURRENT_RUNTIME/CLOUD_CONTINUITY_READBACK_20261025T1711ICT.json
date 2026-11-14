@@ -1,0 +1,166 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.0",
+  "state": "OPEN_WORK_REMAINS",
+  "recorded_at_utc": "2026-10-25T10:11:52Z",
+  "recorded_at_local": "2026-10-25T17:11:52+07:00",
+  "evidence_time_basis": "Direct n8n execution and row readback; direct read-only Windows tick, trace, source hash, scheduler and device-probe readback; GitHub blob parse, PR and Actions readback. Host and cloud clocks are kept separate.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1702ICT.json",
+    "blob_sha": "d07a937edd6731d33ff9fab7854cff68fdd6a463",
+    "commit_sha": "37381145f781d03267c1e74f060a4eb17e9f1ac3",
+    "readback_verified": true
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "latest_execution_id": "163",
+    "latest_execution_status": "success",
+    "latest_execution_mode": "trigger",
+    "started_at_utc": "2026-10-25T10:00:22.065Z",
+    "stopped_at_utc": "2026-10-25T10:00:24.182Z",
+    "execution_payload_readback": "PASS",
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_table_name": "AISSTANGT_MANAGE_CONTINUITY_20261020",
+    "evidence_rows": 352,
+    "latest_evidence_row_id": 352,
+    "latest_cloud_event_id": "X20261025100024046_CLOUD",
+    "latest_row_exact_readback": true,
+    "latest_cloud_state": "OPEN_WORK_REMAINS",
+    "latest_evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_project_id": "6qKpRmicIGHA5snY",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "tasks_closed": 0,
+    "scan_receipt": "STAMP_OLD evidence=351; STAMP_LIVE tasks=45; pending=45; selected_cloud_eligible=8; CLOUD_HEARTBEAT_ONLY; HOST_HEARTBEAT_NOT_PROBED; host operations=0; no task done from scan"
+  },
+  "host": {
+    "route": "Remote Desktop Commander",
+    "device": "DESKTOP-86ITNQ4",
+    "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+    "device_status_at_probe": "ONLINE",
+    "host_probe_at_local": "2026-10-25T17:09:59.9961011+07:00",
+    "host_probe_at_utc": "2026-10-25T10:09:59.9996222Z",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T100639363257Z.json",
+    "latest_tick_observed_at_utc": "2026-10-25T10:06:39.363257Z",
+    "latest_tick_bytes": 1635,
+    "latest_tick_sha256": "9E49EB73B74A8AC3D5437EC2FCC9DFE6D88EA3B4F90EC3142B500F79F82F7BAB",
+    "trace_path": "D:\\SENSOR_LOGS\\state\\telemetry_buffer_sync_wrapper_trace.log",
+    "trace_bytes": 48575,
+    "trace_sha256": "1ED820AC2B5F2556C00192EA7911253FBE63FCC5BF577569FD0E91D1EDC53457",
+    "latest_trace_receipt": "2026-10-25T10:06:39.5653652Z RECEIPT_READBACK_OK",
+    "source_path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+    "source_bytes": 35389440,
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_mutation_reported_by_tick": false,
+    "synthetic_rows_added": 0,
+    "live_sensor_reading_confirmed": false,
+    "xiaomi12_usb": {
+      "adb_state": "device",
+      "sensorservice_probe_succeeded": true,
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "live_sensor_event_stream_confirmed": false
+    },
+    "redmi_note14pro_wireless": {
+      "target": "192.168.1.14:5556",
+      "adb_state": "NOT_LISTED",
+      "live_sensor_event_stream_confirmed": false
+    },
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "last_run_local": "2026-10-25T17:06:33+07:00",
+      "last_result": 0,
+      "next_run_local_at_scheduler_probe": "2026-10-25T17:11:32+07:00",
+      "scheduler_probe_at_local": "2026-10-25T17:08:33.0477112+07:00",
+      "missed_runs": 0,
+      "interpretation": "Next run was still in the future on the host clock at the scheduler probe. Do not compare host due time directly with cloud time."
+    },
+    "expected_modual_source": {
+      "path": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+      "exists_at_expected_path": false,
+      "expected_bytes": 89814328,
+      "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+      "exact_filename_search_under_D_SENSOR_LOGS": "NO_MATCH",
+      "wider_D_drive_search": "INCOMPLETE_AFTER_3_SECONDS; NO CONCLUSION",
+      "candidate_substitution": false
+    }
+  },
+  "github_task_ledger": {
+    "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
+    "fetch_blob_chars": 1280456,
+    "json_parse": "PASS",
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "tasks_closed": 0,
+    "ledger_observed_main_head_before_checkpoint_write": "b580f11d41f6eb083f6b22fec067b26a9afc468e"
+  },
+  "archive_pr36": {
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "e9c299594447d75bebb75c343cdb707731c7ea50",
+    "ci_runs": [
+      {
+        "id": 40177456089,
+        "name": "High-Threshold Secret Exposure Guard",
+        "conclusion": "success"
+      },
+      {
+        "id": 40177456127,
+        "name": "SOL Library Stone Topology",
+        "conclusion": "success"
+      },
+      {
+        "id": 40177456080,
+        "name": "SOL Archive Read-only Adapters",
+        "conclusion": "success"
+      }
+    ],
+    "ci_success_count": 3,
+    "ci_total_count": 3,
+    "comparison_to_main_at_readback": {
+      "main_head": "b580f11d41f6eb083f6b22fec067b26a9afc468e",
+      "status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 23
+    },
+    "merge_or_force_push": false
+  },
+  "provider_access": {
+    "github_connector": "AVAILABLE_AND_USED",
+    "n8n_connector": "AVAILABLE_AND_USED",
+    "remote_desktop_commander": "ONLINE_AND_READ_ONLY_PROBE_SUCCEEDED",
+    "dropbox_connector": "SCHEMA_VALIDATION_REJECTED_LINK_ID_BEFORE_PROVIDER_READ; NO_DROPBOX_DATA_RETRIEVED",
+    "google_drive": "NO_WRITE_ATTEMPTED"
+  },
+  "continuation_guards": {
+    "preserve_open_and_in_progress": true,
+    "no_google_drive_writes": true,
+    "no_process_termination": true,
+    "no_cache_or_meta_db_deletion": true,
+    "no_source_mutation": true,
+    "no_secret_values": true,
+    "no_raw_sensor_values_stored": true,
+    "cloud_heartbeat_is_not_host_heartbeat": true,
+    "no_merge_or_force_push": true,
+    "no_candidate_substitution_for_exact_modual_source": true,
+    "tasks_closed": 0
+  },
+  "next": [
+    "Read the next Windows tick only after the next run is due by host-local scheduler time; keep host and cloud timestamps separate.",
+    "Continue exact-source retrieval for MODUAL by an authorized provider route; do not substitute MODUAL_CARRIER_CANDIDATE_20261025T0753ICT.csv.",
+    "Retry Dropbox only after resolving the connector schema/link selector; no provider data was obtained in this run.",
+    "Keep PR #36 OPEN/Draft; remeasure against current main before any synchronization, and do not merge or force-push.",
+    "Continue cloud-eligible OPEN tasks without closing tasks from scan receipts, checkpoints, or CI success."
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.2",
+  "title": "THU HOI NGUON SOL — cloud continuity checkpoint",
+  "observed_at_utc": "2026-10-28T04:42:46.520Z",
+  "observed_at_local": "2026-10-28T11:42:46.520+07:00",
+  "state": "OPEN_WORK_REMAINS",
+  "timestamp_basis": "Cloud provider timestamps are not host heartbeat.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261028T1137ICT.json",
+    "blob_sha": "01e42fe00e76fee83494ed55430b1e3e1454f008",
+    "commit_sha": "61a3e7aea9354cc4dd3baf587437480c9a985fcd",
+    "readback_verified": true
+  },
+  "previous_resume_pointer": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
+    "blob_sha": "7b4ea36bc745b3b6ba4e15fbc000cd0751f68500",
+    "commit_sha": "dde22ab7f5b26c4081a2c5deea046ca1f5aad650"
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
+    "latest_scheduled_execution": {
+      "execution_id": "255",
+      "status": "success",
+      "scan_evidence_row_id": 619,
+      "readback_evidence_row_id": 620,
+      "stopped_at_utc": "2026-10-28T04:00:24.218Z"
+    },
+    "latest_manual_probe": {
+      "execution_id": "256",
+      "status": "success",
+      "scan_evidence_row_id": 630,
+      "readback_evidence_row_id": 631,
+      "stopped_at_utc": "2026-10-28T04:31:50.869Z"
+    },
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "recovery_rows_total": 45,
+    "recovery_rows_nonterminal": 45,
+    "recovery_rows_terminal": 0,
+    "tasks_closed": 0,
+    "task_statuses_changed": false,
+    "selected_cloud_eligible_count_reported_by_scan": 6,
+    "host_heartbeat_probed": false,
+    "cloud_heartbeat_is_not_host_heartbeat": true
+  },
+  "github_actions": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "workflow_path": ".github/workflows/windows-survival-cloud-continuity.yml",
+    "workflow_id": 393485804,
+    "workflow_file_blob_sha": "044b4e73123af4772b995b410b3a79e847be7e03",
+    "cron": "7 * * * *",
+    "latest_inventory_at_utc": "2026-10-28T04:37:30.608Z",
+    "inventory_evidence_row_id": 635,
+    "workflow_run_total_count": 382,
+    "latest_visible_target_run": {
+      "run_number": 382,
+      "run_id": 40604006495,
+      "event": "schedule",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at_utc": "2026-10-27T23:43:01Z"
+    },
+    "expected_ticks_not_visible_utc": [
+      "2026-10-28T00:07:00Z",
+      "2026-10-28T01:07:00Z",
+      "2026-10-28T02:07:00Z",
+      "2026-10-28T03:07:00Z",
+      "2026-10-28T04:07:00Z"
+    ],
+    "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+    "cause_verified": false,
+    "workflow_changed": false,
+    "next_recheck_after_utc": "2026-10-28T05:07:00Z"
+  },
+  "archive_adapter_task": {
+    "source_task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+    "source_task_table_row_id": 14,
+    "status": "OPEN_7Z_RAR_LR",
+    "isolated_branch": "sol-cloud-continuity/archive-adapter-tests-20261028",
+    "branch_commit_sha": "8c7bc6646ab64d039ed600d0987a178021003e54",
+    "test_file_blob_sha": "28b3a424a3b7481731d49eafa8d1474147384d02",
+    "workflow_file_blob_sha": "48d0598f0feb1544099298ef680a005cfd729436",
+    "source_module_blob_sha": "336c01735d84f1830decae5952db0a9973d770b5",
+    "github_actions_run_id": 40633761872,
+    "github_actions_run_number": 7,
+    "github_actions_job_id": 122635945646,
+    "job_status": "success",
+    "completed_at_utc": "2026-10-28T04:42:13Z",
+    "real_7z_fixture_verified": true,
+    "real_rar_fixture_verified": true,
+    "real_lr_fixture_verified": true,
+    "malformed_7z_fails_closed": true,
+    "signature_only_rar_fails_closed": true,
+    "extraction_performed": false,
+    "upstream_rar_fixture": {
+      "repository": "libarchive/libarchive",
+      "commit_sha": "7574249bdc19f34c63b52ef0102d056f4fb7ba39",
+      "path": "libarchive/test/test_read_format_rar.rar.uu",
+      "upstream_git_blob_sha1": "f197a2983302f5829de2719bdddcf43b8c59b201",
+      "decoded_bytes": 336,
+      "decoded_sha256": "d421b86f6290aefad61b2a36737253b2b30fe27c156bd95abfc230f24fe0307e",
+      "provenance_verified_in_ci": true
+    },
+    "verification_scope": "REAL_7Z_RAR_LR_INTEGRITY_TESTS_WITH_ARCHIVE_SHA_READBACK_AND_NO_EXTRACTION;MALFORMED_INPUT_FAIL_CLOSED;SAFE_MEMBER_PATH_UNIT_TESTS",
+    "remaining_acceptance": "9_FORMAT_CAPABILITY_AND_SOURCE_TARGET_HASH_MATRIX_NOT_YET_RECORDED_AS_ONE_RECEIPT",
+    "main_branch_archive_code_merged": false,
+    "task_closed": false,
+    "evidence_row_id": 638
+  },
+  "recovery_ledger": {
+    "table_id": "rSPFIOWbS7cfNJ8z",
+    "total": 45,
+    "nonterminal": 45,
+    "terminal": 0,
+    "closed": 0,
+    "statuses_preserved": true,
+    "archive_task_status": "OPEN_7Z_RAR_LR"
+  },
+  "host_and_android": {
+    "latest_verified_host_evidence_row_id": 550,
+    "latest_verified_host_heartbeat_utc": "2026-10-27T00:51:44.165010Z",
+    "fresh_host_heartbeat_verified": false,
+    "host_probed_this_invocation": false,
+    "android_online_state": "UNVERIFIED",
+    "remote_route_is_host_heartbeat": false
+  },
+  "unresolved_source_provenance": {
+    "ingestion_gate_payload_03_txt_original_bytes_fetched": false,
+    "ingestion_gate_payload_03_txt_raw_sha256_recomputed": false,
+    "environment_registry_blob_sha1": "9ffdc2da742bd9ad07fbdfb8b27fcd8c8cf8b74e",
+    "historical_zip_library_sha256_match": true,
+    "historical_zip_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+    "historical_zip_original_provider_id_revision_verified": false,
+    "open_task_ledger_content_readback_verified": false,
+    "open_task_ledger_blob_sha1": "8e4a1760001e4f5d20580c8bab5aad76ce760033"
+  },
+  "safety": {
+    "host_writes": 0,
+    "google_drive_writes": 0,
+    "process_or_cache_deletions": 0,
+    "task_status_mutations": 0,
+    "secrets_or_plaintext_credentials_accessed": false,
+    "main_branch_task_ledger_mutated": false,
+    "archive_code_merged_to_main": false
+  },
+  "next_edges": [
+    "Verify the scheduled n8n execution at or after 2026-10-28T05:00:00Z and read back its evidence row.",
+    "Refresh Windows-survival workflow ID 393485804 after the 2026-10-28T05:07:00Z cron tick; preserve OPEN_SCHEDULE_GAP_UNRESOLVED until reconciled.",
+    "Record a single verified capability/source-target hash matrix for the nine concrete formats; do not close SV-20261020-13 until readback proves all acceptance criteria.",
+    "Keep all 45 recovery tasks nonterminal until each has its own verified action and readback.",
+    "Obtain a fresh authorized host heartbeat separately; do not infer host state from cloud scans.",
+    "Retrieve original ingestion_gate_payload_03.txt bytes through an authorized route and recompute SHA-256."
+  ],
+  "post_checkpoint_updates": [
+    {
+      "type": "CHECKPOINT_1137_CREATED_READBACK",
+      "evidence_row_id": 636,
+      "event_id": "X20261028T0437Z_CLOUD_CONTINUITY_CHECKPOINT_READBACK",
+      "checkpoint_blob_sha": "01e42fe00e76fee83494ed55430b1e3e1454f008",
+      "readback_verified": true
+    },
+    {
+      "type": "RESUME_POINTER_1137_READBACK",
+      "evidence_row_id": 637,
+      "event_id": "X20261028T0438Z_RESUME_POINTER_READBACK",
+      "pointer_blob_sha": "7b4ea36bc745b3b6ba4e15fbc000cd0751f68500",
+      "readback_verified": true
+    },
+    {
+      "type": "ARCHIVE_REAL_BACKEND_CI_READBACK",
+      "evidence_row_id": 634,
+      "run_id": 40633249428,
+      "conclusion": "success",
+      "real_7z_verified": true,
+      "real_lr_verified": true,
+      "real_rar_verified": false
+    },
+    {
+      "type": "GITHUB_TARGET_WORKFLOW_INVENTORY",
+      "evidence_row_id": 635,
+      "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+      "latest_target_run_number": 382
+    },
+    {
+      "type": "ARCHIVE_REAL_RAR_BACKEND_CI_READBACK",
+      "evidence_row_id": 638,
+      "event_id": "X20261028T0442Z_ARCHIVE_REAL_RAR_BACKEND_CI_READBACK",
+      "run_id": 40633761872,
+      "conclusion": "success",
+      "real_7z_verified": true,
+      "real_rar_verified": true,
+      "real_lr_verified": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "SOL_TIME_STONE_TOOL_REGISTRY/1.0",
+  "title": "TIME_STONE × Eye of Agamotto",
+  "active": true,
+  "force_active": true,
+  "activation_meaning": "TOOLS_ROUTER_ENTRY_ENABLED; DEVICE_WATCH_MUST_BE_VERIFIED_SEPARATELY",
+  "tags": ["@TIME_STONE", "@Sol Long Mạch", "NexT", "Tools"],
+  "implementation": "Chuỗi công cụ/_Dụng cụ/TIME_STONE_4D/time_stone.py",
+  "skill": "Chuỗi công cụ/_Kỹ năng/TIME_STONE_Eye_of_Agamotto/SKILL.md",
+  "commands": ["sync", "watch", "record"],
+  "lifecycle": {
+    "STAMP_OLD": "HISTORY_READ_ONLY",
+    "STAMP_LIVE": "CURRENT_OBSERVATION_AGED_TO_OLD_BY_REAL_CLOCK",
+    "STAMP_BETA": "FUTURE_DUE_NEEDS_REAL_RECEIPT"
+  },
+  "source_invariants": ["RAW_LOG_APPEND_ONLY", "CURRENT_PROJECTION_ATOMIC_REPLACE", "TRANSITIONS_APPEND_ONLY", "NO_FALSE_PROVIDER_RECEIPT"],
+  "pace": {"wall_clock_timezone_required": true, "default_scan_seconds": 60, "live_window_seconds": 60, "timelock_clock_backward": true},
+  "toolset_azure_devops_mcp": "REFRESH_SOURCE_CURSOR_BEFORE_REMOTE_SCHEDULE_ACTION",
+  "five_wave_journal": "FIVE_WAVE_JOURNAL_REGISTRY_20261016.md",
+  "proof": "PYTHON_STD_LIB_UNIT_TEST_AND_ANDROID_RUNIT_SERVICE_RECEIPT"
+}

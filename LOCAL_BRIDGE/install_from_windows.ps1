@@ -9,12 +9,12 @@ function Invoke-Wsl([string]$Script) {
 }
 
 $discover = @'
-for d in "$HOME"/kepler/worktrees/* "$HOME"/kepler/repos/Open-ai-bot "$HOME"/kepler/Open-ai-bot "$HOME"/Open-ai-bot; do
+for d in "$HOME"/kepler/worktrees/* "$HOME"/kepler/repos/SOL-LONG-MACH "$HOME"/kepler/SOL-LONG-MACH "$HOME"/SOL-LONG-MACH "$HOME"/kepler/repos/Open-ai-bot "$HOME"/kepler/Open-ai-bot "$HOME"/Open-ai-bot; do
   [ -d "$d" ] || continue
   git -C "$d" rev-parse --git-dir >/dev/null 2>&1 || continue
   u="$(git -C "$d" remote get-url origin 2>/dev/null || true)"
   case "$u" in
-    *2708halinh-cloud/Open-ai-bot*) printf '%s\n' "$d"; exit 0 ;;
+    *2708halinh-cloud/SOL-LONG-MACH*|*2708halinh-cloud/Open-ai-bot*) printf '%s\n' "$d"; exit 0 ;;
   esac
 done
 if [ -d "$HOME/kepler" ]; then
@@ -22,7 +22,7 @@ if [ -d "$HOME/kepler" ]; then
     git -C "$d" rev-parse --git-dir >/dev/null 2>&1 || continue
     u="$(git -C "$d" remote get-url origin 2>/dev/null || true)"
     case "$u" in
-      *2708halinh-cloud/Open-ai-bot*) printf '%s\n' "$d"; exit 0 ;;
+      *2708halinh-cloud/SOL-LONG-MACH*|*2708halinh-cloud/Open-ai-bot*) printf '%s\n' "$d"; exit 0 ;;
     esac
   done < <(find "$HOME/kepler" -maxdepth 5 -type d 2>/dev/null)
 fi
@@ -33,13 +33,13 @@ $root = (& wsl.exe -d $Distro -- bash -lc $discover 2>$null | Select-Object -Fir
 if ($root) { $root = $root.Trim() }
 
 if ([string]::IsNullOrWhiteSpace($root)) {
-  Write-Host 'Open-ai-bot checkout not found. Creating stable WSL checkout...'
+  Write-Host 'SOL-LONG-MACH checkout not found. Creating stable canonical WSL checkout...'
   $clone = @'
 set -e
 mkdir -p "$HOME/kepler/repos"
-target="$HOME/kepler/repos/Open-ai-bot"
+target="$HOME/kepler/repos/SOL-LONG-MACH"
 if [ ! -d "$target/.git" ]; then
-  git clone https://github.com/2708halinh-cloud/Open-ai-bot.git "$target"
+  git clone https://github.com/2708halinh-cloud/SOL-LONG-MACH.git "$target"
 fi
 printf '%s\n' "$target"
 '@
@@ -48,7 +48,7 @@ printf '%s\n' "$target"
 }
 
 if ([string]::IsNullOrWhiteSpace($root)) {
-  throw 'Unable to locate or create an Open-ai-bot checkout inside WSL.'
+  throw 'Unable to locate or create a SOL-LONG-MACH checkout inside WSL (legacy Open-ai-bot worktrees are also accepted).'
 }
 
 Write-Host "WSL repository root: $root"

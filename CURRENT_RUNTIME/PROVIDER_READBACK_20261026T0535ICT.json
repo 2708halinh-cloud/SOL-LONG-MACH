@@ -1,0 +1,286 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "id": "PROVIDER_READBACK_20261026T0535ICT",
+  "observed_at": "2026-10-26T05:35:41.432+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "main_head_before_checkpoint": "a303661cf3e0f0eec1ab5e06d4ad7b6475e1f9da",
+  "main_tree_before_checkpoint": "2f489ffbf433fc568ae6c64b31d4360ae52c4c6e",
+  "clock_observation": {
+    "orchestrator_utc": "2026-10-25T22:35:41.432Z",
+    "host_local": "2026-10-26T05:30:18.9909927+07:00",
+    "difference_seconds": 322.44,
+    "interpretation": "Use the host clock for Scheduled Task due-time comparisons; do not infer missed runs from the orchestrator clock."
+  },
+  "canonical_reads_before_write": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "readback": true
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "2840371cea19fa10ae48dbe75ee0d96d446dbea8",
+      "readback": true,
+      "observed_tail": "2026-10-26T05:23:31.4784437+07:00"
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "2b936a21ef528a2fc91ae96ac174086172d050cc",
+      "readback": true,
+      "checkpoint_before": "CURRENT_RUNTIME/PROVIDER_READBACK_20261026T0523ICT.json",
+      "updated_at_before": "2026-10-26T05:23:31.4784437+07:00"
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "51399d3d0efb4620b3cf9eb9ad32d40f0c0e2f40",
+      "readback": true,
+      "observed_at_before": "2026-10-26T05:23:31.4784437+07:00",
+      "task_count": 29,
+      "verified_action_events": 187,
+      "provider_observation_history": 187,
+      "integrity_corrections": 7,
+      "tasks_closed": 0
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "blob_sha": "0d864f5c8e9b4f957aa320ec76f3497129f30ce9",
+      "readback": true,
+      "observed_at_before": "2026-10-26T05:23:31.4784437+07:00"
+    }
+  },
+  "windows_host": {
+    "device_name": "DESKTOP-86ITNQ4",
+    "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+    "route_status": "ONLINE_DIRECT_READ_VERIFIED",
+    "observed_at_local": "2026-10-26T05:30:18.9909927+07:00",
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-26T05:26:33+07:00",
+      "next_run_local": "2026-10-26T05:31:32+07:00",
+      "last_result": "0x0",
+      "missed_runs": 0
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z",
+      "source_mutated": false
+    },
+    "tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T222639981026Z.json",
+      "observed_at_utc": "2026-10-25T22:26:39.981026Z",
+      "bytes": 1635,
+      "sha256": "24bb72351a03dab37b5e57ae97e4c7edb30f99a74a1ef4ba84d28dcce6c65a2a",
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+      "sensor_event_timestamp_sensor_count": 4,
+      "sensor_event_sensors_advanced": [],
+      "live_sensor_reading_confirmed": false,
+      "raw_sensor_values_persisted": false
+    },
+    "consumer": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T222636944Z.json",
+      "observed_at_utc": "2026-10-25T22:26:40.1519028Z",
+      "bytes": 6945,
+      "sha256": "a5bcc7209638c5275f8f874095b3cfa554d0c6e8e692b5e55d538bd2e1f39c7c",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_content_hash_verified": true,
+      "consumer_hash_matches_verifier": true,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "raw_rows_emitted": false,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false
+    },
+    "android_probe": {
+      "adb_transport": "ADB_TRANSPORT_RESPONDED",
+      "xiaomi12_usb_state": "device",
+      "redmi_note14pro_wireless_state": "NOT_LISTED",
+      "live_sensor_reading_confirmed": false
+    }
+  },
+  "dropbox": {
+    "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "size_bytes": 35389440,
+    "client_modified_utc": "2026-10-14T00:15:21Z",
+    "server_modified_utc": "2026-10-14T00:20:03Z",
+    "direct_folder_listing": {
+      "path": "/Linh Hà/SENSOR_LOGS",
+      "entry_count": 56,
+      "has_more": false,
+      "exact_bulk_target_name_present": false
+    },
+    "raw_bytes_downloaded": false,
+    "content_sha256_recomputed_from_downloaded_bytes": false,
+    "provider_content_hash_from_existing_consumer_receipt": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d"
+  },
+  "exact_bulk_target": {
+    "canonical_path": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+    "expected_bytes": 89814328,
+    "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "direct_D_path_exists": false,
+    "w_search": {
+      "pid": 46104,
+      "status": "COMPLETED",
+      "runtime_seconds": 249.37,
+      "exit_code": 0,
+      "returned_name_matches": 3,
+      "access_errors_suppressed": true,
+      "exhaustive_absence_claim": false
+    },
+    "candidates": [
+      {
+        "path": "W:\\Drive của tôi\\.vscode\\thiẾT bỊ\\Thành Lập 6 viên ĐÁ VÔ CỰC - The Creation of the 6 Infinity Stones\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+        "bytes": 68163712,
+        "sha256": "ab7cd110c2065b2fec5ddb8db216f2eb353759b3d0a410001f53ed3bb72ccf95",
+        "exact_size_match": false,
+        "exact_hash_match": false
+      },
+      {
+        "path": "W:\\Drive của tôi\\.vscode\\thiẾT bỊ\\Thành Lập 6 viên ĐÁ VÔ CỰC - The Creation of the 6 Infinity Stones\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV.tmp_sync",
+        "bytes": 68163712,
+        "sha256": "ab7cd110c2065b2fec5ddb8db216f2eb353759b3d0a410001f53ed3bb72ccf95",
+        "exact_size_match": false,
+        "exact_hash_match": false
+      },
+      {
+        "path": "W:\\Drive của tôi\\.vscode (1)\\thiẾT bỊ\\Thành Lập 6 viên ĐÁ VÔ CỰC - The Creation of the 6 Infinity Stones\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+        "bytes": 110480037,
+        "sha256": "a1b77dbdeaf71ab0b833055ad7e82ed8e9a4beaff36b1d5b4c52b0c76455cf2d",
+        "exact_size_match": false,
+        "exact_hash_match": false
+      }
+    ],
+    "source_substitution_performed": false,
+    "source_moved_or_deleted": false
+  },
+  "archive_pr36": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "number": 36,
+    "state": "OPEN",
+    "draft": true,
+    "merged": false,
+    "branch": "fix/archive-adapters-main-recut-20261025T1534ICT",
+    "previous_head": "cd3267f9ea125740328ee2ff14583c7721498a88",
+    "synced_head": "21376afbe2b17112dab41dc5fe30988d0324e5f5",
+    "merge_commit_parents": [
+      "a303661cf3e0f0eec1ab5e06d4ad7b6475e1f9da",
+      "cd3267f9ea125740328ee2ff14583c7721498a88"
+    ],
+    "update_ref": {
+      "success": true,
+      "force": false,
+      "expected_old_head": "cd3267f9ea125740328ee2ff14583c7721498a88"
+    },
+    "compare_at_sync": {
+      "status": "ahead",
+      "ahead_by": 12,
+      "behind_by": 0,
+      "base": "a303661cf3e0f0e0eec1ab5e06d4ad7b6475e1f9da",
+      "head": "21376afbe2b17112dab41dc5fe30988d0324e5f5",
+      "changed_files": 5
+    },
+    "workflows": [
+      {
+        "id": 40240822004,
+        "name": "SOL Library Stone Topology",
+        "conclusion": "success"
+      },
+      {
+        "id": 40240822029,
+        "name": "High-Threshold Secret Exposure Guard",
+        "conclusion": "success"
+      },
+      {
+        "id": 40240822077,
+        "name": "SOL Archive Read-only Adapters",
+        "conclusion": "success"
+      }
+    ],
+    "artifact": {
+      "id": 12616872883,
+      "name": "sol-archive-real-fixture-readback",
+      "bytes": 958,
+      "sha256": "ed269b59af8e4d24c87f348710a78b03ba745c9653393ed740634f1c002447a2",
+      "zip_integrity": "PASS",
+      "expires_at_utc": "2026-11-08T22:34:44Z"
+    },
+    "pr_merge_performed": false,
+    "force_push": false
+  },
+  "tesseract_pr6": {
+    "repository": "2708halinh-cloud/x-time-web",
+    "number": 6,
+    "state": "OPEN",
+    "draft": true,
+    "merged": false,
+    "head_sha": "5ead4fd9cca2bdc42fffb203b5dce0f0d6d51be8",
+    "workflow_file_sha": "9f1133617e683a7b15a588a205c4dee36cafad40",
+    "issuer_env_reference": "vars.XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+    "hosted_run_id": 40220813600,
+    "validation_run_id": 40220813636,
+    "conclusions": {
+      "hosted": "failure",
+      "validation": "failure"
+    },
+    "job_states": {
+      "linux_build": "failure_before_steps",
+      "macos_build": "failure_before_steps",
+      "windows_build": "failure_before_steps",
+      "tesseract_os": "failure_before_steps",
+      "selfhosted_windows_verify": "skipped_for_pull_request",
+      "readback": "failure"
+    },
+    "step_summaries": [],
+    "log_fetch": "BLOB_NOT_FOUND",
+    "issuer_public_key_verified": false,
+    "runner_assignment_verified": false,
+    "rerun_performed": false,
+    "variables_api_fetch": "NOT_ALLOWED_BY_CURRENT_GITHUB_FETCH_ROUTE"
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "latest_execution_id": "176",
+    "latest_execution_status": "success",
+    "latest_execution_started_at_utc": "2026-10-25T22:00:22.081Z",
+    "latest_execution_stopped_at_utc": "2026-10-25T22:00:24.112Z",
+    "last_verified_evidence_row_id": 413,
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "host_heartbeat_probed": false,
+    "host_operations": 0
+  },
+  "carrier_log": {
+    "path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\carrier-events.jsonl",
+    "last_verified_at_local": "2026-10-26T04:17:12.1180801+07:00",
+    "bytes": 6480846988,
+    "retention_policy": "NOT_VERIFIED",
+    "rotation_or_deletion_performed": false
+  },
+  "ledger_before_append": {
+    "task_count": 29,
+    "verified_action_events": 187,
+    "provider_observation_history": 187,
+    "integrity_corrections": 7,
+    "tasks_closed": 0
+  },
+  "safeguards": {
+    "history_preserved": true,
+    "source_mutated": false,
+    "source_moved_or_deleted": false,
+    "secrets_written": false,
+    "raw_sensor_values_exported": false,
+    "cloud_sensor_export_enabled": false,
+    "github_sensor_export_enabled": false
+  },
+  "next": [
+    "After the next scheduled host Tick (host clock next run 05:31:32+07 at the 05:30:18 sample), exact-read the new Tick/consumer receipts and recompute source SHA-256; the latest verified receipt at that sample was 05:26:39+07 and the live sensor stream remained stale.",
+    "Keep the canonical bulk target unresolved: D: path absent; three W: same-name candidates are all wrong size/hash. Search completed but suppressed access errors, so do not claim exhaustive absence or substitute a candidate.",
+    "Archive PR #36 was non-force synced from main head a303661cf3e0f0eec1ab5e06d4ad7b6475e1f9da; current branch head 21376afbe2b17112dab41dc5fe30988d0324e5f5 has 12 ahead/0 behind at that comparison, all three CI workflows passed, and artifact 12616872883 is unexpired. PR remains OPEN/Draft; do not merge the PR or force-push.",
+    "Continue TESSERACT PR #6 issuer-key provenance and runner assignment through an authorized settings/issuer carrier. Hosted jobs failed before steps and logs are unavailable; do not rerun without a verified runner/issuer change.",
+    "Review carrier-events.jsonl retention policy without rotation or deletion.",
+    "Keep all 29 tasks nonterminal; n8n execution 176 succeeded, last verified evidence row 413, 45 recovery rows pending, and host heartbeat not probed."
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "SOL_RAM_ROLE/1.0",
+  "recorded_date": "2026-10-20",
+  "purpose": "accelerate disposable caches and bounded in-process computation without displacing persistent sources",
+  "source_of_truth": {
+    "ububu_daemon": "G:\\OS_Workspace\\ububu_daemon",
+    "evidence": "existing ROOTS path observed in GitHub; live Windows bytes not yet read",
+    "automatic_script_execution": false,
+    "next_required_action": "inspect and hash actual daemon scripts on Windows before integrating"
+  },
+  "rules": {
+    "RAM_is_volatile": true,
+    "no_browser_profile_migration": true,
+    "no_password_cookie_extension_or_token_cache_migration": true,
+    "no_sensor_log_relocation": true,
+    "no_VHDX_as_swapfile": true,
+    "no_disk_formatting": true,
+    "no_unverified_drive_letter_ram_claim": true,
+    "never_autostart_unknown_daemon": true,
+    "reserve_host_available_ram_mb": 1024,
+    "start_cache_mb": 512,
+    "max_cache_mb": 2048
+  },
+  "roles": [
+    {
+      "environment": "WINDOWS",
+      "consumer": "Chrome/Edge",
+      "category": "replaceable HTTP disk cache only",
+      "probe": "audit-ram-and-ububu.ps1",
+      "launcher": "start-chromium-ram-cache.ps1",
+      "prerequisite": "existing ImDisk mapping and available RAM, browser not already running",
+      "persistent_settings": "program flags stored in GitHub, NOT installed in startup",
+      "live_verified": false
+    },
+    {
+      "environment": "WINDOWS",
+      "consumer": "Firefox",
+      "category": "disk cache only",
+      "prerequisite": "observe existing profile and RAM disk; safe reversible profile preference update after browser closed",
+      "live_verified": false,
+      "applied": false
+    },
+    {
+      "environment": "LINUX/WSL",
+      "consumer": "Chrome/Firefox",
+      "category": "tmpfs for transient browser cache",
+      "mount_script": "setup-linux-tmpfs-cache.sh",
+      "prerequisite": "real memory readback; dedicated empty mountpoint and root permission",
+      "live_verified": false,
+      "applied": false
+    },
+    {
+      "environment": "DOCKER",
+      "consumer": "container temporary work directories",
+      "category": "tmpfs per container with bounded size",
+      "prerequisite": "inspect actual compose/services and host available RAM before writing service-specific mount",
+      "live_verified": false,
+      "applied": false
+    },
+    {
+      "environment": "PYTHON",
+      "consumer": "ububu_daemon processors",
+      "category": "bounded in-process LRU, file-mmap read only",
+      "prerequisite": "read exact existing daemon functions and benchmark before wrapping/rewiring",
+      "live_verified": false,
+      "applied": false
+    },
+    {
+      "environment": "REMOTE_CLOUD_CONNECTORS",
+      "consumer": "platform-managed state",
+      "category": "not migratable by local RAM disk",
+      "prerequisite": "only cache user-authorized local copies under data protection policy",
+      "live_verified": false,
+      "applied": false
+    }
+  ],
+  "safe_files": [
+    "tools/ram-accelerator/audit-ram-and-ububu.ps1",
+    "tools/ram-accelerator/start-chromium-ram-cache.ps1",
+    "tools/ram-accelerator/setup-linux-tmpfs-cache.sh"
+  ],
+  "no_source_deleted": true,
+  "local_windows_applied": false
+}

@@ -1,0 +1,150 @@
+{
+  "schema": "SOL_ASSET_PROVENANCE_REGISTRY/1.0",
+  "created_at": "2026-11-14",
+  "purpose": "Persistent index of source artifacts, documents, images, video, audio, interactive media, events and Agent relationships. This is an evidence register, not a claim of complete recovery.",
+  "evidence_policy": {
+    "levels": [
+      "OBSERVED_IN_LIBRARY",
+      "USER_REPORTED",
+      "PRIOR_AGENT_REPORTED",
+      "METADATA_ONLY",
+      "BYTES_READ",
+      "HASH_VERIFIED",
+      "UNRESOLVED"
+    ],
+    "rules": [
+      "Never invent file metadata or source identity",
+      "Preserve original names and source labels",
+      "Record derivatives separately from originals",
+      "Record Agent relationship only when supported by source",
+      "A file listing or URL is not proof that bytes can be read",
+      "Keep unresolved items open; append corrections rather than erase history"
+    ]
+  },
+  "entity_types": [
+    "SOURCE",
+    "CONVERSATION",
+    "EVENT",
+    "ASSET",
+    "AGENT",
+    "STORAGE_LOCATION",
+    "INTERACTION"
+  ],
+  "relationships": [
+    "ORIGINATED_FROM",
+    "ATTACHED_TO",
+    "CREATED_BY",
+    "READ_BY",
+    "MODIFIED_BY",
+    "TRANSFERRED_TO",
+    "CALLED",
+    "HANDOFF_TO",
+    "DEPENDS_ON",
+    "VERIFIED_BY",
+    "STORED_AT",
+    "DERIVED_FROM",
+    "SUPERSEDES",
+    "CONFLICTS_WITH"
+  ],
+  "initial_assets": [
+    {
+      "asset_id": "ASSET-LIB-20261114-MESSAGES-HTML",
+      "original_filename": "messages.html",
+      "media_type": "conversation_export_html",
+      "evidence_status": "BYTES_READ",
+      "source_provider": "ChatGPT Library",
+      "observed_content": "HTML conversation export; beginning contains dated Telegram-related entries from 13-14 June 2026, sender labels Git .codeX and X, message IDs and links.",
+      "source_identity": "Export provenance not yet established from archive manifest.",
+      "sha256": null,
+      "storage_uri": null,
+      "related_agents_or_senders": [
+        "Git .codeX",
+        "X"
+      ],
+      "events": [
+        "EVENT-20260613-TELEGRAM_LINKS",
+        "EVENT-20260614-SHELL_SCRIPT_SHARED"
+      ],
+      "notes": "Only the beginning portion was read in this operation; complete export parsing remains open."
+    },
+    {
+      "asset_id": "ASSET-LIB-20261114-DEBT-JSON",
+      "original_filename": "danh_sach_no.json",
+      "media_type": "application_json",
+      "evidence_status": "BYTES_READ_PARTIAL",
+      "source_provider": "ChatGPT Library",
+      "observed_content": "Outstanding-work debt register generated 2026-11-01; includes repository inventory, issues, pull requests, n8n recovery tasks and evidence policy.",
+      "source_identity": "Library file; export origin not yet resolved.",
+      "sha256": null,
+      "storage_uri": null,
+      "related_agents_or_senders": [],
+      "events": [
+        "EVENT-20261101-DEBT_REGISTER_SNAPSHOT"
+      ]
+    },
+    {
+      "asset_id": "ASSET-LIB-20261114-DEBT-JSON-1",
+      "original_filename": "danh_sach_no(1).json",
+      "media_type": "application_json",
+      "evidence_status": "BYTES_READ_PARTIAL",
+      "source_provider": "ChatGPT Library",
+      "observed_content": "Returned content begins with same debt-register schema and 2026-11-01 generation timestamp; duplicate identity/content comparison not yet completed.",
+      "source_identity": "Library file; relationship to danh_sach_no.json unresolved.",
+      "sha256": null,
+      "storage_uri": null,
+      "related_agents_or_senders": [],
+      "events": [
+        "EVENT-20261101-DEBT_REGISTER_SNAPSHOT"
+      ],
+      "notes": "Do not deduplicate until full byte/hash comparison."
+    },
+    {
+      "asset_id": "ASSET-LIB-20261114-AGENT-BRIDGE",
+      "original_filename": "TESSERACT_AGENT_BRIDGE_20261016.md",
+      "media_type": "markdown_agent_handoff_spec",
+      "evidence_status": "LIBRARY_SEARCHED_CONTENT_REPORTED",
+      "source_provider": "ChatGPT Library",
+      "observed_content": "Describes coordination routes and handoff conditions among _Plugins, TÁC NHÂN, TÁC NHÂN PLUS, TÁC NHÂN—TAY, Master_OAth, Hostinger and Gmail.",
+      "source_identity": "Library artifact; full content/hash not yet read back in this operation.",
+      "sha256": null,
+      "storage_uri": null,
+      "related_agents_or_senders": [
+        "TÁC NHÂN",
+        "TÁC NHÂN PLUS",
+        "TÁC NHÂN—TAY",
+        "Master_OAth",
+        "Hostinger",
+        "Gmail"
+      ],
+      "events": [
+        "EVENT-20261016-AGENT-BRIDGE"
+      ],
+      "notes": "Agent names are source labels, not verified live endpoints."
+    },
+    {
+      "asset_id": "ASSET-LIB-20261114-INTERACTIVE-TXT",
+      "original_filename": "Văn bản đã dán (1).txt",
+      "media_type": "interactive_content_description",
+      "evidence_status": "LIBRARY_SEARCHED_CONTENT_REPORTED",
+      "source_provider": "ChatGPT Library",
+      "observed_content": "Describes an interaction in which selecting an icon displays two text passages side by side.",
+      "source_identity": "Library artifact; full bytes and associated original UI/media not yet verified.",
+      "sha256": null,
+      "storage_uri": null,
+      "related_agents_or_senders": [],
+      "events": [
+        "EVENT-INTERACTIVE-TEXT-COMPARE"
+      ],
+      "notes": "This is a description of interaction behavior, not proof that the original interactive component is preserved."
+    }
+  ],
+  "missing_inventory": {
+    "images": "NOT_YET_ENUMERATED",
+    "videos": "NOT_YET_ENUMERATED",
+    "audio": "NOT_YET_ENUMERATED",
+    "interactive_files": "PARTIAL_SEED_ONLY",
+    "conversation_attachments": "NOT_YET_ENUMERATED",
+    "agent_execution_and_handoff_logs": "PARTIAL_SEED_ONLY"
+  },
+  "next_reconciliation": "Enumerate source exports and attachments, read complete source files, compute hashes only from accessible bytes, extract event timestamps and Agent interactions, then append source-linked records."
+}

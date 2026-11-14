@@ -1,0 +1,339 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.1",
+  "id": "PROVIDER_READBACK_202610251830ICT",
+  "observed_at_utc": "2026-10-25T11:30:03.210Z",
+  "observed_at_local": "2026-10-25T18:30:03.210+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "main_head_before_checkpoint": "3bd980a0d9f37ee4d6dc270fd71ab7dc912e41fe",
+  "canonical_reads": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "readback_verified": true
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "5a28a2579f052844fad2e83e00bf3e85156c2093",
+      "readback_verified": true
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "36a06d1418aa469ef6654538d303483c6efc1994",
+      "raw_readback_verified": true,
+      "parsed": true,
+      "readback_route": "GitHub fetch_blob; 1,194,521 characters; JSON parse succeeded"
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "4419bba51361aeadb8b5bc070c459056595f469f",
+      "raw_readback_verified": true,
+      "parsed": true,
+      "readback_route": "GitHub fetch_blob; 1,069,384 UTF-8 bytes; JSON parse succeeded"
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "blob_sha": "820146146fd9534dad7fc8ebb7ac04b5fc130749",
+      "raw_readback_verified": true,
+      "parsed": true
+    },
+    "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json": {
+      "blob_sha": "c64ab91ffa405b3186eb1b748fae58c8d9cc16c2",
+      "readback_verified": true
+    },
+    "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1729ICT.json": {
+      "blob_sha": "4445add488dffb82312c23da6579c136d0a58350",
+      "readback_verified": true
+    }
+  },
+  "provider_readback": {
+    "github": {
+      "status": "AVAILABLE_AND_USED",
+      "main_head_before_checkpoint": "3bd980a0d9f37ee4d6dc270fd71ab7dc912e41fe",
+      "pointer_and_ledger_full_readback": true,
+      "tasks_closed": 0
+    },
+    "dropbox_outlook": {
+      "status": "METADATA_READ_SUCCESS",
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "last_recorded_content_sha256": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+      "content_sha256_recomputed_this_turn": false,
+      "raw_bytes_downloaded": false
+    },
+    "windows_host": {
+      "inventory_status": "ONLINE",
+      "host": "DESKTOP-86ITNQ4",
+      "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+      "direct_probe_this_turn": true,
+      "host_clock_observed_local": "2026-10-25T18:22:34.8929263+07:00",
+      "scheduled_task": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "task_enabled": true,
+      "task_state": "Ready",
+      "last_run_local": "2026-10-25T18:21:33+07:00",
+      "last_task_result": "0x0",
+      "next_run_local": "2026-10-25T18:26:32+07:00",
+      "missed_runs": 0,
+      "tick_receipt": {
+        "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T112138817813Z.json",
+        "observed_at_utc": "2026-10-25T11:21:38.817813Z",
+        "sha256": "08a026df7b84b107e611b7fd024d535c7b6093384b99ffd78c704dc8a591b777",
+        "source_bytes": 35389440,
+        "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+        "live_sensor_reading_confirmed": false,
+        "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+        "sensor_event_timestamp_sensor_count": 4,
+        "sensor_event_sensors_advanced": [],
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "cloud_export_enabled": false,
+        "github_export_enabled": false
+      },
+      "consumer_receipt": {
+        "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T112136101Z.json",
+        "sha256": "b416e8e52f0e456d049391cc2212b0dd2bc7735b0919fbda35512a9b541a56db",
+        "status": "SOURCE_OBSERVED_READONLY",
+        "exit_code": 0,
+        "source_content_hash_verified": true,
+        "consumer_hash_matches_verifier": true,
+        "live_sensor_reading_confirmed": false,
+        "source_file_written": false,
+        "synthetic_rows_added": 0,
+        "raw_rows_emitted": false,
+        "cloud_export_enabled": false,
+        "github_push_enabled": false,
+        "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+        "sensor_event_sensors_advanced": []
+      },
+      "source_after_readback": {
+        "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+        "size_bytes": 35389440,
+        "last_write_utc": "2026-10-23T08:45:56.2458701Z",
+        "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87"
+      },
+      "exact_bulk_target": {
+        "expected_size_bytes": 89814328,
+        "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+        "found": false,
+        "search_scope": "D:\\SENSOR_LOGS recursive file-size scan"
+      },
+      "adb": {
+        "executable_present": true,
+        "usb_target": "1056285",
+        "usb_state": "device",
+        "sensorservice_probe_succeeded": true,
+        "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+        "wireless_target": "192.168.1.14:5556",
+        "wireless_state": "NOT_LISTED",
+        "termux_installed": true,
+        "termux_service_present": true,
+        "termux_api_package_present": false,
+        "sensor_apps_installed": [
+          "com.galaxy.sensortoolbox",
+          "com.exatools.sensors"
+        ],
+        "active_sensor_service_verified": false
+      },
+      "xtime": {
+        "loopback_health_http": 200,
+        "modual_schema_http": 200,
+        "sensorimotor_http": 200,
+        "schema_live_device_proven": false,
+        "sensorimotor_is_filesystem_delta_not_sensor_event_proof": true
+      },
+      "hwinfo": {
+        "expected_path": "D:\\SENSOR_LOGS\\HWiNFO_WINDOWS.CSV",
+        "found": false,
+        "fresh_sample_verified": false
+      },
+      "time_service": {
+        "service": "W32Time",
+        "status": "Stopped",
+        "start_type": "Manual",
+        "source_query": "service not started",
+        "start_attempt": "FAILED_ACCESS_DENIED_OR_SERVICE_OPEN_DENIED",
+        "system_time_changed": false
+      }
+    },
+    "braid": {
+      "execution_exit_code": 0,
+      "six_receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_SIX_FORCES_20261025T112000374270Z.json",
+      "six_receipt_sha256": "efde81676a4806db4828c0438fe41754e3f0fc32b8b77efec49694a55e739493",
+      "six_action_count": 9,
+      "six_receipt_readback_ok": true,
+      "plural_receipt_path": "G:\\OS_Workspace\\TESSERACT_OS\\runtime\\state\\BRAID_LIVE_PLURAL_20261025T112000442565Z.json",
+      "plural_receipt_sha256": "4452d31d3248a9ffffccb2520e7fb4e2ed88090aacefc83c936d1c863d6a630e",
+      "plural_action_count": 5,
+      "plural_receipt_readback_ok": true,
+      "source_sha256_unchanged": true,
+      "mutation_executed": false,
+      "cloud_host_wiring": "NOT_VERIFIED"
+    },
+    "n8n_cloud": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "164",
+      "status": "success",
+      "started_at_utc": "2026-10-25T11:00:22.075Z",
+      "stopped_at_utc": "2026-10-25T11:00:24.129Z",
+      "event_id": "X20261025110023982_CLOUD",
+      "row_id": 358,
+      "row_exact_readback": true,
+      "state": "OPEN_WORK_REMAINS",
+      "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+      "recovery_rows": 45,
+      "pending_rows": 45,
+      "host_heartbeat_probed": false,
+      "host_operations": 0,
+      "duplicate_manual_execution": false
+    }
+  },
+  "independent_branches": {
+    "archive_pr36": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "e9c299594447d75bebb75c343cdb707731c7ea50",
+      "compared_to_main_head": "3bd980a0d9f37ee4d6dc270fd71ab7dc912e41fe",
+      "compare_status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 54,
+      "exact_target_readback": true,
+      "files": [
+        {
+          "path": ".github/workflows/archive-readonly-adapters.yml",
+          "pr_blob_sha": "cd1e1bcbfed93ce90bb0efe67c6d1a0b9a70b616",
+          "main_exists": false
+        },
+        {
+          "path": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.sandbox-bin/sol_archive_10_formats.py",
+          "pr_blob_sha": "da7660bccfe6aa2b4bebc03f4eb0744e9b16f190",
+          "main_blob_sha": "336c01735d84f1830decae5952db0a9973d770b5"
+        },
+        {
+          "path": "tests/test_sol_archive_10_formats.py",
+          "pr_blob_sha": "dced3b29967b5b51e440e937fa9af3a902643326",
+          "main_exists": false
+        },
+        {
+          "path": "tests/test_sol_library_stone_topology.py",
+          "pr_blob_sha": "a3b9fd7409aeb92cf561eabffe3c4198a7e782b3",
+          "main_blob_sha": "5fea826f737d0028c89a7637f1837220fe8f7897"
+        },
+        {
+          "path": "tests/verify_real_archive_fixtures.py",
+          "pr_blob_sha": "225b2bcb40e2c04cad9aaab100c7b6349a12874e",
+          "main_exists": false
+        }
+      ],
+      "ci_runs": [
+        {
+          "run_id": 40177456089,
+          "conclusion": "success"
+        },
+        {
+          "run_id": 40177456127,
+          "conclusion": "success"
+        },
+        {
+          "run_id": 40177456080,
+          "conclusion": "success"
+        }
+      ],
+      "artifact": {
+        "id": 12592822576,
+        "name": "sol-archive-real-fixture-readback",
+        "size_bytes": 959,
+        "sha256": "05c8c52b781a653d7882c854ba56463f0265b192db090dc761dbd4f124b62c65",
+        "expired": false,
+        "expires_at_utc": "2026-11-08T08:39:22Z"
+      },
+      "merged": false,
+      "force_push": false
+    },
+    "archive_pr34": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/34",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "a90f85ae1e0d5a5129caa1b472acac4f4697a71c",
+      "compare_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 221,
+      "current_main_head": "3bd980a0d9f37ee4d6dc270fd71ab7dc912e41fe",
+      "merged": false,
+      "force_push": false
+    },
+    "modual_pr35": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/35",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "f99d96e39f62245d23ad728daac2c2006061e393",
+      "compare_status": "diverged",
+      "ahead_by": 9,
+      "behind_by": 205,
+      "current_main_head": "3bd980a0d9f37ee4d6dc270fd71ab7dc912e41fe",
+      "ci_runs": [
+        {
+          "run_id": 40154600501,
+          "conclusion": "success"
+        },
+        {
+          "run_id": 40154600506,
+          "conclusion": "success"
+        }
+      ],
+      "merged": false,
+      "force_push": false
+    },
+    "tesseract_pr6": {
+      "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "latest_known_runs": [
+        {
+          "id": 39994207477,
+          "conclusion": "failure",
+          "steps": 0,
+          "artifacts": 0
+        },
+        {
+          "id": 39994207667,
+          "conclusion": "failure",
+          "steps": 0,
+          "artifacts": 0
+        }
+      ],
+      "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+      "issuer_public_key_verified": false,
+      "runner_assignment_verified": false,
+      "ci_rerun_performed": false
+    }
+  },
+  "ledger_snapshot": {
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "verified_action_events": 161,
+    "provider_observations": 161,
+    "integrity_corrections": 4,
+    "tasks_closed": 0
+  },
+  "safety": {
+    "raw_sensor_bytes_downloaded_or_committed": false,
+    "raw_sensor_values_persisted": false,
+    "credentials_exported": false,
+    "source_moved_deleted_or_overwritten": false,
+    "cloud_or_github_sensor_export_enabled": false,
+    "system_time_changed": false,
+    "unfinished_tasks_remain_nonterminal": true,
+    "no_ci_rerun_without_verified_runner_or_issuer_change": true
+  },
+  "result": "WINDOWS_TICK_AND_READONLY_CONSUMER_FRESH_VERIFIED; LIVE_SENSOR_STREAM_STALE; BULK_TARGET_NOT_FOUND; ALL_OPEN_RETAINED",
+  "next": [
+    "After the next host-local scheduled time, read the newest Tick and consumer receipts; current task next run is 2026-10-25 18:26:32+07 by Windows host clock.",
+    "Continue exact-target search for the canonical 89,814,328-byte MODUAL bulk target; do not substitute Dropbox object or repository replica.",
+    "Continue finding a supported continuous sensor client/bridge; ADB transport and X-TIME filesystem deltas are not live sensor stream proof.",
+    "W32Time start failed because the current session cannot open the service; do not change time configuration without authorized elevated rights.",
+    "Keep PR #34, #35, #36 and TESSERACT PR #6 OPEN; do not merge, force-push, or rerun CI without verified issuer/runner changes.",
+    "After the next scheduled n8n pulse, read the actual execution and exact evidence row; do not trigger a duplicate manual scan."
+  ]
+}

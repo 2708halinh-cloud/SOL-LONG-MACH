@@ -1,0 +1,145 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/3.2",
+  "title": "THU HOI NGUON SOL — cloud continuity readback",
+  "observed_at_utc": "2026-10-28T22:13:19Z",
+  "observed_at_local": "2026-10-29T05:13:19+07:00",
+  "state": "OPEN_WORK_REMAINS",
+  "timestamp_basis": "Cloud provider timestamps and GitHub Actions runs are not Windows/Android host heartbeat.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261029T0324ICT.json",
+    "blob_sha": "f642823709d01b2ed33ab97a1127ece788f88d07",
+    "commit_sha": "55dd4e221c7ffe87fe95e97bb28fc6ad2935fa29",
+    "readback_verified": true
+  },
+  "previous_resume_pointer": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json",
+    "blob_sha": "b90305a33237ccaf3a260cc1bb457b08c08b2106",
+    "commit_sha": "96e6b840be41042d63ec0303414e23081e6f2a08",
+    "readback_verified": true
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "version_id": "6caa22c1-6664-46b3-924c-48e9ee040c88",
+    "latest_execution": {
+      "execution_id": "274",
+      "mode": "trigger",
+      "status": "success",
+      "started_at_utc": "2026-10-28T22:00:22.087Z",
+      "stopped_at_utc": "2026-10-28T22:00:24.219Z",
+      "event_id": "X20261028220024074_CLOUD",
+      "evidence_row_id": 689
+    },
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "project_id": "6qKpRmicIGHA5snY",
+    "recovery_rows_total": 45,
+    "recovery_rows_nonterminal": 45,
+    "recovery_rows_terminal": 0,
+    "tasks_closed": 0,
+    "task_statuses_changed": false,
+    "evidence_rows_total_after_append": 689,
+    "receipt_note": "Execution 274 read the prior evidence count as 688, then appended row 689; table readback confirms row 689 exists.",
+    "next_expected_tick_utc": "2026-10-28T23:00:00Z"
+  },
+  "github_sources": {
+    "repository": "2708halinh-cloud/SOL-LONG-MACH",
+    "observed_main_commit": "96e6b840be41042d63ec0303414e23081e6f2a08",
+    "open_tasks_current_blob_sha1": "8e4a1760001e4f5d20580c8bab5aad76ce760033",
+    "open_tasks_current_objects": 29,
+    "open_tasks_current_content_freshly_verified_this_invocation": false,
+    "readback_blocker": "GitHub contents connector returned empty content with the known blob SHA; raw fetch rejected the large file. Retain previous crosswalk receipt, do not infer new ledger content.",
+    "reconciliation_status": "PRIOR_CROSSWALK_RETAINED; 29 GITHUB TASKS MAPPED; 16 N8N-ONLY LEGACY TASKS REMAIN SEPARATE",
+    "normalized_crosswalk_matches": 29,
+    "n8n_rows_without_github_ledger_counterpart": 16,
+    "task_status_mutations": 0,
+    "ledger_rows_merged": 0
+  },
+  "actions_inventory": {
+    "observed_at_utc": "2026-10-28T22:13:19Z",
+    "endpoint": "https://api.github.com/repos/2708halinh-cloud/SOL-LONG-MACH/actions/runs?per_page=100",
+    "total_count": 6515,
+    "pages_read": [
+      1
+    ],
+    "page_size": 100,
+    "windows_survival": {
+      "workflow_id": 393485804,
+      "workflow_path": ".github/workflows/windows-survival-cloud-continuity.yml",
+      "cron": "7 * * * *",
+      "latest_visible_run_id": 40748343196,
+      "latest_visible_run_number": 385,
+      "latest_visible_run_created_at_utc": "2026-10-28T18:47:12Z",
+      "missing_expected_ticks_utc": [
+        "2026-10-28T19:07:00Z",
+        "2026-10-28T20:07:00Z",
+        "2026-10-28T21:07:00Z",
+        "2026-10-28T22:07:00Z"
+      ],
+      "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+      "cause_verified": false,
+      "next_expected_tick_utc": "2026-10-28T23:07:00Z"
+    },
+    "x66": {
+      "workflow_id": 389996732,
+      "workflow_path": ".github/workflows/sol-x66-cloud-continuity.yml",
+      "cron": "17 */6 * * *",
+      "latest_visible_run_id": 40692302037,
+      "latest_visible_run_number": 36,
+      "latest_visible_run_created_at_utc": "2026-10-28T12:58:41Z",
+      "missing_expected_tick_utc": "2026-10-28T18:17:00Z",
+      "state": "OPEN_SCHEDULE_GAP_UNRESOLVED",
+      "cause_verified": false,
+      "next_expected_tick_utc": "2026-10-29T00:17:00Z"
+    }
+  },
+  "archive_adapter_task": {
+    "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+    "recovery_table_row_id": 14,
+    "status": "OPEN_7Z_RAR_LR",
+    "pull_request": {
+      "number": 36,
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "mergeable": true,
+      "mergeable_state": "clean",
+      "head_branch": "fix/archive-adapters-main-recut-20261025T1534ICT",
+      "head_sha": "00400b4f81a31293b1960ed1709280130cc25db3",
+      "latest_checks_completed_at_utc": "2026-10-25T22:58:10Z",
+      "all_five_visible_check_runs_success": true,
+      "fresh_ci_verified_this_invocation": false,
+      "action": "KEEP_DRAFT_NO_MERGE"
+    }
+  },
+  "host_and_android": {
+    "latest_verified_host_evidence_row_id": 550,
+    "latest_host_tick_utc": "2026-10-27T00:51:44.165010Z",
+    "fresh_host_heartbeat_verified": false,
+    "host_probed_this_invocation": false,
+    "android_online_state": "UNVERIFIED",
+    "remote_route_is_host_heartbeat": false
+  },
+  "next_edges": [
+    "Resume from this checkpoint; do not rebuild from scratch.",
+    "Keep all 45 n8n recovery rows nonterminal; preserve 29 GitHub-ledger tasks separately from 16 legacy n8n-only IDs.",
+    "Recheck n8n after 2026-10-28T23:00:00Z.",
+    "Recheck Windows Survival after 2026-10-28T23:07:00Z; keep OPEN_SCHEDULE_GAP_UNRESOLVED until a fresh target-workflow run inventory verifies recovery or cause.",
+    "Recheck X66 after 2026-10-29T00:17:00Z.",
+    "Keep PR #36 draft; no merge without fresh CI and exact readback.",
+    "Obtain a fresh authorized Windows heartbeat separately when a host route becomes available; Android remains UNVERIFIED.",
+    "Continue the 16 legacy n8n-only source_event/source_pointer/permission/result_receipt/next_verified_edge review without merging IDs."
+  ],
+  "safety": {
+    "host_writes": 0,
+    "google_drive_writes": 0,
+    "process_or_cache_deletions": 0,
+    "task_status_mutations": 0,
+    "ledger_rows_merged": 0,
+    "secrets_or_plaintext_credentials_accessed": false,
+    "source_files_modified": 0,
+    "host_heartbeat_probed": false
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.1",
+  "id": "PROVIDER_READBACK_20261025T1702ICT",
+  "observed_at_utc": "2026-10-25T10:02:45Z",
+  "observed_at_local": "2026-10-25T17:02:45+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "main_head_before_checkpoint": "bfc26c7096c87818ca2b8cc2c516dbed5920d06e",
+  "canonical_reads": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "readback_verified": true
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "ef78f631c17c08876df6db2cb9ddd753ae275bbb",
+      "readback_verified": true
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "2e952129cd588adc8904d8d64c60aec3ab94981c",
+      "bytes": 1529197,
+      "raw_readback_verified": true,
+      "git_blob_sha_recomputed": true
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "9378e06ddd5358f40a6e015b682d8f03f0ea3d17",
+      "bytes": 1281695,
+      "raw_readback_verified": true,
+      "git_blob_sha_recomputed": true
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "blob_sha": "4e3a23f562551684f127e93a5b72e93da081140f",
+      "commit_sha": "bfc26c7096c87818ca2b8cc2c516dbed5920d06e",
+      "exact_target_readback": true
+    },
+    "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json": {
+      "blob_sha": "31be8ccf6c36e1108741a8cd2a1867ecff44e2ec",
+      "readback_verified": true,
+      "will_be_updated_additively_after_checkpoint": true
+    }
+  },
+  "provider_readback": {
+    "github": {
+      "status": "AVAILABLE_AND_USED",
+      "main_head_before_checkpoint": "bfc26c7096c87818ca2b8cc2c516dbed5920d06e"
+    },
+    "dropbox_outlook": {
+      "status": "METADATA_READ_SUCCESS",
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "file_id": "id:gvG29tEleJwAAAAAAAACOw",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "raw_bytes_downloaded": false,
+      "content_sha256_recomputed_this_turn": false,
+      "last_recorded_content_sha256": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d"
+    },
+    "remote_desktop_commander": {
+      "status": "ONLINE_AND_USED",
+      "device": "DESKTOP-86ITNQ4",
+      "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+      "host_clock": "2026-10-25T16:58:46.1906634+07:00",
+      "runtime_clock": "2026-10-25T17:02:45+07:00",
+      "approximate_host_clock_lag_seconds": 239
+    },
+    "n8n_cloud_continuity": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "execution_id": "163",
+      "execution_status": "success",
+      "started_at_utc": "2026-10-25T10:00:22.065Z",
+      "stopped_at_utc": "2026-10-25T10:00:24.182Z",
+      "event_id": "X20261025100024046_CLOUD",
+      "row_id": 352,
+      "state": "OPEN_WORK_REMAINS",
+      "recovery_tasks": 45,
+      "pending_tasks": 45,
+      "host_heartbeat": "HOST_HEARTBEAT_NOT_PROBED",
+      "host_operations": 0,
+      "duplicate_manual_execution": false
+    }
+  },
+  "modual_runtime": {
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-25T16:56:33+07:00",
+      "last_result": "0x0",
+      "next_run_local": "2026-10-25T17:01:32+07:00",
+      "missed_runs": 0
+    },
+    "tick_receipt": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T095639451267Z.json",
+      "observed_at_utc": "2026-10-25T09:56:39.451267Z",
+      "sha256": "33b8ec5bd23878295821318a74264b15f23ddd74faf109495c4090edd79e053a",
+      "content_readback": true,
+      "sha256_recomputed": true
+    },
+    "consumer_receipt": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T095636294Z.json",
+      "observed_at_utc": "2026-10-25T09:56:39.574712Z",
+      "sha256": "59a6d6f662cc418b6da6216da80de1551a9f4379d767166b51c345bbec23a63f",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "source_content_hash_verified": true,
+      "consumer_hash_matches_verifier": true,
+      "raw_rows_emitted": false
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "hash_recomputed_this_turn": true,
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z",
+      "source_file_written": false,
+      "synthetic_rows_added": 0
+    },
+    "sensor_stream": {
+      "usb_target": "1056285",
+      "adb_transport": "RESPONDED",
+      "sensorservice_probe_succeeded": true,
+      "sensor_event_timestamp_sensor_count": 4,
+      "sensor_event_sensors_advanced": [],
+      "status": "EVENT_TIMESTAMP_STALE",
+      "wireless_target": "192.168.1.14:5556",
+      "wireless_state": "NOT_LISTED",
+      "production_continuous_stream_verified": false,
+      "raw_sensor_values_persisted": false
+    },
+    "exact_target_discrepancy": {
+      "bulk_target": {
+        "path": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+        "exists": false,
+        "expected_bytes": 89814328,
+        "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3"
+      },
+      "live_target": {
+        "path": "D:\\SENSOR_LOGS\\_SESORIMOTOR__{WINDOWS)__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+        "exists": false,
+        "expected_bytes": 2647298,
+        "expected_sha256": "c0cddbab3b8d5474aa291c761c8377b68b6c7ba01c144cb292965697189a1125"
+      },
+      "verified_repository_replica": {
+        "path": "G:\\OS_Workspace\\SOL-LONG-MACH-main\\SOL-LONG-MACH-main\\MODUAL\\SENSOR_LOGS\\live\\_SESORIMOTOR__{WINDOWS)__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+        "bytes": 2647298,
+        "sha256": "c0cddbab3b8d5474aa291c761c8377b68b6c7ba01c144cb292965697189a1125",
+        "used_as_runtime_source": false
+      },
+      "google_drivefs_search": {
+        "root": "W:\\Drive của tôi",
+        "status": "terminated_before_result",
+        "conclusive": false,
+        "source_mutated": false
+      },
+      "substitution_performed": false,
+      "source_moved_or_deleted": false
+    },
+    "result": "TICK_AND_READONLY_CONSUMER_VERIFIED; SENSOR_STREAM_STALE; EXACT_BULK_TARGET_NOT_FOUND_AT_CANONICAL_PATH; ALL_OPEN_RETAINED"
+  },
+  "independent_branches": {
+    "archive_pr36": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "e9c299594447d75bebb75c343cdb707731c7ea50",
+      "compared_to_main_head": "b580f11d41f6eb083f6b22fec067b26a9afc468e",
+      "compare_status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 23,
+      "ci": [
+        {
+          "run_id": 40177456089,
+          "name": "High-Threshold Secret Exposure Guard",
+          "conclusion": "success",
+          "steps_verified": true
+        },
+        {
+          "run_id": 40177456127,
+          "name": "SOL Library Stone Topology",
+          "conclusion": "success",
+          "steps_verified": true
+        },
+        {
+          "run_id": 40177456080,
+          "name": "SOL Archive Read-only Adapters",
+          "conclusion": "success",
+          "steps_verified": true
+        }
+      ],
+      "artifact": {
+        "id": 12592822576,
+        "name": "sol-archive-real-fixture-readback",
+        "size_bytes": 959,
+        "sha256": "05c8c52b781a653d7882c854ba56463f0265b192db090dc761dbd4f124b62c65",
+        "expired": false,
+        "expires_at_utc": "2026-11-08T08:39:22Z",
+        "head_sha": "e9c299594447d75bebb75c343cdb707731c7ea50"
+      },
+      "merge": false,
+      "force_push": false
+    },
+    "tesseract_pr6": {
+      "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "runs": [
+        {
+          "id": 39994207477,
+          "conclusion": "failure",
+          "jobs": 6,
+          "failed_jobs": 5,
+          "skipped_jobs": 1,
+          "artifacts": 0
+        },
+        {
+          "id": 39994207667,
+          "conclusion": "failure",
+          "jobs": 1,
+          "failed_jobs": 1,
+          "artifacts": 0
+        }
+      ],
+      "issuer_public_key_verified": false,
+      "runner_assignment_verified": false,
+      "rerun": false
+    }
+  },
+  "ledger_snapshot_before_this_turn_append": {
+    "task_count": 29,
+    "verified_action_events": 159,
+    "provider_observations": 159,
+    "integrity_corrections": 4,
+    "tasks_closed": 0
+  },
+  "safety": {
+    "raw_sensor_rows_downloaded_or_committed": false,
+    "credentials_exported": false,
+    "source_moved_deleted_or_overwritten": false,
+    "cloud_or_github_sensor_export_enabled": false,
+    "all_unfinished_tasks_remain_nonterminal": true
+  },
+  "next": [
+    "After the host-clock due time 2026-10-25T17:01:32+07, fresh-read the next Tick and consumer receipt; the current host clock is about 239 seconds behind runtime, so do not infer a later Tick from wall-clock runtime alone.",
+    "Continue exact-target search through bounded known provider/local paths; the W: Google DriveFS recursive search did not produce a result and is inconclusive.",
+    "Keep searching for a persistent sensor client/bridge; current ADB/SensorService responses do not establish continuous telemetry.",
+    "Keep Archive PR #36 and TESSERACT PR #6 OPEN; do not merge, force-push, or rerun TESSERACT CI without a verified issuer/runner change.",
+    "After the next actual n8n pulse, read execution and row; host heartbeat remains unprobed and no manual duplicate scan was started."
+  ],
+  "tasks_closed": 0
+}

@@ -1,0 +1,228 @@
+{
+  "schema": "SOL_PROVIDER_READBACK/1.0",
+  "observed_at": "2026-10-25T07:42:48.6087400+07:00",
+  "observed_at_utc": "2026-10-25T00:42:48.6087400Z",
+  "result": "PARTIALLY_EXECUTED_ALL_OPEN_RETAINED",
+  "required_sources": {
+    "AGENTS.md": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": "47045696911d12ee53db8ebfd78dd13967f29f29",
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": "a6f11ddbe85356e7b7667fe7aeb5d2886f269c8f",
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": "fc3b6fba81712da6f295ab2808227b253a7546c5",
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": "d5ed20e6a4cba82258f2892ad735c6cea40ffaea"
+  },
+  "windows_host": {
+    "host": "DESKTOP-86ITNQ4",
+    "observed_host_time": "2026-10-25T07:42:48.6087400+07:00",
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "last_run_utc": "2026-10-25T00:41:33Z",
+      "last_result": "0x0",
+      "next_run_utc": "2026-10-25T00:46:32Z",
+      "missed_runs": 0
+    },
+    "latest_scheduled_tick": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T004136130080Z.json",
+      "sha256": "89229cc6209b3df61cf4d2ca900c0432c00a0f80306f8d9d2a9cb02e659e1b53",
+      "observed_at_utc": "2026-10-25T00:41:36.130080Z",
+      "bytes": 1292,
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_export_enabled": false,
+      "github_export_enabled": false,
+      "live_sensor_reading_confirmed": false
+    },
+    "latest_consumer_receipt": {
+      "path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T004135574Z.json",
+      "sha256": "6db44b6f079bdfc25c69ccdf0afa6e498446543e1c3e6f1af538867b8e605f9b",
+      "observed_at_utc": "2026-10-25T00:41:36.2304777Z",
+      "status": "SOURCE_OBSERVED_READONLY",
+      "exit_code": 0,
+      "consumer_hash_matches_verifier": true,
+      "source_content_hash_verified": true,
+      "source_bytes": 35389440,
+      "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "dropbox_revision": "0165dc1e4794ab00000000395cdfd73",
+      "dropbox_content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+      "consumer_git_ref": "fix/modual-live-device-probe-20261025",
+      "consumer_git_blob_sha": "d39f88de715421864e4c640ec3ca563accbe7a98",
+      "live_device_probe_git_blob_sha": "939e3c6e2c5e1b7274f11efc00adf80227b77466",
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "raw_rows_emitted": false,
+      "cloud_export_enabled": false,
+      "github_push_enabled": false,
+      "live_sensor_reading_confirmed": false
+    },
+    "device_probe": {
+      "schema": "GGDV_LIVE_DEVICE_PROBE/1.0",
+      "status": "ADB_TRANSPORT_RESPONDED",
+      "observed_at_utc": "2026-10-25T00:41:35.937236Z",
+      "adb_binary_present": true,
+      "adb_devices_command_succeeded": true,
+      "live_sensor_reading_confirmed": false,
+      "targets": [
+        {
+          "role": "XIAOMI12_USB",
+          "target": "1056285",
+          "adb_state": "device",
+          "battery_probe_succeeded": true,
+          "sensorservice_probe_succeeded": true,
+          "sensor_names_observed": [
+            "LSM6DSO",
+            "AK099",
+            "TMD3719",
+            "Accelerometer",
+            "Gyroscope",
+            "Magnetometer",
+            "Light Sensor"
+          ],
+          "sensorservice_output_line_count": 570,
+          "live_sensor_event_stream_confirmed": false
+        },
+        {
+          "role": "REDMI_NOTE14PRO_WIRELESS",
+          "target": "192.168.1.14:5556",
+          "adb_state": "NOT_LISTED",
+          "battery_probe_succeeded": false,
+          "sensorservice_probe_succeeded": false,
+          "sensor_names_observed": [],
+          "live_sensor_event_stream_confirmed": false
+        }
+      ],
+      "redmi_tcp_probe": {
+        "observed_at_utc": "2026-10-25T00:41:04.8202565Z",
+        "reachable": false,
+        "result": "TIMEOUT",
+        "adb_connect_issued": false
+      }
+    },
+    "source_file": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "last_write_utc": "2026-10-23T08:45:56.2458701Z"
+    },
+    "local_code": {
+      "telemetry_buffer_sync_py_sha256": "00aef1e39ddfe6c3b568602b402d5349746fc37fd1b03992b0381f9b2e726bf3",
+      "live_device_probe_py_sha256": "64efaaeb84a4d7db700edae6eb45db2ac67a5b095f7d87e1ffd63f946c10764a",
+      "wrapper_ps1_sha256": "9113ae37ee136940b5bf46c07b5358a83013666485cb428c7c3ed27c78a99712",
+      "branch_source_exact_after_newline_normalization": true,
+      "helper_exact_after_newline_normalization": true,
+      "backup_script_sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+      "backup_wrapper_sha256": "61c2cc88f283518035c0aef521a8548128456f8cae99df2bf31b542dc91d1a64"
+    },
+    "local_regression_tests": {
+      "test_file": "MODUAL/SENSOR_LOGS/tests/test_live_device_probe.py",
+      "result": "PASS",
+      "passed": 3,
+      "failed": 0,
+      "hosted_ci_verified": false
+    }
+  },
+  "dropbox": {
+    "source_path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+    "revision": "0165dc1e4794ab00000000395cdfd73",
+    "size": 35389440,
+    "server_modified_utc": "2026-10-14T00:20:03Z",
+    "content_hash": "becbd99e504dae39c1f977b73cb425757c407136921a2f0c343acd39832b7c2d",
+    "historical_consumer_script": {
+      "path": "/Linh Hà/SENSOR_LOGS/telemetry_buffer_sync.py",
+      "revision": "0165daa22c5d85b0000000395cdfd73",
+      "size": 10707,
+      "server_modified_utc": "2026-10-12T19:59:29Z",
+      "used_as_current": false
+    }
+  },
+  "cloud_provider": {
+    "n8n_workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "latest_verified_execution": "153",
+    "execution_status": "success",
+    "event_id": "X20261025000023964_CLOUD",
+    "event_state": "OPEN_WORK_REMAINS",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "host_heartbeat_probed": false
+  },
+  "independent_branches": {
+    "modual_device_probe_pr": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/35",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "branch": "fix/modual-live-device-probe-20261025",
+      "head": "13fbd47a3f467030d6f1d1a2d64482899f49ae4e",
+      "tests_local": "3 passed",
+      "hosted_runs": [],
+      "merge": false
+    },
+    "archive_pr28": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/28",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "945eeca3419be2b7151d5761eb5aadfa65c31434",
+      "ahead_by": 8,
+      "behind_by": 100,
+      "mergeable": false,
+      "successful_runs": [
+        40138464176,
+        40138464127,
+        40138464130
+      ],
+      "merge": false,
+      "force_push": false
+    },
+    "archive_pr29": {
+      "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/29",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "86e208ff05c06cf0e5dfabfc6481218dc10bc96c",
+      "successful_runs": [
+        40118465586,
+        40118465608
+      ],
+      "merge": false
+    },
+    "tesseract_pr6": {
+      "url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "failed_runs": [
+        39994207477,
+        39994207667
+      ],
+      "artifacts": 0,
+      "issuer_public_key_value_verified": false,
+      "runner_assignment_change_verified": false,
+      "ci_rerun": false
+    }
+  },
+  "ledger": {
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_POST_BOUNDARY_TICK_RECEIPT_VERIFIED_LIVE_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "verified_action_events": 132,
+    "provider_observation_history": 132,
+    "tasks_closed": 0
+  },
+  "safety": {
+    "raw_sensor_values_emitted": false,
+    "raw_sensor_rows_emitted": false,
+    "source_file_written": false,
+    "source_file_moved_or_deleted": false,
+    "secrets_committed": false,
+    "cloud_export_enabled": false,
+    "github_export_enabled": false
+  },
+  "next": [
+    "After the next scheduled boundary (device clock 2026-10-25T00:46:32Z), exact-read the newest Tick and consumer receipts, compare the direct source SHA-256, and verify the new device_probe fields.",
+    "Keep live_sensor_reading_confirmed=false until a genuine sensor event/sample is independently observed; SensorService availability and battery probe success are not a continuous stream proof.",
+    "Continue the Redmi 192.168.1.14:5556 path through an authorized alternate route; the current TCP probe timed out and no adb connect was issued.",
+    "Keep PR #35 open until hosted CI and exact-target readback are verified; do not merge or claim live stream recovery.",
+    "Keep Archive PR #28/#29 and TESSERACT PR #6 open; preserve divergence and do not rerun TESSERACT CI without a verified runner/config change."
+  ]
+}

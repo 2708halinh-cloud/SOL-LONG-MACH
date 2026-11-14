@@ -1,0 +1,113 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.8",
+  "id": "CLOUD_CONTINUITY_READBACK_20261025T2259ICT",
+  "observed_at_utc": "2026-10-25T16:00:30.994Z",
+  "observed_at_local": "2026-10-25T23:00:30.994+07:00",
+  "timestamp_basis": "Direct Windows observations use host clock; n8n timestamps are provider-sourced and not treated as host heartbeat.",
+  "previous_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T2250ICT.json",
+    "blob_sha": "8bafd390d5055127273621f5cbebf0efe7f469b8",
+    "commit_sha": "327783377a2e4c1a13f46b7d5bb1376f76752bfd",
+    "readback_verified": true
+  },
+  "provider_checkpoint": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T2259ICT.json",
+    "blob_sha": "0ec42579dc9fa32cede557ac129baf8ce086e7e4",
+    "commit_sha": "ff7c7d8018da69c7a29485ae2c5dc9fa457827b9",
+    "readback_verified": true
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "latest_execution_id": "169",
+    "latest_execution_status": "success",
+    "latest_cloud_event_id": "X20261025150024063_CLOUD",
+    "latest_cloud_evidence_row_id": 381,
+    "latest_host_evidence_row_id": 387,
+    "latest_host_event_id": "X20261025155203678_HOST_TICK_SENSOR_PROBE_READBACK",
+    "latest_host_row_exact_readback": true,
+    "previous_zip_download_blocker_row_id": 385,
+    "zip_raw_hash_event_row_id": 386,
+    "zip_raw_hash_row_exact_readback": true,
+    "evidence_table_id": "Sk0EFJK5NzWVpBvm",
+    "evidence_table_rows": 387,
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_rows": 45,
+    "nonterminal_rows": 45,
+    "tasks_closed": 0,
+    "host_heartbeat_probed_by_workflow": false,
+    "direct_host_probe": true,
+    "duplicate_manual_execution": false
+  },
+  "host": {
+    "device": "DESKTOP-86ITNQ4",
+    "device_id": "59f03001-c732-403e-b80c-b4191266809c",
+    "route_status": "ONLINE_BY_DIRECT_READBACK",
+    "latest_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T155138608258Z.json",
+    "latest_tick_sha256": "dd4d72cc1e938cffd0396287d3e0ec23ee4e1a3a411d747c41ecdc7fe27df187",
+    "latest_consumer_path": "D:\\SENSOR_LOGS\\receipts\\telemetry_buffer_sync_20261025T155135569Z.json",
+    "latest_consumer_sha256": "874239f854fef9429360b8e9ffb04dc09c53475382ae200d735d96694271628d",
+    "source_sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+    "source_bytes": 35389440,
+    "task_last_run_local": "2026-10-25T22:51:33+07:00",
+    "task_next_run_local": "2026-10-25T22:56:32+07:00",
+    "task_result": 0,
+    "missed_runs": 0,
+    "sensor_event_stream_status": "EVENT_TIMESTAMP_STALE",
+    "sensor_event_timestamp_sensor_count": 4,
+    "sensors_advanced": [],
+    "live_sensor_reading_confirmed": false,
+    "termux_api_package_installed": false,
+    "allowlisted_motion_light_sensors_in_active_connections": false,
+    "device_mutation_performed": false
+  },
+  "historical_zip": {
+    "path": "/Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT/SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip",
+    "file_id": "id:gvG29tEleJwAAAAAAAACLA",
+    "revision": "0165daa5e44669e0000000395cdfd73",
+    "size_bytes": 20882,
+    "raw_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+    "expected_raw_sha256": "da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106",
+    "raw_hash_match": true,
+    "zip_members": 16,
+    "expanded_bytes": 28345,
+    "unsafe_member_paths": 0,
+    "local_file_written": false,
+    "extracted_to_disk": false,
+    "github_upload": false,
+    "state": "SOURCE_BYTES_VERIFIED_FUTURE_SYNC_OPEN",
+    "evidence_row_id": 386
+  },
+  "exact_bulk_target": {
+    "pathD": "D:\\SENSOR_LOGS\\_SESORIMOTOR__WINDOWS__XIAOMI12__REDMINOTE14PRO__0000THEMASTERTEACHER__R000_075203003486__.CSV",
+    "expected_size_bytes": 89814328,
+    "expected_sha256": "b3c4b62187dbd8ee049a1f7214cf1df788a94bc7ea151a63e57b9c78a3f8a5e3",
+    "direct_test_path_on_D": false,
+    "w_drive_path": "W:\\Drive của tôi",
+    "w_search_results": 0,
+    "w_search_completeness": "TOOL_WARNED_RESULTS_MAY_BE_INCOMPLETE",
+    "substitution_performed": false
+  },
+  "carrier_log": {
+    "size_bytes": 6425822264,
+    "last_write_utc": "2026-10-25T15:52:25Z",
+    "retention_policy_review_open": true,
+    "rotation_or_deletion_performed": false
+  },
+  "next": [
+    "Read the next scheduled host Tick after host-clock 2026-10-25T22:56:32+07:00; verify exact receipt and source SHA.",
+    "Keep live sensor stream UNVERIFIED until timestamps advance; current ADB probe sees no active allowlisted motion/light listener and Termux:API is absent. Do not install/launch an app without an approved device workflow.",
+    "Continue exact bulk-target search beyond the bounded W:\\Drive của tôi search; preserve expected fingerprint and accept no substitute.",
+    "Historical ZIP raw bytes now match expected SHA; keep SV-20261020-02 OPEN for future sync/provenance.",
+    "Keep all 45 recovery rows nonterminal; no duplicate manual n8n scan, merge, force-push or CI rerun without new evidence."
+  ],
+  "tasks_closed": 0,
+  "safety": {
+    "raw_sensor_csv_downloaded": false,
+    "raw_sensor_rows_exported": false,
+    "credentials_written": false,
+    "source_moved_or_deleted": false,
+    "cloud_sensor_export_enabled": false,
+    "github_sensor_export_enabled": false,
+    "device_mutation_performed": false
+  }
+}

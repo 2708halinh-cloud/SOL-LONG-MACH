@@ -1,0 +1,112 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.0",
+  "id": "CLOUD_CONTINUITY_READBACK_20261025T1606ICT",
+  "observed_at_utc": "2026-10-25T09:06:54Z",
+  "observed_at_local": "2026-10-25T16:06:54+07:00",
+  "state": "OPEN_WORK_REMAINS",
+  "prior_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1553ICT.json",
+    "blob_sha": "6458b0c34004a1201df4d4eb6e47a5ac465d3d16",
+    "commit_sha": "85f23c6073dc18ee9f042c1ef7b82ecaec7be268"
+  },
+  "provider_checkpoint": {
+    "path": "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1606ICT.json",
+    "blob_sha": "dd5bf56b1a0d2ce2f62a177b7c2a66c1488790f8",
+    "commit_sha": "44f4bbfacb5d5731465a30948fdbf1c3d54af658",
+    "readback_verified": true
+  },
+  "github_ledger": {
+    "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+    "blob_sha": "f03c0b1f40eb1f2d7bbc3fa8731e837a7c3c5ca4",
+    "commit_sha": "7bda12c393d5ed1fd6d2f7e4f2447204f80b4d44",
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "tasks_closed": 0,
+    "readback_verified": true
+  },
+  "archive_pr36": {
+    "url": "https://github.com/2708halinh-cloud/SOL-LONG-MACH/pull/36",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "head": "e9c299594447d75bebb75c343cdb707731c7ea50",
+    "comparison_main_head": "0cbf72e465e9a42f2aa07a1780275abc81a815b3",
+    "comparison_observed_at_local": "2026-10-25T16:06:54+07:00",
+    "status": "diverged",
+    "ahead_by": 5,
+    "behind_by": 13,
+    "changed_path_count": 5,
+    "ci_runs": [
+      {
+        "id": 40177456089,
+        "conclusion": "success"
+      },
+      {
+        "id": 40177456127,
+        "conclusion": "success"
+      },
+      {
+        "id": 40177456080,
+        "conclusion": "success"
+      }
+    ],
+    "artifact_id": 12592822576,
+    "artifact_sha256": "05c8c52b781a653d7882c854ba56463f0265b192db090dc761dbd4f124b62c65",
+    "artifact_readback_verified": true,
+    "fixture_count": 3,
+    "fixture_status": "ALL_PASS",
+    "source_unchanged": true,
+    "extraction_performed": false,
+    "merged": false,
+    "force_push": false,
+    "task_closure": false,
+    "comment_id": 6395781807,
+    "comment_readback_verified": true,
+    "note": "Compare is pinned to comparison_main_head; main advanced afterward with continuity commits. No branch sync performed."
+  },
+  "memory_archive": {
+    "canonical_archive_sha256": "ef8c6667d4d47ea6fb11982c4da06d31e7f183a58987a5e62b4ad8636493f45b",
+    "canonical_archive_bytes": 22493275,
+    "canonical_zip_crc": "PASS",
+    "canonical_zip_members": 13,
+    "map_nguon_sha256": "da0dd06d2d4c67d6341b6c519fd0076cb429a3f0ab1f81acaa1e9610b024ae45",
+    "canonical_bytes_match_prior_readback": true,
+    "alternate_archive_bytes": 22493275,
+    "alternate_archive_hash": "UNVERIFIED_RAW_BYTE_ACCESS_DENIED",
+    "two_source_original_copies_same_sha256": "625cd4d178c36cc31822de421bbf1c288d5ba2cbb96dad78b58a4b1cc1cb4ff4",
+    "source_original_classification": "UNRELATED_REACT_BEST_PRACTICES_BUNDLE_NOT_ACCOUNT_EXPORT",
+    "library_zip_records_visible": 248,
+    "library_recursive_listing_complete": false,
+    "raw_account_exports_recovered": false,
+    "source_identity_discrepancy_resolved": false,
+    "source_bytes_modified": false
+  },
+  "provider_access": {
+    "github": "AVAILABLE_AND_USED",
+    "chatgpt_library": "AVAILABLE_AND_USED",
+    "google_drive": "NOT_EXPOSED_IN_THIS_TURN",
+    "dropbox": "NOT_EXPOSED_IN_THIS_TURN",
+    "takeout": "NOT_EXPOSED_IN_THIS_TURN",
+    "host_browser": "NOT_EXPOSED_IN_THIS_TURN",
+    "n8n": "NOT_EXPOSED_IN_THIS_TURN"
+  },
+  "continuation_guards": {
+    "preserve_all_open_tasks": true,
+    "close_only_after_exact_target_action_and_readback": true,
+    "no_merge": true,
+    "no_force_push": true,
+    "no_source_mutation": true,
+    "no_secrets": true,
+    "tasks_closed": 0
+  },
+  "next": [
+    "Retrieve original account-export bytes independently through an authorized provider/host connector when exposed; preserve source IDs, revisions and hashes.",
+    "Resolve the MAP_NGUON object discrepancy only by direct provider metadata/revision/hash/content readback.",
+    "Keep PR #36 OPEN/Draft; do not merge or force-push. Re-measure against the then-current main on the next pass.",
+    "Continue other independent OPEN/NEXT tasks; no task is closed by this checkpoint or by CI."
+  ]
+}

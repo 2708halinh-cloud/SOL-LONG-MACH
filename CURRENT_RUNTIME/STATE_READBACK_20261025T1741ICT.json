@@ -1,0 +1,130 @@
+{
+  "schema": "SOL_STATE_READBACK/1.0",
+  "id": "STATE_READBACK_20261025T1741ICT",
+  "observed_at_utc": "2026-10-25T10:41:38Z",
+  "observed_at_local": "2026-10-25T17:41:38+07:00",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "main_head_before_state_readback": "45d25b6aeaf4e0acb43092dcc83a91170f4af540",
+  "canonical_reads": {
+    "AGENTS.md": {
+      "blob_sha": "f18f9743de1e21d13bad47770f928ec85e79bd95",
+      "readback_verified": true
+    },
+    "CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md": {
+      "blob_sha": "5a28a2579f052844fad2e83e00bf3e85156c2093",
+      "readback_verified": true
+    },
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json": {
+      "blob_sha": "36a06d1418aa469ef6654538d303483c6efc1994",
+      "raw_readback_verified": true,
+      "parsed": true
+    },
+    "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json": {
+      "blob_sha": "4419bba51361aeadb8b5bc070c459056595f469f",
+      "raw_readback_verified": true,
+      "parsed": true
+    },
+    "MODUAL/SENSOR_LOGS/MODUAL_PARAMETER_CURRENT.json": {
+      "blob_sha": "820146146fd9534dad7fc8ebb7ac04b5fc130749",
+      "parsed": true,
+      "latest_tesseract_readback_present": true
+    },
+    "CURRENT_RUNTIME/PROVIDER_READBACK_20261025T1730ICT.json": {
+      "blob_sha": "2bc7fe3f5271f85d559154510ff72d7b1d16ba75",
+      "readback_verified": true
+    },
+    "CURRENT_RUNTIME/TESSERACT_WORKFLOW_READBACK_20261025T1741ICT.json": {
+      "blob_sha": "ebbd112dd8831575bb32c7e1f36d1391fcfbb7e7",
+      "readback_verified": true
+    },
+    "CURRENT_RUNTIME/CLOUD_CONTINUITY_RESUME_POINTER.json": {
+      "blob_sha": "c64ab91ffa405b3186eb1b748fae58c8d9cc16c2",
+      "readback_verified": true
+    },
+    "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261025T1729ICT.json": {
+      "blob_sha": "4445add488dffb82312c23da6579c136d0a58350",
+      "readback_verified": true
+    }
+  },
+  "provider_state": {
+    "dropbox_outlook": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "size_bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_read_this_turn": true,
+      "raw_bytes_downloaded": false,
+      "content_hash_recomputed_this_turn": false
+    },
+    "desktop_commander": {
+      "inventory_read_this_turn": true,
+      "all_registered_devices_offline": true,
+      "direct_host_probe_this_turn": false,
+      "latest_known_host_evidence_row": 357,
+      "latest_known_host_event": "X20261025102139853_HOST_READBACK",
+      "latest_known_tick_path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261025T102139853472Z.json",
+      "latest_known_tick_sha256": "65B266250438F95F09AD38AD69FAC8FED23C406DC8D4336FAD397845B2F07AAF",
+      "sensor_stream_status": "EVENT_TIMESTAMP_STALE",
+      "production_continuous_stream_verified": false,
+      "exact_bulk_target_found": false
+    },
+    "n8n": {
+      "workflow_id": "BogzhFUDbRp7kuwh",
+      "latest_execution_id": "163",
+      "status": "success",
+      "latest_cloud_row_id": 352,
+      "latest_host_evidence_row_id": 357,
+      "host_heartbeat_probed_by_workflow": false,
+      "recovery_rows": 45,
+      "unfinished_rows": 45
+    }
+  },
+  "independent_branch_actions": {
+    "archive_pr36": {
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "e9c299594447d75bebb75c343cdb707731c7ea50",
+      "compare_main_head": "96d1673fdb1ec9f39c1eb5e1f9d7cfa2585f4dff",
+      "compare_status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 46,
+      "three_current_head_checks_success": true,
+      "exact_changed_file_readback": true,
+      "merge": false,
+      "force_push": false
+    },
+    "tesseract_pr6": {
+      "state": "OPEN_DRAFT_UNMERGED",
+      "head": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+      "workflow_blob_sha": "6552d13a1f8004b0e3d36fd585dd75cdd22acf12",
+      "public_key_variable_name": "XTIME_KILO_RECEIPT_ED25519_PUBLIC_KEY_B64",
+      "self_hosted_job_skipped_for_pull_request": true,
+      "failed_jobs_zero_steps_verified": true,
+      "job_logs_available": false,
+      "issuer_public_key_value_verified": false,
+      "runner_assignment_verified": false,
+      "ci_rerun_performed": false
+    }
+  },
+  "ledger": {
+    "task_count": 29,
+    "status_counts": {
+      "OPEN": 10,
+      "OPEN_CARRIED": 2,
+      "OPEN_CARRIED_NEEDS_FRESH_PROVIDER_READBACK": 13,
+      "OPEN_CONTROLLED_SENSOR_STREAM_TEST_VERIFIED_PRODUCTION_STREAM_NOT_VERIFIED": 1,
+      "IN_PROGRESS": 3
+    },
+    "verified_action_events": 161,
+    "provider_observations": 161,
+    "integrity_corrections": 4,
+    "tasks_closed": 0
+  },
+  "safety": {
+    "raw_sensor_bytes_downloaded_or_committed": false,
+    "credentials_exported": false,
+    "source_moved_deleted_or_overwritten": false,
+    "cloud_or_github_sensor_export_enabled": false,
+    "unfinished_tasks_remain_nonterminal": true
+  }
+}

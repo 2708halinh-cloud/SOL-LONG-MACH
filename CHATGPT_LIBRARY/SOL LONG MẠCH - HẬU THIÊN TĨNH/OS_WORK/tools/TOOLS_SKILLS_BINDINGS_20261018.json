@@ -1,0 +1,44 @@
+{
+  "schema": "SOL_TOOLS_SKILLS_BINDINGS/1.0",
+  "source_date": "2026-10-18",
+  "tools": [
+    {
+      "name": "monid",
+      "skill": "_Skills/monid/SKILL.md",
+      "mcp": "Chuỗi công cụ/_MCPs/Monid/mcp.json",
+      "status": "source_registered_not_authenticated"
+    },
+    {
+      "name": "REALITY_STONE",
+      "source": "Chuỗi công cụ/_Plugins/REALITY_STONE/reality_stone.py",
+      "status": "existing_source",
+      "skill": "_Skills/sol-repair-diagnostics/SKILL.md"
+    },
+    {
+      "name": "REPAIR_DIAGNOSTICS",
+      "source": "Chuỗi công cụ/_Plugins/Power_Router_V2/agent_diagnostics.py",
+      "status": "existing_source",
+      "skill": "_Skills/sol-repair-diagnostics/SKILL.md"
+    },
+    {
+      "name": "BIHM_SERVICES",
+      "source": "CONFIG_SOL/SERVICES_RUNTIME_CURRENT.json",
+      "status": "source_declaration_only",
+      "skill": "_Skills/sol-bihm-services/SKILL.md"
+    },
+    {
+      "name": "CHROME_DEV_TOOLKIT",
+      "source": "Chuỗi công cụ/_App_Browser/TRÌNH DUYỆT/CHORME_DEV_TOOLKIT_SYNC",
+      "status": "existing_source",
+      "skill": "_Skills/sol-browser-devtools/SKILL.md"
+    },
+    {
+      "name": "TYPED_DATA_API",
+      "source": "Chuỗi công cụ/_Dụng cụ/Typed_Data_API/typed_data.py",
+      "skill": "_Skills/typed-data-api/SKILL.md",
+      "tests": "tests/test_sol_typed_data.py",
+      "status": "REPO_SOURCE_AND_ANDROID_PYTHON_8_TESTS_PASS"
+    }
+  ],
+  "verification": "GitHub source-only; runtime activation and OAuth not assumed"
+}

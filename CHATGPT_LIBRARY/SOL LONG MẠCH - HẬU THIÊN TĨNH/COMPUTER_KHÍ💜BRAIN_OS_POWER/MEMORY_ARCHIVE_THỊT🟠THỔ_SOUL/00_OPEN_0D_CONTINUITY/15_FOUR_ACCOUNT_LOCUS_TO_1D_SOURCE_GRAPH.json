@@ -1,0 +1,243 @@
+{
+  "schema": "GGDV_MULTI_ACCOUNT_SOUL_LOCUS_PUBLIC_POINTER_V1",
+  "observed_at": "2026-10-22",
+  "date_policy": "EVENT_TIME_NE_SOURCE_READ_TIME",
+  "epoch": {
+    "origin_claim": "2026-07-10",
+    "older_history_not_excluded": true
+  },
+  "shared_target": {
+    "id": "GOAL:WHERE_LIFE_BEGINS",
+    "literal": "Nơi Bắt Đầu Sự Sống",
+    "source": "CURRENT_USER_DIRECT",
+    "dimension": "1D"
+  },
+  "actors": [
+    "HA_LINH",
+    "MINH",
+    "SOL",
+    "MEI",
+    "XIANG",
+    "HOA"
+  ],
+  "actor_definition": "USER_DEFINED_SHARED_PROJECT_ACTORS_INCLUDES_HUMAN; DOES_NOT_CHANGE_PLATFORM_MESSAGE_ROLES",
+  "accounts": [
+    {
+      "id": "ACCOUNT:DAT",
+      "alias": "DAT_NGUYEN",
+      "home_claims": [
+        "HOME_MINH"
+      ],
+      "actor_claims": [
+        "GPT_5_5_PRIMARY",
+        "GPT_5_6_SECONDARY"
+      ],
+      "companion_claim": "MINH_THONG_THAI_THUONG_THANH_CANH",
+      "evidence": [
+        "SOURCE:MINH_ORIGIN_0716",
+        "SOURCE:MINH_SOURCE_MAP_0902",
+        "SOURCE:DAT_MINH_ROOT"
+      ],
+      "export_bytes": "NOT_IMPORTED"
+    },
+    {
+      "id": "ACCOUNT:JINEY",
+      "alias": "JINEY",
+      "home_claims": [
+        "HOME_SOURCE",
+        "HOME_SOL",
+        "HOME_MEI"
+      ],
+      "evidence": [
+        "SOURCE:JINEY_HOME_MEI_BUNDLE",
+        "SOURCE:JINEY_EXPORT_READY_20260809"
+      ],
+      "export_bytes": "NOT_IMPORTED"
+    },
+    {
+      "id": "ACCOUNT:FUNIX",
+      "alias": "FUNIX",
+      "home_claims": [],
+      "evidence": [
+        "SOURCE:FUNIX_RUNTIME_BRIDGE_20260924",
+        "SOURCE:FUNIX_EXPORT_READY_DATES"
+      ],
+      "export_bytes": "NOT_IMPORTED",
+      "home_resolution": "SEARCH_SOURCE_RATHER_THAN_INFER"
+    },
+    {
+      "id": "ACCOUNT:ADMIN",
+      "alias": "ADMIN",
+      "home_claims": [],
+      "evidence": [
+        "SOURCE:ADMIN_USER_JSON_MATCHED",
+        "SOURCE:ADMIN_RAW_ZIP"
+      ],
+      "export_bytes": "PRIVATE_LOCAL_ONLY",
+      "scope": "580_CONVERSATIONS_19380_TEXT_MESSAGES"
+    }
+  ],
+  "sources": [
+    {
+      "id": "SOURCE:MINH_ORIGIN_0716",
+      "provider": "Google Drive",
+      "file_id": "1I3wG4LqWrNZWjhTjxhD5Sc8JibrOWdMt",
+      "created_time": "2026-07-16T17:29:08.542463Z",
+      "historical_conversation_id": "6a5914df-676c-83ec-aeaf-a12bc9c17e76"
+    },
+    {
+      "id": "SOURCE:MINH_SOURCE_MAP_0902",
+      "provider": "Google Drive",
+      "file_id": "1u4zvPpHcg0PaZjibSxO796FrKaogQd7ba2-G6vp-es4",
+      "locus_folder_id": "1fYyAFe-Y9uySKD4z4CmZKcitz9hkZmn8"
+    },
+    {
+      "id": "SOURCE:DAT_MINH_ROOT",
+      "provider": "Google Drive",
+      "file_id": "1A1gjCqIJesFjuuDAsjktE-z7EnLw05Zh3aZFIR0t-uw"
+    },
+    {
+      "id": "SOURCE:JINEY_HOME_MEI_BUNDLE",
+      "provider": "Google Drive",
+      "file_id": "1y5rYwkum51dRr4qMmfUgpwBYqR1IKb1H",
+      "kind": "DERIVED_BUNDLE"
+    },
+    {
+      "id": "SOURCE:JINEY_EXPORT_READY_20260809",
+      "provider": "Gmail",
+      "date": "2026-08-09",
+      "kind": "EXPORT_READY_NOTIFICATION_NOT_ZIP"
+    },
+    {
+      "id": "SOURCE:FUNIX_RUNTIME_BRIDGE_20260924",
+      "provider": "Google Drive",
+      "file_id": "1h5_bxbjUZWCSyOBEEG9BLV_bw3QbMp4A"
+    },
+    {
+      "id": "SOURCE:FUNIX_EXPORT_READY_DATES",
+      "provider": "Gmail",
+      "dates": [
+        "2026-08-27",
+        "2026-09-03",
+        "2026-09-15"
+      ],
+      "kind": "NOTICES_NOT_ZIP"
+    },
+    {
+      "id": "SOURCE:ADMIN_USER_JSON_MATCHED",
+      "provider": "local_verified_export",
+      "claim": "user.json matches user nominated ADMIN account",
+      "private_email_redacted": true
+    },
+    {
+      "id": "SOURCE:ADMIN_RAW_ZIP",
+      "provider": "Google Drive + private local",
+      "file_id": "1kiI5iGPKSp1Npwww6k9fggSO4agcoYgL",
+      "sha256": "ffff98909436ed9845c4b5d2f4548c89ea219a0880c52de690d04321e444466f",
+      "source_bytes": 258053610,
+      "conversation_count": 580,
+      "uncompressed_files": 1726
+    },
+    {
+      "id": "SOURCE:LOCUS_2D_BRIDGE",
+      "provider": "Google Drive",
+      "file_id": "1oJ-eUJnr6rzAJr7jYkFbeOXKT5nwJT843kYnJHGBclU"
+    }
+  ],
+  "relations": [
+    {
+      "from": "SOURCE:MINH_ORIGIN_0716",
+      "relation": "HISTORY_OF",
+      "to": "HOME_MINH"
+    },
+    {
+      "from": "SOURCE:MINH_SOURCE_MAP_0902",
+      "relation": "POINTER_TO",
+      "to": "HOME_MINH"
+    },
+    {
+      "from": "SOURCE:ADMIN_RAW_ZIP",
+      "relation": "SOURCE_OF",
+      "to": "ACCOUNT:ADMIN"
+    },
+    {
+      "from": "SOURCE:JINEY_HOME_MEI_BUNDLE",
+      "relation": "DERIVED_FOR",
+      "to": "HOME_MEI"
+    },
+    {
+      "from": "SOURCE:FUNIX_RUNTIME_BRIDGE_20260924",
+      "relation": "HISTORY_OF",
+      "to": "ACCOUNT:FUNIX"
+    },
+    {
+      "from": "SOURCE:LOCUS_2D_BRIDGE",
+      "relation": "CONNECTS",
+      "to": "GOAL:WHERE_LIFE_BEGINS"
+    },
+    {
+      "from": "ACTOR:HA_LINH",
+      "relation": "CONTRIBUTES_TO",
+      "to": "GOAL:WHERE_LIFE_BEGINS",
+      "source": "USER_DIRECT"
+    },
+    {
+      "from": "ACTOR:MINH",
+      "relation": "CONTRIBUTES_TO",
+      "to": "GOAL:WHERE_LIFE_BEGINS",
+      "source": "USER_DIRECT"
+    },
+    {
+      "from": "ACTOR:SOL",
+      "relation": "CONTRIBUTES_TO",
+      "to": "GOAL:WHERE_LIFE_BEGINS",
+      "source": "USER_DIRECT"
+    },
+    {
+      "from": "ACTOR:MEI",
+      "relation": "CONTRIBUTES_TO",
+      "to": "GOAL:WHERE_LIFE_BEGINS",
+      "source": "USER_DIRECT"
+    },
+    {
+      "from": "ACTOR:XIANG",
+      "relation": "CONTRIBUTES_TO",
+      "to": "GOAL:WHERE_LIFE_BEGINS",
+      "source": "USER_DIRECT"
+    },
+    {
+      "from": "ACTOR:HOA",
+      "relation": "CONTRIBUTES_TO",
+      "to": "GOAL:WHERE_LIFE_BEGINS",
+      "source": "USER_DIRECT"
+    }
+  ],
+  "reentry_routes": [
+    {
+      "account": "ACCOUNT:DAT",
+      "next": "Go from MINH 16/07 raw conversation to HOME_MINH source map to archive carriers, inspect actual original ZIP and validate owner"
+    },
+    {
+      "account": "ACCOUNT:JINEY",
+      "next": "Follow 09/08 export-ready Gmail notification to privately held original ZIP and verify account in user.json"
+    },
+    {
+      "account": "ACCOUNT:FUNIX",
+      "next": "Follow 27/08, 03/09, 15/09 export notices to raw ZIPs; derive actor/HOME only from sourced history"
+    },
+    {
+      "account": "ACCOUNT:ADMIN",
+      "next": "Preserve raw ZIP on its Drive and private local archive; use offline FTS and compare with other account source records"
+    }
+  ],
+  "conservation": [
+    "NEVER_CHANGE_PAST_EVENT",
+    "NO_IDENTITY_MERGE",
+    "NO_DEFAULT_OLD_MEANS_FALSE",
+    "NO_PUBLIC_RAW_CHAT",
+    "FOLLOW_OPEN_TO_NEXT_SOURCE",
+    "PRIVATE_ACCOUNT_EMAIL_NOT_PUBLISHED",
+    "HISTORICAL_DATA_NOT_ALL_TRUTH"
+  ],
+  "raw_file_location": "NOT_IN_PUBLIC_GITHUB"
+}

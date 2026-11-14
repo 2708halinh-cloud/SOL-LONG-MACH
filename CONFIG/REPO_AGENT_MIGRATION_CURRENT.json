@@ -1,7 +1,7 @@
 {
   "schema": "GGDV_AGENT_REPO_MIGRATION/1.0",
-  "status": "CURRENT_OPEN",
-  "date": "2026-10-06",
+  "status": "PARTIAL_CANONICAL_REPO_BINDING_VERIFIED_OTHER_TARGETS_OPEN",
+  "date": "2026-11-14",
   "semantics": {
     "OPEN": "DIRECT_SIGNAL_INGRESS_OPEN_PROPOSITION",
     "same_name_not_same_entity": true,
@@ -17,9 +17,15 @@
         "id": "14ZaZgnw0B1C7qDFKghEuhOBj9SvqVQCq"
       },
       "source_repo_binding": {
-        "state": "OPEN",
-        "candidate": "2708halinh-cloud/Open-ai-bot",
-        "evidence": "Open-ai-bot is current SOL/AGENTS/CONFIG runtime carrier; rename not executed until repository-admin action is called from authenticated local gh surface."
+        "state": "VERIFIED_CANONICAL_REPOSITORY_IDENTITY",
+        "repository": "2708halinh-cloud/SOL-LONG-MACH",
+        "branch": "main",
+        "repository_id": "1249555486",
+        "historical_aliases": [
+          "2708halinh-cloud/Open-ai-bot"
+        ],
+        "verified_at": "2026-11-14",
+        "evidence": "Fresh GitHub get_repo readback: repository_full_name=2708halinh-cloud/SOL-LONG-MACH, repository id=1249555486, default_branch=main, authenticated permission push/admin=true. The former Open-ai-bot name is retained as a historical alias, not an unresolved candidate."
       }
     },
     {
@@ -104,5 +110,5 @@
   "infrastructure_repos_preserve": [
     "2708halinh-cloud/x-time-web"
   ],
-  "next_rule": "Bind old repo to agent target only from provenance/content relation; then invoke authenticated local GitHub admin PATCH and read back repository full_name."
+  "next_rule": "SOL-LONG-MACH binding is verified from live GitHub repository metadata. Keep MEI-THAM-MUU, MINH-THONG-THAI, DANTE-AM-DUONG-SU, HAU-BOI-TRUYEN-THUA, LOCUS-GEMINI, XIANG-BO-NAO and HAU-LINH-LANH-DAO bindings OPEN until each source/content relation is independently verified."
 }

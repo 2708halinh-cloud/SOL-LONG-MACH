@@ -1,0 +1,183 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.6",
+  "record_type": "CLOUD_LEDGER_CROSSWALK_AND_POST_BOUNDARY_HOST_TICK",
+  "recorded_at_utc": "2026-10-24T16:37:13.438Z",
+  "clock_alignment": "NOT_VERIFIED; cloud-provider timestamps and Windows host-local timestamps remain separate",
+  "repository": {
+    "name": "2708halinh-cloud/SOL-LONG-MACH",
+    "current_open_ledger": {
+      "path": "CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json",
+      "blob_sha": "42ae961fdc70107336a45ee96ac6c5e7be644d99",
+      "provenance_observed_at_host_local": "2026-10-24T23:21:58.7377801+07:00",
+      "task_count": 28,
+      "repo_only_tasks_in_crosswalk": 0
+    },
+    "previous_cloud_checkpoint": {
+      "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2330ICT.json",
+      "blob_sha": "e5f1cfa11fab1d5232e95649b2b34e025fc3493e",
+      "commit_sha": "a8e6cd2ef80080ed12d881d9bbf70a5db411345e"
+    },
+    "global_resume_pointer": {
+      "path": "CURRENT_RUNTIME/TASK_RESUME_POINTER.json",
+      "modified_by_this_checkpoint": false,
+      "note": "Preserved; cloud continuity uses a separate pointer."
+    }
+  },
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "active": true,
+    "version_id": "c6e796c4-cdd9-4355-8b37-83c9ee32f914",
+    "latest_execution": {
+      "id": "142",
+      "mode": "manual",
+      "status": "success",
+      "started_at_utc": "2026-10-24T16:18:31.808Z",
+      "stopped_at_utc": "2026-10-24T16:18:33.828Z"
+    },
+    "latest_scheduled_execution": {
+      "id": "141",
+      "mode": "trigger",
+      "status": "success",
+      "started_at_utc": "2026-10-24T16:00:22.078Z",
+      "stopped_at_utc": "2026-10-24T16:00:24.111Z"
+    },
+    "evidence_table": {
+      "table_id": "Sk0EFJK5NzWVpBvm",
+      "latest_crosswalk_row": {
+        "id": 297,
+        "event_id": "X20261024163713438_LEDGER_CROSSWALK",
+        "readback_verified": true
+      },
+      "latest_host_tick_row": {
+        "id": 298,
+        "event_id": "X20261024163134179_WINDOWS_TICK_READBACK",
+        "readback_verified": true
+      },
+      "observed_latest_row_id": 298
+    },
+    "recovery_table": {
+      "table_id": "rSPFIOWbS7cfNJ8z",
+      "project_id": "6qKpRmicIGHA5snY",
+      "row_count": 45,
+      "terminal_tasks_closed": 0,
+      "status_counts": {
+        "ASSIGNED_DRAFT_WAITING_CREDENTIAL": 5,
+        "SOURCE_RECOVERY_VERIFIED_FUTURE_SYNC_OPEN": 1,
+        "OPEN_RAW_HASH_AND_CLOUD_TRANSFER": 1,
+        "OPEN_QEMU_C_DISCOVERY": 1,
+        "GUARD_APPLIED_FIVE_AGENT_DRAFTS_ACCOUNT_LEVEL_PAUSE_OPEN": 1,
+        "OPEN_SOURCE_DIRECT_TIMESTAMP": 1,
+        "OPEN_ANDROID_SOURCE_ACCESS": 1,
+        "OPEN_END_TO_END_USER_SESSION": 1,
+        "OPEN_CREDENTIAL_BINDING_AND_AUTH_TEST": 1,
+        "OPEN_7Z_RAR_LR": 1,
+        "SOURCE_BYTES_VERIFIED_FUTURE_SYNC_OPEN": 1,
+        "OPEN_HOST_ROUTING_AND_UI_READBACK": 1,
+        "OPEN_HOST_INTEGRATION_AND_INDEPENDENT_TEST": 1,
+        "OPEN_ROUTED_NONCOERCIVE": 27,
+        "IN_PROGRESS": 1
+      },
+      "accessible_project_credentials": 0,
+      "model_binding_verified": false,
+      "publish_or_dispatch_performed": false
+    },
+    "ledger_crosswalk": {
+      "github_open_ledger_blob_sha": "42ae961fdc70107336a45ee96ac6c5e7be644d99",
+      "github_task_count": 28,
+      "n8n_task_count": 45,
+      "normalized_id_matches": 28,
+      "github_only": 0,
+      "n8n_only_historical_tasks": 17,
+      "status_divergences_preserved": [
+        {
+          "task_id": "ANDROID_OLLAMA_LOCALHOST_CHAT_UI",
+          "github_status": "IN_PROGRESS",
+          "n8n_status": "OPEN_ROUTED_NONCOERCIVE"
+        },
+        {
+          "task_id": "SIX_PROJECTIONS_ENVIRONMENT_REGISTRY",
+          "github_status": "IN_PROGRESS",
+          "n8n_status": "OPEN_ROUTED_NONCOERCIVE"
+        }
+      ],
+      "task_statuses_modified": false
+    }
+  },
+  "windows_host": {
+    "device": "DESKTOP-86ITNQ4",
+    "route_status": "ONLINE_READONLY_PROBES_SUCCEEDED",
+    "host_probe_local": "2026-10-24T23:32:15.4387481+07:00",
+    "host_probe_utc": "2026-10-24T16:32:15.5337535Z",
+    "tick_file": "WINDOWS_TICK_20261024T163134179629Z.json",
+    "tick_observed_at_utc": "2026-10-24T16:31:34.179629Z",
+    "tick_sha256": "5FD018A547FD0F6A6F9172594E1FD22172C296E98A757BC4E701586A0358AD61",
+    "source_csv": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256_direct": "9B25BD723DCE06344432597CC4F300053EA5ACBF76BDD2AB4F38BF4A1BF34B87",
+      "sha_matches_tick": true,
+      "source_file_written": false,
+      "synthetic_rows_added": 0
+    },
+    "scheduled_task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "last_run_local": "2026-10-24T23:31:33+07:00",
+      "last_result": 0,
+      "next_run_local_at_probe": "2026-10-24T23:36:32+07:00",
+      "missed_runs": 0
+    },
+    "live_sensor_reading_confirmed": false,
+    "cloud_export_enabled": false,
+    "github_export_enabled": false
+  },
+  "android": {
+    "adb_path_available": true,
+    "adb_device_count": 1,
+    "serial_persisted": false,
+    "sensorservice_snapshot_1_sha256": "7407471A3966E8DE3CA2B219CC7978CC99B54C856E58DE12416E376F21728EC3",
+    "sensorservice_snapshot_2_sha256": "3AFC7524930E03C3E868F85822AD9E64B26E6E6DF44439F7E4F5E21C19523E06",
+    "full_dump_hash_changed": true,
+    "interpretation": "Full-dump hash change alone is inconclusive; live sensor stream remains unverified.",
+    "live_sensor_stream_verified": false,
+    "raw_sensor_values_persisted": false
+  },
+  "source_registry": {
+    "task_id": "SOL-SIX_PROJECTIONS_ENVIRONMENT_REGISTRY",
+    "github_status": "IN_PROGRESS",
+    "n8n_status": "OPEN_ROUTED_NONCOERCIVE",
+    "payload_readback": "UNVERIFIED",
+    "source_blob_sha1": "9ffdc2da742bd9ad07fbdfb8b27fcd8c8cf8b74e",
+    "next_edge": "Obtain authorized raw-source readback for ingestion_gate_payload_03.txt; preserve both ledger states until semantics are reconciled."
+  },
+  "archive_task": {
+    "task_id": "SV-20261020-13-ARCHIVE-FORMATS",
+    "status": "OPEN_7Z_RAR_LR",
+    "pr_number": 27,
+    "pr_state_last_verified": "OPEN",
+    "pr_state_rechecked_this_turn": false,
+    "last_verified_ci_run_id": 40094138216,
+    "last_verified_ci_head_sha": "7765781eeee2b1788f9a466c8046314c60495847",
+    "ci_conclusion": "success",
+    "real_7z_rar_lr_fixtures_verified": false
+  },
+  "safeguards": {
+    "recovery_tasks_closed": 0,
+    "source_data_mutations": 0,
+    "google_drive_writes": 0,
+    "process_terminations": 0,
+    "cache_or_meta_db_deletions": 0,
+    "host_configuration_changes": 0,
+    "agent_dispatch": false
+  },
+  "next_verified_edges": [
+    "After host-local 2026-10-24T23:36:32+07:00, read the newest Windows tick and recompute source CSV SHA-256; preserve clock_alignment=NOT_VERIFIED.",
+    "Inspect Android sensor-event section/timestamps across samples; whole-dump hash change alone does not prove a live sensor stream.",
+    "Reconcile the two status divergences by source semantics only; do not auto-normalize or close either task.",
+    "Continue cloud-eligible OPEN tasks without agent dispatch until model and credential binding are verified.",
+    "Obtain authorized raw-source readback for ingestion_gate_payload_03.txt.",
+    "Keep archive-format task OPEN until real 7Z/RAR/LR fixtures are verified."
+  ]
+}

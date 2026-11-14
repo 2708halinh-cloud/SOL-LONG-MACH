@@ -1,0 +1,123 @@
+name: HelloCheck R-014 Go build/test and safety verification
+
+on:
+  push:
+    branches:
+      - main
+      - sol-cloud-continuity/hellocheck-go-r014-20261028
+    paths:
+      - 'integrations/hellocheck/**'
+      - '.github/workflows/hellocheck-go-r014.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'integrations/hellocheck/**'
+      - '.github/workflows/hellocheck-go-r014.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hellocheck-r014-cloud-verification-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: integrations/hellocheck/go.mod
+          cache: false
+      - name: Download pinned Go module dependencies
+        working-directory: integrations/hellocheck
+        run: go mod download
+      - name: Run Go unit and fake-RPC safety tests
+        working-directory: integrations/hellocheck
+        run: go test ./...
+      - name: Static analysis
+        working-directory: integrations/hellocheck
+        run: go vet ./...
+      - name: Build Linux amd64 executable
+        working-directory: integrations/hellocheck
+        env:
+          GOOS: linux
+          GOARCH: amd64
+          CGO_ENABLED: '0'
+        run: go build -trimpath -o "$RUNNER_TEMP/hellocheck-linux-amd64" ./cmd/hellocheck
+      - name: Cross-build Windows amd64 executable
+        working-directory: integrations/hellocheck
+        env:
+          GOOS: windows
+          GOARCH: amd64
+          CGO_ENABLED: '0'
+        run: go build -trimpath -o "$RUNNER_TEMP/hellocheck-windows-amd64.exe" ./cmd/hellocheck
+      - name: Offline CLI address and decode smoke test
+        working-directory: integrations/hellocheck
+        shell: bash
+        run: |
+          address="$(go run ./cmd/hellocheck address --hash160 0000000000000000000000000000000000000000)"
+          test -n "$address"
+          decoded="$(go run ./cmd/hellocheck inspect --address "$address")"
+          test "$decoded" = "0000000000000000000000000000000000000000"
+          echo "HELLOCHECK_ADDRESS_SMOKE_OK=true" >> "$GITHUB_ENV"
+          echo "HELLOCHECK_OFFLINE_SMOKE=PASS"
+      - name: Create and read back build evidence receipt
+        working-directory: integrations/hellocheck
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, subprocess
+          from pathlib import Path
+
+          runner_temp = Path(os.environ["RUNNER_TEMP"])
+          def sha(path):
+              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+          def binary_record(path):
+              p = runner_temp / path
+              return {"sha256": sha(p), "bytes": p.stat().st_size}
+          receipt = {
+              "schema": "HELLOCHECK_GO_CLOUD_BUILD_RECEIPT_V1",
+              "git_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+              "go_version": subprocess.check_output(["go", "version"], text=True).strip(),
+              "module": "github.com/2708halinh-cloud/SOL-LONG-MACH/integrations/hellocheck",
+              "source_files_sha256": {
+                  name: sha(name) for name in [
+                      "go.mod", "cmd/hellocheck/main.go", "address.go",
+                      "keys.go", "transaction.go", "rpc.go"
+                  ]
+              },
+              "checks": {
+                  "go_mod_download": True,
+                  "go_test_all": True,
+                  "go_vet_all": True,
+                  "linux_amd64_build": True,
+                  "windows_amd64_cross_build": True,
+                  "offline_address_inspect_roundtrip": os.environ.get("HELLOCHECK_ADDRESS_SMOKE_OK") == "true",
+                  "wallet_created": False,
+                  "private_key_or_wif_printed": False,
+                  "external_bitcoin_rpc_called": False,
+                  "transaction_signed_or_broadcast": False
+              },
+              "binaries": {
+                  "linux_amd64": binary_record("hellocheck-linux-amd64"),
+                  "windows_amd64": binary_record("hellocheck-windows-amd64.exe")
+              }
+          }
+          assert receipt["checks"]["offline_address_inspect_roundtrip"]
+          out = runner_temp / "hellocheck-build-receipt.json"
+          out.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+          readback = json.loads(out.read_text(encoding="utf-8"))
+          assert readback == receipt
+          print("HELLOCHECK_BUILD_RECEIPT=" + json.dumps(receipt, sort_keys=True))
+          PY
+      - name: Upload build receipt only (no wallet or keys)
+        uses: actions/upload-artifact@v4
+        with:
+          name: hellocheck-r014-build-receipt
+          path: ${{ runner.temp }}/hellocheck-build-receipt.json
+          if-no-files-found: error
+          retention-days: 7

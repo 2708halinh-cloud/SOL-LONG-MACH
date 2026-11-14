@@ -1,0 +1,28 @@
+name: SOL TIME SPACE INDEX Bridge
+
+on:
+  push:
+    paths:
+      - "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/BRIDGE_TIME_TÓC🟢MỘC_TIME/**"
+      - "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/CORE_PLACES_INDEX_MÁU_🔴_HỎA_REALITY/IDENTITY_PLACES_CORE.json"
+      - "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/EARTH_PEOPLE_XƯƠNG🔵THỦY_SPACE/SPACE.json"
+      - "tests/test_bridge_time_index.py"
+      - ".github/workflows/bridge-time-space-index.yml"
+  pull_request:
+    paths:
+      - "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/BRIDGE_TIME_TÓC🟢MỘC_TIME/**"
+      - "tests/test_bridge_time_index.py"
+      - ".github/workflows/bridge-time-space-index.yml"
+
+jobs:
+  index-space-time:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile TIME bridge
+        run: python -m py_compile "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/BRIDGE_TIME_TÓC🟢MỘC_TIME/time_bridge.py"
+      - name: Verify indexes and X STAMPS causal routing
+        run: python -m unittest discover -s tests -p "test_bridge_time_index.py" -v

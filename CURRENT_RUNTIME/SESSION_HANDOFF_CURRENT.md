@@ -132,3 +132,62 @@ TESSERACT_OS 6D:
 - Không hỏi lại những gì đã có vật chứng trong handoff.
 - Không kết luận "không thể" khi mới chỉ hỏng một route.
 - ACTION trước CONCLUSION; READBACK trước DONE.
+
+
+## CLOUD CONTINUITY READBACK — 2026-10-24T06:47Z
+
+- n8n workflow `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN` (`BogzhFUDbRp7kuwh`) remains ACTIVE. Manual execution `#123` SUCCESS at `2026-10-24T06:47:20Z`; appended receipt row `#266`, event `X20261024064722343_CLOUD`, read back from table. It records `OPEN_WORK_REMAINS`, 45 recovery rows, and explicitly `CLOUD_HEARTBEAT_ONLY; HOST_HEARTBEAT_NOT_PROBED`.
+- Recovery table `SUBAVENGERS_RECOVERY_TASKS_20261020` (`rSPFIOWbS7cfNJ8z`, project `6qKpRmicIGHA5snY`) returned 45 rows; none has a terminal completion status. Preserve all existing statuses.
+- Managed Gateway probe execution `#124` SUCCESS at `2026-10-24T06:47:22Z`; exact model response `GATEWAY_OK`. This verifies the gateway probe only; it does not establish an Agent model/credential binding.
+- Fresh validation of all five project Agents still returns `valid=false`, missing `model` and `credential`; project user-accessible credential count is 0. All five remain unpublished. Do not publish without valid binding and explicit approval.
+- GitHub main observed at `c4cefd535cc7107a48ac54438032409e6e18a0bc` (commit signature unverified/unsigned). Its exact-SHA check runs `verify`, `secret-guard`, and `continuation-guard` completed SUCCESS. This is CI evidence for that SHA only.
+- Remote Desktop Commander read attempt at `2026-10-24T06:47Z` returned “No Desktop Commander device is currently online”; host tick contents and live sensor stream remain unverified. Android heartbeat also remains unverified. Do not infer local state from cloud success.
+- No recovery task was closed; no local data, process, cache, `Meta.db`, clock, or service was changed; no Google Drive write was attempted.
+- Next verified edge: continue authorized cloud-only reads while host access is unavailable; on reconnect, read the newest host tick and compare its nested source digest with a fresh direct source digest before making any sensor claim.
+
+
+## CLOUD CONTINUITY READBACK — 2026-10-24T07:29Z / 14:32 ICT
+
+- n8n workflow `AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN` (`BogzhFUDbRp7kuwh`) remains ACTIVE at version `c6e796c4-cdd9-4355-8b37-83c9ee32f914`. Production execution `#125` SUCCESS at `2026-10-24T07:00:22.073Z`–`07:00:24.115Z`. Latest cloud receipt row `#267`, event `X20261024070023960_CLOUD`, says `OPEN_WORK_REMAINS`, `45/45` recovery rows nonterminal, and `HOST_HEARTBEAT_NOT_PROBED`. This is cloud heartbeat only.
+- Append-only checkpoint created at `CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T1432ICT.json`, commit `f82c31fb6476eabfb0361486a6981c9875e720bc`. GitHub task ledger `CURRENT_RUNTIME/OPEN_TASKS_CURRENT.json` was freshly read at blob SHA `779aa8ab30fb3b54a16b01c997ecd728dc209016`; its 28 GitHub tasks remain a separate ledger from the 45 n8n recovery rows.
+- The secondary Desktop Commander route now reports `DESKTOP-86ITNQ4` online (device `59f03001-c732-403e-b80c-b4191266809c`). Actual local run of `prove_braid_actual_20261020.py` exited 0 at `2026-10-24T07:29:35.242310Z`: missing context rejected; no receipt was created for the rejected request; six forces examined; nine read-only actions; no mutation; source SHA-256 remained `6906e508487e421c85f5aa44a4310fbc4108f5c233926bb70197977f8ec66660`. Receipts read back: `BRAID_LIVE_SIX_FORCES_20261024T072935184184Z.json` SHA-256 `05f1fd6d26ffb8c64ee6b1272f0525029e6e0b3917c3d4cf96630b4943b16cbe`; `BRAID_LIVE_PLURAL_20261024T072935285983Z.json` SHA-256 `cb015068f4bfe514c0e5123a021d3b750c2fa04115150eac1f222cc0ed1d4896`. This proves a local read-only adapter run, not ChatGPT host wiring or a live sensor reading.
+- No fresh `WINDOWS_TICK_*.json` was found in `G:\\OS_Workspace\\TESSERACT_OS`; the broader `G:\\OS_Workspace` search returned no result before its time limit and may be incomplete. Do not claim a new tick or live sensor heartbeat.
+- Current Android probe: `ADB_NOT_IN_PATH`, TCP `192.168.1.14:5556=False`. A prior `state.json` snapshot reports an ADB device but its observation time is not verified; current Android heartbeat remains unverified.
+- n8n user-accessible credential count remains 0; OpenAI model catalog reports `verified=false`. No agent was published or dispatched. Combined GitHub status for prior main SHA `5e3547982acaaf48b1146e64c1e008e7b093f99b` reported no status checks; its commit is unsigned. Do not infer CI success from an empty status list.
+- No task was closed; no original source, process, cache, or `Meta.db` was deleted; no Google Drive write or secret persistence occurred.
+- Next verified edge: obtain a fresh Windows tick through an authorized alternate carrier; keep Android heartbeat unverified until a current device-level probe succeeds; continue independent cloud-safe OPEN tasks from the checkpoint above.
+
+
+## DROPBOX CARRIER METADATA READBACK — 2026-10-24T14:35 ICT
+
+- Read-only Dropbox metadata lookup succeeded for exact carrier `id:gvG29tEleJwAAAAAAAACLA`: `/Linh Hà/OLD NGUỒN DỰ ÁN THU HOI NGUON SOL - CHATGPT/SOL_GOI_NHANH_PHIEN_MOI_CURRENT_20260912_045433.zip`, revision `0165daa5e44669e0000000395cdfd73`, size `20882` bytes, MIME `application/zip`, server-modified `2026-10-12T20:16:07Z`. This matches the exact path/revision recorded in `CURRENT_RUNTIME/TASK_RESUME_POINTER.json`; it is metadata confirmation only, not a raw-byte SHA-256 recheck.
+- GitHub source graph `15_FOUR_ACCOUNT_LOCUS_TO_1D_SOURCE_GRAPH.json` was read at blob SHA `f448e2559dc48637d59d9e247d8bc3f7394146c3`. It explicitly records DAT/JINEY/FUNIX export bytes as `NOT_IMPORTED`; the cited Gmail items are export-ready notices, not ZIP payloads. Their account histories must remain distinct.
+- Fresh bounded Dropbox listings completed with `has_more=false`: 24 immediate entries in the old project folder and 57 immediate entries under `/Linh Hà`. The exact ZIP is present in the old project folder; no JINEY/FUNIX/DAT_NGUYEN raw export was named in those immediate listings. This is not proof of global absence.
+- The Dropbox search tool rejected its schema when `link_id` was combined with search filters; this is a connector validation issue, not a negative source search. Continue using exact-path metadata/listing or another authorized route rather than repeating the same malformed search.
+- Historical expected raw ZIP SHA-256 remains `da1d4989a33cd3b84b82b4c10b8a7948e90327eaf213f9634867136e3ecfc106`. The Dropbox bytes were not downloaded or hashed in this run; preserve the source task as OPEN and do not claim byte identity from matching metadata alone. No Google Drive write was made.
+- Next edge: obtain the raw ZIP through an authorized binary route and compare SHA-256 without exposing a temporary download URL in logs; separately follow the source-bound export-ready notices for JINEY/FUNIX/DAT_NGUYEN when an authorized mail/provider read route is available.
+
+
+## LIBRARY SOURCE_DIRECT_20261018 MANIFEST RECHECK — 2026-10-24T21:30:50+07:00
+
+- Read-only Library materialization of `SOL_PAST_SPACE_EXPLORER_20261018.html`: 40,810 bytes; SHA-256 `3721aa4681bfc7782ee40d6e482fe56fac5a3f24f2458ea24ed68b876d8d6830`.
+- Its embedded manifest identifies `SOURCE_DIRECT_20261018`, `source_origin=TEN_PRESERVED_UPLOADED_FILES`, `files_verifiable=10`, and explicitly retains the limitation `NO_RAW_JINEY_EXPORT_VERIFIED`.
+- Direct Library listing of the exact `SOURCE_DIRECT_20261018` folder returned 10 items, no pagination and no warning. All 10 original byte carriers were materialized read-only; every size and SHA-256 matched the embedded manifest (10/10).
+- This proves byte integrity of that preserved source set only. The set includes derived/tooling and reentry carriers; it does **not** prove an original OpenAI account export for JINEY, FUNIX or DAT NGUYEN was recovered. No source was moved, duplicated, rewritten or uploaded to GitHub; no task status changed.
+- Exact Drive/Dropbox/Takeout provider reads remain necessary to retrieve raw export bytes and provider object/revision metadata. No such provider operation is exposed by the currently callable tools in this run.
+
+
+## OAUTH CLIENT MATERIAL SEPARATION CHECK — 2026-10-24T21:31:30+07:00
+
+- A repository-wide GitHub code search for the two known OAuth client-config filename prefixes returned only two metadata/reference files in `SOL-LONG-MACH`; no raw client-config file was returned by the search.
+- Readback of `workspace-action-gate/config.json` (blob `0e147fedd71cf81e9739509aaad9204c64a43f6f`) shows `secret_material_embedded=false` and `secrets_policy=SECRET_REF_ONLY`. Its healthcheck (blob `2560f1dbe766a656e5b155b1315f9f723aaa5f56`) asserts the same reference-only boundary.
+- This is a scoped code-search/readback, **not** proof that every repository history or external system is free of credentials. No credential value was read, copied, logged or written. No GitHub Actions secret was changed; the authorized secret-control surface is not exposed in this run.
+
+
+## TESSERACT ART SOURCE TRIAGE — 2026-10-24T21:32:30+07:00
+
+- Read the two distinct matrix carriers at the same x-time-web source ref `1dc5de36bc221d0a17c7601d67e2fe34e673f437`:
+  - `UBUBU/TESSERACT_6D_MATRIX.json`, blob `f08f4ab54fd2db12923329755534b6cc7b97c36d`, schema `UBUBU_TESSERACT_6D_MATRIX/2.0`: strict mathematical 6-dimensional hypercube.
+  - `UBUBU/SOL_THANOS/TESSERACT_6D_MATRIX.json`, blob `c004387b3b23f9258cd21dcd6efc3b1f2db9eb5f`, schema `GGDV_TESSERACT_6D_OPERATIONAL_CUBE/4.0`: operational six-axis projection; its `strict_6cube_bridge.canonical_graph` points to the first carrier. Keep these models distinct; the path difference is not itself a corruption.
+- The Library candidates `tesseract-6d-website_SKILL_CAP_NHAT_FRAME_V06.zip` and `TESSERACT_6D_KHUNG_TU_MAU_GOC.zip` are visible by metadata, but raw-byte materialization was denied for both and GitHub code search found no exact-name carrier. They are not accepted as verified source members.
+- No original TESSERACT Art source identity/bundle member or real browser runtime receipt was established. No candidate source was modified and no task status changed.

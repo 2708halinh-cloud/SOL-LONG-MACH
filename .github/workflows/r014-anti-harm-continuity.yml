@@ -1,0 +1,38 @@
+name: R-014 anti-harm continuity (cloud, no Windows host)
+on:
+  push:
+    branches: [main]
+    paths:
+      - "runtime/ggdv_response_gate.py"
+      - "runtime/test_ggdv_response_gate.py"
+      - ".github/workflows/r014-anti-harm-continuity.yml"
+  schedule:
+    - cron: "17 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reject-known-harmful-routes:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout tracked source only
+        uses: actions/checkout@v4
+      - name: Compile GGDV R-014 gate
+        run: python3 -m py_compile runtime/ggdv_response_gate.py
+      - name: Test observed-harm and false-remediation guards
+        run: python3 -m unittest discover -s runtime -p "test_ggdv_response_gate.py" -v
+      - name: Verify remote route survives Windows-offline input
+        run: |
+          python3 - <<'PY'
+          from runtime.ggdv_response_gate import select_next_route
+          route = select_next_route({
+              "ONLINE_DEVICE": False,
+              "REMOTE_GITHUB": True,
+              "REMOTE_DRIVE": True,
+          })
+          assert route == "REMOTE_GITHUB", route
+          print("R014_WINDOWS_INDEPENDENCE_GUARD=PASS")
+          PY

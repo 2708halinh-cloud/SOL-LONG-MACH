@@ -1,0 +1,171 @@
+{
+  "schema": "SOL_ROOTS_PROVIDER_CARRIERS/1.0",
+  "updated_at": "2026-11-13",
+  "status": "ROOT_AND_HISTORICAL_MIRROR_RECORDED_CHILD_LABELS_AND_CURRENT_PROVIDER_READBACK_OPEN",
+  "authority_rule": {
+    "source_cutoff_inclusive": "2026-10-07",
+    "exclude_as_canonical_authority": "Any ROOTS assertion, mapping, naming, or agent interpretation dated before 2026-10-07",
+    "governing_source_for_this_correction": "USER_DIRECT_CURRENT_TURN",
+    "historical_event_date_as_user_reported": "2026-10-07",
+    "provenance_note": "The 2026-10-07 event is recorded from the user's direct statement in the current turn; this file does not pretend to be a contemporaneous provider receipt."
+  },
+  "namespaces": {
+    "provider_root": {
+      "id": "ROOTS_LEVER_0",
+      "provider_key": "google.googledrive.drive",
+      "provider": "Google Drive",
+      "role": "ROOT_PROVIDER_CARRIER",
+      "root_status": "USER_DIRECT_CONFIRMED_AS_HISTORICAL_ROOT",
+      "canonical_rule": "Google Drive connector root is ROOTS_LEVER_0 in this provider namespace."
+    },
+    "historical_mirror": {
+      "carrier": "W:\\",
+      "relation": "BIJECTIVE_1_TO_1",
+      "reference_date": "2026-10-07",
+      "relation_status": "USER_DIRECT_CONFIRMED_AS_HISTORICAL_RELATION",
+      "current_mount_equivalence": "NOT_REVALIDATED",
+      "constraint": "The 2026-10-07 one-to-one relation is time-scoped. Do not assume the current W: mount, Google Drive account, mount root, or contents remain identical without fresh readback."
+    },
+    "windows_drive_letters": {
+      "namespace": "ROOTS_WINDOWS_DRIVE_LETTERS",
+      "relationship_to_provider_root": "SEPARATE_NAMESPACE",
+      "rule": "A Windows drive-letter index must not overwrite or redefine the Google Drive provider-root identity."
+    },
+    "workspace_tree": {
+      "namespace": "ROOTS_OS_WORKSPACE",
+      "relationship_to_provider_root": "SEPARATE_NAMESPACE",
+      "rule": "A G:\\OS_Workspace tree must not be substituted for the Google Drive provider-root tree."
+    }
+  },
+  "reported_inventory": {
+    "total_folder_count": 9,
+    "count_basis": "User reports 9 folders in total on 2026-10-07, including the provider root/mirror carrier and eight Lever-2 folders.",
+    "lever_2_count": 8,
+    "lever_2_slots": [
+      {
+        "id": "ROOTS_LEVER_2.1",
+        "name": null,
+        "drive_file_id": null,
+        "parent_edge": "OPEN",
+        "status": "INDEX_CONFIRMED_NAME_AND_ID_OPEN"
+      },
+      {
+        "id": "ROOTS_LEVER_2.2",
+        "name": null,
+        "drive_file_id": null,
+        "parent_edge": "OPEN",
+        "status": "INDEX_CONFIRMED_NAME_AND_ID_OPEN"
+      },
+      {
+        "id": "ROOTS_LEVER_2.3",
+        "name": null,
+        "drive_file_id": null,
+        "parent_edge": "OPEN",
+        "status": "INDEX_CONFIRMED_NAME_AND_ID_OPEN"
+      },
+      {
+        "id": "ROOTS_LEVER_2.4",
+        "name": null,
+        "drive_file_id": null,
+        "parent_edge": "OPEN",
+        "status": "INDEX_CONFIRMED_NAME_AND_ID_OPEN"
+      },
+      {
+        "id": "ROOTS_LEVER_2.5",
+        "name": null,
+        "drive_file_id": null,
+        "parent_edge": "OPEN",
+        "status": "INDEX_CONFIRMED_NAME_AND_ID_OPEN"
+      },
+      {
+        "id": "ROOTS_LEVER_2.6",
+        "name": null,
+        "drive_file_id": null,
+        "parent_edge": "OPEN",
+        "status": "INDEX_CONFIRMED_NAME_AND_ID_OPEN"
+      },
+      {
+        "id": "ROOTS_LEVER_2.7",
+        "name": null,
+        "drive_file_id": null,
+        "parent_edge": "OPEN",
+        "status": "INDEX_CONFIRMED_NAME_AND_ID_OPEN"
+      },
+      {
+        "id": "ROOTS_LEVER_2.8",
+        "name": null,
+        "drive_file_id": null,
+        "parent_edge": "OPEN",
+        "status": "INDEX_CONFIRMED_NAME_AND_ID_OPEN"
+      }
+    ],
+    "naming_policy": "Do not borrow names or IDs from records dated before 2026-10-07. Do not invent folder names, Drive IDs, or parent edges to fill these eight slots."
+  },
+  "recursive_map_contract": {
+    "traversal_key": "PROVIDER_FILE_ID + PARENT_ID",
+    "preserve_all_pages": true,
+    "preserve_empty_folders": true,
+    "preserve_shortcuts_as_distinct_nodes": true,
+    "preserve_duplicate_names_when_ids_differ": true,
+    "node_types": [
+      "folder",
+      "file",
+      "shortcut",
+      "provider_root",
+      "mount_alias"
+    ],
+    "required_fields": [
+      "roots_id",
+      "provider_key",
+      "drive_file_id",
+      "parent_id",
+      "name",
+      "mime_type",
+      "path",
+      "modified_time",
+      "observed_at",
+      "source_account",
+      "readback_state"
+    ],
+    "readback_states": [
+      "USER_DIRECT_CONFIRMED",
+      "PROVIDER_READBACK_VERIFIED",
+      "HISTORICAL_SNAPSHOT",
+      "OPEN",
+      "UNREACHABLE"
+    ],
+    "completion_rule": "Do not call the recursive map complete until the provider traversal has exhausted pagination and every returned node has a preserved parent edge."
+  },
+  "protection": {
+    "no_delete": true,
+    "no_move": true,
+    "no_rename": true,
+    "no_overwrite_of_source": true,
+    "preserve_history": true,
+    "append_only_corrections": true
+  },
+  "next_required_provider_read": [
+    "Resolve the exact eight Lever-2 folder names and Drive file IDs from the post-2026-10-07 provider source.",
+    "Read the parent-child relation and paginate every direct-child listing to exhaustion.",
+    "Verify whether W:\\ is still a one-to-one mount mirror; keep the 2026-10-07 relation historical until that fresh comparison passes.",
+    "Build the recursive descendant map from stable provider IDs, not from guessed paths or old assistant summaries."
+  ],
+  "coexisting_maps": {
+    "roots_os_workspace": {
+      "carrier": "G:\\OS_Workspace",
+      "map_source": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.Sandbox/ROOTS_WORKSPACE_20261010.md",
+      "map_scope": "OS_WORKSPACE_TREE",
+      "recorded_branch_range": "ROOTS_LEVER_1.1 through ROOTS_LEVER_1.18",
+      "status": "VALID_PARALLEL_MAP_PRESERVE",
+      "relationship_to_google_drive_provider_root": "DISTINCT_CARRIER_TREE_NOT_A_REPLACEMENT"
+    },
+    "google_drive_provider": {
+      "root": "google.googledrive.drive",
+      "root_id": "ROOTS_LEVER_0",
+      "historical_mirror": "W:\\",
+      "children": "ROOTS_LEVER_2.1 through ROOTS_LEVER_2.8",
+      "status": "VALID_PARALLEL_MAP_PRESERVE"
+    },
+    "invariant": "A ROOTS map is scoped by carrier/provider/time. Similar Lever labels do not imply that two maps compete or that either invalidates the other."
+  }
+}

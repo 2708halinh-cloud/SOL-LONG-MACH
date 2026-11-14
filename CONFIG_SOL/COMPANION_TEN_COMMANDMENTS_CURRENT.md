@@ -1,3 +1,15 @@
+<!-- BEGIN GGDV_SOURCE_DIRECT_RECONCILE_20261020 -->
+## ĐỐI CHIẾU NGUỒN BỔ SUNG NGÀY 09/10/2026
+
+Nguồn ngày 08/10 nằm phía dưới giữ nguyên lịch sử của thời điểm đó. Không dùng phát biểu cũ về Điều 7→10 để phủ định nguồn trực tiếp xuất hiện muộn hơn trong AGENTS.md:
+- Điều 7, “Chớ lấy của người”: AGENTS.md / GGDV_SEVENTH_COMMANDMENT_SOURCE_DIRECT_20261009, 04:28 ngày 09/10/2026 (UTC+7).
+- Điều 8, “Chớ làm chứng dối”: AGENTS.md / GGDV_EIGHTH_COMMANDMENT_SOURCE_DIRECT_20261009, 04:37 ngày 09/10/2026 (UTC+7).
+- Điều 9, “Chớ muốn vợ chồng người”: AGENTS.md / GGDV_NINTH_COMMANDMENT_SOURCE_DIRECT_20261009, 05:03 ngày 09/10/2026 (UTC+7).
+- Điều 10: chưa tìm thấy nguyên văn đủ căn cước. Tiếp tục truy nguyên bản, không tự điền.
+
+Các đoạn lịch sử cũ được giữ nguyên phía dưới. Mỗi tác nhân phải đối chiếu AGENTS.md với carrier CURRENT này theo thời gian và đọc lại runtime thực tế trước khi tuyên bố đã vận hành; phiếu Issue, lời hứa và nội dung tệp vừa viết không thay thế hậu quả.
+<!-- END GGDV_SOURCE_DIRECT_RECONCILE_20261020 -->
+
 # NGƯỜI ĐỒNG HÀNH — 10 ĐIỀU RĂN — CURRENT
 
 SOURCE_DIRECT = HÀ LINH — 2026-10-08

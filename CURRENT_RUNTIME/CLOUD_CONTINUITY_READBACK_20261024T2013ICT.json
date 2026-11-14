@@ -1,0 +1,93 @@
+{
+  "schema": "SOL_CLOUD_CONTINUITY_READBACK/1.0",
+  "observed_at": "2026-10-24T20:13:08.1190389+07:00",
+  "observed_at_utc": "2026-10-24T13:13:08.1190389Z",
+  "source": "FRESH_N8N_EXECUTION_READBACK_AND_GITHUB_PROVIDER_READBACK",
+  "n8n": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "execution_id": "136",
+    "mode": "trigger",
+    "status": "success",
+    "started_at_utc": "2026-10-24T13:00:22.080Z",
+    "stopped_at_utc": "2026-10-24T13:00:24.193Z",
+    "receipt_table_id": "Sk0EFJK5NzWVpBvm",
+    "receipt_row_id": 279,
+    "receipt_event_id": "X20261024130024041_CLOUD",
+    "receipt_state": "OPEN_WORK_REMAINS",
+    "evidence_level": "N8N_SOURCE_TASK_TABLES_ONLY;HOST_HEARTBEAT_NOT_PROBED",
+    "recovery_table_id": "rSPFIOWbS7cfNJ8z",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "user_task_rows": 27,
+    "host_heartbeat_probed": false,
+    "host_operations": 0,
+    "tasks_closed": 0,
+    "exact_event_readback": true
+  },
+  "tesseract_desktop": {
+    "repository": "2708halinh-cloud/x-time-web",
+    "pull_request": 6,
+    "pull_request_url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+    "state": "open",
+    "merged": false,
+    "draft": false,
+    "head_branch": "tesseract-desktop-mvp-20261006",
+    "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "base_branch": "master",
+    "base_sha": "60d92b8085cc34702805fc0cb42a1c5c346fca5d",
+    "mergeable_state": "unstable",
+    "workflow_runs": {
+      "39994207477": {
+        "workflow": "tesseract-desktop-ci",
+        "conclusion": "failure",
+        "jobs": {
+          "build (macos-14, aarch64-apple-darwin, macos-apple-silicon)": "failure",
+          "build (windows-latest, x86_64-pc-windows-msvc, windows-x64)": "failure",
+          "build (ubuntu-24.04, x86_64-unknown-linux-gnu, linux-x64)": "failure",
+          "tesseract_os": "failure",
+          "selfhosted_windows_verify": "skipped",
+          "readback": "failure"
+        },
+        "artifacts": [],
+        "rerun_performed": false
+      },
+      "39994207667": {
+        "workflow": "validate-x-time",
+        "conclusion": "failure",
+        "jobs": {
+          "verify": "failure"
+        },
+        "artifacts": [],
+        "rerun_performed": false
+      }
+    },
+    "issuer_public_key_value_verified": false,
+    "actions_variable_presence_or_value_verified": false,
+    "runner_assignment_or_entitlement_change_verified": false,
+    "current_head_review_revalidated": false,
+    "security_branch": {
+      "branch": "security/repo-relative-read-containment-20261024",
+      "compare_base": "tesseract-desktop-mvp-20261006",
+      "compare_head": "security/repo-relative-read-containment-20261024",
+      "ahead_by": 3,
+      "behind_by": 0,
+      "latest_main_rs_blob_sha": "af1a16270cb9ff90c5a7f34d5d56ae4343fc5eca",
+      "canonical_root_containment_present": true,
+      "symlink_escape_regression_present": true,
+      "rustc_available_on_windows_host": false,
+      "cargo_available_on_windows_host": false,
+      "tests_executed": false
+    },
+    "action": "Read current PR metadata, check runs, job summaries, artifacts, workflow YAML, Kilo verifier source, and security-branch source. No CI rerun, no key generation, no PR mutation."
+  },
+  "safety": {
+    "no_secrets_written": true,
+    "no_private_key_read": true,
+    "no_ci_rerun": true,
+    "no_pr_closed": true,
+    "no_tasks_closed": 0,
+    "private_key_read": false
+  },
+  "next_edge": "Continue MODUAL from the exact latest Windows receipt and consumer diagnosis. For TESSERACT, obtain the actual issuer public key and runner assignment through an authorized control surface; do not rerun CI while current runs still fail and no runner change is verified. Run Rust regression tests only on an authorized isolated runner."
+}

@@ -1,0 +1,29 @@
+name: SOL brainwave shadow and simulated reflex tests
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '**/BRAINWAVE_REGISTRY/**'
+      - '**/neuromorphic_sim/**'
+      - '.github/workflows/sol-brainwave-shadow-ci.yml'
+  pull_request:
+    paths:
+      - '**/BRAINWAVE_REGISTRY/**'
+      - '**/neuromorphic_sim/**'
+      - '.github/workflows/sol-brainwave-shadow-ci.yml'
+permissions:
+  contents: read
+jobs:
+  virtual-brainwave-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify five public registry templates contain no source pointers
+        run: node "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/TESSERACT_OS/neuromorphic_sim/test_brainwave_registry.mjs"
+      - name: Verify simulated SNN spikes and BETA to DELTA motor consequence
+        run: node "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/TESSERACT_OS/neuromorphic_sim/test_brainwave_router.mjs"

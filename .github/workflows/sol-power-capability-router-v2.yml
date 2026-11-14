@@ -1,0 +1,26 @@
+name: SOL Power Capability Router V2
+on:
+  push:
+    paths:
+      - "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/_Plugins/**"
+      - "tests/test_power_capability_router_v2.py"
+      - ".github/workflows/sol-power-capability-router-v2.yml"
+  pull_request:
+    paths:
+      - "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/_Plugins/**"
+      - "tests/test_power_capability_router_v2.py"
+      - ".github/workflows/sol-power-capability-router-v2.yml"
+jobs:
+  routing-and-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile routing code
+        run: python -m py_compile "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/_Plugins/power_capability_router.py"
+      - name: Run capability routing regression
+        run: python -m unittest discover -s tests -p 'test_power_capability_router_v2.py' -v
+      - name: Verify Plugins back-edge
+        run: python "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/_Plugins/power_capability_router.py" --repo-root . --task "GGDV Template Creator Azure DevOps"

@@ -7,7 +7,13 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
-SENSOR_ROOT = Path(r"D:\SENSOR_LOGS")
+try:
+    from .sensor_root_resolver import resolve_sensor_root
+except ImportError:  # direct script invocation
+    from sensor_root_resolver import resolve_sensor_root
+
+# Live source has to be observed before any snapshot writes happen.
+SENSOR_ROOT = resolve_sensor_root()
 REPO_ROOT = Path(r"D:\SOL_LONG_MACH\MODEL\repo")
 DEST_ROOT = REPO_ROOT / "MODUAL" / "SENSOR_LOGS"
 SOURCE_DIR = DEST_ROOT / "source"
@@ -32,18 +38,6 @@ def _sha256(path: Path, chunk: int = 8 * 1024 * 1024) -> str:
                 break
             h.update(b)
     return h.hexdigest()
-
-
-def _last_nonempty_line(path: Path, tail_bytes: int = 512 * 1024) -> str:
-    if not path.exists() or path.stat().st_size == 0:
-        return ""
-    size = path.stat().st_size
-    with path.open("rb") as f:
-        f.seek(max(0, size - tail_bytes))
-        data = f.read()
-    text = data.decode("utf-8", errors="replace")
-    lines = [x for x in text.splitlines() if x.strip()]
-    return lines[-1] if lines else ""
 
 
 def _first_line(path: Path) -> str:
@@ -91,27 +85,21 @@ def build_repo_snapshot() -> dict:
         if src.exists():
             shutil.copy2(src, SOURCE_DIR / name)
 
-    if live.exists():
-        shutil.copy2(live, LIVE_DIR / LIVE_NAME)
-
+    # Never copy raw sensor rows into the repository. Keep the compatibility
+    # carrier header-only; the original live source remains on its source root.
     bulk_info = _snapshot_one(bulk, "MODUAL_BULK_LOCAL_SOURCE")
     live_info = _snapshot_one(live, "MODUAL_LIVE_PARAMETER_CARRIER")
 
     bulk_header = _first_line(bulk)
-    bulk_latest = _last_nonempty_line(bulk)
     live_header = _first_line(live)
-    live_latest = _last_nonempty_line(live)
+    bulk_header_text = bulk_header + "\n" if bulk_header else ""
+    live_header_text = live_header + "\n" if live_header else ""
 
-    (DEST_ROOT / "BULK_HEADER_CURRENT.csv").write_text(bulk_header + "\n", encoding="utf-8")
-    (DEST_ROOT / "BULK_LATEST_CURRENT.csv").write_text(
-        bulk_header + "\n" + bulk_latest + "\n" if bulk_header else bulk_latest + "\n",
-        encoding="utf-8",
-    )
-    (DEST_ROOT / "LIVE_HEADER_CURRENT.csv").write_text(live_header + "\n", encoding="utf-8")
-    (DEST_ROOT / "LIVE_LATEST_CURRENT.csv").write_text(
-        live_header + "\n" + live_latest + "\n" if live_header else live_latest + "\n",
-        encoding="utf-8",
-    )
+    (DEST_ROOT / "BULK_HEADER_CURRENT.csv").write_text(bulk_header_text, encoding="utf-8")
+    (DEST_ROOT / "BULK_LATEST_CURRENT.csv").write_text(bulk_header_text, encoding="utf-8")
+    (DEST_ROOT / "LIVE_HEADER_CURRENT.csv").write_text(live_header_text, encoding="utf-8")
+    (DEST_ROOT / "LIVE_LATEST_CURRENT.csv").write_text(live_header_text, encoding="utf-8")
+    (LIVE_DIR / LIVE_NAME).write_text(live_header_text, encoding="utf-8")
 
     state = {
         "schema": "GGDV_MODUAL_SENSOR_LOGS_GITHUB_STATE/1.0",
@@ -123,25 +111,44 @@ def build_repo_snapshot() -> dict:
         "live": live_info,
         "sync_policy": {
             "bulk_raw_committed": False,
-            "bulk_representation": ["sha256", "bytes", "modified_at", "header", "latest_row"],
-            "live_raw_committed": True,
+            "bulk_representation": ["sha256", "bytes", "modified_at", "header"],
+            "live_raw_committed": False,
+            "live_representation": ["sha256", "bytes", "modified_at", "header"],
+            "latest_row_committed": False,
             "control_files_committed": True,
         },
+        "privacy_policy": {
+            "current_snapshot_files": "HEADER_ONLY",
+            "raw_sensor_rows_committed": False,
+            "historical_git_versions_rewritten": False,
+        },
     }
-    (DEST_ROOT / "MODUAL_PARAMETER_CURRENT.json").write_text(
+    state_path = DEST_ROOT / "MODUAL_PARAMETER_CURRENT.json"
+    if state_path.exists():
+        try:
+            previous_state = json.loads(state_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise RuntimeError("CURRENT_STATE_UNREADABLE_REFUSE_OVERWRITE") from exc
+        if not isinstance(previous_state, dict):
+            raise RuntimeError("CURRENT_STATE_NOT_OBJECT_REFUSE_OVERWRITE")
+        # Keep additive provenance/history fields from the existing state file.
+        for key, value in previous_state.items():
+            if key not in state:
+                state[key] = value
+    state_path.write_text(
         json.dumps(state, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
 
     readme = (
         "# MODUAL / SENSOR_LOGS — GitHub Current State\n\n"
-        "SOURCE_DIRECT: D:\\SENSOR_LOGS\n\n"
+        f"OBSERVED_SENSOR_SOURCE: {SENSOR_ROOT}\n\n"
         f"- {BULK_NAME}: bulk telemetry local carrier. Raw bytes remain on local/bulk storage; GitHub keeps digest + header + latest row.\n"
         f"- {LIVE_NAME}: live/intermediate MODUAL parameter carrier; copied into live/.\n"
         "- source/: executable control files that generate/sync MODUAL state.\n"
         "- MODUAL_PARAMETER_CURRENT.json: current compact state/readback.\n\n"
         "AUTO_SYNC:\n"
-        "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py calls modual_github_sync.py on the same snapshot cadence.\n\n"
+        f"Sensor scripts run against verified source {SENSOR_ROOT}; no empty D: recreation.\n\n"
         "GitHub is used here as Law/State, not as the bulk telemetry store.\n"
     )
     (DEST_ROOT / "README.md").write_text(readme, encoding="utf-8")

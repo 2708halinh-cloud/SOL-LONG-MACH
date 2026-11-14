@@ -160,6 +160,17 @@ def make_receipt(tool: str, args: dict, result: dict, *, kind: str = "MOTOR", de
 def motor_enabled() -> bool:
     return os.environ.get("GGDV_MOTOR_ENABLE", "0").strip().lower() in {"1", "true", "yes", "on"}
 
+def is_sol_repo_origin(origin: str) -> bool:
+    """Accept the current GitHub repo name and its verified historical alias."""
+    value = (origin or "").strip().lower().rstrip("/")
+    value = re.sub(r"\.git$", "", value)
+    return bool(re.search(
+        r"(?:github\.com[:/])2708halinh-cloud/(?:sol-long-mach|open-ai-bot)$",
+        value,
+        re.IGNORECASE,
+    ))
+
+
 def which_any(names):
     for n in names:
         p = shutil.which(n)
@@ -326,7 +337,7 @@ def resolve_app_adapter(explicit: str|None=None):
         for root in (base, *base.parents):
             candidates.append(str(root / ".vscode" / "scripts" / "app_adapters.py"))
 
-    # On POSIX/WSL, discover the active Open-ai-bot worktree by Git provenance,
+    # On POSIX/WSL, discover the canonical SOL-LONG-MACH worktree by Git provenance,
     # not by a generated worktree directory name.
     worktrees = Path.home() / "kepler" / "worktrees"
     git = git_path()
@@ -336,7 +347,7 @@ def resolve_app_adapter(explicit: str|None=None):
             if not adapter.exists():
                 continue
             origin = run([git, "-C", str(wt), "remote", "get-url", "origin"], timeout=5)
-            if origin.get("success") and "2708halinh-cloud/Open-ai-bot" in origin.get("stdout", ""):
+            if origin.get("success") and is_sol_repo_origin(origin.get("stdout", "")):
                 candidates.append(str(adapter))
 
     seen=set()

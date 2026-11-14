@@ -21,6 +21,8 @@ import json
 import os
 import tempfile
 
+from runtime.destructive_gate import destructive_preflight
+
 
 @dataclass
 class Edge:
@@ -42,11 +44,13 @@ class Edge:
         return bool(self.callable_now and not self.user_input_required and not self.done)
 
     def grounded_done(self) -> bool:
+        """A reported action is not completed until target readback was verified."""
         return bool(
             self.done
             and self.action_kind
             and self.provider_receipt is not None
             and self.observable_consequence is not None
+            and readback_verified(self.readback)
         )
 
     def next_carrier(self) -> str | None:
@@ -68,6 +72,8 @@ class Checkpoint:
     # R-014: retain errors as evidence while disabling proven-bad mechanisms.
     r014_disabled_mechanisms: list[str] = field(default_factory=list)
     r014_error_history: list[dict[str, Any]] = field(default_factory=list)
+    # A one-use authorization cannot trigger a second destructive execution.
+    used_destructive_intent_ids: list[str] = field(default_factory=list)
 
     def unfinished_edges(self) -> list[Edge]:
         return [e for e in self.edges if not e.grounded_done()]
@@ -93,6 +99,7 @@ def to_dict(cp: Checkpoint) -> dict[str, Any]:
         "cycle_count": cp.cycle_count,
         "r014_disabled_mechanisms": list(cp.r014_disabled_mechanisms),
         "r014_error_history": list(cp.r014_error_history),
+        "used_destructive_intent_ids": list(cp.used_destructive_intent_ids),
         "edges": [asdict(e) for e in cp.edges],
     }
 
@@ -107,6 +114,7 @@ def from_dict(data: dict[str, Any]) -> Checkpoint:
         cycle_count=int(data.get("cycle_count", 0)),
         r014_disabled_mechanisms=list(data.get("r014_disabled_mechanisms", [])),
         r014_error_history=list(data.get("r014_error_history", [])),
+        used_destructive_intent_ids=list(data.get("used_destructive_intent_ids", [])),
         edges=[Edge(**e) for e in data.get("edges", [])],
     )
 
@@ -311,6 +319,19 @@ def mark_carrier_failure(edge: Edge, carrier: str, evidence: Any) -> None:
     edge.callable_now = edge.next_carrier() is not None
 
 
+def readback_verified(readback: Any) -> bool:
+    """Only an explicit positive, source-backed target check can close an edge.
+
+    This predicate checks the evidence contract; callers still must actually
+    perform readback on the real destination and retain the provider receipt.
+    """
+    return (
+        isinstance(readback, dict)
+        and readback.get("verified") is True
+        and readback.get("verified") is not False
+    )
+
+
 def apply_action_result(
     cp: Checkpoint,
     edge_id: str,
@@ -326,8 +347,10 @@ def apply_action_result(
     edge.provider_receipt = provider_receipt
     edge.observable_consequence = observable_consequence
     edge.readback = readback
-    edge.done = True
-    edge.callable_now = False
+    edge.done = bool(action_kind and provider_receipt is not None
+                     and observable_consequence is not None
+                     and readback_verified(readback))
+    edge.callable_now = not edge.done
     cp.state_n += 1
     cp.cycle_count += 1
     if last_consequence_ref is not None:
@@ -352,6 +375,26 @@ def continue_bounded(
         if edge is None:
             break
         carrier = edge.next_carrier()
+        # Enforce an executable check *before* invoking any declared
+        # destructive operation. A source label by itself is not authority.
+        gate = destructive_preflight(cp, edge)
+        if not gate["allowed"]:
+            denied = {
+                "success": False,
+                "action_executed": False,
+                "gate": "DESTRUCTIVE_PREFLIGHT",
+                "reason": gate["reason"],
+                "edge_id": edge.edge_id,
+            }
+            edge.evidence.setdefault("destructive_denials", []).append(denied)
+            edge.callable_now = False
+            receipts.append(denied)
+            steps += 1
+            continue
+        if "intent_id" in gate:
+            # Mark consumed before execution so failed retries cannot
+            # silently repeat a destructive request.
+            cp.used_destructive_intent_ids.append(gate["intent_id"])
         result = executor(edge, carrier)
         receipts.append(result)
         steps += 1
@@ -388,11 +431,14 @@ def continue_bounded(
 
         consequence = result.get("observable_consequence")
         provider_receipt = result.get("provider_receipt")
-        if provider_receipt is None or consequence is None:
-            # Boolean success/report-only is not grounded completion.
+        readback = result.get("readback")
+        if (provider_receipt is None or consequence is None
+                or not readback_verified(readback)):
+            # Success flags, receipts and claimed effects alone cannot close an edge.
+            # Require an actual verified readback from the target.
             edge.evidence.setdefault("rejected_results", []).append(result)
             if carrier is not None:
-                mark_carrier_failure(edge, carrier, "missing receipt/consequence")
+                mark_carrier_failure(edge, carrier, "missing verified target readback or consequence")
             else:
                 edge.callable_now = False
             continue
@@ -430,5 +476,5 @@ __all__ = [
     "stop_allowed", "mark_carrier_failure", "apply_action_result",
     "r014_register_known_error", "r014_mechanism_allowed",
     "r014_pre_response_gate", "r014_observe_recurrence",
-    "continue_bounded",
+    "readback_verified", "continue_bounded",
 ]

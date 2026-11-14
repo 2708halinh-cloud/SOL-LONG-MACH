@@ -1,0 +1,176 @@
+{
+  "schema": "SOL_LONG_MACH_WINDOWS_TICK_READBACK/1.0",
+  "observed_at_local": "2026-10-24T21:17:52.8444428+07:00",
+  "observed_at_utc": "2026-10-24T14:17:52.8444428Z",
+  "repository": "2708halinh-cloud/SOL-LONG-MACH",
+  "branch": "main",
+  "prior_cloud_checkpoint": {
+    "path": "CURRENT_RUNTIME/CLOUD_CONTINUITY_READBACK_20261024T2106ICT.json",
+    "blob_sha": "419fee132b24802bb9227562efcf369424e7c0f7",
+    "result": "N8N execution 137/row 280 verified; host Braid row 281 and host tick row 282 were read back; all 45 recovery rows remain pending."
+  },
+  "windows_tick": {
+    "device": "DESKTOP-86ITNQ4",
+    "route": "REMOTE_DESKTOP_COMMANDER_ALTERNATE_LINK",
+    "task": {
+      "name": "GGDV_MODUAL_SENSOR_LOGS_TICK_EVERY_5M",
+      "state": "Ready",
+      "enabled": true,
+      "start_when_available": true,
+      "execution_time_limit": "PT2M",
+      "last_run_local": "2026-10-24T21:16:34+07:00",
+      "last_result": "0x0",
+      "next_run_local": "2026-10-24T21:21:32+07:00",
+      "missed_runs": 0,
+      "action_execute": "C:\\Users\\halin\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+      "action_arguments": "\"D:\\SENSOR_LOGS\\telemetry_buffer_sync.py\" --once",
+      "action_exact_readback": true
+    },
+    "receipt": {
+      "path": "D:\\SENSOR_LOGS\\state\\WINDOWS_TICK_20261024T141637185163Z.json",
+      "observed_at_utc": "2026-10-24T14:16:37.185163Z",
+      "bytes": 450,
+      "sha256": "76ED571E16DCA39B855834A40AECF8296266EFEA994BCEA3FDB457AB19E10C5F",
+      "sha256_recomputed_directly": true,
+      "content_readback": true,
+      "live_sensor_reading_confirmed": false,
+      "source_file_written": false,
+      "synthetic_rows_added": 0,
+      "cloud_enabled": false,
+      "github_enabled": false
+    },
+    "source": {
+      "path": "D:\\SENSOR_LOGS\\windows_SENSON.CSV",
+      "bytes": 35389440,
+      "sha256": "9b25bd723dce06344432597cc4f300053ea5acbf76bdd2ab4f38bf4a1bf34b87",
+      "sha256_recomputed_directly": true,
+      "sha256_matches_receipt": true,
+      "modified_local": "2026-10-23T15:45:56+07:00"
+    },
+    "local_script": {
+      "path": "D:\\SENSOR_LOGS\\telemetry_buffer_sync.py",
+      "bytes": 13245,
+      "sha256": "adb646a0b779374bc636ce8f310eca264b9844d5a0d63078128d17dc357e54a7",
+      "sha256_recomputed_directly": true,
+      "last_write_local": "2026-10-23T16:12:49+07:00",
+      "executed_manually": false,
+      "behavior": "metadata-only source hash/receipt; telemetry functions are not called by the one-shot path; cloud/GitHub export helpers require explicit environment flags"
+    },
+    "result": "TICK_141637_RECEIPT_AND_DIRECT_SOURCE_HASH_VERIFIED; TASK_READY_LAST_RESULT_0X0; LIVE_SENSOR_STREAM_NOT_VERIFIED"
+  },
+  "providers": {
+    "dropbox_source": {
+      "path": "/Linh Hà/SENSOR_LOGS/windows_SENSON.CSV",
+      "revision": "0165dc1e4794ab00000000395cdfd73",
+      "bytes": 35389440,
+      "server_modified_utc": "2026-10-14T00:20:03Z",
+      "metadata_readback": true,
+      "raw_sensor_payload_downloaded": false
+    },
+    "ollama": {
+      "endpoint": "http://127.0.0.1:11434/api/tags",
+      "http_status": 200,
+      "model_count": 11,
+      "process_pid": 53724
+    },
+    "consumer": {
+      "loopback_endpoint": "http://127.0.0.1:8080/api/health",
+      "loopback_http_status": 0,
+      "loopback_timeout_seconds": 2,
+      "ipv4_endpoint": "http://192.168.1.42:8080/api/health",
+      "ipv4_http_status": 0,
+      "ipv4_timeout_seconds": 2,
+      "https_ipv4_endpoint": "https://192.168.1.42:8080/api/health",
+      "https_result": "NO_HTTP_RESPONSE",
+      "listener_8080": "NO_LISTENER_LINES_OBSERVED",
+      "process_commandline_filter_matches": [
+        "chrome.exe:81988",
+        "cmd.exe:78556",
+        "powershell.exe:11872"
+      ],
+      "matching_application_process_identified": false,
+      "state": "UNVERIFIED_TIMEOUT_NO_8080_OWNER_IDENTIFIED",
+      "service_down_inferred": false,
+      "configuration_changed": false,
+      "last_probe_local": "2026-10-24T21:17:52.844+07:00"
+    },
+    "hwinfo": {
+      "process_running": true,
+      "pid": 17520,
+      "process_started_local": "2026-10-23T09:47:50+07:00",
+      "top_level_sensor_log_csvs": [
+        "windows_SENSON.CSV"
+      ],
+      "current_hwinfo_csv_path_verified": false,
+      "prior_known_hwinfo_csv_stale_since_local": "2026-10-21T09:20:45.8565035+07:00"
+    },
+    "android": {
+      "adb_command_on_path": false,
+      "common_paths_checked": [
+        "C:\\Users\\halin\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "C:\\Android\\platform-tools\\adb.exe",
+        "C:\\ProgramData\\chocolatey\\bin\\adb.exe",
+        "G:\\Android\\Sdk\\platform-tools\\adb.exe"
+      ],
+      "those_paths_found": false,
+      "scoped_recursive_search": "TERMINATED_WITHOUT_RESULTS_BEFORE_COMPLETION",
+      "device_off_inferred": false,
+      "heartbeat_verified": false
+    }
+  },
+  "independent_cloud_edge": {
+    "workflow_id": "BogzhFUDbRp7kuwh",
+    "workflow_name": "AISSTANGT_MANAGE_CLOUD_CONTINUITY_SCAN",
+    "latest_workflow_execution_id": "137",
+    "latest_workflow_execution_status": "success",
+    "latest_scan_row_id": 280,
+    "latest_scan_event_id": "X20261024140023974_CLOUD",
+    "recovery_rows": 45,
+    "pending_rows": 45,
+    "host_heartbeat_probed_by_scan": false,
+    "tasks_closed": 0,
+    "latest_host_tick_row_id": 283,
+    "latest_host_tick_event_id": "X20261024141708337_HOST_TICK",
+    "latest_host_tick_row_readback": true,
+    "latest_host_tick_row_receipt_refers_to": "WINDOWS_TICK_20261024T141637185163Z.json",
+    "latest_host_tick_row_source_hash_matches": true,
+    "latest_host_tick_row_live_sensor_verified": false,
+    "latest_host_braid_row_id": 281,
+    "evidence_table_row_count_at_last_cloud_checkpoint": 282,
+    "exact_latest_row_readback": true
+  },
+  "tesseract": {
+    "repository": "2708halinh-cloud/x-time-web",
+    "pr": 6,
+    "pr_url": "https://github.com/2708halinh-cloud/x-time-web/pull/6",
+    "state": "OPEN_NOT_MERGED",
+    "head_sha": "5312816d5fe2b22e92302211b67f916b88a6fe14",
+    "security_branch": "security/repo-relative-read-containment-20261024",
+    "security_branch_main_rs_blob_sha": "af1a16270cb9ff90c5a7f34d5d56ae4343fc5eca",
+    "security_branch_ahead_by": 3,
+    "behind_by": 0,
+    "canonical_root_containment_present": true,
+    "symlink_escape_regression_present": true,
+    "issuer_public_key_verified": false,
+    "runner_assignment_change_verified": false,
+    "runs": {
+      "39994207477": "failure; six jobs failed or skipped; step lists empty",
+      "39994207667": "failure; verify job failed; step list empty"
+    },
+    "artifacts": 0,
+    "ci_rerun": false,
+    "rust_tests_executed": false
+  },
+  "safety": {
+    "raw_sensor_rows_committed": false,
+    "credentials_committed": false,
+    "source_csv_modified": false,
+    "historical_script_executed": false,
+    "task_configuration_changed": false,
+    "service_configuration_changed": false,
+    "tasks_closed": 0,
+    "ci_rerun": false
+  },
+  "result": "TICK_141637_RECEIPT_AND_SOURCE_HASH_VERIFIED; LIVE_SENSOR_NOT_VERIFIED; CONSUMER_HEALTH_UNVERIFIED; N8N_ROW283_VERIFIED; TESSERACT_OPEN",
+  "next_callable_edge": "After 21:21:32+07, read the next exact tick receipt and task state. Continue locating the actual 8080 consumer owner without configuration changes; find a verified HWiNFO carrier and authorized ADB executable/route. Keep PR #6 open and do not rerun CI until runner assignment changes are verified."
+}

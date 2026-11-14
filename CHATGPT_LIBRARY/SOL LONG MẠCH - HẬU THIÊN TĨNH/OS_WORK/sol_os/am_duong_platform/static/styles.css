@@ -1,0 +1,19 @@
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#e9efff;background:#0e1421}
+*{box-sizing:border-box}body{margin:0}header{padding:18px 24px;border-bottom:1px solid #354254;display:flex;justify-content:space-between;align-items:center;gap:16px;background:#131c2d}header strong{font-size:1.15rem}header small{color:#93a9c9}
+main{display:grid;grid-template-columns:265px minmax(0,1fr) 320px;min-height:calc(100vh - 75px)}
+aside,.right{padding:20px;background:#111c2b}aside{border-right:1px solid #344052}.right{border-left:1px solid #344052}
+section.middle{padding:20px 24px;min-width:0}.panel{border:1px solid #344257;border-radius:12px;padding:16px;margin-bottom:16px;background:#162235}
+h1,h2,h3{margin:0 0 12px}h2{font-size:1rem}p{line-height:1.5;color:#adbfda}label{display:block;color:#b4c5dd;font-size:.9rem;margin-bottom:7px}
+button,input,textarea,select{font:inherit;border-radius:8px;padding:10px;background:#0e1a2b;color:#e9efff;border:1px solid #3d5372;width:100%}
+textarea{resize:vertical;min-height:76px}button{cursor:pointer;background:#254e72;border-color:#4279a4;font-weight:600}
+button:hover{background:#30648f}button.secondary{background:#1c2e45}button:disabled{opacity:.45;cursor:default}
+.stack{display:grid;gap:9px}.row{display:flex;gap:9px;align-items:center}.row>*{min-width:0}select{width:100%} .pill{padding:5px 10px;border-radius:30px;background:#304058;color:#bfd2f4;font-size:.75rem}
+.log{min-height:280px;max-height:48vh;overflow:auto;display:grid;gap:10px;align-content:start}
+.event{border:1px solid #38485d;border-radius:10px;padding:11px;overflow-wrap:anywhere}
+.event .meta{font-size:.75rem;color:#91a9c8;margin-bottom:5px}.event.human{border-left:3px solid #e0b36c}.event.agent{border-left:3px solid #79c7dd}
+.caption{font-size:.76rem;color:#8fa8c8}.status{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.86rem}
+.agentchip{padding:9px;border:1px solid #38485d;border-radius:8px;font-size:.87rem}
+.note{border-left:3px solid #b1b9d4;padding:9px 12px;color:#b7c8e2;background:#1d2a42}
+a{color:#9ac9ff}input[type=checkbox]{width:auto}.workspace-button{text-align:left;background:#1d3049}.tag{color:#88d5c2}
+@media(max-width:1050px){main{grid-template-columns:230px 1fr}.right{grid-column:1/-1;border-left:0;border-top:1px solid #344052}}
+@media(max-width:620px){header{display:block}main{display:block}aside{border-right:0;border-bottom:1px solid #344052}section.middle,.right{padding:13px}.log{max-height:55vh}}

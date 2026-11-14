@@ -1,0 +1,19 @@
+{
+  "name": "sol-computer-khi-puppeteer-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "scripts": {
+    "smoke": "node src/smoke.mjs",
+    "start": "node src/server.mjs",
+    "health": "node src/health.mjs",
+    "test:service": "node src/service-smoke.mjs",
+    "test": "npm run smoke && npm run test:service"
+  },
+  "dependencies": {
+    "puppeteer": "25.14.0"
+  }
+}

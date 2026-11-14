@@ -61,3 +61,8 @@ ROUTE = STATE_N -> OBSERVE -> DELTA -> VALIDATE -> TRANSFORM/RECONFIGURE -> CONS
 PHYSICAL_ENERGY = chỉ tuyên bố bảo toàn năng lượng vật lý khi có biên hệ, nguồn, vật mang, chuyển hóa và bằng chứng đo.
 NEURONS_SESORIMOTOR = observe each intermediate-device delta and separate CONFIG_AT_T from LIVE_RUNTIME_EVIDENCE.
 MARKER = INTERMEDIATE_DEVICE_ENERGY_CONSERVATION_20261007
+
+
+## Repository identity reconciliation — 2026-11-14
+
+This status table records an event-time state observed on 2026-10-07. Preserve the historical source labels `2708halinh-cloud/Open-ai-bot` and `2708halinh-cloud/Open-ai` exactly as recorded; they are not assertions about current repository identity. Fresh GitHub metadata on 2026-11-14 verifies repository ID `1249555486` as `2708halinh-cloud/SOL-LONG-MACH` (default branch `main`). Do not use this dated DEVICE_HEAD/END record as a current live runtime readback.

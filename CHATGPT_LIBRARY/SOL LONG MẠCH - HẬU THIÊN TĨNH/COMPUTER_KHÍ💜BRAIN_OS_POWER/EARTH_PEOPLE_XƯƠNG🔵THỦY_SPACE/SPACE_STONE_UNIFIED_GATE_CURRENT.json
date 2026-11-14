@@ -1,0 +1,144 @@
+{
+  "schema": "SOL_SPACE_STONE_UNIFIED_GATE/1.0",
+  "entrypoint_tag": "@SPACE_STONE",
+  "entrypoint": "Chuỗi công cụ/_Plugins/Power_Router_V2/space_stone_gateway.py",
+  "project_root": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH",
+  "chat_surface": "SOURCE_DIRECT_INGRESS_NOT_SWITCH_TO_OTHER_UI",
+  "identity_rule": "ACTOR_SOL -> USES -> SPACE_STONE_GATE -> CONNECTED_PROVIDER; LLM_IN_TOOLS",
+  "plugins_are_distinct_adapters_not_competing_agents": [
+    {
+      "plugin": "space-stone",
+      "id": "plugins_6abd51c078708191a39bff18bd4d44c5",
+      "skill": "skills://plugins/space-stone/space-stone"
+    },
+    {
+      "plugin": "terex-space-gateway",
+      "id": "plugins_6abf342d3e00819197e8dda3b0f50239",
+      "skill": "skills://plugins/terex-space-gateway/terex-space-gateway"
+    },
+    {
+      "plugin": "space-document-agents",
+      "id": "plugins_6ac4859bb0ec8191a4c7552a959ce454",
+      "skill": "skills://plugins/space-document-agents/spatial-document-segmentation"
+    },
+    {
+      "plugin": "time-stone-personal-tool-forge",
+      "id": "plugins_6ac87be921408191b3fb6c4a430806c7",
+      "skill": "skills://plugins/time-stone-personal-tool-forge/time-stone-personal-tool-forge"
+    },
+    {
+      "plugin": "x-time-ggdv-human",
+      "id": "plugins_6abc7d379ddc8191a24debca8dfdf0e9",
+      "skill": "skills://plugins/x-time-ggdv-human/ggdv-actor-platform-tool-boundary"
+    }
+  ],
+  "five_capabilities": [
+    {
+      "id": "TELEPORTATION",
+      "invoke": [
+        "teleport",
+        "dịch chuyển tức thời",
+        "di chuyển vật mang"
+      ],
+      "implemented": "provider move within same provider or copy+verify across provider; source retention for cross-provider",
+      "physical_metaphor": "instant movement of people/objects across the universe; not physically realizable here",
+      "skill": "skills://plugins/space-stone/instant-portal-relocation"
+    },
+    {
+      "id": "WORMHOLE_PORTAL",
+      "invoke": [
+        "wormhole",
+        "portal",
+        "mở cổng không gian",
+        "cổng xuyên môi trường"
+      ],
+      "implemented": "identify two stable provider endpoints, probe auth/reachability, compose route; no magical/tunnel connectivity",
+      "skill": "skills://plugins/terex-space-gateway/terex-space-gateway"
+    },
+    {
+      "id": "SPACE_CONTROL",
+      "invoke": [
+        "điều khiển không gian",
+        "nén không gian",
+        "bẻ cong không gian",
+        "rebind",
+        "topology"
+      ],
+      "implemented": "read spatial graph, plan constrained rebind/coordinate transform and diff; physical distance unchanged",
+      "skill": "skills://plugins/space-stone/rank1-periphery-router"
+    },
+    {
+      "id": "TESSERACT_POWER",
+      "invoke": [
+        "tesseract",
+        "năng lượng",
+        "phân phối tài nguyên",
+        "energy"
+      ],
+      "implemented": "resource/time/quota budget planning and bound computing adapter; no energy generation or weapon",
+      "skill": "skills://plugins/space-stone/space-invariant-resonance"
+    },
+    {
+      "id": "SPACE_TIME_TRAVEL",
+      "invoke": [
+        "du hành thời gian",
+        "xuyên thời gian",
+        "không thời gian",
+        "time travel",
+        "time_stone",
+        "@time_stone"
+      ],
+      "implemented": "joint SPACE locator + TIME revision selection + history snapshot/reentry; no physical time travel",
+      "skill": "skills://plugins/time-stone-personal-tool-forge/time-stone-personal-tool-forge"
+    }
+  ],
+  "canonical_anchor": {
+    "dms": "10°53'40.56\"N 106°55'19.92\"E",
+    "lat": 10.8946,
+    "lon": 106.9222,
+    "role": "STABLE_PEOPLE_0D_NOT_LIVE_GPS"
+  },
+  "five_other_stones": {
+    "MIND": "SOURCE_AND_PROVENANCE",
+    "POWER": "TOOL_ROUTING_AND_AUTH",
+    "REALITY": "ACTION_RECEIPT_READBACK",
+    "SOUL": "MEMORY_AND_CARRIER_LINEAGE",
+    "TIME": "REVISION_TIMESTAMP_BACKTRACE"
+  },
+  "axes": [
+    [
+      "SPACE",
+      "SOUL"
+    ],
+    [
+      "MIND",
+      "POWER"
+    ],
+    [
+      "REALITY",
+      "TIME"
+    ]
+  ],
+  "center": "TÂM (0)",
+  "envs": [
+    "CHATGPT_CHAT_LIBRARY",
+    "GITHUB",
+    "GOOGLE_DRIVE",
+    "DROPBOX",
+    "LOCAL_WINDOWS_WSL_DOCKER",
+    "ANDROID_REDMi",
+    "GOOGLE_CLOUD"
+  ],
+  "protocol": "SOURCE_DIRECT -> STABLE_ENTITY_ID -> SPACE_SOURCE_DEST_TOPOLOGY -> TIME_EVENT_REVISION -> TOOL_AUTH_SCOPE -> [ADAPTER_ACTION] -> CONSEQUENCE -> RECEIPT -> EXACT_DEST_READBACK -> SOUL_EVENT -> N+1",
+  "guards": {
+    "source_deleted_cross_provider": false,
+    "overwrite_without_explicit_flag": false,
+    "credentials_in_registry": false,
+    "plugin_metadata_equals_installed": false,
+    "physical_movement_claims": false,
+    "physical_energy_claims": false,
+    "time_travel_claims": false,
+    "registered_chatgpt_mention_without_install": false
+  },
+  "integration_state": "ROUTER_SOURCE_AND_LOCAL_ADAPTER_IMPLEMENTATION; HOST_PLUGIN_REGISTRATION_NOT_VERIFIED"
+}
