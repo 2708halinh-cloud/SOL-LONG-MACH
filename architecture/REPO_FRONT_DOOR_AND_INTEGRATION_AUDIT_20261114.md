@@ -8,7 +8,7 @@
 
 The repository contains substantial source material, configuration, workflows, runtime code, continuity archives, and application code. The primary failure is not absence of files. It is that the public entry point, identity pointers, navigation, and operational evidence do not yet present one coherent, verifiable system.
 
-The root README is currently titled **Open-ai-bot** although the live GitHub repository is **SOL-LONG-MACH**. It links to the Open-ai ITEM matrix and describes a clean-working-tree checkpoint rather than explaining this repository. A new reader is not given a usable map of the system.
+The initial audit observation of the root README was superseded by a fresh readback on 2026-11-14: the current root README is titled **SOL-LONG-MACH**, identifies this repository, provides a reading order and now links the ROOTS provider map. The earlier Open-ai-bot front-door finding is therefore RESOLVED; retain the old title/reference only as historical context.
 
 ## 2. SOL-LONG-MACH: observed repository shape
 
@@ -104,7 +104,7 @@ The latest observed `main` pushes on 2026-11-13 show successful runs for the spe
 
 ## 8. Required reconciliation sequence
 
-1. Make the root README the actual front door: identify SOL-LONG-MACH, explain the system in plain Vietnamese, and provide a short reading order.
+1. **DONE — 2026-11-14 readback:** the root README identifies SOL-LONG-MACH, provides a plain-language reading order, separates the two ROOTS map namespaces and states the explicit source-loading boundary.
 2. Reconcile `Open-ai-bot` references against the live repository rename. Preserve historical aliases; update only pointers whose source relation is proven.
 3. Inventory branches and open PRs by feature/source, identify duplicates and dependencies, and select a canonical integration line before merging or closing anything.
 4. Build one Agent/Subagent registry from the actual 13-field materialization contract, distinguishing source/template from deployed runtime and recording readback evidence.
@@ -127,3 +127,12 @@ Most of these PRs are marked draft and several were last updated in October. The
 
 
 **Acceptance rule:** source present ≠ runtime callable; build pass ≠ production deployed; UI label ≠ provider receipt; branch exists ≠ integrated; config says CURRENT ≠ fresh readback.
+
+
+## 10. Follow-up correction and exact repository identity readback — 2026-11-14
+
+Fresh GitHub metadata for repository ID `1249555486` returns `2708halinh-cloud/SOL-LONG-MACH`, default branch `main`, public visibility, and authenticated `admin/push` permissions. The former `2708halinh-cloud/Open-ai-bot` label is retained as a historical alias, not as the active canonical name.
+
+The active self-pointers are reconciled in `GGDV_UNIFIED_POINTER.json`, `CONFIG/POINTERS_CURRENT.json`, and `CONFIG/REPO_AGENT_MIGRATION_CURRENT.json`. External Drive IDs in the pointer snapshot are **not** revalidated by this repository-name readback and remain subject to separate provider checks. Dated records and incident evidence keep their original repository names and timestamps; they are not mass-rewritten as though the rename had already happened on their historical dates.
+
+The Agent load route now states that the complete latest user input anchors each task, adds conditional loading for `ROOTS_PROVIDER_CARRIERS_CURRENT.json`, and explicitly says GitHub documentation is not automatically injected into every ChatGPT session. This is a repository contract; universal cross-chat execution is not proven by a GitHub commit.
