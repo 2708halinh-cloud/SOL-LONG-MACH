@@ -136,3 +136,18 @@ Fresh GitHub metadata for repository ID `1249555486` returns `2708halinh-cloud/S
 The active self-pointers are reconciled in `GGDV_UNIFIED_POINTER.json`, `CONFIG/POINTERS_CURRENT.json`, and `CONFIG/REPO_AGENT_MIGRATION_CURRENT.json`. External Drive IDs in the pointer snapshot are **not** revalidated by this repository-name readback and remain subject to separate provider checks. Dated records and incident evidence keep their original repository names and timestamps; they are not mass-rewritten as though the rename had already happened on their historical dates.
 
 The Agent load route now states that the complete latest user input anchors each task, adds conditional loading for `ROOTS_PROVIDER_CARRIERS_CURRENT.json`, and explicitly says GitHub documentation is not automatically injected into every ChatGPT session. This is a repository contract; universal cross-chat execution is not proven by a GitHub commit.
+
+## 11. Runtime repository identity and source-loader reconciliation — 2026-11-14
+
+The canonical repository name was not only corrected in metadata; active runtime routes were reconciled while retaining the historical alias:
+
+- LOCAL_BRIDGE/runtime/ggdv-sensorimotor-motor-bridge/server/runtime_core.py: worktree discovery now accepts both the verified canonical GitHub URL 2708halinh-cloud/SOL-LONG-MACH and the historical 2708halinh-cloud/Open-ai-bot.
+- LOCAL_BRIDGE/bootstrap_once.ps1, install_from_windows.ps1, and autostart-sol.ps1: search both canonical and legacy checkout locations/remotes. New installer clones use https://github.com/2708halinh-cloud/SOL-LONG-MACH.git.
+- APP/TESSERACT_DESKTOP/src-tauri/src/main.rs: local AGENTS.md discovery tries canonical checkout paths first, then preserved legacy local paths. Remote canonical fetch remains SOL-LONG-MACH; Open-ai remains the separately configured mirror.
+- .github/workflows/local-unify-selfhosted.yml: materialization source now uses SOL-LONG-MACH; legacy source is retained as a historical alias field.
+- CONFIG/AGENTS_LOAD_ROUTE_CURRENT.json points to CONFIG/AGENTS_LOAD_ROUTE.json. The actual Rust loader reads required_carriers from that target. The ROOTS provider registry was therefore added to that exact fresh-read set, not left only as descriptive conditional metadata.
+- LOCAL_BRIDGE/tests/test_repo_identity.py adds regression coverage for canonical HTTPS/SSH origins, the legacy alias, rejection of an unrelated repo, canonical clone source, preserved old paths, and the current-route-to-required-carrier binding. .github/workflows/local-bridge-verify.yml invokes this test and includes desktop loader / self-hosted workflow paths in its triggers.
+
+Dated files PLATFORM_SYNC/CURRENT/snapshot.json, CURRENT_RUNTIME/NEURONS_SESORIMOTOR_SIX_STONES_AFFECT_CURRENT.json, CURRENT_RUNTIME/CODEX_GITHUB_SYNC_READBACK_20261007.json, and CURRENT_RUNTIME/DEVICE_HEAD_END_STATUS_CURRENT.md retain their event-time repository names and are explicitly marked as historical snapshots rather than live current routing data.
+
+**Readback:** current main fetches confirmed the route pointer resolves to the input-ingress route; the route includes the Input-first contract and lists CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json among eight required read carriers. Static checks against fetched current file bytes passed for that pointer, source, test wiring, and corrected origin matcher. The Python unit test is wired into CI, but a successful GitHub Actions run was not observable through the available status result at this readback; no CI pass is claimed here.
