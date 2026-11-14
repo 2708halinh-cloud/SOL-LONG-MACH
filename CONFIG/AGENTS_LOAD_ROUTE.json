@@ -8,7 +8,9 @@
     "historical_repository_aliases": [
       "2708halinh-cloud/Open-ai-bot"
     ],
-    "resolution_note": "GitHub repository rename verified 2026-10-08; live repository is SOL-LONG-MACH. Historical alias preserved for source tracing."
+    "resolution_note": "GitHub repository rename verified 2026-10-08; live repository is SOL-LONG-MACH. Historical alias preserved for source tracing.",
+    "observed_repository_id": "1249555486",
+    "canonical_full_name": "2708halinh-cloud/SOL-LONG-MACH"
   },
   "nguon_guong": {
     "repository": "2708halinh-cloud/Open-ai",
@@ -29,12 +31,17 @@
     "nguon_guong": "e32402703001361c851002177f80b684f8c3224c"
   },
   "moi_luot": [
+    "READ_COMPLETE_USER_INPUT_AND_ATTACHMENTS",
+    "IDENTIFY_ACTION_SCOPE_AND_ACCEPTANCE",
+    "APPLY_HIGHER_PRIORITY_INSTRUCTION_BOUNDARIES",
     "DOC_AGENTS_BYTES_MOI_NHAT",
     "SO_SANH_DELTA",
     "NAP_NGHIA_MOI",
     "GIU_LICH_SU",
+    "RETRIEVE_RELEVANT_PRIMARY_SOURCES",
     "QUET_VIEC_CHUA_XONG",
-    "LAM_VIEC_TU_LAM_DUOC_KE_TIEP"
+    "LAM_VIEC_TU_LAM_DUOC_KE_TIEP",
+    "EXACT_TARGET_READBACK"
   ],
   "dau_ra": {
     "ngon_ngu_mac_dinh": "vi",
@@ -158,5 +165,49 @@
     "carrier": "CONFIG_SOL/TESSERACT_SIGNAL_INGRESS_CURRENT.md",
     "source_first": true,
     "derived_descriptions_separate": true
-  }
+  },
+  "updated_at": "2026-11-14",
+  "input_ingress_contract": {
+    "source_of_task": "THE_COMPLETE_LATEST_USER_INPUT_AND_ITS_ATTACHMENTS",
+    "per_turn_sequence": [
+      "READ_COMPLETE_USER_INPUT_BEFORE_CONTEXT_SELECTION",
+      "IDENTIFY_REQUESTED_ACTION_SCOPE_AND_ACCEPTANCE_CRITERIA",
+      "APPLY_HIGHER_PRIORITY_SYSTEM_AND_DEVELOPER_BOUNDARIES_WITHOUT_REWRITING_USER_FACTS",
+      "LOAD_THIS_REPOSITORY_ROUTE_AND_RELEVANT_OPEN_CHECKPOINTS",
+      "RETRIEVE_RELEVANT_PRIMARY_SOURCE_BYTES",
+      "EXECUTE_THE_NEXT_AUTHORIZED_ACTION",
+      "OBSERVE_CONSEQUENCE_CAPTURE_RECEIPT_AND_READ_BACK_EXACT_TARGET",
+      "PRESERVE_UNRESOLVED_EDGES_AND_CONTINUE"
+    ],
+    "non_substitution_invariants": [
+      "USER_INPUT_IS_THE_TASK_ANCHOR_NOT_A_LOW_PRIORITY_DECORATION",
+      "MEMORY_SUMMARY_IS_NOT_SOURCE_BYTES",
+      "POINTER_IS_NOT_SOURCE_READ",
+      "FILE_PRESENCE_IS_NOT_RUNTIME_HEALTH",
+      "REPORT_IS_NOT_ACTION",
+      "MISSING_FROM_ACTIVE_CONTEXT_DOES_NOT_MEAN_NONEXISTENT"
+    ],
+    "boundary": "This is a repository-level operating contract, not a platform hook. GitHub files are not automatically injected into every ChatGPT turn, chat, or project. The active client/agent must explicitly fetch and read these bytes; never claim global auto-loading from this file alone."
+  },
+  "conditional_carriers": {
+    "roots_provider": {
+      "when": "A task mentions Google Drive, ROOTS_LEVER_0, W:, provider folders, recursive Drive mapping, or provider IDs.",
+      "required": "CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json",
+      "preserve_parallel_workspace_source": "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/.Sandbox/ROOTS_WORKSPACE_20261010.md"
+    },
+    "windows_drive_letters": {
+      "when": "A task concerns Windows drive letters or mount inventory.",
+      "required": "CONFIG_SOL/ROOTS_LEVER_0_WINDOWS_CANONICAL.json",
+      "separation": "This namespace is not the Google Drive provider-root namespace."
+    }
+  },
+  "reentry_read_order": [
+    "READ_COMPLETE_LATEST_USER_INPUT_AND_ATTACHMENTS",
+    "README.md_FOR_REPOSITORY_ORIENTATION",
+    "AGENTS.md_FOR_RULES_AND_SOURCE_DIRECT_HISTORY",
+    "CONFIG/AGENTS_LOAD_ROUTE.json_FOR_ROUTING",
+    "CURRENT_RUNTIME/TASK_RESUME_POINTER.json_AND_RELEVANT_OPEN_CHECKPOINT",
+    "FETCH_ONLY_THE_RELEVANT_PRIMARY_SOURCE_AND_ITS_DEPENDENCIES",
+    "ACT_AND_EXACT_TARGET_READBACK"
+  ]
 }
