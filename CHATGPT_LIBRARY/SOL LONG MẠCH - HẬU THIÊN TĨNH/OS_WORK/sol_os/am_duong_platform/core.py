@@ -1,6 +1,7 @@
 """Local-first durable workrooms for Dương (human) and Âm (AI agents)."""
 from __future__ import annotations
 
+import contextlib
 import json
 import re
 import sqlite3
@@ -67,12 +68,17 @@ class Workrooms:
             c.execute("INSERT OR IGNORE INTO rooms(id,title,created_at) VALUES(?,?,?)",
                       ("sol-main", "SOL — ÂM–DƯƠNG PHÁP SƯ", utc_now()))
 
+    @contextlib.contextmanager
     def _connect(self):
         c = sqlite3.connect(str(self.db), timeout=10)
         c.row_factory = sqlite3.Row
         c.execute("PRAGMA busy_timeout = 10000")
         c.execute("PRAGMA foreign_keys = ON")
-        return c
+        try:
+            with c:
+                yield c
+        finally:
+            c.close()
 
     def rooms(self):
         with self.lock, self._connect() as c:

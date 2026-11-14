@@ -177,6 +177,7 @@ def create_handler(workrooms: Workrooms,token:str):
                 # Never echo a provider URL containing an API key or private payload.
                 return self._send(502,{"error":"PROVIDER_OR_RUNTIME_FAILURE_NO_RECEIPT"})
 
+    configured()
     return Handler
 
 def main():

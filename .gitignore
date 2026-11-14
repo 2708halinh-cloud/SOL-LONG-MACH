@@ -19,24 +19,93 @@ github.env.txt
 *.pem
 secrets.json
 
-# 2. CƠ SỞ DỮ LIỆU (Nơi chứa ký ức của Agent, Log)
+# 2. CƠ SỞ DỮ LIỆU (Datasable đầy đủ: \Có \Bán \Phi cấu trúc — Ký ức Agent, Log)
+# \Có cấu trúc (SQLite / DuckDB / Parquet — giữ nguyên file schema .sql nếu đã commit)
 *.sqlite
 *.sqlite3
 *.db
 *.db-journal
+*.db-wal
+*.db-shm
+*.duckdb
+*.parquet
 memories_*.sqlite
 logs_*.sqlite
+Data/Có cấu trúc/*
+**/Data/Có cấu trúc/*
+DATA_LAKE/04_STRUCTURED/*.db
+!*.sql
+
+# \Bán cấu trúc (Stream/Log runtime — giữ chứng từ kiểm thử CAUSAL_REENTRY_EVENTS.jsonl)
+logs/**/*.jsonl
+runtime/**/*.jsonl
+Data/Bán cấu trúc/*
+**/Data/Bán cấu trúc/*
+!**/CAUSAL_REENTRY_EVENTS.jsonl
+
+# \Phi cấu trúc (Dữ liệu thô / đa phương tiện / lưu trữ nhị phân lớn)
+Data/Phi cấu trúc/*
+**/Data/Phi cấu trúc/*
+DATA_LAKE/02_RAW/
+DATA_LAKE/05_SEARCH/
+DATA_LAKE/08_QUARANTINE/
 
 # 3. THƯ MỤC MÔI TRƯỜNG & THƯ VIỆN BÊN THỨ 3
-# (Những thứ này GitHub không cần lưu vì có thể cài lại bằng lệnh)
+# LƯU Ý: Chưa chắc nền tảng khác (Windows x64 / Termux ARM64 / WSL2 Linux) cài lại được giống hệt
+# (khác ABI, native wheel, hoặc gói ngừng phát hành). Chỉ bỏ qua nhị phân/cache nặng trong Git;
+# BẮT BUỘC giữ pyproject.toml / uv.lock / requirements*.txt / package-lock.json để tái lập.
+# (Trên Windows host hiện tại: Python venv hợp nhất đặt tại G:\OS_Workspace\.venv)
 node_modules/
+**/node_modules/
 venv/
 env/
 .venv/
+**/.venv/
 __pycache__/
+**/__pycache__/
 *.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+**/.pytest_cache/
+dist/
+build/
 
 # 4. HỆ ĐIỀU HÀNH & LOG
 .DS_Store
 Thumbs.db
+desktop.ini
 *.log
+*.tmp
+*.bak
+
+# 5. NOTEBOOK (.ipynb), ĐĨA ẢO / ĐĨA HỆ THỐNG KHÁC & ĐỒNG BỘ DRIVE
+*.ipynb
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+*.avhdx
+*.vhdx
+*.vhd
+*.vhtx
+*.vmdk
+*.vdi
+*.vbox
+*.qcow
+*.qcow2
+*.qed
+*.hdd
+*.img
+*.IMG
+*.iso
+*.ISO
+*.raw
+*.ova
+*.ovf
+*.dmg
+*.wim
+*.esd
+*.swm
+.tmp.driveupload/
+.tmp.drivedownload/
+**/.tmp.driveupload/
+**/.tmp.drivedownload/

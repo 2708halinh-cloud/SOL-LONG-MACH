@@ -4,7 +4,9 @@
 
 **R-000:** Không đánh tráo công cụ đã được liệt kê thành công cụ đã được chạy. Không đổi sự thật hay dấu vết lịch sử để có bề mặt sạch.
 
-- [Chuỗi công cụ](./Chuỗi%20công%20cụ/): phân loại toàn bộ registry và hiện vật.
+- [TOOLS_VIRTUAL_DRIVE (`_Plugins/tools_virtual_drive.py`)](./_Plugins/tools_virtual_drive.py): ổ đĩa ảo công cụ hợp nhất toàn bộ 8 cổng (`_Plugins`, `_Skills`, `_Mcp`, `_Trình duyệt`, `_Dụng cụ`, `_Ứng dụng`, `_Bảo_mật`, `_Sổ_đăng_ký`) + `G:\OS_Workspace\08_TOOLS_HARDWARE`, luôn quay vòng về [`_Plugins`](./_Plugins/README.md).
+- Cổng phân loại hợp nhất (đang hoạt động, không chứa thư mục rỗng): [`_Plugins`](./_Plugins/README.md) · [`_Skills`](./_Skills/README.md) · [`_Mcp`](./_Mcp/README.md) · [`_Trình duyệt`](./_Trình%20duyệt/README.md) · [`_Dụng cụ`](./_Dụng%20cụ/README.md) · [`_Ứng dụng`](./_Ứng%20dụng/README.md) · [`_Bảo_mật`](./_Bảo_mật/README.md) · [`_Sổ_đăng_ký`](./_Sổ_đăng_ký/README.md).
+- [Chuỗi công cụ](./Chuỗi%20công%20cụ/): kho lịch sử nguyên trạng (Registry, hiện vật, submodule đã ghim).
 - [TOOLS_ROOT_CONTRACT.md](./TOOLS_ROOT_CONTRACT.md): hợp đồng gốc cho Tools như logical drive, tuyến quay về `_Plugins`, phân loại, đồng bộ đa carrier và các sai khác đang OPEN.
 - [TOOLS_ROOT_READBACK_20261108.md](./TOOLS_ROOT_READBACK_20261108.md): readback cấu trúc Library, WSL2, local clone, `.adp`, motherboard và trạng thái đồng bộ ngày 08/11/2026.
 - [AGENTS.md](./AGENTS.md): quy tắc và phân quyền.

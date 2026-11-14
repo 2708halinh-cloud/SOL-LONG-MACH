@@ -13,7 +13,11 @@ from pathlib import Path
 
 FAMILIES_PATH = (
     "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/"
-    "AZURE_DEVOPS_MCP_CORE/SOL_NINE_CAPABILITY_FAMILIES.json"
+    "_Mcp/AZURE_DEVOPS_MCP_CORE/SOL_NINE_CAPABILITY_FAMILIES.json"
+)
+CANONICAL_FALLBACK_FAMILIES_PATH = (
+    "CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/OS_WORK/tools/"
+    "Chuỗi công cụ/_MCPs/AZURE_DEVOPS_MCP_CORE/SOL_NINE_CAPABILITY_FAMILIES.json"
 )
 
 
@@ -26,6 +30,8 @@ def normalized(text: str) -> str:
 def load_registry(repo_root: Path) -> dict:
     root = repo_root.resolve()
     path = (root / FAMILIES_PATH).resolve()
+    if not path.is_file():
+        path = (root / CANONICAL_FALLBACK_FAMILIES_PATH).resolve()
     if not path.is_relative_to(root):
         raise ValueError("REGISTRY_OUTSIDE_SOURCE")
     raw = json.loads(path.read_text(encoding="utf-8"))

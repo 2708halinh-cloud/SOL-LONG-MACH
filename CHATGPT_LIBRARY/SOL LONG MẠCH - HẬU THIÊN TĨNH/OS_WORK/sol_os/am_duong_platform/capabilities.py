@@ -1,6 +1,7 @@
 """Capability and privacy gate. No silent external media or text transfers."""
 from __future__ import annotations
 import base64
+import functools
 import json
 import os
 import re
@@ -9,6 +10,21 @@ import subprocess
 import tempfile
 from pathlib import Path
 from urllib import request,parse,error
+
+_ORIG_WHICH = shutil.which
+
+
+@functools.lru_cache(maxsize=16)
+def _probe_binary_cached(name: str, path_env: str, pathext_env: str) -> str | None:
+    """Cache PATH binary probes per PATH/PATHEXT to avoid slow virtual-drive re-scans."""
+    del pathext_env
+    return _ORIG_WHICH(name, path=path_env)
+
+
+def _has_tool(name: str) -> bool:
+    if shutil.which is not _ORIG_WHICH:
+        return bool(shutil.which(name))
+    return bool(_probe_binary_cached(name, os.environ.get("PATH", ""), os.environ.get("PATHEXT", "")))
 
 MAX_TEXT = 12000
 MAX_MEDIA = 9_000_000
@@ -39,8 +55,8 @@ def configured() -> dict:
         "personal_research":{"state":"READY_LOCAL_SOURCED_EVENTS","provider":"sqlite"},
         "translation_basic":{"state":"CONNECTABLE" if g else "REQUIRES_ENV_SOL_GOOGLE_CLOUD_API_KEY","provider":"Google Cloud Translation Basic v2"},
         "image_details":{"state":"CONNECTABLE" if g else "REQUIRES_ENV_SOL_GOOGLE_CLOUD_API_KEY","provider":"Cloud Vision API (faces,landmarks,logos,objects)"},
-        "transcription_mp3_mp4":{"state":"CONNECTABLE" if shutil.which("whisper") and shutil.which("ffmpeg") else "REQUIRES_LOCAL_WHISPER_AND_FFMPEG","provider":"local_whisper_cli"},
-        "video_objects_saved":{"state":"CONNECTABLE" if g and shutil.which("ffmpeg") else "REQUIRES_CLOUD_VISION_KEY_AND_FFMPEG","provider":"bounded_ffmpeg_frames_plus_vision"},
+        "transcription_mp3_mp4":{"state":"CONNECTABLE" if _has_tool("whisper") and _has_tool("ffmpeg") else "REQUIRES_LOCAL_WHISPER_AND_FFMPEG","provider":"local_whisper_cli"},
+        "video_objects_saved":{"state":"CONNECTABLE" if g and _has_tool("ffmpeg") else "REQUIRES_CLOUD_VISION_KEY_AND_FFMPEG","provider":"bounded_ffmpeg_frames_plus_vision"},
         "video_stream_frames":{"state":"CONNECTABLE" if g else "REQUIRES_ENV_SOL_GOOGLE_CLOUD_API_KEY","provider":"caller_supplied_frames_plus_vision"},
         "video_action_recognition":{"state":"NOT_IMPLEMENTED_NEEDS_ACTION_MODEL","provider":None},
     }
