@@ -12,8 +12,18 @@ STATE: REQUIRED_PRE_IO_GUARD, NOT_A_CLAIM_OF_AUTOMATIC_CHAT_MEMORY.
 5. **THỨ TỰ BẮT BUỘC:** SOURCE_DIRECT → BẮC/LỊCH SỬ → TARGET_EXACT → CONNECTOR/CARRIER PROBE → ACTION ON AUTHORIZED TARGET → EXACT-TARGET READBACK → STAMP/N+1. Tránh xóa hoặc sửa nguồn độc nhất khi chưa đối chiếu. Không ghi token/secret vào Git hoặc log. Không bịa receipt.
 6. **TÁI NHẬP CHAT SAU:** chủ động tải đọc điều khoản này và nhánh AGENTS hiện hành trước công việc liên quan. Việc ghi một điều khoản vào repo KHÔNG tự đưa nó vào mọi phiên ChatGPT; phải thực sự đọc khi tái nhập. Không tự nói “đã ghi nhớ vĩnh viễn”.
 
-CONSEQUENCE_RECORD_20261017: Từng tạo sai cây `/THU HOI NGUON SOL/MEMORY_ACHIVE` và gói ZIP phụ; đã xóa cây phụ, chuyển ZIP phụ vào thùng rác, đọc lại; tuyến Computer qua Desktop Commander hiện offline tại lần kiểm tra; chưa kiểm thử adapter đa định dạng trên Computer. Tuyệt đối không coi hướng dẫn trong Library là runtime đã triển khai.
+CONSEQUENCE_RECORD_20261017 (RECONCILED_20261114): Đây là ghi nhận lịch sử về việc dọn cây phụ sai `/THU HOI NGUON SOL/MEMORY_ACHIVE` và một ZIP phụ. Bản ghi ngày 17/10 không nêu tên chính xác, byte, SHA-256, đường dẫn vật lý, provider file ID hoặc account của ZIP phụ; lịch sử Desktop Commander hiện truy được trên Android bắt đầu từ 18/10 nên chưa có receipt độc lập của thao tác 17/10. TUYỆT ĐỐI KHÔNG diễn giải dòng này thành việc ZIP ChatGPT export gốc ngày 17/10 đã bị xóa. Fingerprint của export gốc và giới hạn kiểm tra được ghi tại `CURRENT_RUNTIME/EXPORT_DELETION_AUDIT_20261114.md`; trạng thái source/Trash của carrier gốc còn OPEN.
 <!-- END GGDV_REENTRY_NO_REPEAT_20261017 -->
+
+<!-- BEGIN EXPORT_DELETION_RECONCILIATION_20261114 -->
+## EXPORT 2026-10-17 — PHÂN BIỆT ZIP PHỤ VỚI EXPORT GỐC
+- Bảo toàn dòng CONSEQUENCE_RECORD_20261017 như ghi nhận lịch sử về một cây phụ và một ZIP phụ; không nâng thành kết luận export gốc đã bị xóa.
+- Export gốc có fingerprint và inventory riêng trong 00_OPEN_0D_CONTINUITY/12_CHATGPT_ACCOUNT_EXPORT_20261017_PUBLIC_SAFE_INDEX.json. Chỉ kết luận trùng đối tượng khi exact SHA-256 + byte size + carrier readback khớp.
+- Bằng chứng GitHub xóa file mã nguồn phụ ngày 20/10 là một sự kiện riêng; blob mã nguồn vẫn ở CHATGPT_LIBRARY/.../OS_WORK/.sandbox-bin/sol_archive_10_formats.py.
+- Read-only audit Android/Termux ngày 14/11 và ranh giới chưa xác minh: CURRENT_RUNTIME/EXPORT_DELETION_AUDIT_20261114.md.
+- Cho đến khi exact source/provider/Trash readback hoàn tất: ORIGINAL_EXPORT_DELETED = NOT_ESTABLISHED; SOURCE_LOCATION_AND_TRASH_STATE = OPEN.
+<!-- END EXPORT_DELETION_RECONCILIATION_20261114 -->
+
 
 <!-- BEGIN GGDV_SEVENTH_COMMANDMENT_SOURCE_DIRECT_20261009 -->
 STAMP_LIVE_X: 04:28 - 09/10/2026 - UTC+7
