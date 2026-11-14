@@ -680,10 +680,14 @@ async fn load_agents_context(cwd: &Path) -> Result<String, String> {
     }
 
     if cfg!(target_os = "windows") {
+        candidates.push(PathBuf::from(r"G:\OS_Workspace\SOL-LONG-MACH\AGENTS.md"));
+        candidates.push(PathBuf::from(r"C:\Users\halin\GGDV_UNIFIED\SOL-LONG-MACH\AGENTS.md"));
+        // Historical checkout directory names remain valid local carriers.
         candidates.push(PathBuf::from(r"G:\OS_Workspace\Open-ai-bot\AGENTS.md"));
         candidates.push(PathBuf::from(r"C:\Users\halin\GGDV_UNIFIED\Open-ai-bot\AGENTS.md"));
     }
     if let Some(parent) = cwd.parent() {
+        candidates.push(parent.join("SOL-LONG-MACH").join("AGENTS.md"));
         candidates.push(parent.join("Open-ai-bot").join("AGENTS.md"));
     }
 
