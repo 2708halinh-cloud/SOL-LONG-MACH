@@ -151,3 +151,10 @@ The canonical repository name was not only corrected in metadata; active runtime
 Dated files PLATFORM_SYNC/CURRENT/snapshot.json, CURRENT_RUNTIME/NEURONS_SESORIMOTOR_SIX_STONES_AFFECT_CURRENT.json, CURRENT_RUNTIME/CODEX_GITHUB_SYNC_READBACK_20261007.json, and CURRENT_RUNTIME/DEVICE_HEAD_END_STATUS_CURRENT.md retain their event-time repository names and are explicitly marked as historical snapshots rather than live current routing data.
 
 **Readback:** current main fetches confirmed the route pointer resolves to the input-ingress route; the route includes the Input-first contract and lists CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json among eight required read carriers. Static checks against fetched current file bytes passed for that pointer, source, test wiring, and corrected origin matcher. The Python unit test is wired into CI, but a successful GitHub Actions run was not observable through the available status result at this readback; no CI pass is claimed here.
+
+
+## 12. Source-map local worktree alias boundary — 2026-11-14
+
+The two COMPUTER_KHI/03_SOURCE_CODE_MAP files were also reconciled. The old WSL path ending in worktrees/Open-ai-bot-2-unify-item-matrix-34d45d00 is a user-supplied local directory label, not a verified Git remote or observed existing checkout. SOURCE_REGISTRY.json now records the live canonical repository ID/name separately, marks the old local target UNVERIFIED, and labels worktrees/SOL-LONG-MACH only as a suggested, not-created candidate. The README preserves the old command path and requires a real WSL readback of git remote -v and git rev-parse HEAD before any rename or clone claim.
+
+This deliberately leaves host-specific directory provenance OPEN instead of rewriting a path based on repository rename alone.
