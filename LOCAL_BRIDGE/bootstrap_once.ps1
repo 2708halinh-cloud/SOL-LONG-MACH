@@ -7,12 +7,12 @@ $ErrorActionPreference = 'Stop'
 function Find-GgdvWslRoot {
   param([string]$DistroName)
   $discover = @'
-for d in "$HOME"/kepler/worktrees/* "$HOME"/kepler/repos/Open-ai-bot "$HOME"/kepler/Open-ai-bot "$HOME"/Open-ai-bot; do
+for d in "$HOME"/kepler/worktrees/* "$HOME"/kepler/repos/SOL-LONG-MACH "$HOME"/kepler/SOL-LONG-MACH "$HOME"/SOL-LONG-MACH "$HOME"/kepler/repos/Open-ai-bot "$HOME"/kepler/Open-ai-bot "$HOME"/Open-ai-bot; do
   [ -d "$d" ] || continue
   git -C "$d" rev-parse --git-dir >/dev/null 2>&1 || continue
   u="$(git -C "$d" remote get-url origin 2>/dev/null || true)"
   case "$u" in
-    *2708halinh-cloud/Open-ai-bot*) printf '%s\n' "$d"; exit 0 ;;
+    *2708halinh-cloud/SOL-LONG-MACH*|*2708halinh-cloud/Open-ai-bot*) printf '%s\n' "$d"; exit 0 ;;
   esac
 done
 if [ -d "$HOME/kepler" ]; then
@@ -20,7 +20,7 @@ if [ -d "$HOME/kepler" ]; then
     git -C "$d" rev-parse --git-dir >/dev/null 2>&1 || continue
     u="$(git -C "$d" remote get-url origin 2>/dev/null || true)"
     case "$u" in
-      *2708halinh-cloud/Open-ai-bot*) printf '%s\n' "$d"; exit 0 ;;
+      *2708halinh-cloud/SOL-LONG-MACH*|*2708halinh-cloud/Open-ai-bot*) printf '%s\n' "$d"; exit 0 ;;
     esac
   done < <(find "$HOME/kepler" -maxdepth 5 -type d 2>/dev/null)
 fi
@@ -51,7 +51,7 @@ if ([string]::IsNullOrWhiteSpace($WslRoot)) {
 }
 
 if ([string]::IsNullOrWhiteSpace($WslRoot)) {
-  throw 'Unable to resolve Open-ai-bot WSL worktree. Set GGDV_WSL_REPO_ROOT or pass -WslRoot.'
+  throw 'Unable to resolve SOL-LONG-MACH WSL worktree (historical Open-ai-bot alias also accepted). Set GGDV_WSL_REPO_ROOT or pass -WslRoot.'
 }
 
 $identity=[Security.Principal.WindowsIdentity]::GetCurrent()
@@ -70,12 +70,12 @@ if(-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrat
 $TaskName='TESSERACT_LOCAL_BRIDGE'
 $bashScript = @'
 root=''
-for d in "$HOME"/kepler/worktrees/* "$HOME"/kepler/repos/Open-ai-bot "$HOME"/kepler/Open-ai-bot "$HOME"/Open-ai-bot; do
+for d in "$HOME"/kepler/worktrees/* "$HOME"/kepler/repos/SOL-LONG-MACH "$HOME"/kepler/SOL-LONG-MACH "$HOME"/SOL-LONG-MACH "$HOME"/kepler/repos/Open-ai-bot "$HOME"/kepler/Open-ai-bot "$HOME"/Open-ai-bot; do
   [ -d "$d" ] || continue
   git -C "$d" rev-parse --git-dir >/dev/null 2>&1 || continue
   u="$(git -C "$d" remote get-url origin 2>/dev/null || true)"
   case "$u" in
-    *2708halinh-cloud/Open-ai-bot*) root="$d"; break ;;
+    *2708halinh-cloud/SOL-LONG-MACH*|*2708halinh-cloud/Open-ai-bot*) root="$d"; break ;;
   esac
 done
 if [ -z "$root" ] && [ -d "$HOME/kepler" ]; then
@@ -83,7 +83,7 @@ if [ -z "$root" ] && [ -d "$HOME/kepler" ]; then
     git -C "$d" rev-parse --git-dir >/dev/null 2>&1 || continue
     u="$(git -C "$d" remote get-url origin 2>/dev/null || true)"
     case "$u" in
-      *2708halinh-cloud/Open-ai-bot*) root="$d"; break ;;
+      *2708halinh-cloud/SOL-LONG-MACH*|*2708halinh-cloud/Open-ai-bot*) root="$d"; break ;;
     esac
   done < <(find "$HOME/kepler" -maxdepth 5 -type d 2>/dev/null)
 fi
