@@ -39,8 +39,8 @@ class RepositoryIdentityTests(unittest.TestCase):
 
     def test_desktop_agent_loader_keeps_legacy_and_adds_canonical_local_paths(self):
         source = (REPO_ROOT / "APP" / "TESSERACT_DESKTOP" / "src-tauri" / "src" / "main.rs").read_text(encoding="utf-8")
-        self.assertIn(r"G:\\OS_Workspace\\SOL-LONG-MACH\\AGENTS.md", source)
-        self.assertIn(r"G:\\OS_Workspace\\Open-ai-bot\\AGENTS.md", source)
+        self.assertIn(r"G:\OS_Workspace\SOL-LONG-MACH\AGENTS.md", source)
+        self.assertIn(r"G:\OS_Workspace\Open-ai-bot\AGENTS.md", source)
 
 
 if __name__ == "__main__":
