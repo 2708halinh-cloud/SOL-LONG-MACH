@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 import sys
 import unittest
@@ -41,6 +42,23 @@ class RepositoryIdentityTests(unittest.TestCase):
         source = (REPO_ROOT / "APP" / "TESSERACT_DESKTOP" / "src-tauri" / "src" / "main.rs").read_text(encoding="utf-8")
         self.assertIn(r"G:\OS_Workspace\SOL-LONG-MACH\AGENTS.md", source)
         self.assertIn(r"G:\OS_Workspace\Open-ai-bot\AGENTS.md", source)
+
+
+    def test_desktop_current_route_pointer_reaches_input_contract_and_roots_source(self):
+        pointer_path = REPO_ROOT / "CONFIG" / "AGENTS_LOAD_ROUTE_CURRENT.json"
+        pointer = json.loads(pointer_path.read_text(encoding="utf-8"))
+        route_path = REPO_ROOT / pointer["route"]
+        self.assertTrue(route_path.is_file())
+        route = json.loads(route_path.read_text(encoding="utf-8"))
+        self.assertIn("input_ingress_contract", route)
+        self.assertIn(
+            "CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json",
+            route["required_carriers"],
+        )
+        self.assertEqual(
+            route["conditional_carriers"]["roots_provider"]["required"],
+            "CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json",
+        )
 
 
 if __name__ == "__main__":
