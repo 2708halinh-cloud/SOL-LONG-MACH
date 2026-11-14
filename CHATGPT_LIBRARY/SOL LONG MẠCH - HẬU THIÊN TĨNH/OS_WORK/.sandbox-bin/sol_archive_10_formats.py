@@ -4,13 +4,18 @@ No third-party credential consumption. All source archives stay read-only.
 """
 from __future__ import annotations
 import argparse, bz2, concurrent.futures, gzip, hashlib, json, lzma, os
-import re, shutil, subprocess, sys, tarfile, tempfile, time, zipfile
+import re, shutil, stat, subprocess, sys, tarfile, tempfile, time, zipfile
 from pathlib import Path, PurePosixPath
 
 MAX_MEMBERS=25000
 MAX_EXPANDED=512*1024*1024
 MAX_RATIO=300
 FORMATS=("ALL","7Z","BZ2","GZ","JAR","LR","RAR","TAR","XZ","ZIP")
+EXTERNAL_CANDIDATES = {
+    "7Z": ("7zz", "7z", "7za"),
+    "RAR": ("unrar", "7zz", "7z", "7za", "rar"),
+    "LR": ("lrzip",),
+}
 HEADERS=((b"7z\xbc\xaf\x27\x1c","7Z"),(b"Rar!\x1a\x07","RAR"),
  (b"LRZI","LR"),(b"\x1f\x8b","GZ"),(b"BZh","BZ2"),
  (b"\xfd7zXZ\x00","XZ"),(b"PK\x03\x04","ZIP"),(b"PK\x05\x06","ZIP"))
@@ -42,16 +47,40 @@ def stamp(name):
     matches=re.findall(r"(?<!\d)(?:20\d{2}[-_]?[01]\d[-_]?[0-3]\d)(?!\d)",name)
     return matches[:3]
 
+def adapter_available(kind):
+    """Report whether any binary used by the read-only adapter is available."""
+    return any(shutil.which(candidate) for candidate in EXTERNAL_CANDIDATES[kind])
+
+
 def inspect(path):
     path=Path(path)
-    out={"schema":"SOL_ARCHIVE_10_FORMATS_V1","basename":path.name,
-      "bytes":path.stat().st_size,"sha256":sha(path),"detected":fmt(path),
-      "stamp_old_candidates":stamp(path.name),"account":"ACCOUNT_UNVERIFIED",
-      "sensitive_data_copied":False,"extraction_performed":False,
-      "adapter":None,"status":"UNSUPPORTED","member_count":None,
-      "expanded_bytes":None,"error_code":None}
-    kind=out["detected"]
+    out={
+        "schema":"SOL_ARCHIVE_10_FORMATS_V1",
+        "basename":path.name,
+        "bytes":None,
+        "sha256":None,
+        "detected":"UNREADABLE",
+        "stamp_old_candidates":stamp(path.name),
+        "account":"ACCOUNT_UNVERIFIED",
+        "sensitive_data_copied":False,
+        "extraction_performed":False,
+        "adapter":None,
+        "status":"UNSUPPORTED",
+        "member_count":None,
+        "expanded_bytes":None,
+        "error_code":None,
+        "error_detail":None,
+    }
     try:
+        if path.is_symlink():
+            raise ValueError("UNSAFE_SOURCE_SYMLINK")
+        source_stat=path.lstat()
+        if not stat.S_ISREG(source_stat.st_mode):
+            raise ValueError("UNSAFE_SOURCE_NON_REGULAR_FILE")
+        out["bytes"]=source_stat.st_size
+        out["sha256"]=sha(path)
+        out["detected"]=fmt(path)
+        kind=out["detected"]
         if kind in ("ZIP","JAR"):
             out["adapter"]="python.zipfile"
             with zipfile.ZipFile(path) as arc:
@@ -105,21 +134,43 @@ def inspect(path):
                     if total>MAX_EXPANDED:raise ValueError("EXPANDED_STREAM_LIMIT")
             out.update(member_count=1,expanded_bytes=total,status="PASS")
         elif kind in ("7Z","RAR","LR"):
-            binary=(shutil.which("7z") or shutil.which("7zz")) if kind in ("7Z","RAR") else shutil.which("lrzip")
+            candidates = EXTERNAL_CANDIDATES[kind]
+            binary = None
+            for candidate in candidates:
+                binary = shutil.which(candidate)
+                if binary:
+                    break
             if not binary:
-                out["status"]="NEEDS_ADAPTER"
+                out["status"] = "NEEDS_ADAPTER"
+                out["error_code"] = "ADAPTER_NOT_FOUND"
             else:
-                out["adapter"]=Path(binary).name
-                argv=[binary,"t","-bd",str(path)] if kind in ("7Z","RAR") else [binary,"-t",str(path)]
-                result=subprocess.run(argv,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,
-                                      timeout=45,stdin=subprocess.DEVNULL)
-                out["status"]="PASS" if result.returncode==0 else "TEST_FAILED_OR_ENCRYPTED"
+                adapter_name = Path(binary).name.lower()
+                out["adapter"] = Path(binary).name
+                archive_path = str(path.resolve())
+                if kind == "LR":
+                    argv = [binary, "-t", archive_path]
+                elif adapter_name == "unrar":
+                    argv = [binary, "t", "-inul", archive_path]
+                elif adapter_name == "rar":
+                    argv = [binary, "t", "-idq", archive_path]
+                else:
+                    argv = [binary, "t", "-bd", archive_path]
+                result = subprocess.run(
+                    argv,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                    stdin=subprocess.DEVNULL,
+                    timeout=45,
+                    check=False,
+                )
+                out["status"] = "PASS" if result.returncode == 0 else "TEST_FAILED_OR_ENCRYPTED"
         else:
             out["error_code"]="MAGIC_NOT_RECOGNIZED"
-    except (OSError,ValueError,zipfile.BadZipFile,tarfile.TarError,EOFError,
-            lzma.LZMAError,bz2.BZ2Decompressor.__class__,subprocess.TimeoutExpired) as e:
+    except (OSError, ValueError, zipfile.BadZipFile, tarfile.TarError, EOFError,
+            lzma.LZMAError, subprocess.TimeoutExpired) as e:
         out["status"]="FAILED_SAFE"
         out["error_code"]=type(e).__name__
+        out["error_detail"]=str(e) if isinstance(e, ValueError) else type(e).__name__
     return out
 
 def main():
@@ -130,10 +181,14 @@ def main():
     p.add_argument("--output")
     a=p.parse_args()
     if a.capabilities:
-        print(json.dumps({"formats":list(FORMATS),
-          "ALL":"virtual_index","7Z":bool(shutil.which("7z") or shutil.which("7zz")),
-          "RAR":bool(shutil.which("7z") or shutil.which("7zz")),
-          "LR":bool(shutil.which("lrzip"))}));return
+        print(json.dumps({
+            "formats": list(FORMATS),
+            "ALL": "virtual_index",
+            "7Z": adapter_available("7Z"),
+            "RAR": adapter_available("RAR"),
+            "LR": adapter_available("LR"),
+        }))
+        return
     if a.fixture_test:
         with tempfile.TemporaryDirectory() as dir:
             d=Path(dir);contents=b"safe example"
