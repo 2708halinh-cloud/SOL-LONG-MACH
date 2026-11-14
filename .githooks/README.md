@@ -1,6 +1,6 @@
 # Git hooks
 
-Enable the repository hooks locally:
+Enable the repository hooks locally: ref: refs/heads/.invalid
 
 ```sh
 git config core.hooksPath .githooks
