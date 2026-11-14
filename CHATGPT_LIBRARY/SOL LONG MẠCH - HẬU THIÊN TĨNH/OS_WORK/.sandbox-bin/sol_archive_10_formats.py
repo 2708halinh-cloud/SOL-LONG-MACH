@@ -105,19 +105,44 @@ def inspect(path):
                     if total>MAX_EXPANDED:raise ValueError("EXPANDED_STREAM_LIMIT")
             out.update(member_count=1,expanded_bytes=total,status="PASS")
         elif kind in ("7Z","RAR","LR"):
-            binary=(shutil.which("7z") or shutil.which("7zz")) if kind in ("7Z","RAR") else shutil.which("lrzip")
+            candidates = {
+                "7Z": ("7zz", "7z", "7za"),
+                "RAR": ("unrar", "7zz", "7z", "7za", "rar"),
+                "LR": ("lrzip",),
+            }[kind]
+            binary = None
+            for candidate in candidates:
+                binary = shutil.which(candidate)
+                if binary:
+                    break
             if not binary:
-                out["status"]="NEEDS_ADAPTER"
+                out["status"] = "NEEDS_ADAPTER"
+                out["error_code"] = "ADAPTER_NOT_FOUND"
             else:
-                out["adapter"]=Path(binary).name
-                argv=[binary,"t","-bd",str(path)] if kind in ("7Z","RAR") else [binary,"-t",str(path)]
-                result=subprocess.run(argv,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,
-                                      timeout=45,stdin=subprocess.DEVNULL)
-                out["status"]="PASS" if result.returncode==0 else "TEST_FAILED_OR_ENCRYPTED"
+                adapter_name = Path(binary).name.lower()
+                out["adapter"] = Path(binary).name
+                archive_path = str(path.resolve())
+                if kind == "LR":
+                    argv = [binary, "-t", archive_path]
+                elif adapter_name == "unrar":
+                    argv = [binary, "t", "-inul", archive_path]
+                elif adapter_name == "rar":
+                    argv = [binary, "t", "-idq", archive_path]
+                else:
+                    argv = [binary, "t", "-bd", archive_path]
+                result = subprocess.run(
+                    argv,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                    stdin=subprocess.DEVNULL,
+                    timeout=45,
+                    check=False,
+                )
+                out["status"] = "PASS" if result.returncode == 0 else "TEST_FAILED_OR_ENCRYPTED"
         else:
             out["error_code"]="MAGIC_NOT_RECOGNIZED"
-    except (OSError,ValueError,zipfile.BadZipFile,tarfile.TarError,EOFError,
-            lzma.LZMAError,bz2.BZ2Decompressor.__class__,subprocess.TimeoutExpired) as e:
+    except (OSError, ValueError, zipfile.BadZipFile, tarfile.TarError, EOFError,
+            lzma.LZMAError, subprocess.TimeoutExpired) as e:
         out["status"]="FAILED_SAFE"
         out["error_code"]=type(e).__name__
     return out
