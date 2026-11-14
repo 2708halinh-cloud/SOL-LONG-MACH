@@ -1,0 +1,8 @@
+{
+  "schema":"GGDV_SSN_NPU_RUNTIME_CONFIG/1.0",
+  "backend":"python_cpu_reference",
+  "lif":{"threshold":0.8,"tau_seconds":4.0,"refractory_seconds":0.05,"reset_potential":0.0,"max_potential":2.0},
+  "pipeline":{"max_batch_size":64,"max_parallel_candidates":16,"max_actions_per_cycle":8,"max_context_bytes":1000000,"thermal_limit_c":80.0,"memory_high_watermark":0.85,"allow_overclock":false},
+  "execution_policy":{"allow_execution_by_default":false,"allowed_risks_by_default":["read_only"],"require_complete_arguments":true,"semantic_score_is_authorization":false},
+  "catalog":{"capability_manifest":"capabilities.json","synaptic_edges":"synapses.json","missing_source_policy":"OPEN_DO_NOT_FABRICATE"}
+}
