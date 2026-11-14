@@ -7,6 +7,8 @@ on:
       - 'fix/**'
     paths:
       - 'LOCAL_BRIDGE/**'
+      - 'APP/TESSERACT_DESKTOP/src-tauri/src/main.rs'
+      - '.github/workflows/local-unify-selfhosted.yml'
       - 'RECOVERY/**'
       - 'CURRENT_RUNTIME/TESSERACT_LOCAL_BOOT_CURRENT.md'
       - 'AGENTS.md'
@@ -16,6 +18,8 @@ on:
   pull_request:
     paths:
       - 'LOCAL_BRIDGE/**'
+      - 'APP/TESSERACT_DESKTOP/src-tauri/src/main.rs'
+      - '.github/workflows/local-unify-selfhosted.yml'
       - 'RECOVERY/**'
       - 'CURRENT_RUNTIME/TESSERACT_LOCAL_BOOT_CURRENT.md'
       - 'AGENTS.md'
@@ -33,6 +37,7 @@ jobs:
           python3 -m py_compile LOCAL_BRIDGE/bridge.py
           python3 -m py_compile RECOVERY/recover_continuity.py
           python3 -m py_compile LOCAL_BRIDGE/runtime/ggdv-sensorimotor-motor-bridge/server/runtime_core.py
+          python3 -m unittest LOCAL_BRIDGE.tests.test_repo_identity -v
       - name: Bash syntax
         run: bash -n terminal/tesseract_boot_g_from_wsl.sh
       - name: PowerShell scripts parse
