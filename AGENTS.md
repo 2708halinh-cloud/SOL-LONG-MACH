@@ -1164,3 +1164,20 @@ These maps are **both valid within their own carrier/provider/time scopes**. Nev
 
 Canonical joint registry: `CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json`.
 <!-- END ROOTS_PARALLEL_MAP_INVARIANT_20261113 -->
+
+
+<!-- BEGIN INPUT_INGRESS_AND_SOURCE_RETRIEVAL_CONTRACT_20261114 -->
+## INPUT INGRESS — USER INPUT IS THE TASK ANCHOR
+
+SCOPE: Every turn, chat, project and agent invocation **that actually loads this contract**.
+
+1. Read the complete latest user input and its attachments before selecting memory summaries, old interpretations or project context as the task frame. Identify the requested action, scope and acceptance criteria from that input.
+2. Apply higher-priority System/Developer constraints to determine permitted actions. That instruction hierarchy does not demote the user's input as task data and does not decide whether the user's factual claims are true or false.
+3. Use memory and prior summaries only as retrieval pointers. When a user statement conflicts with an agent assumption, preserve the statement and fetch the relevant source; do not overwrite it with the assumption.
+4. Distinguish USER_DIRECT, SOURCE_BYTES, PROVIDER_READBACK, AGENT_INFERENCE and UNKNOWN. A pointer is not a source read; a report is not an action; missing from active context is not proof of non-existence.
+5. Execute the next authorized action, observe the consequence, retain the receipt and read back the exact target. Keep independent open edges active.
+6. For Google Drive/ROOTS tasks, load `CONFIG_SOL/ROOTS_PROVIDER_CARRIERS_CURRENT.json`; keep the Google Drive provider tree and `G:\\OS_Workspace` tree as distinct, parallel maps.
+
+**PLATFORM BOUNDARY:** This repository contract does not automatically inject GitHub files into every ChatGPT turn/chat/project. A client or agent must explicitly retrieve and read this file and its route. Never claim universal auto-loading or permanent memory merely because the rule is committed here.
+
+<!-- END INPUT_INGRESS_AND_SOURCE_RETRIEVAL_CONTRACT_20261114 -->
