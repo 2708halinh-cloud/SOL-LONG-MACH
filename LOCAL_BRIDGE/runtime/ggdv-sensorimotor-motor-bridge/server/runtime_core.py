@@ -163,9 +163,9 @@ def motor_enabled() -> bool:
 def is_sol_repo_origin(origin: str) -> bool:
     """Accept the current GitHub repo name and its verified historical alias."""
     value = (origin or "").strip().lower().rstrip("/")
-    value = re.sub(r"\\.git$", "", value)
+    value = re.sub(r"\.git$", "", value)
     return bool(re.search(
-        r"(?:github\\.com[:/])2708halinh-cloud/(?:sol-long-mach|open-ai-bot)$",
+        r"(?:github\.com[:/])2708halinh-cloud/(?:sol-long-mach|open-ai-bot)$",
         value,
         re.IGNORECASE,
     ))
