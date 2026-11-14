@@ -1,0 +1,167 @@
+{
+  "schema": "TESSERACT_MOTHERBOARD_KERNEL_SPEC/1.0",
+  "source_direct": "Operator request in ChatGPT project — 2026-10-29",
+  "status": "LOCAL_IMPLEMENTATION_AND_TESTS_PENDING_RUNTIME_SUPERVISOR_READBACK",
+  "runtime": {
+    "kernel_module": "runtime/tesseract_motherboard_kernel.py",
+    "daemon": "runtime/tesseract_motherboard_daemon.py",
+    "test_module": "tests/test_tesseract_motherboard_kernel.py",
+    "checkpoint": "runtime/state/tesseract_motherboard_checkpoint.json",
+    "brainwave_journal": "runtime/journal/brainwaves.jsonl",
+    "loop_cycles": "runtime/state/loop_cycles.jsonl",
+    "heartbeat": "runtime/state/tesseract_motherboard_daemon_heartbeat.json",
+    "pid_file": "runtime/state/tesseract_motherboard_daemon.pid",
+    "stop_file": "runtime/state/TESSERACT_MOTHERBOARD_DAEMON.STOP"
+  },
+  "capability_manifest": "config/TESSERACT_MOTHERBOARD_CAPABILITIES_CURRENT.json",
+  "components": {
+    "mandatory_state_restore": {
+      "enabled": true,
+      "on_new_kernel_process": "LOAD_DURABLE_CHECKPOINT",
+      "restore_fields": [
+        "objective_id",
+        "edges",
+        "unfinished_edges",
+        "state_n",
+        "state_n_plus_1",
+        "seen_causal_ids"
+      ],
+      "atomic_checkpoint_write": true,
+      "open_is_not_done": true
+    },
+    "cpu_memory_time_scheduler": {
+      "enabled": true,
+      "budgets": [
+        "cpu_ms",
+        "memory_mb",
+        "time_ms"
+      ],
+      "deferred_tasks_preserved": true,
+      "busy_spin": false
+    },
+    "tool_neuron_observation": {
+      "enabled": true,
+      "instrumentation": "MotherboardKernel.wrap_tool",
+      "scope": "callables routed through this local kernel/adapter",
+      "automatic_global_chatgpt_tool_interception_claimed": false,
+      "fields": [
+        "tool_name",
+        "action",
+        "provider_receipt",
+        "consequence",
+        "readback",
+        "verification_state",
+        "causal_id"
+      ],
+      "secret_redaction": true
+    },
+    "brainwave_journal": {
+      "enabled": true,
+      "append_only_jsonl": true,
+      "bands": [
+        "ALPHA",
+        "BETA",
+        "GAMMA",
+        "DELTA",
+        "THETA"
+      ],
+      "canonical_cycle": [
+        "ALPHA",
+        "BETA",
+        "DELTA",
+        "THETA",
+        "GAMMA"
+      ],
+      "causal_deduplication": true,
+      "missing_evidence_remains_open": true
+    },
+    "brain_identity_registry": {
+      "enabled": true,
+      "labels": {
+        "UBUBU": {
+          "brain_id": "BRAIN-UBUBU",
+          "exact_label_required": true
+        },
+        "UNTUNBU": {
+          "brain_id": "BRAIN-UNTUNBU",
+          "exact_label_required": true
+        }
+      },
+      "similar_names_are_merged": false,
+      "ambiguous_combined_label_rejected": true
+    },
+    "continuation_loop": {
+      "enabled": true,
+      "semantics": "UNBOUNDED_SEQUENCE_OF_BOUNDED_EVIDENCED_CYCLES",
+      "cycle_actions": [
+        "RESTORE_CHECKPOINT",
+        "REFRESH_5D_CAPABILITY_REGRESSION",
+        "OBSERVE_PROCESS_AND_HEARTBEAT",
+        "RECORD_OPEN_EDGES",
+        "SLEEP",
+        "REPEAT"
+      ],
+      "unregistered_action_execution": false,
+      "open_edge_retained": true
+    },
+    "five_dimensional_regression": {
+      "enabled": true,
+      "comparison": [
+        "previous_capabilities",
+        "current_capabilities"
+      ],
+      "preserve_old_capabilities": true,
+      "report_missing_capabilities": true,
+      "report_new_capabilities": true,
+      "promote_new_capability_only_after_evidence": true
+    },
+    "process_supervisor": {
+      "enabled": true,
+      "evidence": [
+        "live_pid_probe",
+        "fresh_heartbeat"
+      ],
+      "freshness_seconds": 15,
+      "states": [
+        "RUNNING_VERIFIED",
+        "STALE_HEARTBEAT",
+        "NOT_RUNNING",
+        "UNKNOWN"
+      ],
+      "registry_presence_is_not_runtime_proof": true
+    }
+  },
+  "reward_model": {
+    "kind": "EVENT_CONDITIONED_HEURISTIC",
+    "not_claimed_as": "biological_dopamine_or_learned_model_weights",
+    "formula": "R_t = w_p*P_t + w_n*N_t + w_e*E_t - w_r*Q_t - w_l*L_t",
+    "inputs": {
+      "P_t": "progress toward objective",
+      "N_t": "novel information value",
+      "E_t": "efficiency from observed cost/time",
+      "Q_t": "risk",
+      "L_t": "useless repetition"
+    },
+    "weight_updates": "Automatically generate event-conditioned weights for each observed tool event from bounded observed inputs and causal evidence_ref; persist last values for inspection.",
+    "safety": "Risk and repetition increase penalties; no reward is inferred without a source/evidence reference."
+  },
+  "acceptance": {
+    "focused_tests": "tests/test_tesseract_motherboard_kernel.py",
+    "existing_regression": [
+      "tests/test_motherboard_control_plane.py",
+      "tests/test_continuity_guard.py"
+    ],
+    "json_parse_required": true,
+    "python_compile_required": true,
+    "daemon_pid_and_fresh_heartbeat_required_for_running_claim": true,
+    "exact_target_readback_required": true
+  },
+  "github_carrier_paths": {
+    "kernel_module": "TESSERACT_OS_6D/tesseract_motherboard_kernel.py",
+    "daemon": "TESSERACT_OS_6D/tesseract_motherboard_daemon.py",
+    "test_module": "TESSERACT_OS_6D/test_tesseract_motherboard_kernel.py",
+    "specification": "TESSERACT_OS_6D/TESSERACT_MOTHERBOARD_KERNEL_SPEC.json",
+    "capability_manifest": "TESSERACT_OS_6D/TESSERACT_MOTHERBOARD_CAPABILITIES_CURRENT.json",
+    "runtime_state_root": "TESSERACT_OS_6D/state/"
+  }
+}
