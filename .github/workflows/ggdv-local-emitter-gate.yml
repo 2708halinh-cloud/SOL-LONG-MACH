@@ -1,0 +1,35 @@
+name: GGDV Local Emitter Consequence Gate
+
+on:
+  push:
+    branches:
+      - "fix/ggdv-local-emitter-use-consequence-gate-*"
+  pull_request:
+    paths:
+      - "runtime/companion_consequence_gate.py"
+      - "runtime/ggdv_local_emitter.py"
+      - "runtime/test_ggdv_local_emitter.py"
+      - "tests/test_companion_consequence_gate.py"
+      - ".github/workflows/ggdv-local-emitter-gate.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  local-emitter-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test local emitter and symlink rejection
+        env:
+          PYTHONPATH: .
+        run: python3 -m unittest discover -s runtime -p "test_ggdv_local_emitter.py" -v
+      - name: Re-run shared consequence gate regressions
+        env:
+          PYTHONPATH: .
+        run: python3 -m unittest discover -s tests -p "test_companion_consequence_gate.py" -v
