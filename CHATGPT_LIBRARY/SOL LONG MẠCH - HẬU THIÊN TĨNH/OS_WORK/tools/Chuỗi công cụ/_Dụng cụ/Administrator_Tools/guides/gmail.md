@@ -1,0 +1,3 @@
+# Gmail — tìm nguồn xác thực có phạm vi
+
+Dùng Gmail `get_profile` để kiểm đúng email đang kết nối trước khi tìm mã. `search_emails` chỉ khi có thử thách xác thực từ nhà cung cấp đúng phiên; lọc người gửi và thời gian. OTP, cookie và thông tin cá nhân không ghi log, không chuyển ra URL khác, không dùng mã của phiên đã hết hạn. Gửi thư, xóa hay chuyển tiếp là action riêng, cần ủy thác và kiểm quyền. Receipt của email không chứng minh đăng nhập Hostinger thành công.
