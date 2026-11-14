@@ -340,3 +340,8 @@ New evidence should be appended; prior evidence should remain preserved.
 - README source File ID: `15zplXOQlGtDAqJm_jcFPU8yI1plqsmW9T2X3oIFpdLY`
 
 **Case state:** OPEN FOR EVIDENCE / OPEN FOR REBUTTAL / HISTORY PRESERVED.
+
+
+## Repository identity note — 2026-11-14
+
+This evidence record retains `2708halinh-cloud/Open-ai-bot` where that was the repository name at the time of the 2026-10-07 event. Fresh GitHub repository metadata now identifies the same live repository ID `1249555486` as `2708halinh-cloud/SOL-LONG-MACH`, default branch `main`. Treat `Open-ai-bot` as the historical repository alias; do not rewrite event-era timestamps, transcript references, original commit SHAs or source attribution.
