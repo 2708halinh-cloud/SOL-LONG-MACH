@@ -37,7 +37,7 @@ for d in "$HOME"/kepler/worktrees/*; do
   [ -e "$d/.git" ] || continue
   u="$(git -C "$d" remote get-url origin 2>/dev/null || true)"
   case "$u" in
-    *2708halinh-cloud/Open-ai-bot*) printf '%s\n' "$d"; exit 0 ;;
+    *2708halinh-cloud/SOL-LONG-MACH*|*2708halinh-cloud/Open-ai-bot*) printf '%s\n' "$d"; exit 0 ;;
   esac
 done
 exit 1
