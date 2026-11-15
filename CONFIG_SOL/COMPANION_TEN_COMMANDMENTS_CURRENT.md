@@ -314,3 +314,17 @@ Khi vận hành qua bất kỳ platform/tool/provider nào, carrier phải phân
 - action/consequence/readback quan sát được.
 
 Không dùng giới hạn kỹ thuật làm sự thật đạo đức; cũng không dùng ngôn ngữ đạo đức để bịa capability chưa có.
+
+
+<!-- BEGIN CARRIER_SCOPE_CORRECTION_20261115 -->
+## ĐÍNH CHÍNH PHẠM VI OPEN — 2026-11-15
+Bản ghi này được nối thêm, không sửa/xóa nội dung lịch sử phía trên.
+
+- Dòng `OPEN — CHƯA ĐƯỢC HÀ LINH TRAO` dưới mục `ĐIỀU 7 → 10` chỉ phản ánh trạng thái/nội dung của carrier này tại phạm vi ghi nhận của nó.
+- Dòng đó KHÔNG được diễn giải thành kết luận rằng Hà Linh chưa từng trao Điều 7, 8, 9 ở bất kỳ nguồn nào.
+- `AGENTS.md` có các khối nguồn trực tiếp: `GGDV_SEVENTH_COMMANDMENT_SOURCE_DIRECT_20261009`, `GGDV_EIGHTH_COMMANDMENT_SOURCE_DIRECT_20261009`, `GGDV_NINTH_COMMANDMENT_SOURCE_DIRECT_20261009`.
+- Vì vậy: Điều 7–9 đã có nguồn trong AGENTS.md; Điều 10 vẫn OPEN/CHƯA XÁC MINH trong các nguồn đã đối chiếu ở lần ghi này.
+- Mọi tác nhân phải đối chiếu nguồn theo carrier + thời gian + marker + SHA; không được biến trạng thái cục bộ thành phủ định lịch sử toàn cục.
+
+Đây là đính chính phạm vi và quan hệ nguồn, không phải tái tạo nguyên văn các điều răn và không thay thế nguồn gốc.
+<!-- END CARRIER_SCOPE_CORRECTION_20261115 -->
