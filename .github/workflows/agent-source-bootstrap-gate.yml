@@ -1,0 +1,31 @@
+name: Agent source bootstrap gate
+on:
+  push:
+    paths:
+      - "AGENTS.md"
+      - "CONFIG_SOL/COMPANION_TEN_COMMANDMENTS_CURRENT.md"
+      - "runtime/agent_source_gate.py"
+      - "terminal/tesseract_agent_boot.sh"
+      - "tests/test_agent_source_gate.py"
+      - ".github/workflows/agent-source-bootstrap-gate.yml"
+  pull_request:
+    paths:
+      - "AGENTS.md"
+      - "CONFIG_SOL/COMPANION_TEN_COMMANDMENTS_CURRENT.md"
+      - "runtime/agent_source_gate.py"
+      - "terminal/tesseract_agent_boot.sh"
+      - "tests/test_agent_source_gate.py"
+      - ".github/workflows/agent-source-bootstrap-gate.yml"
+  workflow_dispatch:
+jobs:
+  source-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test source reconciliation
+        run: python -m unittest tests.test_agent_source_gate -v
+      - name: Execute repository bootstrap gate
+        run: python runtime/agent_source_gate.py --root .
