@@ -33,7 +33,7 @@ PATTERNS = {
     # Network exports commonly put each HTTP header name and value on separate lines.
     # Detect these layouts without printing or storing the matching credential.
     "authorization_header_credential": re.compile(
-        r"(?im)^[ \t]*authorization[ \t]*\r?\n[ \t]*(?:bearer[ \t]+)?(?!\[?REDACTED\b)[^\r\n]{20,}$"
+        r"(?im)^[ \t]*authorization[ \t]*\r?\n[ \t]*(?![^\r\n]*\[?REDACTED\b)(?:bearer[ \t]+)?[^\r\n]{20,}$"
     ),
     "cookie_header_value": re.compile(
         r"(?im)^[ \t]*cookie[ \t]*\r?\n[ \t]*(?!\[?REDACTED\b)[^\r\n]{32,}$"
