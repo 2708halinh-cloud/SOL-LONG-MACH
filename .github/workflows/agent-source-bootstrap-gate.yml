@@ -26,6 +26,6 @@ jobs:
         with:
           python-version: "3.11"
       - name: Test source reconciliation
-        run: python -m unittest tests.test_agent_source_gate -v
+        run: python -m unittest discover -s tests -p 'test_agent_source_gate.py' -v
       - name: Execute repository bootstrap gate
         run: python runtime/agent_source_gate.py --root .
