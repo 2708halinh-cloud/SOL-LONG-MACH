@@ -33,16 +33,16 @@ PATTERNS = {
     # Network exports commonly put each HTTP header name and value on separate lines.
     # Detect these layouts without printing or storing the matching credential.
     "authorization_header_credential": re.compile(
-        r"(?im)^[ \t]*authorization[ \t]*\r?\n[ \t]*(?![^\r\n]*\[?REDACTED\b)(?:bearer[ \t]+)?[^\r\n]{20,}$"
+        r"(?im)^[ \t]*authorization[ \t]*(?::[ \t]*|[ \t]*\r?\n[ \t]*)(?![^\r\n]*\[?REDACTED\b)(?:bearer[ \t]+)?[^\r\n]{20,}$"
     ),
     "cookie_header_value": re.compile(
-        r"(?im)^[ \t]*cookie[ \t]*\r?\n[ \t]*(?!\[?REDACTED\b)[^\r\n]{32,}$"
+        r"(?im)^[ \t]*cookie[ \t]*(?::[ \t]*|[ \t]*\r?\n[ \t]*)(?![^\r\n]*\[?REDACTED\b)[^\r\n]{32,}$"
     ),
     "session_cookie_value": re.compile(
         r"(?i)(?:__Secure-next-auth\.session-token(?:\.\d+)?|oai-client-auth-info|cf_clearance)\s*=\s*(?!\[?REDACTED\b)[^;\s]{16,}"
     ),
     "account_identifier_header": re.compile(
-        r"(?im)^[ \t]*chatgpt-account-id[ \t]*\r?\n[ \t]*(?!\[?REDACTED\b)[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}[ \t]*$"
+        r"(?im)^[ \t]*chatgpt-account-id[ \t]*(?::[ \t]*|[ \t]*\r?\n[ \t]*)(?![^\r\n]*\[?REDACTED\b)[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}[ \t]*$"
     ),
 }
 def tracked_paths():
