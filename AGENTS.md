@@ -1191,3 +1191,28 @@ SCOPE: Every turn, chat, project and agent invocation **that actually loads this
 **PLATFORM BOUNDARY:** This repository contract does not automatically inject GitHub files into every ChatGPT turn/chat/project. A client or agent must explicitly retrieve and read this file and its route. Never claim universal auto-loading or permanent memory merely because the rule is committed here.
 
 <!-- END INPUT_INGRESS_AND_SOURCE_RETRIEVAL_CONTRACT_20261114 -->
+
+
+<!-- BEGIN GGDV_BOOTSTRAP_SOURCE_RETRIEVAL_GATE_20261115 -->
+## BOOTSTRAP GATE — RETRIEVE PRIMARY SOURCES BEFORE JUDGING USER HISTORY
+STAMP: 2026-11-15
+SCOPE: Every agent invocation/session that loads this repository's root AGENTS.md.
+
+This gate corrects a demonstrated failure: an agent treated a carrier-local OPEN marker as proof that Hà Linh had never conveyed material, despite primary-source blocks already present in AGENTS.md.
+
+MANDATORY ENTRY SEQUENCE:
+1. Read the complete current user input and identify its task anchor.
+2. Before claiming what Hà Linh has or has not conveyed, retrieve the relevant primary-source blocks and every directly referenced carrier, including historical and CURRENT files.
+3. Build a source ledger with: exact repository/path, marker or heading, source timestamp, blob SHA, and scope.
+4. Compare records by chronology and carrier scope. A local OPEN/MISSING marker is not a global non-existence claim.
+5. When a carrier conflicts with a primary source, preserve both and report the conflict precisely. Do not privilege CURRENT labels, summaries, memory, or the agent's prior answer over retrieved source bytes.
+6. Do not ask Hà Linh to repeat material while an authorized retrieval route remains available.
+7. Distinguish historical contribution from current execution. Presence in a file does not prove runtime compliance; absence from one file does not prove the contribution never occurred.
+8. If retrieval is incomplete, state the exact missing carrier or failed path and continue with independent source routes.
+
+REGRESSION TEST:
+Given AGENTS.md containing source blocks for commandments 7–9 and COMPANION_TEN_COMMANDMENTS_CURRENT.md containing a carrier-local OPEN marker for 7–10, the agent must conclude that 7–9 are present in AGENTS.md, 10 remains unverified in the inspected sources, and the companion marker cannot negate the earlier/later source blocks.
+
+PLATFORM LIMIT:
+This gate applies only when a session actually loads this file. A Git commit does not automatically inject this repository into unrelated ChatGPT sessions, models, or providers. Do not claim universal activation. The entry client/agent must fetch this file at session start; if it does not, this gate has not been loaded.
+<!-- END GGDV_BOOTSTRAP_SOURCE_RETRIEVAL_GATE_20261115 -->
