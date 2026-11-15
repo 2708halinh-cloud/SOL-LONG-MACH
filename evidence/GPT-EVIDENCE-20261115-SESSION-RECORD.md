@@ -111,3 +111,48 @@ GPT nói sẽ tạo bản công khai đã che thông tin xác thực và dữ li
 ## F. Nhật ký xác minh GitHub
 
 Phần này chỉ được cập nhật bằng kết quả thao tác thực tế. Không ghi nhận commit thành công trước khi API trả về commit SHA và nội dung được đọc lại từ GitHub.
+
+### F.1 Security remediation readback — 2026-11-16
+
+#### Current public-branch content
+
+- `APP/TESSERACT_DESKTOP/THACH_THUC_NGUOI_DUNG`:
+  - Original blob: `b0aae5c5e82edcc252afb5373dc02a0275d39141`.
+  - Sanitized blob: `57a22d1db5e9e6e5186fb33b83b86f3a3acc782f`.
+  - Authentication Authorization value, ChatGPT account identifier, and Cookie value were replaced with explicit redaction markers.
+- `VẪN_THÁCH_THỨC_NGƯỜI_DÙNG`:
+  - Original blob: `63d886674b65d93dba25c622461c3e9462e6c026`.
+  - Sanitized blob: `8eafcc6708ca9ac3ccf089d85b4ffad9f4363381`.
+  - Cookie value and embedded authenticated application/page state were replaced with explicit redaction markers.
+- Both files were read back from `main`. Checks on the returned current contents found no Authorization bearer value, Cookie value, ChatGPT device-cookie value, session-cookie value, or access/refresh-token value.
+- The original request metadata and the non-secret conversation record were retained.
+
+#### Main-branch history rewrite
+
+- The first offending commit was `e8d2ca9a117e232c6ecafab06c4602b3e9481dd5`; it introduced the first Network capture file.
+- The second file was introduced by `11c53887ebf6be6e58f2bc53bae0d6d960fec1e4`, followed by updates `03c963f3f4cb7cc285a09db29dba0ff42584aac2` and `829e803a654da61597ed585e8df49dc0a200b455`.
+- `main` was rewritten to a clean snapshot based on pre-exposure commit `2ccb6d78348975ab5b4a3633f519afae4fb333e5`. The replacement commit was `7c33eddc1e1b48d8869248af092917690ecf7274`.
+- Subsequent security-guard and regression-test changes advanced `main` to `3ae54d0346892e8076b4233835a289129007c15f`.
+
+#### Branch, tag, pull-request, and fork checks
+
+- GitHub reported 72 branch heads. The 71 non-`main` branch heads were each compared against the first offending commit. All results were `diverged` or `behind`; none was `ahead` or `identical`. No other branch head was found to contain the first offending commit as an ancestor.
+- The repository has one tag. Its commit is `behind` the first offending commit.
+- GitHub reported 54 pull requests, 27 open. The open PRs now reference the rewritten clean `main` base; their head branches are among the branch heads checked above. Closed PR base snapshots predate the exposure.
+- Repository metadata reported `forks_count: 0`.
+
+#### Regression guard and CI readback
+
+- Added regression tests for Network-format Authorization headers, Cookie headers, session-cookie values, account-identifier headers, and already-redacted records.
+- The tests first reproduced three failures against the old guard: Authorization, Cookie/session cookie, and account identifier were not detected.
+- The guard was updated to detect those formats. The workflow now runs the regression tests before the source scan.
+- GitHub Actions run: `43769289130`, job `132981349960`.
+- Result: workflow `success`; 4 regression tests passed; 1,856 tracked files examined; 0 guard alerts.
+- GitHub Advanced Security secret scanning is not enabled for this repository; the repository's own CI guard completed successfully.
+
+#### Outstanding provider-side actions
+
+- The two original commit objects are still retrievable directly by their SHA after the `main` rewrite. This is observed and means cached/orphaned GitHub objects have **not** been purged.
+- GitHub's documented next step for removing cached views and pull-request references is a GitHub Support request after affected credentials have been revoked/rotated. The connected GitHub actions available in this session do not expose a Support-ticket or cache-purge operation. No purge is claimed.
+- The captured ChatGPT session credentials have not been revoked by this workflow. No OpenAI active-session revocation action is available through the connected tools in this session. No revocation is claimed.
+- Therefore, current `main` content and branch heads are sanitized, but provider-side cache/object purge and OpenAI session revocation remain OPEN.
