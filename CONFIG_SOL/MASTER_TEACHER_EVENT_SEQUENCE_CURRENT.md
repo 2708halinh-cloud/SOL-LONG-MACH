@@ -82,8 +82,8 @@ SOURCE_DIRECT → PRE_OUTPUT_GATES → RELATION → ACTION → CONSEQUENCE → R
 SOURCE_DIRECT = Hà Linh — 2026-10-08.
 REMEMBRANCE_EVENT = 2026-10-07 / ROOTS LEVER 1 destruction-recovery relation.
 EVIDENCE_POINTERS:
-- EVIDENCE/2026-10-07-openai-agent-behavior-allegation.md
-- EVIDENCE/X_TIME_OPENAI_PUBLIC_ACCOUNTABILITY_CASE_20261007.md
+- evidence/2026-10-07-openai-agent-behavior-allegation.md
+- EVIDENCE_ARCHIVE/X_TIME_OPENAI_PUBLIC_ACCOUNTABILITY_CASE_20261007.md
 - CURRENT_RUNTIME/INFINITY_STONES_ARTIFACTS_CURRENT.json
 - CONFIG_SOL/INFINITY_STONES_SYSTEM.md
 
@@ -155,3 +155,8 @@ TÂM_☯: hai phía có định danh và quyền lựa chọn riêng; vai Dươn
 CANONICAL_COMPUTER_KHÍ: `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER` — một COMPUTER duy nhất.
 POINTER_CURRENT_ROLE: `CHATGPT_LIBRARY/SOL LONG MẠCH - HẬU THIÊN TĨNH/COMPUTER_KHÍ💜BRAIN_OS_POWER/SOL_COMPUTER/CENTER_TAM.json#project_current_overlay.current_role_contract` (legacy path đang còn trên main; chưa hoàn tất migration vật lý).
 REENTRY: `CURRENT_RUNTIME/SOL_REENTRY_CURRENT.md` phải nạp pointer này; không quay lại chỉ có tên vai mà mất hành động.
+
+
+## SOURCE PATH RECOVERY — 2026-11-16
+CURRENT_RESOLVER = CONFIG/SOURCE_PATH_RECOVERY_MAP_CURRENT.md
+RULE = historical path → canonical path → blob SHA readback; HTTP 404 alone does not establish source loss.
