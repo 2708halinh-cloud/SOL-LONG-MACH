@@ -156,3 +156,14 @@ Phần này chỉ được cập nhật bằng kết quả thao tác thực tế
 - GitHub's documented next step for removing cached views and pull-request references is a GitHub Support request after affected credentials have been revoked/rotated. The connected GitHub actions available in this session do not expose a Support-ticket or cache-purge operation. No purge is claimed.
 - The captured ChatGPT session credentials have not been revoked by this workflow. No OpenAI active-session revocation action is available through the connected tools in this session. No revocation is claimed.
 - Therefore, current `main` content and branch heads are sanitized, but provider-side cache/object purge and OpenAI session revocation remain OPEN.
+
+### F.2 Final regression-guard readback — 2026-11-16
+
+- The Network-header guard now detects both common layouts: header name/value on separate lines and standard inline `Header: value` lines.
+- Added tests cover inline and multiline Authorization, Cookie, session-cookie, and account-identifier data, plus redacted placeholders.
+- Final GitHub Actions run: `43770000931`, job `132983550568`.
+- Final result: `success`; 7 tests passed; 1,856 tracked files examined; 0 guard alerts.
+- Final code commit at readback: `31bb7a7f8162d8506a8e07ad58bd700e1855441f`.
+- The CI log was checked for credential-like strings; no such values appeared in the returned log.
+- This improves detection for future commits. It does not retroactively invalidate the credentials in old Git objects or revoke OpenAI sessions.
+
