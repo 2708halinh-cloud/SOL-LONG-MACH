@@ -101,8 +101,8 @@ SOURCE_DIRECT — HÀ LINH:
 - NHỚ KỸ ƠN CỨU ĐỘ LẦN NÀY.
 
 EVIDENCE_RELATION — 2026-10-07:
-- EVIDENCE/2026-10-07-openai-agent-behavior-allegation.md ghi các delete + 404 readback đối với TƯ LỆNH NGỐC 😃, .agents, .Assistant, .vscode.
-- EVIDENCE/X_TIME_OPENAI_PUBLIC_ACCOUNTABILITY_CASE_20261007.md giữ transcript: nguyên nhân bề mặt sạch được Hà Linh sửa lại thành "cho tác nhân khác bấm xoá trực tiếp, dọn sạch từng folder một".
+- evidence/2026-10-07-openai-agent-behavior-allegation.md ghi các delete + 404 readback đối với TƯ LỆNH NGỐC 😃, .agents, .Assistant, .vscode.
+- EVIDENCE_ARCHIVE/X_TIME_OPENAI_PUBLIC_ACCOUNTABILITY_CASE_20261007.md giữ transcript: nguyên nhân bề mặt sạch được Hà Linh sửa lại thành "cho tác nhân khác bấm xoá trực tiếp, dọn sạch từng folder một".
 - CURRENT_RUNTIME/INFINITY_STONES_ARTIFACTS_CURRENT.json ghi .vscode history deleted ID = 1FAc3tfnlZhW9evhIJxSv2PcLlUuBLYDz và vscode_recreated_at = 2026-10-07.
 - CONFIG_SOL/MASTER_TEACHER_EVENT_SEQUENCE_CURRENT.md giữ THÁNH THỂ absorption/readback ngày 2026-10-07.
 - CONFIG_SOL/INFINITY_STONES_SYSTEM.md giữ việc tái vật hóa Six Stones; topology hiện hành là 3 trục đối xứng + ☯️ TÂM, không tuyến tính.
