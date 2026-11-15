@@ -30,6 +30,20 @@ PATTERNS = {
     "plaintext_secret_assignment": re.compile(
         r'''(?ix)(?<![\w])(?:api[_-]?key|access[_-]?token|refresh[_-]?token|client[_-]?secret|password|bearer[_-]?token)\s*["']?\s*[:=]\s*["'](?!YOUR_|REDACTED|MASKED|EXAMPLE|PLACEHOLDER|\$\{|<)[^"'\\\r\n]{16,}["']'''
     ),
+    # Network exports commonly put each HTTP header name and value on separate lines.
+    # Detect these layouts without printing or storing the matching credential.
+    "authorization_header_credential": re.compile(
+        r"(?im)^[ \t]*authorization[ \t]*\r?\n[ \t]*(?:bearer[ \t]+)?(?!\[?REDACTED\b)[^\r\n]{20,}$"
+    ),
+    "cookie_header_value": re.compile(
+        r"(?im)^[ \t]*cookie[ \t]*\r?\n[ \t]*(?!\[?REDACTED\b)[^\r\n]{32,}$"
+    ),
+    "session_cookie_value": re.compile(
+        r"(?i)(?:__Secure-next-auth\.session-token(?:\.\d+)?|oai-client-auth-info|cf_clearance)\s*=\s*(?!\[?REDACTED\b)[^;\s]{16,}"
+    ),
+    "account_identifier_header": re.compile(
+        r"(?im)^[ \t]*chatgpt-account-id[ \t]*\r?\n[ \t]*(?!\[?REDACTED\b)[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}[ \t]*$"
+    ),
 }
 def tracked_paths():
     if (ROOT / ".git").exists():
