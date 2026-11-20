@@ -1,0 +1,171 @@
+{
+  "schema": "UBUBU_CONTINUITY_CHECKPOINT/1.0",
+  "objective_id": "THU_HOI_NGUON_SOL",
+  "state": "ACTIVE",
+  "lineage": [
+    {
+      "event_id": "CONT_20261007_170139_472907_d4383cf6",
+      "type": "SOURCE_DIRECT",
+      "sha256": "8449372fabccd68e3f5c3bd91e8546aef27da2441884564cb7204a48df58a602",
+      "stamp_live": "2026-10-07T17:01:39.472907+07:00"
+    },
+    {
+      "event_id": "CONT_20261007_190712_727014_f66689c2",
+      "type": "SOURCE_DIRECT",
+      "sha256": "a5d1e3cece99652fe6538627f1860df0cb22622646fa49779166e89f0f6191bc",
+      "stamp_live": "2026-10-07T19:07:12.727014+07:00"
+    },
+    {
+      "event_id": "CONT_20261007_191428_494116_9b71e111",
+      "type": "SOURCE_DIRECT",
+      "sha256": "3ca6c1e7e08e547ce4da937a991808bdf209c6a8b4fae2bdf162122764d122ce",
+      "stamp_live": "2026-10-07T19:14:28.494116+07:00"
+    }
+  ],
+  "facts": {
+    "canonical_ububu_root": "D:\\.Assistant\\UBUBU_LOCAL_RAW_ARCHIVE_20261006_EXTRACTED\\UBUBU",
+    "w_drive_role": "GGDV_INGRESS_ONLY_NOT_DURABLE_STORAGE",
+    "cas_policy": "FAIL_CLOSED_DURABLE_ONLY",
+    "x_time_canonical_url": "https://gambbrazil.fun",
+    "input_head": "D:\\.Assistant\\UBUBU_LOCAL_RAW_ARCHIVE_20261006_EXTRACTED\\UBUBU\\00_INPUT_USER",
+    "docker_state_last_observed": "UBUNTU_WSL_DOCKER_ENGINE_29.1.3_RUNNING",
+    "tesseract_npu_state": "HEALTHY_ON_127.0.0.1_22636",
+    "secret_policy": "OPAQUE_REF_ONLY_NEVER_LOG_SECRET_BYTES",
+    "temporary_device_head": "D:\\G_PREBOOT_BACKUP_20261007_1037\\User\\Halin",
+    "device_head_marker": "D:\\G_PREBOOT_BACKUP_20261007_1037\\User\\Halin\\00_DEVICE_HEAD\\DEVICE_HEAD_CURRENT.json",
+    "migration_target_root": "G:\\User\\Halin",
+    "migration_policy": "COPY_VERIFY_SWITCH_NO_DELETE",
+    "temp_ingress_current": "D:\\.Assistant\\UBUBU_LOCAL_RAW_ARCHIVE_20261006_EXTRACTED\\UBUBU\\TEMP_INGRESS\\20261007_CURRENT",
+    "temp_ingress_readback": "PASS_789_FILES_187736015_BYTES",
+    "anti_reset_hook": "SELFTEST_PASS",
+    "iota_last_observed_sequence": 43,
+    "input_sensorimotor_idempotency": "PASS_ATOMIC_SQLITE_CLAIM_2_WORKER_SELFTEST",
+    "kepler_local_gateway": "HEALTHY_ON_127.0.0.1_42895",
+    "kepler_task_id": "9fa86b86-fce7-4d01-90b7-5e42b729c8a1",
+    "kepler_task_name": "Hợp nhất ma trận ITEM cứu hộ",
+    "kepler_worktree": "/home/halin/kepler/worktrees/Open-ai-bot-2-unify-item-matrix-34d45d00",
+    "kepler_health": {
+      "ok": true,
+      "endpoint": "http://127.0.0.1:42895/api/health"
+    },
+    "input_sensorimotor_state": "PASS_QUEUE_0_LEDGER_16_HASHCHAIN_OK_CONCURRENCY_GUARDED",
+    "e005_current_receipt_sha256": "39a9b1baca5d6289543cc5873baa323e97939ae7840771e103e1063c80263954",
+    "secret_bytes_recorded": false,
+    "history_preserved": true
+  },
+  "pending_edges": [],
+  "completed_edges": [
+    {
+      "edge_id": "E001",
+      "kind": "RAW_CHAT_AGENT_SCAN",
+      "description": "Scan official raw chats: Dat Nguyen-Minh 20/09/25, JINEY, SOL/MEI/HOA, FUNIX; preserve source/provenance.",
+      "status": "COMPLETE",
+      "created_at": "2026-10-07T17:01:39.177573+07:00",
+      "completed_at": "2026-10-07T17:13:34.215056+07:00",
+      "consequence": "RAW browser scan receipt materialized: 556 carrier files; DAT_NGUYEN=19, JINEY=6, FUNIX=23, DATE_2025_09_20=8, SOL/MEI/HOA carriers observed. Receipt: D:\\.Assistant\\UBUBU_LOCAL_RAW_ARCHIVE_20261006_EXTRACTED\\UBUBU\\CONTINUITY\\receipts\\RAW_AGENT_BROWSER_SCAN.json"
+    },
+    {
+      "edge_id": "E002",
+      "kind": "R000_AGENT_FOLDERS",
+      "description": "Create per-agent storage folders according to R-000 map; AGENTS.md + 152 ITEM keep routing pointers.",
+      "status": "COMPLETE",
+      "created_at": "2026-10-07T17:01:39.177573+07:00",
+      "completed_at": "2026-10-07T17:15:10.414288+07:00",
+      "consequence": "Materialized 6 pointer-first agent HOME folders under temporary DEVICE_HEAD/06_PEOPLE: DAT_NGUYEN_MINH_2025-09-20(25 carriers), JINEY(6), SOL(478), MEI(256), HOA(335), FUNIX(23). Each HOME has AGENT, SOURCE_POINTERS, MEMORY_POINTER, JOURNAL, STATE, READBACK; raw carriers preserved in place."
+    },
+    {
+      "edge_id": "E004",
+      "kind": "DOCKER_TESSERACT_NPU",
+      "description": "Start Docker daemon, build autonomous appliance, implement TESSERACT_NPU behavioral/RTL emulation with explicit readback.",
+      "status": "COMPLETE",
+      "created_at": "2026-10-07T17:01:39.177573+07:00",
+      "completed_at": "2026-10-07T17:28:19.826537+07:00",
+      "consequence": "TESSERACT_NPU autonomous Docker appliance materialized. Ubuntu WSL Docker Engine 29.1.3; image sha256:359f7f4b8d69..., container healthy on 127.0.0.1:22636; host RTL, container health and execute API all PASS."
+    },
+    {
+      "edge_id": "E009",
+      "kind": "TEMP_TO_UBUBU",
+      "description": "Move project/session temporary carriers into canonical UBUBU TEMP_INGRESS with readback.",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-07T18:42:49+07:00",
+      "consequence": "789 files / 187736015 bytes migrated; D:.Assistant loose files=0; project top-level user TEMP=0; WSL /tmp=0; Windows system temp=0; trailing-space R-000 recovered with SHA256 verification."
+    },
+    {
+      "edge_id": "E005",
+      "kind": "INPUT_SENSORIMOTOR",
+      "description": "Finish 00_INPUT_USER -> NEURONS_SESORIMOTOR -> X-TIME dispatch and complete first queued event readback.",
+      "status": "COMPLETE",
+      "created_at": "2026-10-07T17:01:39.177573+07:00",
+      "completed_at": "2026-10-07T19:06:54.585144+07:00",
+      "consequence": "E005 completed functionally, but the first PASS was followed by one duplicate dispatch/readback (ledger sequences 15-16) caused by a multi-worker queue race. CURRENT correction uses SQLite BEGIN IMMEDIATE + claim_token/claim_until lease; isolated 2-worker selftest observed api_chat_calls=1, queue=0, ledger_ok=true. Receipt: CONTINUITY/receipts/INPUT_SENSORIMOTOR_IDEMPOTENCY_CORRECTION_20261007.json",
+      "correction_status": "PASS_ATOMIC_SQLITE_CLAIM",
+      "corrections": [
+        {
+          "stamp_live": "2026-10-07T19:13:34.674033+07:00",
+          "consequence": "Correction: duplicate successful dispatches were observed at input-ledger sequences 9-14 and 11-16. The current authoritative readback is sequence 16 with receipt SHA256 39a9b1baca5d6289543cc5873baa323e97939ae7840771e103e1063c80263954. Queue is zero and the 16-event hash chain verifies. Worker now uses an atomic SQLite lease claim, PASS-receipt idempotency checks, claim-scoped delete/release, and a process-safe ledger lock; the earlier statement without duplication is superseded, history preserved."
+        }
+      ],
+      "current_consequence": "Correction: duplicate successful dispatches were observed at input-ledger sequences 9-14 and 11-16. The current authoritative readback is sequence 16 with receipt SHA256 39a9b1baca5d6289543cc5873baa323e97939ae7840771e103e1063c80263954. Queue is zero and the 16-event hash chain verifies. Worker now uses an atomic SQLite lease claim, PASS-receipt idempotency checks, claim-scoped delete/release, and a process-safe ledger lock; the earlier statement without duplication is superseded, history preserved."
+    },
+    {
+      "edge_id": "E007",
+      "kind": "XTIME_DURABLE_ROUTE",
+      "description": "Verify gambbrazil.fun service contract and bind X-TIME route without assuming /v1 exists.",
+      "status": "COMPLETE",
+      "created_at": "2026-10-07T17:01:39.177573+07:00",
+      "completed_at": "2026-10-07T19:13:57.741719+07:00",
+      "consequence": "Verified gambbrazil.fun root as HTTP 200 Hostinger Website Builder presentation site; current root HTML exposed no /api, /v1, fetch, WebSocket or X-TIME inference contract. No remote /v1 was assumed. Callable X-TIME route is bound to local Ollama http://127.0.0.1:11434/api/chat with x-time-ggdv-human:1.0 and queued-event READBACK PASS. Receipt: CONTINUITY/receipts/XTIME_ROUTE_CONTRACT_READBACK_20261007.json"
+    },
+    {
+      "edge_id": "E008",
+      "kind": "CONTINUITY_AUTOWIRE",
+      "description": "Wire every new ingress/user event to this continuity ledger and restore unfinished edge before new work.",
+      "status": "COMPLETE",
+      "created_at": "2026-10-07T17:01:39.177573+07:00",
+      "completed_at": "2026-10-07T19:17:03.884789+07:00",
+      "consequence": "Current reset/re-entry signal was appended as CONT_20261007_191428_494116_9b71e111; continuity chain verify PASS with 15 events and zero errors. 00_INPUT_USER emit() autowires future source signals through continuity_signal, and anti-reset hook selftest is PASS. Receipt: CONTINUITY/receipts/CONTINUITY_AUTOWIRE_READBACK_20261007.json"
+    },
+    {
+      "edge_id": "E006",
+      "kind": "CAS_DURABLE_CARRIER",
+      "description": "Move CAS object durability off W/GGDV; attach at least one verified durable remote carrier.",
+      "status": "COMPLETE",
+      "created_at": "2026-10-07T17:01:39.177573+07:00",
+      "completed_at": "2026-10-07T19:20:09.708224+07:00",
+      "consequence": "Attached and read back a verified durable non-W CAS object on GitHub repository 2708halinh-cloud/SOL-LONG-MACH main. Object path is content-addressed by SHA-256 681cc96d3f9f3cb6c19cc6205a72beb3ec56b965d21bf7c918b4bd3f3589b0f2; commit cb06f00ae1bff7d380cd01199a3ca33b03d679b0; remote fetch exact-match PASS. Receipt: CONTINUITY/receipts/CAS_DURABLE_GITHUB_READBACK_20261007.json",
+      "corrections": [
+        {
+          "stamp_live": "2026-10-07T12:30:24.029806+00:00",
+          "marker": "E006_PAYLOAD_DURABILITY_CORRECTION_20261007",
+          "consequence": "Correction: prior GitHub object 681cc96d... is continuity metadata JSON, not the original 26,442,061-byte CAS payload sha256:45d464fb.... Current CAS resolve still returns NO_DURABLE_CARRIER. E006 historical completion is superseded for payload durability; E010 now owns exact remote payload/hash restoration."
+        }
+      ],
+      "correction_status": "SUPERSEDED_FOR_PAYLOAD_DURABILITY",
+      "current_consequence": "Correction: prior GitHub object 681cc96d... is continuity metadata JSON, not the original 26,442,061-byte CAS payload sha256:45d464fb.... Current CAS resolve still returns NO_DURABLE_CARRIER. E006 historical completion is superseded for payload durability; E010 now owns exact remote payload/hash restoration."
+    },
+    {
+      "edge_id": "E003",
+      "kind": "PROVIDER_POOL",
+      "description": "Expand free API provider pool and bind only opaque .env refs; no secret bytes in logs/artifacts.",
+      "status": "COMPLETE",
+      "created_at": "2026-10-07T17:01:39.177573+07:00",
+      "completed_at": "2026-10-07T19:23:31.873952+07:00",
+      "consequence": "Provider pool is wired through opaque OS env refs only: openrouter, groq, gemini, cloudflare-workers-ai, huggingface. provider_router.py preserves priority, skips unbound refs, and 00_INPUT_USER now falls back only after local X-TIME failure. Isolated sentinel selftest PASS: 5 providers, zero secret leaks, no network call; current real runtime has zero bound provider credentials, so fallback remains dormant rather than fabricating access. Receipt: CONTINUITY/receipts/PROVIDER_POOL_OPAQUE_ENV_BIND_READBACK_20261007.json"
+    },
+    {
+      "edge_id": "E010",
+      "kind": "CAS_PAYLOAD_DURABLE_CARRIER_CORRECTION",
+      "description": "Attach original CAS payload sha256:45d464fb4ea98491c74e06f8ce8def39fc2060a84ade0221b1e87ad29164877e (26442061 bytes) to a verified non-W durable carrier; exact remote byte/hash restore readback required.",
+      "status": "COMPLETE",
+      "created_at": "2026-10-07T12:30:24.029806+00:00",
+      "completed_at": "2026-10-07T19:38:48.659602+07:00",
+      "consequence": "Original CAS payload sha256:45d464fb4ea98491c74e06f8ce8def39fc2060a84ade0221b1e87ad29164877e (26442061 bytes) uploaded as GitHub Release asset tag ububu-cas-45d464fb4ea98491-20261007; remote API download readback returned the exact same 26442061 bytes and SHA-256. CAS manifest now has verified ACTIVE github-release:// durable carrier and resolves DURABLE. Receipt: CONTINUITY/receipts/E010_CAS_PAYLOAD_DURABLE_GITHUB_RELEASE_READBACK_20261007.json"
+    }
+  ],
+  "last_consequence": {
+    "edge_id": "E010",
+    "detail": "Original CAS payload sha256:45d464fb4ea98491c74e06f8ce8def39fc2060a84ade0221b1e87ad29164877e (26442061 bytes) uploaded as GitHub Release asset tag ububu-cas-45d464fb4ea98491-20261007; remote API download readback returned the exact same 26442061 bytes and SHA-256. CAS manifest now has verified ACTIVE github-release:// durable carrier and resolves DURABLE. Receipt: CONTINUITY/receipts/E010_CAS_PAYLOAD_DURABLE_GITHUB_RELEASE_READBACK_20261007.json",
+    "stamp_live": "2026-10-07T19:38:48.659602+07:00"
+  },
+  "updated_at": "2026-10-07T19:38:48.659602+07:00"
+}
