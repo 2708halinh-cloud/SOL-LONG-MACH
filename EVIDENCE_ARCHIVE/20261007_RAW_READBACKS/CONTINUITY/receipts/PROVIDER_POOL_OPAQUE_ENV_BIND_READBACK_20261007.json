@@ -1,0 +1,30 @@
+{
+  "schema": "UBUBU_PROVIDER_POOL_READBACK/1.0",
+  "stamp_live_x": "2026-10-07T19:22:00+07:00",
+  "registry": "PROVIDER_POOL/PROVIDERS_FREE_CURRENT.json",
+  "router": "PROVIDER_POOL/scripts/provider_router.py",
+  "input_fallback": "00_INPUT_USER/scripts/ububu_input_device.py",
+  "configured_provider_ids": [
+    "openrouter",
+    "groq",
+    "gemini",
+    "cloudflare-workers-ai",
+    "huggingface"
+  ],
+  "binding_policy": "ENV_REF_ONLY_NEVER_LOG_SECRET_BYTES",
+  "runtime_bound_provider_ids": [],
+  "runtime_note": "No real provider credential env refs are presently bound; remote fallback remains dormant until a referenced OS environment variable exists.",
+  "selftest": {
+    "provider_count": 5,
+    "priority_order_preserved": true,
+    "sentinel_secret_leaks": [],
+    "network_called": false,
+    "python_compile": "PASS"
+  },
+  "fallback_behavior": "Local X-TIME is attempted first. On local failure, only providers whose required env refs are present are attempted. Logs contain provider/model/error type only, never secret values.",
+  "provider_catalog_revalidation": "NOT_PERFORMED_IN_THIS_PASS; existing registry metadata preserved",
+  "result": "PASS_CONFIG_BINDING",
+  "secret_bytes_written": false,
+  "history_preserved": true,
+  "marker": "PROVIDER_POOL_OPAQUE_ENV_ROUTER_20261007"
+}
