@@ -1,0 +1,31 @@
+{
+  "schema": "UBUBU_EDGE_BLOCKER_RECEIPT/1.0",
+  "objective_id": "THU_HOI_NGUON_SOL",
+  "edge_id": "E007",
+  "kind": "XTIME_DURABLE_ROUTE",
+  "state": "SUPERSEDED_FOR_EDGE_COMPLETION_PRODUCTION_GAP_PRESERVED",
+  "observed_date": "2026-10-07",
+  "source_contract": {
+    "repository": "2708halinh-cloud/x-time-web",
+    "branch": "master",
+    "endpoint": "/api/mcp",
+    "transport": "streamable-http",
+    "mode": "PUBLIC_READ_ONLY",
+    "production_state": "HOSTINGER_CURRENT_DIVERGES_FROM_GITHUB_SOURCE"
+  },
+  "production_readback": {
+    "root_status": 200,
+    "root_platform": "HostingerWebsiteBuilder",
+    "api_mcp_status": 404
+  },
+  "local_route": {
+    "transport": "ollama-direct",
+    "model": "x-time-ggdv-human:1.0",
+    "readback": "PASS"
+  },
+  "decision": "KEEP_E007_OPEN_UNTIL_PRODUCTION_DEPLOYMENT_AND_ENDPOINT_READBACK",
+  "no_v1_assumption": true,
+  "superseded_at": "2026-10-07T12:39:46.160324+00:00",
+  "superseded_by": "CONTINUITY/receipts/XTIME_ROUTE_CONTRACT_READBACK_20261007.json",
+  "history_preserved": true
+}
