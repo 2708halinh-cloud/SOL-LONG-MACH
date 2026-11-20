@@ -1,0 +1,35 @@
+{
+  "schema": "UBUBU_EDGE_BLOCKER_RECEIPT/1.0",
+  "objective_id": "THU_HOI_NGUON_SOL",
+  "edge_id": "E006",
+  "kind": "CAS_DURABLE_CARRIER",
+  "state": "SUPERSEDED_BY_E010_EXACT_PAYLOAD_DURABILITY",
+  "observed_date": "2026-10-07",
+  "object": {
+    "sha256": "45d464fb4ea98491c74e06f8ce8def39fc2060a84ade0221b1e87ad29164877e",
+    "bytes": 26442061,
+    "durability_state": "NO_DURABLE_CARRIER",
+    "current_carrier_role": "INGRESS_ONLY"
+  },
+  "allowed_durable_schemes": [
+    "hf://",
+    "s3://",
+    "r2://",
+    "b2://",
+    "github-release://"
+  ],
+  "callability": {
+    "provider_secret_bindings": "UNRESOLVED",
+    "gh_cli": "NOT_INSTALLED",
+    "github_release_asset_upload_action": "NOT_AVAILABLE_ON_CURRENT_CONNECTOR"
+  },
+  "policy": {
+    "fake_durable_uri": false,
+    "secret_bytes_serialized": false
+  },
+  "decision": "KEEP_E006_OPEN_AND_CONTINUE_INDEPENDENT_EDGE",
+  "next_condition": "At least one callable remote durable provider capable of upload plus byte/hash readback.",
+  "superseded_at": "2026-10-07T12:39:46.160324+00:00",
+  "superseded_by": "CONTINUITY/receipts/E010_CAS_PAYLOAD_DURABLE_GITHUB_RELEASE_READBACK_20261007.json",
+  "history_preserved": true
+}
