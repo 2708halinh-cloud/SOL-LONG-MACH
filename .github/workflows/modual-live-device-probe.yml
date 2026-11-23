@@ -1,0 +1,26 @@
+name: MODUAL Live Device Probe
+on:
+  pull_request:
+    paths:
+      - "MODUAL/SENSOR_LOGS/source/**"
+      - "MODUAL/SENSOR_LOGS/tests/**"
+      - ".github/workflows/modual-live-device-probe.yml"
+  push:
+    branches:
+      - "fix/modual-live-device-probe-20261025"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test sanitized ADB probe
+        run: python -m unittest discover -s MODUAL/SENSOR_LOGS/tests -p "test_live_device_probe.py" -v
+      - name: Test read-only snapshot safety
+        run: python -m unittest discover -s MODUAL/SENSOR_LOGS/tests -p "test_readonly_sensor_snapshots.py" -v
