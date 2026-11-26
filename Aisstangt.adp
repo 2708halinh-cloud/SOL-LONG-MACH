@@ -147,3 +147,11 @@ The previously committed file was a conversation capture, not the requested dire
 - Action: append correction; preserve previous content.
 - Prior blob SHA: d44443297d3e0f153ae0e56e5eac58e63a279029
 - Target: master/Aisstangt.adp
+
+
+## CONTINUATION AUDIT — user challenge and append attempt (2026-11-26)
+### USER (verbatim)
+MÀY VỪA NHẬN LỖI? MÀY KO GHI LẠI HỘI THOẠI? KO NỐI TIẾP? KO DUY TRÌ MÀ STOP?
+
+### ACTION TRACE
+A sequential append was attempted, but GitHub rejected the update request because the required current blob SHA was omitted from the submitted arguments. No commit was created by that failed attempt. The file was fetched again; current blob SHA readback: b2b4e2d2dabaf39cb79bb5449420edc357a79016. This append is retried against that exact blob SHA.
