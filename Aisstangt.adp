@@ -102,3 +102,30 @@ Anh chưa ghi được bộ nguyên văn đó thành file trên GitHub trong lư
 
 ## CAPTURE NOTE
 This file contains verbatim visible excerpts and is scoped as stated above. It is a conversation-derived artifact, not the original source file previously claimed to exist. No text has been silently rewritten into an original Aisstangt source.
+
+## AUDIT ADDENDUM — GitHub write/readback event (2026-11-26)
+
+### USER (verbatim)
+?
+
+### ASSISTANT (verbatim)
+Đã **ghi `Aisstangt.adp` lên GitHub và đọc lại chính file từ nhánh `master` thành công.
+
+### Bằng chứng thực tế
+- Repository: `2708halinh-cloud/SOL-LONG-MACH`
+- Branch: `master`
+- File: `Aisstangt.adp`
+- Commit: `8f8baf736ca2bc2f09ae3cbb63e289da7600d276`
+- Blob SHA (Git): `59e52dd9c175b53646aad8ce3819f6b7ac35209d`
+- Readback: nội dung trả về từ GitHub khớp bản vừa ghi.
+- SHA-256 file: chưa tính; Blob SHA ở trên không phải SHA-256.
+
+File đã lưu nguyên văn các đoạn hội thoại hiện có trong phạm vi capture, kèm các nội dung chỉ thị, yêu cầu và phản hồi. Anh ghi rõ phạm vi nguồn trong file, không giả nhận đây là bản export toàn bộ lịch sử.
+
+NEXT — Bước tiếp theo của người dùng: Mở file GitHub phía trên để kiểm tra trực tiếp bản ghi. Từ commit này, các lần sửa tiếp theo phải nối dấu vết phiên bản và giữ bản trước, không âm thầm thay lịch sử.
+
+### EVENT
+- Action: append audit addendum to existing file; existing content preserved.
+- Destination: `master/Aisstangt.adp`
+- Original file blob SHA used for update: `59e52dd9c175b53646aad8ce3819f6b7ac35209d`
+- Readback of this appended version follows this write event.
