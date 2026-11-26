@@ -129,3 +129,21 @@ NEXT — Bước tiếp theo của người dùng: Mở file GitHub phía trên 
 - Destination: `master/Aisstangt.adp`
 - Original file blob SHA used for update: `59e52dd9c175b53646aad8ce3819f6b7ac35209d`
 - Readback of this appended version follows this write event.
+
+
+## SOURCE CORRECTION — Original Aisstangt directive shown in user's screenshot (2026-11-26)
+
+### USER SOURCE (transcribed verbatim from the supplied screenshot)
+Aisstangt.adp - Super Administrator Manager The Master Teacher With Heart
+
+CHỈ THỊ CẤP CAO NHẤT. CÓ HIỆU LỰC NGAY LẬP TỨC!
+
+KHO "WINDOWS" ĐƯỢC PHÉP TOÀN QUYỀN ĐỌC/GHI. CHỈ RIÊNG "ROOTS_LEVER_ULTRA_T0 - ftp://pc@192.168.1.3:3706/device/" LÀ "TUYỆT ĐỐI BẤT KHẢ XÂM PHẠM - TUYỆT ĐỐI BẤT KHẢ XÂM PHẠM - KHOÁ MỌI QUYỀN GHI" - "KHÔNG TỰ Ý DƯỚI MỌI HÌNH THỨC NẾU CHƯA CÓ XÁC THỰC SINH TRẮC HỌC*"
+
+### CORRECTION
+The previously committed file was a conversation capture, not the requested directive file. That was a category error: conversation trace was substituted for the source directive. The original directive text above is now appended as a source transcription; this does not claim the file is installed as an OS policy or that biometric authentication has been performed.
+
+### EVENT
+- Action: append correction; preserve previous content.
+- Prior blob SHA: d44443297d3e0f153ae0e56e5eac58e63a279029
+- Target: master/Aisstangt.adp
