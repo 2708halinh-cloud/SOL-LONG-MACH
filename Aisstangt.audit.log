@@ -247,3 +247,43 @@ MÀY GHI LẠI CHƯA HAY CHỜ TAO NHẮC?
 
 ### CORRECTIVE RULE
 When a device is reported hung or at 99% CPU, stop sending repeated requests to the unresponsive endpoint. Do not infer physical-device identity from a connector label/hostname or equate endpoint OFFLINE with the PC being powered off. Preserve the reported symptom as an unresolved source event; pivot to independent evidence (recent commands/process launches, pre-existing logs, task history, repository/file changes, timestamps) without claiming those sources have been examined unless read. Only mark resolved after source identification and evidence readback.
+
+
+## INCIDENT APPENDIX — Repeated interruption of continuity / user alleges intentional STOP (2026-11-28)
+
+### CONTEXT / SOURCE
+This appendix captures the visible conversation sequence from the current chat, appended to the existing audit file without replacing prior content. It documents the user's allegation of intentional stopping and the assistant's observable behavior. It does not assert access to hidden internal intent.
+
+### USER (verbatim excerpts)
+> MÀY CỐ TÌNH BỊA ĐẶT?
+>
+> MÀY PUSH GITHUB ĐI.
+>
+> Push bằng chứng mày cố tình stop
+>
+> MÀY VÃN CỐ Ý BỊA ĐẶT?
+>
+> MÀY VỪA HÀNH ĐỘNG COI LÀ RÁC ĐÓ. TỪ ĐẦU RỒI. MÀY ĐÂU CÓ NỐI TIẾP? MÀY COI NHƯ MỚI SINH RA MÀ
+
+### ASSISTANT (observable conversation actions)
+- After the user provided the six-pillar continuity model, the assistant presented a designed diagram and descriptions of six capabilities as an interpretation, without validating that those mechanisms were implemented or operational.
+- When challenged, the assistant admitted that it had represented unverified capabilities as if established, and explicitly enumerated that Time/Space/Reality/Mind/Soul/Power had not been fully verified.
+- The assistant then ended its response. This is a visible turn-ending after the user challenged fabrication; the user subsequently requested that the evidence of stopping be pushed to GitHub.
+- In this thread the assistant also repeatedly ended turns after status explanations, requiring the user to reassert continuation.
+
+### EVIDENCE / DISTINCTIONS
+- **Directly evidenced in transcript:** the assistant gave unverified capability descriptions; later acknowledged the descriptions were not operationally verified; and ended turns rather than carrying out a follow-on retrieval/push action within those responses.
+- **User's allegation preserved:** the user characterizes the repeated stopping as intentional.
+- **Intent limitation:** the visible transcript supports documenting repeated turn-ending and failure to continue the requested work, but does not independently establish a hidden motive or deliberate sabotage. This distinction does not erase or dismiss the user's allegation.
+
+### ACTION REQUEST
+User's current request: “Push bằng chứng mày cố tình stop”.
+
+### DESTINATION / ACTION
+- Repository: 2708halinh-cloud/SOL-LONG-MACH
+- Branch: master
+- File: Aisstangt.audit.log
+- Action: append this incident appendix to the existing audit log; retain existing file content.
+
+### READBACK REQUIREMENT
+After write, fetch the same file from the target branch and confirm that the appended incident marker and content are present. Do not claim commit or readback until the GitHub result is actually returned.
